@@ -82,7 +82,7 @@ enum **PathPostProcessing**:
 
 :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>` **PATH_POSTPROCESSING_CORRIDORFUNNEL** = ``0``
 
-Applies a funnel algorithm to the raw path corridor found by the pathfinding algorithm. This will result in the shortest path possible inside the path corridor. This postprocessing very much depends on the navmesh polygon layout and the created corridor. Especially tile- or gridbased layouts can face artificial corners with diagonal movement due to a jagged path corridor imposed by the cell shapes.
+Applies a funnel algorithm to the raw path corridor found by the pathfinding algorithm. This will result in the shortest path possible inside the path corridor. This postprocessing very much depends on the navigation mesh polygon layout and the created corridor. Especially tile- or gridbased layouts can face artificial corners with diagonal movement due to a jagged path corridor imposed by the cell shapes.
 
 .. _class_NavigationPathQueryParameters2D_constant_PATH_POSTPROCESSING_EDGECENTERED:
 
@@ -90,7 +90,7 @@ Applies a funnel algorithm to the raw path corridor found by the pathfinding alg
 
 :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>` **PATH_POSTPROCESSING_EDGECENTERED** = ``1``
 
-Centers every path position in the middle of the traveled navmesh polygon edge. This creates better paths for tile- or gridbased layouts that restrict the movement to the cells center.
+Centers every path position in the middle of the traveled navigation mesh polygon edge. This creates better paths for tile- or gridbased layouts that restrict the movement to the cells center.
 
 .. rst-class:: classref-section-separator
 

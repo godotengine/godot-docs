@@ -44,35 +44,39 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Basis<class_Basis>`                             | :ref:`basis<class_Node3D_property_basis>`                           |                                                     |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                         | :ref:`global_position<class_Node3D_property_global_position>`       |                                                     |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                         | :ref:`global_rotation<class_Node3D_property_global_rotation>`       |                                                     |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>`                 | :ref:`global_transform<class_Node3D_property_global_transform>`     |                                                     |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                         | :ref:`position<class_Node3D_property_position>`                     | ``Vector3(0, 0, 0)``                                |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Quaternion<class_Quaternion>`                   | :ref:`quaternion<class_Node3D_property_quaternion>`                 |                                                     |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                         | :ref:`rotation<class_Node3D_property_rotation>`                     | ``Vector3(0, 0, 0)``                                |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` | :ref:`rotation_edit_mode<class_Node3D_property_rotation_edit_mode>` | ``0``                                               |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>`       | :ref:`rotation_order<class_Node3D_property_rotation_order>`         | ``2``                                               |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                         | :ref:`scale<class_Node3D_property_scale>`                           | ``Vector3(1, 1, 1)``                                |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`top_level<class_Node3D_property_top_level>`                   | ``false``                                           |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>`                 | :ref:`transform<class_Node3D_property_transform>`                   | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`NodePath<class_NodePath>`                       | :ref:`visibility_parent<class_Node3D_property_visibility_parent>`   | ``NodePath("")``                                    |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
-   | :ref:`bool<class_bool>`                               | :ref:`visible<class_Node3D_property_visible>`                       | ``true``                                            |
-   +-------------------------------------------------------+---------------------------------------------------------------------+-----------------------------------------------------+
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Basis<class_Basis>`                             | :ref:`basis<class_Node3D_property_basis>`                                     |                                                     |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                         | :ref:`global_position<class_Node3D_property_global_position>`                 |                                                     |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                         | :ref:`global_rotation<class_Node3D_property_global_rotation>`                 |                                                     |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                         | :ref:`global_rotation_degrees<class_Node3D_property_global_rotation_degrees>` |                                                     |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`                 | :ref:`global_transform<class_Node3D_property_global_transform>`               |                                                     |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                         | :ref:`position<class_Node3D_property_position>`                               | ``Vector3(0, 0, 0)``                                |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Quaternion<class_Quaternion>`                   | :ref:`quaternion<class_Node3D_property_quaternion>`                           |                                                     |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                         | :ref:`rotation<class_Node3D_property_rotation>`                               | ``Vector3(0, 0, 0)``                                |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                         | :ref:`rotation_degrees<class_Node3D_property_rotation_degrees>`               |                                                     |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` | :ref:`rotation_edit_mode<class_Node3D_property_rotation_edit_mode>`           | ``0``                                               |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`EulerOrder<enum_@GlobalScope_EulerOrder>`       | :ref:`rotation_order<class_Node3D_property_rotation_order>`                   | ``2``                                               |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                         | :ref:`scale<class_Node3D_property_scale>`                                     | ``Vector3(1, 1, 1)``                                |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`                               | :ref:`top_level<class_Node3D_property_top_level>`                             | ``false``                                           |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`                 | :ref:`transform<class_Node3D_property_transform>`                             | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>`                       | :ref:`visibility_parent<class_Node3D_property_visibility_parent>`             | ``NodePath("")``                                    |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`                               | :ref:`visible<class_Node3D_property_visible>`                                 | ``true``                                            |
+   +-------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -327,6 +331,23 @@ Rotation part of the global transformation in radians, specified in terms of YXZ
 
 ----
 
+.. _class_Node3D_property_global_rotation_degrees:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **global_rotation_degrees**
+
+.. rst-class:: classref-property-setget
+
+- void **set_global_rotation_degrees** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_global_rotation_degrees** **(** **)**
+
+Helper property to access :ref:`global_rotation<class_Node3D_property_global_rotation>` in degrees instead of radians.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node3D_property_global_transform:
 
 .. rst-class:: classref-property
@@ -392,6 +413,23 @@ Access to the node rotation as a :ref:`Quaternion<class_Quaternion>`. This prope
 Rotation part of the local transformation in radians, specified in terms of Euler angles. The angles construct a rotaton in the order specified by the :ref:`rotation_order<class_Node3D_property_rotation_order>` property.
 
 \ **Note:** In the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating-point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node3D_property_rotation_degrees:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **rotation_degrees**
+
+.. rst-class:: classref-property-setget
+
+- void **set_rotation_degrees** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_rotation_degrees** **(** **)**
+
+Helper property to access :ref:`rotation<class_Node3D_property_rotation>` in degrees instead of radians.
 
 .. rst-class:: classref-item-separator
 

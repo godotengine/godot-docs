@@ -117,7 +117,7 @@ Methods
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`draw_mesh<class_CanvasItem_method_draw_mesh>` **(** :ref:`Mesh<class_Mesh>` mesh, :ref:`Texture2D<class_Texture2D>` texture, :ref:`Transform2D<class_Transform2D>` transform=Transform2D(1, 0, 0, 1, 0, 0), :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1) **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`draw_msdf_texture_rect_region<class_CanvasItem_method_draw_msdf_texture_rect_region>` **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`float<class_float>` outline=0.0, :ref:`float<class_float>` pixel_range=4.0 **)**                                                                                                                                                                                                                                                                                                                                                                                                      |
+   | void                                  | :ref:`draw_msdf_texture_rect_region<class_CanvasItem_method_draw_msdf_texture_rect_region>` **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`float<class_float>` outline=0.0, :ref:`float<class_float>` pixel_range=4.0, :ref:`float<class_float>` scale=1.0 **)**                                                                                                                                                                                                                                                                                                                                                                 |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`draw_multiline<class_CanvasItem_method_draw_multiline>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`Color<class_Color>` color, :ref:`float<class_float>` width=1.0 **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -929,7 +929,7 @@ Draws a :ref:`Mesh<class_Mesh>` in 2D, using the provided texture. See :ref:`Mes
 
 .. rst-class:: classref-method
 
-void **draw_msdf_texture_rect_region** **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`float<class_float>` outline=0.0, :ref:`float<class_float>` pixel_range=4.0 **)**
+void **draw_msdf_texture_rect_region** **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`float<class_float>` outline=0.0, :ref:`float<class_float>` pixel_range=4.0, :ref:`float<class_float>` scale=1.0 **)**
 
 Draws a textured rectangle region of the multi-channel signed distance field texture at a given position, optionally modulated by a color. See :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` for more information and caveats about MSDF font rendering.
 
@@ -1228,7 +1228,7 @@ Returns the canvas item RID used by :ref:`RenderingServer<class_RenderingServer>
 
 :ref:`Transform2D<class_Transform2D>` **get_canvas_transform** **(** **)** |const|
 
-Returns the transform matrix of this item's canvas.
+Returns the transform from the coordinate system of the canvas, this item is in, to the :ref:`Viewport<class_Viewport>`\ s coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -1264,7 +1264,7 @@ Returns the global transform matrix of this item, i.e. the combined transform up
 
 :ref:`Transform2D<class_Transform2D>` **get_global_transform_with_canvas** **(** **)** |const|
 
-Returns the global transform matrix of this item in relation to the canvas.
+Returns the transform from the local coordinate system of this **CanvasItem** to the :ref:`Viewport<class_Viewport>`\ s coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -1326,7 +1326,7 @@ Returns the viewport's boundaries as a :ref:`Rect2<class_Rect2>`.
 
 :ref:`Transform2D<class_Transform2D>` **get_viewport_transform** **(** **)** |const|
 
-Returns this item's transform in relation to the viewport.
+Returns the transform from the coordinate system of the canvas, this item is in, to the :ref:`Viewport<class_Viewport>`\ s embedders coordinate system.
 
 .. rst-class:: classref-item-separator
 

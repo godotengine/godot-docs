@@ -84,7 +84,7 @@ enum **PlaybackMode**:
 
 :ref:`PlaybackMode<enum_AudioStreamRandomizer_PlaybackMode>` **PLAYBACK_RANDOM_NO_REPEATS** = ``0``
 
-Pick a stream at random according to the probability weights chosen for each stream, but avoid playing the same stream twice in a row whenever possible.
+Pick a stream at random according to the probability weights chosen for each stream, but avoid playing the same stream twice in a row whenever possible. If only 1 sound is present in the pool, the same sound will always play, effectively allowing repeats to occur.
 
 .. _class_AudioStreamRandomizer_constant_PLAYBACK_RANDOM:
 
@@ -92,7 +92,7 @@ Pick a stream at random according to the probability weights chosen for each str
 
 :ref:`PlaybackMode<enum_AudioStreamRandomizer_PlaybackMode>` **PLAYBACK_RANDOM** = ``1``
 
-Pick a stream at random according to the probability weights chosen for each stream.
+Pick a stream at random according to the probability weights chosen for each stream. If only 1 sound is present in the pool, the same sound will always play.
 
 .. _class_AudioStreamRandomizer_constant_PLAYBACK_SEQUENTIAL:
 
@@ -100,7 +100,7 @@ Pick a stream at random according to the probability weights chosen for each str
 
 :ref:`PlaybackMode<enum_AudioStreamRandomizer_PlaybackMode>` **PLAYBACK_SEQUENTIAL** = ``2``
 
-Play streams in the order they appear in the stream pool.
+Play streams in the order they appear in the stream pool. If only 1 sound is present in the pool, the same sound will always play.
 
 .. rst-class:: classref-section-separator
 

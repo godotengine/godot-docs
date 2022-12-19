@@ -19,7 +19,7 @@ Description
 
 2-element structure that can be used to represent positions in 2D space or any other pair of numeric values.
 
-It uses floating-point coordinates. By default, these floating-point values use 32-bit precision, unlike :ref:`float<class_float>` which is always 64-bit. If double precision is needed, compile the engine with the option ``float=64``.
+It uses floating-point coordinates. By default, these floating-point values use 32-bit precision, unlike :ref:`float<class_float>` which is always 64-bit. If double precision is needed, compile the engine with the option ``precision=double``.
 
 See :ref:`Vector2i<class_Vector2i>` for its integer counterpart.
 

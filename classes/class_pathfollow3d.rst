@@ -276,7 +276,7 @@ Method Descriptions
 
 :ref:`Transform3D<class_Transform3D>` **correct_posture** **(** :ref:`Transform3D<class_Transform3D>` transform, :ref:`RotationMode<enum_PathFollow3D_RotationMode>` rotation_mode **)** |static|
 
-Correct the ``transform``. ``rotation_mode`` implicitly specifies how posture (forward, up and sideway direction) is caculated.
+Correct the ``transform``. ``rotation_mode`` implicitly specifies how posture (forward, up and sideway direction) is calculated.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

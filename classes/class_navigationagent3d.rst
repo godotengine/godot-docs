@@ -70,11 +70,11 @@ Methods
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`distance_to_target<class_NavigationAgent3D_method_distance_to_target>` **(** **)** |const|                                                                           |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_current_navigation_path<class_NavigationAgent3D_method_get_current_navigation_path>` **(** **)** |const|                                                         |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_current_navigation_path_index<class_NavigationAgent3D_method_get_current_navigation_path_index>` **(** **)** |const|                                             |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`get_final_location<class_NavigationAgent3D_method_get_final_location>` **(** **)**                                                                                   |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_nav_path<class_NavigationAgent3D_method_get_nav_path>` **(** **)** |const|                                                                                       |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_nav_path_index<class_NavigationAgent3D_method_get_nav_path_index>` **(** **)** |const|                                                                           |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`get_navigation_layer_value<class_NavigationAgent3D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -399,23 +399,11 @@ Returns the distance to the target location, using the agent's global position. 
 
 ----
 
-.. _class_NavigationAgent3D_method_get_final_location:
+.. _class_NavigationAgent3D_method_get_current_navigation_path:
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **get_final_location** **(** **)**
-
-Returns the reachable final location in global coordinates. This can change if the navigation path is altered in any way. Because of this, it would be best to check this each frame.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_NavigationAgent3D_method_get_nav_path:
-
-.. rst-class:: classref-method
-
-:ref:`PackedVector3Array<class_PackedVector3Array>` **get_nav_path** **(** **)** |const|
+:ref:`PackedVector3Array<class_PackedVector3Array>` **get_current_navigation_path** **(** **)** |const|
 
 Returns this agent's current path from start to finish in global coordinates. The path only updates when the target location is changed or the agent requires a repath. The path array is not intended to be used in direct path movement as the agent has its own internal path logic that would get corrupted by changing the path array manually. Use the intended :ref:`get_next_location<class_NavigationAgent3D_method_get_next_location>` once every physics frame to receive the next path point for the agents movement as this function also updates the internal path logic.
 
@@ -423,13 +411,25 @@ Returns this agent's current path from start to finish in global coordinates. Th
 
 ----
 
-.. _class_NavigationAgent3D_method_get_nav_path_index:
+.. _class_NavigationAgent3D_method_get_current_navigation_path_index:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_nav_path_index** **(** **)** |const|
+:ref:`int<class_int>` **get_current_navigation_path_index** **(** **)** |const|
 
 Returns which index the agent is currently on in the navigation path's :ref:`PackedVector3Array<class_PackedVector3Array>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationAgent3D_method_get_final_location:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_final_location** **(** **)**
+
+Returns the reachable final location in global coordinates. This can change if the navigation path is altered in any way. Because of this, it would be best to check this each frame.
 
 .. rst-class:: classref-item-separator
 

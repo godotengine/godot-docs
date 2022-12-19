@@ -472,7 +472,7 @@ Returns the :ref:`Texture2D<class_Texture2D>` of the button at index ``button_id
 
 :ref:`int<class_int>` **get_button_by_id** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` id **)** |const|
 
-Returns the button index if there is a button with id ``id`` in column ``column``, otherwise returns -1.
+Returns the button index if there is a button with ID ``id`` in column ``column``, otherwise returns -1.
 
 .. rst-class:: classref-item-separator
 
@@ -496,7 +496,7 @@ Returns the number of buttons in column ``column``.
 
 :ref:`int<class_int>` **get_button_id** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|
 
-Returns the id for the button at index ``button_idx`` in column ``column``.
+Returns the ID for the button at index ``button_idx`` in column ``column``.
 
 .. rst-class:: classref-item-separator
 

@@ -198,9 +198,9 @@ Returns the number of bytes currently queued to be sent over this channel.
 
 :ref:`int<class_int>` **get_id** **(** **)** |const|
 
-Returns the id assigned to this channel during creation (or auto-assigned during negotiation).
+Returns the ID assigned to this channel during creation (or auto-assigned during negotiation).
 
-If the channel is not negotiated out-of-band the id will only be available after the connection is established (will return ``65535`` until then).
+If the channel is not negotiated out-of-band the ID will only be available after the connection is established (will return ``65535`` until then).
 
 .. rst-class:: classref-item-separator
 

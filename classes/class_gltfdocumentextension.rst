@@ -42,7 +42,7 @@ Methods
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`_export_post<class_GLTFDocumentExtension_method__export_post>` **(** :ref:`GLTFState<class_GLTFState>` state **)** |virtual|                                                                                                                    |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`_export_preflight<class_GLTFDocumentExtension_method__export_preflight>` **(** :ref:`Node<class_Node>` root **)** |virtual|                                                                                                                     |
+   | :ref:`int<class_int>`                             | :ref:`_export_preflight<class_GLTFDocumentExtension_method__export_preflight>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|                                                                            |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Node3D<class_Node3D>`                       | :ref:`_generate_scene_node<class_GLTFDocumentExtension_method__generate_scene_node>` **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`GLTFNode<class_GLTFNode>` gltf_node, :ref:`Node<class_Node>` scene_parent **)** |virtual|                   |
    +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -114,11 +114,11 @@ This method can be used to modify the final JSON of the generated GLTF file.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_export_preflight** **(** :ref:`Node<class_Node>` root **)** |virtual|
+:ref:`int<class_int>` **_export_preflight** **(** :ref:`GLTFState<class_GLTFState>` state, :ref:`Node<class_Node>` root **)** |virtual|
 
 Part of the export process. This method is run first, before all other parts of the export process.
 
-The return value is used to determine if this GLTFDocumentExtension class should be used for exporting a given GLTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the export will use this GLTFDocumentExtension class. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
+The return value is used to determine if this **GLTFDocumentExtension** instance should be used for exporting a given GLTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the export will use this **GLTFDocumentExtension** instance. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
 
 .. rst-class:: classref-item-separator
 
@@ -202,7 +202,7 @@ This method can be used to modify any of the data imported so far, including any
 
 Part of the import process. This method is run first, before all other parts of the import process.
 
-The return value is used to determine if this GLTFDocumentExtension class should be used for importing a given GLTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the import will use this GLTFDocumentExtension class. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
+The return value is used to determine if this **GLTFDocumentExtension** instance should be used for importing a given GLTF file. If :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>`, the import will use this **GLTFDocumentExtension** instance. If not overridden, :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` is returned.
 
 .. rst-class:: classref-item-separator
 
@@ -216,7 +216,7 @@ The return value is used to determine if this GLTFDocumentExtension class should
 
 Part of the import process. This method is run after :ref:`_get_supported_extensions<class_GLTFDocumentExtension_method__get_supported_extensions>` and before :ref:`_generate_scene_node<class_GLTFDocumentExtension_method__generate_scene_node>`.
 
-Runs when parsing the node extensions of a GLTFNode. This method can be used to process the extension JSON data into a format that can be used by :ref:`_generate_scene_node<class_GLTFDocumentExtension_method__generate_scene_node>`.
+Runs when parsing the node extensions of a GLTFNode. This method can be used to process the extension JSON data into a format that can be used by :ref:`_generate_scene_node<class_GLTFDocumentExtension_method__generate_scene_node>`. The return value should be a member of the :ref:`Error<enum_@GlobalScope_Error>` enum.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -963,7 +963,7 @@ Sets the value of the magnetic field of the magnetometer sensor. Can be used for
 
 void **start_joy_vibration** **(** :ref:`int<class_int>` device, :ref:`float<class_float>` weak_magnitude, :ref:`float<class_float>` strong_magnitude, :ref:`float<class_float>` duration=0 **)**
 
-Starts to vibrate the joypad. Joypads usually come with two rumble motors, a strong and a weak one. ``weak_magnitude`` is the strength of the weak motor (between 0 and 1) and ``strong_magnitude`` is the strength of the strong motor (between 0 and 1). ``duration`` is the duration of the effect in seconds (a duration of 0 will try to play the vibration indefinitely).
+Starts to vibrate the joypad. Joypads usually come with two rumble motors, a strong and a weak one. ``weak_magnitude`` is the strength of the weak motor (between 0 and 1) and ``strong_magnitude`` is the strength of the strong motor (between 0 and 1). ``duration`` is the duration of the effect in seconds (a duration of 0 will try to play the vibration indefinitely). The vibration can be stopped early by calling :ref:`stop_joy_vibration<class_Input_method_stop_joy_vibration>`.
 
 \ **Note:** Not every hardware is compatible with long effect durations; it is recommended to restart an effect if it has to be played for more than a few seconds.
 
@@ -977,7 +977,7 @@ Starts to vibrate the joypad. Joypads usually come with two rumble motors, a str
 
 void **stop_joy_vibration** **(** :ref:`int<class_int>` device **)**
 
-Stops the vibration of the joypad.
+Stops the vibration of the joypad started with :ref:`start_joy_vibration<class_Input_method_start_joy_vibration>`.
 
 .. rst-class:: classref-item-separator
 
@@ -989,15 +989,15 @@ Stops the vibration of the joypad.
 
 void **vibrate_handheld** **(** :ref:`int<class_int>` duration_ms=500 **)**
 
-Vibrate handheld devices.
+Vibrate the handheld device for the specified duration in milliseconds.
 
-\ **Note:** This method is implemented on Android, iOS, and Web.
+\ **Note:** This method is implemented on Android, iOS, and Web. It has no effect on other platforms.
 
-\ **Note:** For Android, it requires enabling the ``VIBRATE`` permission in the export preset.
+\ **Note:** For Android, :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` requires enabling the ``VIBRATE`` permission in the export preset. Otherwise, :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` will have no effect.
 
-\ **Note:** For iOS, specifying the duration is supported in iOS 13 and later.
+\ **Note:** For iOS, specifying the duration is only supported in iOS 13 and later.
 
-\ **Note:** Some web browsers such as Safari and Firefox for Android do not support this method.
+\ **Note:** Some web browsers such as Safari and Firefox for Android do not support :ref:`vibrate_handheld<class_Input_method_vibrate_handheld>`.
 
 .. rst-class:: classref-item-separator
 

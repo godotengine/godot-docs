@@ -32,7 +32,7 @@ Using :ref:`add_outline<class_NavigationPolygon_method_add_outline>`:
     var outline = PackedVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
     polygon.add_outline(outline)
     polygon.make_polygons_from_outlines()
-    $NavigationRegion2D.navpoly = polygon
+    $NavigationRegion2D.navigation_polygon = polygon
 
  .. code-tab:: csharp
 
@@ -40,7 +40,7 @@ Using :ref:`add_outline<class_NavigationPolygon_method_add_outline>`:
     var outline = new Vector2[] { new Vector2(0, 0), new Vector2(0, 50), new Vector2(50, 50), new Vector2(50, 0) };
     polygon.AddOutline(outline);
     polygon.MakePolygonsFromOutlines();
-    GetNode<NavigationRegion2D>("NavigationRegion2D").Navpoly = polygon;
+    GetNode<NavigationRegion2D>("NavigationRegion2D").NavigationPolygon = polygon;
 
 
 
@@ -56,7 +56,7 @@ Using :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` and indices
     polygon.vertices = vertices
     var indices = PackedInt32Array([0, 1, 2, 3])
     polygon.add_polygon(indices)
-    $NavigationRegion2D.navpoly = polygon
+    $NavigationRegion2D.navigation_polygon = polygon
 
  .. code-tab:: csharp
 
@@ -65,7 +65,7 @@ Using :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` and indices
     polygon.Vertices = vertices;
     var indices = new int[] { 0, 1, 2, 3 };
     polygon.AddPolygon(indices);
-    GetNode<NavigationRegion2D>("NavigationRegion2D").Navpoly = polygon;
+    GetNode<NavigationRegion2D>("NavigationRegion2D").NavigationPolygon = polygon;
 
 
 
@@ -95,7 +95,7 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`clear_polygons<class_NavigationPolygon_method_clear_polygons>` **(** **)**                                                                                                      |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`NavigationMesh<class_NavigationMesh>`         | :ref:`get_mesh<class_NavigationPolygon_method_get_mesh>` **(** **)**                                                                                                                  |
+   | :ref:`NavigationMesh<class_NavigationMesh>`         | :ref:`get_navigation_mesh<class_NavigationPolygon_method_get_navigation_mesh>` **(** **)**                                                                                            |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_outline<class_NavigationPolygon_method_get_outline>` **(** :ref:`int<class_int>` idx **)** |const|                                                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -185,13 +185,13 @@ Clears the array of polygons, but it doesn't clear the array of outlines and ver
 
 ----
 
-.. _class_NavigationPolygon_method_get_mesh:
+.. _class_NavigationPolygon_method_get_navigation_mesh:
 
 .. rst-class:: classref-method
 
-:ref:`NavigationMesh<class_NavigationMesh>` **get_mesh** **(** **)**
+:ref:`NavigationMesh<class_NavigationMesh>` **get_navigation_mesh** **(** **)**
 
-Returns the :ref:`NavigationMesh<class_NavigationMesh>` resulting from this navigation polygon. This navmesh can be used to update the navmesh of a region with the :ref:`NavigationServer3D.region_set_navmesh<class_NavigationServer3D_method_region_set_navmesh>` API directly (as 2D uses the 3D server behind the scene).
+Returns the :ref:`NavigationMesh<class_NavigationMesh>` resulting from this navigation polygon. This navigation mesh can be used to update the navigation mesh of a region with the :ref:`NavigationServer3D.region_set_navigation_mesh<class_NavigationServer3D_method_region_set_navigation_mesh>` API directly (as 2D uses the 3D server behind the scene).
 
 .. rst-class:: classref-item-separator
 

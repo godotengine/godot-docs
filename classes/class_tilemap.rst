@@ -109,7 +109,7 @@ Methods
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TileMapPattern<class_TileMapPattern>` | :ref:`get_pattern<class_TileMap_method_get_pattern>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i[]<class_Vector2i>` coords_array **)**                                                                                                                                            |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i[]<class_Vector2i>`           | :ref:`get_surrounding_tiles<class_TileMap_method_get_surrounding_tiles>` **(** :ref:`Vector2i<class_Vector2i>` coords **)**                                                                                                                                                             |
+   | :ref:`Vector2i[]<class_Vector2i>`           | :ref:`get_surrounding_cells<class_TileMap_method_get_surrounding_cells>` **(** :ref:`Vector2i<class_Vector2i>` coords **)**                                                                                                                                                             |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i[]<class_Vector2i>`           | :ref:`get_used_cells<class_TileMap_method_get_used_cells>` **(** :ref:`int<class_int>` layer **)** |const|                                                                                                                                                                              |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -561,11 +561,11 @@ Creates a new :ref:`TileMapPattern<class_TileMapPattern>` from the given layer a
 
 ----
 
-.. _class_TileMap_method_get_surrounding_tiles:
+.. _class_TileMap_method_get_surrounding_cells:
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i[]<class_Vector2i>` **get_surrounding_tiles** **(** :ref:`Vector2i<class_Vector2i>` coords **)**
+:ref:`Vector2i[]<class_Vector2i>` **get_surrounding_cells** **(** :ref:`Vector2i<class_Vector2i>` coords **)**
 
 Returns the list of all neighbourings cells to the one at ``coords``
 
@@ -693,9 +693,11 @@ Sets the tile indentifiers for the cell on layer ``layer`` at coordinates ``coor
 
 - The source identifier ``source_id`` identifies a :ref:`TileSetSource<class_TileSetSource>` identifier. See :ref:`TileSet.set_source_id<class_TileSet_method_set_source_id>`,
 
-- The atlas coordinates identifier ``atlas_coords`` identifies a tile coordinates in the atlas (if the source is a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`. For :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` it should be 0),
+- The atlas coordinates identifier ``atlas_coords`` identifies a tile coordinates in the atlas (if the source is a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`. For :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` it should always be ``Vector2i(0, 0)``),
 
 - The alternative tile identifier ``alternative_tile`` identifies a tile alternative the source is a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`, and the scene for a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>`.
+
+If ``source_id`` is set to ``-1``, ``atlas_coords`` to ``Vector2i(-1, -1)`` or ``alternative_tile`` to ``-1``, the cell will be erased. An erased cell gets **all** its identifiers automatically set to their respective invalid values, namely ``-1``, ``Vector2i(-1, -1)`` and ``-1``.
 
 .. rst-class:: classref-item-separator
 

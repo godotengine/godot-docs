@@ -37,11 +37,11 @@ Methods
 .. table::
    :widths: auto
 
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`bake<class_NavigationMeshGenerator_method_bake>` **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)** |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`clear<class_NavigationMeshGenerator_method_clear>` **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)**                                  |
-   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`bake<class_NavigationMeshGenerator_method_bake>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)** |
+   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`clear<class_NavigationMeshGenerator_method_clear>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)**                                  |
+   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -56,9 +56,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh, :ref:`Node<class_Node>` root_node **)**
+void **bake** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)**
 
-Bakes navigation data to the provided ``nav_mesh`` by parsing child nodes under the provided ``root_node`` or a specific group of nodes for potential source geometry. The parse behavior can be controlled with the :ref:`NavigationMesh.geometry_parsed_geometry_type<class_NavigationMesh_property_geometry_parsed_geometry_type>` and :ref:`NavigationMesh.geometry_source_geometry_mode<class_NavigationMesh_property_geometry_source_geometry_mode>` properties on the :ref:`NavigationMesh<class_NavigationMesh>` resource.
+Bakes navigation data to the provided ``navigation_mesh`` by parsing child nodes under the provided ``root_node`` or a specific group of nodes for potential source geometry. The parse behavior can be controlled with the :ref:`NavigationMesh.geometry_parsed_geometry_type<class_NavigationMesh_property_geometry_parsed_geometry_type>` and :ref:`NavigationMesh.geometry_source_geometry_mode<class_NavigationMesh_property_geometry_source_geometry_mode>` properties on the :ref:`NavigationMesh<class_NavigationMesh>` resource.
 
 .. rst-class:: classref-item-separator
 
@@ -68,9 +68,9 @@ Bakes navigation data to the provided ``nav_mesh`` by parsing child nodes under 
 
 .. rst-class:: classref-method
 
-void **clear** **(** :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)**
+void **clear** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)**
 
-Removes all polygons and vertices from the provided ``nav_mesh`` resource.
+Removes all polygons and vertices from the provided ``navigation_mesh`` resource.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

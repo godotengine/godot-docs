@@ -38,47 +38,47 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`clear<class_MeshLibrary_method_clear>` **(** **)**                                                                                                                    |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`create_item<class_MeshLibrary_method_create_item>` **(** :ref:`int<class_int>` id **)**                                                                               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`find_item_by_name<class_MeshLibrary_method_find_item_by_name>` **(** :ref:`String<class_String>` name **)** |const|                                                   |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_item_list<class_MeshLibrary_method_get_item_list>` **(** **)** |const|                                                                                            |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Mesh<class_Mesh>`                         | :ref:`get_item_mesh<class_MeshLibrary_method_get_item_mesh>` **(** :ref:`int<class_int>` id **)** |const|                                                                   |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>`           | :ref:`get_item_mesh_transform<class_MeshLibrary_method_get_item_mesh_transform>` **(** :ref:`int<class_int>` id **)** |const|                                               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                     | :ref:`get_item_name<class_MeshLibrary_method_get_item_name>` **(** :ref:`int<class_int>` id **)** |const|                                                                   |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`NavigationMesh<class_NavigationMesh>`     | :ref:`get_item_navmesh<class_MeshLibrary_method_get_item_navmesh>` **(** :ref:`int<class_int>` id **)** |const|                                                             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>`           | :ref:`get_item_navmesh_transform<class_MeshLibrary_method_get_item_navmesh_transform>` **(** :ref:`int<class_int>` id **)** |const|                                         |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>`               | :ref:`get_item_preview<class_MeshLibrary_method_get_item_preview>` **(** :ref:`int<class_int>` id **)** |const|                                                             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>`                       | :ref:`get_item_shapes<class_MeshLibrary_method_get_item_shapes>` **(** :ref:`int<class_int>` id **)** |const|                                                               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`get_last_unused_item_id<class_MeshLibrary_method_get_last_unused_item_id>` **(** **)** |const|                                                                        |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`remove_item<class_MeshLibrary_method_remove_item>` **(** :ref:`int<class_int>` id **)**                                                                               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`set_item_mesh<class_MeshLibrary_method_set_item_mesh>` **(** :ref:`int<class_int>` id, :ref:`Mesh<class_Mesh>` mesh **)**                                             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`set_item_mesh_transform<class_MeshLibrary_method_set_item_mesh_transform>` **(** :ref:`int<class_int>` id, :ref:`Transform3D<class_Transform3D>` mesh_transform **)** |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`set_item_name<class_MeshLibrary_method_set_item_name>` **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**                                         |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`set_item_navmesh<class_MeshLibrary_method_set_item_navmesh>` **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_NavigationMesh>` navmesh **)**                |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`set_item_navmesh_transform<class_MeshLibrary_method_set_item_navmesh_transform>` **(** :ref:`int<class_int>` id, :ref:`Transform3D<class_Transform3D>` navmesh **)**  |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`set_item_preview<class_MeshLibrary_method_set_item_preview>` **(** :ref:`int<class_int>` id, :ref:`Texture2D<class_Texture2D>` texture **)**                          |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                            | :ref:`set_item_shapes<class_MeshLibrary_method_set_item_shapes>` **(** :ref:`int<class_int>` id, :ref:`Array<class_Array>` shapes **)**                                     |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`clear<class_MeshLibrary_method_clear>` **(** **)**                                                                                                                                           |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`create_item<class_MeshLibrary_method_create_item>` **(** :ref:`int<class_int>` id **)**                                                                                                      |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`find_item_by_name<class_MeshLibrary_method_find_item_by_name>` **(** :ref:`String<class_String>` name **)** |const|                                                                          |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`get_item_list<class_MeshLibrary_method_get_item_list>` **(** **)** |const|                                                                                                                   |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Mesh<class_Mesh>`                         | :ref:`get_item_mesh<class_MeshLibrary_method_get_item_mesh>` **(** :ref:`int<class_int>` id **)** |const|                                                                                          |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`           | :ref:`get_item_mesh_transform<class_MeshLibrary_method_get_item_mesh_transform>` **(** :ref:`int<class_int>` id **)** |const|                                                                      |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                     | :ref:`get_item_name<class_MeshLibrary_method_get_item_name>` **(** :ref:`int<class_int>` id **)** |const|                                                                                          |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NavigationMesh<class_NavigationMesh>`     | :ref:`get_item_navigation_mesh<class_MeshLibrary_method_get_item_navigation_mesh>` **(** :ref:`int<class_int>` id **)** |const|                                                                    |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`           | :ref:`get_item_navigation_mesh_transform<class_MeshLibrary_method_get_item_navigation_mesh_transform>` **(** :ref:`int<class_int>` id **)** |const|                                                |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`               | :ref:`get_item_preview<class_MeshLibrary_method_get_item_preview>` **(** :ref:`int<class_int>` id **)** |const|                                                                                    |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                       | :ref:`get_item_shapes<class_MeshLibrary_method_get_item_shapes>` **(** :ref:`int<class_int>` id **)** |const|                                                                                      |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`get_last_unused_item_id<class_MeshLibrary_method_get_last_unused_item_id>` **(** **)** |const|                                                                                               |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`remove_item<class_MeshLibrary_method_remove_item>` **(** :ref:`int<class_int>` id **)**                                                                                                      |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_item_mesh<class_MeshLibrary_method_set_item_mesh>` **(** :ref:`int<class_int>` id, :ref:`Mesh<class_Mesh>` mesh **)**                                                                    |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_item_mesh_transform<class_MeshLibrary_method_set_item_mesh_transform>` **(** :ref:`int<class_int>` id, :ref:`Transform3D<class_Transform3D>` mesh_transform **)**                        |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_item_name<class_MeshLibrary_method_set_item_name>` **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**                                                                |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_item_navigation_mesh<class_MeshLibrary_method_set_item_navigation_mesh>` **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)**               |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_item_navigation_mesh_transform<class_MeshLibrary_method_set_item_navigation_mesh_transform>` **(** :ref:`int<class_int>` id, :ref:`Transform3D<class_Transform3D>` navigation_mesh **)** |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_item_preview<class_MeshLibrary_method_set_item_preview>` **(** :ref:`int<class_int>` id, :ref:`Texture2D<class_Texture2D>` texture **)**                                                 |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`set_item_shapes<class_MeshLibrary_method_set_item_shapes>` **(** :ref:`int<class_int>` id, :ref:`Array<class_Array>` shapes **)**                                                            |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -175,11 +175,11 @@ Returns the item's name.
 
 ----
 
-.. _class_MeshLibrary_method_get_item_navmesh:
+.. _class_MeshLibrary_method_get_item_navigation_mesh:
 
 .. rst-class:: classref-method
 
-:ref:`NavigationMesh<class_NavigationMesh>` **get_item_navmesh** **(** :ref:`int<class_int>` id **)** |const|
+:ref:`NavigationMesh<class_NavigationMesh>` **get_item_navigation_mesh** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the item's navigation mesh.
 
@@ -187,11 +187,11 @@ Returns the item's navigation mesh.
 
 ----
 
-.. _class_MeshLibrary_method_get_item_navmesh_transform:
+.. _class_MeshLibrary_method_get_item_navigation_mesh_transform:
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **get_item_navmesh_transform** **(** :ref:`int<class_int>` id **)** |const|
+:ref:`Transform3D<class_Transform3D>` **get_item_navigation_mesh_transform** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the transform applied to the item's navigation mesh.
 
@@ -287,11 +287,11 @@ This name is shown in the editor. It can also be used to look up the item later 
 
 ----
 
-.. _class_MeshLibrary_method_set_item_navmesh:
+.. _class_MeshLibrary_method_set_item_navigation_mesh:
 
 .. rst-class:: classref-method
 
-void **set_item_navmesh** **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_NavigationMesh>` navmesh **)**
+void **set_item_navigation_mesh** **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)**
 
 Sets the item's navigation mesh.
 
@@ -299,11 +299,11 @@ Sets the item's navigation mesh.
 
 ----
 
-.. _class_MeshLibrary_method_set_item_navmesh_transform:
+.. _class_MeshLibrary_method_set_item_navigation_mesh_transform:
 
 .. rst-class:: classref-method
 
-void **set_item_navmesh_transform** **(** :ref:`int<class_int>` id, :ref:`Transform3D<class_Transform3D>` navmesh **)**
+void **set_item_navigation_mesh_transform** **(** :ref:`int<class_int>` id, :ref:`Transform3D<class_Transform3D>` navigation_mesh **)**
 
 Sets the transform to apply to the item's navigation mesh.
 

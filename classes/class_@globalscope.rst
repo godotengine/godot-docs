@@ -51,6 +51,8 @@ Properties
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`EngineDebugger<class_EngineDebugger>`                   | :ref:`EngineDebugger<class_@GlobalScope_property_EngineDebugger>`                   |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`GDExtensionManager<class_GDExtensionManager>`           | :ref:`GDExtensionManager<class_@GlobalScope_property_GDExtensionManager>`           |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Geometry2D<class_Geometry2D>`                           | :ref:`Geometry2D<class_@GlobalScope_property_Geometry2D>`                           |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Geometry3D<class_Geometry3D>`                           | :ref:`Geometry3D<class_@GlobalScope_property_Geometry3D>`                           |
@@ -68,8 +70,6 @@ Properties
    | :ref:`JavaScriptBridge<class_JavaScriptBridge>`               | :ref:`JavaScriptBridge<class_@GlobalScope_property_JavaScriptBridge>`               |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`Marshalls<class_Marshalls>`                             | :ref:`Marshalls<class_@GlobalScope_property_Marshalls>`                             |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`NativeExtensionManager<class_NativeExtensionManager>`   | :ref:`NativeExtensionManager<class_@GlobalScope_property_NativeExtensionManager>`   |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>` | :ref:`NavigationMeshGenerator<class_@GlobalScope_property_NavigationMeshGenerator>` |
    +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
@@ -584,6 +584,14 @@ Aligns the top of the inline object (e.g. image, table) to the position of the t
 :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` **INLINE_ALIGNMENT_CENTER_TO** = ``1``
 
 Aligns the center of the inline object (e.g. image, table) to the position of the text specified by ``INLINE_ALIGNMENT_TO_*`` constant.
+
+.. _class_@GlobalScope_constant_INLINE_ALIGNMENT_BASELINE_TO:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` **INLINE_ALIGNMENT_BASELINE_TO** = ``3``
+
+Aligns the baseline (user defined) of the inline object (e.g. image, table) to the position of the text specified by ``INLINE_ALIGNMENT_TO_*`` constant.
 
 .. _class_@GlobalScope_constant_INLINE_ALIGNMENT_BOTTOM_TO:
 
@@ -5277,6 +5285,18 @@ The :ref:`EngineDebugger<class_EngineDebugger>` singleton.
 
 ----
 
+.. _class_@GlobalScope_property_GDExtensionManager:
+
+.. rst-class:: classref-property
+
+:ref:`GDExtensionManager<class_GDExtensionManager>` **GDExtensionManager**
+
+The :ref:`GDExtensionManager<class_GDExtensionManager>` singleton.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_property_Geometry2D:
 
 .. rst-class:: classref-property
@@ -5384,18 +5404,6 @@ The :ref:`JavaScriptBridge<class_JavaScriptBridge>` singleton.
 :ref:`Marshalls<class_Marshalls>` **Marshalls**
 
 The :ref:`Marshalls<class_Marshalls>` singleton.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_@GlobalScope_property_NativeExtensionManager:
-
-.. rst-class:: classref-property
-
-:ref:`NativeExtensionManager<class_NativeExtensionManager>` **NativeExtensionManager**
-
-The :ref:`NativeExtensionManager<class_NativeExtensionManager>` singleton.
 
 .. rst-class:: classref-item-separator
 

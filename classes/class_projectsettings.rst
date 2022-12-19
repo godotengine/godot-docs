@@ -133,8 +133,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`compression/formats/zstd/window_log_size<class_ProjectSettings_property_compression/formats/zstd/window_log_size>`                                                                                   | ``27``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`debug/disable_touch<class_ProjectSettings_property_debug/disable_touch>`                                                                                                                             | ``false``                                                                                        |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/file_logging/enable_file_logging<class_ProjectSettings_property_debug/file_logging/enable_file_logging>`                                                                                       | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/file_logging/enable_file_logging.pc<class_ProjectSettings_property_debug/file_logging/enable_file_logging.pc>`                                                                                 | ``true``                                                                                         |
@@ -1059,8 +1057,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/environment/glow/upscale_mode.mobile<class_ProjectSettings_property_rendering/environment/glow/upscale_mode.mobile>`                                                                       | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/environment/glow/use_high_quality<class_ProjectSettings_property_rendering/environment/glow/use_high_quality>`                                                                             | ``false``                                                                                        |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/environment/screen_space_reflection/roughness_quality<class_ProjectSettings_property_rendering/environment/screen_space_reflection/roughness_quality>`                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/environment/ssao/adaptive_target<class_ProjectSettings_property_rendering/environment/ssao/adaptive_target>`                                                                               | ``0.5``                                                                                          |
@@ -1299,7 +1295,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`rendering/textures/webp_compression/lossless_compression_factor<class_ProjectSettings_property_rendering/textures/webp_compression/lossless_compression_factor>`                                     | ``25``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/transparent_background<class_ProjectSettings_property_rendering/transparent_background>`                                                                                                   | ``false``                                                                                        |
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/viewport/transparent_background<class_ProjectSettings_property_rendering/viewport/transparent_background>`                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>`                                                                                                                               | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1318,6 +1314,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/form_factor<class_ProjectSettings_property_xr/openxr/form_factor>`                                                                                                                         | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/reference_space<class_ProjectSettings_property_xr/openxr/reference_space>`                                                                                                                 | ``"1"``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/submit_depth_buffer<class_ProjectSettings_property_xr/openxr/submit_depth_buffer>`                                                                                                         | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/view_configuration<class_ProjectSettings_property_xr/openxr/view_configuration>`                                                                                                           | ``"1"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1936,18 +1934,6 @@ Enables `long-distance matching <https://github.com/facebook/zstd/releases/tag/v
 :ref:`int<class_int>` **compression/formats/zstd/window_log_size** = ``27``
 
 Largest size limit (in power of 2) allowed when compressing using long-distance matching with Zstandard. Higher values can result in better compression, but will require more memory when compressing and decompressing.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_debug/disable_touch:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **debug/disable_touch** = ``false``
-
-Disable touch input. Only has effect on iOS.
 
 .. rst-class:: classref-item-separator
 
@@ -2901,7 +2887,7 @@ If ``true``, it will require two swipes to access iOS UI that uses gestures.
 
 :ref:`bool<class_bool>` **display/window/per_pixel_transparency/allowed** = ``false``
 
-If ``true``, allows per-pixel transparency for the window background. This affects performance, so leave it on ``false`` unless you need it. See also :ref:`display/window/size/transparent<class_ProjectSettings_property_display/window/size/transparent>` and :ref:`rendering/transparent_background<class_ProjectSettings_property_rendering/transparent_background>`.
+If ``true``, allows per-pixel transparency for the window background. This affects performance, so leave it on ``false`` unless you need it. See also :ref:`display/window/size/transparent<class_ProjectSettings_property_display/window/size/transparent>` and :ref:`rendering/viewport/transparent_background<class_ProjectSettings_property_rendering/viewport/transparent_background>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2993,7 +2979,7 @@ Allows the window to be resizable by default.
 
 :ref:`bool<class_bool>` **display/window/size/transparent** = ``false``
 
-If ``true``, enables a window manager hint that the main window background *can* be transparent. This does not make the background actually transparent. For the background to be transparent, the root viewport must also be made transparent by enabling :ref:`rendering/transparent_background<class_ProjectSettings_property_rendering/transparent_background>`.
+If ``true``, enables a window manager hint that the main window background *can* be transparent. This does not make the background actually transparent. For the background to be transparent, the root viewport must also be made transparent by enabling :ref:`rendering/viewport/transparent_background<class_ProjectSettings_property_rendering/viewport/transparent_background>`.
 
 \ **Note:** To use a transparent splash screen, set :ref:`application/boot_splash/bg_color<class_ProjectSettings_property_application/boot_splash/bg_color>` to ``Color(0, 0, 0, 0)``.
 
@@ -7831,18 +7817,6 @@ Lower-end override for :ref:`rendering/environment/glow/upscale_mode<class_Proje
 
 ----
 
-.. _class_ProjectSettings_property_rendering/environment/glow/use_high_quality:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **rendering/environment/glow/use_high_quality** = ``false``
-
-Takes more samples during downsample pass of glow. This ensures that single pixels are captured by glow which makes the glow look smoother and more stable during movement. However, it is very expensive and makes the glow post process take twice as long.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ProjectSettings_property_rendering/environment/screen_space_reflection/roughness_quality:
 
 .. rst-class:: classref-property
@@ -9351,11 +9325,11 @@ The default compression factor for lossless WebP. Decompression speed is mostly 
 
 ----
 
-.. _class_ProjectSettings_property_rendering/transparent_background:
+.. _class_ProjectSettings_property_rendering/viewport/transparent_background:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/transparent_background** = ``false``
+:ref:`bool<class_bool>` **rendering/viewport/transparent_background** = ``false``
 
 If ``true``, enables :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` on the root viewport. This allows per-pixel transparency to be effective after also enabling :ref:`display/window/size/transparent<class_ProjectSettings_property_display/window/size/transparent>` and :ref:`display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`.
 
@@ -9487,6 +9461,18 @@ Specify whether OpenXR should be configured for an HMD or a hand held device.
 :ref:`int<class_int>` **xr/openxr/reference_space** = ``"1"``
 
 Specify the default reference space.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/submit_depth_buffer:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/submit_depth_buffer** = ``false``
+
+If ``true``, OpenXR will manage the depth buffer and use the depth buffer for advanced reprojection provided this is supported by the XR runtime. Note that some rendering features in Godot can't be used with this feature.
 
 .. rst-class:: classref-item-separator
 

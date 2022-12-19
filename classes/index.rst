@@ -379,6 +379,7 @@ Resources
     class_font
     class_fontfile
     class_fontvariation
+    class_gdextension
     class_gdscript
     class_gltfaccessor
     class_gltfanimation
@@ -431,7 +432,6 @@ Resources
     class_meshtexture
     class_missingresource
     class_multimesh
-    class_nativeextension
     class_navigationmesh
     class_navigationpolygon
     class_noise
@@ -711,6 +711,7 @@ Other objects
     class_engineprofiler
     class_expression
     class_fileaccess
+    class_gdextensionmanager
     class_geometry2d
     class_geometry3d
     class_godotsharp
@@ -745,7 +746,6 @@ Other objects
     class_multiplayerpeer
     class_multiplayerpeerextension
     class_mutex
-    class_nativeextensionmanager
     class_navigationmeshgenerator
     class_navigationpathqueryparameters2d
     class_navigationpathqueryparameters3d

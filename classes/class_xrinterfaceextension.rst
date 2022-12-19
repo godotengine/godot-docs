@@ -140,7 +140,7 @@ Return ``true`` if anchor detection is enabled for this interface.
 
 :ref:`int<class_int>` **_get_camera_feed_id** **(** **)** |virtual| |const|
 
-Returns the camera feed id for the :ref:`CameraFeed<class_CameraFeed>` registered with the :ref:`CameraServer<class_CameraServer>` that should be presented as the background on an AR capable device (if applicable).
+Returns the camera feed ID for the :ref:`CameraFeed<class_CameraFeed>` registered with the :ref:`CameraServer<class_CameraServer>` that should be presented as the background on an AR capable device (if applicable).
 
 .. rst-class:: classref-item-separator
 

@@ -170,6 +170,8 @@ Methods
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                        | :ref:`is_dark_mode_supported<class_DisplayServer_method_is_dark_mode_supported>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                        | :ref:`is_touchscreen_available<class_DisplayServer_method_is_touchscreen_available>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                       |
+   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                          | :ref:`keyboard_get_current_layout<class_DisplayServer_method_keyboard_get_current_layout>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                 |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Key<enum_@GlobalScope_Key>`                              | :ref:`keyboard_get_keycode_from_physical<class_DisplayServer_method_keyboard_get_keycode_from_physical>` **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|                                                                                                                                                                                                                                                                                                         |
@@ -209,8 +211,6 @@ Methods
    | :ref:`Rect2i<class_Rect2i>`                                    | :ref:`screen_get_usable_rect<class_DisplayServer_method_screen_get_usable_rect>` **(** :ref:`int<class_int>` screen=-1 **)** |const|                                                                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                        | :ref:`screen_is_kept_on<class_DisplayServer_method_screen_is_kept_on>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                     |
-   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                        | :ref:`screen_is_touchscreen<class_DisplayServer_method_screen_is_touchscreen>` **(** :ref:`int<class_int>` screen=-1 **)** |const|                                                                                                                                                                                                                                                                                                                                             |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                           | :ref:`screen_set_keep_on<class_DisplayServer_method_screen_set_keep_on>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -276,11 +276,13 @@ Methods
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_position<class_DisplayServer_method_window_get_position>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_real_size<class_DisplayServer_method_window_get_real_size>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                                             |
+   | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_position_with_decorations<class_DisplayServer_method_window_get_position_with_decorations>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                             |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3i<class_Vector3i>`                                | :ref:`window_get_safe_title_margins<class_DisplayServer_method_window_get_safe_title_margins>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_size<class_DisplayServer_method_window_get_size>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                                                       |
+   +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                                | :ref:`window_get_size_with_decorations<class_DisplayServer_method_window_get_size_with_decorations>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                     |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`VSyncMode<enum_DisplayServer_VSyncMode>`                 | :ref:`window_get_vsync_mode<class_DisplayServer_method_window_get_vsync_mode>` **(** :ref:`int<class_int>` window_id=0 **)** |const|                                                                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -900,9 +902,11 @@ Maximized window mode, i.e. :ref:`Window<class_Window>` will occupy whole screen
 
 :ref:`WindowMode<enum_DisplayServer_WindowMode>` **WINDOW_MODE_FULLSCREEN** = ``3``
 
-Full screen window mode. Note that this is not *exclusive* full screen. On Windows and Linux (X11), a borderless window is used to emulate full screen. On macOS, a new desktop is used to display the running project.
+Full screen mode with full multi-window support.
 
-Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
+Full screen window cover the entire display area of a screen, have no border or decorations. Display video mode is not changed.
+
+\ **Note:** Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
 .. _class_DisplayServer_constant_WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 
@@ -910,13 +914,17 @@ Regardless of the platform, enabling full screen will change the window size to 
 
 :ref:`WindowMode<enum_DisplayServer_WindowMode>` **WINDOW_MODE_EXCLUSIVE_FULLSCREEN** = ``4``
 
-Exclusive full screen window mode. This mode is implemented on Windows and macOS only. On other platforms, it is equivalent to :ref:`WINDOW_MODE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_FULLSCREEN>`.
+A single window full screen mode. This mode has less overhead, but only one window can be open on a given screen at a time (opening a child window or application switching will trigger a full screen transition).
 
-\ **On Windows:** Only one window in exclusive full screen mode can be visible on a given screen at a time. If multiple windows are in exclusive full screen mode for the same screen, the last one being set to this mode takes precedence.
+Full screen window cover the entire display area of a screen, have no border or decorations. Display video mode is not changed.
 
-\ **On macOS:** Exclusive full-screen mode prevents Dock and Menu from showing up when the mouse pointer is hovering the edge of the screen.
+\ **On Windows:** Depending on video driver, full screen transition might cause screens to go black for a moment.
 
-Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
+\ **On macOS:** Exclusive full screen mode prevents Dock and Menu from showing up when the mouse pointer is hovering the edge of the screen.
+
+\ **On Linux (X11):** Exclusive full screen mode bypasses compositor.
+
+\ **Note:** Regardless of the platform, enabling full screen will change the window size to match the monitor's size. Therefore, make sure your project supports :doc:`multiple resolutions <../tutorials/rendering/multiple_resolutions>` when enabling full screen mode.
 
 .. rst-class:: classref-item-separator
 
@@ -2341,6 +2349,18 @@ Returns ``true`` if OS supports dark mode.
 
 ----
 
+.. _class_DisplayServer_method_is_touchscreen_available:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_touchscreen_available** **(** **)** |const|
+
+Returns ``true`` if touch events are available (Android or iOS), the capability is detected on the Webplatform or if :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_keyboard_get_current_layout:
 
 .. rst-class:: classref-method
@@ -2634,18 +2654,6 @@ Returns the portion of the screen that is not obstructed by a status bar in pixe
 :ref:`bool<class_bool>` **screen_is_kept_on** **(** **)** |const|
 
 Returns ``true`` if the screen should never be turned off by the operating system's power-saving measures. See also :ref:`screen_set_keep_on<class_DisplayServer_method_screen_set_keep_on>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_DisplayServer_method_screen_is_touchscreen:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **screen_is_touchscreen** **(** :ref:`int<class_int>` screen=-1 **)** |const|
-
-Returns ``true`` if the screen can send touch events or if :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -3099,19 +3107,19 @@ Returns the bounding box of control, or menu item that was used to open the popu
 
 :ref:`Vector2i<class_Vector2i>` **window_get_position** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
-Returns the position of the given window to on the screen.
+Returns the position of the client area of the given window on the screen.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_DisplayServer_method_window_get_real_size:
+.. _class_DisplayServer_method_window_get_position_with_decorations:
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **window_get_real_size** **(** :ref:`int<class_int>` window_id=0 **)** |const|
+:ref:`Vector2i<class_Vector2i>` **window_get_position_with_decorations** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
-Returns the size of the window specified by ``window_id`` (in pixels), including the borders drawn by the operating system. See also :ref:`window_get_size<class_DisplayServer_method_window_get_size>`.
+Returns the position of the given window on the screen including the borders drawn by the operating system. See also :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3135,7 +3143,19 @@ Returns left margins (``x``), right margins (``y``) and height (``z``) of the ti
 
 :ref:`Vector2i<class_Vector2i>` **window_get_size** **(** :ref:`int<class_int>` window_id=0 **)** |const|
 
-Returns the size of the window specified by ``window_id`` (in pixels), excluding the borders drawn by the operating system. This is also called the "client area". See also :ref:`window_get_real_size<class_DisplayServer_method_window_get_real_size>`, :ref:`window_set_size<class_DisplayServer_method_window_set_size>` and :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
+Returns the size of the window specified by ``window_id`` (in pixels), excluding the borders drawn by the operating system. This is also called the "client area". See also :ref:`window_get_size_with_decorations<class_DisplayServer_method_window_get_size_with_decorations>`, :ref:`window_set_size<class_DisplayServer_method_window_set_size>` and :ref:`window_get_position<class_DisplayServer_method_window_get_position>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_window_get_size_with_decorations:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2i<class_Vector2i>` **window_get_size_with_decorations** **(** :ref:`int<class_int>` window_id=0 **)** |const|
+
+Returns the size of the window specified by ``window_id`` (in pixels), including the borders drawn by the operating system. See also :ref:`window_get_size<class_DisplayServer_method_window_get_size>`.
 
 .. rst-class:: classref-item-separator
 

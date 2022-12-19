@@ -19,7 +19,7 @@ Description
 
 The **float** built-in type is a 64-bit double-precision floating-point number, equivalent to ``double`` in C++. This type has 14 reliable decimal digits of precision. The **float** type can be stored in :ref:`Variant<class_Variant>`, which is the generic type used by the engine. The maximum value of **float** is approximately ``1.79769e308``, and the minimum is approximately ``-1.79769e308``.
 
-Many methods and properties in the engine use 32-bit single-precision floating-point numbers instead, equivalent to ``float`` in C++, which have 6 reliable decimal digits of precision. For data structures such as :ref:`Vector2<class_Vector2>` and :ref:`Vector3<class_Vector3>`, Godot uses 32-bit floating-point numbers by default, but it can be changed to use 64-bit doubles if Godot is compiled with the ``float=64`` option.
+Many methods and properties in the engine use 32-bit single-precision floating-point numbers instead, equivalent to ``float`` in C++, which have 6 reliable decimal digits of precision. For data structures such as :ref:`Vector2<class_Vector2>` and :ref:`Vector3<class_Vector3>`, Godot uses 32-bit floating-point numbers by default, but it can be changed to use 64-bit doubles if Godot is compiled with the ``precision=double`` option.
 
 Math done using the **float** type is not guaranteed to be exact or deterministic, and will often result in small errors. You should usually use the :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` and :ref:`@GlobalScope.is_zero_approx<class_@GlobalScope_method_is_zero_approx>` methods instead of ``==`` to compare **float** values for equality.
 

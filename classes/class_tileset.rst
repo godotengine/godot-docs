@@ -259,6 +259,8 @@ Rectangular tile shape.
 
 Diamond tile shape (for isometric look).
 
+\ **Note:** Isometric **TileSet** works best if :ref:`TileMap<class_TileMap>` and all its layers have Y-sort enabled.
+
 .. _class_TileSet_constant_TILE_SHAPE_HALF_OFFSET_SQUARE:
 
 .. rst-class:: classref-enumeration-constant

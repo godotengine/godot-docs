@@ -576,7 +576,7 @@ Returns the parent object of the given shape owner.
 
 :ref:`Shape2D<class_Shape2D>` **shape_owner_get_shape** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** |const|
 
-Returns the :ref:`Shape2D<class_Shape2D>` with the given id from the given shape owner.
+Returns the :ref:`Shape2D<class_Shape2D>` with the given ID from the given shape owner.
 
 .. rst-class:: classref-item-separator
 
@@ -600,7 +600,7 @@ Returns the number of shapes the given shape owner contains.
 
 :ref:`int<class_int>` **shape_owner_get_shape_index** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** |const|
 
-Returns the child index of the :ref:`Shape2D<class_Shape2D>` with the given id from the given shape owner.
+Returns the child index of the :ref:`Shape2D<class_Shape2D>` with the given ID from the given shape owner.
 
 .. rst-class:: classref-item-separator
 

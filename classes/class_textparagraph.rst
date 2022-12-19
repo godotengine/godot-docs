@@ -62,7 +62,7 @@ Methods
    :widths: auto
 
    +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`add_object<class_TextParagraph_method_add_object>` **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1 **)**                                            |
+   | :ref:`bool<class_bool>`         | :ref:`add_object<class_TextParagraph_method_add_object>` **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1, :ref:`float<class_float>` baseline=0.0 **)**    |
    +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`         | :ref:`add_string<class_TextParagraph_method_add_string>` **(** :ref:`String<class_String>` text, :ref:`Font<class_Font>` font, :ref:`int<class_int>` font_size, :ref:`String<class_String>` language="", :ref:`Variant<class_Variant>` meta=null **)**                                          |
    +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -118,7 +118,7 @@ Methods
    +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`           | :ref:`hit_test<class_TextParagraph_method_hit_test>` **(** :ref:`Vector2<class_Vector2>` coords **)** |const|                                                                                                                                                                                   |
    +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`resize_object<class_TextParagraph_method_resize_object>` **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5 **)**                                                                      |
+   | :ref:`bool<class_bool>`         | :ref:`resize_object<class_TextParagraph_method_resize_object>` **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`float<class_float>` baseline=0.0 **)**                              |
    +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                            | :ref:`set_bidi_override<class_TextParagraph_method_set_bidi_override>` **(** :ref:`Array<class_Array>` override **)**                                                                                                                                                                           |
    +---------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -332,7 +332,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **add_object** **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1 **)**
+:ref:`bool<class_bool>` **add_object** **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1, :ref:`float<class_float>` baseline=0.0 **)**
 
 Adds inline object to the text buffer, ``key`` must be unique. In the text, object is represented as ``length`` object replacement characters.
 
@@ -668,7 +668,7 @@ Returns caret character offset at the specified coordinates. This function alway
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **resize_object** **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5 **)**
+:ref:`bool<class_bool>` **resize_object** **(** :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`float<class_float>` baseline=0.0 **)**
 
 Sets new size and alignment of embedded object.
 

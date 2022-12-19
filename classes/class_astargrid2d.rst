@@ -121,7 +121,7 @@ enum **Heuristic**:
 
 :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **HEURISTIC_EUCLIDEAN** = ``0``
 
-The Euclidean heuristic to be used for the pathfinding using the following formula:
+The `Euclidean heuristic <https://en.wikipedia.org/wiki/Euclidean_distance>`__ to be used for the pathfinding using the following formula:
 
 ::
 
@@ -129,19 +129,23 @@ The Euclidean heuristic to be used for the pathfinding using the following formu
     dy = abs(to_id.y - from_id.y)
     result = sqrt(dx * dx + dy * dy)
 
+\ **Note:** This is also the internal heuristic used in :ref:`AStar3D<class_AStar3D>` and :ref:`AStar2D<class_AStar2D>` by default (with the inclusion of possible z-axis coordinate).
+
 .. _class_AStarGrid2D_constant_HEURISTIC_MANHATTAN:
 
 .. rst-class:: classref-enumeration-constant
 
 :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **HEURISTIC_MANHATTAN** = ``1``
 
-The Manhattan heuristic to be used for the pathfinding using the following formula:
+The `Manhattan heuristic <https://en.wikipedia.org/wiki/Taxicab_geometry>`__ to be used for the pathfinding using the following formula:
 
 ::
 
     dx = abs(to_id.x - from_id.x)
     dy = abs(to_id.y - from_id.y)
     result = dx + dy
+
+\ **Note:** This heuristic is intended to be used with 4-side orthogonal movements, provided by setting the :ref:`diagonal_mode<class_AStarGrid2D_property_diagonal_mode>` to :ref:`DIAGONAL_MODE_NEVER<class_AStarGrid2D_constant_DIAGONAL_MODE_NEVER>`.
 
 .. _class_AStarGrid2D_constant_HEURISTIC_OCTILE:
 
@@ -164,7 +168,7 @@ The Octile heuristic to be used for the pathfinding using the following formula:
 
 :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **HEURISTIC_CHEBYSHEV** = ``3``
 
-The Chebyshev heuristic to be used for the pathfinding using the following formula:
+The `Chebyshev heuristic <https://en.wikipedia.org/wiki/Chebyshev_distance>`__ to be used for the pathfinding using the following formula:
 
 ::
 
@@ -467,6 +471,8 @@ Returns ``true`` if a point is disabled for pathfinding. By default, all points 
 void **set_point_solid** **(** :ref:`Vector2i<class_Vector2i>` id, :ref:`bool<class_bool>` solid=true **)**
 
 Disables or enables the specified point for pathfinding. Useful for making an obstacle. By default, all points are enabled.
+
+\ **Note:** Calling :ref:`update<class_AStarGrid2D_method_update>` is not needed after the call of this function.
 
 .. rst-class:: classref-item-separator
 

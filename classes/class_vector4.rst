@@ -19,7 +19,7 @@ Description
 
 4-element structure that can be used to represent any quadruplet of numeric values.
 
-It uses floating-point coordinates. By default, these floating-point values use 32-bit precision, unlike :ref:`float<class_float>` which is always 64-bit. If double precision is needed, compile the engine with the option ``float=64``.
+It uses floating-point coordinates. By default, these floating-point values use 32-bit precision, unlike :ref:`float<class_float>` which is always 64-bit. If double precision is needed, compile the engine with the option ``precision=double``.
 
 See :ref:`Vector4i<class_Vector4i>` for its integer counterpart.
 

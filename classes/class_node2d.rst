@@ -40,27 +40,31 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`         | :ref:`global_position<class_Node2D_property_global_position>`   |                   |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`             | :ref:`global_rotation<class_Node2D_property_global_rotation>`   |                   |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`         | :ref:`global_scale<class_Node2D_property_global_scale>`         |                   |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`             | :ref:`global_skew<class_Node2D_property_global_skew>`           |                   |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`Transform2D<class_Transform2D>` | :ref:`global_transform<class_Node2D_property_global_transform>` |                   |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`         | :ref:`position<class_Node2D_property_position>`                 | ``Vector2(0, 0)`` |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`             | :ref:`rotation<class_Node2D_property_rotation>`                 | ``0.0``           |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_Node2D_property_scale>`                       | ``Vector2(1, 1)`` |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`             | :ref:`skew<class_Node2D_property_skew>`                         | ``0.0``           |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
-   | :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_Node2D_property_transform>`               |                   |
-   +---------------------------------------+-----------------------------------------------------------------+-------------------+
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`         | :ref:`global_position<class_Node2D_property_global_position>`                 |                   |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`             | :ref:`global_rotation<class_Node2D_property_global_rotation>`                 |                   |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`             | :ref:`global_rotation_degrees<class_Node2D_property_global_rotation_degrees>` |                   |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`         | :ref:`global_scale<class_Node2D_property_global_scale>`                       |                   |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`             | :ref:`global_skew<class_Node2D_property_global_skew>`                         |                   |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`global_transform<class_Node2D_property_global_transform>`               |                   |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`         | :ref:`position<class_Node2D_property_position>`                               | ``Vector2(0, 0)`` |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`             | :ref:`rotation<class_Node2D_property_rotation>`                               | ``0.0``           |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`             | :ref:`rotation_degrees<class_Node2D_property_rotation_degrees>`               |                   |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`         | :ref:`scale<class_Node2D_property_scale>`                                     | ``Vector2(1, 1)`` |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`             | :ref:`skew<class_Node2D_property_skew>`                                       | ``0.0``           |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`transform<class_Node2D_property_transform>`                             |                   |
+   +---------------------------------------+-------------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -132,6 +136,23 @@ Global position.
 - :ref:`float<class_float>` **get_global_rotation** **(** **)**
 
 Global rotation in radians.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node2D_property_global_rotation_degrees:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **global_rotation_degrees**
+
+.. rst-class:: classref-property-setget
+
+- void **set_global_rotation_degrees** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_global_rotation_degrees** **(** **)**
+
+Helper property to access :ref:`global_rotation<class_Node2D_property_global_rotation>` in degrees instead of radians.
 
 .. rst-class:: classref-item-separator
 
@@ -217,6 +238,23 @@ Position, relative to the node's parent.
 - :ref:`float<class_float>` **get_rotation** **(** **)**
 
 Rotation in radians, relative to the node's parent.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node2D_property_rotation_degrees:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **rotation_degrees**
+
+.. rst-class:: classref-property-setget
+
+- void **set_rotation_degrees** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_rotation_degrees** **(** **)**
+
+Helper property to access :ref:`rotation<class_Node2D_property_rotation>` in degrees instead of radians.
 
 .. rst-class:: classref-item-separator
 

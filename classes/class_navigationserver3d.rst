@@ -57,7 +57,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`agent_is_map_changed<class_NavigationServer3D_method_agent_is_map_changed>` **(** :ref:`RID<class_RID>` agent **)** |const|                                                                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`agent_set_callback<class_NavigationServer3D_method_agent_set_callback>` **(** :ref:`RID<class_RID>` agent, :ref:`Object<class_Object>` receiver, :ref:`StringName<class_StringName>` method, :ref:`Variant<class_Variant>` userdata=null **)** |const|                  |
+   | void                                                | :ref:`agent_set_callback<class_NavigationServer3D_method_agent_set_callback>` **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` object_id, :ref:`StringName<class_StringName>` method, :ref:`Variant<class_Variant>` userdata=null **)** |const|                       |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`agent_set_map<class_NavigationServer3D_method_agent_set_map>` **(** :ref:`RID<class_RID>` agent, :ref:`RID<class_RID>` map **)** |const|                                                                                                                                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -91,6 +91,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`link_get_navigation_layers<class_NavigationServer3D_method_link_get_navigation_layers>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`link_get_owner_id<class_NavigationServer3D_method_link_get_owner_id>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                    |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                       | :ref:`link_get_start_location<class_NavigationServer3D_method_link_get_start_location>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`link_get_travel_cost<class_NavigationServer3D_method_link_get_travel_cost>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                              |
@@ -106,6 +108,8 @@ Methods
    | void                                                | :ref:`link_set_map<class_NavigationServer3D_method_link_set_map>` **(** :ref:`RID<class_RID>` link, :ref:`RID<class_RID>` map **)** |const|                                                                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_navigation_layers<class_NavigationServer3D_method_link_set_navigation_layers>` **(** :ref:`RID<class_RID>` link, :ref:`int<class_int>` navigation_layers **)** |const|                                                                                         |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`link_set_owner_id<class_NavigationServer3D_method_link_set_owner_id>` **(** :ref:`RID<class_RID>` link, :ref:`int<class_int>` owner_id **)** |const|                                                                                                                    |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_start_location<class_NavigationServer3D_method_link_set_start_location>` **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` location **)** |const|                                                                                                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -155,7 +159,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`query_path<class_NavigationServer3D_method_query_path>` **(** :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>` parameters, :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` result **)** |const|                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`region_bake_navmesh<class_NavigationServer3D_method_region_bake_navmesh>` **(** :ref:`NavigationMesh<class_NavigationMesh>` mesh, :ref:`Node<class_Node>` node **)** |const|                                                                                            |
+   | void                                                | :ref:`region_bake_navigation_mesh<class_NavigationServer3D_method_region_bake_navigation_mesh>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)** |const|                                                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`region_create<class_NavigationServer3D_method_region_create>` **(** **)** |const|                                                                                                                                                                                       |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,6 +175,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`region_get_navigation_layers<class_NavigationServer3D_method_region_get_navigation_layers>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`region_get_owner_id<class_NavigationServer3D_method_region_get_owner_id>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                              |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`region_get_travel_cost<class_NavigationServer3D_method_region_get_travel_cost>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`region_owns_point<class_NavigationServer3D_method_region_owns_point>` **(** :ref:`RID<class_RID>` region, :ref:`Vector3<class_Vector3>` point **)** |const|                                                                                                             |
@@ -181,7 +187,9 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`region_set_navigation_layers<class_NavigationServer3D_method_region_set_navigation_layers>` **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` navigation_layers **)** |const|                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`region_set_navmesh<class_NavigationServer3D_method_region_set_navmesh>` **(** :ref:`RID<class_RID>` region, :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)** |const|                                                                                          |
+   | void                                                | :ref:`region_set_navigation_mesh<class_NavigationServer3D_method_region_set_navigation_mesh>` **(** :ref:`RID<class_RID>` region, :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)** |const|                                                                   |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`region_set_owner_id<class_NavigationServer3D_method_region_set_owner_id>` **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` owner_id **)** |const|                                                                                                              |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`region_set_transform<class_NavigationServer3D_method_region_set_transform>` **(** :ref:`RID<class_RID>` region, :ref:`Transform3D<class_Transform3D>` transform **)** |const|                                                                                           |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -268,11 +276,11 @@ Returns true if the map got changed the previous frame.
 
 .. rst-class:: classref-method
 
-void **agent_set_callback** **(** :ref:`RID<class_RID>` agent, :ref:`Object<class_Object>` receiver, :ref:`StringName<class_StringName>` method, :ref:`Variant<class_Variant>` userdata=null **)** |const|
+void **agent_set_callback** **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` object_id, :ref:`StringName<class_StringName>` method, :ref:`Variant<class_Variant>` userdata=null **)** |const|
 
-Callback called at the end of the RVO process. If a callback is created manually and the agent is placed on a navigation map it will calculate avoidance for the agent and dispatch the calculated ``safe_velocity`` to the ``receiver`` object with a signal to the chosen ``method`` name.
+Sets the callback ``object_id`` and ``method`` that gets called after each avoidance processing step for the ``agent``. The calculated ``safe_velocity`` will be dispatched with a signal to the object just before the physics calculations.
 
-\ **Note:** Created callbacks are always processed independently of the SceneTree state as long as the agent is on a navigation map and not freed. To disable the dispatch of a callback from an agent use :ref:`agent_set_callback<class_NavigationServer3D_method_agent_set_callback>` again with a ``null`` object as the ``receiver``.
+\ **Note:** Created callbacks are always processed independently of the SceneTree state as long as the agent is on a navigation map and not freed. To disable the dispatch of a callback from an agent use :ref:`agent_set_callback<class_NavigationServer3D_method_agent_set_callback>` again with a ``0`` ObjectID as the ``object_id``.
 
 .. rst-class:: classref-item-separator
 
@@ -470,6 +478,18 @@ Returns the navigation layers for this ``link``.
 
 ----
 
+.. _class_NavigationServer3D_method_link_get_owner_id:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **link_get_owner_id** **(** :ref:`RID<class_RID>` link **)** |const|
+
+Returns the ``ObjectID`` of the object which manages this link.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer3D_method_link_get_start_location:
 
 .. rst-class:: classref-method
@@ -561,6 +581,18 @@ Sets the navigation map :ref:`RID<class_RID>` for the link.
 void **link_set_navigation_layers** **(** :ref:`RID<class_RID>` link, :ref:`int<class_int>` navigation_layers **)** |const|
 
 Set the links's navigation layers. This allows selecting links from a path request (when using :ref:`map_get_path<class_NavigationServer3D_method_map_get_path>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_link_set_owner_id:
+
+.. rst-class:: classref-method
+
+void **link_set_owner_id** **(** :ref:`RID<class_RID>` link, :ref:`int<class_int>` owner_id **)** |const|
+
+Set the ``ObjectID`` of the object which manages this link.
 
 .. rst-class:: classref-item-separator
 
@@ -864,13 +896,13 @@ Queries a path in a given navigation map. Start and target position and other pa
 
 ----
 
-.. _class_NavigationServer3D_method_region_bake_navmesh:
+.. _class_NavigationServer3D_method_region_bake_navigation_mesh:
 
 .. rst-class:: classref-method
 
-void **region_bake_navmesh** **(** :ref:`NavigationMesh<class_NavigationMesh>` mesh, :ref:`Node<class_Node>` node **)** |const|
+void **region_bake_navigation_mesh** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)** |const|
 
-Bakes the navigation mesh.
+Bakes the ``navigation_mesh`` with bake source geometry collected starting from the ``root_node``.
 
 .. rst-class:: classref-item-separator
 
@@ -960,6 +992,18 @@ Returns the region's navigation layers.
 
 ----
 
+.. _class_NavigationServer3D_method_region_get_owner_id:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **region_get_owner_id** **(** :ref:`RID<class_RID>` region **)** |const|
+
+Returns the ``ObjectID`` of the object which manages this region.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer3D_method_region_get_travel_cost:
 
 .. rst-class:: classref-method
@@ -1024,13 +1068,25 @@ Set the region's navigation layers. This allows selecting regions from a path re
 
 ----
 
-.. _class_NavigationServer3D_method_region_set_navmesh:
+.. _class_NavigationServer3D_method_region_set_navigation_mesh:
 
 .. rst-class:: classref-method
 
-void **region_set_navmesh** **(** :ref:`RID<class_RID>` region, :ref:`NavigationMesh<class_NavigationMesh>` nav_mesh **)** |const|
+void **region_set_navigation_mesh** **(** :ref:`RID<class_RID>` region, :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh **)** |const|
 
 Sets the navigation mesh for the region.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_region_set_owner_id:
+
+.. rst-class:: classref-method
+
+void **region_set_owner_id** **(** :ref:`RID<class_RID>` region, :ref:`int<class_int>` owner_id **)** |const|
+
+Set the ``ObjectID`` of the object which manages this region.
 
 .. rst-class:: classref-item-separator
 

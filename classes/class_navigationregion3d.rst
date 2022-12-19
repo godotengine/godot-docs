@@ -23,7 +23,7 @@ A region of the navigation map. It tells the :ref:`NavigationServer3D<class_Navi
 
 Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`NavigationServer3D.map_set_edge_connection_margin<class_NavigationServer3D_method_map_set_edge_connection_margin>`.
 
-\ **Note:** Overlapping two regions' navmeshes is not enough for connecting two regions. They must share a similar edge.
+\ **Note:** Overlapping two regions' navigation meshes is not enough for connecting two regions. They must share a similar edge.
 
 The cost of entering this region from another region can be controlled with the :ref:`enter_cost<class_NavigationRegion3D_property_enter_cost>` value.
 
@@ -48,7 +48,7 @@ Properties
    +---------------------------------------------+-------------------------------------------------------------------------------+----------+
    | :ref:`int<class_int>`                       | :ref:`navigation_layers<class_NavigationRegion3D_property_navigation_layers>` | ``1``    |
    +---------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationRegion3D_property_navmesh>`                     |          |
+   | :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navigation_mesh<class_NavigationRegion3D_property_navigation_mesh>`     |          |
    +---------------------------------------------+-------------------------------------------------------------------------------+----------+
    | :ref:`float<class_float>`                   | :ref:`travel_cost<class_NavigationRegion3D_property_travel_cost>`             | ``1.0``  |
    +---------------------------------------------+-------------------------------------------------------------------------------+----------+
@@ -137,7 +137,7 @@ Determines if the **NavigationRegion3D** is enabled or disabled.
 - void **set_enter_cost** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_enter_cost** **(** **)**
 
-When pathfinding enters this region's navmesh from another regions navmesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
+When pathfinding enters this region's navigation mesh from another regions navigation mesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
 
 .. rst-class:: classref-item-separator
 
@@ -160,11 +160,11 @@ A bitfield determining all navigation layers the region belongs to. These naviga
 
 ----
 
-.. _class_NavigationRegion3D_property_navmesh:
+.. _class_NavigationRegion3D_property_navigation_mesh:
 
 .. rst-class:: classref-property
 
-:ref:`NavigationMesh<class_NavigationMesh>` **navmesh**
+:ref:`NavigationMesh<class_NavigationMesh>` **navigation_mesh**
 
 .. rst-class:: classref-property-setget
 
@@ -188,7 +188,7 @@ The :ref:`NavigationMesh<class_NavigationMesh>` resource to use.
 - void **set_travel_cost** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_travel_cost** **(** **)**
 
-When pathfinding moves inside this region's navmesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
+When pathfinding moves inside this region's navigation mesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
 
 .. rst-class:: classref-section-separator
 

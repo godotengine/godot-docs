@@ -113,7 +113,7 @@ Methods
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`canvas_item_add_mesh<class_RenderingServer_method_canvas_item_add_mesh>` **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` mesh, :ref:`Transform2D<class_Transform2D>` transform=Transform2D(1, 0, 0, 1, 0, 0), :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`RID<class_RID>` texture **)**                                                                                                                                                                                                                                                                                                                                                              |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                             | :ref:`canvas_item_add_msdf_texture_rect_region<class_RenderingServer_method_canvas_item_add_msdf_texture_rect_region>` **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`int<class_int>` outline_size=0, :ref:`float<class_float>` px_range=1.0 **)**                                                                                                                                                                                                                                                                               |
+   | void                                                                             | :ref:`canvas_item_add_msdf_texture_rect_region<class_RenderingServer_method_canvas_item_add_msdf_texture_rect_region>` **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`int<class_int>` outline_size=0, :ref:`float<class_float>` px_range=1.0, :ref:`float<class_float>` scale=1.0 **)**                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`canvas_item_add_multimesh<class_RenderingServer_method_canvas_item_add_multimesh>` **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` mesh, :ref:`RID<class_RID>` texture **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -296,8 +296,6 @@ Methods
    | :ref:`RID<class_RID>`                                                            | :ref:`environment_create<class_RenderingServer_method_environment_create>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`environment_glow_set_use_bicubic_upscale<class_RenderingServer_method_environment_glow_set_use_bicubic_upscale>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                             | :ref:`environment_glow_set_use_high_quality<class_RenderingServer_method_environment_glow_set_use_high_quality>` **(** :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`environment_set_adjustment<class_RenderingServer_method_environment_set_adjustment>` **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` brightness, :ref:`float<class_float>` contrast, :ref:`float<class_float>` saturation, :ref:`bool<class_bool>` use_1d_color_correction, :ref:`RID<class_RID>` color_correction **)**                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -5558,7 +5556,7 @@ void **canvas_item_add_mesh** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_
 
 .. rst-class:: classref-method
 
-void **canvas_item_add_msdf_texture_rect_region** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`int<class_int>` outline_size=0, :ref:`float<class_float>` px_range=1.0 **)**
+void **canvas_item_add_msdf_texture_rect_region** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`int<class_int>` outline_size=0, :ref:`float<class_float>` px_range=1.0, :ref:`float<class_float>` scale=1.0 **)**
 
 .. container:: contribute
 
@@ -6774,20 +6772,6 @@ void **environment_glow_set_use_bicubic_upscale** **(** :ref:`bool<class_bool>` 
 
 ----
 
-.. _class_RenderingServer_method_environment_glow_set_use_high_quality:
-
-.. rst-class:: classref-method
-
-void **environment_glow_set_use_high_quality** **(** :ref:`bool<class_bool>` enable **)**
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_RenderingServer_method_environment_set_adjustment:
 
 .. rst-class:: classref-method
@@ -7242,7 +7226,7 @@ Returns the parameters of a shader.
 
 :ref:`RID<class_RID>` **get_test_cube** **(** **)**
 
-Returns the id of the test cube. Creates one if none exists.
+Returns the ID of the test cube. Creates one if none exists.
 
 .. rst-class:: classref-item-separator
 
@@ -7254,7 +7238,7 @@ Returns the id of the test cube. Creates one if none exists.
 
 :ref:`RID<class_RID>` **get_test_texture** **(** **)**
 
-Returns the id of the test texture. Creates one if none exists.
+Returns the ID of the test texture. Creates one if none exists.
 
 .. rst-class:: classref-item-separator
 
@@ -7322,7 +7306,7 @@ Returns the vendor of the video adapter (e.g. "NVIDIA Corporation").
 
 :ref:`RID<class_RID>` **get_white_texture** **(** **)**
 
-Returns the id of a white texture. Creates one if none exists.
+Returns the ID of a white texture. Creates one if none exists.
 
 .. rst-class:: classref-item-separator
 
@@ -7720,7 +7704,7 @@ Sets the weight for a given blend shape associated with this instance.
 
 void **instance_set_custom_aabb** **(** :ref:`RID<class_RID>` instance, :ref:`AABB<class_AABB>` aabb **)**
 
-Sets a custom AABB to use when culling objects from the view frustum. Equivalent to :ref:`GeometryInstance3D.set_custom_aabb<class_GeometryInstance3D_method_set_custom_aabb>`.
+Sets a custom AABB to use when culling objects from the view frustum. Equivalent to setting :ref:`GeometryInstance3D.custom_aabb<class_GeometryInstance3D_property_custom_aabb>`.
 
 .. rst-class:: classref-item-separator
 

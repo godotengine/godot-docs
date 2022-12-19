@@ -232,7 +232,7 @@ void **add_visibility_filter** **(** :ref:`Callable<class_Callable>` filter **)*
 
 Adds a peer visibility filter for this synchronizer.
 
-\ ``filter`` should take a peer id :ref:`int<class_int>` and return a :ref:`bool<class_bool>`.
+\ ``filter`` should take a peer ID :ref:`int<class_int>` and return a :ref:`bool<class_bool>`.
 
 .. rst-class:: classref-item-separator
 

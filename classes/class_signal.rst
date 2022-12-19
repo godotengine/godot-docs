@@ -19,7 +19,7 @@ Description
 
 **Signal** is a built-in :ref:`Variant<class_Variant>` type that represents a signal of an :ref:`Object<class_Object>` instance. Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to functions. Signals allow all connected :ref:`Callable<class_Callable>`\ s (and by extension their respective objects) to listen and react to events, without directly referencing one another. This keeps the code flexible and easier to manage.
 
-In GDScript, signals can be declared with the ``signal`` keyword. In C#, you may use the ``\ **Signal**\ `` attribute on a delegate.
+In GDScript, signals can be declared with the ``signal`` keyword. In C#, you may use the ``[Signal]`` attribute on a delegate.
 
 
 .. tabs::
@@ -34,12 +34,12 @@ In GDScript, signals can be declared with the ``signal`` keyword. In C#, you may
 
  .. code-tab:: csharp
 
-    **Signal**\ 
+    [Signal]
     delegate void Attacked();
     
     // Additional arguments may be declared.
     // These arguments must be passed when the signal is emitted.
-    **Signal**\ 
+    [Signal]
     delegate void ItemDropped(itemName: string, amount: int);
 
 

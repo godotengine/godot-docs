@@ -10,14 +10,18 @@
 String
 ======
 
-Built-in string class.
+Built-in string Variant type.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This is the built-in string class (and the one used by GDScript). It supports Unicode and provides all necessary means for string handling. Strings are reference-counted and use a copy-on-write approach, so passing them around is cheap in resources.
+This is the built-in string Variant type (and the one used by GDScript). Strings may contain any number of Unicode characters, and expose methods useful for manipulating and generating strings. Strings are reference-counted and use a copy-on-write approach (every modification to a string returns a new **String**), so passing them around is cheap in resources.
+
+Some string methods have corresponding variations. Variations suffixed with ``n`` (:ref:`countn<class_String_method_countn>`, :ref:`findn<class_String_method_findn>`, :ref:`replacen<class_String_method_replacen>`, etc.) are **case-insensitive** (they make no distinction between uppercase and lowercase letters). Method variations prefixed with ``r`` (:ref:`rfind<class_String_method_rfind>`, :ref:`rsplit<class_String_method_rsplit>`, etc.) are reversed, and start from the end of the string, instead of the beginning.
+
+\ **Note:** In a boolean context, a string will evaluate to ``false`` if it is empty (``""``). Otherwise, a string will always evaluate to ``true``.
 
 .. rst-class:: classref-introduction-group
 
@@ -267,6 +271,8 @@ Operators
    +-----------------------------+----------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>` | :ref:`operator +<class_String_operator_sum_String>` **(** :ref:`String<class_String>` right **)**              |
    +-----------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`operator +<class_String_operator_sum_StringName>` **(** :ref:`StringName<class_StringName>` right **)**  |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`     | :ref:`operator \<<class_String_operator_lt_String>` **(** :ref:`String<class_String>` right **)**              |
    +-----------------------------+----------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`     | :ref:`operator \<=<class_String_operator_lte_String>` **(** :ref:`String<class_String>` right **)**            |
@@ -344,7 +350,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **begins_with** **(** :ref:`String<class_String>` text **)** |const|
 
-Returns ``true`` if the string begins with the given string.
+Returns ``true`` if the string begins with the given ``text``. See also :ref:`ends_with<class_String_method_ends_with>`.
 
 .. rst-class:: classref-item-separator
 
@@ -356,11 +362,11 @@ Returns ``true`` if the string begins with the given string.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **bigrams** **(** **)** |const|
 
-Returns an array containing the bigrams (pairs of consecutive letters) of this string.
+Returns an array containing the bigrams (pairs of consecutive characters) of this string.
 
 ::
 
-    print("Bigrams".bigrams()) # Prints ["Bi", "ig", "gr", "ra", "am", "ms"]
+    print("Get up!".bigrams()) # Prints ["Ge", "et", "t ", " u", "up", "p!"]
 
 .. rst-class:: classref-item-separator
 
@@ -372,20 +378,22 @@ Returns an array containing the bigrams (pairs of consecutive letters) of this s
 
 :ref:`int<class_int>` **bin_to_int** **(** **)** |const|
 
-Converts a string containing a binary number into an integer. Binary strings can either be prefixed with ``0b`` or not, and they can also start with a ``-`` before the optional prefix.
+Converts the string representing a binary number into an :ref:`int<class_int>`. The string may optionally be prefixed with ``"0b"``, and an additional ``-`` prefix for negative numbers.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    print("0b101".bin_to_int()) # Prints "5".
-    print("101".bin_to_int()) # Prints "5".
+    print("101".bin_to_int())   # Prints 5
+    print("0b101".bin_to_int()) # Prints 5
+    print("-0b10".bin_to_int()) # Prints -2
 
  .. code-tab:: csharp
 
-    GD.Print("0b101".BinToInt()); // Prints "5".
-    GD.Print("101".BinToInt()); // Prints "5".
+    GD.Print("101".BinToInt());   // Prints 5
+    GD.Print("0b101".BinToInt()); // Prints 5
+    GD.Print("-0b10".BinToInt()); // Prints -2
 
 
 
@@ -425,7 +433,24 @@ Returns a copy of the string with escaped characters replaced by their meanings.
 
 :ref:`String<class_String>` **capitalize** **(** **)** |const|
 
-Changes the case of some letters. Replaces underscores with spaces, adds spaces before in-word uppercase characters, converts all letters to lowercase, then capitalizes the first letter and every letter following a space character. For ``capitalize camelCase mixed_with_underscores``, it will return ``Capitalize Camel Case Mixed With Underscores``.
+Changes the appearance of the string: replaces underscores (``_``) with spaces, adds spaces before uppercase letters in the middle of a word, converts all letters to lowercase, then converts the first one and each one following a space to uppercase.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    "move_local_x".capitalize()   # Returns "Move Local X"
+    "sceneFile_path".capitalize() # Returns "Scene File Path"
+
+ .. code-tab:: csharp
+
+    "move_local_x".Capitalize();   // Returns "Move Local X"
+    "sceneFile_path".Capitalize(); // Returns "Scene File Path"
+
+
+
+\ **Note:** This method not the same as the default appearance of properties in the Inspector dock, as it does not capitalize acronyms (``"2D"``, ``"FPS"``, ``"PNG"``, etc.) as you may expect.
 
 .. rst-class:: classref-item-separator
 
@@ -437,13 +462,11 @@ Changes the case of some letters. Replaces underscores with spaces, adds spaces 
 
 :ref:`int<class_int>` **casecmp_to** **(** :ref:`String<class_String>` to **)** |const|
 
-Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
+Performs a case-sensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" and "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order.
 
-\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
 
-\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
-
-To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>`.
+To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>`.
 
 .. rst-class:: classref-item-separator
 
@@ -455,11 +478,11 @@ To get a boolean result from a string comparison, use the ``==`` operator instea
 
 :ref:`String<class_String>` **chr** **(** :ref:`int<class_int>` char **)** |static|
 
-Directly converts an decimal integer to a unicode character. Tables of these characters can be found in various locations, for example `here. <https://unicodelookup.com/>`__\ 
+Returns a single Unicode character from the decimal ``char``. You may use `unicodelookup.com <https://unicodelookup.com/>`__ or `unicode.org <https://www.unicode.org/charts/>`__ as points of reference.
 
 ::
 
-    print(String.chr(65)) # Prints "A"
+    print(String.chr(65))     # Prints "A"
     print(String.chr(129302)) # Prints "🤖" (robot face emoji)
 
 .. rst-class:: classref-item-separator
@@ -472,7 +495,25 @@ Directly converts an decimal integer to a unicode character. Tables of these cha
 
 :ref:`bool<class_bool>` **contains** **(** :ref:`String<class_String>` what **)** |const|
 
-Returns ``true`` if the string contains the given string.
+Returns ``true`` if the string contains ``what``. In GDScript, this corresponds to the ``in`` operator.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    print("Node".contains("de")) # Prints true
+    print("team".contains("I"))  # Prints false
+    print("I" in "team")         # Prints false
+
+ .. code-tab:: csharp
+
+    GD.Print("Node".Contains("de")); // Prints true
+    GD.Print("team".Contains("I"));  // Prints false
+
+
+
+If you need to know where ``what`` is within the string, use :ref:`find<class_String_method_find>`.
 
 .. rst-class:: classref-item-separator
 
@@ -484,7 +525,7 @@ Returns ``true`` if the string contains the given string.
 
 :ref:`int<class_int>` **count** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=0 **)** |const|
 
-Returns the number of occurrences of substring ``what`` between ``from`` and ``to`` positions. If ``from`` and ``to`` equals 0 the whole string will be used. If only ``to`` equals 0 the remained substring will be used.
+Returns the number of occurrences of the substring ``what`` between ``from`` and ``to`` positions. If ``to`` is 0, the search continues until the end of the string.
 
 .. rst-class:: classref-item-separator
 
@@ -496,7 +537,7 @@ Returns the number of occurrences of substring ``what`` between ``from`` and ``t
 
 :ref:`int<class_int>` **countn** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0, :ref:`int<class_int>` to=0 **)** |const|
 
-Returns the number of occurrences of substring ``what`` (ignoring case) between ``from`` and ``to`` positions. If ``from`` and ``to`` equals 0 the whole string will be used. If only ``to`` equals 0 the remained substring will be used.
+Returns the number of occurrences of the substring ``what`` between ``from`` and ``to`` positions, **ignoring case**. If ``to`` is 0, the search continues until the end of the string.
 
 .. rst-class:: classref-item-separator
 
@@ -520,7 +561,7 @@ Returns a copy of the string with indentation (leading tabs and spaces) removed.
 
 :ref:`bool<class_bool>` **ends_with** **(** :ref:`String<class_String>` text **)** |const|
 
-Returns ``true`` if the string ends with the given string.
+Returns ``true`` if the string ends with the given ``text``. See also :ref:`begins_with<class_String_method_begins_with>`.
 
 .. rst-class:: classref-item-separator
 
@@ -532,23 +573,30 @@ Returns ``true`` if the string ends with the given string.
 
 :ref:`int<class_int>` **find** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)** |const|
 
-Returns the index of the **first** case-sensitive occurrence of the specified string in this instance, or ``-1``. Optionally, the starting search index can be specified, continuing to the end of the string.
-
-\ **Note:** If you just want to know whether a string contains a substring, use the ``in`` operator as follows:
+Returns the index of the **first** occurrence of ``what`` in this string, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the end of the string.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    print("i" in "team") # Will print `false`.
+    print("Team".find("I")) # Prints -1
+    
+    print("Potato".find("t"))    # Prints 2
+    print("Potato".find("t", 3)) # Prints 4
+    print("Potato".find("t", 5)) # Prints -1
 
  .. code-tab:: csharp
 
-    // C# has no in operator, but we can use `Contains()`.
-    GD.Print("team".Contains("i")); // Will print `false`.
+    GD.Print("Team".Find("I")); // Prints -1
+    
+    GD.Print("Potato".Find("t"));    // Prints 2
+    GD.print("Potato".Find("t", 3)); // Prints 4
+    GD.print("Potato".Find("t", 5)); // Prints -1
 
 
+
+\ **Note:** If you just want to know whether the string contains ``what``, use :ref:`contains<class_String_method_contains>`. In GDScript, you may also use the ``in`` operator.
 
 .. rst-class:: classref-item-separator
 
@@ -560,7 +608,7 @@ Returns the index of the **first** case-sensitive occurrence of the specified st
 
 :ref:`int<class_int>` **findn** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)** |const|
 
-Returns the index of the **first** case-insensitive occurrence of the specified string in this instance, or ``-1``. Optionally, the starting search index can be specified, continuing to the end of the string.
+Returns the index of the **first** **case-insensitive** occurrence of ``what`` in this string, or ``-1`` if there are none. The starting search index can be specified with ``from``, continuing to the end of the string.
 
 .. rst-class:: classref-item-separator
 
@@ -578,20 +626,22 @@ Formats the string by replacing all occurrences of ``placeholder`` with the elem
 
 ::
 
-    # Prints: Waiting for Godot is a play by Samuel Beckett, and Godot Engine is named after it.
+    # Prints "Waiting for Godot is a play by Samuel Beckett, and Godot Engine is named after it."
     var use_array_values = "Waiting for {0} is a play by {1}, and {0} Engine is named after it."
     print(use_array_values.format(["Godot", "Samuel Beckett"]))
     
-    # Prints: User 42 is Godot.
+    # Prints "User 42 is Godot."
     print("User {id} is {name}.".format({"id": 42, "name": "Godot"}))
 
-Some additional handling is performed when ``values`` is an array. If ``placeholder`` does not contain an underscore, the elements of the array will be used to replace one occurrence of the placeholder in turn; If an array element is another 2-element array, it'll be interpreted as a key-value pair.
+Some additional handling is performed when ``values`` is an :ref:`Array<class_Array>`. If ``placeholder`` does not contain an underscore, the elements of the ``values`` array will be used to replace one occurrence of the placeholder in order; If an element of ``values`` is another 2-element array, it'll be interpreted as a key-value pair.
 
 ::
 
-    # Prints: User 42 is Godot.
+    # Prints "User 42 is Godot."
     print("User {} is {}.".format([42, "Godot"], "{}"))
     print("User {id} is {name}.".format([["id", 42], ["name", "Godot"]]))
+
+See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
 
 .. rst-class:: classref-item-separator
 
@@ -605,6 +655,10 @@ Some additional handling is performed when ``values`` is an array. If ``placehol
 
 If the string is a valid file path, returns the base directory name.
 
+::
+
+    var dir_path = "/path/to/file.txt".get_base_dir() # dir_path is "/path/to"
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -615,7 +669,11 @@ If the string is a valid file path, returns the base directory name.
 
 :ref:`String<class_String>` **get_basename** **(** **)** |const|
 
-If the string is a valid file path, returns the full file path without the extension.
+If the string is a valid file path, returns the full file path, without the extension.
+
+::
+
+    var base = "/path/to/file.txt".get_basename() # base is "/path/to/file"
 
 .. rst-class:: classref-item-separator
 
@@ -627,18 +685,19 @@ If the string is a valid file path, returns the full file path without the exten
 
 :ref:`String<class_String>` **get_extension** **(** **)** |const|
 
-Returns the extension without the leading period character (``.``) if the string is a valid file name or path. If the string does not contain an extension, returns an empty string instead.
+If the string is a valid file name or path, returns the file extension without the leading period (``.``). Otherwise, returns an empty string.
 
 ::
 
-    print("/path/to/file.txt".get_extension())  # "txt"
-    print("file.txt".get_extension())  # "txt"
-    print("file.sample.txt".get_extension())  # "txt"
-    print(".txt".get_extension())  # "txt"
-    print("file.txt.".get_extension())  # "" (empty string)
-    print("file.txt..".get_extension())  # "" (empty string)
-    print("txt".get_extension())  # "" (empty string)
-    print("".get_extension())  # "" (empty string)
+    var a = "/path/to/file.txt".get_extension() # a is "txt"
+    var b = "cool.txt".get_extension()          # b is "txt"
+    var c = "cool.font.tres".get_extension()    # c is "tres"
+    var d = ".pack1".get_extension()            # d is "pack1"
+    
+    var e = "file.txt.".get_extension()  # e is ""
+    var f = "file.txt..".get_extension() # f is ""
+    var g = "txt".get_extension()        # g is ""
+    var h = "".get_extension()           # h is ""
 
 .. rst-class:: classref-item-separator
 
@@ -650,7 +709,11 @@ Returns the extension without the leading period character (``.``) if the string
 
 :ref:`String<class_String>` **get_file** **(** **)** |const|
 
-If the string is a valid file path, returns the filename.
+If the string is a valid file path, returns the file name, including the extension.
+
+::
+
+    var file = "/path/to/icon.png".get_file() # file is "icon.png"
 
 .. rst-class:: classref-item-separator
 
@@ -662,15 +725,15 @@ If the string is a valid file path, returns the filename.
 
 :ref:`String<class_String>` **get_slice** **(** :ref:`String<class_String>` delimiter, :ref:`int<class_int>` slice **)** |const|
 
-Splits a string using a ``delimiter`` and returns a substring at index ``slice``. Returns an empty string if the index doesn't exist.
+Splits the string using a ``delimiter`` and returns the substring at index ``slice``. Returns an empty string if the ``slice`` does not exist.
 
-This is a more performant alternative to :ref:`split<class_String_method_split>` for cases when you need only one element from the array at a fixed index.
+This is faster than :ref:`split<class_String_method_split>`, if you only need one substring.
 
 \ **Example:**\ 
 
 ::
 
-    print("i/am/example/string".get_slice("/", 2)) # Prints 'example'.
+    print("i/am/example/hi".get_slice("/", 2)) # Prints "example"
 
 .. rst-class:: classref-item-separator
 
@@ -682,7 +745,7 @@ This is a more performant alternative to :ref:`split<class_String_method_split>`
 
 :ref:`int<class_int>` **get_slice_count** **(** :ref:`String<class_String>` delimiter **)** |const|
 
-Splits a string using a ``delimiter`` and returns a number of slices.
+Returns the total number of slices when the string is split with the given ``delimiter`` (see :ref:`split<class_String_method_split>`).
 
 .. rst-class:: classref-item-separator
 
@@ -694,9 +757,9 @@ Splits a string using a ``delimiter`` and returns a number of slices.
 
 :ref:`String<class_String>` **get_slicec** **(** :ref:`int<class_int>` delimiter, :ref:`int<class_int>` slice **)** |const|
 
-Splits a string using a Unicode character with code ``delimiter`` and returns a substring at index ``slice``. Returns an empty string if the index doesn't exist.
+Splits the string using a Unicode character with code ``delimiter`` and returns the substring at index ``slice``. Returns an empty string if the ``slice`` does not exist.
 
-This is a more performant alternative to :ref:`split<class_String_method_split>` for cases when you need only one element from the array at a fixed index.
+This is faster than :ref:`split<class_String_method_split>`, if you only need one substring.
 
 .. rst-class:: classref-item-separator
 
@@ -710,7 +773,7 @@ This is a more performant alternative to :ref:`split<class_String_method_split>`
 
 Returns the 32-bit hash value representing the string's contents.
 
-\ **Note:** **String**\ s with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the strings are equal, because different strings can have identical hash values due to hash collisions.
+\ **Note:** Strings with equal hash values are *not* guaranteed to be the same, as a result of hash collisions. On the countrary, strings with different hash values are guaranteed to be different.
 
 .. rst-class:: classref-item-separator
 
@@ -722,20 +785,20 @@ Returns the 32-bit hash value representing the string's contents.
 
 :ref:`int<class_int>` **hex_to_int** **(** **)** |const|
 
-Converts a string containing a hexadecimal number into an integer. Hexadecimal strings can either be prefixed with ``0x`` or not, and they can also start with a ``-`` before the optional prefix.
+Converts the string representing a hexadecimal number into an :ref:`int<class_int>`. The string may be optionally prefixed with ``"0x"``, and an additional ``-`` prefix for negative numbers.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    print("0xff".hex_to_int()) # Prints "255".
-    print("ab".hex_to_int()) # Prints "171".
+    print("0xff".hex_to_int()) # Prints 255
+    print("ab".hex_to_int())   # Prints 171
 
  .. code-tab:: csharp
 
-    GD.Print("0xff".HexToInt()); // Prints "255".
-    GD.Print("ab".HexToInt()); // Prints "171".
+    GD.Print("0xff".HexToInt()); // Prints 255
+    GD.Print("ab".HexToInt());   // Prints 171
 
 
 
@@ -749,9 +812,9 @@ Converts a string containing a hexadecimal number into an integer. Hexadecimal s
 
 :ref:`String<class_String>` **humanize_size** **(** :ref:`int<class_int>` size **)** |static|
 
-Converts an integer representing a number of bytes into a human-readable form.
+Converts ``size`` which represents a number of bytes into a human-readable form.
 
-Note that this output is in `IEC prefix format <https://en.wikipedia.org/wiki/Binary_prefix#IEC_prefixes>`__, and includes ``B``, ``KiB``, ``MiB``, ``GiB``, ``TiB``, ``PiB``, and ``EiB``.
+The result is in `IEC prefix format <https://en.wikipedia.org/wiki/Binary_prefix#IEC_prefixes>`__, which may end in either ``"B"``, ``"KiB"``, ``"MiB"``, ``"GiB"``, ``"TiB"``, ``"PiB"``, or ``"EiB"``.
 
 .. rst-class:: classref-item-separator
 
@@ -763,11 +826,9 @@ Note that this output is in `IEC prefix format <https://en.wikipedia.org/wiki/Bi
 
 :ref:`String<class_String>` **indent** **(** :ref:`String<class_String>` prefix **)** |const|
 
-Returns a copy of the string with lines indented with ``prefix``.
+Indents every line of the string with the given ``prefix``. Empty lines are not indented. See also :ref:`dedent<class_String_method_dedent>` to remove indentation.
 
-For example, the string can be indented with two tabs using ``"\t\t"``, or four spaces using ``"    "``. The prefix can be any string so it can also be used to comment out strings with e.g. ``"# "``. See also :ref:`dedent<class_String_method_dedent>` to remove indentation.
-
-\ **Note:** Empty lines are kept empty.
+For example, the string can be indented with two tabulations using ``"\t\t"``, or four spaces using ``"    "``.
 
 .. rst-class:: classref-item-separator
 
@@ -779,7 +840,7 @@ For example, the string can be indented with two tabs using ``"\t\t"``, or four 
 
 :ref:`String<class_String>` **insert** **(** :ref:`int<class_int>` position, :ref:`String<class_String>` what **)** |const|
 
-Returns a copy of the string with the substring ``what`` inserted at the given ``position``.
+Inserts ``what`` at the given ``position`` in the string.
 
 .. rst-class:: classref-item-separator
 
@@ -791,7 +852,9 @@ Returns a copy of the string with the substring ``what`` inserted at the given `
 
 :ref:`bool<class_bool>` **is_absolute_path** **(** **)** |const|
 
-Returns ``true`` if the string is a path to a file or directory and its starting point is explicitly defined. This includes ``res://``, ``user://``, ``C:\``, ``/``, etc.
+Returns ``true`` if the string is a path to a file or directory, and its starting point is explicitly defined. This method is the opposite of :ref:`is_relative_path<class_String_method_is_relative_path>`.
+
+This includes all paths starting with ``"res://"``, ``"user://"``, ``"C:\"``, ``"/"``, etc.
 
 .. rst-class:: classref-item-separator
 
@@ -803,7 +866,7 @@ Returns ``true`` if the string is a path to a file or directory and its starting
 
 :ref:`bool<class_bool>` **is_empty** **(** **)** |const|
 
-Returns ``true`` if the length of the string equals ``0``.
+Returns ``true`` if the string's length is ``0`` (``""``). See also :ref:`length<class_String_method_length>`.
 
 .. rst-class:: classref-item-separator
 
@@ -815,7 +878,7 @@ Returns ``true`` if the length of the string equals ``0``.
 
 :ref:`bool<class_bool>` **is_relative_path** **(** **)** |const|
 
-Returns ``true`` if the string is a path to a file or directory and its starting point is implicitly defined within the context it is being used. The starting point may refer to the current directory (``./``), or the current :ref:`Node<class_Node>`.
+Returns ``true`` if the string is a path, and its starting point is dependent on context. The path could begin from the current directory, or the current :ref:`Node<class_Node>` (if the string is derived from a :ref:`NodePath<class_NodePath>`), and may sometimes be prefixed with ``"./"``. This method is the opposite of :ref:`is_absolute_path<class_String_method_is_absolute_path>`.
 
 .. rst-class:: classref-item-separator
 
@@ -827,7 +890,16 @@ Returns ``true`` if the string is a path to a file or directory and its starting
 
 :ref:`bool<class_bool>` **is_subsequence_of** **(** :ref:`String<class_String>` text **)** |const|
 
-Returns ``true`` if this string is a subsequence of the given string.
+Returns ``true`` if all characters of this string can be found in ``text`` in their original order.
+
+::
+
+    var text = "Wow, incredible!"
+    
+    print("inedible".is_subsequence_of(text)) # Prints true
+    print("Word!".is_subsequence_of(text))    # Prints true
+    print("Window".is_subsequence_of(text))   # Prints false
+    print("".is_subsequence_of(text))         # Prints true
 
 .. rst-class:: classref-item-separator
 
@@ -839,7 +911,7 @@ Returns ``true`` if this string is a subsequence of the given string.
 
 :ref:`bool<class_bool>` **is_subsequence_ofn** **(** :ref:`String<class_String>` text **)** |const|
 
-Returns ``true`` if this string is a subsequence of the given string, without considering case.
+Returns ``true`` if all characters of this string can be found in ``text`` in their original order, **ignoring case**.
 
 .. rst-class:: classref-item-separator
 
@@ -851,9 +923,7 @@ Returns ``true`` if this string is a subsequence of the given string, without co
 
 :ref:`bool<class_bool>` **is_valid_filename** **(** **)** |const|
 
-Returns ``true`` if this string is free from characters that aren't allowed in file names, those being:
-
-\ ``: / \ ? * " | % < >``
+Returns ``true`` if this string does not contain characters that are not allowed in file names (``:`` ``/`` ``\`` ``?`` ``*`` ``"`` ``|`` ``%`` ``<`` ``>``).
 
 .. rst-class:: classref-item-separator
 
@@ -865,14 +935,14 @@ Returns ``true`` if this string is free from characters that aren't allowed in f
 
 :ref:`bool<class_bool>` **is_valid_float** **(** **)** |const|
 
-Returns ``true`` if this string contains a valid float. This is inclusive of integers, and also supports exponents:
+Returns ``true`` if this string represents a valid floating-point number. A valid float may contain only digits, one decimal point (``.``), and the exponent letter (``e``). It may also be prefixed with a positive (``+``) or negative (``-``) sign. Any valid integer is also a valid float (see :ref:`is_valid_int<class_String_method_is_valid_int>`). See also :ref:`to_float<class_String_method_to_float>`.
 
 ::
 
-    print("1.7".is_valid_float()) # Prints "true"
-    print("24".is_valid_float()) # Prints "true"
-    print("7e3".is_valid_float()) # Prints "true"
-    print("Hello".is_valid_float()) # Prints "false"
+    print("1.7".is_valid_float())   # Prints true
+    print("24".is_valid_float())    # Prints true
+    print("7e3".is_valid_float())   # Prints true
+    print("Hello".is_valid_float()) # Prints false
 
 .. rst-class:: classref-item-separator
 
@@ -884,7 +954,17 @@ Returns ``true`` if this string contains a valid float. This is inclusive of int
 
 :ref:`bool<class_bool>` **is_valid_hex_number** **(** :ref:`bool<class_bool>` with_prefix=false **)** |const|
 
-Returns ``true`` if this string contains a valid hexadecimal number. If ``with_prefix`` is ``true``, then a validity of the hexadecimal number is determined by the ``0x`` prefix, for example: ``0xDEADC0DE``.
+Returns ``true`` if this string is a valid hexadecimal number. A valid hexadecimal number only contains digits or letters ``A`` to ``F`` (either uppercase or lowercase), and may be prefixed with a positive (``+``) or negative (``-``) sign.
+
+If ``with_prefix`` is ``true``, the hexadecimal number needs to prefixed by ``"0x"`` to be considered valid.
+
+::
+
+    print("A08E".is_valid_hex_number())    # Prints true
+    print("-AbCdEf".is_valid_hex_number()) # Prints true
+    print("2.5".is_valid_hex_number())     # Prints false
+    
+    print("0xDEADC0DE".is_valid_hex_number(true)) # Prints true
 
 .. rst-class:: classref-item-separator
 
@@ -896,7 +976,7 @@ Returns ``true`` if this string contains a valid hexadecimal number. If ``with_p
 
 :ref:`bool<class_bool>` **is_valid_html_color** **(** **)** |const|
 
-Returns ``true`` if this string contains a valid color in hexadecimal HTML notation. Other HTML notations such as named colors or ``hsl()`` colors aren't considered valid by this method and will return ``false``.
+Returns ``true`` if this string is a valid color in hexadecimal HTML notation. The string must be a hexadecimal value (see :ref:`is_valid_hex_number<class_String_method_is_valid_hex_number>`) of either 3, 4, 6 or 8 digits, and may be prefixed by a hash sign (``#``). Other HTML notations for colors, such as names or ``hsl()``, are not considered valid. See also :ref:`Color.html<class_Color_method_html>`.
 
 .. rst-class:: classref-item-separator
 
@@ -908,13 +988,14 @@ Returns ``true`` if this string contains a valid color in hexadecimal HTML notat
 
 :ref:`bool<class_bool>` **is_valid_identifier** **(** **)** |const|
 
-Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (``_``) and the first character may not be a digit.
+Returns ``true`` if this string is a valid identifier. A valid identifier may contain only letters, digits and underscores (``_``), and the first character may not be a digit.
 
 ::
 
-    print("good_ident_1".is_valid_identifier()) # Prints "true"
-    print("1st_bad_ident".is_valid_identifier()) # Prints "false"
-    print("bad_ident_#2".is_valid_identifier()) # Prints "false"
+    print("node_2d".is_valid_identifier())    # Prints true
+    print("TYPE_FLOAT".is_valid_identifier()) # Prints true
+    print("1st_method".is_valid_identifier()) # Prints false
+    print("MyMethod#2".is_valid_identifier()) # Prints false
 
 .. rst-class:: classref-item-separator
 
@@ -926,15 +1007,15 @@ Returns ``true`` if this string is a valid identifier. A valid identifier may co
 
 :ref:`bool<class_bool>` **is_valid_int** **(** **)** |const|
 
-Returns ``true`` if this string contains a valid integer.
+Returns ``true`` if this string represents a valid integer. A valid integer only contains digits, and may be prefixed with a positive (``+``) or negative (``-``) sign. See also :ref:`to_int<class_String_method_to_int>`.
 
 ::
 
-    print("7".is_valid_int()) # Prints "true"
-    print("14.6".is_valid_int()) # Prints "false"
-    print("L".is_valid_int()) # Prints "false"
-    print("+3".is_valid_int()) # Prints "true"
-    print("-12".is_valid_int()) # Prints "true"
+    print("7".is_valid_int())    # Prints true
+    print("1.65".is_valid_int()) # Prints false
+    print("Hi".is_valid_int())   # Prints false
+    print("+3".is_valid_int())   # Prints true
+    print("-12".is_valid_int())  # Prints true
 
 .. rst-class:: classref-item-separator
 
@@ -946,7 +1027,7 @@ Returns ``true`` if this string contains a valid integer.
 
 :ref:`bool<class_bool>` **is_valid_ip_address** **(** **)** |const|
 
-Returns ``true`` if this string contains only a well-formatted IPv4 or IPv6 address. This method considers `reserved IP addresses <https://en.wikipedia.org/wiki/Reserved_IP_addresses>`__ such as ``0.0.0.0`` as valid.
+Returns ``true`` if this string represents a well-formatted IPv4 or IPv6 address. This method considers `reserved IP addresses <https://en.wikipedia.org/wiki/Reserved_IP_addresses>`__ such as ``"0.0.0.0"`` and ``"ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff"`` as valid.
 
 .. rst-class:: classref-item-separator
 
@@ -958,7 +1039,7 @@ Returns ``true`` if this string contains only a well-formatted IPv4 or IPv6 addr
 
 :ref:`String<class_String>` **join** **(** :ref:`PackedStringArray<class_PackedStringArray>` parts **)** |const|
 
-Returns a **String** which is the concatenation of the ``parts``. The separator between elements is the string providing this method.
+Returns the concatenation of ``parts``' elements, with each element separated by the string calling this method. This method is the opposite of :ref:`split<class_String_method_split>`.
 
 \ **Example:**\ 
 
@@ -967,11 +1048,18 @@ Returns a **String** which is the concatenation of the ``parts``. The separator 
 
  .. code-tab:: gdscript
 
-    print(", ".join(["One", "Two", "Three", "Four"]))
+    var fruits = ["Apple", "Orange", "Pear", "Kiwi"]
+    
+    print(", ".join(fruits))  # Prints "Apple, Orange, Pear, Kiwi"
+    print("---".join(fruits)) # Prints "Apple---Orange---Pear---Kiwi"
 
  .. code-tab:: csharp
 
-    GD.Print(String.Join(",", new string[] {"One", "Two", "Three", "Four"}));
+    var fruits = new string[] {"Apple", "Orange", "Pear", "Kiwi"};
+    
+    // In C#, this method is static.
+    GD.Print(string.Join(", ", fruits);   // Prints "Apple, Orange, Pear, Kiwi"
+    GD.Print(string.Join("---", fruits)); // Prints "Apple---Orange---Pear---Kiwi"
 
 
 
@@ -985,7 +1073,7 @@ Returns a **String** which is the concatenation of the ``parts``. The separator 
 
 :ref:`String<class_String>` **json_escape** **(** **)** |const|
 
-Returns a copy of the string with special characters escaped using the JSON standard.
+Returns a copy of the string with special characters escaped using the JSON standard. Because it closely matches the C standard, it is possible to use :ref:`c_unescape<class_String_method_c_unescape>` to unescape the string, if necessary.
 
 .. rst-class:: classref-item-separator
 
@@ -997,14 +1085,12 @@ Returns a copy of the string with special characters escaped using the JSON stan
 
 :ref:`String<class_String>` **left** **(** :ref:`int<class_int>` length **)** |const|
 
-Returns a number of characters from the left of the string. If negative ``length`` is used, the characters are counted downwards from **String**'s length.
-
-\ **Example:**\ 
+Returns the first ``length`` characters from the beginning of the string. If ``length`` is negative, strips the last ``length`` characters from the string's end.
 
 ::
 
-    print("sample text".left(3)) #prints "sam"
-    print("sample text".left(-3)) #prints "sample t"
+    print("Hello World!".left(3))  # Prints "Hel"
+    print("Hello World!".left(-4)) # Prints "Hello Wo"
 
 .. rst-class:: classref-item-separator
 
@@ -1016,7 +1102,7 @@ Returns a number of characters from the left of the string. If negative ``length
 
 :ref:`int<class_int>` **length** **(** **)** |const|
 
-Returns the number of characters in the string.
+Returns the number of characters in the string. Empty strings (``""``) always return ``0``. See also :ref:`is_empty<class_String_method_is_empty>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1028,7 +1114,7 @@ Returns the number of characters in the string.
 
 :ref:`String<class_String>` **lpad** **(** :ref:`int<class_int>` min_length, :ref:`String<class_String>` character=" " **)** |const|
 
-Formats a string to be at least ``min_length`` long by adding ``character``\ s to the left of the string.
+Formats the string to be at least ``min_length`` long by adding ``character``\ s to the left of the string, if necessary. See also :ref:`rpad<class_String_method_rpad>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1040,9 +1126,9 @@ Formats a string to be at least ``min_length`` long by adding ``character``\ s t
 
 :ref:`String<class_String>` **lstrip** **(** :ref:`String<class_String>` chars **)** |const|
 
-Returns a copy of the string with characters removed from the left. The ``chars`` argument is a string specifying the set of characters to be removed.
+Removes a set of characters defined in ``chars`` from the string's beginning. See also :ref:`rstrip<class_String_method_rstrip>`.
 
-\ **Note:** The ``chars`` is not a prefix. See :ref:`trim_prefix<class_String_method_trim_prefix>` method that will remove a single prefix string rather than a set of characters.
+\ **Note:** ``chars`` is not a prefix. Use :ref:`trim_prefix<class_String_method_trim_prefix>` to remove a single prefix, rather than a set of characters.
 
 .. rst-class:: classref-item-separator
 
@@ -1054,7 +1140,7 @@ Returns a copy of the string with characters removed from the left. The ``chars`
 
 :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)** |const|
 
-Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
+Does a simple expression match, where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except a period (``.``). An empty string or empty expression always evaluates to ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -1066,7 +1152,7 @@ Does a simple case-sensitive expression match, where ``"*"`` matches zero or mor
 
 :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_String>` expr **)** |const|
 
-Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
+Does a simple **case-insensitive** expression match, where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except a period (``.``). An empty string or empty expression always evaluates to ``false``.
 
 .. rst-class:: classref-item-separator
 
@@ -1078,7 +1164,7 @@ Does a simple case-insensitive expression match, where ``"*"`` matches zero or m
 
 :ref:`PackedByteArray<class_PackedByteArray>` **md5_buffer** **(** **)** |const|
 
-Returns the MD5 hash of the string as an array of bytes.
+Returns the `MD5 hash <https://en.wikipedia.org/wiki/MD5>`__ of the string as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1090,7 +1176,7 @@ Returns the MD5 hash of the string as an array of bytes.
 
 :ref:`String<class_String>` **md5_text** **(** **)** |const|
 
-Returns the MD5 hash of the string as a string.
+Returns the `MD5 hash <https://en.wikipedia.org/wiki/MD5>`__ of the string as another **String**.
 
 .. rst-class:: classref-item-separator
 
@@ -1102,15 +1188,13 @@ Returns the MD5 hash of the string as a string.
 
 :ref:`int<class_int>` **naturalnocasecmp_to** **(** :ref:`String<class_String>` to **)** |const|
 
-Performs a case-insensitive *natural order* comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.
+Performs a **case-insensitive**, *natural order* comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters are converted to uppercase for the comparison.
 
-When used for sorting, natural order comparison will order suites of numbers as expected by most people. If you sort the numbers from 1 to 10 using natural order, you will get ``[1, 2, 3, ...]`` instead of ``[1, 10, 2, 3, ...]``.
+When used for sorting, natural order comparison orders sequences of numbers by the combined value of each digit as is often expected, instead of the single digit's value. A sorted sequence of numbered strings will be ``["1", "2", "3", ...]``, not ``["1", "10", "2", "3", ...]``.
 
-\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
 
-\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
-
-To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`casecmp_to<class_String_method_casecmp_to>`.
+To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`nocasecmp_to<class_String_method_nocasecmp_to>` and :ref:`casecmp_to<class_String_method_casecmp_to>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1122,13 +1206,11 @@ To get a boolean result from a string comparison, use the ``==`` operator instea
 
 :ref:`int<class_int>` **nocasecmp_to** **(** :ref:`String<class_String>` to **)** |const|
 
-Performs a case-insensitive comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters will be converted to uppercase during the comparison.
+Performs a **case-insensitive** comparison to another string. Returns ``-1`` if less than, ``1`` if greater than, or ``0`` if equal. "Less than" or "greater than" are determined by the `Unicode code points <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__ of each string, which roughly matches the alphabetical order. Internally, lowercase characters are converted to uppercase for the comparison.
 
-\ **Behavior with different string lengths:** Returns ``1`` if the "base" string is longer than the ``to`` string or ``-1`` if the "base" string is shorter than the ``to`` string. Keep in mind this length is determined by the number of Unicode codepoints, *not* the actual visible characters.
+With different string lengths, returns ``1`` if this string is longer than the ``to`` string, or ``-1`` if shorter. Note that the length of empty strings is *always* ``0``.
 
-\ **Behavior with empty strings:** Returns ``-1`` if the "base" string is empty, ``1`` if the ``to`` string is empty or ``0`` if both strings are empty.
-
-To get a boolean result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_String_method_casecmp_to>` and :ref:`naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>`.
+To get a :ref:`bool<class_bool>` result from a string comparison, use the ``==`` operator instead. See also :ref:`casecmp_to<class_String_method_casecmp_to>` and :ref:`naturalnocasecmp_to<class_String_method_naturalnocasecmp_to>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1140,25 +1222,27 @@ To get a boolean result from a string comparison, use the ``==`` operator instea
 
 :ref:`String<class_String>` **num** **(** :ref:`float<class_float>` number, :ref:`int<class_int>` decimals=-1 **)** |static|
 
-Converts a :ref:`float<class_float>` to a string representation of a decimal number.
+Converts a :ref:`float<class_float>` to a string representation of a decimal number, with the number of decimal places specified in ``decimals``.
 
-The number of decimal places can be specified with ``decimals``. If ``decimals`` is ``-1`` (default), decimal places will be automatically adjusted so that the string representation has 14 significant digits (counting both digits to the left and the right of the decimal point).
+If ``decimals`` is ``-1`` as by default, the string representation may only have up to 14 significant digits, with digits before the decimal point having priority over digits after.
 
-Trailing zeros are not included in the string. The last digit will be rounded and not truncated.
+Trailing zeros are not included in the string. The last digit is rounded, not truncated.
 
 \ **Example:**\ 
 
 ::
 
-    String.num(3.141593)     # "3.141593"
-    String.num(3.141593, 3)  # "3.142"
-    String.num(3.14159300)   # "3.141593", no trailing zeros.
-    # Last digit will be rounded up here, which reduces total digit count since
-    # trailing zeros are removed:
-    String.num(42.129999, 5) # "42.13"
-    # If `decimals` is not specified, the total number of significant digits is 14:
-    String.num(-0.0000012345432123454321)     # "-0.00000123454321"
-    String.num(-10000.0000012345432123454321) # "-10000.0000012345"
+    String.num(3.141593)     # Returns "3.141593"
+    String.num(3.141593, 3)  # Returns "3.142"
+    String.num(3.14159300)   # Returns "3.141593"
+    
+    # Here, the last digit will be rounded up,
+    # which reduces the total digit count, since trailing zeros are removed:
+    String.num(42.129999, 5) # Returns "42.13"
+    
+    # If `decimals` is not specified, the maximum number of significant digits is 14:
+    String.num(-0.0000012345432123454321)     # Returns "-0.00000123454321"
+    String.num(-10000.0000012345432123454321) # Returns "-10000.0000012345"
 
 .. rst-class:: classref-item-separator
 
@@ -1170,7 +1254,11 @@ Trailing zeros are not included in the string. The last digit will be rounded an
 
 :ref:`String<class_String>` **num_int64** **(** :ref:`int<class_int>` number, :ref:`int<class_int>` base=10, :ref:`bool<class_bool>` capitalize_hex=false **)** |static|
 
-Converts a signed :ref:`int<class_int>` to a string representation of a number.
+Converts the given ``number`` to a string representation, with the given ``base``.
+
+By default, ``base`` is set to decimal (``10``). Other common bases in programming include binary (``2``), `octal <https://en.wikipedia.org/wiki/Octal>`__ (``8``), hexadecimal (``16``).
+
+If ``capitalize_hex`` is ``true``, digits higher than 9 are represented in uppercase.
 
 .. rst-class:: classref-item-separator
 
@@ -1182,9 +1270,28 @@ Converts a signed :ref:`int<class_int>` to a string representation of a number.
 
 :ref:`String<class_String>` **num_scientific** **(** :ref:`float<class_float>` number **)** |static|
 
-.. container:: contribute
+Converts the given ``number`` to a string representation, in scientific notation.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var n = -5.2e8
+    print(n)                       # Prints -520000000
+    print(String.NumScientific(n)) # Prints -5.2e+08
+
+ .. code-tab:: csharp
+
+    // This method is not implemented in C#.
+    // Use `string.ToString()` with "e" to achieve similar results.
+    var n = -5.2e8f;
+    GD.Print(n);                // Prints -520000000
+    GD.Print(n.ToString("e1")); // Prints -5.2e+008
+
+
+
+\ **Note:** In C#, this method is not implemented. To achieve similar results, see C#'s `Standard numeric format strings <https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings>`__
 
 .. rst-class:: classref-item-separator
 
@@ -1196,7 +1303,11 @@ Converts a signed :ref:`int<class_int>` to a string representation of a number.
 
 :ref:`String<class_String>` **num_uint64** **(** :ref:`int<class_int>` number, :ref:`int<class_int>` base=10, :ref:`bool<class_bool>` capitalize_hex=false **)** |static|
 
-Converts a unsigned :ref:`int<class_int>` to a string representation of a number.
+Converts the given unsigned :ref:`int<class_int>` to a string representation, with the given ``base``.
+
+By default, ``base`` is set to decimal (``10``). Other common bases in programming include binary (``2``), `octal <https://en.wikipedia.org/wiki/Octal>`__ (``8``), hexadecimal (``16``).
+
+If ``capitalize_hex`` is ``true``, digits higher than 9 are represented in uppercase.
 
 .. rst-class:: classref-item-separator
 
@@ -1208,7 +1319,7 @@ Converts a unsigned :ref:`int<class_int>` to a string representation of a number
 
 :ref:`String<class_String>` **pad_decimals** **(** :ref:`int<class_int>` digits **)** |const|
 
-Formats a number to have an exact number of ``digits`` after the decimal point.
+Formats the string representing a number to have an exact number of ``digits`` *after* the decimal point.
 
 .. rst-class:: classref-item-separator
 
@@ -1220,7 +1331,7 @@ Formats a number to have an exact number of ``digits`` after the decimal point.
 
 :ref:`String<class_String>` **pad_zeros** **(** :ref:`int<class_int>` digits **)** |const|
 
-Formats a number to have an exact number of ``digits`` before the decimal point.
+Formats the string representing a number to have an exact number of ``digits`` *before* the decimal point.
 
 .. rst-class:: classref-item-separator
 
@@ -1232,7 +1343,9 @@ Formats a number to have an exact number of ``digits`` before the decimal point.
 
 :ref:`String<class_String>` **path_join** **(** :ref:`String<class_String>` file **)** |const|
 
-If the string is a path, this concatenates ``file`` at the end of the string as a subpath. E.g. ``"this/is".path_join("path") == "this/is/path"``.
+Concatenates ``file`` at the end of the string as a subpath, adding ``/`` if necessary.
+
+\ **Example:** ``"this/is".path_join("path") == "this/is/path"``.
 
 .. rst-class:: classref-item-separator
 
@@ -1244,7 +1357,7 @@ If the string is a path, this concatenates ``file`` at the end of the string as 
 
 :ref:`String<class_String>` **repeat** **(** :ref:`int<class_int>` count **)** |const|
 
-Returns original string repeated a number of times. The number of repetitions is given by the argument.
+Repeats this string a number of times. ``count`` needs to be greater than ``0``. Otherwise, returns an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -1256,7 +1369,7 @@ Returns original string repeated a number of times. The number of repetitions is
 
 :ref:`String<class_String>` **replace** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)** |const|
 
-Replaces occurrences of a case-sensitive substring with the given one inside the string.
+Replaces all occurrences of ``what`` inside the string with the given ``forwhat``.
 
 .. rst-class:: classref-item-separator
 
@@ -1268,7 +1381,7 @@ Replaces occurrences of a case-sensitive substring with the given one inside the
 
 :ref:`String<class_String>` **replacen** **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)** |const|
 
-Replaces occurrences of a case-insensitive substring with the given one inside the string.
+Replaces all **case-insensitive** occurrences of ``what`` inside the string with the given ``forwhat``.
 
 .. rst-class:: classref-item-separator
 
@@ -1280,7 +1393,7 @@ Replaces occurrences of a case-insensitive substring with the given one inside t
 
 :ref:`int<class_int>` **rfind** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)** |const|
 
-Returns the index of the **last** case-sensitive occurrence of the specified string in this instance, or ``-1``. Optionally, the starting search index can be specified, continuing to the beginning of the string.
+Returns the index of the **last** occurrence of ``what`` in this string, or ``-1`` if there are none. The search's start can be specified with ``from``, continuing to the beginning of the string. This method is the reverse of :ref:`find<class_String_method_find>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1292,7 +1405,7 @@ Returns the index of the **last** case-sensitive occurrence of the specified str
 
 :ref:`int<class_int>` **rfindn** **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)** |const|
 
-Returns the index of the **last** case-insensitive occurrence of the specified string in this instance, or ``-1``. Optionally, the starting search index can be specified, continuing to the beginning of the string.
+Returns the index of the **last** **case-insensitive** occurrence of ``what`` in this string, or ``-1`` if there are none. The starting search index can be specified with ``from``, continuing to the beginning of the string. This method is the reverse of :ref:`findn<class_String_method_findn>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1304,14 +1417,12 @@ Returns the index of the **last** case-insensitive occurrence of the specified s
 
 :ref:`String<class_String>` **right** **(** :ref:`int<class_int>` length **)** |const|
 
-Returns a number of characters from the right of the string. If negative ``length`` is used, the characters are counted downwards from **String**'s length.
-
-\ **Example:**\ 
+Returns the last ``length`` characters from the end of the string. If ``length`` is negative, strips the first ``length`` characters from the string's beginning.
 
 ::
 
-    print("sample text".right(3)) #prints "ext"
-    print("sample text".right(-3)) #prints "ple text"
+    print("Hello World!".right(3))  # Prints "ld!"
+    print("Hello World!".right(-4)) # Prints "o World!"
 
 .. rst-class:: classref-item-separator
 
@@ -1323,7 +1434,7 @@ Returns a number of characters from the right of the string. If negative ``lengt
 
 :ref:`String<class_String>` **rpad** **(** :ref:`int<class_int>` min_length, :ref:`String<class_String>` character=" " **)** |const|
 
-Formats a string to be at least ``min_length`` long by adding ``character``\ s to the right of the string.
+Formats the string to be at least ``min_length`` long, by adding ``character``\ s to the right of the string, if necessary. See also :ref:`lpad<class_String_method_lpad>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1335,13 +1446,11 @@ Formats a string to be at least ``min_length`` long by adding ``character``\ s t
 
 :ref:`PackedStringArray<class_PackedStringArray>` **rsplit** **(** :ref:`String<class_String>` delimiter="", :ref:`bool<class_bool>` allow_empty=true, :ref:`int<class_int>` maxsplit=0 **)** |const|
 
-Splits the string by a ``delimiter`` string and returns an array of the substrings, starting from right. If ``delimiter`` is an empty string, each substring will be a single character.
+Splits the string using a ``delimiter`` and returns an array of the substrings, starting from the end of the string. The splits in the returned array appear in the same order as the original string. If ``delimiter`` is an empty string, each substring will be a single character.
 
-The splits in the returned array are sorted in the same order as the original string, from left to right.
+If ``allow_empty`` is ``false``, empty strings between adjacent delimiters are excluded from the array.
 
-If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the string, it will add an empty string to the array of substrings at this position.
-
-If ``maxsplit`` is specified, it defines the number of splits to do from the right up to ``maxsplit``. The default value of 0 means that all items are split, thus giving the same result as :ref:`split<class_String_method_split>`.
+If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``maxsplit``. By default, the entire string is split, which is mostly identical to :ref:`split<class_String_method_split>`.
 
 \ **Example:**\ 
 
@@ -1352,13 +1461,14 @@ If ``maxsplit`` is specified, it defines the number of splits to do from the rig
 
     var some_string = "One,Two,Three,Four"
     var some_array = some_string.rsplit(",", true, 1)
+    
     print(some_array.size()) # Prints 2
-    print(some_array[0]) # Prints "One,Two,Three"
-    print(some_array[1]) # Prints "Four"
+    print(some_array[0])     # Prints "One,Two,Three"
+    print(some_array[1])     # Prints "Four"
 
  .. code-tab:: csharp
 
-    // There is no Rsplit.
+    // In C#, there is no String.RSplit() method.
 
 
 
@@ -1372,9 +1482,9 @@ If ``maxsplit`` is specified, it defines the number of splits to do from the rig
 
 :ref:`String<class_String>` **rstrip** **(** :ref:`String<class_String>` chars **)** |const|
 
-Returns a copy of the string with characters removed from the right. The ``chars`` argument is a string specifying the set of characters to be removed.
+Removes a set of characters defined in ``chars`` from the string's end. See also :ref:`lstrip<class_String_method_lstrip>`.
 
-\ **Note:** The ``chars`` is not a suffix. See :ref:`trim_suffix<class_String_method_trim_suffix>` method that will remove a single suffix string rather than a set of characters.
+\ **Note:** ``chars`` is not a suffix. Use :ref:`trim_suffix<class_String_method_trim_suffix>` to remove a single suffix, rather than a set of characters.
 
 .. rst-class:: classref-item-separator
 
@@ -1386,7 +1496,7 @@ Returns a copy of the string with characters removed from the right. The ``chars
 
 :ref:`PackedByteArray<class_PackedByteArray>` **sha1_buffer** **(** **)** |const|
 
-Returns the SHA-1 hash of the string as an array of bytes.
+Returns the `SHA-1 <https://en.wikipedia.org/wiki/SHA-1>`__ hash of the string as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1398,7 +1508,7 @@ Returns the SHA-1 hash of the string as an array of bytes.
 
 :ref:`String<class_String>` **sha1_text** **(** **)** |const|
 
-Returns the SHA-1 hash of the string as a string.
+Returns the `SHA-1 <https://en.wikipedia.org/wiki/SHA-1>`__ hash of the string as another **String**.
 
 .. rst-class:: classref-item-separator
 
@@ -1410,7 +1520,7 @@ Returns the SHA-1 hash of the string as a string.
 
 :ref:`PackedByteArray<class_PackedByteArray>` **sha256_buffer** **(** **)** |const|
 
-Returns the SHA-256 hash of the string as an array of bytes.
+Returns the `SHA-256 <https://en.wikipedia.org/wiki/SHA-2>`__ hash of the string as a :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1422,7 +1532,7 @@ Returns the SHA-256 hash of the string as an array of bytes.
 
 :ref:`String<class_String>` **sha256_text** **(** **)** |const|
 
-Returns the SHA-256 hash of the string as a string.
+Returns the `SHA-256 <https://en.wikipedia.org/wiki/SHA-2>`__ hash of the string as another **String**.
 
 .. rst-class:: classref-item-separator
 
@@ -1434,14 +1544,14 @@ Returns the SHA-256 hash of the string as a string.
 
 :ref:`float<class_float>` **similarity** **(** :ref:`String<class_String>` text **)** |const|
 
-Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) of this string compared to another. A result of 1.0 means totally similar, while 0.0 means totally dissimilar.
+Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient>`__) of this string compared to another. A result of ``1.0`` means totally similar, while ``0.0`` means totally dissimilar.
 
 ::
 
-    print("ABC123".similarity("ABC123")) # Prints "1"
-    print("ABC123".similarity("XYZ456")) # Prints "0"
-    print("ABC123".similarity("123ABC")) # Prints "0.8"
-    print("ABC123".similarity("abc123")) # Prints "0.4"
+    print("ABC123".similarity("ABC123")) # Prints 1.0
+    print("ABC123".similarity("XYZ456")) # Prints 0.0
+    print("ABC123".similarity("123ABC")) # Prints 0.8
+    print("ABC123".similarity("abc123")) # Prints 0.4
 
 .. rst-class:: classref-item-separator
 
@@ -1453,7 +1563,12 @@ Returns the similarity index (`Sorensen-Dice coefficient <https://en.wikipedia.o
 
 :ref:`String<class_String>` **simplify_path** **(** **)** |const|
 
-Returns a simplified canonical path.
+If the string is a valid file path, converts the string into a canonical path. This is the shortest possible path, without ``"./"``, and all the unnecessary ``".."`` and ``"/"``.
+
+::
+
+    var simple_path = "./path/to///../file".simplify_path()
+    print(simple_path) # Prints "path/file"
 
 .. rst-class:: classref-item-separator
 
@@ -1465,13 +1580,11 @@ Returns a simplified canonical path.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **split** **(** :ref:`String<class_String>` delimiter="", :ref:`bool<class_bool>` allow_empty=true, :ref:`int<class_int>` maxsplit=0 **)** |const|
 
-Splits the string by a ``delimiter`` string and returns an array of the substrings. The ``delimiter`` can be of any length. If ``delimiter`` is an empty string, each substring will be a single character.
+Splits the string using a ``delimiter`` and returns an array of the substrings. If ``delimiter`` is an empty string, each substring will be a single character. This method is the opposite of :ref:`join<class_String_method_join>`.
 
-If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the string, it will add an empty string to the array of substrings at this position.
+If ``allow_empty`` is ``false``, empty strings between adjacent delimiters are excluded from the array.
 
-If ``maxsplit`` is specified, it defines the number of splits to do from the left up to ``maxsplit``. The default value of ``0`` means that all items are split.
-
-If you need only one element from the array at a specific index, :ref:`get_slice<class_String_method_get_slice>` is a more performant option.
+If ``maxsplit`` is greater than ``0``, the number of splits may not exceed ``maxsplit``. By default, the entire string is split.
 
 \ **Example:**\ 
 
@@ -1480,22 +1593,25 @@ If you need only one element from the array at a specific index, :ref:`get_slice
 
  .. code-tab:: gdscript
 
-    var some_string = "One,Two,Three,Four"
-    var some_array = some_string.split(",", true, 1)
-    print(some_array.size()) # Prints 2
-    print(some_array[0]) # Prints "Four"
-    print(some_array[1]) # Prints "Three,Two,One"
+    var some_array = "One,Two,Three,Four".split(",", true, 2)
+    
+    print(some_array.size()) # Prints 3
+    print(some_array[0])     # Prints "One"
+    print(some_array[1])     # Prints "Two"
+    print(some_array[2])     # Prints "Three,Four"
 
  .. code-tab:: csharp
 
-    var someString = "One,Two,Three,Four";
-    var someArray = someString.Split(",", true); // This is as close as it gets to Godots API.
-    GD.Print(someArray[0]); // Prints "Four"
-    GD.Print(someArray[1]); // Prints "Three,Two,One"
+    // C#'s `Split()` does not support the `maxsplit` parameter.
+    var someArray = "One,Two,Three".Split(",");
+    
+    GD.Print(someArray[0]); // Prints "One"
+    GD.Print(someArray[1]); // Prints "Two"
+    GD.Print(someArray[2]); // Prints "Three"
 
 
 
-If you need to split strings with more complex rules, use the :ref:`RegEx<class_RegEx>` class instead.
+\ **Note:** If you only need one substring from the array, consider using :ref:`get_slice<class_String_method_get_slice>` which is faster. If you need to split strings with more complex rules, use the :ref:`RegEx<class_RegEx>` class instead.
 
 .. rst-class:: classref-item-separator
 
@@ -1507,11 +1623,15 @@ If you need to split strings with more complex rules, use the :ref:`RegEx<class_
 
 :ref:`PackedFloat64Array<class_PackedFloat64Array>` **split_floats** **(** :ref:`String<class_String>` delimiter, :ref:`bool<class_bool>` allow_empty=true **)** |const|
 
-Splits the string in floats by using a delimiter string and returns an array of the substrings.
+Splits the string into floats by using a ``delimiter`` and returns a :ref:`PackedFloat64Array<class_PackedFloat64Array>`.
 
-For example, ``"1,2.5,3"`` will return ``[1,2.5,3]`` if split by ``","``.
+If ``allow_empty`` is ``false``, empty or invalid :ref:`float<class_float>` conversions between adjacent delimiters are excluded.
 
-If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the string, it will add an empty string to the array of substrings at this position.
+::
+
+    var a = "1,2,4.5".split_floats(",")         # a is [1.0, 2.0, 4.5]
+    var c = "1| ||4.5".split_floats("|")        # c is [1.0, 0.0, 0.0, 4.5]
+    var b = "1| ||4.5".split_floats("|", false) # b is [1.0, 4.5]
 
 .. rst-class:: classref-item-separator
 
@@ -1523,7 +1643,9 @@ If ``allow_empty`` is ``true``, and there are two adjacent delimiters in the str
 
 :ref:`String<class_String>` **strip_edges** **(** :ref:`bool<class_bool>` left=true, :ref:`bool<class_bool>` right=true **)** |const|
 
-Returns a copy of the string stripped of any non-printable character (including tabulations, spaces and line breaks) at the beginning and the end. The optional arguments are used to toggle stripping on the left and right edges respectively.
+Strips all non-printable characters from the beginning and the end of the string. These include spaces, tabulations (``\t``), and newlines (``\n`` ``\r``).
+
+If ``left`` is ``false``, ignores the string's beginning. Likewise, if ``right`` is ``false``, ignores the string's end.
 
 .. rst-class:: classref-item-separator
 
@@ -1535,7 +1657,7 @@ Returns a copy of the string stripped of any non-printable character (including 
 
 :ref:`String<class_String>` **strip_escapes** **(** **)** |const|
 
-Returns a copy of the string stripped of any escape character. These include all non-printable control characters of the first page of the ASCII table (< 32), such as tabulation (``\t`` in C) and newline (``\n`` and ``\r``) characters, but not spaces.
+Strips all escape characters from the string. These include all non-printable control characters of the first page of the ASCII table (values from 0 to 31), such as tabulation (``\t``) and newline (``\n``, ``\r``) characters, but *not* spaces.
 
 .. rst-class:: classref-item-separator
 
@@ -1547,7 +1669,7 @@ Returns a copy of the string stripped of any escape character. These include all
 
 :ref:`String<class_String>` **substr** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` len=-1 **)** |const|
 
-Returns part of the string from the position ``from`` with length ``len``. Argument ``len`` is optional and using ``-1`` will return remaining characters from given position.
+Returns part of the string from the position ``from`` with length ``len``. If ``len`` is ``-1`` (as by default), returns the rest of the string starting from the given position.
 
 .. rst-class:: classref-item-separator
 
@@ -1559,7 +1681,7 @@ Returns part of the string from the position ``from`` with length ``len``. Argum
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_ascii_buffer** **(** **)** |const|
 
-Converts the String (which is a character array) to ASCII/Latin-1 encoded :ref:`PackedByteArray<class_PackedByteArray>` (which is an array of bytes). The conversion is faster compared to :ref:`to_utf8_buffer<class_String_method_to_utf8_buffer>`, as this method assumes that all the characters in the String are ASCII/Latin-1 characters, unsupported characters are replaced with spaces.
+Converts the string to an `ASCII <https://en.wikipedia.org/wiki/ASCII>`__/Latin-1 encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly faster than :ref:`to_utf8_buffer<class_String_method_to_utf8_buffer>`, but replaces all unsupported characters with spaces.
 
 .. rst-class:: classref-item-separator
 
@@ -1583,14 +1705,15 @@ Returns the string converted to ``camelCase``.
 
 :ref:`float<class_float>` **to_float** **(** **)** |const|
 
-Converts a string containing a decimal number into a ``float``. The method will stop on the first non-number character except the first ``.`` (decimal point), and ``e`` which is used for exponential.
+Converts the string representing a decimal number into a :ref:`float<class_float>`. This method stops on the first non-number character, except the first decimal point (``.``) and the exponent letter (``e``). See also :ref:`is_valid_float<class_String_method_is_valid_float>`.
 
 ::
 
-    print("12.3".to_float()) # 12.3
-    print("1.2.3".to_float()) # 1.2
-    print("12ab3".to_float()) # 12
-    print("1e3".to_float()) # 1000
+    var a = "12.35".to_float() # a is 12.35
+    var b = "1.2.3".to_float() # b is 1.2
+    var c = "12xy3".to_float() # c is 12.0
+    var d = "1e3".to_float()   # d is 1000.0
+    var e = "Hello!".to_int()  # e is 0.0
 
 .. rst-class:: classref-item-separator
 
@@ -1602,13 +1725,14 @@ Converts a string containing a decimal number into a ``float``. The method will 
 
 :ref:`int<class_int>` **to_int** **(** **)** |const|
 
-Converts a string containing an integer number into an ``int``. The method will remove any non-number character and stop if it encounters a ``.``.
+Converts the string representing an integer number into an :ref:`int<class_int>`. This method removes any non-number character and stops at the first decimal point (``.``). See also :ref:`is_valid_int<class_String_method_is_valid_int>`.
 
 ::
 
-    print("123".to_int()) # 123
-    print("a1b2c3".to_int()) # 123
-    print("1.2.3".to_int()) # 1
+    var a = "123".to_int()    # a is 123
+    var b = "x1y2z3".to_int() # b is 123
+    var c = "-1.2.3".to_int() # c is -1
+    var d = "Hello!".to_int() # d is 0
 
 .. rst-class:: classref-item-separator
 
@@ -1668,7 +1792,7 @@ Returns the string converted to uppercase.
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf16_buffer** **(** **)** |const|
 
-Converts the String (which is an array of characters) to UTF-16 encoded :ref:`PackedByteArray<class_PackedByteArray>` (which is an array of bytes).
+Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1680,7 +1804,7 @@ Converts the String (which is an array of characters) to UTF-16 encoded :ref:`Pa
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf32_buffer** **(** **)** |const|
 
-Converts the String (which is an array of characters) to UTF-32 encoded :ref:`PackedByteArray<class_PackedByteArray>` (which is an array of bytes).
+Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1692,7 +1816,7 @@ Converts the String (which is an array of characters) to UTF-32 encoded :ref:`Pa
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf8_buffer** **(** **)** |const|
 
-Converts the String (which is an array of characters) to UTF-8 encode :ref:`PackedByteArray<class_PackedByteArray>` (which is an array of bytes). The conversion is a bit slower than :ref:`to_ascii_buffer<class_String_method_to_ascii_buffer>`, but supports all UTF-8 characters. Therefore, you should prefer this function over :ref:`to_ascii_buffer<class_String_method_to_ascii_buffer>`.
+Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly slower than :ref:`to_ascii_buffer<class_String_method_to_ascii_buffer>`, but supports all UTF-8 characters. For most cases, prefer using this method.
 
 .. rst-class:: classref-item-separator
 
@@ -1704,7 +1828,7 @@ Converts the String (which is an array of characters) to UTF-8 encode :ref:`Pack
 
 :ref:`String<class_String>` **trim_prefix** **(** :ref:`String<class_String>` prefix **)** |const|
 
-Removes a given string from the start if it starts with it or leaves the string unchanged.
+Removes the given ``prefix`` from the start of the string, or returns the string unchanged.
 
 .. rst-class:: classref-item-separator
 
@@ -1716,7 +1840,7 @@ Removes a given string from the start if it starts with it or leaves the string 
 
 :ref:`String<class_String>` **trim_suffix** **(** :ref:`String<class_String>` suffix **)** |const|
 
-Removes a given string from the end if it ends with it or leaves the string unchanged.
+Removes the given ``suffix`` from the end of the string, or returns the string unchanged.
 
 .. rst-class:: classref-item-separator
 
@@ -1740,18 +1864,20 @@ Returns the character code at position ``at``.
 
 :ref:`String<class_String>` **uri_decode** **(** **)** |const|
 
-Decodes a string in URL encoded format. This is meant to decode parameters in a URL when receiving an HTTP request.
+Decodes the string from its URL-encoded format. This method is meant to properly decode the parameters in a URL when receiving an HTTP request.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    print("https://example.org/?escaped=" + "Godot%20Engine%3A%27docs%27".uri_decode())
+    var url = "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
+    print(url.uri_decode()) # Prints "$DOCS_URL/?highlight=Godot Engine:docs"
 
  .. code-tab:: csharp
 
-    GD.Print("https://example.org/?escaped=" + "Godot%20Engine%3a%27Docs%27".URIDecode());
+    var url = "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
+    GD.Print(url.URIDecode()) // Prints "$DOCS_URL/?highlight=Godot Engine:docs"
 
 
 
@@ -1765,18 +1891,24 @@ Decodes a string in URL encoded format. This is meant to decode parameters in a 
 
 :ref:`String<class_String>` **uri_encode** **(** **)** |const|
 
-Encodes a string to URL friendly format. This is meant to encode parameters in a URL when sending an HTTP request.
+Encodes the string to URL-friendly format. This method is meant to properly encode the parameters in a URL when sending an HTTP request.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    print("https://example.org/?escaped=" + "Godot Engine:'docs'".uri_encode())
+    var prefix = "$DOCS_URL/?highlight="
+    var url = prefix + "Godot Engine:docs".uri_encode()
+    
+    print(url) # Prints "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
 
  .. code-tab:: csharp
 
-    GD.Print("https://example.org/?escaped=" + "Godot Engine:'docs'".URIEncode());
+    var prefix = "$DOCS_URL/?highlight=";
+    var url = prefix + "Godot Engine:docs".URIEncode();
+    
+    GD.Print(url); // Prints "$DOCS_URL/?highlight=Godot%20Engine%3%docs"
 
 
 
@@ -1790,7 +1922,7 @@ Encodes a string to URL friendly format. This is meant to encode parameters in a
 
 :ref:`String<class_String>` **validate_node_name** **(** **)** |const|
 
-Removes any characters from the string that are prohibited in :ref:`Node<class_Node>` names (``.`` ``:`` ``@`` ``/`` ``"``).
+Removes all characters that are not allowed in :ref:`Node.name<class_Node_property_name>` from the string (``.`` ``:`` ``@`` ``/`` ``"`` ``%``).
 
 .. rst-class:: classref-item-separator
 
@@ -1883,6 +2015,20 @@ For more information, see the :doc:`GDScript format strings <../tutorials/script
 :ref:`String<class_String>` **operator +** **(** :ref:`String<class_String>` right **)**
 
 Appends ``right`` at the end of this **String**, also known as a string concatenation.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_String_operator_sum_StringName:
+
+.. rst-class:: classref-operator
+
+:ref:`String<class_String>` **operator +** **(** :ref:`StringName<class_StringName>` right **)**
+
+.. container:: contribute
+
+	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 

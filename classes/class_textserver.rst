@@ -292,7 +292,7 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`shaped_set_span_update_font<class_TextServer_method_shaped_set_span_update_font>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` index, :ref:`RID[]<class_RID>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={} **)**                                                                                     |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                         | :ref:`shaped_text_add_object<class_TextServer_method_shaped_text_add_object>` **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1 **)**                                                                |
+   | :ref:`bool<class_bool>`                                         | :ref:`shaped_text_add_object<class_TextServer_method_shaped_text_add_object>` **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1, :ref:`float<class_float>` baseline=0.0 **)**                        |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`shaped_text_add_string<class_TextServer_method_shaped_text_add_string>` **(** :ref:`RID<class_RID>` shaped, :ref:`String<class_String>` text, :ref:`RID[]<class_RID>` fonts, :ref:`int<class_int>` size, :ref:`Dictionary<class_Dictionary>` opentype_features={}, :ref:`String<class_String>` language="", :ref:`Variant<class_Variant>` meta=null **)**        |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -376,7 +376,7 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                           | :ref:`shaped_text_prev_grapheme_pos<class_TextServer_method_shaped_text_prev_grapheme_pos>` **(** :ref:`RID<class_RID>` shaped, :ref:`int<class_int>` pos **)** |const|                                                                                                                                                                                                |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                         | :ref:`shaped_text_resize_object<class_TextServer_method_shaped_text_resize_object>` **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5 **)**                                                                                          |
+   | :ref:`bool<class_bool>`                                         | :ref:`shaped_text_resize_object<class_TextServer_method_shaped_text_resize_object>` **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`float<class_float>` baseline=0.0 **)**                                                  |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`shaped_text_set_bidi_override<class_TextServer_method_shaped_text_set_bidi_override>` **(** :ref:`RID<class_RID>` shaped, :ref:`Array<class_Array>` override **)**                                                                                                                                                                                               |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -402,7 +402,7 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`spoof_check<class_TextServer_method_spoof_check>` **(** :ref:`String<class_String>` string **)** |const|                                                                                                                                                                                                                                                         |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`string_get_word_breaks<class_TextServer_method_string_get_word_breaks>` **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language="" **)** |const|                                                                                                                                                                                          |
+   | :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`string_get_word_breaks<class_TextServer_method_string_get_word_breaks>` **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language="", :ref:`int<class_int>` chars_per_line=0 **)** |const|                                                                                                                                                  |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`string_to_lower<class_TextServer_method_string_to_lower>` **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language="" **)** |const|                                                                                                                                                                                                        |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1753,7 +1753,7 @@ Returns index of the cache texture containing the glyph.
 
 :ref:`RID<class_RID>` **font_get_glyph_texture_rid** **(** :ref:`RID<class_RID>` font_rid, :ref:`Vector2i<class_Vector2i>` size, :ref:`int<class_int>` glyph **)** |const|
 
-Returns resource id of the cache texture containing the glyph.
+Returns resource ID of the cache texture containing the glyph.
 
 \ **Note:** If there are pending glyphs to render, calling this function might trigger the texture cache update.
 
@@ -2785,6 +2785,8 @@ Returns the dictionary of the supported OpenType variation coordinates.
 
 Converts a number from the Western Arabic (0..9) to the numeral systems used in ``language``.
 
+If ``language`` is omitted, the active locale will be used.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3057,7 +3059,7 @@ Changes text span font, font size and OpenType features, without changing the te
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **shaped_text_add_object** **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1 **)**
+:ref:`bool<class_bool>` **shaped_text_add_object** **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`int<class_int>` length=1, :ref:`float<class_float>` baseline=0.0 **)**
 
 Adds inline object to the text buffer, ``key`` must be unique. In the text, object is represented as ``length`` object replacement characters.
 
@@ -3567,7 +3569,7 @@ Returns composite character start position closest to the ``pos``.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **shaped_text_resize_object** **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5 **)**
+:ref:`bool<class_bool>` **shaped_text_resize_object** **(** :ref:`RID<class_RID>` shaped, :ref:`Variant<class_Variant>` key, :ref:`Vector2<class_Vector2>` size, :ref:`InlineAlignment<enum_@GlobalScope_InlineAlignment>` inline_align=5, :ref:`float<class_float>` baseline=0.0 **)**
 
 Sets new size and alignment of embedded object.
 
@@ -3733,9 +3735,17 @@ Returns ``true`` if ``string`` is likely to be an attempt at confusing the reade
 
 .. rst-class:: classref-method
 
-:ref:`PackedInt32Array<class_PackedInt32Array>` **string_get_word_breaks** **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language="" **)** |const|
+:ref:`PackedInt32Array<class_PackedInt32Array>` **string_get_word_breaks** **(** :ref:`String<class_String>` string, :ref:`String<class_String>` language="", :ref:`int<class_int>` chars_per_line=0 **)** |const|
 
-Returns array of the word break character offsets.
+Returns an array of the word break boundaries. Elements in the returned array are the offsets of the start and end of words. Therefore the length of the array is always even.
+
+When ``chars_per_line`` is greater than zero, line break boundaries are returned instead.
+
+::
+
+    var ts = TextServerManager.get_primary_interface()
+    print(ts.string_get_word_breaks("Godot Engine")) # Prints [0, 5, 6, 12]
+    print(ts.string_get_word_breaks("Godot Engine", "en", 5)) # Prints [0, 5, 6, 11, 11, 12]
 
 .. rst-class:: classref-item-separator
 

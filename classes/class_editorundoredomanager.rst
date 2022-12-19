@@ -115,6 +115,14 @@ enum **SpecialHistory**:
 
 Global history not associated with any scene, but with external resources etc.
 
+.. _class_EditorUndoRedoManager_constant_REMOTE_HISTORY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SpecialHistory<enum_EditorUndoRedoManager_SpecialHistory>` **REMOTE_HISTORY** = ``-9``
+
+History associated with remote inspector. Used when live editing a running project.
+
 .. _class_EditorUndoRedoManager_constant_INVALID_HISTORY:
 
 .. rst-class:: classref-enumeration-constant

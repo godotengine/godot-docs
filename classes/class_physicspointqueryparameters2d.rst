@@ -63,7 +63,7 @@ Property Descriptions
 - void **set_canvas_instance_id** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_canvas_instance_id** **(** **)**
 
-If different from ``0``, restricts the query to a specific canvas layer specified by its instance id. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+If different from ``0``, restricts the query to a specific canvas layer specified by its instance ID. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
 .. rst-class:: classref-item-separator
 

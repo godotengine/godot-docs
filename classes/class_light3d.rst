@@ -85,7 +85,7 @@ Properties
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                | :ref:`shadow_enabled<class_Light3D_property_shadow_enabled>`                           | ``false``             |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`              | :ref:`shadow_normal_bias<class_Light3D_property_shadow_normal_bias>`                   | ``1.0``               |
+   | :ref:`float<class_float>`              | :ref:`shadow_normal_bias<class_Light3D_property_shadow_normal_bias>`                   | ``2.0``               |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`              | :ref:`shadow_opacity<class_Light3D_property_shadow_opacity>`                           | ``1.0``               |
    +----------------------------------------+----------------------------------------------------------------------------------------+-----------------------+
@@ -752,7 +752,7 @@ If ``true``, the light will cast real-time shadows. This has a significant perfo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **shadow_normal_bias** = ``1.0``
+:ref:`float<class_float>` **shadow_normal_bias** = ``2.0``
 
 .. rst-class:: classref-property-setget
 

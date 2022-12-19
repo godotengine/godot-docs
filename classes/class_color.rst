@@ -1795,11 +1795,22 @@ Returns the **Color** associated with the provided ``hex`` integer in 32-bit ARG
 
 In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix).
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var red = Color.hex(0xffff0000)
     var dark_cyan = Color.hex(0xff008b8b)
     var my_color = Color.hex(0xa4bbefd2)
+
+ .. code-tab:: csharp
+
+    var red = new Color(0xffff0000);
+    var dark_cyan = new Color(0xff008b8b);
+    var my_color = new Color(0xa4bbefd2);
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -1842,9 +1853,9 @@ Returns a new color from ``rgba``, an HTML hexadecimal color string. ``rgba`` is
 
  .. code-tab:: csharp
 
-    var blue = new Color("#0000ff"); // blue is Color(0.0, 0.0, 1.0, 1.0)
-    var green = new Color("#0F0");   // green is Color(0.0, 1.0, 0.0, 1.0)
-    var col = new Color("663399cc"); // col is Color(0.4, 0.2, 0.6, 0.8)
+    var blue = Color.FromHtml("#0000ff"); // blue is Color(0.0, 0.0, 1.0, 1.0)
+    var green = Color.FromHtml("#0F0");   // green is Color(0.0, 1.0, 0.0, 1.0)
+    var col = Color.FromHtml("663399cc"); // col is Color(0.4, 0.2, 0.6, 0.8)
 
 
 
@@ -1875,14 +1886,13 @@ Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The stri
 
  .. code-tab:: csharp
 
-    // This method is not available in C#. Use `StringExtensions.IsValidHtmlColor()`, instead.
-    "#55AAFF".IsValidHtmlColor();   // Returns true
-    "#55AAFF20".IsValidHtmlColor(); // Returns true
-    "55AAFF".IsValidHtmlColor();    // Returns true
-    "#F2C".IsValidHtmlColor();      // Returns true
+    Color.IsHtmlValid("#55AAFF");   // Returns true
+    Color.IsHtmlValid("#55AAFF20"); // Returns true
+    Color.IsHtmlValid("55AAFF");    // Returns true
+    Color.IsHtmlValid("#F2C");      // Returns true
     
-    "#AABBC".IsValidHtmlColor();    // Returns false
-    "#55aaFF5".IsValidHtmlColor();  // Returns false
+    Color.IsHtmlValid("#AABBC");    // Returns false
+    Color.IsHtmlValid("#55aaFF5");  // Returns false
 
 
 

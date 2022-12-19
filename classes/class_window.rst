@@ -94,9 +94,25 @@ Methods
    :widths: auto
 
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Color<class_Color>` color **)**                         |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`add_theme_constant_override<class_Window_method_add_theme_constant_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` constant **)**                    |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`add_theme_font_override<class_Window_method_add_theme_font_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Font<class_Font>` font **)**                              |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`add_theme_font_size_override<class_Window_method_add_theme_font_size_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` font_size **)**                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`add_theme_icon_override<class_Window_method_add_theme_icon_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`Texture2D<class_Texture2D>` texture **)**                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`add_theme_stylebox_override<class_Window_method_add_theme_stylebox_override>` **(** :ref:`StringName<class_StringName>` name, :ref:`StyleBox<class_StyleBox>` stylebox **)**          |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`begin_bulk_theme_override<class_Window_method_begin_bulk_theme_override>` **(** **)**                                                                                                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`can_draw<class_Window_method_can_draw>` **(** **)** |const|                                                                                                                           |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`child_controls_changed<class_Window_method_child_controls_changed>` **(** **)**                                                                                                       |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`end_bulk_theme_override<class_Window_method_end_bulk_theme_override>` **(** **)**                                                                                                     |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                       | :ref:`get_contents_minimum_size<class_Window_method_get_contents_minimum_size>` **(** **)** |const|                                                                                         |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -104,7 +120,9 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`LayoutDirection<enum_Window_LayoutDirection>` | :ref:`get_layout_direction<class_Window_method_get_layout_direction>` **(** **)** |const|                                                                                                   |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i<class_Vector2i>`                     | :ref:`get_real_size<class_Window_method_get_real_size>` **(** **)** |const|                                                                                                                 |
+   | :ref:`Vector2i<class_Vector2i>`                     | :ref:`get_position_with_decorations<class_Window_method_get_position_with_decorations>` **(** **)** |const|                                                                                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                     | :ref:`get_size_with_decorations<class_Window_method_get_size_with_decorations>` **(** **)** |const|                                                                                         |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                           | :ref:`get_theme_color<class_Window_method_get_theme_color>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|                 |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -130,15 +148,27 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_theme_color<class_Window_method_has_theme_color>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|                 |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_theme_color_override<class_Window_method_has_theme_color_override>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                  |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_theme_constant<class_Window_method_has_theme_constant>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|           |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_theme_constant_override<class_Window_method_has_theme_constant_override>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                            |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_theme_font<class_Window_method_has_theme_font>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|                   |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_theme_font_override<class_Window_method_has_theme_font_override>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                    |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_theme_font_size<class_Window_method_has_theme_font_size>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|         |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_theme_font_size_override<class_Window_method_has_theme_font_size_override>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                          |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_theme_icon<class_Window_method_has_theme_icon>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|                   |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_theme_icon_override<class_Window_method_has_theme_icon_override>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                    |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_theme_stylebox<class_Window_method_has_theme_stylebox>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|           |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`has_theme_stylebox_override<class_Window_method_has_theme_stylebox_override>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                            |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`hide<class_Window_method_hide>` **(** **)**                                                                                                                                           |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -161,6 +191,18 @@ Methods
    | void                                                | :ref:`popup_centered_ratio<class_Window_method_popup_centered_ratio>` **(** :ref:`float<class_float>` ratio=0.8 **)**                                                                       |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`popup_on_parent<class_Window_method_popup_on_parent>` **(** :ref:`Rect2i<class_Rect2i>` parent_rect **)**                                                                             |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`remove_theme_color_override<class_Window_method_remove_theme_color_override>` **(** :ref:`StringName<class_StringName>` name **)**                                                    |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`remove_theme_constant_override<class_Window_method_remove_theme_constant_override>` **(** :ref:`StringName<class_StringName>` name **)**                                              |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`remove_theme_font_override<class_Window_method_remove_theme_font_override>` **(** :ref:`StringName<class_StringName>` name **)**                                                      |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`remove_theme_font_size_override<class_Window_method_remove_theme_font_size_override>` **(** :ref:`StringName<class_StringName>` name **)**                                            |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`remove_theme_icon_override<class_Window_method_remove_theme_icon_override>` **(** :ref:`StringName<class_StringName>` name **)**                                                      |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`remove_theme_stylebox_override<class_Window_method_remove_theme_stylebox_override>` **(** :ref:`StringName<class_StringName>` name **)**                                              |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`request_attention<class_Window_method_request_attention>` **(** **)**                                                                                                                 |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -974,9 +1016,9 @@ The window's size in pixels.
 - void **set_theme** **(** :ref:`Theme<class_Theme>` value **)**
 - :ref:`Theme<class_Theme>` **get_theme** **(** **)**
 
-The :ref:`Theme<class_Theme>` resource that determines the style of the underlying :ref:`Control<class_Control>` nodes.
+The :ref:`Theme<class_Theme>` resource this node and all its :ref:`Control<class_Control>` and **Window** children use. If a child node has its own :ref:`Theme<class_Theme>` resource set, theme items are merged with child's definitions having higher priority.
 
-\ **Window** styles will have no effect unless the window is embedded.
+\ **Note:** **Window** styles will have no effect unless the window is embedded.
 
 .. rst-class:: classref-item-separator
 
@@ -1131,6 +1173,102 @@ If ``false``, you need to call :ref:`child_controls_changed<class_Window_method_
 Method Descriptions
 -------------------
 
+.. _class_Window_method_add_theme_color_override:
+
+.. rst-class:: classref-method
+
+void **add_theme_color_override** **(** :ref:`StringName<class_StringName>` name, :ref:`Color<class_Color>` color **)**
+
+Creates a local override for a theme :ref:`Color<class_Color>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_color_override<class_Window_method_remove_theme_color_override>`.
+
+See also :ref:`get_theme_color<class_Window_method_get_theme_color>` and :ref:`Control.add_theme_color_override<class_Control_method_add_theme_color_override>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_add_theme_constant_override:
+
+.. rst-class:: classref-method
+
+void **add_theme_constant_override** **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` constant **)**
+
+Creates a local override for a theme constant with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_constant_override<class_Window_method_remove_theme_constant_override>`.
+
+See also :ref:`get_theme_constant<class_Window_method_get_theme_constant>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_add_theme_font_override:
+
+.. rst-class:: classref-method
+
+void **add_theme_font_override** **(** :ref:`StringName<class_StringName>` name, :ref:`Font<class_Font>` font **)**
+
+Creates a local override for a theme :ref:`Font<class_Font>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_font_override<class_Window_method_remove_theme_font_override>`.
+
+See also :ref:`get_theme_font<class_Window_method_get_theme_font>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_add_theme_font_size_override:
+
+.. rst-class:: classref-method
+
+void **add_theme_font_size_override** **(** :ref:`StringName<class_StringName>` name, :ref:`int<class_int>` font_size **)**
+
+Creates a local override for a theme font size with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_font_size_override<class_Window_method_remove_theme_font_size_override>`.
+
+See also :ref:`get_theme_font_size<class_Window_method_get_theme_font_size>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_add_theme_icon_override:
+
+.. rst-class:: classref-method
+
+void **add_theme_icon_override** **(** :ref:`StringName<class_StringName>` name, :ref:`Texture2D<class_Texture2D>` texture **)**
+
+Creates a local override for a theme icon with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_icon_override<class_Window_method_remove_theme_icon_override>`.
+
+See also :ref:`get_theme_icon<class_Window_method_get_theme_icon>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_add_theme_stylebox_override:
+
+.. rst-class:: classref-method
+
+void **add_theme_stylebox_override** **(** :ref:`StringName<class_StringName>` name, :ref:`StyleBox<class_StyleBox>` stylebox **)**
+
+Creates a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name``. Local overrides always take precedence when fetching theme items for the control. An override can be removed with :ref:`remove_theme_stylebox_override<class_Window_method_remove_theme_stylebox_override>`.
+
+See also :ref:`get_theme_stylebox<class_Window_method_get_theme_stylebox>` and :ref:`Control.add_theme_stylebox_override<class_Control_method_add_theme_stylebox_override>` for more details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_begin_bulk_theme_override:
+
+.. rst-class:: classref-method
+
+void **begin_bulk_theme_override** **(** **)**
+
+Prevents ``*_theme_*_override`` methods from emitting :ref:`NOTIFICATION_THEME_CHANGED<class_Window_constant_NOTIFICATION_THEME_CHANGED>` until :ref:`end_bulk_theme_override<class_Window_method_end_bulk_theme_override>` is called.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_method_can_draw:
 
 .. rst-class:: classref-method
@@ -1150,6 +1288,18 @@ Returns whether the window is being drawn to the screen.
 void **child_controls_changed** **(** **)**
 
 Requests an update of the **Window** size to fit underlying :ref:`Control<class_Control>` nodes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_end_bulk_theme_override:
+
+.. rst-class:: classref-method
+
+void **end_bulk_theme_override** **(** **)**
+
+Ends a bulk theme override update. See :ref:`begin_bulk_theme_override<class_Window_method_begin_bulk_theme_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1191,11 +1341,23 @@ Returns layout direction and text writing direction.
 
 ----
 
-.. _class_Window_method_get_real_size:
+.. _class_Window_method_get_position_with_decorations:
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i<class_Vector2i>` **get_real_size** **(** **)** |const|
+:ref:`Vector2i<class_Vector2i>` **get_position_with_decorations** **(** **)** |const|
+
+Returns the window's position including its border.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_get_size_with_decorations:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2i<class_Vector2i>` **get_size_with_decorations** **(** **)** |const|
 
 Returns the window's size including its border.
 
@@ -1209,7 +1371,7 @@ Returns the window's size including its border.
 
 :ref:`Color<class_Color>` **get_theme_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns the :ref:`Color<class_Color>` at ``name`` if the theme has ``theme_type``.
+Returns a :ref:`Color<class_Color>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a color item with the specified ``name`` and ``theme_type``.
 
 See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
 
@@ -1223,7 +1385,7 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for mor
 
 :ref:`int<class_int>` **get_theme_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns the constant at ``name`` if the theme has ``theme_type``.
+Returns a constant from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a constant item with the specified ``name`` and ``theme_type``.
 
 See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
 
@@ -1237,9 +1399,9 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for mor
 
 :ref:`float<class_float>` **get_theme_default_base_scale** **(** **)** |const|
 
-Returns the default base scale defined in the attached :ref:`Theme<class_Theme>`.
+Returns the default base scale value from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a valid :ref:`Theme.default_base_scale<class_Theme_property_default_base_scale>` value.
 
-See :ref:`Theme.default_base_scale<class_Theme_property_default_base_scale>` for more details.
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1251,9 +1413,9 @@ See :ref:`Theme.default_base_scale<class_Theme_property_default_base_scale>` for
 
 :ref:`Font<class_Font>` **get_theme_default_font** **(** **)** |const|
 
-Returns the default :ref:`Font<class_Font>` defined in the attached :ref:`Theme<class_Theme>`.
+Returns the default font from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a valid :ref:`Theme.default_font<class_Theme_property_default_font>` value.
 
-See :ref:`Theme.default_font<class_Theme_property_default_font>` for more details.
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1265,9 +1427,9 @@ See :ref:`Theme.default_font<class_Theme_property_default_font>` for more detail
 
 :ref:`int<class_int>` **get_theme_default_font_size** **(** **)** |const|
 
-Returns the default font size defined in the attached :ref:`Theme<class_Theme>`.
+Returns the default font size value from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a valid :ref:`Theme.default_font_size<class_Theme_property_default_font_size>` value.
 
-See :ref:`Theme.default_font_size<class_Theme_property_default_font_size>` for more details.
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1279,9 +1441,9 @@ See :ref:`Theme.default_font_size<class_Theme_property_default_font_size>` for m
 
 :ref:`Font<class_Font>` **get_theme_font** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns the :ref:`Font<class_Font>` at ``name`` if the theme has ``theme_type``.
+Returns a :ref:`Font<class_Font>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a font item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1293,9 +1455,9 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for mor
 
 :ref:`int<class_int>` **get_theme_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns the font size at ``name`` if the theme has ``theme_type``.
+Returns a font size from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a font size item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1307,9 +1469,9 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for mor
 
 :ref:`Texture2D<class_Texture2D>` **get_theme_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns the icon at ``name`` if the theme has ``theme_type``.
+Returns an icon from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has an icon item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1321,9 +1483,9 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for mor
 
 :ref:`StyleBox<class_StyleBox>` **get_theme_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns the :ref:`StyleBox<class_StyleBox>` at ``name`` if the theme has ``theme_type``.
+Returns a :ref:`StyleBox<class_StyleBox>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a stylebox item with the specified ``name`` and ``theme_type``.
 
-See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for more details.
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
 
 .. rst-class:: classref-item-separator
 
@@ -1359,7 +1521,23 @@ Returns ``true`` if the window is focused.
 
 :ref:`bool<class_bool>` **has_theme_color** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns ``true`` if :ref:`Color<class_Color>` with ``name`` is in ``theme_type``.
+Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a color item with the specified ``name`` and ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_has_theme_color_override:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_theme_color_override** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns ``true`` if there is a local override for a theme :ref:`Color<class_Color>` with the specified ``name`` in this :ref:`Control<class_Control>` node.
+
+See :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1371,7 +1549,23 @@ Returns ``true`` if :ref:`Color<class_Color>` with ``name`` is in ``theme_type``
 
 :ref:`bool<class_bool>` **has_theme_constant** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns ``true`` if constant with ``name`` is in ``theme_type``.
+Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a constant item with the specified ``name`` and ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_has_theme_constant_override:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_theme_constant_override** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns ``true`` if there is a local override for a theme constant with the specified ``name`` in this :ref:`Control<class_Control>` node.
+
+See :ref:`add_theme_constant_override<class_Window_method_add_theme_constant_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1383,7 +1577,23 @@ Returns ``true`` if constant with ``name`` is in ``theme_type``.
 
 :ref:`bool<class_bool>` **has_theme_font** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns ``true`` if :ref:`Font<class_Font>` with ``name`` is in ``theme_type``.
+Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a font item with the specified ``name`` and ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_has_theme_font_override:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_theme_font_override** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns ``true`` if there is a local override for a theme :ref:`Font<class_Font>` with the specified ``name`` in this :ref:`Control<class_Control>` node.
+
+See :ref:`add_theme_font_override<class_Window_method_add_theme_font_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1395,7 +1605,23 @@ Returns ``true`` if :ref:`Font<class_Font>` with ``name`` is in ``theme_type``.
 
 :ref:`bool<class_bool>` **has_theme_font_size** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns ``true`` if font size with ``name`` is in ``theme_type``.
+Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a font size item with the specified ``name`` and ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_has_theme_font_size_override:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_theme_font_size_override** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns ``true`` if there is a local override for a theme font size with the specified ``name`` in this :ref:`Control<class_Control>` node.
+
+See :ref:`add_theme_font_size_override<class_Window_method_add_theme_font_size_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1407,7 +1633,23 @@ Returns ``true`` if font size with ``name`` is in ``theme_type``.
 
 :ref:`bool<class_bool>` **has_theme_icon** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns ``true`` if icon with ``name`` is in ``theme_type``.
+Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has an icon item with the specified ``name`` and ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_has_theme_icon_override:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_theme_icon_override** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns ``true`` if there is a local override for a theme icon with the specified ``name`` in this :ref:`Control<class_Control>` node.
+
+See :ref:`add_theme_icon_override<class_Window_method_add_theme_icon_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1419,7 +1661,23 @@ Returns ``true`` if icon with ``name`` is in ``theme_type``.
 
 :ref:`bool<class_bool>` **has_theme_stylebox** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|
 
-Returns ``true`` if :ref:`StyleBox<class_StyleBox>` with ``name`` is in ``theme_type``.
+Returns ``true`` if there is a matching :ref:`Theme<class_Theme>` in the tree that has a stylebox item with the specified ``name`` and ``theme_type``.
+
+See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_has_theme_stylebox_override:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_theme_stylebox_override** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns ``true`` if there is a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name`` in this :ref:`Control<class_Control>` node.
+
+See :ref:`add_theme_stylebox_override<class_Window_method_add_theme_stylebox_override>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1560,6 +1818,78 @@ void **popup_on_parent** **(** :ref:`Rect2i<class_Rect2i>` parent_rect **)**
 Popups the **Window** with a position shifted by parent **Window**'s position.
 
 If the **Window** is embedded, has the same effect as :ref:`popup<class_Window_method_popup>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_remove_theme_color_override:
+
+.. rst-class:: classref-method
+
+void **remove_theme_color_override** **(** :ref:`StringName<class_StringName>` name **)**
+
+Removes a local override for a theme :ref:`Color<class_Color>` with the specified ``name`` previously added by :ref:`add_theme_color_override<class_Window_method_add_theme_color_override>` or via the Inspector dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_remove_theme_constant_override:
+
+.. rst-class:: classref-method
+
+void **remove_theme_constant_override** **(** :ref:`StringName<class_StringName>` name **)**
+
+Removes a local override for a theme constant with the specified ``name`` previously added by :ref:`add_theme_constant_override<class_Window_method_add_theme_constant_override>` or via the Inspector dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_remove_theme_font_override:
+
+.. rst-class:: classref-method
+
+void **remove_theme_font_override** **(** :ref:`StringName<class_StringName>` name **)**
+
+Removes a local override for a theme :ref:`Font<class_Font>` with the specified ``name`` previously added by :ref:`add_theme_font_override<class_Window_method_add_theme_font_override>` or via the Inspector dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_remove_theme_font_size_override:
+
+.. rst-class:: classref-method
+
+void **remove_theme_font_size_override** **(** :ref:`StringName<class_StringName>` name **)**
+
+Removes a local override for a theme font size with the specified ``name`` previously added by :ref:`add_theme_font_size_override<class_Window_method_add_theme_font_size_override>` or via the Inspector dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_remove_theme_icon_override:
+
+.. rst-class:: classref-method
+
+void **remove_theme_icon_override** **(** :ref:`StringName<class_StringName>` name **)**
+
+Removes a local override for a theme icon with the specified ``name`` previously added by :ref:`add_theme_icon_override<class_Window_method_add_theme_icon_override>` or via the Inspector dock.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_remove_theme_stylebox_override:
+
+.. rst-class:: classref-method
+
+void **remove_theme_stylebox_override** **(** :ref:`StringName<class_StringName>` name **)**
+
+Removes a local override for a theme :ref:`StyleBox<class_StyleBox>` with the specified ``name`` previously added by :ref:`add_theme_stylebox_override<class_Window_method_add_theme_stylebox_override>` or via the Inspector dock.
 
 .. rst-class:: classref-item-separator
 

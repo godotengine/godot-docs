@@ -325,6 +325,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`   | :ref:`network/tls/editor_tls_certificates<class_EditorSettings_property_network/tls/editor_tls_certificates>`                                                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`project_manager/default_renderer<class_EditorSettings_property_project_manager/default_renderer>`                                                                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`project_manager/sorting_order<class_EditorSettings_property_project_manager/sorting_order>`                                                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`run/auto_save/save_before_running<class_EditorSettings_property_run/auto_save/save_before_running>`                                                                           |
@@ -2284,6 +2286,18 @@ The port number to use to contact the HTTP and HTTPS proxy in the editor (for th
 :ref:`String<class_String>` **network/tls/editor_tls_certificates**
 
 The TLS certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__ will be used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_project_manager/default_renderer:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **project_manager/default_renderer**
+
+The renderer type that will be checked off by default when creating a new project. Accepted strings are "forward_plus", "mobile" or "gl_compatibility".
 
 .. rst-class:: classref-item-separator
 

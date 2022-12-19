@@ -702,7 +702,7 @@ Returns the icon of the item at the given ``index``.
 
 :ref:`int<class_int>` **get_item_id** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the id of the item at the given ``index``. ``id`` can be manually assigned, while index can not.
+Returns the ID of the item at the given ``index``. ``id`` can be manually assigned, while index can not.
 
 .. rst-class:: classref-item-separator
 

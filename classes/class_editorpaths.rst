@@ -23,7 +23,7 @@ This editor-only singleton returns OS-specific paths to various data folders and
 
 \ **Note:** This singleton is not accessible in exported projects. Attempting to access it in an exported project will result in a script error as the singleton won't be declared. To prevent script errors in exported projects, use :ref:`Engine.has_singleton<class_Engine_method_has_singleton>` to check whether the singleton is available before using it.
 
-\ **Note:** Godot complies with the `XDG Base Directory Specification <https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html>`__ on *all* platforms. You can override environment variables following the specification to change the editor and project data paths.
+\ **Note:** On the Linux/BSD platform, Godot complies with the `XDG Base Directory Specification <https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html>`__. You can override environment variables following the specification to change the editor and project data paths.
 
 .. rst-class:: classref-introduction-group
 

@@ -121,6 +121,8 @@ Properties
    +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
    | :ref:`float<class_float>`                            | :ref:`rotation<class_Control_property_rotation>`                                             | ``0.0``           |
    +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                            | :ref:`rotation_degrees<class_Control_property_rotation_degrees>`                             |                   |
+   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
    | :ref:`Vector2<class_Vector2>`                        | :ref:`scale<class_Control_property_scale>`                                                   | ``Vector2(1, 1)`` |
    +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
    | :ref:`Node<class_Node>`                              | :ref:`shortcut_context<class_Control_property_shortcut_context>`                             |                   |
@@ -1653,6 +1655,23 @@ The node's rotation around its pivot, in radians. See :ref:`pivot_offset<class_C
 
 ----
 
+.. _class_Control_property_rotation_degrees:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **rotation_degrees**
+
+.. rst-class:: classref-property-setget
+
+- void **set_rotation_degrees** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_rotation_degrees** **(** **)**
+
+Helper property to access :ref:`rotation<class_Control_property_rotation>` in degrees instead of radians.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Control_property_scale:
 
 .. rst-class:: classref-property
@@ -1769,7 +1788,9 @@ Tells the parent :ref:`Container<class_Container>` nodes how they should resize 
 - void **set_theme** **(** :ref:`Theme<class_Theme>` value **)**
 - :ref:`Theme<class_Theme>` **get_theme** **(** **)**
 
-The :ref:`Theme<class_Theme>` resource this node and all its **Control** children use. If a child node has its own :ref:`Theme<class_Theme>` resource set, theme items are merged with child's definitions having higher priority.
+The :ref:`Theme<class_Theme>` resource this node and all its **Control** and :ref:`Window<class_Window>` children use. If a child node has its own :ref:`Theme<class_Theme>` resource set, theme items are merged with child's definitions having higher priority.
+
+\ **Note:** :ref:`Window<class_Window>` styles will have no effect unless the window is embedded.
 
 .. rst-class:: classref-item-separator
 

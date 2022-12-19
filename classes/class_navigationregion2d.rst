@@ -23,7 +23,7 @@ A region of the navigation map. It tells the :ref:`NavigationServer2D<class_Navi
 
 Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`NavigationServer2D.map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>`.
 
-\ **Note:** Overlapping two regions' polygons is not enough for connecting two regions. They must share a similar edge.
+\ **Note:** Overlapping two regions' navigation polygons is not enough for connecting two regions. They must share a similar edge.
 
 The pathfinding cost of entering this region from another region can be controlled with the :ref:`enter_cost<class_NavigationRegion2D_property_enter_cost>` value.
 
@@ -41,17 +41,17 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationRegion2D_property_enabled>`                     | ``true`` |
-   +---------------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                         | :ref:`enter_cost<class_NavigationRegion2D_property_enter_cost>`               | ``0.0``  |
-   +---------------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`int<class_int>`                             | :ref:`navigation_layers<class_NavigationRegion2D_property_navigation_layers>` | ``1``    |
-   +---------------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationRegion2D_property_navpoly>`                     |          |
-   +---------------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                         | :ref:`travel_cost<class_NavigationRegion2D_property_travel_cost>`             | ``1.0``  |
-   +---------------------------------------------------+-------------------------------------------------------------------------------+----------+
+   +---------------------------------------------------+---------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationRegion2D_property_enabled>`                       | ``true`` |
+   +---------------------------------------------------+---------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`enter_cost<class_NavigationRegion2D_property_enter_cost>`                 | ``0.0``  |
+   +---------------------------------------------------+---------------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`                             | :ref:`navigation_layers<class_NavigationRegion2D_property_navigation_layers>`   | ``1``    |
+   +---------------------------------------------------+---------------------------------------------------------------------------------+----------+
+   | :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navigation_polygon<class_NavigationRegion2D_property_navigation_polygon>` |          |
+   +---------------------------------------------------+---------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                         | :ref:`travel_cost<class_NavigationRegion2D_property_travel_cost>`               | ``1.0``  |
+   +---------------------------------------------------+---------------------------------------------------------------------------------+----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -106,7 +106,7 @@ Determines if the **NavigationRegion2D** is enabled or disabled.
 - void **set_enter_cost** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_enter_cost** **(** **)**
 
-When pathfinding enters this region's navmesh from another regions navmesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
+When pathfinding enters this region's navigation mesh from another regions navigation mesh the ``enter_cost`` value is added to the path distance for determining the shortest path.
 
 .. rst-class:: classref-item-separator
 
@@ -129,11 +129,11 @@ A bitfield determining all navigation layers the region belongs to. These naviga
 
 ----
 
-.. _class_NavigationRegion2D_property_navpoly:
+.. _class_NavigationRegion2D_property_navigation_polygon:
 
 .. rst-class:: classref-property
 
-:ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**
+:ref:`NavigationPolygon<class_NavigationPolygon>` **navigation_polygon**
 
 .. rst-class:: classref-property-setget
 
@@ -157,7 +157,7 @@ The :ref:`NavigationPolygon<class_NavigationPolygon>` resource to use.
 - void **set_travel_cost** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_travel_cost** **(** **)**
 
-When pathfinding moves inside this region's navmesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
+When pathfinding moves inside this region's navigation mesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
 
 .. rst-class:: classref-section-separator
 

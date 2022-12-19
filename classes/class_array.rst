@@ -859,7 +859,7 @@ Returns a random value from the target array.
 
 ::
 
-    var array: Array\ :ref:`int<class_int>` = [1, 2, 3, 4]
+    var array: Array[int] = [1, 2, 3, 4]
     print(array.pick_random())  # Prints either of the four numbers.
 
 .. rst-class:: classref-item-separator

@@ -821,7 +821,7 @@ This will scroll the tree if necessary. In :ref:`SELECT_ROW<class_Tree_constant_
 
 :ref:`int<class_int>` **get_button_id_at_position** **(** :ref:`Vector2<class_Vector2>` position **)** |const|
 
-Returns the button id at ``position``, or -1 if no button is there.
+Returns the button ID at ``position``, or -1 if no button is there.
 
 .. rst-class:: classref-item-separator
 

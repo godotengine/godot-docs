@@ -189,7 +189,7 @@ The keys of a dictionary can be iterated with the ``for`` keyword:
 
 \ **Note:** Erasing elements while iterating over dictionaries is **not** supported and will result in unpredictable behavior.
 
-\ **Note:** When declaring a dictionary with ``const``, the dictionary becomes read-only. A read-only Dictionary's entries cannot be overriden at run-time. This does *not* affect nested :ref:`Array<class_Array>` and **Dictionary** values.
+\ **Note:** When declaring a dictionary with ``const``, the dictionary becomes read-only. A read-only Dictionary's entries cannot be overridden at run-time. This does *not* affect nested :ref:`Array<class_Array>` and **Dictionary** values.
 
 .. rst-class:: classref-introduction-group
 

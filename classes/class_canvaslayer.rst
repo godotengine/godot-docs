@@ -72,13 +72,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------+----------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>` | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** |const| |
-   +-----------------------+----------------------------------------------------------------------------+
-   | void                  | :ref:`hide<class_CanvasLayer_method_hide>` **(** **)**                     |
-   +-----------------------+----------------------------------------------------------------------------+
-   | void                  | :ref:`show<class_CanvasLayer_method_show>` **(** **)**                     |
-   +-----------------------+----------------------------------------------------------------------------+
+   +---------------------------------------+----------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                 | :ref:`get_canvas<class_CanvasLayer_method_get_canvas>` **(** **)** |const|                   |
+   +---------------------------------------+----------------------------------------------------------------------------------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`get_final_transform<class_CanvasLayer_method_get_final_transform>` **(** **)** |const| |
+   +---------------------------------------+----------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`hide<class_CanvasLayer_method_hide>` **(** **)**                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`show<class_CanvasLayer_method_show>` **(** **)**                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -275,6 +277,18 @@ Method Descriptions
 :ref:`RID<class_RID>` **get_canvas** **(** **)** |const|
 
 Returns the RID of the canvas used by this layer.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_CanvasLayer_method_get_final_transform:
+
+.. rst-class:: classref-method
+
+:ref:`Transform2D<class_Transform2D>` **get_final_transform** **(** **)** |const|
+
+Returns the transform from the **CanvasLayer**\ s coordinate system to the :ref:`Viewport<class_Viewport>`\ s coordinate system.
 
 .. rst-class:: classref-item-separator
 

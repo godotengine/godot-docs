@@ -48,6 +48,8 @@ Properties
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>`               | :ref:`underline<class_LinkButton_property_underline>`                                                         | ``0``                                                                               |
    +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                       | :ref:`uri<class_LinkButton_property_uri>`                                                                     | ``""``                                                                              |
+   +-------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -223,7 +225,43 @@ Base text writing direction.
 - void **set_underline_mode** **(** :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` value **)**
 - :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **get_underline_mode** **(** **)**
 
-Determines when to show the underline. See :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` for options.
+The underline mode to use for the text. See :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` for the available modes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LinkButton_property_uri:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **uri** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_uri** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_uri** **(** **)**
+
+The `URI <https://en.wikipedia.org/wiki/Uniform_Resource_Identifier>`__ for this **LinkButton**. If set to a valid URI, pressing the button opens the URI using the operating system's default program for the protocol (via :ref:`OS.shell_open<class_OS_method_shell_open>`). HTTP and HTTPS URLs open the default web browser.
+
+\ **Examples:**\ 
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    uri = "https://godotengine.org"  # Opens the URL in the default web browser.
+    uri = "C:\SomeFolder"  # Opens the file explorer at the given path.
+    uri = "C:\SomeImage.png"  # Opens the given image in the default viewing app.
+
+ .. code-tab:: csharp
+
+    Uri = "https://godotengine.org"; // Opens the URL in the default web browser.
+    Uri = "C:\SomeFolder"; // Opens the file explorer at the given path.
+    Uri = "C:\SomeImage.png"; // Opens the given image in the default viewing app.
+
+
 
 .. rst-class:: classref-section-separator
 
