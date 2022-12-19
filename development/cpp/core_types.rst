@@ -167,8 +167,8 @@ References:
 
 -  `core/templates/vector.h <https://github.com/godotengine/godot/blob/master/core/templates/vector.h>`__
 -  `core/templates/list.h <https://github.com/godotengine/godot/blob/master/core/templates/list.h>`__
--  `core/templates/set.h <https://github.com/godotengine/godot/blob/master/core/templates/set.h>`__
--  `core/templates/map.h <https://github.com/godotengine/godot/blob/master/core/templates/map.h>`__
+-  `core/templates/set.h <https://github.com/godotengine/godot/blob/master/core/templates/vset.h>`__
+-  `core/templates/map.h <https://github.com/godotengine/godot/blob/master/core/templates/vmap.h>`__
 
 String
 ------
