@@ -51,7 +51,8 @@ Editor
    - No support for debugging in threads yet.
 - Visual profiler with CPU and GPU time indications for each step of the
   rendering pipeline.
-- Performance monitoring tools.
+- Performance monitoring tools, including
+  :ref:`custom performance monitors <doc_custom_performance_monitors>`.
 - Live script reloading.
 - Live scene editing.
 

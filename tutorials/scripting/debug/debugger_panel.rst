@@ -68,6 +68,12 @@ FPS, memory usage, how many nodes are in a scene and more. All monitors keep
 track of stats automatically, so even if one monitor isn't open while the game
 is running, you can open it later and see how the values changed.
 
+.. seealso::
+
+    In addition to the default performance monitors, you can also create
+    :ref:`custom performance monitors <doc_custom_performance_monitors>`
+    to track arbitrary values in your project.
+
 Video RAM
 +++++++++
 
