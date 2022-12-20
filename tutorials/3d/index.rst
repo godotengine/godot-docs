@@ -16,6 +16,7 @@
    baked_lightmaps
    environment_and_post_processing
    3d_antialiasing
+   resolution_scaling
    volumetric_fog
    high_dynamic_range
    using_gridmaps
