@@ -242,10 +242,11 @@ Let's code the mob spawning logic. We're going to:
        # We store the reference to the SpawnLocation node.
        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
        # And give it a random offset.
-       mob_spawn_location.unit_offset = randf()
+       mob_spawn_location.h_offset = randf()
+       mob_spawn_location.v_offset = randf()
 
        var player_position = $Player.transform.origin
-       mob.initialize(mob_spawn_location.translation, player_position)
+       mob.initialize(mob_spawn_location.transform.origin, player_position)
 
        add_child(mob)
 
@@ -291,9 +292,10 @@ Here is the complete ``Main.gd`` script so far, for reference.
        var mob = mob_scene.instantiate()
 
        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
-       mob_spawn_location.unit_offset = randf()
+       mob_spawn_location.h_offset = randf()
+       mob_spawn_location.v_offset = randf()
        var player_position = $Player.transform.origin
-       mob.initialize(mob_spawn_location.translation, player_position)
+       mob.initialize(mob_spawn_location.transform.origin, player_position)
 
        add_child(mob)
 
