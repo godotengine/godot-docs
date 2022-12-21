@@ -23,7 +23,7 @@ Download the Android SDK
 
 Download and install the Android SDK.
 
-- You can install it using `Android Studio version 4.1 or later <https://developer.android.com/studio/>`__.
+- You can install the Android SDK using `Android Studio version 4.1 or later <https://developer.android.com/studio/>`__.
 
   - Run it once to complete the SDK setup using these `instructions <https://developer.android.com/studio/intro/update#sdk-manager>`__.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
@@ -35,7 +35,7 @@ Download and install the Android SDK.
     - CMake version 3.10.2.4988404
     - NDK version r23c (23.2.8568313)
 
-- You can install it using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
+- Alternatively, you can install the Android SDK using the `command line tools <https://developer.android.com/studio/#command-tools>`__.
 
   - Once the command line tools are installed, run the `sdkmanager <https://developer.android.com/studio/command-line/sdkmanager>`__ command to complete the setup process:
 
