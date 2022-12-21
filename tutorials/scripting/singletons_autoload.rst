@@ -295,6 +295,14 @@ the button.
 
 .. note::
 
+    If you received an error saying "emit_signal: Error calling method from signal
+    'pressed': 'Control::_on_Button_pressed': Method not found.."
+    You need to attach Scene1.gd to Scene1's root node and attach Scene2.gd to Scene2's
+    root node. Then, you may need to reconnect the pressed() signal to their respective
+    scripts.
+
+.. note::
+
     When scenes are small, the transition is instantaneous. However, if your
     scenes are more complex, they may take a noticeable amount of time to appear.
     To learn how to handle this, see the next tutorial: :ref:`doc_background_loading`.
