@@ -839,6 +839,155 @@ The syntax also supports subgroups (it's not mandatory to declare the base group
 
     group_uniforms MyGroup.MySubgroup;
 
+Global uniforms
+^^^^^^^^^^^^^^^
+
+Sometimes, you want to modify a parameter in many different shaders at once.
+With a regular uniform, this takes a lot of work as all these shaders need to be
+tracked and the uniform needs to be set for each of them. Global uniforms allow
+you to create and update uniforms that will be available in all shaders, in
+every shader type (``canvas_item``, ``spatial``, ``particles``, ``sky`` and
+``fog``).
+
+Global uniforms are especially useful for environmental effects that affect many
+objects in a scene, like having foliage bend when the player is nearby, or having
+objects move with the wind.
+
+To create a global uniform, open the **Project Settings** then go to the
+**Shader Globals** tab. Specify a name for the uniform (case-sensitive) and a
+type, then click **Add** in the top-right corner of the dialog. You can then
+edit the value assigned to the uniform by clicking the value in the list of
+uniforms:
+
+.. figure:: img/shading_language_adding_global_uniforms.webp
+   :align: center
+   :alt: Adding a global uniform in the Shader Globals tab of the Project Settings
+
+   Adding a global uniform in the Shader Globals tab of the Project Settings
+
+After creating a global uniform, you can use it in a shader as follows:
+
+::
+
+    shader_type canvas_item;
+
+    global uniform vec4 my_color;
+
+    void fragment() {
+        COLOR = my_color.rgb;
+    }
+
+Note that the global uniform *must* exist in the Project Settings at the time
+the shader is saved, or compilation will fail. While you can assign a default
+value using ``global uniform vec4 my_color = ...`` in the shader code, it will
+be ignored as the global uniform must always be defined in the Project Settings
+anyway.
+
+To change the value of a global uniform at run-time, use the
+:ref:`RenderingServer.global_shader_parameter_set <class_RenderingServer_method_global_shader_parameter_set>`
+method in a script:
+
+::
+
+    RenderingServer.global_shader_parameter_set("my_color", Color(0.3, 0.6, 1.0))
+
+Assigning global uniform values can be done as many times as desired without
+impacting performance, as setting data doesn't require synchronization between
+the CPU and GPU.
+
+You can also add or remove global uniforms at run-time:
+
+::
+
+    RenderingServer.global_shader_parameter_add("my_color", RenderingServer.GLOBAL_VAR_TYPE_COLOR, Color(0.3, 0.6, 1.0))
+    RenderingServer.global_shader_parameter_remove("my_color")
+
+Adding or removing global uniforms at run-time has a performance cost, although
+it's not as pronounced compared to getting global uniform values from a script
+(see the warning below).
+
+.. warning::
+
+    While you *can* query the value of a global uniform at run-time in a script
+    using ``RenderingServer.global_shader_parameter_get("uniform_name")``, this
+    has a large performance penalty as the rendering thread needs to synchronize
+    with the calling thread.
+
+    Therefore, it's not recommended to read global shader uniform values
+    continuously in a script. If you need to read values in a script after
+    setting them, consider creating an :ref:`autoload <doc_singletons_autoload>`
+    where you store the values you need to query at the same time you're setting
+    them as global uniforms.
+
+.. _doc_shading_language_per_instance_uniforms:
+
+Per-instance uniforms
+^^^^^^^^^^^^^^^^^^^^^
+
+.. note::
+
+    Per-instance uniforms are only available in ``spatial`` (3D) shaders.
+
+Sometimes, you want to modify a parameter on each node using the material. As an
+example, in a forest full of trees, when you want each tree to have a slightly
+different color that is editable by hand. Without per-instance uniforms, this
+requires creating a unique material for each tree (each with a slightly
+different hue). This makes material management more complex, and also has a
+performance overhead due to the scene requiring more unique material instances.
+Vertex colors could also be used here, but they'd require creating unique copies
+of the mesh for each different color, which also has a performance overhead.
+
+Per-instance uniforms are set on each GeometryInstance3D, rather than on each
+Material instance. Take this into account when working with meshes that have
+multiple materials assigned to them, or MultiMesh setups.
+
+::
+
+    shader_type spatial;
+
+    // Provide a hint to edit as a color. Optionally, a default value can be provided.
+    // If no default value is provided, the type's default is used (e.g. opaque black for colors).
+    instance uniform vec4 my_color : source_color = vec4(1.0, 0.5, 0.0, 1.0);
+
+    void fragment() {
+        ALBEDO = my_color.rgb;
+    }
+
+After saving the shader, you can change the per-instance uniform's value using
+the inspector:
+
+.. figure:: img/shading_language_per_instance_uniforms_inspector.webp
+   :align: center
+   :alt: Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
+
+   Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
+
+Per-instance uniform values can also be set at run-time using
+`set_instance_shader_parameter<class_GeometryInstance3D_method_set_instance_shader_parameter>`
+method on a node that inherits from :ref:`class_GeometryInstance3D`:
+
+::
+
+    $MeshInstance3D.set_instance_shader_parameter("my_color", Color(0.3, 0.6, 1.0))
+
+When using per-instance uniforms, there are some restrictions you should be aware of:
+
+- **Per-instance uniforms do not support textures**, only regular scalar and
+  vector types. As a workaround, you can pass a texture array as a regular
+  uniform, then pass the index of the texture to be drawn using a per-instance
+  uniform.
+- There is a practical maximum limit of 16 instance uniforms per shader.
+- If your mesh uses multiple materials, the parameters for the first mesh
+  material found will "win" over the subsequent ones, unless they have the same
+  name, index *and* type. In this case, all parameters are affected correctly.
+- If you run into the above situation, you can avoid clashes by manually
+  specifying the index (0-15) of the instance uniform by using the
+  ``instance_index`` hint:
+
+::
+
+    instance uniform vec4 my_color : source_color, instance_index(5);
+
 Built-in variables
 ------------------
 
