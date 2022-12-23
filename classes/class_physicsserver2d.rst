@@ -216,9 +216,13 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`joint_create<class_PhysicsServer2D_method_joint_create>` **(** **)**                                                                                                                                                                                                                             |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`joint_disable_collisions_between_bodies<class_PhysicsServer2D_method_joint_disable_collisions_between_bodies>` **(** :ref:`RID<class_RID>` joint, :ref:`bool<class_bool>` disable **)**                                                                                                          |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | :ref:`joint_get_param<class_PhysicsServer2D_method_joint_get_param>` **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param **)** |const|                                                                                                                         |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`JointType<enum_PhysicsServer2D_JointType>`                  | :ref:`joint_get_type<class_PhysicsServer2D_method_joint_get_type>` **(** :ref:`RID<class_RID>` joint **)** |const|                                                                                                                                                                                     |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`joint_is_disabled_collisions_between_bodies<class_PhysicsServer2D_method_joint_is_disabled_collisions_between_bodies>` **(** :ref:`RID<class_RID>` joint **)** |const|                                                                                                                           |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`joint_make_damped_spring<class_PhysicsServer2D_method_joint_make_damped_spring>` **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` anchor_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**                             |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2195,6 +2199,18 @@ void **joint_clear** **(** :ref:`RID<class_RID>` joint **)**
 
 ----
 
+.. _class_PhysicsServer2D_method_joint_disable_collisions_between_bodies:
+
+.. rst-class:: classref-method
+
+void **joint_disable_collisions_between_bodies** **(** :ref:`RID<class_RID>` joint, :ref:`bool<class_bool>` disable **)**
+
+Sets whether the bodies attached to the :ref:`Joint2D<class_Joint2D>` will collide with each other.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PhysicsServer2D_method_joint_get_param:
 
 .. rst-class:: classref-method
@@ -2214,6 +2230,18 @@ Returns the value of a joint parameter.
 :ref:`JointType<enum_PhysicsServer2D_JointType>` **joint_get_type** **(** :ref:`RID<class_RID>` joint **)** |const|
 
 Returns a joint's type (see :ref:`JointType<enum_PhysicsServer2D_JointType>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2D_method_joint_is_disabled_collisions_between_bodies:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **joint_is_disabled_collisions_between_bodies** **(** :ref:`RID<class_RID>` joint **)** |const|
+
+Returns whether the bodies attached to the :ref:`Joint2D<class_Joint2D>` will collide with each other.
 
 .. rst-class:: classref-item-separator
 

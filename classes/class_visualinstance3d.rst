@@ -31,9 +31,13 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------+-------------------------------------------------------+-------+
-   | :ref:`int<class_int>` | :ref:`layers<class_VisualInstance3D_property_layers>` | ``1`` |
-   +-----------------------+-------------------------------------------------------+-------+
+   +---------------------------+-----------------------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`layers<class_VisualInstance3D_property_layers>`                                   | ``1``    |
+   +---------------------------+-----------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`sorting_offset<class_VisualInstance3D_property_sorting_offset>`                   | ``0.0``  |
+   +---------------------------+-----------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`sorting_use_aabb_center<class_VisualInstance3D_property_sorting_use_aabb_center>` | ``true`` |
+   +---------------------------+-----------------------------------------------------------------------------------------+----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -84,6 +88,42 @@ The render layer(s) this **VisualInstance3D** is drawn on.
 This object will only be visible for :ref:`Camera3D<class_Camera3D>`\ s whose cull mask includes the render object this **VisualInstance3D** is set to.
 
 For :ref:`Light3D<class_Light3D>`\ s, this can be used to control which **VisualInstance3D**\ s are affected by a specific light. For :ref:`GPUParticles3D<class_GPUParticles3D>`, this can be used to control which particles are effected by a specific attractor. For :ref:`Decal<class_Decal>`\ s, this can be used to control which **VisualInstance3D**\ s are affected by a specific decal.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VisualInstance3D_property_sorting_offset:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **sorting_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sorting_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_sorting_offset** **(** **)**
+
+The sorting offset used by this **VisualInstance3D**. Adjusting it to a higher value will make the **VisualInstance3D** reliably draw on top of other **VisualInstance3D**\ s that are otherwise positioned at the same spot.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VisualInstance3D_property_sorting_use_aabb_center:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **sorting_use_aabb_center** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sorting_use_aabb_center** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_sorting_use_aabb_center** **(** **)**
+
+If ``true``, the object is sorted based on the :ref:`AABB<class_AABB>` center. The object will be sorted based on the global position otherwise.
+
+The :ref:`AABB<class_AABB>` center based sorting is generally more accurate for 3D models. The position based sorting instead allows to better control the drawing order when working with :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`CPUParticles3D<class_CPUParticles3D>`.
 
 .. rst-class:: classref-section-separator
 

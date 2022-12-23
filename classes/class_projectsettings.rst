@@ -1337,7 +1337,7 @@ Methods
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_order<class_ProjectSettings_method_get_order>` **(** :ref:`String<class_String>` name **)** |const|                                                                                       |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`         | :ref:`get_setting<class_ProjectSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                   |
+   | :ref:`Variant<class_Variant>`         | :ref:`get_setting<class_ProjectSettings_method_get_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value=null **)** |const|                                 |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`           | :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` **(** :ref:`String<class_String>` path **)** |const|                                                                             |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -9587,9 +9587,9 @@ Returns the order of a configuration value (influences when saved to the config 
 
 .. rst-class:: classref-method
 
-:ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** |const|
+:ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value=null **)** |const|
 
-Returns the value of a setting.
+Returns the value of the setting identified by ``name``. If the setting doesn't exist and ``default_value`` is specified, the value of ``default_value`` is returned. Otherwise, ``null`` is returned.
 
 \ **Example:**\ 
 
@@ -9599,10 +9599,12 @@ Returns the value of a setting.
  .. code-tab:: gdscript
 
     print(ProjectSettings.get_setting("application/config/name"))
+    print(ProjectSettings.get_setting("application/config/custom_description", "No description specified."))
 
  .. code-tab:: csharp
 
     GD.Print(ProjectSettings.GetSetting("application/config/name"));
+    GD.Print(ProjectSettings.GetSetting("application/config/custom_description", "No description specified."));
 
 
 

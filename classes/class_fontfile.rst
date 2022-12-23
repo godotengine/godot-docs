@@ -411,7 +411,7 @@ Weight (boldness) of the font. A value in the ``100...999`` range, normal font w
 - void **set_force_autohinter** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_force_autohinter** **(** **)**
 
-If set to ``true``, auto-hinting is supported and preferred over font built-in hinting. Used by dynamic fonts only.
+If set to ``true``, auto-hinting is supported and preferred over font built-in hinting. Used by dynamic fonts only (MSDF fonts don't support hinting).
 
 .. rst-class:: classref-item-separator
 
@@ -462,7 +462,7 @@ Font hinting mode. Used by dynamic fonts only.
 - void **set_msdf_pixel_range** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_msdf_pixel_range** **(** **)**
 
-The width of the range around the shape between the minimum and maximum representable signed distance.
+The width of the range around the shape between the minimum and maximum representable signed distance. If using font outlines, :ref:`msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the size of the largest font outline. The default :ref:`msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` value of ``16`` allows outline sizes up to ``8`` to look correct.
 
 .. rst-class:: classref-item-separator
 
@@ -479,7 +479,7 @@ The width of the range around the shape between the minimum and maximum represen
 - void **set_msdf_size** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_msdf_size** **(** **)**
 
-Source font size used to generate MSDF textures.
+Source font size used to generate MSDF textures. Higher values allow for more precision, but are slower to render and require more memory. Only increase this value if you notice a visible lack of precision in glyph rendering.
 
 .. rst-class:: classref-item-separator
 
@@ -496,7 +496,11 @@ Source font size used to generate MSDF textures.
 - void **set_multichannel_signed_distance_field** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_multichannel_signed_distance_field** **(** **)**
 
-If set to ``true``, glyphs of all sizes are rendered using single multichannel signed distance field generated from the dynamic font vector data.
+If set to ``true``, glyphs of all sizes are rendered using single multichannel signed distance field (MSDF) generated from the dynamic font vector data. Since this approach does not rely on rasterizing the font every time its size changes, this allows for resizing the font in real-time without any performance penalty. Text will also not look grainy for :ref:`Control<class_Control>`\ s that are scaled down (or for :ref:`Label3D<class_Label3D>`\ s viewed from a long distance). As a downside, font hinting is not available with MSDF. The lack of font hinting may result in less crisp and less readable fonts at small sizes.
+
+\ **Note:** If using font outlines, :ref:`msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the size of the largest font outline.
+
+\ **Note:** MSDF font rendering does not render glyphs with overlapping shapes correctly. Overlapping shapes are not valid per the OpenType standard, but are still commonly found in many font files, especially those converted by Google Fonts. To avoid issues with overlapping glyphs, consider downloading the font file directly from the type foundry instead of relying on Google Fonts.
 
 .. rst-class:: classref-item-separator
 
@@ -530,7 +534,7 @@ Font OpenType feature set override.
 - void **set_oversampling** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_oversampling** **(** **)**
 
-Font oversampling factor, if set to ``0.0`` global oversampling factor is used instead. Used by dynamic fonts only.
+Font oversampling factor. If set to ``0.0``, the global oversampling factor is used instead. Used by dynamic fonts only (MSDF fonts ignore oversampling).
 
 .. rst-class:: classref-item-separator
 
@@ -564,7 +568,7 @@ Font style name.
 - void **set_subpixel_positioning** **(** :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` value **)**
 - :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **get_subpixel_positioning** **(** **)**
 
-Font glyph subpixel positioning mode. Subpixel positioning provides shaper text and better kerning for smaller font sizes, at the cost of memory usage and font rasterization speed. Use :ref:`TextServer.SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` to automatically enable it based on the font size.
+Font glyph subpixel positioning mode. Subpixel positioning provides shaper text and better kerning for smaller font sizes, at the cost of higher memory usage and lower font rasterization speed. Use :ref:`TextServer.SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` to automatically enable it based on the font size.
 
 .. rst-class:: classref-section-separator
 

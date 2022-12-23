@@ -24,19 +24,23 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+--------------------------------------------------------------------+---------+
-   | :ref:`Curve<class_Curve>` | :ref:`curve<class_TubeTrailMesh_property_curve>`                   |         |
-   +---------------------------+--------------------------------------------------------------------+---------+
-   | :ref:`int<class_int>`     | :ref:`radial_steps<class_TubeTrailMesh_property_radial_steps>`     | ``8``   |
-   +---------------------------+--------------------------------------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`radius<class_TubeTrailMesh_property_radius>`                 | ``0.5`` |
-   +---------------------------+--------------------------------------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`section_length<class_TubeTrailMesh_property_section_length>` | ``0.2`` |
-   +---------------------------+--------------------------------------------------------------------+---------+
-   | :ref:`int<class_int>`     | :ref:`section_rings<class_TubeTrailMesh_property_section_rings>`   | ``3``   |
-   +---------------------------+--------------------------------------------------------------------+---------+
-   | :ref:`int<class_int>`     | :ref:`sections<class_TubeTrailMesh_property_sections>`             | ``5``   |
-   +---------------------------+--------------------------------------------------------------------+---------+
+   +---------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`cap_bottom<class_TubeTrailMesh_property_cap_bottom>`         | ``true`` |
+   +---------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`cap_top<class_TubeTrailMesh_property_cap_top>`               | ``true`` |
+   +---------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`Curve<class_Curve>` | :ref:`curve<class_TubeTrailMesh_property_curve>`                   |          |
+   +---------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`radial_steps<class_TubeTrailMesh_property_radial_steps>`     | ``8``    |
+   +---------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`radius<class_TubeTrailMesh_property_radius>`                 | ``0.5``  |
+   +---------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`section_length<class_TubeTrailMesh_property_section_length>` | ``0.2``  |
+   +---------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`section_rings<class_TubeTrailMesh_property_section_rings>`   | ``3``    |
+   +---------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`sections<class_TubeTrailMesh_property_sections>`             | ``5``    |
+   +---------------------------+--------------------------------------------------------------------+----------+
 
 .. rst-class:: classref-section-separator
 
@@ -46,6 +50,40 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_TubeTrailMesh_property_cap_bottom:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **cap_bottom** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cap_bottom** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_cap_bottom** **(** **)**
+
+If ``true``, generates a cap at the bottom of the tube. This can be set to ``false`` to speed up generation and rendering when the cap is never seen by the camera.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TubeTrailMesh_property_cap_top:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **cap_top** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cap_top** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_cap_top** **(** **)**
+
+If ``true``, generates a cap at the top of the tube. This can be set to ``false`` to speed up generation and rendering when the cap is never seen by the camera.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_TubeTrailMesh_property_curve:
 

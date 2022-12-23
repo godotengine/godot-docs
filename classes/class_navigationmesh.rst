@@ -75,13 +75,13 @@ Properties
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`StringName<class_StringName>`                                 | :ref:`geometry_source_group_name<class_NavigationMesh_property_geometry_source_group_name>`             | ``&"navigation_mesh_source_group"`` |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
-   | :ref:`float<class_float>`                                           | :ref:`polygon_vertices_per_polyon<class_NavigationMesh_property_polygon_vertices_per_polyon>`           | ``6.0``                             |
-   +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`float<class_float>`                                           | :ref:`region_merge_size<class_NavigationMesh_property_region_merge_size>`                               | ``20.0``                            |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`float<class_float>`                                           | :ref:`region_min_size<class_NavigationMesh_property_region_min_size>`                                   | ``2.0``                             |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`SamplePartitionType<enum_NavigationMesh_SamplePartitionType>` | :ref:`sample_partition_type<class_NavigationMesh_property_sample_partition_type>`                       | ``0``                               |
+   +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`float<class_float>`                                           | :ref:`vertices_per_polygon<class_NavigationMesh_property_vertices_per_polygon>`                         | ``6.0``                             |
    +---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -587,23 +587,6 @@ Only used when :ref:`geometry_source_geometry_mode<class_NavigationMesh_property
 
 ----
 
-.. _class_NavigationMesh_property_polygon_vertices_per_polyon:
-
-.. rst-class:: classref-property
-
-:ref:`float<class_float>` **polygon_vertices_per_polyon** = ``6.0``
-
-.. rst-class:: classref-property-setget
-
-- void **set_vertices_per_polyon** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_vertices_per_polyon** **(** **)**
-
-The maximum number of vertices allowed for polygons generated during the contour to polygon conversion process.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_NavigationMesh_property_region_merge_size:
 
 .. rst-class:: classref-property
@@ -654,6 +637,23 @@ The minimum size of a region for it to be created.
 - :ref:`SamplePartitionType<enum_NavigationMesh_SamplePartitionType>` **get_sample_partition_type** **(** **)**
 
 Partitioning algorithm for creating the navigation mesh polys. See :ref:`SamplePartitionType<enum_NavigationMesh_SamplePartitionType>` for possible values.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationMesh_property_vertices_per_polygon:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **vertices_per_polygon** = ``6.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_vertices_per_polygon** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_vertices_per_polygon** **(** **)**
+
+The maximum number of vertices allowed for polygons generated during the contour to polygon conversion process.
 
 .. rst-class:: classref-section-separator
 

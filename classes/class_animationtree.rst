@@ -83,6 +83,20 @@ Methods
 Signals
 -------
 
+.. _class_AnimationTree_signal_animation_finished:
+
+.. rst-class:: classref-signal
+
+**animation_finished** **(** :ref:`StringName<class_StringName>` anim_name **)**
+
+Notifies when an animation finished playing.
+
+\ **Note:** This signal is not emitted if an animation is looping or aborted. Also be aware of the possibility of unseen playback by sync and xfade.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationTree_signal_animation_player_changed:
 
 .. rst-class:: classref-signal
@@ -90,6 +104,20 @@ Signals
 **animation_player_changed** **(** **)**
 
 Emitted when the :ref:`anim_player<class_AnimationTree_property_anim_player>` is changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationTree_signal_animation_started:
+
+.. rst-class:: classref-signal
+
+**animation_started** **(** :ref:`StringName<class_StringName>` anim_name **)**
+
+Notifies when an animation starts playing.
+
+\ **Note:** This signal is not emitted if an animation is looping or playbacked from the middle. Also be aware of the possibility of unseen playback by sync and xfade.
 
 .. rst-class:: classref-section-separator
 

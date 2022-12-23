@@ -48,31 +48,31 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`                       | :ref:`bake_navigation<class_GridMap_property_bake_navigation>`     | ``false``            |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`                       | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`         | ``true``             |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`                       | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`         | ``true``             |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`                       | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`         | ``true``             |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`                         | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>`   | ``8``                |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`                     | :ref:`cell_scale<class_GridMap_property_cell_scale>`               | ``1.0``              |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>`                 | :ref:`cell_size<class_GridMap_property_cell_size>`                 | ``Vector3(2, 2, 2)`` |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`                         | :ref:`collision_layer<class_GridMap_property_collision_layer>`     | ``1``                |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`                         | :ref:`collision_mask<class_GridMap_property_collision_mask>`       | ``1``                |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`MeshLibrary<class_MeshLibrary>`         | :ref:`mesh_library<class_GridMap_property_mesh_library>`           |                      |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`                         | :ref:`navigation_layers<class_GridMap_property_navigation_layers>` | ``1``                |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
-   | :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material<class_GridMap_property_physics_material>`   |                      |
-   +-----------------------------------------------+--------------------------------------------------------------------+----------------------+
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`bake_navigation<class_GridMap_property_bake_navigation>`       | ``false``            |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`cell_center_x<class_GridMap_property_cell_center_x>`           | ``true``             |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`cell_center_y<class_GridMap_property_cell_center_y>`           | ``true``             |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`cell_center_z<class_GridMap_property_cell_center_z>`           | ``true``             |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                         | :ref:`cell_octant_size<class_GridMap_property_cell_octant_size>`     | ``8``                |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                     | :ref:`cell_scale<class_GridMap_property_cell_scale>`                 | ``1.0``              |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                 | :ref:`cell_size<class_GridMap_property_cell_size>`                   | ``Vector3(2, 2, 2)`` |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                         | :ref:`collision_layer<class_GridMap_property_collision_layer>`       | ``1``                |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                         | :ref:`collision_mask<class_GridMap_property_collision_mask>`         | ``1``                |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                     | :ref:`collision_priority<class_GridMap_property_collision_priority>` | ``1.0``              |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`MeshLibrary<class_MeshLibrary>`         | :ref:`mesh_library<class_GridMap_property_mesh_library>`             |                      |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
+   | :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material<class_GridMap_property_physics_material>`     |                      |
+   +-----------------------------------------------+----------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -105,8 +105,6 @@ Methods
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`         | :ref:`get_meshes<class_GridMap_method_get_meshes>` **(** **)** |const|                                                                                                           |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`get_navigation_layer_value<class_GridMap_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                        |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`             | :ref:`get_navigation_map<class_GridMap_method_get_navigation_map>` **(** **)** |const|                                                                                           |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_orthogonal_index_from_basis<class_GridMap_method_get_orthogonal_index_from_basis>` **(** :ref:`Basis<class_Basis>` basis **)** |const|                                 |
@@ -128,8 +126,6 @@ Methods
    | void                              | :ref:`set_collision_layer_value<class_GridMap_method_set_collision_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                   |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_collision_mask_value<class_GridMap_method_set_collision_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                     |
-   +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                              | :ref:`set_navigation_layer_value<class_GridMap_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                 |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_navigation_map<class_GridMap_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**                                                              |
    +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -188,7 +184,7 @@ Property Descriptions
 - void **set_bake_navigation** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_baking_navigation** **(** **)**
 
-If ``true``, this GridMap bakes a navigation region.
+If ``true``, this GridMap creates a navigation region for each cell that uses a :ref:`mesh_library<class_GridMap_property_mesh_library>` item with a navigation mesh. The created navigation region will use the navigation layers bitmask assigned to the :ref:`MeshLibrary<class_MeshLibrary>`'s item.
 
 .. rst-class:: classref-item-separator
 
@@ -336,6 +332,23 @@ The physics layers this GridMap detects collisions in. See `Collision layers and
 
 ----
 
+.. _class_GridMap_property_collision_priority:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **collision_priority** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collision_priority** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_collision_priority** **(** **)**
+
+The priority used to solve colliding when occurring penetration. The higher the priority is, the lower the penetration into the object will be. This can for example be used to prevent the player from breaking through the boundaries of a level.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GridMap_property_mesh_library:
 
 .. rst-class:: classref-property
@@ -348,23 +361,6 @@ The physics layers this GridMap detects collisions in. See `Collision layers and
 - :ref:`MeshLibrary<class_MeshLibrary>` **get_mesh_library** **(** **)**
 
 The assigned :ref:`MeshLibrary<class_MeshLibrary>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GridMap_property_navigation_layers:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **navigation_layers** = ``1``
-
-.. rst-class:: classref-property-setget
-
-- void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_navigation_layers** **(** **)**
-
-A bitmask determining all navigation layers the GridMap generated navigation regions belong to. These navigation layers can be checked upon when requesting a path with :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
 
 .. rst-class:: classref-item-separator
 
@@ -524,18 +520,6 @@ Returns an array of :ref:`Transform3D<class_Transform3D>` and :ref:`Mesh<class_M
 
 ----
 
-.. _class_GridMap_method_get_navigation_layer_value:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **get_navigation_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
-
-Returns whether or not the specified layer of the :ref:`navigation_layers<class_GridMap_property_navigation_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_GridMap_method_get_navigation_map:
 
 .. rst-class:: classref-method
@@ -669,18 +653,6 @@ Based on ``value``, enables or disables the specified layer in the :ref:`collisi
 void **set_collision_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
 Based on ``value``, enables or disables the specified layer in the :ref:`collision_mask<class_GridMap_property_collision_mask>`, given a ``layer_number`` between 1 and 32.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GridMap_method_set_navigation_layer_value:
-
-.. rst-class:: classref-method
-
-void **set_navigation_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
-
-Based on ``value``, enables or disables the specified layer in the :ref:`navigation_layers<class_GridMap_property_navigation_layers>` bitmask, given a ``layer_number`` between 1 and 32.
 
 .. rst-class:: classref-item-separator
 

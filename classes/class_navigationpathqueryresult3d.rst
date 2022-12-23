@@ -29,9 +29,15 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
-   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`path<class_NavigationPathQueryResult3D_property_path>` | ``PackedVector3Array()`` |
-   +-----------------------------------------------------+--------------------------------------------------------------+--------------------------+
+   +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`path<class_NavigationPathQueryResult3D_property_path>`                     | ``PackedVector3Array()`` |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>`     | :ref:`path_owner_ids<class_NavigationPathQueryResult3D_property_path_owner_ids>` | ``PackedInt64Array()``   |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`RID[]<class_RID>`                             | :ref:`path_rids<class_NavigationPathQueryResult3D_property_path_rids>`           | ``[]``                   |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>`     | :ref:`path_types<class_NavigationPathQueryResult3D_property_path_types>`         | ``PackedInt32Array()``   |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------+--------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -44,6 +50,37 @@ Methods
    +------+--------------------------------------------------------------------------+
    | void | :ref:`reset<class_NavigationPathQueryResult3D_method_reset>` **(** **)** |
    +------+--------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_NavigationPathQueryResult3D_PathSegmentType:
+
+.. rst-class:: classref-enumeration
+
+enum **PathSegmentType**:
+
+.. _class_NavigationPathQueryResult3D_constant_PATH_SEGMENT_TYPE_REGION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathSegmentType<enum_NavigationPathQueryResult3D_PathSegmentType>` **PATH_SEGMENT_TYPE_REGION** = ``0``
+
+This segment of the path goes through a region.
+
+.. _class_NavigationPathQueryResult3D_constant_PATH_SEGMENT_TYPE_LINK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathSegmentType<enum_NavigationPathQueryResult3D_PathSegmentType>` **PATH_SEGMENT_TYPE_LINK** = ``1``
+
+This segment of the path goes through a link.
 
 .. rst-class:: classref-section-separator
 
@@ -66,6 +103,57 @@ Property Descriptions
 - :ref:`PackedVector3Array<class_PackedVector3Array>` **get_path** **(** **)**
 
 The resulting path array from the navigation query. All path array positions are in global coordinates. Without customized query parameters this is the same path as returned by :ref:`NavigationServer3D.map_get_path<class_NavigationServer3D_method_map_get_path>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryResult3D_property_path_owner_ids:
+
+.. rst-class:: classref-property
+
+:ref:`PackedInt64Array<class_PackedInt64Array>` **path_owner_ids** = ``PackedInt64Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path_owner_ids** **(** :ref:`PackedInt64Array<class_PackedInt64Array>` value **)**
+- :ref:`PackedInt64Array<class_PackedInt64Array>` **get_path_owner_ids** **(** **)**
+
+The ``ObjectID``\ s of the :ref:`Object<class_Object>`\ s which manage the regions and links each point of the path goes through.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryResult3D_property_path_rids:
+
+.. rst-class:: classref-property
+
+:ref:`RID[]<class_RID>` **path_rids** = ``[]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path_rids** **(** :ref:`RID[]<class_RID>` value **)**
+- :ref:`RID[]<class_RID>` **get_path_rids** **(** **)**
+
+The :ref:`RID<class_RID>`\ s of the regions and links that each point of the path goes through.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryResult3D_property_path_types:
+
+.. rst-class:: classref-property
+
+:ref:`PackedInt32Array<class_PackedInt32Array>` **path_types** = ``PackedInt32Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path_types** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
+- :ref:`PackedInt32Array<class_PackedInt32Array>` **get_path_types** **(** **)**
+
+The type of navigation primitive (region or link) that each point of the path goes through.
 
 .. rst-class:: classref-section-separator
 

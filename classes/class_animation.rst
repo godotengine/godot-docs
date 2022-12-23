@@ -144,7 +144,7 @@ Methods
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`scale_track_insert_key<class_Animation_method_scale_track_insert_key>` **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`Vector3<class_Vector3>` scale **)**                                                                                                              |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                      | :ref:`track_find_key<class_Animation_method_track_find_key>` **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`bool<class_bool>` exact=false **)** |const|                                                                                                                      |
+   | :ref:`int<class_int>`                                      | :ref:`track_find_key<class_Animation_method_track_find_key>` **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`FindMode<enum_Animation_FindMode>` find_mode=0 **)** |const|                                                                                                     |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                    | :ref:`track_get_interpolation_loop_wrap<class_Animation_method_track_get_interpolation_loop_wrap>` **(** :ref:`int<class_int>` track_idx **)** |const|                                                                                                                                                     |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -447,6 +447,40 @@ This flag indicates that the animation has reached the end of the animation and 
 :ref:`LoopedFlag<enum_Animation_LoopedFlag>` **LOOPED_FLAG_START** = ``2``
 
 This flag indicates that the animation has reached the start of the animation and just after loop processed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_Animation_FindMode:
+
+.. rst-class:: classref-enumeration
+
+enum **FindMode**:
+
+.. _class_Animation_constant_FIND_MODE_NEAREST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FindMode<enum_Animation_FindMode>` **FIND_MODE_NEAREST** = ``0``
+
+Finds the nearest time key.
+
+.. _class_Animation_constant_FIND_MODE_APPROX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FindMode<enum_Animation_FindMode>` **FIND_MODE_APPROX** = ``1``
+
+Finds only the key with approximating the time.
+
+.. _class_Animation_constant_FIND_MODE_EXACT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FindMode<enum_Animation_FindMode>` **FIND_MODE_EXACT** = ``2``
+
+Finds only the key with matching the time.
 
 .. rst-class:: classref-section-separator
 
@@ -901,9 +935,9 @@ Inserts a key in a given 3D scale track. Returns the key index.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **track_find_key** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`bool<class_bool>` exact=false **)** |const|
+:ref:`int<class_int>` **track_find_key** **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`FindMode<enum_Animation_FindMode>` find_mode=0 **)** |const|
 
-Finds the key index by time in a given track. Optionally, only find it if the exact time is given.
+Finds the key index by time in a given track. Optionally, only find it if the approx/exact time is given.
 
 .. rst-class:: classref-item-separator
 

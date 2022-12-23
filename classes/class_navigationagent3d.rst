@@ -31,33 +31,35 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`     | :ref:`agent_height_offset<class_NavigationAgent3D_property_agent_height_offset>`         | ``0.0``              |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`       | :ref:`avoidance_enabled<class_NavigationAgent3D_property_avoidance_enabled>`             | ``false``            |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`bool<class_bool>`       | :ref:`ignore_y<class_NavigationAgent3D_property_ignore_y>`                               | ``true``             |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`         | :ref:`max_neighbors<class_NavigationAgent3D_property_max_neighbors>`                     | ``10``               |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`     | :ref:`max_speed<class_NavigationAgent3D_property_max_speed>`                             | ``10.0``             |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`int<class_int>`         | :ref:`navigation_layers<class_NavigationAgent3D_property_navigation_layers>`             | ``1``                |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`     | :ref:`neighbor_distance<class_NavigationAgent3D_property_neighbor_distance>`             | ``50.0``             |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`     | :ref:`path_desired_distance<class_NavigationAgent3D_property_path_desired_distance>`     | ``1.0``              |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`     | :ref:`path_max_distance<class_NavigationAgent3D_property_path_max_distance>`             | ``3.0``              |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`     | :ref:`radius<class_NavigationAgent3D_property_radius>`                                   | ``1.0``              |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`     | :ref:`target_desired_distance<class_NavigationAgent3D_property_target_desired_distance>` | ``1.0``              |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>` | :ref:`target_location<class_NavigationAgent3D_property_target_location>`                 | ``Vector3(0, 0, 0)`` |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`float<class_float>`     | :ref:`time_horizon<class_NavigationAgent3D_property_time_horizon>`                       | ``5.0``              |
-   +-------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                        | :ref:`agent_height_offset<class_NavigationAgent3D_property_agent_height_offset>`         | ``0.0``              |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                                                          | :ref:`avoidance_enabled<class_NavigationAgent3D_property_avoidance_enabled>`             | ``false``            |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                                                          | :ref:`ignore_y<class_NavigationAgent3D_property_ignore_y>`                               | ``true``             |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                                                            | :ref:`max_neighbors<class_NavigationAgent3D_property_max_neighbors>`                     | ``10``               |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                        | :ref:`max_speed<class_NavigationAgent3D_property_max_speed>`                             | ``10.0``             |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                                                            | :ref:`navigation_layers<class_NavigationAgent3D_property_navigation_layers>`             | ``1``                |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                        | :ref:`neighbor_distance<class_NavigationAgent3D_property_neighbor_distance>`             | ``50.0``             |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                        | :ref:`path_desired_distance<class_NavigationAgent3D_property_path_desired_distance>`     | ``1.0``              |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                        | :ref:`path_max_distance<class_NavigationAgent3D_property_path_max_distance>`             | ``3.0``              |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` | :ref:`path_metadata_flags<class_NavigationAgent3D_property_path_metadata_flags>`         | ``7``                |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                        | :ref:`radius<class_NavigationAgent3D_property_radius>`                                   | ``1.0``              |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                        | :ref:`target_desired_distance<class_NavigationAgent3D_property_target_desired_distance>` | ``1.0``              |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                                                    | :ref:`target_location<class_NavigationAgent3D_property_target_location>`                 | ``Vector3(0, 0, 0)`` |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                                        | :ref:`time_horizon<class_NavigationAgent3D_property_time_horizon>`                       | ``5.0``              |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -67,35 +69,37 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                           | :ref:`distance_to_target<class_NavigationAgent3D_method_distance_to_target>` **(** **)** |const|                                                                           |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_current_navigation_path<class_NavigationAgent3D_method_get_current_navigation_path>` **(** **)** |const|                                                         |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                               | :ref:`get_current_navigation_path_index<class_NavigationAgent3D_method_get_current_navigation_path_index>` **(** **)** |const|                                             |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                       | :ref:`get_final_location<class_NavigationAgent3D_method_get_final_location>` **(** **)**                                                                                   |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`get_navigation_layer_value<class_NavigationAgent3D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                               | :ref:`get_navigation_map<class_NavigationAgent3D_method_get_navigation_map>` **(** **)** |const|                                                                           |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                       | :ref:`get_next_location<class_NavigationAgent3D_method_get_next_location>` **(** **)**                                                                                     |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`                               | :ref:`get_rid<class_NavigationAgent3D_method_get_rid>` **(** **)** |const|                                                                                                 |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`is_navigation_finished<class_NavigationAgent3D_method_is_navigation_finished>` **(** **)**                                                                           |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`is_target_reachable<class_NavigationAgent3D_method_is_target_reachable>` **(** **)**                                                                                 |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                             | :ref:`is_target_reached<class_NavigationAgent3D_method_is_target_reached>` **(** **)** |const|                                                                             |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_navigation_layer_value<class_NavigationAgent3D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_navigation_map<class_NavigationAgent3D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**                                              |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`set_velocity<class_NavigationAgent3D_method_set_velocity>` **(** :ref:`Vector3<class_Vector3>` velocity **)**                                                        |
-   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                             | :ref:`distance_to_target<class_NavigationAgent3D_method_distance_to_target>` **(** **)** |const|                                                                           |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>`                   | :ref:`get_current_navigation_path<class_NavigationAgent3D_method_get_current_navigation_path>` **(** **)** |const|                                                         |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                 | :ref:`get_current_navigation_path_index<class_NavigationAgent3D_method_get_current_navigation_path_index>` **(** **)** |const|                                             |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` | :ref:`get_current_navigation_result<class_NavigationAgent3D_method_get_current_navigation_result>` **(** **)** |const|                                                     |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                                         | :ref:`get_final_location<class_NavigationAgent3D_method_get_final_location>` **(** **)**                                                                                   |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`get_navigation_layer_value<class_NavigationAgent3D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                 | :ref:`get_navigation_map<class_NavigationAgent3D_method_get_navigation_map>` **(** **)** |const|                                                                           |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                                         | :ref:`get_next_location<class_NavigationAgent3D_method_get_next_location>` **(** **)**                                                                                     |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                 | :ref:`get_rid<class_NavigationAgent3D_method_get_rid>` **(** **)** |const|                                                                                                 |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`is_navigation_finished<class_NavigationAgent3D_method_is_navigation_finished>` **(** **)**                                                                           |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`is_target_reachable<class_NavigationAgent3D_method_is_target_reachable>` **(** **)**                                                                                 |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`is_target_reached<class_NavigationAgent3D_method_is_target_reached>` **(** **)** |const|                                                                             |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                  | :ref:`set_navigation_layer_value<class_NavigationAgent3D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                  | :ref:`set_navigation_map<class_NavigationAgent3D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**                                              |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                  | :ref:`set_velocity<class_NavigationAgent3D_method_set_velocity>` **(** :ref:`Vector3<class_Vector3>` velocity **)**                                                        |
+   +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -105,6 +109,28 @@ Methods
 
 Signals
 -------
+
+.. _class_NavigationAgent3D_signal_link_reached:
+
+.. rst-class:: classref-signal
+
+**link_reached** **(** :ref:`Dictionary<class_Dictionary>` details **)**
+
+Notifies when a navigation link has been reached.
+
+The details dictionary may contain the following keys depending on the value of :ref:`path_metadata_flags<class_NavigationAgent3D_property_path_metadata_flags>`:
+
+- ``location``: The start location of the link that was reached.
+
+- ``type``: Always :ref:`NavigationPathQueryResult3D.PATH_SEGMENT_TYPE_LINK<class_NavigationPathQueryResult3D_constant_PATH_SEGMENT_TYPE_LINK>`.
+
+- ``rid``: The :ref:`RID<class_RID>` of the link.
+
+- ``owner``: The object which manages the link (usually :ref:`NavigationLink3D<class_NavigationLink3D>`).
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_NavigationAgent3D_signal_navigation_finished:
 
@@ -149,6 +175,28 @@ Notifies when the player-defined :ref:`target_location<class_NavigationAgent3D_p
 **velocity_computed** **(** :ref:`Vector3<class_Vector3>` safe_velocity **)**
 
 Notifies when the collision avoidance velocity is calculated. Emitted by :ref:`set_velocity<class_NavigationAgent3D_method_set_velocity>`. Only emitted when :ref:`avoidance_enabled<class_NavigationAgent3D_property_avoidance_enabled>` is true.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationAgent3D_signal_waypoint_reached:
+
+.. rst-class:: classref-signal
+
+**waypoint_reached** **(** :ref:`Dictionary<class_Dictionary>` details **)**
+
+Notifies when a waypoint along the path has been reached.
+
+The details dictionary may contain the following keys depending on the value of :ref:`path_metadata_flags<class_NavigationAgent3D_property_path_metadata_flags>`:
+
+- ``location``: The location of the waypoint that was reached.
+
+- ``type``: The type of navigation primitive (region or link) that contains this waypoint.
+
+- ``rid``: The :ref:`RID<class_RID>` of the containing navigation primitive (region or link).
+
+- ``owner``: The object which manages the containing navigation primitive (region or link).
 
 .. rst-class:: classref-section-separator
 
@@ -312,6 +360,23 @@ The maximum distance the agent is allowed away from the ideal path to the final 
 
 ----
 
+.. _class_NavigationAgent3D_property_path_metadata_flags:
+
+.. rst-class:: classref-property
+
+:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` **path_metadata_flags** = ``7``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path_metadata_flags** **(** :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` value **)**
+- :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` **get_path_metadata_flags** **(** **)**
+
+Additional information to return with the navigation path.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationAgent3D_property_radius:
 
 .. rst-class:: classref-property
@@ -418,6 +483,18 @@ Returns this agent's current path from start to finish in global coordinates. Th
 :ref:`int<class_int>` **get_current_navigation_path_index** **(** **)** |const|
 
 Returns which index the agent is currently on in the navigation path's :ref:`PackedVector3Array<class_PackedVector3Array>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationAgent3D_method_get_current_navigation_result:
+
+.. rst-class:: classref-method
+
+:ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` **get_current_navigation_result** **(** **)** |const|
+
+Returns the path query result for the path the agent is currently following.
 
 .. rst-class:: classref-item-separator
 

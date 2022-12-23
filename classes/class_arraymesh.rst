@@ -292,7 +292,7 @@ Returns the name of the blend shape at this index.
 
 :ref:`Error<enum_@GlobalScope_Error>` **lightmap_unwrap** **(** :ref:`Transform3D<class_Transform3D>` transform, :ref:`float<class_float>` texel_size **)**
 
-Will perform a UV unwrap on the **ArrayMesh** to prepare the mesh for lightmapping.
+Performs a UV unwrap on the **ArrayMesh** to prepare the mesh for lightmapping.
 
 .. rst-class:: classref-item-separator
 
@@ -304,7 +304,7 @@ Will perform a UV unwrap on the **ArrayMesh** to prepare the mesh for lightmappi
 
 void **regen_normal_maps** **(** **)**
 
-Will regenerate normal maps for the **ArrayMesh**.
+Regenerates tangents for each of the **ArrayMesh**'s surfaces.
 
 .. rst-class:: classref-item-separator
 

@@ -209,7 +209,7 @@ Methods
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`push_underline<class_RichTextLabel_method_push_underline>` **(** **)**                                                                                                                                                                                                                                                                                                           |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`remove_line<class_RichTextLabel_method_remove_line>` **(** :ref:`int<class_int>` line **)**                                                                                                                                                                                                                                                                                      |
+   | :ref:`bool<class_bool>`             | :ref:`remove_paragraph<class_RichTextLabel_method_remove_paragraph>` **(** :ref:`int<class_int>` paragraph **)**                                                                                                                                                                                                                                                                       |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`scroll_to_line<class_RichTextLabel_method_scroll_to_line>` **(** :ref:`int<class_int>` line **)**                                                                                                                                                                                                                                                                                |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1683,15 +1683,15 @@ Adds a ``[u]`` tag to the tag stack.
 
 ----
 
-.. _class_RichTextLabel_method_remove_line:
+.. _class_RichTextLabel_method_remove_paragraph:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **remove_line** **(** :ref:`int<class_int>` line **)**
+:ref:`bool<class_bool>` **remove_paragraph** **(** :ref:`int<class_int>` paragraph **)**
 
-Removes a line of content from the label. Returns ``true`` if the line exists.
+Removes a paragraph of content from the label. Returns ``true`` if the paragraph exists.
 
-The ``line`` argument is the index of the line to remove, it can take values in the interval ``[0, get_line_count() - 1]``.
+The ``paragraph`` argument is the index of the paragraph to remove, it can take values in the interval ``[0, get_paragraph_count() - 1]``.
 
 .. rst-class:: classref-item-separator
 
@@ -1931,6 +1931,8 @@ The vertical space between lines.
 :ref:`int<class_int>` **outline_size** = ``0``
 
 The size of the text outline.
+
+\ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_RichTextLabel_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
 
 .. rst-class:: classref-item-separator
 

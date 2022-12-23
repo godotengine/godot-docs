@@ -236,9 +236,13 @@ Methods
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`joint_create<class_PhysicsServer3D_method_joint_create>` **(** **)**                                                                                                                                                                                                                     |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`joint_disable_collisions_between_bodies<class_PhysicsServer3D_method_joint_disable_collisions_between_bodies>` **(** :ref:`RID<class_RID>` joint, :ref:`bool<class_bool>` disable **)**                                                                                                  |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`joint_get_solver_priority<class_PhysicsServer3D_method_joint_get_solver_priority>` **(** :ref:`RID<class_RID>` joint **)** |const|                                                                                                                                                       |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`JointType<enum_PhysicsServer3D_JointType>`                  | :ref:`joint_get_type<class_PhysicsServer3D_method_joint_get_type>` **(** :ref:`RID<class_RID>` joint **)** |const|                                                                                                                                                                             |
+   +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`joint_is_disabled_collisions_between_bodies<class_PhysicsServer3D_method_joint_is_disabled_collisions_between_bodies>` **(** :ref:`RID<class_RID>` joint **)** |const|                                                                                                                   |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`joint_make_cone_twist<class_PhysicsServer3D_method_joint_make_cone_twist>` **(** :ref:`RID<class_RID>` joint, :ref:`RID<class_RID>` body_A, :ref:`Transform3D<class_Transform3D>` local_ref_A, :ref:`RID<class_RID>` body_B, :ref:`Transform3D<class_Transform3D>` local_ref_B **)**     |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2929,6 +2933,18 @@ void **joint_clear** **(** :ref:`RID<class_RID>` joint **)**
 
 ----
 
+.. _class_PhysicsServer3D_method_joint_disable_collisions_between_bodies:
+
+.. rst-class:: classref-method
+
+void **joint_disable_collisions_between_bodies** **(** :ref:`RID<class_RID>` joint, :ref:`bool<class_bool>` disable **)**
+
+Sets whether the bodies attached to the :ref:`Joint3D<class_Joint3D>` will collide with each other.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_PhysicsServer3D_method_joint_get_solver_priority:
 
 .. rst-class:: classref-method
@@ -2948,6 +2964,18 @@ Gets the priority value of the Joint3D.
 :ref:`JointType<enum_PhysicsServer3D_JointType>` **joint_get_type** **(** :ref:`RID<class_RID>` joint **)** |const|
 
 Returns the type of the Joint3D.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer3D_method_joint_is_disabled_collisions_between_bodies:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **joint_is_disabled_collisions_between_bodies** **(** :ref:`RID<class_RID>` joint **)** |const|
+
+Returns whether the bodies attached to the :ref:`Joint3D<class_Joint3D>` will collide with each other.
 
 .. rst-class:: classref-item-separator
 

@@ -32,6 +32,8 @@ Properties
    +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
    | :ref:`RID<class_RID>`                                                                  | :ref:`map<class_NavigationPathQueryParameters2D_property_map>`                                     |                   |
    +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`       | :ref:`metadata_flags<class_NavigationPathQueryParameters2D_property_metadata_flags>`               | ``7``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`                                                                  | :ref:`navigation_layers<class_NavigationPathQueryParameters2D_property_navigation_layers>`         | ``1``             |
    +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-------------------+
    | :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>`     | :ref:`path_postprocessing<class_NavigationPathQueryParameters2D_property_path_postprocessing>`     | ``0``             |
@@ -92,6 +94,56 @@ Applies a funnel algorithm to the raw path corridor found by the pathfinding alg
 
 Centers every path position in the middle of the traveled navigation mesh polygon edge. This creates better paths for tile- or gridbased layouts that restrict the movement to the cells center.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_NavigationPathQueryParameters2D_PathMetadataFlags:
+
+.. rst-class:: classref-enumeration
+
+flags **PathMetadataFlags**:
+
+.. _class_NavigationPathQueryParameters2D_constant_PATH_METADATA_INCLUDE_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_NONE** = ``0``
+
+Don't include any additional metadata about the returned path.
+
+.. _class_NavigationPathQueryParameters2D_constant_PATH_METADATA_INCLUDE_TYPES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_TYPES** = ``1``
+
+Include the type of navigation primitive (region or link) that each point of the path goes through.
+
+.. _class_NavigationPathQueryParameters2D_constant_PATH_METADATA_INCLUDE_RIDS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_RIDS** = ``2``
+
+Include the :ref:`RID<class_RID>`\ s of the regions and links that each point of the path goes through.
+
+.. _class_NavigationPathQueryParameters2D_constant_PATH_METADATA_INCLUDE_OWNERS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_OWNERS** = ``4``
+
+Include the ``ObjectID``\ s of the :ref:`Object<class_Object>`\ s which manage the regions and links each point of the path goes through.
+
+.. _class_NavigationPathQueryParameters2D_constant_PATH_METADATA_INCLUDE_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **PATH_METADATA_INCLUDE_ALL** = ``7``
+
+Include all available metadata about the returned path.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -113,6 +165,23 @@ Property Descriptions
 - :ref:`RID<class_RID>` **get_map** **(** **)**
 
 The navigation ``map`` :ref:`RID<class_RID>` used in the path query.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationPathQueryParameters2D_property_metadata_flags:
+
+.. rst-class:: classref-property
+
+:ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **metadata_flags** = ``7``
+
+.. rst-class:: classref-property-setget
+
+- void **set_metadata_flags** **(** :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` value **)**
+- :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **get_metadata_flags** **(** **)**
+
+Additional information to include with the navigation path.
 
 .. rst-class:: classref-item-separator
 

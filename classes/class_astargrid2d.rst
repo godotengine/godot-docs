@@ -87,6 +87,10 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_point_path<class_AStarGrid2D_method_get_point_path>` **(** :ref:`Vector2i<class_Vector2i>` from_id, :ref:`Vector2i<class_Vector2i>` to_id **)**                   |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`get_point_position<class_AStarGrid2D_method_get_point_position>` **(** :ref:`Vector2i<class_Vector2i>` id **)** |const|                                               |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get_point_weight_scale<class_AStarGrid2D_method_get_point_weight_scale>` **(** :ref:`Vector2i<class_Vector2i>` id **)** |const|                                       |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_dirty<class_AStarGrid2D_method_is_dirty>` **(** **)** |const|                                                                                                      |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`is_in_bounds<class_AStarGrid2D_method_is_in_bounds>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y **)** |const|                                             |
@@ -96,6 +100,8 @@ Methods
    | :ref:`bool<class_bool>`                             | :ref:`is_point_solid<class_AStarGrid2D_method_is_point_solid>` **(** :ref:`Vector2i<class_Vector2i>` id **)** |const|                                                       |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`set_point_solid<class_AStarGrid2D_method_set_point_solid>` **(** :ref:`Vector2i<class_Vector2i>` id, :ref:`bool<class_bool>` solid=true **)**                         |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_point_weight_scale<class_AStarGrid2D_method_set_point_weight_scale>` **(** :ref:`Vector2i<class_Vector2i>` id, :ref:`float<class_float>` weight_scale **)**       |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`update<class_AStarGrid2D_method_update>` **(** **)**                                                                                                                  |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -307,6 +313,8 @@ A specific :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` mode which will fo
 
 Enables or disables jumping to skip up the intermediate points and speeds up the searching algorithm.
 
+\ **Note:** Currently, toggling it on disables the consideration of weight scaling in pathfinding.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -416,6 +424,30 @@ Returns an array with the points that are in the path found by AStarGrid2D betwe
 
 ----
 
+.. _class_AStarGrid2D_method_get_point_position:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`Vector2i<class_Vector2i>` id **)** |const|
+
+Returns the position of the point associated with the given ``id``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AStarGrid2D_method_get_point_weight_scale:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_point_weight_scale** **(** :ref:`Vector2i<class_Vector2i>` id **)** |const|
+
+Returns the weight scale of the point associated with the given ``id``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AStarGrid2D_method_is_dirty:
 
 .. rst-class:: classref-method
@@ -471,6 +503,20 @@ Returns ``true`` if a point is disabled for pathfinding. By default, all points 
 void **set_point_solid** **(** :ref:`Vector2i<class_Vector2i>` id, :ref:`bool<class_bool>` solid=true **)**
 
 Disables or enables the specified point for pathfinding. Useful for making an obstacle. By default, all points are enabled.
+
+\ **Note:** Calling :ref:`update<class_AStarGrid2D_method_update>` is not needed after the call of this function.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AStarGrid2D_method_set_point_weight_scale:
+
+.. rst-class:: classref-method
+
+void **set_point_weight_scale** **(** :ref:`Vector2i<class_Vector2i>` id, :ref:`float<class_float>` weight_scale **)**
+
+Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scale`` is multiplied by the result of :ref:`_compute_cost<class_AStarGrid2D_method__compute_cost>` when determining the overall cost of traveling across a segment from a neighboring point to this point.
 
 \ **Note:** Calling :ref:`update<class_AStarGrid2D_method_update>` is not needed after the call of this function.
 

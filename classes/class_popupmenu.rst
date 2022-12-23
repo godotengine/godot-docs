@@ -1323,6 +1323,8 @@ Horizontal padding to the left of the items (or right, in RTL layout).
 
 The size of the item text outline.
 
+\ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_PopupMenu_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
+
 .. rst-class:: classref-item-separator
 
 ----

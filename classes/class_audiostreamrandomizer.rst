@@ -47,21 +47,21 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`add_stream<class_AudioStreamRandomizer_method_add_stream>` **(** :ref:`int<class_int>` index **)**                                                                         |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`AudioStream<class_AudioStream>` | :ref:`get_stream<class_AudioStreamRandomizer_method_get_stream>` **(** :ref:`int<class_int>` index **)** |const|                                                                 |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`             | :ref:`get_stream_probability_weight<class_AudioStreamRandomizer_method_get_stream_probability_weight>` **(** :ref:`int<class_int>` index **)** |const|                           |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`move_stream<class_AudioStreamRandomizer_method_move_stream>` **(** :ref:`int<class_int>` index_from, :ref:`int<class_int>` index_to **)**                                  |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`remove_stream<class_AudioStreamRandomizer_method_remove_stream>` **(** :ref:`int<class_int>` index **)**                                                                   |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_stream<class_AudioStreamRandomizer_method_set_stream>` **(** :ref:`int<class_int>` index, :ref:`AudioStream<class_AudioStream>` stream **)**                           |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_stream_probability_weight<class_AudioStreamRandomizer_method_set_stream_probability_weight>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` weight **)** |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`add_stream<class_AudioStreamRandomizer_method_add_stream>` **(** :ref:`int<class_int>` index, :ref:`AudioStream<class_AudioStream>` stream, :ref:`float<class_float>` weight=1.0 **)** |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`get_stream<class_AudioStreamRandomizer_method_get_stream>` **(** :ref:`int<class_int>` index **)** |const|                                                                             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`get_stream_probability_weight<class_AudioStreamRandomizer_method_get_stream_probability_weight>` **(** :ref:`int<class_int>` index **)** |const|                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`move_stream<class_AudioStreamRandomizer_method_move_stream>` **(** :ref:`int<class_int>` index_from, :ref:`int<class_int>` index_to **)**                                              |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`remove_stream<class_AudioStreamRandomizer_method_remove_stream>` **(** :ref:`int<class_int>` index **)**                                                                               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_stream<class_AudioStreamRandomizer_method_set_stream>` **(** :ref:`int<class_int>` index, :ref:`AudioStream<class_AudioStream>` stream **)**                                       |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_stream_probability_weight<class_AudioStreamRandomizer_method_set_stream_probability_weight>` **(** :ref:`int<class_int>` index, :ref:`float<class_float>` weight **)**             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -188,9 +188,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-void **add_stream** **(** :ref:`int<class_int>` index **)**
+void **add_stream** **(** :ref:`int<class_int>` index, :ref:`AudioStream<class_AudioStream>` stream, :ref:`float<class_float>` weight=1.0 **)**
 
-Insert a stream at the specified index.
+Insert a stream at the specified index. If the index is less than zero, the insertion occurs at the end of the underlying pool.
 
 .. rst-class:: classref-item-separator
 

@@ -224,6 +224,8 @@ The separation between the toggle icon and the text (in pixels). Negative values
 
 The size of the text outline.
 
+\ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_CheckButton_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
+
 .. rst-class:: classref-item-separator
 
 ----

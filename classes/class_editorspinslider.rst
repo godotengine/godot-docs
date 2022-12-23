@@ -53,6 +53,59 @@ Properties
 
 .. rst-class:: classref-descriptions-group
 
+Signals
+-------
+
+.. _class_EditorSpinSlider_signal_grabbed:
+
+.. rst-class:: classref-signal
+
+**grabbed** **(** **)**
+
+Emitted when the spinner/slider is grabbed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_signal_ungrabbed:
+
+.. rst-class:: classref-signal
+
+**ungrabbed** **(** **)**
+
+Emitted when the spinner/slider is ungrabbed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_signal_value_focus_entered:
+
+.. rst-class:: classref-signal
+
+**value_focus_entered** **(** **)**
+
+Emitted when the value form gains focus.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_signal_value_focus_exited:
+
+.. rst-class:: classref-signal
+
+**value_focus_exited** **(** **)**
+
+Emitted when the value form loses focus.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Property Descriptions
 ---------------------
 

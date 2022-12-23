@@ -790,6 +790,8 @@ Starting from ``_ready()``, ``bar()`` would print:
 
 Returns the passed ``instance`` converted to a Dictionary. Can be useful for serializing.
 
+\ **Note:** Cannot be used to serialize objects with built-in scripts attached or objects allocated within built-in scripts.
+
 ::
 
     var foo = "bar"
