@@ -46,7 +46,7 @@ Advantages
 
 .. seealso::
 
-    See :ref:`doc_using_fonts` for guidelines on configuring font imports.
+    See :ref:`doc_gui_using_fonts` for guidelines on configuring font imports.
 
 Limitations
 ^^^^^^^^^^^

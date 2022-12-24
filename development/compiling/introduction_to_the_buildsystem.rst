@@ -171,7 +171,7 @@ Supported values for the ``arch`` option are **auto**, **x86_32**, **x86_64**,
 
 ::
 
-    scons platform=<platform> arch=auto/'auto/x86_32/x86_64/arm32/arm64/rv64/ppc32/ppc64/wasm32
+    scons platform=<platform> arch={auto|x86_32|x86_64|arm32|arm64|rv64|ppc32|ppc64|wasm32}
 
 This flag appends the value of ``arch`` to resulting binaries when
 relevant.  The default value ``arch=auto`` detects the architecture
