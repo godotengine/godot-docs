@@ -477,7 +477,7 @@ And the *Mob*'s script.
        $AnimationPlayer.playback_speed = random_speed / min_speed
 
 
-    func squash():
+   func squash():
        emit_signal("squashed")
        queue_free()
 
