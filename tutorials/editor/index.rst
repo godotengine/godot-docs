@@ -1,11 +1,11 @@
-Editor manual
-=============
+Editor introduction
+===================
 
 In this section, we cover the Godot editor in general, from its interface to
 using it with the command line.
 
-The editor's interface
-----------------------
+Editor's interface
+------------------
 
 The following pages explain how to use the various windows, workspaces, and
 docks that make up the Godot editor. We cover some specific editors' interface
@@ -35,12 +35,12 @@ should be aware of.
 
    using_the_web_editor
 
-For developers
---------------
+Advanced features
+-----------------
 
-The articles below focus on features for developers, like calling Godot from the
-command lines and using an external text editor such as Visual Studio Code or
-Emacs.
+The articles below focus on advanced features useful for experienced developers,
+such as calling Godot from the command line and using an external text editor
+like Visual Studio Code or Emacs.
 
 .. toctree::
    :maxdepth: 1
@@ -61,12 +61,3 @@ a project that's only 2D or only 3D and don't want to see what you don't need.
    :name: toc-editor-features
 
    managing_editor_features
-
-Upgrading to Godot 4
---------------------
-
-.. toctree::
-   :maxdepth: 1
-   :name: toc-editor-upgrading
-
-   upgrading_to_godot_4

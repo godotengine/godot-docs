@@ -1,7 +1,7 @@
 .. _doc_upgrading_to_godot_4:
 
-Upgrading to Godot 4
-====================
+Upgrading from Godot 3 to Godot 4
+=================================
 
 Should I upgrade to Godot 4?
 ----------------------------

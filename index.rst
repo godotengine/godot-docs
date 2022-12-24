@@ -95,20 +95,24 @@ the top-level ``index.html`` in a web browser.
    getting_started/first_3d_game/index
 
 
-.. The sections below are sorted alphabetically. Please keep them that way.
+.. Sections below are split into two groups. First come meta sections, covering
+   general matters. Below that different areas of the engine are listed.
+   These sections are sorted alphabetically. Please keep them that way.
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: Tutorials
+   :caption: Manual
    :name: sec-tutorials
+
+   tutorials/best_practices/index
+   tutorials/editor/index
+   tutorials/migrating/index
 
    tutorials/2d/index
    tutorials/3d/index
    tutorials/animation/index
    tutorials/assets_pipeline/index
    tutorials/audio/index
-   tutorials/best_practices/index
-   tutorials/editor/index
    tutorials/export/index
    tutorials/i18n/index
    tutorials/inputs/index
