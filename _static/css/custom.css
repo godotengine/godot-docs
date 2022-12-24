@@ -918,12 +918,14 @@ code,
 
 /* Admonition tweaks */
 
+.rst-content .admonition,
 .rst-content .admonition.note,
 .rst-content .admonition.seealso {
     background-color: var(--admonition-note-background-color);
     color: var(--admonition-note-color);
 }
 
+.rst-content .admonition .admonition-title,
 .rst-content .admonition.note .admonition-title,
 .rst-content .admonition.seealso .admonition-title {
     background-color: var(--admonition-note-title-background-color);
@@ -1564,4 +1566,12 @@ p + .classref-constant {
 }
 .wy-menu-vertical p.caption + ul.active {
     display: block;
+}
+
+/* Top navigation, breadcrumbs */
+.wy-breadcrumbs li a {
+    padding: 0 5px;
+}
+.wy-breadcrumbs li a:first-child {
+    padding-left: 0;
 }
