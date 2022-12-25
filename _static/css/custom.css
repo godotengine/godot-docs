@@ -1438,6 +1438,24 @@ p + .classref-constant {
     color: var(--navbar-level-1-color);
 }
 
+.rst-versions .rst-current-version,
+.rst-versions .rst-other-versions {
+    padding: 12px 14px;
+}
+
+.rst-versions .rst-other-versions {
+    color: var(--navbar-heading-color);
+}
+
+.rst-versions .rst-other-versions dl + dl {
+    margin-top: 4px;
+}
+
+.rst-versions .rst-other-versions hr {
+    border-color: var(--hr-color);
+    margin: 12px 0;
+}
+
 .rst-versions .rst-other-versions small {
     color: var(--navbar-level-3-color);
 }
@@ -1446,20 +1464,24 @@ p + .classref-constant {
     text-decoration: underline;
 }
 
-.rst-versions .rst-other-versions {
-    color: var(--navbar-heading-color);
+/* This will hide every segment of the panel, starting with the 4th. */
+.rst-versions .rst-other-versions .injected dl:nth-child(n+4) {
+    display: none;
 }
 
 .rst-versions .rst-current-version {
     background-color: var(--navbar-current-background-color);
+    border-bottom: 1px solid var(--hr-color);
 }
-
 .rst-versions .rst-current-version:hover {
     background-color: var(--navbar-current-background-color-hover);
 }
-
 .rst-versions .rst-current-version:active {
     background-color: var(--navbar-current-background-color-active);
+}
+
+.rst-versions .rst-current-version .fa {
+    line-height: 20px;
 }
 
 /* Hide the obnoxious automatic highlight from the search context. */
