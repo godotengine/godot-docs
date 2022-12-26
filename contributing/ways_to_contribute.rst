@@ -199,8 +199,8 @@ There are two separate resources referred to as "documentation" in Godot:
   offline, directly in Godot's code editor, or online at Godot :ref:`Class Reference
   <doc_class_reference>`. To contribute to the class reference, you have to edit the
   XML file corresponding to the class and make a pull request.
-  See :ref:`doc_updating_the_class_reference` and
-  :ref:`doc_class_reference_writing_guidelines` for more details.
+  See :ref:`doc_updating_the_class_reference` and :ref:`doc_class_reference_primer`
+  for more details.
 
 - **The tutorials and engine documentation and its translations.**
   This is the part you are reading now, which is distributed in the HTML format.

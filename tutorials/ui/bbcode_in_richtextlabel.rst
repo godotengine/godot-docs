@@ -17,7 +17,7 @@ formatting rules for a part of the text. You may be familiar with them if you ev
 forums (also known as `bulletin boards`, hence the "BB" in "BBCode").
 
 Note that the BBCode tags can also be used, to some extent, in the XML source of
-the class reference. For more information, see :ref:`doc_class_reference_writing_guidelines`.
+the class reference. For more information, see :ref:`doc_class_reference_primer`.
 
 Using BBCode
 ------------

@@ -89,19 +89,20 @@ relatively intuitive:
   new users.
 - The :ref:`sec-tutorials` section can be read as needed,
   in any order. It contains feature-specific tutorials and documentation.
-- The :ref:`sec-devel` section is intended for advanced users and contributors
+- The :ref:`sec-contributing` section gives the information related to contributing to
+  the engine development, e.g. how to report bugs, help with the documentation, etc.
+  It also contains subsections intended for advanced users and contributors
   to the engine development, with the information on compiling the engine,
   contributing to the editor, or developing C++ modules.
-- The :ref:`sec-community` section gives the information related to contributing to
-  the engine development and the life of its community, e.g. how to report bugs,
-  help with the documentation, etc. It also points to various community channels
-  like Godot Contributors Chat and Discord and contains a list of recommended
-  third-party tutorials outside of this documentation.
+- The :ref:`sec-community` section is dedicated to the life of its community.
+  It points to various community channels like Godot Contributors Chat and
+  Discord and contains a list of recommended third-party tutorials outside
+  of this documentation.
 - Finally, the :ref:`sec-class-ref` is the documentation of the Godot API,
   which is also available directly within the engine's script editor. It is
   generated automatically from a file in the main source repository, therefore
   the generated files of the documentation are not meant to be modified. See
-  :ref:`doc_class_reference_writing_guidelines` for details.
+  :ref:`doc_updating_the_class_reference` for details.
 
 In addition to this documentation, you may also want to take a look at the
 various `Godot demo projects <https://github.com/godotengine/godot-demo-projects>`_.

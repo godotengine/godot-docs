@@ -1,7 +1,7 @@
 .. _doc_docs_writing_guidelines:
 
-Docs writing guidelines
-=======================
+Writing guidelines
+==================
 
 The Godot community is rich and international. Users come from all
 around the world. Some of them are young, and many aren't native English

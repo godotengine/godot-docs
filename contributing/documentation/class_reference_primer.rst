@@ -1,7 +1,7 @@
-.. _doc_class_reference_writing_guidelines:
+.. _doc_class_reference_primer:
 
-Class reference writing guidelines
-==================================
+Class reference primer
+======================
 
 This page explains how to write the class reference. You will learn where to
 write new descriptions for the classes, methods, and properties for Godot's
@@ -84,7 +84,7 @@ Write in a clear and simple language. Always follow the :ref:`writing guidelines
 **Do not leave empty lines** in the descriptions: each line in the XML file will
 result in a new paragraph, even if it is empty.
 
-.. _doc_class_reference_writing_guidelines_editing_xml:
+.. _doc_class_reference_editing_xml:
 
 How to edit class XML
 ---------------------
@@ -120,7 +120,7 @@ search feature to find classes and properties quickly.
     `vscode-xml extension <https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml>`__
     to get linting for class reference XML files.
 
-.. _doc_class_reference_writing_guidelines_bbcode:
+.. _doc_class_reference_bbcode:
 
 Improve formatting with BBCode style tags
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -273,13 +273,3 @@ Notice the use of italics instead of bold:
 
 In all the paragraphs described above, make sure the punctuation is part of the
 BBCode tags for consistency.
-
-I don't know what this method does!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-No problem. Leave it for now, and list the methods you skipped when you
-open a Pull Request with your changes. Another writer will take care of it.
-
-You can still look at the methods' implementation in Godot's source code on
-GitHub. If you have doubts, feel free to ask on the `Q&A website
-<https://godotengine.org/qa/>`__ and `Godot Contributors Chat <https://chat.godotengine.org/>`_.

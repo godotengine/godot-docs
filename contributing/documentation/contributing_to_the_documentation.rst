@@ -41,9 +41,9 @@ two game creation tutorials in the Getting Started section.
 We strive to write factual content in an accessible and well-written language. To
 contribute, you should also read:
 
-1. The :ref:`doc_docs_writing_guidelines`. There, you will find rules and
+1. :ref:`doc_docs_writing_guidelines`. There, you will find rules and
    recommendations to write in a way that everyone understands.
-2. The content guidelines. They explain the principles we follow to write the
+2. :ref:`doc_content_guidelines`. They explain the principles we follow to write the
    documentation and the kind of content we accept.
 
 Contributing changes
