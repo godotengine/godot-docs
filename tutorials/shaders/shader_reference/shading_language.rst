@@ -729,11 +729,11 @@ GDScript:
 
 ::
 
-  material.set_shader_uniform("some_value", some_value)
+  material.set_shader_parameter("some_value", some_value)
 
-  material.set_shader_uniform("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
+  material.set_shader_parameter("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
 
-.. note:: The first argument to ``set_shader_uniform`` is the name of the uniform
+.. note:: The first argument to ``set_shader_parameter`` is the name of the uniform
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
 
