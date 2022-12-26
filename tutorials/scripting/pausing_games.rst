@@ -64,9 +64,9 @@ This is what each mode tells a node to do:
 -  **Pausable**: Process the node (and its children in Inherit
    mode) only when the game is not paused.
 -  **WhenPaused**: Process the node (and its children in Inherit
-   mode)only when the game is paused.
+   mode) *only* when the game is paused.
 -  **Always**: Process the node (and its children in Inherit
-   mode) no matter what . Paused or not this node will process.
+   mode) no matter what. Paused or not, this node will process.
 -  **Disabled**: The node (and its children in Inherit
    mode) will not process at all.
 
