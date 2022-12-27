@@ -164,11 +164,11 @@ floating over it like the monsters.
 
 If the character is on the floor and the player presses "jump", we instantly
 give them a lot of vertical speed. In games, you really want controls to be
-responsive and giving instant speed boosts like these, while unrealistic, feel
+responsive and giving instant speed boosts like these, while unrealistic, feels
 great.
 
 Notice that the Y axis is positive upwards. That's unlike 2D, where the Y axis
-is positive downward.
+is positive downwards.
 
 Squashing monsters
 ------------------
