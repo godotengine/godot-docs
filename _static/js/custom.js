@@ -250,6 +250,30 @@ $(document).ready(() => {
     registerOnScrollEvent(mediaQuery);
   });
 
+  // Add line-break suggestions to class refernece navigation items.
+  const classReferenceLinks = document.querySelectorAll('.wy-menu-vertical > ul:last-of-type .reference.internal');
+  for (const linkItem of classReferenceLinks) {
+    let textNode = null;
+    linkItem.childNodes.forEach(it => {
+      if (it.nodeType === Node.TEXT_NODE) {
+        // If this is a text node and if it needs to be updated, store a reference.
+        let text = it.textContent;
+        if (!(text.includes(" ") || text.length < 10)) {
+          textNode = it;
+        }
+      }
+    });
+
+    if (textNode != null) {
+        let text = textNode.textContent;
+        // Adds suggested line-breaks, if needed, and replace the original text.
+        text = text.replace(/((?:(?<=[a-z])[A-Z0-9](?!$))|(?<!^)[A-Z](?=[a-z]))/gm, '<wbr>$1');
+
+        linkItem.removeChild(textNode);
+        linkItem.insertAdjacentHTML('beforeend', text);
+    }
+  }
+
   if (inDev) {
     // Add a compatibility notice using JavaScript so it doesn't end up in the
     // automatically generated `meta description` tag.
