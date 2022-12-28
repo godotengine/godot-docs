@@ -244,11 +244,11 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
                 // Make sure that every parameter has a default value.
                 // Otherwise, there will be problems with creating and editing
                 // your resource via the inspector.
-                public BotStats(int health = 0, Resource subResource = null, String[] strings = null)
+                public BotStats()
                 {
-                    Health = health;
-                    SubResource = subResource;
-                    Strings = strings ?? new String[0];
+                    Health = 0;
+                    SubResource = null;
+                    Strings = new String[0];
                 }
             }
         }
