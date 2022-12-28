@@ -209,6 +209,7 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
 
 .. tabs::
   .. code-tab:: gdscript GDScript
+
     extends Resource
 
     @export var health : int
@@ -229,8 +230,9 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
         using System;
         using Godot;
 
-        namespace ExampleProject {
-            public class BotStats : Resource
+        namespace ExampleProject
+        {
+            public partial class BotStats : Resource
             {
                 [Export]
                 public int Health { get; set; }
@@ -239,16 +241,20 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
                 public Resource SubResource { get; set; }
 
                 [Export]
-                public String[] Strings { get; set; }
+                public string[] Strings { get; set; }
 
-                // Make sure that every parameter has a default value.
-                // Otherwise, there will be problems with creating and editing
-                // your resource via the inspector.
-                public BotStats(int health = 0, Resource subResource = null, String[] strings = null)
+                // Make sure you provide a parameterless constructor.
+                // In C#, a parameterless constructor is different from a
+                // constructor with all default values.
+                // Without a parameterless constructor, Godot will have problems
+                // creating and editing your resource via the inspector.
+                public BotStats() : this(0, null, null) {}
+
+                public BotStats(int health, Resource subResource, string[] strings)
                 {
                     Health = health;
                     SubResource = subResource;
-                    Strings = strings ?? new String[0];
+                    Strings = strings ?? Array.Empty<string>();
                 }
             }
         }
@@ -257,6 +263,7 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
 
 .. tabs::
   .. code-tab:: gdscript GDScript
+
     extends CharacterBody3D
 
     @export var stats : Resource
@@ -269,12 +276,14 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
             # Prints "10"
 
   .. code-tab:: csharp
+
         // Bot.cs
         using System;
         using Godot;
 
-        namespace ExampleProject {
-            public class Bot : CharacterBody3D
+        namespace ExampleProject
+        {
+            public partial class Bot : CharacterBody3D
             {
                 [Export]
                 public Resource Stats;
@@ -322,7 +331,7 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
         using System;
         using Godot;
 
-        public class BotStatsTable : Resource
+        public partial class BotStatsTable : Resource
         {
             private Godot.Dictionary<String, BotStats> _stats = new Godot.Dictionary<String, BotStats>();
 
@@ -375,9 +384,9 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
         using System;
         using Godot;
 
-        public class MyNode : Node
+        public partial class MyNode : Node
         {
-            public class MyResource : Resource
+            public partial class MyResource : Resource
             {
                 [Export]
                 public int Value { get; set; } = 5;
