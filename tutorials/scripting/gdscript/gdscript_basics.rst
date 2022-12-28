@@ -266,11 +266,8 @@ The following is the list of supported operators and their precedence.
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                        | Comparisons                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
-| ``in``                                                                         | Checks if a value is within a string,     |
-|                                                                                | list, range, dictionary, or node.         |
-|                                                                                | When used with the ``for`` keyword it is  |
-|                                                                                | used to iterate though the contents of a  |
-|                                                                                | string, list, range, dictionary or node.  |
+| ``in``                                                                         | Content test / Content iterator           |
+|                                                                                | (when used with ``for``)                  |
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``not``                                                                        | Boolean NOT                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
