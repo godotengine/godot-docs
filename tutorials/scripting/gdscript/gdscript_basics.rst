@@ -322,15 +322,19 @@ Annotations
 
 There are some special tokens in GDScript that act like keywords but are not,
 they are *annotations* instead. Every annotation start with the ``@`` character
-and is specified by a name.
+and is specified by a name. A detailed description and example for each annotation
+can be found inside the :ref:`GDScript class reference <class_@GDScript>`.
 
-Those affect how the script is treated by external tools and usually don't
+Annotations affect how the script is treated by external tools and usually don't
 change the behavior.
 
 For instance, you can use it to export a value to the editor::
 
     @export_range(1, 100, 1, "or_greater")
     var ranged_var: int = 50
+
+For more information about exporting properties, read the :ref:`GDScript exports <doc_gdscript_exports>`
+article.
 
 Annotations can be specified one per line or all in the same line. They affect
 the next statement that isn't an annotation. Annotations can have arguments sent
@@ -344,55 +348,30 @@ Both of these are the same::
 
     @onready @export_node_path(TextEdit, LineEdit) var input_field
 
+.. _doc_gdscript_onready_annotation:
 
-Here's the list of available annotations:
+`@onready` annotation
+~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| **Annotation**               | **Description**                                                                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@tool``                    | Enable the `Tool mode`_.                                                                          |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@onready``                 | Defer initialization of variable until the node is in the tree. See                               |
-|                              | :ref:`doc_gdscript_onready_annotation`.                                                           |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@rpc``                     | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@export``                  | Export hints for the editor. See :ref:`doc_gdscript_exports`.                                     |
-|                              |                                                                                                   |
-| ``@export_enum``             |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_file``             |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_dir``              |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_global_file``      |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_global_dir``       |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_multiline``        |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_placeholder``      |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_range``            |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_exp_easing``       |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_color_no_alpha``   |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_node_path``        |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags``            |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_2d_render``  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_2d_physics`` |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_3d_render``  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_3d_physics`` |                                                                                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------+
+When using nodes, it's common to desire to keep references to parts
+of the scene in a variable. As scenes are only warranted to be
+configured when entering the active scene tree, the sub-nodes can only
+be obtained when a call to ``Node._ready()`` is made.
+
+::
+
+    var my_label
+
+
+    func _ready():
+        my_label = get_node("MyLabel")
+
+This can get a little cumbersome, especially when nodes and external
+references pile up. For this, GDScript has the ``@onready`` annotation, that
+defers initialization of a member variable until ``_ready()`` is called. It
+can replace the above code with a single line::
+
+    @onready var my_label = get_node("MyLabel")
 
 Comments
 ~~~~~~~~
@@ -1874,31 +1853,6 @@ This also means that returning a signal from a function that isn't a coroutine w
           This is done to ensure type safety.
           With this type safety in place, a function cannot say that it returns an ``int`` while it actually returns a function state object
           during runtime.
-
-.. _doc_gdscript_onready_annotation:
-
-`@onready` annotation
-~~~~~~~~~~~~~~~~~~~~~
-
-When using nodes, it's common to desire to keep references to parts
-of the scene in a variable. As scenes are only warranted to be
-configured when entering the active scene tree, the sub-nodes can only
-be obtained when a call to ``Node._ready()`` is made.
-
-::
-
-    var my_label
-
-
-    func _ready():
-        my_label = get_node("MyLabel")
-
-This can get a little cumbersome, especially when nodes and external
-references pile up. For this, GDScript has the ``@onready`` annotation, that
-defers initialization of a member variable until ``_ready()`` is called. It
-can replace the above code with a single line::
-
-    @onready var my_label = get_node("MyLabel")
 
 Assert keyword
 ~~~~~~~~~~~~~~
