@@ -727,7 +727,7 @@ from within the shader.
 You can set uniforms in the editor in the material. Or you can set them through
 GDScript:
 
-::
+.. code-block:: gdscript
 
   material.set_shader_parameter("some_value", some_value)
 
@@ -822,25 +822,25 @@ Uniforms can also be assigned default values:
 
 If you need to make multiple uniforms to be grouped in the specific category of an inspector, you can use a `group_uniform` keyword like:
 
-::
+.. code-block:: glsl
 
     group_uniforms MyGroup;
     uniform sampler2D test;
 
 You can close the group by using:
 
-::
+.. code-block:: glsl
 
     group_uniforms;
 
 The syntax also supports subgroups (it's not mandatory to declare the base group before this):
 
-::
+.. code-block:: glsl
 
     group_uniforms MyGroup.MySubgroup;
 
 Global uniforms
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Sometimes, you want to modify a parameter in many different shaders at once.
 With a regular uniform, this takes a lot of work as all these shaders need to be
@@ -867,7 +867,7 @@ uniforms:
 
 After creating a global uniform, you can use it in a shader as follows:
 
-::
+.. code-block:: glsl
 
     shader_type canvas_item;
 
@@ -887,7 +887,7 @@ To change the value of a global uniform at run-time, use the
 :ref:`RenderingServer.global_shader_parameter_set <class_RenderingServer_method_global_shader_parameter_set>`
 method in a script:
 
-::
+.. code-block:: gdscript
 
     RenderingServer.global_shader_parameter_set("my_color", Color(0.3, 0.6, 1.0))
 
@@ -897,7 +897,7 @@ the CPU and GPU.
 
 You can also add or remove global uniforms at run-time:
 
-::
+.. code-block:: gdscript
 
     RenderingServer.global_shader_parameter_add("my_color", RenderingServer.GLOBAL_VAR_TYPE_COLOR, Color(0.3, 0.6, 1.0))
     RenderingServer.global_shader_parameter_remove("my_color")
@@ -922,7 +922,7 @@ it's not as pronounced compared to getting global uniform values from a script
 .. _doc_shading_language_per_instance_uniforms:
 
 Per-instance uniforms
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -941,7 +941,7 @@ Per-instance uniforms are set on each GeometryInstance3D, rather than on each
 Material instance. Take this into account when working with meshes that have
 multiple materials assigned to them, or MultiMesh setups.
 
-::
+.. code-block:: glsl
 
     shader_type spatial;
 
@@ -966,7 +966,7 @@ Per-instance uniform values can also be set at run-time using
 `set_instance_shader_parameter<class_GeometryInstance3D_method_set_instance_shader_parameter>`
 method on a node that inherits from :ref:`class_GeometryInstance3D`:
 
-::
+.. code-block:: gdscript
 
     $MeshInstance3D.set_instance_shader_parameter("my_color", Color(0.3, 0.6, 1.0))
 
@@ -984,7 +984,7 @@ When using per-instance uniforms, there are some restrictions you should be awar
   specifying the index (0-15) of the instance uniform by using the
   ``instance_index`` hint:
 
-::
+.. code-block:: glsl
 
     instance uniform vec4 my_color : source_color, instance_index(5);
 
