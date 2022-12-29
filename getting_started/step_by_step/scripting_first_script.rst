@@ -264,7 +264,17 @@ Run the scene to see the Godot icon turn in-place.
 Moving forward
 ~~~~~~~~~~~~~~
 
-Let's now make the node move. Add the following two lines to the ``_process()``
+Let's now make the node move. 
+
+Quick math.
+.. code::
+   v:sub:`t` = v:sub:`0` + v:sub:`t` + 0.5 *at:sup:`2`
+
+To make the node turn we calculate the vector. By using the 2d vector 'UP' and rotate it with the value of rotation to get a direction.
+We then multiply it with the magnitude (speed) so we get the velocity-vector(v).
+Our position is then calculated by adding, the velocity-vector(v) multiplied with the delta (t), to the current position.
+
+Add the following two lines to the ``_process()``
 function, ensuring the new lines are indented the same way as the one before
 them.
 
