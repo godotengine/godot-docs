@@ -250,7 +250,16 @@ $(document).ready(() => {
     registerOnScrollEvent(mediaQuery);
   });
 
-  // Add line-break suggestions to class refernece navigation items.
+  // Add line-break suggestions to the sidebar navigation items in the class reference section.
+  //
+  // Some class reference pages have very long PascalCase names, such as
+  //    VisualShaderNodeCurveXYZTexture
+  // Those create issues for our layout, as we can neither make them wrap with CSS without
+  // breaking normal article titles, nor is it good to have them overflow their containers.
+  // So we use a <wbr> tag to insert mid-word suggestions for appropriate splits, so the browser
+  // knows that it's okay to split it like
+  //    Visual Shader Node Curve XYZTexture
+  // and add a new line at an opportune moment.
   const classReferenceLinks = document.querySelectorAll('.wy-menu-vertical > ul:last-of-type .reference.internal');
   for (const linkItem of classReferenceLinks) {
     let textNode = null;
@@ -266,8 +275,10 @@ $(document).ready(() => {
 
     if (textNode != null) {
         let text = textNode.textContent;
-        // Adds suggested line-breaks, if needed, and replace the original text.
-        text = text.replace(/((?:(?<=[a-z])[A-Z0-9](?!$))|(?<!^)[A-Z](?=[a-z]))/gm, '<wbr>$1');
+        // Add suggested line-breaks and replace the original text.
+        // The regex looks for a lowercase letter followed by a number or an uppercase
+        // letter. We avoid splitting at the last character in the name, though.
+        text = text.replace(/([a-z])([A-Z0-9](?!$))/gm, '$1<wbr>$2');
 
         linkItem.removeChild(textNode);
         linkItem.insertAdjacentHTML('beforeend', text);
