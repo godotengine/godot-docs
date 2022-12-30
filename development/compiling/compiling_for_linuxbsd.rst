@@ -253,7 +253,7 @@ the default GCC + GNU ld setup:
 To do so, install Clang and the ``lld`` package from your distribution's package manager
 then use the following SCons command::
 
-    scons platform=linuxbsd use_llvm=yes use_lld=yes
+    scons platform=linuxbsd use_llvm=yes linker=lld
 
 After the build is completed, a new binary with a ``.llvm`` suffix will be
 created in the ``bin/`` folder.
