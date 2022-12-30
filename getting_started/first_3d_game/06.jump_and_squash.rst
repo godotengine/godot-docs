@@ -136,7 +136,7 @@ called ``move_and_slide()``.
 
        # Jumping.
        if is_on_floor() and Input.is_action_just_pressed("jump"):
-           velocity.y += jump_impulse
+           velocity.y = jump_impulse
 
        #...
 
@@ -149,7 +149,7 @@ called ``move_and_slide()``.
         // Jumping.
         if (IsOnFloor() && Input.IsActionJustPressed("jump"))
         {
-            _velocity.y += JumpImpulse;
+            _velocity.y = JumpImpulse;
         }
 
         // ...
