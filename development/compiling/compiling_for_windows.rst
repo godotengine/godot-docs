@@ -24,6 +24,12 @@ For compiling under Windows, the following is required:
   **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
 - `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
   **Make sure to enable the option to add Python to the ``PATH`` in the installer.**
+
+  .. note:: There is a Microsoft Store package of Python but it is mainly for interactive use and not full development.
+           Because of restrictions on Microsoft Store apps, Python scripts may not have full write access to shared locations such as TEMP and the registry.
+           Instead, it will write to a private copy and likely cause issues with SCons later on.
+           We recommend installing Python using their full installer at the link above.
+           
 - `SCons <https://www.scons.org/>`_ build system. Using the latest release is
   recommended, especially for proper support of recent Visual Studio releases.
 
@@ -68,6 +74,18 @@ If the commands above don't work, make sure to add Python to your ``PATH``
 environment variable after installing it, then check again.
 You can do so by running the Python installer again and enabling the option
 to add Python to the ``PATH``.
+
+.. note:: SCons installed via ``pip`` puts an executable ``scons.exe``
+          in the Scripts directory of your Python installation, or in a shadow script directory
+          if you did a User Install. For Windows to run ``scons`` as a command, you'll need this in your search path.
+          During installation with ``pip`` you might have missed a warning like this:
+          .. code-block:: pycon
+             WARNING: The scripts scons-configure-cache.exe, scons.exe and sconsign.exe
+             are installed in 'C:\Users\me\AppData\Roaming\Python\Python310\Scripts'
+             which is not on PATH.
+             Consider adding this directory to PATH or, if you prefer to suppress this warning,
+             use --no-warn-script-location.
+          
 
 If SCons cannot detect your Visual Studio installation, it might be that your
 SCons version is too old. Update it to the latest version with
