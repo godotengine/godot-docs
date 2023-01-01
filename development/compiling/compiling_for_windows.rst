@@ -77,7 +77,9 @@ environment variable after installing it, then check again.
 You can do so by running the Python installer again and enabling the option
 to add Python to the ``PATH``.
 
-.. note:: SCons installed via ``pip`` puts an executable ``scons.exe``
+.. note::
+
+          SCons installed via ``pip`` puts an executable ``scons.exe``
           in the Scripts directory of your Python installation, or in a shadow script directory
           if you did a User Install. For Windows to run ``scons`` as a command, you'll need this in your search path.
           During installation with ``pip`` you might have missed a warning like this:
