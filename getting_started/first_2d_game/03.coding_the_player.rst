@@ -290,7 +290,7 @@ the ``_process`` function (make sure it's not indented under the `else`):
 
  .. code-tab:: csharp
 
-        Position += velocity * delta;
+        Position += velocity * (float)delta;
         Position = new Vector2(
             x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
             y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
