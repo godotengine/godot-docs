@@ -93,12 +93,12 @@ with it. Select the ``Ground`` node and add a :ref:`MeshInstance <class_MeshInst
 .. image:: img/01.game_setup/10.mesh_instance3d.png
 
 In the *Inspector*, click on the field next to *Mesh* and create a *BoxMesh*
-resource to create a visible cube.
+resource to create a visible box.
 
 .. image:: img/01.game_setup/11.box_mesh.webp
 
-Once again, it's too small by default. Click the cube icon to expand the
-resource and set its *Size* to ``60``, ``2``, and ``60``. As the cube
+Once again, it's too small by default. Click the box icon to expand the
+resource and set its *Size* to ``60``, ``2``, and ``60``. As the box
 resource works with a size rather than extents, we need to use these values so
 it matches our collision shape.
 
