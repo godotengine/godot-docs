@@ -25,7 +25,9 @@ For compiling under Windows, the following is required:
 - `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
   **Make sure to enable the option to add Python to the ``PATH`` in the installer.**
 
-  .. note:: There is a Microsoft Store package of Python but it is mainly for interactive use and not full development.
+  .. note::
+  
+           There is a Microsoft Store package of Python but it is mainly for interactive use and not full development.
            Because of restrictions on Microsoft Store apps, Python scripts may not have full write access to shared locations such as TEMP and the registry.
            Instead, it will write to a private copy and likely cause issues with SCons later on.
            We recommend installing Python using their full installer at the link above.
