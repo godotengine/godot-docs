@@ -195,7 +195,7 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         var velocity = Vector2.Zero; // The player's movement vector.
 
