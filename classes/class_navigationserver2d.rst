@@ -40,7 +40,7 @@ This server keeps tracks of any call and executes them during the sync phase. Th
 Tutorials
 ---------
 
-- `2D Navigation Demo <https://godotengine.org/asset-library/asset/117>`__
+- `2D Navigation Server Demo <https://godotengine.org/asset-library/asset/6799>`__
 
 .. rst-class:: classref-reftable-group
 
