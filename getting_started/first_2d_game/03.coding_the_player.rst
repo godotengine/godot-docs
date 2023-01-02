@@ -38,7 +38,7 @@ Start by declaring the member variables this object will need:
     using Godot;
     using System;
 
-    public class Player : Area2D
+    public partial class Player : Area2D
     {
         [Export]
         public int Speed = 400; // How fast the player will move (pixels/sec).
