@@ -23,6 +23,18 @@ If you want to supply values in a range of 0 to 255, you should use :ref:`@GDScr
 
 \ **Note:** In a boolean context, a Color will evaluate to ``false`` if it's equal to ``Color(0, 0, 0, 1)`` (opaque black). Otherwise, a Color will always evaluate to ``true``.
 
+Using constants:
+
+.. tabs::
+ .. tab:: GDScript
+
+    Color.DESIRED_COLOR # see the constants cheatsheet below to view all constants
+
+ .. tab:: C#
+
+    Colors.DesiredColor # (mind the s at Color*s*)
+
+
 \ `Color constants cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/color_constants.png>`__
 
 Tutorials
