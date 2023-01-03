@@ -512,7 +512,7 @@ Godot Shading language supports the most common types of flow control:
 
     } while (cond);
 
-Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze
+Keep in mind that in modern GPUs, an infinite loop can exist and can freeze
 your application (including editor). Godot can't protect you from this, so be
 careful not to make this mistake!
 
