@@ -34,9 +34,9 @@ Regions can be enabled / disabled and if disabled will not contribute to future 
 Creating new navigation regions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-New navigation regions will automatically register to the default world navigation map.
+New NavigationRegion nodes will automatically register to the default world navigation map for their 2D/3D dimension.
 
-The region RID can be obtained from NavigationRegion Nodes with ``get_region_rid()``.
+The region RID can then be obtained from NavigationRegion Nodes with ``get_region_rid()``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -46,6 +46,8 @@ The region RID can be obtained from NavigationRegion Nodes with ``get_region_rid
     var navigationserver_region_rid : RID = get_region_rid()
 
 New regions can also be created with the NavigationServer API and added to any existing map.
+
+If regions are created with the NavigationServer API directly they need to be assigned a navigation map manually.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
