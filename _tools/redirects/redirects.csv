@@ -1,4 +1,5 @@
 source,destination
+/about/index.html,/index.html
 /classes/_classes.html,/classes/
 /community/tutorials/3d/mesh_generation_with_heightmap_and_shaders.html,/tutorials/3d/mesh_generation_with_heightmap_and_shaders.html
 /community/tutorials/gdnative/gdnative-c-example.html,/tutorials/plugins/gdnative/gdnative-c-example.html
@@ -277,6 +278,7 @@ source,destination
 /tutorials/debug/debugger_panel.html,/tutorials/scripting/debug/debugger_panel.html
 /tutorials/debug/index.html,/tutorials/scripting/debug/index.html
 /tutorials/debug/overview_of_debugging_tools.html,/tutorials/scripting/debug/overview_of_debugging_tools.html
+/tutorials/editor/upgrading_to_godot_4.html,/tutorials/migrating/upgrading_to_godot_4.html
 /tutorials/gui/bbcode_in_richtextlabel.html,/tutorials/ui/bbcode_in_richtextlabel.html
 /tutorials/gui/control_node_gallery.html,/tutorials/ui/control_node_gallery.html
 /tutorials/gui/custom_gui_controls.html,/tutorials/ui/custom_gui_controls.html
