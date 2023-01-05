@@ -32,7 +32,8 @@ Your scene tree will look something like this:
 
    Another more efficient method is to use a :ref:`BackBufferCopy
    <class_BackBufferCopy>` to copy a region of the screen to a buffer and to
-   access it in a shader script through ``texture(SCREEN_TEXTURE, ...)``.
+   access it in a shader script through a ``sampler2D`` using
+   ``hint_screen_texture``.
 
 .. note::
 
@@ -46,8 +47,9 @@ For this demo, we will use this :ref:`Sprite <class_Sprite2D>` of a sheep.
 .. image:: img/post_example1.png
 
 Assign a new :ref:`Shader <class_Shader>` to the ``ColorRect``'s
-``ShaderMaterial``. You can access the frame's texture and UV with the built in
-``SCREEN_TEXTURE`` and ``SCREEN_UV`` uniforms.
+``ShaderMaterial``. You can access the frame's texture and UV with a
+``sampler2D`` using ``hint_screen_texture`` and the built in ``SCREEN_UV``
+uniforms.
 
 Copy the following code to your shader. The code below is a hex pixelization
 shader by `arlez80 <https://bitbucket.org/arlez80/hex-mosaic/src/master/>`_,
@@ -57,6 +59,7 @@ shader by `arlez80 <https://bitbucket.org/arlez80/hex-mosaic/src/master/>`_,
     shader_type canvas_item;
 
     uniform vec2 size = vec2(32.0, 28.0);
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
 
     void fragment() {
             vec2 norm_size = size * SCREEN_PIXEL_SIZE;
@@ -74,7 +77,7 @@ shader by `arlez80 <https://bitbucket.org/arlez80/hex-mosaic/src/master/>`_,
                                  float(half)),
                              float(norm_uv.y < 0.3333333) * float(norm_uv.y / 0.3333333 < (abs(norm_uv.x - 0.5) * 2.0)));
 
-            COLOR = textureLod(SCREEN_TEXTURE, center_uv, 0.0);
+            COLOR = textureLod(screen_texture, center_uv, 0.0);
     }
 
 The sheep will look something like this:
@@ -109,17 +112,19 @@ matter.
 
     shader_type canvas_item;
 
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
+
     // Blurs the screen in the X-direction.
     void fragment() {
-        vec3 col = texture(SCREEN_TEXTURE, SCREEN_UV).xyz * 0.16;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.15;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(-SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.15;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(2.0 * SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.12;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(2.0 * -SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.12;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(3.0 * SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.09;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(3.0 * -SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.09;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(4.0 * SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.05;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(4.0 * -SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.05;
+        vec3 col = texture(screen_texture, SCREEN_UV).xyz * 0.16;
+        col += texture(screen_texture, SCREEN_UV + vec2(SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.15;
+        col += texture(screen_texture, SCREEN_UV + vec2(-SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.15;
+        col += texture(screen_texture, SCREEN_UV + vec2(2.0 * SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.12;
+        col += texture(screen_texture, SCREEN_UV + vec2(2.0 * -SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.12;
+        col += texture(screen_texture, SCREEN_UV + vec2(3.0 * SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.09;
+        col += texture(screen_texture, SCREEN_UV + vec2(3.0 * -SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.09;
+        col += texture(screen_texture, SCREEN_UV + vec2(4.0 * SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.05;
+        col += texture(screen_texture, SCREEN_UV + vec2(4.0 * -SCREEN_PIXEL_SIZE.x, 0.0)).xyz * 0.05;
         COLOR.xyz = col;
     }
 
@@ -127,17 +132,19 @@ matter.
 
     shader_type canvas_item;
 
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
+
     // Blurs the screen in the Y-direction.
     void fragment() {
-        vec3 col = texture(SCREEN_TEXTURE, SCREEN_UV).xyz * 0.16;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(0.0, SCREEN_PIXEL_SIZE.y)).xyz * 0.15;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(0.0, -SCREEN_PIXEL_SIZE.y)).xyz * 0.15;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(0.0, 2.0 * SCREEN_PIXEL_SIZE.y)).xyz * 0.12;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(0.0, 2.0 * -SCREEN_PIXEL_SIZE.y)).xyz * 0.12;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(0.0, 3.0 * SCREEN_PIXEL_SIZE.y)).xyz * 0.09;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(0.0, 3.0 * -SCREEN_PIXEL_SIZE.y)).xyz * 0.09;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(0.0, 4.0 * SCREEN_PIXEL_SIZE.y)).xyz * 0.05;
-        col += texture(SCREEN_TEXTURE, SCREEN_UV + vec2(0.0, 4.0 * -SCREEN_PIXEL_SIZE.y)).xyz * 0.05;
+        vec3 col = texture(screen_texture, SCREEN_UV).xyz * 0.16;
+        col += texture(screen_texture, SCREEN_UV + vec2(0.0, SCREEN_PIXEL_SIZE.y)).xyz * 0.15;
+        col += texture(screen_texture, SCREEN_UV + vec2(0.0, -SCREEN_PIXEL_SIZE.y)).xyz * 0.15;
+        col += texture(screen_texture, SCREEN_UV + vec2(0.0, 2.0 * SCREEN_PIXEL_SIZE.y)).xyz * 0.12;
+        col += texture(screen_texture, SCREEN_UV + vec2(0.0, 2.0 * -SCREEN_PIXEL_SIZE.y)).xyz * 0.12;
+        col += texture(screen_texture, SCREEN_UV + vec2(0.0, 3.0 * SCREEN_PIXEL_SIZE.y)).xyz * 0.09;
+        col += texture(screen_texture, SCREEN_UV + vec2(0.0, 3.0 * -SCREEN_PIXEL_SIZE.y)).xyz * 0.09;
+        col += texture(screen_texture, SCREEN_UV + vec2(0.0, 4.0 * SCREEN_PIXEL_SIZE.y)).xyz * 0.05;
+        col += texture(screen_texture, SCREEN_UV + vec2(0.0, 4.0 * -SCREEN_PIXEL_SIZE.y)).xyz * 0.05;
         COLOR.xyz = col;
     }
 
