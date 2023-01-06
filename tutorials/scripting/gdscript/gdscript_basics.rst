@@ -495,7 +495,8 @@ very fast to compare, which makes them good candidates for dictionary keys.
 :ref:`NodePath <class_NodePath>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A pre-parsed path to a node or a node property. They are useful to interact with
+A pre-parsed path to a node or a node property.  It can be
+easily assigned to, and from, a String. They are useful to interact with
 the tree to get a node, or affecting properties like with :ref:`Tweens <class_Tween>`.
 
 Vector built-in types
@@ -576,12 +577,6 @@ Engine built-in types
 
 Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
 also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
-
-:ref:`NodePath <class_NodePath>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Compiled path to a node used mainly in the scene system. It can be
-easily assigned to, and from, a String.
 
 :ref:`RID <class_RID>`
 ^^^^^^^^^^^^^^^^^^^^^^
