@@ -177,6 +177,8 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | is         | Tests whether a variable extends a given class, or is of a given built-in type.                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| in         | Tests whether a value is within a string, list, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing.  |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | as         | Cast the value to a given type if possible.                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | self       | Refers to current class instance.                                                                                                                 |
@@ -264,12 +266,12 @@ The following is the list of supported operators and their precedence.
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                        | Comparisons                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
-| ``in``                                                                         | When used with the ``if`` keyword it      |
-|                                                                                | checks if a value is within a string,     |
-|                                                                                | list, range, dictionary, or node.         |
-|                                                                                | When used with the ``for`` keyword it is  |
-|                                                                                | used to iterate though the contents of a  |
-|                                                                                | string, list, range, dictionary or node.  |
+| ``in``                                                                         | Inclusion checker (when used with         |
+|                                                                                | control flow keywords or in a             |
+|                                                                                | standalone expression).                   |
+|                                                                                |                                           |
+|                                                                                | Content iterator (when used with the      |
+|                                                                                | for_ keyword).                            |
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``not``                                                                        | Boolean NOT                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
