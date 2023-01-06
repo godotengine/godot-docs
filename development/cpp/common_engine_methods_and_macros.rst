@@ -28,7 +28,7 @@ Print text
     // This supports a subset of BBCode tags supported by RichTextLabel
     // and will also appear formatted in the editor Output panel.
     // On Windows, this requires Windows 10 or later to work in the terminal.
-    print_rich("[b]Bold[/b], [color=red]Red text[/color]")
+    print_line_rich("[b]Bold[/b], [color=red]Red text[/color]");
 
     // Prints a formatted error or warning message with a trace.
     ERR_PRINT("Message");
