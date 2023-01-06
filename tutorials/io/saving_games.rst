@@ -88,11 +88,11 @@ The save function will look like this:
 
  .. code-tab:: csharp
 
-    public Godot.Collections.Dictionary<string, object> Save()
+    public Godot.Collections.Dictionary<string, Variant> Save()
     {
-        return new Godot.Collections.Dictionary<string, object>()
+        return new Godot.Collections.Dictionary<string, Variant>()
         {
-            { "Filename", GetSceneFilePath() },
+            { "Filename", SceneFilePath },
             { "Parent", GetParent().GetPath() },
             { "PosX", Position.x }, // Vector2 is not supported by JSON
             { "PosY", Position.y },
@@ -172,16 +172,16 @@ way to pull the data out of the file as well.
         foreach (Node saveNode in saveNodes)
         {
             // Check the node is an instanced scene so it can be instanced again during load.
-            if (String.IsNullOrEmpty(saveNode.SceneFilePath))
+            if (string.IsNullOrEmpty(saveNode.SceneFilePath))
             {
-                GD.Print(String.Format("persistent node '{0}' is not an instanced scene, skipped", saveNode.Name));
+                GD.Print($"persistent node '{saveNode.Name}' is not an instanced scene, skipped");
                 continue;
             }
 
             // Check the node has a save function.
             if (!saveNode.HasMethod("Save"))
             {
-                GD.Print(String.Format("persistent node '{0}' is missing a Save() function, skipped", saveNode.Name));
+                GD.Print($"persistent node '{saveNode.Name}' is missing a Save() function, skipped");
                 continue;
             }
 
@@ -271,7 +271,7 @@ load function:
         while (saveGame.GetPosition() < saveGame.GetLength())
         {
             // Get the saved dictionary from the next line in the save file
-            var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)JSON.Parse(saveGame.GetLine()));
+            var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)JSON.ParseString(saveGame.GetLine()));
 
             // Firstly, we need to create the object and add it to the tree and set its position.
             var newObjectScene = (PackedScene)ResourceLoader.Load(nodeData["Filename"].ToString());
