@@ -14,6 +14,8 @@ VisualShaderNodeFaceForward
 
 Returns the vector that points in the same direction as a reference vector within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

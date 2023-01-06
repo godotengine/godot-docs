@@ -12,52 +12,92 @@ VisualShaderNodeParticleAccelerator
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+------------------------------------------------------------+----------------------------------------------------------------------+-------+
-| :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` | :ref:`mode<class_VisualShaderNodeParticleAccelerator_property_mode>` | ``0`` |
-+------------------------------------------------------------+----------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------------------+----------------------------------------------------------------------+-------+
+   | :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` | :ref:`mode<class_VisualShaderNodeParticleAccelerator_property_mode>` | ``0`` |
+   +------------------------------------------------------------+----------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeParticleAccelerator_Mode:
 
-.. _class_VisualShaderNodeParticleAccelerator_constant_MODE_LINEAR:
-
-.. _class_VisualShaderNodeParticleAccelerator_constant_MODE_RADIAL:
-
-.. _class_VisualShaderNodeParticleAccelerator_constant_MODE_TANGENTIAL:
-
-.. _class_VisualShaderNodeParticleAccelerator_constant_MODE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Mode**:
 
-- **MODE_LINEAR** = **0**
+.. _class_VisualShaderNodeParticleAccelerator_constant_MODE_LINEAR:
 
-- **MODE_RADIAL** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **MODE_TANGENTIAL** = **2**
+:ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_LINEAR** = ``0``
 
-- **MODE_MAX** = **3** --- Represents the size of the :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` enum.
+
+
+.. _class_VisualShaderNodeParticleAccelerator_constant_MODE_RADIAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_RADIAL** = ``1``
+
+
+
+.. _class_VisualShaderNodeParticleAccelerator_constant_MODE_TANGENTIAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_TANGENTIAL** = ``2``
+
+
+
+.. _class_VisualShaderNodeParticleAccelerator_constant_MODE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_MAX** = ``3``
+
+Represents the size of the :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParticleAccelerator_property_mode:
 
-- :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **mode**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0``           |
-+-----------+-----------------+
-| *Setter*  | set_mode(value) |
-+-----------+-----------------+
-| *Getter*  | get_mode()      |
-+-----------+-----------------+
+:ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_mode** **(** :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` value **)**
+- :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **get_mode** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

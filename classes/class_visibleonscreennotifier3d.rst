@@ -16,6 +16,8 @@ VisibleOnScreenNotifier3D
 
 Detects approximately when the node is visible on screen.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,60 +27,95 @@ If you want nodes to be disabled automatically when they exit the screen, use :r
 
 \ **Note:** VisibleOnScreenNotifier3D uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area3D<class_Area3D>` node as a child of a :ref:`Camera3D<class_Camera3D>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------+-------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`aabb<class_VisibleOnScreenNotifier3D_property_aabb>` | ``AABB(-1, -1, -1, 2, 2, 2)`` |
-+-------------------------+------------------------------------------------------------+-------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------------------------------------------------------------+-------------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`aabb<class_VisibleOnScreenNotifier3D_property_aabb>` | ``AABB(-1, -1, -1, 2, 2, 2)`` |
+   +-------------------------+------------------------------------------------------------+-------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibleOnScreenNotifier3D_method_is_on_screen>` **(** **)** |const| |
-+-------------------------+----------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibleOnScreenNotifier3D_method_is_on_screen>` **(** **)** |const| |
+   +-------------------------+----------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_VisibleOnScreenNotifier3D_signal_screen_entered:
 
-- **screen_entered** **(** **)**
+.. rst-class:: classref-signal
+
+**screen_entered** **(** **)**
 
 Emitted when the VisibleOnScreenNotifier3D enters the screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibleOnScreenNotifier3D_signal_screen_exited:
 
-- **screen_exited** **(** **)**
+.. rst-class:: classref-signal
+
+**screen_exited** **(** **)**
 
 Emitted when the VisibleOnScreenNotifier3D exits the screen.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisibleOnScreenNotifier3D_property_aabb:
 
-- :ref:`AABB<class_AABB>` **aabb**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``AABB(-1, -1, -1, 2, 2, 2)`` |
-+-----------+-------------------------------+
-| *Setter*  | set_aabb(value)               |
-+-----------+-------------------------------+
-| *Getter*  | get_aabb()                    |
-+-----------+-------------------------------+
+:ref:`AABB<class_AABB>` **aabb** = ``AABB(-1, -1, -1, 2, 2, 2)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_aabb** **(** :ref:`AABB<class_AABB>` value **)**
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)**
 
 The VisibleOnScreenNotifier3D's bounding box.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisibleOnScreenNotifier3D_method_is_on_screen:
 
-- :ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
 
 If ``true``, the bounding box is on the screen.
 

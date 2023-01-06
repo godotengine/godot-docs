@@ -12,29 +12,45 @@ VisualShaderNodeParticleMultiplyByAxisAngle
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`degrees_mode<class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode>` | ``true`` |
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`degrees_mode<class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode>` | ``true`` |
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode:
 
-- :ref:`bool<class_bool>` **degrees_mode**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | set_degrees_mode(value) |
-+-----------+-------------------------+
-| *Getter*  | is_degrees_mode()       |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **degrees_mode** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_degrees_mode** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_degrees_mode** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

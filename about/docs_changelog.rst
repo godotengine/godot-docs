@@ -5,7 +5,7 @@ Documentation changelog
 
 The documentation is continually being improved. New releases
 include new pages, fixes and updates to existing pages, and many updates
-to the :ref:`class reference <toc-class-ref>`. Below is a list of new pages
+to the :ref:`class reference <doc_class_reference>`. Below is a list of new pages
 added since version 3.0.
 
 .. note:: This document only contains new pages so not all changes are reflected,

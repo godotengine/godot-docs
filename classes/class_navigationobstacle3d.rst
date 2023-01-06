@@ -14,88 +14,122 @@ NavigationObstacle3D
 
 3D Obstacle used in navigation for collision avoidance.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-3D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. ``NavigationObstacle3D`` is physics safe.
+3D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. **NavigationObstacle3D** is physics safe.
 
 Obstacles **don't** change the resulting path from the pathfinding, they only affect the navigation agent movement in a radius. Therefore, using obstacles for the static walls in your level won't work because those walls don't exist in the pathfinding. The navigation agent will be pushed in a semi-random direction away while moving inside that radius. Obstacles are intended as a last resort option for constantly moving objects that cannot be (re)baked to a navigation mesh efficiently.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`estimate_radius<class_NavigationObstacle3D_property_estimate_radius>` | ``true`` |
-+---------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`radius<class_NavigationObstacle3D_property_radius>`                   | ``1.0``  |
-+---------------------------+-----------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`estimate_radius<class_NavigationObstacle3D_property_estimate_radius>` | ``true`` |
+   +---------------------------+-----------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`radius<class_NavigationObstacle3D_property_radius>`                   | ``1.0``  |
+   +---------------------------+-----------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`get_navigation_map<class_NavigationObstacle3D_method_get_navigation_map>` **(** **)** |const|                              |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>` | :ref:`get_rid<class_NavigationObstacle3D_method_get_rid>` **(** **)** |const|                                                    |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`set_navigation_map<class_NavigationObstacle3D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)** |
-+-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_navigation_map<class_NavigationObstacle3D_method_get_navigation_map>` **(** **)** |const|                              |
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>` | :ref:`get_rid<class_NavigationObstacle3D_method_get_rid>` **(** **)** |const|                                                    |
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | void                  | :ref:`set_navigation_map<class_NavigationObstacle3D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)** |
+   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NavigationObstacle3D_property_estimate_radius:
 
-- :ref:`bool<class_bool>` **estimate_radius**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``true``                   |
-+-----------+----------------------------+
-| *Setter*  | set_estimate_radius(value) |
-+-----------+----------------------------+
-| *Getter*  | is_radius_estimated()      |
-+-----------+----------------------------+
+:ref:`bool<class_bool>` **estimate_radius** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_estimate_radius** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_radius_estimated** **(** **)**
 
 Enables radius estimation algorithm which uses parent's collision shapes to determine the obstacle radius.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationObstacle3D_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 The radius of the agent. Used only if :ref:`estimate_radius<class_NavigationObstacle3D_property_estimate_radius>` is set to false.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NavigationObstacle3D_method_get_navigation_map:
 
-- :ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObstacle node. This function returns always the map set on the NavigationObstacle node and not the map of the abstract agent on the NavigationServer. If the agent map is changed directly with the NavigationServer API the NavigationObstacle node will not be aware of the map change. Use :ref:`set_navigation_map<class_NavigationObstacle3D_method_set_navigation_map>` to change the navigation map for the NavigationObstacle and also update the agent on the NavigationServer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationObstacle3D_method_get_rid:
 
-- :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
 Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NavigationObstacle3D_method_set_navigation_map:
 
-- void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
+.. rst-class:: classref-method
+
+void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
 
 Sets the :ref:`RID<class_RID>` of the navigation map this NavigationObstacle node should use and also updates the ``agent`` on the NavigationServer.
 

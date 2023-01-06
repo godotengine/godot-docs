@@ -16,6 +16,8 @@ Adds a 21-band equalizer audio effect to an Audio bus. Gives you control over fr
 
 Each frequency can be modulated between -60/+24 dB.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -64,6 +66,8 @@ Band 20: 16000 Hz
 Band 21: 22000 Hz
 
 See also :ref:`AudioEffectEQ<class_AudioEffectEQ>`, :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`, :ref:`AudioEffectEQ10<class_AudioEffectEQ10>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

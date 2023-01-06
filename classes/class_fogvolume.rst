@@ -14,76 +14,92 @@ FogVolume
 
 A node used to add local fog with the volumetric fog effect.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``FogVolume``\ s are used to add localized fog into the global volumetric fog effect. ``FogVolume``\ s can also remove volumetric fog from specific areas if using a :ref:`FogMaterial<class_FogMaterial>` with a negative :ref:`FogMaterial.density<class_FogMaterial_property_density>`.
+**FogVolume**\ s are used to add localized fog into the global volumetric fog effect. **FogVolume**\ s can also remove volumetric fog from specific areas if using a :ref:`FogMaterial<class_FogMaterial>` with a negative :ref:`FogMaterial.density<class_FogMaterial_property_density>`.
 
-Performance of ``FogVolume``\ s is directly related to their relative size on the screen and the complexity of their attached :ref:`FogMaterial<class_FogMaterial>`. It is best to keep ``FogVolume``\ s relatively small and simple where possible.
+Performance of **FogVolume**\ s is directly related to their relative size on the screen and the complexity of their attached :ref:`FogMaterial<class_FogMaterial>`. It is best to keep **FogVolume**\ s relatively small and simple where possible.
 
-\ **Note:** ``FogVolume``\ s only have a visible effect if :ref:`Environment.volumetric_fog_enabled<class_Environment_property_volumetric_fog_enabled>` is ``true``. If you don't want fog to be globally visible (but only within ``FogVolume`` nodes), set :ref:`Environment.volumetric_fog_density<class_Environment_property_volumetric_fog_density>` to ``0.0``.
+\ **Note:** **FogVolume**\ s only have a visible effect if :ref:`Environment.volumetric_fog_enabled<class_Environment_property_volumetric_fog_enabled>` is ``true``. If you don't want fog to be globally visible (but only within **FogVolume** nodes), set :ref:`Environment.volumetric_fog_density<class_Environment_property_volumetric_fog_density>` to ``0.0``.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+------------------------------------------------------------+----------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                              | :ref:`extents<class_FogVolume_property_extents>`   | ``Vector3(1, 1, 1)`` |
-+------------------------------------------------------------+----------------------------------------------------+----------------------+
-| :ref:`Material<class_Material>`                            | :ref:`material<class_FogVolume_property_material>` |                      |
-+------------------------------------------------------------+----------------------------------------------------+----------------------+
-| :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` | :ref:`shape<class_FogVolume_property_shape>`       | ``3``                |
-+------------------------------------------------------------+----------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------------------+----------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                              | :ref:`extents<class_FogVolume_property_extents>`   | ``Vector3(1, 1, 1)`` |
+   +------------------------------------------------------------+----------------------------------------------------+----------------------+
+   | :ref:`Material<class_Material>`                            | :ref:`material<class_FogVolume_property_material>` |                      |
+   +------------------------------------------------------------+----------------------------------------------------+----------------------+
+   | :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` | :ref:`shape<class_FogVolume_property_shape>`       | ``3``                |
+   +------------------------------------------------------------+----------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_FogVolume_property_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(1, 1, 1)`` |
-+-----------+----------------------+
-| *Setter*  | set_extents(value)   |
-+-----------+----------------------+
-| *Getter*  | get_extents()        |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
 
-The size of the ``FogVolume`` when :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>`.
+.. rst-class:: classref-property-setget
 
-\ **Note:** Thin fog volumes may appear to flicker when the camera moves or rotates. This can be alleviated by increasing :ref:`ProjectSettings.rendering/environment/volumetric_fog/volume_depth<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_depth>` (at a performance cost) or by decreasing :ref:`Environment.volumetric_fog_length<class_Environment_property_volumetric_fog_length>` (at no performance cost, but at the cost of lower fog range). Alternatively, the ``FogVolume`` can be made thicker and use a lower density in the :ref:`material<class_FogVolume_property_material>`.
+- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
 
-\ **Note:** If :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>`, the cone/cylinder will be adjusted to fit within the extents. Non-uniform scaling of cone/cylinder shapes via the :ref:`extents<class_FogVolume_property_extents>` property is not supported, but you can scale the ``FogVolume`` node instead.
+The size of the **FogVolume** when :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>`.
+
+\ **Note:** Thin fog volumes may appear to flicker when the camera moves or rotates. This can be alleviated by increasing :ref:`ProjectSettings.rendering/environment/volumetric_fog/volume_depth<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_depth>` (at a performance cost) or by decreasing :ref:`Environment.volumetric_fog_length<class_Environment_property_volumetric_fog_length>` (at no performance cost, but at the cost of lower fog range). Alternatively, the **FogVolume** can be made thicker and use a lower density in the :ref:`material<class_FogVolume_property_material>`.
+
+\ **Note:** If :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>`, the cone/cylinder will be adjusted to fit within the extents. Non-uniform scaling of cone/cylinder shapes via the :ref:`extents<class_FogVolume_property_extents>` property is not supported, but you can scale the **FogVolume** node instead.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FogVolume_property_material:
 
-- :ref:`Material<class_Material>` **material**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
+:ref:`Material<class_Material>` **material**
 
-The :ref:`Material<class_Material>` used by the ``FogVolume``. Can be either a built-in :ref:`FogMaterial<class_FogMaterial>` or a custom :ref:`ShaderMaterial<class_ShaderMaterial>`.
+.. rst-class:: classref-property-setget
+
+- void **set_material** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_material** **(** **)**
+
+The :ref:`Material<class_Material>` used by the **FogVolume**. Can be either a built-in :ref:`FogMaterial<class_FogMaterial>` or a custom :ref:`ShaderMaterial<class_ShaderMaterial>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FogVolume_property_shape:
 
-- :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **shape**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``3``            |
-+-----------+------------------+
-| *Setter*  | set_shape(value) |
-+-----------+------------------+
-| *Getter*  | get_shape()      |
-+-----------+------------------+
+:ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **shape** = ``3``
 
-The shape of the ``FogVolume``. This can be set to either :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_WORLD<class_RenderingServer_constant_FOG_VOLUME_SHAPE_WORLD>`.
+.. rst-class:: classref-property-setget
+
+- void **set_shape** **(** :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` value **)**
+- :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **get_shape** **(** **)**
+
+The shape of the **FogVolume**. This can be set to either :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_WORLD<class_RenderingServer_constant_FOG_VOLUME_SHAPE_WORLD>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

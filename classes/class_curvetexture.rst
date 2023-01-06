@@ -14,6 +14,8 @@ CurveTexture
 
 A texture that shows a curve.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,76 +23,108 @@ Renders a given :ref:`Curve<class_Curve>` provided to it. Simplifies the task of
 
 If you need to store up to 3 curves within a single texture, use :ref:`CurveXYZTexture<class_CurveXYZTexture>` instead. See also :ref:`GradientTexture1D<class_GradientTexture1D>` and :ref:`GradientTexture2D<class_GradientTexture2D>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------+---------------------------------------------------------------+---------+
-| :ref:`Curve<class_Curve>`                         | :ref:`curve<class_CurveTexture_property_curve>`               |         |
-+---------------------------------------------------+---------------------------------------------------------------+---------+
-| :ref:`TextureMode<enum_CurveTexture_TextureMode>` | :ref:`texture_mode<class_CurveTexture_property_texture_mode>` | ``0``   |
-+---------------------------------------------------+---------------------------------------------------------------+---------+
-| :ref:`int<class_int>`                             | :ref:`width<class_CurveTexture_property_width>`               | ``256`` |
-+---------------------------------------------------+---------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`Curve<class_Curve>`                         | :ref:`curve<class_CurveTexture_property_curve>`               |                                                                                        |
+   +---------------------------------------------------+---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | resource_local_to_scene                                       | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
+   +---------------------------------------------------+---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`TextureMode<enum_CurveTexture_TextureMode>` | :ref:`texture_mode<class_CurveTexture_property_texture_mode>` | ``0``                                                                                  |
+   +---------------------------------------------------+---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`width<class_CurveTexture_property_width>`               | ``256``                                                                                |
+   +---------------------------------------------------+---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_CurveTexture_TextureMode:
 
-.. _class_CurveTexture_constant_TEXTURE_MODE_RGB:
-
-.. _class_CurveTexture_constant_TEXTURE_MODE_RED:
+.. rst-class:: classref-enumeration
 
 enum **TextureMode**:
 
-- **TEXTURE_MODE_RGB** = **0** --- Store the curve equally across the red, green and blue channels. This uses more video memory, but is more compatible with shaders that only read the green and blue values.
+.. _class_CurveTexture_constant_TEXTURE_MODE_RGB:
 
-- **TEXTURE_MODE_RED** = **1** --- Store the curve only in the red channel. This saves video memory, but some custom shaders may not be able to work with this.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureMode<enum_CurveTexture_TextureMode>` **TEXTURE_MODE_RGB** = ``0``
+
+Store the curve equally across the red, green and blue channels. This uses more video memory, but is more compatible with shaders that only read the green and blue values.
+
+.. _class_CurveTexture_constant_TEXTURE_MODE_RED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureMode<enum_CurveTexture_TextureMode>` **TEXTURE_MODE_RED** = ``1``
+
+Store the curve only in the red channel. This saves video memory, but some custom shaders may not be able to work with this.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CurveTexture_property_curve:
 
-- :ref:`Curve<class_Curve>` **curve**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_curve(value) |
-+----------+------------------+
-| *Getter* | get_curve()      |
-+----------+------------------+
+:ref:`Curve<class_Curve>` **curve**
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve** **(** :ref:`Curve<class_Curve>` value **)**
+- :ref:`Curve<class_Curve>` **get_curve** **(** **)**
 
 The :ref:`Curve<class_Curve>` that is rendered onto the texture.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CurveTexture_property_texture_mode:
 
-- :ref:`TextureMode<enum_CurveTexture_TextureMode>` **texture_mode**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_texture_mode(value) |
-+-----------+-------------------------+
-| *Getter*  | get_texture_mode()      |
-+-----------+-------------------------+
+:ref:`TextureMode<enum_CurveTexture_TextureMode>` **texture_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture_mode** **(** :ref:`TextureMode<enum_CurveTexture_TextureMode>` value **)**
+- :ref:`TextureMode<enum_CurveTexture_TextureMode>` **get_texture_mode** **(** **)**
 
 The format the texture should be generated with. When passing a CurveTexture as a input to a :ref:`Shader<class_Shader>`, this may need to be adjusted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CurveTexture_property_width:
 
-- :ref:`int<class_int>` **width**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``256``          |
-+-----------+------------------+
-| *Setter*  | set_width(value) |
-+-----------+------------------+
-| *Getter*  | get_width()      |
-+-----------+------------------+
+:ref:`int<class_int>` **width** = ``256``
+
+.. rst-class:: classref-property-setget
+
+- void **set_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_width** **(** **)**
 
 The width of the texture (in pixels). Higher values make it possible to represent high-frequency data better (such as sudden direction changes), at the cost of increased generation time and memory usage.
 

@@ -14,10 +14,14 @@ Panel
 
 Provides an opaque background for :ref:`Control<class_Control>` children.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Panel is a :ref:`Control<class_Control>` that displays an opaque background. It's commonly used as a parent and container for other types of :ref:`Control<class_Control>` nodes.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,21 +32,34 @@ Tutorials
 
 - `3D Inverse Kinematics Demo <https://godotengine.org/asset-library/asset/523>`__
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_Panel_theme_style_panel>` |
-+---------------------------------+---------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_Panel_theme_style_panel>` |
+   +---------------------------------+---------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_Panel_theme_style_panel:
 
-- :ref:`StyleBox<class_StyleBox>` **panel**
+.. rst-class:: classref-themeproperty
 
-The style of this ``Panel``.
+:ref:`StyleBox<class_StyleBox>` **panel**
+
+The style of this **Panel**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

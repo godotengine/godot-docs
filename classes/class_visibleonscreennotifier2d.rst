@@ -16,6 +16,8 @@ VisibleOnScreenNotifier2D
 
 Detects when the node extents are visible on screen.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,65 +25,102 @@ The VisibleOnScreenNotifier2D detects when it is visible on the screen. It also 
 
 If you want nodes to be disabled automatically when they exit the screen, use :ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>` instead.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------+-----------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibleOnScreenNotifier2D_property_rect>` | ``Rect2(-10, -10, 20, 20)`` |
-+---------------------------+------------------------------------------------------------+-----------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+------------------------------------------------------------+-----------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`rect<class_VisibleOnScreenNotifier2D_property_rect>` | ``Rect2(-10, -10, 20, 20)`` |
+   +---------------------------+------------------------------------------------------------+-----------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibleOnScreenNotifier2D_method_is_on_screen>` **(** **)** |const| |
-+-------------------------+----------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibleOnScreenNotifier2D_method_is_on_screen>` **(** **)** |const| |
+   +-------------------------+----------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_VisibleOnScreenNotifier2D_signal_screen_entered:
 
-- **screen_entered** **(** **)**
+.. rst-class:: classref-signal
+
+**screen_entered** **(** **)**
 
 Emitted when the VisibleOnScreenNotifier2D enters the screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibleOnScreenNotifier2D_signal_screen_exited:
 
-- **screen_exited** **(** **)**
+.. rst-class:: classref-signal
+
+**screen_exited** **(** **)**
 
 Emitted when the VisibleOnScreenNotifier2D exits the screen.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisibleOnScreenNotifier2D_property_rect:
 
-- :ref:`Rect2<class_Rect2>` **rect**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``Rect2(-10, -10, 20, 20)`` |
-+-----------+-----------------------------+
-| *Setter*  | set_rect(value)             |
-+-----------+-----------------------------+
-| *Getter*  | get_rect()                  |
-+-----------+-----------------------------+
+:ref:`Rect2<class_Rect2>` **rect** = ``Rect2(-10, -10, 20, 20)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
+- :ref:`Rect2<class_Rect2>` **get_rect** **(** **)**
 
 The VisibleOnScreenNotifier2D's bounding rectangle.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisibleOnScreenNotifier2D_method_is_on_screen:
 
-- :ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_on_screen** **(** **)** |const|
 
 If ``true``, the bounding rectangle is on the screen.
 

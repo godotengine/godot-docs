@@ -14,61 +14,94 @@ ShaderMaterial
 
 A material that uses a custom :ref:`Shader<class_Shader>` program.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A material that uses a custom :ref:`Shader<class_Shader>` program to render either items to screen or process particles. You can create multiple materials for the same shader but configure different values for the uniforms defined in the shader.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`Shaders documentation index <../tutorials/shaders/index>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------+
-| :ref:`Shader<class_Shader>` | :ref:`shader<class_ShaderMaterial_property_shader>` |
-+-----------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------+
+   | :ref:`Shader<class_Shader>` | :ref:`shader<class_ShaderMaterial_property_shader>` |
+   +-----------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_shader_parameter<class_ShaderMaterial_method_get_shader_parameter>` **(** :ref:`StringName<class_StringName>` param **)** |const|                              |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_shader_parameter<class_ShaderMaterial_method_set_shader_parameter>` **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)** |
-+-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_shader_parameter<class_ShaderMaterial_method_get_shader_parameter>` **(** :ref:`StringName<class_StringName>` param **)** |const|                              |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_shader_parameter<class_ShaderMaterial_method_set_shader_parameter>` **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)** |
+   +-------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ShaderMaterial_property_shader:
 
-- :ref:`Shader<class_Shader>` **shader**
+.. rst-class:: classref-property
 
-+----------+-------------------+
-| *Setter* | set_shader(value) |
-+----------+-------------------+
-| *Getter* | get_shader()      |
-+----------+-------------------+
+:ref:`Shader<class_Shader>` **shader**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shader** **(** :ref:`Shader<class_Shader>` value **)**
+- :ref:`Shader<class_Shader>` **get_shader** **(** **)**
 
 The :ref:`Shader<class_Shader>` program used to render this material.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ShaderMaterial_method_get_shader_parameter:
 
-- :ref:`Variant<class_Variant>` **get_shader_parameter** **(** :ref:`StringName<class_StringName>` param **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_shader_parameter** **(** :ref:`StringName<class_StringName>` param **)** |const|
 
 Returns the current value set for this material of a uniform in the shader.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ShaderMaterial_method_set_shader_parameter:
 
-- void **set_shader_parameter** **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+void **set_shader_parameter** **(** :ref:`StringName<class_StringName>` param, :ref:`Variant<class_Variant>` value **)**
 
 Changes the value set for this material of a uniform in the shader.
 

@@ -14,6 +14,8 @@ ZIPReader
 
 Allows reading the content of a zip file.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -24,57 +26,82 @@ This class implements a reader that can extract the content of individual files 
     func read_zip_file():
         var reader := ZIPReader.new()
         var err := reader.open("user://archive.zip")
-        if err == OK:
+        if err != OK:
             return PackedByteArray()
         var res := reader.read_file("hello.txt")
         reader.close()
         return res
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`close<class_ZIPReader_method_close>` **(** **)**                                                                                       |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_files<class_ZIPReader_method_get_files>` **(** **)**                                                                               |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`open<class_ZIPReader_method_open>` **(** :ref:`String<class_String>` path **)**                                                        |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`read_file<class_ZIPReader_method_read_file>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)** |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`close<class_ZIPReader_method_close>` **(** **)**                                                                                       |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_files<class_ZIPReader_method_get_files>` **(** **)**                                                                               |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`open<class_ZIPReader_method_open>` **(** :ref:`String<class_String>` path **)**                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`read_file<class_ZIPReader_method_read_file>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)** |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ZIPReader_method_close:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **close** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **close** **(** **)**
 
 Closes the underlying resources used by this instance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ZIPReader_method_get_files:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **get_files** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **get_files** **(** **)**
 
 Returns the list of names of all files in the loaded archive.
 
 Must be called after :ref:`open<class_ZIPReader_method_open>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ZIPReader_method_open:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **open** **(** :ref:`String<class_String>` path **)**
 
 Opens the zip archive at the given ``path`` and reads its file index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ZIPReader_method_read_file:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **read_file** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)**
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **read_file** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` case_sensitive=true **)**
 
 Loads the whole content of a file in the loaded zip archive into memory and returns it.
 

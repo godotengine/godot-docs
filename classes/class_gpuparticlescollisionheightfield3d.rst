@@ -14,6 +14,8 @@ GPUParticlesCollisionHeightField3D
 
 Real-time heightmap-shaped 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,138 +23,199 @@ Real-time heightmap-shaped 3D particle attractor affecting :ref:`GPUParticles3D<
 
 Heightmap shapes allow for efficiently representing collisions for convex and concave objects with a single "floor" (such as terrain). This is less flexible than :ref:`GPUParticlesCollisionSDF3D<class_GPUParticlesCollisionSDF3D>`, but it doesn't require a baking step.
 
-\ ``GPUParticlesCollisionHeightField3D`` can also be regenerated in real-time when it is moved, when the camera moves, or even continuously. This makes ``GPUParticlesCollisionHeightField3D`` a good choice for weather effects such as rain and snow and games with highly dynamic geometry. However, since heightmaps cannot represent overhangs, ``GPUParticlesCollisionHeightField3D`` is not suited for indoor particle collision.
+\ **GPUParticlesCollisionHeightField3D** can also be regenerated in real-time when it is moved, when the camera moves, or even continuously. This makes **GPUParticlesCollisionHeightField3D** a good choice for weather effects such as rain and snow and games with highly dynamic geometry. However, since heightmaps cannot represent overhangs, **GPUParticlesCollisionHeightField3D** is not suited for indoor particle collision.
 
 \ **Note:** :ref:`ParticleProcessMaterial.collision_mode<class_ParticleProcessMaterial_property_collision_mode>` must be ``true`` on the :ref:`GPUParticles3D<class_GPUParticles3D>`'s process material for collision to work.
 
 \ **Note:** Particle collision only affects :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                                         | :ref:`extents<class_GPUParticlesCollisionHeightField3D_property_extents>`                             | ``Vector3(1, 1, 1)`` |
-+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`                                               | :ref:`follow_camera_enabled<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>` | ``false``            |
-+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` | :ref:`resolution<class_GPUParticlesCollisionHeightField3D_property_resolution>`                       | ``2``                |
-+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` | :ref:`update_mode<class_GPUParticlesCollisionHeightField3D_property_update_mode>`                     | ``0``                |
-+-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                                         | :ref:`extents<class_GPUParticlesCollisionHeightField3D_property_extents>`                             | ``Vector3(1, 1, 1)`` |
+   +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`follow_camera_enabled<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>` | ``false``            |
+   +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` | :ref:`resolution<class_GPUParticlesCollisionHeightField3D_property_resolution>`                       | ``2``                |
+   +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` | :ref:`update_mode<class_GPUParticlesCollisionHeightField3D_property_update_mode>`                     | ``0``                |
+   +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_GPUParticlesCollisionHeightField3D_Resolution:
 
-.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_256:
-
-.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_512:
-
-.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_1024:
-
-.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_2048:
-
-.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_4096:
-
-.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_8192:
-
-.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Resolution**:
 
-- **RESOLUTION_256** = **0** --- Generate a 256×256 heightmap. Intended for small-scale scenes, or larger scenes with no distant particles.
+.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_256:
 
-- **RESOLUTION_512** = **1** --- Generate a 512×512 heightmap. Intended for medium-scale scenes, or larger scenes with no distant particles.
+.. rst-class:: classref-enumeration-constant
 
-- **RESOLUTION_1024** = **2** --- Generate a 1024×1024 heightmap. Intended for large scenes with distant particles.
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **RESOLUTION_256** = ``0``
 
-- **RESOLUTION_2048** = **3** --- Generate a 2048×2048 heightmap. Intended for very large scenes with distant particles.
+Generate a 256×256 heightmap. Intended for small-scale scenes, or larger scenes with no distant particles.
 
-- **RESOLUTION_4096** = **4** --- Generate a 4096×4096 heightmap. Intended for huge scenes with distant particles.
+.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_512:
 
-- **RESOLUTION_8192** = **5** --- Generate a 8192×8192 heightmap. Intended for gigantic scenes with distant particles.
+.. rst-class:: classref-enumeration-constant
 
-- **RESOLUTION_MAX** = **6** --- Represents the size of the :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` enum.
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **RESOLUTION_512** = ``1``
+
+Generate a 512×512 heightmap. Intended for medium-scale scenes, or larger scenes with no distant particles.
+
+.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_1024:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **RESOLUTION_1024** = ``2``
+
+Generate a 1024×1024 heightmap. Intended for large scenes with distant particles.
+
+.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_2048:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **RESOLUTION_2048** = ``3``
+
+Generate a 2048×2048 heightmap. Intended for very large scenes with distant particles.
+
+.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_4096:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **RESOLUTION_4096** = ``4``
+
+Generate a 4096×4096 heightmap. Intended for huge scenes with distant particles.
+
+.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_8192:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **RESOLUTION_8192** = ``5``
+
+Generate a 8192×8192 heightmap. Intended for gigantic scenes with distant particles.
+
+.. _class_GPUParticlesCollisionHeightField3D_constant_RESOLUTION_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **RESOLUTION_MAX** = ``6``
+
+Represents the size of the :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_GPUParticlesCollisionHeightField3D_UpdateMode:
 
-.. _class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_WHEN_MOVED:
-
-.. _class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_ALWAYS:
+.. rst-class:: classref-enumeration
 
 enum **UpdateMode**:
 
-- **UPDATE_MODE_WHEN_MOVED** = **0** --- Only update the heightmap when the ``GPUParticlesCollisionHeightField3D`` node is moved, or when the camera moves if :ref:`follow_camera_enabled<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>` is ``true``. An update can be forced by slightly moving the ``GPUParticlesCollisionHeightField3D`` in any direction.
+.. _class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_WHEN_MOVED:
 
-- **UPDATE_MODE_ALWAYS** = **1** --- Update the heightmap every frame. This has a significant performance cost. This update should only be used when geometry that particles can collide with changes significantly during gameplay.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **UPDATE_MODE_WHEN_MOVED** = ``0``
+
+Only update the heightmap when the **GPUParticlesCollisionHeightField3D** node is moved, or when the camera moves if :ref:`follow_camera_enabled<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>` is ``true``. An update can be forced by slightly moving the **GPUParticlesCollisionHeightField3D** in any direction.
+
+.. _class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_ALWAYS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **UPDATE_MODE_ALWAYS** = ``1``
+
+Update the heightmap every frame. This has a significant performance cost. This update should only be used when geometry that particles can collide with changes significantly during gameplay.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GPUParticlesCollisionHeightField3D_property_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(1, 1, 1)`` |
-+-----------+----------------------+
-| *Setter*  | set_extents(value)   |
-+-----------+----------------------+
-| *Getter*  | get_extents()        |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
 
 The collision heightmap's extents in 3D units. To improve heightmap quality, :ref:`extents<class_GPUParticlesCollisionHeightField3D_property_extents>` should be set as small as possible while covering the parts of the scene you need.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled:
 
-- :ref:`bool<class_bool>` **follow_camera_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``false``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_follow_camera_enabled(value) |
-+-----------+----------------------------------+
-| *Getter*  | is_follow_camera_enabled()       |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **follow_camera_enabled** = ``false``
 
-If ``true``, the ``GPUParticlesCollisionHeightField3D`` will follow the current camera in global space. The ``GPUParticlesCollisionHeightField3D`` does not need to be a child of the :ref:`Camera3D<class_Camera3D>` node for this to work.
+.. rst-class:: classref-property-setget
+
+- void **set_follow_camera_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_follow_camera_enabled** **(** **)**
+
+If ``true``, the **GPUParticlesCollisionHeightField3D** will follow the current camera in global space. The **GPUParticlesCollisionHeightField3D** does not need to be a child of the :ref:`Camera3D<class_Camera3D>` node for this to work.
 
 Following the camera has a performance cost, as it will force the heightmap to update whenever the camera moves. Consider lowering :ref:`resolution<class_GPUParticlesCollisionHeightField3D_property_resolution>` to improve performance if :ref:`follow_camera_enabled<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>` is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GPUParticlesCollisionHeightField3D_property_resolution:
 
-- :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **resolution**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``2``                 |
-+-----------+-----------------------+
-| *Setter*  | set_resolution(value) |
-+-----------+-----------------------+
-| *Getter*  | get_resolution()      |
-+-----------+-----------------------+
+:ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **resolution** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_resolution** **(** :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` value **)**
+- :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **get_resolution** **(** **)**
 
 Higher resolutions can represent small details more accurately in large scenes, at the cost of lower performance. If :ref:`update_mode<class_GPUParticlesCollisionHeightField3D_property_update_mode>` is :ref:`UPDATE_MODE_ALWAYS<class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_ALWAYS>`, consider using the lowest resolution possible.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GPUParticlesCollisionHeightField3D_property_update_mode:
 
-- :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **update_mode**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0``                  |
-+-----------+------------------------+
-| *Setter*  | set_update_mode(value) |
-+-----------+------------------------+
-| *Getter*  | get_update_mode()      |
-+-----------+------------------------+
+:ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **update_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_update_mode** **(** :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` value **)**
+- :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` **get_update_mode** **(** **)**
 
 The update policy to use for the generated heightmap.
 

@@ -58,15 +58,15 @@ Generate the glue
 Glue sources are the wrapper functions that will be called by managed methods.
 These source files must be generated before building your final binaries. In
 order to generate them, first, you must build a temporary Godot binary with the
-options ``tools=yes`` and ``mono_glue=no``::
+options ``target=editor``::
 
-    scons p=<platform> tools=yes module_mono_enabled=yes mono_glue=no
+    scons p=<platform> target=editor module_mono_enabled=yes
 
 After the build finishes, you need to run the compiled executable with the
-parameter ``--generate-mono-glue`` followed by the path to an output directory.
+parameters ``--headless --generate-mono-glue`` followed by the path to an output directory.
 This path must be ``modules/mono/glue`` in the Godot directory::
 
-    <godot_binary> --generate-mono-glue modules/mono/glue
+    <godot_binary> --headless --generate-mono-glue modules/mono/glue
 
 This command will tell Godot to generate the file ``modules/mono/glue/mono_glue.gen.cpp``,
 the C# solution for the Godot API at ``modules/mono/glue/GodotSharp/GodotSharp/Generated``,
@@ -74,11 +74,11 @@ and the C# solution for the editor tools at ``modules/mono/glue/GodotSharp/Godot
 Once these files are generated, you can build Godot for all the desired targets
 without having to repeat this process.
 
-``<godot_binary>`` refers to the tools binary you compiled above with the Mono
+``<godot_binary>`` refers to the editor binary you compiled above with the Mono
 module enabled. Its exact name will differ based on your system and
 configuration, but should be of the form
-``bin/godot.<platform>.tools.<bits>.mono``, e.g. ``bin/godot.linuxbsd.tools.64.mono``
-or ``bin/godot.windows.tools.64.mono.exe``. Be especially aware of the **.mono**
+``bin/godot.<platform>.editor.<arch>.mono``, e.g. ``bin/godot.linuxbsd.editor.x86_64.mono``
+or ``bin/godot.windows.editor.x86_32.mono.exe``. Be especially aware of the **.mono**
 suffix! If you've previously compiled Godot without Mono support, you might have
 similarly named binaries without this suffix. These binaries can't be used to
 generate the Mono glue.
@@ -86,10 +86,6 @@ generate the Mono glue.
 Notes
 ^^^^^
 
-- **Do not build your final binaries with** ``mono_glue=no``.
-  This disables C# scripting. This option must be used only for the temporary
-  binary that will generate the glue. Godot will print a warning at startup if
-  it was built without the glue sources.
 - The glue sources must be regenerated every time the ClassDB-registered API
   changes. That is, for example, when a new method is registered to the
   scripting API or one of the parameters of such a method changes.
@@ -100,15 +96,14 @@ Notes
 Rebuild with Mono glue
 ----------------------
 
-Once you have generated the Mono glue, you can build the final binary with
-``mono_glue=yes``. This is the default value for ``mono_glue``, so you can also
-omit it. To build a Mono-enabled editor::
+Once you have generated the Mono glue, you can generate the final binary with
+the ``build_assemblies.py`` script.::
 
-    scons p=<platform> tools=yes module_mono_enabled=yes mono_glue=yes
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform={PLATFORM_NAME}
 
 And Mono-enabled export templates::
 
-    scons p=<platform> tools=no module_mono_enabled=yes mono_glue=yes
+    scons p=<platform> target=template_release module_mono_enabled=yes
 
 If everything went well, apart from the normal output, SCons should have created
 the following files in the ``bin`` directory:
@@ -135,17 +130,19 @@ Example (Windows)
 
 ::
 
-    # Build temporary binary
-    scons p=windows tools=yes module_mono_enabled=yes mono_glue=no
+    # Build editor binary
+    scons p=windows target=editor module_mono_enabled=yes
     # Generate glue sources
-    bin\godot.windows.tools.64.mono --generate-mono-glue modules/mono/glue
+    bin\godot.windows.editor.x86_64.mono --generate-mono-glue modules/mono/glue
+    # Build .NET assemblies
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=windows
 
     ### Build binaries normally
     # Editor
-    scons p=windows target=release_debug tools=yes module_mono_enabled=yes
+    scons p=windows target=editor module_mono_enabled=yes
     # Export templates
-    scons p=windows target=release_debug tools=no module_mono_enabled=yes
-    scons p=windows target=release tools=no module_mono_enabled=yes
+    scons p=windows target=template_debug module_mono_enabled=yes
+    scons p=windows target=template_release module_mono_enabled=yes
 
 Example (Linux, \*BSD)
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -153,16 +150,18 @@ Example (Linux, \*BSD)
 ::
 
     # Build temporary binary
-    scons p=linuxbsd tools=yes module_mono_enabled=yes mono_glue=no
+    scons p=linuxbsd target=editor module_mono_enabled=yes
     # Generate glue sources
-    bin/godot.linuxbsd.tools.64.mono --generate-mono-glue modules/mono/glue
+    bin/godot.linuxbsd.editor.x86_64.mono --generate-mono-glue modules/mono/glue
+    # Generate binaries
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin --godot-platform=linuxbsd
 
     ### Build binaries normally
     # Editor
-    scons p=linuxbsd target=release_debug tools=yes module_mono_enabled=yes
+    scons p=linuxbsd target=editor module_mono_enabled=yes
     # Export templates
-    scons p=linuxbsd target=release_debug tools=no module_mono_enabled=yes
-    scons p=linuxbsd target=release tools=no module_mono_enabled=yes
+    scons p=linuxbsd target=template_debug module_mono_enabled=yes
+    scons p=linuxbsd target=template_release module_mono_enabled=yes
 
 .. _compiling_with_mono_data_directory:
 
@@ -181,8 +180,8 @@ Export templates
 
 The name of the data directory for an export template differs based on the
 configuration it was built with. The format is
-``data.mono.<platform>.<bits>.<target>``, e.g. ``data.mono.linuxbsd.32.release_debug`` or
-``data.mono.windows.64.release``.
+``data.mono.<platform>.<arch>.<target>``, e.g. ``data.mono.linuxbsd.x86_32.release_debug`` or
+``data.mono.windows.x86_64.release``.
 
 This directory must be placed with its original name next to the Godot export
 templates. When exporting a project, Godot will also copy this directory with
@@ -195,9 +194,9 @@ the contents of the data directory can be placed in the following locations
 inside the ZIP archive:
 
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Mono/lib`` | ``/osx_template.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
+| ``bin/data.mono.<platform>.<arch>.<target>/Mono/lib`` | ``/osx_template.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Mono/etc`` | ``/osx_template.app/Contents/Resources/GodotSharp/Mono/etc``  |
+| ``bin/data.mono.<platform>.<arch>.<target>/Mono/etc`` | ``/osx_template.app/Contents/Resources/GodotSharp/Mono/etc``  |
 +-------------------------------------------------------+---------------------------------------------------------------+
 
 Editor
@@ -215,13 +214,13 @@ Godot editor is distributed as a bundle, the contents of the data directory may
 be placed in the following locations:
 
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Api``      | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Api``      |
+| ``bin/data.mono.<platform>.<arch>.<target>/Api``      | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Api``      |
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Mono/lib`` | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
+| ``bin/data.mono.<platform>.<arch>.<target>/Mono/lib`` | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Mono/lib`` |
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Mono/etc`` | ``<bundle_name>.app/Contents/Resources/GodotSharp/Mono/etc``  |
+| ``bin/data.mono.<platform>.<arch>.<target>/Mono/etc`` | ``<bundle_name>.app/Contents/Resources/GodotSharp/Mono/etc``  |
 +-------------------------------------------------------+---------------------------------------------------------------+
-| ``bin/data.mono.<platform>.<bits>.<target>/Tools``    | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Tools``    |
+| ``bin/data.mono.<platform>.<arch>.<target>/Tools``    | ``<bundle_name>.app/Contents/Frameworks/GodotSharp/Tools``    |
 +-------------------------------------------------------+---------------------------------------------------------------+
 
 The ``Mono`` subdirectory is optional. It will be needed when distributing the
@@ -374,11 +373,6 @@ the Mono module:
 - **module_mono_enabled**\ =yes | **no**
 
   - Build Godot with the Mono module enabled.
-
-- **mono_glue**\ =\ **yes** | no
-
-  - Whether to include the glue source files in the build
-    and define ``MONO_GLUE_DISABLED`` as a preprocessor macro.
 
 - **mono_prefix**\ =path
 

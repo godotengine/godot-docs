@@ -141,4 +141,4 @@ way, with some additional arguments to provide the correct paths:
 
 ::
 
-    $ scons -j 4 platform=ios arch=arm64 target=release_debug IOS_SDK_PATH="/path/to/iPhoneSDK" IOS_TOOLCHAIN_PATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"
+    $ scons -j 4 platform=ios arch=arm64 target=template_release IOS_SDK_PATH="/path/to/iPhoneSDK" IOS_TOOLCHAIN_PATH="/path/to/iostoolchain" ios_triple="arm-apple-darwin11-"

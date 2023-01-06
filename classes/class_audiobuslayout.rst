@@ -14,6 +14,8 @@ AudioBusLayout
 
 Stores information about the audio buses.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

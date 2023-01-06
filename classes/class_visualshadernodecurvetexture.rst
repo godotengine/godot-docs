@@ -14,30 +14,44 @@ VisualShaderNodeCurveTexture
 
 Performs a :ref:`CurveTexture<class_CurveTexture>` lookup within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Comes with a built-in editor for texture's curves.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------+---------------------------------------------------------------------+
-| :ref:`CurveTexture<class_CurveTexture>` | :ref:`texture<class_VisualShaderNodeCurveTexture_property_texture>` |
-+-----------------------------------------+---------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+---------------------------------------------------------------------+
+   | :ref:`CurveTexture<class_CurveTexture>` | :ref:`texture<class_VisualShaderNodeCurveTexture_property_texture>` |
+   +-----------------------------------------+---------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeCurveTexture_property_texture:
 
-- :ref:`CurveTexture<class_CurveTexture>` **texture**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`CurveTexture<class_CurveTexture>` **texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`CurveTexture<class_CurveTexture>` value **)**
+- :ref:`CurveTexture<class_CurveTexture>` **get_texture** **(** **)**
 
 The source texture.
 

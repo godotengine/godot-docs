@@ -14,6 +14,8 @@ VisualShaderNodeTextureSDFNormal
 
 Performs an SDF (signed-distance field) normal texture lookup within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

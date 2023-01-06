@@ -12,52 +12,88 @@ VisualShaderNodeParticleRandomness
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------------------------------------+---------------------------------------------------------------------------+-------+
-| :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` | :ref:`op_type<class_VisualShaderNodeParticleRandomness_property_op_type>` | ``0`` |
-+---------------------------------------------------------------+---------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` | :ref:`op_type<class_VisualShaderNodeParticleRandomness_property_op_type>` | ``0`` |
+   +---------------------------------------------------------------+---------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeParticleRandomness_OpType:
 
-.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_SCALAR:
-
-.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_VECTOR_2D:
-
-.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_VECTOR_3D:
-
-.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **OpType**:
 
-- **OP_TYPE_SCALAR** = **0** --- A floating-point scalar.
+.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_SCALAR:
 
-- **OP_TYPE_VECTOR_2D** = **1** --- A 2D vector type.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_TYPE_VECTOR_3D** = **2** --- A 3D vector type.
+:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **OP_TYPE_SCALAR** = ``0``
 
-- **OP_TYPE_MAX** = **3** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` enum.
+A floating-point scalar.
+
+.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_VECTOR_2D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **OP_TYPE_VECTOR_2D** = ``1``
+
+A 2D vector type.
+
+.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_VECTOR_3D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **OP_TYPE_VECTOR_3D** = ``2``
+
+A 3D vector type.
+
+.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **OP_TYPE_MAX** = ``3``
+
+Represents the size of the :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParticleRandomness_property_op_type:
 
-- :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **op_type**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_op_type(value) |
-+-----------+--------------------+
-| *Getter*  | get_op_type()      |
-+-----------+--------------------+
+:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **op_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_op_type** **(** :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` value **)**
+- :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **get_op_type** **(** **)**
 
 A type of operands and returned value.
 

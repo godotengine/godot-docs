@@ -14,10 +14,14 @@ AudioEffectReverb
 
 Adds a reverberation audio effect to an Audio bus.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Simulates the sound of acoustic environments such as rooms, concert halls, caverns, or an open spaces.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -26,153 +30,170 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`damping<class_AudioEffectReverb_property_damping>`                     | ``0.5``   |
-+---------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`dry<class_AudioEffectReverb_property_dry>`                             | ``1.0``   |
-+---------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`hipass<class_AudioEffectReverb_property_hipass>`                       | ``0.0``   |
-+---------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`predelay_feedback<class_AudioEffectReverb_property_predelay_feedback>` | ``0.4``   |
-+---------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`predelay_msec<class_AudioEffectReverb_property_predelay_msec>`         | ``150.0`` |
-+---------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`room_size<class_AudioEffectReverb_property_room_size>`                 | ``0.8``   |
-+---------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`spread<class_AudioEffectReverb_property_spread>`                       | ``1.0``   |
-+---------------------------+------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`wet<class_AudioEffectReverb_property_wet>`                             | ``0.5``   |
-+---------------------------+------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`damping<class_AudioEffectReverb_property_damping>`                     | ``0.5``   |
+   +---------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`dry<class_AudioEffectReverb_property_dry>`                             | ``1.0``   |
+   +---------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`hipass<class_AudioEffectReverb_property_hipass>`                       | ``0.0``   |
+   +---------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`predelay_feedback<class_AudioEffectReverb_property_predelay_feedback>` | ``0.4``   |
+   +---------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`predelay_msec<class_AudioEffectReverb_property_predelay_msec>`         | ``150.0`` |
+   +---------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`room_size<class_AudioEffectReverb_property_room_size>`                 | ``0.8``   |
+   +---------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`spread<class_AudioEffectReverb_property_spread>`                       | ``1.0``   |
+   +---------------------------+------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`wet<class_AudioEffectReverb_property_wet>`                             | ``0.5``   |
+   +---------------------------+------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioEffectReverb_property_damping:
 
-- :ref:`float<class_float>` **damping**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0.5``            |
-+-----------+--------------------+
-| *Setter*  | set_damping(value) |
-+-----------+--------------------+
-| *Getter*  | get_damping()      |
-+-----------+--------------------+
+:ref:`float<class_float>` **damping** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_damping** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_damping** **(** **)**
 
 Defines how reflective the imaginary room's walls are. Value can range from 0 to 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectReverb_property_dry:
 
-- :ref:`float<class_float>` **dry**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``1.0``        |
-+-----------+----------------+
-| *Setter*  | set_dry(value) |
-+-----------+----------------+
-| *Getter*  | get_dry()      |
-+-----------+----------------+
+:ref:`float<class_float>` **dry** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_dry** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_dry** **(** **)**
 
 Output percent of original sound. At 0, only modified sound is outputted. Value can range from 0 to 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectReverb_property_hipass:
 
-- :ref:`float<class_float>` **hipass**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``0.0``        |
-+-----------+----------------+
-| *Setter*  | set_hpf(value) |
-+-----------+----------------+
-| *Getter*  | get_hpf()      |
-+-----------+----------------+
+:ref:`float<class_float>` **hipass** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hpf** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_hpf** **(** **)**
 
 High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectReverb_property_predelay_feedback:
 
-- :ref:`float<class_float>` **predelay_feedback**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``0.4``                      |
-+-----------+------------------------------+
-| *Setter*  | set_predelay_feedback(value) |
-+-----------+------------------------------+
-| *Getter*  | get_predelay_feedback()      |
-+-----------+------------------------------+
+:ref:`float<class_float>` **predelay_feedback** = ``0.4``
+
+.. rst-class:: classref-property-setget
+
+- void **set_predelay_feedback** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_predelay_feedback** **(** **)**
 
 Output percent of predelay. Value can range from 0 to 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectReverb_property_predelay_msec:
 
-- :ref:`float<class_float>` **predelay_msec**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``150.0``                |
-+-----------+--------------------------+
-| *Setter*  | set_predelay_msec(value) |
-+-----------+--------------------------+
-| *Getter*  | get_predelay_msec()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **predelay_msec** = ``150.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_predelay_msec** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_predelay_msec** **(** **)**
 
 Time between the original signal and the early reflections of the reverb signal, in milliseconds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectReverb_property_room_size:
 
-- :ref:`float<class_float>` **room_size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0.8``              |
-+-----------+----------------------+
-| *Setter*  | set_room_size(value) |
-+-----------+----------------------+
-| *Getter*  | get_room_size()      |
-+-----------+----------------------+
+:ref:`float<class_float>` **room_size** = ``0.8``
+
+.. rst-class:: classref-property-setget
+
+- void **set_room_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_room_size** **(** **)**
 
 Dimensions of simulated room. Bigger means more echoes. Value can range from 0 to 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectReverb_property_spread:
 
-- :ref:`float<class_float>` **spread**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_spread(value) |
-+-----------+-------------------+
-| *Getter*  | get_spread()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **spread** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_spread** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_spread** **(** **)**
 
 Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectReverb_property_wet:
 
-- :ref:`float<class_float>` **wet**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``0.5``        |
-+-----------+----------------+
-| *Setter*  | set_wet(value) |
-+-----------+----------------+
-| *Getter*  | get_wet()      |
-+-----------+----------------+
+:ref:`float<class_float>` **wet** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_wet** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_wet** **(** **)**
 
 Output percent of modified sound. At 0, only original sound is outputted. Value can range from 0 to 1.
 

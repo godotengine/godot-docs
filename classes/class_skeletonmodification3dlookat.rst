@@ -14,136 +14,187 @@ SkeletonModification3DLookAt
 
 A modification that rotates a bone to look at a target.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This :ref:`SkeletonModification3D<class_SkeletonModification3D>` rotates a bone to look a target. This is extremely helpful for moving character's heads to look at the player, rotating a turret to look at a target, or any other case where you want to make a bone rotate towards something quickly and easily.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`           | :ref:`bone_index<class_SkeletonModification3DLookAt_property_bone_index>`           | ``-2``           |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`String<class_String>`     | :ref:`bone_name<class_SkeletonModification3DLookAt_property_bone_name>`             | ``""``           |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`target_nodepath<class_SkeletonModification3DLookAt_property_target_nodepath>` | ``NodePath("")`` |
-+---------------------------------+-------------------------------------------------------------------------------------+------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`bone_index<class_SkeletonModification3DLookAt_property_bone_index>`           | ``-2``           |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`String<class_String>`     | :ref:`bone_name<class_SkeletonModification3DLookAt_property_bone_name>`             | ``""``           |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`target_nodepath<class_SkeletonModification3DLookAt_property_target_nodepath>` | ``NodePath("")`` |
+   +---------------------------------+-------------------------------------------------------------------------------------+------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_additional_rotation<class_SkeletonModification3DLookAt_method_get_additional_rotation>` **(** **)** |const|                                           |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_lock_rotation_plane<class_SkeletonModification3DLookAt_method_get_lock_rotation_plane>` **(** **)** |const|                                           |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_lock_rotation_to_plane<class_SkeletonModification3DLookAt_method_get_lock_rotation_to_plane>` **(** **)** |const|                                     |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_additional_rotation<class_SkeletonModification3DLookAt_method_set_additional_rotation>` **(** :ref:`Vector3<class_Vector3>` additional_rotation **)** |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_lock_rotation_plane<class_SkeletonModification3DLookAt_method_set_lock_rotation_plane>` **(** :ref:`int<class_int>` plane **)**                       |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_lock_rotation_to_plane<class_SkeletonModification3DLookAt_method_set_lock_rotation_to_plane>` **(** :ref:`bool<class_bool>` lock_to_plane **)**       |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_additional_rotation<class_SkeletonModification3DLookAt_method_get_additional_rotation>` **(** **)** |const|                                           |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_lock_rotation_plane<class_SkeletonModification3DLookAt_method_get_lock_rotation_plane>` **(** **)** |const|                                           |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`get_lock_rotation_to_plane<class_SkeletonModification3DLookAt_method_get_lock_rotation_to_plane>` **(** **)** |const|                                     |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_additional_rotation<class_SkeletonModification3DLookAt_method_set_additional_rotation>` **(** :ref:`Vector3<class_Vector3>` additional_rotation **)** |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_lock_rotation_plane<class_SkeletonModification3DLookAt_method_set_lock_rotation_plane>` **(** :ref:`int<class_int>` plane **)**                       |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_lock_rotation_to_plane<class_SkeletonModification3DLookAt_method_set_lock_rotation_to_plane>` **(** :ref:`bool<class_bool>` lock_to_plane **)**       |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SkeletonModification3DLookAt_property_bone_index:
 
-- :ref:`int<class_int>` **bone_index**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``-2``                |
-+-----------+-----------------------+
-| *Setter*  | set_bone_index(value) |
-+-----------+-----------------------+
-| *Getter*  | get_bone_index()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **bone_index** = ``-2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bone_index** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_bone_index** **(** **)**
 
 The bone index of the bone that should be operated on by this modification.
 
 When possible, this will also update the :ref:`bone_name<class_SkeletonModification3DLookAt_property_bone_name>` based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SkeletonModification3DLookAt_property_bone_name:
 
-- :ref:`String<class_String>` **bone_name**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``""``               |
-+-----------+----------------------+
-| *Setter*  | set_bone_name(value) |
-+-----------+----------------------+
-| *Getter*  | get_bone_name()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **bone_name** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bone_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_bone_name** **(** **)**
 
 The name of the bone that should be operated on by this modification.
 
 When possible, this will also update the :ref:`bone_index<class_SkeletonModification3DLookAt_property_bone_index>` based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SkeletonModification3DLookAt_property_target_nodepath:
 
-- :ref:`NodePath<class_NodePath>` **target_nodepath**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``NodePath("")``       |
-+-----------+------------------------+
-| *Setter*  | set_target_node(value) |
-+-----------+------------------------+
-| *Getter*  | get_target_node()      |
-+-----------+------------------------+
+:ref:`NodePath<class_NodePath>` **target_nodepath** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_target_node** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_target_node** **(** **)**
 
 The NodePath to the node that is the target for the modification.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SkeletonModification3DLookAt_method_get_additional_rotation:
 
-- :ref:`Vector3<class_Vector3>` **get_additional_rotation** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_additional_rotation** **(** **)** |const|
 
 Returns the amount of extra rotation that is applied to the bone after the LookAt modification executes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DLookAt_method_get_lock_rotation_plane:
 
-- :ref:`int<class_int>` **get_lock_rotation_plane** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_lock_rotation_plane** **(** **)** |const|
 
 Returns the plane that the LookAt modification is limiting rotation to.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DLookAt_method_get_lock_rotation_to_plane:
 
-- :ref:`bool<class_bool>` **get_lock_rotation_to_plane** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_lock_rotation_to_plane** **(** **)** |const|
 
 Returns whether the LookAt modification is limiting rotation to a single plane in 3D space.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DLookAt_method_set_additional_rotation:
 
-- void **set_additional_rotation** **(** :ref:`Vector3<class_Vector3>` additional_rotation **)**
+.. rst-class:: classref-method
+
+void **set_additional_rotation** **(** :ref:`Vector3<class_Vector3>` additional_rotation **)**
 
 Sets the amount of extra rotation to be applied after the LookAt modification executes. This allows you to adjust the finished result.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DLookAt_method_set_lock_rotation_plane:
 
-- void **set_lock_rotation_plane** **(** :ref:`int<class_int>` plane **)**
+.. rst-class:: classref-method
+
+void **set_lock_rotation_plane** **(** :ref:`int<class_int>` plane **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DLookAt_method_set_lock_rotation_to_plane:
 
-- void **set_lock_rotation_to_plane** **(** :ref:`bool<class_bool>` lock_to_plane **)**
+.. rst-class:: classref-method
+
+void **set_lock_rotation_to_plane** **(** :ref:`bool<class_bool>` lock_to_plane **)**
 
 When ``true``, the LookAt modification will limit its rotation to a single plane in 3D space. The plane used can be configured using the ``set_lock_rotation_plane`` function.
 

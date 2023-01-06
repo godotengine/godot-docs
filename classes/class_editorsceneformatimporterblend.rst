@@ -14,6 +14,8 @@ EditorSceneFormatImporterBlend
 
 Importer for Blender's ``.blend`` scene file format.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

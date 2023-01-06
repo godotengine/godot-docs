@@ -14,6 +14,8 @@ VisualShaderNodeTexture2DParameter
 
 Provides a 2D texture parameter within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

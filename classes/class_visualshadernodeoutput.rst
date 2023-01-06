@@ -16,6 +16,8 @@ VisualShaderNodeOutput
 
 Represents the output shader parameters within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

@@ -14,50 +14,63 @@ VisualShaderNodeVec3Parameter
 
 A :ref:`Vector3<class_Vector3>` parameter to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Translated to ``uniform vec3`` in the shader language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`default_value<class_VisualShaderNodeVec3Parameter_property_default_value>`                 | ``Vector3(0, 0, 0)`` |
-+-------------------------------+--------------------------------------------------------------------------------------------------+----------------------+
-| :ref:`bool<class_bool>`       | :ref:`default_value_enabled<class_VisualShaderNodeVec3Parameter_property_default_value_enabled>` | ``false``            |
-+-------------------------------+--------------------------------------------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`default_value<class_VisualShaderNodeVec3Parameter_property_default_value>`                 | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+--------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`default_value_enabled<class_VisualShaderNodeVec3Parameter_property_default_value_enabled>` | ``false``            |
+   +-------------------------------+--------------------------------------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeVec3Parameter_property_default_value:
 
-- :ref:`Vector3<class_Vector3>` **default_value**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``Vector3(0, 0, 0)``     |
-+-----------+--------------------------+
-| *Setter*  | set_default_value(value) |
-+-----------+--------------------------+
-| *Getter*  | get_default_value()      |
-+-----------+--------------------------+
+:ref:`Vector3<class_Vector3>` **default_value** = ``Vector3(0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_default_value** **(** **)**
 
 A default value to be assigned within the shader.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeVec3Parameter_property_default_value_enabled:
 
-- :ref:`bool<class_bool>` **default_value_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``false``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_default_value_enabled(value) |
-+-----------+----------------------------------+
-| *Getter*  | is_default_value_enabled()       |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_default_value_enabled** **(** **)**
 
 Enables usage of the :ref:`default_value<class_VisualShaderNodeVec3Parameter_property_default_value>`.
 

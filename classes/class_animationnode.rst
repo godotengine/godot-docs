@@ -16,6 +16,8 @@ AnimationNode
 
 Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,168 +25,255 @@ Base resource for :ref:`AnimationTree<class_AnimationTree>` nodes. In general, i
 
 Inherit this when creating nodes mainly for use in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`, otherwise :ref:`AnimationRootNode<class_AnimationRootNode>` should be used instead.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`AnimationTree <../tutorials/animation/animation_tree>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`filter_enabled<class_AnimationNode_property_filter_enabled>` |
-+-------------------------+--------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`filter_enabled<class_AnimationNode_property_filter_enabled>` |
+   +-------------------------+--------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`_get_caption<class_AnimationNode_method__get_caption>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                        |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AnimationNode<class_AnimationNode>` | :ref:`_get_child_by_name<class_AnimationNode_method__get_child_by_name>` **(** :ref:`StringName<class_StringName>` name **)** |virtual| |const|                                                                                                                                                                                                                                                   |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`       | :ref:`_get_child_nodes<class_AnimationNode_method__get_child_nodes>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`_get_parameter_default_value<class_AnimationNode_method__get_parameter_default_value>` **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|                                                                                                                                                                                                                          |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                 | :ref:`_get_parameter_list<class_AnimationNode_method__get_parameter_list>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                          |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`_has_filter<class_AnimationNode_method__has_filter>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                          |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`_process<class_AnimationNode_method__process>` **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` seek_root **)** |virtual| |const|                                                                                                                                                                                                                |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`add_input<class_AnimationNode_method_add_input>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                                                                                                                                               |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`blend_animation<class_AnimationNode_method_blend_animation>` **(** :ref:`StringName<class_StringName>` animation, :ref:`float<class_float>` time, :ref:`float<class_float>` delta, :ref:`bool<class_bool>` seeked, :ref:`bool<class_bool>` seek_root, :ref:`float<class_float>` blend, :ref:`int<class_int>` pingponged=0 **)**                                                             |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`blend_input<class_AnimationNode_method_blend_input>` **(** :ref:`int<class_int>` input_index, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` seek_root, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` sync=true **)**                                                      |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                 | :ref:`blend_node<class_AnimationNode_method_blend_node>` **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` seek_root, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` sync=true **)** |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_input_count<class_AnimationNode_method_get_input_count>` **(** **)** |const|                                                                                                                                                                                                                                                                                                            |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`get_input_name<class_AnimationNode_method_get_input_name>` **(** :ref:`int<class_int>` input **)**                                                                                                                                                                                                                                                                                          |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`             | :ref:`get_parameter<class_AnimationNode_method_get_parameter>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                                                                       |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`is_path_filtered<class_AnimationNode_method_is_path_filtered>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                                                                                                                                                                                     |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`remove_input<class_AnimationNode_method_remove_input>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                                                                                                                                              |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_filter_path<class_AnimationNode_method_set_filter_path>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                               |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set_parameter<class_AnimationNode_method_set_parameter>` **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**                                                                                                                                                                                                                                          |
-+-------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`               | :ref:`_get_caption<class_AnimationNode_method__get_caption>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                  |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AnimationNode<class_AnimationNode>` | :ref:`_get_child_by_name<class_AnimationNode_method__get_child_by_name>` **(** :ref:`StringName<class_StringName>` name **)** |virtual| |const|                                                                                                                                                                                                                                                             |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`       | :ref:`_get_child_nodes<class_AnimationNode_method__get_child_nodes>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                          |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`             | :ref:`_get_parameter_default_value<class_AnimationNode_method__get_parameter_default_value>` **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|                                                                                                                                                                                                                                    |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                 | :ref:`_get_parameter_list<class_AnimationNode_method__get_parameter_list>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                    |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`_has_filter<class_AnimationNode_method__has_filter>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                    |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                 | :ref:`_process<class_AnimationNode_method__process>` **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking **)** |virtual| |const|                                                                                                                                                                                                                |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`add_input<class_AnimationNode_method_add_input>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                                                                                                                                                         |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`blend_animation<class_AnimationNode_method_blend_animation>` **(** :ref:`StringName<class_StringName>` animation, :ref:`float<class_float>` time, :ref:`float<class_float>` delta, :ref:`bool<class_bool>` seeked, :ref:`bool<class_bool>` is_external_seeking, :ref:`float<class_float>` blend, :ref:`LoopedFlag<enum_Animation_LoopedFlag>` looped_flag=0 **)**                                     |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                 | :ref:`blend_input<class_AnimationNode_method_blend_input>` **(** :ref:`int<class_int>` input_index, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` sync=true **)**                                                      |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                 | :ref:`blend_node<class_AnimationNode_method_blend_node>` **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` sync=true **)** |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`get_input_count<class_AnimationNode_method_get_input_count>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                      |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`               | :ref:`get_input_name<class_AnimationNode_method_get_input_name>` **(** :ref:`int<class_int>` input **)**                                                                                                                                                                                                                                                                                                    |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`             | :ref:`get_parameter<class_AnimationNode_method_get_parameter>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                                                                                 |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`is_path_filtered<class_AnimationNode_method_is_path_filtered>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                                                                                                                                                                                               |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`remove_input<class_AnimationNode_method_remove_input>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                                                                                                                                                        |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`set_filter_path<class_AnimationNode_method_set_filter_path>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**                                                                                                                                                                                                                                                         |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`set_parameter<class_AnimationNode_method_set_parameter>` **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**                                                                                                                                                                                                                                                    |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_AnimationNode_signal_removed_from_graph:
 
-- **removed_from_graph** **(** **)**
+.. rst-class:: classref-signal
+
+**removed_from_graph** **(** **)**
 
 Emitted when the node was removed from the graph.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_signal_tree_changed:
 
-- **tree_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**tree_changed** **(** **)**
 
 Emitted by nodes that inherit from this class and that have an internal tree when one of their nodes changes. The nodes that emit this signal are :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>`, :ref:`AnimationNodeBlendSpace2D<class_AnimationNodeBlendSpace2D>`, :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`, and :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_AnimationNode_FilterAction:
 
-.. _class_AnimationNode_constant_FILTER_IGNORE:
-
-.. _class_AnimationNode_constant_FILTER_PASS:
-
-.. _class_AnimationNode_constant_FILTER_STOP:
-
-.. _class_AnimationNode_constant_FILTER_BLEND:
+.. rst-class:: classref-enumeration
 
 enum **FilterAction**:
 
-- **FILTER_IGNORE** = **0** --- Do not use filtering.
+.. _class_AnimationNode_constant_FILTER_IGNORE:
 
-- **FILTER_PASS** = **1** --- Paths matching the filter will be allowed to pass.
+.. rst-class:: classref-enumeration-constant
 
-- **FILTER_STOP** = **2** --- Paths matching the filter will be discarded.
+:ref:`FilterAction<enum_AnimationNode_FilterAction>` **FILTER_IGNORE** = ``0``
 
-- **FILTER_BLEND** = **3** --- Paths matching the filter will be blended (by the blend value).
+Do not use filtering.
+
+.. _class_AnimationNode_constant_FILTER_PASS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FilterAction<enum_AnimationNode_FilterAction>` **FILTER_PASS** = ``1``
+
+Paths matching the filter will be allowed to pass.
+
+.. _class_AnimationNode_constant_FILTER_STOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FilterAction<enum_AnimationNode_FilterAction>` **FILTER_STOP** = ``2``
+
+Paths matching the filter will be discarded.
+
+.. _class_AnimationNode_constant_FILTER_BLEND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FilterAction<enum_AnimationNode_FilterAction>` **FILTER_BLEND** = ``3``
+
+Paths matching the filter will be blended (by the blend value).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimationNode_property_filter_enabled:
 
-- :ref:`bool<class_bool>` **filter_enabled**
+.. rst-class:: classref-property
 
-+----------+---------------------------+
-| *Setter* | set_filter_enabled(value) |
-+----------+---------------------------+
-| *Getter* | is_filter_enabled()       |
-+----------+---------------------------+
+:ref:`bool<class_bool>` **filter_enabled**
+
+.. rst-class:: classref-property-setget
+
+- void **set_filter_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_filter_enabled** **(** **)**
 
 If ``true``, filtering is enabled.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AnimationNode_method__get_caption:
 
-- :ref:`String<class_String>` **_get_caption** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_caption** **(** **)** |virtual| |const|
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to override the text caption for this node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method__get_child_by_name:
 
-- :ref:`AnimationNode<class_AnimationNode>` **_get_child_by_name** **(** :ref:`StringName<class_StringName>` name **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`AnimationNode<class_AnimationNode>` **_get_child_by_name** **(** :ref:`StringName<class_StringName>` name **)** |virtual| |const|
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a child node by its ``name``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method__get_child_nodes:
 
-- :ref:`Dictionary<class_Dictionary>` **_get_child_nodes** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **_get_child_nodes** **(** **)** |virtual| |const|
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return all children nodes in order as a ``name: node`` dictionary.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method__get_parameter_default_value:
 
-- :ref:`Variant<class_Variant>` **_get_parameter_default_value** **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **_get_parameter_default_value** **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return the default value of a ``parameter``. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method__get_parameter_list:
 
-- :ref:`Array<class_Array>` **_get_parameter_list** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **_get_parameter_list** **(** **)** |virtual| |const|
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return a list of the properties on this node. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees. Format is similar to :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method__has_filter:
 
-- :ref:`bool<class_bool>` **_has_filter** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_has_filter** **(** **)** |virtual| |const|
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return whether the blend tree editor should display filter editing on this node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method__process:
 
-- :ref:`float<class_float>` **_process** **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` seek_root **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **_process** **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking **)** |virtual| |const|
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to run some code when this node is processed. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute.
 
@@ -192,91 +281,137 @@ Here, call the :ref:`blend_input<class_AnimationNode_method_blend_input>`, :ref:
 
 This function should return the time left for the current animation to finish (if unsure, pass the value from the main blend being called).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AnimationNode_method_add_input:
 
-- void **add_input** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+void **add_input** **(** :ref:`String<class_String>` name **)**
 
 Adds an input to the node. This is only useful for nodes created for use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_blend_animation:
 
-- void **blend_animation** **(** :ref:`StringName<class_StringName>` animation, :ref:`float<class_float>` time, :ref:`float<class_float>` delta, :ref:`bool<class_bool>` seeked, :ref:`bool<class_bool>` seek_root, :ref:`float<class_float>` blend, :ref:`int<class_int>` pingponged=0 **)**
+.. rst-class:: classref-method
+
+void **blend_animation** **(** :ref:`StringName<class_StringName>` animation, :ref:`float<class_float>` time, :ref:`float<class_float>` delta, :ref:`bool<class_bool>` seeked, :ref:`bool<class_bool>` is_external_seeking, :ref:`float<class_float>` blend, :ref:`LoopedFlag<enum_Animation_LoopedFlag>` looped_flag=0 **)**
 
 Blend an animation by ``blend`` amount (name must be valid in the linked :ref:`AnimationPlayer<class_AnimationPlayer>`). A ``time`` and ``delta`` may be passed, as well as whether ``seeked`` happened.
+
+A ``looped_flag`` is used by internal processing immediately after the loop. See also :ref:`LoopedFlag<enum_Animation_LoopedFlag>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_blend_input:
 
-- :ref:`float<class_float>` **blend_input** **(** :ref:`int<class_int>` input_index, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` seek_root, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` sync=true **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **blend_input** **(** :ref:`int<class_int>` input_index, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` sync=true **)**
 
 Blend an input. This is only useful for nodes created for an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. The ``time`` parameter is a relative delta, unless ``seek`` is ``true``, in which case it is absolute. A filter mode may be optionally passed (see :ref:`FilterAction<enum_AnimationNode_FilterAction>` for options).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_blend_node:
 
-- :ref:`float<class_float>` **blend_node** **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` seek_root, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` sync=true **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **blend_node** **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking, :ref:`float<class_float>` blend, :ref:`FilterAction<enum_AnimationNode_FilterAction>` filter=0, :ref:`bool<class_bool>` sync=true **)**
 
 Blend another animation node (in case this node contains children animation nodes). This function is only useful if you inherit from :ref:`AnimationRootNode<class_AnimationRootNode>` instead, else editors will not display your node for addition.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_get_input_count:
 
-- :ref:`int<class_int>` **get_input_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_input_count** **(** **)** |const|
 
 Amount of inputs in this node, only useful for nodes that go into :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_get_input_name:
 
-- :ref:`String<class_String>` **get_input_name** **(** :ref:`int<class_int>` input **)**
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_input_name** **(** :ref:`int<class_int>` input **)**
 
 Gets the name of an input by index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_get_parameter:
 
-- :ref:`Variant<class_Variant>` **get_parameter** **(** :ref:`StringName<class_StringName>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_parameter** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Gets the value of a parameter. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_is_path_filtered:
 
-- :ref:`bool<class_bool>` **is_path_filtered** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_path_filtered** **(** :ref:`NodePath<class_NodePath>` path **)** |const|
 
 Returns whether the given path is filtered.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_remove_input:
 
-- void **remove_input** **(** :ref:`int<class_int>` index **)**
+.. rst-class:: classref-method
+
+void **remove_input** **(** :ref:`int<class_int>` index **)**
 
 Removes an input, call this only when inactive.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_set_filter_path:
 
-- void **set_filter_path** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**
+.. rst-class:: classref-method
+
+void **set_filter_path** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enable **)**
 
 Adds or removes a path for the filter.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNode_method_set_parameter:
 
-- void **set_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+void **set_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
 
 Sets a custom parameter. These are used as local memory, because resources can be reused across the tree or scenes.
 

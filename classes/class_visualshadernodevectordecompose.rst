@@ -14,6 +14,8 @@ VisualShaderNodeVectorDecompose
 
 Decomposes a :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>` or 4D vector (represented as a :ref:`Quaternion<class_Quaternion>`) into scalars within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

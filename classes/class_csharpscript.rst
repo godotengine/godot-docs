@@ -14,6 +14,8 @@ CSharpScript
 
 A script implemented in the C# programming language (Mono-enabled builds only).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,24 +23,39 @@ This class represents a C# script. It is the C# equivalent of the :ref:`GDScript
 
 See also :ref:`GodotSharp<class_GodotSharp>`.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`C# documentation index <../tutorials/scripting/c_sharp/index>`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------+--------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`new<class_CSharpScript_method_new>` **(** ... **)** |vararg| |
-+-------------------------------+--------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`new<class_CSharpScript_method_new>` **(** ... **)** |vararg| |
+   +-------------------------------+--------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_CSharpScript_method_new:
 
-- :ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
 
 Returns a new instance of the script.
 

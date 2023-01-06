@@ -14,66 +14,84 @@ GradientTexture1D
 
 Gradient-filled texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 GradientTexture1D uses a :ref:`Gradient<class_Gradient>` to fill the texture data. The gradient will be filled from left to right using colors obtained from the gradient. This means the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`width<class_GradientTexture1D_property_width>`). See also :ref:`GradientTexture2D<class_GradientTexture2D>`, :ref:`CurveTexture<class_CurveTexture>` and :ref:`CurveXYZTexture<class_CurveXYZTexture>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+------------------------------------------------------------+-----------+
-| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture1D_property_gradient>` |           |
-+---------------------------------+------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`         | :ref:`use_hdr<class_GradientTexture1D_property_use_hdr>`   | ``false`` |
-+---------------------------------+------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture1D_property_width>`       | ``256``   |
-+---------------------------------+------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture1D_property_gradient>` |                                                                                        |
+   +---------------------------------+------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | resource_local_to_scene                                    | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
+   +---------------------------------+------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`use_hdr<class_GradientTexture1D_property_use_hdr>`   | ``false``                                                                              |
+   +---------------------------------+------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`width<class_GradientTexture1D_property_width>`       | ``256``                                                                                |
+   +---------------------------------+------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GradientTexture1D_property_gradient:
 
-- :ref:`Gradient<class_Gradient>` **gradient**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_gradient(value) |
-+----------+---------------------+
-| *Getter* | get_gradient()      |
-+----------+---------------------+
+:ref:`Gradient<class_Gradient>` **gradient**
+
+.. rst-class:: classref-property-setget
+
+- void **set_gradient** **(** :ref:`Gradient<class_Gradient>` value **)**
+- :ref:`Gradient<class_Gradient>` **get_gradient** **(** **)**
 
 The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GradientTexture1D_property_use_hdr:
 
-- :ref:`bool<class_bool>` **use_hdr**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_use_hdr(value) |
-+-----------+--------------------+
-| *Getter*  | is_using_hdr()     |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **use_hdr** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_hdr** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_hdr** **(** **)**
 
 If ``true``, the generated texture will support high dynamic range (:ref:`Image.FORMAT_RGBAF<class_Image_constant_FORMAT_RGBAF>` format). This allows for glow effects to work if :ref:`Environment.glow_enabled<class_Environment_property_glow_enabled>` is ``true``. If ``false``, the generated texture will use low dynamic range; overbright colors will be clamped (:ref:`Image.FORMAT_RGBA8<class_Image_constant_FORMAT_RGBA8>` format).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GradientTexture1D_property_width:
 
-- :ref:`int<class_int>` **width**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``256``          |
-+-----------+------------------+
-| *Setter*  | set_width(value) |
-+-----------+------------------+
-| *Getter*  | get_width()      |
-+-----------+------------------+
+:ref:`int<class_int>` **width** = ``256``
+
+.. rst-class:: classref-property-setget
+
+- void **set_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_width** **(** **)**
 
 The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
 

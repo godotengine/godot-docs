@@ -191,7 +191,7 @@ vector, add the following code.
 
    func _physics_process(delta):
        #...
-       #if direction != Vector3.ZERO:
+       if direction != Vector3.ZERO:
            #...
            $AnimationPlayer.playback_speed = 4
        else:
@@ -477,7 +477,7 @@ And the *Mob*'s script.
        $AnimationPlayer.playback_speed = random_speed / min_speed
 
 
-    func squash():
+   func squash():
        emit_signal("squashed")
        queue_free()
 

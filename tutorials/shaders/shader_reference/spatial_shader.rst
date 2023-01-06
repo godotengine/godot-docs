@@ -297,7 +297,9 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | sampler2D **DEPTH_TEXTURE**            | Built-in Texture for reading depth from the screen. Must convert to linear using INV_PROJECTION. |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **DEPTH**                    | Custom depth value (0..1).                                                                       |
+| out float **DEPTH**                    | Custom depth value (0..1). If ``DEPTH`` is being written to in any shader branch, then you are   |
+|                                        | responsible for setting the ``DEPTH`` for **all** other branches. Otherwise, the graphics API    |
+|                                        | will leave them uninitialized.                                                                   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **NORMAL**                  | Normal that comes from vertex function (default, in view space).                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+

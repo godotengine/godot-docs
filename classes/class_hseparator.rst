@@ -14,38 +14,53 @@ HSeparator
 
 Horizontal separator.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Horizontal separator. See :ref:`Separator<class_Separator>`. Even though it looks horizontal, it is used to separate objects vertically.
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------------------------------------------------+-------+
-| :ref:`int<class_int>`           | :ref:`separation<class_HSeparator_theme_constant_separation>` | ``4`` |
-+---------------------------------+---------------------------------------------------------------+-------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_HSeparator_theme_style_separator>`      |       |
-+---------------------------------+---------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`           | :ref:`separation<class_HSeparator_theme_constant_separation>` | ``4`` |
+   +---------------------------------+---------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_HSeparator_theme_style_separator>`      |       |
+   +---------------------------------+---------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_HSeparator_theme_constant_separation:
 
-- :ref:`int<class_int>` **separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **separation** = ``4``
 
 The height of the area covered by the separator. Effectively works like a minimum height.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSeparator_theme_style_separator:
 
-- :ref:`StyleBox<class_StyleBox>` **separator**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **separator**
 
 The style for the separator line. Works best with :ref:`StyleBoxLine<class_StyleBoxLine>`.
 

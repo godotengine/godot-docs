@@ -14,28 +14,43 @@ PopupPanel
 
 Class for displaying popups with a panel background.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Class for displaying popups with a panel background. In some cases it might be simpler to use than :ref:`Popup<class_Popup>`, since it provides a configurable background. If you are making windows, better check :ref:`Window<class_Window>`.
 
-If any :ref:`Control<class_Control>` node is added as a child of this ``PopupPanel``, it will be stretched to fit the panel's size (similar to how :ref:`PanelContainer<class_PanelContainer>` works).
+If any :ref:`Control<class_Control>` node is added as a child of this **PopupPanel**, it will be stretched to fit the panel's size (similar to how :ref:`PanelContainer<class_PanelContainer>` works).
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+---------------------------------+--------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PopupPanel_theme_style_panel>` |
-+---------------------------------+--------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PopupPanel_theme_style_panel>` |
+   +---------------------------------+--------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_PopupPanel_theme_style_panel:
 
-- :ref:`StyleBox<class_StyleBox>` **panel**
+.. rst-class:: classref-themeproperty
 
-The background panel style of this ``PopupPanel``.
+:ref:`StyleBox<class_StyleBox>` **panel**
+
+The background panel style of this **PopupPanel**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

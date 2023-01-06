@@ -18,49 +18,74 @@ Base class for audio equalizers. Gives you control over frequencies.
 
 Use it to create a custom equalizer if :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`, :ref:`AudioEffectEQ10<class_AudioEffectEQ10>` or :ref:`AudioEffectEQ21<class_AudioEffectEQ21>` don't fit your needs.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 AudioEffectEQ gives you control over frequencies. Use it to compensate for existing deficiencies in audio. AudioEffectEQs are useful on the Master bus to completely master a mix and give it more character. They are also useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_band_count<class_AudioEffectEQ_method_get_band_count>` **(** **)** |const|                                                                 |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_band_gain_db<class_AudioEffectEQ_method_get_band_gain_db>` **(** :ref:`int<class_int>` band_idx **)** |const|                              |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_band_gain_db<class_AudioEffectEQ_method_set_band_gain_db>` **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)** |
-+---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_band_count<class_AudioEffectEQ_method_get_band_count>` **(** **)** |const|                                                                 |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_band_gain_db<class_AudioEffectEQ_method_get_band_gain_db>` **(** :ref:`int<class_int>` band_idx **)** |const|                              |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_band_gain_db<class_AudioEffectEQ_method_set_band_gain_db>` **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)** |
+   +---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AudioEffectEQ_method_get_band_count:
 
-- :ref:`int<class_int>` **get_band_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_band_count** **(** **)** |const|
 
 Returns the number of bands of the equalizer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectEQ_method_get_band_gain_db:
 
-- :ref:`float<class_float>` **get_band_gain_db** **(** :ref:`int<class_int>` band_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_band_gain_db** **(** :ref:`int<class_int>` band_idx **)** |const|
 
 Returns the band's gain at the specified index, in dB.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectEQ_method_set_band_gain_db:
 
-- void **set_band_gain_db** **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)**
+.. rst-class:: classref-method
+
+void **set_band_gain_db** **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)**
 
 Sets band's gain at the specified index, in dB.
 

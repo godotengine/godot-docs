@@ -14,34 +14,46 @@ QuadOccluder3D
 
 Flat plane shape for use with occlusion culling in :ref:`OccluderInstance3D<class_OccluderInstance3D>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``QuadOccluder3D`` stores a flat plane shape that can be used by the engine's occlusion culling system. See also :ref:`PolygonOccluder3D<class_PolygonOccluder3D>` if you need to customize the quad's shape.
+**QuadOccluder3D** stores a flat plane shape that can be used by the engine's occlusion culling system. See also :ref:`PolygonOccluder3D<class_PolygonOccluder3D>` if you need to customize the quad's shape.
 
 See :ref:`OccluderInstance3D<class_OccluderInstance3D>`'s documentation for instructions on setting up occlusion culling.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadOccluder3D_property_size>` | ``Vector2(1, 1)`` |
-+-------------------------------+-------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadOccluder3D_property_size>` | ``Vector2(1, 1)`` |
+   +-------------------------------+-------------------------------------------------+-------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_QuadOccluder3D_property_size:
 
-- :ref:`Vector2<class_Vector2>` **size**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(1, 1)`` |
-+-----------+-------------------+
-| *Setter*  | set_size(value)   |
-+-----------+-------------------+
-| *Getter*  | get_size()        |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2(1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
 
 The quad's size in 3D units.
 

@@ -14,71 +14,123 @@ VisualShaderNodeSwitch
 
 A selector function for use within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Returns an associated value of the ``op_type`` type if the provided boolean value is ``true`` or ``false``.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------+---------------------------------------------------------------+-------+
-| :ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` | :ref:`op_type<class_VisualShaderNodeSwitch_property_op_type>` | ``0`` |
-+---------------------------------------------------+---------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+---------------------------------------------------------------+-------+
+   | :ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` | :ref:`op_type<class_VisualShaderNodeSwitch_property_op_type>` | ``0`` |
+   +---------------------------------------------------+---------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeSwitch_OpType:
 
-.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_FLOAT:
-
-.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_INT:
-
-.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_VECTOR_2D:
-
-.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_VECTOR_3D:
-
-.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_VECTOR_4D:
-
-.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_BOOLEAN:
-
-.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_TRANSFORM:
-
-.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **OpType**:
 
-- **OP_TYPE_FLOAT** = **0** --- A floating-point scalar.
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_FLOAT:
 
-- **OP_TYPE_INT** = **1** --- An integer scalar.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_TYPE_VECTOR_2D** = **2** --- A 2D vector type.
+:ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **OP_TYPE_FLOAT** = ``0``
 
-- **OP_TYPE_VECTOR_3D** = **3** --- A 3D vector type.
+A floating-point scalar.
 
-- **OP_TYPE_VECTOR_4D** = **4** --- A 4D vector type.
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_INT:
 
-- **OP_TYPE_BOOLEAN** = **5** --- A boolean type.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_TYPE_TRANSFORM** = **6** --- A transform type.
+:ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **OP_TYPE_INT** = ``1``
 
-- **OP_TYPE_MAX** = **7** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` enum.
+An integer scalar.
+
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_VECTOR_2D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **OP_TYPE_VECTOR_2D** = ``2``
+
+A 2D vector type.
+
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_VECTOR_3D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **OP_TYPE_VECTOR_3D** = ``3``
+
+A 3D vector type.
+
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_VECTOR_4D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **OP_TYPE_VECTOR_4D** = ``4``
+
+A 4D vector type.
+
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_BOOLEAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **OP_TYPE_BOOLEAN** = ``5``
+
+A boolean type.
+
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_TRANSFORM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **OP_TYPE_TRANSFORM** = ``6``
+
+A transform type.
+
+.. _class_VisualShaderNodeSwitch_constant_OP_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **OP_TYPE_MAX** = ``7``
+
+Represents the size of the :ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeSwitch_property_op_type:
 
-- :ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **op_type**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_op_type(value) |
-+-----------+--------------------+
-| *Getter*  | get_op_type()      |
-+-----------+--------------------+
+:ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **op_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_op_type** **(** :ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` value **)**
+- :ref:`OpType<enum_VisualShaderNodeSwitch_OpType>` **get_op_type** **(** **)**
 
 A type of operands and returned value.
 

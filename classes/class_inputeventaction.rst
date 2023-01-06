@@ -14,10 +14,14 @@ InputEventAction
 
 Input event type for actions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Contains a generic action which can be targeted from several types of inputs. Actions can be created from the **Input Map** tab in the **Project > Project Settings** menu. See :ref:`Node._input<class_Node_method__input>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,63 +32,75 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------+-----------------------------------------------------------+-----------+
-| :ref:`StringName<class_StringName>` | :ref:`action<class_InputEventAction_property_action>`     | ``&""``   |
-+-------------------------------------+-----------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`             | :ref:`pressed<class_InputEventAction_property_pressed>`   | ``false`` |
-+-------------------------------------+-----------------------------------------------------------+-----------+
-| :ref:`float<class_float>`           | :ref:`strength<class_InputEventAction_property_strength>` | ``1.0``   |
-+-------------------------------------+-----------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+-----------------------------------------------------------+-----------+
+   | :ref:`StringName<class_StringName>` | :ref:`action<class_InputEventAction_property_action>`     | ``&""``   |
+   +-------------------------------------+-----------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`             | :ref:`pressed<class_InputEventAction_property_pressed>`   | ``false`` |
+   +-------------------------------------+-----------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`           | :ref:`strength<class_InputEventAction_property_strength>` | ``1.0``   |
+   +-------------------------------------+-----------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventAction_property_action:
 
-- :ref:`StringName<class_StringName>` **action**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``&""``           |
-+-----------+-------------------+
-| *Setter*  | set_action(value) |
-+-----------+-------------------+
-| *Getter*  | get_action()      |
-+-----------+-------------------+
+:ref:`StringName<class_StringName>` **action** = ``&""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_action** **(** :ref:`StringName<class_StringName>` value **)**
+- :ref:`StringName<class_StringName>` **get_action** **(** **)**
 
 The action's name. Actions are accessed via this :ref:`String<class_String>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventAction_property_pressed:
 
-- :ref:`bool<class_bool>` **pressed**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_pressed(value) |
-+-----------+--------------------+
-| *Getter*  | is_pressed()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **pressed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pressed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_pressed** **(** **)**
 
 If ``true``, the action's state is pressed. If ``false``, the action's state is released.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventAction_property_strength:
 
-- :ref:`float<class_float>` **strength**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``1.0``             |
-+-----------+---------------------+
-| *Setter*  | set_strength(value) |
-+-----------+---------------------+
-| *Getter*  | get_strength()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **strength** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_strength** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_strength** **(** **)**
 
 The action's strength between 0 and 1. This value is considered as equal to 0 if pressed is ``false``. The event strength allows faking analog joypad motion events, by specifying how strongly the joypad axis is bent or pressed.
 

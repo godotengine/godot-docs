@@ -16,249 +16,326 @@ Camera3D
 
 Camera node, displays from a point of view.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``Camera3D`` is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
+**Camera3D** is a special node that displays what is visible from its current location. Cameras register themselves in the nearest :ref:`Viewport<class_Viewport>` node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a :ref:`Viewport<class_Viewport>`, and, without one, a scene registered in that :ref:`Viewport<class_Viewport>` (or higher viewports) can't be displayed.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`CameraAttributes<class_CameraAttributes>`       | :ref:`attributes<class_Camera3D_property_attributes>`             |                   |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`int<class_int>`                                 | :ref:`cull_mask<class_Camera3D_property_cull_mask>`               | ``1048575``       |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`                               | :ref:`current<class_Camera3D_property_current>`                   | ``false``         |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` | :ref:`doppler_tracking<class_Camera3D_property_doppler_tracking>` | ``0``             |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`Environment<class_Environment>`                 | :ref:`environment<class_Camera3D_property_environment>`           |                   |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`                             | :ref:`far<class_Camera3D_property_far>`                           | ``4000.0``        |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`                             | :ref:`fov<class_Camera3D_property_fov>`                           | ``75.0``          |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>`                         | :ref:`frustum_offset<class_Camera3D_property_frustum_offset>`     | ``Vector2(0, 0)`` |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`                             | :ref:`h_offset<class_Camera3D_property_h_offset>`                 | ``0.0``           |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`KeepAspect<enum_Camera3D_KeepAspect>`           | :ref:`keep_aspect<class_Camera3D_property_keep_aspect>`           | ``1``             |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`                             | :ref:`near<class_Camera3D_property_near>`                         | ``0.05``          |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`ProjectionType<enum_Camera3D_ProjectionType>`   | :ref:`projection<class_Camera3D_property_projection>`             | ``0``             |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`                             | :ref:`size<class_Camera3D_property_size>`                         | ``1.0``           |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`                             | :ref:`v_offset<class_Camera3D_property_v_offset>`                 | ``0.0``           |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`CameraAttributes<class_CameraAttributes>`       | :ref:`attributes<class_Camera3D_property_attributes>`             |                   |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`                                 | :ref:`cull_mask<class_Camera3D_property_cull_mask>`               | ``1048575``       |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                               | :ref:`current<class_Camera3D_property_current>`                   | ``false``         |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` | :ref:`doppler_tracking<class_Camera3D_property_doppler_tracking>` | ``0``             |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`Environment<class_Environment>`                 | :ref:`environment<class_Camera3D_property_environment>`           |                   |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                             | :ref:`far<class_Camera3D_property_far>`                           | ``4000.0``        |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                             | :ref:`fov<class_Camera3D_property_fov>`                           | ``75.0``          |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                         | :ref:`frustum_offset<class_Camera3D_property_frustum_offset>`     | ``Vector2(0, 0)`` |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                             | :ref:`h_offset<class_Camera3D_property_h_offset>`                 | ``0.0``           |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`KeepAspect<enum_Camera3D_KeepAspect>`           | :ref:`keep_aspect<class_Camera3D_property_keep_aspect>`           | ``1``             |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                             | :ref:`near<class_Camera3D_property_near>`                         | ``0.05``          |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`ProjectionType<enum_Camera3D_ProjectionType>`   | :ref:`projection<class_Camera3D_property_projection>`             | ``0``             |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                             | :ref:`size<class_Camera3D_property_size>`                         | ``1.0``           |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                             | :ref:`v_offset<class_Camera3D_property_v_offset>`                 | ``0.0``           |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`clear_current<class_Camera3D_method_clear_current>` **(** :ref:`bool<class_bool>` enable_next=true **)**                                                                                            |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                 | :ref:`get_camera_rid<class_Camera3D_method_get_camera_rid>` **(** **)** |const|                                                                                                                           |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`get_camera_transform<class_Camera3D_method_get_camera_transform>` **(** **)** |const|                                                                                                               |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`get_cull_mask_value<class_Camera3D_method_get_cull_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                                                              |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane[]<class_Plane>`           | :ref:`get_frustum<class_Camera3D_method_get_frustum>` **(** **)** |const|                                                                                                                                 |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                 | :ref:`get_pyramid_shape_rid<class_Camera3D_method_get_pyramid_shape_rid>` **(** **)**                                                                                                                     |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_position_behind<class_Camera3D_method_is_position_behind>` **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|                                                                         |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_position_in_frustum<class_Camera3D_method_is_position_in_frustum>` **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|                                                                 |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`make_current<class_Camera3D_method_make_current>` **(** **)**                                                                                                                                       |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`project_local_ray_normal<class_Camera3D_method_project_local_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|                                                            |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`project_position<class_Camera3D_method_project_position>` **(** :ref:`Vector2<class_Vector2>` screen_point, :ref:`float<class_float>` z_depth **)** |const|                                         |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`project_ray_normal<class_Camera3D_method_project_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|                                                                        |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`         | :ref:`project_ray_origin<class_Camera3D_method_project_ray_origin>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|                                                                        |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_cull_mask_value<class_Camera3D_method_set_cull_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                                                       |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_frustum<class_Camera3D_method_set_frustum>` **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)** |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_orthogonal<class_Camera3D_method_set_orthogonal>` **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**                                 |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_perspective<class_Camera3D_method_set_perspective>` **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**                                |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`unproject_position<class_Camera3D_method_unproject_position>` **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|                                                                         |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`clear_current<class_Camera3D_method_clear_current>` **(** :ref:`bool<class_bool>` enable_next=true **)**                                                                                            |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                 | :ref:`get_camera_rid<class_Camera3D_method_get_camera_rid>` **(** **)** |const|                                                                                                                           |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`get_camera_transform<class_Camera3D_method_get_camera_transform>` **(** **)** |const|                                                                                                               |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`get_cull_mask_value<class_Camera3D_method_get_cull_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                                                                              |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Plane[]<class_Plane>`           | :ref:`get_frustum<class_Camera3D_method_get_frustum>` **(** **)** |const|                                                                                                                                 |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                 | :ref:`get_pyramid_shape_rid<class_Camera3D_method_get_pyramid_shape_rid>` **(** **)**                                                                                                                     |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_position_behind<class_Camera3D_method_is_position_behind>` **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|                                                                         |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_position_in_frustum<class_Camera3D_method_is_position_in_frustum>` **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|                                                                 |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`make_current<class_Camera3D_method_make_current>` **(** **)**                                                                                                                                       |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`         | :ref:`project_local_ray_normal<class_Camera3D_method_project_local_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|                                                            |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`         | :ref:`project_position<class_Camera3D_method_project_position>` **(** :ref:`Vector2<class_Vector2>` screen_point, :ref:`float<class_float>` z_depth **)** |const|                                         |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`         | :ref:`project_ray_normal<class_Camera3D_method_project_ray_normal>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|                                                                        |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`         | :ref:`project_ray_origin<class_Camera3D_method_project_ray_origin>` **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|                                                                        |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_cull_mask_value<class_Camera3D_method_set_cull_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                                                       |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_frustum<class_Camera3D_method_set_frustum>` **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)** |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_orthogonal<class_Camera3D_method_set_orthogonal>` **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**                                 |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_perspective<class_Camera3D_method_set_perspective>` **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**                                |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`         | :ref:`unproject_position<class_Camera3D_method_unproject_position>` **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|                                                                         |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Camera3D_ProjectionType:
 
-.. _class_Camera3D_constant_PROJECTION_PERSPECTIVE:
-
-.. _class_Camera3D_constant_PROJECTION_ORTHOGONAL:
-
-.. _class_Camera3D_constant_PROJECTION_FRUSTUM:
+.. rst-class:: classref-enumeration
 
 enum **ProjectionType**:
 
-- **PROJECTION_PERSPECTIVE** = **0** --- Perspective projection. Objects on the screen becomes smaller when they are far away.
+.. _class_Camera3D_constant_PROJECTION_PERSPECTIVE:
 
-- **PROJECTION_ORTHOGONAL** = **1** --- Orthogonal projection, also known as orthographic projection. Objects remain the same size on the screen no matter how far away they are.
+.. rst-class:: classref-enumeration-constant
 
-- **PROJECTION_FRUSTUM** = **2** --- Frustum projection. This mode allows adjusting :ref:`frustum_offset<class_Camera3D_property_frustum_offset>` to create "tilted frustum" effects.
+:ref:`ProjectionType<enum_Camera3D_ProjectionType>` **PROJECTION_PERSPECTIVE** = ``0``
+
+Perspective projection. Objects on the screen becomes smaller when they are far away.
+
+.. _class_Camera3D_constant_PROJECTION_ORTHOGONAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProjectionType<enum_Camera3D_ProjectionType>` **PROJECTION_ORTHOGONAL** = ``1``
+
+Orthogonal projection, also known as orthographic projection. Objects remain the same size on the screen no matter how far away they are.
+
+.. _class_Camera3D_constant_PROJECTION_FRUSTUM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProjectionType<enum_Camera3D_ProjectionType>` **PROJECTION_FRUSTUM** = ``2``
+
+Frustum projection. This mode allows adjusting :ref:`frustum_offset<class_Camera3D_property_frustum_offset>` to create "tilted frustum" effects.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Camera3D_KeepAspect:
 
-.. _class_Camera3D_constant_KEEP_WIDTH:
-
-.. _class_Camera3D_constant_KEEP_HEIGHT:
+.. rst-class:: classref-enumeration
 
 enum **KeepAspect**:
 
-- **KEEP_WIDTH** = **0** --- Preserves the horizontal aspect ratio; also known as Vert- scaling. This is usually the best option for projects running in portrait mode, as taller aspect ratios will benefit from a wider vertical FOV.
+.. _class_Camera3D_constant_KEEP_WIDTH:
 
-- **KEEP_HEIGHT** = **1** --- Preserves the vertical aspect ratio; also known as Hor+ scaling. This is usually the best option for projects running in landscape mode, as wider aspect ratios will automatically benefit from a wider horizontal FOV.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeepAspect<enum_Camera3D_KeepAspect>` **KEEP_WIDTH** = ``0``
+
+Preserves the horizontal aspect ratio; also known as Vert- scaling. This is usually the best option for projects running in portrait mode, as taller aspect ratios will benefit from a wider vertical FOV.
+
+.. _class_Camera3D_constant_KEEP_HEIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`KeepAspect<enum_Camera3D_KeepAspect>` **KEEP_HEIGHT** = ``1``
+
+Preserves the vertical aspect ratio; also known as Hor+ scaling. This is usually the best option for projects running in landscape mode, as wider aspect ratios will automatically benefit from a wider horizontal FOV.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Camera3D_DopplerTracking:
 
-.. _class_Camera3D_constant_DOPPLER_TRACKING_DISABLED:
-
-.. _class_Camera3D_constant_DOPPLER_TRACKING_IDLE_STEP:
-
-.. _class_Camera3D_constant_DOPPLER_TRACKING_PHYSICS_STEP:
+.. rst-class:: classref-enumeration
 
 enum **DopplerTracking**:
 
-- **DOPPLER_TRACKING_DISABLED** = **0** --- Disables `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ simulation (default).
+.. _class_Camera3D_constant_DOPPLER_TRACKING_DISABLED:
 
-- **DOPPLER_TRACKING_IDLE_STEP** = **1** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
+.. rst-class:: classref-enumeration-constant
 
-- **DOPPLER_TRACKING_PHYSICS_STEP** = **2** --- Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
+:ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` **DOPPLER_TRACKING_DISABLED** = ``0``
+
+Disables `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ simulation (default).
+
+.. _class_Camera3D_constant_DOPPLER_TRACKING_IDLE_STEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` **DOPPLER_TRACKING_IDLE_STEP** = ``1``
+
+Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_process``. Changes in the relative velocity of this camera compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
+
+.. _class_Camera3D_constant_DOPPLER_TRACKING_PHYSICS_STEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` **DOPPLER_TRACKING_PHYSICS_STEP** = ``2``
+
+Simulate `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ by tracking positions of objects that are changed in ``_physics_process``. Changes in the relative velocity of this camera compared to those objects affect how audio is perceived (changing the audio's :ref:`AudioStreamPlayer3D.pitch_scale<class_AudioStreamPlayer3D_property_pitch_scale>`).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Camera3D_property_attributes:
 
-- :ref:`CameraAttributes<class_CameraAttributes>` **attributes**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_attributes(value) |
-+----------+-----------------------+
-| *Getter* | get_attributes()      |
-+----------+-----------------------+
+:ref:`CameraAttributes<class_CameraAttributes>` **attributes**
+
+.. rst-class:: classref-property-setget
+
+- void **set_attributes** **(** :ref:`CameraAttributes<class_CameraAttributes>` value **)**
+- :ref:`CameraAttributes<class_CameraAttributes>` **get_attributes** **(** **)**
 
 The :ref:`CameraAttributes<class_CameraAttributes>` to use for this camera.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_cull_mask:
 
-- :ref:`int<class_int>` **cull_mask**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1048575``          |
-+-----------+----------------------+
-| *Setter*  | set_cull_mask(value) |
-+-----------+----------------------+
-| *Getter*  | get_cull_mask()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **cull_mask** = ``1048575``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cull_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_cull_mask** **(** **)**
 
 The culling mask that describes which 3D render layers are rendered by this camera.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_current:
 
-- :ref:`bool<class_bool>` **current**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_current(value) |
-+-----------+--------------------+
-| *Getter*  | is_current()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **current** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_current** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_current** **(** **)**
 
 If ``true``, the ancestor :ref:`Viewport<class_Viewport>` is currently using this camera.
 
-If multiple cameras are in the scene, one will always be made current. For example, if two ``Camera3D`` nodes are present in the scene and only one is current, setting one camera's :ref:`current<class_Camera3D_property_current>` to ``false`` will cause the other camera to be made current.
+If multiple cameras are in the scene, one will always be made current. For example, if two **Camera3D** nodes are present in the scene and only one is current, setting one camera's :ref:`current<class_Camera3D_property_current>` to ``false`` will cause the other camera to be made current.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_doppler_tracking:
 
-- :ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` **doppler_tracking**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0``                       |
-+-----------+-----------------------------+
-| *Setter*  | set_doppler_tracking(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_doppler_tracking()      |
-+-----------+-----------------------------+
+:ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` **doppler_tracking** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_doppler_tracking** **(** :ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` value **)**
+- :ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` **get_doppler_tracking** **(** **)**
 
 If not :ref:`DOPPLER_TRACKING_DISABLED<class_Camera3D_constant_DOPPLER_TRACKING_DISABLED>`, this camera will simulate the `Doppler effect <https://en.wikipedia.org/wiki/Doppler_effect>`__ for objects changed in particular ``_process`` methods. See :ref:`DopplerTracking<enum_Camera3D_DopplerTracking>` for possible values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_environment:
 
-- :ref:`Environment<class_Environment>` **environment**
+.. rst-class:: classref-property
 
-+----------+------------------------+
-| *Setter* | set_environment(value) |
-+----------+------------------------+
-| *Getter* | get_environment()      |
-+----------+------------------------+
+:ref:`Environment<class_Environment>` **environment**
+
+.. rst-class:: classref-property-setget
+
+- void **set_environment** **(** :ref:`Environment<class_Environment>` value **)**
+- :ref:`Environment<class_Environment>` **get_environment** **(** **)**
 
 The :ref:`Environment<class_Environment>` to use for this camera.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_far:
 
-- :ref:`float<class_float>` **far**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``4000.0``     |
-+-----------+----------------+
-| *Setter*  | set_far(value) |
-+-----------+----------------+
-| *Getter*  | get_far()      |
-+-----------+----------------+
+:ref:`float<class_float>` **far** = ``4000.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_far** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_far** **(** **)**
 
 The distance to the far culling boundary for this camera relative to its local Z axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_fov:
 
-- :ref:`float<class_float>` **fov**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``75.0``       |
-+-----------+----------------+
-| *Setter*  | set_fov(value) |
-+-----------+----------------+
-| *Getter*  | get_fov()      |
-+-----------+----------------+
+:ref:`float<class_float>` **fov** = ``75.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fov** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_fov** **(** **)**
 
 The camera's field of view angle (in degrees). Only applicable in perspective mode. Since :ref:`keep_aspect<class_Camera3D_property_keep_aspect>` locks one axis, ``fov`` sets the other axis' field of view angle.
 
@@ -272,264 +349,347 @@ For reference, the default vertical field of view value (``75.0``) is equivalent
 
 - ~121.63 degrees in a 21:9 viewport
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Camera3D_property_frustum_offset:
 
-- :ref:`Vector2<class_Vector2>` **frustum_offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``Vector2(0, 0)``         |
-+-----------+---------------------------+
-| *Setter*  | set_frustum_offset(value) |
-+-----------+---------------------------+
-| *Getter*  | get_frustum_offset()      |
-+-----------+---------------------------+
+:ref:`Vector2<class_Vector2>` **frustum_offset** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_frustum_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_frustum_offset** **(** **)**
 
 The camera's frustum offset. This can be changed from the default to create "tilted frustum" effects such as `Y-shearing <https://zdoom.org/wiki/Y-shearing>`__.
 
 \ **Note:** Only effective if :ref:`projection<class_Camera3D_property_projection>` is :ref:`PROJECTION_FRUSTUM<class_Camera3D_constant_PROJECTION_FRUSTUM>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Camera3D_property_h_offset:
 
-- :ref:`float<class_float>` **h_offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_h_offset(value) |
-+-----------+---------------------+
-| *Getter*  | get_h_offset()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **h_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_h_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_h_offset** **(** **)**
 
 The horizontal (X) offset of the camera viewport.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_keep_aspect:
 
-- :ref:`KeepAspect<enum_Camera3D_KeepAspect>` **keep_aspect**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``1``                       |
-+-----------+-----------------------------+
-| *Setter*  | set_keep_aspect_mode(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_keep_aspect_mode()      |
-+-----------+-----------------------------+
+:ref:`KeepAspect<enum_Camera3D_KeepAspect>` **keep_aspect** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_keep_aspect_mode** **(** :ref:`KeepAspect<enum_Camera3D_KeepAspect>` value **)**
+- :ref:`KeepAspect<enum_Camera3D_KeepAspect>` **get_keep_aspect_mode** **(** **)**
 
 The axis to lock during :ref:`fov<class_Camera3D_property_fov>`/:ref:`size<class_Camera3D_property_size>` adjustments. Can be either :ref:`KEEP_WIDTH<class_Camera3D_constant_KEEP_WIDTH>` or :ref:`KEEP_HEIGHT<class_Camera3D_constant_KEEP_HEIGHT>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_near:
 
-- :ref:`float<class_float>` **near**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0.05``        |
-+-----------+-----------------+
-| *Setter*  | set_near(value) |
-+-----------+-----------------+
-| *Getter*  | get_near()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **near** = ``0.05``
+
+.. rst-class:: classref-property-setget
+
+- void **set_near** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_near** **(** **)**
 
 The distance to the near culling boundary for this camera relative to its local Z axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_projection:
 
-- :ref:`ProjectionType<enum_Camera3D_ProjectionType>` **projection**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_projection(value) |
-+-----------+-----------------------+
-| *Getter*  | get_projection()      |
-+-----------+-----------------------+
+:ref:`ProjectionType<enum_Camera3D_ProjectionType>` **projection** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_projection** **(** :ref:`ProjectionType<enum_Camera3D_ProjectionType>` value **)**
+- :ref:`ProjectionType<enum_Camera3D_ProjectionType>` **get_projection** **(** **)**
 
 The camera's projection mode. In :ref:`PROJECTION_PERSPECTIVE<class_Camera3D_constant_PROJECTION_PERSPECTIVE>` mode, objects' Z distance from the camera's local space scales their perceived size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_size:
 
-- :ref:`float<class_float>` **size**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``1.0``         |
-+-----------+-----------------+
-| *Setter*  | set_size(value) |
-+-----------+-----------------+
-| *Getter*  | get_size()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **size** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_size** **(** **)**
 
 The camera's size in meters measured as the diameter of the width or height, depending on :ref:`keep_aspect<class_Camera3D_property_keep_aspect>`. Only applicable in orthogonal and frustum modes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_property_v_offset:
 
-- :ref:`float<class_float>` **v_offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_v_offset(value) |
-+-----------+---------------------+
-| *Getter*  | get_v_offset()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **v_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_v_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_v_offset** **(** **)**
 
 The vertical (Y) offset of the camera viewport.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Camera3D_method_clear_current:
 
-- void **clear_current** **(** :ref:`bool<class_bool>` enable_next=true **)**
+.. rst-class:: classref-method
+
+void **clear_current** **(** :ref:`bool<class_bool>` enable_next=true **)**
 
 If this is the current camera, remove it from being current. If ``enable_next`` is ``true``, request to make the next camera current, if any.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_get_camera_rid:
 
-- :ref:`RID<class_RID>` **get_camera_rid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_camera_rid** **(** **)** |const|
 
 Returns the camera's RID from the :ref:`RenderingServer<class_RenderingServer>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_get_camera_transform:
 
-- :ref:`Transform3D<class_Transform3D>` **get_camera_transform** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **get_camera_transform** **(** **)** |const|
 
 Returns the transform of the camera plus the vertical (:ref:`v_offset<class_Camera3D_property_v_offset>`) and horizontal (:ref:`h_offset<class_Camera3D_property_h_offset>`) offsets; and any other adjustments made to the position and orientation of the camera by subclassed cameras such as :ref:`XRCamera3D<class_XRCamera3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_get_cull_mask_value:
 
-- :ref:`bool<class_bool>` **get_cull_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_cull_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
 Returns whether or not the specified layer of the :ref:`cull_mask<class_Camera3D_property_cull_mask>` is enabled, given a ``layer_number`` between 1 and 20.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_get_frustum:
 
-- :ref:`Plane[]<class_Plane>` **get_frustum** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Plane[]<class_Plane>` **get_frustum** **(** **)** |const|
 
 Returns the camera's frustum planes in world space units as an array of :ref:`Plane<class_Plane>`\ s in the following order: near, far, left, top, right, bottom. Not to be confused with :ref:`frustum_offset<class_Camera3D_property_frustum_offset>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_get_pyramid_shape_rid:
 
-- :ref:`RID<class_RID>` **get_pyramid_shape_rid** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_pyramid_shape_rid** **(** **)**
 
 Returns the RID of a pyramid shape encompassing the camera's view frustum, ignoring the camera's near plane. The tip of the pyramid represents the position of the camera.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_is_position_behind:
 
-- :ref:`bool<class_bool>` **is_position_behind** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_position_behind** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
 
 Returns ``true`` if the given position is behind the camera (the blue part of the linked diagram). `See this diagram <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/camera3d_position_frustum.png>`__ for an overview of position query methods.
 
 \ **Note:** A position which returns ``false`` may still be outside the camera's field of view.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Camera3D_method_is_position_in_frustum:
 
-- :ref:`bool<class_bool>` **is_position_in_frustum** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_position_in_frustum** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
 
 Returns ``true`` if the given position is inside the camera's frustum (the green part of the linked diagram). `See this diagram <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/camera3d_position_frustum.png>`__ for an overview of position query methods.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_make_current:
 
-- void **make_current** **(** **)**
+.. rst-class:: classref-method
+
+void **make_current** **(** **)**
 
 Makes this camera the current camera for the :ref:`Viewport<class_Viewport>` (see class description). If the camera node is outside the scene tree, it will attempt to become current once it's added.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_project_local_ray_normal:
 
-- :ref:`Vector3<class_Vector3>` **project_local_ray_normal** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **project_local_ray_normal** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
 Returns a normal vector from the screen point location directed along the camera. Orthogonal cameras are normalized. Perspective cameras account for perspective, screen width/height, etc.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_project_position:
 
-- :ref:`Vector3<class_Vector3>` **project_position** **(** :ref:`Vector2<class_Vector2>` screen_point, :ref:`float<class_float>` z_depth **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **project_position** **(** :ref:`Vector2<class_Vector2>` screen_point, :ref:`float<class_float>` z_depth **)** |const|
 
 Returns the 3D point in world space that maps to the given 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle on a plane that is the given ``z_depth`` distance into the scene away from the camera.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_project_ray_normal:
 
-- :ref:`Vector3<class_Vector3>` **project_ray_normal** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **project_ray_normal** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
 Returns a normal vector in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the inverse camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_project_ray_origin:
 
-- :ref:`Vector3<class_Vector3>` **project_ray_origin** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **project_ray_origin** **(** :ref:`Vector2<class_Vector2>` screen_point **)** |const|
 
 Returns a 3D position in world space, that is the result of projecting a point on the :ref:`Viewport<class_Viewport>` rectangle by the inverse camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_set_cull_mask_value:
 
-- void **set_cull_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+.. rst-class:: classref-method
+
+void **set_cull_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
 Based on ``value``, enables or disables the specified layer in the :ref:`cull_mask<class_Camera3D_property_cull_mask>`, given a ``layer_number`` between 1 and 20.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_set_frustum:
 
-- void **set_frustum** **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
+.. rst-class:: classref-method
+
+void **set_frustum** **(** :ref:`float<class_float>` size, :ref:`Vector2<class_Vector2>` offset, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
 Sets the camera projection to frustum mode (see :ref:`PROJECTION_FRUSTUM<class_Camera3D_constant_PROJECTION_FRUSTUM>`), by specifying a ``size``, an ``offset``, and the ``z_near`` and ``z_far`` clip planes in world space units. See also :ref:`frustum_offset<class_Camera3D_property_frustum_offset>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_set_orthogonal:
 
-- void **set_orthogonal** **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
+.. rst-class:: classref-method
+
+void **set_orthogonal** **(** :ref:`float<class_float>` size, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
 Sets the camera projection to orthogonal mode (see :ref:`PROJECTION_ORTHOGONAL<class_Camera3D_constant_PROJECTION_ORTHOGONAL>`), by specifying a ``size``, and the ``z_near`` and ``z_far`` clip planes in world space units. (As a hint, 2D games often use this projection, with values specified in pixels.)
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_set_perspective:
 
-- void **set_perspective** **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
+.. rst-class:: classref-method
+
+void **set_perspective** **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far **)**
 
 Sets the camera projection to perspective mode (see :ref:`PROJECTION_PERSPECTIVE<class_Camera3D_constant_PROJECTION_PERSPECTIVE>`), by specifying a ``fov`` (field of view) angle in degrees, and the ``z_near`` and ``z_far`` clip planes in world space units.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Camera3D_method_unproject_position:
 
-- :ref:`Vector2<class_Vector2>` **unproject_position** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **unproject_position** **(** :ref:`Vector3<class_Vector3>` world_point **)** |const|
 
 Returns the 2D coordinate in the :ref:`Viewport<class_Viewport>` rectangle that maps to the given 3D point in world space.
 

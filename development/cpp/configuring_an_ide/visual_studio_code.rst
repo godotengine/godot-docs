@@ -45,7 +45,9 @@ Importing the project
       "command": "scons",
       "args": [
         "-j",
-        "$(nproc)"
+        "$(nproc)",
+        // enable for debugging with breakpoints
+        "dev_build=yes",
       ],
       "problemMatcher": "$msCompile"
     }
@@ -61,7 +63,8 @@ Importing the project
         // Use this when your default shell is Command Prompt (cmd.exe).
         "-j %NUMBER_OF_PROCESSORS%",
         // Use this when your default shell is PowerShell.
-        "-j $env:NUMBER_OF_PROCESSORS"
+        "-j $env:NUMBER_OF_PROCESSORS",
+        "dev_build=yes",
       ],
       "problemMatcher": "$msCompile"
     }
@@ -98,7 +101,7 @@ To run and debug the project you need to create a new configuration in the ``lau
       "type": "lldb",
       "request": "launch",
       // Change to godot.linuxbsd.tools.64.llvm for llvm-based builds.
-      "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
+      "program": "${workspaceFolder}/bin/godot.linuxbsd.editor.dev.x86_64",
       // Change the arguments below for the project you want to test with.
       // To run the project instead of editing it, remove the "--editor" argument.
       "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
@@ -115,7 +118,7 @@ To run and debug the project you need to create a new configuration in the ``lau
       "type": "cppdbg",
       "request": "launch",
       // Change to godot.linuxbsd.tools.64.llvm for llvm-based builds.
-      "program": "${workspaceFolder}/bin/godot.linuxbsd.tools.64",
+      "program": "${workspaceFolder}/bin/godot.linuxbsd.editor.dev.x86_64",
       // Change the arguments below for the project you want to test with.
       // To run the project instead of editing it, remove the "--editor" argument.
       "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
@@ -140,7 +143,7 @@ To run and debug the project you need to create a new configuration in the ``lau
       "name": "Launch Project",
       "type": "cppvsdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/bin/godot.windows.tools.64.exe",
+      "program": "${workspaceFolder}/bin/godot.windows.editor.dev.x86_64.exe",
       // Change the arguments below for the project you want to test with.
       // To run the project instead of editing it, remove the "--editor" argument.
       "args": [ "--editor", "--path", "path-to-your-godot-project-folder" ],
@@ -170,7 +173,8 @@ To run and debug the project you need to create a new configuration in the ``lau
     Do note that lldb may work better with LLVM-based builds. See :ref:`doc_compiling_for_linuxbsd` for further information.
 
 The name under ``program`` depends on your build configuration,
-e.g. ``godot.linuxbsd.tools.64`` for 64-bit LinuxBSD platform with ``tools`` enabled.
+e.g. ``godot.linuxbsd.editor.dev.x86_64`` for 64-bit LinuxBSD platform with
+``platform=editor`` and ``dev_build=yes``.
 
 If you run into any issues, ask for help in one of
 `Godot's community channels <https://godotengine.org/community>`__.

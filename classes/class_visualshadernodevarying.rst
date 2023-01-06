@@ -14,45 +14,66 @@ VisualShaderNodeVarying
 
 **Inherited By:** :ref:`VisualShaderNodeVaryingGetter<class_VisualShaderNodeVaryingGetter>`, :ref:`VisualShaderNodeVaryingSetter<class_VisualShaderNodeVaryingSetter>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------------------------+--------------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                       | :ref:`varying_name<class_VisualShaderNodeVarying_property_varying_name>` | ``"[None]"`` |
-+---------------------------------------------------+--------------------------------------------------------------------------+--------------+
-| :ref:`VaryingType<enum_VisualShader_VaryingType>` | :ref:`varying_type<class_VisualShaderNodeVarying_property_varying_type>` | ``0``        |
-+---------------------------------------------------+--------------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+--------------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>`                       | :ref:`varying_name<class_VisualShaderNodeVarying_property_varying_name>` | ``"[None]"`` |
+   +---------------------------------------------------+--------------------------------------------------------------------------+--------------+
+   | :ref:`VaryingType<enum_VisualShader_VaryingType>` | :ref:`varying_type<class_VisualShaderNodeVarying_property_varying_type>` | ``0``        |
+   +---------------------------------------------------+--------------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeVarying_property_varying_name:
 
-- :ref:`String<class_String>` **varying_name**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``"[None]"``            |
-+-----------+-------------------------+
-| *Setter*  | set_varying_name(value) |
-+-----------+-------------------------+
-| *Getter*  | get_varying_name()      |
-+-----------+-------------------------+
+:ref:`String<class_String>` **varying_name** = ``"[None]"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_varying_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_varying_name** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeVarying_property_varying_type:
 
-- :ref:`VaryingType<enum_VisualShader_VaryingType>` **varying_type**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_varying_type(value) |
-+-----------+-------------------------+
-| *Getter*  | get_varying_type()      |
-+-----------+-------------------------+
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **varying_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_varying_type** **(** :ref:`VaryingType<enum_VisualShader_VaryingType>` value **)**
+- :ref:`VaryingType<enum_VisualShader_VaryingType>` **get_varying_type** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

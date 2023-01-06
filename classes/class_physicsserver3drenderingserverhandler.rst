@@ -12,37 +12,72 @@ PhysicsServer3DRenderingServerHandler
 
 **Inherits:** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`_set_aabb<class_PhysicsServer3DRenderingServerHandler_method__set_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)** |virtual|                              |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`_set_normal<class_PhysicsServer3DRenderingServerHandler_method__set_normal>` **(** :ref:`int<class_int>` vertex_id, const void* normals **)** |virtual|  |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`_set_vertex<class_PhysicsServer3DRenderingServerHandler_method__set_vertex>` **(** :ref:`int<class_int>` vertex_id, const void* vertices **)** |virtual| |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_set_aabb<class_PhysicsServer3DRenderingServerHandler_method__set_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)** |virtual|                              |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_set_normal<class_PhysicsServer3DRenderingServerHandler_method__set_normal>` **(** :ref:`int<class_int>` vertex_id, const void* normals **)** |virtual|  |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_set_vertex<class_PhysicsServer3DRenderingServerHandler_method__set_vertex>` **(** :ref:`int<class_int>` vertex_id, const void* vertices **)** |virtual| |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PhysicsServer3DRenderingServerHandler_method__set_aabb:
 
-- void **_set_aabb** **(** :ref:`AABB<class_AABB>` aabb **)** |virtual|
+.. rst-class:: classref-method
+
+void **_set_aabb** **(** :ref:`AABB<class_AABB>` aabb **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsServer3DRenderingServerHandler_method__set_normal:
 
-- void **_set_normal** **(** :ref:`int<class_int>` vertex_id, const void* normals **)** |virtual|
+.. rst-class:: classref-method
+
+void **_set_normal** **(** :ref:`int<class_int>` vertex_id, const void* normals **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsServer3DRenderingServerHandler_method__set_vertex:
 
-- void **_set_vertex** **(** :ref:`int<class_int>` vertex_id, const void* vertices **)** |virtual|
+.. rst-class:: classref-method
+
+void **_set_vertex** **(** :ref:`int<class_int>` vertex_id, const void* vertices **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

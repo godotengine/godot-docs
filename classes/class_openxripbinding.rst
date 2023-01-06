@@ -14,94 +14,134 @@ OpenXRIPBinding
 
 Defines a binding between an :ref:`OpenXRAction<class_OpenXRAction>` and an XR input or output.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This binding resource binds an :ref:`OpenXRAction<class_OpenXRAction>` to inputs or outputs. As most controllers have left hand and right versions that are handled by the same interaction profile we can specify multiple bindings. For instance an action "Fire" could be bound to both "/user/hand/left/input/trigger" and "/user/hand/right/input/trigger".
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------+------------------------------------------------------+-------------------------+
-| :ref:`OpenXRAction<class_OpenXRAction>`           | :ref:`action<class_OpenXRIPBinding_property_action>` |                         |
-+---------------------------------------------------+------------------------------------------------------+-------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`paths<class_OpenXRIPBinding_property_paths>`   | ``PackedStringArray()`` |
-+---------------------------------------------------+------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+------------------------------------------------------+-------------------------+
+   | :ref:`OpenXRAction<class_OpenXRAction>`           | :ref:`action<class_OpenXRIPBinding_property_action>` |                         |
+   +---------------------------------------------------+------------------------------------------------------+-------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`paths<class_OpenXRIPBinding_property_paths>`   | ``PackedStringArray()`` |
+   +---------------------------------------------------+------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`add_path<class_OpenXRIPBinding_method_add_path>` **(** :ref:`String<class_String>` path **)**         |
-+-------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_path_count<class_OpenXRIPBinding_method_get_path_count>` **(** **)** |const|                      |
-+-------------------------+-------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`has_path<class_OpenXRIPBinding_method_has_path>` **(** :ref:`String<class_String>` path **)** |const| |
-+-------------------------+-------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`remove_path<class_OpenXRIPBinding_method_remove_path>` **(** :ref:`String<class_String>` path **)**   |
-+-------------------------+-------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`add_path<class_OpenXRIPBinding_method_add_path>` **(** :ref:`String<class_String>` path **)**         |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`get_path_count<class_OpenXRIPBinding_method_get_path_count>` **(** **)** |const|                      |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`has_path<class_OpenXRIPBinding_method_has_path>` **(** :ref:`String<class_String>` path **)** |const| |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`remove_path<class_OpenXRIPBinding_method_remove_path>` **(** :ref:`String<class_String>` path **)**   |
+   +-------------------------+-------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_OpenXRIPBinding_property_action:
 
-- :ref:`OpenXRAction<class_OpenXRAction>` **action**
+.. rst-class:: classref-property
 
-+----------+-------------------+
-| *Setter* | set_action(value) |
-+----------+-------------------+
-| *Getter* | get_action()      |
-+----------+-------------------+
+:ref:`OpenXRAction<class_OpenXRAction>` **action**
+
+.. rst-class:: classref-property-setget
+
+- void **set_action** **(** :ref:`OpenXRAction<class_OpenXRAction>` value **)**
+- :ref:`OpenXRAction<class_OpenXRAction>` **get_action** **(** **)**
 
 :ref:`OpenXRAction<class_OpenXRAction>` that is bound to these paths.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRIPBinding_property_paths:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **paths**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``PackedStringArray()`` |
-+-----------+-------------------------+
-| *Setter*  | set_paths(value)        |
-+-----------+-------------------------+
-| *Getter*  | get_paths()             |
-+-----------+-------------------------+
+:ref:`PackedStringArray<class_PackedStringArray>` **paths** = ``PackedStringArray()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_paths** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_paths** **(** **)**
 
 Paths that define the inputs or outputs bound on the device.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_OpenXRIPBinding_method_add_path:
 
-- void **add_path** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+void **add_path** **(** :ref:`String<class_String>` path **)**
 
 Add an input/output path to this binding.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRIPBinding_method_get_path_count:
 
-- :ref:`int<class_int>` **get_path_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_path_count** **(** **)** |const|
 
 Get the number of input/output paths in this binding.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRIPBinding_method_has_path:
 
-- :ref:`bool<class_bool>` **has_path** **(** :ref:`String<class_String>` path **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_path** **(** :ref:`String<class_String>` path **)** |const|
 
 Returns ``true`` if this input/output path is part of this binding.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRIPBinding_method_remove_path:
 
-- void **remove_path** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+void **remove_path** **(** :ref:`String<class_String>` path **)**
 
 Removes this input/output path from this binding.
 

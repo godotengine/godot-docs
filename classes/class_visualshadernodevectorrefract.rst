@@ -14,6 +14,8 @@ VisualShaderNodeVectorRefract
 
 Returns the vector that points in the direction of refraction. For use within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

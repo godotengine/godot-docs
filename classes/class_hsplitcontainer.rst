@@ -14,71 +14,88 @@ HSplitContainer
 
 Horizontal split container.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Horizontal split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from left to right.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+-----------------------------------+--------------------------------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`             | :ref:`autohide<class_HSplitContainer_theme_constant_autohide>`                             | ``1``  |
-+-----------------------------------+--------------------------------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`             | :ref:`minimum_grab_thickness<class_HSplitContainer_theme_constant_minimum_grab_thickness>` | ``6``  |
-+-----------------------------------+--------------------------------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`             | :ref:`separation<class_HSplitContainer_theme_constant_separation>`                         | ``12`` |
-+-----------------------------------+--------------------------------------------------------------------------------------------+--------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_HSplitContainer_theme_icon_grabber>`                                   |        |
-+-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`             | :ref:`autohide<class_HSplitContainer_theme_constant_autohide>`                             | ``1``  |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`             | :ref:`minimum_grab_thickness<class_HSplitContainer_theme_constant_minimum_grab_thickness>` | ``6``  |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`             | :ref:`separation<class_HSplitContainer_theme_constant_separation>`                         | ``12`` |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_HSplitContainer_theme_icon_grabber>`                                   |        |
+   +-----------------------------------+--------------------------------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_HSplitContainer_theme_constant_autohide:
 
-- :ref:`int<class_int>` **autohide**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
+:ref:`int<class_int>` **autohide** = ``1``
 
 Boolean value. If 1 (``true``), the grabber will hide automatically when it isn't under the cursor. If 0 (``false``), it's always visible.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSplitContainer_theme_constant_minimum_grab_thickness:
 
-- :ref:`int<class_int>` **minimum_grab_thickness**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``6`` |
-+-----------+-------+
+:ref:`int<class_int>` **minimum_grab_thickness** = ``6``
 
 The minimum thickness of the area users can click on to grab the splitting line. If :ref:`separation<class_HSplitContainer_theme_constant_separation>` or :ref:`grabber<class_HSplitContainer_theme_icon_grabber>`'s thickness are too small, this ensure that the splitting line can still be dragged.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSplitContainer_theme_constant_separation:
 
-- :ref:`int<class_int>` **separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------+
-| *Default* | ``12`` |
-+-----------+--------+
+:ref:`int<class_int>` **separation** = ``12``
 
 The space between sides of the container.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSplitContainer_theme_icon_grabber:
 
-- :ref:`Texture2D<class_Texture2D>` **grabber**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture2D<class_Texture2D>` **grabber**
 
 The icon used for the grabber drawn in the middle area.
 

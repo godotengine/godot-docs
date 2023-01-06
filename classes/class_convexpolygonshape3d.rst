@@ -14,41 +14,55 @@ ConvexPolygonShape3D
 
 Convex polygon shape resource for 3D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-3D convex polygon shape resource to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. Unlike :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, ``ConvexPolygonShape3D`` cannot store concave polygon shapes. :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`\ s can be manually drawn in the editor using the :ref:`CollisionPolygon3D<class_CollisionPolygon3D>` node.
+3D convex polygon shape resource to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. Unlike :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, **ConvexPolygonShape3D** cannot store concave polygon shapes. :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`\ s can be manually drawn in the editor using the :ref:`CollisionPolygon3D<class_CollisionPolygon3D>` node.
 
-\ **Convex decomposition:** Concave objects' collisions can be represented accurately using *several* ``ConvexPolygonShape3D``\ s. This allows dynamic physics bodies to have complex concave collisions (at a performance cost). This is available in the editor by selecting the :ref:`MeshInstance3D<class_MeshInstance3D>`, going to the **Mesh** menu and choosing **Create Multiple Convex Collision Siblings**. Alternatively, :ref:`MeshInstance3D.create_multiple_convex_collisions<class_MeshInstance3D_method_create_multiple_convex_collisions>` can be called in a script to perform this decomposition at run-time.
+\ **Convex decomposition:** Concave objects' collisions can be represented accurately using *several* **ConvexPolygonShape3D**\ s. This allows dynamic physics bodies to have complex concave collisions (at a performance cost). This is available in the editor by selecting the :ref:`MeshInstance3D<class_MeshInstance3D>`, going to the **Mesh** menu and choosing **Create Multiple Convex Collision Siblings**. Alternatively, :ref:`MeshInstance3D.create_multiple_convex_collisions<class_MeshInstance3D_method_create_multiple_convex_collisions>` can be called in a script to perform this decomposition at run-time.
 
-\ **Performance:** ``ConvexPolygonShape3D`` is faster to check collisions against compared to :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, but it is slower than primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>`. Its use should generally be limited to medium-sized objects that cannot have their collision accurately represented by a primitive shape.
+\ **Performance:** **ConvexPolygonShape3D** is faster to check collisions against compared to :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, but it is slower than primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>`. Its use should generally be limited to medium-sized objects that cannot have their collision accurately represented by a primitive shape.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+-----------------------------------------------------------+--------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`points<class_ConvexPolygonShape3D_property_points>` | ``PackedVector3Array()`` |
-+-----------------------------------------------------+-----------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+-----------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`points<class_ConvexPolygonShape3D_property_points>` | ``PackedVector3Array()`` |
+   +-----------------------------------------------------+-----------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ConvexPolygonShape3D_property_points:
 
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **points**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PackedVector3Array()`` |
-+-----------+--------------------------+
-| *Setter*  | set_points(value)        |
-+-----------+--------------------------+
-| *Getter*  | get_points()             |
-+-----------+--------------------------+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **points** = ``PackedVector3Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_points** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` value **)**
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_points** **(** **)**
 
 The list of 3D points forming the convex polygon shape.
 

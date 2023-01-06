@@ -14,12 +14,16 @@ RectangleShape2D
 
 Rectangle shape resource for 2D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 2D rectangle shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. This shape is useful for modeling box-like 2D objects.
 
-\ **Performance:** Being a primitive collision shape, ``RectangleShape2D`` is fast to check collisions against (though not as fast as :ref:`CircleShape2D<class_CircleShape2D>`).
+\ **Performance:** Being a primitive collision shape, **RectangleShape2D** is fast to check collisions against (though not as fast as :ref:`CircleShape2D<class_CircleShape2D>`).
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,27 +32,37 @@ Tutorials
 
 - `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_RectangleShape2D_property_size>` | ``Vector2(20, 20)`` |
-+-------------------------------+---------------------------------------------------+---------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`size<class_RectangleShape2D_property_size>` | ``Vector2(20, 20)`` |
+   +-------------------------------+---------------------------------------------------+---------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_RectangleShape2D_property_size:
 
-- :ref:`Vector2<class_Vector2>` **size**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2(20, 20)`` |
-+-----------+---------------------+
-| *Setter*  | set_size(value)     |
-+-----------+---------------------+
-| *Getter*  | get_size()          |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2(20, 20)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
 
 The rectangle's width and height.
 

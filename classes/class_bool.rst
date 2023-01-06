@@ -12,6 +12,8 @@ bool
 
 Boolean built-in type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -119,89 +121,139 @@ The following code will set ``can_shoot`` to ``false`` and start a timer. This w
 
 
 
+.. rst-class:: classref-reftable-group
+
 Constructors
 ------------
 
-+-------------------------+-------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** **)**                                |
-+-------------------------+-------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** :ref:`bool<class_bool>` from **)**   |
-+-------------------------+-------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** :ref:`float<class_float>` from **)** |
-+-------------------------+-------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** :ref:`int<class_int>` from **)**     |
-+-------------------------+-------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** **)**                                |
+   +-------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** :ref:`bool<class_bool>` from **)**   |
+   +-------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** :ref:`float<class_float>` from **)** |
+   +-------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`bool<class_bool_constructor_bool>` **(** :ref:`int<class_int>` from **)**     |
+   +-------------------------+-------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Operators
 ---------
 
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_bool_operator_neq_bool>` **(** :ref:`bool<class_bool>` right **)** |
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator \<<class_bool_operator_lt_bool>` **(** :ref:`bool<class_bool>` right **)**  |
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_bool_operator_eq_bool>` **(** :ref:`bool<class_bool>` right **)**  |
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ><class_bool_operator_gt_bool>` **(** :ref:`bool<class_bool>` right **)**   |
-+-------------------------+--------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator !=<class_bool_operator_neq_bool>` **(** :ref:`bool<class_bool>` right **)** |
+   +-------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator \<<class_bool_operator_lt_bool>` **(** :ref:`bool<class_bool>` right **)**  |
+   +-------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ==<class_bool_operator_eq_bool>` **(** :ref:`bool<class_bool>` right **)**  |
+   +-------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ><class_bool_operator_gt_bool>` **(** :ref:`bool<class_bool>` right **)**   |
+   +-------------------------+--------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constructor Descriptions
 ------------------------
 
 .. _class_bool_constructor_bool:
 
-- :ref:`bool<class_bool>` **bool** **(** **)**
+.. rst-class:: classref-constructor
 
-Constructs a default-initialized ``bool`` set to ``false``.
+:ref:`bool<class_bool>` **bool** **(** **)**
 
-----
+Constructs a default-initialized **bool** set to ``false``.
 
-- :ref:`bool<class_bool>` **bool** **(** :ref:`bool<class_bool>` from **)**
-
-Constructs a ``bool`` as a copy of the given ``bool``.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`bool<class_bool>` **bool** **(** :ref:`float<class_float>` from **)**
+.. rst-class:: classref-constructor
+
+:ref:`bool<class_bool>` **bool** **(** :ref:`bool<class_bool>` from **)**
+
+Constructs a **bool** as a copy of the given **bool**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`bool<class_bool>` **bool** **(** :ref:`float<class_float>` from **)**
 
 Cast a :ref:`float<class_float>` value to a boolean value, this method will return ``false`` if ``0.0`` is passed in, and ``true`` for all other floats.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`bool<class_bool>` **bool** **(** :ref:`int<class_int>` from **)**
+.. rst-class:: classref-constructor
+
+:ref:`bool<class_bool>` **bool** **(** :ref:`int<class_int>` from **)**
 
 Cast an :ref:`int<class_int>` value to a boolean value, this method will return ``false`` if ``0`` is passed in, and ``true`` for all other ints.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Operator Descriptions
 ---------------------
 
 .. _class_bool_operator_neq_bool:
 
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`bool<class_bool>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`bool<class_bool>` right **)**
 
 Returns ``true`` if two bools are different, i.e. one is ``true`` and the other is ``false``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_bool_operator_lt_bool:
 
-- :ref:`bool<class_bool>` **operator <** **(** :ref:`bool<class_bool>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator <** **(** :ref:`bool<class_bool>` right **)**
 
 Returns ``true`` if the left operand is ``false`` and the right operand is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_bool_operator_eq_bool:
 
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`bool<class_bool>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`bool<class_bool>` right **)**
 
 Returns ``true`` if two bools are equal, i.e. both are ``true`` or both are ``false``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_bool_operator_gt_bool:
 
-- :ref:`bool<class_bool>` **operator >** **(** :ref:`bool<class_bool>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator >** **(** :ref:`bool<class_bool>` right **)**
 
 Returns ``true`` if the left operand is ``true`` and the right operand is ``false``.
 

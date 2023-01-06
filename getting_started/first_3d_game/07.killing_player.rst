@@ -166,7 +166,7 @@ Starting with ``Main.gd``.
 
    func _on_MobTimer_timeout():
        # Create a new instance of the Mob scene.
-       var mob = mob_scene.instance()
+       var mob = mob_scene.instantiate()
 
        # Choose a random location on the SpawnPath.
        var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
@@ -201,7 +201,7 @@ Starting with ``Main.gd``.
         public void OnMobTimerTimeout()
         {
             // Create a new instance of the Mob scene.
-            var mob = (Mob)MobScene.Instance();
+            var mob = (Mob)MobScene.Instantiate();
 
             // Choose a random location on the SpawnPath.
             // We store the reference to the SpawnLocation node.

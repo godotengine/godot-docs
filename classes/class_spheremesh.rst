@@ -14,106 +14,122 @@ SphereMesh
 
 Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Class representing a spherical :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`height<class_SphereMesh_property_height>`                   | ``1.0``   |
-+---------------------------+-------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`is_hemisphere<class_SphereMesh_property_is_hemisphere>`     | ``false`` |
-+---------------------------+-------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`radial_segments<class_SphereMesh_property_radial_segments>` | ``64``    |
-+---------------------------+-------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`radius<class_SphereMesh_property_radius>`                   | ``0.5``   |
-+---------------------------+-------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`rings<class_SphereMesh_property_rings>`                     | ``32``    |
-+---------------------------+-------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`height<class_SphereMesh_property_height>`                   | ``1.0``   |
+   +---------------------------+-------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`is_hemisphere<class_SphereMesh_property_is_hemisphere>`     | ``false`` |
+   +---------------------------+-------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`     | :ref:`radial_segments<class_SphereMesh_property_radial_segments>` | ``64``    |
+   +---------------------------+-------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`radius<class_SphereMesh_property_radius>`                   | ``0.5``   |
+   +---------------------------+-------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`     | :ref:`rings<class_SphereMesh_property_rings>`                     | ``32``    |
+   +---------------------------+-------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SphereMesh_property_height:
 
-- :ref:`float<class_float>` **height**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_height(value) |
-+-----------+-------------------+
-| *Getter*  | get_height()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **height** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_height** **(** **)**
 
 Full height of the sphere.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SphereMesh_property_is_hemisphere:
 
-- :ref:`bool<class_bool>` **is_hemisphere**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``false``                |
-+-----------+--------------------------+
-| *Setter*  | set_is_hemisphere(value) |
-+-----------+--------------------------+
-| *Getter*  | get_is_hemisphere()      |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **is_hemisphere** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_is_hemisphere** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_is_hemisphere** **(** **)**
 
 If ``true``, a hemisphere is created rather than a full sphere.
 
 \ **Note:** To get a regular hemisphere, the height and radius of the sphere must be equal.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SphereMesh_property_radial_segments:
 
-- :ref:`int<class_int>` **radial_segments**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``64``                     |
-+-----------+----------------------------+
-| *Setter*  | set_radial_segments(value) |
-+-----------+----------------------------+
-| *Getter*  | get_radial_segments()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **radial_segments** = ``64``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radial_segments** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_radial_segments** **(** **)**
 
 Number of radial segments on the sphere.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SphereMesh_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.5``           |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 Radius of sphere.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SphereMesh_property_rings:
 
-- :ref:`int<class_int>` **rings**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``32``           |
-+-----------+------------------+
-| *Setter*  | set_rings(value) |
-+-----------+------------------+
-| *Getter*  | get_rings()      |
-+-----------+------------------+
+:ref:`int<class_int>` **rings** = ``32``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rings** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_rings** **(** **)**
 
 Number of segments along the height of the sphere.
 

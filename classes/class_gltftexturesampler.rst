@@ -14,86 +14,101 @@ GLTFTextureSampler
 
 Represents a GLTF texture sampler
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Represents a texture sampler as defined by the base GLTF spec. Texture samplers in GLTF specify how to sample data from the texture's base image, when rendering the texture on an object.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------+-----------------------------------------------------------------+-----------+
-| :ref:`int<class_int>` | :ref:`mag_filter<class_GLTFTextureSampler_property_mag_filter>` | ``9729``  |
-+-----------------------+-----------------------------------------------------------------+-----------+
-| :ref:`int<class_int>` | :ref:`min_filter<class_GLTFTextureSampler_property_min_filter>` | ``9987``  |
-+-----------------------+-----------------------------------------------------------------+-----------+
-| :ref:`int<class_int>` | :ref:`wrap_s<class_GLTFTextureSampler_property_wrap_s>`         | ``10497`` |
-+-----------------------+-----------------------------------------------------------------+-----------+
-| :ref:`int<class_int>` | :ref:`wrap_t<class_GLTFTextureSampler_property_wrap_t>`         | ``10497`` |
-+-----------------------+-----------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>` | :ref:`mag_filter<class_GLTFTextureSampler_property_mag_filter>` | ``9729``  |
+   +-----------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>` | :ref:`min_filter<class_GLTFTextureSampler_property_min_filter>` | ``9987``  |
+   +-----------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>` | :ref:`wrap_s<class_GLTFTextureSampler_property_wrap_s>`         | ``10497`` |
+   +-----------------------+-----------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>` | :ref:`wrap_t<class_GLTFTextureSampler_property_wrap_t>`         | ``10497`` |
+   +-----------------------+-----------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFTextureSampler_property_mag_filter:
 
-- :ref:`int<class_int>` **mag_filter**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``9729``              |
-+-----------+-----------------------+
-| *Setter*  | set_mag_filter(value) |
-+-----------+-----------------------+
-| *Getter*  | get_mag_filter()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **mag_filter** = ``9729``
+
+.. rst-class:: classref-property-setget
+
+- void **set_mag_filter** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_mag_filter** **(** **)**
 
 Texture's magnification filter, used when texture appears larger on screen than the source image.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFTextureSampler_property_min_filter:
 
-- :ref:`int<class_int>` **min_filter**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``9987``              |
-+-----------+-----------------------+
-| *Setter*  | set_min_filter(value) |
-+-----------+-----------------------+
-| *Getter*  | get_min_filter()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **min_filter** = ``9987``
+
+.. rst-class:: classref-property-setget
+
+- void **set_min_filter** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_min_filter** **(** **)**
 
 Texture's minification filter, used when the texture appears smaller on screen than the source image.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFTextureSampler_property_wrap_s:
 
-- :ref:`int<class_int>` **wrap_s**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``10497``         |
-+-----------+-------------------+
-| *Setter*  | set_wrap_s(value) |
-+-----------+-------------------+
-| *Getter*  | get_wrap_s()      |
-+-----------+-------------------+
+:ref:`int<class_int>` **wrap_s** = ``10497``
+
+.. rst-class:: classref-property-setget
+
+- void **set_wrap_s** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_wrap_s** **(** **)**
 
 Wrapping mode to use for S-axis (horizontal) texture coordinates.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFTextureSampler_property_wrap_t:
 
-- :ref:`int<class_int>` **wrap_t**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``10497``         |
-+-----------+-------------------+
-| *Setter*  | set_wrap_t(value) |
-+-----------+-------------------+
-| *Getter*  | get_wrap_t()      |
-+-----------+-------------------+
+:ref:`int<class_int>` **wrap_t** = ``10497``
+
+.. rst-class:: classref-property-setget
+
+- void **set_wrap_t** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_wrap_t** **(** **)**
 
 Wrapping mode to use for T-axis (vertical) texture coordinates.
 

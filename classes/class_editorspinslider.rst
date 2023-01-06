@@ -14,106 +14,179 @@ EditorSpinSlider
 
 Godot editor's control for editing numeric values.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This :ref:`Control<class_Control>` node is used in the editor's Inspector dock to allow editing of numeric values. Can be used with :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` to recreate the same behavior.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`flat<class_EditorSpinSlider_property_flat>`               | ``false``                                                           |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`hide_slider<class_EditorSpinSlider_property_hide_slider>` | ``false``                                                           |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>`              | :ref:`label<class_EditorSpinSlider_property_label>`             | ``""``                                                              |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`read_only<class_EditorSpinSlider_property_read_only>`     | ``false``                                                           |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
-| :ref:`String<class_String>`              | :ref:`suffix<class_EditorSpinSlider_property_suffix>`           | ``""``                                                              |
-+------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`flat<class_EditorSpinSlider_property_flat>`               | ``false``                                                                    |
+   +------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`)          |
+   +------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`hide_slider<class_EditorSpinSlider_property_hide_slider>` | ``false``                                                                    |
+   +------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`              | :ref:`label<class_EditorSpinSlider_property_label>`             | ``""``                                                                       |
+   +------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`read_only<class_EditorSpinSlider_property_read_only>`     | ``false``                                                                    |
+   +------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                    | size_flags_vertical                                             | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   +------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                | step                                                            | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)                  |
+   +------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`              | :ref:`suffix<class_EditorSpinSlider_property_suffix>`           | ``""``                                                                       |
+   +------------------------------------------+-----------------------------------------------------------------+------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Signals
+-------
+
+.. _class_EditorSpinSlider_signal_grabbed:
+
+.. rst-class:: classref-signal
+
+**grabbed** **(** **)**
+
+Emitted when the spinner/slider is grabbed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_signal_ungrabbed:
+
+.. rst-class:: classref-signal
+
+**ungrabbed** **(** **)**
+
+Emitted when the spinner/slider is ungrabbed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_signal_value_focus_entered:
+
+.. rst-class:: classref-signal
+
+**value_focus_entered** **(** **)**
+
+Emitted when the value form gains focus.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSpinSlider_signal_value_focus_exited:
+
+.. rst-class:: classref-signal
+
+**value_focus_exited** **(** **)**
+
+Emitted when the value form loses focus.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_EditorSpinSlider_property_flat:
 
-- :ref:`bool<class_bool>` **flat**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_flat(value) |
-+-----------+-----------------+
-| *Getter*  | is_flat()       |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **flat** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flat** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_flat** **(** **)**
 
 If ``true``, the slider will not draw background.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSpinSlider_property_hide_slider:
 
-- :ref:`bool<class_bool>` **hide_slider**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_hide_slider(value) |
-+-----------+------------------------+
-| *Getter*  | is_hiding_slider()     |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **hide_slider** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hide_slider** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_hiding_slider** **(** **)**
 
 If ``true``, the slider is hidden.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSpinSlider_property_label:
 
-- :ref:`String<class_String>` **label**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``""``           |
-+-----------+------------------+
-| *Setter*  | set_label(value) |
-+-----------+------------------+
-| *Getter*  | get_label()      |
-+-----------+------------------+
+:ref:`String<class_String>` **label** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_label** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_label** **(** **)**
 
 The text that displays to the left of the value.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSpinSlider_property_read_only:
 
-- :ref:`bool<class_bool>` **read_only**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_read_only(value) |
-+-----------+----------------------+
-| *Getter*  | is_read_only()       |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **read_only** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_read_only** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_read_only** **(** **)**
 
 If ``true``, the slider can't be interacted with.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSpinSlider_property_suffix:
 
-- :ref:`String<class_String>` **suffix**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``""``            |
-+-----------+-------------------+
-| *Setter*  | set_suffix(value) |
-+-----------+-------------------+
-| *Getter*  | get_suffix()      |
-+-----------+-------------------+
+:ref:`String<class_String>` **suffix** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_suffix** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_suffix** **(** **)**
 
 The suffix to display after the value (in a faded color). This should generally be a plural word. You may have to use an abbreviation if the suffix is too long to be displayed.
 

@@ -66,8 +66,8 @@ be able to export.
 Open the command prompt for one architecture and run SCons twice (once for
 each target)::
 
-    C:\godot>scons platform=uwp target=release_debug
-    C:\godot>scons platform=uwp target=release
+    C:\godot>scons platform=uwp target=template_debug
+    C:\godot>scons platform=uwp target=template_release
 
 Repeat for the other architectures.
 

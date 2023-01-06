@@ -14,6 +14,8 @@ CollisionPolygon3D
 
 Editor-only node for defining a collision polygon in 3D space.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,81 +23,94 @@ Allows editing a concave or convex collision polygon's vertices on a selected pl
 
 \ **Note:** Since this is an editor-only helper, properties modified during gameplay will have no effect.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
-| :ref:`float<class_float>`                           | :ref:`depth<class_CollisionPolygon3D_property_depth>`       | ``1.0``                  |
-+-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon3D_property_disabled>` | ``false``                |
-+-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
-| :ref:`float<class_float>`                           | :ref:`margin<class_CollisionPolygon3D_property_margin>`     | ``0.04``                 |
-+-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CollisionPolygon3D_property_polygon>`   | ``PackedVector2Array()`` |
-+-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`depth<class_CollisionPolygon3D_property_depth>`       | ``1.0``                  |
+   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`disabled<class_CollisionPolygon3D_property_disabled>` | ``false``                |
+   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`margin<class_CollisionPolygon3D_property_margin>`     | ``0.04``                 |
+   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`polygon<class_CollisionPolygon3D_property_polygon>`   | ``PackedVector2Array()`` |
+   +-----------------------------------------------------+-------------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CollisionPolygon3D_property_depth:
 
-- :ref:`float<class_float>` **depth**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1.0``          |
-+-----------+------------------+
-| *Setter*  | set_depth(value) |
-+-----------+------------------+
-| *Getter*  | get_depth()      |
-+-----------+------------------+
+:ref:`float<class_float>` **depth** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_depth** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_depth** **(** **)**
 
 Length that the resulting collision extends in either direction perpendicular to its polygon.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon3D_property_disabled:
 
-- :ref:`bool<class_bool>` **disabled**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_disabled(value) |
-+-----------+---------------------+
-| *Getter*  | is_disabled()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **disabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_disabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_disabled** **(** **)**
 
 If ``true``, no collision will be produced.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon3D_property_margin:
 
-- :ref:`float<class_float>` **margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.04``          |
-+-----------+-------------------+
-| *Setter*  | set_margin(value) |
-+-----------+-------------------+
-| *Getter*  | get_margin()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **margin** = ``0.04``
+
+.. rst-class:: classref-property-setget
+
+- void **set_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_margin** **(** **)**
 
 The collision margin for the generated :ref:`Shape3D<class_Shape3D>`. See :ref:`Shape3D.margin<class_Shape3D_property_margin>` for more details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon3D_property_polygon:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **polygon**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PackedVector2Array()`` |
-+-----------+--------------------------+
-| *Setter*  | set_polygon(value)       |
-+-----------+--------------------------+
-| *Getter*  | get_polygon()            |
-+-----------+--------------------------+
+:ref:`PackedVector2Array<class_PackedVector2Array>` **polygon** = ``PackedVector2Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
+- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon** **(** **)**
 
 Array of vertices which define the polygon.
 

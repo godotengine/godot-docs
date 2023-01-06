@@ -14,71 +14,123 @@ VisualShaderNodeMix
 
 Linearly interpolates between two values within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Translates to ``mix(a, b, weight)`` in the shader language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+------------------------------------------------+------------------------------------------------------------+-------+
-| :ref:`OpType<enum_VisualShaderNodeMix_OpType>` | :ref:`op_type<class_VisualShaderNodeMix_property_op_type>` | ``0`` |
-+------------------------------------------------+------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------+------------------------------------------------------------+-------+
+   | :ref:`OpType<enum_VisualShaderNodeMix_OpType>` | :ref:`op_type<class_VisualShaderNodeMix_property_op_type>` | ``0`` |
+   +------------------------------------------------+------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeMix_OpType:
 
-.. _class_VisualShaderNodeMix_constant_OP_TYPE_SCALAR:
-
-.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_2D:
-
-.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_2D_SCALAR:
-
-.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_3D:
-
-.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_3D_SCALAR:
-
-.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_4D:
-
-.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_4D_SCALAR:
-
-.. _class_VisualShaderNodeMix_constant_OP_TYPE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **OpType**:
 
-- **OP_TYPE_SCALAR** = **0** --- A floating-point scalar.
+.. _class_VisualShaderNodeMix_constant_OP_TYPE_SCALAR:
 
-- **OP_TYPE_VECTOR_2D** = **1** --- A 2D vector type.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_TYPE_VECTOR_2D_SCALAR** = **2** --- The ``a`` and ``b`` ports use a 2D vector type. The ``weight`` port uses a scalar type.
+:ref:`OpType<enum_VisualShaderNodeMix_OpType>` **OP_TYPE_SCALAR** = ``0``
 
-- **OP_TYPE_VECTOR_3D** = **3** --- A 3D vector type.
+A floating-point scalar.
 
-- **OP_TYPE_VECTOR_3D_SCALAR** = **4** --- The ``a`` and ``b`` ports use a 3D vector type. The ``weight`` port uses a scalar type.
+.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_2D:
 
-- **OP_TYPE_VECTOR_4D** = **5** --- A 4D vector type.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_TYPE_VECTOR_4D_SCALAR** = **6** --- The ``a`` and ``b`` ports use a 4D vector type. The ``weight`` port uses a scalar type.
+:ref:`OpType<enum_VisualShaderNodeMix_OpType>` **OP_TYPE_VECTOR_2D** = ``1``
 
-- **OP_TYPE_MAX** = **7** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeMix_OpType>` enum.
+A 2D vector type.
+
+.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_2D_SCALAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMix_OpType>` **OP_TYPE_VECTOR_2D_SCALAR** = ``2``
+
+The ``a`` and ``b`` ports use a 2D vector type. The ``weight`` port uses a scalar type.
+
+.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_3D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMix_OpType>` **OP_TYPE_VECTOR_3D** = ``3``
+
+A 3D vector type.
+
+.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_3D_SCALAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMix_OpType>` **OP_TYPE_VECTOR_3D_SCALAR** = ``4``
+
+The ``a`` and ``b`` ports use a 3D vector type. The ``weight`` port uses a scalar type.
+
+.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_4D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMix_OpType>` **OP_TYPE_VECTOR_4D** = ``5``
+
+A 4D vector type.
+
+.. _class_VisualShaderNodeMix_constant_OP_TYPE_VECTOR_4D_SCALAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMix_OpType>` **OP_TYPE_VECTOR_4D_SCALAR** = ``6``
+
+The ``a`` and ``b`` ports use a 4D vector type. The ``weight`` port uses a scalar type.
+
+.. _class_VisualShaderNodeMix_constant_OP_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeMix_OpType>` **OP_TYPE_MAX** = ``7``
+
+Represents the size of the :ref:`OpType<enum_VisualShaderNodeMix_OpType>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeMix_property_op_type:
 
-- :ref:`OpType<enum_VisualShaderNodeMix_OpType>` **op_type**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_op_type(value) |
-+-----------+--------------------+
-| *Getter*  | get_op_type()      |
-+-----------+--------------------+
+:ref:`OpType<enum_VisualShaderNodeMix_OpType>` **op_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_op_type** **(** :ref:`OpType<enum_VisualShaderNodeMix_OpType>` value **)**
+- :ref:`OpType<enum_VisualShaderNodeMix_OpType>` **get_op_type** **(** **)**
 
 A type of operands and returned value.
 

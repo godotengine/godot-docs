@@ -14,39 +14,53 @@ CenterContainer
 
 Keeps children controls centered.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 CenterContainer keeps children controls centered. This container keeps all children to their minimum size, in the center.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`use_top_left<class_CenterContainer_property_use_top_left>` | ``false`` |
-+-------------------------+------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`use_top_left<class_CenterContainer_property_use_top_left>` | ``false`` |
+   +-------------------------+------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CenterContainer_property_use_top_left:
 
-- :ref:`bool<class_bool>` **use_top_left**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_use_top_left(value) |
-+-----------+-------------------------+
-| *Getter*  | is_using_top_left()     |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **use_top_left** = ``false``
 
-If ``true``, centers children relative to the ``CenterContainer``'s top left corner.
+.. rst-class:: classref-property-setget
+
+- void **set_use_top_left** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_top_left** **(** **)**
+
+If ``true``, centers children relative to the **CenterContainer**'s top left corner.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

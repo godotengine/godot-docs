@@ -14,37 +14,51 @@ ColorRect
 
 Colored rectangle.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Displays a rectangle filled with a solid :ref:`color<class_ColorRect_property_color>`. If you need to display the border alone, consider using :ref:`ReferenceRect<class_ReferenceRect>` instead.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+----------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_property_color>` | ``Color(1, 1, 1, 1)`` |
-+---------------------------+----------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_property_color>` | ``Color(1, 1, 1, 1)`` |
+   +---------------------------+----------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ColorRect_property_color:
 
-- :ref:`Color<class_Color>` **color**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
-| *Setter*  | set_color(value)      |
-+-----------+-----------------------+
-| *Getter*  | get_color()           |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **color** = ``Color(1, 1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_color** **(** **)**
 
 The fill color.
 

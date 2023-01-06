@@ -14,163 +14,258 @@ EditorScenePostImportPlugin
 
 Plugin to control and modifying the process of importing a scene.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This plugin type exists to modify the process of importing scenes, allowing to change the content as well as add importer options at every stage of the process.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`_get_import_options<class_EditorScenePostImportPlugin_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                                                                                                                                                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`_get_internal_import_options<class_EditorScenePostImportPlugin_method__get_internal_import_options>` **(** :ref:`int<class_int>` category **)** |virtual|                                                                                                                                                                                                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`_get_internal_option_update_view_required<class_EditorScenePostImportPlugin_method__get_internal_option_update_view_required>` **(** :ref:`int<class_int>` category, :ref:`String<class_String>` option **)** |virtual| |const|                                                                                                                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`_get_internal_option_visibility<class_EditorScenePostImportPlugin_method__get_internal_option_visibility>` **(** :ref:`int<class_int>` category, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|                                                                                                                                                |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`_get_option_visibility<class_EditorScenePostImportPlugin_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|                                                                                                                                                                |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`_internal_process<class_EditorScenePostImportPlugin_method__internal_process>` **(** :ref:`int<class_int>` category, :ref:`Node<class_Node>` base_node, :ref:`Node<class_Node>` node, :ref:`Resource<class_Resource>` resource **)** |virtual|                                                                                                                                                    |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`_post_process<class_EditorScenePostImportPlugin_method__post_process>` **(** :ref:`Node<class_Node>` scene **)** |virtual|                                                                                                                                                                                                                                                                        |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`_pre_process<class_EditorScenePostImportPlugin_method__pre_process>` **(** :ref:`Node<class_Node>` scene **)** |virtual|                                                                                                                                                                                                                                                                          |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_import_option<class_EditorScenePostImportPlugin_method_add_import_option>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                                                                                                                                                                                                  |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_import_option_advanced<class_EditorScenePostImportPlugin_method_add_import_option_advanced>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint=0, :ref:`String<class_String>` hint_string="", :ref:`int<class_int>` usage_flags=6 **)** |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_option_value<class_EditorScenePostImportPlugin_method_get_option_value>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`_get_import_options<class_EditorScenePostImportPlugin_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                                                                                                                                                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`_get_internal_import_options<class_EditorScenePostImportPlugin_method__get_internal_import_options>` **(** :ref:`int<class_int>` category **)** |virtual|                                                                                                                                                                                                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`_get_internal_option_update_view_required<class_EditorScenePostImportPlugin_method__get_internal_option_update_view_required>` **(** :ref:`int<class_int>` category, :ref:`String<class_String>` option **)** |virtual| |const|                                                                                                                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`_get_internal_option_visibility<class_EditorScenePostImportPlugin_method__get_internal_option_visibility>` **(** :ref:`int<class_int>` category, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|                                                                                                                                                |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`_get_option_visibility<class_EditorScenePostImportPlugin_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|                                                                                                                                                                |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`_internal_process<class_EditorScenePostImportPlugin_method__internal_process>` **(** :ref:`int<class_int>` category, :ref:`Node<class_Node>` base_node, :ref:`Node<class_Node>` node, :ref:`Resource<class_Resource>` resource **)** |virtual|                                                                                                                                                    |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`_post_process<class_EditorScenePostImportPlugin_method__post_process>` **(** :ref:`Node<class_Node>` scene **)** |virtual|                                                                                                                                                                                                                                                                        |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`_pre_process<class_EditorScenePostImportPlugin_method__pre_process>` **(** :ref:`Node<class_Node>` scene **)** |virtual|                                                                                                                                                                                                                                                                          |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`add_import_option<class_EditorScenePostImportPlugin_method_add_import_option>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                                                                                                                                                                                                  |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`add_import_option_advanced<class_EditorScenePostImportPlugin_method_add_import_option_advanced>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint=0, :ref:`String<class_String>` hint_string="", :ref:`int<class_int>` usage_flags=6 **)** |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_option_value<class_EditorScenePostImportPlugin_method_get_option_value>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_EditorScenePostImportPlugin_InternalImportCategory:
 
-.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_NODE:
-
-.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_MESH_3D_NODE:
-
-.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_MESH:
-
-.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_MATERIAL:
-
-.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_ANIMATION:
-
-.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_ANIMATION_NODE:
-
-.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_SKELETON_3D_NODE:
-
-.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_MAX:
+.. rst-class:: classref-enumeration
 
 enum **InternalImportCategory**:
 
-- **INTERNAL_IMPORT_CATEGORY_NODE** = **0**
+.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_NODE:
 
-- **INTERNAL_IMPORT_CATEGORY_MESH_3D_NODE** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **INTERNAL_IMPORT_CATEGORY_MESH** = **2**
+:ref:`InternalImportCategory<enum_EditorScenePostImportPlugin_InternalImportCategory>` **INTERNAL_IMPORT_CATEGORY_NODE** = ``0``
 
-- **INTERNAL_IMPORT_CATEGORY_MATERIAL** = **3**
 
-- **INTERNAL_IMPORT_CATEGORY_ANIMATION** = **4**
 
-- **INTERNAL_IMPORT_CATEGORY_ANIMATION_NODE** = **5**
+.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_MESH_3D_NODE:
 
-- **INTERNAL_IMPORT_CATEGORY_SKELETON_3D_NODE** = **6**
+.. rst-class:: classref-enumeration-constant
 
-- **INTERNAL_IMPORT_CATEGORY_MAX** = **7**
+:ref:`InternalImportCategory<enum_EditorScenePostImportPlugin_InternalImportCategory>` **INTERNAL_IMPORT_CATEGORY_MESH_3D_NODE** = ``1``
+
+
+
+.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_MESH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InternalImportCategory<enum_EditorScenePostImportPlugin_InternalImportCategory>` **INTERNAL_IMPORT_CATEGORY_MESH** = ``2``
+
+
+
+.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_MATERIAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InternalImportCategory<enum_EditorScenePostImportPlugin_InternalImportCategory>` **INTERNAL_IMPORT_CATEGORY_MATERIAL** = ``3``
+
+
+
+.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_ANIMATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InternalImportCategory<enum_EditorScenePostImportPlugin_InternalImportCategory>` **INTERNAL_IMPORT_CATEGORY_ANIMATION** = ``4``
+
+
+
+.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_ANIMATION_NODE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InternalImportCategory<enum_EditorScenePostImportPlugin_InternalImportCategory>` **INTERNAL_IMPORT_CATEGORY_ANIMATION_NODE** = ``5``
+
+
+
+.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_SKELETON_3D_NODE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InternalImportCategory<enum_EditorScenePostImportPlugin_InternalImportCategory>` **INTERNAL_IMPORT_CATEGORY_SKELETON_3D_NODE** = ``6``
+
+
+
+.. _class_EditorScenePostImportPlugin_constant_INTERNAL_IMPORT_CATEGORY_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`InternalImportCategory<enum_EditorScenePostImportPlugin_InternalImportCategory>` **INTERNAL_IMPORT_CATEGORY_MAX** = ``7``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorScenePostImportPlugin_method__get_import_options:
 
-- void **_get_import_options** **(** :ref:`String<class_String>` path **)** |virtual|
+.. rst-class:: classref-method
+
+void **_get_import_options** **(** :ref:`String<class_String>` path **)** |virtual|
 
 Override to add general import options. These will appear in the main import dock on the editor. Add options via :ref:`add_import_option<class_EditorScenePostImportPlugin_method_add_import_option>` and :ref:`add_import_option_advanced<class_EditorScenePostImportPlugin_method_add_import_option_advanced>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method__get_internal_import_options:
 
-- void **_get_internal_import_options** **(** :ref:`int<class_int>` category **)** |virtual|
+.. rst-class:: classref-method
+
+void **_get_internal_import_options** **(** :ref:`int<class_int>` category **)** |virtual|
 
 Override to add internal import options. These will appear in the 3D scene import dialog. Add options via :ref:`add_import_option<class_EditorScenePostImportPlugin_method_add_import_option>` and :ref:`add_import_option_advanced<class_EditorScenePostImportPlugin_method_add_import_option_advanced>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method__get_internal_option_update_view_required:
 
-- :ref:`Variant<class_Variant>` **_get_internal_option_update_view_required** **(** :ref:`int<class_int>` category, :ref:`String<class_String>` option **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **_get_internal_option_update_view_required** **(** :ref:`int<class_int>` category, :ref:`String<class_String>` option **)** |virtual| |const|
 
 Return true whether updating the 3D view of the import dialog needs to be updated if an option has changed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method__get_internal_option_visibility:
 
-- :ref:`Variant<class_Variant>` **_get_internal_option_visibility** **(** :ref:`int<class_int>` category, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **_get_internal_option_visibility** **(** :ref:`int<class_int>` category, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|
 
 Return true or false whether a given option should be visible. Return null to ignore.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method__get_option_visibility:
 
-- :ref:`Variant<class_Variant>` **_get_option_visibility** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **_get_option_visibility** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|
 
 Return true or false whether a given option should be visible. Return null to ignore.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method__internal_process:
 
-- void **_internal_process** **(** :ref:`int<class_int>` category, :ref:`Node<class_Node>` base_node, :ref:`Node<class_Node>` node, :ref:`Resource<class_Resource>` resource **)** |virtual|
+.. rst-class:: classref-method
+
+void **_internal_process** **(** :ref:`int<class_int>` category, :ref:`Node<class_Node>` base_node, :ref:`Node<class_Node>` node, :ref:`Resource<class_Resource>` resource **)** |virtual|
 
 Process a specific node or resource for a given category.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method__post_process:
 
-- void **_post_process** **(** :ref:`Node<class_Node>` scene **)** |virtual|
+.. rst-class:: classref-method
+
+void **_post_process** **(** :ref:`Node<class_Node>` scene **)** |virtual|
 
 Post process the scene. This function is called after the final scene has been configured.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method__pre_process:
 
-- void **_pre_process** **(** :ref:`Node<class_Node>` scene **)** |virtual|
+.. rst-class:: classref-method
+
+void **_pre_process** **(** :ref:`Node<class_Node>` scene **)** |virtual|
 
 Pre Process the scene. This function is called right after the scene format loader loaded the scene and no changes have been made.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method_add_import_option:
 
-- void **add_import_option** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+void **add_import_option** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
 
 Add a specific import option (name and default value only). This function can only be called from :ref:`_get_import_options<class_EditorScenePostImportPlugin_method__get_import_options>` and :ref:`_get_internal_import_options<class_EditorScenePostImportPlugin_method__get_internal_import_options>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method_add_import_option_advanced:
 
-- void **add_import_option_advanced** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint=0, :ref:`String<class_String>` hint_string="", :ref:`int<class_int>` usage_flags=6 **)**
+.. rst-class:: classref-method
+
+void **add_import_option_advanced** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value, :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` hint=0, :ref:`String<class_String>` hint_string="", :ref:`int<class_int>` usage_flags=6 **)**
 
 Add a specific import option. This function can only be called from :ref:`_get_import_options<class_EditorScenePostImportPlugin_method__get_import_options>` and :ref:`_get_internal_import_options<class_EditorScenePostImportPlugin_method__get_internal_import_options>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImportPlugin_method_get_option_value:
 
-- :ref:`Variant<class_Variant>` **get_option_value** **(** :ref:`StringName<class_StringName>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_option_value** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Query the value of an option. This function can only be called from those querying visibility, or processing.
 

@@ -14,10 +14,14 @@ AudioEffectNotchFilter
 
 Adds a notch filter to the Audio bus.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Attenuates frequencies in a narrow band around the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` and cuts frequencies outside of this range.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

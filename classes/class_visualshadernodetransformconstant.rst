@@ -14,32 +14,44 @@ VisualShaderNodeTransformConstant
 
 A :ref:`Transform3D<class_Transform3D>` constant for use within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A constant :ref:`Transform3D<class_Transform3D>`, which can be used as an input node.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`constant<class_VisualShaderNodeTransformConstant_property_constant>` | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
-+---------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`constant<class_VisualShaderNodeTransformConstant_property_constant>` | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
+   +---------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeTransformConstant_property_constant:
 
-- :ref:`Transform3D<class_Transform3D>` **constant**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------------+
-| *Default* | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
-+-----------+-----------------------------------------------------+
-| *Setter*  | set_constant(value)                                 |
-+-----------+-----------------------------------------------------+
-| *Getter*  | get_constant()                                      |
-+-----------+-----------------------------------------------------+
+:ref:`Transform3D<class_Transform3D>` **constant** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant** **(** :ref:`Transform3D<class_Transform3D>` value **)**
+- :ref:`Transform3D<class_Transform3D>` **get_constant** **(** **)**
 
 A :ref:`Transform3D<class_Transform3D>` constant which represents the state of this node.
 

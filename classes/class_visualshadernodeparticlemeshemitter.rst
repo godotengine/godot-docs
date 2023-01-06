@@ -12,59 +12,87 @@ VisualShaderNodeParticleMeshEmitter
 
 **Inherits:** :ref:`VisualShaderNodeParticleEmitter<class_VisualShaderNodeParticleEmitter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
-| :ref:`Mesh<class_Mesh>` | :ref:`mesh<class_VisualShaderNodeParticleMeshEmitter_property_mesh>`                         |          |
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`   | :ref:`surface_index<class_VisualShaderNodeParticleMeshEmitter_property_surface_index>`       | ``0``    |
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`use_all_surfaces<class_VisualShaderNodeParticleMeshEmitter_property_use_all_surfaces>` | ``true`` |
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+   | :ref:`Mesh<class_Mesh>` | :ref:`mesh<class_VisualShaderNodeParticleMeshEmitter_property_mesh>`                         |          |
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`   | :ref:`surface_index<class_VisualShaderNodeParticleMeshEmitter_property_surface_index>`       | ``0``    |
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`use_all_surfaces<class_VisualShaderNodeParticleMeshEmitter_property_use_all_surfaces>` | ``true`` |
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParticleMeshEmitter_property_mesh:
 
-- :ref:`Mesh<class_Mesh>` **mesh**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
+:ref:`Mesh<class_Mesh>` **mesh**
+
+.. rst-class:: classref-property-setget
+
+- void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeParticleMeshEmitter_property_surface_index:
 
-- :ref:`int<class_int>` **surface_index**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_surface_index(value) |
-+-----------+--------------------------+
-| *Getter*  | get_surface_index()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **surface_index** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_surface_index** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_surface_index** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeParticleMeshEmitter_property_use_all_surfaces:
 
-- :ref:`bool<class_bool>` **use_all_surfaces**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``true``                    |
-+-----------+-----------------------------+
-| *Setter*  | set_use_all_surfaces(value) |
-+-----------+-----------------------------+
-| *Getter*  | is_use_all_surfaces()       |
-+-----------+-----------------------------+
+:ref:`bool<class_bool>` **use_all_surfaces** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_all_surfaces** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_use_all_surfaces** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

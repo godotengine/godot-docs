@@ -14,42 +14,53 @@ HFlowContainer
 
 Horizontal flow container.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Horizontal version of :ref:`FlowContainer<class_FlowContainer>`.
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+-----------------------+-----------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`h_separation<class_HFlowContainer_theme_constant_h_separation>` | ``4`` |
-+-----------------------+-----------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`v_separation<class_HFlowContainer_theme_constant_v_separation>` | ``4`` |
-+-----------------------+-----------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+-----------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`h_separation<class_HFlowContainer_theme_constant_h_separation>` | ``4`` |
+   +-----------------------+-----------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`v_separation<class_HFlowContainer_theme_constant_v_separation>` | ``4`` |
+   +-----------------------+-----------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_HFlowContainer_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **h_separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **h_separation** = ``4``
 
 The horizontal separation of children nodes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HFlowContainer_theme_constant_v_separation:
 
-- :ref:`int<class_int>` **v_separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **v_separation** = ``4``
 
 The vertical separation of children nodes.
 

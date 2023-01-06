@@ -4,6 +4,7 @@ Creating movies
 ===============
 
 Godot can record **non-real-time** video and audio from any 2D or 3D project.
+This kind of recording is also called *offline rendering*.
 There are many scenarios where this is useful:
 
 - Recording game trailers for promotional use.
@@ -32,6 +33,9 @@ Compared to real-time video recording, some advantages of non-real-time recordin
   frame pacing; it will never exhibit dropped frames or stuttering.
   Faster hardware will allow you to render a given animation in less time, but
   the visual output remains identical.
+- Render at a higher resolution than the screen resolution, without having to
+  rely on driver-specific tools such as NVIDIA's Dynamic Super Resolution or
+  AMD's Virtual Super Resolution.
 - Render at a higher framerate than the video's target framerate, then
   :ref:`post-process to generate high-quality motion blur <doc_creating_movies_motion_blur>`.
   This also makes effects that converge over several frames (such as temporal antialiasing,
@@ -99,14 +103,17 @@ not the current working directory. In the above example, the file will be
 written to ``/path/to/your_project/output.avi``. This behavior is similar to the
 ``--export`` command line argument.
 
-Since Movie Maker's output resolution is set by the window size, you can adjust
-the window size on startup to override it:
+Since Movie Maker's output resolution is set by the viewport size, you can
+adjust the window size on startup to override it if the project uses the
+``disabled`` or ``canvas_items`` :ref:`stretch mode <doc_multiple_resolutions>`:
 
 ::
 
     godot --path /path/to/your_project --write-movie output.avi --resolution 1280x720
 
-Note that the window size is clamped by your display's resolution.
+Note that the window size is clamped by your display's resolution. See
+:ref:`doc_creating_movies_recording_at_higher_resolution` if you need to record
+a video at a higher resolution than the screen resolution.
 
 The recording FPS can also be overridden on the command line,
 without having to edit the Project Settings:
@@ -126,7 +133,8 @@ Choosing an output format
 -------------------------
 
 Output formats are provided by the :ref:`MovieWriter <class_MovieWriter>` class.
-Godot has 2 built-in :ref:`MovieWriters <class_MovieWriter>`, and more can be implemented by extensions:
+Godot has 2 built-in :ref:`MovieWriters <class_MovieWriter>`, and more can be
+implemented by extensions:
 
 AVI (recommended)
 ^^^^^^^^^^^^^^^^^
@@ -183,8 +191,8 @@ the **Advanced** toggle in the top-right corner of the Project Settings dialog.
   a movie. This can be different from the project's mix rate, but this
   value must be divisible by the recorded FPS to prevent audio from
   desynchronizing over time.
-- **Speaker Mode:** The speaker mode to use in the recorded audio when writing a movie
-  (stereo, 5.1 surround or 7.1 surround).
+- **Speaker Mode:** The speaker mode to use in the recorded audio when writing
+  a movie (stereo, 5.1 surround or 7.1 surround).
 - **MJPEG Quality:** The JPEG quality to use when writing a video to an AVI
   file, between ``0.01`` and ``1.0`` (inclusive). Higher quality values result
   in better-looking output at the cost of larger file sizes. Recommended quality
@@ -206,13 +214,14 @@ the **Advanced** toggle in the top-right corner of the Project Settings dialog.
 
 .. note::
 
-    The output file's resolution is set by the window size. Make sure to resize
-    the window *before* the splash screen has ended. For this purpose, it's recommended
-    to adjust the **Display > Window > Size > Window Width Override** and
-    **Display > Window > Size > Window Height Override** project settings.
+    When using the ``disabled`` or ``2d`` :ref:`stretch modes <doc_multiple_resolutions>`,
+    the output file's resolution is set by the window size. Make sure to resize
+    the window *before* the splash screen has ended. For this purpose, it's
+    recommended to adjust the
+    **Display > Window > Size > Window Width Override** and
+    **Window Height Override** advanced project settings.
 
-    To apply a resolution override only when recording a movie, you can override
-    those settings with the ``movie`` :ref:`feature tag <doc_feature_tags>`.
+    See also :ref:`doc_creating_movies_recording_at_higher_resolution`.
 
 Quitting Movie Maker mode
 -------------------------
@@ -264,6 +273,48 @@ detail and reduce light leaking:
             # without decreasing its maximum distance.
             get_viewport().world_3d.environment.sdfgi_min_cell_size *= 0.25
             get_viewport().world_3d.environment.sdfgi_cascades = 8
+
+.. _doc_creating_movies_recording_at_higher_resolution:
+
+Rendering at a higher resolution than the screen resolution
+-----------------------------------------------------------
+
+The overall rendering quality can be improved significantly by rendering at high
+resolutions such as 4K or 8K.
+
+.. note::
+
+    For 3D rendering, Godot provides a **Rendering > Scaling 3D > Scale**
+    advanced project setting, which can be set above ``1.0`` to obtain
+    *supersample antialiasing*. The 3D rendering is then *downsampled* when it's
+    drawn on the viewport. This provides an expensive but high-quality form of
+    antialiasing, without increasing the final output resolution.
+
+    Consider using this project setting first, as it avoids slowing down movie
+    writing speeds and increasing output file size compared to actually
+    increasing the output resolution.
+
+If you wish to render 2D at a higher resolution, or if you actually need the
+higher raw pixel output for 3D rendering, you can increase the resolution above
+what the screen allows.
+
+By default, Godot uses the ``disabled`` :ref:`stretch modes <doc_multiple_resolutions>`
+in projects. If using ``disabled`` or ``canvas_items`` stretch mode,
+the window size dictates the output video resolution.
+
+On the other hand, if the project is configured to use the ``viewport`` stretch
+mode, the viewport resolution dictates the output video resolution. The viewport
+resolution is set using the **Display > Window > Size > Viewport Width** and
+**Viewport Height** project settings. This can be used to render a video at a
+higher resolution than the screen resolution.
+
+To make the window smaller during recording without affecting the output video
+resolution, you can set the **Display > Window > Size > Window Width Override**
+and **Window Height Override** advanced project settings to values greater than
+``0``.
+
+To apply a resolution override only when recording a movie, you can override
+those settings with the ``movie`` :ref:`feature tag <doc_feature_tags>`.
 
 Post-processing steps
 ---------------------

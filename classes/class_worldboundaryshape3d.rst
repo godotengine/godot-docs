@@ -14,36 +14,48 @@ WorldBoundaryShape3D
 
 World boundary (infinite plane) shape resource for 3D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-3D world boundary shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. ``WorldBoundaryShape3D`` works like an infinite plane and will not allow any physics body to go to the negative side. Note that the :ref:`Plane<class_Plane>`'s normal matters; anything "below" the plane will collide with it. If the ``WorldBoundaryShape3D`` is used in a :ref:`PhysicsBody3D<class_PhysicsBody3D>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
+3D world boundary shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. **WorldBoundaryShape3D** works like an infinite plane and will not allow any physics body to go to the negative side. Note that the :ref:`Plane<class_Plane>`'s normal matters; anything "below" the plane will collide with it. If the **WorldBoundaryShape3D** is used in a :ref:`PhysicsBody3D<class_PhysicsBody3D>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
 
-\ **Performance:** Being a primitive collision shape, ``WorldBoundaryShape3D`` is fast to check collisions against.
+\ **Performance:** Being a primitive collision shape, **WorldBoundaryShape3D** is fast to check collisions against.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------+-----------------------+
-| :ref:`Plane<class_Plane>` | :ref:`plane<class_WorldBoundaryShape3D_property_plane>` | ``Plane(0, 1, 0, 0)`` |
-+---------------------------+---------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------+-----------------------+
+   | :ref:`Plane<class_Plane>` | :ref:`plane<class_WorldBoundaryShape3D_property_plane>` | ``Plane(0, 1, 0, 0)`` |
+   +---------------------------+---------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_WorldBoundaryShape3D_property_plane:
 
-- :ref:`Plane<class_Plane>` **plane**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``Plane(0, 1, 0, 0)`` |
-+-----------+-----------------------+
-| *Setter*  | set_plane(value)      |
-+-----------+-----------------------+
-| *Getter*  | get_plane()           |
-+-----------+-----------------------+
+:ref:`Plane<class_Plane>` **plane** = ``Plane(0, 1, 0, 0)``
 
-The :ref:`Plane<class_Plane>` used by the ``WorldBoundaryShape3D`` for collision.
+.. rst-class:: classref-property-setget
+
+- void **set_plane** **(** :ref:`Plane<class_Plane>` value **)**
+- :ref:`Plane<class_Plane>` **get_plane** **(** **)**
+
+The :ref:`Plane<class_Plane>` used by the **WorldBoundaryShape3D** for collision.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

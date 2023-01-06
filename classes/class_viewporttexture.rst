@@ -14,6 +14,8 @@ ViewportTexture
 
 Texture which displays the content of a :ref:`Viewport<class_Viewport>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -22,6 +24,8 @@ Displays the content of a :ref:`Viewport<class_Viewport>` node as a dynamic :ref
 To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
 
 \ **Note:** When local to scene, this texture uses :ref:`Resource.setup_local_to_scene<class_Resource_method_setup_local_to_scene>` to set the proxy texture and flags in the local viewport.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -34,29 +38,37 @@ Tutorials
 
 - `3D Viewport Scaling Demo <https://godotengine.org/asset-library/asset/586>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | resource_local_to_scene                                            | ``true`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
-+---------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`viewport_path<class_ViewportTexture_property_viewport_path>` | ``NodePath("")``                                                                      |
-+---------------------------------+--------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`viewport_path<class_ViewportTexture_property_viewport_path>` | ``NodePath("")`` |
+   +---------------------------------+--------------------------------------------------------------------+------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ViewportTexture_property_viewport_path:
 
-- :ref:`NodePath<class_NodePath>` **viewport_path**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``NodePath("")``                  |
-+-----------+-----------------------------------+
-| *Setter*  | set_viewport_path_in_scene(value) |
-+-----------+-----------------------------------+
-| *Getter*  | get_viewport_path_in_scene()      |
-+-----------+-----------------------------------+
+:ref:`NodePath<class_NodePath>` **viewport_path** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_viewport_path_in_scene** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_viewport_path_in_scene** **(** **)**
 
 The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the scene root, not to the node which uses the texture.
 

@@ -34,13 +34,6 @@ Disadvantages
   on their system. However, as Godot supports using text-based message files
   (``.po``), translators can test their work without having to install gettext tools.
 
-Caveats
--------
-
-- As Godot uses its own PO file parser behind the scenes
-  (which is more limited than the reference GNU gettext implementation),
-  some features such as pluralization aren't supported.
-
 Installing gettext tools
 ------------------------
 
@@ -59,15 +52,51 @@ install them.
 - **Linux:** On most distributions, install the ``gettext`` package from
   your distribution's package manager.
 
-Creating the PO template (POT) manually
----------------------------------------
+Creating the PO template
+------------------------
 
-Godot currently doesn't support extracting source strings using ``xgettext``,
-so the ``.pot`` file must be created manually. This file can be placed anywhere
+Automatic generation using the editor
+-------------------------------------
+
+Since Godot 4.0, the editor can generate a PO template automatically from
+specified scene and script files. This POT generation also supports translation
+contexts and pluralization if used in a script, with the optional second
+argument of ``tr()`` and the ``tr_n()`` method.
+
+Open the Project Settings' **Localization > POT Generation** tab, then use the
+**Add…** button to specify the path to your project's scenes and scripts that
+contain localizable strings:
+
+.. figure:: img/localization_using_gettext_pot_generation.webp
+   :align: center
+   :alt: Creating a PO template in the Localization > POT Generation tab of the Project Settings
+
+   Creating a PO template in the **Localization > POT Generation** tab of the Project Settings
+
+After adding at least one scene or script, click **Generate POT** in the
+top-right corner, then specify the path to the output file. This file can be
+placed anywhere in the project directory, but it's recommended to keep it in a
+subdirectory such as ``locale``, as each locale will be defined in its own file.
+
+You can then move over to
+:ref:`creating a messages file from a PO template <doc_localization_using_gettext_messages_file>`.
+
+.. note::
+
+    Remember to regenerate the PO template after making any changes to
+    localizable strings, or after adding new scenes or scripts. Otherwise, newly
+    added strings will not be localizable and translators won't be able to
+    update translations for outdated strings.
+
+Manual creation
+---------------
+
+If the automatic generation approach doesn't work out for your needs, you can
+create a PO template by hand in a text editor. This file can be placed anywhere
 in the project directory, but it's recommended to keep it in a subdirectory, as
 each locale will be defined in its own file.
 
-Create a directory named `locale` in the project directory. In this directory,
+Create a directory named ``locale`` in the project directory. In this directory,
 save a file named ``messages.pot`` with the following contents:
 
 ::
@@ -76,50 +105,31 @@ save a file named ``messages.pot`` with the following contents:
     msgid ""
     msgstr ""
 
+    # Example of a regular string.
     msgid "Hello world!"
+    msgstr ""
+
+    # Example of a string with pluralization.
+    msgid "There is %d apple."
+    msgid_plural "There are %d apples."
+    msgstr[0] ""
+    msgstr[1] ""
+
+    # Example of a string with a translation context.
+    msgctxt "Actions"
+    msgid "Close"
     msgstr ""
 
 Messages in gettext are made of ``msgid`` and ``msgstr`` pairs.
 ``msgid`` is the source string (usually in English), ``msgstr`` will be
 the translated string.
 
-The ``msgstr`` value in PO template files (``.pot``) should **always** be empty.
-Localization will be done in the generated ``.po`` files instead.
+.. warning::
 
-Creating the PO template (POT) using pybabel
---------------------------------------------
+    The ``msgstr`` value in PO template files (``.pot``) should **always** be
+    empty. Localization will be done in the generated ``.po`` files instead.
 
-The Python tool pybabel has support for Godot and can be used to automatically
-create and update the POT file from your scene files and scripts.
-
-After installing ``babel`` and ``babel-godot``, for example using pip:
-
-.. code-block:: shell
-
-    pip3 install babel babel-godot
-
-Write a mapping file (for example ``babelrc``) which will indicate which files
-pybabel needs to process (note that we process GDScript as Python, which is
-generally sufficient):
-
-.. code-block:: none
-
-    [python: **.gd]
-    encoding = utf-8
-
-    [godot_scene: **.tscn]
-    encoding = utf-8
-
-You can then run pybabel like so:
-
-.. code-block:: shell
-
-    pybabel extract -F babelrc -k text -k LineEdit/placeholder_text -k tr -o godot-l10n.pot .
-
-Use the ``-k`` option to specify what needs to be extracted. In this case,
-arguments to :ref:`tr() <class_Object_method_tr>` will be translated, as well
-as properties named "text" (commonly used by Control nodes) and LineEdit's
-"placeholder_text" property.
+.. _doc_localization_using_gettext_messages_file:
 
 Creating a messages file from a PO template
 -------------------------------------------

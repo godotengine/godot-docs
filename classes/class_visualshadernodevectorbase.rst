@@ -16,50 +16,84 @@ VisualShaderNodeVectorBase
 
 A base type for the nodes using different vector types within the visual shader graph.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------------+-------------------------------------------------------------------+-------+
-| :ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` | :ref:`op_type<class_VisualShaderNodeVectorBase_property_op_type>` | ``1`` |
-+-------------------------------------------------------+-------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------+
+   | :ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` | :ref:`op_type<class_VisualShaderNodeVectorBase_property_op_type>` | ``1`` |
+   +-------------------------------------------------------+-------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeVectorBase_OpType:
 
-.. _class_VisualShaderNodeVectorBase_constant_OP_TYPE_VECTOR_2D:
-
-.. _class_VisualShaderNodeVectorBase_constant_OP_TYPE_VECTOR_3D:
-
-.. _class_VisualShaderNodeVectorBase_constant_OP_TYPE_VECTOR_4D:
-
-.. _class_VisualShaderNodeVectorBase_constant_OP_TYPE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **OpType**:
 
-- **OP_TYPE_VECTOR_2D** = **0** --- A 2D vector type.
+.. _class_VisualShaderNodeVectorBase_constant_OP_TYPE_VECTOR_2D:
 
-- **OP_TYPE_VECTOR_3D** = **1** --- A 3D vector type.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_TYPE_VECTOR_4D** = **2** --- A 4D vector type.
+:ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **OP_TYPE_VECTOR_2D** = ``0``
 
-- **OP_TYPE_MAX** = **3** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` enum.
+A 2D vector type.
+
+.. _class_VisualShaderNodeVectorBase_constant_OP_TYPE_VECTOR_3D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **OP_TYPE_VECTOR_3D** = ``1``
+
+A 3D vector type.
+
+.. _class_VisualShaderNodeVectorBase_constant_OP_TYPE_VECTOR_4D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **OP_TYPE_VECTOR_4D** = ``2``
+
+A 4D vector type.
+
+.. _class_VisualShaderNodeVectorBase_constant_OP_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **OP_TYPE_MAX** = ``3``
+
+Represents the size of the :ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeVectorBase_property_op_type:
 
-- :ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **op_type**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``1``              |
-+-----------+--------------------+
-| *Setter*  | set_op_type(value) |
-+-----------+--------------------+
-| *Getter*  | get_op_type()      |
-+-----------+--------------------+
+:ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **op_type** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_op_type** **(** :ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` value **)**
+- :ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **get_op_type** **(** **)**
 
 A base type.
 

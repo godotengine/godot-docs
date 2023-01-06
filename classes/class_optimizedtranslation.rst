@@ -14,24 +14,39 @@ OptimizedTranslation
 
 Optimized translation.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Optimized translation. Uses real-time compressed translations, which results in very small dictionaries.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+------+--------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`generate<class_OptimizedTranslation_method_generate>` **(** :ref:`Translation<class_Translation>` from **)** |
-+------+--------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+--------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`generate<class_OptimizedTranslation_method_generate>` **(** :ref:`Translation<class_Translation>` from **)** |
+   +------+--------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_OptimizedTranslation_method_generate:
 
-- void **generate** **(** :ref:`Translation<class_Translation>` from **)**
+.. rst-class:: classref-method
+
+void **generate** **(** :ref:`Translation<class_Translation>` from **)**
 
 Generates and sets an optimized translation from the given :ref:`Translation<class_Translation>` resource.
 

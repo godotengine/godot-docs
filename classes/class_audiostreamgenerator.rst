@@ -14,6 +14,8 @@ AudioStreamGenerator
 
 Audio stream that generates sounds procedurally.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,6 +25,8 @@ See also :ref:`AudioEffectSpectrumAnalyzer<class_AudioEffectSpectrumAnalyzer>` f
 
 \ **Note:** Due to performance constraints, this class is best used from C# or from a compiled language via GDExtension. If you still want to use this class from GDScript, consider using a lower :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>` such as 11,025 Hz or 22,050 Hz.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -30,45 +34,56 @@ Tutorials
 
 - `Godot 3.2 will get new audio features <https://godotengine.org/article/godot-32-will-get-new-audio-features>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`buffer_length<class_AudioStreamGenerator_property_buffer_length>` | ``0.5``     |
-+---------------------------+-------------------------------------------------------------------------+-------------+
-| :ref:`float<class_float>` | :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>`           | ``44100.0`` |
-+---------------------------+-------------------------------------------------------------------------+-------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`buffer_length<class_AudioStreamGenerator_property_buffer_length>` | ``0.5``     |
+   +---------------------------+-------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>` | :ref:`mix_rate<class_AudioStreamGenerator_property_mix_rate>`           | ``44100.0`` |
+   +---------------------------+-------------------------------------------------------------------------+-------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioStreamGenerator_property_buffer_length:
 
-- :ref:`float<class_float>` **buffer_length**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.5``                  |
-+-----------+--------------------------+
-| *Setter*  | set_buffer_length(value) |
-+-----------+--------------------------+
-| *Getter*  | get_buffer_length()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **buffer_length** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_buffer_length** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_buffer_length** **(** **)**
 
 The length of the buffer to generate (in seconds). Lower values result in less latency, but require the script to generate audio data faster, resulting in increased CPU usage and more risk for audio cracking if the CPU can't keep up.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamGenerator_property_mix_rate:
 
-- :ref:`float<class_float>` **mix_rate**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``44100.0``         |
-+-----------+---------------------+
-| *Setter*  | set_mix_rate(value) |
-+-----------+---------------------+
-| *Getter*  | get_mix_rate()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **mix_rate** = ``44100.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_mix_rate** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_mix_rate** **(** **)**
 
 The sample rate to use (in Hz). Higher values are more demanding for the CPU to generate, but result in better quality.
 

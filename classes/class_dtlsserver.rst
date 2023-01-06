@@ -14,6 +14,8 @@ DTLSServer
 
 Helper class to implement a DTLS server.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -167,29 +169,46 @@ Below a small example of how to use it:
 
 
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`setup<class_DTLSServer_method_setup>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)** |
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` | :ref:`take_connection<class_DTLSServer_method_take_connection>` **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` udp_peer **)**                                                                                     |
-+---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`       | :ref:`setup<class_DTLSServer_method_setup>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)** |
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` | :ref:`take_connection<class_DTLSServer_method_take_connection>` **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` udp_peer **)**                                                                                     |
+   +---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_DTLSServer_method_setup:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **setup** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **setup** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)**
 
 Setup the DTLS server to use the given ``key`` and provide the given ``certificate`` to clients. You can pass the optional ``chain`` parameter to provide additional CA chain information along with the certificate.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_DTLSServer_method_take_connection:
 
-- :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` **take_connection** **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` udp_peer **)**
+.. rst-class:: classref-method
+
+:ref:`PacketPeerDTLS<class_PacketPeerDTLS>` **take_connection** **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` udp_peer **)**
 
 Try to initiate the DTLS handshake with the given ``udp_peer`` which must be already connected (see :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`).
 

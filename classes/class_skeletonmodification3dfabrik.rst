@@ -14,6 +14,8 @@ SkeletonModification3DFABRIK
 
 A modification that uses FABRIK to manipulate a series of bones to reach a target.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,263 +29,353 @@ Because of how FABRIK works, it often gives more natural results than those seen
 
 To help control how the FABRIK joints move, a magnet vector can be passed, which can nudge the bones in a certain direction prior to solving, giving a level of control over the final result.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`           | :ref:`chain_max_iterations<class_SkeletonModification3DFABRIK_property_chain_max_iterations>`         | ``10``           |
-+---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`float<class_float>`       | :ref:`chain_tolerance<class_SkeletonModification3DFABRIK_property_chain_tolerance>`                   | ``0.01``         |
-+---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`           | :ref:`fabrik_data_chain_length<class_SkeletonModification3DFABRIK_property_fabrik_data_chain_length>` | ``0``            |
-+---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`target_nodepath<class_SkeletonModification3DFABRIK_property_target_nodepath>`                   | ``NodePath("")`` |
-+---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`chain_max_iterations<class_SkeletonModification3DFABRIK_property_chain_max_iterations>`         | ``10``           |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
+   | :ref:`float<class_float>`       | :ref:`chain_tolerance<class_SkeletonModification3DFABRIK_property_chain_tolerance>`                   | ``0.01``         |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`fabrik_data_chain_length<class_SkeletonModification3DFABRIK_property_fabrik_data_chain_length>` | ``0``            |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`target_nodepath<class_SkeletonModification3DFABRIK_property_target_nodepath>`                   | ``NodePath("")`` |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------+------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`fabrik_joint_auto_calculate_length<class_SkeletonModification3DFABRIK_method_fabrik_joint_auto_calculate_length>` **(** :ref:`int<class_int>` joint_idx **)**                                                        |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`get_fabrik_joint_auto_calculate_length<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_auto_calculate_length>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                        |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`get_fabrik_joint_bone_index<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_bone_index>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                              |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`get_fabrik_joint_bone_name<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_bone_name>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`get_fabrik_joint_length<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_length>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                                      |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`   | :ref:`get_fabrik_joint_magnet<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_magnet>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                                      |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`get_fabrik_joint_tip_node<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_tip_node>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                                  |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`get_fabrik_joint_use_target_basis<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_use_target_basis>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                  |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`get_fabrik_joint_use_tip_node<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_use_tip_node>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                          |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_fabrik_joint_auto_calculate_length<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_auto_calculate_length>` **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` auto_calculate_length **)** |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_fabrik_joint_bone_index<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_bone_index>` **(** :ref:`int<class_int>` joint_idx, :ref:`int<class_int>` bone_index **)**                                    |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_fabrik_joint_bone_name<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_bone_name>` **(** :ref:`int<class_int>` joint_idx, :ref:`String<class_String>` bone_name **)**                                 |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_fabrik_joint_length<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_length>` **(** :ref:`int<class_int>` joint_idx, :ref:`float<class_float>` length **)**                                            |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_fabrik_joint_magnet<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_magnet>` **(** :ref:`int<class_int>` joint_idx, :ref:`Vector3<class_Vector3>` magnet_position **)**                               |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_fabrik_joint_tip_node<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_tip_node>` **(** :ref:`int<class_int>` joint_idx, :ref:`NodePath<class_NodePath>` tip_node **)**                                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_fabrik_joint_use_target_basis<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_use_target_basis>` **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_target_basis **)**                |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                            | :ref:`set_fabrik_joint_use_tip_node<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_use_tip_node>` **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_tip_node **)**                            |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`fabrik_joint_auto_calculate_length<class_SkeletonModification3DFABRIK_method_fabrik_joint_auto_calculate_length>` **(** :ref:`int<class_int>` joint_idx **)**                                                        |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`get_fabrik_joint_auto_calculate_length<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_auto_calculate_length>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                        |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`get_fabrik_joint_bone_index<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_bone_index>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                              |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`get_fabrik_joint_bone_name<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_bone_name>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                                |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`       | :ref:`get_fabrik_joint_length<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_length>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                                      |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`   | :ref:`get_fabrik_joint_magnet<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_magnet>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                                      |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`get_fabrik_joint_tip_node<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_tip_node>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                                  |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`get_fabrik_joint_use_target_basis<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_use_target_basis>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                  |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`get_fabrik_joint_use_tip_node<class_SkeletonModification3DFABRIK_method_get_fabrik_joint_use_tip_node>` **(** :ref:`int<class_int>` joint_idx **)** |const|                                                          |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_fabrik_joint_auto_calculate_length<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_auto_calculate_length>` **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` auto_calculate_length **)** |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_fabrik_joint_bone_index<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_bone_index>` **(** :ref:`int<class_int>` joint_idx, :ref:`int<class_int>` bone_index **)**                                    |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_fabrik_joint_bone_name<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_bone_name>` **(** :ref:`int<class_int>` joint_idx, :ref:`String<class_String>` bone_name **)**                                 |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_fabrik_joint_length<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_length>` **(** :ref:`int<class_int>` joint_idx, :ref:`float<class_float>` length **)**                                            |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_fabrik_joint_magnet<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_magnet>` **(** :ref:`int<class_int>` joint_idx, :ref:`Vector3<class_Vector3>` magnet_position **)**                               |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_fabrik_joint_tip_node<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_tip_node>` **(** :ref:`int<class_int>` joint_idx, :ref:`NodePath<class_NodePath>` tip_node **)**                                |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_fabrik_joint_use_target_basis<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_use_target_basis>` **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_target_basis **)**                |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`set_fabrik_joint_use_tip_node<class_SkeletonModification3DFABRIK_method_set_fabrik_joint_use_tip_node>` **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_tip_node **)**                            |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SkeletonModification3DFABRIK_property_chain_max_iterations:
 
-- :ref:`int<class_int>` **chain_max_iterations**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``10``                          |
-+-----------+---------------------------------+
-| *Setter*  | set_chain_max_iterations(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_chain_max_iterations()      |
-+-----------+---------------------------------+
+:ref:`int<class_int>` **chain_max_iterations** = ``10``
+
+.. rst-class:: classref-property-setget
+
+- void **set_chain_max_iterations** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_chain_max_iterations** **(** **)**
 
 The number of times FABRIK will try to solve each time the ``execute`` function is called. Setting this value to a lower number will be result in better performance, but this can also result in harsher movements and slower solves.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_property_chain_tolerance:
 
-- :ref:`float<class_float>` **chain_tolerance**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0.01``                   |
-+-----------+----------------------------+
-| *Setter*  | set_chain_tolerance(value) |
-+-----------+----------------------------+
-| *Getter*  | get_chain_tolerance()      |
-+-----------+----------------------------+
+:ref:`float<class_float>` **chain_tolerance** = ``0.01``
+
+.. rst-class:: classref-property-setget
+
+- void **set_chain_tolerance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_chain_tolerance** **(** **)**
 
 The minimum distance the target has to be from the tip of the final bone in the bone chain. Setting this value to a higher number allows for greater performance, but less accurate solves.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_property_fabrik_data_chain_length:
 
-- :ref:`int<class_int>` **fabrik_data_chain_length**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``0``                               |
-+-----------+-------------------------------------+
-| *Setter*  | set_fabrik_data_chain_length(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_fabrik_data_chain_length()      |
-+-----------+-------------------------------------+
+:ref:`int<class_int>` **fabrik_data_chain_length** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fabrik_data_chain_length** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_fabrik_data_chain_length** **(** **)**
 
 The amount of FABRIK joints in the FABRIK modification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_property_target_nodepath:
 
-- :ref:`NodePath<class_NodePath>` **target_nodepath**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``NodePath("")``       |
-+-----------+------------------------+
-| *Setter*  | set_target_node(value) |
-+-----------+------------------------+
-| *Getter*  | get_target_node()      |
-+-----------+------------------------+
+:ref:`NodePath<class_NodePath>` **target_nodepath** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_target_node** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_target_node** **(** **)**
 
 The NodePath to the node that is the target for the FABRIK modification. This node is what the FABRIK chain will attempt to rotate the bone chain to.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SkeletonModification3DFABRIK_method_fabrik_joint_auto_calculate_length:
 
-- void **fabrik_joint_auto_calculate_length** **(** :ref:`int<class_int>` joint_idx **)**
+.. rst-class:: classref-method
+
+void **fabrik_joint_auto_calculate_length** **(** :ref:`int<class_int>` joint_idx **)**
 
 Will attempt to automatically calculate the length of the bone assigned to the FABRIK joint at ``joint_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_get_fabrik_joint_auto_calculate_length:
 
-- :ref:`bool<class_bool>` **get_fabrik_joint_auto_calculate_length** **(** :ref:`int<class_int>` joint_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_fabrik_joint_auto_calculate_length** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
 Returns a boolean that indicates whether this modification will attempt to autocalculate the length of the bone assigned to the FABRIK joint at ``joint_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_get_fabrik_joint_bone_index:
 
-- :ref:`int<class_int>` **get_fabrik_joint_bone_index** **(** :ref:`int<class_int>` joint_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_fabrik_joint_bone_index** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
 Returns the bone index of the bone assigned to the FABRIK joint at ``joint_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_get_fabrik_joint_bone_name:
 
-- :ref:`String<class_String>` **get_fabrik_joint_bone_name** **(** :ref:`int<class_int>` joint_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_fabrik_joint_bone_name** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
 Returns the name of the bone that is assigned to the FABRIK joint at ``joint_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_get_fabrik_joint_length:
 
-- :ref:`float<class_float>` **get_fabrik_joint_length** **(** :ref:`int<class_int>` joint_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_fabrik_joint_length** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
 Returns the length of the FABRIK joint at ``joint_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_get_fabrik_joint_magnet:
 
-- :ref:`Vector3<class_Vector3>` **get_fabrik_joint_magnet** **(** :ref:`int<class_int>` joint_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_fabrik_joint_magnet** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
 Returns the magnet vector of the FABRIK joint at ``joint_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_get_fabrik_joint_tip_node:
 
-- :ref:`NodePath<class_NodePath>` **get_fabrik_joint_tip_node** **(** :ref:`int<class_int>` joint_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`NodePath<class_NodePath>` **get_fabrik_joint_tip_node** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
 Returns the :ref:`Node3D<class_Node3D>`-based node placed at the tip of the FABRIK joint at ``joint_idx``, if one has been set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_get_fabrik_joint_use_target_basis:
 
-- :ref:`bool<class_bool>` **get_fabrik_joint_use_target_basis** **(** :ref:`int<class_int>` joint_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_fabrik_joint_use_target_basis** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
 Returns a boolean indicating whether the FABRIK joint uses the target's :ref:`Basis<class_Basis>` for its rotation.
 
 \ **Note:** This option is only available for the final bone in the FABRIK chain, with this setting being ignored for all other bones.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_get_fabrik_joint_use_tip_node:
 
-- :ref:`bool<class_bool>` **get_fabrik_joint_use_tip_node** **(** :ref:`int<class_int>` joint_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_fabrik_joint_use_tip_node** **(** :ref:`int<class_int>` joint_idx **)** |const|
 
 Sets the :ref:`Node3D<class_Node3D>`-based node that will be used as the tip of the FABRIK joint at ``joint_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_set_fabrik_joint_auto_calculate_length:
 
-- void **set_fabrik_joint_auto_calculate_length** **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` auto_calculate_length **)**
+.. rst-class:: classref-method
+
+void **set_fabrik_joint_auto_calculate_length** **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` auto_calculate_length **)**
 
 When ``true``, this modification will attempt to automatically calculate the length of the bone for the FABRIK joint at ``joint_idx``. It does this by either using the tip node assigned, if there is one assigned, or the distance the of the bone's children, if the bone has any. If the bone has no children and no tip node is assigned, then the modification **cannot** autocalculate the joint's length. In this case, the joint length should be entered manually or a tip node assigned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_set_fabrik_joint_bone_index:
 
-- void **set_fabrik_joint_bone_index** **(** :ref:`int<class_int>` joint_idx, :ref:`int<class_int>` bone_index **)**
+.. rst-class:: classref-method
+
+void **set_fabrik_joint_bone_index** **(** :ref:`int<class_int>` joint_idx, :ref:`int<class_int>` bone_index **)**
 
 Sets the bone index, ``bone_index``, of the FABRIK joint at ``joint_idx``. When possible, this will also update the ``bone_name`` of the FABRIK joint based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_set_fabrik_joint_bone_name:
 
-- void **set_fabrik_joint_bone_name** **(** :ref:`int<class_int>` joint_idx, :ref:`String<class_String>` bone_name **)**
+.. rst-class:: classref-method
+
+void **set_fabrik_joint_bone_name** **(** :ref:`int<class_int>` joint_idx, :ref:`String<class_String>` bone_name **)**
 
 Sets the bone name, ``bone_name``, of the FABRIK joint at ``joint_idx``. When possible, this will also update the ``bone_index`` of the FABRIK joint based on data provided by the :ref:`Skeleton3D<class_Skeleton3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_set_fabrik_joint_length:
 
-- void **set_fabrik_joint_length** **(** :ref:`int<class_int>` joint_idx, :ref:`float<class_float>` length **)**
+.. rst-class:: classref-method
+
+void **set_fabrik_joint_length** **(** :ref:`int<class_int>` joint_idx, :ref:`float<class_float>` length **)**
 
 Sets the joint length, ``length``, of the FABRIK joint at ``joint_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_set_fabrik_joint_magnet:
 
-- void **set_fabrik_joint_magnet** **(** :ref:`int<class_int>` joint_idx, :ref:`Vector3<class_Vector3>` magnet_position **)**
+.. rst-class:: classref-method
+
+void **set_fabrik_joint_magnet** **(** :ref:`int<class_int>` joint_idx, :ref:`Vector3<class_Vector3>` magnet_position **)**
 
 Sets the magenet position to ``magnet_position`` for the joint at ``joint_idx``. The magnet position is used to nudge the joint in that direction when solving, which gives some control over how that joint will bend when being solved.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_set_fabrik_joint_tip_node:
 
-- void **set_fabrik_joint_tip_node** **(** :ref:`int<class_int>` joint_idx, :ref:`NodePath<class_NodePath>` tip_node **)**
+.. rst-class:: classref-method
+
+void **set_fabrik_joint_tip_node** **(** :ref:`int<class_int>` joint_idx, :ref:`NodePath<class_NodePath>` tip_node **)**
 
 Sets the nodepath of the FARIK joint at ``joint_idx`` to ``tip_node``. The tip node is used to calculate the length of the FABRIK joint when set to automatically calculate joint length.
 
 \ **Note:** The tip node should generally be a child node of a :ref:`BoneAttachment3D<class_BoneAttachment3D>` node attached to the bone that this FABRIK joint operates on, with the child node being offset so it is at the end of the bone.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_set_fabrik_joint_use_target_basis:
 
-- void **set_fabrik_joint_use_target_basis** **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_target_basis **)**
+.. rst-class:: classref-method
+
+void **set_fabrik_joint_use_target_basis** **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_target_basis **)**
 
 Sets whether the FABRIK joint at ``joint_idx`` uses the target's :ref:`Basis<class_Basis>` for its rotation.
 
 \ **Note:** This option is only available for the final bone in the FABRIK chain, with this setting being ignored for all other bones.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SkeletonModification3DFABRIK_method_set_fabrik_joint_use_tip_node:
 
-- void **set_fabrik_joint_use_tip_node** **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_tip_node **)**
+.. rst-class:: classref-method
+
+void **set_fabrik_joint_use_tip_node** **(** :ref:`int<class_int>` joint_idx, :ref:`bool<class_bool>` use_tip_node **)**
 
 Sets whether the tip node should be used when autocalculating the joint length for the FABRIK joint at ``joint_idx``. This will only work if there is a node assigned to the tip nodepath for this joint.
 

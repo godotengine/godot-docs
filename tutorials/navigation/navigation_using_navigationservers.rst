@@ -52,7 +52,7 @@ The following functions will be executed in the synchronisation phase only:
 - region_set_enter_cost()
 - region_set_travel_cost()
 - region_set_navigation_layers()
-- region_set_navmesh()
+- region_set_navigation_mesh()
 - agent_set_map()
 - agent_set_neighbor_dist()
 - agent_set_max_neighbors()
@@ -133,17 +133,17 @@ Afterwards the function waits for the next physics_frame before continuing with 
         NavigationServer3D.region_set_transform(region, Transform())
         NavigationServer3D.region_set_map(region, map)
         
-        # create a procedual navmesh for the region
-        var navmesh : NavigationMesh = NavigationMesh.new()
+        # create a procedual navigation mesh for the region
+        var new_navigation_mesh : NavigationMesh = NavigationMesh.new()
         var vertices : PackedVector3Array = PoolVector3Array([
             Vector3(0,0,0),
             Vector3(9.0,0,0),
             Vector3(0,0,9.0)
         ])
-        navmesh.set_vertices(vertices)
+        new_navigation_mesh.set_vertices(vertices)
         var polygon : PackedInt32Array = PackedInt32Array([0, 1, 2])
-        navmesh.add_polygon(polygon)
-        NavigationServer3D.region_set_navmesh(region, navmesh)
+        new_navigation_mesh.add_polygon(polygon)
+        NavigationServer3D.region_set_navigation_mesh(region, new_navigation_mesh)
         
         # wait for NavigationServer sync to adapt to made changes
         await get_tree().physics_frame

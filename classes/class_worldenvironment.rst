@@ -14,14 +14,18 @@ WorldEnvironment
 
 Default environment properties for the entire scene (post-processing effects, lighting and background settings).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-The ``WorldEnvironment`` node is used to configure the default :ref:`Environment<class_Environment>` for the scene.
+The **WorldEnvironment** node is used to configure the default :ref:`Environment<class_Environment>` for the scene.
 
-The parameters defined in the ``WorldEnvironment`` can be overridden by an :ref:`Environment<class_Environment>` node set on the current :ref:`Camera3D<class_Camera3D>`. Additionally, only one ``WorldEnvironment`` may be instantiated in a given scene at a time.
+The parameters defined in the **WorldEnvironment** can be overridden by an :ref:`Environment<class_Environment>` node set on the current :ref:`Camera3D<class_Camera3D>`. Additionally, only one **WorldEnvironment** may be instantiated in a given scene at a time.
 
-The ``WorldEnvironment`` allows the user to specify default lighting parameters (e.g. ambient lighting), various post-processing effects (e.g. SSAO, DOF, Tonemapping), and how to draw the background (e.g. solid color, skybox). Usually, these are added in order to improve the realism/color balance of the scene.
+The **WorldEnvironment** allows the user to specify default lighting parameters (e.g. ambient lighting), various post-processing effects (e.g. SSAO, DOF, Tonemapping), and how to draw the background (e.g. solid color, skybox). Usually, these are added in order to improve the realism/color balance of the scene.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -34,43 +38,58 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`CameraAttributes<class_CameraAttributes>` | :ref:`camera_attributes<class_WorldEnvironment_property_camera_attributes>` |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`Environment<class_Environment>`           | :ref:`environment<class_WorldEnvironment_property_environment>`             |
-+-------------------------------------------------+-----------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+-----------------------------------------------------------------------------+
+   | :ref:`CameraAttributes<class_CameraAttributes>` | :ref:`camera_attributes<class_WorldEnvironment_property_camera_attributes>` |
+   +-------------------------------------------------+-----------------------------------------------------------------------------+
+   | :ref:`Environment<class_Environment>`           | :ref:`environment<class_WorldEnvironment_property_environment>`             |
+   +-------------------------------------------------+-----------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_WorldEnvironment_property_camera_attributes:
 
-- :ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
+.. rst-class:: classref-property
 
-+----------+------------------------------+
-| *Setter* | set_camera_attributes(value) |
-+----------+------------------------------+
-| *Getter* | get_camera_attributes()      |
-+----------+------------------------------+
+:ref:`CameraAttributes<class_CameraAttributes>` **camera_attributes**
+
+.. rst-class:: classref-property-setget
+
+- void **set_camera_attributes** **(** :ref:`CameraAttributes<class_CameraAttributes>` value **)**
+- :ref:`CameraAttributes<class_CameraAttributes>` **get_camera_attributes** **(** **)**
 
 The default :ref:`CameraAttributes<class_CameraAttributes>` resource to use if none set on the :ref:`Camera3D<class_Camera3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WorldEnvironment_property_environment:
 
-- :ref:`Environment<class_Environment>` **environment**
+.. rst-class:: classref-property
 
-+----------+------------------------+
-| *Setter* | set_environment(value) |
-+----------+------------------------+
-| *Getter* | get_environment()      |
-+----------+------------------------+
+:ref:`Environment<class_Environment>` **environment**
 
-The :ref:`Environment<class_Environment>` resource used by this ``WorldEnvironment``, defining the default properties.
+.. rst-class:: classref-property-setget
+
+- void **set_environment** **(** :ref:`Environment<class_Environment>` value **)**
+- :ref:`Environment<class_Environment>` **get_environment** **(** **)**
+
+The :ref:`Environment<class_Environment>` resource used by this **WorldEnvironment**, defining the default properties.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -14,78 +14,108 @@ MeshInstance2D
 
 Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D. A ``MeshInstance2D`` can be automatically created from an existing :ref:`Sprite2D<class_Sprite2D>` via a tool in the editor toolbar. Select the :ref:`Sprite2D<class_Sprite2D>` node, then choose **Sprite2D > Convert to MeshInstance2D** at the top of the 2D editor viewport.
+Node used for displaying a :ref:`Mesh<class_Mesh>` in 2D. A **MeshInstance2D** can be automatically created from an existing :ref:`Sprite2D<class_Sprite2D>` via a tool in the editor toolbar. Select the :ref:`Sprite2D<class_Sprite2D>` node, then choose **Sprite2D > Convert to MeshInstance2D** at the top of the 2D editor viewport.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`2D meshes <../tutorials/2d/2d_meshes>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------+-------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`           | :ref:`mesh<class_MeshInstance2D_property_mesh>`             |
-+-----------------------------------+-------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`normal_map<class_MeshInstance2D_property_normal_map>` |
-+-----------------------------------+-------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`texture<class_MeshInstance2D_property_texture>`       |
-+-----------------------------------+-------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+-------------------------------------------------------------+
+   | :ref:`Mesh<class_Mesh>`           | :ref:`mesh<class_MeshInstance2D_property_mesh>`             |
+   +-----------------------------------+-------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`normal_map<class_MeshInstance2D_property_normal_map>` |
+   +-----------------------------------+-------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`texture<class_MeshInstance2D_property_texture>`       |
+   +-----------------------------------+-------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_MeshInstance2D_signal_texture_changed:
 
-- **texture_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**texture_changed** **(** **)**
 
 Emitted when the :ref:`texture<class_MeshInstance2D_property_texture>` is changed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_MeshInstance2D_property_mesh:
 
-- :ref:`Mesh<class_Mesh>` **mesh**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
+:ref:`Mesh<class_Mesh>` **mesh**
 
-The :ref:`Mesh<class_Mesh>` that will be drawn by the ``MeshInstance2D``.
+.. rst-class:: classref-property-setget
+
+- void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
+
+The :ref:`Mesh<class_Mesh>` that will be drawn by the **MeshInstance2D**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MeshInstance2D_property_normal_map:
 
-- :ref:`Texture2D<class_Texture2D>` **normal_map**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_normal_map(value) |
-+----------+-----------------------+
-| *Getter* | get_normal_map()      |
-+----------+-----------------------+
+:ref:`Texture2D<class_Texture2D>` **normal_map**
+
+.. rst-class:: classref-property-setget
+
+- void **set_normal_map** **(** :ref:`Texture2D<class_Texture2D>` value **)**
+- :ref:`Texture2D<class_Texture2D>` **get_normal_map** **(** **)**
 
 The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
 
 \ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MeshInstance2D_property_texture:
 
-- :ref:`Texture2D<class_Texture2D>` **texture**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture2D<class_Texture2D>` **texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`Texture2D<class_Texture2D>` value **)**
+- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** **)**
 
 The :ref:`Texture2D<class_Texture2D>` that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`. Can be accessed as ``TEXTURE`` in CanvasItem shader.
 

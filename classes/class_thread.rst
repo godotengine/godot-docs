@@ -14,12 +14,16 @@ Thread
 
 A unit of execution in a process.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`\ s simultaneously. The use of synchronization via :ref:`Mutex<class_Mutex>` or :ref:`Semaphore<class_Semaphore>` is advised if working with shared objects.
 
 \ **Note:** Breakpoints won't break on code if it's running in a thread. This is a current limitation of the GDScript debugger.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -30,94 +34,143 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** |const|                                                                                  |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_alive<class_Thread_method_is_alive>` **(** **)** |const|                                                                              |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_started<class_Thread_method_is_started>` **(** **)** |const|                                                                          |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Callable<class_Callable>` callable, :ref:`Priority<enum_Thread_Priority>` priority=1 **)** |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` **(** **)**                                                                          |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** |const|                                                                                  |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_alive<class_Thread_method_is_alive>` **(** **)** |const|                                                                              |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_started<class_Thread_method_is_started>` **(** **)** |const|                                                                          |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Callable<class_Callable>` callable, :ref:`Priority<enum_Thread_Priority>` priority=1 **)** |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`         | :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` **(** **)**                                                                          |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Thread_Priority:
 
-.. _class_Thread_constant_PRIORITY_LOW:
-
-.. _class_Thread_constant_PRIORITY_NORMAL:
-
-.. _class_Thread_constant_PRIORITY_HIGH:
+.. rst-class:: classref-enumeration
 
 enum **Priority**:
 
-- **PRIORITY_LOW** = **0** --- A thread running with lower priority than normally.
+.. _class_Thread_constant_PRIORITY_LOW:
 
-- **PRIORITY_NORMAL** = **1** --- A thread with a standard priority.
+.. rst-class:: classref-enumeration-constant
 
-- **PRIORITY_HIGH** = **2** --- A thread running with higher priority than normally.
+:ref:`Priority<enum_Thread_Priority>` **PRIORITY_LOW** = ``0``
+
+A thread running with lower priority than normally.
+
+.. _class_Thread_constant_PRIORITY_NORMAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Priority<enum_Thread_Priority>` **PRIORITY_NORMAL** = ``1``
+
+A thread with a standard priority.
+
+.. _class_Thread_constant_PRIORITY_HIGH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Priority<enum_Thread_Priority>` **PRIORITY_HIGH** = ``2``
+
+A thread running with higher priority than normally.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Thread_method_get_id:
 
-- :ref:`String<class_String>` **get_id** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the current ``Thread``'s ID, uniquely identifying it among all threads. If the ``Thread`` is not running this returns an empty string.
+:ref:`String<class_String>` **get_id** **(** **)** |const|
+
+Returns the current **Thread**'s ID, uniquely identifying it among all threads. If the **Thread** is not running this returns an empty string.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Thread_method_is_alive:
 
-- :ref:`bool<class_bool>` **is_alive** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if this ``Thread`` is currently running. This is useful for determining if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` can be called without blocking the calling thread.
+:ref:`bool<class_bool>` **is_alive** **(** **)** |const|
 
-To check if a ``Thread`` is joinable, use :ref:`is_started<class_Thread_method_is_started>`.
+Returns ``true`` if this **Thread** is currently running. This is useful for determining if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` can be called without blocking the calling thread.
+
+To check if a **Thread** is joinable, use :ref:`is_started<class_Thread_method_is_started>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Thread_method_is_started:
 
-- :ref:`bool<class_bool>` **is_started** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if this ``Thread`` has been started. Once started, this will return ``true`` until it is joined using :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`. For checking if a ``Thread`` is still executing its task, use :ref:`is_alive<class_Thread_method_is_alive>`.
+:ref:`bool<class_bool>` **is_started** **(** **)** |const|
+
+Returns ``true`` if this **Thread** has been started. Once started, this will return ``true`` until it is joined using :ref:`wait_to_finish<class_Thread_method_wait_to_finish>`. For checking if a **Thread** is still executing its task, use :ref:`is_alive<class_Thread_method_is_alive>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Thread_method_start:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Callable<class_Callable>` callable, :ref:`Priority<enum_Thread_Priority>` priority=1 **)**
+.. rst-class:: classref-method
 
-Starts a new ``Thread`` that calls ``callable``.
+:ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Callable<class_Callable>` callable, :ref:`Priority<enum_Thread_Priority>` priority=1 **)**
+
+Starts a new **Thread** that calls ``callable``.
 
 If the method takes some arguments, you can pass them using :ref:`Callable.bind<class_Callable_method_bind>`.
 
-The ``priority`` of the ``Thread`` can be changed by passing a value from the :ref:`Priority<enum_Thread_Priority>` enum.
+The ``priority`` of the **Thread** can be changed by passing a value from the :ref:`Priority<enum_Thread_Priority>` enum.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` on failure.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Thread_method_wait_to_finish:
 
-- :ref:`Variant<class_Variant>` **wait_to_finish** **(** **)**
+.. rst-class:: classref-method
 
-Joins the ``Thread`` and waits for it to finish. Returns the output of the :ref:`Callable<class_Callable>` passed to :ref:`start<class_Thread_method_start>`.
+:ref:`Variant<class_Variant>` **wait_to_finish** **(** **)**
 
-Should either be used when you want to retrieve the value returned from the method called by the ``Thread`` or before freeing the instance that contains the ``Thread``.
+Joins the **Thread** and waits for it to finish. Returns the output of the :ref:`Callable<class_Callable>` passed to :ref:`start<class_Thread_method_start>`.
+
+Should either be used when you want to retrieve the value returned from the method called by the **Thread** or before freeing the instance that contains the **Thread**.
 
 To determine if this can be called without blocking the calling thread, check if :ref:`is_alive<class_Thread_method_is_alive>` is ``false``.
 
-\ **Note:** After the ``Thread`` finishes joining it will be disposed. If you want to use it again you will have to create a new instance of it.
+\ **Note:** After the **Thread** finishes joining it will be disposed. If you want to use it again you will have to create a new instance of it.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

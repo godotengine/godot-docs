@@ -14,6 +14,8 @@ JavaScriptObject
 
 A wrapper class for web native JavaScript objects.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

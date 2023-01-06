@@ -14,6 +14,8 @@ Label
 
 Displays plain text in a line or wrapped inside a rectangle. For formatted text, use :ref:`RichTextLabel<class_RichTextLabel>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,381 +23,435 @@ Label displays plain text on the screen. It gives you control over the horizonta
 
 \ **Note:** Contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_property_mouse_filter>` defaults to :ref:`Control.MOUSE_FILTER_IGNORE<class_Control_constant_MOUSE_FILTER_IGNORE>` (i.e. it doesn't react to mouse input events). This implies that a label won't display any configured :ref:`Control.tooltip_text<class_Control_property_tooltip_text>`, unless you change its mouse filter.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`                           | :ref:`autowrap_mode<class_Label_property_autowrap_mode>`                                                 | ``0``                                                                        |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                     | :ref:`clip_text<class_Label_property_clip_text>`                                                         | ``false``                                                                    |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`           | :ref:`horizontal_alignment<class_Label_property_horizontal_alignment>`                                   | ``0``                                                                        |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`LabelSettings<class_LabelSettings>`                                   | :ref:`label_settings<class_Label_property_label_settings>`                                               |                                                                              |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                 | :ref:`language<class_Label_property_language>`                                                           | ``""``                                                                       |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                       | :ref:`lines_skipped<class_Label_property_lines_skipped>`                                                 | ``0``                                                                        |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                       | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`                                         | ``-1``                                                                       |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>`                                | mouse_filter                                                                                             | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                       | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`           | :ref:`structured_text_bidi_override<class_Label_property_structured_text_bidi_override>`                 | ``0``                                                                        |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                                                   | :ref:`structured_text_bidi_override_options<class_Label_property_structured_text_bidi_override_options>` | ``[]``                                                                       |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                 | :ref:`text<class_Label_property_text>`                                                                   | ``""``                                                                       |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`TextDirection<enum_Control_TextDirection>`                            | :ref:`text_direction<class_Label_property_text_direction>`                                               | ``0``                                                                        |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`                     | :ref:`text_overrun_behavior<class_Label_property_text_overrun_behavior>`                                 | ``0``                                                                        |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                     | :ref:`uppercase<class_Label_property_uppercase>`                                                         | ``false``                                                                    |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>`               | :ref:`vertical_alignment<class_Label_property_vertical_alignment>`                                       | ``0``                                                                        |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                       | :ref:`visible_characters<class_Label_property_visible_characters>`                                       | ``-1``                                                                       |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` | :ref:`visible_characters_behavior<class_Label_property_visible_characters_behavior>`                     | ``0``                                                                        |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                   | :ref:`visible_ratio<class_Label_property_visible_ratio>`                                                 | ``1.0``                                                                      |
-+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`                           | :ref:`autowrap_mode<class_Label_property_autowrap_mode>`                                                 | ``0``                                                                        |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                     | :ref:`clip_text<class_Label_property_clip_text>`                                                         | ``false``                                                                    |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`           | :ref:`horizontal_alignment<class_Label_property_horizontal_alignment>`                                   | ``0``                                                                        |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`LabelSettings<class_LabelSettings>`                                   | :ref:`label_settings<class_Label_property_label_settings>`                                               |                                                                              |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                 | :ref:`language<class_Label_property_language>`                                                           | ``""``                                                                       |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                       | :ref:`lines_skipped<class_Label_property_lines_skipped>`                                                 | ``0``                                                                        |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                       | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`                                         | ``-1``                                                                       |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>`                                | mouse_filter                                                                                             | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                       | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`           | :ref:`structured_text_bidi_override<class_Label_property_structured_text_bidi_override>`                 | ``0``                                                                        |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                                                   | :ref:`structured_text_bidi_override_options<class_Label_property_structured_text_bidi_override_options>` | ``[]``                                                                       |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                 | :ref:`text<class_Label_property_text>`                                                                   | ``""``                                                                       |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`TextDirection<enum_Control_TextDirection>`                            | :ref:`text_direction<class_Label_property_text_direction>`                                               | ``0``                                                                        |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`                     | :ref:`text_overrun_behavior<class_Label_property_text_overrun_behavior>`                                 | ``0``                                                                        |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                     | :ref:`uppercase<class_Label_property_uppercase>`                                                         | ``false``                                                                    |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>`               | :ref:`vertical_alignment<class_Label_property_vertical_alignment>`                                       | ``0``                                                                        |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                       | :ref:`visible_characters<class_Label_property_visible_characters>`                                       | ``-1``                                                                       |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` | :ref:`visible_characters_behavior<class_Label_property_visible_characters_behavior>`                     | ``0``                                                                        |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                   | :ref:`visible_ratio<class_Label_property_visible_ratio>`                                                 | ``1.0``                                                                      |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** |const|                                 |
-+-----------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** :ref:`int<class_int>` line=-1 **)** |const| |
-+-----------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** |const|           |
-+-----------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** |const|                 |
-+-----------------------+--------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** |const|                                 |
+   +-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** :ref:`int<class_int>` line=-1 **)** |const| |
+   +-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** |const|           |
+   +-----------------------+--------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** |const|                 |
+   +-----------------------+--------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_Label_theme_color_font_color>`                      | ``Color(1, 1, 1, 1)`` |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_Label_theme_color_font_outline_color>`      | ``Color(1, 1, 1, 1)`` |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_Label_theme_color_font_shadow_color>`        | ``Color(0, 0, 0, 0)`` |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`line_spacing<class_Label_theme_constant_line_spacing>`               | ``3``                 |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`outline_size<class_Label_theme_constant_outline_size>`               | ``0``                 |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`shadow_offset_x<class_Label_theme_constant_shadow_offset_x>`         | ``1``                 |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`shadow_offset_y<class_Label_theme_constant_shadow_offset_y>`         | ``1``                 |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`shadow_outline_size<class_Label_theme_constant_shadow_outline_size>` | ``1``                 |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_Label_theme_font_font>`                                   |                       |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`font_size<class_Label_theme_font_size_font_size>`                    |                       |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Label_theme_style_normal>`                              |                       |
-+---------------------------------+----------------------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color<class_Label_theme_color_font_color>`                      | ``Color(1, 1, 1, 1)`` |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_Label_theme_color_font_outline_color>`      | ``Color(1, 1, 1, 1)`` |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_shadow_color<class_Label_theme_color_font_shadow_color>`        | ``Color(0, 0, 0, 0)`` |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`line_spacing<class_Label_theme_constant_line_spacing>`               | ``3``                 |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`outline_size<class_Label_theme_constant_outline_size>`               | ``0``                 |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`shadow_offset_x<class_Label_theme_constant_shadow_offset_x>`         | ``1``                 |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`shadow_offset_y<class_Label_theme_constant_shadow_offset_y>`         | ``1``                 |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`shadow_outline_size<class_Label_theme_constant_shadow_outline_size>` | ``1``                 |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`Font<class_Font>`         | :ref:`font<class_Label_theme_font_font>`                                   |                       |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`font_size<class_Label_theme_font_size_font_size>`                    |                       |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Label_theme_style_normal>`                              |                       |
+   +---------------------------------+----------------------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Label_property_autowrap_mode:
 
-- :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_autowrap_mode(value) |
-+-----------+--------------------------+
-| *Getter*  | get_autowrap_mode()      |
-+-----------+--------------------------+
+:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_autowrap_mode** **(** :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` value **)**
+- :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **get_autowrap_mode** **(** **)**
 
 If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_clip_text:
 
-- :ref:`bool<class_bool>` **clip_text**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_clip_text(value) |
-+-----------+----------------------+
-| *Getter*  | is_clipping_text()   |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **clip_text** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_clip_text** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_clipping_text** **(** **)**
 
 If ``true``, the Label only shows the text that fits inside its bounding rectangle and will clip text horizontally.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_horizontal_alignment:
 
-- :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **horizontal_alignment**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``0``                           |
-+-----------+---------------------------------+
-| *Setter*  | set_horizontal_alignment(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_horizontal_alignment()      |
-+-----------+---------------------------------+
+:ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **horizontal_alignment** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_horizontal_alignment** **(** :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` value **)**
+- :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_horizontal_alignment** **(** **)**
 
 Controls the text's horizontal alignment. Supports left, center, right, and fill, or justify. Set it to one of the :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_label_settings:
 
-- :ref:`LabelSettings<class_LabelSettings>` **label_settings**
+.. rst-class:: classref-property
 
-+----------+---------------------------+
-| *Setter* | set_label_settings(value) |
-+----------+---------------------------+
-| *Getter* | get_label_settings()      |
-+----------+---------------------------+
+:ref:`LabelSettings<class_LabelSettings>` **label_settings**
+
+.. rst-class:: classref-property-setget
+
+- void **set_label_settings** **(** :ref:`LabelSettings<class_LabelSettings>` value **)**
+- :ref:`LabelSettings<class_LabelSettings>` **get_label_settings** **(** **)**
+
+A :ref:`LabelSettings<class_LabelSettings>` resource that can be shared between multiple **Label** nodes. Takes priority over theme properties.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_language:
 
-- :ref:`String<class_String>` **language**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``""``              |
-+-----------+---------------------+
-| *Setter*  | set_language(value) |
-+-----------+---------------------+
-| *Getter*  | get_language()      |
-+-----------+---------------------+
+:ref:`String<class_String>` **language** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_language** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_language** **(** **)**
 
 Language code used for line-breaking and text shaping algorithms, if left empty current locale is used instead.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_lines_skipped:
 
-- :ref:`int<class_int>` **lines_skipped**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_lines_skipped(value) |
-+-----------+--------------------------+
-| *Getter*  | get_lines_skipped()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **lines_skipped** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lines_skipped** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_lines_skipped** **(** **)**
 
 The node ignores the first ``lines_skipped`` lines before it starts to display text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_max_lines_visible:
 
-- :ref:`int<class_int>` **max_lines_visible**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``-1``                       |
-+-----------+------------------------------+
-| *Setter*  | set_max_lines_visible(value) |
-+-----------+------------------------------+
-| *Getter*  | get_max_lines_visible()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **max_lines_visible** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_lines_visible** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max_lines_visible** **(** **)**
 
 Limits the lines of text the node shows on screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_structured_text_bidi_override:
 
-- :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------------+
-| *Default* | ``0``                                    |
-+-----------+------------------------------------------+
-| *Setter*  | set_structured_text_bidi_override(value) |
-+-----------+------------------------------------------+
-| *Getter*  | get_structured_text_bidi_override()      |
-+-----------+------------------------------------------+
+:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **structured_text_bidi_override** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_structured_text_bidi_override** **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` value **)**
+- :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **get_structured_text_bidi_override** **(** **)**
 
 Set BiDi algorithm override for the structured text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_structured_text_bidi_override_options:
 
-- :ref:`Array<class_Array>` **structured_text_bidi_override_options**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------------------+
-| *Default* | ``[]``                                           |
-+-----------+--------------------------------------------------+
-| *Setter*  | set_structured_text_bidi_override_options(value) |
-+-----------+--------------------------------------------------+
-| *Getter*  | get_structured_text_bidi_override_options()      |
-+-----------+--------------------------------------------------+
+:ref:`Array<class_Array>` **structured_text_bidi_override_options** = ``[]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_structured_text_bidi_override_options** **(** :ref:`Array<class_Array>` value **)**
+- :ref:`Array<class_Array>` **get_structured_text_bidi_override_options** **(** **)**
 
 Set additional options for BiDi override.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_text:
 
-- :ref:`String<class_String>` **text**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_text(value) |
-+-----------+-----------------+
-| *Getter*  | get_text()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **text** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_text** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_text** **(** **)**
 
 The text to display on screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_text_direction:
 
-- :ref:`TextDirection<enum_Control_TextDirection>` **text_direction**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_text_direction(value) |
-+-----------+---------------------------+
-| *Getter*  | get_text_direction()      |
-+-----------+---------------------------+
+:ref:`TextDirection<enum_Control_TextDirection>` **text_direction** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_text_direction** **(** :ref:`TextDirection<enum_Control_TextDirection>` value **)**
+- :ref:`TextDirection<enum_Control_TextDirection>` **get_text_direction** **(** **)**
 
 Base text writing direction.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_text_overrun_behavior:
 
-- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``0``                            |
-+-----------+----------------------------------+
-| *Setter*  | set_text_overrun_behavior(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_text_overrun_behavior()      |
-+-----------+----------------------------------+
+:ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **text_overrun_behavior** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_text_overrun_behavior** **(** :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` value **)**
+- :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior** **(** **)**
 
 Sets the clipping behavior when the text exceeds the node's bounding rectangle. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_uppercase:
 
-- :ref:`bool<class_bool>` **uppercase**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_uppercase(value) |
-+-----------+----------------------+
-| *Getter*  | is_uppercase()       |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **uppercase** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_uppercase** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_uppercase** **(** **)**
 
 If ``true``, all the text displays as UPPERCASE.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_vertical_alignment:
 
-- :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **vertical_alignment**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``0``                         |
-+-----------+-------------------------------+
-| *Setter*  | set_vertical_alignment(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_vertical_alignment()      |
-+-----------+-------------------------------+
+:ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **vertical_alignment** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_vertical_alignment** **(** :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` value **)**
+- :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **get_vertical_alignment** **(** **)**
 
 Controls the text's vertical alignment. Supports top, center, bottom, and fill. Set it to one of the :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_visible_characters:
 
-- :ref:`int<class_int>` **visible_characters**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``-1``                        |
-+-----------+-------------------------------+
-| *Setter*  | set_visible_characters(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_visible_characters()      |
-+-----------+-------------------------------+
+:ref:`int<class_int>` **visible_characters** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visible_characters** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_visible_characters** **(** **)**
 
 The number of characters to display. If set to ``-1``, all characters are displayed. This can be useful when animating the text appearing in a dialog box.
 
 \ **Note:** Setting this property updates :ref:`visible_ratio<class_Label_property_visible_ratio>` accordingly.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Label_property_visible_characters_behavior:
 
-- :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` **visible_characters_behavior**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------------+
-| *Default* | ``0``                                  |
-+-----------+----------------------------------------+
-| *Setter*  | set_visible_characters_behavior(value) |
-+-----------+----------------------------------------+
-| *Getter*  | get_visible_characters_behavior()      |
-+-----------+----------------------------------------+
+:ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` **visible_characters_behavior** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visible_characters_behavior** **(** :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` value **)**
+- :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` **get_visible_characters_behavior** **(** **)**
 
 Sets the clipping behavior when :ref:`visible_characters<class_Label_property_visible_characters>` or :ref:`visible_ratio<class_Label_property_visible_ratio>` is set. See :ref:`VisibleCharactersBehavior<enum_TextServer_VisibleCharactersBehavior>` for more info.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_visible_ratio:
 
-- :ref:`float<class_float>` **visible_ratio**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``1.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_visible_ratio(value) |
-+-----------+--------------------------+
-| *Getter*  | get_visible_ratio()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **visible_ratio** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visible_ratio** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_visible_ratio** **(** **)**
 
 The fraction of characters to display, relative to the total number of characters (see :ref:`get_total_character_count<class_Label_method_get_total_character_count>`). If set to ``1.0``, all characters are displayed. If set to ``0.5``, only half of the characters will be displayed. This can be useful when animating the text appearing in a dialog box.
 
 \ **Note:** Setting this property updates :ref:`visible_characters<class_Label_property_visible_characters>` accordingly.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Label_method_get_line_count:
 
-- :ref:`int<class_int>` **get_line_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
 Returns the number of lines of text the Label has.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_method_get_line_height:
 
-- :ref:`int<class_int>` **get_line_height** **(** :ref:`int<class_int>` line=-1 **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_line_height** **(** :ref:`int<class_int>` line=-1 **)** |const|
 
 Returns the height of the line ``line``.
 
@@ -403,142 +459,168 @@ If ``line`` is set to ``-1``, returns the biggest line height.
 
 If there are no lines, returns font size in pixels.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Label_method_get_total_character_count:
 
-- :ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
 
 Returns the total number of printable characters in the text (excluding spaces and newlines).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_method_get_visible_line_count:
 
-- :ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the number of lines shown. Useful if the ``Label``'s height cannot currently display all lines.
+:ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
+
+Returns the number of lines shown. Useful if the **Label**'s height cannot currently display all lines.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_Label_theme_color_font_color:
 
-- :ref:`Color<class_Color>` **font_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **font_color** = ``Color(1, 1, 1, 1)``
 
-Default text :ref:`Color<class_Color>` of the ``Label``.
+Default text :ref:`Color<class_Color>` of the **Label**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_color_font_outline_color:
 
-- :ref:`Color<class_Color>` **font_outline_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **font_outline_color** = ``Color(1, 1, 1, 1)``
 
-The tint of text outline.
+The color of text outline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_color_font_shadow_color:
 
-- :ref:`Color<class_Color>` **font_shadow_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-----------------------+
-| *Default* | ``Color(0, 0, 0, 0)`` |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **font_shadow_color** = ``Color(0, 0, 0, 0)``
 
 :ref:`Color<class_Color>` of the text's shadow effect.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_constant_line_spacing:
 
-- :ref:`int<class_int>` **line_spacing**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``3`` |
-+-----------+-------+
+:ref:`int<class_int>` **line_spacing** = ``3``
 
-Vertical space between lines in multiline ``Label``.
+Vertical space between lines in multiline **Label**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_constant_outline_size:
 
-- :ref:`int<class_int>` **outline_size**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **outline_size** = ``0``
 
 Text outline size.
+
+\ **Note:** If using a font with :ref:`FontFile.multichannel_signed_distance_field<class_FontFile_property_multichannel_signed_distance_field>` enabled, its :ref:`FontFile.msdf_pixel_range<class_FontFile_property_msdf_pixel_range>` must be set to at least *twice* the value of :ref:`outline_size<class_Label_theme_constant_outline_size>` for outline rendering to look correct. Otherwise, the outline may appear to be cut off earlier than intended.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_constant_shadow_offset_x:
 
-- :ref:`int<class_int>` **shadow_offset_x**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
+:ref:`int<class_int>` **shadow_offset_x** = ``1``
 
 The horizontal offset of the text's shadow.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_constant_shadow_offset_y:
 
-- :ref:`int<class_int>` **shadow_offset_y**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
+:ref:`int<class_int>` **shadow_offset_y** = ``1``
 
 The vertical offset of the text's shadow.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_constant_shadow_outline_size:
 
-- :ref:`int<class_int>` **shadow_outline_size**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
+:ref:`int<class_int>` **shadow_outline_size** = ``1``
 
 The size of the shadow outline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_font_font:
 
-- :ref:`Font<class_Font>` **font**
+.. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` used for the ``Label``'s text.
+:ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` used for the **Label**'s text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_font_size_font_size:
 
-- :ref:`int<class_int>` **font_size**
+.. rst-class:: classref-themeproperty
 
-Font size of the ``Label``'s text.
+:ref:`int<class_int>` **font_size**
+
+Font size of the **Label**'s text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_style_normal:
 
-- :ref:`StyleBox<class_StyleBox>` **normal**
+.. rst-class:: classref-themeproperty
 
-Background :ref:`StyleBox<class_StyleBox>` for the ``Label``.
+:ref:`StyleBox<class_StyleBox>` **normal**
+
+Background :ref:`StyleBox<class_StyleBox>` for the **Label**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

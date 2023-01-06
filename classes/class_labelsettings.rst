@@ -12,155 +12,200 @@ LabelSettings
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Collection of common settings to customize label text.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**LabelSettings** is a resource that can be assigned to a :ref:`Label<class_Label>` node to customize it. It will take priority over the properties defined in theme. The resource can be shared between multiple labels and swapped on the fly, so it's convenient and flexible way to setup text style.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------+-----------------------+
-| :ref:`Font<class_Font>`       | :ref:`font<class_LabelSettings_property_font>`                   |                       |
-+-------------------------------+------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`     | :ref:`font_color<class_LabelSettings_property_font_color>`       | ``Color(1, 1, 1, 1)`` |
-+-------------------------------+------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`         | :ref:`font_size<class_LabelSettings_property_font_size>`         | ``16``                |
-+-------------------------------+------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`     | :ref:`line_spacing<class_LabelSettings_property_line_spacing>`   | ``3.0``               |
-+-------------------------------+------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`     | :ref:`outline_color<class_LabelSettings_property_outline_color>` | ``Color(1, 1, 1, 1)`` |
-+-------------------------------+------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`         | :ref:`outline_size<class_LabelSettings_property_outline_size>`   | ``0``                 |
-+-------------------------------+------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`     | :ref:`shadow_color<class_LabelSettings_property_shadow_color>`   | ``Color(0, 0, 0, 0)`` |
-+-------------------------------+------------------------------------------------------------------+-----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_LabelSettings_property_shadow_offset>` | ``Vector2(1, 1)``     |
-+-------------------------------+------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`         | :ref:`shadow_size<class_LabelSettings_property_shadow_size>`     | ``1``                 |
-+-------------------------------+------------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   | :ref:`Font<class_Font>`       | :ref:`font<class_LabelSettings_property_font>`                   |                       |
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`font_color<class_LabelSettings_property_font_color>`       | ``Color(1, 1, 1, 1)`` |
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`font_size<class_LabelSettings_property_font_size>`         | ``16``                |
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`     | :ref:`line_spacing<class_LabelSettings_property_line_spacing>`   | ``3.0``               |
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`outline_color<class_LabelSettings_property_outline_color>` | ``Color(1, 1, 1, 1)`` |
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`outline_size<class_LabelSettings_property_outline_size>`   | ``0``                 |
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`shadow_color<class_LabelSettings_property_shadow_color>`   | ``Color(0, 0, 0, 0)`` |
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_LabelSettings_property_shadow_offset>` | ``Vector2(1, 1)``     |
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`         | :ref:`shadow_size<class_LabelSettings_property_shadow_size>`     | ``1``                 |
+   +-------------------------------+------------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_LabelSettings_property_font:
 
-- :ref:`Font<class_Font>` **font**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_font(value) |
-+----------+-----------------+
-| *Getter* | get_font()      |
-+----------+-----------------+
+:ref:`Font<class_Font>` **font**
+
+.. rst-class:: classref-property-setget
+
+- void **set_font** **(** :ref:`Font<class_Font>` value **)**
+- :ref:`Font<class_Font>` **get_font** **(** **)**
+
+:ref:`Font<class_Font>` used for the text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LabelSettings_property_font_color:
 
-- :ref:`Color<class_Color>` **font_color**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
-| *Setter*  | set_font_color(value) |
-+-----------+-----------------------+
-| *Getter*  | get_font_color()      |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **font_color** = ``Color(1, 1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_font_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_font_color** **(** **)**
+
+Color of the text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LabelSettings_property_font_size:
 
-- :ref:`int<class_int>` **font_size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``16``               |
-+-----------+----------------------+
-| *Setter*  | set_font_size(value) |
-+-----------+----------------------+
-| *Getter*  | get_font_size()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **font_size** = ``16``
+
+.. rst-class:: classref-property-setget
+
+- void **set_font_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_font_size** **(** **)**
+
+Size of the text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LabelSettings_property_line_spacing:
 
-- :ref:`float<class_float>` **line_spacing**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``3.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_line_spacing(value) |
-+-----------+-------------------------+
-| *Getter*  | get_line_spacing()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **line_spacing** = ``3.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_line_spacing** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_line_spacing** **(** **)**
+
+Vertical space between lines when the text is multiline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LabelSettings_property_outline_color:
 
-- :ref:`Color<class_Color>` **outline_color**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``Color(1, 1, 1, 1)``    |
-+-----------+--------------------------+
-| *Setter*  | set_outline_color(value) |
-+-----------+--------------------------+
-| *Getter*  | get_outline_color()      |
-+-----------+--------------------------+
+:ref:`Color<class_Color>` **outline_color** = ``Color(1, 1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_outline_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_outline_color** **(** **)**
+
+The color of the outline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LabelSettings_property_outline_size:
 
-- :ref:`int<class_int>` **outline_size**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_outline_size(value) |
-+-----------+-------------------------+
-| *Getter*  | get_outline_size()      |
-+-----------+-------------------------+
+:ref:`int<class_int>` **outline_size** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_outline_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_outline_size** **(** **)**
+
+Text outline size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LabelSettings_property_shadow_color:
 
-- :ref:`Color<class_Color>` **shadow_color**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color(0, 0, 0, 0)``   |
-+-----------+-------------------------+
-| *Setter*  | set_shadow_color(value) |
-+-----------+-------------------------+
-| *Getter*  | get_shadow_color()      |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_shadow_color** **(** **)**
+
+Color of the shadow effect. If alpha is ``0``, no shadow will be drawn.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LabelSettings_property_shadow_offset:
 
-- :ref:`Vector2<class_Vector2>` **shadow_offset**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``Vector2(1, 1)``        |
-+-----------+--------------------------+
-| *Setter*  | set_shadow_offset(value) |
-+-----------+--------------------------+
-| *Getter*  | get_shadow_offset()      |
-+-----------+--------------------------+
+:ref:`Vector2<class_Vector2>` **shadow_offset** = ``Vector2(1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_shadow_offset** **(** **)**
+
+Offset of the shadow effect, in pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_LabelSettings_property_shadow_size:
 
-- :ref:`int<class_int>` **shadow_size**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1``                  |
-+-----------+------------------------+
-| *Setter*  | set_shadow_size(value) |
-+-----------+------------------------+
-| *Getter*  | get_shadow_size()      |
-+-----------+------------------------+
+:ref:`int<class_int>` **shadow_size** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_shadow_size** **(** **)**
+
+Size of the shadow effect.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

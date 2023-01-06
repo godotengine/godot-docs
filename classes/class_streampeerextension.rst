@@ -12,53 +12,104 @@ StreamPeerExtension
 
 **Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`_get_available_bytes<class_StreamPeerExtension_method__get_available_bytes>` **(** **)** |virtual| |const|                                                         |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_data<class_StreamPeerExtension_method__get_data>` **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual|                 |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_partial_data<class_StreamPeerExtension_method__get_partial_data>` **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual| |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_data<class_StreamPeerExtension_method__put_data>` **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual|                 |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_partial_data<class_StreamPeerExtension_method__put_partial_data>` **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual| |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`_get_available_bytes<class_StreamPeerExtension_method__get_available_bytes>` **(** **)** |virtual| |const|                                                         |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_data<class_StreamPeerExtension_method__get_data>` **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual|                 |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_get_partial_data<class_StreamPeerExtension_method__get_partial_data>` **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual| |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_data<class_StreamPeerExtension_method__put_data>` **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual|                 |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`_put_partial_data<class_StreamPeerExtension_method__put_partial_data>` **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual| |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_StreamPeerExtension_method__get_available_bytes:
 
-- :ref:`int<class_int>` **_get_available_bytes** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_available_bytes** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerExtension_method__get_data:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **_get_data** **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **_get_data** **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerExtension_method__get_partial_data:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **_get_partial_data** **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **_get_partial_data** **(** uint8_t* r_buffer, :ref:`int<class_int>` r_bytes, int32_t* r_received **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerExtension_method__put_data:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **_put_data** **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **_put_data** **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerExtension_method__put_partial_data:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **_put_partial_data** **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **_put_partial_data** **(** const uint8_t* p_data, :ref:`int<class_int>` p_bytes, int32_t* r_sent **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

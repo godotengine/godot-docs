@@ -16,6 +16,8 @@ Separator
 
 Base class for separators.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

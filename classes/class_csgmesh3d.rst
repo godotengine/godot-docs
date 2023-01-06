@@ -14,6 +14,8 @@ CSGMesh3D
 
 A CSG Mesh shape that uses a mesh resource.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,46 +23,63 @@ This CSG node allows you to use any mesh resource as a CSG shape, provided it is
 
 \ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance3D<class_MeshInstance3D>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+----------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_CSGMesh3D_property_material>` |
-+---------------------------------+----------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_CSGMesh3D_property_mesh>`         |
-+---------------------------------+----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------+
+   | :ref:`Material<class_Material>` | :ref:`material<class_CSGMesh3D_property_material>` |
+   +---------------------------------+----------------------------------------------------+
+   | :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_CSGMesh3D_property_mesh>`         |
+   +---------------------------------+----------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CSGMesh3D_property_material:
 
-- :ref:`Material<class_Material>` **material**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
+:ref:`Material<class_Material>` **material**
+
+.. rst-class:: classref-property-setget
+
+- void **set_material** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_material** **(** **)**
 
 The :ref:`Material<class_Material>` used in drawing the CSG shape.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGMesh3D_property_mesh:
 
-- :ref:`Mesh<class_Mesh>` **mesh**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
+:ref:`Mesh<class_Mesh>` **mesh**
+
+.. rst-class:: classref-property-setget
+
+- void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
+- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
 
 The :ref:`Mesh<class_Mesh>` resource to use as a CSG shape.
 

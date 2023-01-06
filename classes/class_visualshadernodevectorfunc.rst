@@ -14,175 +14,331 @@ VisualShaderNodeVectorFunc
 
 A vector function to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A visual shader node able to perform different functions using vectors.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------+---------------------------------------------------------------------+-------+
-| :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` | :ref:`function<class_VisualShaderNodeVectorFunc_property_function>` | ``0`` |
-+-----------------------------------------------------------+---------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------+---------------------------------------------------------------------+-------+
+   | :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` | :ref:`function<class_VisualShaderNodeVectorFunc_property_function>` | ``0`` |
+   +-----------------------------------------------------------+---------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeVectorFunc_Function:
 
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_NORMALIZE:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SATURATE:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_NEGATE:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_RECIPROCAL:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ABS:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ACOS:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ACOSH:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ASIN:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ASINH:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ATAN:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ATANH:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_CEIL:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_COS:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_COSH:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_DEGREES:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_EXP:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_EXP2:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_FLOOR:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_FRACT:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_INVERSE_SQRT:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_LOG:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_LOG2:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_RADIANS:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ROUND:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ROUNDEVEN:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SIGN:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SIN:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SINH:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SQRT:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_TAN:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_TANH:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_TRUNC:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ONEMINUS:
-
-.. _class_VisualShaderNodeVectorFunc_constant_FUNC_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Function**:
 
-- **FUNC_NORMALIZE** = **0** --- Normalizes the vector so that it has a length of ``1`` but points in the same direction.
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_NORMALIZE:
 
-- **FUNC_SATURATE** = **1** --- Clamps the value between ``0.0`` and ``1.0``.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_NEGATE** = **2** --- Returns the opposite value of the parameter.
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_NORMALIZE** = ``0``
 
-- **FUNC_RECIPROCAL** = **3** --- Returns ``1/vector``.
+Normalizes the vector so that it has a length of ``1`` but points in the same direction.
 
-- **FUNC_ABS** = **4** --- Returns the absolute value of the parameter.
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SATURATE:
 
-- **FUNC_ACOS** = **5** --- Returns the arc-cosine of the parameter.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_ACOSH** = **6** --- Returns the inverse hyperbolic cosine of the parameter.
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_SATURATE** = ``1``
 
-- **FUNC_ASIN** = **7** --- Returns the arc-sine of the parameter.
+Clamps the value between ``0.0`` and ``1.0``.
 
-- **FUNC_ASINH** = **8** --- Returns the inverse hyperbolic sine of the parameter.
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_NEGATE:
 
-- **FUNC_ATAN** = **9** --- Returns the arc-tangent of the parameter.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_ATANH** = **10** --- Returns the inverse hyperbolic tangent of the parameter.
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_NEGATE** = ``2``
 
-- **FUNC_CEIL** = **11** --- Finds the nearest integer that is greater than or equal to the parameter.
+Returns the opposite value of the parameter.
 
-- **FUNC_COS** = **12** --- Returns the cosine of the parameter.
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_RECIPROCAL:
 
-- **FUNC_COSH** = **13** --- Returns the hyperbolic cosine of the parameter.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_DEGREES** = **14** --- Converts a quantity in radians to degrees.
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_RECIPROCAL** = ``3``
 
-- **FUNC_EXP** = **15** --- Base-e Exponential.
+Returns ``1/vector``.
 
-- **FUNC_EXP2** = **16** --- Base-2 Exponential.
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ABS:
 
-- **FUNC_FLOOR** = **17** --- Finds the nearest integer less than or equal to the parameter.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_FRACT** = **18** --- Computes the fractional part of the argument.
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ABS** = ``4``
 
-- **FUNC_INVERSE_SQRT** = **19** --- Returns the inverse of the square root of the parameter.
+Returns the absolute value of the parameter.
 
-- **FUNC_LOG** = **20** --- Natural logarithm.
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ACOS:
 
-- **FUNC_LOG2** = **21** --- Base-2 logarithm.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_RADIANS** = **22** --- Converts a quantity in degrees to radians.
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ACOS** = ``5``
 
-- **FUNC_ROUND** = **23** --- Finds the nearest integer to the parameter.
+Returns the arc-cosine of the parameter.
 
-- **FUNC_ROUNDEVEN** = **24** --- Finds the nearest even integer to the parameter.
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ACOSH:
 
-- **FUNC_SIGN** = **25** --- Extracts the sign of the parameter, i.e. returns ``-1`` if the parameter is negative, ``1`` if it's positive and ``0`` otherwise.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_SIN** = **26** --- Returns the sine of the parameter.
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ACOSH** = ``6``
 
-- **FUNC_SINH** = **27** --- Returns the hyperbolic sine of the parameter.
+Returns the inverse hyperbolic cosine of the parameter.
 
-- **FUNC_SQRT** = **28** --- Returns the square root of the parameter.
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ASIN:
 
-- **FUNC_TAN** = **29** --- Returns the tangent of the parameter.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_TANH** = **30** --- Returns the hyperbolic tangent of the parameter.
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ASIN** = ``7``
 
-- **FUNC_TRUNC** = **31** --- Returns a value equal to the nearest integer to the parameter whose absolute value is not larger than the absolute value of the parameter.
+Returns the arc-sine of the parameter.
 
-- **FUNC_ONEMINUS** = **32** --- Returns ``1.0 - vector``.
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ASINH:
 
-- **FUNC_MAX** = **33** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` enum.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ASINH** = ``8``
+
+Returns the inverse hyperbolic sine of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ATAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ATAN** = ``9``
+
+Returns the arc-tangent of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ATANH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ATANH** = ``10``
+
+Returns the inverse hyperbolic tangent of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_CEIL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_CEIL** = ``11``
+
+Finds the nearest integer that is greater than or equal to the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_COS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_COS** = ``12``
+
+Returns the cosine of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_COSH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_COSH** = ``13``
+
+Returns the hyperbolic cosine of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_DEGREES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_DEGREES** = ``14``
+
+Converts a quantity in radians to degrees.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_EXP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_EXP** = ``15``
+
+Base-e Exponential.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_EXP2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_EXP2** = ``16``
+
+Base-2 Exponential.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_FLOOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_FLOOR** = ``17``
+
+Finds the nearest integer less than or equal to the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_FRACT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_FRACT** = ``18``
+
+Computes the fractional part of the argument.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_INVERSE_SQRT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_INVERSE_SQRT** = ``19``
+
+Returns the inverse of the square root of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_LOG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_LOG** = ``20``
+
+Natural logarithm.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_LOG2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_LOG2** = ``21``
+
+Base-2 logarithm.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_RADIANS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_RADIANS** = ``22``
+
+Converts a quantity in degrees to radians.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ROUND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ROUND** = ``23``
+
+Finds the nearest integer to the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ROUNDEVEN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ROUNDEVEN** = ``24``
+
+Finds the nearest even integer to the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SIGN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_SIGN** = ``25``
+
+Extracts the sign of the parameter, i.e. returns ``-1`` if the parameter is negative, ``1`` if it's positive and ``0`` otherwise.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SIN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_SIN** = ``26``
+
+Returns the sine of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SINH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_SINH** = ``27``
+
+Returns the hyperbolic sine of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_SQRT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_SQRT** = ``28``
+
+Returns the square root of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_TAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_TAN** = ``29``
+
+Returns the tangent of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_TANH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_TANH** = ``30``
+
+Returns the hyperbolic tangent of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_TRUNC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_TRUNC** = ``31``
+
+Returns a value equal to the nearest integer to the parameter whose absolute value is not larger than the absolute value of the parameter.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_ONEMINUS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_ONEMINUS** = ``32``
+
+Returns ``1.0 - vector``.
+
+.. _class_VisualShaderNodeVectorFunc_constant_FUNC_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **FUNC_MAX** = ``33``
+
+Represents the size of the :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeVectorFunc_property_function:
 
-- :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **function**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_function(value) |
-+-----------+---------------------+
-| *Getter*  | get_function()      |
-+-----------+---------------------+
+:ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **function** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` value **)**
+- :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` **get_function** **(** **)**
 
 The function to be performed. See :ref:`Function<enum_VisualShaderNodeVectorFunc_Function>` for options.
 

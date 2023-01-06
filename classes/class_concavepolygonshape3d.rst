@@ -14,69 +14,100 @@ ConcavePolygonShape3D
 
 Concave polygon shape resource (also called "trimesh") for 3D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-3D concave polygon shape resource (also called "trimesh") to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. This shape is created by feeding a list of triangles. Despite its name, ``ConcavePolygonShape3D`` can also store convex polygon shapes. However, unlike :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`, ``ConcavePolygonShape3D`` is *not* limited to storing convex shapes exclusively.
+3D concave polygon shape resource (also called "trimesh") to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. This shape is created by feeding a list of triangles. Despite its name, **ConcavePolygonShape3D** can also store convex polygon shapes. However, unlike :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`, **ConcavePolygonShape3D** is *not* limited to storing convex shapes exclusively.
 
-\ **Note:** When used for collision, ``ConcavePolygonShape3D`` is intended to work with static :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes like :ref:`StaticBody3D<class_StaticBody3D>` and will not work with :ref:`CharacterBody3D<class_CharacterBody3D>` or :ref:`RigidBody3D<class_RigidBody3D>` with a mode other than Static.
+\ **Note:** When used for collision, **ConcavePolygonShape3D** is intended to work with static :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes like :ref:`StaticBody3D<class_StaticBody3D>` and will not work with :ref:`CharacterBody3D<class_CharacterBody3D>` or :ref:`RigidBody3D<class_RigidBody3D>` with a mode other than Static.
 
-\ **Performance:** Due to its complexity, ``ConcavePolygonShape3D`` is the slowest collision shape to check collisions against. Its use should generally be limited to level geometry. For convex geometry, using :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` will perform better. For dynamic physics bodies that need concave collision, several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`\ s can be used to represent its collision by using convex decomposition; see :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`'s documentation for instructions. However, consider using primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>` first.
+\ **Performance:** Due to its complexity, **ConcavePolygonShape3D** is the slowest collision shape to check collisions against. Its use should generally be limited to level geometry. For convex geometry, using :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` will perform better. For dynamic physics bodies that need concave collision, several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`\ s can be used to represent its collision by using convex decomposition; see :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`'s documentation for instructions. However, consider using primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>` first.
 
-\ **Warning:** Using this shape for an :ref:`Area3D<class_Area3D>` (via a :ref:`CollisionShape3D<class_CollisionShape3D>` node, created e.g. by using the *Create Trimesh Collision Sibling* option in the *Mesh* menu that appears when selecting a :ref:`MeshInstance3D<class_MeshInstance3D>` node) may give unexpected results: the area will only detect collisions with the triangle faces in the ``ConcavePolygonShape3D`` (and not with any "inside" of the shape, for example); moreover it will only detect all such collisions if :ref:`backface_collision<class_ConcavePolygonShape3D_property_backface_collision>` is ``true``.
+\ **Warning:** Using this shape for an :ref:`Area3D<class_Area3D>` (via a :ref:`CollisionShape3D<class_CollisionShape3D>` node, created e.g. by using the *Create Trimesh Collision Sibling* option in the *Mesh* menu that appears when selecting a :ref:`MeshInstance3D<class_MeshInstance3D>` node) may give unexpected results: the area will only detect collisions with the triangle faces in the **ConcavePolygonShape3D** (and not with any "inside" of the shape, for example); moreover it will only detect all such collisions if :ref:`backface_collision<class_ConcavePolygonShape3D_property_backface_collision>` is ``true``.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`backface_collision<class_ConcavePolygonShape3D_property_backface_collision>` | ``false`` |
-+-------------------------+------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`backface_collision<class_ConcavePolygonShape3D_property_backface_collision>` | ``false`` |
+   +-------------------------+------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape3D_method_get_faces>` **(** **)** |const|                                                   |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_faces<class_ConcavePolygonShape3D_method_set_faces>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces **)** |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`get_faces<class_ConcavePolygonShape3D_method_get_faces>` **(** **)** |const|                                                   |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_faces<class_ConcavePolygonShape3D_method_set_faces>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces **)** |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ConcavePolygonShape3D_property_backface_collision:
 
-- :ref:`bool<class_bool>` **backface_collision**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------------+
-| *Default* | ``false``                             |
-+-----------+---------------------------------------+
-| *Setter*  | set_backface_collision_enabled(value) |
-+-----------+---------------------------------------+
-| *Getter*  | is_backface_collision_enabled()       |
-+-----------+---------------------------------------+
+:ref:`bool<class_bool>` **backface_collision** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_backface_collision_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_backface_collision_enabled** **(** **)**
 
 If set to ``true``, collisions occur on both sides of the concave shape faces. Otherwise they occur only along the face normals.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ConcavePolygonShape3D_method_get_faces:
 
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_faces** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **get_faces** **(** **)** |const|
 
 Returns the faces (an array of triangles).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ConcavePolygonShape3D_method_set_faces:
 
-- void **set_faces** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces **)**
+.. rst-class:: classref-method
+
+void **set_faces** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces **)**
 
 Sets the faces (an array of triangles).
 

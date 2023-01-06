@@ -14,6 +14,8 @@ StyleBoxEmpty
 
 Empty stylebox (does not display anything).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

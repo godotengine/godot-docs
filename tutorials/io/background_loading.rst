@@ -192,7 +192,7 @@ loader.
 
 
     func set_new_scene(scene_resource):
-        current_scene = scene_resource.instance()
+        current_scene = scene_resource.instantiate()
         get_node("/root").add_child(current_scene)
 
 Using multiple threads
@@ -285,7 +285,7 @@ Example:
     start_cutscene()
 
     # Later, when the user presses the pause button for the first time:
-    pause_menu = queue.get_resource("res://pause_menu.tres").instance()
+    pause_menu = queue.get_resource("res://pause_menu.tres").instantiate()
     pause_menu.show()
 
     # When you need a new scene:

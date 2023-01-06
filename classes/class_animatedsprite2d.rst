@@ -14,16 +14,20 @@ AnimatedSprite2D
 
 Sprite node that contains multiple textures as frames to play for animation.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``AnimatedSprite2D`` is similar to the :ref:`Sprite2D<class_Sprite2D>` node, except it carries multiple textures as animation frames. Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which allows you to import image files (or a folder containing said files) to provide the animation frames for the sprite. The :ref:`SpriteFrames<class_SpriteFrames>` resource can be configured in the editor via the SpriteFrames bottom panel.
+**AnimatedSprite2D** is similar to the :ref:`Sprite2D<class_Sprite2D>` node, except it carries multiple textures as animation frames. Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which allows you to import image files (or a folder containing said files) to provide the animation frames for the sprite. The :ref:`SpriteFrames<class_SpriteFrames>` resource can be configured in the editor via the SpriteFrames bottom panel.
 
 After setting up :ref:`frames<class_AnimatedSprite2D_property_frames>`, :ref:`play<class_AnimatedSprite2D_method_play>` may be called. It's also possible to select an :ref:`animation<class_AnimatedSprite2D_property_animation>` and toggle :ref:`playing<class_AnimatedSprite2D_property_playing>`, even within the editor.
 
 To pause the current animation, call :ref:`stop<class_AnimatedSprite2D_method_stop>` or set :ref:`playing<class_AnimatedSprite2D_property_playing>` to ``false``. Alternatively, setting :ref:`speed_scale<class_AnimatedSprite2D_property_speed_scale>` to ``0`` also preserves the current frame's elapsed time.
 
 \ **Note:** You can associate a set of normal or specular maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -32,212 +36,261 @@ Tutorials
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
-| :ref:`StringName<class_StringName>`     | :ref:`animation<class_AnimatedSprite2D_property_animation>`     | ``&"default"``    |
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`                 | :ref:`centered<class_AnimatedSprite2D_property_centered>`       | ``true``          |
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`                 | :ref:`flip_h<class_AnimatedSprite2D_property_flip_h>`           | ``false``         |
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`                 | :ref:`flip_v<class_AnimatedSprite2D_property_flip_v>`           | ``false``         |
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
-| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite2D_property_frame>`             | ``0``             |
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
-| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite2D_property_frames>`           |                   |
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>`           | :ref:`offset<class_AnimatedSprite2D_property_offset>`           | ``Vector2(0, 0)`` |
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
-| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite2D_property_playing>`         | ``false``         |
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
-| :ref:`float<class_float>`               | :ref:`speed_scale<class_AnimatedSprite2D_property_speed_scale>` | ``1.0``           |
-+-----------------------------------------+-----------------------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+   | :ref:`StringName<class_StringName>`     | :ref:`animation<class_AnimatedSprite2D_property_animation>`     | ``&"default"``    |
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`centered<class_AnimatedSprite2D_property_centered>`       | ``true``          |
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`flip_h<class_AnimatedSprite2D_property_flip_h>`           | ``false``         |
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`flip_v<class_AnimatedSprite2D_property_flip_v>`           | ``false``         |
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite2D_property_frame>`             | ``0``             |
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+   | :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite2D_property_frames>`           |                   |
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`           | :ref:`offset<class_AnimatedSprite2D_property_offset>`           | ``Vector2(0, 0)`` |
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite2D_property_playing>`         | ``false``         |
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`               | :ref:`speed_scale<class_AnimatedSprite2D_property_speed_scale>` | ``1.0``           |
+   +-----------------------------------------+-----------------------------------------------------------------+-------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`play<class_AnimatedSprite2D_method_play>` **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<class_bool>` backwards=false **)** |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`stop<class_AnimatedSprite2D_method_stop>` **(** **)**                                                                                       |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`play<class_AnimatedSprite2D_method_play>` **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<class_bool>` backwards=false **)** |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`stop<class_AnimatedSprite2D_method_stop>` **(** **)**                                                                                       |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_AnimatedSprite2D_signal_animation_finished:
 
-- **animation_finished** **(** **)**
+.. rst-class:: classref-signal
+
+**animation_finished** **(** **)**
 
 Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_signal_frame_changed:
 
-- **frame_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**frame_changed** **(** **)**
 
 Emitted when :ref:`frame<class_AnimatedSprite2D_property_frame>` changed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimatedSprite2D_property_animation:
 
-- :ref:`StringName<class_StringName>` **animation**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``&"default"``       |
-+-----------+----------------------+
-| *Setter*  | set_animation(value) |
-+-----------+----------------------+
-| *Getter*  | get_animation()      |
-+-----------+----------------------+
+:ref:`StringName<class_StringName>` **animation** = ``&"default"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_animation** **(** :ref:`StringName<class_StringName>` value **)**
+- :ref:`StringName<class_StringName>` **get_animation** **(** **)**
 
 The current animation from the :ref:`frames<class_AnimatedSprite2D_property_frames>` resource. If this value changes, the ``frame`` counter is reset.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_property_centered:
 
-- :ref:`bool<class_bool>` **centered**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``true``            |
-+-----------+---------------------+
-| *Setter*  | set_centered(value) |
-+-----------+---------------------+
-| *Getter*  | is_centered()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **centered** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_centered** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_centered** **(** **)**
 
 If ``true``, texture will be centered.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_property_flip_h:
 
-- :ref:`bool<class_bool>` **flip_h**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_flip_h(value) |
-+-----------+-------------------+
-| *Getter*  | is_flipped_h()    |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **flip_h** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_h** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_flipped_h** **(** **)**
 
 If ``true``, texture is flipped horizontally.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_property_flip_v:
 
-- :ref:`bool<class_bool>` **flip_v**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_flip_v(value) |
-+-----------+-------------------+
-| *Getter*  | is_flipped_v()    |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **flip_v** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_v** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_flipped_v** **(** **)**
 
 If ``true``, texture is flipped vertically.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_property_frame:
 
-- :ref:`int<class_int>` **frame**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_frame(value) |
-+-----------+------------------+
-| *Getter*  | get_frame()      |
-+-----------+------------------+
+:ref:`int<class_int>` **frame** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_frame** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_frame** **(** **)**
 
 The displayed animation frame's index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_property_frames:
 
-- :ref:`SpriteFrames<class_SpriteFrames>` **frames**
+.. rst-class:: classref-property
 
-+----------+--------------------------+
-| *Setter* | set_sprite_frames(value) |
-+----------+--------------------------+
-| *Getter* | get_sprite_frames()      |
-+----------+--------------------------+
+:ref:`SpriteFrames<class_SpriteFrames>` **frames**
+
+.. rst-class:: classref-property-setget
+
+- void **set_sprite_frames** **(** :ref:`SpriteFrames<class_SpriteFrames>` value **)**
+- :ref:`SpriteFrames<class_SpriteFrames>` **get_sprite_frames** **(** **)**
 
 The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s). Allows you the option to load, edit, clear, make unique and save the states of the :ref:`SpriteFrames<class_SpriteFrames>` resource.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_property_offset:
 
-- :ref:`Vector2<class_Vector2>` **offset**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
-| *Setter*  | set_offset(value) |
-+-----------+-------------------+
-| *Getter*  | get_offset()      |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)**
 
 The texture's drawing offset.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_property_playing:
 
-- :ref:`bool<class_bool>` **playing**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_playing(value) |
-+-----------+--------------------+
-| *Getter*  | is_playing()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **playing** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_playing** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_playing** **(** **)**
 
 If ``true``, the :ref:`animation<class_AnimatedSprite2D_property_animation>` is currently playing. Setting this property to ``false`` is the equivalent of calling :ref:`stop<class_AnimatedSprite2D_method_stop>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_property_speed_scale:
 
-- :ref:`float<class_float>` **speed_scale**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_speed_scale(value) |
-+-----------+------------------------+
-| *Getter*  | get_speed_scale()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **speed_scale** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_speed_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_speed_scale** **(** **)**
 
 The animation speed is multiplied by this value. If set to a negative value, the animation is played in reverse. If set to ``0``, the animation is paused, preserving the current frame's elapsed time.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AnimatedSprite2D_method_play:
 
-- void **play** **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<class_bool>` backwards=false **)**
+.. rst-class:: classref-method
+
+void **play** **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<class_bool>` backwards=false **)**
 
 Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played. If ``backwards`` is ``true``, the animation is played in reverse.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedSprite2D_method_stop:
 
-- void **stop** **(** **)**
+.. rst-class:: classref-method
+
+void **stop** **(** **)**
 
 Stops the current :ref:`animation<class_AnimatedSprite2D_property_animation>` at the current :ref:`frame<class_AnimatedSprite2D_property_frame>`.
 

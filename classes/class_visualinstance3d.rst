@@ -12,114 +12,207 @@ VisualInstance3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`Decal<class_Decal>`, :ref:`FogVolume<class_FogVolume>`, :ref:`GPUParticlesAttractor3D<class_GPUParticlesAttractor3D>`, :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>`, :ref:`GeometryInstance3D<class_GeometryInstance3D>`, :ref:`Light3D<class_Light3D>`, :ref:`LightmapGI<class_LightmapGI>`, :ref:`ReflectionProbe<class_ReflectionProbe>`, :ref:`RootMotionView<class_RootMotionView>`, :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>`, :ref:`VoxelGI<class_VoxelGI>`
+**Inherited By:** :ref:`Decal<class_Decal>`, :ref:`FogVolume<class_FogVolume>`, :ref:`GeometryInstance3D<class_GeometryInstance3D>`, :ref:`GPUParticlesAttractor3D<class_GPUParticlesAttractor3D>`, :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>`, :ref:`Light3D<class_Light3D>`, :ref:`LightmapGI<class_LightmapGI>`, :ref:`ReflectionProbe<class_ReflectionProbe>`, :ref:`RootMotionView<class_RootMotionView>`, :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>`, :ref:`VoxelGI<class_VoxelGI>`
 
 Parent of all visual 3D nodes.
+
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The ``VisualInstance3D`` is used to connect a resource to a visual representation. All visual 3D nodes inherit from the ``VisualInstance3D``. In general, you should not access the ``VisualInstance3D`` properties directly as they are accessed and managed by the nodes that inherit from ``VisualInstance3D``. ``VisualInstance3D`` is the node representation of the :ref:`RenderingServer<class_RenderingServer>` instance.
+The **VisualInstance3D** is used to connect a resource to a visual representation. All visual 3D nodes inherit from the **VisualInstance3D**. In general, you should not access the **VisualInstance3D** properties directly as they are accessed and managed by the nodes that inherit from **VisualInstance3D**. **VisualInstance3D** is the node representation of the :ref:`RenderingServer<class_RenderingServer>` instance.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------+-------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`layers<class_VisualInstance3D_property_layers>` | ``1`` |
-+-----------------------+-------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`layers<class_VisualInstance3D_property_layers>`                                   | ``1``    |
+   +---------------------------+-----------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`sorting_offset<class_VisualInstance3D_property_sorting_offset>`                   | ``0.0``  |
+   +---------------------------+-----------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`sorting_use_aabb_center<class_VisualInstance3D_property_sorting_use_aabb_center>` | ``true`` |
+   +---------------------------+-----------------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`_get_aabb<class_VisualInstance3D_method__get_aabb>` **(** **)** |virtual| |const|                                                                       |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`get_aabb<class_VisualInstance3D_method_get_aabb>` **(** **)** |const|                                                                                   |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`   | :ref:`get_base<class_VisualInstance3D_method_get_base>` **(** **)** |const|                                                                                   |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`   | :ref:`get_instance<class_VisualInstance3D_method_get_instance>` **(** **)** |const|                                                                           |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_layer_mask_value<class_VisualInstance3D_method_get_layer_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_base<class_VisualInstance3D_method_set_base>` **(** :ref:`RID<class_RID>` base **)**                                                                |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_layer_mask_value<class_VisualInstance3D_method_set_layer_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`_get_aabb<class_VisualInstance3D_method__get_aabb>` **(** **)** |virtual| |const|                                                                       |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`get_aabb<class_VisualInstance3D_method_get_aabb>` **(** **)** |const|                                                                                   |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_base<class_VisualInstance3D_method_get_base>` **(** **)** |const|                                                                                   |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_instance<class_VisualInstance3D_method_get_instance>` **(** **)** |const|                                                                           |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_layer_mask_value<class_VisualInstance3D_method_get_layer_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_base<class_VisualInstance3D_method_set_base>` **(** :ref:`RID<class_RID>` base **)**                                                                |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_layer_mask_value<class_VisualInstance3D_method_set_layer_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualInstance3D_property_layers:
 
-- :ref:`int<class_int>` **layers**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``1``                 |
-+-----------+-----------------------+
-| *Setter*  | set_layer_mask(value) |
-+-----------+-----------------------+
-| *Getter*  | get_layer_mask()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **layers** = ``1``
 
-The render layer(s) this ``VisualInstance3D`` is drawn on.
+.. rst-class:: classref-property-setget
 
-This object will only be visible for :ref:`Camera3D<class_Camera3D>`\ s whose cull mask includes the render object this ``VisualInstance3D`` is set to.
+- void **set_layer_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_layer_mask** **(** **)**
 
-For :ref:`Light3D<class_Light3D>`\ s, this can be used to control which ``VisualInstance3D``\ s are affected by a specific light. For :ref:`GPUParticles3D<class_GPUParticles3D>`, this can be used to control which particles are effected by a specific attractor. For :ref:`Decal<class_Decal>`\ s, this can be used to control which ``VisualInstance3D``\ s are affected by a specific decal.
+The render layer(s) this **VisualInstance3D** is drawn on.
+
+This object will only be visible for :ref:`Camera3D<class_Camera3D>`\ s whose cull mask includes the render object this **VisualInstance3D** is set to.
+
+For :ref:`Light3D<class_Light3D>`\ s, this can be used to control which **VisualInstance3D**\ s are affected by a specific light. For :ref:`GPUParticles3D<class_GPUParticles3D>`, this can be used to control which particles are effected by a specific attractor. For :ref:`Decal<class_Decal>`\ s, this can be used to control which **VisualInstance3D**\ s are affected by a specific decal.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VisualInstance3D_property_sorting_offset:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **sorting_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sorting_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_sorting_offset** **(** **)**
+
+The sorting offset used by this **VisualInstance3D**. Adjusting it to a higher value will make the **VisualInstance3D** reliably draw on top of other **VisualInstance3D**\ s that are otherwise positioned at the same spot.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VisualInstance3D_property_sorting_use_aabb_center:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **sorting_use_aabb_center** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sorting_use_aabb_center** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_sorting_use_aabb_center** **(** **)**
+
+If ``true``, the object is sorted based on the :ref:`AABB<class_AABB>` center. The object will be sorted based on the global position otherwise.
+
+The :ref:`AABB<class_AABB>` center based sorting is generally more accurate for 3D models. The position based sorting instead allows to better control the drawing order when working with :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`CPUParticles3D<class_CPUParticles3D>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisualInstance3D_method__get_aabb:
 
-- :ref:`AABB<class_AABB>` **_get_aabb** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`AABB<class_AABB>` **_get_aabb** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance3D_method_get_aabb:
 
-- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance3D``.
+:ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
+
+Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this **VisualInstance3D**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance3D_method_get_base:
 
-- :ref:`RID<class_RID>` **get_base** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the RID of the resource associated with this ``VisualInstance3D``. For example, if the Node is a :ref:`MeshInstance3D<class_MeshInstance3D>`, this will return the RID of the associated :ref:`Mesh<class_Mesh>`.
+:ref:`RID<class_RID>` **get_base** **(** **)** |const|
+
+Returns the RID of the resource associated with this **VisualInstance3D**. For example, if the Node is a :ref:`MeshInstance3D<class_MeshInstance3D>`, this will return the RID of the associated :ref:`Mesh<class_Mesh>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance3D_method_get_instance:
 
-- :ref:`RID<class_RID>` **get_instance** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the RID of this instance. This RID is the same as the RID returned by :ref:`RenderingServer.instance_create<class_RenderingServer_method_instance_create>`. This RID is needed if you want to call :ref:`RenderingServer<class_RenderingServer>` functions directly on this ``VisualInstance3D``.
+:ref:`RID<class_RID>` **get_instance** **(** **)** |const|
+
+Returns the RID of this instance. This RID is the same as the RID returned by :ref:`RenderingServer.instance_create<class_RenderingServer_method_instance_create>`. This RID is needed if you want to call :ref:`RenderingServer<class_RenderingServer>` functions directly on this **VisualInstance3D**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance3D_method_get_layer_mask_value:
 
-- :ref:`bool<class_bool>` **get_layer_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_layer_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
 Returns whether or not the specified layer of the :ref:`layers<class_VisualInstance3D_property_layers>` is enabled, given a ``layer_number`` between 1 and 20.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance3D_method_set_base:
 
-- void **set_base** **(** :ref:`RID<class_RID>` base **)**
+.. rst-class:: classref-method
 
-Sets the resource that is instantiated by this ``VisualInstance3D``, which changes how the engine handles the ``VisualInstance3D`` under the hood. Equivalent to :ref:`RenderingServer.instance_set_base<class_RenderingServer_method_instance_set_base>`.
+void **set_base** **(** :ref:`RID<class_RID>` base **)**
+
+Sets the resource that is instantiated by this **VisualInstance3D**, which changes how the engine handles the **VisualInstance3D** under the hood. Equivalent to :ref:`RenderingServer.instance_set_base<class_RenderingServer_method_instance_set_base>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance3D_method_set_layer_mask_value:
 
-- void **set_layer_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+.. rst-class:: classref-method
+
+void **set_layer_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
 Based on ``value``, enables or disables the specified layer in the :ref:`layers<class_VisualInstance3D_property_layers>`, given a ``layer_number`` between 1 and 20.
 

@@ -14,84 +14,111 @@ OggPacketSequence
 
 A sequence of Ogg packets.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A sequence of Ogg packets.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
-| :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`granule_positions<class_OggPacketSequence_property_granule_positions>` | ``PackedInt64Array()`` |
-+-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
-| :ref:`Array[]<class_Array>`                     | :ref:`packet_data<class_OggPacketSequence_property_packet_data>`             | ``[]``                 |
-+-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
-| :ref:`float<class_float>`                       | :ref:`sampling_rate<class_OggPacketSequence_property_sampling_rate>`         | ``0.0``                |
-+-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+   | :ref:`PackedInt64Array<class_PackedInt64Array>` | :ref:`granule_positions<class_OggPacketSequence_property_granule_positions>` | ``PackedInt64Array()`` |
+   +-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+   | :ref:`Array[]<class_Array>`                     | :ref:`packet_data<class_OggPacketSequence_property_packet_data>`             | ``[]``                 |
+   +-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+   | :ref:`float<class_float>`                       | :ref:`sampling_rate<class_OggPacketSequence_property_sampling_rate>`         | ``0.0``                |
+   +-------------------------------------------------+------------------------------------------------------------------------------+------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_length<class_OggPacketSequence_method_get_length>` **(** **)** |const| |
-+---------------------------+----------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_length<class_OggPacketSequence_method_get_length>` **(** **)** |const| |
+   +---------------------------+----------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_OggPacketSequence_property_granule_positions:
 
-- :ref:`PackedInt64Array<class_PackedInt64Array>` **granule_positions**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``PackedInt64Array()``              |
-+-----------+-------------------------------------+
-| *Setter*  | set_packet_granule_positions(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_packet_granule_positions()      |
-+-----------+-------------------------------------+
+:ref:`PackedInt64Array<class_PackedInt64Array>` **granule_positions** = ``PackedInt64Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_packet_granule_positions** **(** :ref:`PackedInt64Array<class_PackedInt64Array>` value **)**
+- :ref:`PackedInt64Array<class_PackedInt64Array>` **get_packet_granule_positions** **(** **)**
 
 Contains the granule positions for each page in this packet sequence.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OggPacketSequence_property_packet_data:
 
-- :ref:`Array[]<class_Array>` **packet_data**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``[]``                 |
-+-----------+------------------------+
-| *Setter*  | set_packet_data(value) |
-+-----------+------------------------+
-| *Getter*  | get_packet_data()      |
-+-----------+------------------------+
+:ref:`Array[]<class_Array>` **packet_data** = ``[]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_packet_data** **(** :ref:`Array[]<class_Array>` value **)**
+- :ref:`Array[]<class_Array>` **get_packet_data** **(** **)**
 
 Contains the raw packets that make up this OggPacketSequence.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OggPacketSequence_property_sampling_rate:
 
-- :ref:`float<class_float>` **sampling_rate**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_sampling_rate(value) |
-+-----------+--------------------------+
-| *Getter*  | get_sampling_rate()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **sampling_rate** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sampling_rate** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_sampling_rate** **(** **)**
 
 Holds sample rate information about this sequence. Must be set by another class that actually understands the codec.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_OggPacketSequence_method_get_length:
 
-- :ref:`float<class_float>` **get_length** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_length** **(** **)** |const|
 
 The length of this stream, in seconds.
 

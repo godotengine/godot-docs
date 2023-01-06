@@ -12,159 +12,258 @@ VisualShaderNode
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisualShaderNodeBillboard<class_VisualShaderNodeBillboard>`, :ref:`VisualShaderNodeClamp<class_VisualShaderNodeClamp>`, :ref:`VisualShaderNodeColorFunc<class_VisualShaderNodeColorFunc>`, :ref:`VisualShaderNodeColorOp<class_VisualShaderNodeColorOp>`, :ref:`VisualShaderNodeCompare<class_VisualShaderNodeCompare>`, :ref:`VisualShaderNodeConstant<class_VisualShaderNodeConstant>`, :ref:`VisualShaderNodeCubemap<class_VisualShaderNodeCubemap>`, :ref:`VisualShaderNodeCustom<class_VisualShaderNodeCustom>`, :ref:`VisualShaderNodeDerivativeFunc<class_VisualShaderNodeDerivativeFunc>`, :ref:`VisualShaderNodeDeterminant<class_VisualShaderNodeDeterminant>`, :ref:`VisualShaderNodeDistanceFade<class_VisualShaderNodeDistanceFade>`, :ref:`VisualShaderNodeDotProduct<class_VisualShaderNodeDotProduct>`, :ref:`VisualShaderNodeFloatFunc<class_VisualShaderNodeFloatFunc>`, :ref:`VisualShaderNodeFloatOp<class_VisualShaderNodeFloatOp>`, :ref:`VisualShaderNodeFresnel<class_VisualShaderNodeFresnel>`, :ref:`VisualShaderNodeIf<class_VisualShaderNodeIf>`, :ref:`VisualShaderNodeInput<class_VisualShaderNodeInput>`, :ref:`VisualShaderNodeIntFunc<class_VisualShaderNodeIntFunc>`, :ref:`VisualShaderNodeIntOp<class_VisualShaderNodeIntOp>`, :ref:`VisualShaderNodeIs<class_VisualShaderNodeIs>`, :ref:`VisualShaderNodeLinearSceneDepth<class_VisualShaderNodeLinearSceneDepth>`, :ref:`VisualShaderNodeMix<class_VisualShaderNodeMix>`, :ref:`VisualShaderNodeMultiplyAdd<class_VisualShaderNodeMultiplyAdd>`, :ref:`VisualShaderNodeOuterProduct<class_VisualShaderNodeOuterProduct>`, :ref:`VisualShaderNodeOutput<class_VisualShaderNodeOutput>`, :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>`, :ref:`VisualShaderNodeParameterRef<class_VisualShaderNodeParameterRef>`, :ref:`VisualShaderNodeParticleAccelerator<class_VisualShaderNodeParticleAccelerator>`, :ref:`VisualShaderNodeParticleConeVelocity<class_VisualShaderNodeParticleConeVelocity>`, :ref:`VisualShaderNodeParticleEmit<class_VisualShaderNodeParticleEmit>`, :ref:`VisualShaderNodeParticleEmitter<class_VisualShaderNodeParticleEmitter>`, :ref:`VisualShaderNodeParticleMultiplyByAxisAngle<class_VisualShaderNodeParticleMultiplyByAxisAngle>`, :ref:`VisualShaderNodeParticleRandomness<class_VisualShaderNodeParticleRandomness>`, :ref:`VisualShaderNodeProximityFade<class_VisualShaderNodeProximityFade>`, :ref:`VisualShaderNodeRandomRange<class_VisualShaderNodeRandomRange>`, :ref:`VisualShaderNodeRemap<class_VisualShaderNodeRemap>`, :ref:`VisualShaderNodeResizableBase<class_VisualShaderNodeResizableBase>`, :ref:`VisualShaderNodeSDFRaymarch<class_VisualShaderNodeSDFRaymarch>`, :ref:`VisualShaderNodeSDFToScreenUV<class_VisualShaderNodeSDFToScreenUV>`, :ref:`VisualShaderNodeSample3D<class_VisualShaderNodeSample3D>`, :ref:`VisualShaderNodeScreenUVToSDF<class_VisualShaderNodeScreenUVToSDF>`, :ref:`VisualShaderNodeSmoothStep<class_VisualShaderNodeSmoothStep>`, :ref:`VisualShaderNodeStep<class_VisualShaderNodeStep>`, :ref:`VisualShaderNodeSwitch<class_VisualShaderNodeSwitch>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, :ref:`VisualShaderNodeTextureSDF<class_VisualShaderNodeTextureSDF>`, :ref:`VisualShaderNodeTextureSDFNormal<class_VisualShaderNodeTextureSDFNormal>`, :ref:`VisualShaderNodeTransformCompose<class_VisualShaderNodeTransformCompose>`, :ref:`VisualShaderNodeTransformDecompose<class_VisualShaderNodeTransformDecompose>`, :ref:`VisualShaderNodeTransformFunc<class_VisualShaderNodeTransformFunc>`, :ref:`VisualShaderNodeTransformOp<class_VisualShaderNodeTransformOp>`, :ref:`VisualShaderNodeTransformVecMult<class_VisualShaderNodeTransformVecMult>`, :ref:`VisualShaderNodeUVFunc<class_VisualShaderNodeUVFunc>`, :ref:`VisualShaderNodeUVPolarCoord<class_VisualShaderNodeUVPolarCoord>`, :ref:`VisualShaderNodeVarying<class_VisualShaderNodeVarying>`, :ref:`VisualShaderNodeVectorBase<class_VisualShaderNodeVectorBase>`
+**Inherited By:** :ref:`VisualShaderNodeBillboard<class_VisualShaderNodeBillboard>`, :ref:`VisualShaderNodeClamp<class_VisualShaderNodeClamp>`, :ref:`VisualShaderNodeColorFunc<class_VisualShaderNodeColorFunc>`, :ref:`VisualShaderNodeColorOp<class_VisualShaderNodeColorOp>`, :ref:`VisualShaderNodeCompare<class_VisualShaderNodeCompare>`, :ref:`VisualShaderNodeConstant<class_VisualShaderNodeConstant>`, :ref:`VisualShaderNodeCubemap<class_VisualShaderNodeCubemap>`, :ref:`VisualShaderNodeCustom<class_VisualShaderNodeCustom>`, :ref:`VisualShaderNodeDerivativeFunc<class_VisualShaderNodeDerivativeFunc>`, :ref:`VisualShaderNodeDeterminant<class_VisualShaderNodeDeterminant>`, :ref:`VisualShaderNodeDistanceFade<class_VisualShaderNodeDistanceFade>`, :ref:`VisualShaderNodeDotProduct<class_VisualShaderNodeDotProduct>`, :ref:`VisualShaderNodeFloatFunc<class_VisualShaderNodeFloatFunc>`, :ref:`VisualShaderNodeFloatOp<class_VisualShaderNodeFloatOp>`, :ref:`VisualShaderNodeFresnel<class_VisualShaderNodeFresnel>`, :ref:`VisualShaderNodeIf<class_VisualShaderNodeIf>`, :ref:`VisualShaderNodeInput<class_VisualShaderNodeInput>`, :ref:`VisualShaderNodeIntFunc<class_VisualShaderNodeIntFunc>`, :ref:`VisualShaderNodeIntOp<class_VisualShaderNodeIntOp>`, :ref:`VisualShaderNodeIs<class_VisualShaderNodeIs>`, :ref:`VisualShaderNodeLinearSceneDepth<class_VisualShaderNodeLinearSceneDepth>`, :ref:`VisualShaderNodeMix<class_VisualShaderNodeMix>`, :ref:`VisualShaderNodeMultiplyAdd<class_VisualShaderNodeMultiplyAdd>`, :ref:`VisualShaderNodeOuterProduct<class_VisualShaderNodeOuterProduct>`, :ref:`VisualShaderNodeOutput<class_VisualShaderNodeOutput>`, :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>`, :ref:`VisualShaderNodeParameterRef<class_VisualShaderNodeParameterRef>`, :ref:`VisualShaderNodeParticleAccelerator<class_VisualShaderNodeParticleAccelerator>`, :ref:`VisualShaderNodeParticleConeVelocity<class_VisualShaderNodeParticleConeVelocity>`, :ref:`VisualShaderNodeParticleEmit<class_VisualShaderNodeParticleEmit>`, :ref:`VisualShaderNodeParticleEmitter<class_VisualShaderNodeParticleEmitter>`, :ref:`VisualShaderNodeParticleMultiplyByAxisAngle<class_VisualShaderNodeParticleMultiplyByAxisAngle>`, :ref:`VisualShaderNodeParticleRandomness<class_VisualShaderNodeParticleRandomness>`, :ref:`VisualShaderNodeProximityFade<class_VisualShaderNodeProximityFade>`, :ref:`VisualShaderNodeRandomRange<class_VisualShaderNodeRandomRange>`, :ref:`VisualShaderNodeRemap<class_VisualShaderNodeRemap>`, :ref:`VisualShaderNodeResizableBase<class_VisualShaderNodeResizableBase>`, :ref:`VisualShaderNodeSample3D<class_VisualShaderNodeSample3D>`, :ref:`VisualShaderNodeScreenUVToSDF<class_VisualShaderNodeScreenUVToSDF>`, :ref:`VisualShaderNodeSDFRaymarch<class_VisualShaderNodeSDFRaymarch>`, :ref:`VisualShaderNodeSDFToScreenUV<class_VisualShaderNodeSDFToScreenUV>`, :ref:`VisualShaderNodeSmoothStep<class_VisualShaderNodeSmoothStep>`, :ref:`VisualShaderNodeStep<class_VisualShaderNodeStep>`, :ref:`VisualShaderNodeSwitch<class_VisualShaderNodeSwitch>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, :ref:`VisualShaderNodeTextureSDF<class_VisualShaderNodeTextureSDF>`, :ref:`VisualShaderNodeTextureSDFNormal<class_VisualShaderNodeTextureSDFNormal>`, :ref:`VisualShaderNodeTransformCompose<class_VisualShaderNodeTransformCompose>`, :ref:`VisualShaderNodeTransformDecompose<class_VisualShaderNodeTransformDecompose>`, :ref:`VisualShaderNodeTransformFunc<class_VisualShaderNodeTransformFunc>`, :ref:`VisualShaderNodeTransformOp<class_VisualShaderNodeTransformOp>`, :ref:`VisualShaderNodeTransformVecMult<class_VisualShaderNodeTransformVecMult>`, :ref:`VisualShaderNodeUVFunc<class_VisualShaderNodeUVFunc>`, :ref:`VisualShaderNodeUVPolarCoord<class_VisualShaderNodeUVPolarCoord>`, :ref:`VisualShaderNodeVarying<class_VisualShaderNodeVarying>`, :ref:`VisualShaderNodeVectorBase<class_VisualShaderNodeVectorBase>`
 
 Base class for nodes in a visual shader graph.
+
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
 Visual shader graphs consist of various nodes. Each node in the graph is a separate object and they are represented as a rectangular boxes with title and a set of properties. Each node has also connection ports that allow to connect it to another nodes and control the flow of the shader.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`VisualShaders <../tutorials/shaders/visual_shaders>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------+-----------------------------------------------------------------------------------------+--------+
-| :ref:`int<class_int>` | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` | ``-1`` |
-+-----------------------+-----------------------------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------+-----------------------------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>` | :ref:`output_port_for_preview<class_VisualShaderNode_property_output_port_for_preview>` | ``-1`` |
+   +-----------------------+-----------------------------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`clear_default_input_values<class_VisualShaderNode_method_clear_default_input_values>` **(** **)**                                                                                                                    |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>` **(** **)** |const|                                                                                                                |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** |const|                                                                             |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove_input_port_default_value<class_VisualShaderNode_method_remove_input_port_default_value>` **(** :ref:`int<class_int>` port **)**                                                                               |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_default_input_values<class_VisualShaderNode_method_set_default_input_values>` **(** :ref:`Array<class_Array>` values **)**                                                                                       |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_input_port_default_value<class_VisualShaderNode_method_set_input_port_default_value>` **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` prev_value=null **)** |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`clear_default_input_values<class_VisualShaderNode_method_clear_default_input_values>` **(** **)**                                                                                                                    |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>` **(** **)** |const|                                                                                                                |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** |const|                                                                             |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`remove_input_port_default_value<class_VisualShaderNode_method_remove_input_port_default_value>` **(** :ref:`int<class_int>` port **)**                                                                               |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_default_input_values<class_VisualShaderNode_method_set_default_input_values>` **(** :ref:`Array<class_Array>` values **)**                                                                                       |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_input_port_default_value<class_VisualShaderNode_method_set_input_port_default_value>` **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` prev_value=null **)** |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_VisualShaderNode_signal_editor_refresh_request:
 
-- **editor_refresh_request** **(** **)**
+.. rst-class:: classref-signal
+
+**editor_refresh_request** **(** **)**
 
 Emitted when the node requests an editor refresh. Currently called only in setter of :ref:`VisualShaderNodeTexture.source<class_VisualShaderNodeTexture_property_source>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, and :ref:`VisualShaderNodeCubemap<class_VisualShaderNodeCubemap>` (and their derivatives).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNode_PortType:
 
-.. _class_VisualShaderNode_constant_PORT_TYPE_SCALAR:
-
-.. _class_VisualShaderNode_constant_PORT_TYPE_SCALAR_INT:
-
-.. _class_VisualShaderNode_constant_PORT_TYPE_VECTOR_2D:
-
-.. _class_VisualShaderNode_constant_PORT_TYPE_VECTOR_3D:
-
-.. _class_VisualShaderNode_constant_PORT_TYPE_VECTOR_4D:
-
-.. _class_VisualShaderNode_constant_PORT_TYPE_BOOLEAN:
-
-.. _class_VisualShaderNode_constant_PORT_TYPE_TRANSFORM:
-
-.. _class_VisualShaderNode_constant_PORT_TYPE_SAMPLER:
-
-.. _class_VisualShaderNode_constant_PORT_TYPE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **PortType**:
 
-- **PORT_TYPE_SCALAR** = **0** --- Floating-point scalar. Translated to ``float`` type in shader code.
+.. _class_VisualShaderNode_constant_PORT_TYPE_SCALAR:
 
-- **PORT_TYPE_SCALAR_INT** = **1** --- Integer scalar. Translated to ``int`` type in shader code.
+.. rst-class:: classref-enumeration-constant
 
-- **PORT_TYPE_VECTOR_2D** = **2** --- 2D vector of floating-point values. Translated to ``vec2`` type in shader code.
+:ref:`PortType<enum_VisualShaderNode_PortType>` **PORT_TYPE_SCALAR** = ``0``
 
-- **PORT_TYPE_VECTOR_3D** = **3** --- 3D vector of floating-point values. Translated to ``vec3`` type in shader code.
+Floating-point scalar. Translated to ``float`` type in shader code.
 
-- **PORT_TYPE_VECTOR_4D** = **4** --- 4D vector of floating-point values. Translated to ``vec4`` type in shader code.
+.. _class_VisualShaderNode_constant_PORT_TYPE_SCALAR_INT:
 
-- **PORT_TYPE_BOOLEAN** = **5** --- Boolean type. Translated to ``bool`` type in shader code.
+.. rst-class:: classref-enumeration-constant
 
-- **PORT_TYPE_TRANSFORM** = **6** --- Transform type. Translated to ``mat4`` type in shader code.
+:ref:`PortType<enum_VisualShaderNode_PortType>` **PORT_TYPE_SCALAR_INT** = ``1``
 
-- **PORT_TYPE_SAMPLER** = **7** --- Sampler type. Translated to reference of sampler uniform in shader code. Can only be used for input ports in non-uniform nodes.
+Integer scalar. Translated to ``int`` type in shader code.
 
-- **PORT_TYPE_MAX** = **8** --- Represents the size of the :ref:`PortType<enum_VisualShaderNode_PortType>` enum.
+.. _class_VisualShaderNode_constant_PORT_TYPE_VECTOR_2D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortType<enum_VisualShaderNode_PortType>` **PORT_TYPE_VECTOR_2D** = ``2``
+
+2D vector of floating-point values. Translated to ``vec2`` type in shader code.
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_VECTOR_3D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortType<enum_VisualShaderNode_PortType>` **PORT_TYPE_VECTOR_3D** = ``3``
+
+3D vector of floating-point values. Translated to ``vec3`` type in shader code.
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_VECTOR_4D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortType<enum_VisualShaderNode_PortType>` **PORT_TYPE_VECTOR_4D** = ``4``
+
+4D vector of floating-point values. Translated to ``vec4`` type in shader code.
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_BOOLEAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortType<enum_VisualShaderNode_PortType>` **PORT_TYPE_BOOLEAN** = ``5``
+
+Boolean type. Translated to ``bool`` type in shader code.
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_TRANSFORM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortType<enum_VisualShaderNode_PortType>` **PORT_TYPE_TRANSFORM** = ``6``
+
+Transform type. Translated to ``mat4`` type in shader code.
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_SAMPLER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortType<enum_VisualShaderNode_PortType>` **PORT_TYPE_SAMPLER** = ``7``
+
+Sampler type. Translated to reference of sampler uniform in shader code. Can only be used for input ports in non-uniform nodes.
+
+.. _class_VisualShaderNode_constant_PORT_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PortType<enum_VisualShaderNode_PortType>` **PORT_TYPE_MAX** = ``8``
+
+Represents the size of the :ref:`PortType<enum_VisualShaderNode_PortType>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNode_property_output_port_for_preview:
 
-- :ref:`int<class_int>` **output_port_for_preview**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------+
-| *Default* | ``-1``                             |
-+-----------+------------------------------------+
-| *Setter*  | set_output_port_for_preview(value) |
-+-----------+------------------------------------+
-| *Getter*  | get_output_port_for_preview()      |
-+-----------+------------------------------------+
+:ref:`int<class_int>` **output_port_for_preview** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_output_port_for_preview** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_output_port_for_preview** **(** **)**
 
 Sets the output port index which will be showed for preview. If set to ``-1`` no port will be open for preview.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisualShaderNode_method_clear_default_input_values:
 
-- void **clear_default_input_values** **(** **)**
+.. rst-class:: classref-method
+
+void **clear_default_input_values** **(** **)**
 
 Clears the default input ports value.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNode_method_get_default_input_values:
 
-- :ref:`Array<class_Array>` **get_default_input_values** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_default_input_values** **(** **)** |const|
 
 Returns an :ref:`Array<class_Array>` containing default values for all of the input ports of the node in the form ``[index0, value0, index1, value1, ...]``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNode_method_get_input_port_default_value:
 
-- :ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_input_port_default_value** **(** :ref:`int<class_int>` port **)** |const|
 
 Returns the default value of the input ``port``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNode_method_remove_input_port_default_value:
 
-- void **remove_input_port_default_value** **(** :ref:`int<class_int>` port **)**
+.. rst-class:: classref-method
+
+void **remove_input_port_default_value** **(** :ref:`int<class_int>` port **)**
 
 Removes the default value of the input ``port``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNode_method_set_default_input_values:
 
-- void **set_default_input_values** **(** :ref:`Array<class_Array>` values **)**
+.. rst-class:: classref-method
+
+void **set_default_input_values** **(** :ref:`Array<class_Array>` values **)**
 
 Sets the default input ports values using an :ref:`Array<class_Array>` of the form ``[index0, value0, index1, value1, ...]``. For example: ``[0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0)]``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNode_method_set_input_port_default_value:
 
-- void **set_input_port_default_value** **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` prev_value=null **)**
+.. rst-class:: classref-method
+
+void **set_input_port_default_value** **(** :ref:`int<class_int>` port, :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` prev_value=null **)**
 
 Sets the default ``value`` for the selected input ``port``.
 
