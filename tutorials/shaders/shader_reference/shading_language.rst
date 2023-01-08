@@ -1299,7 +1299,7 @@ is used, it can be scalar or vector.
 |                                                                             |                                                                     |
 | uvec_type **findMSB** (uvec_type value)                                     |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
-| void **imulExtended** (ivec_type x, ivec_type y, out ivec_type msb,         | Adds two 32-bit numbers and produce a 64-bit result.                |
+| void **imulExtended** (ivec_type x, ivec_type y, out ivec_type msb,         | Multiplies two 32-bit numbers and produce a 64-bit result.          |
 | out ivec_type lsb)                                                          | ``x`` - the first number.                                           |
 |                                                                             | ``y`` - the second number.                                          |
 | void **umulExtended** (uvec_type x, uvec_type y, out uvec_type msb,         | ``msb`` - will contain the most significant bits.                   |
