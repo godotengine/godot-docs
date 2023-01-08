@@ -1449,7 +1449,7 @@ p + .classref-constant {
     position: fixed;
 }
 
-/* Version selector (only visible on Read the Docs) */
+/* Read the Docs flyout panel, with language and version selectors. */
 
 .rst-versions {
     background-color: var(--navbar-current-background-color);
