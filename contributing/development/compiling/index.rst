@@ -1,5 +1,5 @@
-Compiling
-=========
+Building from source
+====================
 
 .. toctree::
    :maxdepth: 1
