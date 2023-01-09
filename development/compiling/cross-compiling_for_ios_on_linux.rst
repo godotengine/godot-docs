@@ -27,7 +27,7 @@ Requirements
 ------------
 
 -  `XCode with the iOS SDK <https://developer.apple.com/xcode/download>`__
-   (a dmg image) for newer versions a **xip** file it's going to be downloaded.
+   (a dmg image, for newer versions a **xip** file is going to be downloaded.)
 -  `Clang >= 3.5 <http://clang.llvm.org>`__ for your development
    machine installed and in the ``PATH``. It has to be version >= 3.5
    to target ``arm64`` architecture.
