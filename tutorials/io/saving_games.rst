@@ -270,8 +270,17 @@ load function:
 
         while (saveGame.GetPosition() < saveGame.GetLength())
         {
+            var jsonString = saveGame.GetLine();
+            // Creates the helper class to interact with JSON
+            var json = new JSON();
+            var parseResult = json.Parse(jsonString);
+            if (parseResult != Error.Ok) {
+                GD.Print($"JSON Parse Error: {json.GetErrorMessage()} in {jsonString} at line {json.GetErrorLine()}");
+                continue;
+            }
+
             // Get the saved dictionary from the next line in the save file
-            var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)JSON.ParseString(saveGame.GetLine()));
+            var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
 
             // Firstly, we need to create the object and add it to the tree and set its position.
             var newObjectScene = (PackedScene)ResourceLoader.Load(nodeData["Filename"].ToString());
@@ -280,7 +289,7 @@ load function:
             newObject.Set("position", new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
 
             // Now we set the remaining variables.
-            foreach (KeyValuePair<string, object> entry in nodeData)
+            foreach (KeyValuePair<string, Variant> entry in nodeData)
             {
                 string key = entry.Key.ToString();
                 if (key == "Filename" || key == "Parent" || key == "PosX" || key == "PosY")
