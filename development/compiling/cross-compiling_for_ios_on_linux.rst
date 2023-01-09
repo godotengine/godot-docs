@@ -93,6 +93,7 @@ For newer versions you should extract the **xip** file:
     [...]
     ######### Blocks
 
+Note that for the commands below, you may need to replace the version (`X.x`) with whatever iOS SDK version you're using.
 
 Extract the iOS SDK:
 
