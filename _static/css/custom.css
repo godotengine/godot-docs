@@ -316,14 +316,21 @@ article ol,
 .wy-plain-list-disc,
 .wy-plain-list-decimal,
 .rst-content ol.arabic,
-.rst-content .section ul,
-.rst-content .toctree-wrapper ul,
-.rst-content .section ol {
+.rst-content .toctree-wrapper ul {
     /* Increase the line height slightly to account for the different font */
     line-height: 25px;
 }
 
-.rst-content section ul li {
+/* Depending on the environment, it can be a section tag or a div with the section class. */
+.rst-content section ul,
+.rst-content section ol,
+.rst-content .section ul,
+.rst-content .section ol {
+    /* Increase the line height slightly to account for the different font */
+    line-height: 25px;
+}
+.rst-content section ul li,
+.rst-content .section ul li {
     /* Increase spacing between list items. */
     margin-top: 8px;
     margin-bottom: 8px;
