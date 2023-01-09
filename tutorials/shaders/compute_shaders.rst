@@ -229,7 +229,7 @@ Let's retrieve the data and print the results to our console.
 
     # Read back the data from the buffer
     var output_bytes := rd.buffer_get_data(buffer)
-    var output := output_bytes.to_float64_array()
+    var output := output_bytes.to_float32_array()
     print("Input: ", input)
     print("Output: ", output)
 
