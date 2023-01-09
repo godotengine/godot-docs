@@ -27,7 +27,7 @@ Requirements
 ------------
 
 -  `XCode with the iOS SDK <https://developer.apple.com/xcode/download>`__
-   (a dmg image)
+   (a dmg image, for newer versions a **xip** file is going to be downloaded.)
 -  `Clang >= 3.5 <http://clang.llvm.org>`__ for your development
    machine installed and in the ``PATH``. It has to be version >= 3.5
    to target ``arm64`` architecture.
@@ -36,9 +36,10 @@ Requirements
 -  `darling-dmg <https://github.com/darlinghq/darling-dmg>`__, which
    needs to be built from source. The procedure for that is explained
    below.
-
+   - For newer versions you should download `xar <https://mackyle.github.io/xar/>` and `pbzx <https://github.com/NiklasRosenstein/pbzx>`.
    -  For building darling-dmg, you'll need the development packages of
       the following libraries: fuse, icu, openssl, zlib, bzip2.
+   -  For building xar and pbzx you may want to follow `this guide <https://gist.github.com/phracker/1944ce190e01963c550566b749bd2b54>`
 
 -  `cctools-port <https://github.com/tpoechtrager/cctools-port>`__
    for the needed build tools. The procedure for building is quite
@@ -81,13 +82,27 @@ Mount the XCode image:
     [...]
     Everything looks OK, disk mounted
 
+
+For newer versions you should extract the **xip** file:
+
+::
+
+    $ mkdir xcode
+    $ xar -xf /path/to/Xcode_X.x.xip -C xcode
+    $ pbzx -n Content | cpio -i
+    [...]
+    ######### Blocks
+
+Note that for the commands below, you may need to replace the version (`X.x`) with whatever iOS SDK version you're using.
+
 Extract the iOS SDK:
 
 ::
 
-    $ mkdir -p iPhoneSDK/iPhoneOS9.1.sdk
-    $ cp -r xcode/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/* iPhoneSDK/iPhoneOS9.1.sdk
-    $ cp -r xcode/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/* iPhoneSDK/iPhoneOS9.1.sdk/usr/include/c++
+    $ # If you don't know your iPhone SDK version you can see the json file inside of Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs
+    $ mkdir -p iPhoneSDK/iPhoneOSX.x.sdk
+    $ cp -r xcode/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/* iPhoneSDK/iPhoneOSX.x.sdk
+    $ cp -r xcode/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/* iPhoneSDK/iPhoneOSX.x.sdk/usr/include/c++
     $ fusermount -u xcode  # unmount the image
 
 Pack the SDK:
@@ -95,7 +110,7 @@ Pack the SDK:
 ::
 
     $ cd iPhoneSDK
-    $ tar -cf - * | xz -9 -c - > iPhoneOS9.1.sdk.tar.xz
+    $ tar -cf - * | xz -9 -c - > iPhoneOSX.x.sdk.tar.xz
 
 Toolchain
 ~~~~~~~~~
@@ -106,7 +121,7 @@ Build cctools:
 
     $ git clone https://github.com/tpoechtrager/cctools-port.git
     $ cd cctools-port/usage_examples/ios_toolchain
-    $ ./build.sh /path/iPhoneOS9.1.sdk.tar.xz arm64
+    $ ./build.sh /path/iPhoneOSX.x.sdk.tar.xz arm64
 
 Copy the tools to a nicer place. Note that the SCons scripts for
 building will look under ``usr/bin`` inside the directory you provide
