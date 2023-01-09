@@ -134,7 +134,7 @@ Inside ``_physics_process()``, add the following code before the ``move_and_slid
 
        # Jumping.
        if is_on_floor() and Input.is_action_just_pressed("jump"):
-            target_velocity.y = jump_impulse
+           target_velocity.y = jump_impulse
 
        #...
 
