@@ -143,7 +143,7 @@ Using spaces
 
 Insert a space:
 
-* Around a binary and tertiary operator.
+* Around a binary and ternary operator.
 * Between an opening parenthesis and ``if``, ``for``, ``foreach``, ``catch``, ``while``, ``lock`` or ``using`` keywords.
 * Before and within a single line accessor block.
 * Between accessors in a single line accessor block.
