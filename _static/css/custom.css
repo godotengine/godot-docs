@@ -1633,11 +1633,3 @@ p + .classref-constant {
 .wy-menu-vertical p.caption + ul.active {
     display: block;
 }
-
-/* Top navigation, breadcrumbs */
-.wy-breadcrumbs li a {
-    padding: 0 5px;
-}
-.wy-breadcrumbs li a:first-child {
-    padding-left: 0;
-}
