@@ -295,7 +295,7 @@ information about where and how the collision occurred. For example, we use its
     The method ``is_in_group()`` is available on every :ref:`Node<class_Node>`.
 
 To check that we are landing on the monster, we use the vector dot product:
-``Vector3.UP.dot(collision.get_normal) > 0.1``. The collision normal is a 3D vector
+``Vector3.UP.dot(collision.get_normal()) > 0.1``. The collision normal is a 3D vector
 that is perpendicular to the plane where the collision occurred. The dot product
 allows us to compare it to the up direction.
 
