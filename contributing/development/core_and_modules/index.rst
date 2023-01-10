@@ -1,6 +1,9 @@
 Engine core and modules
 =======================
 
+The following pages are meant to introduce the global organization of Godot Engine's
+source code, and give useful tips for extending and fixing the engine on the C++ side.
+
 Getting started with Godot's source code
 ----------------------------------------
 
@@ -10,7 +13,7 @@ This section covers the basics that you will encounter in (almost) every source 
    :maxdepth: 1
    :name: toc-devel-cpp-source-beginner
 
-   introduction_to_godot_development
+   godot_architecture_diagram
    common_engine_methods_and_macros
    core_types
    variant_class
