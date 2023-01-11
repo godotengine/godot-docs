@@ -13,7 +13,9 @@ Exporting is done by using the ``[Export]`` attribute.
 
 .. code-block:: csharp
 
-    public class ExportExample : Node3D
+    using Godot;
+
+    public partial class ExportExample : Node3D
     {
         [Export]
         private int Number = 5;

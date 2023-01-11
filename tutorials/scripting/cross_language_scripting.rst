@@ -35,7 +35,9 @@ The following two scripts will be used as references throughout this page.
 
  .. code-tab:: csharp
 
-    public class MyCSharpNode : Node
+    using Godot;
+
+    public partial class MyCSharpNode : Node
     {
         public String str1 = "bar";
         public String str2 { get { return "barbar"; } }

@@ -153,7 +153,9 @@ Consequently, any ``Node`` or ``Reference`` will be compatible automatically, bu
 
 .. code-block:: csharp
 
-    public class DataObject : Godot.Object
+    using Godot;
+
+    public partial class DataObject : Godot.Object
     {
         public string Field1 { get; set; }
         public string Field2 { get; set; }

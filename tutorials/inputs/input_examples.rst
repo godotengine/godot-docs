@@ -86,9 +86,8 @@ attach the following script:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Node : Godot.Node
+    public partial class Node : Godot.Node
     {
         public override void _Input(InputEvent inputEvent)
         {
@@ -346,9 +345,8 @@ node:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Node2D : Godot.Node2D
+    public partial class Node2D : Godot.Node2D
     {
         private bool dragging = false;
         private int clickRadius = 32; // Size of the sprite.

@@ -113,7 +113,9 @@ deltatime methods as needed.
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
 
         // Called every frame, even when the engine detects no input.
@@ -171,7 +173,9 @@ instantiation:
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
         private string _test = "one";
 
@@ -255,7 +259,9 @@ nodes that one might create at runtime.
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
         public Node ParentCache = null;
 

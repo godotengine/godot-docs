@@ -56,7 +56,6 @@ Add a script to the character body and add the following code:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     public partial class Movement : CharacterBody2D
     {
@@ -123,7 +122,6 @@ while up/down moves it forward or backward in whatever direction it's facing.
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     public partial class Movement : CharacterBody2D
     {
@@ -182,7 +180,6 @@ is set by the mouse position instead of the keyboard. The character will always
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     public partial class Movement : CharacterBody2D
     {
@@ -246,7 +243,6 @@ on the screen will cause the player to move to the target location.
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     public partial class Movement : CharacterBody2D
     {

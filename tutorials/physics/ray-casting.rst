@@ -177,7 +177,9 @@ collision object node:
 
  .. code-tab:: csharp
 
-    class Body : CharacterBody2D
+    using Godot;
+
+    public partial class Body : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {
@@ -211,7 +213,9 @@ member variable:
 
  .. code-tab:: csharp
 
-    class Body : CharacterBody2D
+    using Godot;
+
+    public partial class Body : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {

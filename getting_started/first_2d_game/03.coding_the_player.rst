@@ -36,7 +36,6 @@ Start by declaring the member variables this object will need:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     public partial class Player : Area2D
     {

@@ -64,9 +64,8 @@ or lose precision if the frame rate is too high or too low.
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : CharacterBody2D
+    public partial class PhysicsScript : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {
@@ -128,9 +127,8 @@ So, let's move our sprite downwards until it hits the floor:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : CharacterBody2D
+    public partial class PhysicsScript : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {
@@ -162,9 +160,8 @@ little more like a regular game character:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : CharacterBody2D
+    public partial class PhysicsScript : CharacterBody2D
     {
         const float gravity = 200.0f;
         Vector2 velocity;
@@ -213,9 +210,8 @@ This adds basic support for walking when pressing left and right:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : CharacterBody2D
+    public partial class PhysicsScript : CharacterBody2D
     {
         const float gravity = 200.0f;
         const int walkSpeed = 200;

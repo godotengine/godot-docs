@@ -275,7 +275,9 @@ For example, here is the code for an "Asteroids" style spaceship:
 
  .. code-tab:: csharp
 
-    class Spaceship : RigidBody2D
+    using Godot;
+
+    public partial class Spaceship : RigidBody2D
     {
         private Vector2 _thrust = new Vector2(0, -250);
         private float _torque = 20000;
@@ -366,7 +368,9 @@ occurred:
 
  .. code-tab:: csharp
 
-    class Body : PhysicsBody2D
+    using Godot;
+
+    public partial class Body : PhysicsBody2D
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
@@ -396,7 +400,9 @@ Or to bounce off of the colliding object:
 
  .. code-tab:: csharp
 
-    class Body : PhysicsBody2D
+    using Godot;
+
+    public partial class Body : PhysicsBody2D
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
@@ -455,7 +461,9 @@ the ground (including slopes) and jump when standing on the ground:
 
  .. code-tab:: csharp
 
-    class Body : CharacterBody2D
+    using Godot;
+
+    public partial class Body : CharacterBody2D
     {
         private float _runSpeed = 350;
         private float _jumpSpeed = -1000;

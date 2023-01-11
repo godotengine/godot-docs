@@ -37,7 +37,9 @@ given velocity:
 
  .. code-tab:: csharp
 
-    public class Bullet : Area2D
+    using Godot;
+
+    public partial class Bullet : Area2D
     {
         Vector2 Velocity = new Vector2();
 
@@ -104,7 +106,9 @@ Here is the code for the player using signals to emit the bullet:
 
  .. code-tab:: csharp
 
-    public class Player : Sprite2D
+    using Godot;
+
+    public partial class Player : Sprite2D
     {
         [Signal]
         delegate void ShootEventHandler(PackedScene bullet, Vector2 direction, Vector2 location);

@@ -78,7 +78,9 @@ use ``area_entered``. However, let's assume our player is a ``CharacterBody2D``
 
  .. code-tab:: csharp
 
-    public class Coin : Area2D
+    using Godot;
+
+    public partial class Coin : Area2D
     {
 
         public void OnCoinBodyEntered(PhysicsBody2D body)
