@@ -22,3 +22,4 @@ make the most of your time learning it.
    first_look_at_the_editor
    learning_new_features
    godot_design_philosophy
+   reading_the_class_reference
