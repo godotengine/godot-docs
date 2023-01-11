@@ -40,6 +40,8 @@ Methods
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_set_uid<class_ResourceFormatSaver_method__set_uid>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` uid **)** |virtual|                                       |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -97,6 +99,18 @@ If this method is not implemented, the default behavior returns whether the path
 Saves the given resource object to a file at the target ``path``. ``flags`` is a bitmask composed with :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` constants.
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceFormatSaver_method__set_uid:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **_set_uid** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` uid **)** |virtual|
+
+Sets a new UID for the resource at the given ``path``. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -99,18 +99,6 @@ Methods
 Signals
 -------
 
-.. _class_AnimationNode_signal_removed_from_graph:
-
-.. rst-class:: classref-signal
-
-**removed_from_graph** **(** **)**
-
-Emitted when the node was removed from the graph.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_AnimationNode_signal_tree_changed:
 
 .. rst-class:: classref-signal

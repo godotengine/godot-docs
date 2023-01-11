@@ -16,6 +16,13 @@ VisualShaderNodeParticleEmitter
 
 A base class for particle emitters.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Particle emitter nodes can be used in "start" step of particle shaders and they define the starting position of the particles. Connect them to the Position output port.
+
 .. rst-class:: classref-reftable-group
 
 Properties

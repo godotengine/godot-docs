@@ -12,9 +12,14 @@ VisualShaderNodeParticleAccelerator
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+A visual shader node that accelerates particles.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Particle accelerator can be used in "process" step of particle shader. It will accelerate the particles. Connect it to the Velocity output port.
 
 .. rst-class:: classref-reftable-group
 
@@ -49,7 +54,7 @@ enum **Mode**:
 
 :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_LINEAR** = ``0``
 
-
+The particles will be accelerated based on their velocity.
 
 .. _class_VisualShaderNodeParticleAccelerator_constant_MODE_RADIAL:
 
@@ -57,7 +62,7 @@ enum **Mode**:
 
 :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_RADIAL** = ``1``
 
-
+The particles will be accelerated towards or away from the center.
 
 .. _class_VisualShaderNodeParticleAccelerator_constant_MODE_TANGENTIAL:
 
@@ -65,7 +70,7 @@ enum **Mode**:
 
 :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_TANGENTIAL** = ``2``
 
-
+The particles will be accelerated tangentially to the radius vector from center to their position.
 
 .. _class_VisualShaderNodeParticleAccelerator_constant_MODE_MAX:
 
@@ -95,9 +100,7 @@ Property Descriptions
 - void **set_mode** **(** :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` value **)**
 - :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **get_mode** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Defines in what manner the particles will be accelerated.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

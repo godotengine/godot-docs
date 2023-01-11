@@ -126,7 +126,7 @@ A shader for light calculations.
 
 :ref:`Type<enum_VisualShader_Type>` **TYPE_START** = ``3``
 
-
+A function for the "start" stage of particle shader.
 
 .. _class_VisualShader_constant_TYPE_PROCESS:
 
@@ -134,7 +134,7 @@ A shader for light calculations.
 
 :ref:`Type<enum_VisualShader_Type>` **TYPE_PROCESS** = ``4``
 
-
+A function for the "process" stage of particle shader.
 
 .. _class_VisualShader_constant_TYPE_COLLIDE:
 
@@ -142,7 +142,7 @@ A shader for light calculations.
 
 :ref:`Type<enum_VisualShader_Type>` **TYPE_COLLIDE** = ``5``
 
-
+A function for the "collide" stage (particle collision handler) of particle shader.
 
 .. _class_VisualShader_constant_TYPE_START_CUSTOM:
 
@@ -150,7 +150,7 @@ A shader for light calculations.
 
 :ref:`Type<enum_VisualShader_Type>` **TYPE_START_CUSTOM** = ``6``
 
-
+A function for the "start" stage of particle shader, with customized output.
 
 .. _class_VisualShader_constant_TYPE_PROCESS_CUSTOM:
 
@@ -158,7 +158,7 @@ A shader for light calculations.
 
 :ref:`Type<enum_VisualShader_Type>` **TYPE_PROCESS_CUSTOM** = ``7``
 
-
+A function for the "process" stage of particle shader, with customized output.
 
 .. _class_VisualShader_constant_TYPE_SKY:
 
@@ -166,7 +166,7 @@ A shader for light calculations.
 
 :ref:`Type<enum_VisualShader_Type>` **TYPE_SKY** = ``8``
 
-
+A shader for 3D environment's sky.
 
 .. _class_VisualShader_constant_TYPE_FOG:
 
@@ -200,7 +200,7 @@ enum **VaryingMode**:
 
 :ref:`VaryingMode<enum_VisualShader_VaryingMode>` **VARYING_MODE_VERTEX_TO_FRAG_LIGHT** = ``0``
 
-
+Varying is passed from ``Vertex`` function to ``Fragment`` and ``Light`` functions.
 
 .. _class_VisualShader_constant_VARYING_MODE_FRAG_TO_LIGHT:
 
@@ -208,7 +208,7 @@ enum **VaryingMode**:
 
 :ref:`VaryingMode<enum_VisualShader_VaryingMode>` **VARYING_MODE_FRAG_TO_LIGHT** = ``1``
 
-
+Varying is passed from ``Fragment`` function to ``Light`` function.
 
 .. _class_VisualShader_constant_VARYING_MODE_MAX:
 
@@ -216,7 +216,7 @@ enum **VaryingMode**:
 
 :ref:`VaryingMode<enum_VisualShader_VaryingMode>` **VARYING_MODE_MAX** = ``2``
 
-
+Represents the size of the :ref:`VaryingMode<enum_VisualShader_VaryingMode>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -234,7 +234,7 @@ enum **VaryingType**:
 
 :ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_FLOAT** = ``0``
 
-
+Varying is of type :ref:`float<class_float>`.
 
 .. _class_VisualShader_constant_VARYING_TYPE_INT:
 
@@ -242,55 +242,63 @@ enum **VaryingType**:
 
 :ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_INT** = ``1``
 
+Varying is of type :ref:`int<class_int>`.
 
+.. _class_VisualShader_constant_VARYING_TYPE_UINT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_UINT** = ``2``
+
+Varying is of type unsigned :ref:`int<class_int>`.
 
 .. _class_VisualShader_constant_VARYING_TYPE_VECTOR_2D:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_VECTOR_2D** = ``2``
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_VECTOR_2D** = ``3``
 
-
+Varying is of type :ref:`Vector2<class_Vector2>`.
 
 .. _class_VisualShader_constant_VARYING_TYPE_VECTOR_3D:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_VECTOR_3D** = ``3``
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_VECTOR_3D** = ``4``
 
-
+Varying is of type :ref:`Vector3<class_Vector3>`.
 
 .. _class_VisualShader_constant_VARYING_TYPE_VECTOR_4D:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_VECTOR_4D** = ``4``
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_VECTOR_4D** = ``5``
 
-
+Varying is of type :ref:`Vector4<class_Vector4>`.
 
 .. _class_VisualShader_constant_VARYING_TYPE_BOOLEAN:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_BOOLEAN** = ``5``
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_BOOLEAN** = ``6``
 
-
+Varying is of type :ref:`bool<class_bool>`.
 
 .. _class_VisualShader_constant_VARYING_TYPE_TRANSFORM:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_TRANSFORM** = ``6``
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_TRANSFORM** = ``7``
 
-
+Varying is of type :ref:`Transform3D<class_Transform3D>`.
 
 .. _class_VisualShader_constant_VARYING_TYPE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_MAX** = ``7``
+:ref:`VaryingType<enum_VisualShader_VaryingType>` **VARYING_TYPE_MAX** = ``8``
 
-
+Represents the size of the :ref:`VaryingType<enum_VisualShader_VaryingType>` enum.
 
 .. rst-class:: classref-section-separator
 
@@ -307,7 +315,7 @@ Constants
 
 **NODE_ID_INVALID** = ``-1``
 
-
+Denotes invalid **VisualShader** node.
 
 .. _class_VisualShader_constant_NODE_ID_OUTPUT:
 
@@ -315,7 +323,7 @@ Constants
 
 **NODE_ID_OUTPUT** = ``0``
 
-
+Denotes output node of **VisualShader**.
 
 .. rst-class:: classref-section-separator
 
@@ -366,9 +374,7 @@ Adds the specified ``node`` to the shader.
 
 void **add_varying** **(** :ref:`String<class_String>` name, :ref:`VaryingMode<enum_VisualShader_VaryingMode>` mode, :ref:`VaryingType<enum_VisualShader_VaryingType>` type **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Adds a new varying value node to the shader.
 
 .. rst-class:: classref-item-separator
 
@@ -476,9 +482,7 @@ Returns the position of the specified node within the shader graph.
 
 :ref:`int<class_int>` **get_valid_node_id** **(** :ref:`Type<enum_VisualShader_Type>` type **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns next valid node ID that can be added to the shader graph.
 
 .. rst-class:: classref-item-separator
 
@@ -490,9 +494,7 @@ Returns the position of the specified node within the shader graph.
 
 :ref:`bool<class_bool>` **has_varying** **(** :ref:`String<class_String>` name **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the shader has a varying with the given ``name``.
 
 .. rst-class:: classref-item-separator
 
@@ -528,9 +530,7 @@ Removes the specified node from the shader.
 
 void **remove_varying** **(** :ref:`String<class_String>` name **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Removes a varying value node with the given ``name``. Prints an error if a node with this name is not found.
 
 .. rst-class:: classref-item-separator
 

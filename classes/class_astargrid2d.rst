@@ -54,19 +54,21 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------+------------------------------------------------------------------------+--------------------+
-   | :ref:`Vector2<class_Vector2>`                      | :ref:`cell_size<class_AStarGrid2D_property_cell_size>`                 | ``Vector2(1, 1)``  |
-   +----------------------------------------------------+------------------------------------------------------------------------+--------------------+
-   | :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`       | :ref:`default_heuristic<class_AStarGrid2D_property_default_heuristic>` | ``0``              |
-   +----------------------------------------------------+------------------------------------------------------------------------+--------------------+
-   | :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` | :ref:`diagonal_mode<class_AStarGrid2D_property_diagonal_mode>`         | ``0``              |
-   +----------------------------------------------------+------------------------------------------------------------------------+--------------------+
-   | :ref:`bool<class_bool>`                            | :ref:`jumping_enabled<class_AStarGrid2D_property_jumping_enabled>`     | ``false``          |
-   +----------------------------------------------------+------------------------------------------------------------------------+--------------------+
-   | :ref:`Vector2<class_Vector2>`                      | :ref:`offset<class_AStarGrid2D_property_offset>`                       | ``Vector2(0, 0)``  |
-   +----------------------------------------------------+------------------------------------------------------------------------+--------------------+
-   | :ref:`Vector2i<class_Vector2i>`                    | :ref:`size<class_AStarGrid2D_property_size>`                           | ``Vector2i(0, 0)`` |
-   +----------------------------------------------------+------------------------------------------------------------------------+--------------------+
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`Vector2<class_Vector2>`                      | :ref:`cell_size<class_AStarGrid2D_property_cell_size>`                                   | ``Vector2(1, 1)``  |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`       | :ref:`default_compute_heuristic<class_AStarGrid2D_property_default_compute_heuristic>`   | ``0``              |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`       | :ref:`default_estimate_heuristic<class_AStarGrid2D_property_default_estimate_heuristic>` | ``0``              |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` | :ref:`diagonal_mode<class_AStarGrid2D_property_diagonal_mode>`                           | ``0``              |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`jumping_enabled<class_AStarGrid2D_property_jumping_enabled>`                       | ``false``          |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`Vector2<class_Vector2>`                      | :ref:`offset<class_AStarGrid2D_property_offset>`                                         | ``Vector2(0, 0)``  |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`Vector2i<class_Vector2i>`                    | :ref:`size<class_AStarGrid2D_property_size>`                                             | ``Vector2i(0, 0)`` |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -266,18 +268,35 @@ The size of the point cell which will be applied to calculate the resulting poin
 
 ----
 
-.. _class_AStarGrid2D_property_default_heuristic:
+.. _class_AStarGrid2D_property_default_compute_heuristic:
 
 .. rst-class:: classref-property
 
-:ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **default_heuristic** = ``0``
+:ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **default_compute_heuristic** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_heuristic** **(** :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` value **)**
-- :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **get_default_heuristic** **(** **)**
+- void **set_default_compute_heuristic** **(** :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` value **)**
+- :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **get_default_compute_heuristic** **(** **)**
 
-The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to calculate the path if :ref:`_compute_cost<class_AStarGrid2D_method__compute_cost>` and/or :ref:`_estimate_cost<class_AStarGrid2D_method__estimate_cost>` were not overridden.
+The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to calculate the cost between two points if :ref:`_compute_cost<class_AStarGrid2D_method__compute_cost>` was not overridden.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AStarGrid2D_property_default_estimate_heuristic:
+
+.. rst-class:: classref-property
+
+:ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **default_estimate_heuristic** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_estimate_heuristic** **(** :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` value **)**
+- :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` **get_default_estimate_heuristic** **(** **)**
+
+The default :ref:`Heuristic<enum_AStarGrid2D_Heuristic>` which will be used to calculate the cost between the point and the end point if :ref:`_estimate_cost<class_AStarGrid2D_method__estimate_cost>` was not overridden.
 
 .. rst-class:: classref-item-separator
 

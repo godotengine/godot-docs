@@ -12,9 +12,14 @@ VisualShaderNodeIntParameter
 
 **Inherits:** :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+A visual shader node for shader parameter (uniform) of type :ref:`int<class_int>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+A :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>` of type :ref:`int<class_int>`. Offers additional customization for range of accepted values.
 
 .. rst-class:: classref-reftable-group
 
@@ -59,7 +64,7 @@ enum **Hint**:
 
 :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **HINT_NONE** = ``0``
 
-
+The parameter will not constrain its value.
 
 .. _class_VisualShaderNodeIntParameter_constant_HINT_RANGE:
 
@@ -67,7 +72,7 @@ enum **Hint**:
 
 :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **HINT_RANGE** = ``1``
 
-
+The parameter's value must be within the specified :ref:`min<class_VisualShaderNodeIntParameter_property_min>`/:ref:`max<class_VisualShaderNodeIntParameter_property_max>` range.
 
 .. _class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP:
 
@@ -75,7 +80,7 @@ enum **Hint**:
 
 :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **HINT_RANGE_STEP** = ``2``
 
-
+The parameter's value must be within the specified range, with the given :ref:`step<class_VisualShaderNodeIntParameter_property_step>` between values.
 
 .. _class_VisualShaderNodeIntParameter_constant_HINT_MAX:
 
@@ -83,7 +88,7 @@ enum **Hint**:
 
 :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **HINT_MAX** = ``3``
 
-
+Represents the size of the :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` enum.
 
 .. rst-class:: classref-section-separator
 
@@ -105,9 +110,7 @@ Property Descriptions
 - void **set_default_value** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_default_value** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Default value of this parameter, which will be used if not set externally. :ref:`default_value_enabled<class_VisualShaderNodeIntParameter_property_default_value_enabled>` must be enabled; defaults to ``0`` otherwise.
 
 .. rst-class:: classref-item-separator
 
@@ -124,9 +127,7 @@ Property Descriptions
 - void **set_default_value_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_default_value_enabled** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, the node will have a custom default value.
 
 .. rst-class:: classref-item-separator
 
@@ -143,9 +144,7 @@ Property Descriptions
 - void **set_hint** **(** :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` value **)**
 - :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **get_hint** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Range hint of this node. Use it to customize valid parameter range.
 
 .. rst-class:: classref-item-separator
 
@@ -162,9 +161,7 @@ Property Descriptions
 - void **set_max** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_max** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The maximum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>` must be either :ref:`HINT_RANGE<class_VisualShaderNodeIntParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP>` for this to take effect.
 
 .. rst-class:: classref-item-separator
 
@@ -181,9 +178,7 @@ Property Descriptions
 - void **set_min** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_min** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The minimum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>` must be either :ref:`HINT_RANGE<class_VisualShaderNodeIntParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP>` for this to take effect.
 
 .. rst-class:: classref-item-separator
 
@@ -200,9 +195,7 @@ Property Descriptions
 - void **set_step** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_step** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The step between parameter's values. Forces the parameter to be a multiple of the given value. :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>` must be :ref:`HINT_RANGE_STEP<class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP>` for this to take effect.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

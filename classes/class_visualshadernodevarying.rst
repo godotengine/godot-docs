@@ -14,9 +14,14 @@ VisualShaderNodeVarying
 
 **Inherited By:** :ref:`VisualShaderNodeVaryingGetter<class_VisualShaderNodeVaryingGetter>`, :ref:`VisualShaderNodeVaryingSetter<class_VisualShaderNodeVaryingSetter>`
 
-.. container:: contribute
+A visual shader node that represents a "varying" shader value.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Varying values are shader variables that can be passed between shader functions, e.g. from Vertex shader to Fragment shader.
 
 .. rst-class:: classref-reftable-group
 
@@ -52,9 +57,7 @@ Property Descriptions
 - void **set_varying_name** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_varying_name** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Name of the variable. Must be unique.
 
 .. rst-class:: classref-item-separator
 
@@ -71,9 +74,7 @@ Property Descriptions
 - void **set_varying_type** **(** :ref:`VaryingType<enum_VisualShader_VaryingType>` value **)**
 - :ref:`VaryingType<enum_VisualShader_VaryingType>` **get_varying_type** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Type of the variable. Determines where the variable can be accessed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

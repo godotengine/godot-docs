@@ -297,6 +297,10 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`_world_boundary_shape_create<class_PhysicsServer2DExtension_method__world_boundary_shape_create>` **(** **)** |virtual|                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`body_test_motion_is_excluding_body<class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_body>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                                                                                                                   |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`body_test_motion_is_excluding_object<class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_object>` **(** :ref:`int<class_int>` object **)** |const|                                                                                                                                                                                                                                             |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -2202,6 +2206,34 @@ void **_sync** **(** **)** |virtual|
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **_world_boundary_shape_create** **(** **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_body:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **body_test_motion_is_excluding_body** **(** :ref:`RID<class_RID>` body **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2DExtension_method_body_test_motion_is_excluding_object:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **body_test_motion_is_excluding_object** **(** :ref:`int<class_int>` object **)** |const|
 
 .. container:: contribute
 

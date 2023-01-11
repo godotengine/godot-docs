@@ -28,6 +28,8 @@ Tutorials
 
 - `3D Navmesh Demo <https://godotengine.org/asset-library/asset/124>`__
 
+- :doc:`Using NavigationMeshes <../tutorials/navigation/navigation_using_navigationmeshes>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

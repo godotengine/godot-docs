@@ -14,6 +14,13 @@ VisualShaderNodeUVFunc
 
 Contains functions to modify texture coordinates (``uv``) to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+UV functions are similar to :ref:`Vector2<class_Vector2>` functions, but the input port of this node uses the shader's UV value by default.
+
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -93,11 +93,17 @@ Methods
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | :ref:`Callable<class_Callable>`     | :ref:`bind<class_Callable_method_bind>` **(** ... **)** |vararg| |const|                                    |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Callable<class_Callable>`     | :ref:`bindv<class_Callable_method_bindv>` **(** :ref:`Array<class_Array>` arguments **)**                   |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`       | :ref:`call<class_Callable_method_call>` **(** ... **)** |vararg| |const|                                    |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`call_deferred<class_Callable_method_call_deferred>` **(** ... **)** |vararg| |const|                  |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`       | :ref:`callv<class_Callable_method_callv>` **(** :ref:`Array<class_Array>` arguments **)** |const|           |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`           | :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>` **(** **)** |const|                   |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` **(** **)** |const|       |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>` | :ref:`get_method<class_Callable_method_get_method>` **(** **)** |const|                                     |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
@@ -194,6 +200,18 @@ Returns a copy of this **Callable** with one or more arguments bound. When calle
 
 ----
 
+.. _class_Callable_method_bindv:
+
+.. rst-class:: classref-method
+
+:ref:`Callable<class_Callable>` **bindv** **(** :ref:`Array<class_Array>` arguments **)**
+
+Returns a copy of this **Callable** with one or more arguments bound, reading them from an array. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call<class_Callable_method_call>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Callable_method_call:
 
 .. rst-class:: classref-method
@@ -230,6 +248,30 @@ Calls the method represented by this **Callable** in deferred mode, i.e. during 
 :ref:`Variant<class_Variant>` **callv** **(** :ref:`Array<class_Array>` arguments **)** |const|
 
 Calls the method represented by this **Callable**. Unlike :ref:`call<class_Callable_method_call>`, this method expects all arguments to be contained inside the ``arguments`` :ref:`Array<class_Array>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Callable_method_get_bound_arguments:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_bound_arguments** **(** **)** |const|
+
+Return the bound arguments (as long as :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` is greater than zero), or empty (if :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` is less than or equal to zero).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Callable_method_get_bound_arguments_count:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_bound_arguments_count** **(** **)** |const|
+
+Returns the total amount of arguments bound (or unbound) via successive :ref:`bind<class_Callable_method_bind>` or :ref:`unbind<class_Callable_method_unbind>` calls. If the amount of arguments unbound is greater than the ones bound, this function returns a value less than zero.
 
 .. rst-class:: classref-item-separator
 

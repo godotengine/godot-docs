@@ -21,7 +21,7 @@ Description
 
 Spawnable scenes can be configured in the editor or through code (see :ref:`add_spawnable_scene<class_MultiplayerSpawner_method_add_spawnable_scene>`).
 
-Also supports custom node spawns through :ref:`spawn<class_MultiplayerSpawner_method_spawn>`, calling :ref:`_spawn_custom<class_MultiplayerSpawner_method__spawn_custom>` on all peers.
+Also supports custom node spawns through :ref:`spawn<class_MultiplayerSpawner_method_spawn>`, calling :ref:`spawn_function<class_MultiplayerSpawner_property_spawn_function>` on all peers.
 
 Internally, **MultiplayerSpawner** uses :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>` to notify spawns passing the spawned node as the ``object`` and itself as the ``configuration``, and :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>` to notify despawns in a similar way.
 
@@ -33,11 +33,13 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------+-------------------------------------------------------------------+------------------+
-   | :ref:`int<class_int>`           | :ref:`spawn_limit<class_MultiplayerSpawner_property_spawn_limit>` | ``0``            |
-   +---------------------------------+-------------------------------------------------------------------+------------------+
-   | :ref:`NodePath<class_NodePath>` | :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`   | ``NodePath("")`` |
-   +---------------------------------+-------------------------------------------------------------------+------------------+
+   +---------------------------------+-------------------------------------------------------------------------+------------------+
+   | :ref:`Callable<class_Callable>` | :ref:`spawn_function<class_MultiplayerSpawner_property_spawn_function>` |                  |
+   +---------------------------------+-------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`spawn_limit<class_MultiplayerSpawner_property_spawn_limit>`       | ``0``            |
+   +---------------------------------+-------------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`         | ``NodePath("")`` |
+   +---------------------------------+-------------------------------------------------------------------------+------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -47,8 +49,6 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`     | :ref:`_spawn_custom<class_MultiplayerSpawner_method__spawn_custom>` **(** :ref:`Variant<class_Variant>` data **)** |virtual|    |
    +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
    | void                        | :ref:`add_spawnable_scene<class_MultiplayerSpawner_method_add_spawnable_scene>` **(** :ref:`String<class_String>` path **)**    |
    +-----------------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -99,6 +99,25 @@ Emitted when a spawnable scene or custom spawn was spawned by the multiplayer au
 Property Descriptions
 ---------------------
 
+.. _class_MultiplayerSpawner_property_spawn_function:
+
+.. rst-class:: classref-property
+
+:ref:`Callable<class_Callable>` **spawn_function**
+
+.. rst-class:: classref-property-setget
+
+- void **set_spawn_function** **(** :ref:`Callable<class_Callable>` value **)**
+- :ref:`Callable<class_Callable>` **get_spawn_function** **(** **)**
+
+Method called on all peers when for every custom :ref:`spawn<class_MultiplayerSpawner_method_spawn>` requested by the authority. Will receive the ``data`` parameter, and should return a :ref:`Node<class_Node>` that is not in the scene tree.
+
+\ **Note:** The returned node should **not** be added to the scene with :ref:`Node.add_child<class_Node_method_add_child>`. This is done automatically.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_MultiplayerSpawner_property_spawn_limit:
 
 .. rst-class:: classref-property
@@ -139,20 +158,6 @@ Path to the spawn root. Spawnable scenes that are added as direct children are r
 
 Method Descriptions
 -------------------
-
-.. _class_MultiplayerSpawner_method__spawn_custom:
-
-.. rst-class:: classref-method
-
-:ref:`Node<class_Node>` **_spawn_custom** **(** :ref:`Variant<class_Variant>` data **)** |virtual|
-
-Method called on all peers when a custom spawn was requested by the authority using :ref:`spawn<class_MultiplayerSpawner_method_spawn>`. Should return a :ref:`Node<class_Node>` that is not in the scene tree.
-
-\ **Note:** Spawned nodes should **not** be added to the scene with :ref:`Node.add_child<class_Node_method_add_child>`. This is done automatically.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _class_MultiplayerSpawner_method_add_spawnable_scene:
 
@@ -208,7 +213,7 @@ Returns the count of spawnable scene paths.
 
 :ref:`Node<class_Node>` **spawn** **(** :ref:`Variant<class_Variant>` data=null **)**
 
-Requests a custom spawn, with ``data`` passed to :ref:`_spawn_custom<class_MultiplayerSpawner_method__spawn_custom>` on all peers. Returns the locally spawned node instance already inside the scene tree, and added as a child of the node pointed by :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`.
+Requests a custom spawn, with ``data`` passed to :ref:`spawn_function<class_MultiplayerSpawner_property_spawn_function>` on all peers. Returns the locally spawned node instance already inside the scene tree, and added as a child of the node pointed by :ref:`spawn_path<class_MultiplayerSpawner_property_spawn_path>`.
 
 \ **Note:** Spawnable scenes are spawned automatically. :ref:`spawn<class_MultiplayerSpawner_method_spawn>` is only needed for custom spawns.
 

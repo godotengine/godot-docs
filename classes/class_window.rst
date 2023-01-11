@@ -33,57 +33,59 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`always_on_top<class_Window_property_always_on_top>`               | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`auto_translate<class_Window_property_auto_translate>`             | ``true``               |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`borderless<class_Window_property_borderless>`                     | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`ContentScaleAspect<enum_Window_ContentScaleAspect>` | :ref:`content_scale_aspect<class_Window_property_content_scale_aspect>` | ``0``                  |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`float<class_float>`                                 | :ref:`content_scale_factor<class_Window_property_content_scale_factor>` | ``1.0``                |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`ContentScaleMode<enum_Window_ContentScaleMode>`     | :ref:`content_scale_mode<class_Window_property_content_scale_mode>`     | ``0``                  |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`Vector2i<class_Vector2i>`                           | :ref:`content_scale_size<class_Window_property_content_scale_size>`     | ``Vector2i(0, 0)``     |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`int<class_int>`                                     | :ref:`current_screen<class_Window_property_current_screen>`             | ``0``                  |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`exclusive<class_Window_property_exclusive>`                       | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`extend_to_title<class_Window_property_extend_to_title>`           | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`Vector2i<class_Vector2i>`                           | :ref:`max_size<class_Window_property_max_size>`                         | ``Vector2i(0, 0)``     |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`Vector2i<class_Vector2i>`                           | :ref:`min_size<class_Window_property_min_size>`                         | ``Vector2i(0, 0)``     |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`Mode<enum_Window_Mode>`                             | :ref:`mode<class_Window_property_mode>`                                 | ``0``                  |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`popup_window<class_Window_property_popup_window>`                 | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`Vector2i<class_Vector2i>`                           | :ref:`position<class_Window_property_position>`                         | ``Vector2i(0, 0)``     |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`Vector2i<class_Vector2i>`                           | :ref:`size<class_Window_property_size>`                                 | ``Vector2i(100, 100)`` |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`Theme<class_Theme>`                                 | :ref:`theme<class_Window_property_theme>`                               |                        |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`StringName<class_StringName>`                       | :ref:`theme_type_variation<class_Window_property_theme_type_variation>` | ``&""``                |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`String<class_String>`                               | :ref:`title<class_Window_property_title>`                               | ``""``                 |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`transient<class_Window_property_transient>`                       | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`transparent<class_Window_property_transparent>`                   | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`unfocusable<class_Window_property_unfocusable>`                   | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`unresizable<class_Window_property_unresizable>`                   | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`visible<class_Window_property_visible>`                           | ``true``               |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`wrap_controls<class_Window_property_wrap_controls>`               | ``false``              |
-   +-----------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`always_on_top<class_Window_property_always_on_top>`               | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`auto_translate<class_Window_property_auto_translate>`             | ``true``               |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`borderless<class_Window_property_borderless>`                     | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`ContentScaleAspect<enum_Window_ContentScaleAspect>`       | :ref:`content_scale_aspect<class_Window_property_content_scale_aspect>` | ``0``                  |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`float<class_float>`                                       | :ref:`content_scale_factor<class_Window_property_content_scale_factor>` | ``1.0``                |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`ContentScaleMode<enum_Window_ContentScaleMode>`           | :ref:`content_scale_mode<class_Window_property_content_scale_mode>`     | ``0``                  |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`content_scale_size<class_Window_property_content_scale_size>`     | ``Vector2i(0, 0)``     |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`current_screen<class_Window_property_current_screen>`             |                        |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`exclusive<class_Window_property_exclusive>`                       | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`extend_to_title<class_Window_property_extend_to_title>`           | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` | :ref:`initial_position<class_Window_property_initial_position>`         | ``0``                  |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`max_size<class_Window_property_max_size>`                         | ``Vector2i(0, 0)``     |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`min_size<class_Window_property_min_size>`                         | ``Vector2i(0, 0)``     |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`Mode<enum_Window_Mode>`                                   | :ref:`mode<class_Window_property_mode>`                                 | ``0``                  |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`popup_window<class_Window_property_popup_window>`                 | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`position<class_Window_property_position>`                         | ``Vector2i(0, 0)``     |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                                 | :ref:`size<class_Window_property_size>`                                 | ``Vector2i(100, 100)`` |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`Theme<class_Theme>`                                       | :ref:`theme<class_Window_property_theme>`                               |                        |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`StringName<class_StringName>`                             | :ref:`theme_type_variation<class_Window_property_theme_type_variation>` | ``&""``                |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`String<class_String>`                                     | :ref:`title<class_Window_property_title>`                               | ``""``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`transient<class_Window_property_transient>`                       | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`transparent<class_Window_property_transparent>`                   | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`unfocusable<class_Window_property_unfocusable>`                   | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`unresizable<class_Window_property_unresizable>`                   | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`visible<class_Window_property_visible>`                           | ``true``               |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`wrap_controls<class_Window_property_wrap_controls>`               | ``false``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------+------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -683,6 +685,32 @@ Left-to-right layout direction.
 
 Right-to-left layout direction.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_Window_WindowInitialPosition:
+
+.. rst-class:: classref-enumeration
+
+enum **WindowInitialPosition**:
+
+.. _class_Window_constant_WINDOW_INITIAL_POSITION_ABSOLUTE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **WINDOW_INITIAL_POSITION_ABSOLUTE** = ``0``
+
+
+
+.. _class_Window_constant_WINDOW_INITIAL_POSITION_CENTER_SCREEN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **WINDOW_INITIAL_POSITION_CENTER_SCREEN** = ``1``
+
+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -848,7 +876,7 @@ Base size of the content (i.e. nodes that are drawn inside the window). If non-z
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **current_screen** = ``0``
+:ref:`int<class_int>` **current_screen**
 
 .. rst-class:: classref-property-setget
 
@@ -892,6 +920,25 @@ Needs :ref:`transient<class_Window_property_transient>` enabled to work.
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_Window_Flags>` flag **)** |const|
 
 If ``true``, the **Window** contents is expanded to the full size of the window, window title bar is transparent.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_property_initial_position:
+
+.. rst-class:: classref-property
+
+:ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **initial_position** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_initial_position** **(** :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` value **)**
+- :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **get_initial_position** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. rst-class:: classref-item-separator
 

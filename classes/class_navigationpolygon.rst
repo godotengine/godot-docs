@@ -76,6 +76,8 @@ Tutorials
 
 - `2D Navigation Demo <https://godotengine.org/asset-library/asset/117>`__
 
+- :doc:`Using NavigationMeshes <../tutorials/navigation/navigation_using_navigationmeshes>`
+
 .. rst-class:: classref-reftable-group
 
 Methods
