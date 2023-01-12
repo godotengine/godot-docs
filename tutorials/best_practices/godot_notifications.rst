@@ -156,7 +156,9 @@ instantiation:
     # "one" is an "initialized value". These DO NOT trigger the setter.
     # If someone set the value as "two" from the Inspector, this would be an
     # "exported value". These DO trigger the setter.
-    export(String) var test = "one" setget set_test
+    @export var test : String = "one" :
+        set(value):
+            set_test(value)
 
     func _init():
         # "three" is an "init assignment value".

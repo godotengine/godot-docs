@@ -37,10 +37,14 @@ for reference purposes.
         | "tool"
         ;
 
-    classVarDecl = [ "onready" ] [ export ] "var" IDENTIFIER [ ":" typeHint ]
-        [ "=" expression ] [ setget ] NEWLINE ;
-    setget = "setget" [ IDENTIFIER ] [ "," IDENTIFIER] ;
-    export = "export" [ "(" [ BUILTINTYPE | IDENTIFIER { "," literal } ] ")" ] ;
+    classVarDecl = [ @onready ] [ @export ] "var" IDENTIFIER [ ":" typeHint ]
+    [ "=" expression ] IDENTIFIER
+    [ ":" [ "set" "(" value ")" ":" { method } ] | "get" ":" { method } ] NEWLINE ;
+        INDENT set "( new_value )" ] ":" NEWLINE ;
+        INDENT INDENT IDENTIFIER = new_value
+        INDENT get ":" ] NEWLINE ;
+        INDENT INDENT return IDENTIFIER NEWLINE ;
+    (* Note: either the set or get method may be omitted *)
     typeHint = BUILTINTYPE | IDENTIFIER ;
 
     constDecl = "const" IDENTIFIER [ ":" typeHint ] "=" expression NEWLINE ;

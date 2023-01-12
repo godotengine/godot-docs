@@ -17,7 +17,9 @@ The following two scripts will be used as references throughout this page.
     extends Node
 
     var str1 : String = "foo"
-    var str2 : String setget ,get_str2
+    var str2 : String :
+        get:
+            return get_str2()
 
     func get_str2() -> String:
         return "foofoo"

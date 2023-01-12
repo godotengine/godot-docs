@@ -182,7 +182,7 @@ Editing variables
 -----------------
 
 Add and export a variable speed to the script. The function set_speed after
-``setget`` is executed with your input to change the variable. Modify
+``set`` is executed with your input to change the variable. Modify
 ``_process()`` to include the rotation speed.
 
 .. tabs::
