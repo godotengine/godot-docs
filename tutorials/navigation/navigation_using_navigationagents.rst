@@ -174,7 +174,7 @@ This script adds basic navigation movement to a Node3D with a NavigationAgent3D 
         var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
         navigation_agent.set_velocity(new_velocity)
 
-    func _on_NavigationAgent3D_velocity_computed(safe_velocity : Vector3):
+    func _on_navigation_agent_3d_velocity_computed(safe_velocity : Vector3):
         # Move Node3D with the computed `safe_velocity` to avoid dynamic obstacles.
         global_transform.origin = global_transform.origin.move_toward(global_transform.origin + safe_velocity, movement_delta)
 
@@ -204,7 +204,7 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
         var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
         navigation_agent.set_velocity(new_velocity)
 
-    func _on_NavigationAgent3D_velocity_computed(safe_velocity : Vector3):
+    func _on_navigation_agent_3d_velocity_computed(safe_velocity : Vector3):
         # Move CharacterBody3D with the computed `safe_velocity` to avoid dynamic obstacles.
         velocity = safe_velocity
         move_and_slide()
@@ -232,6 +232,6 @@ This script adds basic navigation movement to a RigidBody3D with a NavigationAge
         var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * velocity
         navigation_agent.set_velocity(new_velocity)
 
-    func _on_NavigationAgent3D_velocity_computed(safe_velocity : Vector3):
+    func _on_navigation_agent_3d_velocity_computed(safe_velocity : Vector3):
         # Move RigidBody3D with the computed `safe_velocity` to avoid dynamic obstacles.
         set_linear_velocity(safe_velocity)

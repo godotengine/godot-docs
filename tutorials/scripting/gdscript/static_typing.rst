@@ -291,7 +291,7 @@ a ``body_entered`` signal in a dynamic style:
 
 ::
 
-    func _on_Area2D_body_entered(body):
+    func _on_area_2d_body_entered(body):
         pass
 
 And the same callback, with type hints:

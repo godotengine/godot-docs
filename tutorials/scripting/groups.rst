@@ -98,7 +98,7 @@ enemies that the player was spotted.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Player_spotted():
+    func _on_player_spotted():
         get_tree().call_group("guards", "enter_alert_mode")
 
  .. code-tab:: csharp

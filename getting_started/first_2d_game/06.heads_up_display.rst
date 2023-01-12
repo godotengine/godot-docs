@@ -149,9 +149,9 @@ Now add this script to ``HUD``:
         void show_get_ready();
         void show_game_over();
         void update_score(const int score);
-        void _on_StartButton_pressed();
-        void _on_StartMessageTimer_timeout();
-        void _on_GetReadyMessageTimer_timeout();
+        void _on_start_button_pressed();
+        void _on_start_message_timer_timeout();
+        void _on_get_ready_message_timer_timeout();
 
         static void _register_methods();
     };
@@ -199,9 +199,9 @@ such as "Get Ready", so we add the following code
         godot::register_method("show_get_ready", &HUD::show_get_ready);
         godot::register_method("show_game_over", &HUD::show_game_over);
         godot::register_method("update_score", &HUD::update_score);
-        godot::register_method("_on_StartButton_pressed", &HUD::_on_StartButton_pressed);
-        godot::register_method("_on_StartMessageTimer_timeout", &HUD::_on_StartMessageTimer_timeout);
-        godot::register_method("_on_GetReadyMessageTimer_timeout", &HUD::_on_GetReadyMessageTimer_timeout);
+        godot::register_method("_on_start_button_pressed", &HUD::_on_start_button_pressed);
+        godot::register_method("_on_start_message_timer_timeout", &HUD::_on_start_message_timer_timeout);
+        godot::register_method("_on_get_ready_message_timer_timeout", &HUD::_on_get_ready_message_timer_timeout);
         godot::register_signal<HUD>("start_game", godot::Dictionary());
     }
 
@@ -292,11 +292,11 @@ signal of ``StartButton``, and add the following code to the new functions:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_StartButton_pressed():
+    func _on_start_button_pressed():
         $StartButton.hide()
         start_game.emit()
 
-    func _on_MessageTimer_timeout():
+    func _on_message_timer_timeout():
         $Message.hide()
 
  .. code-tab:: csharp
@@ -315,19 +315,19 @@ signal of ``StartButton``, and add the following code to the new functions:
  .. code-tab:: cpp
 
     // This code goes in `hud.cpp`.
-    void HUD::_on_StartButton_pressed() {
+    void HUD::_on_start_button_pressed() {
         _start_button_timer->stop();
         _start_button->hide();
         emit_signal("start_game");
     }
 
-    void HUD::_on_StartMessageTimer_timeout() {
+    void HUD::_on_start_message_timer_timeout() {
         _message_label->set_text("Dodge the\nCreeps");
         _message_label->show();
         _start_button_timer->start();
     }
 
-    void HUD::_on_GetReadyMessageTimer_timeout() {
+    void HUD::_on_get_ready_message_timer_timeout() {
         _message_label->hide();
     }
 
@@ -382,7 +382,7 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
         _hud->show_game_over();
 
-Finally, add this to ``_on_ScoreTimer_timeout()`` to keep the display in sync
+Finally, add this to ``_on_score_timer_timeout()`` to keep the display in sync
 with the changing score:
 
 .. tabs::

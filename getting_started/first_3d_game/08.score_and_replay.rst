@@ -127,7 +127,7 @@ line:
    func _on_mob_timer_timeout():
        #...
         # We connect the mob to the score label to update the score upon squashing one.
-        mob.squashed.connect($UserInterface/ScoreLabel._on_Mob_squashed.bind())
+        mob.squashed.connect($UserInterface/ScoreLabel._on_mob_squashed.bind())
 
  .. code-tab:: csharp
 
@@ -139,9 +139,9 @@ line:
     }
 
 This line means that when the mob emits the ``squashed`` signal, the
-``ScoreLabel`` node will receive it and call the function ``_on_Mob_squashed()``.
+``ScoreLabel`` node will receive it and call the function ``_on_mob_squashed()``.
 
-Head back to the ``score_label.gd`` script to define the ``_on_Mob_squashed()``
+Head back to the ``score_label.gd`` script to define the ``_on_mob_squashed()``
 callback function.
 
 There, we increment the score and update the displayed text.
@@ -149,7 +149,7 @@ There, we increment the score and update the displayed text.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   func _on_Mob_squashed():
+   func _on_mob_squashed():
        score += 1
        text = "Score: %s" % score
 
@@ -174,7 +174,7 @@ function.
 .. note::
 
    If you get an error when you squash a mob
-   check your capital letters in the signal "_on_Mob_squashed"
+   check your capital letters in the signal "_on_mob_squashed"
 
 You can now play the game and squash a few enemies to see the score
 increase.
@@ -267,7 +267,7 @@ Then, when the player gets hit, we show the overlay.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   func _on_Player_hit():
+   func _on_player_hit():
        #...
        $UserInterface/Retry.show()
 
@@ -403,7 +403,7 @@ Here is the complete ``main.gd`` script for reference.
         add_child(mob)
 
         # We connect the mob to the score label to update the score upon squashing one.
-        mob.squashed.connect($UserInterface/ScoreLabel._on_Mob_squashed.bind())
+        mob.squashed.connect($UserInterface/ScoreLabel._on_mob_squashed.bind())
 
     func _on_player_hit():
         $MobTimer.stop()

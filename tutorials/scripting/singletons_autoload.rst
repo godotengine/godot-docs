@@ -256,7 +256,7 @@ Finally, we need to fill the empty callback functions in the two scenes:
 
     # Add to 'scene_1.gd'.
 
-    func _on_Button_pressed():
+    func _on_button_pressed():
         Global.goto_scene("res://scene_2.tscn")
 
  .. code-tab:: csharp
@@ -276,7 +276,7 @@ and
 
     # Add to 'scene_2.gd'.
 
-    func _on_Button_pressed():
+    func _on_button_pressed():
         Global.goto_scene("res://scene_1.tscn")
 
  .. code-tab:: csharp

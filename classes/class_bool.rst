@@ -27,7 +27,7 @@ Booleans can be directly used in ``if`` statements. The code below demonstrates 
  .. code-tab:: gdscript
 
     var _can_shoot = true
-    
+
     func shoot():
         if _can_shoot:
             pass # Perform shooting actions here.
@@ -35,7 +35,7 @@ Booleans can be directly used in ``if`` statements. The code below demonstrates 
  .. code-tab:: csharp
 
     private bool _canShoot = true;
-    
+
     public void Shoot()
     {
         if (_canShoot)
@@ -56,7 +56,7 @@ The following code will only create a bullet if both conditions are met: action 
  .. code-tab:: gdscript
 
     var _can_shoot = true
-    
+
     func shoot():
         if _can_shoot and Input.is_action_pressed("shoot"):
             create_bullet()
@@ -64,7 +64,7 @@ The following code will only create a bullet if both conditions are met: action 
  .. code-tab:: csharp
 
     private bool _canShoot = true;
-    
+
     public void Shoot()
     {
         if (_canShoot && Input.IsActionPressed("shoot"))
@@ -84,13 +84,13 @@ The following code will set ``can_shoot`` to ``false`` and start a timer. This w
 
     var _can_shoot = true
     @onready var _cool_down = $CoolDownTimer
-    
+
     func shoot():
         if _can_shoot and Input.is_action_pressed("shoot"):
             create_bullet()
             _can_shoot = false
             _cool_down.start()
-    
+
     func _on_cool_down_timer_timeout():
         _can_shoot = true
 
@@ -98,12 +98,12 @@ The following code will set ``can_shoot`` to ``false`` and start a timer. This w
 
     private bool _canShoot = true;
     private Timer _coolDown;
-    
+
     public override void _Ready()
     {
         _coolDown = GetNode<Timer>("CoolDownTimer");
     }
-    
+
     public void Shoot()
     {
         if (_canShoot && Input.IsActionPressed("shoot"))
@@ -113,7 +113,7 @@ The following code will set ``can_shoot`` to ``false`` and start a timer. This w
             _coolDown.Start();
         }
     }
-    
+
     public void OnCoolDownTimerTimeout()
     {
         _canShoot = true;

@@ -146,9 +146,9 @@ to instance.
         void _ready();
         void game_over();
         void new_game();
-        void _on_MobTimer_timeout();
-        void _on_ScoreTimer_timeout();
-        void _on_StartTimer_timeout();
+        void _on_mob_timer_timeout();
+        void _on_score_timer_timeout();
+        void _on_start_timer_timeout();
 
         static void _register_methods();
     };
@@ -249,10 +249,10 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_ScoreTimer_timeout():
+    func _on_score_timer_timeout():
         score += 1
 
-    func _on_StartTimer_timeout():
+    func _on_start_timer_timeout():
         $MobTimer.start()
         $ScoreTimer.start()
 
@@ -272,11 +272,11 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
  .. code-tab:: cpp
 
     // This code goes in `main.cpp`.
-    void Main::_on_ScoreTimer_timeout() {
+    void Main::_on_score_timer_timeout() {
         score += 1;
     }
 
-    void Main::_on_StartTimer_timeout() {
+    void Main::_on_start_timer_timeout() {
         _mob_timer->start();
         _score_timer->start();
     }
@@ -286,13 +286,13 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
         godot::register_method("_ready", &Main::_ready);
         godot::register_method("game_over", &Main::game_over);
         godot::register_method("new_game", &Main::new_game);
-        godot::register_method("_on_MobTimer_timeout", &Main::_on_MobTimer_timeout);
-        godot::register_method("_on_ScoreTimer_timeout", &Main::_on_ScoreTimer_timeout);
-        godot::register_method("_on_StartTimer_timeout", &Main::_on_StartTimer_timeout);
+        godot::register_method("_on_mob_timer_timeout", &Main::_on_mob_timer_timeout);
+        godot::register_method("_on_score_timer_timeout", &Main::_on_score_timer_timeout);
+        godot::register_method("_on_start_timer_timeout", &Main::_on_start_timer_timeout);
         godot::register_property("mob_scene", &Main::mob_scene, (godot::Ref<godot::PackedScene>)nullptr);
     }
 
-In ``_on_MobTimer_timeout()``, we will create a mob instance, pick a random
+In ``_on_mob_timer_timeout()``, we will create a mob instance, pick a random
 starting location along the ``Path2D``, and set the mob in motion. The
 ``PathFollow2D`` node will automatically rotate as it follows the path, so we
 will use that to select the mob's direction as well as its position.
@@ -305,7 +305,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_MobTimer_timeout():
+    func _on_mob_timer_timeout():
         # Create a new instance of the Mob scene.
         var mob = mob_scene.instantiate()
 
@@ -366,7 +366,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
  .. code-tab:: cpp
 
     // This code goes in `main.cpp`.
-    void Main::_on_MobTimer_timeout() {
+    void Main::_on_mob_timer_timeout() {
         // Create a new instance of the Mob scene.
         godot::Node *mob = mob_scene->instance();
 

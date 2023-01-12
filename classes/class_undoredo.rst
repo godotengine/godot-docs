@@ -31,13 +31,13 @@ Here's an example on how to add an action to the Godot editor's own **UndoRedo**
  .. code-tab:: gdscript
 
     var undo_redo = get_undo_redo() # Method of EditorPlugin.
-    
+
     func do_something():
         pass # Put your code here.
-    
+
     func undo_something():
         pass # Put here the code that reverts what's done by "do_something()".
-    
+
     func _on_my_button_pressed():
         var node = get_node("MyNode2D")
         undo_redo.create_action("Move the node")
@@ -50,22 +50,22 @@ Here's an example on how to add an action to the Godot editor's own **UndoRedo**
  .. code-tab:: csharp
 
     public UndoRedo UndoRedo;
-    
+
     public override void _Ready()
     {
         UndoRedo = GetUndoRedo(); // Method of EditorPlugin.
     }
-    
+
     public void DoSomething()
     {
         // Put your code here.
     }
-    
+
     public void UndoSomething()
     {
         // Put here the code that reverts what's done by "DoSomething()".
     }
-    
+
     private void OnMyButtonPressed()
     {
         var node = GetNode<Node2D>("MyNode2D");

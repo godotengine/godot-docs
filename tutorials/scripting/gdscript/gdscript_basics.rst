@@ -1675,16 +1675,16 @@ signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody3D`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
-signal, the game node's ``_on_Character_health_depleted`` is called::
+signal, the game node's ``_on_character_health_depleted`` is called::
 
     # game.gd
 
     func _ready():
         var character_node = get_node('Character')
-        character_node.health_depleted.connect(_on_Character_health_depleted)
+        character_node.health_depleted.connect(_on_character_health_depleted)
 
 
-    func _on_Character_health_depleted():
+    func _on_character_health_depleted():
         get_tree().reload_current_scene()
 
 You can emit as many arguments as you want along with a signal.
@@ -1721,7 +1721,7 @@ the :ref:`Signal.connect() <class_Signal_method_connect>` method::
     # character's health_changed signal is emitted.
 
     ...
-    func _on_Character_health_changed(old_value, new_value):
+    func _on_character_health_changed(old_value, new_value):
         if old_value > new_value:
             progress_bar.modulate = Color.RED
         else:
@@ -1744,7 +1744,7 @@ node in this case.
         var character_node = get_node('Character')
         var lifebar_node = get_node('UserInterface/Lifebar')
 
-        character_node.health_changed.connect(lifebar_node._on_Character_health_changed)
+        character_node.health_changed.connect(lifebar_node._on_character_health_changed)
 
 This allows the ``Lifebar`` to react to health changes without coupling it to
 the ``Character`` node.
@@ -1782,13 +1782,13 @@ character's name in the binds array argument::
         var character_node = get_node('Character')
         var battle_log_node = get_node('UserInterface/BattleLog')
 
-        character_node.health_changed.connect(battle_log_node._on_Character_health_changed, [character_node.name])
+        character_node.health_changed.connect(battle_log_node._on_character_health_changed, [character_node.name])
 
 Our ``BattleLog`` node receives each element in the binds array as an extra argument::
 
     # battle_log.gd
 
-    func _on_Character_health_changed(old_value, new_value, character_name):
+    func _on_character_health_changed(old_value, new_value, character_name):
         if not new_value <= old_value:
             return
 

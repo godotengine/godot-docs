@@ -75,7 +75,7 @@ Start by declaring the member variables this object will need:
         void _ready();
         void _process(const double p_delta);
         void start(const godot::Vector2 p_position);
-        void _on_Player_body_entered(godot::Node2D *_body);
+        void _on_player_body_entered(godot::Node2D *_body);
 
         static void _register_methods();
     };
@@ -448,7 +448,7 @@ Add the following at the top of the script. If you're using GDScript, add it aft
         godot::register_method("_ready", &Player::_ready);
         godot::register_method("_process", &Player::_process);
         godot::register_method("start", &Player::start);
-        godot::register_method("_on_Player_body_entered", &Player::_on_Player_body_entered);
+        godot::register_method("_on_player_body_entered", &Player::_on_player_body_entered);
         godot::register_property("speed", &Player::speed, (real_t)400.0);
         // This below line is the signal.
         godot::register_signal<Player>("hit", godot::Dictionary());
@@ -476,7 +476,7 @@ this code to the function:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Player_body_entered(body):
+    func _on_player_body_entered(body):
         hide() # Player disappears after being hit.
         hit.emit()
         # Must be deferred as we can't change physics properties on a physics callback.
@@ -495,7 +495,7 @@ this code to the function:
  .. code-tab:: cpp
 
     // This code goes in `player.cpp`.
-    void Player::_on_Player_body_entered(godot::Node2D *_body) {
+    void Player::_on_player_body_entered(godot::Node2D *_body) {
         hide(); // Player disappears after being hit.
         emit_signal("hit");
         // Must be deferred as we can't change physics properties on a physics callback.

@@ -397,7 +397,7 @@ And the code for the Bullet:
             if collision.get_collider().has_method("hit"):
                 collision.get_collider().hit()
 
-    func _on_VisibilityNotifier2D_screen_exited():
+    func _on_visibility_notifier_2d_screen_exited():
         # Deletes the bullet when it exits the screen.
         queue_free()
 
