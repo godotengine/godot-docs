@@ -261,7 +261,7 @@ Finally, we need to fill the empty callback functions in the two scenes:
 
  .. code-tab:: csharp
 
-    // Add to 'scene_1.cs'.
+    // Add to 'Scene1.cs'.
 
     public void OnButtonPressed()
     {
@@ -281,7 +281,7 @@ and
 
  .. code-tab:: csharp
 
-    // Add to 'scene_2.cs'.
+    // Add to 'Scene2.cs'.
 
     public void OnButtonPressed()
     {
