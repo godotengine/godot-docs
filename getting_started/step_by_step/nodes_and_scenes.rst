@@ -143,7 +143,7 @@ A popup invites you to save the scene, which is required to run it.
 .. image:: img/nodes_and_scenes_10_save_scene_popup.png
 
 Click the Yes button, and in the file browser that appears, press the Save
-button to save it as "Label.tscn".
+button to save it as "label.tscn".
 
 .. image:: img/nodes_and_scenes_11_save_scene_as.png
 
@@ -179,7 +179,7 @@ A popup window appears and invites you to select the main scene.
 .. image:: img/nodes_and_scenes_14_main_scene_popup.png
 
 Click the Select button, and in the file dialog that appears, double click on
-Label.tscn.
+label.tscn.
 
 .. image:: img/nodes_and_scenes_15_select_main_scene.png
 

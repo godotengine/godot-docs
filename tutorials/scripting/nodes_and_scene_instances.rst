@@ -188,11 +188,11 @@ steps:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var scene = load("res://MyScene.tscn")
+    var scene = load("res://my_scene.tscn")
 
  .. code-tab:: csharp
 
-    var scene = GD.Load<PackedScene>("res://MyScene.tscn");
+    var scene = GD.Load<PackedScene>("res://my_scene.tscn");
 
 Preloading the scene can improve the user's experience as the load operation
 happens when the compiler reads the script and not at runtime. This feature is
@@ -201,7 +201,7 @@ only available with GDScript.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var scene = preload("res://MyScene.tscn")
+    var scene = preload("res://my_scene.tscn")
 
 At that point, ``scene`` is a packed scene resource, not a node. To create the
 actual node, you need to call :ref:`PackedScene.instantiate()

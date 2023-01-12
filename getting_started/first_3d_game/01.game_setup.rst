@@ -45,7 +45,7 @@ a node to the scene, you can press :kbd:`Ctrl + a` (or :kbd:`Cmd + a` on macOS).
 
 .. image:: img/01.game_setup/05.main_node.png
 
-Save the scene as ``Main.tscn`` by pressing :kbd:`Ctrl + s` (:kbd:`Cmd + s` on macOS).
+Save the scene as ``main.tscn`` by pressing :kbd:`Ctrl + s` (:kbd:`Cmd + s` on macOS).
 
 We'll start by adding a floor that'll prevent the characters from falling. To
 create static colliders like the floor, walls, or ceilings, you can use :ref:`StaticBody3D <class_StaticBody3D>` nodes. They require :ref:`CollisionShape3D <class_CollisionShape3D>` child nodes to

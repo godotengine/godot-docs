@@ -257,8 +257,8 @@ node structure, you can copy them to different scenes.
 For example, both the ``Mob`` and the ``Player`` scenes have a ``Pivot`` and a
 ``Character`` node, so we can reuse animations between them.
 
-Open the ``Player.tscn`` scene, select the ``AnimationPlayer`` node and open the "float" animation.
-Next, click on **Animation > Copy**. Then open ``Mob.tscn`` and open its animation
+Open the ``player.tscn`` scene, select the ``AnimationPlayer`` node and open the "float" animation.
+Next, click on **Animation > Copy**. Then open ``mob.tscn`` and open its animation
 player. Click **Animation > Paste**. That's it; all monsters will now play the float
 animation.
 

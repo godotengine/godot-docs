@@ -399,7 +399,7 @@ with the changing score:
         _hud->update_score(score);
 
 Now you're ready to play! Click the "Play the Project" button. You will be asked
-to select a main scene, so choose ``Main.tscn``.
+to select a main scene, so choose ``main.tscn``.
 
 Removing old creeps
 ~~~~~~~~~~~~~~~~~~~

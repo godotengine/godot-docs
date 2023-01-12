@@ -38,7 +38,7 @@ Scene setup
 -----------
 
 To add a button to our game, we will create a new main scene which will include
-both a button and the ``Sprite2D.tscn`` scene that we scripted in previous
+both a button and the ``sprite_2d.tscn`` scene that we scripted in previous
 lessons.
 
 Create a new scene by going to the menu Scene -> New Scene.
@@ -50,7 +50,7 @@ root.
 
 .. image:: img/signals_02_2d_scene.png
 
-In the FileSystem dock, click and drag the ``Sprite2D.tscn`` file you saved
+In the FileSystem dock, click and drag the ``sprite_2d.tscn`` file you saved
 previously onto the Node2D to instantiate it.
 
 .. image:: img/signals_03_dragging_scene.png

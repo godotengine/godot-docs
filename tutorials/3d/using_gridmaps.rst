@@ -28,8 +28,9 @@ Creating a MeshLibrary
 ----------------------
 
 To begin, you need a :ref:`class_MeshLibrary`, which is a collection
-of individual meshes that can be used in the gridmap. Open the "MeshLibrary_Source.tscn"
-scene to see an example of how to set up the mesh library.
+of individual meshes that can be used in the gridmap. Open the
+"mesh_library_source.tscn" scene to see an example of how to set up the mesh
+library.
 
 .. image:: img/gridmap_meshlibrary1.png
 

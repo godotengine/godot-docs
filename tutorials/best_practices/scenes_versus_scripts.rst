@@ -40,7 +40,7 @@ a change in API:
     public partial class Game : Node
     {
         public readonly Script MyNodeScr = (Script)ResourceLoader.Load("MyNode.cs");
-        public readonly PackedScene MySceneScn = (PackedScene)ResourceLoader.Load("MyScene.tscn");
+        public readonly PackedScene MySceneScn = (PackedScene)ResourceLoader.Load("my_scene.tscn");
         public Node ANode;
         public Node MyNode;
         public Node MyScene;

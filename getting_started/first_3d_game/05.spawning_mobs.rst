@@ -8,7 +8,7 @@ you will have monsters roaming the game board.
 
 |image0|
 
-Double-click on ``Main.tscn`` in the *FileSystem* dock to open the ``Main`` scene.
+Double-click on ``main.tscn`` in the *FileSystem* dock to open the ``Main`` scene.
 
 Before drawing the path, we're going to change the game resolution. Our game has
 a default window size of ``1024x600``. We're going to set it to ``720x540``, a
@@ -155,7 +155,7 @@ Spawning monsters randomly
 
 Right-click on the ``Main`` node and attach a new script to it.
 
-We first export a variable to the *Inspector* so that we can assign ``Mob.tscn``
+We first export a variable to the *Inspector* so that we can assign ``mob.tscn``
 or any other monster to it.
 
 Then, as we're going to spawn the monsters procedurally, we want to randomize
@@ -195,9 +195,9 @@ always spawn following the same sequence.
 
 We want to spawn mobs at regular time intervals. To do this, we need to go back
 to the scene and add a timer. Before that, though, we need to assign the
-``Mob.tscn`` file to the ``mob_scene`` property above (otherwise it's null!)
+``mob.tscn`` file to the ``mob_scene`` property above (otherwise it's null!)
 
-Head back to the 3D screen and select the ``Main`` node. Drag ``Mob.tscn`` from
+Head back to the 3D screen and select the ``Main`` node. Drag ``mob.tscn`` from
 the *FileSystem* dock to the *Mob Scene* slot in the *Inspector*.
 
 |image20|
