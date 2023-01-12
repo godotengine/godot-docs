@@ -255,6 +255,24 @@
     }
 }
 
+@keyframes target-highlight-fade {
+    from {
+        background-color: hsla(56, 100%, 50%, 0.2);
+    }
+
+    to {
+        background-color: hsla(56, 100%, 50%, 0.05);
+    }
+}
+
+*:target {
+    /* Highlight selected sections, with an animation to make it more noticeable initially. */
+    background-color: hsla(56, 100%, 50%, 0.05);
+    padding: 1rem 2rem 0.25rem 1rem;
+    margin: -1rem -2rem -0.25rem -1rem;
+    animation: target-highlight-fade 2.5s ease-out;
+}
+
 body,
 h1,
 h2,
