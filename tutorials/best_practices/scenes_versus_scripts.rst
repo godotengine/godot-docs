@@ -148,13 +148,13 @@ with it, and finally adds it as a child of the ``Main`` node:
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # Main.gd
+    # main.gd
     extends Node
 
     func _init():
         var child = Node.new()
         child.name = "Child"
-        child.script = preload("Child.gd")
+        child.script = preload("child.gd")
         child.owner = self
         add_child(child)
 

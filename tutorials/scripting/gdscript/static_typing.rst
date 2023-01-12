@@ -33,9 +33,9 @@ who work with your code should always pass an ``Item`` to the
 
 ::
 
-    # In 'Item.gd'.
+    # In 'item.gd'.
     class_name Item
-    # In 'Inventory.gd'.
+    # In 'inventory.gd'.
     class_name Inventory
 
 
@@ -123,11 +123,11 @@ script you want to use as a type in a constant:
 
 ::
 
-    const Rifle = preload("res://player/weapons/Rifle.gd")
+    const Rifle = preload("res://player/weapons/rifle.gd")
     var my_rifle: Rifle
 
 The second method is to use the ``class_name`` keyword when you create.
-For the example above, your Rifle.gd would look like this:
+For the example above, your rifle.gd would look like this:
 
 ::
 
@@ -235,7 +235,7 @@ You can also use your own nodes as return types:
 
 ::
 
-    # Inventory.gd
+    # inventory.gd
 
     # Adds an item to the inventory and returns it.
     func add(reference: Item, amount: int) -> Item:

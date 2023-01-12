@@ -184,7 +184,7 @@ following code, which we saw two lessons ago:
         Position += velocity * (float)delta;
     }
 
-Your complete ``Sprite2D.gd`` code should look like the following.
+Your complete ``sprite_2d.gd`` code should look like the following.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -337,7 +337,7 @@ Complete script
 ---------------
 
 That's it for our little moving and blinking Godot icon demo!
-Here is the complete ``Sprite2D.gd`` file for reference.
+Here is the complete ``sprite_2d.gd`` file for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

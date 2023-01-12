@@ -283,7 +283,7 @@ what the *PathFollow* node's ``progress_ratio`` expects:
 The path we have set is around the camera's viewport, so any random value between 0 and 1
 is a random position alongside the edges of the viewport!
 
-Here is the complete ``Main.gd`` script so far, for reference.
+Here is the complete ``main.gd`` script so far, for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

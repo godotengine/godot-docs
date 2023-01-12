@@ -110,12 +110,12 @@ monsters from the code, we cannot connect the mob signal to the ``ScoreLabel`` v
 Instead, we have to make the connection from the code every time we spawn a
 monster.
 
-Open the script ``Main.gd``. If it's still open, you can click on its name in
+Open the script ``main.gd``. If it's still open, you can click on its name in
 the script editor's left column.
 
 |image10|
 
-Alternatively, you can double-click the ``Main.gd`` file in the *FileSystem*
+Alternatively, you can double-click the ``main.gd`` file in the *FileSystem*
 dock.
 
 At the bottom of the ``_on_mob_timer_timeout()`` function, add the following
@@ -141,7 +141,7 @@ line:
 This line means that when the mob emits the ``squashed`` signal, the
 ``ScoreLabel`` node will receive it and call the function ``_on_Mob_squashed()``.
 
-Head back to the ``ScoreLabel.gd`` script to define the ``_on_Mob_squashed()``
+Head back to the ``score_label.gd`` script to define the ``_on_Mob_squashed()``
 callback function.
 
 There, we increment the score and update the displayed text.
@@ -244,7 +244,7 @@ Coding the retry option
 We can now head to the code to show and hide the ``Retry`` node when the player
 dies and plays again.
 
-Open the script ``Main.gd``. First, we want to hide the overlay at the start of
+Open the script ``main.gd``. First, we want to hide the overlay at the start of
 the game. Add this line to the ``_ready()`` function.
 
 .. tabs::
@@ -372,7 +372,7 @@ game's viewport.
 And that does it for this lesson. In the next part, we'll add an animation to
 make the game both look and feel much nicer.
 
-Here is the complete ``Main.gd`` script for reference.
+Here is the complete ``main.gd`` script for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

@@ -158,7 +158,7 @@ Code checkpoint
 Here are the complete scripts for the ``Main``, ``Mob``, and ``Player`` nodes,
 for reference. You can use them to compare and check your code.
 
-Starting with ``Main.gd``.
+Starting with ``main.gd``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -230,7 +230,7 @@ Starting with ``Main.gd``.
         }
     }
 
-Next is ``Mob.gd``.
+Next is ``mob.gd``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -317,7 +317,7 @@ Next is ``Mob.gd``.
         }
     }
 
-Finally, the longest script, ``Player.gd``:
+Finally, the longest script, ``player.gd``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript

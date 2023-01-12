@@ -52,7 +52,7 @@ you should remove the instance you have added by calling
 
 
     func _enter_tree():
-        plugin = preload("res://addons/my_inspector_plugin/MyInspectorPlugin.gd").new()
+        plugin = preload("res://addons/my_inspector_plugin/my_inspector_plugin.gd").new()
         add_inspector_plugin(plugin)
 
 
@@ -87,7 +87,7 @@ you should remove the instance you have added by calling
 Interacting with the inspector
 ------------------------------
 
-To interact with the inspector dock, your ``MyInspectorPlugin.gd`` script must
+To interact with the inspector dock, your ``my_inspector_plugin.gd`` script must
 extend the :ref:`class_EditorInspectorPlugin` class. This class provides several
 virtual methods that affect how the inspector handles properties.
 
@@ -112,10 +112,10 @@ specifically add :ref:`class_EditorProperty`-based controls.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # MyInspectorPlugin.gd
+    # my_inspector_plugin.gd
     extends EditorInspectorPlugin
 
-    var RandomIntEditor = preload("res://addons/my_inspector_plugin/RandomIntEditor.gd")
+    var RandomIntEditor = preload("res://addons/my_inspector_plugin/random_int_editor.gd")
 
 
     func _can_handle(object):
@@ -195,7 +195,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # RandomIntEditor.gd
+    # random_int_editor.gd
     extends EditorProperty
 
 

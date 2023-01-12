@@ -127,10 +127,10 @@ scene contains a label displaying the scene name and a button with its
 ``pressed()`` signal connected. When you run the project, it starts in
 ``scene_1.tscn``. However, pressing the button does nothing.
 
-Global.gd
+global.gd
 ~~~~~~~~~
 
-Switch to the **Script** tab and create a new script called ``Global.gd``.
+Switch to the **Script** tab and create a new script called ``global.gd``.
 Make sure it inherits from ``Node``:
 
 .. image:: img/autoload_script.png
@@ -138,7 +138,7 @@ Make sure it inherits from ``Node``:
 The next step is to add this script to the autoLoad list. Open
 **Project > Project Settings** from the menu, switch to the **AutoLoad** tab and
 select the script by clicking the browse button or typing its path:
-``res://Global.gd``. Press **Add** to add it to the autoload list:
+``res://global.gd``. Press **Add** to add it to the autoload list:
 
 .. image:: img/autoload_tutorial1.png
 
@@ -146,7 +146,7 @@ Now whenever we run any scene in the project, this script will always be loaded.
 
 Returning to the script, it needs to fetch the current scene in the
 `_ready()` function. Both the current scene (the one with the button) and
-``Global.gd`` are children of root, but autoloaded nodes are always first. This
+``global.gd`` are children of root, but autoloaded nodes are always first. This
 means that the last child of root is always the loaded scene.
 
 .. tabs::
@@ -254,14 +254,14 @@ Finally, we need to fill the empty callback functions in the two scenes:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Add to 'Scene1.gd'.
+    # Add to 'scene_1.gd'.
 
     func _on_Button_pressed():
         Global.goto_scene("res://scene_2.tscn")
 
  .. code-tab:: csharp
 
-    // Add to 'Scene1.cs'.
+    // Add to 'scene_1.cs'.
 
     public void OnButtonPressed()
     {
@@ -274,14 +274,14 @@ and
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Add to 'Scene2.gd'.
+    # Add to 'scene_2.gd'.
 
     func _on_Button_pressed():
         Global.goto_scene("res://scene_1.tscn")
 
  .. code-tab:: csharp
 
-    // Add to 'Scene2.cs'.
+    // Add to 'scene_2.cs'.
 
     public void OnButtonPressed()
     {

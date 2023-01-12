@@ -19,7 +19,7 @@ Description
 
 **Callable** is a built-in :ref:`Variant<class_Variant>` type that represents a function. It can either be a method within an :ref:`Object<class_Object>` instance, or a standalone function not related to any object, like a lambda function. Like all :ref:`Variant<class_Variant>` types, it can be stored in variables and passed to other functions. It is most commonly used for signal callbacks.
 
-\ **Example:**\ 
+\ **Example:**\
 
 
 .. tabs::
@@ -28,7 +28,7 @@ Description
 
     func print_args(arg1, arg2, arg3 = ""):
         prints(arg1, arg2, arg3)
-    
+
     func test():
         var callable = Callable(self, "print_args")
         callable.call("hello", "world")  # Prints "hello world ".
@@ -42,7 +42,7 @@ Description
     {
         GD.PrintS(arg1, arg2, arg3);
     }
-    
+
     public void Test()
     {
         // Invalid calls fail silently.
@@ -61,10 +61,10 @@ In GDScript, it's possible to create lambda functions within a method. Lambda fu
     func _init():
         var my_lambda = func (message):
             print(message)
-    
+
         # Prints Hello everyone!
         my_lambda.call("Hello everyone!")
-    
+
         # Prints "Attack!", when the button_pressed signal is emitted.
         button_pressed.connect(func(): print("Attack!"))
 
