@@ -96,7 +96,9 @@ the ``score`` variable.
 
  .. code-tab:: csharp
 
-    public class ScoreLabel : Label
+    using Godot;
+
+    public partial class ScoreLabel : Label
     {
         private int _score = 0;
     }
@@ -413,7 +415,9 @@ Here is the complete ``Main.gd`` script for reference.
             get_tree().reload_current_scene()
  .. code-tab:: csharp
 
-    public class Main : Node
+    using Godot;
+
+    public partial class Main : Node
     {
     #pragma warning disable 649
         [Export]

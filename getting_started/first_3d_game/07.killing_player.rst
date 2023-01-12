@@ -191,7 +191,9 @@ Starting with ``Main.gd``.
         $MobTimer.stop()
  .. code-tab:: csharp
 
-    public class Main : Node
+    using Godot;
+
+    public partial class Main : Node
     {
     #pragma warning disable 649
         [Export]
@@ -271,7 +273,9 @@ Next is ``Mob.gd``.
         queue_free() # Destroy this node
  .. code-tab:: csharp
 
-    public class Mob : CharacterBody3D
+    using Godot;
+
+    public partial class Mob : CharacterBody3D
     {
         // Emitted when the played jumped on the mob.
         [Signal]
@@ -399,7 +403,9 @@ Finally, the longest script, ``Player.gd``:
         die()
  .. code-tab:: csharp
 
-    public class Player : CharacterBody3D
+    using Godot;
+
+    public partial class Player : CharacterBody3D
     {
         // Emitted when the player was hit by a mob.
         [Signal]
