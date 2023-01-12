@@ -69,7 +69,7 @@ redrawn if modified:
 
     extends Node2D
 
-    @export (Texture) var texture :
+    @export var texture : Texture :
         set(value):
             texture = value
             _set_texture(value)
