@@ -254,9 +254,8 @@ Attach a script to the CharacterBody2D and add the following code:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class KBExample : CharacterBody2D
+    public partial class KBExample : CharacterBody2D
     {
         public int Speed = 250;
         private Vector2 _velocity = new Vector2();
@@ -358,9 +357,8 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class KBExample : CharacterBody2D
+    public partial class KBExample : CharacterBody2D
     {
         private PackedScene _bullet = (PackedScene)GD.Load("res://Bullet.tscn");
         public int Speed = 200;
@@ -434,9 +432,8 @@ And the code for the Bullet:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Bullet : CharacterBody2D
+    public partial class Bullet : CharacterBody2D
     {
         public int Speed = 750;
         private Vector2 _velocity = new Vector2();
@@ -531,9 +528,8 @@ Here's the code for the player body:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class KBExample : CharacterBody2D
+    public partial class KBExample : CharacterBody2D
     {
         [Export] public int RunSpeed = 100;
         [Export] public int JumpSpeed = -400;

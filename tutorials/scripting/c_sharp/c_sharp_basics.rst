@@ -204,9 +204,8 @@ Here's a blank C# script with some comments to demonstrate how it works.
 .. code-block:: csharp
 
     using Godot;
-    using System;
 
-    public class YourCustomClass : Node
+    public partial class YourCustomClass : Node
     {
         // Member variables here, example:
         private int a = 2;
@@ -302,7 +301,6 @@ a single code location:
 .. code-block:: csharp
 
     using Godot;
-    using System;
 
     public class YourCustomClass : Node3D
     {

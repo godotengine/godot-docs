@@ -90,7 +90,9 @@ single Label node, with the following script attached to it:
 
  .. code-tab:: csharp
 
-    public class CustomLabel : Label
+    using Godot;
+
+    public partial class CustomLabel : Label
     {
         private float _time;
 

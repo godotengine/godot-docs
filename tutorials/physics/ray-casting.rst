@@ -180,7 +180,9 @@ from a CharacterBody2D or any other collision object node:
 
  .. code-tab:: csharp
 
-    class Body : CharacterBody2D
+    using Godot;
+
+    public partial class Body : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {
@@ -217,7 +219,9 @@ member variable. The array of exceptions can be supplied as the last argument as
 
  .. code-tab:: csharp
 
-    class Body : CharacterBody2D
+    using Godot;
+
+    public partial class Body : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {

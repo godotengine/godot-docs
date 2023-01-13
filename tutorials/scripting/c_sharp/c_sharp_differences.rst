@@ -100,7 +100,7 @@ Example:
 
     using Godot;
 
-    public class MyNode : Node
+    public partial class MyNode : Node
     {
         [Export]
         private NodePath _nodePath;

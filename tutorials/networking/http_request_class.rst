@@ -48,7 +48,9 @@ Below is all the code we need to make it work. The URL points to an online API m
 
     .. code-tab:: csharp
 
-        class HTTPRequestDemo : CanvasLayer
+        using Godot;
+        
+        public partial class HTTPRequestDemo : CanvasLayer
         {
             public override void _Ready()
             {
