@@ -147,7 +147,7 @@ In the main scene, we then connect the player's signal (it will appear in the
 
  .. code-tab:: csharp
 
-    public void _on_player_Shoot(PackedScene bullet, Vector2 direction, Vector2 location)
+    public void OnPlayerShoot(PackedScene bullet, Vector2 direction, Vector2 location)
     {
         var bulletInstance = (Bullet)bullet.Instantiate();
         AddChild(bulletInstance);
