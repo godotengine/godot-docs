@@ -43,9 +43,9 @@ given velocity:
     {
         Vector2 Velocity = new Vector2();
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            Position += Velocity * delta;
+            Position += Velocity * (float)delta;
         }
     }
 
@@ -115,18 +115,18 @@ Here is the code for the player using signals to emit the bullet:
 
         private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
 
-        public override void _Input(InputEvent event)
+        public override void _Input(InputEvent @event)
         {
-            if (input is InputEventMouseButton mouseButton)
+            if (@event is InputEventMouseButton mouseButton)
             {
-                if (mouseButton.ButtonIndex == (int)ButtonList.Left && mouseButton.Pressed)
+                if (mouseButton.ButtonIndex == MouseButton.Left && mouseButton.Pressed)
                 {
-                    EmitSignal(nameof(Shoot), _bullet, Rotation, Position);
+                    EmitSignal(SignalName.Shoot, _bullet, Rotation, Position);
                 }
             }
         }
 
-        public override _Process(float delta)
+        public override void _Process(double delta)
         {
             LookAt(GetGlobalMousePosition());
         }

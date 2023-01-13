@@ -253,7 +253,7 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
                 {
                     Health = health;
                     SubResource = subResource;
-                    Strings = strings ?? Array.Empty<string>();
+                    Strings = strings ?? System.Array.Empty<string>();
                 }
             }
         }
@@ -288,7 +288,8 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
 
                 public override void _Ready()
                 {
-                    if (Stats != null && Stats is BotStats botStats) {
+                    if (Stats is BotStats botStats)
+                    {
                         GD.Print(botStats.Health); // Prints '10'.
                     }
                 }
@@ -330,7 +331,7 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
 
         public partial class BotStatsTable : Resource
         {
-            private Godot.Dictionary<String, BotStats> _stats = new Godot.Dictionary<String, BotStats>();
+            private Godot.Dictionary<string, BotStats> _stats = new Godot.Dictionary<string, BotStats>();
 
             public BotStatsTable()
             {
