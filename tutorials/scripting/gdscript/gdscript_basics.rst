@@ -1721,9 +1721,9 @@ the :ref:`Signal.connect() <class_Signal_method_connect>` method::
     ...
     func _on_Character_health_changed(old_value, new_value):
         if old_value > new_value:
-            progress_bar.modulate = Color.red
+            progress_bar.modulate = Color.RED
         else:
-            progress_bar.modulate = Color.green
+            progress_bar.modulate = Color.GREEN
 
         # Imagine that `animate` is a user-defined function that animates the
         # bar filling up or emptying itself.
