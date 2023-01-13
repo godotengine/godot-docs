@@ -466,7 +466,7 @@ GDScript                C#
 ``PackedByteArray``      ``byte[]``
 ``PackedFloat32Array``   ``float[]``
 ``PackedFloat64Array``   ``double[]``
-``PackedStringArray``    ``String[]``
+``PackedStringArray``    ``string[]``
 ``PackedColorArray``     ``Color[]``
 ``PackedVector2Array``   ``Vector2[]``
 ``PackedVector3Array``   ``Vector3[]``

@@ -33,7 +33,7 @@ The engine calls this method every time it draws a frame:
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         // Do something...
     }
@@ -65,7 +65,7 @@ The engine calls this method before every physics step:
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // Do something...
     }
@@ -94,9 +94,9 @@ single Label node, with the following script attached to it:
 
     public partial class CustomLabel : Label
     {
-        private float _time;
+        private double _time;
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
             _time += delta;
             Text = _time.ToString(); // 'Text' is a built-in Label property.

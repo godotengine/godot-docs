@@ -218,7 +218,7 @@ Here's a blank C# script with some comments to demonstrate how it works.
             GD.Print("Hello from C# to Godot :)");
         }
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
             // Called every frame. Delta is time since the last frame.
             // Update game logic here.

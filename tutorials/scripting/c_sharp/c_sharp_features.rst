@@ -67,13 +67,18 @@ Generic methods are also provided to make this type conversion transparent.
 
 To check if the node can be cast to Sprite2D, you can use the ``is`` operator.
 The ``is`` operator returns false if the node cannot be cast to Sprite2D,
-otherwise it returns true.
+otherwise it returns true. Note that using the ``is`` operator against ``null`` is always going to be falsy.
 
 .. code-block:: csharp
 
     if (GetNode("MySprite") is Sprite2D)
     {
         // Yup, it's a Sprite2D!
+    }
+
+    if (null is Sprite2D)
+    {
+        // This block can never happen.
     }
 
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
@@ -107,7 +112,7 @@ If you want to connect a signal in the editor, you need to (re)build the project
 
     public void MyCallbackWithArguments(string foo, int bar)
     {
-        GD.Print("My callback with: ", foo, " and ", bar, "!");
+        GD.Print($"My callback with: {foo} and {bar}!");
     }
 
     public void SomeFunction()
@@ -122,11 +127,11 @@ Emitting signals is done with the ``EmitSignal`` method.
 
     public void SomeFunction()
     {
-        EmitSignal(nameof(MySignal));
-        EmitSignal(nameof(MySignalWithArguments), "hello there", 28);
+        EmitSignal(SignalName.MySignal);
+        EmitSignal(SignalName.MySignalWithArguments, "hello there", 28);
     }
 
-Notice that you can always reference a signal name with the ``nameof`` keyword (applied on the delegate itself).
+Notice that you can always reference a signal name with its generated ``SignalName``.
 
 It is possible to bind values when establishing a connection by passing a Godot array.
 
