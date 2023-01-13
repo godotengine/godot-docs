@@ -380,7 +380,9 @@ Here's the *Player* script.
         die()
  .. code-tab:: csharp
 
-    public class Player : CharacterBody3D
+    using Godot;
+
+    public partial class Player : CharacterBody3D
     {
         // Emitted when the player was hit by a mob.
         [Signal]
@@ -520,7 +522,9 @@ And the *Mob*'s script.
         queue_free() # Destroy this node
  .. code-tab:: csharp
 
-    public class Mob : CharacterBody3D
+    using Godot;
+
+    public partial class Mob : CharacterBody3D
     {
         // Emitted when the played jumped on the mob.
         [Signal]

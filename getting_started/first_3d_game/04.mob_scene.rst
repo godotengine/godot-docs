@@ -61,7 +61,7 @@ want to pay for it when the mob is outside the screen.
 
 Once a monster leaves the screen, we don't need it anymore, so we should delete it.
 Godot has a node that detects when objects leave the screen,
-:ref:`VisibleOnScreenNotifier3D <class_VisibileOnScreenNotifier3D>`, and we're going to use it to destroy our mobs.
+:ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>`, and we're going to use it to destroy our mobs.
 
 .. note::
 
@@ -76,7 +76,7 @@ Godot has a node that detects when objects leave the screen,
     reference counting, which doesn't have that caveat. You can learn more
     about that here: :ref:`doc_gdscript_basics_memory_management`.
 
-Select the ``Mob`` node and add a child node :ref:`VisibleOnScreenNotifier3D <class_VisibileOnScreenNotifier3D>`. Another
+Select the ``Mob`` node and add a child node :ref:`VisibleOnScreenNotifier3D <class_VisibleOnScreenNotifier3D>`. Another
 box, pink this time, appears. When this box completely leaves the screen, the
 node will emit a signal.
 
@@ -117,7 +117,9 @@ and ``max_speed``, to define a random speed range, which we will later use to de
 
  .. code-tab:: csharp
 
-    public class Mob : CharacterBody3D
+    using Godot;
+
+    public partial class Mob : CharacterBody3D
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
@@ -282,7 +284,9 @@ Here is the complete ``Mob.gd`` script for reference.
         queue_free()
  .. code-tab:: csharp
 
-    public class Mob : CharacterBody3D
+    using Godot;
+
+    public partial class Mob : CharacterBody3D
     {
         // Minimum speed of the mob in meters per second
         [Export]

@@ -175,7 +175,9 @@ always spawn following the same sequence.
 
  .. code-tab:: csharp
 
-    public class Main : Node
+    using Godot;
+
+    public partial class Main : Node
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
@@ -312,7 +314,9 @@ Here is the complete ``Main.gd`` script so far, for reference.
 
  .. code-tab:: csharp
 
-    public class Main : Node
+    using Godot;
+
+    public partial class Main : Node
     {
     #pragma warning disable 649
         [Export]

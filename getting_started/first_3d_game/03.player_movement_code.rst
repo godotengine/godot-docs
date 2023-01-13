@@ -30,7 +30,9 @@ character.
 
  .. code-tab:: csharp
 
-    public class Player : CharacterBody3D
+    using Godot;
+
+    public partial class Player : CharacterBody3D
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
@@ -274,7 +276,9 @@ Here is the complete ``Player.gd`` code for reference.
         move_and_slide()
  .. code-tab:: csharp
 
-    public class Player : CharacterBody3D
+    using Godot;
+
+    public partial class Player : CharacterBody3D
     {
         // How fast the player moves in meters per second.
         [Export]
