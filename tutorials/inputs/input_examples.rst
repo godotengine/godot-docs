@@ -297,7 +297,7 @@ also counts as a button - two buttons, to be precise, with both
     {
         if (inputEvent is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
         {
-            switch ((MouseButton)mouseEvent.ButtonIndex)
+            switch (mouseEvent.ButtonIndex)
             {
                 case MouseButton.Left:
                     GD.Print("Left button was clicked at ", {mouseEvent.Position});
