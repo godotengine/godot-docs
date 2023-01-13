@@ -474,14 +474,13 @@ Import
    - Ogg Vorbis.
    - MP3.
 
-- *3D scenes:*
+- *3D scenes:* See :ref:`doc_importing_3d_scenes`.
 
    - glTF 2.0 *(recommended)*.
-   - `ESCN <https://github.com/godotengine/godot-blender-exporter>`__
-     (direct export from Blender).
-   - FBX (static meshes only).
+   - ``.blend`` (by calling Blender's glTF export functionality transparently).
+   - FBX (by calling fbx2gltf transparently).
    - Collada (.dae).
-   - Wavefront OBJ (static scenes only, can be loaded directly as a mesh).
+   - Wavefront OBJ (static scenes only, can be loaded directly as a mesh or imported as a 3D scene).
 
 - Support for loading glTF 2.0 scenes at run-time, including from an exported project.
 - 3D meshes use `Mikktspace <http://www.mikktspace.com/>`__ to generate tangents
