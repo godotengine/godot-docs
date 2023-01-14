@@ -52,10 +52,10 @@ Defines with replacements may also have one or more *arguments*, which can then
 be passed when referencing the define (similar to a function call).
 
 If the replacement code is not defined, the identifier may only be used with
-``#ifdef` or ``#ifndef`` directives.
+``#ifdef`` or ``#ifndef`` directives.
 
-Compared to constants (``const CONSTANT = value;``), ``#define``s can be used
-anywhere within the shader. ``#define``s can also be used to insert arbitrary
+Compared to constants (``const CONSTANT = value;``), ``#define`` can be used
+anywhere within the shader. ``#define`` can also be used to insert arbitrary
 shader code at any location, while constants can't do that.
 
 .. code-block:: glsl
@@ -197,14 +197,14 @@ of the ``#if`` preprocessor statement:
     #endif
 
 However, the ``#if`` variant can be faster in certain scenarios. This is because
-all run-time branches in a shader are still compiled and variables within 
+all run-time branches in a shader are still compiled and variables within
 those branches may still take up register space, even if they are never run in
 practice.
 
-`Modern GPUs are quite effective at performing "static" branching <https://medium.com/@jasonbooth_86226/branching-on-a-gpu-18bfc83694f2>`__.
-"Static" branching refers to ``if`` statements where *all* pixels/vertices
-evaluate to the same result in a given shader invocation. However, high amounts
-of :abbr:`VGPR (Vector General-Purpose Register)`s (which can be caused by
+Modern GPUs are `quite effective <https://medium.com/@jasonbooth_86226/branching-on-a-gpu-18bfc83694f2>`__
+at performing "static" branching. "Static" branching refers to ``if`` statements where
+*all* pixels/vertices evaluate to the same result in a given shader invocation. However,
+high amounts of :abbr:`VGPRs (Vector General-Purpose Register)` (which can be caused by
 having too many branches) can still slow down shader execution significantly.
 
 #elif
