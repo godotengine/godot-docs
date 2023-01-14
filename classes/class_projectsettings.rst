@@ -211,8 +211,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_variable>`                                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/void_assignment<class_ProjectSettings_property_debug/gdscript/warnings/void_assignment>`                                                                                     | ``1``                                                                                            |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`debug/settings/crash_handler/message<class_ProjectSettings_property_debug/settings/crash_handler/message>`                                                                                           | ``"Please include this when reporting the bug to the project developer."``                       |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`debug/settings/crash_handler/message.editor<class_ProjectSettings_property_debug/settings/crash_handler/message.editor>`                                                                             | ``"Please include this when reporting the bug on: https://github.com/godotengine/godot/issues"`` |
@@ -296,6 +294,8 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/borderless<class_ProjectSettings_property_display/window/size/borderless>`                                                                                                       | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/extend_to_title<class_ProjectSettings_property_display/window/size/extend_to_title>`                                                                                             | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>`                                                                                               | ``-2``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`display/window/size/mode<class_ProjectSettings_property_display/window/size/mode>`                                                                                                                   | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -2407,18 +2407,6 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
-.. _class_ProjectSettings_property_debug/gdscript/warnings/void_assignment:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **debug/gdscript/warnings/void_assignment** = ``1``
-
-When set to ``warn`` or ``error``, produces a warning or an error respectively when assigning the result of a function that returns ``void`` to a variable.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ProjectSettings_property_debug/settings/crash_handler/message:
 
 .. rst-class:: classref-property
@@ -2930,6 +2918,18 @@ Forces the main window to be borderless.
 Main window content is expanded to the full size of the window. Unlike a borderless window, the frame is left intact and can be used to resize the window, and the title bar is transparent, but has minimize/maximize/close buttons.
 
 \ **Note:** This setting is implemented only on macOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_display/window/size/initial_screen:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **display/window/size/initial_screen** = ``-2``
+
+Main window initial screen.
 
 .. rst-class:: classref-item-separator
 

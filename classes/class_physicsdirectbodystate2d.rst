@@ -111,6 +111,8 @@ Methods
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_contact_count<class_PhysicsDirectBodyState2D_method_get_contact_count>` **(** **)** |const|                                                                                     |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_impulse<class_PhysicsDirectBodyState2D_method_get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                               |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_normal<class_PhysicsDirectBodyState2D_method_get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                     |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_position<class_PhysicsDirectBodyState2D_method_get_contact_local_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                 |
@@ -577,6 +579,18 @@ Returns the linear velocity vector at the collider's contact point.
 Returns the number of contacts this body has with other bodies.
 
 \ **Note:** By default, this returns 0 unless bodies are configured to monitor contacts. See :ref:`RigidBody2D.contact_monitor<class_RigidBody2D_property_contact_monitor>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState2D_method_get_contact_impulse:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_contact_impulse** **(** :ref:`int<class_int>` contact_idx **)** |const|
+
+Returns the impulse created by the contact.
 
 .. rst-class:: classref-item-separator
 

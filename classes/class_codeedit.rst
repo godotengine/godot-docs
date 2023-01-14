@@ -539,7 +539,7 @@ Sets whether code completion is allowed.
 .. rst-class:: classref-property-setget
 
 - void **set_code_completion_prefixes** **(** :ref:`String[]<class_String>` value **)**
-- :ref:`String[]<class_String>` **get_code_comletion_prefixes** **(** **)**
+- :ref:`String[]<class_String>` **get_code_completion_prefixes** **(** **)**
 
 Sets prefixes that will trigger code completion.
 

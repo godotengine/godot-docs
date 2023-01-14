@@ -134,13 +134,13 @@ the top-level ``index.html`` in a web browser.
 .. toctree::
    :hidden:
    :maxdepth: 1
-   :caption: Engine Development
-   :name: sec-devel
+   :caption: Contributing
+   :name: sec-contributing
 
-   development/compiling/index
-   development/cpp/index
-   development/editor/index
-   development/file_formats/index
+   contributing/ways_to_contribute
+   contributing/workflow/index
+   contributing/development/index
+   contributing/documentation/index
 
 
 .. toctree::
@@ -149,7 +149,6 @@ the top-level ``index.html`` in a web browser.
    :caption: Community
    :name: sec-community
 
-   community/contributing/index
    community/asset_library/index
    community/channels
    community/tutorials

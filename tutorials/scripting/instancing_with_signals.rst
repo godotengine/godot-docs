@@ -37,13 +37,15 @@ given velocity:
 
  .. code-tab:: csharp
 
-    public class Bullet : Area2D
+    using Godot;
+
+    public partial class Bullet : Area2D
     {
         Vector2 Velocity = new Vector2();
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            Position += Velocity * delta;
+            Position += Velocity * (float)delta;
         }
     }
 
@@ -104,25 +106,27 @@ Here is the code for the player using signals to emit the bullet:
 
  .. code-tab:: csharp
 
-    public class Player : Sprite2D
+    using Godot;
+
+    public partial class Player : Sprite2D
     {
         [Signal]
         delegate void ShootEventHandler(PackedScene bullet, Vector2 direction, Vector2 location);
 
         private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
 
-        public override void _Input(InputEvent event)
+        public override void _Input(InputEvent @event)
         {
-            if (input is InputEventMouseButton mouseButton)
+            if (@event is InputEventMouseButton mouseButton)
             {
-                if (mouseButton.ButtonIndex == (int)ButtonList.Left && mouseButton.Pressed)
+                if (mouseButton.ButtonIndex == MouseButton.Left && mouseButton.Pressed)
                 {
-                    EmitSignal(nameof(Shoot), _bullet, Rotation, Position);
+                    EmitSignal(SignalName.Shoot, _bullet, Rotation, Position);
                 }
             }
         }
 
-        public override _Process(float delta)
+        public override void _Process(double delta)
         {
             LookAt(GetGlobalMousePosition());
         }

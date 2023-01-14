@@ -14,7 +14,14 @@ VisualShaderNodeVectorBase
 
 **Inherited By:** :ref:`VisualShaderNodeFaceForward<class_VisualShaderNodeFaceForward>`, :ref:`VisualShaderNodeVectorCompose<class_VisualShaderNodeVectorCompose>`, :ref:`VisualShaderNodeVectorDecompose<class_VisualShaderNodeVectorDecompose>`, :ref:`VisualShaderNodeVectorDistance<class_VisualShaderNodeVectorDistance>`, :ref:`VisualShaderNodeVectorFunc<class_VisualShaderNodeVectorFunc>`, :ref:`VisualShaderNodeVectorLen<class_VisualShaderNodeVectorLen>`, :ref:`VisualShaderNodeVectorOp<class_VisualShaderNodeVectorOp>`, :ref:`VisualShaderNodeVectorRefract<class_VisualShaderNodeVectorRefract>`
 
-A base type for the nodes using different vector types within the visual shader graph.
+A base type for the nodes that perform vector operations within the visual shader graph.
+
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This is an abstract class. See the derived types for descriptions of the possible operations.
 
 .. rst-class:: classref-reftable-group
 
@@ -95,7 +102,7 @@ Property Descriptions
 - void **set_op_type** **(** :ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` value **)**
 - :ref:`OpType<enum_VisualShaderNodeVectorBase_OpType>` **get_op_type** **(** **)**
 
-A base type.
+A vector type that this operation is performed on.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -30,6 +30,7 @@
     --content-wrap-background-color: #efefef;
     --content-background-color: #fcfcfc;
     --logo-opacity: 1.0;
+
     --navbar-background-color: #333f67;
     --navbar-background-color-hover: #29355c;
     --navbar-background-color-active: #212d51;
@@ -37,9 +38,14 @@
     --navbar-current-background-color-hover: #182343;
     --navbar-current-background-color-active: #131e3b;
     --navbar-category-active-color: rgba(255 115 129 / 10%);
+    --navbar-current-color: #f1f9ff;
     --navbar-level-1-color: #c3e3ff;
     --navbar-level-2-color: #b8d6f0;
     --navbar-level-3-color: #a3c4e1;
+    --navbar-expand-base-color: #81a3c2;
+    --navbar-expand-hover-color: #c3e3ff;
+    --navbar-expand-active-color: #f1f9ff;
+    --navbar-dimmed-color: #a3c4e1;
     --navbar-heading-color: #ff7381;
     --navbar-scrollbar-color: #d45a66;
     --navbar-scrollbar-hover-color: #b14550;
@@ -141,6 +147,7 @@
         --content-background-color: #2e3236;
         /* Decrease the logo opacity when using the dark theme to be less distracting */
         --logo-opacity: 0.85;
+
         --navbar-background-color: #25282b;
         --navbar-background-color-hover: #333639;
         --navbar-background-color-active: #111417;
@@ -148,9 +155,14 @@
         --navbar-current-background-color-hover: #44474a;
         --navbar-current-background-color-active: #222528;
         --navbar-category-active-color: rgba(238 115 129 / 10%);
+        --navbar-current-color: #fefefe;
         --navbar-level-1-color: #ddd;
         --navbar-level-2-color: #ccc;
         --navbar-level-3-color: #bbb;
+        --navbar-expand-base-color: #80848e;
+        --navbar-expand-hover-color: #ccc;
+        --navbar-expand-active-color: #ddd;
+        --navbar-dimmed-color: #bbb;
         --navbar-heading-color: #ee7381;
         --navbar-scrollbar-color: #be5460;
         --navbar-scrollbar-hover-color: #963e48;
@@ -304,14 +316,21 @@ article ol,
 .wy-plain-list-disc,
 .wy-plain-list-decimal,
 .rst-content ol.arabic,
-.rst-content .section ul,
-.rst-content .toctree-wrapper ul,
-.rst-content .section ol {
+.rst-content .toctree-wrapper ul {
     /* Increase the line height slightly to account for the different font */
     line-height: 25px;
 }
 
-.rst-content section ul li {
+/* Depending on the environment, it can be a section tag or a div with the section class. */
+.rst-content section ul,
+.rst-content section ol,
+.rst-content .section ul,
+.rst-content .section ol {
+    /* Increase the line height slightly to account for the different font */
+    line-height: 25px;
+}
+.rst-content section ul li,
+.rst-content .section ul li {
     /* Increase spacing between list items. */
     margin-top: 8px;
     margin-bottom: 8px;
@@ -1215,6 +1234,8 @@ p + .classref-constant {
 
 .wy-side-nav-search {
     background-color: var(--navbar-background-color);
+    color: var(--navbar-level-1-color);
+    margin-right: 8px;
 }
 
 .wy-side-nav-search.fixed {
@@ -1266,7 +1287,22 @@ p + .classref-constant {
     opacity: 0.55;
 }
 
-/* Navigation bar */
+/* Version branch label below the logo */
+.wy-side-nav-search > div.version {
+    color: var(--navbar-dimmed-color);
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Navigational top bar (mobile only) */
+
+.wy-nav-top,
+.wy-nav-top a {
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-level-1-color);
+}
+
+/* Navigational sidebar */
 
 .wy-nav-side {
     background-color: var(--navbar-background-color);
@@ -1287,117 +1323,132 @@ p + .classref-constant {
     letter-spacing: 0.75px;
 }
 
-/* Mobile navigation */
+/* Default styling of navigation items */
 
-.wy-nav-top,
-.wy-nav-top a {
+.wy-menu-vertical li {
     background-color: var(--navbar-background-color);
+}
+.wy-menu-vertical li.current {
+    background-color: var(--navbar-current-background-color);
+}
+
+.wy-menu-vertical li > a {
     color: var(--navbar-level-1-color);
+    font-size: 92%;
+    line-height: 20px;
+    padding: .4045em 1.618em;
 }
-
-/* Version branch label below the logo */
-.wy-side-nav-search > div.version {
-    color: var(--navbar-level-3-color);
-    font-size: 14px;
-    opacity: 0.9;
-}
-
-/* First level of navigation items */
-
-.wy-menu-vertical a {
-    color: var(--navbar-level-1-color);
-}
-
-.wy-menu-vertical a:hover {
+.wy-menu-vertical li > a:hover {
     background-color: var(--navbar-background-color-hover);
     color: var(--navbar-level-1-color);
 }
-
-.wy-menu-vertical a:active {
+.wy-menu-vertical li > a:active {
     background-color: var(--navbar-background-color-active);
 }
 
-.wy-menu-vertical li.toctree-l1 > a {
-    padding: .4045em 1.918em;
-}
-
-.wy-menu-vertical li.toctree-l1.current > a {
-    border: none;
-}
-
-.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a button.toctree-expand,
-.wy-menu-vertical li.toctree-l1 a button.toctree-expand,
-.wy-menu-vertical li.toctree-l2 a button.toctree-expand {
-    color: var(--navbar-level-3-color);
+.wy-menu-vertical li > a button.toctree-expand {
+    color: var(--navbar-expand-base-color) !important;
     opacity: 0.9;
     margin-right: 8px;
-}
 
-.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:hover button.toctree-expand,
-.wy-menu-vertical li.toctree-l1 a:hover button.toctree-expand,
-.wy-menu-vertical li.toctree-l2 a:hover button.toctree-expand {
-    color: var(--navbar-level-2-color);
-    opacity: 1;
-}
-
-.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:active button.toctree-expand,
-.wy-menu-vertical li.toctree-l1 a:active button.toctree-expand,
-.wy-menu-vertical li.toctree-l2 a:active button.toctree-expand {
-    color: var(--navbar-level-1-color);
-    opacity: 1;
-}
-
-/* Second (and higher) levels of navigation items */
-
-.wy-menu-vertical li.current a {
-    /* Make long words always display on a single line, keep wrapping for multiple words */
-    /* This fixes the class reference titles' display with very long class names */
-    display: flex;
-}
-
-.wy-menu-vertical li.current a,
-.wy-menu-vertical li.toctree-l2.current > a,
-.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
-.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
-    background-color: var(--navbar-current-background-color);
-    color: var(--navbar-level-2-color);
-    border-color: var(--navbar-current-background-color);
-}
-
-.wy-menu-vertical li.current a:hover,
-.wy-menu-vertical li.toctree-l2.current > a:hover,
-.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
-.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:hover {
-    background-color: var(--navbar-current-background-color-hover);
-}
-
-.wy-menu-vertical li.current a:active,
-.wy-menu-vertical li.toctree-l2.current > a:active,
-.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:active,
-.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:active {
-    background-color: var(--navbar-current-background-color-active);
-}
-
-.wy-menu-vertical a {
-    /* This overrides 8px margin added in other multi-selector rules */
-    margin-right: 0;
-}
-
-/* Make the expand icon a bit easier to hit. */
-.wy-menu-vertical li a button.toctree-expand {
+    /* Make the expand icon a bit easier to hit. */
     position: relative;
     width: 12px;
     min-width: 12px; /* Forces the size to stay this way in the flexbox model. */
     height: 18px;
 }
+.wy-menu-vertical li.current > a button.toctree-expand {
+    color: var(--navbar-current-color) !important;
+}
+.wy-menu-vertical li > a:hover button.toctree-expand {
+    color: var(--navbar-expand-hover-color) !important;
+    opacity: 1;
+}
+.wy-menu-vertical li > a:active button.toctree-expand {
+    color: var(--navbar-expand-active-color) !important;
+    opacity: 1;
+}
 
-.wy-menu-vertical li a button.toctree-expand:before {
+/* Make the expand icon a bit easier to hit. */
+.wy-menu-vertical li > a button.toctree-expand:before {
     position: absolute;
-    top: -3px;
+    top: -2px;
     left: -6px;
     width: 24px;
     height: 24px;
     padding: 6px;
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.toctree-l2.current > a {
+    background-color: var(--navbar-current-background-color-hover);
+    border-bottom: 2px solid var(--navbar-current-background-color);
+    color: var(--navbar-current-color);
+    font-weight: 600;
+
+    /* Make long words always display on a single line, keep wrapping for multiple words */
+    /* This fixes the class reference titles' display with very long class names */
+    display: flex;
+}
+.wy-menu-vertical li.current > a:hover,
+.wy-menu-vertical li.toctree-l2.current > a:hover {
+    background-color: var(--navbar-current-background-color-hover);
+}
+.wy-menu-vertical li.current > a:active,
+.wy-menu-vertical li.toctree-l2.current > a:active {
+    background-color: var(--navbar-current-background-color-active);
+}
+
+/* Slightly adjust first level items. */
+.wy-menu-vertical li.toctree-l1 > a,
+.wy-menu-vertical li.toctree-l1.current > a {
+    border: none;
+    padding: .4045em 1.918em;
+}
+.wy-menu-vertical li.toctree-l1.current > a {
+    border-bottom: 2px solid var(--navbar-current-background-color);
+}
+
+/* Override styling for children of the current item. */
+.wy-menu-vertical li.current li > a,
+.wy-menu-vertical li.toctree-l2.current li > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
+    background-color: var(--navbar-current-background-color);
+    border: none;
+    border-bottom: 2px solid var(--navbar-current-background-color);
+    color: var(--navbar-level-2-color);
+}
+.wy-menu-vertical li.current li > a:hover,
+.wy-menu-vertical li.toctree-l2.current li > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a:hover {
+    background-color: var(--navbar-current-background-color-hover);
+}
+.wy-menu-vertical li.current li > a:active,
+.wy-menu-vertical li.toctree-l2.current li > a:active,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:active,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a:active {
+    background-color: var(--navbar-current-background-color-active);
+}
+
+.wy-menu-vertical li.toctree-l2.current li > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
+    color: var(--navbar-level-3-color);
+}
+.wy-menu-vertical li.toctree-l2.current li > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a:hover {
+    color: var(--navbar-level-1-color);
+}
+
+.wy-menu-vertical li.current li.current > a,
+.wy-menu-vertical li.toctree-l2.current li.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4.current > a {
+    color: var(--navbar-current-color);
+    font-weight: 600;
 }
 
 /* Banner panel in sidebar */
@@ -1405,7 +1456,7 @@ p + .classref-constant {
     position: fixed;
 }
 
-/* Version selector (only visible on Read the Docs) */
+/* Read the Docs flyout panel, with language and version selectors. */
 
 .rst-versions {
     background-color: var(--navbar-current-background-color);
@@ -1459,7 +1510,7 @@ p + .classref-constant {
 }
 
 .rst-versions .rst-other-versions small {
-    color: var(--navbar-level-3-color);
+    color: var(--navbar-dimmed-color);
 }
 
 .rst-versions .rst-other-versions dd a:hover {
@@ -1588,12 +1639,4 @@ p + .classref-constant {
 }
 .wy-menu-vertical p.caption + ul.active {
     display: block;
-}
-
-/* Top navigation, breadcrumbs */
-.wy-breadcrumbs li a {
-    padding: 0 5px;
-}
-.wy-breadcrumbs li a:first-child {
-    padding-left: 0;
 }

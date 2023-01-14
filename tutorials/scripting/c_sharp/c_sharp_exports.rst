@@ -13,7 +13,9 @@ Exporting is done by using the ``[Export]`` attribute.
 
 .. code-block:: csharp
 
-    public class ExportExample : Node3D
+    using Godot;
+
+    public partial class ExportExample : Node3D
     {
         [Export]
         private int Number = 5;
@@ -305,9 +307,9 @@ Exported arrays should be initialized empty.
 .. code-block:: csharp
 
     [Export]
-    private Vector3[] Vector3s = new Vector3[0];
+    private Vector3[] Vector3s = System.Array.Empty<Vector3>();
     [Export]
-    private String[] String = new String[0];
+    private string[] Strings = System.Array.Empty<string>();
 
 
 You can omit the default value, but then it would be null if not assigned.

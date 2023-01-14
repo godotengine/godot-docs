@@ -30,7 +30,9 @@ So now lets work with a compute shader to see how it really works.
 Creating a ComputeShader
 ------------------------
 
-To begin using compute shaders, create a new text file called "compute_example.glsl". When you write compute shaders in Godot, you write them in GLSL directly. The Godot shader language is based off of GLSL so if you are familiar with normal shaders in Godot the syntax below will look somewhat familiar.
+To begin using compute shaders, ensure you are using a Vulkan based renderer (the Forward+ or Mobile options), as compute shaders are currently only supported on Vulkan.
+
+Create a new text file called "compute_example.glsl". When you write compute shaders in Godot, you write them in GLSL directly. The Godot shader language is based off of GLSL so if you are familiar with normal shaders in Godot the syntax below will look somewhat familiar.
 
 Let's take a look at this compute shader code:
 
@@ -229,7 +231,7 @@ Let's retrieve the data and print the results to our console.
 
     # Read back the data from the buffer
     var output_bytes := rd.buffer_get_data(buffer)
-    var output := output_bytes.to_float64_array()
+    var output := output_bytes.to_float32_array()
     print("Input: ", input)
     print("Output: ", output)
 

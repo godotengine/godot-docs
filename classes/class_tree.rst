@@ -105,6 +105,8 @@ Methods
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TreeItem<class_TreeItem>`                  | :ref:`create_item<class_Tree_method_create_item>` **(** :ref:`TreeItem<class_TreeItem>` parent=null, :ref:`int<class_int>` idx=-1 **)**                                                          |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                             | :ref:`deselect_all<class_Tree_method_deselect_all>` **(** **)**                                                                                                                                  |
+   +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`edit_selected<class_Tree_method_edit_selected>` **(** **)**                                                                                                                                |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`ensure_cursor_is_visible<class_Tree_method_ensure_cursor_is_visible>` **(** **)**                                                                                                          |
@@ -782,6 +784,18 @@ Creates an item in the tree and adds it as a child of ``parent``, which can be e
 If ``parent`` is ``null``, the root item will be the parent, or the new item will be the root itself if the tree is empty.
 
 The new item will be the ``idx``\ th child of parent, or it will be the last child if there are not enough siblings.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_method_deselect_all:
+
+.. rst-class:: classref-method
+
+void **deselect_all** **(** **)**
+
+Deselects all tree items (rows and columns). In :ref:`SELECT_MULTI<class_Tree_constant_SELECT_MULTI>` mode also removes selection cursor.
 
 .. rst-class:: classref-item-separator
 

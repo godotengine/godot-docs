@@ -2853,7 +2853,7 @@ Soft hyphen key.
 
 .. rst-class:: classref-enumeration
 
-enum **KeyModifierMask**:
+flags **KeyModifierMask**:
 
 .. _class_@GlobalScope_constant_KEY_CODE_MASK:
 
@@ -3017,11 +3017,21 @@ Extra mouse button 1. This is sometimes present, usually to the sides of the mou
 
 Extra mouse button 2. This is sometimes present, usually to the sides of the mouse.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_@GlobalScope_MouseButtonMask:
+
+.. rst-class:: classref-enumeration
+
+flags **MouseButtonMask**:
+
 .. _class_@GlobalScope_constant_MOUSE_BUTTON_MASK_LEFT:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **MOUSE_BUTTON_MASK_LEFT** = ``1``
+:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **MOUSE_BUTTON_MASK_LEFT** = ``1``
 
 Primary mouse button mask, usually for the left button.
 
@@ -3029,7 +3039,7 @@ Primary mouse button mask, usually for the left button.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **MOUSE_BUTTON_MASK_RIGHT** = ``2``
+:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **MOUSE_BUTTON_MASK_RIGHT** = ``2``
 
 Secondary mouse button mask, usually for the right button.
 
@@ -3037,23 +3047,23 @@ Secondary mouse button mask, usually for the right button.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **MOUSE_BUTTON_MASK_MIDDLE** = ``4``
+:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **MOUSE_BUTTON_MASK_MIDDLE** = ``4``
 
 Middle mouse button mask.
 
-.. _class_@GlobalScope_constant_MOUSE_BUTTON_MASK_XBUTTON1:
+.. _class_@GlobalScope_constant_MOUSE_BUTTON_MASK_MB_XBUTTON1:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **MOUSE_BUTTON_MASK_XBUTTON1** = ``128``
+:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **MOUSE_BUTTON_MASK_MB_XBUTTON1** = ``128``
 
 Extra mouse button 1 mask.
 
-.. _class_@GlobalScope_constant_MOUSE_BUTTON_MASK_XBUTTON2:
+.. _class_@GlobalScope_constant_MOUSE_BUTTON_MASK_MB_XBUTTON2:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **MOUSE_BUTTON_MASK_XBUTTON2** = ``256``
+:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **MOUSE_BUTTON_MASK_MB_XBUTTON2** = ``256``
 
 Extra mouse button 2 mask.
 
@@ -4156,75 +4166,11 @@ Hint that a property represents a particular type. If a property is :ref:`TYPE_S
 
 
 
-.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_VARIANT_TYPE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_METHOD_OF_VARIANT_TYPE** = ``25``
-
-
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_BASE_TYPE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_METHOD_OF_BASE_TYPE** = ``26``
-
-
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_INSTANCE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_METHOD_OF_INSTANCE** = ``27``
-
-
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_SCRIPT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_METHOD_OF_SCRIPT** = ``28``
-
-
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE** = ``29``
-
-
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_BASE_TYPE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PROPERTY_OF_BASE_TYPE** = ``30``
-
-
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_INSTANCE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PROPERTY_OF_INSTANCE** = ``31``
-
-
-
-.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_SCRIPT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PROPERTY_OF_SCRIPT** = ``32``
-
-
-
 .. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_TOO_BIG:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_OBJECT_TOO_BIG** = ``33``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_OBJECT_TOO_BIG** = ``25``
 
 
 
@@ -4232,7 +4178,7 @@ Hint that a property represents a particular type. If a property is :ref:`TYPE_S
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = ``34``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = ``26``
 
 
 
@@ -4240,7 +4186,7 @@ Hint that a property represents a particular type. If a property is :ref:`TYPE_S
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_SAVE_FILE** = ``35``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_SAVE_FILE** = ``27``
 
 
 
@@ -4248,7 +4194,7 @@ Hint that a property represents a particular type. If a property is :ref:`TYPE_S
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_GLOBAL_SAVE_FILE** = ``36``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_GLOBAL_SAVE_FILE** = ``28``
 
 
 
@@ -4256,7 +4202,7 @@ Hint that a property represents a particular type. If a property is :ref:`TYPE_S
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_INT_IS_OBJECTID** = ``37``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_INT_IS_OBJECTID** = ``29``
 
 
 
@@ -4264,7 +4210,7 @@ Hint that a property represents a particular type. If a property is :ref:`TYPE_S
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_INT_IS_POINTER** = ``38``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_INT_IS_POINTER** = ``30``
 
 
 
@@ -4272,7 +4218,7 @@ Hint that a property represents a particular type. If a property is :ref:`TYPE_S
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_ARRAY_TYPE** = ``39``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_ARRAY_TYPE** = ``31``
 
 
 
@@ -4280,7 +4226,7 @@ Hint that a property represents a particular type. If a property is :ref:`TYPE_S
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LOCALE_ID** = ``40``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LOCALE_ID** = ``32``
 
 Hints that a string property is a locale code. Editing it will show a locale dialog for picking language and country.
 
@@ -4288,7 +4234,7 @@ Hints that a string property is a locale code. Editing it will show a locale dia
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LOCALIZABLE_STRING** = ``41``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LOCALIZABLE_STRING** = ``33``
 
 Hints that a dictionary property is string translation map. Dictionary keys are locale codes and, values are translated strings.
 
@@ -4296,7 +4242,7 @@ Hints that a dictionary property is string translation map. Dictionary keys are 
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_TYPE** = ``42``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_NODE_TYPE** = ``34``
 
 
 
@@ -4304,7 +4250,7 @@ Hints that a dictionary property is string translation map. Dictionary keys are 
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_HIDE_QUATERNION_EDIT** = ``43``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_HIDE_QUATERNION_EDIT** = ``35``
 
 Hints that a quaternion property should disable the temporary euler editor.
 
@@ -4312,7 +4258,7 @@ Hints that a quaternion property should disable the temporary euler editor.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PASSWORD** = ``44``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_PASSWORD** = ``36``
 
 Hints that a string property is a password, and every character is replaced with the secret character.
 
@@ -4320,7 +4266,7 @@ Hints that a string property is a password, and every character is replaced with
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``45``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``37``
 
 
 
@@ -4332,7 +4278,7 @@ Hints that a string property is a password, and every character is replaced with
 
 .. rst-class:: classref-enumeration
 
-enum **PropertyUsageFlags**:
+flags **PropertyUsageFlags**:
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NONE:
 
@@ -4358,11 +4304,19 @@ The property is serialized and saved in the scene file (default).
 
 The property is shown in the :ref:`EditorInspector<class_EditorInspector>` (default).
 
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_INTERNAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_INTERNAL** = ``8``
+
+
+
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_CHECKABLE:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CHECKABLE** = ``8``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CHECKABLE** = ``16``
 
 The property can be checked in the :ref:`EditorInspector<class_EditorInspector>`.
 
@@ -4370,17 +4324,9 @@ The property can be checked in the :ref:`EditorInspector<class_EditorInspector>`
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CHECKED** = ``16``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_CHECKED** = ``32``
 
 The property is checked in the :ref:`EditorInspector<class_EditorInspector>`.
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_INTERNATIONALIZED:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_INTERNATIONALIZED** = ``32``
-
-The property is a translatable string.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_GROUP:
 
@@ -4478,13 +4424,13 @@ The property is a script variable which should be serialized and saved in the sc
 
 
 
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_INTERNAL:
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_ARRAY:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_INTERNAL** = ``262144``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_ARRAY** = ``262144``
 
-
+The property is an array.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_DO_NOT_SHARE_ON_DUPLICATE:
 
@@ -4558,14 +4504,6 @@ The property is only shown in the editor if modern renderers are supported (GLES
 
 The property is read-only in the :ref:`EditorInspector<class_EditorInspector>`.
 
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_ARRAY:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_ARRAY** = ``268435456``
-
-The property is an array.
-
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT:
 
 .. rst-class:: classref-enumeration-constant
@@ -4573,14 +4511,6 @@ The property is an array.
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFAULT** = ``6``
 
 Default usage (storage, editor and network).
-
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT_INTL:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFAULT_INTL** = ``38``
-
-Default usage for translatable strings (storage, editor, network and internationalized).
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NO_EDITOR:
 
@@ -4598,7 +4528,7 @@ Default usage but without showing the property in the editor (storage, network).
 
 .. rst-class:: classref-enumeration
 
-enum **MethodFlags**:
+flags **MethodFlags**:
 
 .. _class_@GlobalScope_constant_METHOD_FLAG_NORMAL:
 

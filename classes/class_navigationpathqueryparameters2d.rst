@@ -21,6 +21,13 @@ Description
 
 This class contains the start and target position and other parameters to be used with :ref:`NavigationServer2D.query_path<class_NavigationServer2D_method_query_path>`.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using NavigationPathQueryObjects <../tutorials/navigation/navigation_using_navigationpathqueryobjects>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

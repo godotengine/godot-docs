@@ -225,6 +225,8 @@ This effectively allows to have different branches of the scene tree to be manag
 
 Enable or disable the server feature that notifies clients of other peers' connection/disconnection, and relays messages between them. When this option is ``false``, clients won't be automatically notified of other peers and won't be able to send them packets through the server.
 
+\ **Note:** Changing this option while other peers are connected may lead to unexpected behaviors.
+
 \ **Note:** Support for this feature may depend on the current :ref:`MultiplayerPeer<class_MultiplayerPeer>` configuration. See :ref:`MultiplayerPeer.is_server_relay_supported<class_MultiplayerPeer_method_is_server_relay_supported>`.
 
 .. rst-class:: classref-section-separator

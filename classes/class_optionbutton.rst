@@ -400,9 +400,9 @@ Returns the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
 
 :ref:`int<class_int>` **get_selectable_item** **(** :ref:`bool<class_bool>` from_last=false **)** |const|
 
-.. container:: contribute
+Returns the index of the first item which is not disabled, or marked as a separator. If ``from_last`` is ``true``, the items will be searched in reverse order.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``-1`` if no item is found.
 
 .. rst-class:: classref-item-separator
 
@@ -438,9 +438,7 @@ Gets the metadata of the selected item. Metadata for items can be set using :ref
 
 :ref:`bool<class_bool>` **has_selectable_items** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if this button contains at least one item which is not disabled, or marked as a separator.
 
 .. rst-class:: classref-item-separator
 
@@ -464,9 +462,7 @@ Returns ``true`` if the item at index ``idx`` is disabled.
 
 :ref:`bool<class_bool>` **is_item_separator** **(** :ref:`int<class_int>` idx **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the item at index ``idx`` is marked as a separator.
 
 .. rst-class:: classref-item-separator
 

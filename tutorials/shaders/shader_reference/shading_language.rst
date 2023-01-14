@@ -512,7 +512,7 @@ Godot Shading language supports the most common types of flow control:
 
     } while (cond);
 
-Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze
+Keep in mind that in modern GPUs, an infinite loop can exist and can freeze
 your application (including editor). Godot can't protect you from this, so be
 careful not to make this mistake!
 
@@ -748,6 +748,7 @@ used, and how the editor should allow users to modify it.
     uniform vec4 color : source_color;
     uniform float amount : hint_range(0, 1);
     uniform vec4 other_color : source_color = vec4(1.0);
+    uniform sampler2D image : source_color;
 
 It's important to understand that textures that are supplied as color require
 hints for proper sRGB->linear conversion (i.e. ``source_color``), as Godot's 3D
@@ -1159,8 +1160,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec2 **textureSize** (gsampler2D s, int lod)                               | Get the size of a texture.                                          |
 |                                                                             |                                                                     |
-| ivec3 **textureSize** (gsampler2DArray s, int lod)                          |                                                                     |
-|                                                                             |                                                                     |
+| ivec3 **textureSize** (gsampler2DArray s, int lod)                          | The LOD defines which mipmap level is used. An LOD value of 0 will  |
+|                                                                             | use the full resolution texture.                                    |
 | ivec3 **textureSize** (gsampler3D s, int lod)                               |                                                                     |
 |                                                                             |                                                                     |
 | ivec2 **textureSize** (samplerCube s, int lod)                              |                                                                     |
@@ -1201,8 +1202,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureLod** (gsampler2D s, vec2 p, float lod)                 | Perform a texture read at custom mipmap.                            |
 |                                                                             |                                                                     |
-| gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            |                                                                     |
-|                                                                             |                                                                     |
+| gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            | The LOD defines which mipmap level is used. An LOD value of 0.0     |
+|                                                                             | will use the full resolution texture.                               |
 | gvec4_type **textureLod** (gsampler3D s, vec3 p, float lod)                 |                                                                     |
 |                                                                             |                                                                     |
 | vec4 **textureLod** (samplerCube s, vec3 p, float lod)                      |                                                                     |
@@ -1211,8 +1212,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureProjLod** (gsampler2D s, vec3 p, float lod)             | Performs a texture read with projection/LOD.                        |
 |                                                                             |                                                                     |
-| gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             |                                                                     |
-|                                                                             |                                                                     |
+| gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             | The LOD defines which mipmap level is used. An LOD value of 0.0     |
+|                                                                             | will use the full resolution texture.                               |
 | gvec4_type **textureProjLod** (gsampler3D s, vec4 p, float lod)             |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureGrad** (gsampler2D s, vec2 p, vec2 dPdx,                | Performs a texture read with explicit gradients.                    |
@@ -1237,8 +1238,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **texelFetch** (gsampler2D s, ivec2 p, int lod)                  | Fetches a single texel using integer coordinates.                   |
 |                                                                             |                                                                     |
-| gvec4_type **texelFetch** (gsampler2DArray s, ivec3 p, int lod)             |                                                                     |
-|                                                                             |                                                                     |
+| gvec4_type **texelFetch** (gsampler2DArray s, ivec3 p, int lod)             | The LOD defines which mipmap level is used. An LOD value of 0 will  |
+|                                                                             | use the full resolution texture.                                    |
 | gvec4_type **texelFetch** (gsampler3D s, ivec3 p, int lod)                  |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureGather** (gsampler2D s, vec2 p [, int comps])           | Gathers four texels from a texture.                                 |
@@ -1299,7 +1300,7 @@ is used, it can be scalar or vector.
 |                                                                             |                                                                     |
 | uvec_type **findMSB** (uvec_type value)                                     |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
-| void **imulExtended** (ivec_type x, ivec_type y, out ivec_type msb,         | Adds two 32-bit numbers and produce a 64-bit result.                |
+| void **imulExtended** (ivec_type x, ivec_type y, out ivec_type msb,         | Multiplies two 32-bit numbers and produce a 64-bit result.          |
 | out ivec_type lsb)                                                          | ``x`` - the first number.                                           |
 |                                                                             | ``y`` - the second number.                                          |
 | void **umulExtended** (uvec_type x, uvec_type y, out uvec_type msb,         | ``msb`` - will contain the most significant bits.                   |

@@ -21,6 +21,13 @@ Description
 
 Creates a link between two locations that :ref:`NavigationServer2D<class_NavigationServer2D>` can route agents through.  Links can be used to express navigation methods that aren't just traveling along the surface of the navigation mesh, like zip-lines, teleporters, or jumping across gaps.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using NavigationLinks <../tutorials/navigation/navigation_using_navigationlinks>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
