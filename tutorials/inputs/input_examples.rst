@@ -300,7 +300,7 @@ also counts as a button - two buttons, to be precise, with both
             switch (mouseEvent.ButtonIndex)
             {
                 case MouseButton.Left:
-                    GD.Print("Left button was clicked at ", {mouseEvent.Position});
+                    GD.Print($"Left button was clicked at {mouseEvent.Position}");
                     break;
                 case MouseButton.WheelUp:
                     GD.Print("Wheel up");
