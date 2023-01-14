@@ -14,7 +14,10 @@ works and what their pros and cons are. In this tutorial, we'll look at the
 of how to use it.
 
 .. note:: This document assumes you're familiar with Godot's various physics
-          bodies. Please read :ref:`doc_physics_introduction` first.
+          bodies. Please read :ref:`doc_physics_introduction` first, for an overview.
+
+.. note:: While this document uses ``CharacterBody2D`` in its examples, the same
+          concepts apply in 3D as well.
 
 What is a character body?
 -------------------------
