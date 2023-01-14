@@ -64,7 +64,7 @@ The code in the ``process()`` function will always run.
 We need to generate 4 random numbers: 3 to create a random position and one for the random
 offset of the swim cycle.
 
-First, generate 4 seeds inside the ``start()`` function using the ``hash`` function provided above:
+First, generate 4 seeds inside the ``start()`` function using the ``hash()`` function provided above:
 
 .. code-block:: glsl
 
