@@ -243,7 +243,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
     func refresh_control_text():
         property_control.text = "Value: " + str(current_value)
 
- .. code-tab:: none C#
+ .. code-tab:: csharp
 
     // RandomIntEditor.cs
     #if TOOLS
