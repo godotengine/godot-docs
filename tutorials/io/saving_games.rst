@@ -188,8 +188,11 @@ way to pull the data out of the file as well.
             // Call the node's save function.
             var nodeData = saveNode.Call("Save");
 
+            # JSON provides a static method to serialized JSON string
+            var jsonString = JSON.Stringify(nodeData);
+
             // Store the save dictionary as a new line in the save file.
-            saveGame.StoreLine(JSON.Stringify(nodeData));
+            saveGame.StoreLine(jsonString);
         }
     }
 
@@ -271,15 +274,17 @@ load function:
         while (saveGame.GetPosition() < saveGame.GetLength())
         {
             var jsonString = saveGame.GetLine();
+
             // Creates the helper class to interact with JSON
             var json = new JSON();
             var parseResult = json.Parse(jsonString);
-            if (parseResult != Error.Ok) {
+            if (parseResult != Error.Ok)
+            {
                 GD.Print($"JSON Parse Error: {json.GetErrorMessage()} in {jsonString} at line {json.GetErrorLine()}");
                 continue;
             }
 
-            // Get the saved dictionary from the next line in the save file
+            // Get the data from the JSON object
             var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
 
             // Firstly, we need to create the object and add it to the tree and set its position.
@@ -291,7 +296,7 @@ load function:
             // Now we set the remaining variables.
             foreach (KeyValuePair<string, Variant> entry in nodeData)
             {
-                string key = entry.Key.ToString();
+                string key = entry.Key;
                 if (key == "Filename" || key == "Parent" || key == "PosX" || key == "PosY")
                     continue;
                 newObject.Set(key, entry.Value);
