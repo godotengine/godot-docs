@@ -97,22 +97,11 @@ the following line of code:
 
  .. code-tab:: csharp C#
 
-    public class Sprite : Godot.Sprite2D
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+    using Godot;
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+    public partial class Sprite : Sprite2D
     {
-
     }
-
-    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-    //  public override void _Process(float delta)
-    //  {
-    //
-    //  }
 
 Every GDScript file is implicitly a class. The ``extends`` keyword defines the
 class this script inherits or extends. In this case, it's ``Sprite2D``, meaning
@@ -233,9 +222,9 @@ At the bottom of the script, define the function:
 
  .. code-tab:: csharp C#
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        Rotation += AngularSpeed * delta;
+        Rotation += AngularSpeed * (float)delta;
     }
 
 The ``func`` keyword defines a new function. After it, we have to write the
@@ -261,6 +250,10 @@ Run the scene to see the Godot icon turn in-place.
 
 .. image:: img/scripting_first_script_godot_turning_in_place.gif
 
+.. note:: In C#, notice how the ``delta`` argument taken by ``_Process()`` is a
+          ``double``. We therefore need to convert it to ``float`` when we apply
+          it to the rotation.
+
 Moving forward
 ~~~~~~~~~~~~~~
 
@@ -279,7 +272,7 @@ them.
 
     var velocity = Vector2.Up.Rotated(Rotation) * Speed;
 
-    Position += velocity * delta;
+    Position += velocity * (float)delta;
 
 As we already saw, the ``var`` keyword defines a new variable. If you put it at
 the top of the script, it defines a property of the class. Inside a function, it
@@ -332,17 +325,16 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
-    public class Sprite : Godot.Sprite2D
+    public partial class Sprite : Sprite2D
     {
         private int Speed = 400;
         private float AngularSpeed = Mathf.Pi;
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
-            Rotation += AngularSpeed * delta;
+            Rotation += AngularSpeed * (float)delta;
             var velocity = Vector2.Up.Rotated(Rotation) * Speed;
 
-            Position += velocity * delta;
-
+            Position += velocity * (float)delta;
         }
     }

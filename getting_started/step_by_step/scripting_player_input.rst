@@ -54,7 +54,7 @@ code below.
         direction = 1;
     }
 
-    Rotation += AngularSpeed * direction * delta;
+    Rotation += AngularSpeed * direction * (float)delta;
 
 Our ``direction`` local variable is a multiplier representing the direction in
 which the player wants to turn. A value of ``0`` means the player isn't pressing
@@ -141,13 +141,13 @@ Here is the complete ``Sprite2D.gd`` file for reference.
  .. code-tab:: csharp C#
 
     using Godot;
-    
-    public class Sprite : Godot.Sprite2D
+
+    public partial class Sprite : Sprite2D
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
             var direction = 0;
             if (Input.IsActionPressed("ui_left"))
@@ -159,7 +159,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
                 direction = 1;
             }
 
-            Rotation += AngularSpeed * direction * delta;
+            Rotation += AngularSpeed * direction * (float)delta;
 
             var velocity = Vector2.Zero;
             if (Input.IsActionPressed("ui_up"))
@@ -167,7 +167,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
                 velocity = Vector2.Up.Rotated(Rotation) * Speed;
             }
 
-            Position += velocity * delta;
+            Position += velocity * (float)delta;
         }
     }
 
