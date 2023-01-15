@@ -143,7 +143,7 @@ and ``get_slide_collision()``:
  .. code-tab:: csharp
 
     // Using MoveAndCollide.
-    var collision = MoveAndCollide(velocity * (float)delta);
+    var collision = MoveAndCollide(Velocity * (float)delta);
     if (collision != null)
     {
         GD.Print("I collided with ", ((Node)collision.GetCollider()).Name);
@@ -188,7 +188,7 @@ the same collision response:
  .. code-tab:: csharp
 
     // using MoveAndCollide
-    var collision = MoveAndCollide(velocity * (float)delta);
+    var collision = MoveAndCollide(Velocity * (float)delta);
     if (collision != null)
     {
         velocity = velocity.Slide(collision.GetNormal());
@@ -500,14 +500,14 @@ Here's the code for the player body:
         public float JumpSpeed = -400.0f;
 
         // Get the gravity from the project settings so you can sync with rigid body nodes.
-        public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity");
+        public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 
         public override void _PhysicsProcess(double delta)
         {
             Vector2 velocity = Velocity;
 
             // Add the gravity.
-            velocity.y += Gravity * delta;
+            velocity.y += Gravity * (float)delta;
 
             // Handle jump.
             if (Input.IsActionJustPressed("jump") && IsOnFloor())
