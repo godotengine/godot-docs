@@ -1,16 +1,19 @@
-# Base dependencies
-
 # Sync with readthedocs:
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/pip.txt
 # https://github.com/readthedocs/readthedocs.org/blob/master/requirements/docs.txt
+
+# Base dependencies
+pygments==2.14.0
+
+# Sphinx base and RTD theme.
 sphinx==4.4.0
 sphinx_rtd_theme==1.1.1
 
-# Code tabs extension for GDScript/C#
+# Sphinx extensions.
+
+# Code tabs extension to display codeblocks in different languages as tabs.
 sphinx-tabs==3.4.0
-
-# Custom 404 error page (more useful than the default)
+# Custom 404 error page (more useful than the default).
 sphinx-notfound-page==0.8.3
-
-# Adds Open Graph tags in the HTML `<head>` tag
+# Adds Open Graph tags in the HTML `<head>` tag.
 sphinxext-opengraph==0.7.5
