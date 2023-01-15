@@ -143,7 +143,7 @@ and ``get_slide_collision()``:
  .. code-tab:: csharp
 
     // Using MoveAndCollide.
-    var collision = MoveAndCollide(velocity * delta);
+    var collision = MoveAndCollide(velocity * (float)delta);
     if (collision != null)
     {
         GD.Print("I collided with ", ((Node)collision.GetCollider()).Name);
@@ -188,7 +188,7 @@ the same collision response:
  .. code-tab:: csharp
 
     // using MoveAndCollide
-    var collision = MoveAndCollide(velocity * delta);
+    var collision = MoveAndCollide(velocity * (float)delta);
     if (collision != null)
     {
         velocity = velocity.Slide(collision.GetNormal());
@@ -267,7 +267,7 @@ Attach a script to the CharacterBody2D and add the following code:
         public override void _PhysicsProcess(double delta)
         {
             GetInput();
-            MoveAndCollide(Velocity * delta);
+            MoveAndCollide(Velocity * (float)delta);
         }
     }
 
@@ -324,7 +324,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
         # "Muzzle" is a Marker2D placed at the barrel of the gun.
         var b = Bullet.instantiate()
         b.start($Muzzle.global_position, rotation)
-        get_tree.root.add_child(b)
+        get_tree().root.add_child(b)
 
     func _physics_process(delta):
         get_input()
@@ -348,7 +348,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
             // Add these actions in Project Settings -> Input Map.
             float inputDir = Input.GetAxis("backward", "forward");
             Velocity = Transform.x * inputDir * Speed;
-            if (Input.IsActionPressed("mouse_click"))
+            if (Input.IsActionPressed("shoot"))
             {
                 Shoot();
             }
@@ -409,19 +409,19 @@ And the code for the Bullet:
     {
         public int Speed = 750;
 
-        public void Start(Vector2 _position, float _direction)
+        public void Start(Vector2 position, float direction)
         {
-            Rotation = _direction;
-            Position = _position;
-            _velocity = new Vector2(speed, 0).Rotated(Rotation);
+            Rotation = direction;
+            Position = position;
+            Velocity = new Vector2(speed, 0).Rotated(Rotation);
         }
 
         public override void _PhysicsProcess(double delta)
         {
-            var collision = MoveAndCollide(_velocity * delta);
+            var collision = MoveAndCollide(Velocity * (float)delta);
             if (collision != null)
             {
-                _velocity = _velocity.Bounce(collision.GetNormal());
+                Velocity = Velocity.Bounce(collision.GetNormal());
                 if (collision.GetCollider().HasMethod("Hit"))
                 {
                     collision.GetCollider().Call("Hit");
@@ -484,7 +484,7 @@ Here's the code for the player body:
         if Input.is_action_just_pressed("jump") and is_on_floor():
             velocity.y = jump_speed
 
-        # Get the input direction and handle the movement/deceleration.
+        # Get the input direction.
         var direction = Input.get_axis("ui_left", "ui_right")
         velocity.x = direction * speed
 
@@ -496,17 +496,28 @@ Here's the code for the player body:
 
     public partial class CBExample : CharacterBody2D
     {
-        public float Speed = 100.0;
-        public float JumpSpeed = -400.0;
+        public float Speed = 100.0f;
+        public float JumpSpeed = -400.0f;
+
+        // Get the gravity from the project settings so you can sync with rigid body nodes.
         public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity");
 
         public override void _PhysicsProcess(double delta)
         {
-            Velocity.y += Gravity * delta;
-            if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
-                Velocity.y = JumpSpeed;
+            Vector2 velocity = Velocity;
+
+            // Add the gravity.
+            velocity.y += Gravity * delta;
+
+            // Handle jump.
+            if (Input.IsActionJustPressed("jump") && IsOnFloor())
+                velocity.y = JumpSpeed;
+
+            // Get the input direction.
             Vector2 direction = Input.GetAxis("ui_left", "ui_right");
-            Velocity.x = direction * Speed;
+            velocity.x = direction * Speed;
+
+            Velocity = velocity;
             MoveAndSlide();
         }
     }
