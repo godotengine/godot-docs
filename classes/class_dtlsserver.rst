@@ -30,17 +30,17 @@ Below a small example of how to use it:
 
     # server_node.gd
     extends Node
-
+    
     var dtls := DTLSServer.new()
     var server := UDPServer.new()
     var peers = []
-
+    
     func _ready():
         server.listen(4242)
         var key = load("key.key") # Your private key.
         var cert = load("cert.crt") # Your X509 certificate.
         dtls.setup(key, cert)
-
+    
     func _process(delta):
         while server.is_connection_available():
             var peer : PacketPeerUDP = server.take_connection()
@@ -49,7 +49,7 @@ Below a small example of how to use it:
                 continue # It is normal that 50% of the connections fails due to cookie exchange.
             print("Peer connected!")
             peers.append(dtls_peer)
-
+    
         for p in peers:
             p.poll() # Must poll to update the state.
             if p.get_status() == PacketPeerDTLS.STATUS_CONNECTED:
@@ -74,7 +74,7 @@ Below a small example of how to use it:
             var cert = GD.Load<X509Certificate>("cert.crt"); // Your X509 certificate.
             Dtls.Setup(key, cert);
         }
-
+    
         public override void _Process(float delta)
         {
             while (Server.IsConnectionAvailable())
@@ -88,7 +88,7 @@ Below a small example of how to use it:
                 GD.Print("Peer connected!");
                 Peers.Add(dtlsPeer);
             }
-
+    
             foreach (var p in Peers)
             {
                 p.Poll(); // Must poll to update the state.
@@ -113,15 +113,15 @@ Below a small example of how to use it:
 
     # client_node.gd
     extends Node
-
+    
     var dtls := PacketPeerDTLS.new()
     var udp := PacketPeerUDP.new()
     var connected = false
-
+    
     func _ready():
         udp.connect_to_host("127.0.0.1", 4242)
         dtls.connect_to_peer(udp, false) # Use true in production for certificate validation!
-
+    
     func _process(delta):
         dtls.poll()
         if dtls.get_status() == PacketPeerDTLS.STATUS_CONNECTED:
@@ -147,7 +147,7 @@ Below a small example of how to use it:
             Udp.ConnectToHost("127.0.0.1", 4242);
             Dtls.ConnectToPeer(Udp, false); // Use true in production for certificate validation!
         }
-
+    
         public override void _Process(float delta)
         {
             Dtls.Poll();

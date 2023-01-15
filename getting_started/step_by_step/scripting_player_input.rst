@@ -141,6 +141,7 @@ Here is the complete ``sprite_2d.gd`` file for reference.
  .. code-tab:: csharp C#
 
     using Godot;
+
     public partial class Sprite : Sprite2D
     {
         private float Speed = 400;
