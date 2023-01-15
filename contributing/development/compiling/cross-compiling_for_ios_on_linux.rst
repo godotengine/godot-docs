@@ -26,26 +26,29 @@ described here and cross-compiling the binary.
 Requirements
 ------------
 
--  `XCode with the iOS SDK <https://developer.apple.com/xcode/download>`__
-   (a dmg image, for newer versions a **xip** file is going to be downloaded.)
--  `Clang >= 3.5 <http://clang.llvm.org>`__ for your development
-   machine installed and in the ``PATH``. It has to be version >= 3.5
-   to target ``arm64`` architecture.
--  `Fuse <https://github.com/libfuse/libfuse>`__ for mounting and unmounting
-   the dmg image.
--  `darling-dmg <https://github.com/darlinghq/darling-dmg>`__, which
-   needs to be built from source. The procedure for that is explained
-   below.
-   - For newer versions you should download `xar <https://mackyle.github.io/xar/>` and `pbzx <https://github.com/NiklasRosenstein/pbzx>`.
-   -  For building darling-dmg, you'll need the development packages of
+- `XCode with the iOS SDK <https://developer.apple.com/xcode/download>`__
+  (a dmg image, for newer versions a **xip** file is going to be downloaded.)
+- `Clang >= 3.5 <http://clang.llvm.org>`__ for your development
+  machine installed and in the ``PATH``. It has to be version >= 3.5
+  to target ``arm64`` architecture.
+- `Fuse <https://github.com/libfuse/libfuse>`__ for mounting and unmounting
+  the dmg image.
+- `darling-dmg <https://github.com/darlinghq/darling-dmg>`__, which
+  needs to be built from source. The procedure for that is explained
+  below.
+
+    - For newer versions you should download `xar <https://mackyle.github.io/xar/>`__
+      and `pbzx <https://github.com/NiklasRosenstein/pbzx>`__.
+    - For building darling-dmg, you'll need the development packages of
       the following libraries: fuse, icu, openssl, zlib, bzip2.
-   -  For building xar and pbzx you may want to follow `this guide <https://gist.github.com/phracker/1944ce190e01963c550566b749bd2b54>`
+    - For building xar and pbzx you may want to follow
+      `this guide <https://gist.github.com/phracker/1944ce190e01963c550566b749bd2b54>`__.
 
--  `cctools-port <https://github.com/tpoechtrager/cctools-port>`__
-   for the needed build tools. The procedure for building is quite
-   peculiar and is described below.
+- `cctools-port <https://github.com/tpoechtrager/cctools-port>`__
+  for the needed build tools. The procedure for building is quite
+  peculiar and is described below.
 
-   -  This also has some extra dependencies: automake, autogen, libtool.
+    - This also has some extra dependencies: automake, autogen, libtool.
 
 Configuring the environment
 ---------------------------
