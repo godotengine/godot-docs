@@ -188,7 +188,7 @@ way to pull the data out of the file as well.
             // Call the node's save function.
             var nodeData = saveNode.Call("Save");
 
-            # JSON provides a static method to serialized JSON string
+            // JSON provides a static method to serialized JSON string
             var jsonString = JSON.Stringify(nodeData);
 
             // Store the save dictionary as a new line in the save file.
