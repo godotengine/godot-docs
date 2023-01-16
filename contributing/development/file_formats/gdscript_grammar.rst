@@ -38,12 +38,12 @@ for reference purposes.
         ;
 
     classVarDecl = [ @onready ] [ @export ] "var" IDENTIFIER [ ":" typeHint ]
-    [ "=" expression ] IDENTIFIER
+    [ "=" expression ] 
     [ ":" [ "set" "(" value ")" ":" { method } ] | "get" ":" { method } ] NEWLINE ;
         INDENT set "( new_value )" ] ":" NEWLINE ;
         INDENT INDENT IDENTIFIER = new_value
         INDENT get ":" ] NEWLINE ;
-        INDENT INDENT return IDENTIFIER NEWLINE ;
+        INDENT INDENT return [ value | IDENTIFIER ] NEWLINE ;
     (* Note: either the set or get method may be omitted *)
     typeHint = BUILTINTYPE | IDENTIFIER ;
 
