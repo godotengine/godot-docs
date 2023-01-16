@@ -9,6 +9,7 @@ Basic Tutorial
    :name: xr-basic-tutorial
 
    setting_up_xr
+   deploying_to_android
    basic_xr_locomotion
 
 Advanced topics
