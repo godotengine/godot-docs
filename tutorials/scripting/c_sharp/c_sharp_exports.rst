@@ -61,6 +61,51 @@ the following to list them:
     [Export]
     private Resource Resource;
 
+Grouping Exports
+________________
+
+It is possible to group your exported properties inside the Inspector with the ``[ExportGroup]``
+attribute. Every exported property after this attribute will be added to the group. Start a new
+group or use ``[ExportGroup("")]`` to break out.
+
+.. code-block:: csharp
+
+    [ExportGroup("My Properties")]
+    [Export]
+    private int Number = 3;
+
+The second argument of the attribute can be used to only group properties with the specified prefix.
+
+Groups cannot be nested, use ``[ExportSubgroup]`` to create subgroups within a group.
+
+.. code-block:: csharp
+
+    [ExportSubgroup("Extra Properties")]
+    [Export]
+    private string Text = "";
+    [Export]
+    private bool Flag = false;
+
+You can also change the name of your main category, or create additional categories in the property
+list with the ``[ExportCategory]`` attribute.
+
+.. code-block:: csharp
+
+    [ExportCategory("Main Category")]
+    [Export]
+    private int Number = 3;
+    [Export]
+    private string Text = "";
+
+    [ExportCategory("Extra Category")]
+    [Export]
+    private bool Flag = false;
+
+.. note::
+
+    The list of properties is organized based on the class inheritance, and new categories break
+    that expectation. Use them carefully, especially when creating projects for public use.
+
 ..
 	Commenting out enum examples because I have been told they
 	require extra steps to actually work properly. The examples below
