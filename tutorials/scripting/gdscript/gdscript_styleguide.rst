@@ -396,6 +396,8 @@ they only reduce readability.
     if (is_colliding()):
         queue_free()
 
+.. _boolean_operators:
+
 Boolean operators
 ~~~~~~~~~~~~~~~~~
 

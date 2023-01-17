@@ -268,16 +268,19 @@ The following is the list of supported operators and their precedence.
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``in``                                                                         | Inclusion checker (when used with         |
 |                                                                                | control flow keywords or in a             |
-|                                                                                | standalone expression).                   |
+|                                                                                | standalone expression)                    |
 |                                                                                |                                           |
 |                                                                                | Content iterator (when used with the      |
-|                                                                                | for_ keyword).                            |
+|                                                                                | for_ keyword)                             |
 +--------------------------------------------------------------------------------+-------------------------------------------+
-| ``not`` ``!``                                                                  | :ref:`Boolean NOT<boolean_aliases>`       |
+| ``not`` ``!``                                                                  | Boolean NOT and it's                      |
+|                                                                                | :ref:`aliase<boolean_operators>`          |
 +--------------------------------------------------------------------------------+-------------------------------------------+
-| ``and`` ``&&``                                                                 | :ref:`Boolean AND<boolean_aliases>`       |
+| ``and`` ``&&``                                                                 | Boolean AND and it's                      |
+|                                                                                | :ref:`aliase<boolean_operators>`          |
 +--------------------------------------------------------------------------------+-------------------------------------------+
-| ``or`` ``||``                                                                  | :ref:`Boolean OR<boolean_aliases>`        |
+| ``or`` ``||``                                                                  | Boolean OR and it's                       |
+|                                                                                | :ref:`aliase<boolean_operators>`          |
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``if x else``                                                                  | Ternary if/else                           |
 +--------------------------------------------------------------------------------+-------------------------------------------+
