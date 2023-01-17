@@ -93,8 +93,8 @@ Pause Menu Example
 ------------------
 
 Here is an example of a pause menu. Create a popup or panel with controls
-inside, and set its pause mode to "Process" then hide it. By setting the
-root of the pause popup to "Process", all children and grandchildren will
+inside, and set its pause mode to "When Paused" or "Always" then hide it. By setting the
+root of the pause popup to "When Paused" or "Always", all children and grandchildren will
 inherit that state. This way, this branch of the scene tree will continue
 working when paused.
 
