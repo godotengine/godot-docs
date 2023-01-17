@@ -317,6 +317,45 @@ underscore (\_) to separate words:
 
     const float GOLDEN_RATIO = 1.618;
 
+Preprocessor directives
+~~~~~~~~~~~~~~~~~~~~~~~
+
+:ref:`doc_shader_preprocessor` directives should be written in CONSTANT__CASE.
+Directives should be written without any indentation before them, even if
+nested within a function.
+
+To preserve the natural flow of indentation when shader errors are printed to
+the console, extra indentation should **not** be added within ``#if``,
+``#ifdef`` or ``#ifndef`` blocks:
+
+**Good**:
+
+.. code-block:: glsl
+
+    #define HEIGHTMAP_ENABLED
+
+    void fragment() {
+        vec2 position = vec2(1.0, 2.0);
+
+    #ifdef HEIGHTMAP_ENABLED
+        sample_heightmap(position);
+    #endif
+    }
+
+**Bad**:
+
+.. code-block:: glsl
+
+    #define heightmap_enabled
+
+    void fragment() {
+        vec2 position = vec2(1.0, 2.0);
+
+        #ifdef heightmap_enabled
+            sample_heightmap(position);
+        #endif
+    }
+
 Code order
 ----------
 

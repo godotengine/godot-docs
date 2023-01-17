@@ -33,6 +33,13 @@ The cost of traveling distances inside this region can be controlled with the :r
 
 \ **Note:** This node caches changes to its properties, so if you make changes to the underlying region :ref:`RID<class_RID>` in :ref:`NavigationServer3D<class_NavigationServer3D>`, they will not be reflected in this node's properties.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using NavigationRegions <../tutorials/navigation/navigation_using_navigationregions>`
+
 .. rst-class:: classref-reftable-group
 
 Properties

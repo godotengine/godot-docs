@@ -68,11 +68,19 @@ A floating-point scalar.
 
 An integer scalar.
 
+.. _class_VisualShaderNodeCompare_constant_CTYPE_SCALAR_UINT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_SCALAR_UINT** = ``2``
+
+An unsigned integer scalar.
+
 .. _class_VisualShaderNodeCompare_constant_CTYPE_VECTOR_2D:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_2D** = ``2``
+:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_2D** = ``3``
 
 A 2D vector type.
 
@@ -80,7 +88,7 @@ A 2D vector type.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_3D** = ``3``
+:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_3D** = ``4``
 
 A 3D vector type.
 
@@ -88,7 +96,7 @@ A 3D vector type.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_4D** = ``4``
+:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_4D** = ``5``
 
 A 4D vector type.
 
@@ -96,7 +104,7 @@ A 4D vector type.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_BOOLEAN** = ``5``
+:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_BOOLEAN** = ``6``
 
 A boolean type.
 
@@ -104,7 +112,7 @@ A boolean type.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_TRANSFORM** = ``6``
+:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_TRANSFORM** = ``7``
 
 A transform (``mat4``) type.
 
@@ -112,7 +120,7 @@ A transform (``mat4``) type.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_MAX** = ``7``
+:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_MAX** = ``8``
 
 Represents the size of the :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` enum.
 

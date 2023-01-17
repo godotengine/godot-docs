@@ -481,7 +481,9 @@ accesses:
   .. code-tab:: csharp
 
     // Child.cs
-    public class Child : Node
+    using Godot;
+
+    public partial class Child : Node
     {
         public FuncRef FN = null;
 
@@ -493,7 +495,9 @@ accesses:
     }
 
     // Parent.cs
-    public class Parent : Node
+    using Godot;
+
+    public partial class Parent : Node
     {
         public Node Child;
 

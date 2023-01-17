@@ -47,6 +47,8 @@ Methods
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                   | :ref:`eval<class_JavaScriptBridge_method_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**                                                                              |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`force_fs_sync<class_JavaScriptBridge_method_force_fs_sync>` **(** **)**                                                                                                                                                         |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`get_interface<class_JavaScriptBridge_method_get_interface>` **(** :ref:`String<class_String>` interface **)**                                                                                                                   |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`pwa_needs_update<class_JavaScriptBridge_method_pwa_needs_update>` **(** **)** |const|                                                                                                                                           |
@@ -131,6 +133,20 @@ Prompts the user to download a file containing the specified ``buffer``. The fil
 Execute the string ``code`` as JavaScript code within the browser window. This is a call to the actual global JavaScript function ``eval()``.
 
 If ``use_global_execution_context`` is ``true``, the code will be evaluated in the global execution context. Otherwise, it is evaluated in the execution context of a function within the engine's runtime environment.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_JavaScriptBridge_method_force_fs_sync:
+
+.. rst-class:: classref-method
+
+void **force_fs_sync** **(** **)**
+
+Force synchronization of the persistent file system (when enabled).
+
+\ **Note:** This is only useful for modules or extensions that can't use :ref:`FileAccess<class_FileAccess>` to write files.
 
 .. rst-class:: classref-item-separator
 

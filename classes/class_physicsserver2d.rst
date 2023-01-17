@@ -232,6 +232,10 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`joint_set_param<class_PhysicsServer2D_method_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param, :ref:`float<class_float>` value **)**                                                                                                |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                         | :ref:`pin_joint_get_param<class_PhysicsServer2D_method_pin_joint_get_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |const|                                                                                                           |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param, :ref:`float<class_float>` value **)**                                                                                  |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`rectangle_shape_create<class_PhysicsServer2D_method_rectangle_shape_create>` **(** **)**                                                                                                                                                                                                         |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`segment_shape_create<class_PhysicsServer2D_method_segment_shape_create>` **(** **)**                                                                                                                                                                                                             |
@@ -2296,6 +2300,30 @@ void **joint_make_pin** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_V
 void **joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param, :ref:`float<class_float>` value **)**
 
 Sets a joint parameter. See :ref:`JointParam<enum_PhysicsServer2D_JointParam>` for a list of available parameters.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2D_method_pin_joint_get_param:
+
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **pin_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |const|
+
+Returns the value of a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` for a list of available parameters.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsServer2D_method_pin_joint_set_param:
+
+.. rst-class:: classref-method
+
+void **pin_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param, :ref:`float<class_float>` value **)**
+
+Sets a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` for a list of available parameters.
 
 .. rst-class:: classref-item-separator
 

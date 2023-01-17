@@ -179,7 +179,7 @@ in another context without any extra changes to its API.
       // Parent
       GetNode<Left>("Left").Target = GetNode("Right/Receiver");
 
-      public class Left : Node
+      public partial class Left : Node
       {
           public Node Target = null;
 
@@ -189,7 +189,7 @@ in another context without any extra changes to its API.
           }
       }
 
-      public class Right : Node
+      public partial class Right : Node
       {
           public Node Receiver = null;
 

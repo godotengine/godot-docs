@@ -64,11 +64,19 @@ A floating-point scalar.
 
 An integer scalar.
 
+.. _class_VisualShaderNodeClamp_constant_OP_TYPE_UINT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **OP_TYPE_UINT** = ``2``
+
+An unsigned integer scalar.
+
 .. _class_VisualShaderNodeClamp_constant_OP_TYPE_VECTOR_2D:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **OP_TYPE_VECTOR_2D** = ``2``
+:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **OP_TYPE_VECTOR_2D** = ``3``
 
 A 2D vector type.
 
@@ -76,7 +84,7 @@ A 2D vector type.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **OP_TYPE_VECTOR_3D** = ``3``
+:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **OP_TYPE_VECTOR_3D** = ``4``
 
 A 3D vector type.
 
@@ -84,7 +92,7 @@ A 3D vector type.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **OP_TYPE_VECTOR_4D** = ``4``
+:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **OP_TYPE_VECTOR_4D** = ``5``
 
 A 4D vector type.
 
@@ -92,7 +100,7 @@ A 4D vector type.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **OP_TYPE_MAX** = ``5``
+:ref:`OpType<enum_VisualShaderNodeClamp_OpType>` **OP_TYPE_MAX** = ``6``
 
 Represents the size of the :ref:`OpType<enum_VisualShaderNodeClamp_OpType>` enum.
 

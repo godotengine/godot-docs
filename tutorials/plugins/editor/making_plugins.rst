@@ -127,10 +127,9 @@ like this:
 
     #if TOOLS
     using Godot;
-    using System;
 
     [Tool]
-    public class CustomNode : EditorPlugin
+    public partial class CustomNode : EditorPlugin
     {
         public override void _EnterTree()
         {
@@ -191,10 +190,9 @@ clicked. For that, we'll need a script that extends from
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     [Tool]
-    public class MyButton : Button
+    public partial class MyButton : Button
     {
         public override void _EnterTree()
         {
@@ -240,17 +238,16 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
 
     #if TOOLS
     using Godot;
-    using System;
 
     [Tool]
-    public class CustomNode : EditorPlugin
+    public partial class CustomNode : EditorPlugin
     {
         public override void _EnterTree()
         {
             // Initialization of the plugin goes here.
             // Add the new type with a name, a parent type, a script and an icon.
             var script = GD.Load<Script>("MyButton.cs");
-            var texture = GD.Load<Texture>("icon.png");
+            var texture = GD.Load<Texture2D>("icon.png");
             AddCustomType("MyButton", "Button", script, texture);
         }
 
@@ -366,10 +363,9 @@ The script could look like this:
 
     #if TOOLS
     using Godot;
-    using System;
 
     [Tool]
-    public class CustomDock : EditorPlugin
+    public partial class CustomDock : EditorPlugin
     {
         Control dock;
 

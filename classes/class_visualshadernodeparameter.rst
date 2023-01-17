@@ -12,7 +12,7 @@ VisualShaderNodeParameter
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisualShaderNodeBooleanParameter<class_VisualShaderNodeBooleanParameter>`, :ref:`VisualShaderNodeColorParameter<class_VisualShaderNodeColorParameter>`, :ref:`VisualShaderNodeFloatParameter<class_VisualShaderNodeFloatParameter>`, :ref:`VisualShaderNodeIntParameter<class_VisualShaderNodeIntParameter>`, :ref:`VisualShaderNodeTextureParameter<class_VisualShaderNodeTextureParameter>`, :ref:`VisualShaderNodeTransformParameter<class_VisualShaderNodeTransformParameter>`, :ref:`VisualShaderNodeVec2Parameter<class_VisualShaderNodeVec2Parameter>`, :ref:`VisualShaderNodeVec3Parameter<class_VisualShaderNodeVec3Parameter>`, :ref:`VisualShaderNodeVec4Parameter<class_VisualShaderNodeVec4Parameter>`
+**Inherited By:** :ref:`VisualShaderNodeBooleanParameter<class_VisualShaderNodeBooleanParameter>`, :ref:`VisualShaderNodeColorParameter<class_VisualShaderNodeColorParameter>`, :ref:`VisualShaderNodeFloatParameter<class_VisualShaderNodeFloatParameter>`, :ref:`VisualShaderNodeIntParameter<class_VisualShaderNodeIntParameter>`, :ref:`VisualShaderNodeTextureParameter<class_VisualShaderNodeTextureParameter>`, :ref:`VisualShaderNodeTransformParameter<class_VisualShaderNodeTransformParameter>`, :ref:`VisualShaderNodeUIntParameter<class_VisualShaderNodeUIntParameter>`, :ref:`VisualShaderNodeVec2Parameter<class_VisualShaderNodeVec2Parameter>`, :ref:`VisualShaderNodeVec3Parameter<class_VisualShaderNodeVec3Parameter>`, :ref:`VisualShaderNodeVec4Parameter<class_VisualShaderNodeVec4Parameter>`
 
 A base type for the parameters within the visual shader graph.
 
@@ -58,7 +58,7 @@ enum **Qualifier**:
 
 :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **QUAL_NONE** = ``0``
 
-
+The parameter will be tied to the :ref:`ShaderMaterial<class_ShaderMaterial>` using this shader.
 
 .. _class_VisualShaderNodeParameter_constant_QUAL_GLOBAL:
 
@@ -66,7 +66,7 @@ enum **Qualifier**:
 
 :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **QUAL_GLOBAL** = ``1``
 
-
+The parameter will use a global value, defined in Project Settings.
 
 .. _class_VisualShaderNodeParameter_constant_QUAL_INSTANCE:
 
@@ -74,7 +74,7 @@ enum **Qualifier**:
 
 :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **QUAL_INSTANCE** = ``2``
 
-
+The parameter will be tied to the node with attached :ref:`ShaderMaterial<class_ShaderMaterial>` using this shader.
 
 .. _class_VisualShaderNodeParameter_constant_QUAL_MAX:
 
@@ -121,9 +121,7 @@ Name of the parameter, by which it can be accessed through the :ref:`ShaderMater
 - void **set_qualifier** **(** :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` value **)**
 - :ref:`Qualifier<enum_VisualShaderNodeParameter_Qualifier>` **get_qualifier** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Defines the scope of the parameter.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

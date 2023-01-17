@@ -30,7 +30,9 @@ So now lets work with a compute shader to see how it really works.
 Creating a ComputeShader
 ------------------------
 
-To begin using compute shaders, create a new text file called "compute_example.glsl". When you write compute shaders in Godot, you write them in GLSL directly. The Godot shader language is based off of GLSL so if you are familiar with normal shaders in Godot the syntax below will look somewhat familiar.
+To begin using compute shaders, ensure you are using a Vulkan based renderer (the Forward+ or Mobile options), as compute shaders are currently only supported on Vulkan.
+
+Create a new text file called "compute_example.glsl". When you write compute shaders in Godot, you write them in GLSL directly. The Godot shader language is based off of GLSL so if you are familiar with normal shaders in Godot the syntax below will look somewhat familiar.
 
 Let's take a look at this compute shader code:
 
@@ -44,7 +46,7 @@ Let's take a look at this compute shader code:
 
     // A binding to the buffer we create in our script
     layout(set = 0, binding = 0, std430) restrict buffer MyDataBuffer {
-        double data[];
+        float data[];
     }
     my_data_buffer;
 
@@ -54,7 +56,8 @@ Let's take a look at this compute shader code:
         my_data_buffer.data[gl_GlobalInvocationID.x] *= 2.0;
     }
 
-This code takes an array of doubles, multiplies each element by 2 and store the results back in the buffer array.
+This code takes an array of floats, multiplies each element by 2 and store the results back in the buffer array.
+ 
 
 To continue copy the code above into your newly created "compute_example.glsl" file.
 
@@ -99,31 +102,31 @@ Provide input data
 
 As you might remember we want to pass an input array to our shader, multiply each element by 2 and get the results.
 
-To pass values to a compute shader we need to create a buffer. We are dealing with an array of doubles, so we will use a storage buffer for this example.
+To pass values to a compute shader we need to create a buffer. We are dealing with an array of floats, so we will use a storage buffer for this example.
 A storage buffer takes an array of bytes and allows the CPU to transfer data to and from the GPU.
 
-So let's initialize an array of doubles and create a storage buffer:
+So let's initialize an array of floats and create a storage buffer:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Prepare our data. We use doubles in the shader, so we need 64 bit.
-    var input := PackedFloat64Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    # Prepare our data. We use floats in the shader, so we need 32 bit.
+    var input := PackedFloat32Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     var input_bytes := input.to_byte_array()
 
-    # Create a storage buffer that can hold our double values.
-    # Each double has 8 byte (64 bit) so 10 x 8 = 80 bytes
+    # Create a storage buffer that can hold our float values.
+    # Each float has 8 byte (32 bit) so 10 x 8 = 80 bytes
     var buffer := rd.storage_buffer_create(input_bytes.size(), input_bytes)
 
  .. code-tab:: csharp
 
-    // Prepare our data. We use doubles in the shader, so we need 64 bit.
-    var input = new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-    var inputBytes = new byte[input.Length * sizeof(double)];
+    // Prepare our data. We use floats in the shader, so we need 32 bit.
+    var input = new float[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+    var inputBytes = new byte[input.Length * sizeof(float)];
     Buffer.BlockCopy(input, 0, inputBytes, 0, inputBytes.Length);
 
-    // Create a storage buffer that can hold our double values.
-    // Each double has 8 byte (64 bit) so 10 x 8 = 80 bytes
+    // Create a storage buffer that can hold our float values.
+    // Each float has 8 byte (32 bit) so 10 x 8 = 80 bytes
     var buffer = rd.StorageBufferCreate((uint)inputBytes.Length, inputBytes);
 
 With the buffer in place we need to tell the rendering device to use this buffer.
@@ -228,7 +231,7 @@ Let's retrieve the data and print the results to our console.
 
     # Read back the data from the buffer
     var output_bytes := rd.buffer_get_data(buffer)
-    var output := output_bytes.to_float64_array()
+    var output := output_bytes.to_float32_array()
     print("Input: ", input)
     print("Output: ", output)
 
@@ -236,7 +239,7 @@ Let's retrieve the data and print the results to our console.
 
     // Read back the data from the buffers
     var outputBytes = rd.BufferGetData(outputBuffer);
-    var output = new double[input.Length];
+    var output = new float[input.Length];
     Buffer.BlockCopy(outputBytes, 0, output, 0, outputBytes.Length);
     GD.Print("Input: ", input)
     GD.Print("Output: ", output)

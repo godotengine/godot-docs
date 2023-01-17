@@ -12,9 +12,14 @@ VisualShaderNodeParticleRandomness
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Visual shader node for randomizing particle values.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Randomness node will output pseudo-random values of the given type based on the specified minimum and maximum values.
 
 .. rst-class:: classref-reftable-group
 

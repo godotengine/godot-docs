@@ -38,13 +38,13 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+------------------------------------------------------------------------+-------------------+
-   | :ref:`MouseButton<enum_@GlobalScope_MouseButton>` | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | ``0``             |
-   +---------------------------------------------------+------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                     | :ref:`global_position<class_InputEventMouse_property_global_position>` | ``Vector2(0, 0)`` |
-   +---------------------------------------------------+------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                     | :ref:`position<class_InputEventMouse_property_position>`               | ``Vector2(0, 0)`` |
-   +---------------------------------------------------+------------------------------------------------------------------------+-------------------+
+   +-----------------------------------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | ``0``             |
+   +-----------------------------------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                             | :ref:`global_position<class_InputEventMouse_property_global_position>` | ``Vector2(0, 0)`` |
+   +-----------------------------------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                             | :ref:`position<class_InputEventMouse_property_position>`               | ``Vector2(0, 0)`` |
+   +-----------------------------------------------------------+------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -59,12 +59,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **button_mask** = ``0``
+:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **button_mask** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_button_mask** **(** :ref:`MouseButton<enum_@GlobalScope_MouseButton>` value **)**
-- :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **get_button_mask** **(** **)**
+- void **set_button_mask** **(** :ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` value **)**
+- :ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **get_button_mask** **(** **)**
 
 The mouse button mask identifier, one of or a bitwise combination of the :ref:`MouseButton<enum_@GlobalScope_MouseButton>` button masks.
 

@@ -83,11 +83,10 @@ either? Let's see an example:
 
   .. code-tab:: csharp
 
-    using System;
     using Godot;
 
     // C# and other languages have no concept of "preloading".
-    public class MyBuildings : Node
+    public partial class MyBuildings : Node
     {
         //This is a read-only field, it can only be assigned when it's declared or during a constructor.
         public readonly PackedScene Building = ResourceLoader.Load<PackedScene>("res://building.tscn");

@@ -66,7 +66,7 @@ you should remove the instance you have added by calling
     using Godot;
 
     [Tool]
-    public class Plugin : EditorPlugin
+    public partial class Plugin : EditorPlugin
     {
         private MyInspectorPlugin _plugin;
 
@@ -141,7 +141,7 @@ specifically add :ref:`class_EditorProperty`-based controls.
     #if TOOLS
     using Godot;
 
-    public class MyInspectorPlugin : EditorInspectorPlugin
+    public partial class MyInspectorPlugin : EditorInspectorPlugin
     {
         public override bool CanHandle(Object @object)
         {
@@ -243,13 +243,13 @@ followed by ``set_bottom_editor()`` to position it below the name.
     func refresh_control_text():
         property_control.text = "Value: " + str(current_value)
 
- .. code-tab:: none C#
+ .. code-tab:: csharp
 
     // RandomIntEditor.cs
     #if TOOLS
     using Godot;
 
-    public class RandomIntEditor : EditorProperty
+    public partial class RandomIntEditor : EditorProperty
     {
         // The main control for editing the property.
         private Button _propertyControl = new Button();

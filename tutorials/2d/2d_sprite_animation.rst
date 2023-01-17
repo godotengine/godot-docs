@@ -88,7 +88,9 @@ released.
 
  .. code-tab:: csharp
 
-    public class Character : CharacterBody2D
+    using Godot;
+
+    public partial class Character : CharacterBody2D
     {
         private AnimatedSprite2D _animatedSprite;
 
@@ -227,7 +229,9 @@ released.
 
  .. code-tab:: csharp
 
-    public class Character : CharacterBody2D
+    using Godot;
+
+    public partial class Character : CharacterBody2D
     {
         private AnimationPlayer _animationPlayer;
 

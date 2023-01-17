@@ -7,6 +7,15 @@ Using NavigationMeshes
 :ref:`NavigationPolygon<class_NavigationPolygon>` and
 :ref:`NavigationMesh<class_NavigationMesh>`  respectively.
 
+.. note::
+
+    A navigation mesh describes the traversable safe area for an agent with its center position at zero radius.
+    If you want pathfinding to account for an agent's (collision) size you need to shrink the navigation mesh accordingly.
+
+Navigation works independent from other engine parts like rendering and physics. A navigation mesh is the data format to exchange information from those other systems as it describes the traversable safe area for a specific agent. All the necessary information from other engine parts need to be already factored in when creating a navigation mesh. E.g. like visuals that an agent should not clip through or physics collision shapes that an agent should not collide with. This process of factoring in all those wanted navigation restrictions from other engine parts like visuals and collision is commonly called navigation mesh baking.
+
+If you experience clipping or collision problems while following navigation paths always remember that you need to tell the navigation system through an appropriated navigation mesh what your intentions are. By itself the navigation system will never know "this is a tree / rock / wall collision shape or visual mesh" because it only knows "here I was told I can path safely cause it is on navigation mesh".
+
 .. _doc_navigation_navmesh_baking:
 
 Creating 2D NavigationMeshes

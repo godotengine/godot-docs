@@ -64,6 +64,8 @@ Methods
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`add_tab<class_TabBar_method_add_tab>` **(** :ref:`String<class_String>` title="", :ref:`Texture2D<class_Texture2D>` icon=null **)**                                       |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                             | :ref:`clear_tabs<class_TabBar_method_clear_tabs>` **(** **)**                                                                                                                   |
+   +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`ensure_tab_visible<class_TabBar_method_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                                                         |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`get_offset_buttons_visible<class_TabBar_method_get_offset_buttons_visible>` **(** **)** |const|                                                                           |
@@ -574,6 +576,18 @@ Method Descriptions
 void **add_tab** **(** :ref:`String<class_String>` title="", :ref:`Texture2D<class_Texture2D>` icon=null **)**
 
 Adds a new tab.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_method_clear_tabs:
+
+.. rst-class:: classref-method
+
+void **clear_tabs** **(** **)**
+
+Clears all tabs.
 
 .. rst-class:: classref-item-separator
 

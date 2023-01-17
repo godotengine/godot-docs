@@ -37,6 +37,8 @@ Methods
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`_rest_info<class_PhysicsDirectSpaceState2DExtension_method__rest_info>` **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer2DExtensionShapeRestInfo* rest_info **)** |virtual|                                           |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_body_excluded_from_query<class_PhysicsDirectSpaceState2DExtension_method_is_body_excluded_from_query>` **(** :ref:`RID<class_RID>` body **)** |const|                                                                                                                                                                                                                                                                                                                          |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -122,6 +124,20 @@ Method Descriptions
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **_rest_info** **(** :ref:`RID<class_RID>` shape_rid, :ref:`Transform2D<class_Transform2D>` transform, :ref:`Vector2<class_Vector2>` motion, :ref:`float<class_float>` margin, :ref:`int<class_int>` collision_mask, :ref:`bool<class_bool>` collide_with_bodies, :ref:`bool<class_bool>` collide_with_areas, PhysicsServer2DExtensionShapeRestInfo* rest_info **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectSpaceState2DExtension_method_is_body_excluded_from_query:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_body_excluded_from_query** **(** :ref:`RID<class_RID>` body **)** |const|
 
 .. container:: contribute
 

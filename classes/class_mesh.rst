@@ -377,7 +377,7 @@ Represents the size of the :ref:`ArrayCustomFormat<enum_Mesh_ArrayCustomFormat>`
 
 .. rst-class:: classref-enumeration
 
-enum **ArrayFormat**:
+flags **ArrayFormat**:
 
 .. _class_Mesh_constant_ARRAY_FORMAT_VERTEX:
 

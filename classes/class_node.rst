@@ -161,6 +161,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Viewport<class_Viewport>`                   | :ref:`get_viewport<class_Node_method_get_viewport>` **(** **)** |const|                                                                                                                                                        |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Window<class_Window>`                       | :ref:`get_window<class_Node_method_get_window>` **(** **)** |const|                                                                                                                                                            |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`has_node<class_Node_method_has_node>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                                           |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`has_node_and_resource<class_Node_method_has_node_and_resource>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                 |
@@ -212,6 +214,8 @@ Methods
    | void                                              | :ref:`remove_child<class_Node_method_remove_child>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                   |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`remove_from_group<class_Node_method_remove_from_group>` **(** :ref:`StringName<class_StringName>` group **)**                                                                                                            |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`reparent<class_Node_method_reparent>` **(** :ref:`Node<class_Node>` new_parent, :ref:`bool<class_bool>` keep_global_transform=true **)**                                                                                 |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`replace_by<class_Node_method_replace_by>` **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` keep_groups=false **)**                                                                                            |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1690,6 +1694,18 @@ Returns the node's :ref:`Viewport<class_Viewport>`.
 
 ----
 
+.. _class_Node_method_get_window:
+
+.. rst-class:: classref-method
+
+:ref:`Window<class_Window>` **get_window** **(** **)** |const|
+
+Returns the :ref:`Window<class_Window>` that contains this node. If the node is in the main window, this is equivalent to getting the root node (``get_tree().get_root()``).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_method_has_node:
 
 .. rst-class:: classref-method
@@ -2025,6 +2041,20 @@ Removes a child node. The node is NOT deleted and must be deleted manually.
 void **remove_from_group** **(** :ref:`StringName<class_StringName>` group **)**
 
 Removes a node from the ``group``. Does nothing if the node is not in the ``group``. See notes in the description, and the group methods in :ref:`SceneTree<class_SceneTree>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_reparent:
+
+.. rst-class:: classref-method
+
+void **reparent** **(** :ref:`Node<class_Node>` new_parent, :ref:`bool<class_bool>` keep_global_transform=true **)**
+
+Changes the parent of this **Node** to the ``new_parent``. The node needs to already have a parent.
+
+If ``keep_global_transform`` is ``true``, the node's global transform will be preserved if supported. :ref:`Node2D<class_Node2D>`, :ref:`Node3D<class_Node3D>` and :ref:`Control<class_Control>` support this argument (but :ref:`Control<class_Control>` keeps only position).
 
 .. rst-class:: classref-item-separator
 

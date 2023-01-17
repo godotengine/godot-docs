@@ -67,7 +67,7 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`_get_contact_count<class_PhysicsDirectBodyState3DExtension_method__get_contact_count>` **(** **)** |virtual| |const|                                                                                   |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                         | :ref:`_get_contact_impulse<class_PhysicsDirectBodyState3DExtension_method__get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|                                             |
+   | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_contact_impulse<class_PhysicsDirectBodyState3DExtension_method__get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|                                             |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_contact_local_normal<class_PhysicsDirectBodyState3DExtension_method__get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|                                   |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -423,7 +423,7 @@ void **_apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_contact_impulse** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
+:ref:`Vector3<class_Vector3>` **_get_contact_impulse** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
 
 .. container:: contribute
 

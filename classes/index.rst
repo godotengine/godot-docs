@@ -622,6 +622,10 @@ Resources
     class_visualshadernodetransformop
     class_visualshadernodetransformparameter
     class_visualshadernodetransformvecmult
+    class_visualshadernodeuintconstant
+    class_visualshadernodeuintfunc
+    class_visualshadernodeuintop
+    class_visualshadernodeuintparameter
     class_visualshadernodeuvfunc
     class_visualshadernodeuvpolarcoord
     class_visualshadernodevarying

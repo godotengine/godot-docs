@@ -512,7 +512,7 @@ Godot Shading language supports the most common types of flow control:
 
     } while (cond);
 
-Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze
+Keep in mind that in modern GPUs, an infinite loop can exist and can freeze
 your application (including editor). Godot can't protect you from this, so be
 careful not to make this mistake!
 
@@ -727,7 +727,7 @@ from within the shader.
 You can set uniforms in the editor in the material. Or you can set them through
 GDScript:
 
-::
+.. code-block:: gdscript
 
   material.set_shader_parameter("some_value", some_value)
 
@@ -748,6 +748,7 @@ used, and how the editor should allow users to modify it.
     uniform vec4 color : source_color;
     uniform float amount : hint_range(0, 1);
     uniform vec4 other_color : source_color = vec4(1.0);
+    uniform sampler2D image : source_color;
 
 It's important to understand that textures that are supplied as color require
 hints for proper sRGB->linear conversion (i.e. ``source_color``), as Godot's 3D
@@ -822,25 +823,25 @@ Uniforms can also be assigned default values:
 
 If you need to make multiple uniforms to be grouped in the specific category of an inspector, you can use a `group_uniform` keyword like:
 
-::
+.. code-block:: glsl
 
     group_uniforms MyGroup;
     uniform sampler2D test;
 
 You can close the group by using:
 
-::
+.. code-block:: glsl
 
     group_uniforms;
 
 The syntax also supports subgroups (it's not mandatory to declare the base group before this):
 
-::
+.. code-block:: glsl
 
     group_uniforms MyGroup.MySubgroup;
 
 Global uniforms
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~
 
 Sometimes, you want to modify a parameter in many different shaders at once.
 With a regular uniform, this takes a lot of work as all these shaders need to be
@@ -867,7 +868,7 @@ uniforms:
 
 After creating a global uniform, you can use it in a shader as follows:
 
-::
+.. code-block:: glsl
 
     shader_type canvas_item;
 
@@ -887,7 +888,7 @@ To change the value of a global uniform at run-time, use the
 :ref:`RenderingServer.global_shader_parameter_set <class_RenderingServer_method_global_shader_parameter_set>`
 method in a script:
 
-::
+.. code-block:: gdscript
 
     RenderingServer.global_shader_parameter_set("my_color", Color(0.3, 0.6, 1.0))
 
@@ -897,7 +898,7 @@ the CPU and GPU.
 
 You can also add or remove global uniforms at run-time:
 
-::
+.. code-block:: gdscript
 
     RenderingServer.global_shader_parameter_add("my_color", RenderingServer.GLOBAL_VAR_TYPE_COLOR, Color(0.3, 0.6, 1.0))
     RenderingServer.global_shader_parameter_remove("my_color")
@@ -922,7 +923,7 @@ it's not as pronounced compared to getting global uniform values from a script
 .. _doc_shading_language_per_instance_uniforms:
 
 Per-instance uniforms
-^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~
 
 .. note::
 
@@ -941,7 +942,7 @@ Per-instance uniforms are set on each GeometryInstance3D, rather than on each
 Material instance. Take this into account when working with meshes that have
 multiple materials assigned to them, or MultiMesh setups.
 
-::
+.. code-block:: glsl
 
     shader_type spatial;
 
@@ -966,7 +967,7 @@ Per-instance uniform values can also be set at run-time using
 `set_instance_shader_parameter<class_GeometryInstance3D_method_set_instance_shader_parameter>`
 method on a node that inherits from :ref:`class_GeometryInstance3D`:
 
-::
+.. code-block:: gdscript
 
     $MeshInstance3D.set_instance_shader_parameter("my_color", Color(0.3, 0.6, 1.0))
 
@@ -984,7 +985,7 @@ When using per-instance uniforms, there are some restrictions you should be awar
   specifying the index (0-15) of the instance uniform by using the
   ``instance_index`` hint:
 
-::
+.. code-block:: glsl
 
     instance uniform vec4 my_color : source_color, instance_index(5);
 
@@ -1159,8 +1160,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec2 **textureSize** (gsampler2D s, int lod)                               | Get the size of a texture.                                          |
 |                                                                             |                                                                     |
-| ivec3 **textureSize** (gsampler2DArray s, int lod)                          |                                                                     |
-|                                                                             |                                                                     |
+| ivec3 **textureSize** (gsampler2DArray s, int lod)                          | The LOD defines which mipmap level is used. An LOD value of 0 will  |
+|                                                                             | use the full resolution texture.                                    |
 | ivec3 **textureSize** (gsampler3D s, int lod)                               |                                                                     |
 |                                                                             |                                                                     |
 | ivec2 **textureSize** (samplerCube s, int lod)                              |                                                                     |
@@ -1201,8 +1202,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureLod** (gsampler2D s, vec2 p, float lod)                 | Perform a texture read at custom mipmap.                            |
 |                                                                             |                                                                     |
-| gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            |                                                                     |
-|                                                                             |                                                                     |
+| gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            | The LOD defines which mipmap level is used. An LOD value of 0.0     |
+|                                                                             | will use the full resolution texture.                               |
 | gvec4_type **textureLod** (gsampler3D s, vec3 p, float lod)                 |                                                                     |
 |                                                                             |                                                                     |
 | vec4 **textureLod** (samplerCube s, vec3 p, float lod)                      |                                                                     |
@@ -1211,8 +1212,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureProjLod** (gsampler2D s, vec3 p, float lod)             | Performs a texture read with projection/LOD.                        |
 |                                                                             |                                                                     |
-| gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             |                                                                     |
-|                                                                             |                                                                     |
+| gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             | The LOD defines which mipmap level is used. An LOD value of 0.0     |
+|                                                                             | will use the full resolution texture.                               |
 | gvec4_type **textureProjLod** (gsampler3D s, vec4 p, float lod)             |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureGrad** (gsampler2D s, vec2 p, vec2 dPdx,                | Performs a texture read with explicit gradients.                    |
@@ -1237,8 +1238,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **texelFetch** (gsampler2D s, ivec2 p, int lod)                  | Fetches a single texel using integer coordinates.                   |
 |                                                                             |                                                                     |
-| gvec4_type **texelFetch** (gsampler2DArray s, ivec3 p, int lod)             |                                                                     |
-|                                                                             |                                                                     |
+| gvec4_type **texelFetch** (gsampler2DArray s, ivec3 p, int lod)             | The LOD defines which mipmap level is used. An LOD value of 0 will  |
+|                                                                             | use the full resolution texture.                                    |
 | gvec4_type **texelFetch** (gsampler3D s, ivec3 p, int lod)                  |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureGather** (gsampler2D s, vec2 p [, int comps])           | Gathers four texels from a texture.                                 |
@@ -1299,7 +1300,7 @@ is used, it can be scalar or vector.
 |                                                                             |                                                                     |
 | uvec_type **findMSB** (uvec_type value)                                     |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
-| void **imulExtended** (ivec_type x, ivec_type y, out ivec_type msb,         | Adds two 32-bit numbers and produce a 64-bit result.                |
+| void **imulExtended** (ivec_type x, ivec_type y, out ivec_type msb,         | Multiplies two 32-bit numbers and produce a 64-bit result.          |
 | out ivec_type lsb)                                                          | ``x`` - the first number.                                           |
 |                                                                             | ``y`` - the second number.                                          |
 | void **umulExtended** (uvec_type x, uvec_type y, out uvec_type msb,         | ``msb`` - will contain the most significant bits.                   |

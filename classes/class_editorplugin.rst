@@ -1510,7 +1510,7 @@ Removes a custom translation parser plugin registered by :ref:`add_translation_p
 
 void **remove_undo_redo_inspector_hook_callback** **(** :ref:`Callable<class_Callable>` callable **)**
 
-Removes a callback previsously added by :ref:`add_undo_redo_inspector_hook_callback<class_EditorPlugin_method_add_undo_redo_inspector_hook_callback>`.
+Removes a callback previously added by :ref:`add_undo_redo_inspector_hook_callback<class_EditorPlugin_method_add_undo_redo_inspector_hook_callback>`.
 
 .. rst-class:: classref-item-separator
 

@@ -21,6 +21,13 @@ Description
 
 This class contains the result of a navigation path query from :ref:`NavigationServer3D.query_path<class_NavigationServer3D_method_query_path>`.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using NavigationPathQueryObjects <../tutorials/navigation/navigation_using_navigationpathqueryobjects>`
+
 .. rst-class:: classref-reftable-group
 
 Properties
