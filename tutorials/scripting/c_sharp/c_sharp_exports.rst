@@ -61,8 +61,8 @@ the following to list them:
     [Export]
     private Resource Resource;
 
-Grouping Exports
-________________
+Grouping exports
+----------------
 
 It is possible to group your exported properties inside the Inspector with the ``[ExportGroup]``
 attribute. Every exported property after this attribute will be added to the group. Start a new
