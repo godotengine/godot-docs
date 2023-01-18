@@ -35,7 +35,7 @@ Name the animation "float".
 
 |image3|
 
-Once you created the animation, the timeline appears with numbers representing
+Once you've created the animation, the timeline appears with numbers representing
 time in seconds.
 
 |image4|
