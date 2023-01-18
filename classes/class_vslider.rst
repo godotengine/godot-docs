@@ -31,11 +31,19 @@ Properties
 .. table::
    :widths: auto
 
+<<<<<<< HEAD
    +------------------------------------------+-----------------------+--------------------------------------------------------------------------------+
    | :ref:`SizeFlags<enum_Control_SizeFlags>` | size_flags_horizontal | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_horizontal>`) |
    +------------------------------------------+-----------------------+--------------------------------------------------------------------------------+
    | :ref:`SizeFlags<enum_Control_SizeFlags>` | size_flags_vertical   | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`)   |
    +------------------------------------------+-----------------------+--------------------------------------------------------------------------------+
+=======
+   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | size_flags_horizontal | ``0`` (overrides :ref:`Control<class_Control_property_size_flags_horizontal>`) |
+   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | size_flags_vertical   | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`)   |
+   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-reftable-group
 

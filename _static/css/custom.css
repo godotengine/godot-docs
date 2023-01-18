@@ -30,7 +30,10 @@
     --content-wrap-background-color: #efefef;
     --content-background-color: #fcfcfc;
     --logo-opacity: 1.0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     --navbar-background-color: #333f67;
     --navbar-background-color-hover: #29355c;
     --navbar-background-color-active: #212d51;
@@ -38,6 +41,7 @@
     --navbar-current-background-color-hover: #182343;
     --navbar-current-background-color-active: #131e3b;
     --navbar-category-active-color: rgba(255 115 129 / 10%);
+<<<<<<< HEAD
     --navbar-current-color: #f1f9ff;
     --navbar-level-1-color: #c3e3ff;
     --navbar-level-2-color: #b8d6f0;
@@ -46,6 +50,11 @@
     --navbar-expand-hover-color: #c3e3ff;
     --navbar-expand-active-color: #f1f9ff;
     --navbar-dimmed-color: #a3c4e1;
+=======
+    --navbar-level-1-color: #c3e3ff;
+    --navbar-level-2-color: #b8d6f0;
+    --navbar-level-3-color: #a3c4e1;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     --navbar-heading-color: #ff7381;
     --navbar-scrollbar-color: #d45a66;
     --navbar-scrollbar-hover-color: #b14550;
@@ -147,7 +156,10 @@
         --content-background-color: #2e3236;
         /* Decrease the logo opacity when using the dark theme to be less distracting */
         --logo-opacity: 0.85;
+<<<<<<< HEAD
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         --navbar-background-color: #25282b;
         --navbar-background-color-hover: #333639;
         --navbar-background-color-active: #111417;
@@ -155,6 +167,7 @@
         --navbar-current-background-color-hover: #44474a;
         --navbar-current-background-color-active: #222528;
         --navbar-category-active-color: rgba(238 115 129 / 10%);
+<<<<<<< HEAD
         --navbar-current-color: #fefefe;
         --navbar-level-1-color: #ddd;
         --navbar-level-2-color: #ccc;
@@ -163,6 +176,11 @@
         --navbar-expand-hover-color: #ccc;
         --navbar-expand-active-color: #ddd;
         --navbar-dimmed-color: #bbb;
+=======
+        --navbar-level-1-color: #ddd;
+        --navbar-level-2-color: #ccc;
+        --navbar-level-3-color: #bbb;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         --navbar-heading-color: #ee7381;
         --navbar-scrollbar-color: #be5460;
         --navbar-scrollbar-hover-color: #963e48;
@@ -316,6 +334,7 @@ article ol,
 .wy-plain-list-disc,
 .wy-plain-list-decimal,
 .rst-content ol.arabic,
+<<<<<<< HEAD
 .rst-content .toctree-wrapper ul {
     /* Increase the line height slightly to account for the different font */
     line-height: 25px;
@@ -325,12 +344,21 @@ article ol,
 .rst-content section ul,
 .rst-content section ol,
 .rst-content .section ul,
+=======
+.rst-content .section ul,
+.rst-content .toctree-wrapper ul,
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .rst-content .section ol {
     /* Increase the line height slightly to account for the different font */
     line-height: 25px;
 }
+<<<<<<< HEAD
 .rst-content section ul li,
 .rst-content .section ul li {
+=======
+
+.rst-content section ul li {
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     /* Increase spacing between list items. */
     margin-top: 8px;
     margin-bottom: 8px;
@@ -988,9 +1016,13 @@ code,
 }
 
 /* Keyboard shortcuts tweaks */
+<<<<<<< HEAD
 kbd, .kbd,
 .rst-content :not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > kbd,
 .rst-content :not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > .kbd {
+=======
+kbd, .kbd {
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     background-color: var(--kbd-background-color);
     border: 1px solid var(--kbd-outline-color);
     border-radius: 3px;
@@ -1236,8 +1268,11 @@ p + .classref-constant {
 
 .wy-side-nav-search {
     background-color: var(--navbar-background-color);
+<<<<<<< HEAD
     color: var(--navbar-level-1-color);
     margin-right: 8px;
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 }
 
 .wy-side-nav-search.fixed {
@@ -1289,6 +1324,7 @@ p + .classref-constant {
     opacity: 0.55;
 }
 
+<<<<<<< HEAD
 /* Version branch label below the logo */
 .wy-side-nav-search > div.version {
     color: var(--navbar-dimmed-color);
@@ -1305,6 +1341,9 @@ p + .classref-constant {
 }
 
 /* Navigational sidebar */
+=======
+/* Navigation bar */
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .wy-nav-side {
     background-color: var(--navbar-background-color);
@@ -1325,6 +1364,7 @@ p + .classref-constant {
     letter-spacing: 0.75px;
 }
 
+<<<<<<< HEAD
 /* Default styling of navigation items */
 
 .wy-menu-vertical li {
@@ -1354,11 +1394,112 @@ p + .classref-constant {
     margin-right: 8px;
 
     /* Make the expand icon a bit easier to hit. */
+=======
+/* Mobile navigation */
+
+.wy-nav-top,
+.wy-nav-top a {
+    background-color: var(--navbar-background-color);
+    color: var(--navbar-level-1-color);
+}
+
+/* Version branch label below the logo */
+.wy-side-nav-search > div.version {
+    color: var(--navbar-level-3-color);
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* First level of navigation items */
+
+.wy-menu-vertical a {
+    color: var(--navbar-level-1-color);
+}
+
+.wy-menu-vertical a:hover {
+    background-color: var(--navbar-background-color-hover);
+    color: var(--navbar-level-1-color);
+}
+
+.wy-menu-vertical a:active {
+    background-color: var(--navbar-background-color-active);
+}
+
+.wy-menu-vertical li.toctree-l1 > a {
+    padding: .4045em 1.918em;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+    border: none;
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a button.toctree-expand,
+.wy-menu-vertical li.toctree-l1 a button.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a button.toctree-expand {
+    color: var(--navbar-level-3-color);
+    opacity: 0.9;
+    margin-right: 8px;
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:hover button.toctree-expand,
+.wy-menu-vertical li.toctree-l1 a:hover button.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:hover button.toctree-expand {
+    color: var(--navbar-level-2-color);
+    opacity: 1;
+}
+
+.wy-side-nav-search, .wy-menu-vertical a, .wy-menu-vertical a:active button.toctree-expand,
+.wy-menu-vertical li.toctree-l1 a:active button.toctree-expand,
+.wy-menu-vertical li.toctree-l2 a:active button.toctree-expand {
+    color: var(--navbar-level-1-color);
+    opacity: 1;
+}
+
+/* Second (and higher) levels of navigation items */
+
+.wy-menu-vertical li.current a {
+    /* Make long words always display on a single line, keep wrapping for multiple words */
+    /* This fixes the class reference titles' display with very long class names */
+    display: flex;
+}
+
+.wy-menu-vertical li.current a,
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l4 > a {
+    background-color: var(--navbar-current-background-color);
+    color: var(--navbar-level-2-color);
+    border-color: var(--navbar-current-background-color);
+}
+
+.wy-menu-vertical li.current a:hover,
+.wy-menu-vertical li.toctree-l2.current > a:hover,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:hover {
+    background-color: var(--navbar-current-background-color-hover);
+}
+
+.wy-menu-vertical li.current a:active,
+.wy-menu-vertical li.toctree-l2.current > a:active,
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:active,
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:active {
+    background-color: var(--navbar-current-background-color-active);
+}
+
+.wy-menu-vertical a {
+    /* This overrides 8px margin added in other multi-selector rules */
+    margin-right: 0;
+}
+
+/* Make the expand icon a bit easier to hit. */
+.wy-menu-vertical li a button.toctree-expand {
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     position: relative;
     width: 12px;
     min-width: 12px; /* Forces the size to stay this way in the flexbox model. */
     height: 18px;
 }
+<<<<<<< HEAD
 .wy-menu-vertical li.current > a button.toctree-expand {
     color: var(--navbar-current-color) !important;
 }
@@ -1375,12 +1516,19 @@ p + .classref-constant {
 .wy-menu-vertical li > a button.toctree-expand:before {
     position: absolute;
     top: -2px;
+=======
+
+.wy-menu-vertical li a button.toctree-expand:before {
+    position: absolute;
+    top: -3px;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     left: -6px;
     width: 24px;
     height: 24px;
     padding: 6px;
 }
 
+<<<<<<< HEAD
 .wy-menu-vertical li.current > a,
 .wy-menu-vertical li.toctree-l2.current > a {
     background-color: var(--navbar-current-background-color-hover);
@@ -1453,12 +1601,18 @@ p + .classref-constant {
     font-weight: 600;
 }
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 /* Banner panel in sidebar */
 .wy-nav-side .ethical-rtd.fixed {
     position: fixed;
 }
 
+<<<<<<< HEAD
 /* Read the Docs flyout panel, with language and version selectors. */
+=======
+/* Version selector (only visible on Read the Docs) */
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .rst-versions {
     background-color: var(--navbar-current-background-color);
@@ -1512,7 +1666,11 @@ p + .classref-constant {
 }
 
 .rst-versions .rst-other-versions small {
+<<<<<<< HEAD
     color: var(--navbar-dimmed-color);
+=======
+    color: var(--navbar-level-3-color);
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 }
 
 .rst-versions .rst-other-versions dd a:hover {
@@ -1642,3 +1800,14 @@ p + .classref-constant {
 .wy-menu-vertical p.caption + ul.active {
     display: block;
 }
+<<<<<<< HEAD
+=======
+
+/* Top navigation, breadcrumbs */
+.wy-breadcrumbs li a {
+    padding: 0 5px;
+}
+.wy-breadcrumbs li a:first-child {
+    padding-left: 0;
+}
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)

@@ -21,6 +21,7 @@ Description
 
 This class contains the start and target position and other parameters to be used with :ref:`NavigationServer3D.query_path<class_NavigationServer3D_method_query_path>`.
 
+<<<<<<< HEAD
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -28,6 +29,8 @@ Tutorials
 
 - :doc:`Using NavigationPathQueryObjects <../tutorials/navigation/navigation_using_navigationpathqueryobjects>`
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. rst-class:: classref-reftable-group
 
 Properties

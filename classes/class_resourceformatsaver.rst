@@ -40,8 +40,11 @@ Methods
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_set_uid<class_ResourceFormatSaver_method__set_uid>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` uid **)** |virtual|                                       |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-section-separator
 
@@ -100,6 +103,7 @@ Saves the given resource object to a file at the target ``path``. ``flags`` is a
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
 
+<<<<<<< HEAD
 .. rst-class:: classref-item-separator
 
 ----
@@ -112,6 +116,8 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or an
 
 Sets a new UID for the resource at the given ``path``. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, or an :ref:`Error<enum_@GlobalScope_Error>` constant in case of failure.
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

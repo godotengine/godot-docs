@@ -23,7 +23,11 @@ Description
 
 After setting up :ref:`frames<class_AnimatedSprite2D_property_frames>`, :ref:`play<class_AnimatedSprite2D_method_play>` may be called. It's also possible to select an :ref:`animation<class_AnimatedSprite2D_property_animation>` and toggle :ref:`playing<class_AnimatedSprite2D_property_playing>`, even within the editor.
 
+<<<<<<< HEAD
 To pause the current animation, set :ref:`playing<class_AnimatedSprite2D_property_playing>` to ``false``. Alternatively, setting :ref:`speed_scale<class_AnimatedSprite2D_property_speed_scale>` to ``0`` also preserves the current frame's elapsed time.
+=======
+To pause the current animation, call :ref:`stop<class_AnimatedSprite2D_method_stop>` or set :ref:`playing<class_AnimatedSprite2D_property_playing>` to ``false``. Alternatively, setting :ref:`speed_scale<class_AnimatedSprite2D_property_speed_scale>` to ``0`` also preserves the current frame's elapsed time.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 \ **Note:** You can associate a set of normal or specular maps by creating additional :ref:`SpriteFrames<class_SpriteFrames>` resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 :ref:`SpriteFrames<class_SpriteFrames>` resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
 
@@ -93,7 +97,11 @@ Signals
 
 **animation_finished** **(** **)**
 
+<<<<<<< HEAD
 Emitted when the animation reaches the end, or the start if it is played in reverse. If the animation is looping, this signal is emitted at the end of each loop.
+=======
+Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 
@@ -246,11 +254,15 @@ The texture's drawing offset.
 - void **set_playing** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_playing** **(** **)**
 
+<<<<<<< HEAD
 If ``true``, the :ref:`animation<class_AnimatedSprite2D_property_animation>` is currently playing. Setting this property to ``false`` pauses the current animation. Use :ref:`stop<class_AnimatedSprite2D_method_stop>` to stop the animation at the current frame instead.
 
 \ **Note:** Unlike :ref:`stop<class_AnimatedSprite2D_method_stop>`, changing this property to ``false`` preserves the current frame's elapsed time and the ``backwards`` flag of the current :ref:`animation<class_AnimatedSprite2D_property_animation>` (if it was previously set by :ref:`play<class_AnimatedSprite2D_method_play>`).
 
 \ **Note:** After a non-looping animation finishes, the property still remains ``true``.
+=======
+If ``true``, the :ref:`animation<class_AnimatedSprite2D_property_animation>` is currently playing. Setting this property to ``false`` is the equivalent of calling :ref:`stop<class_AnimatedSprite2D_method_stop>`.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 
@@ -286,8 +298,11 @@ void **play** **(** :ref:`StringName<class_StringName>` anim=&"", :ref:`bool<cla
 
 Plays the animation named ``anim``. If no ``anim`` is provided, the current animation is played. If ``backwards`` is ``true``, the animation is played in reverse.
 
+<<<<<<< HEAD
 \ **Note:** If :ref:`speed_scale<class_AnimatedSprite2D_property_speed_scale>` is negative, the animation direction specified by ``backwards`` will be inverted.
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. rst-class:: classref-item-separator
 
 ----
@@ -300,7 +315,11 @@ void **stop** **(** **)**
 
 Stops the current :ref:`animation<class_AnimatedSprite2D_property_animation>` at the current :ref:`frame<class_AnimatedSprite2D_property_frame>`.
 
+<<<<<<< HEAD
 \ **Note:** This method resets the current frame's elapsed time and removes the ``backwards`` flag from the current :ref:`animation<class_AnimatedSprite2D_property_animation>` (if it was previously set by :ref:`play<class_AnimatedSprite2D_method_play>`). If this behavior is undesired, set :ref:`playing<class_AnimatedSprite2D_property_playing>` to ``false`` instead.
+=======
+\ **Note:** This method resets the current frame's elapsed time. If this behavior is undesired, consider setting :ref:`speed_scale<class_AnimatedSprite2D_property_speed_scale>` to ``0``, instead.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

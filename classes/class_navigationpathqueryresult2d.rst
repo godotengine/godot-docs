@@ -21,6 +21,7 @@ Description
 
 This class contains the result of a navigation path query from :ref:`NavigationServer2D.query_path<class_NavigationServer2D_method_query_path>`.
 
+<<<<<<< HEAD
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -28,6 +29,8 @@ Tutorials
 
 - :doc:`Using NavigationPathQueryObjects <../tutorials/navigation/navigation_using_navigationpathqueryobjects>`
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -31,6 +31,7 @@ Properties
 .. table::
    :widths: auto
 
+<<<<<<< HEAD
    +-----------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`ActionMode<enum_BaseButton_ActionMode>`             | :ref:`action_mode<class_BaseButton_property_action_mode>`                   | ``1``                                                               |
    +-----------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
@@ -54,6 +55,31 @@ Properties
    +-----------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`toggle_mode<class_BaseButton_property_toggle_mode>`                   | ``false``                                                           |
    +-----------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+=======
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`ActionMode<enum_BaseButton_ActionMode>`     | :ref:`action_mode<class_BaseButton_property_action_mode>`                   | ``1``                                                               |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`ButtonGroup<class_ButtonGroup>`             | :ref:`button_group<class_BaseButton_property_button_group>`                 |                                                                     |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`MouseButton<enum_@GlobalScope_MouseButton>` | :ref:`button_mask<class_BaseButton_property_button_mask>`                   | ``1``                                                               |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`button_pressed<class_BaseButton_property_button_pressed>`             | ``false``                                                           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`disabled<class_BaseButton_property_disabled>`                         | ``false``                                                           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`          | focus_mode                                                                  | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`keep_pressed_outside<class_BaseButton_property_keep_pressed_outside>` | ``false``                                                           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`Shortcut<class_Shortcut>`                   | :ref:`shortcut<class_BaseButton_property_shortcut>`                         |                                                                     |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`shortcut_feedback<class_BaseButton_property_shortcut_feedback>`       | ``true``                                                            |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`shortcut_in_tooltip<class_BaseButton_property_shortcut_in_tooltip>`   | ``true``                                                            |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`toggle_mode<class_BaseButton_property_toggle_mode>`                   | ``false``                                                           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-reftable-group
 
@@ -258,12 +284,21 @@ The :ref:`ButtonGroup<class_ButtonGroup>` associated with the button. Not to be 
 
 .. rst-class:: classref-property
 
+<<<<<<< HEAD
 :ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **button_mask** = ``1``
 
 .. rst-class:: classref-property-setget
 
 - void **set_button_mask** **(** :ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` value **)**
 - :ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **get_button_mask** **(** **)**
+=======
+:ref:`MouseButton<enum_@GlobalScope_MouseButton>` **button_mask** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_button_mask** **(** :ref:`MouseButton<enum_@GlobalScope_MouseButton>` value **)**
+- :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **get_button_mask** **(** **)**
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Binary mask to choose which mouse buttons this button will respond to.
 

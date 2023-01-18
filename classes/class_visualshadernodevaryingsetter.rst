@@ -12,6 +12,7 @@ VisualShaderNodeVaryingSetter
 
 **Inherits:** :ref:`VisualShaderNodeVarying<class_VisualShaderNodeVarying>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+<<<<<<< HEAD
 A visual shader node that sets a value of a varying.
 
 .. rst-class:: classref-introduction-group
@@ -20,6 +21,11 @@ Description
 -----------
 
 Inputs a value to a varying defined in the shader. You need to first create a varying that can be used in the given function, e.g. varying setter in Fragment shader requires a varying with mode set to :ref:`VisualShader.VARYING_MODE_FRAG_TO_LIGHT<class_VisualShader_constant_VARYING_MODE_FRAG_TO_LIGHT>`.
+=======
+.. container:: contribute
+
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

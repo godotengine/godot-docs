@@ -785,7 +785,11 @@ void **set_layer_y_sort_enabled** **(** :ref:`int<class_int>` layer, :ref:`bool<
 
 Enables or disables a layer's Y-sorting. If a layer is Y-sorted, the layer will behave as a CanvasItem node where each of its tile gets Y-sorted.
 
+<<<<<<< HEAD
 Y-sorted layers should usually be on different Z-index values than not Y-sorted layers, otherwise, each of those layer will be Y-sorted as whole with the Y-sorted one. This is usually an undesired behavior.
+=======
+Y-sorted layers should usually be on different Z-index values than not Y-sorted layers, otherwise, each of those layer will be Y-sorted as whole with the Y-sorted one. This is usually an undesired behvaior.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 If ``layer`` is negative, the layers are accessed from the last one.
 

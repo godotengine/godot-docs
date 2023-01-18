@@ -59,6 +59,10 @@ Add five extra methods such that the script looks like this:
 
     #if TOOLS
     using Godot;
+<<<<<<< HEAD
+=======
+    using System;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
     [Tool]
     public partial class MainScreenPlugin : EditorPlugin
@@ -128,6 +132,10 @@ Add a script to the button like this:
  .. code-tab:: csharp
 
     using Godot;
+<<<<<<< HEAD
+=======
+    using System;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
     [Tool]
     public partial class PrintHello : Button
@@ -197,6 +205,10 @@ Here is the full plugin script:
 
     #if TOOLS
     using Godot;
+<<<<<<< HEAD
+=======
+    using System;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
     [Tool]
     public partial class MainScreenPlugin : EditorPlugin

@@ -105,8 +105,11 @@ Methods
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TreeItem<class_TreeItem>`                  | :ref:`create_item<class_Tree_method_create_item>` **(** :ref:`TreeItem<class_TreeItem>` parent=null, :ref:`int<class_int>` idx=-1 **)**                                                          |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | void                                             | :ref:`deselect_all<class_Tree_method_deselect_all>` **(** **)**                                                                                                                                  |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`bool<class_bool>`                          | :ref:`edit_selected<class_Tree_method_edit_selected>` **(** **)**                                                                                                                                |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`ensure_cursor_is_visible<class_Tree_method_ensure_cursor_is_visible>` **(** **)**                                                                                                          |
@@ -789,6 +792,7 @@ The new item will be the ``idx``\ th child of parent, or it will be the last chi
 
 ----
 
+<<<<<<< HEAD
 .. _class_Tree_method_deselect_all:
 
 .. rst-class:: classref-method
@@ -801,6 +805,8 @@ Deselects all tree items (rows and columns). In :ref:`SELECT_MULTI<class_Tree_co
 
 ----
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_Tree_method_edit_selected:
 
 .. rst-class:: classref-method

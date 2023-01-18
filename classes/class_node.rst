@@ -161,8 +161,11 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Viewport<class_Viewport>`                   | :ref:`get_viewport<class_Node_method_get_viewport>` **(** **)** |const|                                                                                                                                                        |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | :ref:`Window<class_Window>`                       | :ref:`get_window<class_Node_method_get_window>` **(** **)** |const|                                                                                                                                                            |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`bool<class_bool>`                           | :ref:`has_node<class_Node_method_has_node>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                                           |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`has_node_and_resource<class_Node_method_has_node_and_resource>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                 |
@@ -215,8 +218,11 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`remove_from_group<class_Node_method_remove_from_group>` **(** :ref:`StringName<class_StringName>` group **)**                                                                                                            |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | void                                              | :ref:`reparent<class_Node_method_reparent>` **(** :ref:`Node<class_Node>` new_parent, :ref:`bool<class_bool>` keep_global_transform=true **)**                                                                                 |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | void                                              | :ref:`replace_by<class_Node_method_replace_by>` **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` keep_groups=false **)**                                                                                            |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`request_ready<class_Node_method_request_ready>` **(** **)**                                                                                                                                                              |
@@ -1694,6 +1700,7 @@ Returns the node's :ref:`Viewport<class_Viewport>`.
 
 ----
 
+<<<<<<< HEAD
 .. _class_Node_method_get_window:
 
 .. rst-class:: classref-method
@@ -1706,6 +1713,8 @@ Returns the :ref:`Window<class_Window>` that contains this node. If the node is 
 
 ----
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_Node_method_has_node:
 
 .. rst-class:: classref-method
@@ -2046,6 +2055,7 @@ Removes a node from the ``group``. Does nothing if the node is not in the ``grou
 
 ----
 
+<<<<<<< HEAD
 .. _class_Node_method_reparent:
 
 .. rst-class:: classref-method
@@ -2060,6 +2070,8 @@ If ``keep_global_transform`` is ``true``, the node's global transform will be pr
 
 ----
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_Node_method_replace_by:
 
 .. rst-class:: classref-method

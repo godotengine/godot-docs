@@ -12,6 +12,7 @@ VisualShaderNodeParticleEmit
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+<<<<<<< HEAD
 A visual shader node that forces to emit a particle from a sub-emitter.
 
 .. rst-class:: classref-introduction-group
@@ -20,6 +21,11 @@ Description
 -----------
 
 This node internally calls ``emit_subparticle`` shader method. It will emit a particle from the configured sub-emitter and also allows to customize how its emitted. Requires a sub-emitter assigned to the particles node with this shader.
+=======
+.. container:: contribute
+
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-reftable-group
 
@@ -54,7 +60,11 @@ enum **EmitFlags**:
 
 :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_POSITION** = ``1``
 
+<<<<<<< HEAD
 If enabled, the particle starts with the position defined by this node.
+=======
+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_ROT_SCALE:
 
@@ -62,7 +72,11 @@ If enabled, the particle starts with the position defined by this node.
 
 :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_ROT_SCALE** = ``2``
 
+<<<<<<< HEAD
 If enabled, the particle starts with the rotation and scale defined by this node.
+=======
+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_VELOCITY:
 
@@ -70,7 +84,11 @@ If enabled, the particle starts with the rotation and scale defined by this node
 
 :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_VELOCITY** = ``4``
 
+<<<<<<< HEAD
 If enabled,the particle starts with the velocity defined by this node.
+=======
+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_COLOR:
 
@@ -78,7 +96,11 @@ If enabled,the particle starts with the velocity defined by this node.
 
 :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_COLOR** = ``8``
 
+<<<<<<< HEAD
 If enabled, the particle starts with the color defined by this node.
+=======
+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_VisualShaderNodeParticleEmit_constant_EMIT_FLAG_CUSTOM:
 
@@ -86,7 +108,11 @@ If enabled, the particle starts with the color defined by this node.
 
 :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **EMIT_FLAG_CUSTOM** = ``16``
 
+<<<<<<< HEAD
 If enabled, the particle starts with the ``CUSTOM`` data defined by this node.
+=======
+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-section-separator
 
@@ -108,7 +134,13 @@ Property Descriptions
 - void **set_flags** **(** :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` value **)**
 - :ref:`EmitFlags<enum_VisualShaderNodeParticleEmit_EmitFlags>` **get_flags** **(** **)**
 
+<<<<<<< HEAD
 Flags used to override the properties defined in the sub-emitter's process material.
+=======
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

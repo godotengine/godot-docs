@@ -124,9 +124,13 @@ It will connect and fetch a website.
 
  .. code-tab:: csharp
 
+<<<<<<< HEAD
     using Godot;
 
     public partial class HTTPTest : SceneTree
+=======
+    class HTTPTest : SceneTree
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // HTTPClient demo.
         // This simple class can make HTTP requests; it will not block, but it needs to be polled.

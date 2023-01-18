@@ -37,6 +37,7 @@ given velocity:
 
  .. code-tab:: csharp
 
+<<<<<<< HEAD
     using Godot;
 
     public partial class Bullet : Area2D
@@ -46,6 +47,15 @@ given velocity:
         public override void _PhysicsProcess(double delta)
         {
             Position += Velocity * (float)delta;
+=======
+    public class Bullet : Area2D
+    {
+        Vector2 Velocity = new Vector2();
+
+        public override void _PhysicsProcess(float delta)
+        {
+            Position += Velocity * delta;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         }
     }
 
@@ -106,15 +116,20 @@ Here is the code for the player using signals to emit the bullet:
 
  .. code-tab:: csharp
 
+<<<<<<< HEAD
     using Godot;
 
     public partial class Player : Sprite2D
+=======
+    public class Player : Sprite2D
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         [Signal]
         delegate void ShootEventHandler(PackedScene bullet, Vector2 direction, Vector2 location);
 
         private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
 
+<<<<<<< HEAD
         public override void _Input(InputEvent @event)
         {
             if (@event is InputEventMouseButton mouseButton)
@@ -122,11 +137,24 @@ Here is the code for the player using signals to emit the bullet:
                 if (mouseButton.ButtonIndex == MouseButton.Left && mouseButton.Pressed)
                 {
                     EmitSignal(SignalName.Shoot, _bullet, Rotation, Position);
+=======
+        public override void _Input(InputEvent event)
+        {
+            if (input is InputEventMouseButton mouseButton)
+            {
+                if (mouseButton.ButtonIndex == (int)ButtonList.Left && mouseButton.Pressed)
+                {
+                    EmitSignal(nameof(Shoot), _bullet, Rotation, Position);
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
                 }
             }
         }
 
+<<<<<<< HEAD
         public override void _Process(double delta)
+=======
+        public override _Process(float delta)
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         {
             LookAt(GetGlobalMousePosition());
         }

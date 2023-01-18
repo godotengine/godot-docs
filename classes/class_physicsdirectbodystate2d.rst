@@ -111,8 +111,11 @@ Methods
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_contact_count<class_PhysicsDirectBodyState2D_method_get_contact_count>` **(** **)** |const|                                                                                     |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_impulse<class_PhysicsDirectBodyState2D_method_get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                               |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_normal<class_PhysicsDirectBodyState2D_method_get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                     |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                     | :ref:`get_contact_local_position<class_PhysicsDirectBodyState2D_method_get_contact_local_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                 |
@@ -584,6 +587,7 @@ Returns the number of contacts this body has with other bodies.
 
 ----
 
+<<<<<<< HEAD
 .. _class_PhysicsDirectBodyState2D_method_get_contact_impulse:
 
 .. rst-class:: classref-method
@@ -596,6 +600,8 @@ Returns the impulse created by the contact.
 
 ----
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_PhysicsDirectBodyState2D_method_get_contact_local_normal:
 
 .. rst-class:: classref-method

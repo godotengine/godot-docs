@@ -179,7 +179,11 @@ in another context without any extra changes to its API.
       // Parent
       GetNode<Left>("Left").Target = GetNode("Right/Receiver");
 
+<<<<<<< HEAD
       public partial class Left : Node
+=======
+      public class Left : Node
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
       {
           public Node Target = null;
 
@@ -189,7 +193,11 @@ in another context without any extra changes to its API.
           }
       }
 
+<<<<<<< HEAD
       public partial class Right : Node
+=======
+      public class Right : Node
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
       {
           public Node Receiver = null;
 

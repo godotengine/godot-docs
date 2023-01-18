@@ -21,8 +21,11 @@ Description
 
 Contains a generic action which can be targeted from several types of inputs. Actions can be created from the **Input Map** tab in the **Project > Project Settings** menu. See :ref:`Node._input<class_Node_method__input>`.
 
+<<<<<<< HEAD
 \ **Note:** Unlike the other :ref:`InputEvent<class_InputEvent>` subclasses which map to unique physical events, this virtual one is not emitted by the engine. This class is useful to emit actions manually with :ref:`Input.parse_input_event<class_Input_method_parse_input_event>`, which are then received in :ref:`Node._input<class_Node_method__input>`. To check if a physical event matches an action from the Input Map, use :ref:`InputEvent.is_action<class_InputEvent_method_is_action>` and :ref:`InputEvent.is_action_pressed<class_InputEvent_method_is_action_pressed>`.
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. rst-class:: classref-introduction-group
 
 Tutorials

@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 Editor introduction
 ===================
+=======
+Editor manual
+=============
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 In this section, we cover the Godot editor in general, from its interface to
 using it with the command line.
 
+<<<<<<< HEAD
 Editor's interface
 ------------------
+=======
+The editor's interface
+----------------------
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 The following pages explain how to use the various windows, workspaces, and
 docks that make up the Godot editor. We cover some specific editors' interface
@@ -35,12 +45,21 @@ should be aware of.
 
    using_the_web_editor
 
+<<<<<<< HEAD
 Advanced features
 -----------------
 
 The articles below focus on advanced features useful for experienced developers,
 such as calling Godot from the command line and using an external text editor
 like Visual Studio Code or Emacs.
+=======
+For developers
+--------------
+
+The articles below focus on features for developers, like calling Godot from the
+command lines and using an external text editor such as Visual Studio Code or
+Emacs.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. toctree::
    :maxdepth: 1
@@ -61,3 +80,15 @@ a project that's only 2D or only 3D and don't want to see what you don't need.
    :name: toc-editor-features
 
    managing_editor_features
+<<<<<<< HEAD
+=======
+
+Upgrading to Godot 4
+--------------------
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-editor-upgrading
+
+   upgrading_to_godot_4
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)

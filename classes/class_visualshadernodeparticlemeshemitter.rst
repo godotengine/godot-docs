@@ -12,6 +12,7 @@ VisualShaderNodeParticleMeshEmitter
 
 **Inherits:** :ref:`VisualShaderNodeParticleEmitter<class_VisualShaderNodeParticleEmitter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+<<<<<<< HEAD
 A visual shader node that makes particles emitted in a shape defined by a :ref:`Mesh<class_Mesh>`.
 
 .. rst-class:: classref-introduction-group
@@ -20,6 +21,11 @@ Description
 -----------
 
 :ref:`VisualShaderNodeParticleEmitter<class_VisualShaderNodeParticleEmitter>` that makes the particles emitted in a shape of the assigned :ref:`mesh<class_VisualShaderNodeParticleMeshEmitter_property_mesh>`. It will emit from the mesh's surfaces, either all or only the specified one.
+=======
+.. container:: contribute
+
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-reftable-group
 
@@ -57,7 +63,13 @@ Property Descriptions
 - void **set_mesh** **(** :ref:`Mesh<class_Mesh>` value **)**
 - :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)**
 
+<<<<<<< HEAD
 The :ref:`Mesh<class_Mesh>` that defines emission shape.
+=======
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 
@@ -74,7 +86,13 @@ The :ref:`Mesh<class_Mesh>` that defines emission shape.
 - void **set_surface_index** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_surface_index** **(** **)**
 
+<<<<<<< HEAD
 Index of the surface that emits particles. :ref:`use_all_surfaces<class_VisualShaderNodeParticleMeshEmitter_property_use_all_surfaces>` must be ``false`` for this to take effect.
+=======
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 
@@ -91,7 +109,13 @@ Index of the surface that emits particles. :ref:`use_all_surfaces<class_VisualSh
 - void **set_use_all_surfaces** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_use_all_surfaces** **(** **)**
 
+<<<<<<< HEAD
 If ``true``, the particles will emit from all surfaces of the mesh.
+=======
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

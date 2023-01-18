@@ -23,6 +23,7 @@ Description
 
 \ **Note:** After setting :ref:`target_location<class_NavigationAgent2D_property_target_location>` it is required to use the :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` function once every physics frame to update the internal path logic of the NavigationAgent. The returned vector position from this function should be used as the next movement position for the agent's parent Node.
 
+<<<<<<< HEAD
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -30,6 +31,8 @@ Tutorials
 
 - :doc:`Using NavigationAgents <../tutorials/navigation/navigation_using_navigationagents>`
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. rst-class:: classref-reftable-group
 
 Properties

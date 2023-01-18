@@ -13,9 +13,13 @@ Exporting is done by using the ``[Export]`` attribute.
 
 .. code-block:: csharp
 
+<<<<<<< HEAD
     using Godot;
 
     public partial class ExportExample : Node3D
+=======
+    public class ExportExample : Node3D
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         [Export]
         private int Number = 5;
@@ -61,6 +65,7 @@ the following to list them:
     [Export]
     private Resource Resource;
 
+<<<<<<< HEAD
 Grouping exports
 ----------------
 
@@ -106,6 +111,8 @@ list with the ``[ExportCategory]`` attribute.
     The list of properties is organized based on the class inheritance, and new categories break
     that expectation. Use them carefully, especially when creating projects for public use.
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 ..
 	Commenting out enum examples because I have been told they
 	require extra steps to actually work properly. The examples below
@@ -352,9 +359,15 @@ Exported arrays should be initialized empty.
 .. code-block:: csharp
 
     [Export]
+<<<<<<< HEAD
     private Vector3[] Vector3s = System.Array.Empty<Vector3>();
     [Export]
     private string[] Strings = System.Array.Empty<string>();
+=======
+    private Vector3[] Vector3s = new Vector3[0];
+    [Export]
+    private String[] String = new String[0];
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 
 You can omit the default value, but then it would be null if not assigned.

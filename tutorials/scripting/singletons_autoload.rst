@@ -163,8 +163,14 @@ means that the last child of root is always the loaded scene.
  .. code-tab:: csharp
 
     using Godot;
+<<<<<<< HEAD
 
     public partial class Global : Node
+=======
+    using System;
+
+    public class Global : Godot.Node
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public Node CurrentScene { get; set; }
 

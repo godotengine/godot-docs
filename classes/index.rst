@@ -622,10 +622,13 @@ Resources
     class_visualshadernodetransformop
     class_visualshadernodetransformparameter
     class_visualshadernodetransformvecmult
+<<<<<<< HEAD
     class_visualshadernodeuintconstant
     class_visualshadernodeuintfunc
     class_visualshadernodeuintop
     class_visualshadernodeuintparameter
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     class_visualshadernodeuvfunc
     class_visualshadernodeuvpolarcoord
     class_visualshadernodevarying

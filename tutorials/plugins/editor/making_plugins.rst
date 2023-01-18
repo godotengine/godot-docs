@@ -127,9 +127,16 @@ like this:
 
     #if TOOLS
     using Godot;
+<<<<<<< HEAD
 
     [Tool]
     public partial class CustomNode : EditorPlugin
+=======
+    using System;
+
+    [Tool]
+    public class CustomNode : EditorPlugin
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public override void _EnterTree()
         {
@@ -190,9 +197,16 @@ clicked. For that, we'll need a script that extends from
  .. code-tab:: csharp
 
     using Godot;
+<<<<<<< HEAD
 
     [Tool]
     public partial class MyButton : Button
+=======
+    using System;
+
+    [Tool]
+    public class MyButton : Button
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public override void _EnterTree()
         {
@@ -238,9 +252,16 @@ dialog. For that, change the ``custom_node.gd`` script to the following:
 
     #if TOOLS
     using Godot;
+<<<<<<< HEAD
 
     [Tool]
     public partial class CustomNode : EditorPlugin
+=======
+    using System;
+
+    [Tool]
+    public class CustomNode : EditorPlugin
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public override void _EnterTree()
         {
@@ -363,9 +384,16 @@ The script could look like this:
 
     #if TOOLS
     using Godot;
+<<<<<<< HEAD
 
     [Tool]
     public partial class CustomDock : EditorPlugin
+=======
+    using System;
+
+    [Tool]
+    public class CustomDock : EditorPlugin
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         Control dock;
 

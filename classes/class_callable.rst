@@ -93,18 +93,24 @@ Methods
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | :ref:`Callable<class_Callable>`     | :ref:`bind<class_Callable_method_bind>` **(** ... **)** |vararg| |const|                                    |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | :ref:`Callable<class_Callable>`     | :ref:`bindv<class_Callable_method_bindv>` **(** :ref:`Array<class_Array>` arguments **)**                   |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`Variant<class_Variant>`       | :ref:`call<class_Callable_method_call>` **(** ... **)** |vararg| |const|                                    |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`call_deferred<class_Callable_method_call_deferred>` **(** ... **)** |vararg| |const|                  |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`       | :ref:`callv<class_Callable_method_callv>` **(** :ref:`Array<class_Array>` arguments **)** |const|           |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | :ref:`Array<class_Array>`           | :ref:`get_bound_arguments<class_Callable_method_get_bound_arguments>` **(** **)** |const|                   |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`get_bound_arguments_count<class_Callable_method_get_bound_arguments_count>` **(** **)** |const|       |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`StringName<class_StringName>` | :ref:`get_method<class_Callable_method_get_method>` **(** **)** |const|                                     |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------+
    | :ref:`Object<class_Object>`         | :ref:`get_object<class_Callable_method_get_object>` **(** **)** |const|                                     |
@@ -200,6 +206,7 @@ Returns a copy of this **Callable** with one or more arguments bound. When calle
 
 ----
 
+<<<<<<< HEAD
 .. _class_Callable_method_bindv:
 
 .. rst-class:: classref-method
@@ -212,6 +219,8 @@ Returns a copy of this **Callable** with one or more arguments bound, reading th
 
 ----
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_Callable_method_call:
 
 .. rst-class:: classref-method
@@ -253,6 +262,7 @@ Calls the method represented by this **Callable**. Unlike :ref:`call<class_Calla
 
 ----
 
+<<<<<<< HEAD
 .. _class_Callable_method_get_bound_arguments:
 
 .. rst-class:: classref-method
@@ -277,6 +287,8 @@ Returns the total amount of arguments bound (or unbound) via successive :ref:`bi
 
 ----
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_Callable_method_get_method:
 
 .. rst-class:: classref-method

@@ -143,7 +143,11 @@ Using spaces
 
 Insert a space:
 
+<<<<<<< HEAD
 * Around a binary and ternary operator.
+=======
+* Around a binary and tertiary operator.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 * Between an opening parenthesis and ``if``, ``for``, ``foreach``, ``catch``, ``while``, ``lock`` or ``using`` keywords.
 * Before and within a single line accessor block.
 * Between accessors in a single line accessor block.

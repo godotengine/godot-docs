@@ -17,7 +17,11 @@ formatting rules for a part of the text. You may be familiar with them if you ev
 forums (also known as `bulletin boards`, hence the "BB" in "BBCode").
 
 Note that the BBCode tags can also be used, to some extent, in the XML source of
+<<<<<<< HEAD
 the class reference. For more information, see :ref:`doc_class_reference_primer`.
+=======
+the class reference. For more information, see :ref:`doc_class_reference_writing_guidelines`.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Using BBCode
 ------------

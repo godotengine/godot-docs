@@ -47,8 +47,11 @@ Methods
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                   | :ref:`eval<class_JavaScriptBridge_method_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**                                                                              |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | void                                            | :ref:`force_fs_sync<class_JavaScriptBridge_method_force_fs_sync>` **(** **)**                                                                                                                                                         |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`get_interface<class_JavaScriptBridge_method_get_interface>` **(** :ref:`String<class_String>` interface **)**                                                                                                                   |
    +-------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`pwa_needs_update<class_JavaScriptBridge_method_pwa_needs_update>` **(** **)** |const|                                                                                                                                           |
@@ -138,6 +141,7 @@ If ``use_global_execution_context`` is ``true``, the code will be evaluated in t
 
 ----
 
+<<<<<<< HEAD
 .. _class_JavaScriptBridge_method_force_fs_sync:
 
 .. rst-class:: classref-method
@@ -152,6 +156,8 @@ Force synchronization of the persistent file system (when enabled).
 
 ----
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_JavaScriptBridge_method_get_interface:
 
 .. rst-class:: classref-method

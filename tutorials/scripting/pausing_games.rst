@@ -48,19 +48,28 @@ You can also alter the property with code:
  .. code-tab:: gdscript GDScript
 
     func _ready():
+<<<<<<< HEAD
         process_mode = Node.PROCESS_MODE_PAUSABLE
+=======
+        pause_mode = Node.PAUSE_MODE_PROCESS
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
+<<<<<<< HEAD
         ProcessMode = Node.ProcessModeEnum.Pausable;
+=======
+        PauseMode = Node.PauseModeEnum.Process;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
 This is what each mode tells a node to do:  
 
 -  **Inherit**: Process depending on the state of the parent,
    grandparent, etc. The first parent that has a non-Inherit state.
+<<<<<<< HEAD
 -  **Pausable**: Process the node (and its children in Inherit
    mode) only when the game is not paused.
 -  **WhenPaused**: Process the node (and its children in Inherit
@@ -69,6 +78,14 @@ This is what each mode tells a node to do:
    mode) no matter what. Paused or not, this node will process.
 -  **Disabled**: The node (and its children in Inherit
    mode) will not process at all.
+=======
+-  **Pausable**: Stop the node no matter what (and children in Inherit
+   mode). When paused this node will not process.
+-  **WhenPaused**:
+-  **Always**: Process the node no matter what (and children in Inherit
+   mode). Paused or not this node will process.
+-  **Disabled**: The node will not process at all.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 By default, all nodes have this property in the "Inherit" state. If the
 parent is set to "Inherit", then the grandparent will be checked and so
@@ -78,7 +95,12 @@ every node will be paused. Several things happen when a node stops processing.
 
 The ``_process``, ``_physics_process``, ``_input``, and ``_input_event`` functions
 will not be called. However signals still work and cause their connected function to
+<<<<<<< HEAD
 run, even if that function's script is attached to a node that is not currently being processed.
+=======
+run, even if that function's script is attached to a node that has its pause
+mode set to "Stop".
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Animation nodes will pause their current animation, audio nodes
 will pause their current audio stream, and particles will pause. These resume

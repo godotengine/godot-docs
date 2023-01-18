@@ -207,6 +207,181 @@ The OpenGL 3 rendering driver. It uses OpenGL 3.3 Core Profile on desktop platfo
 
 ----
 
+<<<<<<< HEAD
+=======
+.. _enum_OS_Weekday:
+
+.. rst-class:: classref-enumeration
+
+enum **Weekday**:
+
+.. _class_OS_constant_DAY_SUNDAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Weekday<enum_OS_Weekday>` **DAY_SUNDAY** = ``0``
+
+Sunday.
+
+.. _class_OS_constant_DAY_MONDAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Weekday<enum_OS_Weekday>` **DAY_MONDAY** = ``1``
+
+Monday.
+
+.. _class_OS_constant_DAY_TUESDAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Weekday<enum_OS_Weekday>` **DAY_TUESDAY** = ``2``
+
+Tuesday.
+
+.. _class_OS_constant_DAY_WEDNESDAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Weekday<enum_OS_Weekday>` **DAY_WEDNESDAY** = ``3``
+
+Wednesday.
+
+.. _class_OS_constant_DAY_THURSDAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Weekday<enum_OS_Weekday>` **DAY_THURSDAY** = ``4``
+
+Thursday.
+
+.. _class_OS_constant_DAY_FRIDAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Weekday<enum_OS_Weekday>` **DAY_FRIDAY** = ``5``
+
+Friday.
+
+.. _class_OS_constant_DAY_SATURDAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Weekday<enum_OS_Weekday>` **DAY_SATURDAY** = ``6``
+
+Saturday.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_OS_Month:
+
+.. rst-class:: classref-enumeration
+
+enum **Month**:
+
+.. _class_OS_constant_MONTH_JANUARY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_JANUARY** = ``1``
+
+January.
+
+.. _class_OS_constant_MONTH_FEBRUARY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_FEBRUARY** = ``2``
+
+February.
+
+.. _class_OS_constant_MONTH_MARCH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_MARCH** = ``3``
+
+March.
+
+.. _class_OS_constant_MONTH_APRIL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_APRIL** = ``4``
+
+April.
+
+.. _class_OS_constant_MONTH_MAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_MAY** = ``5``
+
+May.
+
+.. _class_OS_constant_MONTH_JUNE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_JUNE** = ``6``
+
+June.
+
+.. _class_OS_constant_MONTH_JULY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_JULY** = ``7``
+
+July.
+
+.. _class_OS_constant_MONTH_AUGUST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_AUGUST** = ``8``
+
+August.
+
+.. _class_OS_constant_MONTH_SEPTEMBER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_SEPTEMBER** = ``9``
+
+September.
+
+.. _class_OS_constant_MONTH_OCTOBER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_OCTOBER** = ``10``
+
+October.
+
+.. _class_OS_constant_MONTH_NOVEMBER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_NOVEMBER** = ``11``
+
+November.
+
+.. _class_OS_constant_MONTH_DECEMBER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Month<enum_OS_Month>` **MONTH_DECEMBER** = ``12``
+
+December.
+
+.. rst-class:: classref-item-separator
+
+----
+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _enum_OS_SystemDir:
 
 .. rst-class:: classref-enumeration

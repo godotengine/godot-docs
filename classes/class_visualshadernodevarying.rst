@@ -14,6 +14,7 @@ VisualShaderNodeVarying
 
 **Inherited By:** :ref:`VisualShaderNodeVaryingGetter<class_VisualShaderNodeVaryingGetter>`, :ref:`VisualShaderNodeVaryingSetter<class_VisualShaderNodeVaryingSetter>`
 
+<<<<<<< HEAD
 A visual shader node that represents a "varying" shader value.
 
 .. rst-class:: classref-introduction-group
@@ -22,6 +23,11 @@ Description
 -----------
 
 Varying values are shader variables that can be passed between shader functions, e.g. from Vertex shader to Fragment shader.
+=======
+.. container:: contribute
+
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-reftable-group
 
@@ -57,7 +63,13 @@ Property Descriptions
 - void **set_varying_name** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_varying_name** **(** **)**
 
+<<<<<<< HEAD
 Name of the variable. Must be unique.
+=======
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 
@@ -74,7 +86,13 @@ Name of the variable. Must be unique.
 - void **set_varying_type** **(** :ref:`VaryingType<enum_VisualShader_VaryingType>` value **)**
 - :ref:`VaryingType<enum_VisualShader_VaryingType>` **get_varying_type** **(** **)**
 
+<<<<<<< HEAD
 Type of the variable. Determines where the variable can be accessed.
+=======
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

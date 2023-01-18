@@ -68,8 +68,11 @@ Arrays can be concatenated using the ``+`` operator:
 
 \ **Note:** Arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
 
+<<<<<<< HEAD
 \ **Note:** Erasing elements while iterating over arrays is **not** supported and will result in unpredictable behavior.
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 \ **Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
 .. rst-class:: classref-reftable-group
@@ -541,7 +544,11 @@ Returns the number of times an element is in the array.
 
 Returns a copy of the array.
 
+<<<<<<< HEAD
 If ``deep`` is ``true``, a deep copy is performed: all nested arrays and dictionaries are duplicated and will not be shared with the original array. If ``false``, a shallow copy is made and references to the original nested arrays and dictionaries are kept, so that modifying a sub-array or dictionary in the copy will also impact those referenced in the source array. Note that any :ref:`Object<class_Object>`-derived elements will be shallow copied regardless of the ``deep`` setting.
+=======
+If ``deep`` is ``true``, a deep copy is performed: all nested arrays and dictionaries are duplicated and will not be shared with the original array. If ``false``, a shallow copy is made and references to the original nested arrays and dictionaries are kept, so that modifying a sub-array or dictionary in the copy will also impact those referenced in the source array.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 
@@ -559,8 +566,11 @@ Removes the first occurrence of a value from the array. If the value does not ex
 
 \ **Note:** On large arrays, this method will be slower if the removed element is close to the beginning of the array (index 0). This is because all elements placed after the removed element have to be reindexed.
 
+<<<<<<< HEAD
 \ **Note:** Do not erase entries while iterating over the array.
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. rst-class:: classref-item-separator
 
 ----

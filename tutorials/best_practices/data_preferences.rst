@@ -248,10 +248,15 @@ tree structures.
 
   .. code-tab:: csharp
 
+<<<<<<< HEAD
     using Godot;
 
     // Can decide whether to expose getters/setters for properties later
     public partial class TreeNode : Object
+=======
+    // Can decide whether to expose getters/setters for properties later
+    public class TreeNode : Object
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private TreeNode _parent = null;
 

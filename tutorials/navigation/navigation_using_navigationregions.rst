@@ -12,7 +12,11 @@ and :ref:`NavigationRegion3D<class_NavigationRegion3D>` respectively.
 Individual NavigationRegions upload their 2D NavigationPolygon or 3D NavigationMesh resource data to the NavigationServer.
 The NavigationServer map turns this information into a combined navigation map for pathfinding.
 
+<<<<<<< HEAD
 To create a navigation region using the SceneTree add a ``NavigationRegion2D`` or ``NavigationRegion3D`` node to the scene.
+=======
+To create a navigation region using the SceneTree add a ``NavigationRegion3D`` or ``NavigationRegion3D`` node to the scene.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 All regions require a navigationmesh resource to function. See :ref:`doc_navigation_using_navigationmeshes` to learn how to create and apply navigationmeshes.
 
 NavigationRegions will automatically push ``global_transform`` changes to the region on the NavigationServer which makes them suitable for moving platforms.
@@ -34,9 +38,15 @@ Regions can be enabled / disabled and if disabled will not contribute to future 
 Creating new navigation regions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+<<<<<<< HEAD
 New NavigationRegion nodes will automatically register to the default world navigation map for their 2D/3D dimension.
 
 The region RID can then be obtained from NavigationRegion Nodes with ``get_region_rid()``.
+=======
+New navigation regions will automatically register to the default world navigation map.
+
+The region RID can be obtained from NavigationRegion Nodes with ``get_region_rid()``.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -47,8 +57,11 @@ The region RID can then be obtained from NavigationRegion Nodes with ``get_regio
 
 New regions can also be created with the NavigationServer API and added to any existing map.
 
+<<<<<<< HEAD
 If regions are created with the NavigationServer API directly they need to be assigned a navigation map manually.
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. tabs::
  .. code-tab:: gdscript GDScript
 

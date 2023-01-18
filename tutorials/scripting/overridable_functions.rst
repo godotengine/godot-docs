@@ -86,13 +86,21 @@ information, read the dedicated documentation:
 
  .. code-tab:: csharp
 
+<<<<<<< HEAD
     public override void _Process(double delta)
+=======
+    public override void _Process(float delta)
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // Called every frame, as often as possible.
         base._Process(delta);
     }
 
+<<<<<<< HEAD
     public override void _PhysicsProcess(double delta)
+=======
+    public override void _PhysicsProcess(float delta)
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // Called every physics frame.
         base._PhysicsProcess(delta);
@@ -126,14 +134,22 @@ To learn more about inputs in Godot, see the :ref:`Input section <toc-learn-feat
     // Called once for every event.
     public override void _UnhandledInput(InputEvent @event)
     {
+<<<<<<< HEAD
         base._UnhandledInput(@event);
+=======
+        base._UnhandledInput(event);
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
     // Called once for every event, before _unhandled_input(), allowing you to
     // consume some events.
     public override void _Input(InputEvent @event)
     {
+<<<<<<< HEAD
         base._Input(@event);
+=======
+        base._Input(event);
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
 There are some more overridable functions like

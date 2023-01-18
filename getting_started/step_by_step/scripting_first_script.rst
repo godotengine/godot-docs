@@ -97,12 +97,32 @@ the following line of code:
 
  .. code-tab:: csharp C#
 
+<<<<<<< HEAD
     using Godot;
 
     public partial class Sprite : Sprite2D
     {
     }
 
+=======
+    public class Sprite : Godot.Sprite2D
+    // Declare member variables here. Examples:
+    // private int a = 2;
+    // private string b = "text";
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
+
+    }
+
+    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
+    //  public override void _Process(float delta)
+    //  {
+    //
+    //  }
+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 Every GDScript file is implicitly a class. The ``extends`` keyword defines the
 class this script inherits or extends. In this case, it's ``Sprite2D``, meaning
 our script will get access to all the properties and functions of the Sprite2D
@@ -222,9 +242,15 @@ At the bottom of the script, define the function:
 
  .. code-tab:: csharp C#
 
+<<<<<<< HEAD
     public override void _Process(double delta)
     {
         Rotation += AngularSpeed * (float)delta;
+=======
+    public override void _Process(float delta)
+    {
+        Rotation += AngularSpeed * delta;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
 The ``func`` keyword defines a new function. After it, we have to write the
@@ -250,10 +276,13 @@ Run the scene to see the Godot icon turn in-place.
 
 .. image:: img/scripting_first_script_godot_turning_in_place.gif
 
+<<<<<<< HEAD
 .. note:: In C#, notice how the ``delta`` argument taken by ``_Process()`` is a
           ``double``. We therefore need to convert it to ``float`` when we apply
           it to the rotation.
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 Moving forward
 ~~~~~~~~~~~~~~
 
@@ -272,7 +301,11 @@ them.
 
     var velocity = Vector2.Up.Rotated(Rotation) * Speed;
 
+<<<<<<< HEAD
     Position += velocity * (float)delta;
+=======
+    Position += velocity * delta;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 As we already saw, the ``var`` keyword defines a new variable. If you put it at
 the top of the script, it defines a property of the class. Inside a function, it
@@ -325,16 +358,30 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
+<<<<<<< HEAD
     public partial class Sprite : Sprite2D
+=======
+    public class Sprite : Godot.Sprite2D
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private int Speed = 400;
         private float AngularSpeed = Mathf.Pi;
 
+<<<<<<< HEAD
         public override void _Process(double delta)
         {
             Rotation += AngularSpeed * (float)delta;
             var velocity = Vector2.Up.Rotated(Rotation) * Speed;
 
             Position += velocity * (float)delta;
+=======
+        public override void _Process(float delta)
+        {
+            Rotation += AngularSpeed * delta;
+            var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+
+            Position += velocity * delta;
+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         }
     }

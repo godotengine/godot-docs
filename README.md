@@ -25,6 +25,7 @@ add-on.
 
 All contributors are welcome to help on the Godot documentation.
 
+<<<<<<< HEAD
 To get started, head to the [Contributing section](https://docs.godotengine.org/en/latest/contributing/ways_to_contribute.html#contributing-to-the-documentation) of the online manual. There, you will find all the information you need to write and submit changes.
 
 Here are some quick links to the areas you might be interested in:
@@ -35,6 +36,18 @@ Here are some quick links to the areas you might be interested in:
 4. [Writing guidelines](https://docs.godotengine.org/en/latest/contributing/documentation/docs_writing_guidelines.html)
 5. [Building the manual](https://docs.godotengine.org/en/latest/contributing/documentation/building_the_manual.html)
 6. [Translating the documentation](https://docs.godotengine.org/en/latest/contributing/documentation/editor_and_docs_localization.html)
+=======
+To get started, head to the [Contributing section](https://docs.godotengine.org/en/latest/community/contributing/index.html) of the online manual. There, you will find all the information you need to write and submit changes.
+
+Here are some quick links to the areas you might be interested in:
+
+1. [Contributing to the online manual](https://docs.godotengine.org/en/latest/community/contributing/contributing_to_the_documentation.html)
+2. [Contributing to the class reference](https://docs.godotengine.org/en/latest/community/contributing/updating_the_class_reference.html)
+3. [Content guidelines](https://docs.godotengine.org/en/latest/community/contributing/content_guidelines.html)
+4. [Writing guidelines](https://docs.godotengine.org/en/latest/community/contributing/docs_writing_guidelines.html)
+5. [Building the manual](https://docs.godotengine.org/en/latest/community/contributing/building_the_manual.html)
+6. [Translating the documentation](https://docs.godotengine.org/en/latest/community/contributing/editor_and_docs_localization.html)
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 ## License
 

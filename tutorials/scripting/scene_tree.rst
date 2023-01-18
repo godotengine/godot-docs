@@ -154,7 +154,11 @@ function:
 
     public void _MyLevelWasCompleted()
     {
+<<<<<<< HEAD
         GetTree().ChangeSceneToFile("res://levels/level2.tscn");
+=======
+        GetTree().ChangeScene("res://levels/level2.tscn");
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
 Rather than using file paths, one can also use ready-made
@@ -175,7 +179,11 @@ function
     public void _MyLevelWasCompleted()
     {
         var nextScene = (PackedScene)ResourceLoader.Load("res://levels/level2.tscn");
+<<<<<<< HEAD
         GetTree().ChangeSceneToPacked(nextScene);
+=======
+        GetTree().ChangeSceneTo(nextScene);
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
 These are quick and useful ways to switch scenes but have the drawback

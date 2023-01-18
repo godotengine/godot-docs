@@ -370,8 +370,13 @@ common exporting features which can be implemented with a low-level API.
 
 Before reading further, you should get familiar with the way properties are
 handled and how they can be customized with
+<<<<<<< HEAD
 :ref:`_set() <class_Object_method__set>`,
 :ref:`_get() <class_Object_method__get>`, and
+=======
+:ref:`_set() <class_Object_method__get_property_list>`,
+:ref:`_get() <class_Object_method__get_property_list>`, and
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 :ref:`_get_property_list() <class_Object_method__get_property_list>` methods as
 described in :ref:`doc_accessing_data_or_logic_from_object`.
 

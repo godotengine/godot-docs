@@ -129,11 +129,19 @@ Properties
    +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
    | :ref:`Vector2<class_Vector2>`                        | :ref:`size<class_Control_property_size>`                                                     | ``Vector2(0, 0)`` |
    +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+<<<<<<< HEAD
    | :ref:`SizeFlags<enum_Control_SizeFlags>`             | :ref:`size_flags_horizontal<class_Control_property_size_flags_horizontal>`                   | ``1``             |
    +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
    | :ref:`float<class_float>`                            | :ref:`size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`             | ``1.0``           |
    +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
    | :ref:`SizeFlags<enum_Control_SizeFlags>`             | :ref:`size_flags_vertical<class_Control_property_size_flags_vertical>`                       | ``1``             |
+=======
+   | :ref:`int<class_int>`                                | :ref:`size_flags_horizontal<class_Control_property_size_flags_horizontal>`                   | ``1``             |
+   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                            | :ref:`size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`             | ``1.0``           |
+   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`                                | :ref:`size_flags_vertical<class_Control_property_size_flags_vertical>`                       | ``1``             |
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
    | :ref:`Theme<class_Theme>`                            | :ref:`theme<class_Control_property_theme>`                                                   |                   |
    +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
@@ -297,7 +305,11 @@ Methods
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                         | :ref:`set_begin<class_Control_method_set_begin>` **(** :ref:`Vector2<class_Vector2>` position **)**                                                                                                                                                                |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | void                                         | :ref:`set_drag_forwarding<class_Control_method_set_drag_forwarding>` **(** :ref:`Callable<class_Callable>` drag_func, :ref:`Callable<class_Callable>` can_drop_func, :ref:`Callable<class_Callable>` drop_func **)**                                               |
+=======
+   | void                                         | :ref:`set_drag_forwarding<class_Control_method_set_drag_forwarding>` **(** :ref:`Object<class_Object>` target **)**                                                                                                                                                |
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                         | :ref:`set_drag_preview<class_Control_method_set_drag_preview>` **(** :ref:`Control<class_Control>` control **)**                                                                                                                                                   |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -818,7 +830,11 @@ The control's size will not change.
 
 .. rst-class:: classref-enumeration
 
+<<<<<<< HEAD
 flags **SizeFlags**:
+=======
+enum **SizeFlags**:
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_Control_constant_SIZE_SHRINK_BEGIN:
 
@@ -1730,12 +1746,21 @@ The size of the node's bounding rectangle, in pixels. :ref:`Container<class_Cont
 
 .. rst-class:: classref-property
 
+<<<<<<< HEAD
 :ref:`SizeFlags<enum_Control_SizeFlags>` **size_flags_horizontal** = ``1``
 
 .. rst-class:: classref-property-setget
 
 - void **set_h_size_flags** **(** :ref:`SizeFlags<enum_Control_SizeFlags>` value **)**
 - :ref:`SizeFlags<enum_Control_SizeFlags>` **get_h_size_flags** **(** **)**
+=======
+:ref:`int<class_int>` **size_flags_horizontal** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_h_size_flags** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_h_size_flags** **(** **)**
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the X axis. Use one of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
@@ -1764,12 +1789,21 @@ If the node and at least one of its neighbors uses the :ref:`SIZE_EXPAND<class_C
 
 .. rst-class:: classref-property
 
+<<<<<<< HEAD
 :ref:`SizeFlags<enum_Control_SizeFlags>` **size_flags_vertical** = ``1``
 
 .. rst-class:: classref-property-setget
 
 - void **set_v_size_flags** **(** :ref:`SizeFlags<enum_Control_SizeFlags>` value **)**
 - :ref:`SizeFlags<enum_Control_SizeFlags>` **get_v_size_flags** **(** **)**
+=======
+:ref:`int<class_int>` **size_flags_vertical** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_v_size_flags** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_v_size_flags** **(** **)**
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the Y axis. Use one of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
@@ -3095,6 +3129,7 @@ Sets :ref:`offset_left<class_Control_property_offset_left>` and :ref:`offset_top
 
 .. rst-class:: classref-method
 
+<<<<<<< HEAD
 void **set_drag_forwarding** **(** :ref:`Callable<class_Callable>` drag_func, :ref:`Callable<class_Callable>` can_drop_func, :ref:`Callable<class_Callable>` drop_func **)**
 
 Forwards the handling of this control's :ref:`_get_drag_data<class_Control_method__get_drag_data>`,  :ref:`_can_drop_data<class_Control_method__can_drop_data>` and :ref:`_drop_data<class_Control_method__drop_data>` virtual functions to delegate callables.
@@ -3102,6 +3137,77 @@ Forwards the handling of this control's :ref:`_get_drag_data<class_Control_metho
 For each argument, if not empty, the delegate callable is used, otherwise the local (virtual) function is used.
 
 The function format for each callable should be exactly the same as the virtual functions described above.
+=======
+void **set_drag_forwarding** **(** :ref:`Object<class_Object>` target **)**
+
+Forwards the handling of this control's drag and drop to ``target`` object.
+
+Forwarding can be implemented in the target object similar to the methods :ref:`_get_drag_data<class_Control_method__get_drag_data>`, :ref:`_can_drop_data<class_Control_method__can_drop_data>`, and :ref:`_drop_data<class_Control_method__drop_data>` but with two differences:
+
+1. The function name must be suffixed with **_fw**\ 
+
+2. The function must take an extra argument that is the control doing the forwarding
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # ThisControl.gd
+    extends Control
+    export(Control) var target_control
+    
+    func _ready():
+        set_drag_forwarding(target_control)
+    
+    # TargetControl.gd
+    extends Control
+    
+    func _can_drop_data_fw(position, data, from_control):
+        return true
+    
+    func _drop_data_fw(position, data, from_control):
+        my_handle_data(data) # Your handler method.
+    
+    func _get_drag_data_fw(position, from_control):
+        set_drag_preview(my_preview)
+        return my_data()
+
+ .. code-tab:: csharp
+
+    // ThisControl.cs
+    public class ThisControl : Control
+    {
+        [Export]
+        public Control TargetControl { get; set; }
+        public override void _Ready()
+        {
+            SetDragForwarding(TargetControl);
+        }
+    }
+    
+    // TargetControl.cs
+    public class TargetControl : Control
+    {
+        public void CanDropDataFw(Vector2 position, object data, Control fromControl)
+        {
+            return true;
+        }
+    
+        public void DropDataFw(Vector2 position, object data, Control fromControl)
+        {
+            MyHandleData(data); // Your handler method.
+        }
+    
+        public void GetDragDataFw(Vector2 position, Control fromControl)
+        {
+            SetDragPreview(MyPreview);
+            return MyData();
+        }
+    }
+
+
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 

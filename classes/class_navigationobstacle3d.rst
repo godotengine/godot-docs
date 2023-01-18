@@ -23,6 +23,7 @@ Description
 
 Obstacles **don't** change the resulting path from the pathfinding, they only affect the navigation agent movement in a radius. Therefore, using obstacles for the static walls in your level won't work because those walls don't exist in the pathfinding. The navigation agent will be pushed in a semi-random direction away while moving inside that radius. Obstacles are intended as a last resort option for constantly moving objects that cannot be (re)baked to a navigation mesh efficiently.
 
+<<<<<<< HEAD
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -30,6 +31,8 @@ Tutorials
 
 - :doc:`Using NavigationObstacles <../tutorials/navigation/navigation_using_navigationobstacles>`
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. rst-class:: classref-reftable-group
 
 Properties

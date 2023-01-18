@@ -7,6 +7,7 @@ Using NavigationMeshes
 :ref:`NavigationPolygon<class_NavigationPolygon>` and
 :ref:`NavigationMesh<class_NavigationMesh>`  respectively.
 
+<<<<<<< HEAD
 .. note::
 
     A navigation mesh describes the traversable safe area for an agent with its center position at zero radius.
@@ -16,6 +17,8 @@ Navigation works independent from other engine parts like rendering and physics.
 
 If you experience clipping or collision problems while following navigation paths always remember that you need to tell the navigation system through an appropriated navigation mesh what your intentions are. By itself the navigation system will never know "this is a tree / rock / wall collision shape or visual mesh" because it only knows "here I was told I can path safely cause it is on navigation mesh".
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _doc_navigation_navmesh_baking:
 
 Creating 2D NavigationMeshes

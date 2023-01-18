@@ -115,8 +115,11 @@ Methods
    +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                        | :ref:`set_multiplayer<class_SceneTree_method_set_multiplayer>` **(** :ref:`MultiplayerAPI<class_MultiplayerAPI>` multiplayer, :ref:`NodePath<class_NodePath>` root_path=NodePath("") **)**                                                              |
    +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<<<<<<< HEAD
    | void                                        | :ref:`unload_current_scene<class_SceneTree_method_unload_current_scene>` **(** **)**                                                                                                                                                                    |
    +---------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-section-separator
 
@@ -510,7 +513,11 @@ Changes the running scene to the one at the given ``path``, after loading it int
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_CANT_OPEN<class_@GlobalScope_constant_ERR_CANT_OPEN>` if the ``path`` cannot be loaded into a :ref:`PackedScene<class_PackedScene>`, or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if that scene cannot be instantiated.
 
+<<<<<<< HEAD
 \ **Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. This ensures that both scenes are never loaded at the same time, which can exhaust system resources if the scenes are too large or if running in a memory constrained environment. As such, you won't be able to access the loaded scene immediately after the :ref:`change_scene_to_file<class_SceneTree_method_change_scene_to_file>` call.
+=======
+\ **Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene_to_file<class_SceneTree_method_change_scene_to_file>` call.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 
@@ -522,9 +529,15 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:
 
 :ref:`Error<enum_@GlobalScope_Error>` **change_scene_to_packed** **(** :ref:`PackedScene<class_PackedScene>` packed_scene **)**
 
+<<<<<<< HEAD
 Changes the running scene to a new instance of the given :ref:`PackedScene<class_PackedScene>` (which must be valid).
 
 Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated, or :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` if the scene is invalid.
+=======
+Changes the running scene to a new instance of the given :ref:`PackedScene<class_PackedScene>`.
+
+Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the scene cannot be instantiated.
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 \ **Note:** The scene change is deferred, which means that the new scene node is added on the next idle frame. You won't be able to access it immediately after the :ref:`change_scene_to_packed<class_SceneTree_method_change_scene_to_packed>` call.
 
@@ -779,6 +792,7 @@ void **set_multiplayer** **(** :ref:`MultiplayerAPI<class_MultiplayerAPI>` multi
 
 Sets a custom :ref:`MultiplayerAPI<class_MultiplayerAPI>` with the given ``root_path`` (controlling also the relative subpaths), or override the default one if ``root_path`` is empty.
 
+<<<<<<< HEAD
 .. rst-class:: classref-item-separator
 
 ----
@@ -791,6 +805,8 @@ void **unload_current_scene** **(** **)**
 
 If a current scene is loaded, calling this method will unload it.
 
+=======
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

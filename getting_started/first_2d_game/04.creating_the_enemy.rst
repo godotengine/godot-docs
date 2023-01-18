@@ -65,9 +65,13 @@ Add a script to the ``Mob`` like this:
 
  .. code-tab:: csharp
 
+<<<<<<< HEAD
     using Godot;
 
     public partial class Mob : RigidBody2D
+=======
+    public class Mob : RigidBody2D
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // Don't forget to rebuild the project.
     }

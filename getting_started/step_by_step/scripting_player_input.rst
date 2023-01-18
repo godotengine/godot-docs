@@ -54,7 +54,11 @@ code below.
         direction = 1;
     }
 
+<<<<<<< HEAD
     Rotation += AngularSpeed * direction * (float)delta;
+=======
+    Rotation += AngularSpeed * direction * delta;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Our ``direction`` local variable is a multiplier representing the direction in
 which the player wants to turn. A value of ``0`` means the player isn't pressing
@@ -141,13 +145,22 @@ Here is the complete ``Sprite2D.gd`` file for reference.
  .. code-tab:: csharp C#
 
     using Godot;
+<<<<<<< HEAD
 
     public partial class Sprite : Sprite2D
+=======
+    
+    public class Sprite : Godot.Sprite2D
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
 
+<<<<<<< HEAD
         public override void _Process(double delta)
+=======
+        public override void _Process(float delta)
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         {
             var direction = 0;
             if (Input.IsActionPressed("ui_left"))
@@ -159,7 +172,11 @@ Here is the complete ``Sprite2D.gd`` file for reference.
                 direction = 1;
             }
 
+<<<<<<< HEAD
             Rotation += AngularSpeed * direction * (float)delta;
+=======
+            Rotation += AngularSpeed * direction * delta;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
             var velocity = Vector2.Zero;
             if (Input.IsActionPressed("ui_up"))
@@ -167,7 +184,11 @@ Here is the complete ``Sprite2D.gd`` file for reference.
                 velocity = Vector2.Up.Rotated(Rotation) * Speed;
             }
 
+<<<<<<< HEAD
             Position += velocity * (float)delta;
+=======
+            Position += velocity * delta;
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         }
     }
 

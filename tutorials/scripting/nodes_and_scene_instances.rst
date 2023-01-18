@@ -28,7 +28,11 @@ To do so, you can use the following code.
     var camera2d
 
     func _ready():
+<<<<<<< HEAD
         sprite2d = get_node("Sprite")
+=======
+        sprite2d = get_node("Sprite2D")
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         camera2d = get_node("Camera2D")
 
  .. code-tab:: csharp
@@ -40,7 +44,11 @@ To do so, you can use the following code.
     {
         base._Ready();
 
+<<<<<<< HEAD
         _sprite2D = GetNode<Sprite2D>("Sprite");
+=======
+        _sprite2D = GetNode<Sprite2D>("Sprite2D");
+>>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         _camera2D = GetNode<Camera2D>("Camera2D");
     }
 
