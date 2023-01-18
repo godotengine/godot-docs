@@ -35,14 +35,14 @@ here's an example of how GDScript looks.
     # Everything after "#" is a comment.
     # A file is a class!
 
+    # (optional) icon to show in the editor dialogs:
+    @icon("res://path/to/optional/icon.svg")
+
     # (optional) class definition:
     class_name MyClass
 
     # Inheritance:
     extends BaseClass
-
-    # (optional) icon to show in the editor dialogs:
-    @icon("res://path/to/optional/icon.svg")
 
 
     # Member variables.
@@ -1313,9 +1313,9 @@ class will then appear with its new icon in the editor::
 
    # Item.gd
 
-   extends Node
-   class_name Item
    @icon("res://interface/icons/item.png")
+   class_name Item
+   extends Node
 
 .. image:: img/class_name_editor_register_example.png
 
