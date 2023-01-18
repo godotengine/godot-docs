@@ -211,11 +211,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_variable<class_ProjectSettings_property_debug/gdscript/warnings/unused_variable>`                                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
-=======
-   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/void_assignment<class_ProjectSettings_property_debug/gdscript/warnings/void_assignment>`                                                                                     | ``1``                                                                                            |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`String<class_String>`                       | :ref:`debug/settings/crash_handler/message<class_ProjectSettings_property_debug/settings/crash_handler/message>`                                                                                           | ``"Please include this when reporting the bug to the project developer."``                       |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`debug/settings/crash_handler/message.editor<class_ProjectSettings_property_debug/settings/crash_handler/message.editor>`                                                                             | ``"Please include this when reporting the bug on: https://github.com/godotengine/godot/issues"`` |
@@ -300,11 +295,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/extend_to_title<class_ProjectSettings_property_display/window/size/extend_to_title>`                                                                                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
    | :ref:`int<class_int>`                             | :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>`                                                                                               | ``-2``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`int<class_int>`                             | :ref:`display/window/size/mode<class_ProjectSettings_property_display/window/size/mode>`                                                                                                                   | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/no_focus<class_ProjectSettings_property_display/window/size/no_focus>`                                                                                                           | ``false``                                                                                        |
@@ -2415,21 +2407,6 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
-<<<<<<< HEAD
-=======
-.. _class_ProjectSettings_property_debug/gdscript/warnings/void_assignment:
-
-.. rst-class:: classref-property
-
-:ref:`int<class_int>` **debug/gdscript/warnings/void_assignment** = ``1``
-
-When set to ``warn`` or ``error``, produces a warning or an error respectively when assigning the result of a function that returns ``void`` to a variable.
-
-.. rst-class:: classref-item-separator
-
-----
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_ProjectSettings_property_debug/settings/crash_handler/message:
 
 .. rst-class:: classref-property
@@ -2946,7 +2923,6 @@ Main window content is expanded to the full size of the window. Unlike a borderl
 
 ----
 
-<<<<<<< HEAD
 .. _class_ProjectSettings_property_display/window/size/initial_screen:
 
 .. rst-class:: classref-property
@@ -2959,8 +2935,6 @@ Main window initial screen.
 
 ----
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_ProjectSettings_property_display/window/size/mode:
 
 .. rst-class:: classref-property

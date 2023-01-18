@@ -208,11 +208,7 @@ Your complete ``Sprite2D.gd`` code should look like the following.
 
     using Godot;
 
-<<<<<<< HEAD
     public partial class Sprite : Sprite2D
-=======
-    public class Sprite : Godot.Sprite2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
@@ -374,11 +370,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
-<<<<<<< HEAD
     public partial class Sprite : Sprite2D
-=======
-    public class Sprite : Godot.Sprite2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
@@ -431,11 +423,7 @@ reaches 0.
 
     using Godot;
 
-<<<<<<< HEAD
     public partial class CustomSignal : Node2D
-=======
-    public class CustomSignal : Node2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         [Signal]
         public delegate void HealthDepletedEventHandler();
@@ -489,11 +477,7 @@ names between parentheses:
 
     using Godot;
 
-<<<<<<< HEAD
     public partial class CustomSignal : Node
-=======
-    public class CustomSignal : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         [Signal]
         public delegate void HealthChangedEventHandler(int oldValue, int newValue);

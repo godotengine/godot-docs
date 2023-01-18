@@ -75,7 +75,6 @@ attribution to "Juan Linietsky, Ariel Manzur and the Godot Engine community".
 Organization of the documentation
 ---------------------------------
 
-<<<<<<< HEAD
 This documentation is organized in several sections with an impressively
 unbalanced distribution of contents – but the way it is split up should be
 relatively intuitive:
@@ -84,21 +83,10 @@ relatively intuitive:
   the information about the engine, its history, its licensing, authors, etc. It
   also contains the :ref:`doc_faq`.
 - The **Getting Started** section is the *raison d'être* of this
-=======
-This documentation is organized in five sections with an impressively
-unbalanced distribution of contents – but the way it is split up should be
-relatively intuitive:
-
-- The :ref:`sec-general` section contains this introduction as well as
-  the information about the engine, its history, its licensing, authors, etc. It
-  also contains the :ref:`doc_faq`.
-- The :ref:`sec-learn` section is the *raison d'être* of this
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
   documentation, as it contains all the necessary information on using the
   engine to make games. It starts with the :ref:`Step by step
   <toc-learn-step_by_step>` tutorial which should be the entry point for all
   new users.
-<<<<<<< HEAD
 - The **Manual** section can be read as needed,
   in any order. It contains feature-specific tutorials and documentation.
 - The **Contributing** section gives the information related to contributing to
@@ -115,23 +103,6 @@ relatively intuitive:
   generated automatically from a file in the main source repository, therefore
   the generated files of the documentation are not meant to be modified. See
   :ref:`doc_updating_the_class_reference` for details.
-=======
-- The :ref:`sec-tutorials` section can be read as needed,
-  in any order. It contains feature-specific tutorials and documentation.
-- The :ref:`sec-devel` section is intended for advanced users and contributors
-  to the engine development, with the information on compiling the engine,
-  contributing to the editor, or developing C++ modules.
-- The :ref:`sec-community` section gives the information related to contributing to
-  the engine development and the life of its community, e.g. how to report bugs,
-  help with the documentation, etc. It also points to various community channels
-  like Godot Contributors Chat and Discord and contains a list of recommended
-  third-party tutorials outside of this documentation.
-- Finally, the :ref:`sec-class-ref` is the documentation of the Godot API,
-  which is also available directly within the engine's script editor. It is
-  generated automatically from a file in the main source repository, therefore
-  the generated files of the documentation are not meant to be modified. See
-  :ref:`doc_class_reference_writing_guidelines` for details.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 In addition to this documentation, you may also want to take a look at the
 various `Godot demo projects <https://github.com/godotengine/godot-demo-projects>`_.

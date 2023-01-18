@@ -36,10 +36,7 @@ name in the path for ``get_node()``. For example:
  .. code-tab:: gdscript GDScript
 
     get_node("%RedButton").text = "Hello"
-<<<<<<< HEAD
 
  .. code-tab:: csharp
 
     GetNode<Button>("%RedButton").Text = "Hello";
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)

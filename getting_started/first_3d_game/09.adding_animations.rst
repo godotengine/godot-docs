@@ -17,11 +17,7 @@ Using the animation editor
 The engine comes with tools to author animations in the editor. You can then use
 the code to play and control them at runtime.
 
-<<<<<<< HEAD
 Open the player scene, select the ``Player`` node, and add an :ref:`AnimationPlayer <class_AnimationPlayer>` node.
-=======
-Open the player scene, select the player node, and add an *AnimationPlayer* node.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 The *Animation* dock appears in the bottom panel.
 
@@ -39,11 +35,7 @@ Name the animation "float".
 
 |image3|
 
-<<<<<<< HEAD
 Once you've created the animation, the timeline appears with numbers representing
-=======
-Once you created the animation, the timeline appears with numbers representing
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 time in seconds.
 
 |image4|
@@ -86,7 +78,6 @@ corresponding property. The keyframe gets inserted where your time cursor is in
 the timeline.
 
 Let's insert our first keys. Here, we will animate both the translation and the
-<<<<<<< HEAD
 rotation of the ``Character`` node.
 
 Select the ``Character`` and in the *Inspector* expand the *Transform* section. Click the key icon next to *Position*, and *Rotation*.
@@ -97,15 +88,6 @@ Select the ``Character`` and in the *Inspector* expand the *Transform* section. 
 
 For this tutorial, just create RESET Track(s) which is the default choice
 
-=======
-rotation of the *Character* node.
-
-Select the *Character* and click the key icon next to *Translation* in the
-*Inspector*. Do the same for *Rotation Degrees*.
-
-|image10|
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 Two tracks appear in the editor with a diamond icon representing each keyframe.
 
 |image11|
@@ -116,7 +98,6 @@ translation key to ``0.2`` seconds and the rotation key to ``0.1`` seconds.
 |image12|
 
 Move the time cursor to ``0.5`` seconds by clicking and dragging on the gray
-<<<<<<< HEAD
 timeline.
 
 .. image:: img/09.adding_animations/timeline_05_click.webp
@@ -130,14 +111,6 @@ Create a keyframe for both properties
 .. image:: img/09.adding_animations/second_keys_both.webp
 
 Now, move the position keyframe to ``0.7``
-=======
-timeline. In the *Inspector*, set the *Translation*'s *Y* axis to about
-``0.65`` meters and the *Rotation Degrees*' *X* axis to ``8``.
-
-|image13|
-
-Create a keyframe for both properties and shift the translation key to ``0.7``
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 seconds by dragging it on the timeline.
 
 |image14|
@@ -151,17 +124,11 @@ seconds by dragging it on the timeline.
     make them feel alive.
 
 Move the time cursor to the end of the animation, at ``1.2`` seconds. Set the Y
-<<<<<<< HEAD
 position to about ``0.35`` and the X rotation to ``-9`` degrees. Once again,
 create a key for both properties.
 
 .. image:: img/09.adding_animations/animation_final_keyframes.webp
 
-=======
-translation to about ``0.35`` and the X rotation to ``-9`` degrees. Once again,
-create a key for both properties.
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 You can preview the result by clicking the play button or pressing :kbd:`Shift + D`.
 Click the stop button or press :kbd:`S` to stop playback.
 
@@ -215,11 +182,7 @@ Your animation should look something like this.
 
 If you play the game, the player's creature will now float!
 
-<<<<<<< HEAD
 If the creature is a little too close to the floor, you can move the ``Pivot`` up
-=======
-If the creature is a little too close to the floor, you can move the *Pivot* up
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 to offset it.
 
 Controlling the animation in code
@@ -228,11 +191,7 @@ Controlling the animation in code
 We can use code to control the animation playback based on the player's input.
 Let's change the animation speed when the character is moving.
 
-<<<<<<< HEAD
 Open the ``Player``'s script by clicking the script icon next to it.
-=======
-Open the *Player*'s script by clicking the script icon next to it.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 |image22|
 
@@ -269,11 +228,7 @@ vector, add the following code.
 This code makes it so when the player moves, we multiply the playback speed by
 ``4``. When they stop, we reset it to normal.
 
-<<<<<<< HEAD
 We mentioned that the ``Pivot`` could layer transforms on top of the animation. We
-=======
-We mentioned that the pivot could layer transforms on top of the animation. We
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 can make the character arc when jumping using the following line of code. Add it
 at the end of ``_physics_process()``.
 
@@ -299,17 +254,10 @@ Animating the mobs
 Here's another nice trick with animations in Godot: as long as you use a similar
 node structure, you can copy them to different scenes.
 
-<<<<<<< HEAD
 For example, both the ``Mob`` and the ``Player`` scenes have a ``Pivot`` and a
 ``Character`` node, so we can reuse animations between them.
 
 Open the ``Player.tscn`` scene, select the ``AnimationPlayer`` node and open the "float" animation.
-=======
-For example, both the *Mob* and the *Player* scenes have a *Pivot* and a
-*Character* node, so we can reuse animations between them.
-
-Open the *Player* scene, select the animation player node and open the "float" animation.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 Next, click on **Animation > Copy**. Then open ``Mob.tscn`` and open its animation
 player. Click **Animation > Paste**. That's it; all monsters will now play the float
 animation.
@@ -346,7 +294,6 @@ Here's the *Player* script.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-<<<<<<< HEAD
     extends CharacterBody3D
 
     signal hit
@@ -436,76 +383,6 @@ Here's the *Player* script.
     using Godot;
 
     public partial class Player : CharacterBody3D
-=======
-   extends CharacterBody3D
-
-   # Emitted when the player was hit by a mob.
-   signal hit
-
-   # How fast the player moves in meters per second.
-   @export var speed = 14
-   # The downward acceleration when in the air, in meters per second per second.
-   @export var fall_acceleration = 75
-   # Vertical impulse applied to the character upon jumping in meters per second.
-   @export var jump_impulse = 20
-   # Vertical impulse applied to the character upon bouncing over a mob in meters per second.
-   @export var bounce_impulse = 16
-
-   var velocity = Vector3.ZERO
-
-
-   func _physics_process(delta):
-       var direction = Vector3.ZERO
-
-       if Input.is_action_pressed("move_right"):
-           direction.x += 1
-       if Input.is_action_pressed("move_left"):
-           direction.x -= 1
-       if Input.is_action_pressed("move_back"):
-           direction.z += 1
-       if Input.is_action_pressed("move_forward"):
-           direction.z -= 1
-
-       if direction != Vector3.ZERO:
-           direction = direction.normalized()
-           $Pivot.look_at(translation + direction, Vector3.UP)
-           $AnimationPlayer.playback_speed = 4
-       else:
-           $AnimationPlayer.playback_speed = 1
-
-       velocity.x = direction.x * speed
-       velocity.z = direction.z * speed
-
-       # Jumping
-       if is_on_floor() and Input.is_action_just_pressed("jump"):
-           velocity.y += jump_impulse
-
-       velocity.y -= fall_acceleration * delta
-       velocity = move_and_slide(velocity, Vector3.UP)
-
-       for index in range(get_slide_count()):
-           var collision = get_slide_collision(index)
-           if collision.collider.is_in_group("mob"):
-               var mob = collision.collider
-               if Vector3.UP.dot(collision.normal) > 0.1:
-                   mob.squash()
-                   velocity.y = bounce_impulse
-
-       $Pivot.rotation.x = PI / 6 * velocity.y / jump_impulse
-
-
-   func die():
-       emit_signal("hit")
-       queue_free()
-
-
-   func _on_MobDetector_body_entered(_body):
-       die()
-
- .. code-tab:: csharp
-
-    public class Player : CharacterBody3D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // Emitted when the player was hit by a mob.
         [Signal]
@@ -605,7 +482,6 @@ And the *Mob*'s script.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-<<<<<<< HEAD
     extends CharacterBody3D
 
     # Minimum speed of the mob in meters per second.
@@ -649,47 +525,6 @@ And the *Mob*'s script.
     using Godot;
 
     public partial class Mob : CharacterBody3D
-=======
-   extends CharacterBody3D
-
-   # Emitted when the player jumped on the mob.
-   signal squashed
-
-   # Minimum speed of the mob in meters per second.
-   @export var min_speed = 10
-   # Maximum speed of the mob in meters per second.
-   @export var max_speed = 18
-
-   var velocity = Vector3.ZERO
-
-
-   func _physics_process(_delta):
-       move_and_slide(velocity)
-
-
-   func initialize(start_position, player_position):
-       look_at_from_position(start_position, player_position, Vector3.UP)
-       rotate_y(rand_range(-PI / 4, PI / 4))
-
-       var random_speed = rand_range(min_speed, max_speed)
-       velocity = Vector3.FORWARD * random_speed
-       velocity = velocity.rotated(Vector3.UP, rotation.y)
-
-       $AnimationPlayer.playback_speed = random_speed / min_speed
-
-
-   func squash():
-       emit_signal("squashed")
-       queue_free()
-
-
-   func _on_VisibilityNotifier_screen_exited():
-       queue_free()
-
- .. code-tab:: csharp
-
-    public class Mob : CharacterBody3D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // Emitted when the played jumped on the mob.
         [Signal]
@@ -735,16 +570,11 @@ And the *Mob*'s script.
 
 .. |image0| image:: img/squash-the-creeps-final.gif
 .. |image1| image:: img/09.adding_animations/01.animation_player_dock.png
-<<<<<<< HEAD
 .. |image2| image:: img/09.adding_animations/02.new_animation.webp
-=======
-.. |image2| image:: img/09.adding_animations/02.new_animation.png
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. |image3| image:: img/09.adding_animations/03.float_name.png
 .. |image4| image:: img/09.adding_animations/03.timeline.png
 .. |image5| image:: img/09.adding_animations/04.autoplay_and_loop.png
 .. |image6| image:: img/09.adding_animations/05.pin_icon.png
-<<<<<<< HEAD
 .. |image7| image:: img/09.adding_animations/06.animation_duration.webp
 .. |image8| image:: img/09.adding_animations/07.editable_timeline.webp
 .. |image9| image:: img/09.adding_animations/08.zoom_slider.webp
@@ -755,18 +585,6 @@ And the *Mob*'s script.
 .. |image14| image:: img/09.adding_animations/13.second_keys.webp
 .. |image15| image:: img/09.adding_animations/14.play_button.png
 .. |image16| image:: img/09.adding_animations/15.box_select.webp
-=======
-.. |image7| image:: img/09.adding_animations/06.animation_duration.png
-.. |image8| image:: img/09.adding_animations/07.editable_timeline.png
-.. |image9| image:: img/09.adding_animations/08.zoom_slider.png
-.. |image10| image:: img/09.adding_animations/09.creating_first_keyframe.png
-.. |image11| image:: img/09.adding_animations/10.initial_keys.png
-.. |image12| image:: img/09.adding_animations/11.moving_keys.png
-.. |image13| image:: img/09.adding_animations/12.second_keys_values.png
-.. |image14| image:: img/09.adding_animations/13.second_keys.png
-.. |image15| image:: img/09.adding_animations/14.play_button.png
-.. |image16| image:: img/09.adding_animations/15.box_select.png
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. |image17| image:: img/09.adding_animations/16.easing_property.png
 .. |image18| image:: img/09.adding_animations/17.ease_out.png
 .. |image19| image:: img/09.adding_animations/18.ease_out_second_rotation_key.png

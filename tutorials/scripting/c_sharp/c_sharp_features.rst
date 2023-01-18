@@ -67,11 +67,7 @@ Generic methods are also provided to make this type conversion transparent.
 
 To check if the node can be cast to Sprite2D, you can use the ``is`` operator.
 The ``is`` operator returns false if the node cannot be cast to Sprite2D,
-<<<<<<< HEAD
 otherwise it returns true. Note that using the ``is`` operator against ``null`` is always going to be falsy.
-=======
-otherwise it returns true.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. code-block:: csharp
 
@@ -80,14 +76,11 @@ otherwise it returns true.
         // Yup, it's a Sprite2D!
     }
 
-<<<<<<< HEAD
     if (null is Sprite2D)
     {
         // This block can never happen.
     }
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
 
 .. _doc_c_sharp_signals:
@@ -119,11 +112,7 @@ If you want to connect a signal in the editor, you need to (re)build the project
 
     public void MyCallbackWithArguments(string foo, int bar)
     {
-<<<<<<< HEAD
         GD.Print($"My callback with: {foo} and {bar}!");
-=======
-        GD.Print("My callback with: ", foo, " and ", bar, "!");
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
     public void SomeFunction()
@@ -138,19 +127,11 @@ Emitting signals is done with the ``EmitSignal`` method.
 
     public void SomeFunction()
     {
-<<<<<<< HEAD
         EmitSignal(SignalName.MySignal);
         EmitSignal(SignalName.MySignalWithArguments, "hello there", 28);
     }
 
 Notice that you can always reference a signal name with its generated ``SignalName``.
-=======
-        EmitSignal(nameof(MySignal));
-        EmitSignal(nameof(MySignalWithArguments), "hello there", 28);
-    }
-
-Notice that you can always reference a signal name with the ``nameof`` keyword (applied on the delegate itself).
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 It is possible to bind values when establishing a connection by passing a Godot array.
 
@@ -177,13 +158,9 @@ Consequently, any ``Node`` or ``Reference`` will be compatible automatically, bu
 
 .. code-block:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class DataObject : Godot.Object
-=======
-    public class DataObject : Godot.Object
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public string Field1 { get; set; }
         public string Field2 { get; set; }

@@ -1,6 +1,5 @@
 .. _doc_shader_preprocessor:
 
-<<<<<<< HEAD
 Shader preprocessor
 ===================
 
@@ -58,26 +57,11 @@ If the replacement code is not defined, the identifier may only be used with
 Compared to constants (``const CONSTANT = value;``), ``#define`` can be used
 anywhere within the shader. ``#define`` can also be used to insert arbitrary
 shader code at any location, while constants can't do that.
-=======
-Shader Preprocessor
-===================
-
-The shader preprocessor is an optional step before shader compilation of text shaders in Godot.
-If you don't need it, you may ignore it, but it contains some useful macros which may speed up your productivity.
-
-#define
-^^^^^^^
-\ **Syntax:** `#define identifier <replacement_code>`.
-
-Defines the identifier after that directive as a macro, and replaces all successive occurrence of it with the replacement code given in the shader.
-If the replacement code is not defined, it may only be used within `#ifdef` or `#ifndef` directives.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. code-block:: glsl
 
     shader_type spatial;
 
-<<<<<<< HEAD
     // Notice the lack of semicolon at the end of the line, as the replacement text
     // shouldn't insert a semicolon on its own.
     #define USE_MY_COLOR
@@ -95,18 +79,12 @@ If the replacement code is not defined, it may only be used within `#ifdef` or `
             param4 \
     )
 
-=======
-    #define USE_MY_COLOR
-    #define MY_COLOR vec3(1, 0, 0)
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     void fragment() {
     #ifdef USE_MY_COLOR
         ALBEDO = MY_COLOR;
     #endif
     }
 
-<<<<<<< HEAD
 
 Defining a ``#define`` for an identifier that is already defined results in an
 error. To prevent this, use ``#undef <identifier>``.
@@ -117,78 +95,6 @@ error. To prevent this, use ``#undef <identifier>``.
 **Syntax:** ``#undef identifier``
 
 The ``#undef`` directive may be used to cancel a previously defined ``#define`` directive:
-=======
-#if
-^^^
-\ **Syntax:** `#if condition`.
-
-The `#if` directive checks the condition and if it evaluates to a non-zero value, the code block is included, otherwise it is skipped.
-In order to evaluate, the condition must be an expression giving a simple floating-point, integer or boolean result. There may be multiple condition blocks connected by `||` or `&&` operators.
-It may be continued by a `#else` block, but must be ended with the `#endif` directive.
-
-.. code-block:: glsl
-
-    #define VAR 3
-    #define USE_LIGHT 0 // evaluates to false
-    #define USE_COLOR 1 // evaluates to true
-
-    #if VAR == 3 && (USE_LIGHT || USE_COLOR)
-
-
-    #endif
-
-#ifdef
-^^^^^^
-\ **Syntax:** `#ifdef identifier`.
-
-Checks whether the passed identifier is defined by `#define` before that directive. Useful for creating multiple shader versions in the same file.
-It may be continued by a `#else` block, but must be ended with the `#endif` directive.
-
-.. code-block:: glsl
-
-    #define USE_LIGHT
-    #ifdef USE_LIGHT
-
-    #endif
-
-#ifndef
-^^^^^^^
-\ **Syntax:** `#ifndef identifier`.
-
-Similar to `#ifdef` but checks whether the passed identifier is not defined by `#define` before that directive.
-
-#else
-^^^^^
-\ **Syntax:** `#else`.
-
-Defines the optional block which is included when the previously defined `#if`, `#ifdef` or `#ifndef` directive evaluates to false.
-
-.. code-block:: glsl
-
-    shader_type spatial;
-
-    #define MY_COLOR vec3(1, 0, 0)
-
-    void fragment() {
-    #ifndef MY_COLOR
-        ALBEDO = MY_COLOR;
-    #else
-        ALBEDO = vec3(0, 0, 1);
-    #endif
-    }
-
-#endif
-^^^^^^
-\ **Syntax:** `#endif`.
-
-Used as terminator for the `#if`, `#ifdef`, `#ifndef` or subsequent `#else` directives.
-
-#undef
-^^^^^^
-\ **Syntax:** `#undef identifier`.
-
-The `#undef` directive may be used to cancel the previously defined `#define` directive: 
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. code-block:: glsl
 
@@ -205,7 +111,6 @@ The `#undef` directive may be used to cancel the previously defined `#define` di
         return MY_COLOR;
     }
 
-<<<<<<< HEAD
 Without ``#undef`` in the above example, there would be a macro redefinition error.
 
 #if
@@ -420,15 +325,11 @@ Defines the optional block which is included when the previously defined `#if`,
 **Syntax:** ``#endif``
 
 Used as terminator for the ``#if``, ``#`ifdef``, ``#ifndef`` or subsequent ``#else`` directives.
-=======
-Without `#undef` in that case there will be a macro redefinition error.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 #include
 ^^^^^^^^
 \ **Syntax:** `#include "path"`.
 
-<<<<<<< HEAD
 The ``#include`` directive includes the *entire* content of a shader include
 file in a shader. ``"path"`` can be an absolute ``res://`` path or relative to
 the current shader file. Relative paths are only allowed in shaders that are
@@ -478,14 +379,6 @@ Example base shader (using the include file we created above):
         // No error, as we've included a definition for `get_fancy_color()` via the shader include.
         COLOR = get_fancy_color();
     }
-=======
-The `#include` directive includes the content of shader include to a shader. It may be used in any place, but is recommended at the beginning of the shader file, 
-after the `shader_type` to prevent possible errors. The shader include may be created by using a `File → Create Shader Include` menu option of the shader editor.
-
-.. code-block:: glsl
-
-    #include "my_shader_inc.gdshaderinc"
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 #pragma
 ^^^^^^^
@@ -493,23 +386,15 @@ after the `shader_type` to prevent possible errors. The shader include may be cr
 
 The `#pragma` directive provides additional information to the preprocessor or compiler.
 
-<<<<<<< HEAD
 Currently, it may have only one value: ``disable_preprocessor``. If you don't need
 the preprocessor, use that directive to speed up shader compilation by excluding
 the preprocessor step.
-=======
-Currently, it may have only one value: `disable_preprocessor`.
-If you don't need the preprocessor, use that directive, and it will speed up the shader compilation by excluding the preprocessor step. 
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. code-block:: glsl
 
     #pragma disable_preprocessor
-<<<<<<< HEAD
 
     #if USE_LIGHT
     // This causes a shader compilation error, as the `#if USE_LIGHT` and `#endif`
     // are included as-is in the final shader code.
     #endif
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)

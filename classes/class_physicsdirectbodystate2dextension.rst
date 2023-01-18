@@ -67,11 +67,8 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`_get_contact_count<class_PhysicsDirectBodyState2DExtension_method__get_contact_count>` **(** **)** |virtual| |const|                                                                                   |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
    | :ref:`Vector2<class_Vector2>`                                     | :ref:`_get_contact_impulse<class_PhysicsDirectBodyState2DExtension_method__get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|                                             |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`Vector2<class_Vector2>`                                     | :ref:`_get_contact_local_normal<class_PhysicsDirectBodyState2DExtension_method__get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|                                   |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                                     | :ref:`_get_contact_local_position<class_PhysicsDirectBodyState2DExtension_method__get_contact_local_position>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|                               |
@@ -418,7 +415,6 @@ void **_apply_torque_impulse** **(** :ref:`float<class_float>` impulse **)** |vi
 
 ----
 
-<<<<<<< HEAD
 .. _class_PhysicsDirectBodyState2DExtension_method__get_contact_impulse:
 
 .. rst-class:: classref-method
@@ -433,8 +429,6 @@ void **_apply_torque_impulse** **(** :ref:`float<class_float>` impulse **)** |vi
 
 ----
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_PhysicsDirectBodyState2DExtension_method__get_contact_local_normal:
 
 .. rst-class:: classref-method

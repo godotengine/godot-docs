@@ -166,11 +166,7 @@ use these as the base for creating other templates:
        }
 
        // Called every frame. 'delta' is the elapsed time since the previous frame.
-<<<<<<< HEAD
        public override void _Process(double delta)
-=======
-       public override void _Process(float delta)
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
        {
        }
    }

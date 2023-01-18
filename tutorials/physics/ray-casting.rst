@@ -87,21 +87,13 @@ And in 3D:
  .. code-tab:: gdscript GDScript
 
     func _physics_process(delta):
-<<<<<<< HEAD
         var space_state = get_world_3d().direct_space_state
-=======
-        var space_state = get_world().direct_space_state
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
  .. code-tab:: csharp
 
     public override void _PhysicsProcess(float delta)
     {
-<<<<<<< HEAD
         var spaceState = GetWorld3d().DirectSpaceState;
-=======
-        var spaceState = GetWorld().DirectSpaceState;
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
 Raycast query
@@ -117,12 +109,8 @@ may be used. For example:
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
         # use global coordinates, not local to node
-<<<<<<< HEAD
         var query = PhysicsRayQueryParameters2D.create(Vector2(0, 0), Vector2(50, 100))
         var result = space_state.intersect_ray(query)
-=======
-        var result = space_state.intersect_ray(Vector2(0, 0), Vector2(50, 100))
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
  .. code-tab:: csharp
 
@@ -130,12 +118,8 @@ may be used. For example:
     {
         var spaceState = GetWorld2d().DirectSpaceState;
         // use global coordinates, not local to node
-<<<<<<< HEAD
         var query = PhysicsRayQueryParameters2D.create(new Vector2(), new Vector2(50, 100));
         var result = spaceState.IntersectRay(query);
-=======
-        var result = spaceState.IntersectRay(new Vector2(), new Vector2(50, 100));
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
 The result is a dictionary. If the ray didn't hit anything, the dictionary will
@@ -179,16 +163,9 @@ as shown in the following image:
 
 .. image:: img/raycast_falsepositive.png
 
-<<<<<<< HEAD
 To avoid self-intersection, the ``intersect_ray()`` parameters object can take an
 array of exceptions via its ``exclude`` property. This is an example of how to use it 
 from a CharacterBody2D or any other collision object node:
-=======
-To avoid self-intersection, the ``intersect_ray()`` function can take an
-optional third parameter which is an array of exceptions. This is an
-example of how to use it from a CharacterBody2D or any other
-collision object node:
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -197,7 +174,6 @@ collision object node:
 
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
-<<<<<<< HEAD
         var query = PhysicsRayQueryParameters2D.create(global_position, enemy_position)
         query.exclude = [self]
         var result = space_state.intersect_ray(query)
@@ -207,24 +183,13 @@ collision object node:
     using Godot;
 
     public partial class Body : CharacterBody2D
-=======
-        var result = space_state.intersect_ray(global_position, enemy_position, [self])
-
- .. code-tab:: csharp
-
-    class Body : CharacterBody2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public override void _PhysicsProcess(float delta)
         {
             var spaceState = GetWorld2d().DirectSpaceState;
-<<<<<<< HEAD
             var query = PhysicsRayQueryParameters2D.create(globalPosition, enemyPosition);
             query.Exclude = new Godot.Collections.Array { this };
             var result = spaceState.IntersectRay(query);
-=======
-            var result = spaceState.IntersectRay(globalPosition, enemyPosition, new Godot.Collections.Array { this });
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         }
     }
 
@@ -237,15 +202,9 @@ While the exceptions method works fine for excluding the parent body, it becomes
 very inconvenient if you need a large and/or dynamic list of exceptions. In
 this case, it is much more efficient to use the collision layer/mask system.
 
-<<<<<<< HEAD
 The ``intersect_ray()`` parameters object can also be supplied a collision mask.
 For example, to use the same mask as the parent body, use the ``collision_mask``
 member variable. The array of exceptions can be supplied as the last argument as well:
-=======
-The optional fourth argument for ``intersect_ray()`` is a collision mask. For
-example, to use the same mask as the parent body, use the ``collision_mask``
-member variable:
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -253,7 +212,6 @@ member variable:
     extends CharacterBody2D
 
     func _physics_process(delta):
-<<<<<<< HEAD
         var space_state = get_world_2d().direct_space_state
         var query = PhysicsRayQueryParameters2D.create(global_position, enemy_position, 
             collision_mask, [self]) 
@@ -264,27 +222,13 @@ member variable:
     using Godot;
 
     public partial class Body : CharacterBody2D
-=======
-        var space_state = get_world().direct_space_state
-        var result = space_state.intersect_ray(global_position, enemy_position,
-                                [self], collision_mask)
-
- .. code-tab:: csharp
-
-    class Body : CharacterBody2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public override void _PhysicsProcess(float delta)
         {
             var spaceState = GetWorld2d().DirectSpaceState;
-<<<<<<< HEAD
             var query = PhysicsRayQueryParameters2D.create(globalPosition, enemyPosition,
                 CollisionMask, new Godot.Collections.Array { this });
             var result = spaceState.IntersectRay(query);
-=======
-            var result = spaceState.IntersectRay(globalPosition, enemyPosition,
-                            new Godot.Collections.Array { this }, CollisionMask);
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         }
     }
 

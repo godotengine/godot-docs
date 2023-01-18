@@ -88,13 +88,9 @@ released.
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class Character : CharacterBody2D
-=======
-    public class Character : CharacterBody2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private AnimatedSprite2D _animatedSprite;
 
@@ -233,13 +229,9 @@ released.
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class Character : CharacterBody2D
-=======
-    public class Character : CharacterBody2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private AnimationPlayer _animationPlayer;
 

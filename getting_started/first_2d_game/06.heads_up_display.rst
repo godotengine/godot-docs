@@ -107,19 +107,12 @@ Now add this script to ``HUD``:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class HUD : CanvasLayer
     {
         // Don't forget to rebuild the project so the editor knows about the new signal.
 
-=======
-    public class HUD : CanvasLayer
-    {
-        // Don't forget to rebuild the project so the editor knows about the new signal.
-        
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         [Signal]
         public delegate void StartGameEventHandler();
     }
@@ -165,11 +158,7 @@ Now add this script to ``HUD``:
 
     #endif // HUD_H
 
-<<<<<<< HEAD
 We now want to display a message temporarily,
-=======
-We now want to display a message temporarily, 
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 such as "Get Ready", so we add the following code
 
 .. tabs::
@@ -315,11 +304,7 @@ signal of ``StartButton``, and add the following code to the new functions:
     public void OnStartButtonPressed()
     {
         GetNode<Button>("StartButton").Hide();
-<<<<<<< HEAD
         EmitSignal(SignalName.StartGame);
-=======
-        EmitSignal(nameof(StartGame));
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
     public void OnMessageTimerTimeout()

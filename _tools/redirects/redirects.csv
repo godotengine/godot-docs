@@ -1,5 +1,4 @@
 source,destination
-<<<<<<< HEAD
 /about/index.html,/index.html
 /classes/_classes.html,/classes/
 /community/contributing/best_practices_for_engine_contributors.html,/contributing/development/best_practices_for_engine_contributors.html
@@ -18,9 +17,6 @@ source,destination
 /community/contributing/testing_pull_requests.html,/contributing/workflow/testing_pull_requests.html
 /community/contributing/updating_the_class_reference.html,/contributing/documentation/updating_the_class_reference.html
 /community/contributing/ways_to_contribute.html,/contributing/ways_to_contribute.html
-=======
-/classes/_classes.html,/classes/
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 /community/tutorials/3d/mesh_generation_with_heightmap_and_shaders.html,/tutorials/3d/mesh_generation_with_heightmap_and_shaders.html
 /community/tutorials/gdnative/gdnative-c-example.html,/tutorials/plugins/gdnative/gdnative-c-example.html
 /community/tutorials/gdnative/index.html,/tutorials/plugins/gdnative/index.html
@@ -29,7 +25,6 @@ source,destination
 /content/3d/making_trees.html,/tutorials/content/making_trees.html
 /contributing/_contributing.html,/community/contributing/
 /contributing/bug_triage_guidelines.html,/community/contributing/bug_triage_guidelines.html
-<<<<<<< HEAD
 /contributing/development/core_and_modules/introduction_to_godot_development.html,/contributing/development/core_and_modules/index.html
 /contributing/doc_and_l10n_guidelines.html,/community/contributing/doc_and_l10n_guidelines.html
 /contributing/updating_the_class_reference.html,/community/contributing/updating_the_class_reference.html
@@ -81,11 +76,6 @@ source,destination
 /development/file_formats/gdscript_grammar.html,/contributing/development/file_formats/gdscript_grammar.html
 /development/file_formats/index.html,/contributing/development/file_formats/index.html
 /development/file_formats/tscn.html,/contributing/development/file_formats/tscn.html
-=======
-/contributing/doc_and_l10n_guidelines.html,/community/contributing/doc_and_l10n_guidelines.html
-/contributing/updating_the_class_reference.html,/community/contributing/updating_the_class_reference.html
-/development/consoles/consoles.html,/tutorials/platform/consoles.html
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 /development/plugins/import_plugins.html,/tutorials/plugins/editor/import_plugins.html
 /development/plugins/index.html,/tutorials/plugins/editor/index.html
 /development/plugins/making_plugins.html,/tutorials/plugins/editor/making_plugins.html
@@ -352,10 +342,7 @@ source,destination
 /tutorials/debug/debugger_panel.html,/tutorials/scripting/debug/debugger_panel.html
 /tutorials/debug/index.html,/tutorials/scripting/debug/index.html
 /tutorials/debug/overview_of_debugging_tools.html,/tutorials/scripting/debug/overview_of_debugging_tools.html
-<<<<<<< HEAD
 /tutorials/editor/upgrading_to_godot_4.html,/tutorials/migrating/upgrading_to_godot_4.html
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 /tutorials/gui/bbcode_in_richtextlabel.html,/tutorials/ui/bbcode_in_richtextlabel.html
 /tutorials/gui/control_node_gallery.html,/tutorials/ui/control_node_gallery.html
 /tutorials/gui/custom_gui_controls.html,/tutorials/ui/custom_gui_controls.html

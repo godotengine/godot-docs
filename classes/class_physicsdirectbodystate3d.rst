@@ -115,11 +115,7 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_contact_count<class_PhysicsDirectBodyState3D_method_get_contact_count>` **(** **)** |const|                                                                                        |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_impulse<class_PhysicsDirectBodyState3D_method_get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                                  |
-=======
-   | :ref:`float<class_float>`                                         | :ref:`get_contact_impulse<class_PhysicsDirectBodyState3D_method_get_contact_impulse>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                                  |
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_local_normal<class_PhysicsDirectBodyState3D_method_get_contact_local_normal>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                        |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -630,15 +626,9 @@ Returns the number of contacts this body has with other bodies.
 
 .. rst-class:: classref-method
 
-<<<<<<< HEAD
 :ref:`Vector3<class_Vector3>` **get_contact_impulse** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Impulse created by the contact.
-=======
-:ref:`float<class_float>` **get_contact_impulse** **(** :ref:`int<class_int>` contact_idx **)** |const|
-
-Impulse created by the contact. Only implemented for Bullet physics.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 

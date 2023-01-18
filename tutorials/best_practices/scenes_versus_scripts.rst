@@ -23,7 +23,6 @@ But, choosing which one to use can be a dilemma. Creating script instances
 is identical to creating in-engine classes whereas handling scenes requires
 a change in API:
 
-<<<<<<< HEAD
 .. tabs::
   .. code-tab:: gdscript GDScript
 
@@ -55,40 +54,6 @@ a change in API:
             MyInheritedScene = MySceneScn.Instantiate(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
         }
     }
-=======
-    .. tabs::
-      .. code-tab:: gdscript GDScript
-
-        const MyNode = preload("my_node.gd")
-        const MyScene = preload("my_scene.tscn")
-        var node = Node.new()
-        var my_node = MyNode.new() # Same method call
-        var my_scene = MyScene.instantiate() # Different method call
-        var my_inherited_scene = MyScene.instantiate(PackedScene.GEN_EDIT_STATE_MAIN) # Create scene inheriting from MyScene
-
-      .. code-tab:: csharp
-
-        using System;
-        using Godot;
-
-        public class Game : Node
-        {
-            public readonly Script MyNodeScr = (Script)ResourceLoader.Load("MyNode.cs");
-            public readonly PackedScene MySceneScn = (PackedScene)ResourceLoader.Load("MyScene.tscn");
-            public Node ANode;
-            public Node MyNode;
-            public Node MyScene;
-            public Node MyInheritedScene;
-
-            public Game()
-            {
-                ANode = new Node();
-                MyNode = new MyNode(); // Same syntax
-                MyScene = MySceneScn.Instantiate(); // Different. Instantiated from a PackedScene
-                MyInheritedScene = MySceneScn.Instantiate(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
-            }
-        }
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Also, scripts will operate a little slower than scenes due to the
 speed differences between engine and script code. The larger and more complex
@@ -195,16 +160,9 @@ with it, and finally adds it as a child of the ``Main`` node:
 
   .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class Main : Resource
-=======
-    using System;
-    using Godot;
-
-    public class Main : Resource
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public Node Child { get; set; }
 

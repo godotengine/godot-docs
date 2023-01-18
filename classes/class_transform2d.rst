@@ -113,15 +113,6 @@ Methods
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>` | :ref:`scaled_local<class_Transform2D_method_scaled_local>` **(** :ref:`Vector2<class_Vector2>` scale **)** |const|                                                   |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
-=======
-   | void                                  | :ref:`set_rotation<class_Transform2D_method_set_rotation>` **(** :ref:`float<class_float>` rotation **)**                                                            |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_scale<class_Transform2D_method_set_scale>` **(** :ref:`Vector2<class_Vector2>` scale **)**                                                                 |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_skew<class_Transform2D_method_set_skew>` **(** :ref:`float<class_float>` skew **)**                                                                        |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`Transform2D<class_Transform2D>` | :ref:`translated<class_Transform2D_method_translated>` **(** :ref:`Vector2<class_Vector2>` offset **)** |const|                                                      |
    +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform2D<class_Transform2D>` | :ref:`translated_local<class_Transform2D_method_translated_local>` **(** :ref:`Vector2<class_Vector2>` offset **)** |const|                                          |
@@ -529,47 +520,6 @@ This can be seen as transforming with respect to the local frame.
 
 ----
 
-<<<<<<< HEAD
-=======
-.. _class_Transform2D_method_set_rotation:
-
-.. rst-class:: classref-method
-
-void **set_rotation** **(** :ref:`float<class_float>` rotation **)**
-
-Sets the transform's rotation (in radians).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_Transform2D_method_set_scale:
-
-.. rst-class:: classref-method
-
-void **set_scale** **(** :ref:`Vector2<class_Vector2>` scale **)**
-
-Sets the transform's scale.
-
-\ **Note:** Negative X scales in 2D are not decomposable from the transformation matrix. Due to the way scale is represented with transformation matrices in Godot, negative scales on the X axis will be changed to negative scales on the Y axis and a rotation of 180 degrees when decomposed.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_Transform2D_method_set_skew:
-
-.. rst-class:: classref-method
-
-void **set_skew** **(** :ref:`float<class_float>` skew **)**
-
-Sets the transform's skew (in radians).
-
-.. rst-class:: classref-item-separator
-
-----
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_Transform2D_method_translated:
 
 .. rst-class:: classref-method

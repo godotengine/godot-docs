@@ -585,11 +585,7 @@ The material will use the texture's alpha values for transparency.
 
 :ref:`Transparency<enum_BaseMaterial3D_Transparency>` **TRANSPARENCY_ALPHA_SCISSOR** = ``2``
 
-<<<<<<< HEAD
 The material will cut off all values below a threshold, the rest will remain opaque. The opaque portions will be rendered in the depth prepass.
-=======
-The material will cut off all values below a threshold, the rest will remain opaque. The opaque portions will be rendering in the depth prepass.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_BaseMaterial3D_constant_TRANSPARENCY_ALPHA_HASH:
 
@@ -605,11 +601,7 @@ The material will cut off all values below a spatially-deterministic threshold, 
 
 :ref:`Transparency<enum_BaseMaterial3D_Transparency>` **TRANSPARENCY_ALPHA_DEPTH_PRE_PASS** = ``4``
 
-<<<<<<< HEAD
 The material will use the texture's alpha value for transparency, but will discard fragments with an alpha of less than 0.99 during the depth prepass and fragments with an alpha less than 0.1 during the shadow pass.
-=======
-The material will use the texture's alpha value for transparency, but will still be rendered in the depth prepass.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_BaseMaterial3D_constant_TRANSPARENCY_MAX:
 

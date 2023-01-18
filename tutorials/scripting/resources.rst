@@ -227,10 +227,6 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
   .. code-tab:: csharp
 
         // BotStats.cs
-<<<<<<< HEAD
-=======
-        using System;
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         using Godot;
 
         namespace ExampleProject
@@ -257,11 +253,7 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
                 {
                     Health = health;
                     SubResource = subResource;
-<<<<<<< HEAD
                     Strings = strings ?? System.Array.Empty<string>();
-=======
-                    Strings = strings ?? Array.Empty<string>();
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
                 }
             }
         }
@@ -285,10 +277,6 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
   .. code-tab:: csharp
 
         // Bot.cs
-<<<<<<< HEAD
-=======
-        using System;
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         using Godot;
 
         namespace ExampleProject
@@ -300,12 +288,8 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
 
                 public override void _Ready()
                 {
-<<<<<<< HEAD
                     if (Stats is BotStats botStats)
                     {
-=======
-                    if (Stats != null && Stats is BotStats botStats) {
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
                         GD.Print(botStats.Health); // Prints '10'.
                     }
                 }
@@ -343,19 +327,11 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
             print(data)
       .. code-tab:: csharp
 
-<<<<<<< HEAD
-=======
-        using System;
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         using Godot;
 
         public partial class BotStatsTable : Resource
         {
-<<<<<<< HEAD
             private Godot.Dictionary<string, BotStats> _stats = new Godot.Dictionary<string, BotStats>();
-=======
-            private Godot.Dictionary<String, BotStats> _stats = new Godot.Dictionary<String, BotStats>();
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
             public BotStatsTable()
             {
@@ -403,10 +379,6 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
             ResourceSaver.save(my_res, "res://my_res.tres")
       .. code-tab:: csharp
 
-<<<<<<< HEAD
-=======
-        using System;
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         using Godot;
 
         public partial class MyNode : Node

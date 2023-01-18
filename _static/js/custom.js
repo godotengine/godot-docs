@@ -200,15 +200,11 @@ const registerSidebarObserver = (function(){
     // theme adds an extra button to fold and unfold the tree without navigating away.
     // But that means that the buttons are added after the initial load, so we need to
     // improvise to detect clicks on these buttons.
-<<<<<<< HEAD
     const scrollElement = document.querySelector('.wy-menu-vertical');
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     const registerLinkHandler = (linkChildren) => {
       linkChildren.forEach(it => {
         if (it.nodeType === Node.ELEMENT_NODE && it.classList.contains('toctree-expand')) {
           it.addEventListener('click', () => {
-<<<<<<< HEAD
             // Toggling a different item will close the currently opened one,
             // which may shift the clicked item out of the view. We correct for that.
             const menuItem = it.parentNode;
@@ -219,8 +215,6 @@ const registerSidebarObserver = (function(){
               menuItem.scrollIntoView();
             }
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
             callback();
           });
         }
@@ -229,11 +223,7 @@ const registerSidebarObserver = (function(){
 
     const navigationSections = document.querySelectorAll('.wy-menu-vertical ul');
     navigationSections.forEach(it => {
-<<<<<<< HEAD
       if (it.previousSibling == null || typeof it.previousSibling === 'undefined' || it.previousSibling.tagName != 'A') {
-=======
-      if (typeof it.previousSibling === 'undefined' || it.previousSibling.tagName != 'A') {
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         return;
       }
 

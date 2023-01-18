@@ -113,13 +113,9 @@ deltatime methods as needed.
 
   .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class MyNode : Node
-=======
-    public class MyNode : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
 
         // Called every frame, even when the engine detects no input.
@@ -177,13 +173,9 @@ instantiation:
 
   .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class MyNode : Node
-=======
-    public class MyNode : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private string _test = "one";
 
@@ -267,13 +259,9 @@ nodes that one might create at runtime.
 
   .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class MyNode : Node
-=======
-    public class MyNode : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public Node ParentCache = null;
 

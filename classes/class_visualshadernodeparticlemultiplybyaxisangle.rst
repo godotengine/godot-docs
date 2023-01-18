@@ -12,7 +12,6 @@ VisualShaderNodeParticleMultiplyByAxisAngle
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-<<<<<<< HEAD
 A visual shader helper node for multiplying position and rotation of particles.
 
 .. rst-class:: classref-introduction-group
@@ -21,11 +20,6 @@ Description
 -----------
 
 This node helps to multiply a position input vector by rotation using specific axis. Intended to work with emitters.
-=======
-.. container:: contribute
-
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-reftable-group
 
@@ -59,13 +53,7 @@ Property Descriptions
 - void **set_degrees_mode** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_degrees_mode** **(** **)**
 
-<<<<<<< HEAD
 If ``true``, the angle will be interpreted in degrees instead of radians.
-=======
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

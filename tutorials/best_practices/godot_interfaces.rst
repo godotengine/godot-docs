@@ -481,13 +481,9 @@ accesses:
   .. code-tab:: csharp
 
     // Child.cs
-<<<<<<< HEAD
     using Godot;
 
     public partial class Child : Node
-=======
-    public class Child : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public FuncRef FN = null;
 
@@ -499,13 +495,9 @@ accesses:
     }
 
     // Parent.cs
-<<<<<<< HEAD
     using Godot;
 
     public partial class Parent : Node
-=======
-    public class Parent : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public Node Child;
 

@@ -55,7 +55,6 @@ A unique thing about particle shaders is that some built-in variables are saved 
 ``TRANSFORM``, ``COLOR``, and ``CUSTOM`` can all be accessed in the shader of the mesh, and
 also in the particle shader the next time it is run.
 
-<<<<<<< HEAD
 Next, setup your ``start()`` function. Particles shaders contain a ``start()`` function and a
 ``process()`` function.
 
@@ -66,32 +65,6 @@ We need to generate 4 random numbers: 3 to create a random position and one for 
 offset of the swim cycle.
 
 First, generate 4 seeds inside the ``start()`` function using the ``hash()`` function provided above:
-=======
-Next, setup your ``vertex`` function. Particles shaders only contain a vertex function
-and no others.
-
-First we will distinguish between code that needs to be run only when the particle system starts
-and code that should always run. We want to give each fish a random position and a random animation
-offset when the system is first run. To do so, we wrap that code in an ``if`` statement that checks the
-built-in variable ``RESTART`` which becomes ``true`` for one frame when the particle system is restarted.
-
-From a high level, this looks like:
-
-.. code-block:: glsl
-
-  void vertex() {
-    if (RESTART) {
-      //Initialization code goes here
-    } else {
-      //per-frame code goes here
-    }
-  }
-
-Next, we need to generate 4 random numbers: 3 to create a random position and one for the random
-offset of the swim cycle.
-
-First, generate 4 seeds inside the ``RESTART`` block using the ``hash`` function provided above:
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. code-block:: glsl
 
@@ -116,22 +89,14 @@ the position information.
 
   TRANSFORM[3].xyz = position * 20.0;
 
-<<<<<<< HEAD
 Remember, all this code so far goes inside the ``start()`` function.
-=======
-Remember, all this code so far goes inside the ``RESTART`` block.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 The vertex shader for your mesh can stay the exact same as it was in the previous tutorial.
 
 Now you can move each fish individually each frame, either by adding to the ``TRANSFORM`` directly
 or by writing to ``VELOCITY``.
 
-<<<<<<< HEAD
 Let's transform the fish by setting their ``VELOCITY`` in the ``start()`` function.
-=======
-Let's transform the fish by setting their ``VELOCITY``.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. code-block:: glsl
 
@@ -148,12 +113,9 @@ below.
 
 This will give each fish a unique speed between ``2`` and ``10``.
 
-<<<<<<< HEAD
 You can also let each fish change its velocity over time if you set the velocity in the ``process()``
 function.
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 If you used ``CUSTOM.y`` in the last tutorial, you can also set the speed of the swim animation based
 on the ``VELOCITY``. Just use ``CUSTOM.y``.
 

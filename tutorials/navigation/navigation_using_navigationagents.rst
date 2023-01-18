@@ -187,10 +187,7 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
 
     @export var movement_speed : float = 4.0
     @onready var navigation_agent : NavigationAgent3D = get_node("NavigationAgent3D")
-<<<<<<< HEAD
     var movement_delta : float
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
     func set_movement_target(movement_target : Vector3):
         navigation_agent.set_target_location(movement_target)

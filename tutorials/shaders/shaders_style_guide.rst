@@ -317,7 +317,6 @@ underscore (\_) to separate words:
 
     const float GOLDEN_RATIO = 1.618;
 
-<<<<<<< HEAD
 Preprocessor directives
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -357,8 +356,6 @@ the console, extra indentation should **not** be added within ``#if``,
         #endif
     }
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 Code order
 ----------
 

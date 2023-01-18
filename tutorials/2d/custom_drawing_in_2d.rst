@@ -82,13 +82,9 @@ redrawn if modified:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class CustomNode2D : Node2D
-=======
-    public class CustomNode2D : Node2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private Texture _texture;
         public Texture Texture
@@ -128,13 +124,9 @@ call ``queue_redraw()`` from the ``_process()`` callback, like this:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class CustomNode2D : Node2D
-=======
-    public class CustomNode2D : Node2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public override void _Draw()
         {
@@ -338,13 +330,9 @@ using ``get_node()``.
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class CustomNode2D : Node2D
-=======
-    public class CustomNode2D : Node2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private float _rotationAngle = 50;
         private float _angleFrom = 75;

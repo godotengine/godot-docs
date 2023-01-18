@@ -33,11 +33,7 @@ The engine calls this method every time it draws a frame:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     public override void _Process(double delta)
-=======
-    public override void _Process(float delta)
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // Do something...
     }
@@ -69,11 +65,7 @@ The engine calls this method before every physics step:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     public override void _PhysicsProcess(double delta)
-=======
-    public override void _PhysicsProcess(float delta)
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // Do something...
     }
@@ -98,7 +90,6 @@ single Label node, with the following script attached to it:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class CustomLabel : Label
@@ -106,13 +97,6 @@ single Label node, with the following script attached to it:
         private double _time;
 
         public override void _Process(double delta)
-=======
-    public class CustomLabel : Label
-    {
-        private float _time;
-
-        public override void _Process(float delta)
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         {
             _time += delta;
             Text = _time.ToString(); // 'Text' is a built-in Label property.

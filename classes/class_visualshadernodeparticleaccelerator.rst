@@ -12,7 +12,6 @@ VisualShaderNodeParticleAccelerator
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-<<<<<<< HEAD
 A visual shader node that accelerates particles.
 
 .. rst-class:: classref-introduction-group
@@ -21,11 +20,6 @@ Description
 -----------
 
 Particle accelerator can be used in "process" step of particle shader. It will accelerate the particles. Connect it to the Velocity output port.
-=======
-.. container:: contribute
-
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-reftable-group
 
@@ -60,11 +54,7 @@ enum **Mode**:
 
 :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_LINEAR** = ``0``
 
-<<<<<<< HEAD
 The particles will be accelerated based on their velocity.
-=======
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_VisualShaderNodeParticleAccelerator_constant_MODE_RADIAL:
 
@@ -72,11 +62,7 @@ The particles will be accelerated based on their velocity.
 
 :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_RADIAL** = ``1``
 
-<<<<<<< HEAD
 The particles will be accelerated towards or away from the center.
-=======
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_VisualShaderNodeParticleAccelerator_constant_MODE_TANGENTIAL:
 
@@ -84,11 +70,7 @@ The particles will be accelerated towards or away from the center.
 
 :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **MODE_TANGENTIAL** = ``2``
 
-<<<<<<< HEAD
 The particles will be accelerated tangentially to the radius vector from center to their position.
-=======
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. _class_VisualShaderNodeParticleAccelerator_constant_MODE_MAX:
 
@@ -118,13 +100,7 @@ Property Descriptions
 - void **set_mode** **(** :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` value **)**
 - :ref:`Mode<enum_VisualShaderNodeParticleAccelerator_Mode>` **get_mode** **(** **)**
 
-<<<<<<< HEAD
 Defines in what manner the particles will be accelerated.
-=======
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

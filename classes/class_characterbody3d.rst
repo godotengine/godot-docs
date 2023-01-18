@@ -97,11 +97,8 @@ Methods
    +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`KinematicCollision3D<class_KinematicCollision3D>` | :ref:`get_last_slide_collision<class_CharacterBody3D_method_get_last_slide_collision>` **(** **)**                                                   |
    +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
    | :ref:`Vector3<class_Vector3>`                           | :ref:`get_platform_angular_velocity<class_CharacterBody3D_method_get_platform_angular_velocity>` **(** **)** |const|                                 |
    +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`Vector3<class_Vector3>`                           | :ref:`get_platform_velocity<class_CharacterBody3D_method_get_platform_velocity>` **(** **)** |const|                                                 |
    +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                           | :ref:`get_position_delta<class_CharacterBody3D_method_get_position_delta>` **(** **)** |const|                                                       |
@@ -523,7 +520,6 @@ Returns a :ref:`KinematicCollision3D<class_KinematicCollision3D>`, which contain
 
 ----
 
-<<<<<<< HEAD
 .. _class_CharacterBody3D_method_get_platform_angular_velocity:
 
 .. rst-class:: classref-method
@@ -536,19 +532,13 @@ Returns the angular velocity of the platform at the last collision point. Only v
 
 ----
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_CharacterBody3D_method_get_platform_velocity:
 
 .. rst-class:: classref-method
 
 :ref:`Vector3<class_Vector3>` **get_platform_velocity** **(** **)** |const|
 
-<<<<<<< HEAD
 Returns the linear velocity of the platform at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>`.
-=======
-Returns the linear velocity of the floor at the last collision point. Only valid after calling :ref:`move_and_slide<class_CharacterBody3D_method_move_and_slide>` and when :ref:`is_on_floor<class_CharacterBody3D_method_is_on_floor>` returns ``true``.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-item-separator
 

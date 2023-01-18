@@ -232,13 +232,10 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`joint_set_param<class_PhysicsServer2D_method_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param, :ref:`float<class_float>` value **)**                                                                                                |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
    | :ref:`float<class_float>`                                         | :ref:`pin_joint_get_param<class_PhysicsServer2D_method_pin_joint_get_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param **)** |const|                                                                                                           |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>` **(** :ref:`RID<class_RID>` joint, :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` param, :ref:`float<class_float>` value **)**                                                                                  |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | :ref:`RID<class_RID>`                                             | :ref:`rectangle_shape_create<class_PhysicsServer2D_method_rectangle_shape_create>` **(** **)**                                                                                                                                                                                                         |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                             | :ref:`segment_shape_create<class_PhysicsServer2D_method_segment_shape_create>` **(** **)**                                                                                                                                                                                                             |
@@ -2308,7 +2305,6 @@ Sets a joint parameter. See :ref:`JointParam<enum_PhysicsServer2D_JointParam>` f
 
 ----
 
-<<<<<<< HEAD
 .. _class_PhysicsServer2D_method_pin_joint_get_param:
 
 .. rst-class:: classref-method
@@ -2333,8 +2329,6 @@ Sets a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJoin
 
 ----
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_PhysicsServer2D_method_rectangle_shape_create:
 
 .. rst-class:: classref-method

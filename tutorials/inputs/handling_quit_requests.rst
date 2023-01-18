@@ -82,11 +82,7 @@ program termination, you should send the notification yourself:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     GetTree().Root.PropagateNotification((int)NotificationWmCloseRequest)
-=======
-    GetTree().GetRoot().PropagateNotification(NotificationWmCloseRequest)
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Sending this notification will inform all nodes about the program termination,
 but will not terminate the program itself *unlike in 3.X*. In order to achieve

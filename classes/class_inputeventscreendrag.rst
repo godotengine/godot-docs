@@ -36,7 +36,6 @@ Properties
 .. table::
    :widths: auto
 
-<<<<<<< HEAD
    +-------------------------------+-----------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`               | ``0``             |
    +-------------------------------+-----------------------------------------------------------------------+-------------------+
@@ -52,17 +51,6 @@ Properties
    +-------------------------------+-----------------------------------------------------------------------+-------------------+
    | :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventScreenDrag_property_velocity>`         | ``Vector2(0, 0)`` |
    +-------------------------------+-----------------------------------------------------------------------+-------------------+
-=======
-   +-------------------------------+---------------------------------------------------------------+-------------------+
-   | :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`       | ``0``             |
-   +-------------------------------+---------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_property_position>` | ``Vector2(0, 0)`` |
-   +-------------------------------+---------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>` | ``Vector2(0, 0)`` |
-   +-------------------------------+---------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`velocity<class_InputEventScreenDrag_property_velocity>` | ``Vector2(0, 0)`` |
-   +-------------------------------+---------------------------------------------------------------+-------------------+
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. rst-class:: classref-section-separator
 
@@ -90,7 +78,6 @@ The drag event index in the case of a multi-drag event.
 
 ----
 
-<<<<<<< HEAD
 .. _class_InputEventScreenDrag_property_pen_inverted:
 
 .. rst-class:: classref-property
@@ -108,8 +95,6 @@ Returns ``true`` when using the eraser end of a stylus pen.
 
 ----
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_InputEventScreenDrag_property_position:
 
 .. rst-class:: classref-property
@@ -127,7 +112,6 @@ The drag position.
 
 ----
 
-<<<<<<< HEAD
 .. _class_InputEventScreenDrag_property_pressure:
 
 .. rst-class:: classref-property
@@ -145,8 +129,6 @@ Represents the pressure the user puts on the pen. Ranges from ``0.0`` to ``1.0``
 
 ----
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_InputEventScreenDrag_property_relative:
 
 .. rst-class:: classref-property
@@ -164,7 +146,6 @@ The drag position relative to the previous position (position at the last frame)
 
 ----
 
-<<<<<<< HEAD
 .. _class_InputEventScreenDrag_property_tilt:
 
 .. rst-class:: classref-property
@@ -182,8 +163,6 @@ Represents the angles of tilt of the pen. Positive X-coordinate value indicates 
 
 ----
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_InputEventScreenDrag_property_velocity:
 
 .. rst-class:: classref-property

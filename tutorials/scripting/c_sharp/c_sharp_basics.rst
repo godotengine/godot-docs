@@ -204,14 +204,8 @@ Here's a blank C# script with some comments to demonstrate how it works.
 .. code-block:: csharp
 
     using Godot;
-<<<<<<< HEAD
 
     public partial class YourCustomClass : Node
-=======
-    using System;
-
-    public class YourCustomClass : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // Member variables here, example:
         private int a = 2;
@@ -224,11 +218,7 @@ Here's a blank C# script with some comments to demonstrate how it works.
             GD.Print("Hello from C# to Godot :)");
         }
 
-<<<<<<< HEAD
         public override void _Process(double delta)
-=======
-        public override void _Process(float delta)
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         {
             // Called every frame. Delta is time since the last frame.
             // Update game logic here.
@@ -311,10 +301,6 @@ a single code location:
 .. code-block:: csharp
 
     using Godot;
-<<<<<<< HEAD
-=======
-    using System;
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
     public class YourCustomClass : Node3D
     {

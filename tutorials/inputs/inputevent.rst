@@ -69,25 +69,17 @@ received input, in order:
 
 .. image:: img/input_event_flow.png
 
-<<<<<<< HEAD
 1. If the Viewport is embedding Windows, the Viewport tries to interpret the event in its
    capability as a Window-Manager (e.g. for resizing or moving Windows).
 2. Next if an embedded Window is focused, the event is sent to that Window and processed in
    the Windows Viewport. If no embedded Window is focused, The Event is sent to the nodes of
    the current viewport in the following order.
 3. First of all, the standard :ref:`Node._input() <class_Node_method__input>` function
-=======
-1. First of all, the standard :ref:`Node._input() <class_Node_method__input>` function
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    will be called in any node that overrides it (and hasn't disabled input processing with :ref:`Node.set_process_input() <class_Node_method_set_process_input>`).
    If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the event will
    not spread any more. This ensures that you can filter all events of interest, even before the GUI.
    For gameplay input, :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>` is generally a better fit, because it allows the GUI to intercept the events.
-<<<<<<< HEAD
 4. Second, it will try to feed the input to the GUI, and see if any
-=======
-2. Second, it will try to feed the input to the GUI, and see if any
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    control can receive it. If so, the :ref:`Control <class_Control>` will be called via the
    virtual function :ref:`Control._gui_input() <class_Control_method__gui_input>` and the signal
    "gui_input" will be emitted (this function is re-implementable by
@@ -97,7 +89,6 @@ received input, in order:
    property to control whether a :ref:`Control <class_Control>` is notified
    of mouse events via :ref:`Control._gui_input() <class_Control_method__gui_input>`
    callback, and whether these events are propagated further.
-<<<<<<< HEAD
 5. If so far no one consumed the event, the :ref:`Node._shortcut_input() <class_Node_method__shortcut_input>` callback
    will be called if overridden (and not disabled with
    :ref:`Node.set_process_shortcut_input() <class_Node_method_set_process_shortcut_input>`).
@@ -106,14 +97,10 @@ received input, in order:
    If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the
    event will not spread any more. The shortcut input callback is ideal for treating events that are intended as shortcuts.
 6. If so far no one consumed the event, the :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>` callback
-=======
-3. If so far no one consumed the event, the unhandled input callback
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    will be called if overridden (and not disabled with
    :ref:`Node.set_process_unhandled_input() <class_Node_method_set_process_unhandled_input>`).
    If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the
    event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.
-<<<<<<< HEAD
 7. If so far no one consumed the event, the :ref:`Node._unhandled_key_input() <class_Node_method__unhandled_key_input>` callback
    will be called if overridden (and not disabled with
    :ref:`Node.set_process_unhandled_key_input() <class_Node_method_set_process_unhandled_key_input>`).
@@ -148,23 +135,6 @@ methods has to be used:
    :ref:`Node._input() <class_Node_method__input>` and :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>`.
 2. Implement event propagation based on the indivitual requirements.
 
-=======
-4. If no one wanted the event so far, and a :ref:`Camera3D <class_Camera3D>` is assigned
-   to the Viewport with :ref:`Object Picking <class_viewport_property_physics_object_picking>` turned on, a ray to the physics world (in the ray direction from
-   the click) will be cast. (For the root viewport, this can also be enabled in :ref:`Project Settings <class_ProjectSettings_property_physics/common/enable_object_picking>`.) If this ray hits an object, it will call the
-   :ref:`CollisionObject._input_event() <class_CollisionObject3D_method__input_event>` function in the relevant
-   physics object (bodies receive this callback by default, but areas do
-   not. This can be configured through :ref:`Area3D <class_Area3D>` properties).
-5. Finally, if the event was unhandled, it will be passed to the next
-   Viewport in the tree, otherwise it will be ignored.
-
-When sending events to all listening nodes within a scene, the viewport
-will do so in a reverse depth-first order: Starting with the node at
-the bottom of the scene tree, and ending at the root node:
-
-.. image:: img/input_event_scene_flow.png
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 GUI events also travel up the scene tree but, since these events target
 specific Controls, only direct ancestors of the targeted Control node receive the event.
 

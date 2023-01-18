@@ -3,11 +3,7 @@
 Jumping and squashing monsters
 ==============================
 
-<<<<<<< HEAD
 In this part, we'll add the ability to jump and squash the monsters. In the next
-=======
-In this part, we'll add the ability to jump, to squash the monsters. In the next
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 lesson, we'll make the player die when a monster hits them on the ground.
 
 First, we have to change a few settings related to physics interactions. Enter
@@ -55,18 +51,13 @@ Now, we can assign them to our physics nodes.
 Assigning layers and masks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD
 In the *Main* scene, select the ``Ground`` node. In the *Inspector*, expand the
-=======
-In the *Main* scene, select the *Ground* node. In the *Inspector*, expand the
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 *Collision* section. There, you can see the node's layers and masks as a grid of
 buttons.
 
 |image2|
 
 The ground is part of the world, so we want it to be part of the third layer.
-<<<<<<< HEAD
 Click the lit button to toggle **off** the first *Layer* and toggle **on** the third
 one. Then, toggle **off** the *Mask* by clicking on it.
 
@@ -74,16 +65,6 @@ one. Then, toggle **off** the *Mask* by clicking on it.
 
 As mentioned before, the *Mask* property allows a node to listen to interaction
 with other physics objects, but we don't need it to have collisions. ``Ground`` doesn't need to listen to anything; it's just there to prevent
-=======
-Click the lit button to toggle off the first *Layer* and toggle on the third
-one. Then, toggle off the *Mask* by clicking on it.
-
-|image3|
-
-As I mentioned above, the *Mask* property allows a node to listen to interaction
-with other physics objects, but we don't need it to have collisions. The
-*Ground* doesn't need to listen to anything; it's just there to prevent
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 creatures from falling.
 
 Note that you can click the "..." button on the right side of the properties to
@@ -91,30 +72,17 @@ see a list of named checkboxes.
 
 |image4|
 
-<<<<<<< HEAD
 Next up are the ``Player`` and the ``Mob``. Open ``Player.tscn`` by double-clicking
 the file in the *FileSystem* dock.
 
 Select the *Player* node and set its *Collision -> Mask* to both "enemies" and
 "world". You can leave the default *Layer* property as it is, because the first layer is the
 "player" layer.
-=======
-Next up are the *Player* and the *Mob*. Open ``Player.tscn`` by double-clicking
-the file in the *FileSystem* dock.
-
-Select the *Player* node and set its *Collision -> Mask* to both "enemies" and
-"world". You can leave the default *Layer* property as the first layer is the
-"player" one.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 |image5|
 
 Then, open the *Mob* scene by double-clicking on ``Mob.tscn`` and select the
-<<<<<<< HEAD
 ``Mob`` node.
-=======
-*Mob* node.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Set its *Collision -> Layer* to "enemies" and unset its *Collision -> Mask*,
 leaving the mask empty.
@@ -122,11 +90,7 @@ leaving the mask empty.
 |image6|
 
 These settings mean the monsters will move through one another. If you want the
-<<<<<<< HEAD
 monsters to collide with and slide against each other, turn **on** the "enemies"
-=======
-monsters to collide with and slide against each other, turn on the "enemies"
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 mask.
 
 .. note::
@@ -160,12 +124,7 @@ the ``jump_impulse``.
     [Export]
     public int JumpImpulse = 20;
 
-<<<<<<< HEAD
 Inside ``_physics_process()``, add the following code before the ``move_and_slide()`` codeblock.
-=======
-Inside ``_physics_process()``, add the following code before the line where we
-called ``move_and_slide()``.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -175,11 +134,7 @@ called ``move_and_slide()``.
 
        # Jumping.
        if is_on_floor() and Input.is_action_just_pressed("jump"):
-<<<<<<< HEAD
            target_velocity.y = jump_impulse
-=======
-           velocity.y += jump_impulse
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
        #...
 
@@ -192,11 +147,7 @@ called ``move_and_slide()``.
         // Jumping.
         if (IsOnFloor() && Input.IsActionJustPressed("jump"))
         {
-<<<<<<< HEAD
             _velocity.y = JumpImpulse;
-=======
-            _velocity.y += JumpImpulse;
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         }
 
         // ...
@@ -269,11 +220,7 @@ when jumping.
     [Export]
     public int BounceImpulse = 16;
 
-<<<<<<< HEAD
 Then, after the **Jumping** codeblock we added above in ``_physics_process()``, add the following loop. With
-=======
-Then, at the bottom of ``_physics_process()``, add the following loop. With
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 ``move_and_slide()``, Godot makes the body move sometimes multiple times in a
 row to smooth out the character's motion. So we have to loop over all collisions
 that may have happened.
@@ -288,7 +235,6 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
 
    func _physics_process(delta):
        #...
-<<<<<<< HEAD
        # Iterate through all collisions that occurred this frame
         # in C this would be for(int i = 0; i < collisions.Count; i++)
         for index in range(get_slide_collision_count()):
@@ -307,19 +253,6 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
                     # If so, we squash it and bounce.
                     mob.squash()
                     target_velocity.y = bounce_impulse
-=======
-       for index in range(get_slide_count()):
-           # We check every collision that occurred this frame.
-           var collision = get_slide_collision(index)
-           # If we collide with a monster...
-           if collision.collider.is_in_group("mob"):
-               var mob = collision.collider
-               # ...we check that we are hitting it from above.
-               if Vector3.UP.dot(collision.normal) > 0.1:
-                   # If so, we squash it and bounce.
-                   mob.squash()
-                   velocity.y = bounce_impulse
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
  .. code-tab:: csharp
 
@@ -347,36 +280,22 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
 
  That's a lot of new functions. Here's some more information about them.
 
-<<<<<<< HEAD
 The functions ``get_slide_collision_count()`` and ``get_slide_collision()`` both come from
 the :ref:`CharacterBody3D <class_CharacterBody3D>` class and are related to
-=======
-The functions ``get_slide_count()`` and ``get_slide_collision()`` both come from
-the :ref:`CharacterBody3D<class_CharacterBody3D>` class and are related to
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 ``move_and_slide()``.
 
 ``get_slide_collision()`` returns a
 :ref:`KinematicCollision3D<class_KinematicCollision3D>` object that holds
 information about where and how the collision occurred. For example, we use its
-<<<<<<< HEAD
 ``get_collider`` property to check if we collided with a "mob" by calling
 ``is_in_group()`` on it: ``collision.get_collider(index).is_in_group("mob")``.
-=======
-``collider`` property to check if we collided with a "mob" by calling
-``is_in_group()`` on it: ``collision.collider.is_in_group("mob")``.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. note::
 
     The method ``is_in_group()`` is available on every :ref:`Node<class_Node>`.
 
 To check that we are landing on the monster, we use the vector dot product:
-<<<<<<< HEAD
 ``Vector3.UP.dot(collision.get_normal()) > 0.1``. The collision normal is a 3D vector
-=======
-``Vector3.UP.dot(collision.normal) > 0.1``. The collision normal is a 3D vector
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 that is perpendicular to the plane where the collision occurred. The dot product
 allows us to compare it to the up direction.
 
@@ -384,11 +303,7 @@ With dot products, when the result is greater than ``0``, the two vectors are at
 an angle of fewer than 90 degrees. A value higher than ``0.1`` tells us that we
 are roughly above the monster.
 
-<<<<<<< HEAD
 We are calling one undefined function, ``mob.squash()``, so we have to add it to
-=======
-We are calling one undefined function, ``mob.squash()``. We have to add it to
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 the Mob class.
 
 Open the script ``Mob.gd`` by double-clicking on it in the *FileSystem* dock. At
@@ -433,20 +348,11 @@ With that, you should be able to kill monsters by jumping on them. You can press
 However, the player won't die yet. We'll work on that in the next part.
 
 .. |image0| image:: img/06.jump_and_squash/02.project_settings.png
-<<<<<<< HEAD
 .. |image1| image:: img/06.jump_and_squash/03.physics_layers.webp
 .. |image2| image:: img/06.jump_and_squash/04.default_physics_properties.webp
 .. |image3| image:: img/06.jump_and_squash/05.toggle_layer_and_mask.webp
 .. |image4| image:: img/06.jump_and_squash/06.named_checkboxes.png
 .. |image5| image:: img/06.jump_and_squash/07.player_physics_mask.webp
 .. |image6| image:: img/06.jump_and_squash/08.mob_physics_mask.webp
-=======
-.. |image1| image:: img/06.jump_and_squash/03.physics_layers.png
-.. |image2| image:: img/06.jump_and_squash/04.default_physics_properties.png
-.. |image3| image:: img/06.jump_and_squash/05.toggle_layer_and_mask.png
-.. |image4| image:: img/06.jump_and_squash/06.named_checkboxes.png
-.. |image5| image:: img/06.jump_and_squash/07.player_physics_mask.png
-.. |image6| image:: img/06.jump_and_squash/08.mob_physics_mask.png
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. |image7| image:: img/06.jump_and_squash/09.groups_tab.png
 .. |image8| image:: img/06.jump_and_squash/10.group_scene_icon.png

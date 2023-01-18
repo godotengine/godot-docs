@@ -9,19 +9,11 @@ the game.
 We have to keep track of the current score in a variable and display it on
 screen using a minimal interface. We will use a text label to do that.
 
-<<<<<<< HEAD
 In the main scene, add a new child node :ref:`Control <class_Control>` to ``Main`` and name it
 ``UserInterface``. You will automatically be taken to the 2D screen, where you can
 edit your User Interface (UI).
 
 Add a :ref:`Label <class_Label>` node and name it ``ScoreLabel``
-=======
-In the main scene, add a new *Control* node as a child of *Main* and name it
-*UserInterface*. You will automatically be taken to the 2D screen, where you can
-edit your User Interface (UI).
-
-Add a *Label* node and rename it to *ScoreLabel*.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 |image0|
 
@@ -32,45 +24,25 @@ In the *Inspector*, set the *Label*'s *Text* to a placeholder like "Score: 0".
 Also, the text is white by default, like our game's background. We need to
 change its color to see it at runtime.
 
-<<<<<<< HEAD
 Scroll down to *Theme Overrides*, and expand *Colors*
 and enable *Font Color* in order to tint the text to black
 (which contrasts well with the white 3D scene)
 
 |image2|
 
-=======
-Scroll down to *Theme Overrides*, and expand *Colors* and click the black box next to *Font Color* to
-tint the text.
-
-|image2|
-
-Pick a dark tone so it contrasts well with the 3D scene.
-
-|image3|
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 Finally, click and drag on the text in the viewport to move it away from the
 top-left corner.
 
 |image4|
 
-<<<<<<< HEAD
 The ``UserInterface`` node allows us to group our UI in a branch of the scene tree
-=======
-The *UserInterface* node allows us to group our UI in a branch of the scene tree
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 and use a theme resource that will propagate to all its children. We'll use it
 to set our game's font.
 
 Creating a UI theme
 -------------------
 
-<<<<<<< HEAD
 Once again, select the ``UserInterface`` node. In the *Inspector*, create a new
-=======
-Once again, select the *UserInterface* node. In the *Inspector*, create a new
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 theme resource in *Theme -> Theme*.
 
 |image5|
@@ -88,19 +60,11 @@ By default, a theme only has one property, the *Default Font*.
     interfaces, but that is beyond the scope of this series. To learn more about
     creating and editing themes, see :ref:`doc_gui_skinning`.
 
-<<<<<<< HEAD
 Click the *Default Font* property and create a new :ref:`FontVariation <class_FontVariation>`
 
 |image7|
 
 Expand the :ref:`FontVariation <class_FontVariation>` by clicking on it and expand its *Font* section. There,
-=======
-Click the *Default Font* property and create a new *DynamicFont*.
-
-|image7|
-
-Expand the *DynamicFont* by clicking on it and expand its *Font* section. There,
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 you will see an empty *Font Data* field.
 
 |image8|
@@ -108,11 +72,7 @@ you will see an empty *Font Data* field.
 This one expects a font file like the ones you have on your computer. Two common
 font file formats are TrueType Font (TTF) and OpenType Font (OTF).
 
-<<<<<<< HEAD
 In the *FileSystem* dock, expand the ``fonts`` directory and click and drag the
-=======
-In the *FileSystem* dock, Expand the ``fonts`` directory and click and drag the
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 ``Montserrat-Medium.ttf`` file we included in the project onto the *Font Data*.
 The text will reappear in the theme preview.
 
@@ -124,11 +84,7 @@ the text's size.
 Keeping track of the score
 --------------------------
 
-<<<<<<< HEAD
 Let's work on the score next. Attach a new script to the ``ScoreLabel`` and define
-=======
-Let's work on the score next. Attach a new script to the *ScoreLabel* and define
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 the ``score`` variable.
 
 .. tabs::
@@ -140,25 +96,16 @@ the ``score`` variable.
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class ScoreLabel : Label
-=======
-    public class ScoreLabel : Label
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private int _score = 0;
     }
 
 The score should increase by ``1`` every time we squash a monster. We can use
-<<<<<<< HEAD
 their ``squashed`` signal to know when that happens. However, because we instantiate
 monsters from the code, we cannot connect the mob signal to the ``ScoreLabel`` via the editor.
-=======
-their ``squashed`` signal to know when that happens. However, as we instantiate
-monsters from the code, we cannot do the connection in the editor.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Instead, we have to make the connection from the code every time we spawn a
 monster.
@@ -171,28 +118,16 @@ the script editor's left column.
 Alternatively, you can double-click the ``Main.gd`` file in the *FileSystem*
 dock.
 
-<<<<<<< HEAD
 At the bottom of the ``_on_mob_timer_timeout()`` function, add the following
 line:
-=======
-At the bottom of the ``_on_MobTimer_timeout()`` function, add the following
-line.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-<<<<<<< HEAD
    func _on_mob_timer_timeout():
        #...
         # We connect the mob to the score label to update the score upon squashing one.
         mob.squashed.connect($UserInterface/ScoreLabel._on_Mob_squashed.bind())
-=======
-   func _on_MobTimer_timeout():
-       #...
-       # We connect the mob to the score label to update the score upon squashing one.
-       mob.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
  .. code-tab:: csharp
 
@@ -204,11 +139,7 @@ line.
     }
 
 This line means that when the mob emits the ``squashed`` signal, the
-<<<<<<< HEAD
 ``ScoreLabel`` node will receive it and call the function ``_on_Mob_squashed()``.
-=======
-*ScoreLabel* node will receive it and call the function ``_on_Mob_squashed()``.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Head back to the ``ScoreLabel.gd`` script to define the ``_on_Mob_squashed()``
 callback function.
@@ -232,26 +163,19 @@ There, we increment the score and update the displayed text.
 
 The second line uses the value of the ``score`` variable to replace the
 placeholder ``%s``. When using this feature, Godot automatically converts values
-<<<<<<< HEAD
 to string text, which is convenient to output text in labels or using the ``print()``
-=======
-to text, which is convenient to output text in labels or using the ``print()``
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 function.
 
 .. seealso::
 
     You can learn more about string formatting here: :ref:`doc_gdscript_printf`.
 
-<<<<<<< HEAD
 
 .. note::
 
    If you get an error when you squash a mob
    check your capital letters in the signal "_on_Mob_squashed"
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 You can now play the game and squash a few enemies to see the score
 increase.
 
@@ -271,13 +195,8 @@ Retrying the game
 We'll now add the ability to play again after dying. When the player dies, we'll
 display a message on the screen and wait for input.
 
-<<<<<<< HEAD
 Head back to the ``Main.tscn`` scene, select the ``UserInterface`` node, add a
 child node *ColorRect*, and name it ``Retry``. This node fills a
-=======
-Head back to the *Main* scene, select the *UserInterface* node, add a
-*ColorRect* node as a child of it and name it *Retry*. This node fills a
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 rectangle with a uniform color and will serve as an overlay to darken the
 screen.
 
@@ -290,17 +209,12 @@ Open it and apply the *Full Rect* command.
 
 |image13|
 
-<<<<<<< HEAD
 Nothing happens. Well, almost nothing; only the four green pins move to the
-=======
-Nothing happens. Well, almost nothing: only the four green pins move to the
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 corners of the selection box.
 
 |image14|
 
 This is because UI nodes (all the ones with a green icon) work with anchors and
-<<<<<<< HEAD
 margins relative to their parent's bounding box. Here, the ``UserInterface`` node
 has a small size and the ``Retry`` one is limited by it.
 
@@ -316,23 +230,6 @@ Alpha channel, that is to say, its opacity/transparency.
 
 Next, add a :ref:`Label <class_Label>` as a child of ``Retry`` and give it the *Text*
 "Press Enter to retry."
-=======
-margins relative to their parent's bounding box. Here, the *UserInterface* node
-has a small size and the *Retry* one is limited by it.
-
-Select the *UserInterface* and apply *Layout -> Full Rect* to it as well. The
-*Retry* node should now span the whole viewport.
-
-Let's change its color so it darkens the game area. Select *Retry* and in the
-*Inspector*, set its *Color* to something both dark and transparent. To do so,
-in the color picker, drag the *A* slider to the left. It controls the color's
-alpha channel, that is to say, its opacity.
-
-|image15|
-
-Next, add a *Label* as a child of *Retry* and give it the *Text* "Press Enter to
-retry."
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 |image16|
 
@@ -344,11 +241,7 @@ to it.
 Coding the retry option
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-<<<<<<< HEAD
 We can now head to the code to show and hide the ``Retry`` node when the player
-=======
-We can now head to the code to show and hide the *Retry* node when the player
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 dies and plays again.
 
 Open the script ``Main.gd``. First, we want to hide the overlay at the start of
@@ -386,19 +279,11 @@ Then, when the player gets hit, we show the overlay.
         GetNode<Control>("UserInterface/Retry").Show();
     }
 
-<<<<<<< HEAD
 Finally, when the ``Retry`` node is visible, we need to listen to the player's
 input and restart the game if they press enter. To do this, we use the built-in
 ``_unhandled_input()`` callback, which is triggered on any input.
 
 If the player pressed the predefined ``ui_accept`` input action and ``Retry`` is
-=======
-Finally, when the *Retry* node is visible, we need to listen to the player's
-input and restart the game if they press enter. To do this, we use the built-in
-``_unhandled_input()`` callback.
-
-If the player pressed the predefined ``ui_accept`` input action and *Retry* is
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 visible, we reload the current scene.
 
 .. tabs::
@@ -430,11 +315,7 @@ Adding music
 To add music that plays continuously in the background, we're going to use
 another feature in Godot: :ref:`autoloads <doc_singletons_autoload>`.
 
-<<<<<<< HEAD
 To play audio, all you need to do is add an :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` node to your
-=======
-To play audio, all you need to do is add an *AudioStreamPlayer* node to your
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 scene and attach an audio file to it. When you start the scene, it can play
 automatically. However, when you reload the scene, like we do to play again, the
 audio nodes are also reset, and the music starts back from the beginning.
@@ -447,13 +328,8 @@ Create a new scene by going to the *Scene* menu and clicking *New Scene*.
 
 |image18|
 
-<<<<<<< HEAD
 Click the *Other Node* button to create an :ref:`AudioStreamPlayer2D <class_AudioStreamPlayer2D>` and rename it to
 ``MusicPlayer``.
-=======
-Click the *Other Node* button to create an *AudioStreamPlayer* and rename it to
-*MusicPlayer*.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 |image19|
 
@@ -475,13 +351,8 @@ click the *Add* button on the right to register the node.
 
 |image21|
 
-<<<<<<< HEAD
 ``MusicPlayer.tscn`` now loads into any scene you open or play.
 So if you run the game now, the music will play automatically in any scene.
-=======
-If you run the game now, the music will play automatically. And even when you
-lose and retry, it keeps going.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Before we wrap up this lesson, here's a quick look at how it works under the
 hood. When you run the game, your *Scene* dock changes to give you two tabs:
@@ -495,11 +366,7 @@ instantiated mobs at the bottom.
 
 |image23|
 
-<<<<<<< HEAD
 At the top are the autoloaded ``MusicPlayer`` and a *root* node, which is your
-=======
-At the top are the autoloaded *MusicPlayer* and a *root* node, which is your
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 game's viewport.
 
 And that does it for this lesson. In the next part, we'll add an animation to
@@ -510,7 +377,6 @@ Here is the complete ``Main.gd`` script for reference.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-<<<<<<< HEAD
     extends Node
 
     @export var mob_scene: PackedScene
@@ -552,43 +418,6 @@ Here is the complete ``Main.gd`` script for reference.
     using Godot;
 
     public partial class Main : Node
-=======
-   extends Node
-
-   @export var mob_scene: PackedScene
-
-
-   func _ready():
-       randomize()
-       $UserInterface/Retry.hide()
-
-
-   func _unhandled_input(event):
-       if event.is_action_pressed("ui_accept") and $UserInterface/Retry.visible:
-           get_tree().reload_current_scene()
-
-
-   func _on_MobTimer_timeout():
-       var mob = mob_scene.instantiate()
-
-       var mob_spawn_location = get_node("SpawnPath/SpawnLocation")
-       mob_spawn_location.unit_offset = randf()
-
-       var player_position = $Player.transform.origin
-       mob.initialize(mob_spawn_location.translation, player_position)
-
-       add_child(mob)
-       mob.connect("squashed", $UserInterface/ScoreLabel, "_on_Mob_squashed")
-
-
-   func _on_Player_hit():
-       $MobTimer.stop()
-       $UserInterface/Retry.show()
-
- .. code-tab:: csharp
-
-    public class Main : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
     #pragma warning disable 649
         [Export]
@@ -616,11 +445,7 @@ Here is the complete ``Main.gd`` script for reference.
             var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
             mobSpawnLocation.UnitOffset = GD.Randf();
 
-<<<<<<< HEAD
             Vector3 playerPosition = GetNode<Player>("Player").position;
-=======
-            Vector3 playerPosition = GetNode<Player>("Player").Transform.origin;
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
             mob.Initialize(mobSpawnLocation.Translation, playerPosition);
 
             AddChild(mob);
@@ -637,24 +462,14 @@ Here is the complete ``Main.gd`` script for reference.
 
 .. |image0| image:: img/08.score_and_replay/01.label_node.png
 .. |image1| image:: img/08.score_and_replay/02.score_placeholder.png
-<<<<<<< HEAD
 .. |image2| image:: img/08.score_and_replay/02.score_custom_color.webp
-=======
-.. |image2| image:: img/08.score_and_replay/02.score_custom_color.png
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. |image3| image:: img/08.score_and_replay/02.score_color_picker.png
 .. |image4| image:: img/08.score_and_replay/02.score_label_moved.png
 .. |image5| image:: img/08.score_and_replay/03.creating_theme.png
 .. |image6| image:: img/08.score_and_replay/04.theme_preview.png
-<<<<<<< HEAD
 .. |image7| image:: img/08.score_and_replay/05.dynamic_font.webp
 .. |image8| image:: img/08.score_and_replay/06.font_data.webp
 .. |image9| image:: img/08.score_and_replay/07.font_size.webp
-=======
-.. |image7| image:: img/08.score_and_replay/05.dynamic_font.png
-.. |image8| image:: img/08.score_and_replay/06.font_data.png
-.. |image9| image:: img/08.score_and_replay/07.font_size.png
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. |image10| image:: img/08.score_and_replay/08.open_main_script.png
 .. |image11| image:: img/08.score_and_replay/09.score_in_game.png
 .. |image12| image:: img/08.score_and_replay/10.layout_icon.png

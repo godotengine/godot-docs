@@ -68,7 +68,6 @@ A floating-point scalar.
 
 An integer scalar.
 
-<<<<<<< HEAD
 .. _class_VisualShaderNodeCompare_constant_CTYPE_SCALAR_UINT:
 
 .. rst-class:: classref-enumeration-constant
@@ -77,17 +76,11 @@ An integer scalar.
 
 An unsigned integer scalar.
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_VisualShaderNodeCompare_constant_CTYPE_VECTOR_2D:
 
 .. rst-class:: classref-enumeration-constant
 
-<<<<<<< HEAD
 :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_2D** = ``3``
-=======
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_2D** = ``2``
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 A 2D vector type.
 
@@ -95,11 +88,7 @@ A 2D vector type.
 
 .. rst-class:: classref-enumeration-constant
 
-<<<<<<< HEAD
 :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_3D** = ``4``
-=======
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_3D** = ``3``
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 A 3D vector type.
 
@@ -107,11 +96,7 @@ A 3D vector type.
 
 .. rst-class:: classref-enumeration-constant
 
-<<<<<<< HEAD
 :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_4D** = ``5``
-=======
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_VECTOR_4D** = ``4``
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 A 4D vector type.
 
@@ -119,11 +104,7 @@ A 4D vector type.
 
 .. rst-class:: classref-enumeration-constant
 
-<<<<<<< HEAD
 :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_BOOLEAN** = ``6``
-=======
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_BOOLEAN** = ``5``
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 A boolean type.
 
@@ -131,11 +112,7 @@ A boolean type.
 
 .. rst-class:: classref-enumeration-constant
 
-<<<<<<< HEAD
 :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_TRANSFORM** = ``7``
-=======
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_TRANSFORM** = ``6``
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 A transform (``mat4``) type.
 
@@ -143,11 +120,7 @@ A transform (``mat4``) type.
 
 .. rst-class:: classref-enumeration-constant
 
-<<<<<<< HEAD
 :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_MAX** = ``8``
-=======
-:ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` **CTYPE_MAX** = ``7``
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Represents the size of the :ref:`ComparisonType<enum_VisualShaderNodeCompare_ComparisonType>` enum.
 

@@ -50,13 +50,9 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class Body : RigidBody3D
-=======
-    class Body : RigidBody
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private void LookFollow(PhysicsDirectBodyState state, Transform3D currentTransform, Vector3 targetPosition)
         {

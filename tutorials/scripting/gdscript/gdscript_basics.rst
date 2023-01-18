@@ -177,11 +177,8 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | is         | Tests whether a variable extends a given class, or is of a given built-in type.                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
 | in         | Tests whether a value is within a string, list, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing.  |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 | as         | Cast the value to a given type if possible.                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | self       | Refers to current class instance.                                                                                                                 |
@@ -269,21 +266,12 @@ The following is the list of supported operators and their precedence.
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                        | Comparisons                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
-<<<<<<< HEAD
 | ``in``                                                                         | Inclusion checker (when used with         |
 |                                                                                | control flow keywords or in a             |
 |                                                                                | standalone expression).                   |
 |                                                                                |                                           |
 |                                                                                | Content iterator (when used with the      |
 |                                                                                | for_ keyword).                            |
-=======
-| ``in``                                                                         | When used with the ``if`` keyword it      |
-|                                                                                | checks if a value is within a string,     |
-|                                                                                | list, range, dictionary, or node.         |
-|                                                                                | When used with the ``for`` keyword it is  |
-|                                                                                | used to iterate though the contents of a  |
-|                                                                                | string, list, range, dictionary or node.  |
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``not``                                                                        | Boolean NOT                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
@@ -1733,15 +1721,9 @@ the :ref:`Signal.connect() <class_Signal_method_connect>` method::
     ...
     func _on_Character_health_changed(old_value, new_value):
         if old_value > new_value:
-<<<<<<< HEAD
             progress_bar.modulate = Color.RED
         else:
             progress_bar.modulate = Color.GREEN
-=======
-            progress_bar.modulate = Color.red
-        else:
-            progress_bar.modulate = Color.green
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
         # Imagine that `animate` is a user-defined function that animates the
         # bar filling up or emptying itself.

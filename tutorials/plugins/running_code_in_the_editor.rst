@@ -129,16 +129,9 @@ and open a script, and change it to this:
  .. code-tab:: csharp
 
     using Godot;
-<<<<<<< HEAD
 
     [Tool]
     public partial class MySprite : Sprite2D
-=======
-    using System;
-
-    [Tool]
-    public class MySprite : Sprite2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         public override void _Process(float delta)
         {
@@ -211,16 +204,9 @@ Add and export a variable speed to the script. The function set_speed after
  .. code-tab:: csharp
 
     using Godot;
-<<<<<<< HEAD
 
     [Tool]
     public partial class MySprite : Sprite2D
-=======
-    using System;
-
-    [Tool]
-    public class MySprite : Sprite2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private float speed = 1;
 

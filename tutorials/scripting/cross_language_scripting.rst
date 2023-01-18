@@ -16,15 +16,7 @@ The following two scripts will be used as references throughout this page.
 
     extends Node
 
-<<<<<<< HEAD
     var my_field : String = "foo"
-=======
-    var str1 : String = "foo"
-    var str2 : String setget ,get_str2
-
-    func get_str2() -> String:
-        return "foofoo"
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
     func print_node_name(node : Node) -> void:
         print(node.get_name())
@@ -39,7 +31,6 @@ The following two scripts will be used as references throughout this page.
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class MyCSharpNode : Node
@@ -54,31 +45,12 @@ The following two scripts will be used as references throughout this page.
         public void PrintArray(string[] arr)
         {
             foreach (string element in arr)
-=======
-    public class MyCSharpNode : Node
-    {
-        public String str1 = "bar";
-        public String str2 { get { return "barbar"; } }
-
-        public void PrintNodeName(Node node)
-        {
-            GD.Print(node.GetName());
-        }
-
-        public void PrintArray(String[] arr)
-        {
-            foreach (String element in arr)
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
             {
                 GD.Print(element);
             }
         }
 
-<<<<<<< HEAD
         public void PrintNTimes(string msg, int n)
-=======
-        public void PrintNTimes(String msg, int n)
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         {
             for (int i = 0; i < n; ++i)
             {
@@ -100,11 +72,7 @@ Using C# from GDScript doesn't need much work. Once loaded
 (see :ref:`doc_gdscript_classes_as_resources`), the script can be instantiated
 with :ref:`new() <class_CSharpScript_method_new>`.
 
-<<<<<<< HEAD
 .. code-block:: gdscript
-=======
-::
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
     var my_csharp_script = load("res://path_to_cs_file.cs")
     var my_csharp_node = my_csharp_script.new()
@@ -118,11 +86,7 @@ with :ref:`new() <class_CSharpScript_method_new>`.
     ``Invalid call. Nonexistent function `new` in base``.
 
     For example, MyCoolNode.cs should contain a class named MyCoolNode.
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     The C# class needs to derive a Godot class, for example ``Godot.Object``.
     Otherwise, the same error will occur.
 
@@ -152,26 +116,11 @@ Accessing C# fields from GDScript
 Accessing C# fields from GDScript is straightforward, you shouldn't have
 anything to worry about.
 
-<<<<<<< HEAD
 .. code-block:: gdscript
 
     print(my_csharp_node.myField) # bar
     my_csharp_node.myField = "BAR"
     print(my_csharp_node.myField) # BAR
-=======
-::
-
-    print(my_csharp_node.str1) # bar
-    my_csharp_node.str1 = "BAR"
-    print(my_csharp_node.str1) # BAR
-
-    print(my_csharp_node.str2) # barbar
-    # my_csharp_node.str2 = "BARBAR" # This line will hang and crash
-
-Note that it doesn't matter if the field is defined as a property or an
-attribute. However, trying to set a value on a property that does not define
-a setter will result in a crash.
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Accessing GDScript fields from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -182,18 +131,9 @@ and :ref:`Object.Set() <class_Object_method_set>`. The first argument is the nam
 
 .. code-block:: csharp
 
-<<<<<<< HEAD
     GD.Print(myGDScriptNode.Get("my_field")); // foo
     myGDScriptNode.Set("my_field", "FOO");
     GD.Print(myGDScriptNode.Get("my_field")); // FOO
-=======
-    GD.Print(myGDScriptNode.Get("str1")); // foo
-    myGDScriptNode.Set("str1", "FOO");
-    GD.Print(myGDScriptNode.Get("str1")); // FOO
-
-    GD.Print(myGDScriptNode.Get("str2")); // foofoo
-    // myGDScriptNode.Set("str2", "FOOFOO"); // This line won't do anything
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 Keep in mind that when setting a field value you should only use types the
 GDScript side knows about.
@@ -210,11 +150,7 @@ marshalling process will do its best to cast the arguments to match
 function signatures.
 If that's impossible, you'll see the following error: ``Invalid call. Nonexistent function `FunctionName```.
 
-<<<<<<< HEAD
 .. code-block:: gdscript
-=======
-::
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
     my_csharp_node.PrintNodeName(self) # myGDScriptNode
     # my_csharp_node.PrintNodeName() # This line will fail.
@@ -239,18 +175,9 @@ to said method.
 
     myGDScriptNode.Call("print_n_times", "Hello there!", 2); // Hello there! Hello there!
 
-<<<<<<< HEAD
     string[] arr = new string[] { "a", "b", "c" };
     myGDScriptNode.Call("print_array", arr); // a, b, c
     myGDScriptNode.Call("print_array", new int[] { 1, 2, 3 }); // 1, 2, 3
-=======
-    // When dealing with functions taking a single array as arguments, we need to be careful.
-    // If we don't cast it into an object, the engine will treat each element of the array as a separate argument and the call will fail.
-    String[] arr = new String[] { "a", "b", "c" };
-    // myGDScriptNode.Call("print_array", arr); // This line will fail silently and won't error out.
-    myGDScriptNode.Call("print_array", (object)arr); // a, b, c
-    myGDScriptNode.Call("print_array", (object)new int[] { 1, 2, 3 }); // 1, 2, 3
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     // Note how the type of each array entry does not matter as long as it can be handled by the marshaller
 
 .. warning::

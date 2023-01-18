@@ -12,7 +12,6 @@ VisualShaderNodeParticleConeVelocity
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-<<<<<<< HEAD
 A visual shader node that makes particles move in a cone shape.
 
 .. rst-class:: classref-introduction-group
@@ -21,11 +20,6 @@ Description
 -----------
 
 This node can be used in "start" step of particle shader. It defines the initial velocity of the particles, making them move in cone shape starting from the center, with a given spread.
-=======
-.. container:: contribute
-
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

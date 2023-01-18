@@ -100,11 +100,7 @@ Example:
 
     using Godot;
 
-<<<<<<< HEAD
     public partial class MyNode : Node
-=======
-    public class MyNode : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         [Export]
         private NodePath _nodePath;
@@ -470,11 +466,7 @@ GDScript                C#
 ``PackedByteArray``      ``byte[]``
 ``PackedFloat32Array``   ``float[]``
 ``PackedFloat64Array``   ``double[]``
-<<<<<<< HEAD
 ``PackedStringArray``    ``string[]``
-=======
-``PackedStringArray``    ``String[]``
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 ``PackedColorArray``     ``Color[]``
 ``PackedVector2Array``   ``Vector2[]``
 ``PackedVector3Array``   ``Vector3[]``

@@ -64,11 +64,8 @@ Methods
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`add_tab<class_TabBar_method_add_tab>` **(** :ref:`String<class_String>` title="", :ref:`Texture2D<class_Texture2D>` icon=null **)**                                       |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-<<<<<<< HEAD
    | void                                             | :ref:`clear_tabs<class_TabBar_method_clear_tabs>` **(** **)**                                                                                                                   |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
    | void                                             | :ref:`ensure_tab_visible<class_TabBar_method_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                                                         |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                          | :ref:`get_offset_buttons_visible<class_TabBar_method_get_offset_buttons_visible>` **(** **)** |const|                                                                           |
@@ -584,7 +581,6 @@ Adds a new tab.
 
 ----
 
-<<<<<<< HEAD
 .. _class_TabBar_method_clear_tabs:
 
 .. rst-class:: classref-method
@@ -597,8 +593,6 @@ Clears all tabs.
 
 ----
 
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 .. _class_TabBar_method_ensure_tab_visible:
 
 .. rst-class:: classref-method

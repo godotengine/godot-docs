@@ -87,13 +87,9 @@ to instance.
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class Main : Node
-=======
-    public class Main : Node
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
@@ -158,29 +154,7 @@ to instance.
     };
 
     #endif // MAIN_H
-<<<<<<< HEAD
     
-=======
-
-We also add a call to ``randomize()`` here so that the random number
-generator generates different random numbers each time the game is run:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    func _ready():
-        randomize()
-
- .. code-tab:: csharp
-
-    public override void _Ready()
-    {
-        GD.Randomize();
-    }
-
- .. code-tab:: cpp
-
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     // This code goes in `main.cpp`.
     #include "main.hpp"
 
@@ -200,10 +174,6 @@ generator generates different random numbers each time the game is run:
         //_music = get_node<godot::AudioStreamPlayer>("Music");
         //_death_sound = get_node<godot::AudioStreamPlayer>("DeathSound");
         _random = (godot::Ref<godot::RandomNumberGenerator>)godot::RandomNumberGenerator::_new();
-<<<<<<< HEAD
-=======
-        _random->randomize();
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     }
 
 Click the ``Main`` node and you will see the ``Mob Scene`` property in the Inspector
@@ -369,11 +339,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         // obviously Mob and PathFollow2D, since they appear later on the line.
 
         // Create a new instance of the Mob scene.
-<<<<<<< HEAD
         var mob = MobScene.Instantiate<Mob>();
-=======
-        var mob = MobScene.Instance<Mob>();
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
@@ -442,10 +408,6 @@ call to ``_ready()``:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-<<<<<<< HEAD
-=======
-        randomize()
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         new_game()
 
  .. code-tab:: csharp

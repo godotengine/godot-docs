@@ -154,11 +154,7 @@ Code example
 ^^^^^^^^^^^^
 
 In function calls, layers are specified as a bitmask. Where a function enables
-<<<<<<< HEAD
 all layers by default, the layer mask will be given as ``0xffffffff``. Your code
-=======
-all layers by default, the layer mask will be given as ``0x7fffffff``. Your code
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 can use binary, hexadecimal, or decimal notation for layer masks, depending
 on your preference.
 
@@ -267,7 +263,6 @@ For example, here is the code for an "Asteroids" style spaceship:
 
     func _integrate_forces(state):
         if Input.is_action_pressed("ui_up"):
-<<<<<<< HEAD
             state.apply_force(thrust.rotated(rotation))
         else:
             state.apply_force(Vector2())
@@ -283,21 +278,6 @@ For example, here is the code for an "Asteroids" style spaceship:
     using Godot;
 
     public partial class Spaceship : RigidBody2D
-=======
-            applied_force = thrust.rotated(rotation)
-        else:
-            applied_force = Vector2()
-        var rotation_dir = 0
-        if Input.is_action_pressed("ui_right"):
-            rotation_dir += 1
-        if Input.is_action_pressed("ui_left"):
-            rotation_dir -= 1
-        applied_torque = rotation_dir * torque
-
- .. code-tab:: csharp
-
-    class Spaceship : RigidBody2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private Vector2 _thrust = new Vector2(0, -250);
         private float _torque = 20000;
@@ -388,13 +368,9 @@ occurred:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class Body : PhysicsBody2D
-=======
-    class Body : PhysicsBody2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
@@ -424,13 +400,9 @@ Or to bounce off of the colliding object:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class Body : PhysicsBody2D
-=======
-    class Body : PhysicsBody2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
@@ -489,13 +461,9 @@ the ground (including slopes) and jump when standing on the ground:
 
  .. code-tab:: csharp
 
-<<<<<<< HEAD
     using Godot;
 
     public partial class Body : CharacterBody2D
-=======
-    class Body : CharacterBody2D
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
     {
         private float _runSpeed = 350;
         private float _jumpSpeed = -1000;

@@ -38,10 +38,7 @@ Below is all the code we need to make it work. The URL points to an online API m
 
         func _ready():
             $HTTPRequest.connect("request_completed", self, "_on_request_completed")
-<<<<<<< HEAD
             $Button.connect("pressed", self, "_on_Button_pressed")
-=======
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
 
         func _on_Button_pressed():
             $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed")
@@ -52,13 +49,9 @@ Below is all the code we need to make it work. The URL points to an online API m
 
     .. code-tab:: csharp
 
-<<<<<<< HEAD
         using Godot;
         
         public partial class HTTPRequestDemo : CanvasLayer
-=======
-        class HTTPRequestDemo : CanvasLayer
->>>>>>> ecd1fe77e (Update development/compiling/compiling_for_windows.rst)
         {
             public override void _Ready()
             {
