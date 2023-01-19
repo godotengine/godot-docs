@@ -35,10 +35,13 @@ Here is a complete class example based on these guidelines:
 
     signal state_changed(previous, new)
 
-    export var initial_state = NodePath()
-    var is_active = true setget set_is_active
+    @export var initial_state = NodePath()
+    var is_active = true:
+        set = set_is_active
 
-    @onready var _state = get_node(initial_state) setget set_state
+    @onready var _state = get_node(initial_state):
+        set = set_state
+
     @onready var _state_name = _state.name
 
 
@@ -764,12 +767,11 @@ variables, in that order.
 
    const MAX_LIVES = 3
 
-   export(Jobs) var job = Jobs.KNIGHT
-   export var max_health = 50
-   export var attack = 5
+   @export var job: Jobs = Jobs.KNIGHT
+   @export var max_health = 50
+   @export var attack = 5
 
-   var health = max_health setget set_health
-
+   var health = max_health
    var _speed = 300.0
 
    @onready var sword = get_node("Sword")
@@ -778,7 +780,7 @@ variables, in that order.
 
 .. note::
 
-   The GDScript compiler evaluates onready variables right before the ``_ready``
+   The GDScript compiler evaluates @onready variables right before the ``_ready``
    callback. You can use that to cache node dependencies, that is to say, to get
    child nodes in the scene that your class relies on. This is what the example
    above shows.

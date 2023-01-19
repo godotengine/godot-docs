@@ -181,8 +181,8 @@ run the game, it will spin counter-clockwise.
 Editing variables
 -----------------
 
-Add and export a variable speed to the script. The function set_speed after
-``setget`` is executed with your input to change the variable. Modify
+Add and export a variable speed to the script. Use a custom property ``set``
+method to reset the rotation to zero when speed is assigned a value.  Modify
 ``_process()`` to include the rotation speed.
 
 .. tabs::

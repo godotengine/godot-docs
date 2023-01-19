@@ -1556,8 +1556,7 @@ won't generate infinite recursion and saves you from explicitly declaring anothe
 This backing member variable is not created if you don't use it.
 
 .. note::
-
-    Unlike ``setget`` in previous Godot versions, the properties setter and getter are **always** called,
+    Unlike ``setget`` in previous Godot versions, ``set`` and ``get`` methods are **always** called,
     even when accessed inside the same class (with or without prefixing with ``self.``). This makes the behavior
     consistent. If you need direct access to the value, use another variable for direct access and make the property
     code use that name.
