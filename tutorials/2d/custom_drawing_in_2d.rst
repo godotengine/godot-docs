@@ -58,7 +58,7 @@ The ``_draw()`` function is only called once, and then the draw commands
 are cached and remembered, so further calls are unnecessary.
 
 If re-drawing is required because a state or something else changed,
-call :ref:`CanvasItem.update() <class_CanvasItem_method_update>`
+call :ref:`CanvasItem.queue_redraw() <class_CanvasItem_method_queue_redraw>`
 in that same node and a new ``_draw()`` call will happen.
 
 Here is a little more complex example, a texture variable that will be
@@ -75,14 +75,16 @@ redrawn if modified:
         # If the texture variable is modified externally,
         # this callback is called.
         texture = value  # Texture was changed.
-        update()  # Update the node's visual representation.
+        queue_redraw()  # Trigger a redraw of the node.
 
     func _draw():
         draw_texture(texture, Vector2())
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    using Godot;
+
+    public partial class CustomNode2D : Node2D
     {
         private Texture _texture;
         public Texture Texture
@@ -95,7 +97,7 @@ redrawn if modified:
             set
             {
                 _texture = value;
-                Update();
+                QueueRedraw();
             }
         }
 
@@ -106,7 +108,7 @@ redrawn if modified:
     }
 
 In some cases, it may be desired to draw every frame. For this,
-call ``update()`` from the ``_process()`` callback, like this:
+call ``queue_redraw()`` from the ``_process()`` callback, like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -118,11 +120,13 @@ call ``update()`` from the ``_process()`` callback, like this:
         pass
 
     func _process(delta):
-        update()
+        queue_redraw()
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    using Godot;
+
+    public partial class CustomNode2D : Node2D
     {
         public override void _Draw()
         {
@@ -131,7 +135,7 @@ call ``update()`` from the ``_process()`` callback, like this:
 
         public override void _Process(float delta)
         {
-            Update();
+            QueueRedraw();
         }
     }
 
@@ -326,7 +330,9 @@ using ``get_node()``.
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    using Godot;
+
+    public partial class CustomNode2D : Node2D
     {
         private float _rotationAngle = 50;
         private float _angleFrom = 75;
@@ -342,7 +348,7 @@ work correctly, but the angle values will grow bigger and bigger over time until
 they reach the maximum integer value Godot can manage (``2^31 - 1``).
 When this happens, Godot may crash or produce unexpected behavior.
 
-Finally, we must not forget to call the ``update()`` function, which automatically
+Finally, we must not forget to call the ``queue_redraw()`` function, which automatically
 calls ``_draw()``. This way, you can control when you want to refresh the frame.
 
 .. tabs::
@@ -356,7 +362,7 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
         if angle_from > 360 and angle_to > 360:
             angle_from = wrapf(angle_from, 0, 360)
             angle_to = wrapf(angle_to, 0, 360)
-        update()
+        queue_redraw()
 
  .. code-tab:: csharp
 
@@ -371,7 +377,7 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
             _angleFrom = Mathf.Wrap(_angleFrom, 0, 360);
             _angleTo = Mathf.Wrap(_angleTo, 0, 360);
         }
-        Update();
+        QueueRedraw();
     }
 
 
@@ -425,7 +431,7 @@ smaller value, which directly depends on the rendering speed.
         if angle_from > 360 and angle_to > 360:
             angle_from = wrapf(angle_from, 0, 360)
             angle_to = wrapf(angle_to, 0, 360)
-        update()
+        queue_redraw()
 
  .. code-tab:: csharp
 
@@ -440,7 +446,7 @@ smaller value, which directly depends on the rendering speed.
             _angleFrom = Wrap(_angleFrom, 0, 360);
             _angleTo = Wrap(_angleTo, 0, 360);
         }
-        Update();
+        QueueRedraw();
     }
 
 
@@ -450,15 +456,13 @@ Antialiased drawing
 ^^^^^^^^^^^^^^^^^^^
 
 Godot offers method parameters in :ref:`draw_line<class_CanvasItem_method_draw_line>`
-to enable antialiasing, but it doesn't work reliably in all situations
-(for instance, on mobile/web platforms, or when HDR is enabled).
-There is also no ``antialiased`` parameter available in
-:ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+to enable antialiasing, but not all custom drawing methods offer this ``antialiased``
+parameter.
 
-As a workaround, install and use the
-`Antialiased Line2D add-on <https://github.com/godot-extended-libraries/godot-antialiased-line2d>`__
-(which also supports antialiased Polygon2D drawing). Note that this add-on relies
-on high-level nodes, rather than low-level ``_draw()`` functions.
+For custom drawing methods that don't provide an ``antialiased`` parameter,
+you can enable 2D MSAA instead, which affects rendering in the entire viewport.
+This provides high-quality antialiasing, but a higher performance cost and only
+on specific elements. See :ref:`doc_2d_antialiasing` for more information.
 
 Tools
 -----

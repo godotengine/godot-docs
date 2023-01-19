@@ -14,6 +14,8 @@ LightmapperRD
 
 The built-in GPU-based lightmapper for use with :ref:`LightmapGI<class_LightmapGI>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

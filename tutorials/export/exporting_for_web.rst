@@ -61,13 +61,11 @@ game in the default browser for testing.
 You can choose the **Export Type** to select which features will be available:
 
 - *Regular*: is the most compatible across browsers, will not support threads,
-  nor GDNative.
+  nor GDExtension.
 - *Threads*: will require the browser to support `SharedArrayBuffer
   <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
   See `Can I use SharedArrayBuffer <https://caniuse.com/sharedarraybuffer>`__
   for details.
-- *GDNative*: enables GDNative support but makes the binary bigger and slower
-  to load.
 
 If you plan to use :ref:`VRAM compression <doc_import_images>` make sure that
 **Vram Texture Compression** is enabled for the targeted platforms (enabling
@@ -88,7 +86,7 @@ JavaScript APIs, include CSS, or run JavaScript code.
                To customize the generated file, use the **Custom HTML shell**
                option.
 
-.. warning:: **Export types** other then *Regular* are not yet supported by the
+.. warning:: **Export types** other than *Regular* are not yet supported by the
              C# version.
 
 Limitations
@@ -146,15 +144,6 @@ across browsers is still limited.
 .. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
              Browsers also require that the web page is served with specific
              `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
-
-GDNative
-~~~~~~~~
-
-As mentioned :ref:`above <doc_javascript_export_options>` GDNative is only
-available if the appropriate **Export Type** is set.
-
-The export will also copy the required GDNative ``.wasm`` files to the output
-folder (and must be uploaded to your server along with your game).
 
 Full screen and mouse capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

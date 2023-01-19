@@ -12,21 +12,40 @@ JavaClassWrapper
 
 **Inherits:** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`JavaClass<class_JavaClass>` | :ref:`wrap<class_JavaClassWrapper_method_wrap>` **(** :ref:`String<class_String>` name **)** |
-+-----------------------------------+----------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+----------------------------------------------------------------------------------------------+
+   | :ref:`JavaClass<class_JavaClass>` | :ref:`wrap<class_JavaClassWrapper_method_wrap>` **(** :ref:`String<class_String>` name **)** |
+   +-----------------------------------+----------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_JavaClassWrapper_method_wrap:
 
-- :ref:`JavaClass<class_JavaClass>` **wrap** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+:ref:`JavaClass<class_JavaClass>` **wrap** **(** :ref:`String<class_String>` name **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

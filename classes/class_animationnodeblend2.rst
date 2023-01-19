@@ -14,10 +14,14 @@ AnimationNodeBlend2
 
 Blends two animations linearly inside of an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations linearly based on an amount value in the ``[0.0, 1.0]`` range.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

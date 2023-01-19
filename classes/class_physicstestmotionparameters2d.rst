@@ -14,146 +14,164 @@ PhysicsTestMotionParameters2D
 
 Parameters to be sent to a 2D body motion test.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This class contains parameters used in :ref:`PhysicsServer2D.body_test_motion<class_PhysicsServer2D_method_body_test_motion>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`collide_separation_ray<class_PhysicsTestMotionParameters2D_property_collide_separation_ray>` | ``false``                         |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`RID[]<class_RID>`               | :ref:`exclude_bodies<class_PhysicsTestMotionParameters2D_property_exclude_bodies>`                 | ``[]``                            |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`exclude_objects<class_PhysicsTestMotionParameters2D_property_exclude_objects>`               | ``[]``                            |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`from<class_PhysicsTestMotionParameters2D_property_from>`                                     | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`             | :ref:`margin<class_PhysicsTestMotionParameters2D_property_margin>`                                 | ``0.08``                          |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Vector2<class_Vector2>`         | :ref:`motion<class_PhysicsTestMotionParameters2D_property_motion>`                                 | ``Vector2(0, 0)``                 |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`recovery_as_collision<class_PhysicsTestMotionParameters2D_property_recovery_as_collision>`   | ``false``                         |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`collide_separation_ray<class_PhysicsTestMotionParameters2D_property_collide_separation_ray>` | ``false``                         |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`RID[]<class_RID>`               | :ref:`exclude_bodies<class_PhysicsTestMotionParameters2D_property_exclude_bodies>`                 | ``[]``                            |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int[]<class_int>`               | :ref:`exclude_objects<class_PhysicsTestMotionParameters2D_property_exclude_objects>`               | ``[]``                            |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`from<class_PhysicsTestMotionParameters2D_property_from>`                                     | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`             | :ref:`margin<class_PhysicsTestMotionParameters2D_property_margin>`                                 | ``0.08``                          |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Vector2<class_Vector2>`         | :ref:`motion<class_PhysicsTestMotionParameters2D_property_motion>`                                 | ``Vector2(0, 0)``                 |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`recovery_as_collision<class_PhysicsTestMotionParameters2D_property_recovery_as_collision>`   | ``false``                         |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PhysicsTestMotionParameters2D_property_collide_separation_ray:
 
-- :ref:`bool<class_bool>` **collide_separation_ray**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------------+
-| *Default* | ``false``                                 |
-+-----------+-------------------------------------------+
-| *Setter*  | set_collide_separation_ray_enabled(value) |
-+-----------+-------------------------------------------+
-| *Getter*  | is_collide_separation_ray_enabled()       |
-+-----------+-------------------------------------------+
+:ref:`bool<class_bool>` **collide_separation_ray** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collide_separation_ray_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_collide_separation_ray_enabled** **(** **)**
 
 If set to ``true``, shapes of type :ref:`PhysicsServer2D.SHAPE_SEPARATION_RAY<class_PhysicsServer2D_constant_SHAPE_SEPARATION_RAY>` are used to detect collisions and can stop the motion. Can be useful when snapping to the ground.
 
 If set to ``false``, shapes of type :ref:`PhysicsServer2D.SHAPE_SEPARATION_RAY<class_PhysicsServer2D_constant_SHAPE_SEPARATION_RAY>` are only used for separation when overlapping with other bodies. That's the main use for separation ray shapes.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PhysicsTestMotionParameters2D_property_exclude_bodies:
 
-- :ref:`RID[]<class_RID>` **exclude_bodies**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``[]``                    |
-+-----------+---------------------------+
-| *Setter*  | set_exclude_bodies(value) |
-+-----------+---------------------------+
-| *Getter*  | get_exclude_bodies()      |
-+-----------+---------------------------+
+:ref:`RID[]<class_RID>` **exclude_bodies** = ``[]``
 
-Optional array of body :ref:`RID<class_RID>` to exclude from collision.
+.. rst-class:: classref-property-setget
+
+- void **set_exclude_bodies** **(** :ref:`RID[]<class_RID>` value **)**
+- :ref:`RID[]<class_RID>` **get_exclude_bodies** **(** **)**
+
+Optional array of body :ref:`RID<class_RID>` to exclude from collision. Use :ref:`CollisionObject2D.get_rid<class_CollisionObject2D_method_get_rid>` to get the :ref:`RID<class_RID>` associated with a :ref:`CollisionObject2D<class_CollisionObject2D>`-derived node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsTestMotionParameters2D_property_exclude_objects:
 
-- :ref:`Array<class_Array>` **exclude_objects**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``[]``                     |
-+-----------+----------------------------+
-| *Setter*  | set_exclude_objects(value) |
-+-----------+----------------------------+
-| *Getter*  | get_exclude_objects()      |
-+-----------+----------------------------+
+:ref:`int[]<class_int>` **exclude_objects** = ``[]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_exclude_objects** **(** :ref:`int[]<class_int>` value **)**
+- :ref:`int[]<class_int>` **get_exclude_objects** **(** **)**
 
 Optional array of object unique instance ID to exclude from collision. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsTestMotionParameters2D_property_from:
 
-- :ref:`Transform2D<class_Transform2D>` **from**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
-+-----------+-----------------------------------+
-| *Setter*  | set_from(value)                   |
-+-----------+-----------------------------------+
-| *Getter*  | get_from()                        |
-+-----------+-----------------------------------+
+:ref:`Transform2D<class_Transform2D>` **from** = ``Transform2D(1, 0, 0, 1, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_from** **(** :ref:`Transform2D<class_Transform2D>` value **)**
+- :ref:`Transform2D<class_Transform2D>` **get_from** **(** **)**
 
 Transform in global space where the motion should start. Usually set to :ref:`Node2D.global_transform<class_Node2D_property_global_transform>` for the current body's transform.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsTestMotionParameters2D_property_margin:
 
-- :ref:`float<class_float>` **margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.08``          |
-+-----------+-------------------+
-| *Setter*  | set_margin(value) |
-+-----------+-------------------+
-| *Getter*  | get_margin()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **margin** = ``0.08``
+
+.. rst-class:: classref-property-setget
+
+- void **set_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_margin** **(** **)**
 
 Increases the size of the shapes involved in the collision detection.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsTestMotionParameters2D_property_motion:
 
-- :ref:`Vector2<class_Vector2>` **motion**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
-| *Setter*  | set_motion(value) |
-+-----------+-------------------+
-| *Getter*  | get_motion()      |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **motion** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_motion** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_motion** **(** **)**
 
 Motion vector to define the length and direction of the motion to test.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsTestMotionParameters2D_property_recovery_as_collision:
 
-- :ref:`bool<class_bool>` **recovery_as_collision**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------------+
-| *Default* | ``false``                                |
-+-----------+------------------------------------------+
-| *Setter*  | set_recovery_as_collision_enabled(value) |
-+-----------+------------------------------------------+
-| *Getter*  | is_recovery_as_collision_enabled()       |
-+-----------+------------------------------------------+
+:ref:`bool<class_bool>` **recovery_as_collision** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_recovery_as_collision_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_recovery_as_collision_enabled** **(** **)**
 
 If set to ``true``, any depenetration from the recovery phase is reported as a collision; this is used e.g. by :ref:`CharacterBody2D<class_CharacterBody2D>` for improving floor detection during floor snapping.
 
-If set to ``false``, only collisions resulting from the motion are reported, which is generally the desired behaviour.
+If set to ``false``, only collisions resulting from the motion are reported, which is generally the desired behavior.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

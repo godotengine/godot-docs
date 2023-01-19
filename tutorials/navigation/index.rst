@@ -12,6 +12,7 @@ Navigation
    navigation_using_navigationregions
    navigation_using_navigationmeshes
    navigation_using_navigationpaths
+   navigation_using_navigationpathqueryobjects
    navigation_using_navigationagents
    navigation_using_navigationobstacles
    navigation_using_navigationlinks

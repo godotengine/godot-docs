@@ -76,7 +76,7 @@ released.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     onready var _animated_sprite = $AnimatedSprite2D
 
@@ -88,7 +88,9 @@ released.
 
  .. code-tab:: csharp
 
-    public class Character : KinematicBody2D
+    using Godot;
+
+    public partial class Character : CharacterBody2D
     {
         private AnimatedSprite2D _animatedSprite;
 
@@ -215,7 +217,7 @@ released.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     onready var _animation_player = $AnimationPlayer
 
@@ -227,7 +229,9 @@ released.
 
  .. code-tab:: csharp
 
-    public class Character : KinematicBody2D
+    using Godot;
+
+    public partial class Character : CharacterBody2D
     {
         private AnimationPlayer _animationPlayer;
 

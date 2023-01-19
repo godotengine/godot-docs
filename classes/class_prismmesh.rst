@@ -14,104 +14,120 @@ PrismMesh
 
 Class representing a prism-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Class representing a prism-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`     | :ref:`left_to_right<class_PrismMesh_property_left_to_right>`       | ``0.5``              |
-+-------------------------------+--------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_PrismMesh_property_size>`                         | ``Vector3(1, 1, 1)`` |
-+-------------------------------+--------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PrismMesh_property_subdivide_depth>`   | ``0``                |
-+-------------------------------+--------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_height<class_PrismMesh_property_subdivide_height>` | ``0``                |
-+-------------------------------+--------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`         | :ref:`subdivide_width<class_PrismMesh_property_subdivide_width>`   | ``0``                |
-+-------------------------------+--------------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`     | :ref:`left_to_right<class_PrismMesh_property_left_to_right>`       | ``0.5``              |
+   +-------------------------------+--------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`size<class_PrismMesh_property_size>`                         | ``Vector3(1, 1, 1)`` |
+   +-------------------------------+--------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`         | :ref:`subdivide_depth<class_PrismMesh_property_subdivide_depth>`   | ``0``                |
+   +-------------------------------+--------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`         | :ref:`subdivide_height<class_PrismMesh_property_subdivide_height>` | ``0``                |
+   +-------------------------------+--------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`         | :ref:`subdivide_width<class_PrismMesh_property_subdivide_width>`   | ``0``                |
+   +-------------------------------+--------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PrismMesh_property_left_to_right:
 
-- :ref:`float<class_float>` **left_to_right**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.5``                  |
-+-----------+--------------------------+
-| *Setter*  | set_left_to_right(value) |
-+-----------+--------------------------+
-| *Getter*  | get_left_to_right()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **left_to_right** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_left_to_right** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_left_to_right** **(** **)**
 
 Displacement of the upper edge along the X axis. 0.0 positions edge straight above the bottom-left edge.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PrismMesh_property_size:
 
-- :ref:`Vector3<class_Vector3>` **size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(1, 1, 1)`` |
-+-----------+----------------------+
-| *Setter*  | set_size(value)      |
-+-----------+----------------------+
-| *Getter*  | get_size()           |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
 
 Size of the prism.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PrismMesh_property_subdivide_depth:
 
-- :ref:`int<class_int>` **subdivide_depth**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_subdivide_depth(value) |
-+-----------+----------------------------+
-| *Getter*  | get_subdivide_depth()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **subdivide_depth** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_subdivide_depth** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_subdivide_depth** **(** **)**
 
 Number of added edge loops along the Z axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PrismMesh_property_subdivide_height:
 
-- :ref:`int<class_int>` **subdivide_height**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0``                       |
-+-----------+-----------------------------+
-| *Setter*  | set_subdivide_height(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_subdivide_height()      |
-+-----------+-----------------------------+
+:ref:`int<class_int>` **subdivide_height** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_subdivide_height** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_subdivide_height** **(** **)**
 
 Number of added edge loops along the Y axis.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PrismMesh_property_subdivide_width:
 
-- :ref:`int<class_int>` **subdivide_width**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_subdivide_width(value) |
-+-----------+----------------------------+
-| *Getter*  | get_subdivide_width()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **subdivide_width** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_subdivide_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_subdivide_width** **(** **)**
 
 Number of added edge loops along the X axis.
 

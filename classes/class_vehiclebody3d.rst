@@ -14,6 +14,8 @@ VehicleBody3D
 
 Physics body that simulates the behavior of a car.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,54 +25,67 @@ This node implements all the physics logic needed to simulate a car. It is based
 
 \ **Note:** This class has known issues and isn't designed to provide realistic 3D vehicle physics. If you want advanced vehicle physics, you will probably have to write your own physics integration using another :ref:`PhysicsBody3D<class_PhysicsBody3D>` class.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`brake<class_VehicleBody3D_property_brake>`               | ``0.0``                                                                  |
-+---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody3D_property_engine_force>` | ``0.0``                                                                  |
-+---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | mass                                                           | ``40.0`` (overrides :ref:`RigidBody3D<class_RigidBody3D_property_mass>`) |
-+---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`steering<class_VehicleBody3D_property_steering>`         | ``0.0``                                                                  |
-+---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`brake<class_VehicleBody3D_property_brake>`               | ``0.0``                                                                  |
+   +---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`engine_force<class_VehicleBody3D_property_engine_force>` | ``0.0``                                                                  |
+   +---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | mass                                                           | ``40.0`` (overrides :ref:`RigidBody3D<class_RigidBody3D_property_mass>`) |
+   +---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`steering<class_VehicleBody3D_property_steering>`         | ``0.0``                                                                  |
+   +---------------------------+----------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VehicleBody3D_property_brake:
 
-- :ref:`float<class_float>` **brake**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0.0``          |
-+-----------+------------------+
-| *Setter*  | set_brake(value) |
-+-----------+------------------+
-| *Getter*  | get_brake()      |
-+-----------+------------------+
+:ref:`float<class_float>` **brake** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_brake** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_brake** **(** **)**
 
 Slows down the vehicle by applying a braking force. The vehicle is only slowed down if the wheels are in contact with a surface. The force you need to apply to adequately slow down your vehicle depends on the :ref:`RigidBody3D.mass<class_RigidBody3D_property_mass>` of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 30 range for hard braking.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VehicleBody3D_property_engine_force:
 
-- :ref:`float<class_float>` **engine_force**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_engine_force(value) |
-+-----------+-------------------------+
-| *Getter*  | get_engine_force()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **engine_force** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_engine_force** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_engine_force** **(** **)**
 
 Accelerates the vehicle by applying an engine force. The vehicle is only sped up if the wheels that have :ref:`VehicleWheel3D.use_as_traction<class_VehicleWheel3D_property_use_as_traction>` set to ``true`` and are in contact with a surface. The :ref:`RigidBody3D.mass<class_RigidBody3D_property_mass>` of the vehicle has an effect on the acceleration of the vehicle. For a vehicle with a mass set to 1000, try a value in the 25 - 50 range for acceleration.
 
@@ -78,19 +93,20 @@ Accelerates the vehicle by applying an engine force. The vehicle is only sped up
 
 A negative value will result in the vehicle reversing.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_VehicleBody3D_property_steering:
 
-- :ref:`float<class_float>` **steering**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_steering(value) |
-+-----------+---------------------+
-| *Getter*  | get_steering()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **steering** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_steering** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_steering** **(** **)**
 
 The steering angle for the vehicle, in radians. Setting this to a non-zero value will result in the vehicle turning when it's moving. Wheels that have :ref:`VehicleWheel3D.use_as_steering<class_VehicleWheel3D_property_use_as_steering>` set to ``true`` will automatically be rotated.
 

@@ -65,7 +65,9 @@ Add a script to the ``Mob`` like this:
 
  .. code-tab:: csharp
 
-    public class Mob : RigidBody2D
+    using Godot;
+
+    public partial class Mob : RigidBody2D
     {
         // Don't forget to rebuild the project.
     }
@@ -132,7 +134,7 @@ and randomly choose one of the three animation types:
         godot::Ref<godot::RandomNumberGenerator> random = godot::RandomNumberGenerator::_new();
         random->randomize();
         _animated_sprite = get_node<godot::AnimatedSprite2D>("AnimatedSprite2D");
-        _animated_sprite->_set_playing(true);
+        _animated_sprite->set_playing(true);
         godot::PoolStringArray mob_types = _animated_sprite->get_sprite_frames()->get_animation_names();
         _animated_sprite->set_animation(mob_types[random->randi() % mob_types.size()]);
     }

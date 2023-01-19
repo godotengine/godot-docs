@@ -14,44 +14,67 @@ EditorFileSystemImportFormatSupportQuery
 
 Used to query and configure import format support.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This class is used to query and configure a certain import format. It is used in conjunction with asset format import plugins.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_file_extensions<class_EditorFileSystemImportFormatSupportQuery_method__get_file_extensions>` **(** **)** |virtual| |const| |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`_is_active<class_EditorFileSystemImportFormatSupportQuery_method__is_active>` **(** **)** |virtual| |const|                     |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`_query<class_EditorFileSystemImportFormatSupportQuery_method__query>` **(** **)** |virtual| |const|                             |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_file_extensions<class_EditorFileSystemImportFormatSupportQuery_method__get_file_extensions>` **(** **)** |virtual| |const| |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_is_active<class_EditorFileSystemImportFormatSupportQuery_method__is_active>` **(** **)** |virtual| |const|                     |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_query<class_EditorFileSystemImportFormatSupportQuery_method__query>` **(** **)** |virtual| |const|                             |
+   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorFileSystemImportFormatSupportQuery_method__get_file_extensions:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **_get_file_extensions** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_file_extensions** **(** **)** |virtual| |const|
 
 Return the file extensions supported.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorFileSystemImportFormatSupportQuery_method__is_active:
 
-- :ref:`bool<class_bool>` **_is_active** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_is_active** **(** **)** |virtual| |const|
 
 Return whether this importer is active.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorFileSystemImportFormatSupportQuery_method__query:
 
-- :ref:`bool<class_bool>` **_query** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_query** **(** **)** |virtual| |const|
 
 Query support. Return false if import must not continue.
 

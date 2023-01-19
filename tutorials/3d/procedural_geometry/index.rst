@@ -14,7 +14,7 @@ it is best to understand each one and how it can be useful in a given situation.
    arraymesh
    meshdatatool
    surfacetool
-   immediategeometry
+   immediatemesh
 
 .. note::
 
@@ -106,19 +106,19 @@ The SurfaceTool allows the creation of Meshes using an OpenGL 1.x immediate mode
 
 For more information about the SurfaceTool, please see the :ref:`SurfaceTool tutorial <doc_surfacetool>`.
 
-ImmediateGeometry
-^^^^^^^^^^^^^^^^^
+ImmediateMesh
+^^^^^^^^^^^^^
 
-ImmediateGeometry is a node that uses an immediate mode style interface (like SurfaceTool) to draw objects. The
-difference between ImmediateGeometry and the SurfaceTool is that ImmediateGeometry is a node itself that can be
+ImmediateMesh is a node that uses an immediate mode style interface (like SurfaceTool) to draw objects. The
+difference between ImmediateMesh and the SurfaceTool is that ImmediateMesh is a node itself that can be
 added to the scene tree and is drawn directly from the code, while The SurfaceTool generates a Mesh that needs to be added to
 a MeshInstance3D to be seen.
 
-ImmediateGeometry is useful for prototyping because of its straightforward API, but it is slow because the geometry
+ImmediateMesh is useful for prototyping because of its straightforward API, but it is slow because the geometry
 is rebuilt every frame. It is most useful for adding simple geometry for visual debugging (e.g. by drawing lines to
 visualize physics raycasts etc.).
 
-For more information about ImmediateGeometry, please see the :ref:`ImmediateGeometry tutorial <doc_immediategeometry>`.
+For more information about ImmediateMesh, please see the :ref:`ImmediateMesh tutorial <doc_immediatemesh>`.
 
 Which one should I use?
 -----------------------
@@ -130,7 +130,7 @@ Both SurfaceTool and ArrayMesh are excellent for generating static geometry (mes
 Using an ArrayMesh is slightly faster than using a SurfaceTool, but the API is a little more challenging.
 Additionally, SurfaceTool has a few quality of life methods such as ``generate_normals()`` and ``index()``.
 
-ImmediateGeometry regenerates the mesh every frame, so it is much slower than ArrayMesh or SurfaceTool. However, if you
+ImmediateMesh regenerates the mesh every frame, so it is much slower than ArrayMesh or SurfaceTool. However, if you
 need the geometry to change every frame anyway, it provides a much easier interface that may even be a little faster than generating
 an ArrayMesh every frame.
 

@@ -14,6 +14,8 @@ VisualShaderNodeGlobalExpression
 
 A custom global visual shader graph expression written in Godot Shading Language.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

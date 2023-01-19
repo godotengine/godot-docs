@@ -12,111 +12,142 @@ AudioStreamOggVorbis
 
 **Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                             | :ref:`bar_beats<class_AudioStreamOggVorbis_property_bar_beats>`             | ``4``     |
-+---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                             | :ref:`beat_count<class_AudioStreamOggVorbis_property_beat_count>`           | ``0``     |
-+---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                         | :ref:`bpm<class_AudioStreamOggVorbis_property_bpm>`                         | ``0.0``   |
-+---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                           | :ref:`loop<class_AudioStreamOggVorbis_property_loop>`                       | ``false`` |
-+---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                         | :ref:`loop_offset<class_AudioStreamOggVorbis_property_loop_offset>`         | ``0.0``   |
-+---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`OggPacketSequence<class_OggPacketSequence>` | :ref:`packet_sequence<class_AudioStreamOggVorbis_property_packet_sequence>` |           |
-+---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                             | :ref:`bar_beats<class_AudioStreamOggVorbis_property_bar_beats>`             | ``4``     |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                             | :ref:`beat_count<class_AudioStreamOggVorbis_property_beat_count>`           | ``0``     |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                         | :ref:`bpm<class_AudioStreamOggVorbis_property_bpm>`                         | ``0.0``   |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`loop<class_AudioStreamOggVorbis_property_loop>`                       | ``false`` |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                         | :ref:`loop_offset<class_AudioStreamOggVorbis_property_loop_offset>`         | ``0.0``   |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`OggPacketSequence<class_OggPacketSequence>` | :ref:`packet_sequence<class_AudioStreamOggVorbis_property_packet_sequence>` |           |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioStreamOggVorbis_property_bar_beats:
 
-- :ref:`int<class_int>` **bar_beats**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``4``                |
-+-----------+----------------------+
-| *Setter*  | set_bar_beats(value) |
-+-----------+----------------------+
-| *Getter*  | get_bar_beats()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **bar_beats** = ``4``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bar_beats** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_bar_beats** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamOggVorbis_property_beat_count:
 
-- :ref:`int<class_int>` **beat_count**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_beat_count(value) |
-+-----------+-----------------------+
-| *Getter*  | get_beat_count()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **beat_count** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_beat_count** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_beat_count** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamOggVorbis_property_bpm:
 
-- :ref:`float<class_float>` **bpm**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``0.0``        |
-+-----------+----------------+
-| *Setter*  | set_bpm(value) |
-+-----------+----------------+
-| *Getter*  | get_bpm()      |
-+-----------+----------------+
+:ref:`float<class_float>` **bpm** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bpm** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_bpm** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamOggVorbis_property_loop:
 
-- :ref:`bool<class_bool>` **loop**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_loop(value) |
-+-----------+-----------------+
-| *Getter*  | has_loop()      |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **loop** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **has_loop** **(** **)**
 
 If ``true``, the stream will automatically loop when it reaches the end.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamOggVorbis_property_loop_offset:
 
-- :ref:`float<class_float>` **loop_offset**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.0``                |
-+-----------+------------------------+
-| *Setter*  | set_loop_offset(value) |
-+-----------+------------------------+
-| *Getter*  | get_loop_offset()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **loop_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_loop_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_loop_offset** **(** **)**
 
 Time in seconds at which the stream starts after being looped.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamOggVorbis_property_packet_sequence:
 
-- :ref:`OggPacketSequence<class_OggPacketSequence>` **packet_sequence**
+.. rst-class:: classref-property
 
-+----------+----------------------------+
-| *Setter* | set_packet_sequence(value) |
-+----------+----------------------------+
-| *Getter* | get_packet_sequence()      |
-+----------+----------------------------+
+:ref:`OggPacketSequence<class_OggPacketSequence>` **packet_sequence**
+
+.. rst-class:: classref-property-setget
+
+- void **set_packet_sequence** **(** :ref:`OggPacketSequence<class_OggPacketSequence>` value **)**
+- :ref:`OggPacketSequence<class_OggPacketSequence>` **get_packet_sequence** **(** **)**
 
 Contains the raw Ogg data for this stream.
 

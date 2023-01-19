@@ -144,7 +144,7 @@ Nodes
 Root Type
 ^^^^^^^^^
 
-By default, the type of the root node in imported scenes is "Spatial", but this can be modified.
+By default, the type of the root node in imported scenes is "Node3D", but this can be modified.
 
 Root Name
 ^^^^^^^^^
@@ -434,8 +434,8 @@ will create a triangle mesh collision shape, which is a slow, but accurate
 option for collision detection. This option is usually what you want for level
 geometry (but see also ``-colonly`` below).
 
-The option ``-convcol`` will create a :ref:`class_convexpolygonshape` instead of
-a :ref:`class_concavepolygonshape`. Unlike triangle meshes which can be concave,
+The option ``-convcol`` will create a :ref:`class_ConvexPolygonShape3D` instead of
+a :ref:`class_ConcavePolygonShape3D`. Unlike triangle meshes which can be concave,
 a convex shape can only accurately represent a shape that doesn't have any
 concave angles (a pyramid is convex, but a hollow box is concave). Due to this,
 convex collision shapes are generally not suited for level geometry. When
@@ -448,22 +448,22 @@ enough for collisions. This can create physics glitches and slow down the engine
 unnecessarily.
 
 To solve this, the ``-colonly`` modifier exists. It will remove the mesh upon
-importing and will create a :ref:`class_staticbody` collision instead.
+importing and will create a :ref:`class_StaticBody3D` collision instead.
 This helps the visual mesh and actual collision to be separated.
 
-The option ``-convcolonly`` works in a similar way, but will create a :ref:`class_convexpolygonshape` instead.
+The option ``-convcolonly`` works in a similar way, but will create a :ref:`class_ConvexPolygonShape3D` instead.
 
 With Collada files the option ``-colonly`` can also be used with Blender's empty objects.
-On import, it will create a :ref:`class_staticbody` with
+On import, it will create a :ref:`class_StaticBody3D` with
 a collision node as a child. The collision node will have one of a number of predefined shapes,
 depending on Blender's empty draw type:
 
 .. image:: img/3dimp_BlenderEmptyDrawTypes.png
 
--  Single arrow will create a :ref:`class_rayshape`.
--  Cube will create a :ref:`class_boxshape`.
--  Image will create a :ref:`class_worldmarginshape`.
--  Sphere (and the others not listed) will create a :ref:`class_sphereshape`.
+-  Single arrow will create a :ref:`class_SeparationRayShape3D`.
+-  Cube will create a :ref:`class_BoxShape3D`.
+-  Image will create a :ref:`class_WorldBoundaryShape3D`.
+-  Sphere (and the others not listed) will create a :ref:`class_SphereShape3D`.
 
 When possible, **try to use a few primitive collision shapes** instead of triangle
 mesh or convex shapes. Primitive shapes often have the best performance and
@@ -493,18 +493,18 @@ Create a VehicleBody (-vehicle)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A mesh node with the ``-vehicle`` suffix will be imported as a child to a
-:ref:`class_VehicleBody` node.
+:ref:`class_VehicleBody3D` node.
 
 Create a VehicleWheel (-wheel)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A mesh node with the ``-wheel`` suffix will be imported as a child to a
-:ref:`class_VehicleWheel` node.
+:ref:`class_VehicleWheel3D` node.
 
 Rigid Body (-rigid)
 ~~~~~~~~~~~~~~~~~~~
 
-A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody`.
+A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody3D`.
 
 Animation loop (-loop, -cycle)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

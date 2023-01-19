@@ -12,6 +12,8 @@ int
 
 Integer built-in type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -19,7 +21,7 @@ Signed 64-bit integer type.
 
 It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854775808, 9223372036854775807]``. Exceeding those bounds will wrap around.
 
-\ ``int`` is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
+\ **int** is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
 
 
 .. tabs::
@@ -54,151 +56,209 @@ It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854
 
 
 
+.. rst-class:: classref-reftable-group
+
 Constructors
 ------------
 
-+-----------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** **)**                                |
-+-----------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`int<class_int>` from **)**     |
-+-----------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`bool<class_bool>` from **)**   |
-+-----------------------+----------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`float<class_float>` from **)** |
-+-----------------------+----------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** **)**                                  |
+   +-----------------------+------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`int<class_int>` from **)**       |
+   +-----------------------+------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`String<class_String>` from **)** |
+   +-----------------------+------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`bool<class_bool>` from **)**     |
+   +-----------------------+------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`int<class_int_constructor_int>` **(** :ref:`float<class_float>` from **)**   |
+   +-----------------------+------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Operators
 ---------
 
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator !=<class_int_operator_neq_bool>` **(** :ref:`float<class_float>` right **)**                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator !=<class_int_operator_neq_bool>` **(** :ref:`int<class_int>` right **)**                    |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator %<class_int_operator_mod_int>` **(** :ref:`int<class_int>` right **)**                      |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator &<class_int_operator_bwand_int>` **(** :ref:`int<class_int>` right **)**                    |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`           | :ref:`operator *<class_int_operator_mul_Color>` **(** :ref:`Color<class_Color>` right **)**                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Quaternion<class_Quaternion>` | :ref:`operator *<class_int_operator_mul_Quaternion>` **(** :ref:`Quaternion<class_Quaternion>` right **)** |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`operator *<class_int_operator_mul_Vector2>` **(** :ref:`Vector2<class_Vector2>` right **)**          |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>`     | :ref:`operator *<class_int_operator_mul_Vector2i>` **(** :ref:`Vector2i<class_Vector2i>` right **)**       |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`       | :ref:`operator *<class_int_operator_mul_Vector3>` **(** :ref:`Vector3<class_Vector3>` right **)**          |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3i<class_Vector3i>`     | :ref:`operator *<class_int_operator_mul_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)**       |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>`       | :ref:`operator *<class_int_operator_mul_Vector4>` **(** :ref:`Vector4<class_Vector4>` right **)**          |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>`     | :ref:`operator *<class_int_operator_mul_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**       |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`operator *<class_int_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator *<class_int_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                      |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`operator **<class_int_operator_pow_float>` **(** :ref:`float<class_float>` right **)**               |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator **<class_int_operator_pow_int>` **(** :ref:`int<class_int>` right **)**                     |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`         | :ref:`operator +<class_int_operator_sum_String>` **(** :ref:`String<class_String>` right **)**             |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`operator +<class_int_operator_sum_float>` **(** :ref:`float<class_float>` right **)**                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator +<class_int_operator_sum_int>` **(** :ref:`int<class_int>` right **)**                      |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`operator -<class_int_operator_dif_float>` **(** :ref:`float<class_float>` right **)**                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator -<class_int_operator_dif_int>` **(** :ref:`int<class_int>` right **)**                      |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`           | :ref:`operator /<class_int_operator_div_float>` **(** :ref:`float<class_float>` right **)**                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator /<class_int_operator_div_int>` **(** :ref:`int<class_int>` right **)**                      |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator \<<class_int_operator_lt_bool>` **(** :ref:`float<class_float>` right **)**                 |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator \<<class_int_operator_lt_bool>` **(** :ref:`int<class_int>` right **)**                     |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator \<\<<class_int_operator_bwsl_int>` **(** :ref:`int<class_int>` right **)**                  |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator \<=<class_int_operator_lte_bool>` **(** :ref:`float<class_float>` right **)**               |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator \<=<class_int_operator_lte_bool>` **(** :ref:`int<class_int>` right **)**                   |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator ==<class_int_operator_eq_bool>` **(** :ref:`float<class_float>` right **)**                 |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator ==<class_int_operator_eq_bool>` **(** :ref:`int<class_int>` right **)**                     |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator ><class_int_operator_gt_bool>` **(** :ref:`float<class_float>` right **)**                  |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator ><class_int_operator_gt_bool>` **(** :ref:`int<class_int>` right **)**                      |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator >=<class_int_operator_gte_bool>` **(** :ref:`float<class_float>` right **)**                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`operator >=<class_int_operator_gte_bool>` **(** :ref:`int<class_int>` right **)**                    |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator >><class_int_operator_bwsr_int>` **(** :ref:`int<class_int>` right **)**                    |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator ^<class_int_operator_bwxor_int>` **(** :ref:`int<class_int>` right **)**                    |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator unary+<class_int_operator_unplus_int>` **(** **)**                                          |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator unary-<class_int_operator_unminus_int>` **(** **)**                                         |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator |<class_int_operator_bwor_int>` **(** :ref:`int<class_int>` right **)**                     |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`operator ~<class_int_operator_bwnot_int>` **(** **)**                                                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator !=<class_int_operator_neq_float>` **(** :ref:`float<class_float>` right **)**               |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator !=<class_int_operator_neq_int>` **(** :ref:`int<class_int>` right **)**                     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator %<class_int_operator_mod_int>` **(** :ref:`int<class_int>` right **)**                      |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator &<class_int_operator_bwand_int>` **(** :ref:`int<class_int>` right **)**                    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`           | :ref:`operator *<class_int_operator_mul_Color>` **(** :ref:`Color<class_Color>` right **)**                |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quaternion<class_Quaternion>` | :ref:`operator *<class_int_operator_mul_Quaternion>` **(** :ref:`Quaternion<class_Quaternion>` right **)** |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`       | :ref:`operator *<class_int_operator_mul_Vector2>` **(** :ref:`Vector2<class_Vector2>` right **)**          |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>`     | :ref:`operator *<class_int_operator_mul_Vector2i>` **(** :ref:`Vector2i<class_Vector2i>` right **)**       |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`       | :ref:`operator *<class_int_operator_mul_Vector3>` **(** :ref:`Vector3<class_Vector3>` right **)**          |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3i<class_Vector3i>`     | :ref:`operator *<class_int_operator_mul_Vector3i>` **(** :ref:`Vector3i<class_Vector3i>` right **)**       |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>`       | :ref:`operator *<class_int_operator_mul_Vector4>` **(** :ref:`Vector4<class_Vector4>` right **)**          |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>`     | :ref:`operator *<class_int_operator_mul_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**       |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`           | :ref:`operator *<class_int_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator *<class_int_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                      |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`           | :ref:`operator **<class_int_operator_pow_float>` **(** :ref:`float<class_float>` right **)**               |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator **<class_int_operator_pow_int>` **(** :ref:`int<class_int>` right **)**                     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`           | :ref:`operator +<class_int_operator_sum_float>` **(** :ref:`float<class_float>` right **)**                |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator +<class_int_operator_sum_int>` **(** :ref:`int<class_int>` right **)**                      |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`           | :ref:`operator -<class_int_operator_dif_float>` **(** :ref:`float<class_float>` right **)**                |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator -<class_int_operator_dif_int>` **(** :ref:`int<class_int>` right **)**                      |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`           | :ref:`operator /<class_int_operator_div_float>` **(** :ref:`float<class_float>` right **)**                |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator /<class_int_operator_div_int>` **(** :ref:`int<class_int>` right **)**                      |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator \<<class_int_operator_lt_float>` **(** :ref:`float<class_float>` right **)**                |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator \<<class_int_operator_lt_int>` **(** :ref:`int<class_int>` right **)**                      |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator \<\<<class_int_operator_bwsl_int>` **(** :ref:`int<class_int>` right **)**                  |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator \<=<class_int_operator_lte_float>` **(** :ref:`float<class_float>` right **)**              |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator \<=<class_int_operator_lte_int>` **(** :ref:`int<class_int>` right **)**                    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator ==<class_int_operator_eq_float>` **(** :ref:`float<class_float>` right **)**                |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator ==<class_int_operator_eq_int>` **(** :ref:`int<class_int>` right **)**                      |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator ><class_int_operator_gt_float>` **(** :ref:`float<class_float>` right **)**                 |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator ><class_int_operator_gt_int>` **(** :ref:`int<class_int>` right **)**                       |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator >=<class_int_operator_gte_float>` **(** :ref:`float<class_float>` right **)**               |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`operator >=<class_int_operator_gte_int>` **(** :ref:`int<class_int>` right **)**                     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator >><class_int_operator_bwsr_int>` **(** :ref:`int<class_int>` right **)**                    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator ^<class_int_operator_bwxor_int>` **(** :ref:`int<class_int>` right **)**                    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator unary+<class_int_operator_unplus>` **(** **)**                                              |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator unary-<class_int_operator_unminus>` **(** **)**                                             |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator |<class_int_operator_bwor_int>` **(** :ref:`int<class_int>` right **)**                     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`operator ~<class_int_operator_bwnot>` **(** **)**                                                    |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constructor Descriptions
 ------------------------
 
 .. _class_int_constructor_int:
 
-- :ref:`int<class_int>` **int** **(** **)**
+.. rst-class:: classref-constructor
 
-Constructs a default-initialized ``int`` set to ``0``.
+:ref:`int<class_int>` **int** **(** **)**
 
-----
+Constructs a default-initialized **int** set to ``0``.
 
-- :ref:`int<class_int>` **int** **(** :ref:`int<class_int>` from **)**
-
-Constructs an ``int`` as a copy of the given ``int``.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`int<class_int>` **int** **(** :ref:`bool<class_bool>` from **)**
+.. rst-class:: classref-constructor
+
+:ref:`int<class_int>` **int** **(** :ref:`int<class_int>` from **)**
+
+Constructs an **int** as a copy of the given **int**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`int<class_int>` **int** **(** :ref:`String<class_String>` from **)**
+
+Converts a :ref:`String<class_String>` to an **int**, following the same rules as :ref:`String.to_int<class_String_method_to_int>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`int<class_int>` **int** **(** :ref:`bool<class_bool>` from **)**
 
 Cast a :ref:`bool<class_bool>` value to an integer value, ``int(true)`` will be equals to 1 and ``int(false)`` will be equals to 0.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)**
+.. rst-class:: classref-constructor
+
+:ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)**
 
 Cast a float value to an integer value, this method simply removes the number fractions (i.e. rounds ``from`` towards zero), so for example ``int(2.7)`` will be equals to 2, ``int(0.1)`` will be equals to 0 and ``int(-2.7)`` will be equals to -2. This operation is also called truncation.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Operator Descriptions
 ---------------------
 
-.. _class_int_operator_neq_bool:
+.. _class_int_operator_neq_float:
 
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`float<class_float>` right **)**
+.. rst-class:: classref-operator
 
-Returns ``true`` if operands are different from each other.
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`float<class_float>` right **)**
+
+Returns ``true`` if this **int** is not equivalent to the given :ref:`float<class_float>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_neq_int:
 
-Returns ``true`` if operands are different from each other.
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`int<class_int>` right **)**
+
+Returns ``true`` if the integers are not equal.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_int_operator_mod_int:
 
-- :ref:`int<class_int>` **operator %** **(** :ref:`int<class_int>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator %** **(** :ref:`int<class_int>` right **)**
 
 Returns the remainder after dividing two integers. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
 
@@ -208,11 +268,15 @@ Returns the remainder after dividing two integers. This operation uses truncated
     print(12 % 4) # 0
     print(-5 % 3) # -2
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_int_operator_bwand_int:
 
-- :ref:`int<class_int>` **operator &** **(** :ref:`int<class_int>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator &** **(** :ref:`int<class_int>` right **)**
 
 Returns the result of bitwise ``AND`` operation for two integers.
 
@@ -230,127 +294,235 @@ It's useful to retrieve binary flags from a variable.
     if flags & 1:
         do_stuff()
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_int_operator_mul_Color:
 
-- :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
+.. rst-class:: classref-operator
 
-Multiplies each component of the :ref:`Color<class_Color>` by the given ``int``.
+:ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
 
-----
+Multiplies each component of the :ref:`Color<class_Color>` by the given **int**.
 
-- :ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)**
-
-Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the given ``int``. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)**
+.. _class_int_operator_mul_Quaternion:
 
-Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given ``int``.
+.. rst-class:: classref-operator
+
+:ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)**
+
+Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the given **int**. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_int_operator_mul_Vector2:
+
+.. rst-class:: classref-operator
+
+:ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)**
+
+Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given **int**.
 
 ::
 
     print(2 * Vector2(1, 1)) # Vector2(2, 2)
 
-----
-
-- :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)**
-
-Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given ``int``.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
+.. _class_int_operator_mul_Vector2i:
 
-Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given ``int``.
+.. rst-class:: classref-operator
 
-----
+:ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
-- :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
+Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given **int**.
 
-Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given ``int``.
-
-----
-
-- :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`Vector4<class_Vector4>` right **)**
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. _class_int_operator_mul_Vector3:
+
+.. rst-class:: classref-operator
+
+:ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
+
+Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given **int**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)**
+.. _class_int_operator_mul_Vector3i:
 
-Multiplies an ``int`` and a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+.. rst-class:: classref-operator
+
+:ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
+
+Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given **int**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`int<class_int>` **operator *** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_mul_Vector4:
 
-Multiplies two ``int``\ s.
+.. rst-class:: classref-operator
+
+:ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`Vector4<class_Vector4>` right **)**
+
+Multiplies each component of the :ref:`Vector4<class_Vector4>` by the given **int**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_int_operator_mul_Vector4i:
+
+.. rst-class:: classref-operator
+
+:ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Multiplies each component of the :ref:`Vector4i<class_Vector4i>` by the given **int**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_int_operator_mul_float:
+
+.. rst-class:: classref-operator
+
+:ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)**
+
+Multiplies an **int** and a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_int_operator_mul_int:
+
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+Multiplies two **int**\ s.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_int_operator_pow_float:
 
-- :ref:`float<class_float>` **operator **** **(** :ref:`float<class_float>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`float<class_float>` **operator **** **(** :ref:`float<class_float>` right **)**
+
+Raises an **int** to a power of a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+
+::
+
+    print(8**0.25) # 1.68179283050743
+
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`int<class_int>` **operator **** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_pow_int:
+
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator **** **(** :ref:`int<class_int>` right **)**
+
+Raises an **int** to a power of a **int**.
+
+::
+
+    print(5**5) # 3125
+
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_int_operator_sum_String:
+.. _class_int_operator_sum_float:
 
-- :ref:`String<class_String>` **operator +** **(** :ref:`String<class_String>` right **)**
+.. rst-class:: classref-operator
 
-Adds Unicode character with code ``int`` to the :ref:`String<class_String>`.
+:ref:`float<class_float>` **operator +** **(** :ref:`float<class_float>` right **)**
 
-----
+Adds an **int** and a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
 
-- :ref:`float<class_float>` **operator +** **(** :ref:`float<class_float>` right **)**
-
-Adds an ``int`` and a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`int<class_int>` **operator +** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_sum_int:
+
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator +** **(** :ref:`int<class_int>` right **)**
 
 Adds two integers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_int_operator_dif_float:
 
-- :ref:`float<class_float>` **operator -** **(** :ref:`float<class_float>` right **)**
+.. rst-class:: classref-operator
 
-Subtracts a :ref:`float<class_float>` from an ``int``. The result is a :ref:`float<class_float>`.
+:ref:`float<class_float>` **operator -** **(** :ref:`float<class_float>` right **)**
+
+Subtracts a :ref:`float<class_float>` from an **int**. The result is a :ref:`float<class_float>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`int<class_int>` **operator -** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_dif_int:
+
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator -** **(** :ref:`int<class_int>` right **)**
 
 Subtracts two integers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_int_operator_div_float:
 
-- :ref:`float<class_float>` **operator /** **(** :ref:`float<class_float>` right **)**
+.. rst-class:: classref-operator
 
-Divides an ``int`` by a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+:ref:`float<class_float>` **operator /** **(** :ref:`float<class_float>` right **)**
+
+Divides an **int** by a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
 
 ::
 
     print(10 / 3.0) # 3.333...
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`int<class_int>` **operator /** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_div_int:
+
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator /** **(** :ref:`int<class_int>` right **)**
 
 Divides two integers. The decimal part of the result is discarded (truncated).
 
@@ -359,25 +531,39 @@ Divides two integers. The decimal part of the result is discarded (truncated).
     print(10 / 2) # 5
     print(10 / 3) # 3
 
-----
-
-.. _class_int_operator_lt_bool:
-
-- :ref:`bool<class_bool>` **operator <** **(** :ref:`float<class_float>` right **)**
-
-Returns ``true`` if this ``int`` is less than the given :ref:`float<class_float>`.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`bool<class_bool>` **operator <** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_lt_float:
 
-Returns ``true`` the left integer is less than the right one.
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator <** **(** :ref:`float<class_float>` right **)**
+
+Returns ``true`` if this **int** is less than the given :ref:`float<class_float>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_int_operator_lt_int:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator <** **(** :ref:`int<class_int>` right **)**
+
+Returns ``true`` if the left integer is less than the right one.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_int_operator_bwsl_int:
 
-- :ref:`int<class_int>` **operator <<** **(** :ref:`int<class_int>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator <<** **(** :ref:`int<class_int>` right **)**
 
 Performs bitwise shift left operation on the integer. Effectively the same as multiplying by a power of 2.
 
@@ -386,67 +572,111 @@ Performs bitwise shift left operation on the integer. Effectively the same as mu
     print(10 << 1) # 20
     print(10 << 4) # 160
 
-----
-
-.. _class_int_operator_lte_bool:
-
-- :ref:`bool<class_bool>` **operator <=** **(** :ref:`float<class_float>` right **)**
-
-Returns ``true`` if this ``int`` is less than or equal to the given :ref:`float<class_float>`.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`bool<class_bool>` **operator <=** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_lte_float:
 
-Returns ``true`` the left integer is less than or equal to the right one.
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator <=** **(** :ref:`float<class_float>` right **)**
+
+Returns ``true`` if this **int** is less than or equal to the given :ref:`float<class_float>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_int_operator_eq_bool:
+.. _class_int_operator_lte_int:
 
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`float<class_float>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator <=** **(** :ref:`int<class_int>` right **)**
+
+Returns ``true`` if the left integer is less than or equal to the right one.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_int_operator_eq_float:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`float<class_float>` right **)**
 
 Returns ``true`` if the integer is equal to the given :ref:`float<class_float>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_eq_int:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`int<class_int>` right **)**
 
 Returns ``true`` if both integers are equal.
 
-----
-
-.. _class_int_operator_gt_bool:
-
-- :ref:`bool<class_bool>` **operator >** **(** :ref:`float<class_float>` right **)**
-
-Returns ``true`` if this ``int`` is greater than the given :ref:`float<class_float>`.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`bool<class_bool>` **operator >** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_gt_float:
 
-Returns ``true`` the left integer is greater than the right one.
+.. rst-class:: classref-operator
 
-----
+:ref:`bool<class_bool>` **operator >** **(** :ref:`float<class_float>` right **)**
 
-.. _class_int_operator_gte_bool:
+Returns ``true`` if this **int** is greater than the given :ref:`float<class_float>`.
 
-- :ref:`bool<class_bool>` **operator >=** **(** :ref:`float<class_float>` right **)**
-
-Returns ``true`` if this ``int`` is greater than or equal to the given :ref:`float<class_float>`.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`bool<class_bool>` **operator >=** **(** :ref:`int<class_int>` right **)**
+.. _class_int_operator_gt_int:
 
-Returns ``true`` the left integer is greater than or equal to the right one.
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator >** **(** :ref:`int<class_int>` right **)**
+
+Returns ``true`` if the left integer is greater than the right one.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_int_operator_gte_float:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator >=** **(** :ref:`float<class_float>` right **)**
+
+Returns ``true`` if this **int** is greater than or equal to the given :ref:`float<class_float>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_int_operator_gte_int:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator >=** **(** :ref:`int<class_int>` right **)**
+
+Returns ``true`` if the left integer is greater than or equal to the right one.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_int_operator_bwsr_int:
 
-- :ref:`int<class_int>` **operator >>** **(** :ref:`int<class_int>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator >>** **(** :ref:`int<class_int>` right **)**
 
 Performs bitwise shift right operation on the integer. Effectively the same as dividing by a power of 2.
 
@@ -455,11 +685,15 @@ Performs bitwise shift right operation on the integer. Effectively the same as d
     print(10 >> 1) # 5
     print(10 >> 2) # 2
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_int_operator_bwxor_int:
 
-- :ref:`int<class_int>` **operator ^** **(** :ref:`int<class_int>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator ^** **(** :ref:`int<class_int>` right **)**
 
 Returns the result of bitwise ``XOR`` operation for two integers.
 
@@ -468,27 +702,39 @@ Returns the result of bitwise ``XOR`` operation for two integers.
     print(5 ^ 1) # 4
     print(4 ^ 7) # 3
 
+.. rst-class:: classref-item-separator
+
 ----
 
-.. _class_int_operator_unplus_int:
+.. _class_int_operator_unplus:
 
-- :ref:`int<class_int>` **operator unary+** **(** **)**
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator unary+** **(** **)**
 
 Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-.. _class_int_operator_unminus_int:
+.. _class_int_operator_unminus:
 
-- :ref:`int<class_int>` **operator unary-** **(** **)**
+.. rst-class:: classref-operator
 
-Returns the negated value of the ``int``. If positive, turns the number negative. If negative, turns the number positive. If zero, does nothing.
+:ref:`int<class_int>` **operator unary-** **(** **)**
+
+Returns the negated value of the **int**. If positive, turns the number negative. If negative, turns the number positive. If zero, does nothing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_int_operator_bwor_int:
 
-- :ref:`int<class_int>` **operator |** **(** :ref:`int<class_int>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator |** **(** :ref:`int<class_int>` right **)**
 
 Returns the result of bitwise ``OR`` operation for two integers.
 
@@ -506,11 +752,15 @@ It's useful to store binary flags in a variable.
     flags |= 1
     flags |= 4
 
+.. rst-class:: classref-item-separator
+
 ----
 
-.. _class_int_operator_bwnot_int:
+.. _class_int_operator_bwnot:
 
-- :ref:`int<class_int>` **operator ~** **(** **)**
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator ~** **(** **)**
 
 Returns the result of bitwise ``NOT`` operation for the integer. It's effectively equal to ``-int + 1``.
 

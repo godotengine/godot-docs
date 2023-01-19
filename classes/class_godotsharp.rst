@@ -14,6 +14,8 @@ GodotSharp
 
 Bridge between Godot and the Mono runtime (Mono-enabled builds only).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,19 +23,32 @@ This class is a bridge between Godot and the Mono runtime. It exposes several lo
 
 See also :ref:`CSharpScript<class_CSharpScript>`.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` **(** **)** |
-+-------------------------+-------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_runtime_initialized<class_GodotSharp_method_is_runtime_initialized>` **(** **)** |
+   +-------------------------+-------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GodotSharp_method_is_runtime_initialized:
 
-- :ref:`bool<class_bool>` **is_runtime_initialized** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_runtime_initialized** **(** **)**
 
 Returns ``true`` if the .NET runtime is initialized, ``false`` otherwise.
 

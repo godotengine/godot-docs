@@ -14,99 +14,160 @@ VisualShaderNodeDerivativeFunc
 
 Calculates a derivative within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This node is only available in ``Fragment`` and ``Light`` visual shaders.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` | :ref:`function<class_VisualShaderNodeDerivativeFunc_property_function>` | ``0`` |
-+---------------------------------------------------------------+-------------------------------------------------------------------------+-------+
-| :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>`     | :ref:`op_type<class_VisualShaderNodeDerivativeFunc_property_op_type>`   | ``0`` |
-+---------------------------------------------------------------+-------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+-------+
+   | :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` | :ref:`function<class_VisualShaderNodeDerivativeFunc_property_function>` | ``0`` |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+-------+
+   | :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>`     | :ref:`op_type<class_VisualShaderNodeDerivativeFunc_property_op_type>`   | ``0`` |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeDerivativeFunc_OpType:
 
-.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_SCALAR:
-
-.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_VECTOR_2D:
-
-.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_VECTOR_3D:
-
-.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_VECTOR_4D:
-
-.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **OpType**:
 
-- **OP_TYPE_SCALAR** = **0** --- A floating-point scalar.
+.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_SCALAR:
 
-- **OP_TYPE_VECTOR_2D** = **1** --- A 2D vector type.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_TYPE_VECTOR_3D** = **2** --- A 3D vector type.
+:ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **OP_TYPE_SCALAR** = ``0``
 
-- **OP_TYPE_VECTOR_4D** = **3** --- A 4D vector type.
+A floating-point scalar.
 
-- **OP_TYPE_MAX** = **4** --- Represents the size of the :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` enum.
+.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_VECTOR_2D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **OP_TYPE_VECTOR_2D** = ``1``
+
+A 2D vector type.
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_VECTOR_3D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **OP_TYPE_VECTOR_3D** = ``2``
+
+A 3D vector type.
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_VECTOR_4D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **OP_TYPE_VECTOR_4D** = ``3``
+
+A 4D vector type.
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_OP_TYPE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **OP_TYPE_MAX** = ``4``
+
+Represents the size of the :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_VisualShaderNodeDerivativeFunc_Function:
 
-.. _class_VisualShaderNodeDerivativeFunc_constant_FUNC_SUM:
-
-.. _class_VisualShaderNodeDerivativeFunc_constant_FUNC_X:
-
-.. _class_VisualShaderNodeDerivativeFunc_constant_FUNC_Y:
-
-.. _class_VisualShaderNodeDerivativeFunc_constant_FUNC_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Function**:
 
-- **FUNC_SUM** = **0** --- Sum of absolute derivative in ``x`` and ``y``.
+.. _class_VisualShaderNodeDerivativeFunc_constant_FUNC_SUM:
 
-- **FUNC_X** = **1** --- Derivative in ``x`` using local differencing.
+.. rst-class:: classref-enumeration-constant
 
-- **FUNC_Y** = **2** --- Derivative in ``y`` using local differencing.
+:ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **FUNC_SUM** = ``0``
 
-- **FUNC_MAX** = **3** --- Represents the size of the :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` enum.
+Sum of absolute derivative in ``x`` and ``y``.
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_FUNC_X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **FUNC_X** = ``1``
+
+Derivative in ``x`` using local differencing.
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_FUNC_Y:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **FUNC_Y** = ``2``
+
+Derivative in ``y`` using local differencing.
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_FUNC_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **FUNC_MAX** = ``3``
+
+Represents the size of the :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeDerivativeFunc_property_function:
 
-- :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **function**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_function(value) |
-+-----------+---------------------+
-| *Getter*  | get_function()      |
-+-----------+---------------------+
+:ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **function** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` value **)**
+- :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` **get_function** **(** **)**
 
 A derivative function type. See :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` for options.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeDerivativeFunc_property_op_type:
 
-- :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **op_type**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_op_type(value) |
-+-----------+--------------------+
-| *Getter*  | get_op_type()      |
-+-----------+--------------------+
+:ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **op_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_op_type** **(** :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` value **)**
+- :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **get_op_type** **(** **)**
 
 A type of operands and returned value. See :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` for options.
 

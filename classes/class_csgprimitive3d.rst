@@ -16,6 +16,8 @@ CSGPrimitive3D
 
 Base class for CSG primitives.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,32 +25,44 @@ Parent class for various CSG primitives. It contains code and functionality that
 
 \ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance3D<class_MeshInstance3D>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+-------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`flip_faces<class_CSGPrimitive3D_property_flip_faces>` | ``false`` |
-+-------------------------+-------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`flip_faces<class_CSGPrimitive3D_property_flip_faces>` | ``false`` |
+   +-------------------------+-------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CSGPrimitive3D_property_flip_faces:
 
-- :ref:`bool<class_bool>` **flip_faces**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``false``             |
-+-----------+-----------------------+
-| *Setter*  | set_flip_faces(value) |
-+-----------+-----------------------+
-| *Getter*  | get_flip_faces()      |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **flip_faces** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_faces** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_flip_faces** **(** **)**
 
 If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn.
 

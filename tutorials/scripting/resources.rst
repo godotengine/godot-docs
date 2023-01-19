@@ -80,7 +80,7 @@ There are two ways to load resources from code. First, you can use the ``load()`
 
     func _ready():
         # Godot loads the Resource when it reads this very line.
-        var imported_resource = load("res://robi.png") 
+        var imported_resource = load("res://robi.png")
         $sprite.texture = imported_resource
 
  .. code-tab:: csharp
@@ -132,7 +132,7 @@ To get an instance of the scene, you have to use the
 
     public void OnShoot()
     {
-        Node bullet = _bulletScene.Instance();
+        Node bullet = _bulletScene.Instantiate();
         AddChild(bullet);
     }
 
@@ -164,8 +164,8 @@ memory management from the Reference type.
 This comes with many distinct advantages over alternative data
 structures, such as JSON, CSV, or custom TXT files. Users can only import these
 assets as a :ref:`Dictionary <class_Dictionary>` (JSON) or as a
-:ref:`File <class_File>` to parse. What sets Resources apart is their
-inheritance of :ref:`Object <class_Object>`, :ref:`Reference <class_Reference>`,
+:ref:`FileAccess <class_FileAccess>` to parse. What sets Resources apart is their
+inheritance of :ref:`Object <class_Object>`, :ref:`RefCounted <class_RefCounted>`,
 and :ref:`Resource <class_Resource>` features:
 
 - They can define constants, so constants from other data fields or objects are not needed.
@@ -209,8 +209,9 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
 
 .. tabs::
   .. code-tab:: gdscript GDScript
+
     extends Resource
-    
+
     @export var health : int
     @export var sub_resource : Resource
     @export var strings : PackedStringArray
@@ -222,15 +223,15 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
         health = p_health
         sub_resource = p_sub_resource
         strings = p_strings
-        
+
   .. code-tab:: csharp
 
         // BotStats.cs
-        using System;
         using Godot;
 
-        namespace ExampleProject {
-            public class BotStats : Resource
+        namespace ExampleProject
+        {
+            public partial class BotStats : Resource
             {
                 [Export]
                 public int Health { get; set; }
@@ -239,24 +240,29 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
                 public Resource SubResource { get; set; }
 
                 [Export]
-                public String[] Strings { get; set; }
+                public string[] Strings { get; set; }
 
-                // Make sure that every parameter has a default value.
-                // Otherwise, there will be problems with creating and editing
-                // your resource via the inspector.
-                public BotStats(int health = 0, Resource subResource = null, String[] strings = null)
+                // Make sure you provide a parameterless constructor.
+                // In C#, a parameterless constructor is different from a
+                // constructor with all default values.
+                // Without a parameterless constructor, Godot will have problems
+                // creating and editing your resource via the inspector.
+                public BotStats() : this(0, null, null) {}
+
+                public BotStats(int health, Resource subResource, string[] strings)
                 {
                     Health = health;
                     SubResource = subResource;
-                    Strings = strings ?? new String[0];
+                    Strings = strings ?? System.Array.Empty<string>();
                 }
             }
         }
-      
+
 Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, and add the following script to it:
-       
+
 .. tabs::
   .. code-tab:: gdscript GDScript
+
     extends CharacterBody3D
 
     @export var stats : Resource
@@ -265,29 +271,31 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
         # Uses an implicit, duck-typed interface for any 'health'-compatible resources.
         if stats:
             stats.health = 10
-            print(stats.health) 
+            print(stats.health)
             # Prints "10"
-  
+
   .. code-tab:: csharp
+
         // Bot.cs
-        using System;
         using Godot;
 
-        namespace ExampleProject {
-            public class Bot : CharacterBody3D
+        namespace ExampleProject
+        {
+            public partial class Bot : CharacterBody3D
             {
                 [Export]
                 public Resource Stats;
 
                 public override void _Ready()
                 {
-                    if (Stats != null && Stats is BotStats botStats) {
+                    if (Stats is BotStats botStats)
+                    {
                         GD.Print(botStats.Health); // Prints '10'.
                     }
                 }
             }
         }
-        
+
 Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we named ``bot``, and drag&drop the ``bot_stats.tres`` resource onto the Inspector. It should print 10! Obviously, this setup can be used for more advanced features than this, but as long you really understand *how* it all worked, you should figure out everything else related to Resources.
 
 .. note::
@@ -319,12 +327,11 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
             print(data)
       .. code-tab:: csharp
 
-        using System;
         using Godot;
 
-        public class BotStatsTable : Resource
+        public partial class BotStatsTable : Resource
         {
-            private Godot.Dictionary<String, BotStats> _stats = new Godot.Dictionary<String, BotStats>();
+            private Godot.Dictionary<string, BotStats> _stats = new Godot.Dictionary<string, BotStats>();
 
             public BotStatsTable()
             {
@@ -372,12 +379,11 @@ Now, select the :ref:`CharacterBody3D <class_CharacterBody3D>` node which we nam
             ResourceSaver.save(my_res, "res://my_res.tres")
       .. code-tab:: csharp
 
-        using System;
         using Godot;
 
-        public class MyNode : Node
+        public partial class MyNode : Node
         {
-            public class MyResource : Resource
+            public partial class MyResource : Resource
             {
                 [Export]
                 public int Value { get; set; } = 5;

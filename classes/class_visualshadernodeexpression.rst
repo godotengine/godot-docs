@@ -16,6 +16,8 @@ VisualShaderNodeExpression
 
 A custom visual shader graph expression written in Godot Shading Language.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,27 +25,37 @@ Custom Godot Shading Language expression, with a custom number of input and outp
 
 The provided code is directly injected into the graph's matching shader function (``vertex``, ``fragment``, or ``light``), so it cannot be used to declare functions, varyings, uniforms, or global constants. See :ref:`VisualShaderNodeGlobalExpression<class_VisualShaderNodeGlobalExpression>` for such global definitions.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`expression<class_VisualShaderNodeExpression_property_expression>` | ``""`` |
-+-----------------------------+-------------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-------------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`expression<class_VisualShaderNodeExpression_property_expression>` | ``""`` |
+   +-----------------------------+-------------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeExpression_property_expression:
 
-- :ref:`String<class_String>` **expression**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``""``                |
-+-----------+-----------------------+
-| *Setter*  | set_expression(value) |
-+-----------+-----------------------+
-| *Getter*  | get_expression()      |
-+-----------+-----------------------+
+:ref:`String<class_String>` **expression** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_expression** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_expression** **(** **)**
 
 An expression in Godot Shading Language, which will be injected at the start of the graph's matching shader function (``vertex``, ``fragment``, or ``light``), and thus cannot be used to declare functions, varyings, uniforms, or global constants.
 

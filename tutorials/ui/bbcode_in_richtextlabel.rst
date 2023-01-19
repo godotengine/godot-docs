@@ -17,7 +17,7 @@ formatting rules for a part of the text. You may be familiar with them if you ev
 forums (also known as `bulletin boards`, hence the "BB" in "BBCode").
 
 Note that the BBCode tags can also be used, to some extent, in the XML source of
-the class reference. For more information, see :ref:`doc_class_reference_writing_guidelines`.
+the class reference. For more information, see :ref:`doc_class_reference_primer`.
 
 Using BBCode
 ------------
@@ -26,7 +26,7 @@ By default :ref:`class_RichTextLabel` functions exactly the same as the normal l
 has the :ref:`property_text <class_RichTextLabel_property_text>` property, which you can
 edit to have uniformly formatted text. To be able to use BBCodes and rich text formatting
 you need to turn on the BBCode mode by setting :ref:`bbcode_enabled <class_RichTextLabel_property_bbcode_enabled>`.
-After that you can edit the :ref:`bbcode_text <class_RichTextLabel_property_bbcode_text>`
+After that you can edit the :ref:`text <class_RichTextLabel_property_text>`
 property using available tags. Both properties are located in the "Bb Code" section of
 the Inspector.
 

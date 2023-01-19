@@ -14,6 +14,8 @@ GridContainer
 
 Grid container used to arrange Control-derived children in a grid like layout.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,6 +25,8 @@ Notice that grid layout will preserve the columns and rows for every size of the
 
 \ **Note:** GridContainer only works with child nodes inheriting from Control. It won't rearrange child nodes inheriting from Node2D.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -30,61 +34,80 @@ Tutorials
 
 - `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------+------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`columns<class_GridContainer_property_columns>` | ``1`` |
-+-----------------------+------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`columns<class_GridContainer_property_columns>` | ``1`` |
+   +-----------------------+------------------------------------------------------+-------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+-----------------------+----------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`h_separation<class_GridContainer_theme_constant_h_separation>` | ``4`` |
-+-----------------------+----------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`v_separation<class_GridContainer_theme_constant_v_separation>` | ``4`` |
-+-----------------------+----------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+----------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`h_separation<class_GridContainer_theme_constant_h_separation>` | ``4`` |
+   +-----------------------+----------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`v_separation<class_GridContainer_theme_constant_v_separation>` | ``4`` |
+   +-----------------------+----------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GridContainer_property_columns:
 
-- :ref:`int<class_int>` **columns**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``1``              |
-+-----------+--------------------+
-| *Setter*  | set_columns(value) |
-+-----------+--------------------+
-| *Getter*  | get_columns()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **columns** = ``1``
 
-The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its Control-derived children to accommodate the new layout.
+.. rst-class:: classref-property-setget
+
+- void **set_columns** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_columns** **(** **)**
+
+The number of columns in the **GridContainer**. If modified, **GridContainer** reorders its Control-derived children to accommodate the new layout.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_GridContainer_theme_constant_h_separation:
 
-- :ref:`int<class_int>` **h_separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **h_separation** = ``4``
 
 The horizontal separation of children nodes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GridContainer_theme_constant_v_separation:
 
-- :ref:`int<class_int>` **v_separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **v_separation** = ``4``
 
 The vertical separation of children nodes.
 

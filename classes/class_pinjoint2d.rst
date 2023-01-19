@@ -14,32 +14,44 @@ PinJoint2D
 
 Pin joint for 2D shapes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Pin joint for 2D rigid bodies. It pins two bodies (dynamic or static) together.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` | ``0.0`` |
-+---------------------------+-----------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` | ``0.0`` |
+   +---------------------------+-----------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PinJoint2D_property_softness:
 
-- :ref:`float<class_float>` **softness**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_softness(value) |
-+-----------+---------------------+
-| *Getter*  | get_softness()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **softness** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_softness** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_softness** **(** **)**
 
 The higher this value, the more the bond to the pinned partner can flex.
 

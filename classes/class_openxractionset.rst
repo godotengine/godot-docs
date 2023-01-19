@@ -14,6 +14,8 @@ OpenXRActionSet
 
 Collection of :ref:`OpenXRAction<class_OpenXRAction>` resources that make up an action set.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,99 +23,132 @@ Action sets in OpenXR define a collection of actions that can be activated in un
 
 Action sets can contain the same action with the same name, if such action sets are active at the same time the action set with the highest priority defines which binding is active.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------------+--------+
-| :ref:`Array<class_Array>`   | :ref:`actions<class_OpenXRActionSet_property_actions>`               | ``[]`` |
-+-----------------------------+----------------------------------------------------------------------+--------+
-| :ref:`String<class_String>` | :ref:`localized_name<class_OpenXRActionSet_property_localized_name>` | ``""`` |
-+-----------------------------+----------------------------------------------------------------------+--------+
-| :ref:`int<class_int>`       | :ref:`priority<class_OpenXRActionSet_property_priority>`             | ``0``  |
-+-----------------------------+----------------------------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+----------------------------------------------------------------------+--------+
+   | :ref:`Array<class_Array>`   | :ref:`actions<class_OpenXRActionSet_property_actions>`               | ``[]`` |
+   +-----------------------------+----------------------------------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`localized_name<class_OpenXRActionSet_property_localized_name>` | ``""`` |
+   +-----------------------------+----------------------------------------------------------------------+--------+
+   | :ref:`int<class_int>`       | :ref:`priority<class_OpenXRActionSet_property_priority>`             | ``0``  |
+   +-----------------------------+----------------------------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`add_action<class_OpenXRActionSet_method_add_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**       |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_action_count<class_OpenXRActionSet_method_get_action_count>` **(** **)** |const|                                  |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                  | :ref:`remove_action<class_OpenXRActionSet_method_remove_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)** |
-+-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                  | :ref:`add_action<class_OpenXRActionSet_method_add_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**       |
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_action_count<class_OpenXRActionSet_method_get_action_count>` **(** **)** |const|                                  |
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
+   | void                  | :ref:`remove_action<class_OpenXRActionSet_method_remove_action>` **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)** |
+   +-----------------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_OpenXRActionSet_property_actions:
 
-- :ref:`Array<class_Array>` **actions**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``[]``             |
-+-----------+--------------------+
-| *Setter*  | set_actions(value) |
-+-----------+--------------------+
-| *Getter*  | get_actions()      |
-+-----------+--------------------+
+:ref:`Array<class_Array>` **actions** = ``[]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_actions** **(** :ref:`Array<class_Array>` value **)**
+- :ref:`Array<class_Array>` **get_actions** **(** **)**
 
 Collection of actions for this action set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRActionSet_property_localized_name:
 
-- :ref:`String<class_String>` **localized_name**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``""``                    |
-+-----------+---------------------------+
-| *Setter*  | set_localized_name(value) |
-+-----------+---------------------------+
-| *Getter*  | get_localized_name()      |
-+-----------+---------------------------+
+:ref:`String<class_String>` **localized_name** = ``""``
 
-The localised name of this action set.
+.. rst-class:: classref-property-setget
+
+- void **set_localized_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_localized_name** **(** **)**
+
+The localized name of this action set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRActionSet_property_priority:
 
-- :ref:`int<class_int>` **priority**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_priority(value) |
-+-----------+---------------------+
-| *Getter*  | get_priority()      |
-+-----------+---------------------+
+:ref:`int<class_int>` **priority** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_priority** **(** **)**
 
 The priority for this action set.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_OpenXRActionSet_method_add_action:
 
-- void **add_action** **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**
+.. rst-class:: classref-method
+
+void **add_action** **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**
 
 Add an action to this action set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRActionSet_method_get_action_count:
 
-- :ref:`int<class_int>` **get_action_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_action_count** **(** **)** |const|
 
 Retrieve the number of actions in our action set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRActionSet_method_remove_action:
 
-- void **remove_action** **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**
+.. rst-class:: classref-method
+
+void **remove_action** **(** :ref:`OpenXRAction<class_OpenXRAction>` action **)**
 
 Remove an action from this action set.
 

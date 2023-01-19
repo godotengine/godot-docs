@@ -14,6 +14,8 @@ VisualShaderNodeOuterProduct
 
 Calculates an outer product of two vectors within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

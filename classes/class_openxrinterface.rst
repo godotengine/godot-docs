@@ -14,58 +14,149 @@ OpenXRInterface
 
 Our OpenXR interface.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 The OpenXR interface allows Godot to interact with OpenXR runtimes and make it possible to create XR experiences and games.
 
-Due to the needs of OpenXR this interface works slightly different than other plugin based XR interfaces. It needs to be initialised when Godot starts. You need to enable OpenXR, settings for this can be found in your games project settings under the XR heading. You do need to mark a viewport for use with XR in order for Godot to know which render result should be output to the headset.
+Due to the needs of OpenXR this interface works slightly different than other plugin based XR interfaces. It needs to be initialized when Godot starts. You need to enable OpenXR, settings for this can be found in your games project settings under the XR heading. You do need to mark a viewport for use with XR in order for Godot to know which render result should be output to the headset.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`Setting up XR <../tutorials/xr/setting_up_xr>`
 
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`display_refresh_rate<class_OpenXRInterface_property_display_refresh_rate>` | ``0.0`` |
+   +---------------------------+----------------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_available_display_refresh_rates<class_OpenXRInterface_method_get_available_display_refresh_rates>` **(** **)** |const| |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Signals
 -------
 
 .. _class_OpenXRInterface_signal_pose_recentered:
 
-- **pose_recentered** **(** **)**
+.. rst-class:: classref-signal
+
+**pose_recentered** **(** **)**
 
 Informs the user queued a recenter of the player position.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRInterface_signal_session_begun:
 
-- **session_begun** **(** **)**
+.. rst-class:: classref-signal
+
+**session_begun** **(** **)**
 
 Informs our OpenXR session has been started.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRInterface_signal_session_focussed:
 
-- **session_focussed** **(** **)**
+.. rst-class:: classref-signal
+
+**session_focussed** **(** **)**
 
 Informs our OpenXR session now has focus.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRInterface_signal_session_stopping:
 
-- **session_stopping** **(** **)**
+.. rst-class:: classref-signal
+
+**session_stopping** **(** **)**
 
 Informs our OpenXR session is stopping.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OpenXRInterface_signal_session_visible:
 
-- **session_visible** **(** **)**
+.. rst-class:: classref-signal
+
+**session_visible** **(** **)**
 
 Informs our OpenXR session is now visible (output is being sent to the HMD).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_OpenXRInterface_property_display_refresh_rate:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **display_refresh_rate** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_display_refresh_rate** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_display_refresh_rate** **(** **)**
+
+The display refresh rate for the current HMD. Only functional if this feature is supported by the OpenXR runtime and after the interface has been initialized.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_OpenXRInterface_method_get_available_display_refresh_rates:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_available_display_refresh_rates** **(** **)** |const|
+
+Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the OpenXR runtime and after the interface has been initialized.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

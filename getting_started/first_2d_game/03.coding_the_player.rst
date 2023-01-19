@@ -36,9 +36,8 @@ Start by declaring the member variables this object will need:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Player : Area2D
+    public partial class Player : Area2D
     {
         [Export]
         public int Speed = 400; // How fast the player will move (pixels/sec).
@@ -195,7 +194,7 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         var velocity = Vector2.Zero; // The player's movement vector.
 
@@ -290,7 +289,7 @@ the ``_process`` function (make sure it's not indented under the `else`):
 
  .. code-tab:: csharp
 
-        Position += velocity * delta;
+        Position += velocity * (float)delta;
         Position = new Vector2(
             x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
             y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
@@ -488,7 +487,7 @@ this code to the function:
     public void OnPlayerBodyEntered(PhysicsBody2D body)
     {
         Hide(); // Player disappears after being hit.
-        EmitSignal(nameof(Hit));
+        EmitSignal(SignalName.Hit);
         // Must be deferred as we can't change physics properties on a physics callback.
         GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
     }

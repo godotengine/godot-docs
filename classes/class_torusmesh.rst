@@ -14,86 +14,101 @@ TorusMesh
 
 Class representing a torus :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Class representing a torus :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`inner_radius<class_TorusMesh_property_inner_radius>`   | ``0.5`` |
-+---------------------------+--------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`outer_radius<class_TorusMesh_property_outer_radius>`   | ``1.0`` |
-+---------------------------+--------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`ring_segments<class_TorusMesh_property_ring_segments>` | ``32``  |
-+---------------------------+--------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`rings<class_TorusMesh_property_rings>`                 | ``64``  |
-+---------------------------+--------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`inner_radius<class_TorusMesh_property_inner_radius>`   | ``0.5`` |
+   +---------------------------+--------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`outer_radius<class_TorusMesh_property_outer_radius>`   | ``1.0`` |
+   +---------------------------+--------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`ring_segments<class_TorusMesh_property_ring_segments>` | ``32``  |
+   +---------------------------+--------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`rings<class_TorusMesh_property_rings>`                 | ``64``  |
+   +---------------------------+--------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_TorusMesh_property_inner_radius:
 
-- :ref:`float<class_float>` **inner_radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.5``                 |
-+-----------+-------------------------+
-| *Setter*  | set_inner_radius(value) |
-+-----------+-------------------------+
-| *Getter*  | get_inner_radius()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **inner_radius** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_inner_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_inner_radius** **(** **)**
 
 The inner radius of the torus.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TorusMesh_property_outer_radius:
 
-- :ref:`float<class_float>` **outer_radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``1.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_outer_radius(value) |
-+-----------+-------------------------+
-| *Getter*  | get_outer_radius()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **outer_radius** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_outer_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_outer_radius** **(** **)**
 
 The outer radius of the torus.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TorusMesh_property_ring_segments:
 
-- :ref:`int<class_int>` **ring_segments**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``32``                   |
-+-----------+--------------------------+
-| *Setter*  | set_ring_segments(value) |
-+-----------+--------------------------+
-| *Getter*  | get_ring_segments()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **ring_segments** = ``32``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ring_segments** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_ring_segments** **(** **)**
 
 The number of edges each ring of the torus is constructed of.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TorusMesh_property_rings:
 
-- :ref:`int<class_int>` **rings**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``64``           |
-+-----------+------------------+
-| *Setter*  | set_rings(value) |
-+-----------+------------------+
-| *Getter*  | get_rings()      |
-+-----------+------------------+
+:ref:`int<class_int>` **rings** = ``64``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rings** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_rings** **(** **)**
 
 The number of slices the torus is constructed of.
 

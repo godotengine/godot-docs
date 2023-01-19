@@ -86,9 +86,8 @@ attach the following script:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Node : Godot.Node
+    public partial class Node : Godot.Node
     {
         public override void _Input(InputEvent inputEvent)
         {
@@ -210,7 +209,7 @@ the :kbd:`T`:
         }
     }
 
-.. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of keycode
+.. tip:: See :ref:`@GlobalScope_Key <enum_@GlobalScope_Key>` for a list of keycode
         constants.
 
 .. warning::
@@ -261,7 +260,7 @@ different when it's :kbd:`Shift + T`:
         }
     }
 
-.. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of keycode
+.. tip:: See :ref:`@GlobalScope_Key <enum_@GlobalScope_Key>` for a list of keycode
         constants.
 
 Mouse events
@@ -275,7 +274,7 @@ means that all mouse events will contain a ``position`` property.
 Mouse buttons
 ~~~~~~~~~~~~~
 
-Capturing mouse buttons is very similar to handling key events. :ref:`@GlobalScope_ButtonList <enum_@GlobalScope_ButtonList>`
+Capturing mouse buttons is very similar to handling key events. :ref:`@GlobalScope_MouseButton <enum_@GlobalScope_MouseButton>`
 contains a list of ``BUTTON_*`` constants for each possible button, which will
 be reported in the event's ``button_index`` property. Note that the scrollwheel
 also counts as a button - two buttons, to be precise, with both
@@ -346,9 +345,8 @@ node:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Node2D : Godot.Node2D
+    public partial class Node2D : Godot.Node2D
     {
         private bool dragging = false;
         private int clickRadius = 32; // Size of the sprite.

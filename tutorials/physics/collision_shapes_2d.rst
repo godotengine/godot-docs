@@ -32,8 +32,8 @@ Godot provides the following primitive collision shape types:
 - :ref:`class_CircleShape2D`
 - :ref:`class_CapsuleShape2D`
 - :ref:`class_SegmentShape2D`
-- :ref:`class_RayShape2D` (designed for characters)
-- :ref:`class_LineShape2D` (infinite plane)
+- :ref:`class_SeparationRayShape2D` (designed for characters)
+- :ref:`class_WorldBoundaryShape2D` (infinite plane)
 
 You can represent the collision of most smaller objects using one or more
 primitive shapes. However, for more complex objects, such as a large ship or a

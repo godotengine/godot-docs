@@ -33,7 +33,7 @@ see the :ref:`Animating thousands of fish <doc_animating_thousands_of_fish>` tut
 to the shader can be provided via textures (there are floating-point :ref:`Image<class_Image>` formats
 which are ideal for this).
 
-Another alternative is to use GDNative and C++, which should be extremely efficient (it's possible
+Another alternative is to use a GDExtension and C++, which should be extremely efficient (it's possible
 to set the entire state for all objects using linear memory via the
 :ref:`RenderingServer.multimesh_set_buffer() <class_RenderingServer_method_multimesh_set_buffer>`
 function). This way, the array can be created with multiple threads, then set in one call, providing
@@ -53,7 +53,7 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends MultiMeshInstance
+    extends MultiMeshInstance3D
 
 
     func _ready():
@@ -75,9 +75,8 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
  .. code-tab:: csharp C#
 
     using Godot;
-    using System;
 
-    public class YourClassName : MultiMeshInstance
+    public partial class YourClassName : MultiMeshInstance3D
     {
         public override void _Ready()
         {

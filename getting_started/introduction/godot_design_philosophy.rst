@@ -88,7 +88,7 @@ GDScript lets you write code using an indentation-based syntax,
 yet it detects types and offers a static language's quality of auto-completion.
 It is also optimized for gameplay code with built-in types like Vectors and Colors.
 
-Note that with GDNative, you can write high-performance code using compiled
+Note that with GDExtension, you can write high-performance code using compiled
 languages like C, C++, Rust, or Python (using the Cython compiler)
 without recompiling the engine.
 

@@ -14,28 +14,45 @@ CallbackTweener
 
 Calls the specified method after optional delay.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``CallbackTweener`` is used to call a method in a tweening sequence. See :ref:`Tween.tween_callback<class_Tween_method_tween_callback>` for more usage information.
+**CallbackTweener** is used to call a method in a tweening sequence. See :ref:`Tween.tween_callback<class_Tween_method_tween_callback>` for more usage information.
 
-\ **Note:** :ref:`Tween.tween_callback<class_Tween_method_tween_callback>` is the only correct way to create ``CallbackTweener``. Any ``CallbackTweener`` created manually will not function correctly.
+\ **Note:** :ref:`Tween.tween_callback<class_Tween_method_tween_callback>` is the only correct way to create **CallbackTweener**. Any **CallbackTweener** created manually will not function correctly.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`CallbackTweener<class_CallbackTweener>` | :ref:`set_delay<class_CallbackTweener_method_set_delay>` **(** :ref:`float<class_float>` delay **)** |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------+
+   | :ref:`CallbackTweener<class_CallbackTweener>` | :ref:`set_delay<class_CallbackTweener_method_set_delay>` **(** :ref:`float<class_float>` delay **)** |
+   +-----------------------------------------------+------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_CallbackTweener_method_set_delay:
 
-- :ref:`CallbackTweener<class_CallbackTweener>` **set_delay** **(** :ref:`float<class_float>` delay **)**
+.. rst-class:: classref-method
 
-Makes the callback call delayed by given time in seconds. Example:
+:ref:`CallbackTweener<class_CallbackTweener>` **set_delay** **(** :ref:`float<class_float>` delay **)**
+
+Makes the callback call delayed by given time in seconds.
+
+\ **Example:**\ 
 
 ::
 

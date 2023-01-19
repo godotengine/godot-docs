@@ -41,6 +41,11 @@ Each one has a specific function:
    If you don't want disabled objects to cast shadows, adjust the ``cast_shadow`` property on the
    GeometryInstance to the desired value.
 
+.. seealso::
+
+    See :ref:`doc_physical_light_and_camera_units` if you wish to use real world
+    units to configure your lights' intensity and color temperature.
+
 Shadow mapping
 ^^^^^^^^^^^^^^
 

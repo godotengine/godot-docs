@@ -35,14 +35,14 @@ here's an example of how GDScript looks.
     # Everything after "#" is a comment.
     # A file is a class!
 
+    # (optional) icon to show in the editor dialogs:
+    @icon("res://path/to/optional/icon.svg")
+
     # (optional) class definition:
     class_name MyClass
 
     # Inheritance:
     extends BaseClass
-
-    # (optional) icon to show in the editor dialogs:
-    @icon("res://path/to/optional/icon.svg")
 
 
     # Member variables.
@@ -177,6 +177,8 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | is         | Tests whether a variable extends a given class, or is of a given built-in type.                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| in         | Tests whether a value is within a string, list, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing.  |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | as         | Cast the value to a given type if possible.                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | self       | Refers to current class instance.                                                                                                                 |
@@ -264,12 +266,12 @@ The following is the list of supported operators and their precedence.
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                        | Comparisons                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
-| ``in``                                                                         | When used with the ``if`` keyword it      |
-|                                                                                | checks if a value is within a string,     |
-|                                                                                | list, range, dictionary, or node.         |
-|                                                                                | When used with the ``for`` keyword it is  |
-|                                                                                | used to iterate though the contents of a  |
-|                                                                                | string, list, range, dictionary or node.  |
+| ``in``                                                                         | Inclusion checker (when used with         |
+|                                                                                | control flow keywords or in a             |
+|                                                                                | standalone expression).                   |
+|                                                                                |                                           |
+|                                                                                | Content iterator (when used with the      |
+|                                                                                | for_ keyword).                            |
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``not``                                                                        | Boolean NOT                               |
 +--------------------------------------------------------------------------------+-------------------------------------------+
@@ -298,7 +300,7 @@ Literals
 +--------------------------+----------------------------------------+
 | ``3.14``, ``58.1e-10``   | Floating-point number (real)           |
 +--------------------------+----------------------------------------+
-| ``"Hello"``, ``"Hi"``    | Strings                                |
+| ``"Hello"``, ``'Hi'``    | Strings                                |
 +--------------------------+----------------------------------------+
 | ``"""Hello"""``          | Multiline string                       |
 +--------------------------+----------------------------------------+
@@ -322,15 +324,19 @@ Annotations
 
 There are some special tokens in GDScript that act like keywords but are not,
 they are *annotations* instead. Every annotation start with the ``@`` character
-and is specified by a name.
+and is specified by a name. A detailed description and example for each annotation
+can be found inside the :ref:`GDScript class reference <class_@GDScript>`.
 
-Those affect how the script is treated by external tools and usually don't
+Annotations affect how the script is treated by external tools and usually don't
 change the behavior.
 
 For instance, you can use it to export a value to the editor::
 
     @export_range(1, 100, 1, "or_greater")
     var ranged_var: int = 50
+
+For more information about exporting properties, read the :ref:`GDScript exports <doc_gdscript_exports>`
+article.
 
 Annotations can be specified one per line or all in the same line. They affect
 the next statement that isn't an annotation. Annotations can have arguments sent
@@ -344,55 +350,30 @@ Both of these are the same::
 
     @onready @export_node_path(TextEdit, LineEdit) var input_field
 
+.. _doc_gdscript_onready_annotation:
 
-Here's the list of available annotations:
+`@onready` annotation
+~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| **Annotation**               | **Description**                                                                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@tool``                    | Enable the `Tool mode`_.                                                                          |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@onready``                 | Defer initialization of variable until the node is in the tree. See                               |
-|                              | :ref:`doc_gdscript_onready_annotation`.                                                           |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@rpc``                     | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@export``                  | Export hints for the editor. See :ref:`doc_gdscript_exports`.                                     |
-|                              |                                                                                                   |
-| ``@export_enum``             |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_file``             |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_dir``              |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_global_file``      |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_global_dir``       |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_multiline``        |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_placeholder``      |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_range``            |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_exp_easing``       |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_color_no_alpha``   |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_node_path``        |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags``            |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_2d_render``  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_2d_physics`` |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_3d_render``  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_3d_physics`` |                                                                                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------+
+When using nodes, it's common to desire to keep references to parts
+of the scene in a variable. As scenes are only warranted to be
+configured when entering the active scene tree, the sub-nodes can only
+be obtained when a call to ``Node._ready()`` is made.
+
+::
+
+    var my_label
+
+
+    func _ready():
+        my_label = get_node("MyLabel")
+
+This can get a little cumbersome, especially when nodes and external
+references pile up. For this, GDScript has the ``@onready`` annotation, that
+defers initialization of a member variable until ``_ready()`` is called. It
+can replace the above code with a single line::
+
+    @onready var my_label = get_node("MyLabel")
 
 Comments
 ~~~~~~~~
@@ -561,8 +542,8 @@ in a 3D grid.
 3D Plane type in normalized form that contains a ``normal`` vector field
 and a ``d`` scalar distance.
 
-:ref:`Quat <class_Quat>`
-^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`Quaternion <class_Quaternion>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.
@@ -1210,7 +1191,7 @@ There are 6 pattern types:
     Matches the contents of a variable/enum::
 
         match typeof(x):
-            TYPE_REAL:
+            TYPE_FLOAT:
                 print("float")
             TYPE_STRING:
                 print("text")
@@ -1332,9 +1313,9 @@ class will then appear with its new icon in the editor::
 
    # Item.gd
 
-   extends Node
-   class_name Item
    @icon("res://interface/icons/item.png")
+   class_name Item
+   extends Node
 
 .. image:: img/class_name_editor_register_example.png
 
@@ -1538,13 +1519,13 @@ Exports
 
     Documentation about exports has been moved to :ref:`doc_gdscript_exports`.
 
-.. _doc_gdscript_tool_mode:
 
+.. _doc_gdscript_basics_setters_getters:
 
-Properties
-~~~~~~~~~~
+Properties (setters and getters)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sometimes you want a class' member variable to do more than just hold data and actually perform
+Sometimes, you want a class' member variable to do more than just hold data and actually perform
 some validation or computation whenever its value change. It may also be desired to
 encapsulate its access in some way.
 
@@ -1588,6 +1569,8 @@ you can use a different notation to use existing class functions::
         get = get_my_prop, set = set_my_prop
 
 This can also be done in the same line.
+
+.. _doc_gdscript_tool_mode:
 
 Tool mode
 ~~~~~~~~~
@@ -1686,7 +1669,7 @@ to. To create custom signals for a class, use the ``signal`` keyword.
    Game Programming Patterns ebook.
 
 You can connect these signals to methods the same way you connect built-in
-signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody`.
+signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody3D`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
@@ -1738,9 +1721,9 @@ the :ref:`Signal.connect() <class_Signal_method_connect>` method::
     ...
     func _on_Character_health_changed(old_value, new_value):
         if old_value > new_value:
-            progress_bar.modulate = Color.red
+            progress_bar.modulate = Color.RED
         else:
-            progress_bar.modulate = Color.green
+            progress_bar.modulate = Color.GREEN
 
         # Imagine that `animate` is a user-defined function that animates the
         # bar filling up or emptying itself.
@@ -1872,31 +1855,6 @@ This also means that returning a signal from a function that isn't a coroutine w
           This is done to ensure type safety.
           With this type safety in place, a function cannot say that it returns an ``int`` while it actually returns a function state object
           during runtime.
-
-.. _doc_gdscript_onready_annotation:
-
-`@onready` annotation
-~~~~~~~~~~~~~~~~~~~~~
-
-When using nodes, it's common to desire to keep references to parts
-of the scene in a variable. As scenes are only warranted to be
-configured when entering the active scene tree, the sub-nodes can only
-be obtained when a call to ``Node._ready()`` is made.
-
-::
-
-    var my_label
-
-
-    func _ready():
-        my_label = get_node("MyLabel")
-
-This can get a little cumbersome, especially when nodes and external
-references pile up. For this, GDScript has the ``@onready`` annotation, that
-defers initialization of a member variable until ``_ready()`` is called. It
-can replace the above code with a single line::
-
-    @onready var my_label = get_node("MyLabel")
 
 Assert keyword
 ~~~~~~~~~~~~~~

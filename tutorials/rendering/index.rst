@@ -8,4 +8,3 @@ Rendering
    viewports
    multiple_resolutions
    jitter_stutter
-   gles2_gles3_differences

@@ -222,8 +222,8 @@ The surface normal has a value of ``(0, -1)`` because this is a horizontal
 surface. When the ball collides, we take its remaining motion (the amount left
 over when it hits the surface) and reflect it using the normal. In Godot, the
 :ref:`Vector2 <class_Vector2>` class has a ``bounce()`` method to handle this.
-Here is a GDScript example of the diagram above using a :ref:`KinematicBody2D
-<class_KinematicBody2D>`:
+Here is a GDScript example of the diagram above using a :ref:`CharacterBody2D
+<class_CharacterBody2D>`:
 
 
 .. tabs::

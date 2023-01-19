@@ -14,141 +14,188 @@ ThemeDB
 
 An engine singleton providing access to static :ref:`Theme<class_Theme>` information, such as default and project theme, and fallback values.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 This engine singleton provides access to static information about :ref:`Theme<class_Theme>` resources used by the engine and by your projects. You can fetch the default engine theme, as well as your project configured theme.
 
-\ ``ThemeDB`` also contains fallback values for theme properties.
+\ **ThemeDB** also contains fallback values for theme properties.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`         | :ref:`fallback_base_scale<class_ThemeDB_property_fallback_base_scale>` | ``1.0`` |
-+-----------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`Font<class_Font>`           | :ref:`fallback_font<class_ThemeDB_property_fallback_font>`             |         |
-+-----------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`             | :ref:`fallback_font_size<class_ThemeDB_property_fallback_font_size>`   | ``16``  |
-+-----------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`fallback_icon<class_ThemeDB_property_fallback_icon>`             |         |
-+-----------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`StyleBox<class_StyleBox>`   | :ref:`fallback_stylebox<class_ThemeDB_property_fallback_stylebox>`     |         |
-+-----------------------------------+------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>`         | :ref:`fallback_base_scale<class_ThemeDB_property_fallback_base_scale>` | ``1.0`` |
+   +-----------------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`Font<class_Font>`           | :ref:`fallback_font<class_ThemeDB_property_fallback_font>`             |         |
+   +-----------------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`             | :ref:`fallback_font_size<class_ThemeDB_property_fallback_font_size>`   | ``16``  |
+   +-----------------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`fallback_icon<class_ThemeDB_property_fallback_icon>`             |         |
+   +-----------------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`StyleBox<class_StyleBox>`   | :ref:`fallback_stylebox<class_ThemeDB_property_fallback_stylebox>`     |         |
+   +-----------------------------------+------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+------------------------------------------------------------------------------+
-| :ref:`Theme<class_Theme>` | :ref:`get_default_theme<class_ThemeDB_method_get_default_theme>` **(** **)** |
-+---------------------------+------------------------------------------------------------------------------+
-| :ref:`Theme<class_Theme>` | :ref:`get_project_theme<class_ThemeDB_method_get_project_theme>` **(** **)** |
-+---------------------------+------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+------------------------------------------------------------------------------+
+   | :ref:`Theme<class_Theme>` | :ref:`get_default_theme<class_ThemeDB_method_get_default_theme>` **(** **)** |
+   +---------------------------+------------------------------------------------------------------------------+
+   | :ref:`Theme<class_Theme>` | :ref:`get_project_theme<class_ThemeDB_method_get_project_theme>` **(** **)** |
+   +---------------------------+------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_ThemeDB_signal_fallback_changed:
 
-- **fallback_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**fallback_changed** **(** **)**
 
 Emitted when one of the fallback values had been changed. Use it to refresh the look of controls that may rely on the fallback theme items.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ThemeDB_property_fallback_base_scale:
 
-- :ref:`float<class_float>` **fallback_base_scale**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``1.0``                        |
-+-----------+--------------------------------+
-| *Setter*  | set_fallback_base_scale(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_fallback_base_scale()      |
-+-----------+--------------------------------+
+:ref:`float<class_float>` **fallback_base_scale** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fallback_base_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_fallback_base_scale** **(** **)**
 
 The fallback base scale factor of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
 
 See also :ref:`Theme.default_base_scale<class_Theme_property_default_base_scale>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ThemeDB_property_fallback_font:
 
-- :ref:`Font<class_Font>` **fallback_font**
+.. rst-class:: classref-property
 
-+----------+--------------------------+
-| *Setter* | set_fallback_font(value) |
-+----------+--------------------------+
-| *Getter* | get_fallback_font()      |
-+----------+--------------------------+
+:ref:`Font<class_Font>` **fallback_font**
+
+.. rst-class:: classref-property-setget
+
+- void **set_fallback_font** **(** :ref:`Font<class_Font>` value **)**
+- :ref:`Font<class_Font>` **get_fallback_font** **(** **)**
 
 The fallback font of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
 
 See also :ref:`Theme.default_font<class_Theme_property_default_font>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ThemeDB_property_fallback_font_size:
 
-- :ref:`int<class_int>` **fallback_font_size**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``16``                        |
-+-----------+-------------------------------+
-| *Setter*  | set_fallback_font_size(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_fallback_font_size()      |
-+-----------+-------------------------------+
+:ref:`int<class_int>` **fallback_font_size** = ``16``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fallback_font_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_fallback_font_size** **(** **)**
 
 The fallback font size of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
 
 See also :ref:`Theme.default_font_size<class_Theme_property_default_font_size>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ThemeDB_property_fallback_icon:
 
-- :ref:`Texture2D<class_Texture2D>` **fallback_icon**
+.. rst-class:: classref-property
 
-+----------+--------------------------+
-| *Setter* | set_fallback_icon(value) |
-+----------+--------------------------+
-| *Getter* | get_fallback_icon()      |
-+----------+--------------------------+
+:ref:`Texture2D<class_Texture2D>` **fallback_icon**
+
+.. rst-class:: classref-property-setget
+
+- void **set_fallback_icon** **(** :ref:`Texture2D<class_Texture2D>` value **)**
+- :ref:`Texture2D<class_Texture2D>` **get_fallback_icon** **(** **)**
 
 The fallback icon of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ThemeDB_property_fallback_stylebox:
 
-- :ref:`StyleBox<class_StyleBox>` **fallback_stylebox**
+.. rst-class:: classref-property
 
-+----------+------------------------------+
-| *Setter* | set_fallback_stylebox(value) |
-+----------+------------------------------+
-| *Getter* | get_fallback_stylebox()      |
-+----------+------------------------------+
+:ref:`StyleBox<class_StyleBox>` **fallback_stylebox**
+
+.. rst-class:: classref-property-setget
+
+- void **set_fallback_stylebox** **(** :ref:`StyleBox<class_StyleBox>` value **)**
+- :ref:`StyleBox<class_StyleBox>` **get_fallback_stylebox** **(** **)**
 
 The fallback stylebox of every :ref:`Control<class_Control>` node and :ref:`Theme<class_Theme>` resource. Used when no other value is available to the control.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ThemeDB_method_get_default_theme:
 
-- :ref:`Theme<class_Theme>` **get_default_theme** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Theme<class_Theme>` **get_default_theme** **(** **)**
 
 Returns a reference to the default engine :ref:`Theme<class_Theme>`. This theme resource is responsible for the out-of-the-box look of :ref:`Control<class_Control>` nodes and cannot be overridden.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ThemeDB_method_get_project_theme:
 
-- :ref:`Theme<class_Theme>` **get_project_theme** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Theme<class_Theme>` **get_project_theme** **(** **)**
 
 Returns a reference to the custom project :ref:`Theme<class_Theme>`. This theme resources allows to override the default engine theme for every control node in the project.
 

@@ -16,202 +16,280 @@ Font loaded from a system font.
 
 \ **Note:** This class is implemented on iOS, Linux, macOS and Windows, on other platforms it will fallback to default theme font.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``SystemFont`` loads a font from a system font with the first matching name from :ref:`font_names<class_SystemFont_property_font_names>`.
+**SystemFont** loads a font from a system font with the first matching name from :ref:`font_names<class_SystemFont_property_font_names>`.
 
 It will attempt to match font style, but it's not guaranteed.
 
-The returned font might be part of a font collection or be a variable font with OpenType "weight" and/or "italic" features set.
+The returned font might be part of a font collection or be a variable font with OpenType "weight", "width" and/or "italic" features set.
 
 You can create :ref:`FontVariation<class_FontVariation>` of the system font for fine control over its features.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>`       | :ref:`antialiasing<class_SystemFont_property_antialiasing>`                                             | ``1``                   |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Font[]<class_Font>`                                       | :ref:`fallbacks<class_SystemFont_property_fallbacks>`                                                   | ``[]``                  |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>`               | :ref:`font_names<class_SystemFont_property_font_names>`                                                 | ``PackedStringArray()`` |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`FontStyle<enum_TextServer_FontStyle>`                     | :ref:`font_style<class_SystemFont_property_font_style>`                                                 | ``0``                   |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`force_autohinter<class_SystemFont_property_force_autohinter>`                                     | ``false``               |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`generate_mipmaps<class_SystemFont_property_generate_mipmaps>`                                     | ``false``               |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`Hinting<enum_TextServer_Hinting>`                         | :ref:`hinting<class_SystemFont_property_hinting>`                                                       | ``1``                   |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                         | :ref:`multichannel_signed_distance_field<class_SystemFont_property_multichannel_signed_distance_field>` | ``false``               |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                                       | :ref:`oversampling<class_SystemFont_property_oversampling>`                                             | ``0.0``                 |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` | :ref:`subpixel_positioning<class_SystemFont_property_subpixel_positioning>`                             | ``1``                   |
-+-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`allow_system_fallback<class_SystemFont_property_allow_system_fallback>`                           | ``true``                |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>`       | :ref:`antialiasing<class_SystemFont_property_antialiasing>`                                             | ``1``                   |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Font[]<class_Font>`                                       | :ref:`fallbacks<class_SystemFont_property_fallbacks>`                                                   | ``[]``                  |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`font_italic<class_SystemFont_property_font_italic>`                                               | ``false``               |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`               | :ref:`font_names<class_SystemFont_property_font_names>`                                                 | ``PackedStringArray()`` |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`font_stretch<class_SystemFont_property_font_stretch>`                                             | ``100``                 |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`font_weight<class_SystemFont_property_font_weight>`                                               | ``400``                 |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`force_autohinter<class_SystemFont_property_force_autohinter>`                                     | ``false``               |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`generate_mipmaps<class_SystemFont_property_generate_mipmaps>`                                     | ``false``               |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Hinting<enum_TextServer_Hinting>`                         | :ref:`hinting<class_SystemFont_property_hinting>`                                                       | ``1``                   |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`multichannel_signed_distance_field<class_SystemFont_property_multichannel_signed_distance_field>` | ``false``               |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                                       | :ref:`oversampling<class_SystemFont_property_oversampling>`                                             | ``0.0``                 |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` | :ref:`subpixel_positioning<class_SystemFont_property_subpixel_positioning>`                             | ``1``                   |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
+.. _class_SystemFont_property_allow_system_fallback:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **allow_system_fallback** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_allow_system_fallback** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_allow_system_fallback** **(** **)**
+
+If set to ``true``, system fonts can be automatically used as fallbacks.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_SystemFont_property_antialiasing:
 
-- :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``1``                   |
-+-----------+-------------------------+
-| *Setter*  | set_antialiasing(value) |
-+-----------+-------------------------+
-| *Getter*  | get_antialiasing()      |
-+-----------+-------------------------+
+:ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **antialiasing** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_antialiasing** **(** :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` value **)**
+- :ref:`FontAntialiasing<enum_TextServer_FontAntialiasing>` **get_antialiasing** **(** **)**
 
 Font anti-aliasing mode.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SystemFont_property_fallbacks:
 
-- :ref:`Font[]<class_Font>` **fallbacks**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``[]``               |
-+-----------+----------------------+
-| *Setter*  | set_fallbacks(value) |
-+-----------+----------------------+
-| *Getter*  | get_fallbacks()      |
-+-----------+----------------------+
+:ref:`Font[]<class_Font>` **fallbacks** = ``[]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fallbacks** **(** :ref:`Font[]<class_Font>` value **)**
+- :ref:`Font[]<class_Font>` **get_fallbacks** **(** **)**
 
 Array of fallback :ref:`Font<class_Font>`\ s.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SystemFont_property_font_italic:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **font_italic** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_font_italic** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_font_italic** **(** **)**
+
+If set to ``true``, italic or oblique font is preferred.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SystemFont_property_font_names:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **font_names**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``PackedStringArray()`` |
-+-----------+-------------------------+
-| *Setter*  | set_font_names(value)   |
-+-----------+-------------------------+
-| *Getter*  | get_font_names()        |
-+-----------+-------------------------+
+:ref:`PackedStringArray<class_PackedStringArray>` **font_names** = ``PackedStringArray()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_font_names** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_font_names** **(** **)**
 
 Array of font family names to search, first matching font found is used.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-.. _class_SystemFont_property_font_style:
+.. _class_SystemFont_property_font_stretch:
 
-- :ref:`FontStyle<enum_TextServer_FontStyle>` **font_style**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_font_style(value) |
-+-----------+-----------------------+
-| *Getter*  | get_font_style()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **font_stretch** = ``100``
 
-Font style flags, see :ref:`FontStyle<enum_TextServer_FontStyle>`.
+.. rst-class:: classref-property-setget
+
+- void **set_font_stretch** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_font_stretch** **(** **)**
+
+Preferred font stretch amount, compared to a normal width. A percentage value between ``50%`` and ``200%``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SystemFont_property_font_weight:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **font_weight** = ``400``
+
+.. rst-class:: classref-property-setget
+
+- void **set_font_weight** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_font_weight** **(** **)**
+
+Preferred weight (boldness) of the font. A value in the ``100...999`` range, normal font weight is ``400``, bold font weight is ``700``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SystemFont_property_force_autohinter:
 
-- :ref:`bool<class_bool>` **force_autohinter**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``false``                   |
-+-----------+-----------------------------+
-| *Setter*  | set_force_autohinter(value) |
-+-----------+-----------------------------+
-| *Getter*  | is_force_autohinter()       |
-+-----------+-----------------------------+
+:ref:`bool<class_bool>` **force_autohinter** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_force_autohinter** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_force_autohinter** **(** **)**
 
 If set to ``true``, auto-hinting is supported and preferred over font built-in hinting.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SystemFont_property_generate_mipmaps:
 
-- :ref:`bool<class_bool>` **generate_mipmaps**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``false``                   |
-+-----------+-----------------------------+
-| *Setter*  | set_generate_mipmaps(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_generate_mipmaps()      |
-+-----------+-----------------------------+
+:ref:`bool<class_bool>` **generate_mipmaps** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_generate_mipmaps** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_generate_mipmaps** **(** **)**
 
 If set to ``true``, generate mipmaps for the font textures.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SystemFont_property_hinting:
 
-- :ref:`Hinting<enum_TextServer_Hinting>` **hinting**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``1``              |
-+-----------+--------------------+
-| *Setter*  | set_hinting(value) |
-+-----------+--------------------+
-| *Getter*  | get_hinting()      |
-+-----------+--------------------+
+:ref:`Hinting<enum_TextServer_Hinting>` **hinting** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hinting** **(** :ref:`Hinting<enum_TextServer_Hinting>` value **)**
+- :ref:`Hinting<enum_TextServer_Hinting>` **get_hinting** **(** **)**
 
 Font hinting mode.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SystemFont_property_multichannel_signed_distance_field:
 
-- :ref:`bool<class_bool>` **multichannel_signed_distance_field**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------+
-| *Default* | ``false``                                     |
-+-----------+-----------------------------------------------+
-| *Setter*  | set_multichannel_signed_distance_field(value) |
-+-----------+-----------------------------------------------+
-| *Getter*  | is_multichannel_signed_distance_field()       |
-+-----------+-----------------------------------------------+
+:ref:`bool<class_bool>` **multichannel_signed_distance_field** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_multichannel_signed_distance_field** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_multichannel_signed_distance_field** **(** **)**
 
 If set to ``true``, glyphs of all sizes are rendered using single multichannel signed distance field generated from the dynamic font vector data.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SystemFont_property_oversampling:
 
-- :ref:`float<class_float>` **oversampling**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_oversampling(value) |
-+-----------+-------------------------+
-| *Getter*  | get_oversampling()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **oversampling** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_oversampling** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_oversampling** **(** **)**
 
 Font oversampling factor, if set to ``0.0`` global oversampling factor is used instead.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SystemFont_property_subpixel_positioning:
 
-- :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **subpixel_positioning**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``1``                           |
-+-----------+---------------------------------+
-| *Setter*  | set_subpixel_positioning(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_subpixel_positioning()      |
-+-----------+---------------------------------+
+:ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **subpixel_positioning** = ``1``
 
-Font glyph sub-pixel positioning mode. Subpixel positioning provides shaper text and better kerning for smaller font sizes, at the cost of memory usage and font rasterization speed. Use :ref:`TextServer.SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` to automatically enable it based on the font size.
+.. rst-class:: classref-property-setget
+
+- void **set_subpixel_positioning** **(** :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` value **)**
+- :ref:`SubpixelPositioning<enum_TextServer_SubpixelPositioning>` **get_subpixel_positioning** **(** **)**
+
+Font glyph subpixel positioning mode. Subpixel positioning provides shaper text and better kerning for smaller font sizes, at the cost of memory usage and font rasterization speed. Use :ref:`TextServer.SUBPIXEL_POSITIONING_AUTO<class_TextServer_constant_SUBPIXEL_POSITIONING_AUTO>` to automatically enable it based on the font size.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

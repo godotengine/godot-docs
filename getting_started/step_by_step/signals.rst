@@ -208,7 +208,7 @@ Your complete ``Sprite2D.gd`` code should look like the following.
 
     using Godot;
 
-    public class Sprite : Godot.Sprite2D
+    public partial class Sprite : Sprite2D
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
@@ -370,7 +370,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
-    public class Sprite : Godot.Sprite2D
+    public partial class Sprite : Sprite2D
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
@@ -423,7 +423,7 @@ reaches 0.
 
     using Godot;
 
-    public class CustomSignal : Node2D
+    public partial class CustomSignal : Node2D
     {
         [Signal]
         public delegate void HealthDepletedEventHandler();
@@ -477,7 +477,7 @@ names between parentheses:
 
     using Godot;
 
-    public class CustomSignal : Node
+    public partial class CustomSignal : Node
     {
         [Signal]
         public delegate void HealthChangedEventHandler(int oldValue, int newValue);

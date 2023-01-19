@@ -16,6 +16,8 @@ StaticBody3D
 
 Physics body for 3D physics which is static or moves only by script. Useful for floor and walls.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -29,6 +31,8 @@ They have extra functionalities to move and affect other bodies:
 
 \ **Constant velocity:** When :ref:`constant_linear_velocity<class_StaticBody3D_property_constant_linear_velocity>` or :ref:`constant_angular_velocity<class_StaticBody3D_property_constant_angular_velocity>` is set, static bodies don't move themselves but affect touching bodies as if they were moving. This is useful for simulating conveyor belts or conveyor wheels.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -38,61 +42,75 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                 | :ref:`constant_angular_velocity<class_StaticBody3D_property_constant_angular_velocity>` | ``Vector3(0, 0, 0)`` |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                 | :ref:`constant_linear_velocity<class_StaticBody3D_property_constant_linear_velocity>`   | ``Vector3(0, 0, 0)`` |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+----------------------+
-| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody3D_property_physics_material_override>` |                      |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                 | :ref:`constant_angular_velocity<class_StaticBody3D_property_constant_angular_velocity>` | ``Vector3(0, 0, 0)`` |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                 | :ref:`constant_linear_velocity<class_StaticBody3D_property_constant_linear_velocity>`   | ``Vector3(0, 0, 0)`` |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+----------------------+
+   | :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody3D_property_physics_material_override>` |                      |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_StaticBody3D_property_constant_angular_velocity:
 
-- :ref:`Vector3<class_Vector3>` **constant_angular_velocity**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------+
-| *Default* | ``Vector3(0, 0, 0)``                 |
-+-----------+--------------------------------------+
-| *Setter*  | set_constant_angular_velocity(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_constant_angular_velocity()      |
-+-----------+--------------------------------------+
+:ref:`Vector3<class_Vector3>` **constant_angular_velocity** = ``Vector3(0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant_angular_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_constant_angular_velocity** **(** **)**
 
 The body's constant angular velocity. This does not rotate the body, but affects touching bodies, as if it were rotating.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StaticBody3D_property_constant_linear_velocity:
 
-- :ref:`Vector3<class_Vector3>` **constant_linear_velocity**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``Vector3(0, 0, 0)``                |
-+-----------+-------------------------------------+
-| *Setter*  | set_constant_linear_velocity(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_constant_linear_velocity()      |
-+-----------+-------------------------------------+
+:ref:`Vector3<class_Vector3>` **constant_linear_velocity** = ``Vector3(0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant_linear_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_constant_linear_velocity** **(** **)**
 
 The body's constant linear velocity. This does not move the body, but affects touching bodies, as if it were moving.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StaticBody3D_property_physics_material_override:
 
-- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
+.. rst-class:: classref-property
 
-+----------+--------------------------------------+
-| *Setter* | set_physics_material_override(value) |
-+----------+--------------------------------------+
-| *Getter* | get_physics_material_override()      |
-+----------+--------------------------------------+
+:ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
+
+.. rst-class:: classref-property-setget
+
+- void **set_physics_material_override** **(** :ref:`PhysicsMaterial<class_PhysicsMaterial>` value **)**
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override** **(** **)**
 
 The physics material override for the body.
 

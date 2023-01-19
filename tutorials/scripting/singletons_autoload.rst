@@ -163,9 +163,8 @@ means that the last child of root is always the loaded scene.
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Global : Godot.Node
+    public partial class Global : Node
     {
         public Node CurrentScene { get; set; }
 
@@ -203,7 +202,7 @@ current scene and replace it with the requested one.
         var s = ResourceLoader.load(path)
 
         # Instance the new scene.
-        current_scene = s.instance()
+        current_scene = s.instantiate()
 
         # Add it to the active scene, as child of root.
         get_tree().root.add_child(current_scene)
@@ -236,7 +235,7 @@ current scene and replace it with the requested one.
         var nextScene = (PackedScene)GD.Load(path);
 
         // Instance the new scene.
-        CurrentScene = nextScene.Instance();
+        CurrentScene = nextScene.Instantiate();
 
         // Add it to the active scene, as child of root.
         GetTree().Root.AddChild(CurrentScene);

@@ -14,6 +14,8 @@ StreamPeerGZIP
 
 Stream peer handling GZIP and deflate compression/decompresison.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,49 +23,74 @@ This class allows to compress or decompress data using GZIP/deflate in a streami
 
 After starting the stream via :ref:`start_compression<class_StreamPeerGZIP_method_start_compression>` (or :ref:`start_decompression<class_StreamPeerGZIP_method_start_decompression>`), calling :ref:`StreamPeer.put_partial_data<class_StreamPeer_method_put_partial_data>` on this stream will compress (or decompress) the data, writing it to the internal buffer. Calling :ref:`StreamPeer.get_available_bytes<class_StreamPeer_method_get_available_bytes>` will return the pending bytes in the internal buffer, and :ref:`StreamPeer.get_partial_data<class_StreamPeer_method_get_partial_data>` will retrieve the compressed (or decompressed) bytes from it. When the stream is over, you must call :ref:`finish<class_StreamPeerGZIP_method_finish>` to ensure the internal buffer is properly flushed (make sure to call :ref:`StreamPeer.get_available_bytes<class_StreamPeer_method_get_available_bytes>` on last time to check if more data needs to be read after that).
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`clear<class_StreamPeerGZIP_method_clear>` **(** **)**                                                                                                                |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`finish<class_StreamPeerGZIP_method_finish>` **(** **)**                                                                                                              |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start_compression<class_StreamPeerGZIP_method_start_compression>` **(** :ref:`bool<class_bool>` use_deflate=false, :ref:`int<class_int>` buffer_size=65535 **)**     |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start_decompression<class_StreamPeerGZIP_method_start_decompression>` **(** :ref:`bool<class_bool>` use_deflate=false, :ref:`int<class_int>` buffer_size=65535 **)** |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`clear<class_StreamPeerGZIP_method_clear>` **(** **)**                                                                                                                |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`finish<class_StreamPeerGZIP_method_finish>` **(** **)**                                                                                                              |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start_compression<class_StreamPeerGZIP_method_start_compression>` **(** :ref:`bool<class_bool>` use_deflate=false, :ref:`int<class_int>` buffer_size=65535 **)**     |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start_decompression<class_StreamPeerGZIP_method_start_decompression>` **(** :ref:`bool<class_bool>` use_deflate=false, :ref:`int<class_int>` buffer_size=65535 **)** |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_StreamPeerGZIP_method_clear:
 
-- void **clear** **(** **)**
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
 
 Clears this stream, resetting the internal state.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerGZIP_method_finish:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **finish** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **finish** **(** **)**
 
 Finalizes the stream, compressing or decompressing any buffered chunk left.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerGZIP_method_start_compression:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **start_compression** **(** :ref:`bool<class_bool>` use_deflate=false, :ref:`int<class_int>` buffer_size=65535 **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **start_compression** **(** :ref:`bool<class_bool>` use_deflate=false, :ref:`int<class_int>` buffer_size=65535 **)**
 
 Start the stream in compression mode with the given ``buffer_size``, if ``use_deflate`` is ``true`` uses deflate instead of GZIP.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerGZIP_method_start_decompression:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **start_decompression** **(** :ref:`bool<class_bool>` use_deflate=false, :ref:`int<class_int>` buffer_size=65535 **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **start_decompression** **(** :ref:`bool<class_bool>` use_deflate=false, :ref:`int<class_int>` buffer_size=65535 **)**
 
 Start the stream in decompression mode with the given ``buffer_size``, if ``use_deflate`` is ``true`` uses deflate instead of GZIP.
 

@@ -14,10 +14,46 @@ Marker3D
 
 Generic 3D position hint for editing.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Generic 3D position hint for editing. It's just like a plain :ref:`Node3D<class_Node3D>`, but it displays as a cross in the 3D editor at all times.
+
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`gizmo_extents<class_Marker3D_property_gizmo_extents>` | ``0.25`` |
+   +---------------------------+-------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_Marker3D_property_gizmo_extents:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **gizmo_extents** = ``0.25``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gizmo_extents** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_gizmo_extents** **(** **)**
+
+Size of the gizmo cross that appears in the editor.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

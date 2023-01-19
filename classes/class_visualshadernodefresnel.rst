@@ -14,6 +14,8 @@ VisualShaderNodeFresnel
 
 A Fresnel effect to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

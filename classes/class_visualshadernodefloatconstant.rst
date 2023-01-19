@@ -14,32 +14,44 @@ VisualShaderNodeFloatConstant
 
 A scalar floating-point constant to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Translated to ``float`` in the shader language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`constant<class_VisualShaderNodeFloatConstant_property_constant>` | ``0.0`` |
-+---------------------------+------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`constant<class_VisualShaderNodeFloatConstant_property_constant>` | ``0.0`` |
+   +---------------------------+------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeFloatConstant_property_constant:
 
-- :ref:`float<class_float>` **constant**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_constant(value) |
-+-----------+---------------------+
-| *Getter*  | get_constant()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **constant** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_constant** **(** **)**
 
 A floating-point constant which represents a state of this node.
 

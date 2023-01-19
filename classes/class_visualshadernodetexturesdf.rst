@@ -14,6 +14,8 @@ VisualShaderNodeTextureSDF
 
 Performs an SDF (signed-distance field) texture lookup within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

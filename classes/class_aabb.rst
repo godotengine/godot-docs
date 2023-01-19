@@ -12,16 +12,20 @@ AABB
 
 Axis-Aligned Bounding Box.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``AABB`` consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+**AABB** consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
 
-It uses floating-point coordinates. The 2D counterpart to ``AABB`` is :ref:`Rect2<class_Rect2>`.
+It uses floating-point coordinates. The 2D counterpart to **AABB** is :ref:`Rect2<class_Rect2>`.
 
 Negative values for :ref:`size<class_AABB_property_size>` are not supported and will not work for most methods. Use :ref:`abs<class_AABB_method_abs>` to get an AABB with a positive size.
 
-\ **Note:** Unlike :ref:`Rect2<class_Rect2>`, ``AABB`` does not have a variant that uses integer coordinates.
+\ **Note:** Unlike :ref:`Rect2<class_Rect2>`, **AABB** does not have a variant that uses integer coordinates.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -32,176 +36,234 @@ Tutorials
 
 - :doc:`Advanced vector math <../tutorials/math/vectors_advanced>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-----------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`end<class_AABB_property_end>`           | ``Vector3(0, 0, 0)`` |
-+-------------------------------+-----------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`position<class_AABB_property_position>` | ``Vector3(0, 0, 0)`` |
-+-------------------------------+-----------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_AABB_property_size>`         | ``Vector3(0, 0, 0)`` |
-+-------------------------------+-----------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`end<class_AABB_property_end>`           | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+-----------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`position<class_AABB_property_position>` | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+-----------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`size<class_AABB_property_size>`         | ``Vector3(0, 0, 0)`` |
+   +-------------------------------+-----------------------------------------------+----------------------+
+
+.. rst-class:: classref-reftable-group
 
 Constructors
 ------------
 
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`AABB<class_AABB_constructor_AABB>` **(** **)**                                                                            |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`AABB<class_AABB_constructor_AABB>` **(** :ref:`AABB<class_AABB>` from **)**                                               |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`AABB<class_AABB_constructor_AABB>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` size **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`AABB<class_AABB_constructor_AABB>` **(** **)**                                                                            |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`AABB<class_AABB_constructor_AABB>` **(** :ref:`AABB<class_AABB>` from **)**                                               |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`AABB<class_AABB_constructor_AABB>` **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` size **)** |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`       | :ref:`abs<class_AABB_method_abs>` **(** **)** |const|                                                                                                    |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`encloses<class_AABB_method_encloses>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                             |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`       | :ref:`expand<class_AABB_method_expand>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                       |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_center<class_AABB_method_get_center>` **(** **)** |const|                                                                                      |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_endpoint<class_AABB_method_get_endpoint>` **(** :ref:`int<class_int>` idx **)** |const|                                                        |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_longest_axis<class_AABB_method_get_longest_axis>` **(** **)** |const|                                                                          |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_longest_axis_index<class_AABB_method_get_longest_axis_index>` **(** **)** |const|                                                              |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_longest_axis_size<class_AABB_method_get_longest_axis_size>` **(** **)** |const|                                                                |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_shortest_axis<class_AABB_method_get_shortest_axis>` **(** **)** |const|                                                                        |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_shortest_axis_index<class_AABB_method_get_shortest_axis_index>` **(** **)** |const|                                                            |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_shortest_axis_size<class_AABB_method_get_shortest_axis_size>` **(** **)** |const|                                                              |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`get_support<class_AABB_method_get_support>` **(** :ref:`Vector3<class_Vector3>` dir **)** |const|                                                  |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_volume<class_AABB_method_get_volume>` **(** **)** |const|                                                                                      |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`       | :ref:`grow<class_AABB_method_grow>` **(** :ref:`float<class_float>` by **)** |const|                                                                     |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_point<class_AABB_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point **)** |const|                                                    |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_surface<class_AABB_method_has_surface>` **(** **)** |const|                                                                                    |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_volume<class_AABB_method_has_volume>` **(** **)** |const|                                                                                      |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`       | :ref:`intersection<class_AABB_method_intersection>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                     |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`intersects<class_AABB_method_intersects>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                         |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`intersects_plane<class_AABB_method_intersects_plane>` **(** :ref:`Plane<class_Plane>` plane **)** |const|                                          |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`intersects_ray<class_AABB_method_intersects_ray>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)** |const|        |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`intersects_segment<class_AABB_method_intersects_segment>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)** |const| |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` **(** :ref:`AABB<class_AABB>` aabb **)** |const|                                               |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`       | :ref:`merge<class_AABB_method_merge>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                                   |
-+-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`       | :ref:`abs<class_AABB_method_abs>` **(** **)** |const|                                                                                                    |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`encloses<class_AABB_method_encloses>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                             |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`       | :ref:`expand<class_AABB_method_expand>` **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|                                                       |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_center<class_AABB_method_get_center>` **(** **)** |const|                                                                                      |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_endpoint<class_AABB_method_get_endpoint>` **(** :ref:`int<class_int>` idx **)** |const|                                                        |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_longest_axis<class_AABB_method_get_longest_axis>` **(** **)** |const|                                                                          |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_longest_axis_index<class_AABB_method_get_longest_axis_index>` **(** **)** |const|                                                              |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_longest_axis_size<class_AABB_method_get_longest_axis_size>` **(** **)** |const|                                                                |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_shortest_axis<class_AABB_method_get_shortest_axis>` **(** **)** |const|                                                                        |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_shortest_axis_index<class_AABB_method_get_shortest_axis_index>` **(** **)** |const|                                                            |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_shortest_axis_size<class_AABB_method_get_shortest_axis_size>` **(** **)** |const|                                                              |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_support<class_AABB_method_get_support>` **(** :ref:`Vector3<class_Vector3>` dir **)** |const|                                                  |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_volume<class_AABB_method_get_volume>` **(** **)** |const|                                                                                      |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`       | :ref:`grow<class_AABB_method_grow>` **(** :ref:`float<class_float>` by **)** |const|                                                                     |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`has_point<class_AABB_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point **)** |const|                                                    |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`has_surface<class_AABB_method_has_surface>` **(** **)** |const|                                                                                    |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`has_volume<class_AABB_method_has_volume>` **(** **)** |const|                                                                                      |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`       | :ref:`intersection<class_AABB_method_intersection>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                     |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`intersects<class_AABB_method_intersects>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                         |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`intersects_plane<class_AABB_method_intersects_plane>` **(** :ref:`Plane<class_Plane>` plane **)** |const|                                          |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`intersects_ray<class_AABB_method_intersects_ray>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)** |const|        |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`intersects_segment<class_AABB_method_intersects_segment>` **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)** |const| |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` **(** :ref:`AABB<class_AABB>` aabb **)** |const|                                               |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_finite<class_AABB_method_is_finite>` **(** **)** |const|                                                                                        |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`       | :ref:`merge<class_AABB_method_merge>` **(** :ref:`AABB<class_AABB>` with **)** |const|                                                                   |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Operators
 ---------
 
-+-------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator !=<class_AABB_operator_neq_bool>` **(** :ref:`AABB<class_AABB>` right **)**              |
-+-------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`operator *<class_AABB_operator_mul_AABB>` **(** :ref:`Transform3D<class_Transform3D>` right **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`operator ==<class_AABB_operator_eq_bool>` **(** :ref:`AABB<class_AABB>` right **)**               |
-+-------------------------+---------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator !=<class_AABB_operator_neq_AABB>` **(** :ref:`AABB<class_AABB>` right **)**                     |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`operator *<class_AABB_operator_mul_Transform3D>` **(** :ref:`Transform3D<class_Transform3D>` right **)** |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`operator ==<class_AABB_operator_eq_AABB>` **(** :ref:`AABB<class_AABB>` right **)**                      |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AABB_property_end:
 
-- :ref:`Vector3<class_Vector3>` **end**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(0, 0, 0)`` |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **end** = ``Vector3(0, 0, 0)``
 
 Ending corner. This is calculated as ``position + size``. Setting this value will change the size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_property_position:
 
-- :ref:`Vector3<class_Vector3>` **position**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(0, 0, 0)`` |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **position** = ``Vector3(0, 0, 0)``
 
 Beginning corner. Typically has values lower than :ref:`end<class_AABB_property_end>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_property_size:
 
-- :ref:`Vector3<class_Vector3>` **size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(0, 0, 0)`` |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(0, 0, 0)``
 
 Size from :ref:`position<class_AABB_property_position>` to :ref:`end<class_AABB_property_end>`. Typically, all components are positive.
 
 If the size is negative, you can use :ref:`abs<class_AABB_method_abs>` to fix it.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constructor Descriptions
 ------------------------
 
 .. _class_AABB_constructor_AABB:
 
-- :ref:`AABB<class_AABB>` **AABB** **(** **)**
+.. rst-class:: classref-constructor
 
-Constructs a default-initialized ``AABB`` with default (zero) values of :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>`.
+:ref:`AABB<class_AABB>` **AABB** **(** **)**
 
-----
+Constructs a default-initialized **AABB** with default (zero) values of :ref:`position<class_AABB_property_position>` and :ref:`size<class_AABB_property_size>`.
 
-- :ref:`AABB<class_AABB>` **AABB** **(** :ref:`AABB<class_AABB>` from **)**
-
-Constructs an ``AABB`` as a copy of the given ``AABB``.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`AABB<class_AABB>` **AABB** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` size **)**
+.. rst-class:: classref-constructor
 
-Constructs an ``AABB`` from a position and size.
+:ref:`AABB<class_AABB>` **AABB** **(** :ref:`AABB<class_AABB>` from **)**
+
+Constructs an **AABB** as a copy of the given **AABB**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`AABB<class_AABB>` **AABB** **(** :ref:`Vector3<class_Vector3>` position, :ref:`Vector3<class_Vector3>` size **)**
+
+Constructs an **AABB** from a position and size.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AABB_method_abs:
 
-- :ref:`AABB<class_AABB>` **abs** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`AABB<class_AABB>` **abs** **(** **)** |const|
 
 Returns an AABB with equivalent position and size, modified so that the most-negative corner is the origin and the size is positive.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_encloses:
 
-- :ref:`bool<class_bool>` **encloses** **(** :ref:`AABB<class_AABB>` with **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if this ``AABB`` completely encloses another one.
+:ref:`bool<class_bool>` **encloses** **(** :ref:`AABB<class_AABB>` with **)** |const|
+
+Returns ``true`` if this **AABB** completely encloses another one.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_expand:
 
-- :ref:`AABB<class_AABB>` **expand** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
+.. rst-class:: classref-method
 
-Returns a copy of this ``AABB`` expanded to include a given point.
+:ref:`AABB<class_AABB>` **expand** **(** :ref:`Vector3<class_Vector3>` to_point **)** |const|
+
+Returns a copy of this **AABB** expanded to include a given point.
 
 \ **Example:**\ 
 
@@ -224,198 +286,312 @@ Returns a copy of this ``AABB`` expanded to include a given point.
 
 
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AABB_method_get_center:
 
-- :ref:`Vector3<class_Vector3>` **get_center** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the center of the ``AABB``, which is equal to :ref:`position<class_AABB_property_position>` + (:ref:`size<class_AABB_property_size>` / 2).
+:ref:`Vector3<class_Vector3>` **get_center** **(** **)** |const|
+
+Returns the center of the **AABB**, which is equal to :ref:`position<class_AABB_property_position>` + (:ref:`size<class_AABB_property_size>` / 2).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_get_endpoint:
 
-- :ref:`Vector3<class_Vector3>` **get_endpoint** **(** :ref:`int<class_int>` idx **)** |const|
+.. rst-class:: classref-method
 
-Gets the position of the 8 endpoints of the ``AABB`` in space.
+:ref:`Vector3<class_Vector3>` **get_endpoint** **(** :ref:`int<class_int>` idx **)** |const|
+
+Gets the position of the 8 endpoints of the **AABB** in space.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_get_longest_axis:
 
-- :ref:`Vector3<class_Vector3>` **get_longest_axis** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the normalized longest axis of the ``AABB``.
+:ref:`Vector3<class_Vector3>` **get_longest_axis** **(** **)** |const|
+
+Returns the normalized longest axis of the **AABB**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_get_longest_axis_index:
 
-- :ref:`int<class_int>` **get_longest_axis_index** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the index of the longest axis of the ``AABB`` (according to :ref:`Vector3<class_Vector3>`'s ``AXIS_*`` constants).
+:ref:`int<class_int>` **get_longest_axis_index** **(** **)** |const|
+
+Returns the index of the longest axis of the **AABB** (according to :ref:`Vector3<class_Vector3>`'s ``AXIS_*`` constants).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_get_longest_axis_size:
 
-- :ref:`float<class_float>` **get_longest_axis_size** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the scalar length of the longest axis of the ``AABB``.
+:ref:`float<class_float>` **get_longest_axis_size** **(** **)** |const|
+
+Returns the scalar length of the longest axis of the **AABB**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_get_shortest_axis:
 
-- :ref:`Vector3<class_Vector3>` **get_shortest_axis** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the normalized shortest axis of the ``AABB``.
+:ref:`Vector3<class_Vector3>` **get_shortest_axis** **(** **)** |const|
+
+Returns the normalized shortest axis of the **AABB**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_get_shortest_axis_index:
 
-- :ref:`int<class_int>` **get_shortest_axis_index** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the index of the shortest axis of the ``AABB`` (according to :ref:`Vector3<class_Vector3>`::AXIS\* enum).
+:ref:`int<class_int>` **get_shortest_axis_index** **(** **)** |const|
+
+Returns the index of the shortest axis of the **AABB** (according to :ref:`Vector3<class_Vector3>`::AXIS\* enum).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_get_shortest_axis_size:
 
-- :ref:`float<class_float>` **get_shortest_axis_size** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the scalar length of the shortest axis of the ``AABB``.
+:ref:`float<class_float>` **get_shortest_axis_size** **(** **)** |const|
+
+Returns the scalar length of the shortest axis of the **AABB**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_get_support:
 
-- :ref:`Vector3<class_Vector3>` **get_support** **(** :ref:`Vector3<class_Vector3>` dir **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_support** **(** :ref:`Vector3<class_Vector3>` dir **)** |const|
 
 Returns the support point in a given direction. This is useful for collision detection algorithms.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_get_volume:
 
-- :ref:`float<class_float>` **get_volume** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the volume of the ``AABB``.
+:ref:`float<class_float>` **get_volume** **(** **)** |const|
+
+Returns the volume of the **AABB**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_grow:
 
-- :ref:`AABB<class_AABB>` **grow** **(** :ref:`float<class_float>` by **)** |const|
+.. rst-class:: classref-method
 
-Returns a copy of the ``AABB`` grown a given number of units towards all the sides.
+:ref:`AABB<class_AABB>` **grow** **(** :ref:`float<class_float>` by **)** |const|
+
+Returns a copy of the **AABB** grown a given number of units towards all the sides.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_has_point:
 
-- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if the ``AABB`` contains a point. Points on the faces of the AABB are considered included, though float-point precision errors may impact the accuracy of such checks.
+:ref:`bool<class_bool>` **has_point** **(** :ref:`Vector3<class_Vector3>` point **)** |const|
 
-\ **Note:** This method is not reliable for ``AABB`` with a *negative size*. Use :ref:`abs<class_AABB_method_abs>` to get a positive sized equivalent ``AABB`` to check for contained points.
+Returns ``true`` if the **AABB** contains a point. Points on the faces of the AABB are considered included, though float-point precision errors may impact the accuracy of such checks.
+
+\ **Note:** This method is not reliable for **AABB** with a *negative size*. Use :ref:`abs<class_AABB_method_abs>` to get a positive sized equivalent **AABB** to check for contained points.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_has_surface:
 
-- :ref:`bool<class_bool>` **has_surface** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if the ``AABB`` has a surface or a length, and ``false`` if the ``AABB`` is empty (all components of :ref:`size<class_AABB_property_size>` are zero or negative).
+:ref:`bool<class_bool>` **has_surface** **(** **)** |const|
+
+Returns ``true`` if the **AABB** has a surface or a length, and ``false`` if the **AABB** is empty (all components of :ref:`size<class_AABB_property_size>` are zero or negative).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_has_volume:
 
-- :ref:`bool<class_bool>` **has_volume** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if the ``AABB`` has a volume, and ``false`` if the ``AABB`` is flat, empty, or has a negative :ref:`size<class_AABB_property_size>`.
+:ref:`bool<class_bool>` **has_volume** **(** **)** |const|
+
+Returns ``true`` if the **AABB** has a volume, and ``false`` if the **AABB** is flat, empty, or has a negative :ref:`size<class_AABB_property_size>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_intersection:
 
-- :ref:`AABB<class_AABB>` **intersection** **(** :ref:`AABB<class_AABB>` with **)** |const|
+.. rst-class:: classref-method
 
-Returns the intersection between two ``AABB``. An empty AABB (size ``(0, 0, 0)``) is returned on failure.
+:ref:`AABB<class_AABB>` **intersection** **(** :ref:`AABB<class_AABB>` with **)** |const|
+
+Returns the intersection between two **AABB**. An empty AABB (size ``(0, 0, 0)``) is returned on failure.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_intersects:
 
-- :ref:`bool<class_bool>` **intersects** **(** :ref:`AABB<class_AABB>` with **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if the ``AABB`` overlaps with another.
+:ref:`bool<class_bool>` **intersects** **(** :ref:`AABB<class_AABB>` with **)** |const|
+
+Returns ``true`` if the **AABB** overlaps with another.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_intersects_plane:
 
-- :ref:`bool<class_bool>` **intersects_plane** **(** :ref:`Plane<class_Plane>` plane **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if the ``AABB`` is on both sides of a plane.
+:ref:`bool<class_bool>` **intersects_plane** **(** :ref:`Plane<class_Plane>` plane **)** |const|
+
+Returns ``true`` if the **AABB** is on both sides of a plane.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_intersects_ray:
 
-- :ref:`Variant<class_Variant>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)** |const|
+
+Returns ``true`` if the given ray intersects with this **AABB**. Ray length is infinite.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_intersects_segment:
 
-- :ref:`Variant<class_Variant>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if the ``AABB`` intersects the line segment between ``from`` and ``to``.
+:ref:`Variant<class_Variant>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)** |const|
+
+Returns ``true`` if the **AABB** intersects the line segment between ``from`` and ``to``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_is_equal_approx:
 
-- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`AABB<class_AABB>` aabb **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if this ``AABB`` and ``aabb`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+:ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`AABB<class_AABB>` aabb **)** |const|
+
+Returns ``true`` if this **AABB** and ``aabb`` are approximately equal, by calling :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AABB_method_is_finite:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this **AABB** is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AABB_method_merge:
 
-- :ref:`AABB<class_AABB>` **merge** **(** :ref:`AABB<class_AABB>` with **)** |const|
+.. rst-class:: classref-method
 
-Returns a larger ``AABB`` that contains both this ``AABB`` and ``with``.
+:ref:`AABB<class_AABB>` **merge** **(** :ref:`AABB<class_AABB>` with **)** |const|
+
+Returns a larger **AABB** that contains both this **AABB** and ``with``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Operator Descriptions
 ---------------------
 
-.. _class_AABB_operator_neq_bool:
+.. _class_AABB_operator_neq_AABB:
 
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`AABB<class_AABB>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`AABB<class_AABB>` right **)**
 
 Returns ``true`` if the vectors are not equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 
-----
-
-.. _class_AABB_operator_mul_AABB:
-
-- :ref:`AABB<class_AABB>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
-
-Inversely transforms (multiplies) the ``AABB`` by the given :ref:`Transform3D<class_Transform3D>` transformation matrix.
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_AABB_operator_eq_bool:
+.. _class_AABB_operator_mul_Transform3D:
 
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`AABB<class_AABB>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`AABB<class_AABB>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+
+Inversely transforms (multiplies) the **AABB** by the given :ref:`Transform3D<class_Transform3D>` transformation matrix.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AABB_operator_eq_AABB:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`AABB<class_AABB>` right **)**
 
 Returns ``true`` if the AABBs are exactly equal.
 

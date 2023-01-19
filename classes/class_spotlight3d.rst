@@ -14,10 +14,14 @@ SpotLight3D
 
 A spotlight, such as a reflector spotlight or a lantern.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A Spotlight is a type of :ref:`Light3D<class_Light3D>` node that emits lights in a specific direction, in the shape of a cone. The light is attenuated through the distance. This attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light3D<class_Light3D>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -26,85 +30,104 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`float<class_float>` | shadow_bias                                                                      | ``0.03`` (overrides :ref:`Light3D<class_Light3D_property_shadow_bias>`) |
-+---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight3D_property_spot_angle>`                         | ``45.0``                                                                |
-+---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight3D_property_spot_angle_attenuation>` | ``1.0``                                                                 |
-+---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>`             | ``1.0``                                                                 |
-+---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight3D_property_spot_range>`                         | ``5.0``                                                                 |
-+---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | shadow_bias                                                                      | ``0.03`` (overrides :ref:`Light3D<class_Light3D_property_shadow_bias>`)       |
+   +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | shadow_normal_bias                                                               | ``1.0`` (overrides :ref:`Light3D<class_Light3D_property_shadow_normal_bias>`) |
+   +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight3D_property_spot_angle>`                         | ``45.0``                                                                      |
+   +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight3D_property_spot_angle_attenuation>` | ``1.0``                                                                       |
+   +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>`             | ``1.0``                                                                       |
+   +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight3D_property_spot_range>`                         | ``5.0``                                                                       |
+   +---------------------------+----------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SpotLight3D_property_spot_angle:
 
-- :ref:`float<class_float>` **spot_angle**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``45.0``         |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **spot_angle** = ``45.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** **)**
 
 The spotlight's angle in degrees.
+
+\ **Note:** :ref:`spot_angle<class_SpotLight3D_property_spot_angle>` is not affected by :ref:`Node3D.scale<class_Node3D_property_scale>` (the light's scale or its parent's scale).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpotLight3D_property_spot_angle_attenuation:
 
-- :ref:`float<class_float>` **spot_angle_attenuation**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1.0``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **spot_angle_attenuation** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** **)**
 
 The spotlight's angular attenuation curve.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpotLight3D_property_spot_attenuation:
 
-- :ref:`float<class_float>` **spot_attenuation**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1.0``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **spot_attenuation** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** **)**
 
 The spotlight's light energy attenuation curve.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpotLight3D_property_spot_range:
 
-- :ref:`float<class_float>` **spot_range**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``5.0``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **spot_range** = ``5.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** **)**
 
 The maximal range that can be reached by the spotlight. Note that the effectively lit area may appear to be smaller depending on the :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` in use. No matter the :ref:`spot_attenuation<class_SpotLight3D_property_spot_attenuation>` in use, the light will never reach anything outside this range.
+
+\ **Note:** :ref:`spot_range<class_SpotLight3D_property_spot_range>` is not affected by :ref:`Node3D.scale<class_Node3D_property_scale>` (the light's scale or its parent's scale).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

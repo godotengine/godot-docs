@@ -14,71 +14,95 @@ AudioEffectStereoEnhance
 
 An audio effect that can be used to adjust the intensity of stereo panning.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 An audio effect that can be used to adjust the intensity of stereo panning.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`pan_pullout<class_AudioEffectStereoEnhance_property_pan_pullout>`         | ``1.0`` |
-+---------------------------+---------------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`surround<class_AudioEffectStereoEnhance_property_surround>`               | ``0.0`` |
-+---------------------------+---------------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`time_pullout_ms<class_AudioEffectStereoEnhance_property_time_pullout_ms>` | ``0.0`` |
-+---------------------------+---------------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`pan_pullout<class_AudioEffectStereoEnhance_property_pan_pullout>`         | ``1.0`` |
+   +---------------------------+---------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`surround<class_AudioEffectStereoEnhance_property_surround>`               | ``0.0`` |
+   +---------------------------+---------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`time_pullout_ms<class_AudioEffectStereoEnhance_property_time_pullout_ms>` | ``0.0`` |
+   +---------------------------+---------------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioEffectStereoEnhance_property_pan_pullout:
 
-- :ref:`float<class_float>` **pan_pullout**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_pan_pullout(value) |
-+-----------+------------------------+
-| *Getter*  | get_pan_pullout()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **pan_pullout** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pan_pullout** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pan_pullout** **(** **)**
 
 Values greater than 1.0 increase intensity of any panning on audio passing through this effect, whereas values less than 1.0 will decrease the panning intensity. A value of 0.0 will downmix audio to mono.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectStereoEnhance_property_surround:
 
-- :ref:`float<class_float>` **surround**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_surround(value) |
-+-----------+---------------------+
-| *Getter*  | get_surround()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **surround** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_surround** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_surround** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectStereoEnhance_property_time_pullout_ms:
 
-- :ref:`float<class_float>` **time_pullout_ms**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_time_pullout(value) |
-+-----------+-------------------------+
-| *Getter*  | get_time_pullout()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **time_pullout_ms** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_time_pullout** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_time_pullout** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

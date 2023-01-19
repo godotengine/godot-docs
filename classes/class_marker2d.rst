@@ -14,32 +14,44 @@ Marker2D
 
 Generic 2D position hint for editing.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Generic 2D position hint for editing. It's just like a plain :ref:`Node2D<class_Node2D>`, but it displays as a cross in the 2D editor at all times. You can set cross' visual size by using the gizmo in the 2D editor while the node is selected.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`gizmo_extents<class_Marker2D_property_gizmo_extents>` | ``10.0`` |
-+---------------------------+-------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`gizmo_extents<class_Marker2D_property_gizmo_extents>` | ``10.0`` |
+   +---------------------------+-------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Marker2D_property_gizmo_extents:
 
-- :ref:`float<class_float>` **gizmo_extents**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``10.0``                 |
-+-----------+--------------------------+
-| *Setter*  | set_gizmo_extents(value) |
-+-----------+--------------------------+
-| *Getter*  | get_gizmo_extents()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **gizmo_extents** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gizmo_extents** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_gizmo_extents** **(** **)**
 
 Size of the gizmo cross that appears in the editor.
 

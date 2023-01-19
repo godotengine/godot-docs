@@ -16,100 +16,160 @@ Container
 
 Base node for containers.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Base node for containers. A ``Container`` contains other controls and automatically arranges them in a certain way.
+Base node for containers. A **Container** contains other controls and automatically arranges them in a certain way.
 
 A Control can inherit this to create custom container classes.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+----------------------------------------------+--------------+-----------------------------------------------------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
-+----------------------------------------------+--------------+-----------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------+--------------+-----------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
+   +----------------------------------------------+--------------+-----------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_horizontal<class_Container_method__get_allowed_size_flags_horizontal>` **(** **)** |virtual| |const|                 |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_vertical<class_Container_method__get_allowed_size_flags_vertical>` **(** **)** |virtual| |const|                     |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
-+-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_horizontal<class_Container_method__get_allowed_size_flags_horizontal>` **(** **)** |virtual| |const|                 |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedInt32Array<class_PackedInt32Array>` | :ref:`_get_allowed_size_flags_vertical<class_Container_method__get_allowed_size_flags_vertical>` **(** **)** |virtual| |const|                     |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`fit_child_in_rect<class_Container_method_fit_child_in_rect>` **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)** |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`queue_sort<class_Container_method_queue_sort>` **(** **)**                                                                                   |
+   +-------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Container_signal_pre_sort_children:
 
-- **pre_sort_children** **(** **)**
+.. rst-class:: classref-signal
+
+**pre_sort_children** **(** **)**
 
 Emitted when children are going to be sorted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Container_signal_sort_children:
 
-- **sort_children** **(** **)**
+.. rst-class:: classref-signal
+
+**sort_children** **(** **)**
 
 Emitted when sorting the children is needed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Container_constant_NOTIFICATION_PRE_SORT_CHILDREN:
 
+.. rst-class:: classref-constant
+
+**NOTIFICATION_PRE_SORT_CHILDREN** = ``50``
+
+Notification just before children are going to be sorted, in case there's something to process beforehand.
+
 .. _class_Container_constant_NOTIFICATION_SORT_CHILDREN:
 
-- **NOTIFICATION_PRE_SORT_CHILDREN** = **50** --- Notification just before children are going to be sorted, in case there's something to process beforehand.
+.. rst-class:: classref-constant
 
-- **NOTIFICATION_SORT_CHILDREN** = **51** --- Notification for when sorting the children, it must be obeyed immediately.
+**NOTIFICATION_SORT_CHILDREN** = ``51``
+
+Notification for when sorting the children, it must be obeyed immediately.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Container_method__get_allowed_size_flags_horizontal:
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_horizontal** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
 
-Implement to return a list of allowed horizontal :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the inspector dock.
+:ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_horizontal** **(** **)** |virtual| |const|
+
+Implement to return a list of allowed horizontal :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the Inspector dock.
 
 \ **Note:** Having no size flags is equal to having :ref:`Control.SIZE_SHRINK_BEGIN<class_Control_constant_SIZE_SHRINK_BEGIN>`. As such, this value is always implicitly allowed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Container_method__get_allowed_size_flags_vertical:
 
-- :ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_vertical** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
 
-Implement to return a list of allowed vertical :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the inspector dock.
+:ref:`PackedInt32Array<class_PackedInt32Array>` **_get_allowed_size_flags_vertical** **(** **)** |virtual| |const|
+
+Implement to return a list of allowed vertical :ref:`SizeFlags<enum_Control_SizeFlags>` for child nodes. This doesn't technically prevent the usages of any other size flags, if your implementation requires that. This only limits the options available to the user in the Inspector dock.
 
 \ **Note:** Having no size flags is equal to having :ref:`Control.SIZE_SHRINK_BEGIN<class_Control_constant_SIZE_SHRINK_BEGIN>`. As such, this value is always implicitly allowed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Container_method_fit_child_in_rect:
 
-- void **fit_child_in_rect** **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)**
+.. rst-class:: classref-method
+
+void **fit_child_in_rect** **(** :ref:`Control<class_Control>` child, :ref:`Rect2<class_Rect2>` rect **)**
 
 Fit a child control in a given rect. This is mainly a helper for creating custom container classes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Container_method_queue_sort:
 
-- void **queue_sort** **(** **)**
+.. rst-class:: classref-method
+
+void **queue_sort** **(** **)**
 
 Queue resort of the contained children. This is called automatically anyway, but can be called upon request.
 

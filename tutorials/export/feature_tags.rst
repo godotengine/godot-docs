@@ -64,6 +64,10 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 +-----------------+----------------------------------------------------------+
 | **standalone**  | Running on a non-editor build                            |
 +-----------------+----------------------------------------------------------+
+| **double**      | Running on a double-precision build                      |
++-----------------+----------------------------------------------------------+
+| **single**      | Running on a single-precision build                      |
++-----------------+----------------------------------------------------------+
 | **64**          | Running on a 64-bit build (any architecture)             |
 +-----------------+----------------------------------------------------------+
 | **32**          | Running on a 32-bit build (any architecture)             |

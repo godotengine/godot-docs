@@ -15,7 +15,7 @@ This tutorial explains the parameters present in both materials.
 
 There are 4 ways to add these materials to an object. A material can be added in
 the *Material* property of the mesh. It can be added in the *Material* property of
-the node using the mesh (such as a MeshInstance node), the *Material Override* property
+the node using the mesh (such as a MeshInstance3D node), the *Material Override* property
 of the node using the mesh, and the *Material Overlay*.
 
 .. image:: img/add_material.png
@@ -176,7 +176,7 @@ the object. The default is *Burley*. Other modes are also available:
   (via roughness). Works well for clay-like materials and some types of cloth.
 * **Toon:** Provides a hard cut for lighting, with smoothing affected by roughness.
   It is recommended you disable sky contribution from your environment's
-  ambient light settings or disable ambient light in the spatial material
+  ambient light settings or disable ambient light in the StandardMaterial3D
   to achieve a better effect.
 
 .. image:: img/spatial_material6.png
@@ -426,6 +426,8 @@ UV1 and UV2
 Godot supports two UV channels per material. Secondary UV is often useful for
 ambient occlusion or emission (baked light). UVs can be scaled and offset,
 which is useful when using repeating textures.
+
+.. _doc_standard_material_3d_triplanar_mapping:
 
 Triplanar Mapping
 ~~~~~~~~~~~~~~~~~

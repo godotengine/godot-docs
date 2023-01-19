@@ -16,6 +16,8 @@ Lightmapper
 
 Abstract class extended by lightmappers, for use in :ref:`LightmapGI<class_LightmapGI>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

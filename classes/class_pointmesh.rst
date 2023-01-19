@@ -14,6 +14,8 @@ PointMesh
 
 Mesh with a single Point primitive.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

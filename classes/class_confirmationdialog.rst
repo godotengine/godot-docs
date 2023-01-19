@@ -16,6 +16,8 @@ ConfirmationDialog
 
 Dialog for confirmation of actions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -28,57 +30,80 @@ To get cancel action, you can use:
 
  .. code-tab:: gdscript
 
-    get_cancel().connect("pressed", self, "cancelled")
+    get_cancel_button().pressed.connect(self.cancelled)
 
  .. code-tab:: csharp
 
-    GetCancel().Connect("pressed", this, nameof(Cancelled));
+    GetCancelButton().Pressed += Cancelled;
 
 
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | :ref:`cancel_button_text<class_ConfirmationDialog_property_cancel_button_text>` | ``"Cancel"``                                                                    |
-+---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>` | min_size                                                                        | ``Vector2i(200, 70)`` (overrides :ref:`Window<class_Window_property_min_size>`) |
-+---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Vector2i<class_Vector2i>` | size                                                                            | ``Vector2i(200, 100)`` (overrides :ref:`Window<class_Window_property_size>`)    |
-+---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| :ref:`String<class_String>`     | title                                                                           | ``"Please Confirm..."`` (overrides :ref:`Window<class_Window_property_title>`)  |
-+---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | :ref:`cancel_button_text<class_ConfirmationDialog_property_cancel_button_text>` | ``"Cancel"``                                                                    |
+   +---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>` | min_size                                                                        | ``Vector2i(200, 70)`` (overrides :ref:`Window<class_Window_property_min_size>`) |
+   +---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`Vector2i<class_Vector2i>` | size                                                                            | ``Vector2i(200, 100)`` (overrides :ref:`Window<class_Window_property_size>`)    |
+   +---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`     | title                                                                           | ``"Please Confirm..."`` (overrides :ref:`Window<class_Window_property_title>`)  |
+   +---------------------------------+---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------+-----------------------------------------------------------------------------------------+
-| :ref:`Button<class_Button>` | :ref:`get_cancel_button<class_ConfirmationDialog_method_get_cancel_button>` **(** **)** |
-+-----------------------------+-----------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`Button<class_Button>` | :ref:`get_cancel_button<class_ConfirmationDialog_method_get_cancel_button>` **(** **)** |
+   +-----------------------------+-----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ConfirmationDialog_property_cancel_button_text:
 
-- :ref:`String<class_String>` **cancel_button_text**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``"Cancel"``                  |
-+-----------+-------------------------------+
-| *Setter*  | set_cancel_button_text(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_cancel_button_text()      |
-+-----------+-------------------------------+
+:ref:`String<class_String>` **cancel_button_text** = ``"Cancel"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cancel_button_text** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_cancel_button_text** **(** **)**
 
 The text displayed by the cancel button (see :ref:`get_cancel_button<class_ConfirmationDialog_method_get_cancel_button>`).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ConfirmationDialog_method_get_cancel_button:
 
-- :ref:`Button<class_Button>` **get_cancel_button** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Button<class_Button>` **get_cancel_button** **(** **)**
 
 Returns the cancel button.
 

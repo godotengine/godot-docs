@@ -16,272 +16,418 @@ GeometryInstance3D
 
 Base node for geometry-based visual instances.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>`       | :ref:`cast_shadow<class_GeometryInstance3D_property_cast_shadow>`                                     |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                       | :ref:`extra_cull_margin<class_GeometryInstance3D_property_extra_cull_margin>`                         |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>`                     | :ref:`gi_lightmap_scale<class_GeometryInstance3D_property_gi_lightmap_scale>`                         |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`GIMode<enum_GeometryInstance3D_GIMode>`                                   | :ref:`gi_mode<class_GeometryInstance3D_property_gi_mode>`                                             |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                         | :ref:`ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>`           |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                       | :ref:`lod_bias<class_GeometryInstance3D_property_lod_bias>`                                           |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>`                                                 | :ref:`material_overlay<class_GeometryInstance3D_property_material_overlay>`                           |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>`                                                 | :ref:`material_override<class_GeometryInstance3D_property_material_override>`                         |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                       | :ref:`transparency<class_GeometryInstance3D_property_transparency>`                                   |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                       | :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>`               |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                       | :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                       | :ref:`visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`                   |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                                       | :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`     |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` | :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>`       |
-+---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>`       | :ref:`cast_shadow<class_GeometryInstance3D_property_cast_shadow>`                                     | ``1``                      |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`AABB<class_AABB>`                                                         | :ref:`custom_aabb<class_GeometryInstance3D_property_custom_aabb>`                                     | ``AABB(0, 0, 0, 0, 0, 0)`` |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`float<class_float>`                                                       | :ref:`extra_cull_margin<class_GeometryInstance3D_property_extra_cull_margin>`                         | ``0.0``                    |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>`                     | :ref:`gi_lightmap_scale<class_GeometryInstance3D_property_gi_lightmap_scale>`                         | ``0``                      |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`GIMode<enum_GeometryInstance3D_GIMode>`                                   | :ref:`gi_mode<class_GeometryInstance3D_property_gi_mode>`                                             | ``1``                      |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`bool<class_bool>`                                                         | :ref:`ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>`           | ``false``                  |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`float<class_float>`                                                       | :ref:`lod_bias<class_GeometryInstance3D_property_lod_bias>`                                           | ``1.0``                    |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Material<class_Material>`                                                 | :ref:`material_overlay<class_GeometryInstance3D_property_material_overlay>`                           |                            |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`Material<class_Material>`                                                 | :ref:`material_override<class_GeometryInstance3D_property_material_override>`                         |                            |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`float<class_float>`                                                       | :ref:`transparency<class_GeometryInstance3D_property_transparency>`                                   | ``0.0``                    |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`float<class_float>`                                                       | :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>`               | ``0.0``                    |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`float<class_float>`                                                       | :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` | ``0.0``                    |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`float<class_float>`                                                       | :ref:`visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>`                   | ``0.0``                    |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`float<class_float>`                                                       | :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`     | ``0.0``                    |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+   | :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` | :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>`       | ``0``                      |
+   +---------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_instance_shader_parameter<class_GeometryInstance3D_method_get_instance_shader_parameter>` **(** :ref:`StringName<class_StringName>` name **)** |const|                              |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_custom_aabb<class_GeometryInstance3D_method_set_custom_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)**                                                                              |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_instance_shader_parameter<class_GeometryInstance3D_method_set_instance_shader_parameter>` **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)** |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_instance_shader_parameter<class_GeometryInstance3D_method_get_instance_shader_parameter>` **(** :ref:`StringName<class_StringName>` name **)** |const|                              |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_instance_shader_parameter<class_GeometryInstance3D_method_set_instance_shader_parameter>` **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)** |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_GeometryInstance3D_ShadowCastingSetting:
 
-.. _class_GeometryInstance3D_constant_SHADOW_CASTING_SETTING_OFF:
-
-.. _class_GeometryInstance3D_constant_SHADOW_CASTING_SETTING_ON:
-
-.. _class_GeometryInstance3D_constant_SHADOW_CASTING_SETTING_DOUBLE_SIDED:
-
-.. _class_GeometryInstance3D_constant_SHADOW_CASTING_SETTING_SHADOWS_ONLY:
+.. rst-class:: classref-enumeration
 
 enum **ShadowCastingSetting**:
 
-- **SHADOW_CASTING_SETTING_OFF** = **0** --- Will not cast any shadows. Use this to improve performance for small geometry that is unlikely to cast noticeable shadows (such as debris).
+.. _class_GeometryInstance3D_constant_SHADOW_CASTING_SETTING_OFF:
 
-- **SHADOW_CASTING_SETTING_ON** = **1** --- Will cast shadows from all visible faces in the GeometryInstance3D.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **SHADOW_CASTING_SETTING_OFF** = ``0``
+
+Will not cast any shadows. Use this to improve performance for small geometry that is unlikely to cast noticeable shadows (such as debris).
+
+.. _class_GeometryInstance3D_constant_SHADOW_CASTING_SETTING_ON:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **SHADOW_CASTING_SETTING_ON** = ``1``
+
+Will cast shadows from all visible faces in the GeometryInstance3D.
 
 Will take culling into account, so faces not being rendered will not be taken into account when shadow casting.
 
-- **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = **2** --- Will cast shadows from all visible faces in the GeometryInstance3D.
+.. _class_GeometryInstance3D_constant_SHADOW_CASTING_SETTING_DOUBLE_SIDED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = ``2``
+
+Will cast shadows from all visible faces in the GeometryInstance3D.
 
 Will not take culling into account, so all faces will be taken into account when shadow casting.
 
-- **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3** --- Will only show the shadows casted from this object.
+.. _class_GeometryInstance3D_constant_SHADOW_CASTING_SETTING_SHADOWS_ONLY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = ``3``
+
+Will only show the shadows casted from this object.
 
 In other words, the actual mesh will not be visible, only the shadows casted from the mesh will be.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_GeometryInstance3D_GIMode:
 
-.. _class_GeometryInstance3D_constant_GI_MODE_DISABLED:
-
-.. _class_GeometryInstance3D_constant_GI_MODE_STATIC:
-
-.. _class_GeometryInstance3D_constant_GI_MODE_DYNAMIC:
+.. rst-class:: classref-enumeration
 
 enum **GIMode**:
 
-- **GI_MODE_DISABLED** = **0** --- Disabled global illumination mode. Use for dynamic objects that do not contribute to global illumination (such as characters). When using :ref:`VoxelGI<class_VoxelGI>` and SDFGI, the geometry will *receive* indirect lighting and reflections but the geometry will not be considered in GI baking. When using :ref:`LightmapGI<class_LightmapGI>`, the object will receive indirect lighting using lightmap probes instead of using the baked lightmap texture.
+.. _class_GeometryInstance3D_constant_GI_MODE_DISABLED:
 
-- **GI_MODE_STATIC** = **1** --- Baked global illumination mode. Use for static objects that contribute to global illumination (such as level geometry). This GI mode is effective when using :ref:`VoxelGI<class_VoxelGI>`, SDFGI and :ref:`LightmapGI<class_LightmapGI>`.
+.. rst-class:: classref-enumeration-constant
 
-- **GI_MODE_DYNAMIC** = **2** --- Dynamic global illumination mode. Use for dynamic objects that contribute to global illumination. This GI mode is only effective when using :ref:`VoxelGI<class_VoxelGI>`, but it has a higher performance impact than :ref:`GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>`. When using other GI methods, this will act the same as :ref:`GI_MODE_DISABLED<class_GeometryInstance3D_constant_GI_MODE_DISABLED>`.
+:ref:`GIMode<enum_GeometryInstance3D_GIMode>` **GI_MODE_DISABLED** = ``0``
+
+Disabled global illumination mode. Use for dynamic objects that do not contribute to global illumination (such as characters). When using :ref:`VoxelGI<class_VoxelGI>` and SDFGI, the geometry will *receive* indirect lighting and reflections but the geometry will not be considered in GI baking. When using :ref:`LightmapGI<class_LightmapGI>`, the object will receive indirect lighting using lightmap probes instead of using the baked lightmap texture.
+
+.. _class_GeometryInstance3D_constant_GI_MODE_STATIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`GIMode<enum_GeometryInstance3D_GIMode>` **GI_MODE_STATIC** = ``1``
+
+Baked global illumination mode. Use for static objects that contribute to global illumination (such as level geometry). This GI mode is effective when using :ref:`VoxelGI<class_VoxelGI>`, SDFGI and :ref:`LightmapGI<class_LightmapGI>`.
+
+.. _class_GeometryInstance3D_constant_GI_MODE_DYNAMIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`GIMode<enum_GeometryInstance3D_GIMode>` **GI_MODE_DYNAMIC** = ``2``
+
+Dynamic global illumination mode. Use for dynamic objects that contribute to global illumination. This GI mode is only effective when using :ref:`VoxelGI<class_VoxelGI>`, but it has a higher performance impact than :ref:`GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>`. When using other GI methods, this will act the same as :ref:`GI_MODE_DISABLED<class_GeometryInstance3D_constant_GI_MODE_DISABLED>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_GeometryInstance3D_LightmapScale:
 
-.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_1X:
-
-.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_2X:
-
-.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_4X:
-
-.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_8X:
-
-.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **LightmapScale**:
 
-- **LIGHTMAP_SCALE_1X** = **0** --- The standard texel density for lightmapping with :ref:`LightmapGI<class_LightmapGI>`.
+.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_1X:
 
-- **LIGHTMAP_SCALE_2X** = **1** --- Multiplies texel density by 2× for lightmapping with :ref:`LightmapGI<class_LightmapGI>`. To ensure consistency in texel density, use this when scaling a mesh by a factor between 1.5 and 3.0.
+.. rst-class:: classref-enumeration-constant
 
-- **LIGHTMAP_SCALE_4X** = **2** --- Multiplies texel density by 4× for lightmapping with :ref:`LightmapGI<class_LightmapGI>`. To ensure consistency in texel density, use this when scaling a mesh by a factor between 3.0 and 6.0.
+:ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_1X** = ``0``
 
-- **LIGHTMAP_SCALE_8X** = **3** --- Multiplies texel density by 8× for lightmapping with :ref:`LightmapGI<class_LightmapGI>`. To ensure consistency in texel density, use this when scaling a mesh by a factor greater than 6.0.
+The standard texel density for lightmapping with :ref:`LightmapGI<class_LightmapGI>`.
 
-- **LIGHTMAP_SCALE_MAX** = **4** --- Represents the size of the :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` enum.
+.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_2X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_2X** = ``1``
+
+Multiplies texel density by 2× for lightmapping with :ref:`LightmapGI<class_LightmapGI>`. To ensure consistency in texel density, use this when scaling a mesh by a factor between 1.5 and 3.0.
+
+.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_4X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_4X** = ``2``
+
+Multiplies texel density by 4× for lightmapping with :ref:`LightmapGI<class_LightmapGI>`. To ensure consistency in texel density, use this when scaling a mesh by a factor between 3.0 and 6.0.
+
+.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_8X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_8X** = ``3``
+
+Multiplies texel density by 8× for lightmapping with :ref:`LightmapGI<class_LightmapGI>`. To ensure consistency in texel density, use this when scaling a mesh by a factor greater than 6.0.
+
+.. _class_GeometryInstance3D_constant_LIGHTMAP_SCALE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **LIGHTMAP_SCALE_MAX** = ``4``
+
+Represents the size of the :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_GeometryInstance3D_VisibilityRangeFadeMode:
 
-.. _class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED:
-
-.. _class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF:
-
-.. _class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES:
+.. rst-class:: classref-enumeration
 
 enum **VisibilityRangeFadeMode**:
 
-- **VISIBILITY_RANGE_FADE_DISABLED** = **0** --- Will not fade itself nor its visibility dependencies, hysteresis will be used instead. This is the fastest approach to manual LOD, but it can result in noticeable LOD transitions depending on how the LOD meshes are authored. See :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`Node3D.visibility_parent<class_Node3D_property_visibility_parent>` for more information.
+.. _class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED:
 
-- **VISIBILITY_RANGE_FADE_SELF** = **1** --- Will fade-out itself when reaching the limits of its own visibility range. This is slower than :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, but it can provide smoother transitions. The fading range is determined by :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` and :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`.
+.. rst-class:: classref-enumeration-constant
 
-- **VISIBILITY_RANGE_FADE_DEPENDENCIES** = **2** --- Will fade-in its visibility dependencies (see :ref:`Node3D.visibility_parent<class_Node3D_property_visibility_parent>`) when reaching the limits of its own visibility range. This is slower than :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, but it can provide smoother transitions. The fading range is determined by :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` and :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`.
+:ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **VISIBILITY_RANGE_FADE_DISABLED** = ``0``
+
+Will not fade itself nor its visibility dependencies, hysteresis will be used instead. This is the fastest approach to manual LOD, but it can result in noticeable LOD transitions depending on how the LOD meshes are authored. See :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` and :ref:`Node3D.visibility_parent<class_Node3D_property_visibility_parent>` for more information.
+
+.. _class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **VISIBILITY_RANGE_FADE_SELF** = ``1``
+
+Will fade-out itself when reaching the limits of its own visibility range. This is slower than :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, but it can provide smoother transitions. The fading range is determined by :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` and :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`.
+
+.. _class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **VISIBILITY_RANGE_FADE_DEPENDENCIES** = ``2``
+
+Will fade-in its visibility dependencies (see :ref:`Node3D.visibility_parent<class_Node3D_property_visibility_parent>`) when reaching the limits of its own visibility range. This is slower than :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, but it can provide smoother transitions. The fading range is determined by :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` and :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GeometryInstance3D_property_cast_shadow:
 
-- :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **cast_shadow**
+.. rst-class:: classref-property
 
-+----------+---------------------------------+
-| *Setter* | set_cast_shadows_setting(value) |
-+----------+---------------------------------+
-| *Getter* | get_cast_shadows_setting()      |
-+----------+---------------------------------+
+:ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **cast_shadow** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cast_shadows_setting** **(** :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` value **)**
+- :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` **get_cast_shadows_setting** **(** **)**
 
 The selected shadow casting flag. See :ref:`ShadowCastingSetting<enum_GeometryInstance3D_ShadowCastingSetting>` for possible values.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GeometryInstance3D_property_custom_aabb:
+
+.. rst-class:: classref-property
+
+:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB(0, 0, 0, 0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` value **)**
+- :ref:`AABB<class_AABB>` **get_custom_aabb** **(** **)**
+
+Overrides the bounding box of this node with a custom one. This can be used to avoid the expensive :ref:`AABB<class_AABB>` recalculation that happens when a skeleton is used with a :ref:`MeshInstance3D<class_MeshInstance3D>` or to have fine control over the :ref:`MeshInstance3D<class_MeshInstance3D>`'s bounding box. To remove this, set value to an :ref:`AABB<class_AABB>` with all fields set to zero.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance3D_property_extra_cull_margin:
 
-- :ref:`float<class_float>` **extra_cull_margin**
+.. rst-class:: classref-property
 
-+----------+------------------------------+
-| *Setter* | set_extra_cull_margin(value) |
-+----------+------------------------------+
-| *Getter* | get_extra_cull_margin()      |
-+----------+------------------------------+
+:ref:`float<class_float>` **extra_cull_margin** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extra_cull_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_extra_cull_margin** **(** **)**
 
 The extra distance added to the GeometryInstance3D's bounding box (:ref:`AABB<class_AABB>`) to increase its cull box.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance3D_property_gi_lightmap_scale:
 
-- :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **gi_lightmap_scale**
+.. rst-class:: classref-property
 
-+----------+---------------------------+
-| *Setter* | set_lightmap_scale(value) |
-+----------+---------------------------+
-| *Getter* | get_lightmap_scale()      |
-+----------+---------------------------+
+:ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **gi_lightmap_scale** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lightmap_scale** **(** :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` value **)**
+- :ref:`LightmapScale<enum_GeometryInstance3D_LightmapScale>` **get_lightmap_scale** **(** **)**
 
 The texel density to use for lightmapping in :ref:`LightmapGI<class_LightmapGI>`. Greater scale values provide higher resolution in the lightmap, which can result in sharper shadows for lights that have both direct and indirect light baked. However, greater scale values will also increase the space taken by the mesh in the lightmap texture, which increases the memory, storage, and bake time requirements. When using a single mesh at different scales, consider adjusting this value to keep the lightmap texel density consistent across meshes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance3D_property_gi_mode:
 
-- :ref:`GIMode<enum_GeometryInstance3D_GIMode>` **gi_mode**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_gi_mode(value) |
-+----------+--------------------+
-| *Getter* | get_gi_mode()      |
-+----------+--------------------+
+:ref:`GIMode<enum_GeometryInstance3D_GIMode>` **gi_mode** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gi_mode** **(** :ref:`GIMode<enum_GeometryInstance3D_GIMode>` value **)**
+- :ref:`GIMode<enum_GeometryInstance3D_GIMode>` **get_gi_mode** **(** **)**
 
 The global illumination mode to use for the whole geometry. To avoid inconsistent results, use a mode that matches the purpose of the mesh during gameplay (static/dynamic).
 
 \ **Note:** Lights' bake mode will also affect the global illumination rendering. See :ref:`Light3D.light_bake_mode<class_Light3D_property_light_bake_mode>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance3D_property_ignore_occlusion_culling:
 
-- :ref:`bool<class_bool>` **ignore_occlusion_culling**
+.. rst-class:: classref-property
 
-+----------+-------------------------------------+
-| *Setter* | set_ignore_occlusion_culling(value) |
-+----------+-------------------------------------+
-| *Getter* | is_ignoring_occlusion_culling()     |
-+----------+-------------------------------------+
+:ref:`bool<class_bool>` **ignore_occlusion_culling** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ignore_occlusion_culling** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_ignoring_occlusion_culling** **(** **)**
+
+If ``true``, disables occlusion culling for this instance.  Useful for gizmos that must be rendered even when occlusion culling is in use.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance3D_property_lod_bias:
 
-- :ref:`float<class_float>` **lod_bias**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_lod_bias(value) |
-+----------+---------------------+
-| *Getter* | get_lod_bias()      |
-+----------+---------------------+
+:ref:`float<class_float>` **lod_bias** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lod_bias** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_lod_bias** **(** **)**
+
+Changes how quickly the mesh transitions to a lower level of detail.  A value of 0 will force the mesh to its lowest level of detail, a value of 1 will use the default settings, and larger values will keep the mesh in a higher level of detail at farther distances.
+
+Useful for testing level of detail transitions in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance3D_property_material_overlay:
 
-- :ref:`Material<class_Material>` **material_overlay**
+.. rst-class:: classref-property
 
-+----------+-----------------------------+
-| *Setter* | set_material_overlay(value) |
-+----------+-----------------------------+
-| *Getter* | get_material_overlay()      |
-+----------+-----------------------------+
+:ref:`Material<class_Material>` **material_overlay**
+
+.. rst-class:: classref-property-setget
+
+- void **set_material_overlay** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_material_overlay** **(** **)**
 
 The material overlay for the whole geometry.
 
 If a material is assigned to this property, it will be rendered on top of any other active material for all the surfaces.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance3D_property_material_override:
 
-- :ref:`Material<class_Material>` **material_override**
+.. rst-class:: classref-property
 
-+----------+------------------------------+
-| *Setter* | set_material_override(value) |
-+----------+------------------------------+
-| *Getter* | get_material_override()      |
-+----------+------------------------------+
+:ref:`Material<class_Material>` **material_override**
+
+.. rst-class:: classref-property-setget
+
+- void **set_material_override** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_material_override** **(** **)**
 
 The material override for the whole geometry.
 
 If a material is assigned to this property, it will be used instead of any material set in any material slot of the mesh.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance3D_property_transparency:
 
-- :ref:`float<class_float>` **transparency**
+.. rst-class:: classref-property
 
-+----------+-------------------------+
-| *Setter* | set_transparency(value) |
-+----------+-------------------------+
-| *Getter* | get_transparency()      |
-+----------+-------------------------+
+:ref:`float<class_float>` **transparency** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_transparency** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_transparency** **(** **)**
 
 The transparency applied to the whole geometry (as a multiplier of the materials' existing transparency). ``0.0`` is fully opaque, while ``1.0`` is fully transparent. Values greater than ``0.0`` (exclusive) will force the geometry's materials to go through the transparent pipeline, which is slower to render and can exhibit rendering issues due to incorrect transparency sorting. However, unlike using a transparent material, setting :ref:`transparency<class_GeometryInstance3D_property_transparency>` to a value greater than ``0.0`` (exclusive) will *not* disable shadow rendering.
 
@@ -289,100 +435,123 @@ In spatial shaders, ``1.0 - transparency`` is set as the default value of the ``
 
 \ **Note:** :ref:`transparency<class_GeometryInstance3D_property_transparency>` is clamped between ``0.0`` and ``1.0``, so this property cannot be used to make transparent materials more opaque than they originally are.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance3D_property_visibility_range_begin:
 
-- :ref:`float<class_float>` **visibility_range_begin**
+.. rst-class:: classref-property
 
-+----------+-----------------------------------+
-| *Setter* | set_visibility_range_begin(value) |
-+----------+-----------------------------------+
-| *Getter* | get_visibility_range_begin()      |
-+----------+-----------------------------------+
+:ref:`float<class_float>` **visibility_range_begin** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visibility_range_begin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_visibility_range_begin** **(** **)**
 
 Starting distance from which the GeometryInstance3D will be visible, taking :ref:`visibility_range_begin_margin<class_GeometryInstance3D_property_visibility_range_begin_margin>` into account as well. The default value of 0 is used to disable the range check.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance3D_property_visibility_range_begin_margin:
 
-- :ref:`float<class_float>` **visibility_range_begin_margin**
+.. rst-class:: classref-property
 
-+----------+------------------------------------------+
-| *Setter* | set_visibility_range_begin_margin(value) |
-+----------+------------------------------------------+
-| *Getter* | get_visibility_range_begin_margin()      |
-+----------+------------------------------------------+
+:ref:`float<class_float>` **visibility_range_begin_margin** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visibility_range_begin_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_visibility_range_begin_margin** **(** **)**
 
 Margin for the :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` threshold. The GeometryInstance3D will only change its visibility state when it goes over or under the :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` threshold by this amount.
 
 If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, this acts as an hysteresis distance. If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_SELF<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF>` or :ref:`VISIBILITY_RANGE_FADE_DEPENDENCIES<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES>`, this acts as a fade transition distance and must be set to a value greater than ``0.0`` for the effect to be noticeable.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance3D_property_visibility_range_end:
 
-- :ref:`float<class_float>` **visibility_range_end**
+.. rst-class:: classref-property
 
-+----------+---------------------------------+
-| *Setter* | set_visibility_range_end(value) |
-+----------+---------------------------------+
-| *Getter* | get_visibility_range_end()      |
-+----------+---------------------------------+
+:ref:`float<class_float>` **visibility_range_end** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visibility_range_end** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_visibility_range_end** **(** **)**
 
 Distance from which the GeometryInstance3D will be hidden, taking :ref:`visibility_range_end_margin<class_GeometryInstance3D_property_visibility_range_end_margin>` into account as well. The default value of 0 is used to disable the range check.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance3D_property_visibility_range_end_margin:
 
-- :ref:`float<class_float>` **visibility_range_end_margin**
+.. rst-class:: classref-property
 
-+----------+----------------------------------------+
-| *Setter* | set_visibility_range_end_margin(value) |
-+----------+----------------------------------------+
-| *Getter* | get_visibility_range_end_margin()      |
-+----------+----------------------------------------+
+:ref:`float<class_float>` **visibility_range_end_margin** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visibility_range_end_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_visibility_range_end_margin** **(** **)**
 
 Margin for the :ref:`visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>` threshold. The GeometryInstance3D will only change its visibility state when it goes over or under the :ref:`visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>` threshold by this amount.
 
 If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, this acts as an hysteresis distance. If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_SELF<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF>` or :ref:`VISIBILITY_RANGE_FADE_DEPENDENCIES<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES>`, this acts as a fade transition distance and must be set to a value greater than ``0.0`` for the effect to be noticeable.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance3D_property_visibility_range_fade_mode:
 
-- :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **visibility_range_fade_mode**
+.. rst-class:: classref-property
 
-+----------+---------------------------------------+
-| *Setter* | set_visibility_range_fade_mode(value) |
-+----------+---------------------------------------+
-| *Getter* | get_visibility_range_fade_mode()      |
-+----------+---------------------------------------+
+:ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **visibility_range_fade_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visibility_range_fade_mode** **(** :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` value **)**
+- :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` **get_visibility_range_fade_mode** **(** **)**
 
 Controls which instances will be faded when approaching the limits of the visibility range. See :ref:`VisibilityRangeFadeMode<enum_GeometryInstance3D_VisibilityRangeFadeMode>` for possible values.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GeometryInstance3D_method_get_instance_shader_parameter:
 
-- :ref:`Variant<class_Variant>` **get_instance_shader_parameter** **(** :ref:`StringName<class_StringName>` name **)** |const|
+.. rst-class:: classref-method
 
-----
+:ref:`Variant<class_Variant>` **get_instance_shader_parameter** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-.. _class_GeometryInstance3D_method_set_custom_aabb:
+Get the value of a shader parameter as set on this instance.
 
-- void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` aabb **)**
-
-Overrides the bounding box of this node with a custom one. To remove it, set an :ref:`AABB<class_AABB>` with all fields set to zero.
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance3D_method_set_instance_shader_parameter:
 
-- void **set_instance_shader_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+void **set_instance_shader_parameter** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
+
+Set the value of a shader parameter for this instance only.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

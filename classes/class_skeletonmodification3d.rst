@@ -16,6 +16,8 @@ SkeletonModification3D
 
 A resource that operates on bones in a :ref:`Skeleton3D<class_Skeleton3D>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,113 +25,157 @@ This resource provides an interface that can be expanded so code that operates o
 
 This is used to provide Godot with a flexible and powerful Inverse Kinematics solution that can be adapted for many different uses.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`enabled<class_SkeletonModification3D_property_enabled>`               | ``true`` |
-+-------------------------+-----------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`   | :ref:`execution_mode<class_SkeletonModification3D_property_execution_mode>` | ``0``    |
-+-------------------------+-----------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-----------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`enabled<class_SkeletonModification3D_property_enabled>`               | ``true`` |
+   +-------------------------+-----------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`   | :ref:`execution_mode<class_SkeletonModification3D_property_execution_mode>` | ``0``    |
+   +-------------------------+-----------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                  | :ref:`_execute<class_SkeletonModification3D_method__execute>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                                                           |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                  | :ref:`_setup_modification<class_SkeletonModification3D_method__setup_modification>` **(** :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` modification_stack **)** |virtual|            |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                             | :ref:`clamp_angle<class_SkeletonModification3D_method_clamp_angle>` **(** :ref:`float<class_float>` angle, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`bool<class_bool>` invert **)** |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                               | :ref:`get_is_setup<class_SkeletonModification3D_method_get_is_setup>` **(** **)** |const|                                                                                                                     |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` | :ref:`get_modification_stack<class_SkeletonModification3D_method_get_modification_stack>` **(** **)**                                                                                                         |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                  | :ref:`set_is_setup<class_SkeletonModification3D_method_set_is_setup>` **(** :ref:`bool<class_bool>` is_setup **)**                                                                                            |
-+-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                  | :ref:`_execute<class_SkeletonModification3D_method__execute>` **(** :ref:`float<class_float>` delta **)** |virtual|                                                                                           |
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                  | :ref:`_setup_modification<class_SkeletonModification3D_method__setup_modification>` **(** :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` modification_stack **)** |virtual|            |
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                             | :ref:`clamp_angle<class_SkeletonModification3D_method_clamp_angle>` **(** :ref:`float<class_float>` angle, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`bool<class_bool>` invert **)** |
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`get_is_setup<class_SkeletonModification3D_method_get_is_setup>` **(** **)** |const|                                                                                                                     |
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` | :ref:`get_modification_stack<class_SkeletonModification3D_method_get_modification_stack>` **(** **)**                                                                                                         |
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                  | :ref:`set_is_setup<class_SkeletonModification3D_method_set_is_setup>` **(** :ref:`bool<class_bool>` is_setup **)**                                                                                            |
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SkeletonModification3D_property_enabled:
 
-- :ref:`bool<class_bool>` **enabled**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``true``           |
-+-----------+--------------------+
-| *Setter*  | set_enabled(value) |
-+-----------+--------------------+
-| *Getter*  | get_enabled()      |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **enabled** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_enabled** **(** **)**
 
 When true, the modification's :ref:`_execute<class_SkeletonModification3D_method__execute>` function will be called by the :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3D_property_execution_mode:
 
-- :ref:`int<class_int>` **execution_mode**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_execution_mode(value) |
-+-----------+---------------------------+
-| *Getter*  | get_execution_mode()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **execution_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_execution_mode** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_execution_mode** **(** **)**
 
 The execution mode for the modification. This tells the modification stack when to execute the modification. Some modifications have settings that are only available in certain execution modes.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SkeletonModification3D_method__execute:
 
-- void **_execute** **(** :ref:`float<class_float>` delta **)** |virtual|
+.. rst-class:: classref-method
+
+void **_execute** **(** :ref:`float<class_float>` delta **)** |virtual|
 
 Executes the given modification. This is where the modification performs whatever function it is designed to do.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3D_method__setup_modification:
 
-- void **_setup_modification** **(** :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` modification_stack **)** |virtual|
+.. rst-class:: classref-method
+
+void **_setup_modification** **(** :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` modification_stack **)** |virtual|
 
 Sets up the modification so it can be executed. This function should be called automatically by the :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` containing this modification.
 
 If you need to initialize a modification before use, this is the place to do it!
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SkeletonModification3D_method_clamp_angle:
 
-- :ref:`float<class_float>` **clamp_angle** **(** :ref:`float<class_float>` angle, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`bool<class_bool>` invert **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **clamp_angle** **(** :ref:`float<class_float>` angle, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`bool<class_bool>` invert **)**
 
 Takes a angle and clamps it so it is within the passed-in ``min`` and ``max`` range. ``invert`` will inversely clamp the angle, clamping it to the range outside of the given bounds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3D_method_get_is_setup:
 
-- :ref:`bool<class_bool>` **get_is_setup** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_is_setup** **(** **)** |const|
 
 Returns whether this modification has been successfully setup or not.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3D_method_get_modification_stack:
 
-- :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` **get_modification_stack** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` **get_modification_stack** **(** **)**
 
 Returns the :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` that this modification is bound to. Through the modification stack, you can access the Skeleton3D the modification is operating on.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3D_method_set_is_setup:
 
-- void **set_is_setup** **(** :ref:`bool<class_bool>` is_setup **)**
+.. rst-class:: classref-method
+
+void **set_is_setup** **(** :ref:`bool<class_bool>` is_setup **)**
 
 Manually allows you to set the setup state of the modification. This function should only rarely be used, as the :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` the modification is bound to should handle setting the modification up.
 

@@ -14,6 +14,8 @@ Path3D
 
 Contains a :ref:`Curve3D<class_Curve3D>` path for :ref:`PathFollow3D<class_PathFollow3D>` nodes to follow.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,34 +23,54 @@ Can have :ref:`PathFollow3D<class_PathFollow3D>` child nodes moving along the :r
 
 Note that the path is considered as relative to the moved nodes (children of :ref:`PathFollow3D<class_PathFollow3D>`). As such, the curve should usually start with a zero vector ``(0, 0, 0)``.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------+
-| :ref:`Curve3D<class_Curve3D>` | :ref:`curve<class_Path3D_property_curve>` |
-+-------------------------------+-------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------+
+   | :ref:`Curve3D<class_Curve3D>` | :ref:`curve<class_Path3D_property_curve>` |
+   +-------------------------------+-------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Path3D_signal_curve_changed:
 
-- **curve_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**curve_changed** **(** **)**
 
 Emitted when the :ref:`curve<class_Path3D_property_curve>` changes.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Path3D_property_curve:
 
-- :ref:`Curve3D<class_Curve3D>` **curve**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_curve(value) |
-+----------+------------------+
-| *Getter* | get_curve()      |
-+----------+------------------+
+:ref:`Curve3D<class_Curve3D>` **curve**
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve** **(** :ref:`Curve3D<class_Curve3D>` value **)**
+- :ref:`Curve3D<class_Curve3D>` **get_curve** **(** **)**
 
 A :ref:`Curve3D<class_Curve3D>` describing the path.
 

@@ -12,132 +12,190 @@ VisualShaderNodeIntParameter
 
 **Inherits:** :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A visual shader node for shader parameter (uniform) of type :ref:`int<class_int>`.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+A :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>` of type :ref:`int<class_int>`. Offers additional customization for range of accepted values.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                               | :ref:`default_value<class_VisualShaderNodeIntParameter_property_default_value>`                 | ``0``     |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                             | :ref:`default_value_enabled<class_VisualShaderNodeIntParameter_property_default_value_enabled>` | ``false`` |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
-| :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` | :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>`                                   | ``0``     |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                               | :ref:`max<class_VisualShaderNodeIntParameter_property_max>`                                     | ``100``   |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                               | :ref:`min<class_VisualShaderNodeIntParameter_property_min>`                                     | ``0``     |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                               | :ref:`step<class_VisualShaderNodeIntParameter_property_step>`                                   | ``1``     |
-+-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                               | :ref:`default_value<class_VisualShaderNodeIntParameter_property_default_value>`                 | ``0``     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                             | :ref:`default_value_enabled<class_VisualShaderNodeIntParameter_property_default_value_enabled>` | ``false`` |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` | :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>`                                   | ``0``     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                               | :ref:`max<class_VisualShaderNodeIntParameter_property_max>`                                     | ``100``   |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                               | :ref:`min<class_VisualShaderNodeIntParameter_property_min>`                                     | ``0``     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                               | :ref:`step<class_VisualShaderNodeIntParameter_property_step>`                                   | ``1``     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeIntParameter_Hint:
 
-.. _class_VisualShaderNodeIntParameter_constant_HINT_NONE:
-
-.. _class_VisualShaderNodeIntParameter_constant_HINT_RANGE:
-
-.. _class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP:
-
-.. _class_VisualShaderNodeIntParameter_constant_HINT_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Hint**:
 
-- **HINT_NONE** = **0**
+.. _class_VisualShaderNodeIntParameter_constant_HINT_NONE:
 
-- **HINT_RANGE** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **HINT_RANGE_STEP** = **2**
+:ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **HINT_NONE** = ``0``
 
-- **HINT_MAX** = **3**
+The parameter will not constrain its value.
+
+.. _class_VisualShaderNodeIntParameter_constant_HINT_RANGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **HINT_RANGE** = ``1``
+
+The parameter's value must be within the specified :ref:`min<class_VisualShaderNodeIntParameter_property_min>`/:ref:`max<class_VisualShaderNodeIntParameter_property_max>` range.
+
+.. _class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **HINT_RANGE_STEP** = ``2``
+
+The parameter's value must be within the specified range, with the given :ref:`step<class_VisualShaderNodeIntParameter_property_step>` between values.
+
+.. _class_VisualShaderNodeIntParameter_constant_HINT_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **HINT_MAX** = ``3``
+
+Represents the size of the :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeIntParameter_property_default_value:
 
-- :ref:`int<class_int>` **default_value**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_default_value(value) |
-+-----------+--------------------------+
-| *Getter*  | get_default_value()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **default_value** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_default_value** **(** **)**
+
+Default value of this parameter, which will be used if not set externally. :ref:`default_value_enabled<class_VisualShaderNodeIntParameter_property_default_value_enabled>` must be enabled; defaults to ``0`` otherwise.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeIntParameter_property_default_value_enabled:
 
-- :ref:`bool<class_bool>` **default_value_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``false``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_default_value_enabled(value) |
-+-----------+----------------------------------+
-| *Getter*  | is_default_value_enabled()       |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_default_value_enabled** **(** **)**
+
+If ``true``, the node will have a custom default value.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeIntParameter_property_hint:
 
-- :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **hint**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0``           |
-+-----------+-----------------+
-| *Setter*  | set_hint(value) |
-+-----------+-----------------+
-| *Getter*  | get_hint()      |
-+-----------+-----------------+
+:ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **hint** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hint** **(** :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` value **)**
+- :ref:`Hint<enum_VisualShaderNodeIntParameter_Hint>` **get_hint** **(** **)**
+
+Range hint of this node. Use it to customize valid parameter range.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeIntParameter_property_max:
 
-- :ref:`int<class_int>` **max**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``100``        |
-+-----------+----------------+
-| *Setter*  | set_max(value) |
-+-----------+----------------+
-| *Getter*  | get_max()      |
-+-----------+----------------+
+:ref:`int<class_int>` **max** = ``100``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max** **(** **)**
+
+The maximum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>` must be either :ref:`HINT_RANGE<class_VisualShaderNodeIntParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP>` for this to take effect.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeIntParameter_property_min:
 
-- :ref:`int<class_int>` **min**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``0``          |
-+-----------+----------------+
-| *Setter*  | set_min(value) |
-+-----------+----------------+
-| *Getter*  | get_min()      |
-+-----------+----------------+
+:ref:`int<class_int>` **min** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_min** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_min** **(** **)**
+
+The minimum value this parameter can take. :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>` must be either :ref:`HINT_RANGE<class_VisualShaderNodeIntParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP>` for this to take effect.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeIntParameter_property_step:
 
-- :ref:`int<class_int>` **step**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``1``           |
-+-----------+-----------------+
-| *Setter*  | set_step(value) |
-+-----------+-----------------+
-| *Getter*  | get_step()      |
-+-----------+-----------------+
+:ref:`int<class_int>` **step** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_step** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_step** **(** **)**
+
+The step between parameter's values. Forces the parameter to be a multiple of the given value. :ref:`hint<class_VisualShaderNodeIntParameter_property_hint>` must be :ref:`HINT_RANGE_STEP<class_VisualShaderNodeIntParameter_constant_HINT_RANGE_STEP>` for this to take effect.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

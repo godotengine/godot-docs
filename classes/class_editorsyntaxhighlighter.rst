@@ -14,6 +14,8 @@ EditorSyntaxHighlighter
 
 Base Syntax highlighter resource for the :ref:`ScriptEditor<class_ScriptEditor>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,29 +23,46 @@ Base syntax highlighter resource all editor syntax highlighters extend from, it 
 
 Add a syntax highlighter to an individual script by calling :ref:`ScriptEditorBase.add_syntax_highlighter<class_ScriptEditorBase_method_add_syntax_highlighter>`. To apply to all scripts on open, call :ref:`ScriptEditor.register_syntax_highlighter<class_ScriptEditor_method_register_syntax_highlighter>`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`_get_name<class_EditorSyntaxHighlighter_method__get_name>` **(** **)** |virtual| |const|                               |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_supported_languages<class_EditorSyntaxHighlighter_method__get_supported_languages>` **(** **)** |virtual| |const| |
-+---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`_get_name<class_EditorSyntaxHighlighter_method__get_name>` **(** **)** |virtual| |const|                               |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_supported_languages<class_EditorSyntaxHighlighter_method__get_supported_languages>` **(** **)** |virtual| |const| |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorSyntaxHighlighter_method__get_name:
 
-- :ref:`String<class_String>` **_get_name** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_name** **(** **)** |virtual| |const|
 
 Virtual method which can be overridden to return the syntax highlighter name.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSyntaxHighlighter_method__get_supported_languages:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **_get_supported_languages** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_supported_languages** **(** **)** |virtual| |const|
 
 Virtual method which can be overridden to return the supported language names.
 

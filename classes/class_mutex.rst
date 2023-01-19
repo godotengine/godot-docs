@@ -14,55 +14,80 @@ Mutex
 
 A synchronization mutex (mutual exclusion).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A synchronization mutex (mutual exclusion). This is used to synchronize multiple :ref:`Thread<class_Thread>`\ s, and is equivalent to a binary :ref:`Semaphore<class_Semaphore>`. It guarantees that only one thread can ever acquire the lock at a time. A mutex can be used to protect a critical section; however, be careful to avoid deadlocks.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`Using multiple threads <../tutorials/performance/using_multiple_threads>`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+----------------------------------------------------------+
-| void                                  | :ref:`lock<class_Mutex_method_lock>` **(** **)**         |
-+---------------------------------------+----------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`try_lock<class_Mutex_method_try_lock>` **(** **)** |
-+---------------------------------------+----------------------------------------------------------+
-| void                                  | :ref:`unlock<class_Mutex_method_unlock>` **(** **)**     |
-+---------------------------------------+----------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+----------------------------------------------------------+
+   | void                                  | :ref:`lock<class_Mutex_method_lock>` **(** **)**         |
+   +---------------------------------------+----------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`try_lock<class_Mutex_method_try_lock>` **(** **)** |
+   +---------------------------------------+----------------------------------------------------------+
+   | void                                  | :ref:`unlock<class_Mutex_method_unlock>` **(** **)**     |
+   +---------------------------------------+----------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Mutex_method_lock:
 
-- void **lock** **(** **)**
+.. rst-class:: classref-method
 
-Locks this ``Mutex``, blocks until it is unlocked by the current owner.
+void **lock** **(** **)**
+
+Locks this **Mutex**, blocks until it is unlocked by the current owner.
 
 \ **Note:** This function returns without blocking if the thread already has ownership of the mutex.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Mutex_method_try_lock:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **try_lock** **(** **)**
+.. rst-class:: classref-method
 
-Tries locking this ``Mutex``, but does not block. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
+:ref:`Error<enum_@GlobalScope_Error>` **try_lock** **(** **)**
+
+Tries locking this **Mutex**, but does not block. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
 
 \ **Note:** This function returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the thread already has ownership of the mutex.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Mutex_method_unlock:
 
-- void **unlock** **(** **)**
+.. rst-class:: classref-method
 
-Unlocks this ``Mutex``, leaving it to other threads.
+void **unlock** **(** **)**
+
+Unlocks this **Mutex**, leaving it to other threads.
 
 \ **Note:** If a thread called :ref:`lock<class_Mutex_method_lock>` or :ref:`try_lock<class_Mutex_method_try_lock>` multiple times while already having ownership of the mutex, it must also call :ref:`unlock<class_Mutex_method_unlock>` the same number of times in order to unlock it correctly.
 

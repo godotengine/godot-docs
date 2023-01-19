@@ -16,10 +16,14 @@ Material
 
 Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance3D<class_VisualInstance3D>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,69 +32,103 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------------+
-| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |
-+---------------------------------+-----------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` |
-+---------------------------------+-----------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-----------------------------------------------------------------+
+   | :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |
+   +---------------------------------+-----------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` |
+   +---------------------------------+-----------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`_can_do_next_pass<class_Material_method__can_do_next_pass>` **(** **)** |virtual| |const|               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`_can_use_render_priority<class_Material_method__can_use_render_priority>` **(** **)** |virtual| |const| |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`Mode<enum_Shader_Mode>` | :ref:`_get_shader_mode<class_Material_method__get_shader_mode>` **(** **)** |virtual| |const|                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`         | :ref:`_get_shader_rid<class_Material_method__get_shader_rid>` **(** **)** |virtual| |const|                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`inspect_native_shader_code<class_Material_method_inspect_native_shader_code>` **(** **)**               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`_can_do_next_pass<class_Material_method__can_do_next_pass>` **(** **)** |virtual| |const|               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`_can_use_render_priority<class_Material_method__can_use_render_priority>` **(** **)** |virtual| |const| |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`Mode<enum_Shader_Mode>` | :ref:`_get_shader_mode<class_Material_method__get_shader_mode>` **(** **)** |virtual| |const|                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`         | :ref:`_get_shader_rid<class_Material_method__get_shader_rid>` **(** **)** |virtual| |const|                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`inspect_native_shader_code<class_Material_method_inspect_native_shader_code>` **(** **)**               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Material_constant_RENDER_PRIORITY_MAX:
 
+.. rst-class:: classref-constant
+
+**RENDER_PRIORITY_MAX** = ``127``
+
+Maximum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
+
 .. _class_Material_constant_RENDER_PRIORITY_MIN:
 
-- **RENDER_PRIORITY_MAX** = **127** --- Maximum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
+.. rst-class:: classref-constant
 
-- **RENDER_PRIORITY_MIN** = **-128** --- Minimum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
+**RENDER_PRIORITY_MIN** = ``-128``
+
+Minimum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Material_property_next_pass:
 
-- :ref:`Material<class_Material>` **next_pass**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_next_pass(value) |
-+----------+----------------------+
-| *Getter* | get_next_pass()      |
-+----------+----------------------+
+:ref:`Material<class_Material>` **next_pass**
 
-Sets the ``Material`` to be used for the next pass. This renders the object again using a different material.
+.. rst-class:: classref-property-setget
+
+- void **set_next_pass** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_next_pass** **(** **)**
+
+Sets the **Material** to be used for the next pass. This renders the object again using a different material.
 
 \ **Note:** This only applies to :ref:`StandardMaterial3D<class_StandardMaterial3D>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Material_property_render_priority:
 
-- :ref:`int<class_int>` **render_priority**
+.. rst-class:: classref-property
 
-+----------+----------------------------+
-| *Setter* | set_render_priority(value) |
-+----------+----------------------------+
-| *Getter* | get_render_priority()      |
-+----------+----------------------------+
+:ref:`int<class_int>` **render_priority**
+
+.. rst-class:: classref-property-setget
+
+- void **set_render_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_render_priority** **(** **)**
 
 Sets the render priority for transparent objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects.
 
@@ -98,36 +136,80 @@ Sets the render priority for transparent objects in 3D scenes. Higher priority o
 
 \ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Method Descriptions
 -------------------
 
 .. _class_Material_method__can_do_next_pass:
 
-- :ref:`bool<class_bool>` **_can_do_next_pass** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_can_do_next_pass** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Material_method__can_use_render_priority:
 
-- :ref:`bool<class_bool>` **_can_use_render_priority** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_can_use_render_priority** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Material_method__get_shader_mode:
 
-- :ref:`Mode<enum_Shader_Mode>` **_get_shader_mode** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`Mode<enum_Shader_Mode>` **_get_shader_mode** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Material_method__get_shader_rid:
 
-- :ref:`RID<class_RID>` **_get_shader_rid** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **_get_shader_rid** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Material_method_inspect_native_shader_code:
 
-- void **inspect_native_shader_code** **(** **)**
+.. rst-class:: classref-method
+
+void **inspect_native_shader_code** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

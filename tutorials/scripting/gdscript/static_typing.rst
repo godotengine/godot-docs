@@ -149,7 +149,7 @@ Type casting is a key concept in typed languages.
 Casting is the conversion of a value from one type to another.
 
 Imagine an Enemy in your game, that ``extends Area2D``. You want it to
-collide with the Player, a ``KinematicBody2D`` with a script called
+collide with the Player, a ``CharacterBody2D`` with a script called
 ``PlayerController`` attached to it. You use the ``on_body_entered``
 signal to detect the collision. With typed code, the body you detect is
 going to be a generic ``PhysicsBody2D``, and not your
@@ -198,7 +198,7 @@ don't care about the node's type as long as it has the methods you need
 to call.
 
 You can use casting to tell Godot the type you expect when you get a
-node: ``($Timer as Timer)``, ``($Player as KinematicBody2D)``, etc.
+node: ``($Timer as Timer)``, ``($Player as CharacterBody2D)``, etc.
 Godot will ensure the type works and if so, the line number will turn
 green at the left of the script editor.
 
@@ -331,13 +331,6 @@ Cases where you can't specify types
 To wrap up this introduction, let's cover a few cases where you can't
 use type hints. All the examples below **will trigger errors**.
 
-You can't use Enums as types:
-
-::
-
-    enum MoveDirection {UP, DOWN, LEFT, RIGHT}
-    var current_direction: MoveDirection
-
 You can't specify the type of individual members in an array. This will
 give you an error:
 
@@ -354,28 +347,6 @@ element the ``for`` keyword loops over already has a different type. So you
     var names = ["John", "Marta", "Samantha", "Jimmy"]
     for name: String in names:
         pass
-
-Two scripts can't depend on each other in a cyclic fashion:
-
-::
-
-    # Player.gd
-
-    extends Area2D
-    class_name Player
-
-
-    var rifle: Rifle
-
-::
-
-    # Rifle.gd
-
-    extends Area2D
-    class_name Rifle
-
-
-    var player: Player
 
 Summary
 -------

@@ -86,13 +86,13 @@ information, read the dedicated documentation:
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         // Called every frame, as often as possible.
         base._Process(delta);
     }
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // Called every physics frame.
         base._PhysicsProcess(delta);
@@ -126,19 +126,19 @@ To learn more about inputs in Godot, see the :ref:`Input section <toc-learn-feat
     // Called once for every event.
     public override void _UnhandledInput(InputEvent @event)
     {
-        base._UnhandledInput(event);
+        base._UnhandledInput(@event);
     }
 
     // Called once for every event, before _unhandled_input(), allowing you to
     // consume some events.
     public override void _Input(InputEvent @event)
     {
-        base._Input(event);
+        base._Input(@event);
     }
 
 There are some more overridable functions like
-:ref:`Node._get_configuration_warning()
-<class_Node_method__get_configuration_warning>`. Specialized node types provide
+:ref:`Node._get_configuration_warnings()
+<class_Node_method__get_configuration_warnings>`. Specialized node types provide
 more callbacks like :ref:`CanvasItem._draw() <class_CanvasItem_method__draw>` to
 draw programmatically or :ref:`Control._gui_input()
 <class_Control_method__gui_input>` to handle clicks and input on UI elements.

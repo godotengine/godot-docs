@@ -14,12 +14,18 @@ CylinderShape3D
 
 Cylinder shape for 3D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Cylinder shape for collisions. Like :ref:`CapsuleShape3D<class_CapsuleShape3D>`, but without hemispheres at the cylinder's ends.
 
-\ **Performance:** Being a primitive collision shape, ``CylinderShape3D`` is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`). ``CylinderShape3D`` is also more demanding compared to :ref:`CapsuleShape3D<class_CapsuleShape3D>`.
+\ **Note:** There are several known bugs with cylinder collision shapes. Using :ref:`CapsuleShape3D<class_CapsuleShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>` instead is recommended.
+
+\ **Performance:** Being a primitive collision shape, **CylinderShape3D** is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`). **CylinderShape3D** is also more demanding compared to :ref:`CapsuleShape3D<class_CapsuleShape3D>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -30,45 +36,56 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`height<class_CylinderShape3D_property_height>` | ``2.0`` |
-+---------------------------+------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_CylinderShape3D_property_radius>` | ``0.5`` |
-+---------------------------+------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`height<class_CylinderShape3D_property_height>` | ``2.0`` |
+   +---------------------------+------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`radius<class_CylinderShape3D_property_radius>` | ``0.5`` |
+   +---------------------------+------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CylinderShape3D_property_height:
 
-- :ref:`float<class_float>` **height**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``2.0``           |
-+-----------+-------------------+
-| *Setter*  | set_height(value) |
-+-----------+-------------------+
-| *Getter*  | get_height()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **height** = ``2.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_height** **(** **)**
 
 The cylinder's height.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CylinderShape3D_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.5``           |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 The cylinder's radius.
 

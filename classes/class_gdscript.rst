@@ -14,41 +14,62 @@ GDScript
 
 A script implemented in the GDScript programming language.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-A script implemented in the GDScript programming language. The script extends the functionality of all objects that instance it.
+A script implemented in the GDScript programming language. The script extends the functionality of all objects that instantiate it.
 
 \ :ref:`new<class_GDScript_method_new>` creates a new instance of the script. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GDScript documentation index <../tutorials/scripting/gdscript/index>`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** |const| |
-+-----------------------------------------------+-------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`new<class_GDScript_method_new>` **(** ... **)** |vararg|                      |
-+-----------------------------------------------+-------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** |const| |
+   +-----------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                 | :ref:`new<class_GDScript_method_new>` **(** ... **)** |vararg|                      |
+   +-----------------------------------------------+-------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GDScript_method_get_as_byte_code:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **get_as_byte_code** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **get_as_byte_code** **(** **)** |const|
 
 Returns byte code for the script source code.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GDScript_method_new:
 
-- :ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
 
 Returns a new instance of the script.
 

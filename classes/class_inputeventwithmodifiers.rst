@@ -16,125 +16,156 @@ InputEventWithModifiers
 
 Base class for keys events with modifiers.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Contains keys events information with modifiers support like :kbd:`Shift` or :kbd:`Alt`. See :ref:`Node._input<class_Node_method__input>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`InputEvent <../tutorials/inputs/inputevent>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`alt_pressed<class_InputEventWithModifiers_property_alt_pressed>`                                   | ``false`` |
-+-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`command_or_control_autoremap<class_InputEventWithModifiers_property_command_or_control_autoremap>` | ``false`` |
-+-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>`                                 | ``false`` |
-+-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>`                                 | ``false`` |
-+-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`shift_pressed<class_InputEventWithModifiers_property_shift_pressed>`                               | ``false`` |
-+-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`alt_pressed<class_InputEventWithModifiers_property_alt_pressed>`                                   | ``false`` |
+   +-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`command_or_control_autoremap<class_InputEventWithModifiers_property_command_or_control_autoremap>` | ``false`` |
+   +-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>`                                 | ``false`` |
+   +-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>`                                 | ``false`` |
+   +-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`shift_pressed<class_InputEventWithModifiers_property_shift_pressed>`                               | ``false`` |
+   +-------------------------+----------------------------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_command_or_control_pressed<class_InputEventWithModifiers_method_is_command_or_control_pressed>` **(** **)** |const| |
-+-------------------------+------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_command_or_control_pressed<class_InputEventWithModifiers_method_is_command_or_control_pressed>` **(** **)** |const| |
+   +-------------------------+------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventWithModifiers_property_alt_pressed:
 
-- :ref:`bool<class_bool>` **alt_pressed**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_alt_pressed(value) |
-+-----------+------------------------+
-| *Getter*  | is_alt_pressed()       |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **alt_pressed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alt_pressed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_alt_pressed** **(** **)**
 
 State of the :kbd:`Alt` modifier.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventWithModifiers_property_command_or_control_autoremap:
 
-- :ref:`bool<class_bool>` **command_or_control_autoremap**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------+
-| *Default* | ``false``                               |
-+-----------+-----------------------------------------+
-| *Setter*  | set_command_or_control_autoremap(value) |
-+-----------+-----------------------------------------+
-| *Getter*  | is_command_or_control_autoremap()       |
-+-----------+-----------------------------------------+
+:ref:`bool<class_bool>` **command_or_control_autoremap** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_command_or_control_autoremap** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_command_or_control_autoremap** **(** **)**
 
 Automatically use :kbd:`Meta` (:kbd:`Command`) on macOS and :kbd:`Ctrl` on other platforms. If ``true``, :ref:`ctrl_pressed<class_InputEventWithModifiers_property_ctrl_pressed>` and :ref:`meta_pressed<class_InputEventWithModifiers_property_meta_pressed>` cannot be set.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventWithModifiers_property_ctrl_pressed:
 
-- :ref:`bool<class_bool>` **ctrl_pressed**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_ctrl_pressed(value) |
-+-----------+-------------------------+
-| *Getter*  | is_ctrl_pressed()       |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **ctrl_pressed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ctrl_pressed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_ctrl_pressed** **(** **)**
 
 State of the :kbd:`Ctrl` modifier.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventWithModifiers_property_meta_pressed:
 
-- :ref:`bool<class_bool>` **meta_pressed**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_meta_pressed(value) |
-+-----------+-------------------------+
-| *Getter*  | is_meta_pressed()       |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **meta_pressed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_meta_pressed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_meta_pressed** **(** **)**
 
 State of the :kbd:`Meta` modifier. On Windows and Linux, this represents the Windows key (sometimes called "meta" or "super" on Linux). On macOS, this represents the Command key.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventWithModifiers_property_shift_pressed:
 
-- :ref:`bool<class_bool>` **shift_pressed**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``false``                |
-+-----------+--------------------------+
-| *Setter*  | set_shift_pressed(value) |
-+-----------+--------------------------+
-| *Getter*  | is_shift_pressed()       |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **shift_pressed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shift_pressed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_shift_pressed** **(** **)**
 
 State of the :kbd:`Shift` modifier.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_InputEventWithModifiers_method_is_command_or_control_pressed:
 
-- :ref:`bool<class_bool>` **is_command_or_control_pressed** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_command_or_control_pressed** **(** **)** |const|
 
 On macOS, returns ``true`` if :kbd:`Meta` (:kbd:`Command`) is pressed.
 

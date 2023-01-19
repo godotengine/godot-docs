@@ -12,297 +12,459 @@ Vector4i
 
 Vector used for 4D math using integer coordinates.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 4-element structure that can be used to represent 4D grid coordinates or sets of integers.
 
-It uses integer coordinates. See :ref:`Vector4<class_Vector4>` for its floating-point counterpart.
+It uses integer coordinates and is therefore preferable to :ref:`Vector4<class_Vector4>` when exact precision is required. Note that the values are limited to 32 bits, and unlike :ref:`Vector4<class_Vector4>` this cannot be configured with an engine build option. Use :ref:`int<class_int>` or :ref:`PackedInt64Array<class_PackedInt64Array>` if 64-bit values are needed.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------+-------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`w<class_Vector4i_property_w>` | ``0`` |
-+-----------------------+-------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`x<class_Vector4i_property_x>` | ``0`` |
-+-----------------------+-------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`y<class_Vector4i_property_y>` | ``0`` |
-+-----------------------+-------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`z<class_Vector4i_property_z>` | ``0`` |
-+-----------------------+-------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+-------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`w<class_Vector4i_property_w>` | ``0`` |
+   +-----------------------+-------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`x<class_Vector4i_property_x>` | ``0`` |
+   +-----------------------+-------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`y<class_Vector4i_property_y>` | ``0`` |
+   +-----------------------+-------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`z<class_Vector4i_property_z>` | ``0`` |
+   +-----------------------+-------------------------------------+-------+
+
+.. rst-class:: classref-reftable-group
 
 Constructors
 ------------
 
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`Vector4i<class_Vector4i_constructor_Vector4i>` **(** **)**                                                                                                    |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`Vector4i<class_Vector4i_constructor_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` from **)**                                                               |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`Vector4i<class_Vector4i_constructor_Vector4i>` **(** :ref:`Vector4<class_Vector4>` from **)**                                                                 |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`Vector4i<class_Vector4i_constructor_Vector4i>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` w **)** |
-+---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`Vector4i<class_Vector4i_constructor_Vector4i>` **(** **)**                                                                                                    |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`Vector4i<class_Vector4i_constructor_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` from **)**                                                               |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`Vector4i<class_Vector4i_constructor_Vector4i>` **(** :ref:`Vector4<class_Vector4>` from **)**                                                                 |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`Vector4i<class_Vector4i_constructor_Vector4i>` **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` w **)** |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`abs<class_Vector4i_method_abs>` **(** **)** |const|                                                                              |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`clamp<class_Vector4i_method_clamp>` **(** :ref:`Vector4i<class_Vector4i>` min, :ref:`Vector4i<class_Vector4i>` max **)** |const| |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`       | :ref:`length<class_Vector4i_method_length>` **(** **)** |const|                                                                        |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`length_squared<class_Vector4i_method_length_squared>` **(** **)** |const|                                                        |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` **(** **)** |const|                                                        |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`min_axis_index<class_Vector4i_method_min_axis_index>` **(** **)** |const|                                                        |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`sign<class_Vector4i_method_sign>` **(** **)** |const|                                                                            |
-+---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`abs<class_Vector4i_method_abs>` **(** **)** |const|                                                                              |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`clamp<class_Vector4i_method_clamp>` **(** :ref:`Vector4i<class_Vector4i>` min, :ref:`Vector4i<class_Vector4i>` max **)** |const| |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`       | :ref:`length<class_Vector4i_method_length>` **(** **)** |const|                                                                        |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`length_squared<class_Vector4i_method_length_squared>` **(** **)** |const|                                                        |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` **(** **)** |const|                                                        |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`min_axis_index<class_Vector4i_method_min_axis_index>` **(** **)** |const|                                                        |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`sign<class_Vector4i_method_sign>` **(** **)** |const|                                                                            |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`snapped<class_Vector4i_method_snapped>` **(** :ref:`Vector4i<class_Vector4i>` step **)** |const|                                 |
+   +---------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Operators
 ---------
 
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator !=<class_Vector4i_operator_neq_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**    |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator %<class_Vector4i_operator_mod_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)** |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator %<class_Vector4i_operator_mod_Vector4i>` **(** :ref:`int<class_int>` right **)**           |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator *<class_Vector4i_operator_mul_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)** |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>`   | :ref:`operator *<class_Vector4i_operator_mul_Vector4>` **(** :ref:`float<class_float>` right **)**        |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator *<class_Vector4i_operator_mul_Vector4i>` **(** :ref:`int<class_int>` right **)**           |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator +<class_Vector4i_operator_sum_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)** |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator -<class_Vector4i_operator_dif_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)** |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator /<class_Vector4i_operator_div_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)** |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4<class_Vector4>`   | :ref:`operator /<class_Vector4i_operator_div_Vector4>` **(** :ref:`float<class_float>` right **)**        |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator /<class_Vector4i_operator_div_Vector4i>` **(** :ref:`int<class_int>` right **)**           |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator \<<class_Vector4i_operator_lt_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**     |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator \<=<class_Vector4i_operator_lte_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**   |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator ==<class_Vector4i_operator_eq_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**     |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator ><class_Vector4i_operator_gt_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**      |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`operator >=<class_Vector4i_operator_gte_bool>` **(** :ref:`Vector4i<class_Vector4i>` right **)**    |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`           | :ref:`operator []<class_Vector4i_operator_idx_int>` **(** :ref:`int<class_int>` index **)**               |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator unary+<class_Vector4i_operator_unplus_Vector4i>` **(** **)**                               |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Vector4i<class_Vector4i>` | :ref:`operator unary-<class_Vector4i_operator_unminus_Vector4i>` **(** **)**                              |
-+---------------------------------+-----------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`operator !=<class_Vector4i_operator_neq_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**  |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator %<class_Vector4i_operator_mod_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**   |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator %<class_Vector4i_operator_mod_int>` **(** :ref:`int<class_int>` right **)**                  |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator *<class_Vector4i_operator_mul_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**   |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>`   | :ref:`operator *<class_Vector4i_operator_mul_float>` **(** :ref:`float<class_float>` right **)**            |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator *<class_Vector4i_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                  |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator +<class_Vector4i_operator_sum_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**   |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator -<class_Vector4i_operator_dif_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**   |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator /<class_Vector4i_operator_div_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**   |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4<class_Vector4>`   | :ref:`operator /<class_Vector4i_operator_div_float>` **(** :ref:`float<class_float>` right **)**            |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator /<class_Vector4i_operator_div_int>` **(** :ref:`int<class_int>` right **)**                  |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`operator \<<class_Vector4i_operator_lt_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**   |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`operator \<=<class_Vector4i_operator_lte_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)** |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`operator ==<class_Vector4i_operator_eq_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**   |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`operator ><class_Vector4i_operator_gt_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**    |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`operator >=<class_Vector4i_operator_gte_Vector4i>` **(** :ref:`Vector4i<class_Vector4i>` right **)**  |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`operator []<class_Vector4i_operator_idx_int>` **(** :ref:`int<class_int>` index **)**                 |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator unary+<class_Vector4i_operator_unplus>` **(** **)**                                          |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector4i<class_Vector4i>` | :ref:`operator unary-<class_Vector4i_operator_unminus>` **(** **)**                                         |
+   +---------------------------------+-------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Vector4i_constant_AXIS_X:
 
+.. rst-class:: classref-constant
+
+**AXIS_X** = ``0``
+
+Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+
 .. _class_Vector4i_constant_AXIS_Y:
+
+.. rst-class:: classref-constant
+
+**AXIS_Y** = ``1``
+
+Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
 .. _class_Vector4i_constant_AXIS_Z:
 
+.. rst-class:: classref-constant
+
+**AXIS_Z** = ``2``
+
+Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+
 .. _class_Vector4i_constant_AXIS_W:
+
+.. rst-class:: classref-constant
+
+**AXIS_W** = ``3``
+
+Enumerated value for the W axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
 
 .. _class_Vector4i_constant_ZERO:
 
+.. rst-class:: classref-constant
+
+**ZERO** = ``Vector4i(0, 0, 0, 0)``
+
+Zero vector, a vector with all components set to ``0``.
+
 .. _class_Vector4i_constant_ONE:
 
-- **AXIS_X** = **0** --- Enumerated value for the X axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+.. rst-class:: classref-constant
 
-- **AXIS_Y** = **1** --- Enumerated value for the Y axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+**ONE** = ``Vector4i(1, 1, 1, 1)``
 
-- **AXIS_Z** = **2** --- Enumerated value for the Z axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+One vector, a vector with all components set to ``1``.
 
-- **AXIS_W** = **3** --- Enumerated value for the W axis. Returned by :ref:`max_axis_index<class_Vector4i_method_max_axis_index>` and :ref:`min_axis_index<class_Vector4i_method_min_axis_index>`.
+.. rst-class:: classref-section-separator
 
-- **ZERO** = **Vector4i(0, 0, 0, 0)** --- Zero vector, a vector with all components set to ``0``.
+----
 
-- **ONE** = **Vector4i(1, 1, 1, 1)** --- One vector, a vector with all components set to ``1``.
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Vector4i_property_w:
 
-- :ref:`int<class_int>` **w**
+.. rst-class:: classref-property
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **w** = ``0``
 
 The vector's W component. Also accessible by using the index position ``[3]``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_property_x:
 
-- :ref:`int<class_int>` **x**
+.. rst-class:: classref-property
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **x** = ``0``
 
 The vector's X component. Also accessible by using the index position ``[0]``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_property_y:
 
-- :ref:`int<class_int>` **y**
+.. rst-class:: classref-property
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **y** = ``0``
 
 The vector's Y component. Also accessible by using the index position ``[1]``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_property_z:
 
-- :ref:`int<class_int>` **z**
+.. rst-class:: classref-property
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **z** = ``0``
 
 The vector's Z component. Also accessible by using the index position ``[2]``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constructor Descriptions
 ------------------------
 
 .. _class_Vector4i_constructor_Vector4i:
 
-- :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** **)**
+.. rst-class:: classref-constructor
 
-Constructs a default-initialized ``Vector4i`` with all components set to ``0``.
+:ref:`Vector4i<class_Vector4i>` **Vector4i** **(** **)**
 
-----
+Constructs a default-initialized **Vector4i** with all components set to ``0``.
 
-- :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`Vector4i<class_Vector4i>` from **)**
-
-Constructs a ``Vector4i`` as a copy of the given ``Vector4i``.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`Vector4<class_Vector4>` from **)**
+.. rst-class:: classref-constructor
 
-Constructs a new ``Vector4i`` from the given :ref:`Vector4<class_Vector4>`.
+:ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`Vector4i<class_Vector4i>` from **)**
+
+Constructs a **Vector4i** as a copy of the given **Vector4i**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` w **)**
+.. rst-class:: classref-constructor
 
-Returns a ``Vector4i`` with the given components.
+:ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`Vector4<class_Vector4>` from **)**
+
+Constructs a new **Vector4i** from the given :ref:`Vector4<class_Vector4>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`int<class_int>` x, :ref:`int<class_int>` y, :ref:`int<class_int>` z, :ref:`int<class_int>` w **)**
+
+Returns a **Vector4i** with the given components.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Vector4i_method_abs:
 
-- :ref:`Vector4i<class_Vector4i>` **abs** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector4i<class_Vector4i>` **abs** **(** **)** |const|
 
 Returns a new vector with all components in absolute values (i.e. positive).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_method_clamp:
 
-- :ref:`Vector4i<class_Vector4i>` **clamp** **(** :ref:`Vector4i<class_Vector4i>` min, :ref:`Vector4i<class_Vector4i>` max **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector4i<class_Vector4i>` **clamp** **(** :ref:`Vector4i<class_Vector4i>` min, :ref:`Vector4i<class_Vector4i>` max **)** |const|
 
 Returns a new vector with all components clamped between the components of ``min`` and ``max``, by running :ref:`@GlobalScope.clamp<class_@GlobalScope_method_clamp>` on each component.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_method_length:
 
-- :ref:`float<class_float>` **length** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **length** **(** **)** |const|
 
 Returns the length (magnitude) of this vector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_method_length_squared:
 
-- :ref:`int<class_int>` **length_squared** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **length_squared** **(** **)** |const|
 
 Returns the squared length (squared magnitude) of this vector. This method runs faster than :ref:`length<class_Vector4i_method_length>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_method_max_axis_index:
 
-- :ref:`int<class_int>` **max_axis_index** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **max_axis_index** **(** **)** |const|
 
 Returns the axis of the vector's highest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_X<class_Vector4i_constant_AXIS_X>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_method_min_axis_index:
 
-- :ref:`int<class_int>` **min_axis_index** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **min_axis_index** **(** **)** |const|
 
 Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all components are equal, this method returns :ref:`AXIS_W<class_Vector4i_constant_AXIS_W>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_method_sign:
 
-- :ref:`Vector4i<class_Vector4i>` **sign** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns a new vector with each component set to one or negative one, depending on the signs of the components, or zero if the component is zero, by calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
+:ref:`Vector4i<class_Vector4i>` **sign** **(** **)** |const|
+
+Returns a new vector with each component set to ``1`` if it's positive, ``-1`` if it's negative, and ``0`` if it's zero. The result is identical to calling :ref:`@GlobalScope.sign<class_@GlobalScope_method_sign>` on each component.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector4i_method_snapped:
+
+.. rst-class:: classref-method
+
+:ref:`Vector4i<class_Vector4i>` **snapped** **(** :ref:`Vector4i<class_Vector4i>` step **)** |const|
+
+Returns a new vector with each component snapped to the closest multiple of the corresponding component in ``step``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Operator Descriptions
 ---------------------
 
-.. _class_Vector4i_operator_neq_bool:
+.. _class_Vector4i_operator_neq_Vector4i:
 
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
 Returns ``true`` if the vectors are not equal.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_operator_mod_Vector4i:
 
-- :ref:`Vector4i<class_Vector4i>` **operator %** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`Vector4i<class_Vector4i>` **operator %** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Gets the remainder of each component of the **Vector4i** with the components of the given **Vector4i**. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+
+::
+
+    print(Vector4i(10, -20, 30, -40) % Vector4i(7, 8, 9, 10))  # Prints "(3, -4, 3, 0)"
+
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Vector4i<class_Vector4i>` **operator %** **(** :ref:`int<class_int>` right **)**
+.. _class_Vector4i_operator_mod_int:
+
+.. rst-class:: classref-operator
+
+:ref:`Vector4i<class_Vector4i>` **operator %** **(** :ref:`int<class_int>` right **)**
+
+Gets the remainder of each component of the **Vector4i** with the the given :ref:`int<class_int>`. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+
+::
+
+    print(Vector4i(10, -20, 30, -40) % 7)  # Prints "(3, -6, 2, -5)"
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_operator_mul_Vector4i:
 
-- :ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. rst-class:: classref-operator
 
-Multiplies each component of the ``Vector4i`` by the components of the given ``Vector4i``.
+:ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Multiplies each component of the **Vector4i** by the components of the given **Vector4i**.
 
 ::
 
     print(Vector4i(10, 20, 30, 40) * Vector4i(3, 4, 5, 6)) # Prints "(30, 80, 150, 240)"
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`float<class_float>` right **)**
+.. _class_Vector4i_operator_mul_float:
 
-Multiplies each component of the ``Vector4i`` by the given :ref:`float<class_float>`.
+.. rst-class:: classref-operator
+
+:ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`float<class_float>` right **)**
+
+Multiplies each component of the **Vector4i** by the given :ref:`float<class_float>`.
 
 Returns a Vector4 value due to floating-point operations.
 
@@ -310,53 +472,77 @@ Returns a Vector4 value due to floating-point operations.
 
     print(Vector4i(10, 20, 30, 40) * 2) # Prints "(20, 40, 60, 80)"
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`int<class_int>` right **)**
+.. _class_Vector4i_operator_mul_int:
 
-Multiplies each component of the ``Vector4i`` by the given :ref:`int<class_int>`.
+.. rst-class:: classref-operator
+
+:ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+Multiplies each component of the **Vector4i** by the given :ref:`int<class_int>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_operator_sum_Vector4i:
 
-- :ref:`Vector4i<class_Vector4i>` **operator +** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. rst-class:: classref-operator
 
-Adds each component of the ``Vector4i`` by the components of the given ``Vector4i``.
+:ref:`Vector4i<class_Vector4i>` **operator +** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Adds each component of the **Vector4i** by the components of the given **Vector4i**.
 
 ::
 
     print(Vector4i(10, 20, 30, 40) + Vector4i(3, 4, 5, 6)) # Prints "(13, 24, 35, 46)"
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Vector4i_operator_dif_Vector4i:
 
-- :ref:`Vector4i<class_Vector4i>` **operator -** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. rst-class:: classref-operator
 
-Subtracts each component of the ``Vector4i`` by the components of the given ``Vector4i``.
+:ref:`Vector4i<class_Vector4i>` **operator -** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Subtracts each component of the **Vector4i** by the components of the given **Vector4i**.
 
 ::
 
     print(Vector4i(10, 20, 30, 40) - Vector4i(3, 4, 5, 6)) # Prints "(7, 16, 25, 34)"
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Vector4i_operator_div_Vector4i:
 
-- :ref:`Vector4i<class_Vector4i>` **operator /** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. rst-class:: classref-operator
 
-Divides each component of the ``Vector4i`` by the components of the given ``Vector4i``.
+:ref:`Vector4i<class_Vector4i>` **operator /** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Divides each component of the **Vector4i** by the components of the given **Vector4i**.
 
 ::
 
     print(Vector4i(10, 20, 30, 40) / Vector4i(2, 5, 3, 4)) # Prints "(5, 4, 10, 10)"
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`Vector4<class_Vector4>` **operator /** **(** :ref:`float<class_float>` right **)**
+.. _class_Vector4i_operator_div_float:
 
-Divides each component of the ``Vector4i`` by the given :ref:`float<class_float>`.
+.. rst-class:: classref-operator
+
+:ref:`Vector4<class_Vector4>` **operator /** **(** :ref:`float<class_float>` right **)**
+
+Divides each component of the **Vector4i** by the given :ref:`float<class_float>`.
 
 Returns a Vector4 value due to floating-point operations.
 
@@ -364,75 +550,113 @@ Returns a Vector4 value due to floating-point operations.
 
     print(Vector4i(10, 20, 30, 40) / 2 # Prints "(5, 10, 15, 20)"
 
-----
-
-- :ref:`Vector4i<class_Vector4i>` **operator /** **(** :ref:`int<class_int>` right **)**
-
-Divides each component of the ``Vector4i`` by the given :ref:`int<class_int>`.
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_Vector4i_operator_lt_bool:
+.. _class_Vector4i_operator_div_int:
 
-- :ref:`bool<class_bool>` **operator <** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. rst-class:: classref-operator
 
-Compares two ``Vector4i`` vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+:ref:`Vector4i<class_Vector4i>` **operator /** **(** :ref:`int<class_int>` right **)**
 
-----
+Divides each component of the **Vector4i** by the given :ref:`int<class_int>`.
 
-.. _class_Vector4i_operator_lte_bool:
-
-- :ref:`bool<class_bool>` **operator <=** **(** :ref:`Vector4i<class_Vector4i>` right **)**
-
-Compares two ``Vector4i`` vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_Vector4i_operator_eq_bool:
+.. _class_Vector4i_operator_lt_Vector4i:
 
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator <** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Compares two **Vector4i** vectors by first checking if the X value of the left vector is less than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector4i_operator_lte_Vector4i:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator <=** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Compares two **Vector4i** vectors by first checking if the X value of the left vector is less than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector4i_operator_eq_Vector4i:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
 Returns ``true`` if the vectors are exactly equal.
 
-----
-
-.. _class_Vector4i_operator_gt_bool:
-
-- :ref:`bool<class_bool>` **operator >** **(** :ref:`Vector4i<class_Vector4i>` right **)**
-
-Compares two ``Vector4i`` vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_Vector4i_operator_gte_bool:
+.. _class_Vector4i_operator_gt_Vector4i:
 
-- :ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+.. rst-class:: classref-operator
 
-Compares two ``Vector4i`` vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+:ref:`bool<class_bool>` **operator >** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Compares two **Vector4i** vectors by first checking if the X value of the left vector is greater than the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Vector4i_operator_gte_Vector4i:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator >=** **(** :ref:`Vector4i<class_Vector4i>` right **)**
+
+Compares two **Vector4i** vectors by first checking if the X value of the left vector is greater than or equal to the X value of the ``right`` vector. If the X values are exactly equal, then it repeats this check with the Y values of the two vectors, Z values of the two vectors, and then with the W values. This operator is useful for sorting vectors.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Vector4i_operator_idx_int:
 
-- :ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)**
+.. rst-class:: classref-operator
+
+:ref:`int<class_int>` **operator []** **(** :ref:`int<class_int>` index **)**
 
 Access vector components using their ``index``. ``v[0]`` is equivalent to ``v.x``, ``v[1]`` is equivalent to ``v.y``, ``v[2]`` is equivalent to ``v.z``, and ``v[3]`` is equivalent to ``v.w``.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-.. _class_Vector4i_operator_unplus_Vector4i:
+.. _class_Vector4i_operator_unplus:
 
-- :ref:`Vector4i<class_Vector4i>` **operator unary+** **(** **)**
+.. rst-class:: classref-operator
+
+:ref:`Vector4i<class_Vector4i>` **operator unary+** **(** **)**
 
 Returns the same value as if the ``+`` was not there. Unary ``+`` does nothing, but sometimes it can make your code more readable.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-.. _class_Vector4i_operator_unminus_Vector4i:
+.. _class_Vector4i_operator_unminus:
 
-- :ref:`Vector4i<class_Vector4i>` **operator unary-** **(** **)**
+.. rst-class:: classref-operator
 
-Returns the negative value of the ``Vector4i``. This is the same as writing ``Vector4i(-v.x, -v.y, -v.z, -v.w)``. This operation flips the direction of the vector while keeping the same magnitude.
+:ref:`Vector4i<class_Vector4i>` **operator unary-** **(** **)**
+
+Returns the negative value of the **Vector4i**. This is the same as writing ``Vector4i(-v.x, -v.y, -v.z, -v.w)``. This operation flips the direction of the vector while keeping the same magnitude.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

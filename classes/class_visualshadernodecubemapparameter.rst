@@ -14,6 +14,8 @@ VisualShaderNodeCubemapParameter
 
 A :ref:`Cubemap<class_Cubemap>` parameter node to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

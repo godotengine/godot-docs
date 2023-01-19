@@ -13,7 +13,9 @@ Exporting is done by using the ``[Export]`` attribute.
 
 .. code-block:: csharp
 
-    public class ExportExample : Spatial
+    using Godot;
+
+    public partial class ExportExample : Node3D
     {
         [Export]
         private int Number = 5;
@@ -58,6 +60,51 @@ the following to list them:
 
     [Export]
     private Resource Resource;
+
+Grouping exports
+----------------
+
+It is possible to group your exported properties inside the Inspector with the ``[ExportGroup]``
+attribute. Every exported property after this attribute will be added to the group. Start a new
+group or use ``[ExportGroup("")]`` to break out.
+
+.. code-block:: csharp
+
+    [ExportGroup("My Properties")]
+    [Export]
+    private int Number = 3;
+
+The second argument of the attribute can be used to only group properties with the specified prefix.
+
+Groups cannot be nested, use ``[ExportSubgroup]`` to create subgroups within a group.
+
+.. code-block:: csharp
+
+    [ExportSubgroup("Extra Properties")]
+    [Export]
+    private string Text = "";
+    [Export]
+    private bool Flag = false;
+
+You can also change the name of your main category, or create additional categories in the property
+list with the ``[ExportCategory]`` attribute.
+
+.. code-block:: csharp
+
+    [ExportCategory("Main Category")]
+    [Export]
+    private int Number = 3;
+    [Export]
+    private string Text = "";
+
+    [ExportCategory("Extra Category")]
+    [Export]
+    private bool Flag = false;
+
+.. note::
+
+    The list of properties is organized based on the class inheritance, and new categories break
+    that expectation. Use them carefully, especially when creating projects for public use.
 
 ..
 	Commenting out enum examples because I have been told they
@@ -305,9 +352,9 @@ Exported arrays should be initialized empty.
 .. code-block:: csharp
 
     [Export]
-    private Vector3[] Vector3s = new Vector3[0];
+    private Vector3[] Vector3s = System.Array.Empty<Vector3>();
     [Export]
-    private String[] String = new String[0];
+    private string[] Strings = System.Array.Empty<string>();
 
 
 You can omit the default value, but then it would be null if not assigned.
@@ -341,7 +388,7 @@ Setting exported variables from a tool script
 When changing an exported variable's value from a script in
 :ref:`doc_gdscript_tool_mode`, the value in the inspector won't be updated
 automatically. To update it, call
-:ref:`property_list_changed_notify() <class_Object_method_property_list_changed_notify>`
+:ref:`notify_property_list_changed() <class_Object_method_notify_property_list_changed>`
 after setting the exported variable's value.
 
 Advanced exports

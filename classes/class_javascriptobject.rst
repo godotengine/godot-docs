@@ -14,12 +14,14 @@ JavaScriptObject
 
 A wrapper class for web native JavaScript objects.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 JavaScriptObject is used to interact with JavaScript objects retrieved or created via :ref:`JavaScriptBridge.get_interface<class_JavaScriptBridge_method_get_interface>`, :ref:`JavaScriptBridge.create_object<class_JavaScriptBridge_method_create_object>`, or :ref:`JavaScriptBridge.create_callback<class_JavaScriptBridge_method_create_callback>`.
 
-Example:
+\ **Example:**\ 
 
 ::
 

@@ -14,36 +14,55 @@ PhysicsServer2DManager
 
 Manager for 2D physics server implementations.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``PhysicsServer2DManager`` is the API for registering :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementations, and for setting the default implementation.
+**PhysicsServer2DManager** is the API for registering :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementations, and for setting the default implementation.
 
 \ **Note:** It is not possible to switch physics servers at runtime. This class is only used on startup at the server initialization level, by Godot itself and possibly by GDExtensions.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`register_server<class_PhysicsServer2DManager_method_register_server>` **(** :ref:`String<class_String>` name, :ref:`Callable<class_Callable>` create_callback **)** |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_default_server<class_PhysicsServer2DManager_method_set_default_server>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` priority **)**            |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`register_server<class_PhysicsServer2DManager_method_register_server>` **(** :ref:`String<class_String>` name, :ref:`Callable<class_Callable>` create_callback **)** |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_default_server<class_PhysicsServer2DManager_method_set_default_server>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` priority **)**            |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PhysicsServer2DManager_method_register_server:
 
-- void **register_server** **(** :ref:`String<class_String>` name, :ref:`Callable<class_Callable>` create_callback **)**
+.. rst-class:: classref-method
+
+void **register_server** **(** :ref:`String<class_String>` name, :ref:`Callable<class_Callable>` create_callback **)**
 
 Register a :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementation by passing a ``name`` and a :ref:`Callable<class_Callable>` that returns a :ref:`PhysicsServer2D<class_PhysicsServer2D>` object.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PhysicsServer2DManager_method_set_default_server:
 
-- void **set_default_server** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` priority **)**
+.. rst-class:: classref-method
+
+void **set_default_server** **(** :ref:`String<class_String>` name, :ref:`int<class_int>` priority **)**
 
 Set the default :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementation to the one identified by ``name``, if ``priority`` is greater than the priority of the current default implementation.
 

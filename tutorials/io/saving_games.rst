@@ -241,7 +241,7 @@ load function:
             var node_data = json.get_data()
 
             # Firstly, we need to create the object and add it to the tree and set its position.
-            var new_object = load(node_data["filename"]).instance()
+            var new_object = load(node_data["filename"]).instantiate()
             get_node(node_data["parent"]).add_child(new_object)
             new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
 
@@ -282,7 +282,7 @@ load function:
 
             // Firstly, we need to create the object and add it to the tree and set its position.
             var newObjectScene = (PackedScene)ResourceLoader.Load(nodeData["Filename"].ToString());
-            var newObject = (Node)newObjectScene.Instance();
+            var newObject = (Node)newObjectScene.Instantiate();
             GetNode(nodeData["Parent"].ToString()).AddChild(newObject);
             newObject.Set("Position", new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
 
@@ -341,7 +341,7 @@ Here are some important gotchas to know about when using JSON.
   JSON only offers a limited set of data types. If you have data types
   that JSON doesn't have, you will need to translate your data to and
   from types that JSON can handle. For example, some important types that JSON
-  can't parse are: ``Vector2``, ``Vector3``, ``Color``, ``Rect2``, and ``Quat``.
+  can't parse are: ``Vector2``, ``Vector3``, ``Color``, ``Rect2``, and ``Quaternion``.
 * **Custom logic needed for encoding/decoding:**
   If you have any custom classes that you want to store with JSON, you will
   need to write your own logic for encoding and decoding those classes.
@@ -351,7 +351,7 @@ Binary serialization
 
 :ref:`Binary serialization<doc_binary_serialization_api>` is an alternative
 approach for storing game state, and you can use it with the functions
-``get_var`` and ``store_var`` of :ref:`class_File`.
+``get_var`` and ``store_var`` of :ref:`class_FileAccess`.
 
 * Binary serialization should produce smaller files than JSON.
 * Binary serialization can handle most common data types.

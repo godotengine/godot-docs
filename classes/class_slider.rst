@@ -16,6 +16,8 @@ Slider
 
 Base class for GUI sliders.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,98 +25,127 @@ Base class for GUI sliders.
 
 \ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+-----------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`editable<class_Slider_property_editable>`                 | ``true``  |
-+-------------------------+-----------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`scrollable<class_Slider_property_scrollable>`             | ``true``  |
-+-------------------------+-----------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`   | :ref:`tick_count<class_Slider_property_tick_count>`             | ``0``     |
-+-------------------------+-----------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | ``false`` |
-+-------------------------+-----------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 | ``true``                                                            |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>` | focus_mode                                                      | ``2`` (overrides :ref:`Control<class_Control_property_focus_mode>`) |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             | ``true``                                                            |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`float<class_float>`                | step                                                            | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)         |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             | ``0``                                                               |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` | ``false``                                                           |
+   +------------------------------------------+-----------------------------------------------------------------+---------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Slider_signal_drag_ended:
 
-- **drag_ended** **(** :ref:`bool<class_bool>` value_changed **)**
+.. rst-class:: classref-signal
+
+**drag_ended** **(** :ref:`bool<class_bool>` value_changed **)**
 
 Emitted when dragging stops. If ``value_changed`` is true, :ref:`Range.value<class_Range_property_value>` is different from the value when you started the dragging.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Slider_signal_drag_started:
 
-- **drag_started** **(** **)**
+.. rst-class:: classref-signal
+
+**drag_started** **(** **)**
 
 Emitted when dragging is started.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Slider_property_editable:
 
-- :ref:`bool<class_bool>` **editable**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``true``            |
-+-----------+---------------------+
-| *Setter*  | set_editable(value) |
-+-----------+---------------------+
-| *Getter*  | is_editable()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **editable** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_editable** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_editable** **(** **)**
 
 If ``true``, the slider can be interacted with. If ``false``, the value can be changed only by code.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Slider_property_scrollable:
 
-- :ref:`bool<class_bool>` **scrollable**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``true``              |
-+-----------+-----------------------+
-| *Setter*  | set_scrollable(value) |
-+-----------+-----------------------+
-| *Getter*  | is_scrollable()       |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **scrollable** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_scrollable** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_scrollable** **(** **)**
 
 If ``true``, the value can be changed using the mouse wheel.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Slider_property_tick_count:
 
-- :ref:`int<class_int>` **tick_count**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_ticks(value) |
-+-----------+------------------+
-| *Getter*  | get_ticks()      |
-+-----------+------------------+
+:ref:`int<class_int>` **tick_count** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ticks** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_ticks** **(** **)**
 
 Number of ticks displayed on the slider, including border ticks. Ticks are uniformly-distributed value markers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Slider_property_ticks_on_borders:
 
-- :ref:`bool<class_bool>` **ticks_on_borders**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``false``                   |
-+-----------+-----------------------------+
-| *Setter*  | set_ticks_on_borders(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_ticks_on_borders()      |
-+-----------+-----------------------------+
+:ref:`bool<class_bool>` **ticks_on_borders** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ticks_on_borders** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_ticks_on_borders** **(** **)**
 
 If ``true``, the slider will display ticks for minimum and maximum values.
 

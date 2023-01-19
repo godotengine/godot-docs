@@ -38,10 +38,10 @@ Input
 -----
 
 :ref:`Viewports <class_Viewport>` are also responsible for delivering properly adjusted and
-scaled input events to all their children nodes. Typically, input is received by the
-nearest :ref:`Viewport <class_Viewport>` in the tree, but you can set :ref:`Viewports <class_Viewport>` not to receive input by checking
-'Disable Input' to 'on'; this will allow the next nearest :ref:`Viewport <class_Viewport>` in the tree to capture
-the input.
+scaled input events to their children nodes. By default :ref:`SubViewports <class_SubViewport>` don't
+automatically receive input, unless they receive it from their direct
+:ref:`SubViewportContainer <class_SubViewportContainer>` parent node. In this case, input can be
+disabled with the :ref:`Disable Input <class_Viewport_property_gui_disable_input>` property.
 
 .. image:: img/input.png
 
@@ -108,7 +108,7 @@ Worlds
 
 For 3D, a :ref:`Viewport <class_Viewport>` will contain a :ref:`World3D <class_World3D>`. This
 is basically the universe that links physics and rendering together.
-Spatial-based nodes will register using the :ref:`World3D <class_World3D>` of the closest :ref:`Viewport <class_Viewport>`.
+Node3D-based nodes will register using the :ref:`World3D <class_World3D>` of the closest :ref:`Viewport <class_Viewport>`.
 By default, newly created :ref:`Viewports <class_Viewport>` do not contain a :ref:`World3D <class_World3D>` but
 use the same as their parent :ref:`Viewport <class_Viewport>` (the root :ref:`Viewport <class_Viewport>` always contains a
 :ref:`World3D <class_World3D>`, which is the one objects are rendered to by default). A :ref:`World3D <class_World3D>` can
@@ -237,7 +237,7 @@ and then selecting the :ref:`Viewport <class_Viewport>` you want to use.
 .. image:: img/texturepath.png
 
 Every frame, the :ref:`Viewport <class_Viewport>`'s texture is cleared away with the default clear color (or a transparent
-color if :ref:`Transparent Bg<class_Viewport_property_transparent_bg>` is set to ``true``). This can be changed by setting :ref:`Clear Mode<class_Viewport_property_render_target_clear_mode>` to Never or Next Frame.
+color if :ref:`Transparent Bg<class_Viewport_property_transparent_bg>` is set to ``true``). This can be changed by setting ``Clear Mode`` to Never or Next Frame.
 As the name implies, Never means the texture will never be cleared, while next frame will
 clear the texture on the next frame and then set itself to Never.
 

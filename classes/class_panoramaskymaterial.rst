@@ -14,6 +14,8 @@ PanoramaSkyMaterial
 
 A :ref:`Material<class_Material>` used with :ref:`Sky<class_Sky>` to draw a background texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,45 +25,58 @@ Using an HDR panorama is strongly recommended for accurate, high-quality reflect
 
 You can use `this tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html>`__ to convert a cubemap to an equirectangular sky map.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`           | :ref:`filter<class_PanoramaSkyMaterial_property_filter>`     | ``true`` |
-+-----------------------------------+--------------------------------------------------------------+----------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`panorama<class_PanoramaSkyMaterial_property_panorama>` |          |
-+-----------------------------------+--------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+--------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`           | :ref:`filter<class_PanoramaSkyMaterial_property_filter>`     | ``true`` |
+   +-----------------------------------+--------------------------------------------------------------+----------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`panorama<class_PanoramaSkyMaterial_property_panorama>` |          |
+   +-----------------------------------+--------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PanoramaSkyMaterial_property_filter:
 
-- :ref:`bool<class_bool>` **filter**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``true``                     |
-+-----------+------------------------------+
-| *Setter*  | set_filtering_enabled(value) |
-+-----------+------------------------------+
-| *Getter*  | is_filtering_enabled()       |
-+-----------+------------------------------+
+:ref:`bool<class_bool>` **filter** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_filtering_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_filtering_enabled** **(** **)**
 
 A boolean value to determine if the background texture should be filtered or not.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PanoramaSkyMaterial_property_panorama:
 
-- :ref:`Texture2D<class_Texture2D>` **panorama**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_panorama(value) |
-+----------+---------------------+
-| *Getter* | get_panorama()      |
-+----------+---------------------+
+:ref:`Texture2D<class_Texture2D>` **panorama**
 
-:ref:`Texture2D<class_Texture2D>` to be applied to the ``PanoramaSkyMaterial``.
+.. rst-class:: classref-property-setget
+
+- void **set_panorama** **(** :ref:`Texture2D<class_Texture2D>` value **)**
+- :ref:`Texture2D<class_Texture2D>` **get_panorama** **(** **)**
+
+:ref:`Texture2D<class_Texture2D>` to be applied to the **PanoramaSkyMaterial**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

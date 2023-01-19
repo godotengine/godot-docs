@@ -12,59 +12,87 @@ GLTFMesh
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-| :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`blend_weights<class_GLTFMesh_property_blend_weights>`           | ``PackedFloat32Array()`` |
-+-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-| :ref:`Material[]<class_Material>`                   | :ref:`instance_materials<class_GLTFMesh_property_instance_materials>` | ``[]``                   |
-+-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-| :ref:`ImporterMesh<class_ImporterMesh>`             | :ref:`mesh<class_GLTFMesh_property_mesh>`                             |                          |
-+-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`blend_weights<class_GLTFMesh_property_blend_weights>`           | ``PackedFloat32Array()`` |
+   +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`Material[]<class_Material>`                   | :ref:`instance_materials<class_GLTFMesh_property_instance_materials>` | ``[]``                   |
+   +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`ImporterMesh<class_ImporterMesh>`             | :ref:`mesh<class_GLTFMesh_property_mesh>`                             |                          |
+   +-----------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFMesh_property_blend_weights:
 
-- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **blend_weights**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PackedFloat32Array()`` |
-+-----------+--------------------------+
-| *Setter*  | set_blend_weights(value) |
-+-----------+--------------------------+
-| *Getter*  | get_blend_weights()      |
-+-----------+--------------------------+
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **blend_weights** = ``PackedFloat32Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_blend_weights** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` value **)**
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_blend_weights** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFMesh_property_instance_materials:
 
-- :ref:`Material[]<class_Material>` **instance_materials**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``[]``                        |
-+-----------+-------------------------------+
-| *Setter*  | set_instance_materials(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_instance_materials()      |
-+-----------+-------------------------------+
+:ref:`Material[]<class_Material>` **instance_materials** = ``[]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_instance_materials** **(** :ref:`Material[]<class_Material>` value **)**
+- :ref:`Material[]<class_Material>` **get_instance_materials** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFMesh_property_mesh:
 
-- :ref:`ImporterMesh<class_ImporterMesh>` **mesh**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
+:ref:`ImporterMesh<class_ImporterMesh>` **mesh**
+
+.. rst-class:: classref-property-setget
+
+- void **set_mesh** **(** :ref:`ImporterMesh<class_ImporterMesh>` value **)**
+- :ref:`ImporterMesh<class_ImporterMesh>` **get_mesh** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

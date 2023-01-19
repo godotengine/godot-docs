@@ -14,12 +14,12 @@ FontVariation
 
 Variation of the :ref:`Font<class_Font>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 OpenType variations, simulated bold / slant, and additional font settings like OpenType features and extra spacing.
-
-
 
 To use simulated bold font variant:
 
@@ -44,225 +44,260 @@ To use simulated bold font variant:
 
 
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Font<class_Font>`               | :ref:`base_font<class_FontVariation_property_base_font>`                       |                                   |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Font[]<class_Font>`             | :ref:`fallbacks<class_FontVariation_property_fallbacks>`                       | ``[]``                            |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Dictionary<class_Dictionary>`   | :ref:`opentype_features<class_FontVariation_property_opentype_features>`       | ``{}``                            |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`                 | :ref:`spacing_bottom<class_FontVariation_property_spacing_bottom>`             | ``0``                             |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`                 | :ref:`spacing_glyph<class_FontVariation_property_spacing_glyph>`               | ``0``                             |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`                 | :ref:`spacing_space<class_FontVariation_property_spacing_space>`               | ``0``                             |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`                 | :ref:`spacing_top<class_FontVariation_property_spacing_top>`                   | ``0``                             |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`             | :ref:`variation_embolden<class_FontVariation_property_variation_embolden>`     | ``0.0``                           |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`                 | :ref:`variation_face_index<class_FontVariation_property_variation_face_index>` | ``0``                             |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Dictionary<class_Dictionary>`   | :ref:`variation_opentype<class_FontVariation_property_variation_opentype>`     | ``{}``                            |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`variation_transform<class_FontVariation_property_variation_transform>`   | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
-+---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Font<class_Font>`               | :ref:`base_font<class_FontVariation_property_base_font>`                       |                                   |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Font[]<class_Font>`             | :ref:`fallbacks<class_FontVariation_property_fallbacks>`                       | ``[]``                            |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`   | :ref:`opentype_features<class_FontVariation_property_opentype_features>`       | ``{}``                            |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`spacing_bottom<class_FontVariation_property_spacing_bottom>`             | ``0``                             |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`spacing_glyph<class_FontVariation_property_spacing_glyph>`               | ``0``                             |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`spacing_space<class_FontVariation_property_spacing_space>`               | ``0``                             |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`spacing_top<class_FontVariation_property_spacing_top>`                   | ``0``                             |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`             | :ref:`variation_embolden<class_FontVariation_property_variation_embolden>`     | ``0.0``                           |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`variation_face_index<class_FontVariation_property_variation_face_index>` | ``0``                             |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`   | :ref:`variation_opentype<class_FontVariation_property_variation_opentype>`     | ``{}``                            |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`variation_transform<class_FontVariation_property_variation_transform>`   | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
+   +---------------------------------------+--------------------------------------------------------------------------------+-----------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_spacing<class_FontVariation_method_set_spacing>` **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)** |
-+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_spacing<class_FontVariation_method_set_spacing>` **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)** |
+   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_FontVariation_property_base_font:
 
-- :ref:`Font<class_Font>` **base_font**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_base_font(value) |
-+----------+----------------------+
-| *Getter* | get_base_font()      |
-+----------+----------------------+
+:ref:`Font<class_Font>` **base_font**
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_font** **(** :ref:`Font<class_Font>` value **)**
+- :ref:`Font<class_Font>` **get_base_font** **(** **)**
 
 Base font used to create a variation. If not set, default :ref:`Theme<class_Theme>` font is used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FontVariation_property_fallbacks:
 
-- :ref:`Font[]<class_Font>` **fallbacks**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``[]``               |
-+-----------+----------------------+
-| *Setter*  | set_fallbacks(value) |
-+-----------+----------------------+
-| *Getter*  | get_fallbacks()      |
-+-----------+----------------------+
+:ref:`Font[]<class_Font>` **fallbacks** = ``[]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fallbacks** **(** :ref:`Font[]<class_Font>` value **)**
+- :ref:`Font[]<class_Font>` **get_fallbacks** **(** **)**
 
 Array of fallback :ref:`Font<class_Font>`\ s. If not set :ref:`base_font<class_FontVariation_property_base_font>` fallback are ussed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FontVariation_property_opentype_features:
 
-- :ref:`Dictionary<class_Dictionary>` **opentype_features**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``{}``                       |
-+-----------+------------------------------+
-| *Setter*  | set_opentype_features(value) |
-+-----------+------------------------------+
-| *Getter*  | get_opentype_features()      |
-+-----------+------------------------------+
+:ref:`Dictionary<class_Dictionary>` **opentype_features** = ``{}``
+
+.. rst-class:: classref-property-setget
+
+- void **set_opentype_features** **(** :ref:`Dictionary<class_Dictionary>` value **)**
+- :ref:`Dictionary<class_Dictionary>` **get_opentype_features** **(** **)**
 
 A set of OpenType feature tags. More info: `OpenType feature tags <https://docs.microsoft.com/en-us/typography/opentype/spec/featuretags>`__.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FontVariation_property_spacing_bottom:
 
-- :ref:`int<class_int>` **spacing_bottom**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_spacing(value) |
-+-----------+--------------------+
-| *Getter*  | get_spacing()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **spacing_bottom** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_spacing** **(** **)**
 
 Extra spacing at the bottom of the line in pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FontVariation_property_spacing_glyph:
 
-- :ref:`int<class_int>` **spacing_glyph**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_spacing(value) |
-+-----------+--------------------+
-| *Getter*  | get_spacing()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **spacing_glyph** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_spacing** **(** **)**
 
 Extra spacing between graphical glyphs
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FontVariation_property_spacing_space:
 
-- :ref:`int<class_int>` **spacing_space**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_spacing(value) |
-+-----------+--------------------+
-| *Getter*  | get_spacing()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **spacing_space** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_spacing** **(** **)**
 
 Extra width of the space glyphs.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FontVariation_property_spacing_top:
 
-- :ref:`int<class_int>` **spacing_top**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_spacing(value) |
-+-----------+--------------------+
-| *Getter*  | get_spacing()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **spacing_top** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_spacing** **(** **)**
 
 Extra spacing at the top of the line in pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FontVariation_property_variation_embolden:
 
-- :ref:`float<class_float>` **variation_embolden**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``0.0``                       |
-+-----------+-------------------------------+
-| *Setter*  | set_variation_embolden(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_variation_embolden()      |
-+-----------+-------------------------------+
+:ref:`float<class_float>` **variation_embolden** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_variation_embolden** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_variation_embolden** **(** **)**
 
 If is not equal to zero, emboldens the font outlines. Negative values reduce the outline thickness.
 
 \ **Note:** Emboldened fonts might have self-intersecting outlines, which will prevent MSDF fonts and :ref:`TextMesh<class_TextMesh>` from working correctly.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_FontVariation_property_variation_face_index:
 
-- :ref:`int<class_int>` **variation_face_index**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``0``                           |
-+-----------+---------------------------------+
-| *Setter*  | set_variation_face_index(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_variation_face_index()      |
-+-----------+---------------------------------+
+:ref:`int<class_int>` **variation_face_index** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_variation_face_index** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_variation_face_index** **(** **)**
 
 Active face index in the TrueType / OpenType collection file.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FontVariation_property_variation_opentype:
 
-- :ref:`Dictionary<class_Dictionary>` **variation_opentype**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``{}``                        |
-+-----------+-------------------------------+
-| *Setter*  | set_variation_opentype(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_variation_opentype()      |
-+-----------+-------------------------------+
+:ref:`Dictionary<class_Dictionary>` **variation_opentype** = ``{}``
+
+.. rst-class:: classref-property-setget
+
+- void **set_variation_opentype** **(** :ref:`Dictionary<class_Dictionary>` value **)**
+- :ref:`Dictionary<class_Dictionary>` **get_variation_opentype** **(** **)**
 
 Font OpenType variation coordinates. More info: `OpenType variation tags <https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg>`__.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_FontVariation_property_variation_transform:
 
-- :ref:`Transform2D<class_Transform2D>` **variation_transform**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``Transform2D(1, 0, 0, 1, 0, 0)`` |
-+-----------+-----------------------------------+
-| *Setter*  | set_variation_transform(value)    |
-+-----------+-----------------------------------+
-| *Getter*  | get_variation_transform()         |
-+-----------+-----------------------------------+
+:ref:`Transform2D<class_Transform2D>` **variation_transform** = ``Transform2D(1, 0, 0, 1, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_variation_transform** **(** :ref:`Transform2D<class_Transform2D>` value **)**
+- :ref:`Transform2D<class_Transform2D>` **get_variation_transform** **(** **)**
 
 2D transform, applied to the font outlines, can be used for slanting, flipping and rotating glyphs.
 
 For example, to simulate italic typeface by slanting, apply the following transform ``Transform2D(1.0, slant, 0.0, 1.0, 0.0, 0.0)``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_FontVariation_method_set_spacing:
 
-- void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
+.. rst-class:: classref-method
+
+void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
 
 Sets the spacing for ``type`` (see :ref:`SpacingType<enum_TextServer_SpacingType>`) to ``value`` in pixels (not relative to the font size).
 

@@ -16,19 +16,19 @@ In 3D, math is a little more complex than in 2D, so also checking the
 developers, not mathematicians or engineers) will help pave the way for you
 to develop 3D games efficiently.
 
-Spatial node
-~~~~~~~~~~~~
+Node3D node
+~~~~~~~~~~~
 
 :ref:`Node2D <class_Node2D>` is the base node for 2D.
 :ref:`Control <class_Control>` is the base node for everything GUI.
-Following this reasoning, the 3D engine uses the :ref:`Spatial <class_Spatial>`
+Following this reasoning, the 3D engine uses the :ref:`Node3D <class_Node3D>`
 node for everything 3D.
 
 .. image:: img/tuto_3d1.png
 
-Spatial nodes have a local transform, which is relative to the parent
+Node3Ds have a local transform, which is relative to the parent
 node (as long as the parent node is also of **or inherits from** the type
-Spatial). This transform can be accessed as a 4×3
+Node3D). This transform can be accessed as a 4×3
 :ref:`Transform3D <class_Transform3D>`, or as 3 :ref:`Vector3 <class_Vector3>`
 members representing location, Euler rotation (X, Y and Z angles) and
 scale.
@@ -56,7 +56,7 @@ entire scenes (exactly as they look in the DCC), including animation,
 skeletal rigs, blend shapes, etc.
 
 The second pipeline is by importing simple .OBJ files as mesh resources,
-which can be then put inside a :ref:`MeshInstance <class_MeshInstance>`
+which can be then put inside a :ref:`MeshInstance3D <class_MeshInstance3D>`
 node for display.
 
 Generated geometry
@@ -78,7 +78,7 @@ Immediate geometry
 
 If, instead, you need to generate simple geometry that
 will be updated often, Godot provides a special node,
-:ref:`ImmediateGeometry <class_ImmediateGeometry>`,
+:ref:`ImmediateMesh <class_ImmediateMesh>`,
 which provides an OpenGL 1.x style immediate-mode API to create points,
 lines, triangles, etc.
 
@@ -110,7 +110,7 @@ Environments can also be overridden in the Camera.
 ~~~~~~~~~~~
 
 Editing 3D scenes is done in the 3D tab. This tab can be selected
-manually, but it will be automatically enabled when a Spatial node is
+manually, but it will be automatically enabled when a Node3D node is
 selected.
 
 .. image:: img/tuto_3d3.png
@@ -137,14 +137,22 @@ floating-point precision issues (and thus, glitches or artifacts) in
 delicate areas such as rendering or physics. Make sure your artists
 always work in the right scale!
 
-The Y coordinate is used for "up", though for most objects that need
-alignment (like lights, cameras, capsule collider, vehicle, etc.), the Z
-axis is used as a "pointing towards" direction. This convention roughly
-means that:
+The Y coordinate is used for "up". As for the horizontal X/Z axes, Godot uses a
+**right-handed** coordinate system. This means that for most objects that need
+alignment (such as lights or cameras), the Z axis is used as a "pointing
+towards" direction. This convention roughly means that:
 
 -  **X** is sides
 -  **Y** is up/down
 -  **Z** is front/back
+
+See this chart for comparison with other 3D software:
+
+.. figure:: img/introduction_to_3d_coordinate_systems.webp
+   :align: center
+   :alt: 3D coordinate systems comparison chart
+
+   Image by `Freya Holmér <https://twitter.com/FreyaHolmer>`__
 
 Space and manipulation gizmos
 -----------------------------
@@ -193,7 +201,7 @@ Cameras
 -------
 
 No matter how many objects are placed in the 3D space, nothing will be
-displayed unless a :ref:`Camera <class_Camera>` is
+displayed unless a :ref:`Camera3D <class_Camera3D>` is
 also added to the scene. Cameras can work in either orthogonal or
 perspective projections:
 

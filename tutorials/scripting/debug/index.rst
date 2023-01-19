@@ -8,3 +8,4 @@ Debug
    overview_of_debugging_tools
    debugger_panel
    the_profiler
+   custom_performance_monitors

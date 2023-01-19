@@ -620,7 +620,7 @@ Use PascalCase for class and node names:
 
 ::
 
-   extends KinematicBody
+   extends CharacterBody3D
 
 Also use PascalCase when loading a class into a constant or a variable:
 

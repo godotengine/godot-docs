@@ -14,10 +14,12 @@ ImageTexture
 
 A :ref:`Texture2D<class_Texture2D>` based on an :ref:`Image<class_Image>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-A :ref:`Texture2D<class_Texture2D>` based on an :ref:`Image<class_Image>`. For an image to be displayed, an ``ImageTexture`` has to be created from it using the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method:
+A :ref:`Texture2D<class_Texture2D>` based on an :ref:`Image<class_Image>`. For an image to be displayed, an **ImageTexture** has to be created from it using the :ref:`create_from_image<class_ImageTexture_method_create_from_image>` method:
 
 ::
 
@@ -43,70 +45,113 @@ This is because images have to be imported as a :ref:`CompressedTexture2D<class_
     var texture = load("res://icon.svg")
     var image : Image = texture.get_image()
 
-An ``ImageTexture`` is not meant to be operated from within the editor interface directly, and is mostly useful for rendering images on screen dynamically via code. If you need to generate images procedurally from within the editor, consider saving and importing images as custom texture resources implementing a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
+An **ImageTexture** is not meant to be operated from within the editor interface directly, and is mostly useful for rendering images on screen dynamically via code. If you need to generate images procedurally from within the editor, consider saving and importing images as custom texture resources implementing a new :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
 
 \ **Note:** The maximum texture size is 16384×16384 pixels due to graphics hardware limitations.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`Importing images <../tutorials/assets_pipeline/importing_images>`
 
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+-------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | resource_local_to_scene | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
+   +-------------------------+-------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ImageTexture<class_ImageTexture>` | :ref:`create_from_image<class_ImageTexture_method_create_from_image>` **(** :ref:`Image<class_Image>` image **)** |static| |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Format<enum_Image_Format>`        | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** |const|                                                |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`set_image<class_ImageTexture_method_set_image>` **(** :ref:`Image<class_Image>` image **)**                          |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`set_size_override<class_ImageTexture_method_set_size_override>` **(** :ref:`Vector2i<class_Vector2i>` size **)**     |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`update<class_ImageTexture_method_update>` **(** :ref:`Image<class_Image>` image **)**                                |
-+-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`ImageTexture<class_ImageTexture>` | :ref:`create_from_image<class_ImageTexture_method_create_from_image>` **(** :ref:`Image<class_Image>` image **)** |static| |
+   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Format<enum_Image_Format>`        | :ref:`get_format<class_ImageTexture_method_get_format>` **(** **)** |const|                                                |
+   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`set_image<class_ImageTexture_method_set_image>` **(** :ref:`Image<class_Image>` image **)**                          |
+   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`set_size_override<class_ImageTexture_method_set_size_override>` **(** :ref:`Vector2i<class_Vector2i>` size **)**     |
+   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`update<class_ImageTexture_method_update>` **(** :ref:`Image<class_Image>` image **)**                                |
+   +-----------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ImageTexture_method_create_from_image:
 
-- :ref:`ImageTexture<class_ImageTexture>` **create_from_image** **(** :ref:`Image<class_Image>` image **)** |static|
+.. rst-class:: classref-method
 
-Creates a new ``ImageTexture`` and initializes it by allocating and setting the data from an :ref:`Image<class_Image>`.
+:ref:`ImageTexture<class_ImageTexture>` **create_from_image** **(** :ref:`Image<class_Image>` image **)** |static|
+
+Creates a new **ImageTexture** and initializes it by allocating and setting the data from an :ref:`Image<class_Image>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ImageTexture_method_get_format:
 
-- :ref:`Format<enum_Image_Format>` **get_format** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Format<enum_Image_Format>` **get_format** **(** **)** |const|
 
 Returns the format of the texture, one of :ref:`Format<enum_Image_Format>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ImageTexture_method_set_image:
 
-- void **set_image** **(** :ref:`Image<class_Image>` image **)**
+.. rst-class:: classref-method
+
+void **set_image** **(** :ref:`Image<class_Image>` image **)**
 
 Replaces the texture's data with a new :ref:`Image<class_Image>`. This will re-allocate new memory for the texture.
 
 If you want to update the image, but don't need to change its parameters (format, size), use :ref:`update<class_ImageTexture_method_update>` instead for better performance.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ImageTexture_method_set_size_override:
 
-- void **set_size_override** **(** :ref:`Vector2i<class_Vector2i>` size **)**
+.. rst-class:: classref-method
+
+void **set_size_override** **(** :ref:`Vector2i<class_Vector2i>` size **)**
 
 Resizes the texture to the specified dimensions.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ImageTexture_method_update:
 
-- void **update** **(** :ref:`Image<class_Image>` image **)**
+.. rst-class:: classref-method
+
+void **update** **(** :ref:`Image<class_Image>` image **)**
 
 Replaces the texture's data with a new :ref:`Image<class_Image>`.
 

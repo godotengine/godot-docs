@@ -14,6 +14,8 @@ BoneMap
 
 Bone map for retargeting.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,82 +23,134 @@ This class contains a hashmap that uses a list of bone names in :ref:`SkeletonPr
 
 By assigning the actual :ref:`Skeleton3D<class_Skeleton3D>` bone name as the key value, it maps the :ref:`Skeleton3D<class_Skeleton3D>` to the :ref:`SkeletonProfile<class_SkeletonProfile>`.
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Retargeting 3D Skeletons <../tutorials/assets_pipeline/retargeting_3d_skeletons>`
+
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------+------------------------------------------------+
-| :ref:`SkeletonProfile<class_SkeletonProfile>` | :ref:`profile<class_BoneMap_property_profile>` |
-+-----------------------------------------------+------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+------------------------------------------------+
+   | :ref:`SkeletonProfile<class_SkeletonProfile>` | :ref:`profile<class_BoneMap_property_profile>` |
+   +-----------------------------------------------+------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName<class_StringName>` | :ref:`find_profile_bone_name<class_BoneMap_method_find_profile_bone_name>` **(** :ref:`StringName<class_StringName>` skeleton_bone_name **)** |const|                                                |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName<class_StringName>` | :ref:`get_skeleton_bone_name<class_BoneMap_method_get_skeleton_bone_name>` **(** :ref:`StringName<class_StringName>` profile_bone_name **)** |const|                                                 |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`set_skeleton_bone_name<class_BoneMap_method_set_skeleton_bone_name>` **(** :ref:`StringName<class_StringName>` profile_bone_name, :ref:`StringName<class_StringName>` skeleton_bone_name **)** |
-+-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`find_profile_bone_name<class_BoneMap_method_find_profile_bone_name>` **(** :ref:`StringName<class_StringName>` skeleton_bone_name **)** |const|                                                |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>` | :ref:`get_skeleton_bone_name<class_BoneMap_method_get_skeleton_bone_name>` **(** :ref:`StringName<class_StringName>` profile_bone_name **)** |const|                                                 |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`set_skeleton_bone_name<class_BoneMap_method_set_skeleton_bone_name>` **(** :ref:`StringName<class_StringName>` profile_bone_name, :ref:`StringName<class_StringName>` skeleton_bone_name **)** |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_BoneMap_signal_bone_map_updated:
 
-- **bone_map_updated** **(** **)**
+.. rst-class:: classref-signal
 
-This signal is emitted when change the key value in the ``BoneMap``. This is used to validate mapping and to update ``BoneMap`` editor.
+**bone_map_updated** **(** **)**
+
+This signal is emitted when change the key value in the **BoneMap**. This is used to validate mapping and to update **BoneMap** editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_BoneMap_signal_profile_updated:
 
-- **profile_updated** **(** **)**
+.. rst-class:: classref-signal
 
-This signal is emitted when change the value in profile or change the reference of profile. This is used to update key names in the ``BoneMap`` and to redraw the ``BoneMap`` editor.
+**profile_updated** **(** **)**
+
+This signal is emitted when change the value in profile or change the reference of profile. This is used to update key names in the **BoneMap** and to redraw the **BoneMap** editor.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_BoneMap_property_profile:
 
-- :ref:`SkeletonProfile<class_SkeletonProfile>` **profile**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_profile(value) |
-+----------+--------------------+
-| *Getter* | get_profile()      |
-+----------+--------------------+
+:ref:`SkeletonProfile<class_SkeletonProfile>` **profile**
 
-A :ref:`SkeletonProfile<class_SkeletonProfile>` of the mapping target. Key names in the ``BoneMap`` are synchronized with it.
+.. rst-class:: classref-property-setget
+
+- void **set_profile** **(** :ref:`SkeletonProfile<class_SkeletonProfile>` value **)**
+- :ref:`SkeletonProfile<class_SkeletonProfile>` **get_profile** **(** **)**
+
+A :ref:`SkeletonProfile<class_SkeletonProfile>` of the mapping target. Key names in the **BoneMap** are synchronized with it.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_BoneMap_method_find_profile_bone_name:
 
-- :ref:`StringName<class_StringName>` **find_profile_bone_name** **(** :ref:`StringName<class_StringName>` skeleton_bone_name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **find_profile_bone_name** **(** :ref:`StringName<class_StringName>` skeleton_bone_name **)** |const|
 
 Returns a profile bone name having ``skeleton_bone_name``. If not found, an empty :ref:`StringName<class_StringName>` will be returned.
 
 In the retargeting process, the returned bone name is the bone name of the target skeleton.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_BoneMap_method_get_skeleton_bone_name:
 
-- :ref:`StringName<class_StringName>` **get_skeleton_bone_name** **(** :ref:`StringName<class_StringName>` profile_bone_name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **get_skeleton_bone_name** **(** :ref:`StringName<class_StringName>` profile_bone_name **)** |const|
 
 Returns a skeleton bone name is mapped to ``profile_bone_name``.
 
 In the retargeting process, the returned bone name is the bone name of the source skeleton.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_BoneMap_method_set_skeleton_bone_name:
 
-- void **set_skeleton_bone_name** **(** :ref:`StringName<class_StringName>` profile_bone_name, :ref:`StringName<class_StringName>` skeleton_bone_name **)**
+.. rst-class:: classref-method
+
+void **set_skeleton_bone_name** **(** :ref:`StringName<class_StringName>` profile_bone_name, :ref:`StringName<class_StringName>` skeleton_bone_name **)**
 
 Maps a skeleton bone name to ``profile_bone_name``.
 

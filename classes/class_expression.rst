@@ -14,6 +14,8 @@ Expression
 
 A class that stores an expression you can execute.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -31,7 +33,7 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
     var expression = Expression.new()
     
     func _ready():
-        $LineEdit.connect("text_submitted", self, "_on_text_submitted")
+        $LineEdit.text_submitted.connect(self._on_text_submitted)
     
     func _on_text_submitted(command):
         var error = expression.parse(command)
@@ -48,7 +50,7 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
     
     public override void _Ready()
     {
-        GetNode("LineEdit").Connect("text_submitted", this, nameof(OnTextEntered));
+        GetNode("LineEdit").TextSubmitted += OnTextEntered;
     }
     
     private void OnTextEntered(string command)
@@ -68,51 +70,76 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
 
 
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`execute<class_Expression_method_execute>` **(** :ref:`Array<class_Array>` inputs=[], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true, :ref:`bool<class_bool>` const_calls_only=false **)** |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_error_text<class_Expression_method_get_error_text>` **(** **)** |const|                                                                                                                                                        |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_execute_failed<class_Expression_method_has_execute_failed>` **(** **)** |const|                                                                                                                                                |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_Expression_method_parse>` **(** :ref:`String<class_String>` expression, :ref:`PackedStringArray<class_PackedStringArray>` input_names=PackedStringArray() **)**                                                        |
-+---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`         | :ref:`execute<class_Expression_method_execute>` **(** :ref:`Array<class_Array>` inputs=[], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true, :ref:`bool<class_bool>` const_calls_only=false **)** |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_error_text<class_Expression_method_get_error_text>` **(** **)** |const|                                                                                                                                                        |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`has_execute_failed<class_Expression_method_has_execute_failed>` **(** **)** |const|                                                                                                                                                |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_Expression_method_parse>` **(** :ref:`String<class_String>` expression, :ref:`PackedStringArray<class_PackedStringArray>` input_names=PackedStringArray() **)**                                                        |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Expression_method_execute:
 
-- :ref:`Variant<class_Variant>` **execute** **(** :ref:`Array<class_Array>` inputs=[], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true, :ref:`bool<class_bool>` const_calls_only=false **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **execute** **(** :ref:`Array<class_Array>` inputs=[], :ref:`Object<class_Object>` base_instance=null, :ref:`bool<class_bool>` show_error=true, :ref:`bool<class_bool>` const_calls_only=false **)**
 
 Executes the expression that was previously parsed by :ref:`parse<class_Expression_method_parse>` and returns the result. Before you use the returned object, you should check if the method failed by calling :ref:`has_execute_failed<class_Expression_method_has_execute_failed>`.
 
 If you defined input variables in :ref:`parse<class_Expression_method_parse>`, you can specify their values in the inputs array, in the same order.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Expression_method_get_error_text:
 
-- :ref:`String<class_String>` **get_error_text** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_error_text** **(** **)** |const|
 
 Returns the error text if :ref:`parse<class_Expression_method_parse>` has failed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Expression_method_has_execute_failed:
 
-- :ref:`bool<class_bool>` **has_execute_failed** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_execute_failed** **(** **)** |const|
 
 Returns ``true`` if :ref:`execute<class_Expression_method_execute>` has failed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Expression_method_parse:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` expression, :ref:`PackedStringArray<class_PackedStringArray>` input_names=PackedStringArray() **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` expression, :ref:`PackedStringArray<class_PackedStringArray>` input_names=PackedStringArray() **)**
 
 Parses the expression and returns an :ref:`Error<enum_@GlobalScope_Error>` code.
 

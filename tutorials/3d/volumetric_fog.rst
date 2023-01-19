@@ -176,7 +176,7 @@ FogVolume properties
   scaling of cone/cylinder shapes via the **Extents** property is not supported,
   but you can scale the FogVolume node instead.
 - **Shape:** The shape of the FogVolume. This can be set to **Ellipsoid**,
-  **Cone**, **Cylinder, **Box** or **World** (acts as global volumetric fog).
+  **Cone**, **Cylinder**, **Box** or **World** (acts as global volumetric fog).
 - **Material:** The material used by the FogVolume. Can be either a
   built-in FogMaterial or a custom ShaderMaterial (:ref:`doc_fog_shader`).
 

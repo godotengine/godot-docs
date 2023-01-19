@@ -16,10 +16,14 @@ PanelContainer
 
 Panel container type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Panel container type. This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,28 +32,46 @@ Tutorials
 
 - `2D Role Playing Game Demo <https://godotengine.org/asset-library/asset/520>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+----------------------------------------------+--------------+-----------------------------------------------------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | ``0`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
-+----------------------------------------------+--------------+-----------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------+--------------+-----------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter | ``0`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
+   +----------------------------------------------+--------------+-----------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+---------------------------------+------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PanelContainer_theme_style_panel>` |
-+---------------------------------+------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+------------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PanelContainer_theme_style_panel>` |
+   +---------------------------------+------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_PanelContainer_theme_style_panel:
 
-- :ref:`StyleBox<class_StyleBox>` **panel**
+.. rst-class:: classref-themeproperty
 
-The style of ``PanelContainer``'s background.
+:ref:`StyleBox<class_StyleBox>` **panel**
+
+The style of **PanelContainer**'s background.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

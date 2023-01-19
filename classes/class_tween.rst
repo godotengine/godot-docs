@@ -14,16 +14,18 @@ Tween
 
 Lightweight object used for general-purpose animation via script, using :ref:`Tweener<class_Tweener>`\ s.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Tweens are mostly useful for animations requiring a numerical property to be interpolated over a range of values. The name *tween* comes from *in-betweening*, an animation technique where you specify *keyframes* and the computer interpolates the frames that appear between them. Animating something with a ``Tween`` is called tweening.
+Tweens are mostly useful for animations requiring a numerical property to be interpolated over a range of values. The name *tween* comes from *in-betweening*, an animation technique where you specify *keyframes* and the computer interpolates the frames that appear between them. Animating something with a **Tween** is called tweening.
 
-\ ``Tween`` is more suited than :ref:`AnimationPlayer<class_AnimationPlayer>` for animations where you don't know the final values in advance. For example, interpolating a dynamically-chosen camera zoom value is best done with a ``Tween``; it would be difficult to do the same thing with an :ref:`AnimationPlayer<class_AnimationPlayer>` node. Tweens are also more light-weight than :ref:`AnimationPlayer<class_AnimationPlayer>`, so they are very much suited for simple animations or general tasks that don't require visual tweaking provided by the editor. They can be used in a fire-and-forget manner for some logic that normally would be done by code. You can e.g. make something shoot periodically by using a looped :ref:`CallbackTweener<class_CallbackTweener>` with a delay.
+\ **Tween** is more suited than :ref:`AnimationPlayer<class_AnimationPlayer>` for animations where you don't know the final values in advance. For example, interpolating a dynamically-chosen camera zoom value is best done with a **Tween**; it would be difficult to do the same thing with an :ref:`AnimationPlayer<class_AnimationPlayer>` node. Tweens are also more light-weight than :ref:`AnimationPlayer<class_AnimationPlayer>`, so they are very much suited for simple animations or general tasks that don't require visual tweaking provided by the editor. They can be used in a fire-and-forget manner for some logic that normally would be done by code. You can e.g. make something shoot periodically by using a looped :ref:`CallbackTweener<class_CallbackTweener>` with a delay.
 
-A ``Tween`` can be created by using either :ref:`SceneTree.create_tween<class_SceneTree_method_create_tween>` or :ref:`Node.create_tween<class_Node_method_create_tween>`. ``Tween``\ s created manually (i.e. by using ``Tween.new()``) are invalid and can't be used for tweening values.
+A **Tween** can be created by using either :ref:`SceneTree.create_tween<class_SceneTree_method_create_tween>` or :ref:`Node.create_tween<class_Node_method_create_tween>`. **Tween**\ s created manually (i.e. by using ``Tween.new()``) are invalid and can't be used for tweening values.
 
-A tween animation is created by adding :ref:`Tweener<class_Tweener>`\ s to the ``Tween`` object, using :ref:`tween_property<class_Tween_method_tween_property>`, :ref:`tween_interval<class_Tween_method_tween_interval>`, :ref:`tween_callback<class_Tween_method_tween_callback>` or :ref:`tween_method<class_Tween_method_tween_method>`:
+A tween animation is created by adding :ref:`Tweener<class_Tweener>`\ s to the **Tween** object, using :ref:`tween_property<class_Tween_method_tween_property>`, :ref:`tween_interval<class_Tween_method_tween_interval>`, :ref:`tween_callback<class_Tween_method_tween_callback>` or :ref:`tween_method<class_Tween_method_tween_method>`:
 
 
 .. tabs::
@@ -67,7 +69,7 @@ When a :ref:`Tweener<class_Tweener>` is created with one of the ``tween_*`` meth
 
 
 
-Most of the ``Tween`` methods can be chained this way too. In the following example the ``Tween`` is bound to the running script's node and a default transition is set for its :ref:`Tweener<class_Tweener>`\ s:
+Most of the **Tween** methods can be chained this way too. In the following example the **Tween** is bound to the running script's node and a default transition is set for its :ref:`Tweener<class_Tweener>`\ s:
 
 
 .. tabs::
@@ -88,7 +90,7 @@ Most of the ``Tween`` methods can be chained this way too. In the following exam
 
 
 
-Another interesting use for ``Tween``\ s is animating arbitrary sets of objects:
+Another interesting use for **Tween**\ s is animating arbitrary sets of objects:
 
 
 .. tabs::
@@ -109,7 +111,7 @@ Another interesting use for ``Tween``\ s is animating arbitrary sets of objects:
 
 In the example above, all children of a node are moved one after another to position (0, 0).
 
-You should avoid using more than one ``Tween`` per object's property. If two or more tweens animate one property at the same time, the last one created will take priority and assign the final value. If you want to interrupt and restart an animation, consider assigning the ``Tween`` to a variable:
+You should avoid using more than one **Tween** per object's property. If two or more tweens animate one property at the same time, the last one created will take priority and assign the final value. If you want to interrupt and restart an animation, consider assigning the **Tween** to a variable:
 
 
 .. tabs::
@@ -139,209 +141,342 @@ Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accep
 
 \ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__\ 
 
-\ **Note:** All ``Tween``\ s will automatically start by default. To prevent a ``Tween`` from autostarting, you can call :ref:`stop<class_Tween_method_stop>` immediately after it is created.
+\ **Note:** All **Tween**\ s will automatically start by default. To prevent a **Tween** from autostarting, you can call :ref:`stop<class_Tween_method_stop>` immediately after it is created.
 
-\ **Note:** ``Tween``\ s are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+\ **Note:** **Tween**\ s are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`bind_node<class_Tween_method_bind_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                                                                                                                                             |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`chain<class_Tween_method_chain>` **(** **)**                                                                                                                                                                                                                                                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`custom_step<class_Tween_method_custom_step>` **(** :ref:`float<class_float>` delta **)**                                                                                                                                                                                                                                                                      |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                     | :ref:`get_total_elapsed_time<class_Tween_method_get_total_elapsed_time>` **(** **)** |const|                                                                                                                                                                                                                                                                        |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`interpolate_value<class_Tween_method_interpolate_value>` **(** :ref:`Variant<class_Variant>` initial_value, :ref:`Variant<class_Variant>` delta_value, :ref:`float<class_float>` elapsed_time, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type **)** |static| |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`is_running<class_Tween_method_is_running>` **(** **)**                                                                                                                                                                                                                                                                                                        |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`is_valid<class_Tween_method_is_valid>` **(** **)**                                                                                                                                                                                                                                                                                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`kill<class_Tween_method_kill>` **(** **)**                                                                                                                                                                                                                                                                                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`parallel<class_Tween_method_parallel>` **(** **)**                                                                                                                                                                                                                                                                                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`pause<class_Tween_method_pause>` **(** **)**                                                                                                                                                                                                                                                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`play<class_Tween_method_play>` **(** **)**                                                                                                                                                                                                                                                                                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`set_ease<class_Tween_method_set_ease>` **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**                                                                                                                                                                                                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`set_loops<class_Tween_method_set_loops>` **(** :ref:`int<class_int>` loops=0 **)**                                                                                                                                                                                                                                                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`set_parallel<class_Tween_method_set_parallel>` **(** :ref:`bool<class_bool>` parallel=true **)**                                                                                                                                                                                                                                                              |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`set_pause_mode<class_Tween_method_set_pause_mode>` **(** :ref:`TweenPauseMode<enum_Tween_TweenPauseMode>` mode **)**                                                                                                                                                                                                                                          |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`set_process_mode<class_Tween_method_set_process_mode>` **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**                                                                                                                                                                                                                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`set_speed_scale<class_Tween_method_set_speed_scale>` **(** :ref:`float<class_float>` speed **)**                                                                                                                                                                                                                                                              |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Tween<class_Tween>`                     | :ref:`set_trans<class_Tween_method_set_trans>` **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**                                                                                                                                                                                                                                                   |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`stop<class_Tween_method_stop>` **(** **)**                                                                                                                                                                                                                                                                                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`CallbackTweener<class_CallbackTweener>` | :ref:`tween_callback<class_Tween_method_tween_callback>` **(** :ref:`Callable<class_Callable>` callback **)**                                                                                                                                                                                                                                                       |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`IntervalTweener<class_IntervalTweener>` | :ref:`tween_interval<class_Tween_method_tween_interval>` **(** :ref:`float<class_float>` time **)**                                                                                                                                                                                                                                                                 |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`MethodTweener<class_MethodTweener>`     | :ref:`tween_method<class_Tween_method_tween_method>` **(** :ref:`Callable<class_Callable>` method, :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` duration **)**                                                                                                                                                   |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`tween_property<class_Tween_method_tween_property>` **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration **)**                                                                                                                                      |
-+-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`bind_node<class_Tween_method_bind_node>` **(** :ref:`Node<class_Node>` node **)**                                                                                                                                                                                                                                                                             |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`chain<class_Tween_method_chain>` **(** **)**                                                                                                                                                                                                                                                                                                                  |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`custom_step<class_Tween_method_custom_step>` **(** :ref:`float<class_float>` delta **)**                                                                                                                                                                                                                                                                      |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                     | :ref:`get_total_elapsed_time<class_Tween_method_get_total_elapsed_time>` **(** **)** |const|                                                                                                                                                                                                                                                                        |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                 | :ref:`interpolate_value<class_Tween_method_interpolate_value>` **(** :ref:`Variant<class_Variant>` initial_value, :ref:`Variant<class_Variant>` delta_value, :ref:`float<class_float>` elapsed_time, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type **)** |static| |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`is_running<class_Tween_method_is_running>` **(** **)**                                                                                                                                                                                                                                                                                                        |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`is_valid<class_Tween_method_is_valid>` **(** **)**                                                                                                                                                                                                                                                                                                            |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`kill<class_Tween_method_kill>` **(** **)**                                                                                                                                                                                                                                                                                                                    |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`parallel<class_Tween_method_parallel>` **(** **)**                                                                                                                                                                                                                                                                                                            |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`pause<class_Tween_method_pause>` **(** **)**                                                                                                                                                                                                                                                                                                                  |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`play<class_Tween_method_play>` **(** **)**                                                                                                                                                                                                                                                                                                                    |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`set_ease<class_Tween_method_set_ease>` **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**                                                                                                                                                                                                                                                                  |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`set_loops<class_Tween_method_set_loops>` **(** :ref:`int<class_int>` loops=0 **)**                                                                                                                                                                                                                                                                            |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`set_parallel<class_Tween_method_set_parallel>` **(** :ref:`bool<class_bool>` parallel=true **)**                                                                                                                                                                                                                                                              |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`set_pause_mode<class_Tween_method_set_pause_mode>` **(** :ref:`TweenPauseMode<enum_Tween_TweenPauseMode>` mode **)**                                                                                                                                                                                                                                          |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`set_process_mode<class_Tween_method_set_process_mode>` **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**                                                                                                                                                                                                                                  |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`set_speed_scale<class_Tween_method_set_speed_scale>` **(** :ref:`float<class_float>` speed **)**                                                                                                                                                                                                                                                              |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Tween<class_Tween>`                     | :ref:`set_trans<class_Tween_method_set_trans>` **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**                                                                                                                                                                                                                                                   |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`stop<class_Tween_method_stop>` **(** **)**                                                                                                                                                                                                                                                                                                                    |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`CallbackTweener<class_CallbackTweener>` | :ref:`tween_callback<class_Tween_method_tween_callback>` **(** :ref:`Callable<class_Callable>` callback **)**                                                                                                                                                                                                                                                       |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`IntervalTweener<class_IntervalTweener>` | :ref:`tween_interval<class_Tween_method_tween_interval>` **(** :ref:`float<class_float>` time **)**                                                                                                                                                                                                                                                                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`MethodTweener<class_MethodTweener>`     | :ref:`tween_method<class_Tween_method_tween_method>` **(** :ref:`Callable<class_Callable>` method, :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` duration **)**                                                                                                                                                   |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PropertyTweener<class_PropertyTweener>` | :ref:`tween_property<class_Tween_method_tween_property>` **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration **)**                                                                                                                                      |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Tween_signal_finished:
 
-- **finished** **(** **)**
+.. rst-class:: classref-signal
 
-Emitted when the ``Tween`` has finished all tweening. Never emitted when the ``Tween`` is set to infinite looping (see :ref:`set_loops<class_Tween_method_set_loops>`).
+**finished** **(** **)**
 
-\ **Note:** The ``Tween`` is removed (invalidated) in the next processing frame after this signal is emitted. Calling :ref:`stop<class_Tween_method_stop>` inside the signal callback will prevent the ``Tween`` from being removed.
+Emitted when the **Tween** has finished all tweening. Never emitted when the **Tween** is set to infinite looping (see :ref:`set_loops<class_Tween_method_set_loops>`).
+
+\ **Note:** The **Tween** is removed (invalidated) in the next processing frame after this signal is emitted. Calling :ref:`stop<class_Tween_method_stop>` inside the signal callback will prevent the **Tween** from being removed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_signal_loop_finished:
 
-- **loop_finished** **(** :ref:`int<class_int>` loop_count **)**
+.. rst-class:: classref-signal
+
+**loop_finished** **(** :ref:`int<class_int>` loop_count **)**
 
 Emitted when a full loop is complete (see :ref:`set_loops<class_Tween_method_set_loops>`), providing the loop index. This signal is not emitted after the final loop, use :ref:`finished<class_Tween_signal_finished>` instead for this case.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_signal_step_finished:
 
-- **step_finished** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-signal
 
-Emitted when one step of the ``Tween`` is complete, providing the step index. One step is either a single :ref:`Tweener<class_Tweener>` or a group of :ref:`Tweener<class_Tweener>`\ s running in parallel.
+**step_finished** **(** :ref:`int<class_int>` idx **)**
+
+Emitted when one step of the **Tween** is complete, providing the step index. One step is either a single :ref:`Tweener<class_Tweener>` or a group of :ref:`Tweener<class_Tweener>`\ s running in parallel.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Tween_TweenProcessMode:
 
-.. _class_Tween_constant_TWEEN_PROCESS_PHYSICS:
-
-.. _class_Tween_constant_TWEEN_PROCESS_IDLE:
+.. rst-class:: classref-enumeration
 
 enum **TweenProcessMode**:
 
-- **TWEEN_PROCESS_PHYSICS** = **0** --- The ``Tween`` updates during the physics frame.
+.. _class_Tween_constant_TWEEN_PROCESS_PHYSICS:
 
-- **TWEEN_PROCESS_IDLE** = **1** --- The ``Tween`` updates during the idle frame.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **TWEEN_PROCESS_PHYSICS** = ``0``
+
+The **Tween** updates during the physics frame.
+
+.. _class_Tween_constant_TWEEN_PROCESS_IDLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **TWEEN_PROCESS_IDLE** = ``1``
+
+The **Tween** updates during the idle frame.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Tween_TweenPauseMode:
 
-.. _class_Tween_constant_TWEEN_PAUSE_BOUND:
-
-.. _class_Tween_constant_TWEEN_PAUSE_STOP:
-
-.. _class_Tween_constant_TWEEN_PAUSE_PROCESS:
+.. rst-class:: classref-enumeration
 
 enum **TweenPauseMode**:
 
-- **TWEEN_PAUSE_BOUND** = **0** --- If the ``Tween`` has a bound node, it will process when that node can process (see :ref:`Node.process_mode<class_Node_property_process_mode>`). Otherwise it's the same as :ref:`TWEEN_PAUSE_STOP<class_Tween_constant_TWEEN_PAUSE_STOP>`.
+.. _class_Tween_constant_TWEEN_PAUSE_BOUND:
 
-- **TWEEN_PAUSE_STOP** = **1** --- If :ref:`SceneTree<class_SceneTree>` is paused, the ``Tween`` will also pause.
+.. rst-class:: classref-enumeration-constant
 
-- **TWEEN_PAUSE_PROCESS** = **2** --- The ``Tween`` will process regardless of whether :ref:`SceneTree<class_SceneTree>` is paused.
+:ref:`TweenPauseMode<enum_Tween_TweenPauseMode>` **TWEEN_PAUSE_BOUND** = ``0``
+
+If the **Tween** has a bound node, it will process when that node can process (see :ref:`Node.process_mode<class_Node_property_process_mode>`). Otherwise it's the same as :ref:`TWEEN_PAUSE_STOP<class_Tween_constant_TWEEN_PAUSE_STOP>`.
+
+.. _class_Tween_constant_TWEEN_PAUSE_STOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TweenPauseMode<enum_Tween_TweenPauseMode>` **TWEEN_PAUSE_STOP** = ``1``
+
+If :ref:`SceneTree<class_SceneTree>` is paused, the **Tween** will also pause.
+
+.. _class_Tween_constant_TWEEN_PAUSE_PROCESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TweenPauseMode<enum_Tween_TweenPauseMode>` **TWEEN_PAUSE_PROCESS** = ``2``
+
+The **Tween** will process regardless of whether :ref:`SceneTree<class_SceneTree>` is paused.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Tween_TransitionType:
 
-.. _class_Tween_constant_TRANS_LINEAR:
-
-.. _class_Tween_constant_TRANS_SINE:
-
-.. _class_Tween_constant_TRANS_QUINT:
-
-.. _class_Tween_constant_TRANS_QUART:
-
-.. _class_Tween_constant_TRANS_QUAD:
-
-.. _class_Tween_constant_TRANS_EXPO:
-
-.. _class_Tween_constant_TRANS_ELASTIC:
-
-.. _class_Tween_constant_TRANS_CUBIC:
-
-.. _class_Tween_constant_TRANS_CIRC:
-
-.. _class_Tween_constant_TRANS_BOUNCE:
-
-.. _class_Tween_constant_TRANS_BACK:
+.. rst-class:: classref-enumeration
 
 enum **TransitionType**:
 
-- **TRANS_LINEAR** = **0** --- The animation is interpolated linearly.
+.. _class_Tween_constant_TRANS_LINEAR:
 
-- **TRANS_SINE** = **1** --- The animation is interpolated using a sine function.
+.. rst-class:: classref-enumeration-constant
 
-- **TRANS_QUINT** = **2** --- The animation is interpolated with a quintic (to the power of 5) function.
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_LINEAR** = ``0``
 
-- **TRANS_QUART** = **3** --- The animation is interpolated with a quartic (to the power of 4) function.
+The animation is interpolated linearly.
 
-- **TRANS_QUAD** = **4** --- The animation is interpolated with a quadratic (to the power of 2) function.
+.. _class_Tween_constant_TRANS_SINE:
 
-- **TRANS_EXPO** = **5** --- The animation is interpolated with an exponential (to the power of x) function.
+.. rst-class:: classref-enumeration-constant
 
-- **TRANS_ELASTIC** = **6** --- The animation is interpolated with elasticity, wiggling around the edges.
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_SINE** = ``1``
 
-- **TRANS_CUBIC** = **7** --- The animation is interpolated with a cubic (to the power of 3) function.
+The animation is interpolated using a sine function.
 
-- **TRANS_CIRC** = **8** --- The animation is interpolated with a function using square roots.
+.. _class_Tween_constant_TRANS_QUINT:
 
-- **TRANS_BOUNCE** = **9** --- The animation is interpolated by bouncing at the end.
+.. rst-class:: classref-enumeration-constant
 
-- **TRANS_BACK** = **10** --- The animation is interpolated backing out at ends.
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_QUINT** = ``2``
+
+The animation is interpolated with a quintic (to the power of 5) function.
+
+.. _class_Tween_constant_TRANS_QUART:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_QUART** = ``3``
+
+The animation is interpolated with a quartic (to the power of 4) function.
+
+.. _class_Tween_constant_TRANS_QUAD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_QUAD** = ``4``
+
+The animation is interpolated with a quadratic (to the power of 2) function.
+
+.. _class_Tween_constant_TRANS_EXPO:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_EXPO** = ``5``
+
+The animation is interpolated with an exponential (to the power of x) function.
+
+.. _class_Tween_constant_TRANS_ELASTIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_ELASTIC** = ``6``
+
+The animation is interpolated with elasticity, wiggling around the edges.
+
+.. _class_Tween_constant_TRANS_CUBIC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_CUBIC** = ``7``
+
+The animation is interpolated with a cubic (to the power of 3) function.
+
+.. _class_Tween_constant_TRANS_CIRC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_CIRC** = ``8``
+
+The animation is interpolated with a function using square roots.
+
+.. _class_Tween_constant_TRANS_BOUNCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_BOUNCE** = ``9``
+
+The animation is interpolated by bouncing at the end.
+
+.. _class_Tween_constant_TRANS_BACK:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_BACK** = ``10``
+
+The animation is interpolated backing out at ends.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Tween_EaseType:
 
-.. _class_Tween_constant_EASE_IN:
-
-.. _class_Tween_constant_EASE_OUT:
-
-.. _class_Tween_constant_EASE_IN_OUT:
-
-.. _class_Tween_constant_EASE_OUT_IN:
+.. rst-class:: classref-enumeration
 
 enum **EaseType**:
 
-- **EASE_IN** = **0** --- The interpolation starts slowly and speeds up towards the end.
+.. _class_Tween_constant_EASE_IN:
 
-- **EASE_OUT** = **1** --- The interpolation starts quickly and slows down towards the end.
+.. rst-class:: classref-enumeration-constant
 
-- **EASE_IN_OUT** = **2** --- A combination of :ref:`EASE_IN<class_Tween_constant_EASE_IN>` and :ref:`EASE_OUT<class_Tween_constant_EASE_OUT>`. The interpolation is slowest at both ends.
+:ref:`EaseType<enum_Tween_EaseType>` **EASE_IN** = ``0``
 
-- **EASE_OUT_IN** = **3** --- A combination of :ref:`EASE_IN<class_Tween_constant_EASE_IN>` and :ref:`EASE_OUT<class_Tween_constant_EASE_OUT>`. The interpolation is fastest at both ends.
+The interpolation starts slowly and speeds up towards the end.
+
+.. _class_Tween_constant_EASE_OUT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EaseType<enum_Tween_EaseType>` **EASE_OUT** = ``1``
+
+The interpolation starts quickly and slows down towards the end.
+
+.. _class_Tween_constant_EASE_IN_OUT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EaseType<enum_Tween_EaseType>` **EASE_IN_OUT** = ``2``
+
+A combination of :ref:`EASE_IN<class_Tween_constant_EASE_IN>` and :ref:`EASE_OUT<class_Tween_constant_EASE_OUT>`. The interpolation is slowest at both ends.
+
+.. _class_Tween_constant_EASE_OUT_IN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EaseType<enum_Tween_EaseType>` **EASE_OUT_IN** = ``3``
+
+A combination of :ref:`EASE_IN<class_Tween_constant_EASE_IN>` and :ref:`EASE_OUT<class_Tween_constant_EASE_OUT>`. The interpolation is fastest at both ends.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Tween_method_bind_node:
 
-- :ref:`Tween<class_Tween>` **bind_node** **(** :ref:`Node<class_Node>` node **)**
+.. rst-class:: classref-method
 
-Binds this ``Tween`` with the given ``node``. ``Tween``\ s are processed directly by the :ref:`SceneTree<class_SceneTree>`, so they run independently of the animated nodes. When you bind a :ref:`Node<class_Node>` with the ``Tween``, the ``Tween`` will halt the animation when the object is not inside tree and the ``Tween`` will be automatically killed when the bound object is freed. Also :ref:`TWEEN_PAUSE_BOUND<class_Tween_constant_TWEEN_PAUSE_BOUND>` will make the pausing behavior dependent on the bound node.
+:ref:`Tween<class_Tween>` **bind_node** **(** :ref:`Node<class_Node>` node **)**
 
-For a shorter way to create and bind a ``Tween``, you can use :ref:`Node.create_tween<class_Node_method_create_tween>`.
+Binds this **Tween** with the given ``node``. **Tween**\ s are processed directly by the :ref:`SceneTree<class_SceneTree>`, so they run independently of the animated nodes. When you bind a :ref:`Node<class_Node>` with the **Tween**, the **Tween** will halt the animation when the object is not inside tree and the **Tween** will be automatically killed when the bound object is freed. Also :ref:`TWEEN_PAUSE_BOUND<class_Tween_constant_TWEEN_PAUSE_BOUND>` will make the pausing behavior dependent on the bound node.
+
+For a shorter way to create and bind a **Tween**, you can use :ref:`Node.create_tween<class_Node_method_create_tween>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_chain:
 
-- :ref:`Tween<class_Tween>` **chain** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Tween<class_Tween>` **chain** **(** **)**
 
 Used to chain two :ref:`Tweener<class_Tweener>`\ s after :ref:`set_parallel<class_Tween_method_set_parallel>` is called with ``true``.
 
@@ -364,35 +499,47 @@ Used to chain two :ref:`Tweener<class_Tweener>`\ s after :ref:`set_parallel<clas
 
 
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Tween_method_custom_step:
 
-- :ref:`bool<class_bool>` **custom_step** **(** :ref:`float<class_float>` delta **)**
+.. rst-class:: classref-method
 
-Processes the ``Tween`` by the given ``delta`` value, in seconds. This is mostly useful for manual control when the ``Tween`` is paused. It can also be used to end the ``Tween`` animation immediately, by setting ``delta`` longer than the whole duration of the ``Tween`` animation.
+:ref:`bool<class_bool>` **custom_step** **(** :ref:`float<class_float>` delta **)**
 
-Returns ``true`` if the ``Tween`` still has :ref:`Tweener<class_Tweener>`\ s that haven't finished.
+Processes the **Tween** by the given ``delta`` value, in seconds. This is mostly useful for manual control when the **Tween** is paused. It can also be used to end the **Tween** animation immediately, by setting ``delta`` longer than the whole duration of the **Tween** animation.
 
-\ **Note:** The ``Tween`` will become invalid in the next processing frame after its animation finishes. Calling :ref:`stop<class_Tween_method_stop>` after performing :ref:`custom_step<class_Tween_method_custom_step>` instead keeps and resets the ``Tween``.
+Returns ``true`` if the **Tween** still has :ref:`Tweener<class_Tweener>`\ s that haven't finished.
+
+\ **Note:** The **Tween** will become invalid in the next processing frame after its animation finishes. Calling :ref:`stop<class_Tween_method_stop>` after performing :ref:`custom_step<class_Tween_method_custom_step>` instead keeps and resets the **Tween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_get_total_elapsed_time:
 
-- :ref:`float<class_float>` **get_total_elapsed_time** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the total time in seconds the ``Tween`` has been animating (i.e. the time since it started, not counting pauses etc.). The time is affected by :ref:`set_speed_scale<class_Tween_method_set_speed_scale>`, and :ref:`stop<class_Tween_method_stop>` will reset it to ``0``.
+:ref:`float<class_float>` **get_total_elapsed_time** **(** **)** |const|
 
-\ **Note:** As it results from accumulating frame deltas, the time returned after the ``Tween`` has finished animating will be slightly greater than the actual ``Tween`` duration.
+Returns the total time in seconds the **Tween** has been animating (i.e. the time since it started, not counting pauses etc.). The time is affected by :ref:`set_speed_scale<class_Tween_method_set_speed_scale>`, and :ref:`stop<class_Tween_method_stop>` will reset it to ``0``.
+
+\ **Note:** As it results from accumulating frame deltas, the time returned after the **Tween** has finished animating will be slightly greater than the actual **Tween** duration.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_interpolate_value:
 
-- :ref:`Variant<class_Variant>` **interpolate_value** **(** :ref:`Variant<class_Variant>` initial_value, :ref:`Variant<class_Variant>` delta_value, :ref:`float<class_float>` elapsed_time, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type **)** |static|
+.. rst-class:: classref-method
 
-This method can be used for manual interpolation of a value, when you don't want ``Tween`` to do animating for you. It's similar to :ref:`@GlobalScope.lerp<class_@GlobalScope_method_lerp>`, but with support for custom transition and easing.
+:ref:`Variant<class_Variant>` **interpolate_value** **(** :ref:`Variant<class_Variant>` initial_value, :ref:`Variant<class_Variant>` delta_value, :ref:`float<class_float>` elapsed_time, :ref:`float<class_float>` duration, :ref:`TransitionType<enum_Tween_TransitionType>` trans_type, :ref:`EaseType<enum_Tween_EaseType>` ease_type **)** |static|
+
+This method can be used for manual interpolation of a value, when you don't want **Tween** to do animating for you. It's similar to :ref:`@GlobalScope.lerp<class_@GlobalScope_method_lerp>`, but with support for custom transition and easing.
 
 \ ``initial_value`` is the starting value of the interpolation.
 
@@ -404,37 +551,55 @@ This method can be used for manual interpolation of a value, when you don't want
 
 \ **Note:** If ``duration`` is equal to ``0``, the method will always return the final value, regardless of ``elapsed_time`` provided.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Tween_method_is_running:
 
-- :ref:`bool<class_bool>` **is_running** **(** **)**
+.. rst-class:: classref-method
 
-Returns whether the ``Tween`` is currently running, i.e. it wasn't paused and it's not finished.
+:ref:`bool<class_bool>` **is_running** **(** **)**
+
+Returns whether the **Tween** is currently running, i.e. it wasn't paused and it's not finished.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** **)**
+.. rst-class:: classref-method
 
-Returns whether the ``Tween`` is valid. A valid ``Tween`` is a ``Tween`` contained by the scene tree (i.e. the array from :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>` will contain this ``Tween``). A ``Tween`` might become invalid when it has finished tweening, is killed, or when created with ``Tween.new()``. Invalid ``Tween``\ s can't have :ref:`Tweener<class_Tweener>`\ s appended.
+:ref:`bool<class_bool>` **is_valid** **(** **)**
+
+Returns whether the **Tween** is valid. A valid **Tween** is a **Tween** contained by the scene tree (i.e. the array from :ref:`SceneTree.get_processed_tweens<class_SceneTree_method_get_processed_tweens>` will contain this **Tween**). A **Tween** might become invalid when it has finished tweening, is killed, or when created with ``Tween.new()``. Invalid **Tween**\ s can't have :ref:`Tweener<class_Tweener>`\ s appended.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_kill:
 
-- void **kill** **(** **)**
+.. rst-class:: classref-method
 
-Aborts all tweening operations and invalidates the ``Tween``.
+void **kill** **(** **)**
+
+Aborts all tweening operations and invalidates the **Tween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_parallel:
 
-- :ref:`Tween<class_Tween>` **parallel** **(** **)**
+.. rst-class:: classref-method
 
-Makes the next :ref:`Tweener<class_Tweener>` run parallelly to the previous one. Example:
+:ref:`Tween<class_Tween>` **parallel** **(** **)**
+
+Makes the next :ref:`Tweener<class_Tweener>` run parallelly to the previous one.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -457,105 +622,149 @@ Makes the next :ref:`Tweener<class_Tweener>` run parallelly to the previous one.
 
 All :ref:`Tweener<class_Tweener>`\ s in the example will run at the same time.
 
-You can make the ``Tween`` parallel by default by using :ref:`set_parallel<class_Tween_method_set_parallel>`.
+You can make the **Tween** parallel by default by using :ref:`set_parallel<class_Tween_method_set_parallel>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_pause:
 
-- void **pause** **(** **)**
+.. rst-class:: classref-method
+
+void **pause** **(** **)**
 
 Pauses the tweening. The animation can be resumed by using :ref:`play<class_Tween_method_play>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_play:
 
-- void **play** **(** **)**
+.. rst-class:: classref-method
 
-Resumes a paused or stopped ``Tween``.
+void **play** **(** **)**
+
+Resumes a paused or stopped **Tween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_set_ease:
 
-- :ref:`Tween<class_Tween>` **set_ease** **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**
+.. rst-class:: classref-method
 
-Sets the default ease type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this ``Tween``.
+:ref:`Tween<class_Tween>` **set_ease** **(** :ref:`EaseType<enum_Tween_EaseType>` ease **)**
+
+Sets the default ease type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this **Tween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_set_loops:
 
-- :ref:`Tween<class_Tween>` **set_loops** **(** :ref:`int<class_int>` loops=0 **)**
+.. rst-class:: classref-method
+
+:ref:`Tween<class_Tween>` **set_loops** **(** :ref:`int<class_int>` loops=0 **)**
 
 Sets the number of times the tweening sequence will be repeated, i.e. ``set_loops(2)`` will run the animation twice.
 
-Calling this method without arguments will make the ``Tween`` run infinitely, until either it is killed with :ref:`kill<class_Tween_method_kill>`, the ``Tween``'s bound node is freed, or all the animated objects have been freed (which makes further animation impossible).
+Calling this method without arguments will make the **Tween** run infinitely, until either it is killed with :ref:`kill<class_Tween_method_kill>`, the **Tween**'s bound node is freed, or all the animated objects have been freed (which makes further animation impossible).
 
-\ **Warning:** Make sure to always add some duration/delay when using infinite loops. To prevent the game freezing, 0-duration looped animations (e.g. a single :ref:`CallbackTweener<class_CallbackTweener>` with no delay) are stopped after a small number of loops, which may produce unexpected results. If a ``Tween``'s lifetime depends on some node, always use :ref:`bind_node<class_Tween_method_bind_node>`.
+\ **Warning:** Make sure to always add some duration/delay when using infinite loops. To prevent the game freezing, 0-duration looped animations (e.g. a single :ref:`CallbackTweener<class_CallbackTweener>` with no delay) are stopped after a small number of loops, which may produce unexpected results. If a **Tween**'s lifetime depends on some node, always use :ref:`bind_node<class_Tween_method_bind_node>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_set_parallel:
 
-- :ref:`Tween<class_Tween>` **set_parallel** **(** :ref:`bool<class_bool>` parallel=true **)**
+.. rst-class:: classref-method
+
+:ref:`Tween<class_Tween>` **set_parallel** **(** :ref:`bool<class_bool>` parallel=true **)**
 
 If ``parallel`` is ``true``, the :ref:`Tweener<class_Tweener>`\ s appended after this method will by default run simultaneously, as opposed to sequentially.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_set_pause_mode:
 
-- :ref:`Tween<class_Tween>` **set_pause_mode** **(** :ref:`TweenPauseMode<enum_Tween_TweenPauseMode>` mode **)**
+.. rst-class:: classref-method
 
-Determines the behavior of the ``Tween`` when the :ref:`SceneTree<class_SceneTree>` is paused. Check :ref:`TweenPauseMode<enum_Tween_TweenPauseMode>` for options.
+:ref:`Tween<class_Tween>` **set_pause_mode** **(** :ref:`TweenPauseMode<enum_Tween_TweenPauseMode>` mode **)**
+
+Determines the behavior of the **Tween** when the :ref:`SceneTree<class_SceneTree>` is paused. Check :ref:`TweenPauseMode<enum_Tween_TweenPauseMode>` for options.
 
 Default value is :ref:`TWEEN_PAUSE_BOUND<class_Tween_constant_TWEEN_PAUSE_BOUND>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_set_process_mode:
 
-- :ref:`Tween<class_Tween>` **set_process_mode** **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**
+.. rst-class:: classref-method
 
-Determines whether the ``Tween`` should run during idle frame (see :ref:`Node._process<class_Node_method__process>`) or physics frame (see :ref:`Node._physics_process<class_Node_method__physics_process>`.
+:ref:`Tween<class_Tween>` **set_process_mode** **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**
+
+Determines whether the **Tween** should run during idle frame (see :ref:`Node._process<class_Node_method__process>`) or physics frame (see :ref:`Node._physics_process<class_Node_method__physics_process>`.
 
 Default value is :ref:`TWEEN_PROCESS_IDLE<class_Tween_constant_TWEEN_PROCESS_IDLE>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_set_speed_scale:
 
-- :ref:`Tween<class_Tween>` **set_speed_scale** **(** :ref:`float<class_float>` speed **)**
+.. rst-class:: classref-method
+
+:ref:`Tween<class_Tween>` **set_speed_scale** **(** :ref:`float<class_float>` speed **)**
 
 Scales the speed of tweening. This affects all :ref:`Tweener<class_Tweener>`\ s and their delays.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_set_trans:
 
-- :ref:`Tween<class_Tween>` **set_trans** **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**
+.. rst-class:: classref-method
 
-Sets the default transition type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this ``Tween``.
+:ref:`Tween<class_Tween>` **set_trans** **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**
+
+Sets the default transition type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this **Tween**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_stop:
 
-- void **stop** **(** **)**
+.. rst-class:: classref-method
 
-Stops the tweening and resets the ``Tween`` to its initial state. This will not remove any appended :ref:`Tweener<class_Tweener>`\ s.
+void **stop** **(** **)**
+
+Stops the tweening and resets the **Tween** to its initial state. This will not remove any appended :ref:`Tweener<class_Tweener>`\ s.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tween_method_tween_callback:
 
-- :ref:`CallbackTweener<class_CallbackTweener>` **tween_callback** **(** :ref:`Callable<class_Callable>` callback **)**
+.. rst-class:: classref-method
+
+:ref:`CallbackTweener<class_CallbackTweener>` **tween_callback** **(** :ref:`Callable<class_Callable>` callback **)**
 
 Creates and appends a :ref:`CallbackTweener<class_CallbackTweener>`. This method can be used to call an arbitrary method in any object. Use :ref:`Callable.bind<class_Callable_method_bind>` to bind additional arguments for the call.
 
-Example: object that keeps shooting every 1 second.
+\ **Example:** Object that keeps shooting every 1 second:
 
 
 .. tabs::
@@ -572,7 +781,7 @@ Example: object that keeps shooting every 1 second.
 
 
 
-Example: turning a sprite red and then blue, with 2 second delay.
+\ **Example:** Turning a sprite red and then blue, with 2 second delay:
 
 
 .. tabs::
@@ -592,15 +801,19 @@ Example: turning a sprite red and then blue, with 2 second delay.
 
 
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Tween_method_tween_interval:
 
-- :ref:`IntervalTweener<class_IntervalTweener>` **tween_interval** **(** :ref:`float<class_float>` time **)**
+.. rst-class:: classref-method
 
-Creates and appends an :ref:`IntervalTweener<class_IntervalTweener>`. This method can be used to create delays in the tween animation, as an alternative to using the delay in other :ref:`Tweener<class_Tweener>`\ s, or when there's no animation (in which case the ``Tween`` acts as a timer). ``time`` is the length of the interval, in seconds.
+:ref:`IntervalTweener<class_IntervalTweener>` **tween_interval** **(** :ref:`float<class_float>` time **)**
 
-Example: creating an interval in code execution.
+Creates and appends an :ref:`IntervalTweener<class_IntervalTweener>`. This method can be used to create delays in the tween animation, as an alternative to using the delay in other :ref:`Tweener<class_Tweener>`\ s, or when there's no animation (in which case the **Tween** acts as a timer). ``time`` is the length of the interval, in seconds.
+
+\ **Example:** Creating an interval in code execution:
 
 
 .. tabs::
@@ -619,7 +832,7 @@ Example: creating an interval in code execution.
 
 
 
-Example: creating an object that moves back and forth and jumps every few seconds.
+\ **Example:** Creating an object that moves back and forth and jumps every few seconds:
 
 
 .. tabs::
@@ -646,15 +859,19 @@ Example: creating an object that moves back and forth and jumps every few second
 
 
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Tween_method_tween_method:
 
-- :ref:`MethodTweener<class_MethodTweener>` **tween_method** **(** :ref:`Callable<class_Callable>` method, :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` duration **)**
+.. rst-class:: classref-method
+
+:ref:`MethodTweener<class_MethodTweener>` **tween_method** **(** :ref:`Callable<class_Callable>` method, :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`float<class_float>` duration **)**
 
 Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is similar to a combination of :ref:`tween_callback<class_Tween_method_tween_callback>` and :ref:`tween_property<class_Tween_method_tween_property>`. It calls a method over time with a tweened value provided as an argument. The value is tweened between ``from`` and ``to`` over the time specified by ``duration``, in seconds. Use :ref:`Callable.bind<class_Callable_method_bind>` to bind additional arguments for the call. You can use :ref:`MethodTweener.set_ease<class_MethodTweener_method_set_ease>` and :ref:`MethodTweener.set_trans<class_MethodTweener_method_set_trans>` to tweak the easing and transition of the value or :ref:`MethodTweener.set_delay<class_MethodTweener_method_set_delay>` to delay the tweening.
 
-Example: making a 3D object look from one point to another point.
+\ **Example:** Making a 3D object look from one point to another point:
 
 
 .. tabs::
@@ -671,7 +888,7 @@ Example: making a 3D object look from one point to another point.
 
 
 
-Example: setting a text of a :ref:`Label<class_Label>`, using an intermediate method and after a delay.
+\ **Example:** Setting the text of a :ref:`Label<class_Label>`, using an intermediate method and after a delay:
 
 
 .. tabs::
@@ -702,13 +919,19 @@ Example: setting a text of a :ref:`Label<class_Label>`, using an intermediate me
 
 
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Tween_method_tween_property:
 
-- :ref:`PropertyTweener<class_PropertyTweener>` **tween_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration **)**
+.. rst-class:: classref-method
 
-Creates and appends a :ref:`PropertyTweener<class_PropertyTweener>`. This method tweens a ``property`` of an ``object`` between an initial value and ``final_val`` in a span of time equal to ``duration``, in seconds. The initial value by default is the property's value at the time the tweening of the :ref:`PropertyTweener<class_PropertyTweener>` starts. For example:
+:ref:`PropertyTweener<class_PropertyTweener>` **tween_property** **(** :ref:`Object<class_Object>` object, :ref:`NodePath<class_NodePath>` property, :ref:`Variant<class_Variant>` final_val, :ref:`float<class_float>` duration **)**
+
+Creates and appends a :ref:`PropertyTweener<class_PropertyTweener>`. This method tweens a ``property`` of an ``object`` between an initial value and ``final_val`` in a span of time equal to ``duration``, in seconds. The initial value by default is the property's value at the time the tweening of the :ref:`PropertyTweener<class_PropertyTweener>` starts.
+
+\ **Example:**\ 
 
 
 .. tabs::
@@ -731,7 +954,7 @@ will move the sprite to position (100, 200) and then to (200, 300). If you use :
 
 \ **Note:** You can find the correct property name by hovering over the property in the Inspector. You can also provide the components of a property directly by using ``"property:component"`` (eg. ``position:x``), where it would only apply to that particular component.
 
-Example: moving object twice from the same position, with different transition types.
+\ **Example:** Moving an object twice from the same position, with different transition types:
 
 
 .. tabs::

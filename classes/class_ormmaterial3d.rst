@@ -14,10 +14,14 @@ ORMMaterial3D
 
 Physically based rendering (PBR) material that can be applied to 3D objects, can use an ORM texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 ORMMaterial3D's properties are inherited from :ref:`BaseMaterial3D<class_BaseMaterial3D>`. Unlike :ref:`StandardMaterial3D<class_StandardMaterial3D>`, ORMMaterial3D uses a single texture for ambient occlusion, roughness and metallic maps, known as an ORM texture.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

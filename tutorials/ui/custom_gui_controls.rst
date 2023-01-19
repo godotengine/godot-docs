@@ -25,7 +25,7 @@ Checking control size
 
 Unlike 2D nodes, "size" is important with controls, as it helps to
 organize them in proper layouts. For this, the
-:ref:`Control.rect_size <class_Control_property_rect_size>`
+:ref:`Control.size <class_Control_property_size>`
 property is provided. Checking it during ``_draw()`` is vital to ensure
 everything is kept in-bounds.
 

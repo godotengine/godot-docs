@@ -16,175 +16,252 @@ Script
 
 A class stored as a resource.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-A class stored as a resource. A script extends the functionality of all objects that instance it.
+A class stored as a resource. A script extends the functionality of all objects that instantiate it.
 
 This is the base class for all scripts and should not be used directly. Trying to create a new script with this class will result in an error.
 
 The ``new`` method of a script subclass creates a new instance. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`Scripting documentation index <../tutorials/scripting/index>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`source_code<class_Script_property_source_code>` |
-+-----------------------------+-------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`source_code<class_Script_property_source_code>` |
+   +-----------------------------+-------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`can_instantiate<class_Script_method_can_instantiate>` **(** **)** |const|                                                            |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Script<class_Script>`           | :ref:`get_base_script<class_Script_method_get_base_script>` **(** **)** |const|                                                            |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName<class_StringName>`   | :ref:`get_instance_base_type<class_Script_method_get_instance_base_type>` **(** **)** |const|                                              |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`get_property_default_value<class_Script_method_get_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`   | :ref:`get_script_constant_map<class_Script_method_get_script_constant_map>` **(** **)**                                                    |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_script_method_list<class_Script_method_get_script_method_list>` **(** **)**                                                      |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_script_property_list<class_Script_method_get_script_property_list>` **(** **)**                                                  |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_script_signal_list<class_Script_method_get_script_signal_list>` **(** **)**                                                      |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_script_signal<class_Script_method_has_script_signal>` **(** :ref:`StringName<class_StringName>` signal_name **)** |const|        |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_source_code<class_Script_method_has_source_code>` **(** **)** |const|                                                            |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`instance_has<class_Script_method_instance_has>` **(** :ref:`Object<class_Object>` base_object **)** |const|                          |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_tool<class_Script_method_is_tool>` **(** **)** |const|                                                                            |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`reload<class_Script_method_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                                             |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`can_instantiate<class_Script_method_can_instantiate>` **(** **)** |const|                                                            |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Script<class_Script>`           | :ref:`get_base_script<class_Script_method_get_base_script>` **(** **)** |const|                                                            |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`   | :ref:`get_instance_base_type<class_Script_method_get_instance_base_type>` **(** **)** |const|                                              |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`         | :ref:`get_property_default_value<class_Script_method_get_property_default_value>` **(** :ref:`StringName<class_StringName>` property **)** |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`   | :ref:`get_script_constant_map<class_Script_method_get_script_constant_map>` **(** **)**                                                    |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_script_method_list<class_Script_method_get_script_method_list>` **(** **)**                                                      |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_script_property_list<class_Script_method_get_script_property_list>` **(** **)**                                                  |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_script_signal_list<class_Script_method_get_script_signal_list>` **(** **)**                                                      |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`has_script_signal<class_Script_method_has_script_signal>` **(** :ref:`StringName<class_StringName>` signal_name **)** |const|        |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`has_source_code<class_Script_method_has_source_code>` **(** **)** |const|                                                            |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`instance_has<class_Script_method_instance_has>` **(** :ref:`Object<class_Object>` base_object **)** |const|                          |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_tool<class_Script_method_is_tool>` **(** **)** |const|                                                                            |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`reload<class_Script_method_reload>` **(** :ref:`bool<class_bool>` keep_state=false **)**                                             |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Script_property_source_code:
 
-- :ref:`String<class_String>` **source_code**
+.. rst-class:: classref-property
 
-+----------+------------------------+
-| *Setter* | set_source_code(value) |
-+----------+------------------------+
-| *Getter* | get_source_code()      |
-+----------+------------------------+
+:ref:`String<class_String>` **source_code**
+
+.. rst-class:: classref-property-setget
+
+- void **set_source_code** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_source_code** **(** **)**
 
 The script source code or an empty string if source code is not available. When set, does not reload the class implementation automatically.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Script_method_can_instantiate:
 
-- :ref:`bool<class_bool>` **can_instantiate** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **can_instantiate** **(** **)** |const|
 
 Returns ``true`` if the script can be instantiated.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_get_base_script:
 
-- :ref:`Script<class_Script>` **get_base_script** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Script<class_Script>` **get_base_script** **(** **)** |const|
 
 Returns the script directly inherited by this script.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_get_instance_base_type:
 
-- :ref:`StringName<class_StringName>` **get_instance_base_type** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **get_instance_base_type** **(** **)** |const|
 
 Returns the script's base type.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_get_property_default_value:
 
-- :ref:`Variant<class_Variant>` **get_property_default_value** **(** :ref:`StringName<class_StringName>` property **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_property_default_value** **(** :ref:`StringName<class_StringName>` property **)**
 
 Returns the default value of the specified property.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_get_script_constant_map:
 
-- :ref:`Dictionary<class_Dictionary>` **get_script_constant_map** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_script_constant_map** **(** **)**
 
 Returns a dictionary containing constant names and their values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_get_script_method_list:
 
-- :ref:`Dictionary[]<class_Dictionary>` **get_script_method_list** **(** **)**
+.. rst-class:: classref-method
 
-Returns the list of methods in this ``Script``.
+:ref:`Dictionary[]<class_Dictionary>` **get_script_method_list** **(** **)**
+
+Returns the list of methods in this **Script**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_get_script_property_list:
 
-- :ref:`Dictionary[]<class_Dictionary>` **get_script_property_list** **(** **)**
+.. rst-class:: classref-method
 
-Returns the list of properties in this ``Script``.
+:ref:`Dictionary[]<class_Dictionary>` **get_script_property_list** **(** **)**
+
+Returns the list of properties in this **Script**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_get_script_signal_list:
 
-- :ref:`Dictionary[]<class_Dictionary>` **get_script_signal_list** **(** **)**
+.. rst-class:: classref-method
 
-Returns the list of user signals defined in this ``Script``.
+:ref:`Dictionary[]<class_Dictionary>` **get_script_signal_list** **(** **)**
+
+Returns the list of user signals defined in this **Script**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_has_script_signal:
 
-- :ref:`bool<class_bool>` **has_script_signal** **(** :ref:`StringName<class_StringName>` signal_name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_script_signal** **(** :ref:`StringName<class_StringName>` signal_name **)** |const|
 
 Returns ``true`` if the script, or a base class, defines a signal with the given name.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_has_source_code:
 
-- :ref:`bool<class_bool>` **has_source_code** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_source_code** **(** **)** |const|
 
 Returns ``true`` if the script contains non-empty source code.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_instance_has:
 
-- :ref:`bool<class_bool>` **instance_has** **(** :ref:`Object<class_Object>` base_object **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **instance_has** **(** :ref:`Object<class_Object>` base_object **)** |const|
 
 Returns ``true`` if ``base_object`` is an instance of this script.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_is_tool:
 
-- :ref:`bool<class_bool>` **is_tool** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_tool** **(** **)** |const|
 
 Returns ``true`` if the script is a tool script. A tool script can run in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Script_method_reload:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **reload** **(** :ref:`bool<class_bool>` keep_state=false **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **reload** **(** :ref:`bool<class_bool>` keep_state=false **)**
 
 Reloads the script's class implementation. Returns an error code.
 

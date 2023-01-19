@@ -14,6 +14,8 @@ AudioEffectLimiter
 
 Adds a soft-clip limiter audio effect to an Audio bus.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,84 +23,103 @@ A limiter is similar to a compressor, but it's less flexible and designed to dis
 
 Soft clipping starts to reduce the peaks a little below the threshold level and progressively increases its effect as the input level increases such that the threshold is never exceeded.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`Audio buses <../tutorials/audio/audio_buses>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`ceiling_db<class_AudioEffectLimiter_property_ceiling_db>`           | ``-0.1`` |
-+---------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`soft_clip_db<class_AudioEffectLimiter_property_soft_clip_db>`       | ``2.0``  |
-+---------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`soft_clip_ratio<class_AudioEffectLimiter_property_soft_clip_ratio>` | ``10.0`` |
-+---------------------------+---------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`threshold_db<class_AudioEffectLimiter_property_threshold_db>`       | ``0.0``  |
-+---------------------------+---------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`ceiling_db<class_AudioEffectLimiter_property_ceiling_db>`           | ``-0.1`` |
+   +---------------------------+---------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`soft_clip_db<class_AudioEffectLimiter_property_soft_clip_db>`       | ``2.0``  |
+   +---------------------------+---------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`soft_clip_ratio<class_AudioEffectLimiter_property_soft_clip_ratio>` | ``10.0`` |
+   +---------------------------+---------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`threshold_db<class_AudioEffectLimiter_property_threshold_db>`       | ``0.0``  |
+   +---------------------------+---------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioEffectLimiter_property_ceiling_db:
 
-- :ref:`float<class_float>` **ceiling_db**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``-0.1``              |
-+-----------+-----------------------+
-| *Setter*  | set_ceiling_db(value) |
-+-----------+-----------------------+
-| *Getter*  | get_ceiling_db()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **ceiling_db** = ``-0.1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_ceiling_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_ceiling_db** **(** **)**
 
 The waveform's maximum allowed value, in decibels. Value can range from -20 to -0.1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectLimiter_property_soft_clip_db:
 
-- :ref:`float<class_float>` **soft_clip_db**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``2.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_soft_clip_db(value) |
-+-----------+-------------------------+
-| *Getter*  | get_soft_clip_db()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **soft_clip_db** = ``2.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_soft_clip_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_soft_clip_db** **(** **)**
 
 Applies a gain to the limited waves, in decibels. Value can range from 0 to 6.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectLimiter_property_soft_clip_ratio:
 
-- :ref:`float<class_float>` **soft_clip_ratio**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``10.0``                   |
-+-----------+----------------------------+
-| *Setter*  | set_soft_clip_ratio(value) |
-+-----------+----------------------------+
-| *Getter*  | get_soft_clip_ratio()      |
-+-----------+----------------------------+
+:ref:`float<class_float>` **soft_clip_ratio** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_soft_clip_ratio** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_soft_clip_ratio** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioEffectLimiter_property_threshold_db:
 
-- :ref:`float<class_float>` **threshold_db**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_threshold_db(value) |
-+-----------+-------------------------+
-| *Getter*  | get_threshold_db()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **threshold_db** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_threshold_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_threshold_db** **(** **)**
 
 Threshold from which the limiter begins to be active, in decibels. Value can range from -30 to 0.
 

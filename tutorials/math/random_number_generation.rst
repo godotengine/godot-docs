@@ -25,11 +25,8 @@ using the :ref:`class_RandomNumberGenerator` class.
 
 Global scope methods are easier to set up, but they don't offer as much control.
 
-RandomNumberGenerator requires more code to use, but exposes many methods not
-found in global scope such as :ref:`randi_range()
-<class_RandomNumberGenerator_method_randi_range>` and :ref:`randfn()
-<class_RandomNumberGenerator_method_randfn>`. On top of that, it allows creating
-multiple instances each with their own seed.
+RandomNumberGenerator requires more code to use, but allows creating
+multiple instances, each with their own seed and state.
 
 This tutorial uses global scope methods, except when the method only exists in
 the RandomNumberGenerator class.
@@ -38,7 +35,7 @@ The randomize() method
 ----------------------
 
 In global scope, you can find a :ref:`randomize()
-<class_@GDScript_method_randomize>` method. **This method should be called only
+<class_@GlobalScope_method_randomize>` method. **This method should be called only
 once when your project starts to initialize the random seed.** Calling it
 multiple times is unnecessary and may impact performance negatively.
 
@@ -58,7 +55,7 @@ Putting it in your main scene script's ``_ready()`` method is a good choice:
     }
 
 You can also set a fixed random seed instead using :ref:`seed()
-<class_@GDScript_method_seed>`. Doing so will give you *deterministic* results
+<class_@GlobalScope_method_seed>`. Doing so will give you *deterministic* results
 across runs:
 
 .. tabs::
@@ -97,7 +94,7 @@ Getting a random number
 Let's look at some of the most commonly used functions and methods to generate
 random numbers in Godot.
 
-The function :ref:`randi() <class_@GDScript_method_randi>` returns a random
+The function :ref:`randi() <class_@GlobalScope_method_randi>` returns a random
 number between 0 and 2^32-1. Since the maximum value is huge, you most likely
 want to use the modulo operator (``%``) to bound the result between 0 and the
 denominator:
@@ -119,7 +116,7 @@ denominator:
     // Prints a random integer between 10 and 60.
     GD.Print(GD.Randi() % 51 + 10);
 
-:ref:`randf() <class_@GDScript_method_randf>` returns a random floating-point
+:ref:`randf() <class_@GlobalScope_method_randf>` returns a random floating-point
 number between 0 and 1. This is useful to implement a
 :ref:`doc_random_number_generation_weighted_random_probability` system, among
 other things.
@@ -145,7 +142,7 @@ varying by the deviation (1.0 by default):
     random.Randomize();
     GD.Print(random.Randfn());
 
-:ref:`rand_range() <class_@GDScript_method_rand_range>` takes two arguments
+:ref:`randf_range() <class_@GlobalScope_method_randf_range>` takes two arguments
 ``from`` and ``to``, and returns a random floating-point number between ``from``
 and ``to``:
 
@@ -153,12 +150,7 @@ and ``to``:
  .. code-tab:: gdscript GDScript
 
     # Prints a random floating-point number between -4 and 6.5.
-    print(rand_range(-4, 6.5))
-
- .. code-tab:: csharp
-
-    // Prints a random floating-point number between -4 and 6.5.
-    GD.Print(GD.RandRange(-4, 6.5));
+    print(randf_range(-4, 6.5))
 
 :ref:`RandomNumberGenerator.randi_range()
 <class_RandomNumberGenerator_method_randi_range>` takes two arguments ``from``
@@ -174,7 +166,7 @@ and ``to``, and returns a random integer between ``from`` and ``to``:
 
  .. code-tab:: csharp
 
-    # Prints a random integer number between -10 and 10.
+    // Prints a random integer number between -10 and 10.
     random.Randomize();
     GD.Print(random.RandiRange(-10, 10));
 
@@ -328,7 +320,7 @@ We can apply similar logic from arrays to dictionaries as well:
 Weighted random probability
 ---------------------------
 
-The :ref:`randf() <class_@GDScript_method_randf>` method returns a
+The :ref:`randf() <class_@GlobalScope_method_randf>` method returns a
 floating-point number between 0.0 and 1.0. We can use this to create a
 "weighted" probability where different outcomes have different likelihoods:
 

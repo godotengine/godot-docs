@@ -5,7 +5,7 @@ Documentation changelog
 
 The documentation is continually being improved. New releases
 include new pages, fixes and updates to existing pages, and many updates
-to the :ref:`class reference <toc-class-ref>`. Below is a list of new pages
+to the :ref:`class reference <doc_class_reference>`. Below is a list of new pages
 added since version 3.0.
 
 .. note:: This document only contains new pages so not all changes are reflected,
@@ -107,7 +107,6 @@ Scripting
 - :ref:`doc_debugger_panel`
 - :ref:`doc_creating_script_templates`
 - :ref:`doc_evaluating_expressions`
-- :ref:`doc_what_is_gdnative`
 - :ref:`doc_gdscript_warning_system` (split from :ref:`doc_gdscript_static_typing`)
 
 User Interface (UI)
@@ -185,7 +184,7 @@ Procedural geometry series:
   - :ref:`doc_arraymesh`
   - :ref:`doc_surfacetool`
   - :ref:`doc_meshdatatool`
-  - :ref:`doc_immediategeometry`
+  - :ref:`doc_immediatemesh`
 
 Optimization
 ^^^^^^^^^^^^
@@ -282,7 +281,7 @@ Plugins
 ^^^^^^^
 
 - :ref:`doc_making_main_screen_plugins`
-- :ref:`doc_spatial_gizmo_plugins`
+- :ref:`doc_3d_gizmo_plugins`
 
 Platform-specific
 ^^^^^^^^^^^^^^^^^
@@ -305,7 +304,6 @@ Miscellaneous
 - :ref:`doc_jitter_stutter`
 - :ref:`doc_running_code_in_the_editor`
 - :ref:`doc_change_scenes_manually`
-- :ref:`doc_gles2_gles3_differences`
 
 Compiling
 ^^^^^^^^^

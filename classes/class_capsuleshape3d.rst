@@ -14,57 +14,72 @@ CapsuleShape3D
 
 Capsule shape resource for 3D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 3D capsule shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. In 3D, a capsule is a cylinder shape with hemispheres at both ends.
 
-\ **Performance:** Being a primitive collision shape, ``CapsuleShape3D`` is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`). ``CapsuleShape3D`` is cheaper to check collisions against compared to :ref:`CylinderShape3D<class_CylinderShape3D>`.
+\ **Performance:** Being a primitive collision shape, **CapsuleShape3D** is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`). **CapsuleShape3D** is cheaper to check collisions against compared to :ref:`CylinderShape3D<class_CylinderShape3D>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `3D Physics Tests Demo <https://godotengine.org/asset-library/asset/675>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape3D_property_height>` | ``2.0`` |
-+---------------------------+-----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape3D_property_radius>` | ``0.5`` |
-+---------------------------+-----------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`height<class_CapsuleShape3D_property_height>` | ``2.0`` |
+   +---------------------------+-----------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape3D_property_radius>` | ``0.5`` |
+   +---------------------------+-----------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CapsuleShape3D_property_height:
 
-- :ref:`float<class_float>` **height**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``2.0``           |
-+-----------+-------------------+
-| *Setter*  | set_height(value) |
-+-----------+-------------------+
-| *Getter*  | get_height()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **height** = ``2.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_height** **(** **)**
 
 The capsule's height.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CapsuleShape3D_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.5``           |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 The capsule's radius.
 

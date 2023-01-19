@@ -56,15 +56,15 @@ Mid-level abstraction
 
 Before going into how we would like to synchronize a game across the network, it can be helpful to understand how the base network API for synchronization works.
 
-Godot uses a mid-level object :ref:`NetworkedMultiplayerPeer <class_NetworkedMultiplayerPeer>`.
+Godot uses a mid-level object :ref:`MultiplayerPeer <class_MultiplayerPeer>`.
 This object is not meant to be created directly, but is designed so that several C++ implementations can provide it.
 
 This object extends from :ref:`PacketPeer <class_PacketPeer>`, so it inherits all the useful methods for serializing, sending and receiving data. On top of that, it adds methods to set a peer, transfer mode, etc. It also includes signals that will let you know when peers connect or disconnect.
 
 This class interface can abstract most types of network layers, topologies and libraries. By default, Godot
-provides an implementation based on ENet (:ref:`NetworkedMultiplayerEnet <class_NetworkedMultiplayerENet>`),
-one based on WebRTC (:ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>`), and one based on WebSocket
-(:ref:`WebSocketMultiplayerPeer <class_WebSocketMultiplayerPeer>`), but this could be used to implement
+provides an implementation based on ENet (:ref:`ENetMultiplayerPeer <class_ENetMultiplayerPeer>`),
+one based on WebRTC (:ref:`WebRTCMultiplayerPeer <class_WebRTCMultiplayerPeer>`), and one based on WebSocket
+(:ref:`WebSocketPeer <class_WebSocketPeer>`), but this could be used to implement
 mobile APIs (for ad hoc WiFi, Bluetooth) or custom device/console-specific networking APIs.
 
 For most common cases, using this object directly is discouraged, as Godot provides even higher level networking facilities.
@@ -164,7 +164,7 @@ Server and Clients:
 The above signals are called on every peer connected to the server (including on the server) when a new peer connects or disconnects.
 Clients will connect with a unique ID greater than 1, while network peer ID 1 is always the server.
 Anything below 1 should be handled as invalid.
-You can retrieve the ID for the local system via :ref:`SceneTree.get_network_unique_id() <class_SceneTree_method_get_network_unique_id>`.
+You can retrieve the ID for the local system via ``SceneTree.get_network_unique_id()``.
 These IDs will be useful mostly for lobby management and should generally be stored, as they identify connected peers and thus players. You can also use IDs to send messages only to certain peers.
 
 Clients:
@@ -309,18 +309,18 @@ every peer and RPC will work great! Here is an example:
         var selfPeerID = get_tree().get_network_unique_id()
 
         # Load world
-        var world = load(which_level).instance()
+        var world = load(which_level).instantiate()
         get_node("/root").add_child(world)
 
         # Load my player
-        var my_player = preload("res://player.tscn").instance()
+        var my_player = preload("res://player.tscn").instantiate()
         my_player.set_name(str(selfPeerID))
         my_player.set_network_master(selfPeerID) # Will be explained later
         get_node("/root/world/players").add_child(my_player)
 
         # Load other players
         for p in player_info:
-            var player = preload("res://player.tscn").instance()
+            var player = preload("res://player.tscn").instantiate()
             player.set_name(str(p))
             player.set_network_master(p) # Will be explained later
             get_node("/root/world/players").add_child(player)
@@ -382,9 +382,9 @@ The network master of a node is the peer that has the ultimate authority over it
 When not explicitly set, the network master is inherited from the parent node, which if not changed, is always going to be the server (ID 1). Thus the server has authority over all nodes by default.
 
 The network master can be set
-with the function :ref:`Node.set_network_master(id, recursive) <class_Node_method_set_network_master>` (recursive is ``true`` by default and means the network master is recursively set on all child nodes of the node as well).
+with the function :ref:``Node.set_network_master(id, recursive)`` (recursive is ``true`` by default and means the network master is recursively set on all child nodes of the node as well).
 
-Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling :ref:`Node.is_network_master() <class_Node_method_is_network_master>`. This will return ``true`` when executed on the server and ``false`` on all client peers.
+Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling ``Node.is_network_master()``. This will return ``true`` when executed on the server and ``false`` on all client peers.
 
 If you have paid attention to the previous example, it's possible you noticed that each peer was set to have network master authority for their own player (Node) instead of the server:
 
@@ -392,14 +392,14 @@ If you have paid attention to the previous example, it's possible you noticed th
 
         [...]
         # Load my player
-        var my_player = preload("res://player.tscn").instance()
+        var my_player = preload("res://player.tscn").instantiate()
         my_player.set_name(str(selfPeerID))
         my_player.set_network_master(selfPeerID) # The player belongs to this peer; it has the authority.
         get_node("/root/world/players").add_child(my_player)
 
         # Load other players
         for p in player_info:
-            var player = preload("res://player.tscn").instance()
+            var player = preload("res://player.tscn").instantiate()
             player.set_name(str(p))
             player.set_network_master(p) # Each other connected peer has authority over their own player.
             get_node("/root/world/players").add_child(player)

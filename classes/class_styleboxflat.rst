@@ -14,6 +14,8 @@ StyleBoxFlat
 
 Customizable :ref:`StyleBox<class_StyleBox>` with a given set of parameters (no texture required).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,7 +29,9 @@ This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks w
 
 - Shadow (with blur and offset)
 
-Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system. Example:
+Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system.
+
+\ **Example:**\ 
 
 ::
 
@@ -42,242 +46,266 @@ The relative system now would take the 1:2 ratio of the two left corners to calc
     corner_radius_top_left: 10
     corner_radius_bottom_left: 20
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`bool<class_bool>`       | :ref:`anti_aliasing<class_StyleBoxFlat_property_anti_aliasing>`                           | ``true``                    |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`     | :ref:`anti_aliasing_size<class_StyleBoxFlat_property_anti_aliasing_size>`                 | ``0.625``                   |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`     | :ref:`bg_color<class_StyleBoxFlat_property_bg_color>`                                     | ``Color(0.6, 0.6, 0.6, 1)`` |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`bool<class_bool>`       | :ref:`border_blend<class_StyleBoxFlat_property_border_blend>`                             | ``false``                   |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`     | :ref:`border_color<class_StyleBoxFlat_property_border_color>`                             | ``Color(0.8, 0.8, 0.8, 1)`` |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`border_width_bottom<class_StyleBoxFlat_property_border_width_bottom>`               | ``0``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`border_width_left<class_StyleBoxFlat_property_border_width_left>`                   | ``0``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`border_width_right<class_StyleBoxFlat_property_border_width_right>`                 | ``0``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`border_width_top<class_StyleBoxFlat_property_border_width_top>`                     | ``0``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`corner_detail<class_StyleBoxFlat_property_corner_detail>`                           | ``8``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`corner_radius_bottom_left<class_StyleBoxFlat_property_corner_radius_bottom_left>`   | ``0``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`corner_radius_bottom_right<class_StyleBoxFlat_property_corner_radius_bottom_right>` | ``0``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`corner_radius_top_left<class_StyleBoxFlat_property_corner_radius_top_left>`         | ``0``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`corner_radius_top_right<class_StyleBoxFlat_property_corner_radius_top_right>`       | ``0``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`bool<class_bool>`       | :ref:`draw_center<class_StyleBoxFlat_property_draw_center>`                               | ``true``                    |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`     | :ref:`expand_margin_bottom<class_StyleBoxFlat_property_expand_margin_bottom>`             | ``0.0``                     |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`     | :ref:`expand_margin_left<class_StyleBoxFlat_property_expand_margin_left>`                 | ``0.0``                     |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`     | :ref:`expand_margin_right<class_StyleBoxFlat_property_expand_margin_right>`               | ``0.0``                     |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`float<class_float>`     | :ref:`expand_margin_top<class_StyleBoxFlat_property_expand_margin_top>`                   | ``0.0``                     |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Color<class_Color>`     | :ref:`shadow_color<class_StyleBoxFlat_property_shadow_color>`                             | ``Color(0, 0, 0, 0.6)``     |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_StyleBoxFlat_property_shadow_offset>`                           | ``Vector2(0, 0)``           |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`int<class_int>`         | :ref:`shadow_size<class_StyleBoxFlat_property_shadow_size>`                               | ``0``                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`skew<class_StyleBoxFlat_property_skew>`                                             | ``Vector2(0, 0)``           |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`anti_aliasing<class_StyleBoxFlat_property_anti_aliasing>`                           | ``true``                    |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`float<class_float>`     | :ref:`anti_aliasing_size<class_StyleBoxFlat_property_anti_aliasing_size>`                 | ``0.625``                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`bg_color<class_StyleBoxFlat_property_bg_color>`                                     | ``Color(0.6, 0.6, 0.6, 1)`` |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`border_blend<class_StyleBoxFlat_property_border_blend>`                             | ``false``                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`border_color<class_StyleBoxFlat_property_border_color>`                             | ``Color(0.8, 0.8, 0.8, 1)`` |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`border_width_bottom<class_StyleBoxFlat_property_border_width_bottom>`               | ``0``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`border_width_left<class_StyleBoxFlat_property_border_width_left>`                   | ``0``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`border_width_right<class_StyleBoxFlat_property_border_width_right>`                 | ``0``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`border_width_top<class_StyleBoxFlat_property_border_width_top>`                     | ``0``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`corner_detail<class_StyleBoxFlat_property_corner_detail>`                           | ``8``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`corner_radius_bottom_left<class_StyleBoxFlat_property_corner_radius_bottom_left>`   | ``0``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`corner_radius_bottom_right<class_StyleBoxFlat_property_corner_radius_bottom_right>` | ``0``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`corner_radius_top_left<class_StyleBoxFlat_property_corner_radius_top_left>`         | ``0``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`corner_radius_top_right<class_StyleBoxFlat_property_corner_radius_top_right>`       | ``0``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`draw_center<class_StyleBoxFlat_property_draw_center>`                               | ``true``                    |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`float<class_float>`     | :ref:`expand_margin_bottom<class_StyleBoxFlat_property_expand_margin_bottom>`             | ``0.0``                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`float<class_float>`     | :ref:`expand_margin_left<class_StyleBoxFlat_property_expand_margin_left>`                 | ``0.0``                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`float<class_float>`     | :ref:`expand_margin_right<class_StyleBoxFlat_property_expand_margin_right>`               | ``0.0``                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`float<class_float>`     | :ref:`expand_margin_top<class_StyleBoxFlat_property_expand_margin_top>`                   | ``0.0``                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`shadow_color<class_StyleBoxFlat_property_shadow_color>`                             | ``Color(0, 0, 0, 0.6)``     |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`shadow_offset<class_StyleBoxFlat_property_shadow_offset>`                           | ``Vector2(0, 0)``           |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`int<class_int>`         | :ref:`shadow_size<class_StyleBoxFlat_property_shadow_size>`                               | ``0``                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`skew<class_StyleBoxFlat_property_skew>`                                             | ``Vector2(0, 0)``           |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_border_width<class_StyleBoxFlat_method_get_border_width>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                             |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_border_width_min<class_StyleBoxFlat_method_get_border_width_min>` **(** **)** |const|                                                                |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`     | :ref:`get_corner_radius<class_StyleBoxFlat_method_get_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|                       |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_expand_margin<class_StyleBoxFlat_method_get_expand_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                           |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_border_width<class_StyleBoxFlat_method_set_border_width>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**        |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_border_width_all<class_StyleBoxFlat_method_set_border_width_all>` **(** :ref:`int<class_int>` width **)**                                            |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_corner_radius<class_StyleBoxFlat_method_set_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)** |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>` **(** :ref:`int<class_int>` radius **)**                                         |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_expand_margin<class_StyleBoxFlat_method_set_expand_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**   |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_expand_margin_all<class_StyleBoxFlat_method_set_expand_margin_all>` **(** :ref:`float<class_float>` size **)**                                       |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_border_width<class_StyleBoxFlat_method_get_border_width>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                             |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_border_width_min<class_StyleBoxFlat_method_get_border_width_min>` **(** **)** |const|                                                                |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`get_corner_radius<class_StyleBoxFlat_method_get_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|                       |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_expand_margin<class_StyleBoxFlat_method_get_expand_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                           |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_border_width<class_StyleBoxFlat_method_set_border_width>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**        |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_border_width_all<class_StyleBoxFlat_method_set_border_width_all>` **(** :ref:`int<class_int>` width **)**                                            |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_corner_radius<class_StyleBoxFlat_method_set_corner_radius>` **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)** |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>` **(** :ref:`int<class_int>` radius **)**                                         |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_expand_margin<class_StyleBoxFlat_method_set_expand_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**   |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_expand_margin_all<class_StyleBoxFlat_method_set_expand_margin_all>` **(** :ref:`float<class_float>` size **)**                                       |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_StyleBoxFlat_property_anti_aliasing:
 
-- :ref:`bool<class_bool>` **anti_aliasing**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | set_anti_aliased(value) |
-+-----------+-------------------------+
-| *Getter*  | is_anti_aliased()       |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **anti_aliasing** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_anti_aliased** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_anti_aliased** **(** **)**
 
 Antialiasing draws a small ring around the edges, which fades to transparency. As a result, edges look much smoother. This is only noticeable when using rounded corners or :ref:`skew<class_StyleBoxFlat_property_skew>`.
 
 \ **Note:** When using beveled corners with 45-degree angles (:ref:`corner_detail<class_StyleBoxFlat_property_corner_detail>` = 1), it is recommended to set :ref:`anti_aliasing<class_StyleBoxFlat_property_anti_aliasing>` to ``false`` to ensure crisp visuals and avoid possible visual glitches.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_StyleBoxFlat_property_anti_aliasing_size:
 
-- :ref:`float<class_float>` **anti_aliasing_size**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0.625``          |
-+-----------+--------------------+
-| *Setter*  | set_aa_size(value) |
-+-----------+--------------------+
-| *Getter*  | get_aa_size()      |
-+-----------+--------------------+
+:ref:`float<class_float>` **anti_aliasing_size** = ``0.625``
+
+.. rst-class:: classref-property-setget
+
+- void **set_aa_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_aa_size** **(** **)**
 
 This changes the size of the faded ring. Higher values can be used to achieve a "blurry" effect.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_bg_color:
 
-- :ref:`Color<class_Color>` **bg_color**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``Color(0.6, 0.6, 0.6, 1)`` |
-+-----------+-----------------------------+
-| *Setter*  | set_bg_color(value)         |
-+-----------+-----------------------------+
-| *Getter*  | get_bg_color()              |
-+-----------+-----------------------------+
+:ref:`Color<class_Color>` **bg_color** = ``Color(0.6, 0.6, 0.6, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bg_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_bg_color** **(** **)**
 
 The background color of the stylebox.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_border_blend:
 
-- :ref:`bool<class_bool>` **border_blend**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_border_blend(value) |
-+-----------+-------------------------+
-| *Getter*  | get_border_blend()      |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **border_blend** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_border_blend** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_border_blend** **(** **)**
 
 If ``true``, the border will fade into the background color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_border_color:
 
-- :ref:`Color<class_Color>` **border_color**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``Color(0.8, 0.8, 0.8, 1)`` |
-+-----------+-----------------------------+
-| *Setter*  | set_border_color(value)     |
-+-----------+-----------------------------+
-| *Getter*  | get_border_color()          |
-+-----------+-----------------------------+
+:ref:`Color<class_Color>` **border_color** = ``Color(0.8, 0.8, 0.8, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_border_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_border_color** **(** **)**
 
 Sets the color of the border.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_border_width_bottom:
 
-- :ref:`int<class_int>` **border_width_bottom**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_border_width(value) |
-+-----------+-------------------------+
-| *Getter*  | get_border_width()      |
-+-----------+-------------------------+
+:ref:`int<class_int>` **border_width_bottom** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**
+- :ref:`int<class_int>` **get_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Border width for the bottom border.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_border_width_left:
 
-- :ref:`int<class_int>` **border_width_left**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_border_width(value) |
-+-----------+-------------------------+
-| *Getter*  | get_border_width()      |
-+-----------+-------------------------+
+:ref:`int<class_int>` **border_width_left** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**
+- :ref:`int<class_int>` **get_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Border width for the left border.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_border_width_right:
 
-- :ref:`int<class_int>` **border_width_right**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_border_width(value) |
-+-----------+-------------------------+
-| *Getter*  | get_border_width()      |
-+-----------+-------------------------+
+:ref:`int<class_int>` **border_width_right** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**
+- :ref:`int<class_int>` **get_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Border width for the right border.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_border_width_top:
 
-- :ref:`int<class_int>` **border_width_top**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_border_width(value) |
-+-----------+-------------------------+
-| *Getter*  | get_border_width()      |
-+-----------+-------------------------+
+:ref:`int<class_int>` **border_width_top** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**
+- :ref:`int<class_int>` **get_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Border width for the top border.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_corner_detail:
 
-- :ref:`int<class_int>` **corner_detail**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``8``                    |
-+-----------+--------------------------+
-| *Setter*  | set_corner_detail(value) |
-+-----------+--------------------------+
-| *Getter*  | get_corner_detail()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **corner_detail** = ``8``
+
+.. rst-class:: classref-property-setget
+
+- void **set_corner_detail** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_corner_detail** **(** **)**
 
 This sets the number of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value, you should take the corner radius (:ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>`) into account.
 
@@ -285,302 +313,359 @@ For corner radii less than 10, ``4`` or ``5`` should be enough. For corner radii
 
 A corner detail of ``1`` will result in chamfered corners instead of rounded corners, which is useful for some artistic effects.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_StyleBoxFlat_property_corner_radius_bottom_left:
 
-- :ref:`int<class_int>` **corner_radius_bottom_left**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_corner_radius(value) |
-+-----------+--------------------------+
-| *Getter*  | get_corner_radius()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **corner_radius_bottom_left** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)**
+- :ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|
 
 The bottom-left corner's radius. If ``0``, the corner is not rounded.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_corner_radius_bottom_right:
 
-- :ref:`int<class_int>` **corner_radius_bottom_right**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_corner_radius(value) |
-+-----------+--------------------------+
-| *Getter*  | get_corner_radius()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **corner_radius_bottom_right** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)**
+- :ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|
 
 The bottom-right corner's radius. If ``0``, the corner is not rounded.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_corner_radius_top_left:
 
-- :ref:`int<class_int>` **corner_radius_top_left**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_corner_radius(value) |
-+-----------+--------------------------+
-| *Getter*  | get_corner_radius()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **corner_radius_top_left** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)**
+- :ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|
 
 The top-left corner's radius. If ``0``, the corner is not rounded.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_corner_radius_top_right:
 
-- :ref:`int<class_int>` **corner_radius_top_right**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_corner_radius(value) |
-+-----------+--------------------------+
-| *Getter*  | get_corner_radius()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **corner_radius_top_right** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)**
+- :ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|
 
 The top-right corner's radius. If ``0``, the corner is not rounded.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_draw_center:
 
-- :ref:`bool<class_bool>` **draw_center**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``true``                 |
-+-----------+--------------------------+
-| *Setter*  | set_draw_center(value)   |
-+-----------+--------------------------+
-| *Getter*  | is_draw_center_enabled() |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **draw_center** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_draw_center** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_draw_center_enabled** **(** **)**
 
 Toggles drawing of the inner part of the stylebox.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_expand_margin_bottom:
 
-- :ref:`float<class_float>` **expand_margin_bottom**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_expand_margin(value) |
-+-----------+--------------------------+
-| *Getter*  | get_expand_margin()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **expand_margin_bottom** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**
+- :ref:`float<class_float>` **get_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Expands the stylebox outside of the control rect on the bottom edge. Useful in combination with :ref:`border_width_bottom<class_StyleBoxFlat_property_border_width_bottom>` to draw a border outside the control rect.
 
 \ **Note:** Unlike :ref:`StyleBox.content_margin_bottom<class_StyleBox_property_content_margin_bottom>`, :ref:`expand_margin_bottom<class_StyleBoxFlat_property_expand_margin_bottom>` does *not* affect the size of the clickable area for :ref:`Control<class_Control>`\ s. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_StyleBoxFlat_property_expand_margin_left:
 
-- :ref:`float<class_float>` **expand_margin_left**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_expand_margin(value) |
-+-----------+--------------------------+
-| *Getter*  | get_expand_margin()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **expand_margin_left** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**
+- :ref:`float<class_float>` **get_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Expands the stylebox outside of the control rect on the left edge. Useful in combination with :ref:`border_width_left<class_StyleBoxFlat_property_border_width_left>` to draw a border outside the control rect.
 
 \ **Note:** Unlike :ref:`StyleBox.content_margin_left<class_StyleBox_property_content_margin_left>`, :ref:`expand_margin_left<class_StyleBoxFlat_property_expand_margin_left>` does *not* affect the size of the clickable area for :ref:`Control<class_Control>`\ s. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_StyleBoxFlat_property_expand_margin_right:
 
-- :ref:`float<class_float>` **expand_margin_right**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_expand_margin(value) |
-+-----------+--------------------------+
-| *Getter*  | get_expand_margin()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **expand_margin_right** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**
+- :ref:`float<class_float>` **get_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Expands the stylebox outside of the control rect on the right edge. Useful in combination with :ref:`border_width_right<class_StyleBoxFlat_property_border_width_right>` to draw a border outside the control rect.
 
 \ **Note:** Unlike :ref:`StyleBox.content_margin_right<class_StyleBox_property_content_margin_right>`, :ref:`expand_margin_right<class_StyleBoxFlat_property_expand_margin_right>` does *not* affect the size of the clickable area for :ref:`Control<class_Control>`\ s. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_StyleBoxFlat_property_expand_margin_top:
 
-- :ref:`float<class_float>` **expand_margin_top**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_expand_margin(value) |
-+-----------+--------------------------+
-| *Getter*  | get_expand_margin()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **expand_margin_top** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**
+- :ref:`float<class_float>` **get_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Expands the stylebox outside of the control rect on the top edge. Useful in combination with :ref:`border_width_top<class_StyleBoxFlat_property_border_width_top>` to draw a border outside the control rect.
 
 \ **Note:** Unlike :ref:`StyleBox.content_margin_top<class_StyleBox_property_content_margin_top>`, :ref:`expand_margin_top<class_StyleBoxFlat_property_expand_margin_top>` does *not* affect the size of the clickable area for :ref:`Control<class_Control>`\ s. This can negatively impact usability if used wrong, as the user may try to click an area of the StyleBox that cannot actually receive clicks.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_StyleBoxFlat_property_shadow_color:
 
-- :ref:`Color<class_Color>` **shadow_color**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color(0, 0, 0, 0.6)`` |
-+-----------+-------------------------+
-| *Setter*  | set_shadow_color(value) |
-+-----------+-------------------------+
-| *Getter*  | get_shadow_color()      |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **shadow_color** = ``Color(0, 0, 0, 0.6)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_shadow_color** **(** **)**
 
 The color of the shadow. This has no effect if :ref:`shadow_size<class_StyleBoxFlat_property_shadow_size>` is lower than 1.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_shadow_offset:
 
-- :ref:`Vector2<class_Vector2>` **shadow_offset**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``Vector2(0, 0)``        |
-+-----------+--------------------------+
-| *Setter*  | set_shadow_offset(value) |
-+-----------+--------------------------+
-| *Getter*  | get_shadow_offset()      |
-+-----------+--------------------------+
+:ref:`Vector2<class_Vector2>` **shadow_offset** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_shadow_offset** **(** **)**
 
 The shadow offset in pixels. Adjusts the position of the shadow relatively to the stylebox.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_shadow_size:
 
-- :ref:`int<class_int>` **shadow_size**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0``                  |
-+-----------+------------------------+
-| *Setter*  | set_shadow_size(value) |
-+-----------+------------------------+
-| *Getter*  | get_shadow_size()      |
-+-----------+------------------------+
+:ref:`int<class_int>` **shadow_size** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_shadow_size** **(** **)**
 
 The shadow size in pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_property_skew:
 
-- :ref:`Vector2<class_Vector2>` **skew**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
-| *Setter*  | set_skew(value)   |
-+-----------+-------------------+
-| *Getter*  | get_skew()        |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **skew** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_skew** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_skew** **(** **)**
 
 If set to a non-zero value on either axis, :ref:`skew<class_StyleBoxFlat_property_skew>` distorts the StyleBox horizontally and/or vertically. This can be used for "futuristic"-style UIs. Positive values skew the StyleBox towards the right (X axis) and upwards (Y axis), while negative values skew the StyleBox towards the left (X axis) and downwards (Y axis).
 
 \ **Note:** To ensure text does not touch the StyleBox's edges, consider increasing the :ref:`StyleBox<class_StyleBox>`'s content margin (see :ref:`StyleBox.content_margin_bottom<class_StyleBox_property_content_margin_bottom>`). It is preferable to increase the content margin instead of the expand margin (see :ref:`expand_margin_bottom<class_StyleBoxFlat_property_expand_margin_bottom>`), as increasing the expand margin does not increase the size of the clickable area for :ref:`Control<class_Control>`\ s.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_StyleBoxFlat_method_get_border_width:
 
-- :ref:`int<class_int>` **get_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Returns the specified :ref:`Side<enum_@GlobalScope_Side>`'s border width.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_method_get_border_width_min:
 
-- :ref:`int<class_int>` **get_border_width_min** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_border_width_min** **(** **)** |const|
 
 Returns the smallest border width out of all four borders.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_method_get_corner_radius:
 
-- :ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner **)** |const|
 
 Returns the given ``corner``'s radius. See :ref:`Corner<enum_@GlobalScope_Corner>` for possible values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_method_get_expand_margin:
 
-- :ref:`float<class_float>` **get_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 Returns the size of the specified :ref:`Side<enum_@GlobalScope_Side>`'s expand margin.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_method_set_border_width:
 
-- void **set_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**
+.. rst-class:: classref-method
+
+void **set_border_width** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`int<class_int>` width **)**
 
 Sets the specified :ref:`Side<enum_@GlobalScope_Side>`'s border width to ``width`` pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_method_set_border_width_all:
 
-- void **set_border_width_all** **(** :ref:`int<class_int>` width **)**
+.. rst-class:: classref-method
+
+void **set_border_width_all** **(** :ref:`int<class_int>` width **)**
 
 Sets the border width to ``width`` pixels for all sides.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_method_set_corner_radius:
 
-- void **set_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)**
+.. rst-class:: classref-method
+
+void **set_corner_radius** **(** :ref:`Corner<enum_@GlobalScope_Corner>` corner, :ref:`int<class_int>` radius **)**
 
 Sets the corner radius to ``radius`` pixels for the given ``corner``. See :ref:`Corner<enum_@GlobalScope_Corner>` for possible values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_method_set_corner_radius_all:
 
-- void **set_corner_radius_all** **(** :ref:`int<class_int>` radius **)**
+.. rst-class:: classref-method
+
+void **set_corner_radius_all** **(** :ref:`int<class_int>` radius **)**
 
 Sets the corner radius to ``radius`` pixels for all corners.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_method_set_expand_margin:
 
-- void **set_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**
+.. rst-class:: classref-method
+
+void **set_expand_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` size **)**
 
 Sets the expand margin to ``size`` pixels for the specified :ref:`Side<enum_@GlobalScope_Side>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StyleBoxFlat_method_set_expand_margin_all:
 
-- void **set_expand_margin_all** **(** :ref:`float<class_float>` size **)**
+.. rst-class:: classref-method
+
+void **set_expand_margin_all** **(** :ref:`float<class_float>` size **)**
 
 Sets the expand margin to ``size`` pixels for all margins.
 

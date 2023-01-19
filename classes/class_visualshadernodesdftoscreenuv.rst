@@ -14,6 +14,8 @@ VisualShaderNodeSDFToScreenUV
 
 A function to convert an SDF (signed-distance field) to screen UV, to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

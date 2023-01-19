@@ -56,7 +56,7 @@ After notarization is completed, `staple the ticket <https://developer.apple.com
 If you have an Apple Developer ID Certificate and exporting from Linux or Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install `PyOxidizer rcodesign <https://github.com/indygreg/PyOxidizer/tree/main/apple-codesign>`__, and configure the path to ``rcodesign`` in the ``Editor Settings > Export > macOS > rcodesign``.
+Install `PyOxidizer rcodesign <https://github.com/indygreg/apple-platform-rs/tree/main/apple-codesign>`__, and configure the path to ``rcodesign`` in the ``Editor Settings > Export > macOS > rcodesign``.
 
 To sign exported app
 ^^^^^^^^^^^^^^^^^^^^
@@ -146,9 +146,9 @@ See `Hardened Runtime <https://developer.apple.com/documentation/security/harden
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Allow Unsigned Executable Memory [4]_ | Allows creating writable and executable memory without JIT restrictions. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation. |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Allow DYLD Environment Variables [4]_ | Allows app to uss dynamic linker environment variables to inject code.  f you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation.   |
+| Allow DYLD Environment Variables [4]_ | Allows app to uss dynamic linker environment variables to inject code. If you are using add-ons with dynamic or self-modifying native code, enable them according to the add-on documentation.   |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Disable Library Validation            | Allows app to load arbitrary libraries and frameworks. Enabled it if you are using GDNative add-ons and ad-hoc signature, or want to support user-provided external add-ons.                     |
+| Disable Library Validation            | Allows app to load arbitrary libraries and frameworks. Enable it if you are using GDExtension add-ons or ad-hoc signing, or want to support user-provided external add-ons.                      |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Audio Input                           | Enable if you need to use the microphone or other audio input sources, if it's enabled you should also provide usage message in the `privacy/microphone_usage_description` option.               |
 +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

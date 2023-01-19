@@ -14,10 +14,14 @@ QuadMesh
 
 Class representing a square mesh facing the camera.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Class representing a square :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Y axes; this rotation is more suited for use with billboarded materials. A ``QuadMesh`` is equivalent to a :ref:`PlaneMesh<class_PlaneMesh>` except its default :ref:`PlaneMesh.orientation<class_PlaneMesh_property_orientation>` is :ref:`PlaneMesh.FACE_Z<class_PlaneMesh_constant_FACE_Z>`.
+Class representing a square :ref:`PrimitiveMesh<class_PrimitiveMesh>`. This flat mesh does not have a thickness. By default, this mesh is aligned on the X and Y axes; this rotation is more suited for use with billboarded materials. A **QuadMesh** is equivalent to a :ref:`PlaneMesh<class_PlaneMesh>` except its default :ref:`PlaneMesh.orientation<class_PlaneMesh_property_orientation>` is :ref:`PlaneMesh.FACE_Z<class_PlaneMesh_constant_FACE_Z>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -26,14 +30,19 @@ Tutorials
 
 - `2D in 3D Demo <https://godotengine.org/asset-library/asset/129>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+------------------------------------------------+-------------+-------------------------------------------------------------------------------+
-| :ref:`Orientation<enum_PlaneMesh_Orientation>` | orientation | ``2`` (overrides :ref:`PlaneMesh<class_PlaneMesh_property_orientation>`)      |
-+------------------------------------------------+-------------+-------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                  | size        | ``Vector2(1, 1)`` (overrides :ref:`PlaneMesh<class_PlaneMesh_property_size>`) |
-+------------------------------------------------+-------------+-------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------+-------------+-------------------------------------------------------------------------------+
+   | :ref:`Orientation<enum_PlaneMesh_Orientation>` | orientation | ``2`` (overrides :ref:`PlaneMesh<class_PlaneMesh_property_orientation>`)      |
+   +------------------------------------------------+-------------+-------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                  | size        | ``Vector2(1, 1)`` (overrides :ref:`PlaneMesh<class_PlaneMesh_property_size>`) |
+   +------------------------------------------------+-------------+-------------------------------------------------------------------------------+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

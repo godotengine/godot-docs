@@ -14,6 +14,8 @@ XROrigin3D
 
 The origin point in AR/VR.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,32 +27,63 @@ It is the position of this node that you update when your character needs to mov
 
 For example, if your character is driving a car, the XROrigin3D node should be a child node of this car. Or, if you're implementing a teleport system to move your character, you should change the position of this node.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`XR documentation index <../tutorials/xr/index>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`world_scale<class_XROrigin3D_property_world_scale>` | ``1.0`` |
-+---------------------------+-----------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`current<class_XROrigin3D_property_current>`         | ``false`` |
+   +---------------------------+-----------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`world_scale<class_XROrigin3D_property_world_scale>` | ``1.0``   |
+   +---------------------------+-----------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
+.. _class_XROrigin3D_property_current:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **current** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_current** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_current** **(** **)**
+
+Is this XROrigin3D node the current origin used by the :ref:`XRServer<class_XRServer>`?
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_XROrigin3D_property_world_scale:
 
-- :ref:`float<class_float>` **world_scale**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_world_scale(value) |
-+-----------+------------------------+
-| *Getter*  | get_world_scale()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **world_scale** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_world_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_world_scale** **(** **)**
 
 Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 real world meter.
 

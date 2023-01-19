@@ -33,7 +33,7 @@ This is how it's done in the `Third Person Shooter demo <https://github.com/godo
 
 .. image:: img/animtree1.png
 
-A new scene was created for the player with a ``KinematicBody`` as root. Inside this scene, the original ``.dae`` (Collada) file was instantiated
+A new scene was created for the player with a ``CharacterBody3D`` as root. Inside this scene, the original ``.dae`` (Collada) file was instantiated
 and an ``AnimationTree`` node was created.
 
 Creating a tree
@@ -188,6 +188,48 @@ Transitions also have a few properties. Click any transition and it will be disp
 * *Priority* is used together with the ``travel()`` function from code (more on this later). Lower priority transitions are preferred when travelling through the tree.
 * *Disabled* toggles disabling this transition (when disabled, it will not be used during travel or auto advance).
 
+For better blending
+-------------------
+
+In Godot 4.0+, in order for the blending results to be deterministic (reproducible and always consistent),
+the blended property values must have a specific initial value.
+For example, in the case of two animations to be blended, if one animation has a property track and the other does not,
+the blended animation is calculated as if the latter animation had a property track with the initial value.
+
+When using Position/Rotation/Scale 3D tracks for Skeleton3D bones, the initial value is Bone Rest.
+For other properties, the initial value is ``0`` and if the track is present in the ``RESET`` animation,
+the value of its first keyframe is used instead.
+
+For example, the following AnimationPlayer has two animations, but one of them lacks a Property track for Position.
+
+.. image:: img/blending1.webp
+
+This means that the animation lacking that will treat those Positions as ``Vector2(0, 0)``.
+
+.. image:: img/blending2.webp
+
+This problem can be solved by adding a Property track for Position as an initial value to the ``RESET`` animation.
+
+.. image:: img/blending3.webp
+
+.. image:: img/blending4.webp
+
+.. note:: Be aware that the ``RESET`` animation exists to define the default pose when loading an object originally.
+          It is assumed to have only one frame and is not expected to be played back using the timeline.
+
+Also keep in mind that the Rotation 3D tracks and the Property tracks for 2D rotation
+with Interpolation Type set to Linear Angle or Cubic Angle will prevent rotation of more than 180 degrees
+from the initial value as blended animation.
+
+This can be useful for Skeleton3Ds to prevent the bones penetrating the body when blending animations.
+Therefore, Skeleton3D's Bone Rest values should be as close to the midpoint of the movable range as possible.
+**This means that for humanoid models, it is preferable to import them in a T-pose**.
+
+.. image:: img/blending5.webp
+
+You can see that the shortest rotation path from Bone Rests is prioritized rather than the shortest rotation path between animations.
+
+If you need to rotate Skeleton3D itself more than 180 degrees by blend animations for movement, you can use Root Motion.
 
 Root motion
 -----------
@@ -211,7 +253,7 @@ Afterwards, the actual motion can be retrieved via the :ref:`AnimationTree <clas
 
     animTree.GetRootMotionTransform();
 
-This can be fed to functions such as :ref:`KinematicBody.move_and_slide <class_KinematicBody_method_move_and_slide>` to control the character movement.
+This can be fed to functions such as :ref:`CharacterBody3D.move_and_slide <class_CharacterBody3D_method_move_and_slide>` to control the character movement.
 
 There is also a tool node, ``RootMotionView``, that can be placed in a scene and will act as a custom floor for your
 character and animations (this node is disabled by default during the game).

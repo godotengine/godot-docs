@@ -12,75 +12,129 @@ RDUniform
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+------------------------------------------------------+------------------------------------------------------------+-------+
-| :ref:`int<class_int>`                                | :ref:`binding<class_RDUniform_property_binding>`           | ``0`` |
-+------------------------------------------------------+------------------------------------------------------------+-------+
-| :ref:`UniformType<enum_RenderingDevice_UniformType>` | :ref:`uniform_type<class_RDUniform_property_uniform_type>` | ``3`` |
-+------------------------------------------------------+------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------------+------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`                                | :ref:`binding<class_RDUniform_property_binding>`           | ``0`` |
+   +------------------------------------------------------+------------------------------------------------------------+-------+
+   | :ref:`UniformType<enum_RenderingDevice_UniformType>` | :ref:`uniform_type<class_RDUniform_property_uniform_type>` | ``3`` |
+   +------------------------------------------------------+------------------------------------------------------------+-------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+-----------------------------------------------------------------------------------+
-| void                    | :ref:`add_id<class_RDUniform_method_add_id>` **(** :ref:`RID<class_RID>` id **)** |
-+-------------------------+-----------------------------------------------------------------------------------+
-| void                    | :ref:`clear_ids<class_RDUniform_method_clear_ids>` **(** **)**                    |
-+-------------------------+-----------------------------------------------------------------------------------+
-| :ref:`RID[]<class_RID>` | :ref:`get_ids<class_RDUniform_method_get_ids>` **(** **)** |const|                |
-+-------------------------+-----------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-----------------------------------------------------------------------------------+
+   | void                    | :ref:`add_id<class_RDUniform_method_add_id>` **(** :ref:`RID<class_RID>` id **)** |
+   +-------------------------+-----------------------------------------------------------------------------------+
+   | void                    | :ref:`clear_ids<class_RDUniform_method_clear_ids>` **(** **)**                    |
+   +-------------------------+-----------------------------------------------------------------------------------+
+   | :ref:`RID[]<class_RID>` | :ref:`get_ids<class_RDUniform_method_get_ids>` **(** **)** |const|                |
+   +-------------------------+-----------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_RDUniform_property_binding:
 
-- :ref:`int<class_int>` **binding**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_binding(value) |
-+-----------+--------------------+
-| *Getter*  | get_binding()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **binding** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_binding** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_binding** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RDUniform_property_uniform_type:
 
-- :ref:`UniformType<enum_RenderingDevice_UniformType>` **uniform_type**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``3``                   |
-+-----------+-------------------------+
-| *Setter*  | set_uniform_type(value) |
-+-----------+-------------------------+
-| *Getter*  | get_uniform_type()      |
-+-----------+-------------------------+
+:ref:`UniformType<enum_RenderingDevice_UniformType>` **uniform_type** = ``3``
+
+.. rst-class:: classref-property-setget
+
+- void **set_uniform_type** **(** :ref:`UniformType<enum_RenderingDevice_UniformType>` value **)**
+- :ref:`UniformType<enum_RenderingDevice_UniformType>` **get_uniform_type** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_RDUniform_method_add_id:
 
-- void **add_id** **(** :ref:`RID<class_RID>` id **)**
+.. rst-class:: classref-method
+
+void **add_id** **(** :ref:`RID<class_RID>` id **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RDUniform_method_clear_ids:
 
-- void **clear_ids** **(** **)**
+.. rst-class:: classref-method
+
+void **clear_ids** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RDUniform_method_get_ids:
 
-- :ref:`RID[]<class_RID>` **get_ids** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID[]<class_RID>` **get_ids** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

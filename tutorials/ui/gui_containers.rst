@@ -184,7 +184,7 @@ Here is an example of a container that fits children to its rect size:
 
     using Godot;
 
-    public class CustomContainer : Container
+    public partial class CustomContainer : Container
     {
         public override void _Notification(int what)
         {

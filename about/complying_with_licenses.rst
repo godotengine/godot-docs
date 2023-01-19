@@ -56,6 +56,28 @@ The license does not specify how it has to be included, so anything is valid as
 long as it can be displayed under some condition. These are the most common
 approaches (only need to implement one of them, not all).
 
+.. tip::
+
+    Godot provides several methods to get license information in the Engine
+    singleton. This allows you to source the license information directly from
+    the engine binary, which prevents the information from becoming outdated if
+    you update engine versions.
+
+    For the engine itself:
+
+    - :ref:`Engine.get_license_text<class_Engine_method_get_license_text>`
+
+    For third-party components used by the engine:
+
+    - :ref:`Engine.get_license_info<class_Engine_method_get_license_info>`
+    - :ref:`Engine.get_copyright_info<class_Engine_method_get_copyright_info>`
+
+    For miscellaneous engine contributor information. You don't have to include
+    these ones in your project, but they're listed here for reference:
+
+    - :ref:`Engine.get_author_info<class_Engine_method_get_author_info>`
+    - :ref:`Engine.get_donor_info<class_Engine_method_get_donor_info>`
+
 Credits screen
 ^^^^^^^^^^^^^^
 
@@ -67,11 +89,13 @@ Licenses screen
 ^^^^^^^^^^^^^^^
 
 Some games have a special menu (often in the settings) to display licenses.
+This menu is typically accessed with a button called **Third-party Licenses**
+or **Open Source Licenses**.
 
 Output log
 ^^^^^^^^^^
 
-Just printing the licensing text using the :ref:`print() <class_@GlobalScope_method_print>`
+Printing the licensing text using the :ref:`print() <class_@GlobalScope_method_print>`
 function may be enough on platforms where a global output log is readable.
 This is the case on desktop platforms, Android and HTML5 (but not iOS and UWP).
 
@@ -116,7 +140,7 @@ Godot license:
 
 .. note::
 
-    <year> should correspond to the value from the FreeType version used 
+    <year> should correspond to the value from the FreeType version used
     in your build. This information can be found in the editor by opening
     the **Help > About** dialog and going to the **Third-party Licenses**
     tab.

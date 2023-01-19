@@ -14,6 +14,8 @@ SkeletonModification3DStackHolder
 
 A modification that holds and executes a :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,29 +23,46 @@ This :ref:`SkeletonModification3D<class_SkeletonModification3D>` holds a referen
 
 \ **Note:** The modifications in the held :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` will only be executed if their execution mode matches the execution mode of the SkeletonModification3DStackHolder.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` | :ref:`get_held_modification_stack<class_SkeletonModification3DStackHolder_method_get_held_modification_stack>` **(** **)** |const|                                                                                       |
-+-----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                  | :ref:`set_held_modification_stack<class_SkeletonModification3DStackHolder_method_set_held_modification_stack>` **(** :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` held_modification_stack **)** |
-+-----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` | :ref:`get_held_modification_stack<class_SkeletonModification3DStackHolder_method_get_held_modification_stack>` **(** **)** |const|                                                                                       |
+   +-----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                  | :ref:`set_held_modification_stack<class_SkeletonModification3DStackHolder_method_set_held_modification_stack>` **(** :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` held_modification_stack **)** |
+   +-----------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SkeletonModification3DStackHolder_method_get_held_modification_stack:
 
-- :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` **get_held_modification_stack** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` **get_held_modification_stack** **(** **)** |const|
 
 Returns the :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` that this modification is holding.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkeletonModification3DStackHolder_method_set_held_modification_stack:
 
-- void **set_held_modification_stack** **(** :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` held_modification_stack **)**
+.. rst-class:: classref-method
+
+void **set_held_modification_stack** **(** :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` held_modification_stack **)**
 
 Sets the :ref:`SkeletonModificationStack3D<class_SkeletonModificationStack3D>` that this modification is holding. This modification stack will then be executed when this modification is executed.
 

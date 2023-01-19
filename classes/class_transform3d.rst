@@ -12,12 +12,16 @@ Transform3D
 
 3D transformation (3×4 matrix).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 3×4 matrix (3 rows, 4 columns) used for 3D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consists of a :ref:`basis<class_Transform3D_property_basis>` (first 3 columns) and a :ref:`Vector3<class_Vector3>` for the :ref:`origin<class_Transform3D_property_origin>` (last column).
 
 For more information, read the "Matrices and transforms" documentation article.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -34,213 +38,333 @@ Tutorials
 
 - `2.5D Demo <https://godotengine.org/asset-library/asset/583>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+--------------------------------------------------+--------------------------------------+
-| :ref:`Basis<class_Basis>`     | :ref:`basis<class_Transform3D_property_basis>`   | ``Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)`` |
-+-------------------------------+--------------------------------------------------+--------------------------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`origin<class_Transform3D_property_origin>` | ``Vector3(0, 0, 0)``                 |
-+-------------------------------+--------------------------------------------------+--------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------+--------------------------------------+
+   | :ref:`Basis<class_Basis>`     | :ref:`basis<class_Transform3D_property_basis>`   | ``Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)`` |
+   +-------------------------------+--------------------------------------------------+--------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`origin<class_Transform3D_property_origin>` | ``Vector3(0, 0, 0)``                 |
+   +-------------------------------+--------------------------------------------------+--------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Constructors
 ------------
 
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** **)**                                                                                                                                                        |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** :ref:`Transform3D<class_Transform3D>` from **)**                                                                                                             |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** :ref:`Basis<class_Basis>` basis, :ref:`Vector3<class_Vector3>` origin **)**                                                                                  |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** :ref:`Projection<class_Projection>` from **)**                                                                                                               |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis, :ref:`Vector3<class_Vector3>` origin **)** |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** **)**                                                                                                                                                        |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** :ref:`Transform3D<class_Transform3D>` from **)**                                                                                                             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** :ref:`Basis<class_Basis>` basis, :ref:`Vector3<class_Vector3>` origin **)**                                                                                  |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** :ref:`Projection<class_Projection>` from **)**                                                                                                               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`Transform3D<class_Transform3D_constructor_Transform3D>` **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis, :ref:`Vector3<class_Vector3>` origin **)** |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`affine_inverse<class_Transform3D_method_affine_inverse>` **(** **)** |const|                                                                                   |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`interpolate_with<class_Transform3D_method_interpolate_with>` **(** :ref:`Transform3D<class_Transform3D>` xform, :ref:`float<class_float>` weight **)** |const| |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`inverse<class_Transform3D_method_inverse>` **(** **)** |const|                                                                                                 |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>` **(** :ref:`Transform3D<class_Transform3D>` xform **)** |const|                                     |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`looking_at<class_Transform3D_method_looking_at>` **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0) **)** |const|   |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`orthonormalized<class_Transform3D_method_orthonormalized>` **(** **)** |const|                                                                                 |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`rotated<class_Transform3D_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                             |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`rotated_local<class_Transform3D_method_rotated_local>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                 |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`scaled<class_Transform3D_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                               |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`scaled_local<class_Transform3D_method_scaled_local>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                   |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`translated<class_Transform3D_method_translated>` **(** :ref:`Vector3<class_Vector3>` offset **)** |const|                                                      |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`translated_local<class_Transform3D_method_translated_local>` **(** :ref:`Vector3<class_Vector3>` offset **)** |const|                                          |
-+---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`affine_inverse<class_Transform3D_method_affine_inverse>` **(** **)** |const|                                                                                   |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`interpolate_with<class_Transform3D_method_interpolate_with>` **(** :ref:`Transform3D<class_Transform3D>` xform, :ref:`float<class_float>` weight **)** |const| |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`inverse<class_Transform3D_method_inverse>` **(** **)** |const|                                                                                                 |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>` **(** :ref:`Transform3D<class_Transform3D>` xform **)** |const|                                     |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_finite<class_Transform3D_method_is_finite>` **(** **)** |const|                                                                                             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`looking_at<class_Transform3D_method_looking_at>` **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0) **)** |const|   |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`orthonormalized<class_Transform3D_method_orthonormalized>` **(** **)** |const|                                                                                 |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`rotated<class_Transform3D_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`rotated_local<class_Transform3D_method_rotated_local>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                 |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`scaled<class_Transform3D_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`scaled_local<class_Transform3D_method_scaled_local>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                   |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`translated<class_Transform3D_method_translated>` **(** :ref:`Vector3<class_Vector3>` offset **)** |const|                                                      |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`translated_local<class_Transform3D_method_translated_local>` **(** :ref:`Vector3<class_Vector3>` offset **)** |const|                                          |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Operators
 ---------
 
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator !=<class_Transform3D_operator_neq_bool>` **(** :ref:`Transform3D<class_Transform3D>` right **)**                            |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`                             | :ref:`operator *<class_Transform3D_operator_mul_AABB>` **(** :ref:`AABB<class_AABB>` right **)**                                           |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`operator *<class_Transform3D_operator_mul_PackedVector3Array>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)** |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_Plane>`                           | :ref:`operator *<class_Transform3D_operator_mul_Plane>` **(** :ref:`Plane<class_Plane>` right **)**                                        |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_Transform3D>` **(** :ref:`Transform3D<class_Transform3D>` right **)**                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`                       | :ref:`operator *<class_Transform3D_operator_mul_Vector3>` **(** :ref:`Vector3<class_Vector3>` right **)**                                  |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_Transform3D>` **(** :ref:`float<class_float>` right **)**                                  |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_Transform3D>` **(** :ref:`int<class_int>` right **)**                                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`operator ==<class_Transform3D_operator_eq_bool>` **(** :ref:`Transform3D<class_Transform3D>` right **)**                             |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`operator !=<class_Transform3D_operator_neq_Transform3D>` **(** :ref:`Transform3D<class_Transform3D>` right **)**                     |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`                             | :ref:`operator *<class_Transform3D_operator_mul_AABB>` **(** :ref:`AABB<class_AABB>` right **)**                                           |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`operator *<class_Transform3D_operator_mul_PackedVector3Array>` **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)** |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Plane<class_Plane>`                           | :ref:`operator *<class_Transform3D_operator_mul_Plane>` **(** :ref:`Plane<class_Plane>` right **)**                                        |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_Transform3D>` **(** :ref:`Transform3D<class_Transform3D>` right **)**                      |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`operator *<class_Transform3D_operator_mul_Vector3>` **(** :ref:`Vector3<class_Vector3>` right **)**                                  |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_float>` **(** :ref:`float<class_float>` right **)**                                        |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>`               | :ref:`operator *<class_Transform3D_operator_mul_int>` **(** :ref:`int<class_int>` right **)**                                              |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`operator ==<class_Transform3D_operator_eq_Transform3D>` **(** :ref:`Transform3D<class_Transform3D>` right **)**                      |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Transform3D_constant_IDENTITY:
 
+.. rst-class:: classref-constant
+
+**IDENTITY** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+
+**Transform3D** with no translation, rotation or scaling applied. When applied to other data structures, :ref:`IDENTITY<class_Transform3D_constant_IDENTITY>` performs no transformation.
+
 .. _class_Transform3D_constant_FLIP_X:
+
+.. rst-class:: classref-constant
+
+**FLIP_X** = ``Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+
+**Transform3D** with mirroring applied perpendicular to the YZ plane.
 
 .. _class_Transform3D_constant_FLIP_Y:
 
+.. rst-class:: classref-constant
+
+**FLIP_Y** = ``Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0)``
+
+**Transform3D** with mirroring applied perpendicular to the XZ plane.
+
 .. _class_Transform3D_constant_FLIP_Z:
 
-- **IDENTITY** = **Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)** --- ``Transform3D`` with no translation, rotation or scaling applied. When applied to other data structures, :ref:`IDENTITY<class_Transform3D_constant_IDENTITY>` performs no transformation.
+.. rst-class:: classref-constant
 
-- **FLIP_X** = **Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)** --- ``Transform3D`` with mirroring applied perpendicular to the YZ plane.
+**FLIP_Z** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)``
 
-- **FLIP_Y** = **Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0, 0)** --- ``Transform3D`` with mirroring applied perpendicular to the XZ plane.
+**Transform3D** with mirroring applied perpendicular to the XY plane.
 
-- **FLIP_Z** = **Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)** --- ``Transform3D`` with mirroring applied perpendicular to the XY plane.
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Transform3D_property_basis:
 
-- :ref:`Basis<class_Basis>` **basis**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------+
-| *Default* | ``Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)`` |
-+-----------+--------------------------------------+
+:ref:`Basis<class_Basis>` **basis** = ``Basis(1, 0, 0, 0, 1, 0, 0, 0, 1)``
 
 The basis is a matrix containing 3 :ref:`Vector3<class_Vector3>` as its columns: X axis, Y axis, and Z axis. These vectors can be interpreted as the basis vectors of local coordinate system traveling with the object.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Transform3D_property_origin:
 
-- :ref:`Vector3<class_Vector3>` **origin**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(0, 0, 0)`` |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **origin** = ``Vector3(0, 0, 0)``
 
 The translation offset of the transform (column 3, the fourth column). Equivalent to array index ``3``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constructor Descriptions
 ------------------------
 
 .. _class_Transform3D_constructor_Transform3D:
 
-- :ref:`Transform3D<class_Transform3D>` **Transform3D** **(** **)**
+.. rst-class:: classref-constructor
 
-Constructs a default-initialized ``Transform3D`` set to :ref:`IDENTITY<class_Transform3D_constant_IDENTITY>`.
+:ref:`Transform3D<class_Transform3D>` **Transform3D** **(** **)**
 
-----
+Constructs a default-initialized **Transform3D** set to :ref:`IDENTITY<class_Transform3D_constant_IDENTITY>`.
 
-- :ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Transform3D<class_Transform3D>` from **)**
-
-Constructs a ``Transform3D`` as a copy of the given ``Transform3D``.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Basis<class_Basis>` basis, :ref:`Vector3<class_Vector3>` origin **)**
+.. rst-class:: classref-constructor
+
+:ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Transform3D<class_Transform3D>` from **)**
+
+Constructs a **Transform3D** as a copy of the given **Transform3D**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Basis<class_Basis>` basis, :ref:`Vector3<class_Vector3>` origin **)**
 
 Constructs a Transform3D from a :ref:`Basis<class_Basis>` and :ref:`Vector3<class_Vector3>`.
 
-----
-
-- :ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Projection<class_Projection>` from **)**
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis, :ref:`Vector3<class_Vector3>` origin **)**
+.. rst-class:: classref-constructor
+
+:ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Projection<class_Projection>` from **)**
+
+.. container:: contribute
+
+	There is currently no description for this constructor. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Vector3<class_Vector3>` x_axis, :ref:`Vector3<class_Vector3>` y_axis, :ref:`Vector3<class_Vector3>` z_axis, :ref:`Vector3<class_Vector3>` origin **)**
 
 Constructs a Transform3D from four :ref:`Vector3<class_Vector3>` values (matrix columns). Each axis corresponds to local basis vectors (some of which may be scaled).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Transform3D_method_affine_inverse:
 
-- :ref:`Transform3D<class_Transform3D>` **affine_inverse** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **affine_inverse** **(** **)** |const|
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation, scaling and translation.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Transform3D_method_interpolate_with:
 
-- :ref:`Transform3D<class_Transform3D>` **interpolate_with** **(** :ref:`Transform3D<class_Transform3D>` xform, :ref:`float<class_float>` weight **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **interpolate_with** **(** :ref:`Transform3D<class_Transform3D>` xform, :ref:`float<class_float>` weight **)** |const|
 
 Returns a transform interpolated between this transform and another by a given ``weight`` (on the range of 0.0 to 1.0).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Transform3D_method_inverse:
 
-- :ref:`Transform3D<class_Transform3D>` **inverse** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **inverse** **(** **)** |const|
 
 Returns the inverse of the transform, under the assumption that the transformation is composed of rotation and translation (no scaling, use :ref:`affine_inverse<class_Transform3D_method_affine_inverse>` for transforms with scaling).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Transform3D_method_is_equal_approx:
 
-- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform3D<class_Transform3D>` xform **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform3D<class_Transform3D>` xform **)** |const|
 
 Returns ``true`` if this transform and ``transform`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Transform3D_method_is_finite:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this transform is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Transform3D_method_looking_at:
 
-- :ref:`Transform3D<class_Transform3D>` **looking_at** **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0) **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **looking_at** **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0) **)** |const|
 
 Returns a copy of the transform rotated such that the forward axis (-Z) points towards the ``target`` position.
 
 The up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the forward axis. The resulting transform is orthonormalized. The existing rotation, scale, and skew information from the original transform is discarded. The ``target`` and ``up`` vectors cannot be zero, cannot be parallel to each other, and are defined in global/parent space.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Transform3D_method_orthonormalized:
 
-- :ref:`Transform3D<class_Transform3D>` **orthonormalized** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **orthonormalized** **(** **)** |const|
 
 Returns the transform with the basis orthogonal (90 degrees), and normalized axis vectors (scale of 1 or -1).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Transform3D_method_rotated:
 
-- :ref:`Transform3D<class_Transform3D>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **rotated** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|
 
 Returns a copy of the transform rotated around the given ``axis`` by the given ``angle`` (in radians).
 
@@ -252,11 +376,15 @@ with a corresponding rotation transform ``R`` from the left, i.e., ``R * X``.
 
 This can be seen as transforming with respect to the global/parent frame.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Transform3D_method_rotated_local:
 
-- :ref:`Transform3D<class_Transform3D>` **rotated_local** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **rotated_local** **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|
 
 Returns a copy of the transform rotated around the given ``axis`` by the given ``angle`` (in radians).
 
@@ -268,11 +396,15 @@ with a corresponding rotation transform ``R`` from the right, i.e., ``X * R``.
 
 This can be seen as transforming with respect to the local frame.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Transform3D_method_scaled:
 
-- :ref:`Transform3D<class_Transform3D>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **scaled** **(** :ref:`Vector3<class_Vector3>` scale **)** |const|
 
 Returns a copy of the transform scaled by the given ``scale`` factor.
 
@@ -282,11 +414,15 @@ with a corresponding scaling transform ``S`` from the left, i.e., ``S * X``.
 
 This can be seen as transforming with respect to the global/parent frame.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Transform3D_method_scaled_local:
 
-- :ref:`Transform3D<class_Transform3D>` **scaled_local** **(** :ref:`Vector3<class_Vector3>` scale **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **scaled_local** **(** :ref:`Vector3<class_Vector3>` scale **)** |const|
 
 Returns a copy of the transform scaled by the given ``scale`` factor.
 
@@ -296,11 +432,15 @@ with a corresponding scaling transform ``S`` from the right, i.e., ``X * S``.
 
 This can be seen as transforming with respect to the local frame.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Transform3D_method_translated:
 
-- :ref:`Transform3D<class_Transform3D>` **translated** **(** :ref:`Vector3<class_Vector3>` offset **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **translated** **(** :ref:`Vector3<class_Vector3>` offset **)** |const|
 
 Returns a copy of the transform translated by the given ``offset``.
 
@@ -310,11 +450,15 @@ with a corresponding translation transform ``T`` from the left, i.e., ``T * X``.
 
 This can be seen as transforming with respect to the global/parent frame.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Transform3D_method_translated_local:
 
-- :ref:`Transform3D<class_Transform3D>` **translated_local** **(** :ref:`Vector3<class_Vector3>` offset **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform3D<class_Transform3D>` **translated_local** **(** :ref:`Vector3<class_Vector3>` offset **)** |const|
 
 Returns a copy of the transform translated by the given ``offset``.
 
@@ -324,66 +468,118 @@ with a corresponding translation transform ``T`` from the right, i.e., ``X * T``
 
 This can be seen as transforming with respect to the local frame.
 
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Operator Descriptions
 ---------------------
 
-.. _class_Transform3D_operator_neq_bool:
+.. _class_Transform3D_operator_neq_Transform3D:
 
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`Transform3D<class_Transform3D>` right **)**
 
 Returns ``true`` if the transforms are not equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>` instead, which is more reliable.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Transform3D_operator_mul_AABB:
 
-- :ref:`AABB<class_AABB>` **operator *** **(** :ref:`AABB<class_AABB>` right **)**
+.. rst-class:: classref-operator
 
-Transforms (multiplies) the :ref:`AABB<class_AABB>` by the given ``Transform3D`` matrix.
+:ref:`AABB<class_AABB>` **operator *** **(** :ref:`AABB<class_AABB>` right **)**
 
-----
+Transforms (multiplies) the :ref:`AABB<class_AABB>` by the given **Transform3D** matrix.
 
-- :ref:`PackedVector3Array<class_PackedVector3Array>` **operator *** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**
-
-Transforms (multiplies) each element of the :ref:`Vector3<class_Vector3>` array by the given ``Transform3D`` matrix.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Plane<class_Plane>` **operator *** **(** :ref:`Plane<class_Plane>` right **)**
+.. _class_Transform3D_operator_mul_PackedVector3Array:
 
-Transforms (multiplies) the :ref:`Plane<class_Plane>` by the given ``Transform3D`` transformation matrix.
+.. rst-class:: classref-operator
+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **operator *** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` right **)**
+
+Transforms (multiplies) each element of the :ref:`Vector3<class_Vector3>` array by the given **Transform3D** matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Transform3D<class_Transform3D>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+.. _class_Transform3D_operator_mul_Plane:
+
+.. rst-class:: classref-operator
+
+:ref:`Plane<class_Plane>` **operator *** **(** :ref:`Plane<class_Plane>` right **)**
+
+Transforms (multiplies) the :ref:`Plane<class_Plane>` by the given **Transform3D** transformation matrix.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Transform3D_operator_mul_Transform3D:
+
+.. rst-class:: classref-operator
+
+:ref:`Transform3D<class_Transform3D>` **operator *** **(** :ref:`Transform3D<class_Transform3D>` right **)**
 
 Composes these two transformation matrices by multiplying them together. This has the effect of transforming the second transform (the child) by the first transform (the parent).
 
-----
-
-- :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
-
-Transforms (multiplies) the :ref:`Vector3<class_Vector3>` by the given ``Transform3D`` matrix.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Transform3D<class_Transform3D>` **operator *** **(** :ref:`float<class_float>` right **)**
+.. _class_Transform3D_operator_mul_Vector3:
 
-This operator multiplies all components of the ``Transform3D``, including the origin vector, which scales it uniformly.
+.. rst-class:: classref-operator
+
+:ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
+
+Transforms (multiplies) the :ref:`Vector3<class_Vector3>` by the given **Transform3D** matrix.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Transform3D<class_Transform3D>` **operator *** **(** :ref:`int<class_int>` right **)**
+.. _class_Transform3D_operator_mul_float:
 
-This operator multiplies all components of the ``Transform3D``, including the origin vector, which scales it uniformly.
+.. rst-class:: classref-operator
+
+:ref:`Transform3D<class_Transform3D>` **operator *** **(** :ref:`float<class_float>` right **)**
+
+This operator multiplies all components of the **Transform3D**, including the origin vector, which scales it uniformly.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_Transform3D_operator_eq_bool:
+.. _class_Transform3D_operator_mul_int:
 
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`Transform3D<class_Transform3D>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`Transform3D<class_Transform3D>` **operator *** **(** :ref:`int<class_int>` right **)**
+
+This operator multiplies all components of the **Transform3D**, including the origin vector, which scales it uniformly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Transform3D_operator_eq_Transform3D:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`Transform3D<class_Transform3D>` right **)**
 
 Returns ``true`` if the transforms are exactly equal.
 

@@ -56,7 +56,7 @@ or lose precision if the frame rate is too high or too low.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     func _physics_process(delta):
         pass
@@ -64,9 +64,8 @@ or lose precision if the frame rate is too high or too low.
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : KinematicBody2D
+    public partial class PhysicsScript : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {
@@ -110,8 +109,7 @@ Moving the kinematic character
 
 Go back to the character scene, and open the script, the magic begins
 now! Kinematic body will do nothing by default, but it has a
-useful function called
-:ref:`KinematicBody2D.move_and_collide() <class_KinematicBody2D_method_move_and_collide>`.
+useful function called ``CharacterBody2D.move_and_collide()``.
 This function takes a :ref:`Vector2 <class_Vector2>` as
 an argument, and tries to apply that motion to the kinematic body. If a
 collision happens, it stops right at the moment of the collision.
@@ -121,7 +119,7 @@ So, let's move our sprite downwards until it hits the floor:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     func _physics_process(delta):
         move_and_collide(Vector2(0, 1)) # Move down 1 pixel per physics frame
@@ -129,9 +127,8 @@ So, let's move our sprite downwards until it hits the floor:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : KinematicBody2D
+    public partial class PhysicsScript : CharacterBody2D
     {
         public override void _PhysicsProcess(float delta)
         {
@@ -149,7 +146,7 @@ little more like a regular game character:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     const GRAVITY = 200.0
     var velocity = Vector2()
@@ -163,9 +160,8 @@ little more like a regular game character:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : KinematicBody2D
+    public partial class PhysicsScript : CharacterBody2D
     {
         const float gravity = 200.0f;
         Vector2 velocity;
@@ -188,7 +184,7 @@ This adds basic support for walking when pressing left and right:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     const GRAVITY = 200.0
     const WALK_SPEED = 200
@@ -214,9 +210,8 @@ This adds basic support for walking when pressing left and right:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class PhysicsScript : KinematicBody2D
+    public partial class PhysicsScript : CharacterBody2D
     {
         const float gravity = 200.0f;
         const int walkSpeed = 200;

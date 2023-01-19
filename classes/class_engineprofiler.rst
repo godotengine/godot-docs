@@ -14,6 +14,8 @@ EngineProfiler
 
 Base class for creating custom profilers.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,39 +23,60 @@ This class can be used to implement custom profilers that are able to interact w
 
 See :ref:`EngineDebugger<class_EngineDebugger>` and :ref:`EditorDebuggerPlugin<class_EditorDebuggerPlugin>` for more information.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`_add_frame<class_EngineProfiler_method__add_frame>` **(** :ref:`Array<class_Array>` data **)** |virtual|                                                                                                                           |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`_tick<class_EngineProfiler_method__tick>` **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` process_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual| |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`_toggle<class_EngineProfiler_method__toggle>` **(** :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` options **)** |virtual|                                                                                              |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_add_frame<class_EngineProfiler_method__add_frame>` **(** :ref:`Array<class_Array>` data **)** |virtual|                                                                                                                           |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_tick<class_EngineProfiler_method__tick>` **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` process_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual| |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`_toggle<class_EngineProfiler_method__toggle>` **(** :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` options **)** |virtual|                                                                                              |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EngineProfiler_method__add_frame:
 
-- void **_add_frame** **(** :ref:`Array<class_Array>` data **)** |virtual|
+.. rst-class:: classref-method
+
+void **_add_frame** **(** :ref:`Array<class_Array>` data **)** |virtual|
 
 Called when data is added to profiler using :ref:`EngineDebugger.profiler_add_frame_data<class_EngineDebugger_method_profiler_add_frame_data>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EngineProfiler_method__tick:
 
-- void **_tick** **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` process_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual|
+.. rst-class:: classref-method
+
+void **_tick** **(** :ref:`float<class_float>` frame_time, :ref:`float<class_float>` process_time, :ref:`float<class_float>` physics_time, :ref:`float<class_float>` physics_frame_time **)** |virtual|
 
 Called once every engine iteration when the profiler is active with information about the current frame. All time values are in seconds. Lower values represent faster processing times and are therefore considered better.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EngineProfiler_method__toggle:
 
-- void **_toggle** **(** :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` options **)** |virtual|
+.. rst-class:: classref-method
+
+void **_toggle** **(** :ref:`bool<class_bool>` enable, :ref:`Array<class_Array>` options **)** |virtual|
 
 Called when the profiler is enabled/disabled, along with a set of ``options``.
 

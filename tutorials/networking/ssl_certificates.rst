@@ -8,7 +8,7 @@ Introduction
 
 It is often desired to use SSL connections for communications to avoid
 "man in the middle" attacks. Godot has a connection wrapper,
-:ref:`StreamPeerSSL <class_StreamPeerSSL>`,
+:ref:`StreamPeerTLS <class_StreamPeerTLS>`,
 which can take a regular connection and add security around it. The
 :ref:`HTTPClient <class_HTTPClient>`
 class also supports HTTPS by using this same wrapper.

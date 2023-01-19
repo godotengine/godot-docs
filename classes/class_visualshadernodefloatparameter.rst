@@ -14,145 +14,186 @@ VisualShaderNodeFloatParameter
 
 A scalar float parameter to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Translated to ``uniform float`` in the shader language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                             | :ref:`default_value<class_VisualShaderNodeFloatParameter_property_default_value>`                 | ``0.0``   |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                               | :ref:`default_value_enabled<class_VisualShaderNodeFloatParameter_property_default_value_enabled>` | ``false`` |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
-| :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` | :ref:`hint<class_VisualShaderNodeFloatParameter_property_hint>`                                   | ``0``     |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                             | :ref:`max<class_VisualShaderNodeFloatParameter_property_max>`                                     | ``1.0``   |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                             | :ref:`min<class_VisualShaderNodeFloatParameter_property_min>`                                     | ``0.0``   |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                             | :ref:`step<class_VisualShaderNodeFloatParameter_property_step>`                                   | ``0.1``   |
-+-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                             | :ref:`default_value<class_VisualShaderNodeFloatParameter_property_default_value>`                 | ``0.0``   |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                               | :ref:`default_value_enabled<class_VisualShaderNodeFloatParameter_property_default_value_enabled>` | ``false`` |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` | :ref:`hint<class_VisualShaderNodeFloatParameter_property_hint>`                                   | ``0``     |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                             | :ref:`max<class_VisualShaderNodeFloatParameter_property_max>`                                     | ``1.0``   |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                             | :ref:`min<class_VisualShaderNodeFloatParameter_property_min>`                                     | ``0.0``   |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                             | :ref:`step<class_VisualShaderNodeFloatParameter_property_step>`                                   | ``0.1``   |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeFloatParameter_Hint:
 
-.. _class_VisualShaderNodeFloatParameter_constant_HINT_NONE:
-
-.. _class_VisualShaderNodeFloatParameter_constant_HINT_RANGE:
-
-.. _class_VisualShaderNodeFloatParameter_constant_HINT_RANGE_STEP:
-
-.. _class_VisualShaderNodeFloatParameter_constant_HINT_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Hint**:
 
-- **HINT_NONE** = **0** --- No hint used.
+.. _class_VisualShaderNodeFloatParameter_constant_HINT_NONE:
 
-- **HINT_RANGE** = **1** --- A range hint for scalar value, which limits possible input values between :ref:`min<class_VisualShaderNodeFloatParameter_property_min>` and :ref:`max<class_VisualShaderNodeFloatParameter_property_max>`. Translated to ``hint_range(min, max)`` in shader code.
+.. rst-class:: classref-enumeration-constant
 
-- **HINT_RANGE_STEP** = **2** --- A range hint for scalar value with step, which limits possible input values between :ref:`min<class_VisualShaderNodeFloatParameter_property_min>` and :ref:`max<class_VisualShaderNodeFloatParameter_property_max>`, with a step (increment) of :ref:`step<class_VisualShaderNodeFloatParameter_property_step>`). Translated to ``hint_range(min, max, step)`` in shader code.
+:ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **HINT_NONE** = ``0``
 
-- **HINT_MAX** = **3** --- Represents the size of the :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` enum.
+No hint used.
+
+.. _class_VisualShaderNodeFloatParameter_constant_HINT_RANGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **HINT_RANGE** = ``1``
+
+A range hint for scalar value, which limits possible input values between :ref:`min<class_VisualShaderNodeFloatParameter_property_min>` and :ref:`max<class_VisualShaderNodeFloatParameter_property_max>`. Translated to ``hint_range(min, max)`` in shader code.
+
+.. _class_VisualShaderNodeFloatParameter_constant_HINT_RANGE_STEP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **HINT_RANGE_STEP** = ``2``
+
+A range hint for scalar value with step, which limits possible input values between :ref:`min<class_VisualShaderNodeFloatParameter_property_min>` and :ref:`max<class_VisualShaderNodeFloatParameter_property_max>`, with a step (increment) of :ref:`step<class_VisualShaderNodeFloatParameter_property_step>`). Translated to ``hint_range(min, max, step)`` in shader code.
+
+.. _class_VisualShaderNodeFloatParameter_constant_HINT_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **HINT_MAX** = ``3``
+
+Represents the size of the :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeFloatParameter_property_default_value:
 
-- :ref:`float<class_float>` **default_value**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_default_value(value) |
-+-----------+--------------------------+
-| *Getter*  | get_default_value()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **default_value** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_default_value** **(** **)**
 
 A default value to be assigned within the shader.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeFloatParameter_property_default_value_enabled:
 
-- :ref:`bool<class_bool>` **default_value_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``false``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_default_value_enabled(value) |
-+-----------+----------------------------------+
-| *Getter*  | is_default_value_enabled()       |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_default_value_enabled** **(** **)**
 
 Enables usage of the :ref:`default_value<class_VisualShaderNodeFloatParameter_property_default_value>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeFloatParameter_property_hint:
 
-- :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **hint**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0``           |
-+-----------+-----------------+
-| *Setter*  | set_hint(value) |
-+-----------+-----------------+
-| *Getter*  | get_hint()      |
-+-----------+-----------------+
+:ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **hint** = ``0``
 
-A hint applied to the uniform, which controls the values it can take when set through the inspector.
+.. rst-class:: classref-property-setget
+
+- void **set_hint** **(** :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` value **)**
+- :ref:`Hint<enum_VisualShaderNodeFloatParameter_Hint>` **get_hint** **(** **)**
+
+A hint applied to the uniform, which controls the values it can take when set through the Inspector.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeFloatParameter_property_max:
 
-- :ref:`float<class_float>` **max**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``1.0``        |
-+-----------+----------------+
-| *Setter*  | set_max(value) |
-+-----------+----------------+
-| *Getter*  | get_max()      |
-+-----------+----------------+
+:ref:`float<class_float>` **max** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_max** **(** **)**
 
 Minimum value for range hints. Used if :ref:`hint<class_VisualShaderNodeFloatParameter_property_hint>` is set to :ref:`HINT_RANGE<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE_STEP>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeFloatParameter_property_min:
 
-- :ref:`float<class_float>` **min**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``0.0``        |
-+-----------+----------------+
-| *Setter*  | set_min(value) |
-+-----------+----------------+
-| *Getter*  | get_min()      |
-+-----------+----------------+
+:ref:`float<class_float>` **min** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_min** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_min** **(** **)**
 
 Maximum value for range hints. Used if :ref:`hint<class_VisualShaderNodeFloatParameter_property_hint>` is set to :ref:`HINT_RANGE<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE>` or :ref:`HINT_RANGE_STEP<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE_STEP>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeFloatParameter_property_step:
 
-- :ref:`float<class_float>` **step**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0.1``         |
-+-----------+-----------------+
-| *Setter*  | set_step(value) |
-+-----------+-----------------+
-| *Getter*  | get_step()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **step** = ``0.1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_step** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_step** **(** **)**
 
 Step (increment) value for the range hint with step. Used if :ref:`hint<class_VisualShaderNodeFloatParameter_property_hint>` is set to :ref:`HINT_RANGE_STEP<class_VisualShaderNodeFloatParameter_constant_HINT_RANGE_STEP>`.
 

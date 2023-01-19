@@ -12,16 +12,20 @@ Rect2
 
 2D axis-aligned bounding box using floating point coordinates.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``Rect2`` consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
+**Rect2** consists of a position, a size, and several utility functions. It is typically used for fast overlap tests.
 
 It uses floating-point coordinates. If you need integer coordinates, use :ref:`Rect2i<class_Rect2i>` instead.
 
-The 3D counterpart to ``Rect2`` is :ref:`AABB<class_AABB>`.
+The 3D counterpart to **Rect2** is :ref:`AABB<class_AABB>`.
 
 Negative values for :ref:`size<class_Rect2_property_size>` are not supported and will not work for most methods. Use :ref:`abs<class_Rect2_method_abs>` to get a Rect2 with a positive size.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -32,172 +36,238 @@ Tutorials
 
 - :doc:`Advanced vector math <../tutorials/math/vectors_advanced>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`end<class_Rect2_property_end>`           | ``Vector2(0, 0)`` |
-+-------------------------------+------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_Rect2_property_position>` | ``Vector2(0, 0)`` |
-+-------------------------------+------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_Rect2_property_size>`         | ``Vector2(0, 0)`` |
-+-------------------------------+------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`end<class_Rect2_property_end>`           | ``Vector2(0, 0)`` |
+   +-------------------------------+------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`position<class_Rect2_property_position>` | ``Vector2(0, 0)`` |
+   +-------------------------------+------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`size<class_Rect2_property_size>`         | ``Vector2(0, 0)`` |
+   +-------------------------------+------------------------------------------------+-------------------+
+
+.. rst-class:: classref-reftable-group
 
 Constructors
 ------------
 
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** **)**                                                                                                                             |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** :ref:`Rect2<class_Rect2>` from **)**                                                                                              |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** :ref:`Rect2i<class_Rect2i>` from **)**                                                                                            |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` size **)**                                                  |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)** |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** **)**                                                                                                                             |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** :ref:`Rect2<class_Rect2>` from **)**                                                                                              |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** :ref:`Rect2i<class_Rect2i>` from **)**                                                                                            |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` size **)**                                                  |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`Rect2<class_Rect2_constructor_Rect2>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)** |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`abs<class_Rect2_method_abs>` **(** **)** |const|                                                                                                                                                          |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`encloses<class_Rect2_method_encloses>` **(** :ref:`Rect2<class_Rect2>` b **)** |const|                                                                                                                    |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`expand<class_Rect2_method_expand>` **(** :ref:`Vector2<class_Vector2>` to **)** |const|                                                                                                                   |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`get_area<class_Rect2_method_get_area>` **(** **)** |const|                                                                                                                                                |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`get_center<class_Rect2_method_get_center>` **(** **)** |const|                                                                                                                                            |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`grow<class_Rect2_method_grow>` **(** :ref:`float<class_float>` amount **)** |const|                                                                                                                       |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`grow_individual<class_Rect2_method_grow_individual>` **(** :ref:`float<class_float>` left, :ref:`float<class_float>` top, :ref:`float<class_float>` right, :ref:`float<class_float>` bottom **)** |const| |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`grow_side<class_Rect2_method_grow_side>` **(** :ref:`int<class_int>` side, :ref:`float<class_float>` amount **)** |const|                                                                                 |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_area<class_Rect2_method_has_area>` **(** **)** |const|                                                                                                                                                |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`has_point<class_Rect2_method_has_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                                                                                          |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`intersection<class_Rect2_method_intersection>` **(** :ref:`Rect2<class_Rect2>` b **)** |const|                                                                                                            |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`intersects<class_Rect2_method_intersects>` **(** :ref:`Rect2<class_Rect2>` b, :ref:`bool<class_bool>` include_borders=false **)** |const|                                                                 |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` **(** :ref:`Rect2<class_Rect2>` rect **)** |const|                                                                                                   |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`merge<class_Rect2_method_merge>` **(** :ref:`Rect2<class_Rect2>` b **)** |const|                                                                                                                          |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`abs<class_Rect2_method_abs>` **(** **)** |const|                                                                                                                                                          |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`encloses<class_Rect2_method_encloses>` **(** :ref:`Rect2<class_Rect2>` b **)** |const|                                                                                                                    |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`expand<class_Rect2_method_expand>` **(** :ref:`Vector2<class_Vector2>` to **)** |const|                                                                                                                   |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`get_area<class_Rect2_method_get_area>` **(** **)** |const|                                                                                                                                                |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_center<class_Rect2_method_get_center>` **(** **)** |const|                                                                                                                                            |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`grow<class_Rect2_method_grow>` **(** :ref:`float<class_float>` amount **)** |const|                                                                                                                       |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`grow_individual<class_Rect2_method_grow_individual>` **(** :ref:`float<class_float>` left, :ref:`float<class_float>` top, :ref:`float<class_float>` right, :ref:`float<class_float>` bottom **)** |const| |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`grow_side<class_Rect2_method_grow_side>` **(** :ref:`int<class_int>` side, :ref:`float<class_float>` amount **)** |const|                                                                                 |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`has_area<class_Rect2_method_has_area>` **(** **)** |const|                                                                                                                                                |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`has_point<class_Rect2_method_has_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                                                                                          |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`intersection<class_Rect2_method_intersection>` **(** :ref:`Rect2<class_Rect2>` b **)** |const|                                                                                                            |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`intersects<class_Rect2_method_intersects>` **(** :ref:`Rect2<class_Rect2>` b, :ref:`bool<class_bool>` include_borders=false **)** |const|                                                                 |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` **(** :ref:`Rect2<class_Rect2>` rect **)** |const|                                                                                                   |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_finite<class_Rect2_method_is_finite>` **(** **)** |const|                                                                                                                                              |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`merge<class_Rect2_method_merge>` **(** :ref:`Rect2<class_Rect2>` b **)** |const|                                                                                                                          |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Operators
 ---------
 
-+---------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator !=<class_Rect2_operator_neq_bool>` **(** :ref:`Rect2<class_Rect2>` right **)**             |
-+---------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`operator *<class_Rect2_operator_mul_Rect2>` **(** :ref:`Transform2D<class_Transform2D>` right **)** |
-+---------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`operator ==<class_Rect2_operator_eq_bool>` **(** :ref:`Rect2<class_Rect2>` right **)**              |
-+---------------------------+-----------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`operator !=<class_Rect2_operator_neq_Rect2>` **(** :ref:`Rect2<class_Rect2>` right **)**                  |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`operator *<class_Rect2_operator_mul_Transform2D>` **(** :ref:`Transform2D<class_Transform2D>` right **)** |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`operator ==<class_Rect2_operator_eq_Rect2>` **(** :ref:`Rect2<class_Rect2>` right **)**                   |
+   +---------------------------+-----------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Rect2_property_end:
 
-- :ref:`Vector2<class_Vector2>` **end**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **end** = ``Vector2(0, 0)``
 
 Ending corner. This is calculated as ``position + size``. Setting this value will change the size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_property_position:
 
-- :ref:`Vector2<class_Vector2>` **position**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2(0, 0)``
 
 Beginning corner. Typically has values lower than :ref:`end<class_Rect2_property_end>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_property_size:
 
-- :ref:`Vector2<class_Vector2>` **size**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2(0, 0)``
 
 Size from :ref:`position<class_Rect2_property_position>` to :ref:`end<class_Rect2_property_end>`. Typically, all components are positive.
 
 If the size is negative, you can use :ref:`abs<class_Rect2_method_abs>` to fix it.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constructor Descriptions
 ------------------------
 
 .. _class_Rect2_constructor_Rect2:
 
-- :ref:`Rect2<class_Rect2>` **Rect2** **(** **)**
+.. rst-class:: classref-constructor
 
-Constructs a default-initialized ``Rect2`` with default (zero) values of :ref:`position<class_Rect2_property_position>` and :ref:`size<class_Rect2_property_size>`.
+:ref:`Rect2<class_Rect2>` **Rect2** **(** **)**
 
-----
+Constructs a default-initialized **Rect2** with default (zero) values of :ref:`position<class_Rect2_property_position>` and :ref:`size<class_Rect2_property_size>`.
 
-- :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`Rect2<class_Rect2>` from **)**
-
-Constructs a ``Rect2`` as a copy of the given ``Rect2``.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`Rect2i<class_Rect2i>` from **)**
+.. rst-class:: classref-constructor
 
-Constructs a ``Rect2`` from a :ref:`Rect2i<class_Rect2i>`.
+:ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`Rect2<class_Rect2>` from **)**
 
-----
+Constructs a **Rect2** as a copy of the given **Rect2**.
 
-- :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` size **)**
-
-Constructs a ``Rect2`` by position and size.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**
+.. rst-class:: classref-constructor
 
-Constructs a ``Rect2`` by x, y, width, and height.
+:ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`Rect2i<class_Rect2i>` from **)**
+
+Constructs a **Rect2** from a :ref:`Rect2i<class_Rect2i>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`Vector2<class_Vector2>` position, :ref:`Vector2<class_Vector2>` size **)**
+
+Constructs a **Rect2** by position and size.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`Rect2<class_Rect2>` **Rect2** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` width, :ref:`float<class_float>` height **)**
+
+Constructs a **Rect2** by x, y, width, and height.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Rect2_method_abs:
 
-- :ref:`Rect2<class_Rect2>` **abs** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns a ``Rect2`` with equivalent position and area, modified so that the top-left corner is the origin and ``width`` and ``height`` are positive.
+:ref:`Rect2<class_Rect2>` **abs** **(** **)** |const|
+
+Returns a **Rect2** with equivalent position and area, modified so that the top-left corner is the origin and ``width`` and ``height`` are positive.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_encloses:
 
-- :ref:`bool<class_bool>` **encloses** **(** :ref:`Rect2<class_Rect2>` b **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if this ``Rect2`` completely encloses another one.
+:ref:`bool<class_bool>` **encloses** **(** :ref:`Rect2<class_Rect2>` b **)** |const|
+
+Returns ``true`` if this **Rect2** completely encloses another one.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_expand:
 
-- :ref:`Rect2<class_Rect2>` **expand** **(** :ref:`Vector2<class_Vector2>` to **)** |const|
+.. rst-class:: classref-method
 
-Returns a copy of this ``Rect2`` expanded to include a given point.
+:ref:`Rect2<class_Rect2>` **expand** **(** :ref:`Vector2<class_Vector2>` to **)** |const|
+
+Returns a copy of this **Rect2** expanded to include a given point.
 
 \ **Example:**\ 
 
@@ -213,131 +283,203 @@ Returns a copy of this ``Rect2`` expanded to include a given point.
 
  .. code-tab:: csharp
 
-    # position (-3, 2), size (1, 1)
+    // position (-3, 2), size (1, 1)
     var rect = new Rect2(new Vector2(-3, 2), new Vector2(1, 1));
-    # position (-3, -1), size (3, 4), so we fit both rect and Vector2(0, -1)
+    // position (-3, -1), size (3, 4), so we fit both rect and Vector2(0, -1)
     var rect2 = rect.Expand(new Vector2(0, -1));
 
 
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_get_area:
 
-- :ref:`float<class_float>` **get_area** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the area of the ``Rect2``. See also :ref:`has_area<class_Rect2_method_has_area>`.
+:ref:`float<class_float>` **get_area** **(** **)** |const|
+
+Returns the area of the **Rect2**. See also :ref:`has_area<class_Rect2_method_has_area>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_get_center:
 
-- :ref:`Vector2<class_Vector2>` **get_center** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the center of the ``Rect2``, which is equal to :ref:`position<class_Rect2_property_position>` + (:ref:`size<class_Rect2_property_size>` / 2).
+:ref:`Vector2<class_Vector2>` **get_center** **(** **)** |const|
+
+Returns the center of the **Rect2**, which is equal to :ref:`position<class_Rect2_property_position>` + (:ref:`size<class_Rect2_property_size>` / 2).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_grow:
 
-- :ref:`Rect2<class_Rect2>` **grow** **(** :ref:`float<class_float>` amount **)** |const|
+.. rst-class:: classref-method
 
-Returns a copy of the ``Rect2`` grown by the specified ``amount`` on all sides.
+:ref:`Rect2<class_Rect2>` **grow** **(** :ref:`float<class_float>` amount **)** |const|
+
+Returns a copy of the **Rect2** grown by the specified ``amount`` on all sides.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_grow_individual:
 
-- :ref:`Rect2<class_Rect2>` **grow_individual** **(** :ref:`float<class_float>` left, :ref:`float<class_float>` top, :ref:`float<class_float>` right, :ref:`float<class_float>` bottom **)** |const|
+.. rst-class:: classref-method
 
-Returns a copy of the ``Rect2`` grown by the specified amount on each side individually.
+:ref:`Rect2<class_Rect2>` **grow_individual** **(** :ref:`float<class_float>` left, :ref:`float<class_float>` top, :ref:`float<class_float>` right, :ref:`float<class_float>` bottom **)** |const|
+
+Returns a copy of the **Rect2** grown by the specified amount on each side individually.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_grow_side:
 
-- :ref:`Rect2<class_Rect2>` **grow_side** **(** :ref:`int<class_int>` side, :ref:`float<class_float>` amount **)** |const|
+.. rst-class:: classref-method
 
-Returns a copy of the ``Rect2`` grown by the specified ``amount`` on the specified :ref:`Side<enum_@GlobalScope_Side>`.
+:ref:`Rect2<class_Rect2>` **grow_side** **(** :ref:`int<class_int>` side, :ref:`float<class_float>` amount **)** |const|
+
+Returns a copy of the **Rect2** grown by the specified ``amount`` on the specified :ref:`Side<enum_@GlobalScope_Side>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_has_area:
 
-- :ref:`bool<class_bool>` **has_area** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if the ``Rect2`` has area, and ``false`` if the ``Rect2`` is linear, empty, or has a negative :ref:`size<class_Rect2_property_size>`. See also :ref:`get_area<class_Rect2_method_get_area>`.
+:ref:`bool<class_bool>` **has_area** **(** **)** |const|
+
+Returns ``true`` if the **Rect2** has area, and ``false`` if the **Rect2** is linear, empty, or has a negative :ref:`size<class_Rect2_property_size>`. See also :ref:`get_area<class_Rect2_method_get_area>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_has_point:
 
-- :ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if the ``Rect2`` contains a point. By convention, the right and bottom edges of the ``Rect2`` are considered exclusive, so points on these edges are **not** included.
+:ref:`bool<class_bool>` **has_point** **(** :ref:`Vector2<class_Vector2>` point **)** |const|
 
-\ **Note:** This method is not reliable for ``Rect2`` with a *negative size*. Use :ref:`abs<class_Rect2_method_abs>` to get a positive sized equivalent rectangle to check for contained points.
+Returns ``true`` if the **Rect2** contains a point. By convention, the right and bottom edges of the **Rect2** are considered exclusive, so points on these edges are **not** included.
+
+\ **Note:** This method is not reliable for **Rect2** with a *negative size*. Use :ref:`abs<class_Rect2_method_abs>` to get a positive sized equivalent rectangle to check for contained points.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_intersection:
 
-- :ref:`Rect2<class_Rect2>` **intersection** **(** :ref:`Rect2<class_Rect2>` b **)** |const|
+.. rst-class:: classref-method
 
-Returns the intersection of this ``Rect2`` and ``b``.
+:ref:`Rect2<class_Rect2>` **intersection** **(** :ref:`Rect2<class_Rect2>` b **)** |const|
 
-If the rectangles do not intersect, an empty ``Rect2`` is returned.
+Returns the intersection of this **Rect2** and ``b``.
+
+If the rectangles do not intersect, an empty **Rect2** is returned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_intersects:
 
-- :ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_Rect2>` b, :ref:`bool<class_bool>` include_borders=false **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if the ``Rect2`` overlaps with ``b`` (i.e. they have at least one point in common).
+:ref:`bool<class_bool>` **intersects** **(** :ref:`Rect2<class_Rect2>` b, :ref:`bool<class_bool>` include_borders=false **)** |const|
+
+Returns ``true`` if the **Rect2** overlaps with ``b`` (i.e. they have at least one point in common).
 
 If ``include_borders`` is ``true``, they will also be considered overlapping if their borders touch, even without intersection.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_is_equal_approx:
 
-- :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Rect2<class_Rect2>` rect **)** |const|
+.. rst-class:: classref-method
 
-Returns ``true`` if this ``Rect2`` and ``rect`` are approximately equal, by calling ``is_equal_approx`` on each component.
+:ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Rect2<class_Rect2>` rect **)** |const|
+
+Returns ``true`` if this **Rect2** and ``rect`` are approximately equal, by calling ``is_equal_approx`` on each component.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Rect2_method_is_finite:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_finite** **(** **)** |const|
+
+Returns ``true`` if this **Rect2** is finite, by calling :ref:`@GlobalScope.is_finite<class_@GlobalScope_method_is_finite>` on each component.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Rect2_method_merge:
 
-- :ref:`Rect2<class_Rect2>` **merge** **(** :ref:`Rect2<class_Rect2>` b **)** |const|
+.. rst-class:: classref-method
 
-Returns a larger ``Rect2`` that contains this ``Rect2`` and ``b``.
+:ref:`Rect2<class_Rect2>` **merge** **(** :ref:`Rect2<class_Rect2>` b **)** |const|
+
+Returns a larger **Rect2** that contains this **Rect2** and ``b``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Operator Descriptions
 ---------------------
 
-.. _class_Rect2_operator_neq_bool:
+.. _class_Rect2_operator_neq_Rect2:
 
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`Rect2<class_Rect2>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`Rect2<class_Rect2>` right **)**
 
 Returns ``true`` if the rectangles are not equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_Rect2_method_is_equal_approx>` instead, which is more reliable.
 
-----
-
-.. _class_Rect2_operator_mul_Rect2:
-
-- :ref:`Rect2<class_Rect2>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
-
-Inversely transforms (multiplies) the ``Rect2`` by the given :ref:`Transform2D<class_Transform2D>` transformation matrix.
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_Rect2_operator_eq_bool:
+.. _class_Rect2_operator_mul_Transform2D:
 
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`Rect2<class_Rect2>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`Rect2<class_Rect2>` **operator *** **(** :ref:`Transform2D<class_Transform2D>` right **)**
+
+Inversely transforms (multiplies) the **Rect2** by the given :ref:`Transform2D<class_Transform2D>` transformation matrix.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Rect2_operator_eq_Rect2:
+
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`Rect2<class_Rect2>` right **)**
 
 Returns ``true`` if the rectangles are exactly equal.
 

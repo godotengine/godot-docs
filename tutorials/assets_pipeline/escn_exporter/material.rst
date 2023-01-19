@@ -52,7 +52,7 @@ difficulties in implementation, which are:
 
 Sometimes materials may not be valid for exporting (e.g. has some unsupported node) or it
 is using Blender Internal Engine, only the diffuse color and a few flags (e.g. unshaded) are
-exported and form a Spatial Material.
+exported and form a StandardMaterial3D.
 
 
 Generate external materials

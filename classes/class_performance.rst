@@ -14,6 +14,8 @@ Performance
 
 Exposes performance-related data.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,134 +29,251 @@ You can add custom monitors using the :ref:`add_custom_monitor<class_Performance
 
 \ **Note:** Custom monitors do not support negative values. Negative values are clamped to 0.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)** |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`         | :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName[]<class_StringName>` | :ref:`get_custom_monitor_names<class_Performance_method_get_custom_monitor_names>` **(** **)**                                                                                                              |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`             | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|                                                                               |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_monitor_modification_time<class_Performance_method_get_monitor_modification_time>` **(** **)**                                                                                                    |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`remove_custom_monitor<class_Performance_method_remove_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                             |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`add_custom_monitor<class_Performance_method_add_custom_monitor>` **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)** |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`         | :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName[]<class_StringName>` | :ref:`get_custom_monitor_names<class_Performance_method_get_custom_monitor_names>` **(** **)**                                                                                                              |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|                                                                               |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_monitor_modification_time<class_Performance_method_get_monitor_modification_time>` **(** **)**                                                                                                    |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                                   |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`remove_custom_monitor<class_Performance_method_remove_custom_monitor>` **(** :ref:`StringName<class_StringName>` id **)**                                                                             |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Performance_Monitor:
 
-.. _class_Performance_constant_TIME_FPS:
-
-.. _class_Performance_constant_TIME_PROCESS:
-
-.. _class_Performance_constant_TIME_PHYSICS_PROCESS:
-
-.. _class_Performance_constant_MEMORY_STATIC:
-
-.. _class_Performance_constant_MEMORY_STATIC_MAX:
-
-.. _class_Performance_constant_MEMORY_MESSAGE_BUFFER_MAX:
-
-.. _class_Performance_constant_OBJECT_COUNT:
-
-.. _class_Performance_constant_OBJECT_RESOURCE_COUNT:
-
-.. _class_Performance_constant_OBJECT_NODE_COUNT:
-
-.. _class_Performance_constant_OBJECT_ORPHAN_NODE_COUNT:
-
-.. _class_Performance_constant_RENDER_TOTAL_OBJECTS_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_TOTAL_PRIMITIVES_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_TOTAL_DRAW_CALLS_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_VIDEO_MEM_USED:
-
-.. _class_Performance_constant_RENDER_TEXTURE_MEM_USED:
-
-.. _class_Performance_constant_RENDER_BUFFER_MEM_USED:
-
-.. _class_Performance_constant_PHYSICS_2D_ACTIVE_OBJECTS:
-
-.. _class_Performance_constant_PHYSICS_2D_COLLISION_PAIRS:
-
-.. _class_Performance_constant_PHYSICS_2D_ISLAND_COUNT:
-
-.. _class_Performance_constant_PHYSICS_3D_ACTIVE_OBJECTS:
-
-.. _class_Performance_constant_PHYSICS_3D_COLLISION_PAIRS:
-
-.. _class_Performance_constant_PHYSICS_3D_ISLAND_COUNT:
-
-.. _class_Performance_constant_AUDIO_OUTPUT_LATENCY:
-
-.. _class_Performance_constant_MONITOR_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Monitor**:
 
-- **TIME_FPS** = **0** --- The number of frames rendered in the last second. This metric is only updated once per second, even if queried more often. *Higher is better.*
+.. _class_Performance_constant_TIME_FPS:
 
-- **TIME_PROCESS** = **1** --- Time it took to complete one frame, in seconds. *Lower is better.*
+.. rst-class:: classref-enumeration-constant
 
-- **TIME_PHYSICS_PROCESS** = **2** --- Time it took to complete one physics frame, in seconds. *Lower is better.*
+:ref:`Monitor<enum_Performance_Monitor>` **TIME_FPS** = ``0``
 
-- **MEMORY_STATIC** = **3** --- Static memory currently used, in bytes. Not available in release builds. *Lower is better.*
+The number of frames rendered in the last second. This metric is only updated once per second, even if queried more often. *Higher is better.*
 
-- **MEMORY_STATIC_MAX** = **4** --- Available static memory. Not available in release builds. *Lower is better.*
+.. _class_Performance_constant_TIME_PROCESS:
 
-- **MEMORY_MESSAGE_BUFFER_MAX** = **5** --- Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications. *Lower is better.*
+.. rst-class:: classref-enumeration-constant
 
-- **OBJECT_COUNT** = **6** --- Number of objects currently instantiated (including nodes). *Lower is better.*
+:ref:`Monitor<enum_Performance_Monitor>` **TIME_PROCESS** = ``1``
 
-- **OBJECT_RESOURCE_COUNT** = **7** --- Number of resources currently used. *Lower is better.*
+Time it took to complete one frame, in seconds. *Lower is better.*
 
-- **OBJECT_NODE_COUNT** = **8** --- Number of nodes currently instantiated in the scene tree. This also includes the root node. *Lower is better.*
+.. _class_Performance_constant_TIME_PHYSICS_PROCESS:
 
-- **OBJECT_ORPHAN_NODE_COUNT** = **9** --- Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree. *Lower is better.*
+.. rst-class:: classref-enumeration-constant
 
-- **RENDER_TOTAL_OBJECTS_IN_FRAME** = **10** --- The total number of objects in the last rendered frame. This metric doesn't include culled objects (either via hiding nodes, frustum culling or occlusion culling). *Lower is better.*
+:ref:`Monitor<enum_Performance_Monitor>` **TIME_PHYSICS_PROCESS** = ``2``
 
-- **RENDER_TOTAL_PRIMITIVES_IN_FRAME** = **11** --- The total number of vertices or indices rendered in the last rendered frame. This metric doesn't include primitives from culled objects (either via hiding nodes, frustum culling or occlusion culling). Due to the depth prepass and shadow passes, the number of primitives is always higher than the actual number of vertices in the scene (typically double or triple the original vertex count). *Lower is better.*
+Time it took to complete one physics frame, in seconds. *Lower is better.*
 
-- **RENDER_TOTAL_DRAW_CALLS_IN_FRAME** = **12** --- The total number of draw calls performed in the last rendered frame. This metric doesn't include culled objects (either via hiding nodes, frustum culling or occlusion culling), since they do not result in draw calls. *Lower is better.*
+.. _class_Performance_constant_MEMORY_STATIC:
 
-- **RENDER_VIDEO_MEM_USED** = **13** --- The amount of video memory used (texture and vertex memory combined, in bytes). Since this metric also includes miscellaneous allocations, this value is always greater than the sum of :ref:`RENDER_TEXTURE_MEM_USED<class_Performance_constant_RENDER_TEXTURE_MEM_USED>` and :ref:`RENDER_BUFFER_MEM_USED<class_Performance_constant_RENDER_BUFFER_MEM_USED>`. *Lower is better.*
+.. rst-class:: classref-enumeration-constant
 
-- **RENDER_TEXTURE_MEM_USED** = **14** --- The amount of texture memory used (in bytes). *Lower is better.*
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_STATIC** = ``3``
 
-- **RENDER_BUFFER_MEM_USED** = **15** --- The amount of render buffer memory used (in bytes). *Lower is better.*
+Static memory currently used, in bytes. Not available in release builds. *Lower is better.*
 
-- **PHYSICS_2D_ACTIVE_OBJECTS** = **16** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game. *Lower is better.*
+.. _class_Performance_constant_MEMORY_STATIC_MAX:
 
-- **PHYSICS_2D_COLLISION_PAIRS** = **17** --- Number of collision pairs in the 2D physics engine. *Lower is better.*
+.. rst-class:: classref-enumeration-constant
 
-- **PHYSICS_2D_ISLAND_COUNT** = **18** --- Number of islands in the 2D physics engine. *Lower is better.*
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_STATIC_MAX** = ``4``
 
-- **PHYSICS_3D_ACTIVE_OBJECTS** = **19** --- Number of active :ref:`RigidBody3D<class_RigidBody3D>` and :ref:`VehicleBody3D<class_VehicleBody3D>` nodes in the game. *Lower is better.*
+Available static memory. Not available in release builds. *Lower is better.*
 
-- **PHYSICS_3D_COLLISION_PAIRS** = **20** --- Number of collision pairs in the 3D physics engine. *Lower is better.*
+.. _class_Performance_constant_MEMORY_MESSAGE_BUFFER_MAX:
 
-- **PHYSICS_3D_ISLAND_COUNT** = **21** --- Number of islands in the 3D physics engine. *Lower is better.*
+.. rst-class:: classref-enumeration-constant
 
-- **AUDIO_OUTPUT_LATENCY** = **22** --- Output latency of the :ref:`AudioServer<class_AudioServer>`. *Lower is better.*
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_MESSAGE_BUFFER_MAX** = ``5``
 
-- **MONITOR_MAX** = **23** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
+Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications. *Lower is better.*
+
+.. _class_Performance_constant_OBJECT_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_COUNT** = ``6``
+
+Number of objects currently instantiated (including nodes). *Lower is better.*
+
+.. _class_Performance_constant_OBJECT_RESOURCE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_RESOURCE_COUNT** = ``7``
+
+Number of resources currently used. *Lower is better.*
+
+.. _class_Performance_constant_OBJECT_NODE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_NODE_COUNT** = ``8``
+
+Number of nodes currently instantiated in the scene tree. This also includes the root node. *Lower is better.*
+
+.. _class_Performance_constant_OBJECT_ORPHAN_NODE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_ORPHAN_NODE_COUNT** = ``9``
+
+Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree. *Lower is better.*
+
+.. _class_Performance_constant_RENDER_TOTAL_OBJECTS_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TOTAL_OBJECTS_IN_FRAME** = ``10``
+
+The total number of objects in the last rendered frame. This metric doesn't include culled objects (either via hiding nodes, frustum culling or occlusion culling). *Lower is better.*
+
+.. _class_Performance_constant_RENDER_TOTAL_PRIMITIVES_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TOTAL_PRIMITIVES_IN_FRAME** = ``11``
+
+The total number of vertices or indices rendered in the last rendered frame. This metric doesn't include primitives from culled objects (either via hiding nodes, frustum culling or occlusion culling). Due to the depth prepass and shadow passes, the number of primitives is always higher than the actual number of vertices in the scene (typically double or triple the original vertex count). *Lower is better.*
+
+.. _class_Performance_constant_RENDER_TOTAL_DRAW_CALLS_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TOTAL_DRAW_CALLS_IN_FRAME** = ``12``
+
+The total number of draw calls performed in the last rendered frame. This metric doesn't include culled objects (either via hiding nodes, frustum culling or occlusion culling), since they do not result in draw calls. *Lower is better.*
+
+.. _class_Performance_constant_RENDER_VIDEO_MEM_USED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_VIDEO_MEM_USED** = ``13``
+
+The amount of video memory used (texture and vertex memory combined, in bytes). Since this metric also includes miscellaneous allocations, this value is always greater than the sum of :ref:`RENDER_TEXTURE_MEM_USED<class_Performance_constant_RENDER_TEXTURE_MEM_USED>` and :ref:`RENDER_BUFFER_MEM_USED<class_Performance_constant_RENDER_BUFFER_MEM_USED>`. *Lower is better.*
+
+.. _class_Performance_constant_RENDER_TEXTURE_MEM_USED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TEXTURE_MEM_USED** = ``14``
+
+The amount of texture memory used (in bytes). *Lower is better.*
+
+.. _class_Performance_constant_RENDER_BUFFER_MEM_USED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_BUFFER_MEM_USED** = ``15``
+
+The amount of render buffer memory used (in bytes). *Lower is better.*
+
+.. _class_Performance_constant_PHYSICS_2D_ACTIVE_OBJECTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_ACTIVE_OBJECTS** = ``16``
+
+Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game. *Lower is better.*
+
+.. _class_Performance_constant_PHYSICS_2D_COLLISION_PAIRS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_COLLISION_PAIRS** = ``17``
+
+Number of collision pairs in the 2D physics engine. *Lower is better.*
+
+.. _class_Performance_constant_PHYSICS_2D_ISLAND_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_ISLAND_COUNT** = ``18``
+
+Number of islands in the 2D physics engine. *Lower is better.*
+
+.. _class_Performance_constant_PHYSICS_3D_ACTIVE_OBJECTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_ACTIVE_OBJECTS** = ``19``
+
+Number of active :ref:`RigidBody3D<class_RigidBody3D>` and :ref:`VehicleBody3D<class_VehicleBody3D>` nodes in the game. *Lower is better.*
+
+.. _class_Performance_constant_PHYSICS_3D_COLLISION_PAIRS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_COLLISION_PAIRS** = ``20``
+
+Number of collision pairs in the 3D physics engine. *Lower is better.*
+
+.. _class_Performance_constant_PHYSICS_3D_ISLAND_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_ISLAND_COUNT** = ``21``
+
+Number of islands in the 3D physics engine. *Lower is better.*
+
+.. _class_Performance_constant_AUDIO_OUTPUT_LATENCY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **AUDIO_OUTPUT_LATENCY** = ``22``
+
+Output latency of the :ref:`AudioServer<class_AudioServer>`. *Lower is better.*
+
+.. _class_Performance_constant_MONITOR_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``23``
+
+Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Performance_method_add_custom_monitor:
 
-- void **add_custom_monitor** **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)**
+.. rst-class:: classref-method
+
+void **add_custom_monitor** **(** :ref:`StringName<class_StringName>` id, :ref:`Callable<class_Callable>` callable, :ref:`Array<class_Array>` arguments=[] **)**
 
 Adds a custom monitor with the name ``id``. You can specify the category of the monitor using slash delimiters in ``id`` (for example: ``"Game/NumberOfNPCs"``). If there is more than one slash delimiter, then the default category is used. The default category is ``"Custom"``. Prints an error if given ``id`` is already present.
 
@@ -214,27 +333,39 @@ The debugger calls the callable to get the value of custom monitor. The callable
 
 Callables are called with arguments supplied in argument array.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Performance_method_get_custom_monitor:
 
-- :ref:`Variant<class_Variant>` **get_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
 
 Returns the value of custom monitor with given ``id``. The callable is called to get the value of custom monitor. See also :ref:`has_custom_monitor<class_Performance_method_has_custom_monitor>`. Prints an error if the given ``id`` is absent.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Performance_method_get_custom_monitor_names:
 
-- :ref:`StringName[]<class_StringName>` **get_custom_monitor_names** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`StringName[]<class_StringName>` **get_custom_monitor_names** **(** **)**
 
 Returns the names of active custom monitors in an :ref:`Array<class_Array>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Performance_method_get_monitor:
 
-- :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|
 
 Returns the value of one of the available built-in monitors. You should provide one of the :ref:`Monitor<enum_Performance_Monitor>` constants as the argument, like this:
 
@@ -253,27 +384,39 @@ Returns the value of one of the available built-in monitors. You should provide 
 
 See :ref:`get_custom_monitor<class_Performance_method_get_custom_monitor>` to query custom performance monitors' values.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Performance_method_get_monitor_modification_time:
 
-- :ref:`int<class_int>` **get_monitor_modification_time** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_monitor_modification_time** **(** **)**
 
 Returns the last tick in which custom monitor was added/removed (in microseconds since the engine started). This is set to :ref:`Time.get_ticks_usec<class_Time_method_get_ticks_usec>` when the monitor is updated.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Performance_method_has_custom_monitor:
 
-- :ref:`bool<class_bool>` **has_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
 
 Returns ``true`` if custom monitor with the given ``id`` is present, ``false`` otherwise.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Performance_method_remove_custom_monitor:
 
-- void **remove_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
+.. rst-class:: classref-method
+
+void **remove_custom_monitor** **(** :ref:`StringName<class_StringName>` id **)**
 
 Removes the custom monitor with given ``id``. Prints an error if the given ``id`` is already absent.
 

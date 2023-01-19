@@ -118,7 +118,6 @@ the recorded stream can be stored into the ``recording`` variable by calling
         print(recording.mix_rate)
         print(recording.stereo)
         var data = recording.get_data()
-        print(data)
         print(data.size())
         $AudioStreamPlayer.stream = recording
         $AudioStreamPlayer.play()
@@ -132,7 +131,6 @@ the recorded stream can be stored into the ``recording`` variable by calling
         GD.Print(_recording.MixRate);
         GD.Print(_recording.Stereo);
         byte[] data = _recording.Data;
-        GD.Print(data);
         GD.Print(data.Length);
         var audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
         audioStreamPlayer.Stream = _recording;
