@@ -72,31 +72,34 @@ Setup for 3D scene
 The following steps show how to setup a minimum viable navigation in 3D that uses the NavigationServer3D and
 a NavigationAgent3D for path movement.
 
-1.) Add a NavigationRegion3D Node to the scene.
+#. Add a NavigationRegion3D Node to the scene.
 
-2.) Click on the region node and add a new :ref:`NavigationMesh<class_NavigationMesh>` Resource to the region node
+#. Click on the region node and add a new :ref:`NavigationMesh<class_NavigationMesh>` Resource to
+   the region node.
 
-.. image:: img/nav_3d_min_setup_step1.png
+   .. image:: img/nav_3d_min_setup_step1.png
 
-3.) Add a new MeshInstance3D node as a child of the region node
+#. Add a new MeshInstance3D node as a child of the region node.
 
-4.) Select the MeshInstance3D node and add a new PlaneMesh and increase the xy size to 10.
+#. Select the MeshInstance3D node and add a new PlaneMesh and increase the xy size to 10.
 
-5.) Select the region node again and press the "Bake Navmesh" button on the top bar
+#. Select the region node again and press the "Bake Navmesh" button on the top bar.
 
-.. image:: img/nav_3d_min_setup_step2.png
+   .. image:: img/nav_3d_min_setup_step2.png
 
-7.) Now a transparent navigation mesh appeared that hovers some distance on top the planemesh.
+#. Now a transparent navigation mesh appeared that hovers some distance on top the planemesh.
 
-.. image:: img/nav_3d_min_setup_step3.png
+   .. image:: img/nav_3d_min_setup_step3.png
 
-8.) Add a CharacterBody3D below the region node with a basic collision shape and some mesh for visuals.
+#. Add a CharacterBody3D below the region node with a basic collision shape and some mesh for visuals.
 
-9.) Add a NavigationAgent3D node below the character node
+#. Add a NavigationAgent3D node below the character node.
 
-.. image:: img/nav_3d_min_setup_step4.png
+   .. image:: img/nav_3d_min_setup_step4.png
 
-10.) Add a script to the CharacterBody3D node with the following content.
+#. Add a script to the CharacterBody3D node with the following content. Set a movement target after
+   the scene has fully loaded and the NavigationServer had time to sync. Also, add a Camera3D and some
+   light and environment to see something.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -122,10 +125,48 @@ a NavigationAgent3D for path movement.
         set_velocity(new_velocity)
         move_and_slide()
 
-Set a movement target with the set_movement_target() function after the scene has fully loaded.
-Also add a Camera3D and some light and environment to see something.
+ .. code-tab:: csharp C#
 
-.. warning::
+    using Godot;
 
-    On the first frame the NavigationServer map has not synchronised region data and any path query will return empty.
-    Use ``await get_tree().physics_frame`` to pause scripts until the NavigationServer had time to sync.
+    public partial class MyCharacterBody3D : CharacterBody3D
+    {
+        private float _movementSpeed = 0.3f;
+
+        private NavigationAgent3D _navigationAgent;
+
+        public Vector3 MovementTarget
+        {
+            get { _navigationAgent.TargetLocation; }
+            set { _navigationAgent.TargetLocation = value; }
+        }
+
+        public override void _Ready()
+        {
+            base._Ready();
+
+            _navigationAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
+        }
+
+        public override void _PhysicsProcess(double delta)
+        {
+            base._PhysicsProcess(delta);
+
+            Vector3 currentAgentPosition = GlobalTransform.origin;
+            Vector3 nextPathPosition = _navigationAgent.GetNextLocation();
+
+            Vector3 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();
+            newVelocity *= _movementSpeed;
+
+            Velocity = newVelocity;
+
+            MoveAndSlide();
+        }
+    }
+
+.. note::
+
+    On the first frame the NavigationServer map has not synchronised region data and any path query
+    will return empty. Await one frame to pause scripts until the NavigationServer had time to sync.
+
+    You can find more details about this in the :ref:`2D Navigation Overview page <doc_navigation_overview_2d>`.
