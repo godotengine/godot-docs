@@ -50,7 +50,7 @@ Sizing options are independent for vertical and horizontal sizing and not all co
   Controls that don't expand will be pushed away by those that do. Between expanding controls, the
   amount of space they take from each other is determined by the *Stretch Ratio* (see below).
   This option is only available when the parent Container is of the right type, for example the *HBoxContainer* has this option
-  for the horizontal sizing option.
+  for horizontal sizing.
 * **Shrink Begin** When expanding, try to remain at the left or top of the expanded
   area.
 * **Shrink Center** When expanding, try to remain at the center of the expanded
