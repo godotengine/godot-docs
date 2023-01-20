@@ -34,8 +34,8 @@ This text reads as follows:
 
     This game uses Godot Engine, available under the following license:
 
-    Copyright (c) 2007-2022 Juan Linietsky, Ariel Manzur.
-    Copyright (c) 2014-2022 Godot Engine contributors.
+    Copyright (c) 2014-present Godot Engine contributors.
+    Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -155,10 +155,6 @@ The Apache license needs to be complied to by including the following text:
     WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-Keep in mind that Godot 2.x and 3.0 use `OpenSSL <https://www.openssl.org>`_ 1.x
-instead. This old OpenSSL version used the OpenSSL license, not the Apache 2 license
-as the latest version of OpenSSL currently uses (as of April 2022).
 
 .. note::
 
