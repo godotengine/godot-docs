@@ -13,15 +13,29 @@ Compiling for iOS
 Requirements
 ------------
 
--  SCons 3.0+ (you can install it via `Homebrew <https://brew.sh/>`_ or
-   `MacPorts <https://www.macports.org/>`_, you should be able
-   to run ``scons`` in a terminal when installed).
--  Xcode 11.0 (or later) with the iOS (13.0) SDK and the command line tools.
+- `Python 3.6+ <https://www.python.org/downloads/macos/>`_.
+- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+- `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`_
+  (or the more lightweight Command Line Tools for Xcode).
 
 If you are building the ``master`` branch:
 
 -  Download and follow README instructions to build a static ``.xcframework``
    from the `MoltenVK SDK <https://github.com/KhronosGroup/MoltenVK#fetching-moltenvk-source-code>`__.
+
+.. note:: If you have `Homebrew <https://brew.sh/>`_ installed, you can easily
+          install SCons using the following command::
+
+              brew install scons
+
+          Installing Homebrew will also fetch the Command Line Tools
+          for Xcode automatically if you don't have them already.
+
+          Similarly, if you have `MacPorts <https://www.macports.org/>`_
+          installed, you can easily install SCons using the
+          following command::
+
+              sudo port install scons
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.

@@ -263,8 +263,7 @@ Blacken your Python changes using `Black <https://pypi.org/project/black/>`__.
 Using black locally
 ~~~~~~~~~~~~~~~~~~~
 
-First of all, you will need to install black. Black requires Python 3.6.0+
-to run.
+First of all, you will need to install Black. Black requires Python 3.7+ to run.
 
 Installation
 ^^^^^^^^^^^^

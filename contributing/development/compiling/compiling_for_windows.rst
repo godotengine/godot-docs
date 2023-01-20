@@ -22,10 +22,11 @@ For compiling under Windows, the following is required:
 - `MinGW-w64 <http://mingw-w64.org/>`_ with GCC can be used as an alternative to
   Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
   **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
-- `Python 3.5+ <https://www.python.org/downloads/windows/>`_.
+- `Python 3.6+ <https://www.python.org/downloads/windows/>`_.
   **Make sure to enable the option to add Python to the ``PATH`` in the installer.**
-- `SCons <https://www.scons.org/>`_ build system. Using the latest release is
-  recommended, especially for proper support of recent Visual Studio releases.
+- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system. Using the
+  latest release is recommended, especially for proper support of recent Visual
+  Studio releases.
 
 .. note:: If you have `Scoop <https://scoop.sh/>`_ installed, you can easily
           install MinGW and other dependencies using the following command::
