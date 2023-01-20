@@ -139,9 +139,74 @@ call ``queue_redraw()`` from the ``_process()`` callback, like this:
         }
     }
 
+Coordinates
+-----------
+
+The drawing API uses the CanvasItem's coordinate system, not necessarily pixel
+coordinates. Which means it uses the coordinate space created after applying
+the CanvasItem's transform. Additionally, you can apply a custom transform on
+top of it by using
+:ref:`draw_set_transform<class_CanvasItem_method_draw_set_transform>` or
+:ref:`draw_set_transform_matrix<class_CanvasItem_method_draw_set_transform_matrix>`.
+
+When using ``draw_line``, you should consider the width of the line.
+When using a width that is an odd size, the position should be shifted
+by ``0.5`` to keep the line centered as shown below.
+
+.. image:: img/draw_line.png
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Node2D
+
+    func _draw():
+        draw_line(Vector2(1.5, 1), Vector2(1.5, 4), Color.GREEN, 1.0)
+        draw_line(Vector2(4, 1), Vector2(4, 4), Color.GREEN, 2.0)
+        draw_line(Vector2(7.5, 1), Vector2(7.5, 4), Color.GREEN, 3.0)
+
+ .. code-tab:: csharp
+
+    public class CustomNode2D : Node2D
+    {
+        public override void _Draw()
+        {
+            DrawLine(new Vector2(1.5, 1), new Vector2(1.5, 4), Colors.Green, 1.0)
+            DrawLine(new Vector2(4, 1), new Vector2(4, 4), Colors.Green, 2.0)
+            DrawLine(new Vector2(7.5, 1), new Vector2(7.5, 4), Colors.Green, 3.0)
+        }
+    }
+
+The same applies to the ``draw_rect`` method with ``filled = false``.
+
+.. image:: img/draw_rect.png
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Node2D
+
+    func _draw():
+        draw_rect(Rect2(1, 1, 3, 3), Color.GREEN)
+        draw_rect(Rect2(5.5, 1.5, 2, 2), Color.GREEN, false, 1.0)
+        draw_rect(Rect2(9, 1, 5, 5), Color.GREEN)
+        draw_rect(Rect2(16, 2, 3, 3), Color.GREEN, false, 2.0)
+
+ .. code-tab:: csharp
+
+    public class CustomNode2D : Node2D
+    {
+        public override void _Draw()
+        {
+            DrawRect(new Rect2(1, 1, 3, 3), Colors.Green)
+            DrawRect(new Rect2(5.5, 1.5, 2, 2), Colors.Green, false, 1.0)
+            DrawRect(new Rect2(9, 1, 5, 5), Colors.Green)
+            DrawRect(new Rect2(16, 2, 3, 3), Colors.Green, false, 2.0)
+        }
+    }
 
 An example: drawing circular arcs
-----------------------------------
+---------------------------------
 
 We will now use the custom drawing functionality of the Godot Engine to draw
 something that Godot doesn't provide functions for. As an example, Godot provides
