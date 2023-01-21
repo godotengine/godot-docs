@@ -97,23 +97,42 @@ a NavigationAgent3D for path movement.
 
    .. image:: img/nav_3d_min_setup_step4.png
 
-#. Add a script to the CharacterBody3D node with the following content. Set a movement target after
-   the scene has fully loaded and the NavigationServer had time to sync. Also, add a Camera3D and some
-   light and environment to see something.
+#. Add a script to the CharacterBody3D node with the following content. We make sure to set a
+   movement target after the scene has fully loaded and the NavigationServer had time to sync.
+   Also, add a Camera3D and some light and environment to see something.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends CharacterBody3D
 
-    var movement_speed  : float = 4.0
+    var movement_speed : float = 2.0
+    var movement_target_position : Vector3 = Vector2(-3.0,0.0,2.0)
 
-    @onready var navigation_agent = $NavigationAgent3D
+    @onready var navigation_agent : NavigationAgent3D = $NavigationAgent3D
+
+    func _ready():
+        # These values need to be adjusted for the actor's speed
+        # and the navigation layout.
+        navigation_agent.path_desired_distance = 0.5
+        navigation_agent.target_desired_distance = 0.5
+
+        # Make sure to not await during _ready.
+        call_deferred("actor_setup")
+
+    func actor_setup():
+        # Wait for the first physics frame so the NavigationServer can sync.
+        await get_tree().physics_frame
+
+        # Now that the navigation map is no longer empty, set the movement target.
+        set_movement_target(movement_target_position)
 
     func set_movement_target(movement_target : Vector3):
         navigation_agent.set_target_location(movement_target)
 
     func _physics_process(delta):
+        if navigation_agent.is_target_reached():
+            return
 
         var current_agent_position : Vector3 = global_transform.origin
         var next_path_position : Vector3 = navigation_agent.get_next_location()
@@ -131,13 +150,14 @@ a NavigationAgent3D for path movement.
 
     public partial class MyCharacterBody3D : CharacterBody3D
     {
-        private float _movementSpeed = 0.3f;
-
         private NavigationAgent3D _navigationAgent;
+
+        private float _movementSpeed = 2.0f;
+        private Vector3 _movementTargetPosition = new Vector3(-3.0f, 0.0f, 2.0f);
 
         public Vector3 MovementTarget
         {
-            get { _navigationAgent.TargetLocation; }
+            get { return _navigationAgent.TargetLocation; }
             set { _navigationAgent.TargetLocation = value; }
         }
 
@@ -146,11 +166,24 @@ a NavigationAgent3D for path movement.
             base._Ready();
 
             _navigationAgent = GetNode<NavigationAgent3D>("NavigationAgent3D");
+
+            // These values need to be adjusted for the actor's speed
+            // and the navigation layout.
+            _navigationAgent.PathDesiredDistance = 0.5f;
+            _navigationAgent.TargetDesiredDistance = 0.5f;
+
+            // Make sure to not await during _Ready.
+            Callable.From(ActorSetup).CallDeferred();
         }
 
         public override void _PhysicsProcess(double delta)
         {
             base._PhysicsProcess(delta);
+
+            if (_navigationAgent.IsTargetReached())
+            {
+                return;
+            }
 
             Vector3 currentAgentPosition = GlobalTransform.origin;
             Vector3 nextPathPosition = _navigationAgent.GetNextLocation();
@@ -162,11 +195,18 @@ a NavigationAgent3D for path movement.
 
             MoveAndSlide();
         }
+
+        private async void ActorSetup()
+        {
+            // Wait for the first physics frame so the NavigationServer can sync.
+            await ToSignal(GetTree(), SceneTree.SignalName.PhysicsFrame);
+
+            // Now that the navigation map is no longer empty, set the movement target.
+            MovementTarget = _movementTargetPosition;
+        }
     }
 
 .. note::
 
     On the first frame the NavigationServer map has not synchronised region data and any path query
     will return empty. Await one frame to pause scripts until the NavigationServer had time to sync.
-
-    You can find more details about this in the :ref:`2D Navigation Overview page <doc_navigation_overview_2d>`.
