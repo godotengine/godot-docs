@@ -17,7 +17,7 @@ CanvasItem nodes, and nodes inheriting from them, are direct or indirect childre
 
 The Viewport's property
 :ref:`Viewport.canvas_transform <class_Viewport_property_canvas_transform>`,
-allows to apply a custom :ref:`Transform2D <class_Transform2D>`
+which allows applying a custom :ref:`Transform2D <class_Transform2D>`
 transform to the CanvasItem hierarchy it contains. Nodes such as
 :ref:`Camera2D <class_Camera2D>` work by changing that transform.
 
