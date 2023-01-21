@@ -13,13 +13,15 @@ Compiling for Universal Windows Platform
 Requirements
 ------------
 
--  SCons 3.0+ (see :ref:`doc_compiling_for_windows` for more details).
--  Visual Studio 2017 or later. See :ref:`doc_compiling_for_windows` about the
-   caveats of installing it and the various prompts.
--  Windows 10 SDK (can be selected in Visual Studio installation).
--  `ANGLE source <https://github.com/Microsoft/angle>`__. Use the
-   ``ms_master`` (default) branch. Keep it in a path without spaces to
-   avoid problems.
+- `Python 3.6+ <https://www.python.org/downloads/windows/>`_.
+  **Make sure to enable the option to add Python to the ``PATH`` in the installer.**
+- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system. Using the
+  latest release is recommended, especially for proper support of recent Visual
+  Studio releases.
+- Windows 10 SDK (can be selected in Visual Studio installation).
+- `ANGLE source <https://github.com/Microsoft/angle>`__. Use the
+  ``ms_master`` (default) branch. Keep it in a path without spaces to
+  avoid problems.
 
 .. note:: The ANGLE repo by Microsoft has been discontinued and the
           ``ms_master`` branch has been cleared out.

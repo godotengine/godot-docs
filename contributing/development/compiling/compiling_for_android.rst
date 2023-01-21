@@ -26,19 +26,19 @@ Requirements
 
 For compiling under Windows, Linux or macOS, the following is required:
 
--  `Python 3.5+ <https://www.python.org/downloads/>`_.
--  `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
--  `Android SDK <https://developer.android.com/studio/#command-tools>`_
-   (command-line tools are sufficient).
+- `Python 3.6+ <https://www.python.org/downloads/>`_.
+- `SCons 3.0+ <https://scons.org/pages/download.html>`_ build system.
+- `Android SDK <https://developer.android.com/studio/#command-tools>`_
+  (command-line tools are sufficient).
 
-   -  Required SDK components will be automatically installed.
-   -  On Linux,
+   - Required SDK components will be automatically installed.
+   - On Linux,
       **do not use an Android SDK provided by your distribution's repositories as it will often be outdated**.
 
--  Gradle (will be downloaded and installed automatically if missing).
--  JDK 11 (either OpenJDK or Oracle JDK).
+- Gradle (will be downloaded and installed automatically if missing).
+- JDK 11 (either OpenJDK or Oracle JDK).
 
-   -  You can download a build from `ojdkbuild <https://github.com/ojdkbuild/ojdkbuild>`_.
+   - You can download a build from `ojdkbuild <https://github.com/ojdkbuild/ojdkbuild>`_.
 
 .. seealso:: To get the Godot source code for compiling, see
              :ref:`doc_getting_source`.
