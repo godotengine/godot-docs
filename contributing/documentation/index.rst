@@ -22,6 +22,7 @@ documentation.
 
    content_guidelines
    docs_writing_guidelines
+   docs_image_guidelines
 
 Writing the manual
 ------------------
