@@ -140,6 +140,22 @@ template from the official Godot distribution::
 
     zip -q -9 -r osx.zip osx_template.app
 
+Using Pyston for faster development
+-----------------------------------
+
+You can use `Pyston <https://www.pyston.org/>`__ to run SCons. Pyston is a
+JIT-enabled implementation of the Python language (which SCons is written in).
+Its "full" version is currently only compatible with Linux, but Pyston-lite is
+also compatible with macOS (both x86 and ARM). Pyston can speed up incremental
+builds significantly, often by a factor between 1.5× and 2×. Pyston can be
+combined with alternative likers such as LLD or Mold to get even faster builds.
+
+To install Pyston-lite, run ``python -m pip install pyston_lite_autoload`` then
+run SCons as usual. This will automatically load a subset of Pyston's
+optimizations in any Python program you run. However, this won't bring as much
+of a performance improvement compared to installing "full" Pyston (which
+currently can't be done on macOS).
+
 Cross-compiling for macOS from Linux
 ------------------------------------
 
