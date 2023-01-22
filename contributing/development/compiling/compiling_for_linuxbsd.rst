@@ -36,6 +36,8 @@ required:
              For a general overview of SCons usage for Godot, see
              :ref:`doc_introduction_to_the_buildsystem`.
 
+.. _doc_compiling_for_linuxbsd_oneliners:
+
 Distro-specific one-liners
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 +------------------+-----------------------------------------------------------------------------------------------------------+
@@ -260,6 +262,77 @@ created in the ``bin/`` folder.
 
 It's still recommended to use GCC for production builds as they can be compiled using
 link-time optimization, making the resulting binaries smaller and faster.
+
+Using mold for faster development
+---------------------------------
+
+For even faster linking compared to LLD, you can use `mold <https://github.com/rui314/mold>`__.
+mold can be used with either GCC or Clang.
+
+As of January 2023, mold is not readily available in Linux distribution
+repositories, so you will have to install its binaries manually.
+
+- Download mold binaries from its `releases page <https://github.com/rui314/mold/releases/latest>`__.
+- Extract the ``.tar.gz`` file, then move the extraced folder to a location such as ``.local/share/mold``.
+- Add ``$HOME/.local/share/mold/bin`` to your user's ``PATH`` environment variable.
+  For example, you can add the following line at the end of your ``$HOME/.bash_profile`` file:
+
+::
+
+    PATH="$HOME/.local/share/mold/bin:$PATH"
+
+- Open a new terminal (or run ``source "$HOME/.bash_profile"``),
+  then use the following SCons command when compiling Godot::
+
+    scons platform=linuxbsd linker=mold
+
+Using system libraries for faster development
+---------------------------------------------
+
+`Godot bundles the source code of various third-party libraries. <https://github.com/godotengine/godot/tree/master/thirdparty>`__
+You can choose to use system versions of third-party libraries instead.
+This makes the Godot binary faster to link, as third-party libraries are
+dynamically linked. Therefore, they don't need to be statically linked
+every time you build the engine (even on small incremental changes).
+
+However, not all Linux distributions have packages for third-party libraries
+available (or they may not be up-to-date).
+
+Moving to system libraries can reduce linking times by several seconds on slow
+CPUs, but it requires manual testing depending on your Linux distribution. Also,
+you may not be able to use system libraries for everything due to bugs in the
+system library packages (or in the build system, as this feature is less
+tested).
+
+To compile Godot with system libraries, install these dependencies *on top* of the ones
+listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
+
++------------------+-----------------------------------------------------------------------------------------------------------+
+| **Fedora**       | ::                                                                                                        |
+|                  |                                                                                                           |
+|                  |     sudo dnf install embree-devel enet-devel glslang-devel graphite2-devel harfbuzz-devel libicu-devel \  |
+|                  |         libsquish-devel libtheora-devel libvorbis-devel libwebp-devel libzstd-devel mbedtls-devel \       |
+|                  |         miniupnpc-devel                                                                                   |
++------------------+-----------------------------------------------------------------------------------------------------------+
+
+After installing all required packages, use the following command to build Godot:
+
+.. NOTE: Some `builtin_` options aren't used here because they break the build as of January 2023
+   (tested on Fedora 37).
+
+::
+
+    scons platform=linuxbsd builtin_embree=no builtin_enet=no builtin_freetype=no builtin_graphite=no builtin_harfbuzz=no builtin_libogg=no builtin_libpng=no builtin_libtheora=no builtin_libvorbis=no builtin_libwebp=no builtin_mbedtls=no builtin_miniupnpc=no builtin_pcre2=no builtin_zlib=no builtin_zstd=no
+
+You can view a list of all built-in libraries that have system alternatives by
+running ``scons -h``, then looking for options starting with ``builtin_``.
+
+.. warning::
+
+    When using system libraries, the resulting library is **not** portable
+    across Linux distributions anymore. Do not use this approach for creating
+    binaries you intend to distribute to others, unless you're creating a
+    package for a Linux distribution.
 
 Using Pyston for faster development
 -----------------------------------
