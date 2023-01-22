@@ -877,7 +877,7 @@ while
 ^^^^^
 
 Simple loops are created by using ``while`` syntax. Loops can be broken
-using ``break`` or continued using ``continue``:
+using ``break`` or continued using ``continue`` (i.e. skipping to the next iteration of the loop without executing any further code in the current iteration):
 
 ::
 
