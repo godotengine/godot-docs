@@ -38,6 +38,11 @@ To play the music, add ``$Music.play()`` in the ``new_game()`` function and
 
 Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
 
+.. note:: If you already run the game with some stereo output, you have probably
+        noticed the game sound being considerably balanced to the left. This is because 
+        the ``AudioStreamPlayer`` are on the upper-left corner (position 0, 0), so place
+        them in the center of the screen (240, 360) and the audio should sound balanced.
+
 Keyboard shortcut
 ~~~~~~~~~~~~~~~~~
 
