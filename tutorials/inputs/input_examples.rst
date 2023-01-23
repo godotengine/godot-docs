@@ -395,6 +395,7 @@ a mouse click event, and :ref:`InputEventScreenDrag <class_InputEventScreenDrag>
 works much the same as mouse motion.
 
 .. tip:: To test your touch events on a non-touchscreen device, open Project
-        Settings and go to the "Input Devices/Pointing" section. Enable "Emulate
-        Touch From Mouse" and your project will interpret mouse clicks and
+        Settings, go to the "General" tab, turn the "Advanced Settings" toggle 
+        in the top right of the window on, and go to the "Input Devices/Pointing" 
+        section. Enable "Emulate Touch From Mouse" and your project will interpret mouse clicks and
         motion as touch events.
