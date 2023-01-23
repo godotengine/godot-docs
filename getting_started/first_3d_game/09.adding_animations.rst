@@ -293,7 +293,6 @@ Here's the *Player* script.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-
     extends CharacterBody3D
 
     signal hit
@@ -373,7 +372,7 @@ Here's the *Player* script.
 
     # And this function at the bottom.
     func die():
-        emit_signal("hit")
+        hit.emit()
         queue_free()
 
     func _on_mob_detector_body_entered(body):
@@ -518,7 +517,7 @@ And the *Mob*'s script.
         queue_free()
 
     func squash():
-        emit_signal("squashed")
+        squashed.emit()
         queue_free() # Destroy this node
  .. code-tab:: csharp
 

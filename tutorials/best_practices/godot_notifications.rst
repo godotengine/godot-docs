@@ -249,10 +249,10 @@ nodes that one might create at runtime.
             NOTIFICATION_PARENTED:
                 parent_cache = get_parent()
                 if connection_check():
-                    parent_cache.connect("interacted_with", self, "_on_parent_interacted_with")
+                    parent_cache.interacted_with.connect(_on_parent_interacted_with)
             NOTIFICATION_UNPARENTED:
                 if connection_check():
-                    parent_cache.disconnect("interacted_with", self, "_on_parent_interacted_with")
+                    parent_cache.interacted_with.disconnect(_on_parent_interacted_with)
 
     func _on_parent_interacted_with():
         print("I'm reacting to my parent's interaction!")

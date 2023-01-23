@@ -119,8 +119,8 @@ This example expands on the previous one, separating the peers in two different 
 
     func _ready():
         # Connect all functions
-        peer.connect("ice_candidate_created", self, "_on_ice_candidate")
-        peer.connect("session_description_created", self, "_on_session")
+        peer.ice_candidate_created.connect(_on_ice_candidate)
+        peer.session_description_created.connect(_on_session)
 
         # Register to the local signaling server (see below for the implementation)
         Signaling.register(get_path())

@@ -51,20 +51,20 @@ Initialization example:
 
             # These are all signals supported by the API
             # You can drop some of these based on your needs
-            payment.connect("billing_resume", self, "_on_billing_resume") # No params
-            payment.connect("connected", self, "_on_connected") # No params
-            payment.connect("disconnected", self, "_on_disconnected") # No params
-            payment.connect("connect_error", self, "_on_connect_error") # Response ID (int), Debug message (string)
-            payment.connect("price_change_acknowledged", self, "_on_price_acknowledged") # Response ID (int)
-            payment.connect("purchases_updated", self, "_on_purchases_updated") # Purchases (Dictionary[])
-            payment.connect("purchase_error", self, "_on_purchase_error") # Response ID (int), Debug message (string)
-            payment.connect("sku_details_query_completed", self, "_on_sku_details_query_completed") # SKUs (Dictionary[])
-            payment.connect("sku_details_query_error", self, "_on_sku_details_query_error") # Response ID (int), Debug message (string), Queried SKUs (string[])
-            payment.connect("purchase_acknowledged", self, "_on_purchase_acknowledged") # Purchase token (string)
-            payment.connect("purchase_acknowledgement_error", self, "_on_purchase_acknowledgement_error") # Response ID (int), Debug message (string), Purchase token (string)
-            payment.connect("purchase_consumed", self, "_on_purchase_consumed") # Purchase token (string)
-            payment.connect("purchase_consumption_error", self, "_on_purchase_consumption_error") # Response ID (int), Debug message (string), Purchase token (string)
-            payment.connect("query_purchases_response", self, "_on_query_purchases_response") # Purchases (Dictionary[])
+            payment.billing_resume.connect(_on_billing_resume) # No params
+            payment.connected.connect(_on_connected) # No params
+            payment.disconnected.connect(_on_disconnected) # No params
+            payment.connect_error.connect(_on_connect_error) # Response ID (int), Debug message (string)
+            payment.price_change_acknowledged.connect(_on_price_acknowledged) # Response ID (int)
+            payment.purchases_updated.connect(_on_purchases_updated) # Purchases (Dictionary[])
+            payment.purchase_error.connect(_on_purchase_error) # Response ID (int), Debug message (string)
+            payment.sku_details_query_completed.connect(_on_sku_details_query_completed) # SKUs (Dictionary[])
+            payment.sku_details_query_error.connect(_on_sku_details_query_error) # Response ID (int), Debug message (string), Queried SKUs (string[])
+            payment.purchase_acknowledged.connect(_on_purchase_acknowledged) # Purchase token (string)
+            payment.purchase_acknowledgement_error.connect(_on_purchase_acknowledgement_error) # Response ID (int), Debug message (string), Purchase token (string)
+            payment.purchase_consumed.connect(_on_purchase_consumed) # Purchase token (string)
+            payment.purchase_consumption_error.connect(_on_purchase_consumption_error) # Response ID (int), Debug message (string), Purchase token (string)
+            payment.query_purchases_response.connect(_on_query_purchases_response) # Purchases (Dictionary[])
 
             payment.startConnection()
         else:

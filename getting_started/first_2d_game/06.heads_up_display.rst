@@ -294,7 +294,7 @@ signal of ``StartButton``, and add the following code to the new functions:
 
     func _on_StartButton_pressed():
         $StartButton.hide()
-        emit_signal("start_game")
+        start_game.emit()
 
     func _on_MessageTimer_timeout():
         $Message.hide()

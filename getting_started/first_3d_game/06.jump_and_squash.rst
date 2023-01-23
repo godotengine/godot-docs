@@ -321,7 +321,7 @@ destroy the mob.
 
 
    func squash():
-       emit_signal("squashed")
+       squashed.emit()
        queue_free()
 
  .. code-tab:: csharp

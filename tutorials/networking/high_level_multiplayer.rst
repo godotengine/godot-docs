@@ -222,11 +222,11 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
     # Connect all functions
 
     func _ready():
-        get_tree().connect("network_peer_connected", self, "_player_connected")
-        get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
-        get_tree().connect("connected_to_server", self, "_connected_ok")
-        get_tree().connect("connection_failed", self, "_connected_fail")
-        get_tree().connect("server_disconnected", self, "_server_disconnected")
+        get_tree().network_peer_connected.connect(_player_connected)
+        get_tree().network_peer_disconnected.connect(_player_disconnected)
+        get_tree().connected_to_server.connect(_connected_ok)
+        get_tree().connection_failed.connect(_connected_fail)
+        get_tree().server_disconnected.connect(_server_disconnected)
 
     # Player info, associate ID to data
     var player_info = {}

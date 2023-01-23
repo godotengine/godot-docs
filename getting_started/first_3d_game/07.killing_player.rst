@@ -71,7 +71,7 @@ a ``die()`` function that helps us put a descriptive label on the code.
 
    # And this function at the bottom.
    func die():
-       emit_signal("hit")
+       hit.emit()
        queue_free()
 
 
@@ -269,8 +269,8 @@ Next is ``Mob.gd``.
         queue_free()
 
     func squash():
-        emit_signal("squashed")
-        queue_free() # Destroy this node
+       squashed.emit()
+       queue_free() # Destroy this node
  .. code-tab:: csharp
 
     using Godot;
@@ -321,8 +321,7 @@ Finally, the longest script, ``Player.gd``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-
-   extends CharacterBody3D
+    extends CharacterBody3D
 
     signal hit
 
@@ -396,7 +395,7 @@ Finally, the longest script, ``Player.gd``:
 
     # And this function at the bottom.
     func die():
-        emit_signal("hit")
+        hit.emit()
         queue_free()
 
     func _on_mob_detector_body_entered(body):
