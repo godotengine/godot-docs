@@ -493,6 +493,8 @@ Communicating with other scripting languages
 
 This is explained extensively in :ref:`doc_cross_language_scripting`.
 
+.. _doc_c_sharp_differences_yield:
+
 Yield
 -----
 

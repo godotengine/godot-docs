@@ -66,6 +66,8 @@ represent characters, weapons, doors, or your user interface.
 
 .. image:: img/key_concepts_scene_tree.webp
 
+.. _doc_key_concepts_signals:
+
 Signals
 -------
 
