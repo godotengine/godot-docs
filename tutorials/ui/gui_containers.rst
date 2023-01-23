@@ -35,12 +35,12 @@ Example of *HBoxContainer* resizing children buttons.
 The real strength of containers is that they can be nested (as nodes), allowing the creation of very complex layouts that resize effortlessly.
 
 Sizing options
-----------
+--------------
 
 When adding a node to a container, the way the container treats each child depends mainly on their *container sizing options*. These options
 can be found by inspecting the layout of any *Control* that is a child of a *Container*.
 
-   .. image:: img/container_sizing_options.png
+   .. image:: img/container_sizing_options.webp
 
 Sizing options are independent for vertical and horizontal sizing and not all containers make use of them (but most do):
 
