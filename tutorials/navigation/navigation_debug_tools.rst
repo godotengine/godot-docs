@@ -59,3 +59,31 @@ The connections can be made visible through geometry with the navigation debug `
 .. note::
 
     Edge connections are only visible when the NavigationServer is active.
+
+Debug Performance
+-----------------
+
+To measure NavigationServer performance a dedicated monitor exists that can be found within the Editor Debugger under `Debugger->Monitors->NavigationProcess`.
+
+.. image:: img/navigation_debug_performance1.webp
+
+NavigationProcess shows how long the NavigationServer spends updating its internals this update frame in milliseconds.
+NavigationProcess works similar to Process for visual frame rendering and PhysicsProcess for collision and fixed updates.
+
+NavigationProcess accounts for all updates to ``navigation maps``, ``navigation regions`` and ``navigation agents`` as well as all the ``avoidance calculations`` for the update frame.
+
+.. note::
+
+    NavigationProcess does NOT include pathfinding performance cause pathfinding operates on the navigation map data independently from the server process update.
+
+NavigationProcess should be in general kept as low and as stable as possible for runtime performance to avoid frame rate issues.
+Note that since the NavigationServer process update happens in the middle of the physics update an increase in NavigationProcess will automatically increase PhysicsProcess by the same amount.
+
+Navigation also provides more detailed statistics about the current navigation related objects and navigation map composition on the NavigationServer.
+
+.. image:: img/navigation_debug_performance2.webp
+
+Navigation statistics shown here can not be judged as good or bad for performance as it depends entirely on the project what can be considered as reasonable or horribly excessive.
+
+Navigation statistics help with identifying performance bottlenecks that are less obvious because the source might not always have a visible representation.
+E.g. pathfinding performance issues created by overly detailed navigation meshes with thousand of edges / polygons or problems caused by procedural navigation gone wrong.
