@@ -113,6 +113,9 @@ Running the project upgrade tool
     You can backup a project by using version control, or by copying the project
     folder to another location.
 
+Using the project manager
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
 To use the project upgrade tool:
 
 1. Open the Godot 4 project manager.
@@ -129,6 +132,46 @@ To use the project upgrade tool:
 6. When the project manager interface becomes available again, double-click the
    project (or select the project then choose **Edit**) to open it in the
    editor.
+
+If you hit conversion issues due to some project files being too large or long,
+you can use the command line to upgrade the project (see below). This will allow
+you to override the converter's size limits.
+
+Using the command line
+^^^^^^^^^^^^^^^^^^^^^^
+
+To use the project upgrade tool from the :ref:`command line <doc_command_line_tutorial>`,
+it's recommended to validate the project conversion by running the Godot editor binary with the following arguments:
+
+::
+
+    # [<max_file_kb>] [<max_line_size>] are optional arguments.
+    # Remove them if you aren't changing their values.
+    path/to/godot.binary --path /path/to/project/folder --validate-conversion-3to4 [<max_file_kb>] [<max_line_size>]
+
+If the list of planned upgrades looks good to you, run the following command on
+the Godot editor binary to upgrade project files:
+
+::
+
+    # [<max_file_kb>] [<max_line_size>] are optional arguments.
+    # Remove them if you aren't changing their values.
+    path/to/godot.binary --path /path/to/project/folder --convert-3to4 [<max_file_kb>] [<max_line_size>]
+
+``[<max_file_kb>]`` and ``[<max_line_size>]`` are *optional* arguments to specify
+the maximum size of files to be converted (in kilobytes and lines). The default
+limits are 4 MB and 100,000 lines respectively. If a file hits either of those
+limits, it will not be upgraded by the project converter. This is useful to
+prevent large resources from slowing down the upgrade to a crawl.
+
+If you still want large files to be converted by the project upgrade tool,
+increase the size limits when running the project upgrade tool. For example,
+running the Godot editor binary with those arguments increases both limits by a
+10× factor:
+
+::
+
+    path/to/godot.binary --path /path/to/project/folder --convert-3to4 40000 1000000
 
 .. note::
 
