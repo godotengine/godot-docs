@@ -107,25 +107,7 @@ Start a terminal, go to the root dir of the engine source code and type:
 
 ::
 
-    scons -j8 platform=linuxbsd
-
-A good rule of thumb for the ``-j`` (*jobs*) flag, is to have at least as many
-threads compiling Godot as you have cores in your CPU, if not one or two more.
-Feel free to add the ``-j`` option to any SCons command you see below.
-
-You can automatically use all available CPU cores with command substitution.
-
-On Linux, you can use ``nproc``:
-
-::
-
-    scons -j$(nproc)
-
-On \*BSD, you can use ``sysctl -n hw.ncpu``:
-
-::
-
-    scons -j$(sysctl -n hw.ncpu)
+    scons platform=linuxbsd
 
 .. note::
 
@@ -169,7 +151,7 @@ Running a headless/server build
 To run in *headless* mode which provides editor functionality to export
 projects in an automated manner, use the normal build::
 
-    scons -j8 platform=linuxbsd target=editor
+    scons platform=linuxbsd target=editor
 
 And then use the ``--headless`` command line argument::
 
@@ -178,12 +160,12 @@ And then use the ``--headless`` command line argument::
 To compile a debug *server* build which can be used with
 :ref:`remote debugging tools <doc_command_line_tutorial>`, use::
 
-    scons -j8 platform=linuxbsd target=template_debug
+    scons platform=linuxbsd target=template_debug
 
 To compile a *server* build which is optimized to run dedicated game servers,
 use::
 
-    scons -j8 platform=linuxbsd target=template_release production=yes
+    scons platform=linuxbsd target=template_release production=yes
 
 Building export templates
 -------------------------
