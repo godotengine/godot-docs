@@ -375,7 +375,7 @@ one).
 
 |image7|
 
-Here's where the magic happens. Select the *CameraPivot* and rotate it ``45``
+Here's where the magic happens. Select the *CameraPivot* and rotate it ``-45``
 degrees around the X axis (using the red circle). You'll see the camera move as
 if it was attached to a crane.
 
