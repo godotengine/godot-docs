@@ -136,14 +136,6 @@ the engine source code (using ``cd``) and type::
 
     C:\godot> scons platform=windows
 
-You can specify a number of CPU threads to use to speed up the build::
-
-    C:\godot> scons -j6 platform=windows
-
-In general, it is OK to have at least as many threads compiling Godot as you
-have cores in your CPU, if not one or two more. Feel free to add the ``-j``
-option to any SCons command you see below.
-
 .. note:: When compiling with multiple CPU threads, SCons may warn about
           pywin32 being missing. You can safely ignore this warning.
 

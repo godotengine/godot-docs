@@ -45,7 +45,7 @@ To add a custom build target that invokes SCons for compilation:
 
 - Give the tool a name, e.g. ``Build Godot debug``, set **Program** to ``scons``, set **Arguments** to the compilation settings you want (see :ref:`compiling Godot <toc-devel-compiling>`), and set the **Working directory** to ``$ProjectFileDir$``, which equals the Godot root directory. Click **OK** to create the tool.
 
-   .. note:: CLion does not expand shell commands like ``scons -j$(nproc)``. Use concrete values instead, e.g. ``scons -j8``
+   .. note:: CLion does not expand shell commands like ``scons -j$(nproc)``. Use concrete values instead, e.g. ``scons -j8``.
 
 .. figure:: img/clion-create-build-tool.png
    :align: center
