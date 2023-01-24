@@ -3,7 +3,7 @@
 2D Navigation Overview
 ======================
 
-Godot provides multiple objects, classes and servers to facilitate grid-based or mesh-based navigation and pathfinding for 2D and 3D games. 
+Godot provides multiple objects, classes and servers to facilitate grid-based or mesh-based navigation and pathfinding for 2D and 3D games.
 The following section provides a quick overview over all available navigation related objects in Godot for 2D scenes and their primary use.
 
 Godot provides the following objects and classes for 2D navigation:
@@ -67,33 +67,31 @@ Setup for 2D scene
 The following steps show the basic setup for a minimum viable navigation in 2D that uses the
 NavigationServer2D and a NavigationAgent2D for path movement.
 
-1.) Add a NavigationRegion2D Node to the scene.
+#. Add a NavigationRegion2D Node to the scene.
 
-2.) Click on the region node and add a new NavigationPolygon Resource to the region node
+#. Click on the region node and add a new NavigationPolygon Resource to the region node.
 
-.. image:: img/nav_2d_min_setup_step1.png
+   .. image:: img/nav_2d_min_setup_step1.png
 
-3.) Define the moveable navigation area with the NavigationPolygon draw tool
+#. Define the moveable navigation area with the NavigationPolygon draw tool.
 
-.. image:: img/nav_2d_min_setup_step2.png
+   .. image:: img/nav_2d_min_setup_step2.png
 
-.. note::
+   .. note::
 
-    The navigation mesh defines the area where an actor can stand and move with its center.
-    Leave enough margin between the navpolygon edges and collision objects to not get path following actors repeatedly stuck on collision.
+        The navigation mesh defines the area where an actor can stand and move with its center.
+        Leave enough margin between the navpolygon edges and collision objects to not get path
+        following actors repeatedly stuck on collision.
 
-4.) Add a CharacterBody2D below the region node with a basic collision shape and a sprite or mesh for visuals.
+#. Add a CharacterBody2D below the region node with a basic collision shape and a sprite or mesh
+   for visuals.
 
-5.) Add a NavigationAgent2D node below the character node
+#. Add a NavigationAgent2D node below the character node.
 
-.. image:: img/nav_2d_min_setup_step3.png
+   .. image:: img/nav_2d_min_setup_step3.png
 
-6.) Add the following script to the CharacterBody2D node. Set a movement target with the set_movement_target() function after the scene has fully loaded and the NavigationServer had time to sync.
-
-.. note::
-
-    On the first frame the NavigationServer map has not synchronised region data and any path query will return empty.
-    Use ``await get_tree().physics_frame`` to pause scripts until the NavigationServer had time to sync.
+#. Add the following script to the CharacterBody2D node. We make sure to set a movement target
+   after the scene has fully loaded and the NavigationServer had time to sync.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -106,28 +104,25 @@ NavigationServer2D and a NavigationAgent2D for path movement.
     @onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
 
     func _ready():
-        # these values need to be adjusted for the actor's speed
-        # and the navpolygon layout as each crossed edge will create a path point
-        # If the actor moves to fast it might overshoot 
-        # multiple path points in one frame and start to backtrack
+        # These values need to be adjusted for the actor's speed
+        # and the navigation layout.
         navigation_agent.path_desired_distance = 4.0
         navigation_agent.target_desired_distance = 4.0
 
-        # make a deferred function call to assure the entire Scenetree is loaded
+        # Make sure to not await during _ready.
         call_deferred("actor_setup")
 
     func actor_setup():
-        # wait for the first physics frame so the NavigationServer can sync
+        # Wait for the first physics frame so the NavigationServer can sync.
         await get_tree().physics_frame
 
-        # now that the navigation map is no longer empty set the movement target
+        # Now that the navigation map is no longer empty, set the movement target.
         set_movement_target(movement_target_position)
 
     func set_movement_target(movement_target : Vector2):
         navigation_agent.set_target_location(movement_target)
 
     func _physics_process(delta):
-
         if navigation_agent.is_target_reached():
             return
 
@@ -141,3 +136,70 @@ NavigationServer2D and a NavigationAgent2D for path movement.
         set_velocity(new_velocity)
 
         move_and_slide()
+
+ .. code-tab:: csharp C#
+
+    using Godot;
+
+    public partial class MyCharacterBody2D : CharacterBody2D
+    {
+        private NavigationAgent2D _navigationAgent;
+
+        private float _movementSpeed = 200.0f;
+        private Vector2 _movementTargetPosition = new Vector2(70.0f, 226.0f);
+
+        public Vector2 MovementTarget
+        {
+            get { return _navigationAgent.TargetLocation; }
+            set { _navigationAgent.TargetLocation = value; }
+        }
+
+        public override void _Ready()
+        {
+            base._Ready();
+
+            _navigationAgent = GetNode<NavigationAgent2D>("NavigationAgent2D");
+
+            // These values need to be adjusted for the actor's speed
+            // and the navigation layout.
+            _navigationAgent.PathDesiredDistance = 4.0f;
+            _navigationAgent.TargetDesiredDistance = 4.0f;
+
+            // Make sure to not await during _Ready.
+            Callable.From(ActorSetup).CallDeferred();
+        }
+
+        public override void _PhysicsProcess(double delta)
+        {
+            base._PhysicsProcess(delta);
+
+            if (_navigationAgent.IsTargetReached())
+            {
+                return;
+            }
+
+            Vector2 currentAgentPosition = GlobalTransform.origin;
+            Vector2 nextPathPosition = _navigationAgent.GetNextLocation();
+
+            Vector2 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();
+            newVelocity *= _movementSpeed;
+
+            Velocity = newVelocity;
+
+            MoveAndSlide();
+        }
+
+        private async void ActorSetup()
+        {
+            // Wait for the first physics frame so the NavigationServer can sync.
+            await ToSignal(GetTree(), SceneTree.SignalName.PhysicsFrame);
+
+            // Now that the navigation map is no longer empty, set the movement target.
+            MovementTarget = _movementTargetPosition;
+        }
+    }
+
+.. note::
+
+    On the first frame the NavigationServer map has not synchronised region data and any path query
+    will return empty. Await one frame to pause scripts until the NavigationServer had time to sync.
