@@ -106,11 +106,7 @@ Start a terminal, go to the root dir of the engine source code and type:
 
 ::
 
-    scons -j8 platform=x11
-
-A good rule of thumb for the ``-j`` (*jobs*) flag, is to have at least as many
-threads compiling Godot as you have cores in your CPU, if not one or two more.
-Feel free to add the ``-j`` option to any SCons command you see below.
+    scons platform=x11
 
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
@@ -148,17 +144,17 @@ Compiling a headless/server build
 To compile a *headless* build which provides editor functionality to export
 projects in an automated manner, use::
 
-    scons -j8 platform=server tools=yes target=release_debug
+    scons platform=server tools=yes target=release_debug
 
 To compile a debug *server* build which can be used with
 :ref:`remote debugging tools <doc_command_line_tutorial>`, use::
 
-    scons -j8 platform=server tools=no target=release_debug
+    scons platform=server tools=no target=release_debug
 
 To compile a *server* build which is optimized to run dedicated game servers,
 use::
 
-    scons -j8 platform=server tools=no target=release
+    scons platform=server tools=no target=release
 
 Building export templates
 -------------------------

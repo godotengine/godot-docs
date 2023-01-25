@@ -33,33 +33,13 @@ Importing the project
 
 - Within the ``tasks.json`` file find the ``"tasks"`` array and add a new section to it:
 
-.. tabs::
-  .. code-tab:: js Linux/X11
+.. code-block:: js
 
     {
       "label": "build",
       "group": "build",
       "type": "shell",
       "command": "scons",
-      "args": [
-        "-j $(nproc)"
-      ],
-      "problemMatcher": "$msCompile"
-    }
-
-  .. code-tab:: js Windows
-
-    {
-      "label": "build",
-      "group": "build",
-      "type": "shell",
-      "command": "scons",
-      "args": [
-        // Use this when your default shell is Command Prompt (cmd.exe).
-        "-j %NUMBER_OF_PROCESSORS%",
-        // Use this when your default shell is PowerShell.
-        "-j $env:NUMBER_OF_PROCESSORS"
-      ],
       "problemMatcher": "$msCompile"
     }
 
