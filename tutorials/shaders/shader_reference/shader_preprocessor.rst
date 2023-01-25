@@ -111,6 +111,10 @@ The ``#undef`` directive may be used to cancel a previously defined ``#define`` 
         return MY_COLOR;
     }
 
+    // Like in most preprocessors, undefining a define that was not previously defined is allowed
+    // (and won't print any warning or error).
+    #undef THIS_DOES_NOT_EXIST
+
 Without ``#undef`` in the above example, there would be a macro redefinition error.
 
 #if
