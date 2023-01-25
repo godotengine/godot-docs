@@ -48,11 +48,11 @@ Start a terminal, go to the root directory of the engine source code.
 
 To compile for Intel (x86-64) powered Macs, use::
 
-    scons platform=osx arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=osx arch=x86_64
 
 To compile for Apple Silicon (ARM64) powered Macs, use::
 
-    scons platform=osx arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=osx arch=arm64
 
 To support both architectures in a single "Universal 2" binary, run the above two commands and then use ``lipo`` to bundle them together::
 
@@ -83,17 +83,17 @@ Compiling a headless/server build
 To compile a *headless* build which provides editor functionality to export
 projects in an automated manner, use::
 
-    scons platform=server tools=yes target=release_debug --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=server tools=yes target=release_debug
 
 To compile a debug *server* build which can be used with
 :ref:`remote debugging tools <doc_command_line_tutorial>`, use::
 
-    scons platform=server tools=no target=release_debug --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=server tools=no target=release_debug
 
 To compile a release *server* build which is optimized to run dedicated game servers,
 use::
 
-    scons platform=server tools=no target=release --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=server tools=no target=release
 
 Building export templates
 -------------------------
@@ -108,13 +108,13 @@ of those two architectures by leaving out the ``lipo`` step below.
 
 - For Intel x86_64::
 
-    scons platform=osx tools=no target=release arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
-    scons platform=osx tools=no target=release_debug arch=x86_64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=osx tools=no target=release arch=x86_64
+    scons platform=osx tools=no target=release_debug arch=x86_64
 
 - For ARM64 (Apple M1)::
 
-    scons platform=osx tools=no target=release arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
-    scons platform=osx tools=no target=release_debug arch=arm64 --jobs=$(sysctl -n hw.logicalcpu)
+    scons platform=osx tools=no target=release arch=arm64
+    scons platform=osx tools=no target=release_debug arch=arm64
 
 To support both architectures in a single "Universal 2" binary, run the above
 two commands blocks and then use ``lipo`` to bundle them together::
