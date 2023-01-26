@@ -158,23 +158,18 @@ by ``0.5`` to keep the line centered as shown below.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Node2D
-
     func _draw():
-        draw_line(Vector2(1.5, 1), Vector2(1.5, 4), Color.GREEN, 1.0)
-        draw_line(Vector2(4, 1), Vector2(4, 4), Color.GREEN, 2.0)
-        draw_line(Vector2(7.5, 1), Vector2(7.5, 4), Color.GREEN, 3.0)
+        draw_line(Vector2(1.5, 1.0), Vector2(1.5, 4.0), Color.GREEN, 1.0)
+        draw_line(Vector2(4.0, 1.0), Vector2(4.0, 4.0), Color.GREEN, 2.0)
+        draw_line(Vector2(7.5, 1.0), Vector2(7.5, 4.0), Color.GREEN, 3.0)
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    public override void _Draw()
     {
-        public override void _Draw()
-        {
-            DrawLine(new Vector2(1.5, 1), new Vector2(1.5, 4), Colors.Green, 1.0)
-            DrawLine(new Vector2(4, 1), new Vector2(4, 4), Colors.Green, 2.0)
-            DrawLine(new Vector2(7.5, 1), new Vector2(7.5, 4), Colors.Green, 3.0)
-        }
+        DrawLine(new Vector2(1.5f, 1.0f), new Vector2(1.5f, 4.0f), Colors.Green, 1.0f);
+        DrawLine(new Vector2(4.0f, 1.0f), new Vector2(4.0f, 4.0f), Colors.Green, 2.0f);
+        DrawLine(new Vector2(7.5f, 1.0f), new Vector2(7.5f, 4.0f), Colors.Green, 3.0f);
     }
 
 The same applies to the ``draw_rect`` method with ``filled = false``.
@@ -184,25 +179,20 @@ The same applies to the ``draw_rect`` method with ``filled = false``.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Node2D
-
     func _draw():
-        draw_rect(Rect2(1, 1, 3, 3), Color.GREEN)
-        draw_rect(Rect2(5.5, 1.5, 2, 2), Color.GREEN, false, 1.0)
-        draw_rect(Rect2(9, 1, 5, 5), Color.GREEN)
-        draw_rect(Rect2(16, 2, 3, 3), Color.GREEN, false, 2.0)
+        draw_rect(Rect2(1.0, 1.0, 3.0, 3.0), Color.GREEN)
+        draw_rect(Rect2(5.5, 1.5, 2.0, 2.0), Color.GREEN, false, 1.0)
+        draw_rect(Rect2(9.0, 1.0, 5.0, 5.0), Color.GREEN)
+        draw_rect(Rect2(16.0, 2.0, 3.0, 3.0), Color.GREEN, false, 2.0)
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    public override void _Draw()
     {
-        public override void _Draw()
-        {
-            DrawRect(new Rect2(1, 1, 3, 3), Colors.Green)
-            DrawRect(new Rect2(5.5, 1.5, 2, 2), Colors.Green, false, 1.0)
-            DrawRect(new Rect2(9, 1, 5, 5), Colors.Green)
-            DrawRect(new Rect2(16, 2, 3, 3), Colors.Green, false, 2.0)
-        }
+        DrawRect(new Rect2(1.0f, 1.0f, 3.0f, 3.0f), Colors.Green);
+        DrawRect(new Rect2(5.5f, 1.5f, 2.0f, 2.0f), Colors.Green, false, 1.0f);
+        DrawRect(new Rect2(9.0f, 1.0f, 5.0f, 5.0f), Colors.Green);
+        DrawRect(new Rect2(16.0f, 2.0f, 3.0f, 3.0f), Colors.Green, false, 2.0f);
     }
 
 An example: drawing circular arcs
