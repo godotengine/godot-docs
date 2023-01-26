@@ -163,7 +163,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | break      | Exits the execution of the current ``for`` or ``while`` loop.                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| continue   | Immediately skips to the next iteration of the ``for`` or ``while`` loop. Stops execution in ``match`` and looks for a match in patterns below it |
+| continue   | Immediately skips to the next iteration of the ``for`` or ``while`` loop.                                                                         |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | pass       | Used where a statement is required syntactically but execution of code is undesired, e.g. in empty functions.                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
