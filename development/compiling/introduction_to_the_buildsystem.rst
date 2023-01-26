@@ -81,12 +81,13 @@ To build for a platform (for example, x11), run with the ``platform=`` (or
 
     scons platform=x11
 
-This will start the build process, which will take a while. If you want
-SCons to build faster, use the ``-j <cores>`` parameter to specify how many
-cores will be used for the build. Or leave it using one core, so you
-can use your computer for something else :)
+This will start the build process, which will take a while. By default, Godot's
+SCons setup is configured to use all CPU threads but one (to keep the system
+responsive during compilation). If you want to adjust how many CPU threads SCons
+will use, use the ``-j <threads>`` parameter to specify how many threads will be
+used for the build.
 
-Example for using 4 cores:
+Example for using 4 threads:
 
 ::
 
@@ -294,8 +295,8 @@ Using the SCONSFLAGS
 ``SCONSFLAGS`` is an environment variable which is used by the SCons to set the
 options automatically without having to supply them via the command line.
 
-For instance, you may want to build Godot in parallel with the aforementioned
-``-j`` option for all the future builds:
+For instance, you may want to force a number of CPU threads with the
+aforementioned ``-j`` option for all future builds:
 
 .. tabs::
  .. code-tab:: bash Linux/macOS
