@@ -58,6 +58,7 @@ Devlogs
 
 - `Andrea Catania (Physics & AI) <https://www.youtube.com/channel/UCm4RuvYtgpgFDTCgaEUT5uQ/videos>`_
 - `Bastiaan Olij (AR & VR) <https://www.youtube.com/channel/UCrbLJYzJjDf2p-vJC011lYw/videos>`_
+- `DevDuck (2D) <https://www.youtube.com/@devduck/videos>`_
 
 Resources
 ---------
