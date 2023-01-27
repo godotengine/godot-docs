@@ -277,8 +277,8 @@ take a look over the official
   So when using e.g. ``CallDeferred("AddChild")``, ``AddChild`` will not work because
   the API is expecting the original ``snake_case`` version ``add_child``. However, you
   can use any custom properties or methods without this limitation.
-  Prefer using the exposed StringName in the ``PropertyName``, ``MethodName`` and
-  ``SignalName`` to avoid extra StringName allocations and worrying about snake_case naming.
+  Prefer using the exposed ``StringName`` in the ``PropertyName``, ``MethodName`` and
+  ``SignalName`` to avoid extra ``StringName`` allocations and worrying about snake_case naming.
 
 
 As of Godot 4.0, exporting .NET projects is supported for desktop platforms

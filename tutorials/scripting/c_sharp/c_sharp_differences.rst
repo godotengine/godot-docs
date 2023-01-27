@@ -45,7 +45,7 @@ Math global functions, like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2``,
 located under ``Mathf`` as ``Abs``, ``Acos``, ``Asin``, ``Atan`` and ``Atan2``.
 The ``PI`` constant can be found as ``Mathf.Pi``.
 
-C# also provides the static `System.Math`_ and `System.MathF`_ classes that may
+C# also provides static `System.Math`_ and `System.MathF`_ classes that may
 contain other useful mathematical operations.
 
 .. _System.Math: https://learn.microsoft.com/en-us/dotnet/api/system.math
@@ -98,10 +98,10 @@ Example:
         }
     }
 
-`@export` annotation
---------------------
+``@export`` annotation
+----------------------
 
-Use the ``[Export]`` attribute instead of the GDScript `@export` annotation.
+Use the ``[Export]`` attribute instead of the GDScript ``@export`` annotation.
 This attribute can also be provided with optional :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` and ``hintString`` parameters.
 Default values can be set by assigning a value.
 
@@ -128,8 +128,8 @@ Example:
 
 See also: :ref:`doc_c_sharp_exports`.
 
-Signal keyword
---------------
+``signal`` keyword
+------------------
 
 Use the ``[Signal]`` attribute to declare a signal instead of the GDScript ``signal`` keyword.
 This attribute should be used on a `delegate`, whose name signature will be used to define the signal.
@@ -499,15 +499,15 @@ Use the ``Godot.Collections.Dictionary<T>(Godot.Collections.Dictionary)`` constr
 Variant
 -------
 
-``Godot.Variant`` is used as the variant type, any variant-compatible type can be converted from/to it.
-Consider avoiding ``Godot.Variant`` and take advantage of C#'s type safety when possible,
-only use ``Godot.Variant`` when necessary to use Godot untyped APIs.
+``Godot.Variant`` is used to represent the Godot's native :ref:`Variant <doc_variant_class>` type. Any Variant-compatible type can be converted from/to it.
+We recommend avoiding ``Godot.Variant`` unless it is necessary to interact with untyped engine APIs.
+Take advantage of C#'s type safety when possible.
 
-The ``Variant.As{TYPE}`` methods or the generic ``Variant.As<T>`` method can be used to convert
+Any of ``Variant.As{TYPE}`` methods or the generic ``Variant.As<T>`` method can be used to convert
 a ``Godot.Variant`` to a C# type. Since the ``Godot.Variant`` type contains implicit conversions
 defined for all the supported types calling these methods directly is usually not necessary.
 
-Use the ``CreateFrom`` method overloads or the generic ``From<T>`` method to convert a C# type
+Use ``CreateFrom`` method overloads or the generic ``From<T>`` method to convert a C# type
 to a ``Godot.Variant``.
 
 Communicating with other scripting languages
@@ -517,13 +517,13 @@ This is explained extensively in :ref:`doc_cross_language_scripting`.
 
 .. _doc_c_sharp_differences_await:
 
-Await keyword
--------------
+``await`` keyword
+-----------------
 
 Something similar to GDScript's ``await`` keyword can be achieved with C#'s
 `await keyword <https://docs.microsoft.com/en-US/dotnet/csharp/language-reference/keywords/await>`_.
 
-The C# ``await`` keyword can be used with any awaitable expression, it's commonly
+The ``await`` keyword in C# can be used with any awaitable expression. It's commonly
 used with operands of the types `Task`_, `Task<TResult>`_, `ValueTask`_, or `ValueTask<TResult>`_.
 
 An expression ``t`` is awaitable if one of the following holds:
@@ -543,7 +543,7 @@ An expression ``t`` is awaitable if one of the following holds:
 .. _ValueTask: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.valuetask
 .. _ValueTask<TResult>: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.valuetask-1
 
-The equivalent of await on signal can be achieved with the ``await`` keyword and
+An equivalent of awaiting a signal in GDScript can be achieved with the ``await`` keyword and
 ``Godot.Object.ToSignal``.
 
 Example:
