@@ -255,7 +255,11 @@ a constant force of gravity will be applyed downward so that the player stays gr
 			    velocity.y = jump_power
 
 
-
+When you run your project in the editor, the player may immeadiatly fall off-screen.
+To prevent this create a :ref:`StaticBody2D <class_StaticBody2D>` 
+add a :ref:`Sprite2D <class_Sprite2D>`, and a :ref:`CollisionShape2D <class_CollisionShape2D>` to it.
+Finally, place the :ref:`StaticBody2D <class_StaticBody2D>` below the player in the scene.
+Save and run the project again, you now have a platformer character!
 
 Click-and-move
 --------------
