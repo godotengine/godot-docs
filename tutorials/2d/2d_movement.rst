@@ -213,6 +213,50 @@ could get the same effect by setting the angle like this:
     var rotation = GetGlobalMousePosition().AngleToPoint(Position);
 
 
+Platformer-character-(friction + acceleration)
+----------------------------------------
+
+In this example, the player will be able to move left/right and also jump,
+a constant force of gravity will be applyed downward so that the player stays grounded.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+    
+    extends CharacterBody2D
+
+    @export var walkspeed = 200
+    @export var jump_power = -800
+    @export var gravity = 3000
+    @export var acceleration = 0.25
+    @export var friction = 0.1
+
+
+    var velocity = Vector2.ZERO
+
+    func get_input():
+	    var dir = 0
+	    if Input.is_action_pressed("right"):
+		    dir += 1
+	    if Input.is_action_pressed("left"):
+		    dir -= 1
+	    if dir != 0:
+		    velocity.x = lerp(velocity.x, dir * walkspeed, acceleration)
+	    else:
+		    velocity.x = lerp(velocity.x, 0, friction)
+
+
+    func _physics_process(delta):
+	    get_input()
+	    velocity.y += gravity * delta
+	    velocity = move_and_slide(velocity, Vector2.UP)
+	    
+	    if Input.is_action_pressed("jump"):
+		    if is_on_floor():
+			    velocity.y = jump_power
+
+
+
+
 Click-and-move
 --------------
 
