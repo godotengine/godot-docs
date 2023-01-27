@@ -50,7 +50,7 @@ Text tutorials
 
 - `FinepointCGI website by Mitch <http://finepointcgi.io/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
-- `Godot Recipes by KidsCanCode <http://godotrecipes.com/>`__
+- `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__
 
 Devlogs
