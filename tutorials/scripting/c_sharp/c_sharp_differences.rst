@@ -505,6 +505,79 @@ GDScript                C#
 ``Godot.Collections.Array<T>`` is a type-safe wrapper around ``Godot.Collections.Array``.
 Use the ``Godot.Collections.Array<T>(Godot.Collections.Array)`` constructor to create one.
 
+List of Godot's Array methods and their equivalent in C#:
+
+=======================  ==============================================================
+GDScript                 C#
+=======================  ==============================================================
+all                      `System.Linq.Enumerable.All`_
+any                      `System.Linq.Enumerable.Any`_
+append                   Add
+append_array             AddRange
+back                     ``Array[^1]`` or `System.Linq.Enumerable.Last`_ or `System.Linq.Enumerable.LastOrDefault`_
+bsearch                  BinarySearch
+bsearch_custom           N/A
+clear                    Clear
+count                    `System.Linq.Enumerable.Count`_
+duplicate                Duplicate
+erase                    Remove
+fill                     Fill
+filter                   Use `System.Linq.Enumerable.Where`_
+find                     IndexOf
+front                    ``Array[0]`` or `System.Linq.Enumerable.First`_ or `System.Linq.Enumerable.FirstOrDefault`_
+get_typed_builtin        N/A
+get_typed_class_name     N/A
+get_typed_script         N/A
+has                      Contains
+hash                     GD.Hash
+insert                   Insert
+is_empty                 Use ``Count == 0``
+is_read_only             IsReadOnly
+is_typed                 N/A
+make_read_only           MakeReadOnly
+map                      `System.Linq.Enumerable.Select`_
+max                      Max
+min                      Min
+pick_random              PickRandom (Consider using `System.Random`_)
+pop_at                   ``Array[i]`` with ``RemoveAt(i)``
+pop_back                 ``Array[^1]`` with ``RemoveAt(Count - 1)``
+pop_front                ``Array[0]`` with ``RemoveAt(0)``
+push_back                ``Insert(Count, item)``
+push_front               ``Insert(0, item)``
+reduce                   `System.Linq.Enumerable.Aggregate`_
+remove_at                RemoveAt
+resize                   Resize
+reverse                  Reverse
+rfind                    LastIndexOf
+shuffle                  Shuffle
+size                     Count
+slice                    Slice
+sort                     Sort
+sort_custom              `System.Linq.Enumerable.OrderBy`_
+typed_assign             N/A
+operator !=              !RecursiveEqual
+operator +               operator +
+operator <               N/A
+operator <=              N/A
+operator ==              RecursiveEqual
+operator >               N/A
+operator >=              N/A
+operator []              Array[int] indexer
+=======================  ==============================================================
+
+.. _System.Random: https://learn.microsoft.com/en-us/dotnet/api/system.random
+.. _System.Linq.Enumerable.Aggregate: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.aggregate
+.. _System.Linq.Enumerable.All: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.all
+.. _System.Linq.Enumerable.Any: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any
+.. _System.Linq.Enumerable.Count: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.count
+.. _System.Linq.Enumerable.First: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.first
+.. _System.Linq.Enumerable.FirstOrDefault: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.firstordefault
+.. _System.Linq.Enumerable.Last: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.last
+.. _System.Linq.Enumerable.LastOrDefault: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.lastordefault
+.. _System.Linq.Enumerable.OrderBy: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.orderby
+.. _System.Linq.Enumerable.Select: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.select
+.. _System.Linq.Enumerable.Where: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where
+
 Dictionary
 ----------
 
