@@ -219,6 +219,8 @@ Platformer-character-(friction + acceleration)
 In this example, the player will be able to move left/right and also jump,
 a constant force of gravity will be applyed downward so that the player stays grounded.
 
+.. image:: img/platformer_character.gif
+
 .. tabs::
  .. code-tab:: gdscript GDScript
     
