@@ -187,8 +187,8 @@ blanking to finish. This leads to *similar* input lag as V-Sync disabled with
 the same framerate cap (usually less than 1 ms greater), but without any
 tearing.
 
-This can be done by changing the **Debug > Settings > FPS > Force FPS** project
-setting or assigning ``Engine.target_fps`` at run-time in a script.
+This can be done by changing the **Application > Run > Max FPS** project
+setting or assigning ``Engine.max_fps`` at run-time in a script.
 
 On some platforms, you can also opt into a low-latency mode in the graphics
 driver options (such as the NVIDIA Control Panel on Windows). The **Ultra**
@@ -206,8 +206,8 @@ however result in high CPU usage, so 500 Hz may be a safer bet on low-end CPUs.
 If your mouse offers multiple :abbr:`DPI (Dots Per Inch)` settings, consider also
 `using the highest possible setting and reducing in-game sensitivity to reduce mouse latency <https://www.youtube.com/watch?v=6AoRfv9W110>`__.
 
-On Linux, disabling compsoting in window managers that allow it (such as KWin or
-Xfwm) can reduce input lag significantly.
+On Linux, disabling compositing in window managers that allow it (such as KWin
+or Xfwm) can reduce input lag significantly.
 
 Reporting jitter, stutter or input lag problems
 -----------------------------------------------
