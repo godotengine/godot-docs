@@ -579,7 +579,7 @@ A typical household lightbulb can range from around 600 lumens to 1,200 lumens, 
 - void **set_param** **(** :ref:`Param<enum_Light3D_Param>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light3D_Param>` param **)** |const|
 
-Used by :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is ``true``. Sets the intensity of the light source measured in Lux. Lux is a measure pf luminous flux per unit area, it is equal to one lumen per square metre. Lux is the measure of how much light hits a surface at a given time.
+Used by :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s when :ref:`ProjectSettings.rendering/lights_and_shadows/use_physical_light_units<class_ProjectSettings_property_rendering/lights_and_shadows/use_physical_light_units>` is ``true``. Sets the intensity of the light source measured in Lux. Lux is a measure of luminous flux per unit area, it is equal to one lumen per square meter. Lux is the measure of how much light hits a surface at a given time.
 
 On a clear sunny day a surface in direct sunlight may be approximately 100,000 lux, a typical room in a home may be approximately 50 lux, while the moonlit ground may be approximately 0.1 lux.
 

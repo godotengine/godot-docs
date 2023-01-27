@@ -31,13 +31,11 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------+------------------------------------------------------------------+
-   | :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance2D_property_multimesh>`   |
-   +-----------------------------------+------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`normal_map<class_MultiMeshInstance2D_property_normal_map>` |
-   +-----------------------------------+------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>` | :ref:`texture<class_MultiMeshInstance2D_property_texture>`       |
-   +-----------------------------------+------------------------------------------------------------------+
+   +-----------------------------------+----------------------------------------------------------------+
+   | :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance2D_property_multimesh>` |
+   +-----------------------------------+----------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`texture<class_MultiMeshInstance2D_property_texture>`     |
+   +-----------------------------------+----------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -77,25 +75,6 @@ Property Descriptions
 - :ref:`MultiMesh<class_MultiMesh>` **get_multimesh** **(** **)**
 
 The :ref:`MultiMesh<class_MultiMesh>` that will be drawn by the **MultiMeshInstance2D**.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_MultiMeshInstance2D_property_normal_map:
-
-.. rst-class:: classref-property
-
-:ref:`Texture2D<class_Texture2D>` **normal_map**
-
-.. rst-class:: classref-property-setget
-
-- void **set_normal_map** **(** :ref:`Texture2D<class_Texture2D>` value **)**
-- :ref:`Texture2D<class_Texture2D>` **get_normal_map** **(** **)**
-
-The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
-
-\ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
 .. rst-class:: classref-item-separator
 

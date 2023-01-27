@@ -1006,11 +1006,19 @@ Use :ref:`window_get_safe_title_margins<class_DisplayServer_method_window_get_sa
 
 \ **Note:** This flag is implemented on macOS.
 
+.. _class_DisplayServer_constant_WINDOW_FLAG_MOUSE_PASSTHROUGH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MOUSE_PASSTHROUGH** = ``7``
+
+All mouse events are passed to the underlying window of the same application.
+
 .. _class_DisplayServer_constant_WINDOW_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``7``
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``8``
 
 Max value of the :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`.
 
@@ -3011,6 +3019,8 @@ void **warp_mouse** **(** :ref:`Vector2i<class_Vector2i>` position **)**
 
 Sets the mouse cursor position to the given ``position`` relative to an origin at the upper left corner of the currently focused game Window Manager window.
 
+\ **Note:** :ref:`warp_mouse<class_DisplayServer_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3557,11 +3567,11 @@ Note that behavior might be different depending on the platform.
 
 void **window_set_vsync_mode** **(** :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` vsync_mode, :ref:`int<class_int>` window_id=0 **)**
 
-Sets the V-Sync mode of the given window.
+Sets the V-Sync mode of the given window. See also :ref:`ProjectSettings.display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>`.
 
 See :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` for possible values and how they affect the behavior of your application.
 
-Depending on the platform and used renderer, the engine will fall back to :ref:`VSYNC_ENABLED<class_DisplayServer_constant_VSYNC_ENABLED>`, if the desired mode is not supported.
+Depending on the platform and used renderer, the engine will fall back to :ref:`VSYNC_ENABLED<class_DisplayServer_constant_VSYNC_ENABLED>` if the desired mode is not supported.
 
 .. rst-class:: classref-item-separator
 

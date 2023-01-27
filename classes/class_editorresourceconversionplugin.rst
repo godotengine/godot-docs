@@ -12,9 +12,38 @@ EditorResourceConversionPlugin
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Plugin for adding custom converters from one resource format to another in the editor resource picker context menu; for example, converting a :ref:`StandardMaterial3D<class_StandardMaterial3D>` to a :ref:`ShaderMaterial<class_ShaderMaterial>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**EditorResourceConversionPlugin** is invoked when the context menu is brought up for a resource in the editor inspector. Relevant conversion plugins will appear as menu options to convert the given resource to a target type.
+
+Below shows an example of a basic plugin that will convert an :ref:`ImageTexture<class_ImageTexture>` to a :ref:`PortableCompressedTexture2D<class_PortableCompressedTexture2D>`.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    extends EditorResourceConversionPlugin
+    
+    func _handles(resource : Resource):
+        return resource is ImageTexture
+    
+    func _converts_to():
+        return "PortableCompressedTexture2D"
+    
+    func _convert(itex : Resource):
+        var ptex = PortableCompressedTexture2D.new()
+        ptex.create_from_image(itex.get_image(), PortableCompressedTexture2D.COMPRESSION_MODE_LOSSLESS)
+        return ptex
+
+
+
+To use an **EditorResourceConversionPlugin**, register it using the :ref:`EditorPlugin.add_resource_conversion_plugin<class_EditorPlugin_method_add_resource_conversion_plugin>` method first.
 
 .. rst-class:: classref-reftable-group
 
@@ -47,9 +76,7 @@ Method Descriptions
 
 :ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Takes an input :ref:`Resource<class_Resource>` and converts it to the type given in :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>`. The returned :ref:`Resource<class_Resource>` is the result of the conversion, and the input :ref:`Resource<class_Resource>` remains unchanged.
 
 .. rst-class:: classref-item-separator
 
@@ -61,9 +88,7 @@ Method Descriptions
 
 :ref:`String<class_String>` **_converts_to** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the class name of the target type of :ref:`Resource<class_Resource>` that this plugin converts source resources to.
 
 .. rst-class:: classref-item-separator
 
@@ -75,9 +100,7 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **_handles** **(** :ref:`Resource<class_Resource>` resource **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Called to determine whether a particular :ref:`Resource<class_Resource>` can be converted to the target resource type by this plugin.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

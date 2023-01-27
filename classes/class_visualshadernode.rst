@@ -70,23 +70,6 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
-Signals
--------
-
-.. _class_VisualShaderNode_signal_editor_refresh_request:
-
-.. rst-class:: classref-signal
-
-**editor_refresh_request** **(** **)**
-
-Emitted when the node requests an editor refresh. Currently called only in setter of :ref:`VisualShaderNodeTexture.source<class_VisualShaderNodeTexture_property_source>`, :ref:`VisualShaderNodeTexture<class_VisualShaderNodeTexture>`, and :ref:`VisualShaderNodeCubemap<class_VisualShaderNodeCubemap>` (and their derivatives).
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
 Enumerations
 ------------
 

@@ -12,14 +12,14 @@ NavigationLink2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Creates a link between two locations that :ref:`NavigationServer2D<class_NavigationServer2D>` can route agents through.
+Creates a link between two positions that :ref:`NavigationServer2D<class_NavigationServer2D>` can route agents through.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Creates a link between two locations that :ref:`NavigationServer2D<class_NavigationServer2D>` can route agents through.  Links can be used to express navigation methods that aren't just traveling along the surface of the navigation mesh, like zip-lines, teleporters, or jumping across gaps.
+Creates a link between two positions that :ref:`NavigationServer2D<class_NavigationServer2D>` can route agents through.  Links can be used to express navigation methods that aren't just traveling along the surface of the navigation mesh, like zip-lines, teleporters, or jumping across gaps.
 
 .. rst-class:: classref-introduction-group
 
@@ -41,13 +41,13 @@ Properties
    +-------------------------------+-----------------------------------------------------------------------------+-------------------+
    | :ref:`bool<class_bool>`       | :ref:`enabled<class_NavigationLink2D_property_enabled>`                     | ``true``          |
    +-------------------------------+-----------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`end_location<class_NavigationLink2D_property_end_location>`           | ``Vector2(0, 0)`` |
+   | :ref:`Vector2<class_Vector2>` | :ref:`end_position<class_NavigationLink2D_property_end_position>`           | ``Vector2(0, 0)`` |
    +-------------------------------+-----------------------------------------------------------------------------+-------------------+
    | :ref:`float<class_float>`     | :ref:`enter_cost<class_NavigationLink2D_property_enter_cost>`               | ``0.0``           |
    +-------------------------------+-----------------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`         | :ref:`navigation_layers<class_NavigationLink2D_property_navigation_layers>` | ``1``             |
    +-------------------------------+-----------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>` | :ref:`start_location<class_NavigationLink2D_property_start_location>`       | ``Vector2(0, 0)`` |
+   | :ref:`Vector2<class_Vector2>` | :ref:`start_position<class_NavigationLink2D_property_start_position>`       | ``Vector2(0, 0)`` |
    +-------------------------------+-----------------------------------------------------------------------------+-------------------+
    | :ref:`float<class_float>`     | :ref:`travel_cost<class_NavigationLink2D_property_travel_cost>`             | ``1.0``           |
    +-------------------------------+-----------------------------------------------------------------------------+-------------------+
@@ -86,7 +86,7 @@ Property Descriptions
 - void **set_bidirectional** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_bidirectional** **(** **)**
 
-Whether this link can be traveled in both directions or only from :ref:`start_location<class_NavigationLink2D_property_start_location>` to :ref:`end_location<class_NavigationLink2D_property_end_location>`.
+Whether this link can be traveled in both directions or only from :ref:`start_position<class_NavigationLink2D_property_start_position>` to :ref:`end_position<class_NavigationLink2D_property_end_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -109,16 +109,16 @@ Whether this link is currently active. If ``false``, :ref:`NavigationServer2D.ma
 
 ----
 
-.. _class_NavigationLink2D_property_end_location:
+.. _class_NavigationLink2D_property_end_position:
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **end_location** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **end_position** = ``Vector2(0, 0)``
 
 .. rst-class:: classref-property-setget
 
-- void **set_end_location** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_end_location** **(** **)**
+- void **set_end_position** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_end_position** **(** **)**
 
 Ending position of the link.
 
@@ -164,16 +164,16 @@ A bitfield determining all navigation layers the link belongs to. These navigati
 
 ----
 
-.. _class_NavigationLink2D_property_start_location:
+.. _class_NavigationLink2D_property_start_position:
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **start_location** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **start_position** = ``Vector2(0, 0)``
 
 .. rst-class:: classref-property-setget
 
-- void **set_start_location** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_start_location** **(** **)**
+- void **set_start_position** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_start_position** **(** **)**
 
 Starting position of the link.
 

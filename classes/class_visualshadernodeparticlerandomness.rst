@@ -72,11 +72,19 @@ A 2D vector type.
 
 A 3D vector type.
 
+.. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_VECTOR_4D:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **OP_TYPE_VECTOR_4D** = ``3``
+
+A 4D vector type.
+
 .. _class_VisualShaderNodeParticleRandomness_constant_OP_TYPE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **OP_TYPE_MAX** = ``3``
+:ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` **OP_TYPE_MAX** = ``4``
 
 Represents the size of the :ref:`OpType<enum_VisualShaderNodeParticleRandomness_OpType>` enum.
 

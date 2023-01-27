@@ -93,7 +93,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     }
     
     // Called when the HTTP request is completed.
-    private void HttpRequestCompleted(int result, int response_code, string[] headers, byte[] body)
+    private void HttpRequestCompleted(int result, int responseCode, string[] headers, byte[] body)
     {
         var json = new JSON();
         json.Parse(body.GetStringFromUTF8());
@@ -158,7 +158,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     }
     
     // Called when the HTTP request is completed.
-    private void HttpRequestCompleted(int result, int response_code, string[] headers, byte[] body)
+    private void HttpRequestCompleted(int result, int responseCode, string[] headers, byte[] body)
     {
         if (result != (int)HTTPRequest.Result.Success)
         {

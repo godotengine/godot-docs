@@ -31,13 +31,13 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+-----------------------------------------------------------------------------------------+----------+
-   | :ref:`int<class_int>`     | :ref:`layers<class_VisualInstance3D_property_layers>`                                   | ``1``    |
-   +---------------------------+-----------------------------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>` | :ref:`sorting_offset<class_VisualInstance3D_property_sorting_offset>`                   | ``0.0``  |
-   +---------------------------+-----------------------------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`   | :ref:`sorting_use_aabb_center<class_VisualInstance3D_property_sorting_use_aabb_center>` | ``true`` |
-   +---------------------------+-----------------------------------------------------------------------------------------+----------+
+   +---------------------------+-----------------------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`layers<class_VisualInstance3D_property_layers>`                                   | ``1``   |
+   +---------------------------+-----------------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`sorting_offset<class_VisualInstance3D_property_sorting_offset>`                   | ``0.0`` |
+   +---------------------------+-----------------------------------------------------------------------------------------+---------+
+   | :ref:`bool<class_bool>`   | :ref:`sorting_use_aabb_center<class_VisualInstance3D_property_sorting_use_aabb_center>` |         |
+   +---------------------------+-----------------------------------------------------------------------------------------+---------+
 
 .. rst-class:: classref-reftable-group
 
@@ -114,7 +114,7 @@ The sorting offset used by this **VisualInstance3D**. Adjusting it to a higher v
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **sorting_use_aabb_center** = ``true``
+:ref:`bool<class_bool>` **sorting_use_aabb_center**
 
 .. rst-class:: classref-property-setget
 

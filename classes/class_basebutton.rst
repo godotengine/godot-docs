@@ -356,7 +356,7 @@ If ``true``, the button stays pressed when moving the cursor outside the button 
 - void **set_shortcut_feedback** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_shortcut_feedback** **(** **)**
 
-If ``true``, the button will appear pressed when its shortcut is activated. If ``false`` and :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is ``false``, the shortcut will activate the button without appearing to press the button.
+If ``true``, the button will highlight for a short amount of time when its shortcut is activated. If ``false`` and :ref:`toggle_mode<class_BaseButton_property_toggle_mode>` is ``false``, the shortcut will activate without any visual feedback.
 
 .. rst-class:: classref-item-separator
 

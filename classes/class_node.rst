@@ -657,6 +657,14 @@ Notification received when the node is disabled. See :ref:`PROCESS_MODE_DISABLED
 
 Notification received when the node is enabled again after being disabled. See :ref:`PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`.
 
+.. _class_Node_constant_NOTIFICATION_NODE_RECACHE_REQUESTED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_NODE_RECACHE_REQUESTED** = ``30``
+
+Notification received when other nodes in the tree may have been removed/replaced and node pointers may require re-caching.
+
 .. _class_Node_constant_NOTIFICATION_EDITOR_PRE_SAVE:
 
 .. rst-class:: classref-constant
@@ -2121,7 +2129,7 @@ Changes the RPC mode for the given ``method`` with the given ``config`` which sh
         channel = 0,
     }
 
-See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` and :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`. An alternative is annotating methods and properties with the corresponding annotation (``@rpc(any)``, ``@rpc(authority)``). By default, methods are not exposed to networking (and RPCs).
+See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` and :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`. An alternative is annotating methods and properties with the corresponding annotation (``@rpc("any")``, ``@rpc("authority")``). By default, methods are not exposed to networking (and RPCs).
 
 .. rst-class:: classref-item-separator
 

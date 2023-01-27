@@ -23,6 +23,8 @@ Allows editing a concave or convex collision polygon's vertices on a selected pl
 
 \ **Note:** Since this is an editor-only helper, properties modified during gameplay will have no effect.
 
+\ **Warning:** A non-uniformly scaled CollisionPolygon3D node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change its :ref:`polygon<class_CollisionPolygon3D_property_polygon>`'s vertices instead.
+
 .. rst-class:: classref-reftable-group
 
 Properties

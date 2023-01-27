@@ -165,7 +165,7 @@ Methods
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Object<class_Object>`                  | :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>` **(** :ref:`String<class_String>` for_text **)** |virtual| |const|                                                                                                                          |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i[]<class_Vector2i>`            | :ref:`_structured_text_parser<class_Control_method__structured_text_parser>` **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|                                                                                        |
+   | :ref:`Vector3i[]<class_Vector3i>`            | :ref:`_structured_text_parser<class_Control_method__structured_text_parser>` **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|                                                                                        |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                         | :ref:`accept_event<class_Control_method_accept_event>` **(** **)**                                                                                                                                                                                                 |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1632,7 +1632,7 @@ By default, the node's pivot is its top-left corner. When you change its :ref:`r
 
 - :ref:`Vector2<class_Vector2>` **get_position** **(** **)**
 
-The node's position, relative to its parent. It corresponds to the rectangle's top-left corner. The property is not affected by :ref:`pivot_offset<class_Control_property_pivot_offset>`.
+The node's position, relative to its containing node. It corresponds to the rectangle's top-left corner. The property is not affected by :ref:`pivot_offset<class_Control_property_pivot_offset>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1720,7 +1720,7 @@ The :ref:`Node<class_Node>` which must be a parent of the focused **Control** fo
 
 - :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
 
-The size of the node's bounding rectangle, in pixels. :ref:`Container<class_Container>` nodes update this property automatically.
+The size of the node's bounding rectangle, in the node's coordinate system. :ref:`Container<class_Container>` nodes update this property automatically.
 
 .. rst-class:: classref-item-separator
 
@@ -2104,7 +2104,7 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
  .. code-tab:: gdscript
 
     func _make_custom_tooltip(for_text):
-        var tooltip = preload("res://SomeTooltipScene.tscn").instantiate()
+        var tooltip = preload("res://some_tooltip_scene.tscn").instantiate()
         tooltip.get_node("Label").text = for_text
         return tooltip
 
@@ -2112,7 +2112,7 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
 
     public override Godot.Control _MakeCustomTooltip(String forText)
     {
-        Node tooltip = ResourceLoader.Load<PackedScene>("res://SomeTooltipScene.tscn").Instantiate();
+        Node tooltip = ResourceLoader.Load<PackedScene>("res://some_tooltip_scene.tscn").Instantiate();
         tooltip.GetNode<Label>("Label").Text = forText;
         return tooltip;
     }
@@ -2127,11 +2127,11 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i[]<class_Vector2i>` **_structured_text_parser** **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|
+:ref:`Vector3i[]<class_Vector3i>` **_structured_text_parser** **(** :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |virtual| |const|
 
 User defined BiDi algorithm override function.
 
-Returns an :ref:`Array<class_Array>` of :ref:`Vector2i<class_Vector2i>` text ranges, in the left-to-right order. Ranges should cover full source ``text`` without overlaps. BiDi algorithm will be used on each range separately.
+Returns an :ref:`Array<class_Array>` of :ref:`Vector3i<class_Vector3i>` text ranges and text base directions, in the left-to-right order. Ranges should cover full source ``text`` without overlaps. BiDi algorithm will be used on each range separately.
 
 .. rst-class:: classref-item-separator
 
@@ -2429,7 +2429,11 @@ Returns the focus neighbor for the specified :ref:`Side<enum_@GlobalScope_Side>`
 
 :ref:`Rect2<class_Rect2>` **get_global_rect** **(** **)** |const|
 
-Returns the position and size of the control relative to the :ref:`CanvasLayer<class_CanvasLayer>`. See :ref:`global_position<class_Control_property_global_position>` and :ref:`size<class_Control_property_size>`.
+Returns the position and size of the control relative to the containing canvas. See :ref:`global_position<class_Control_property_global_position>` and :ref:`size<class_Control_property_size>`.
+
+\ **Note:** If the node itself or any parent :ref:`CanvasItem<class_CanvasItem>` between the node and the canvas have a non default rotation or skew, the resulting size is likely not meaningful.
+
+\ **Note:** Setting :ref:`Viewport.gui_snap_controls_to_pixels<class_Viewport_property_gui_snap_controls_to_pixels>` to ``true`` can lead to rounding inaccuracies between the displayed control and the returned :ref:`Rect2<class_Rect2>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2489,7 +2493,11 @@ Returns the parent control node.
 
 :ref:`Rect2<class_Rect2>` **get_rect** **(** **)** |const|
 
-Returns the position and size of the control relative to the top-left corner of the parent Control. See :ref:`position<class_Control_property_position>` and :ref:`size<class_Control_property_size>`.
+Returns the position and size of the control in the coordinate system of the containing node. See :ref:`position<class_Control_property_position>`, :ref:`scale<class_Control_property_scale>` and :ref:`size<class_Control_property_size>`.
+
+\ **Note:** If :ref:`rotation<class_Control_property_rotation>` is not the default rotation, the resulting size is not meaningful.
+
+\ **Note:** Setting :ref:`Viewport.gui_snap_controls_to_pixels<class_Viewport_property_gui_snap_controls_to_pixels>` to ``true`` can lead to rounding inaccuracies between the displayed control and the returned :ref:`Rect2<class_Rect2>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3264,6 +3272,8 @@ Invalidates the size cache in this node and in parent nodes up to top level. Int
 void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` position **)**
 
 Moves the mouse cursor to ``position``, relative to :ref:`position<class_Control_property_position>` of this **Control**.
+
+\ **Note:** :ref:`warp_mouse<class_Control_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

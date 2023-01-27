@@ -10,7 +10,7 @@
 JSON
 ====
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
 Helper class for creating and parsing JSON data.
 
@@ -85,7 +85,9 @@ Methods
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`           | :ref:`get_error_message<class_JSON_method_get_error_message>` **(** **)** |const|                                                                                                                                                  |
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_JSON_method_parse>` **(** :ref:`String<class_String>` json_string **)**                                                                                                                                          |
+   | :ref:`String<class_String>`           | :ref:`get_parsed_text<class_JSON_method_get_parsed_text>` **(** **)** |const|                                                                                                                                                      |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`parse<class_JSON_method_parse>` **(** :ref:`String<class_String>` json_text, :ref:`bool<class_bool>` keep_text=false **)**                                                                                                   |
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`         | :ref:`parse_string<class_JSON_method_parse_string>` **(** :ref:`String<class_String>` json_string **)** |static|                                                                                                                   |
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -147,17 +149,31 @@ Returns an empty string if the last call to :ref:`parse<class_JSON_method_parse>
 
 ----
 
+.. _class_JSON_method_get_parsed_text:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_parsed_text** **(** **)** |const|
+
+Return the text parsed by :ref:`parse<class_JSON_method_parse>` as long as the function is instructed to keep it.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_JSON_method_parse:
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` json_string **)**
+:ref:`Error<enum_@GlobalScope_Error>` **parse** **(** :ref:`String<class_String>` json_text, :ref:`bool<class_bool>` keep_text=false **)**
 
-Attempts to parse the ``json_string`` provided.
+Attempts to parse the ``json_text`` provided.
 
 Returns an :ref:`Error<enum_@GlobalScope_Error>`. If the parse was successful, it returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` and the result can be retrieved using :ref:`data<class_JSON_property_data>`. If unsuccessful, use :ref:`get_error_line<class_JSON_method_get_error_line>` and :ref:`get_error_message<class_JSON_method_get_error_message>` for identifying the source of the failure.
 
 Non-static variant of :ref:`parse_string<class_JSON_method_parse_string>`, if you want custom error handling.
+
+The optional ``keep_text`` argument instructs the parser to keep a copy of the original text. This text can be obtained later by using the :ref:`get_parsed_text<class_JSON_method_get_parsed_text>` function and is used when saving the resource (instead of generating new text from :ref:`data<class_JSON_property_data>`).
 
 .. rst-class:: classref-item-separator
 

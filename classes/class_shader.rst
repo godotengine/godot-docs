@@ -55,7 +55,7 @@ Methods
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Mode<enum_Shader_Mode>`     | :ref:`get_mode<class_Shader_method_get_mode>` **(** **)** |const|                                                                                                                                                      |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`           | :ref:`has_parameter<class_Shader_method_has_parameter>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                   |
+   | :ref:`Array<class_Array>`         | :ref:`get_shader_uniform_list<class_Shader_method_get_shader_uniform_list>` **(** :ref:`bool<class_bool>` get_groups=false **)**                                                                                       |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`set_default_texture_parameter<class_Shader_method_set_default_texture_parameter>` **(** :ref:`StringName<class_StringName>` name, :ref:`Texture2D<class_Texture2D>` texture, :ref:`int<class_int>` index=0 **)** |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -174,15 +174,15 @@ Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shad
 
 ----
 
-.. _class_Shader_method_has_parameter:
+.. _class_Shader_method_get_shader_uniform_list:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **has_parameter** **(** :ref:`StringName<class_StringName>` name **)** |const|
+:ref:`Array<class_Array>` **get_shader_uniform_list** **(** :ref:`bool<class_bool>` get_groups=false **)**
 
-Returns ``true`` if the shader has this param defined as a uniform in its code.
+Get the list of shader uniforms that can be assigned to a :ref:`ShaderMaterial<class_ShaderMaterial>`, for use with :ref:`ShaderMaterial.set_shader_parameter<class_ShaderMaterial_method_set_shader_parameter>` and :ref:`ShaderMaterial.get_shader_parameter<class_ShaderMaterial_method_get_shader_parameter>`. The parameters returned are contained in dictionaries in a similar format to the ones returned by :ref:`Object.get_property_list<class_Object_method_get_property_list>`.
 
-\ **Note:** ``name`` must match the name of the uniform in the code exactly.
+If argument ``get_groups`` is true, parameter grouping hints will be provided.
 
 .. rst-class:: classref-item-separator
 

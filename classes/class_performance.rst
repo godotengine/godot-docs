@@ -92,11 +92,19 @@ Time it took to complete one frame, in seconds. *Lower is better.*
 
 Time it took to complete one physics frame, in seconds. *Lower is better.*
 
+.. _class_Performance_constant_TIME_NAVIGATION_PROCESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **TIME_NAVIGATION_PROCESS** = ``3``
+
+Time it took to complete one navigation step, in seconds. This includes navigation map updates as well as agent avoidance calculations. *Lower is better.*
+
 .. _class_Performance_constant_MEMORY_STATIC:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_STATIC** = ``3``
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_STATIC** = ``4``
 
 Static memory currently used, in bytes. Not available in release builds. *Lower is better.*
 
@@ -104,7 +112,7 @@ Static memory currently used, in bytes. Not available in release builds. *Lower 
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_STATIC_MAX** = ``4``
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_STATIC_MAX** = ``5``
 
 Available static memory. Not available in release builds. *Lower is better.*
 
@@ -112,7 +120,7 @@ Available static memory. Not available in release builds. *Lower is better.*
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_MESSAGE_BUFFER_MAX** = ``5``
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_MESSAGE_BUFFER_MAX** = ``6``
 
 Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications. *Lower is better.*
 
@@ -120,7 +128,7 @@ Largest amount of memory the message queue buffer has used, in bytes. The messag
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_COUNT** = ``6``
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_COUNT** = ``7``
 
 Number of objects currently instantiated (including nodes). *Lower is better.*
 
@@ -128,7 +136,7 @@ Number of objects currently instantiated (including nodes). *Lower is better.*
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_RESOURCE_COUNT** = ``7``
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_RESOURCE_COUNT** = ``8``
 
 Number of resources currently used. *Lower is better.*
 
@@ -136,7 +144,7 @@ Number of resources currently used. *Lower is better.*
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_NODE_COUNT** = ``8``
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_NODE_COUNT** = ``9``
 
 Number of nodes currently instantiated in the scene tree. This also includes the root node. *Lower is better.*
 
@@ -144,7 +152,7 @@ Number of nodes currently instantiated in the scene tree. This also includes the
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_ORPHAN_NODE_COUNT** = ``9``
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_ORPHAN_NODE_COUNT** = ``10``
 
 Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree. *Lower is better.*
 
@@ -152,7 +160,7 @@ Number of orphan nodes, i.e. nodes which are not parented to a node of the scene
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TOTAL_OBJECTS_IN_FRAME** = ``10``
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TOTAL_OBJECTS_IN_FRAME** = ``11``
 
 The total number of objects in the last rendered frame. This metric doesn't include culled objects (either via hiding nodes, frustum culling or occlusion culling). *Lower is better.*
 
@@ -160,7 +168,7 @@ The total number of objects in the last rendered frame. This metric doesn't incl
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TOTAL_PRIMITIVES_IN_FRAME** = ``11``
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TOTAL_PRIMITIVES_IN_FRAME** = ``12``
 
 The total number of vertices or indices rendered in the last rendered frame. This metric doesn't include primitives from culled objects (either via hiding nodes, frustum culling or occlusion culling). Due to the depth prepass and shadow passes, the number of primitives is always higher than the actual number of vertices in the scene (typically double or triple the original vertex count). *Lower is better.*
 
@@ -168,7 +176,7 @@ The total number of vertices or indices rendered in the last rendered frame. Thi
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TOTAL_DRAW_CALLS_IN_FRAME** = ``12``
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TOTAL_DRAW_CALLS_IN_FRAME** = ``13``
 
 The total number of draw calls performed in the last rendered frame. This metric doesn't include culled objects (either via hiding nodes, frustum culling or occlusion culling), since they do not result in draw calls. *Lower is better.*
 
@@ -176,7 +184,7 @@ The total number of draw calls performed in the last rendered frame. This metric
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **RENDER_VIDEO_MEM_USED** = ``13``
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_VIDEO_MEM_USED** = ``14``
 
 The amount of video memory used (texture and vertex memory combined, in bytes). Since this metric also includes miscellaneous allocations, this value is always greater than the sum of :ref:`RENDER_TEXTURE_MEM_USED<class_Performance_constant_RENDER_TEXTURE_MEM_USED>` and :ref:`RENDER_BUFFER_MEM_USED<class_Performance_constant_RENDER_BUFFER_MEM_USED>`. *Lower is better.*
 
@@ -184,7 +192,7 @@ The amount of video memory used (texture and vertex memory combined, in bytes). 
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TEXTURE_MEM_USED** = ``14``
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TEXTURE_MEM_USED** = ``15``
 
 The amount of texture memory used (in bytes). *Lower is better.*
 
@@ -192,7 +200,7 @@ The amount of texture memory used (in bytes). *Lower is better.*
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **RENDER_BUFFER_MEM_USED** = ``15``
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_BUFFER_MEM_USED** = ``16``
 
 The amount of render buffer memory used (in bytes). *Lower is better.*
 
@@ -200,7 +208,7 @@ The amount of render buffer memory used (in bytes). *Lower is better.*
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_ACTIVE_OBJECTS** = ``16``
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_ACTIVE_OBJECTS** = ``17``
 
 Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game. *Lower is better.*
 
@@ -208,7 +216,7 @@ Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game. *Lower
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_COLLISION_PAIRS** = ``17``
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_COLLISION_PAIRS** = ``18``
 
 Number of collision pairs in the 2D physics engine. *Lower is better.*
 
@@ -216,7 +224,7 @@ Number of collision pairs in the 2D physics engine. *Lower is better.*
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_ISLAND_COUNT** = ``18``
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_ISLAND_COUNT** = ``19``
 
 Number of islands in the 2D physics engine. *Lower is better.*
 
@@ -224,7 +232,7 @@ Number of islands in the 2D physics engine. *Lower is better.*
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_ACTIVE_OBJECTS** = ``19``
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_ACTIVE_OBJECTS** = ``20``
 
 Number of active :ref:`RigidBody3D<class_RigidBody3D>` and :ref:`VehicleBody3D<class_VehicleBody3D>` nodes in the game. *Lower is better.*
 
@@ -232,7 +240,7 @@ Number of active :ref:`RigidBody3D<class_RigidBody3D>` and :ref:`VehicleBody3D<c
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_COLLISION_PAIRS** = ``20``
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_COLLISION_PAIRS** = ``21``
 
 Number of collision pairs in the 3D physics engine. *Lower is better.*
 
@@ -240,7 +248,7 @@ Number of collision pairs in the 3D physics engine. *Lower is better.*
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_ISLAND_COUNT** = ``21``
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_ISLAND_COUNT** = ``22``
 
 Number of islands in the 3D physics engine. *Lower is better.*
 
@@ -248,15 +256,87 @@ Number of islands in the 3D physics engine. *Lower is better.*
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **AUDIO_OUTPUT_LATENCY** = ``22``
+:ref:`Monitor<enum_Performance_Monitor>` **AUDIO_OUTPUT_LATENCY** = ``23``
 
 Output latency of the :ref:`AudioServer<class_AudioServer>`. *Lower is better.*
+
+.. _class_Performance_constant_NAVIGATION_ACTIVE_MAPS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_ACTIVE_MAPS** = ``24``
+
+Number of active navigation maps in the :ref:`NavigationServer3D<class_NavigationServer3D>`. This also includes the two empty default navigation maps created by World2D and World3D.
+
+.. _class_Performance_constant_NAVIGATION_REGION_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_REGION_COUNT** = ``25``
+
+Number of active navigation regions in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_AGENT_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_AGENT_COUNT** = ``26``
+
+Number of active navigation agents processing avoidance in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_LINK_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_LINK_COUNT** = ``27``
+
+Number of active navigation links in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_POLYGON_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_POLYGON_COUNT** = ``28``
+
+Number of navigation mesh polygons in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_EDGE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_EDGE_COUNT** = ``29``
+
+Number of navigation mesh polygon edges in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_EDGE_MERGE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_EDGE_MERGE_COUNT** = ``30``
+
+Number of navigation mesh polygon edges that were merged due to edge key overlap in the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_EDGE_CONNECTION_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_EDGE_CONNECTION_COUNT** = ``31``
+
+Number of polygon edges that are considered connected by edge proximity :ref:`NavigationServer3D<class_NavigationServer3D>`.
+
+.. _class_Performance_constant_NAVIGATION_EDGE_FREE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **NAVIGATION_EDGE_FREE_COUNT** = ``32``
+
+Number of navigation mesh polygon edges that could not be merged in the :ref:`NavigationServer3D<class_NavigationServer3D>`. The edges still may be connected by edge proximity or with links.
 
 .. _class_Performance_constant_MONITOR_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``23``
+:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``33``
 
 Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
 
@@ -306,7 +386,7 @@ Adds a custom monitor with the name ``id``. You can specify the category of the 
 
     public override void _Ready()
     {
-        var monitorValue = new Callable(this, nameof(GetMonitorValue));
+        var monitorValue = new Callable(this, MethodName.GetMonitorValue);
     
         // Adds monitor with name "MyName" to category "MyCategory".
         Performance.AddCustomMonitor("MyCategory/MyMonitor", monitorValue);

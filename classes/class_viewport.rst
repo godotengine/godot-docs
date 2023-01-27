@@ -1803,7 +1803,7 @@ Returns an individual bit on the rendering layer mask.
 
 :ref:`Transform2D<class_Transform2D>` **get_final_transform** **(** **)** |const|
 
-Returns the total transform of the viewport.
+Returns the transform from the viewport's coordinate system to the embedder's coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -2090,6 +2090,8 @@ Sets the number of subdivisions to use in the specified quadrant. A higher numbe
 void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` position **)**
 
 Moves the mouse pointer to the specified position in this **Viewport** using the coordinate system of this **Viewport**.
+
+\ **Note:** :ref:`warp_mouse<class_Viewport_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

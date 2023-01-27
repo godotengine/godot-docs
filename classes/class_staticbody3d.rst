@@ -27,9 +27,11 @@ A static body is a simple body that doesn't move under physics simulation, i.e. 
 
 They have extra functionalities to move and affect other bodies:
 
-\ **Static transform change:** Static bodies can be moved by animation or script. In this case, they are just teleported and don't affect other bodies on their path.
+\ *Static transform change:* Static bodies can be moved by animation or script. In this case, they are just teleported and don't affect other bodies on their path.
 
-\ **Constant velocity:** When :ref:`constant_linear_velocity<class_StaticBody3D_property_constant_linear_velocity>` or :ref:`constant_angular_velocity<class_StaticBody3D_property_constant_angular_velocity>` is set, static bodies don't move themselves but affect touching bodies as if they were moving. This is useful for simulating conveyor belts or conveyor wheels.
+\ *Constant velocity:* When :ref:`constant_linear_velocity<class_StaticBody3D_property_constant_linear_velocity>` or :ref:`constant_angular_velocity<class_StaticBody3D_property_constant_angular_velocity>` is set, static bodies don't move themselves but affect touching bodies as if they were moving. This is useful for simulating conveyor belts or conveyor wheels.
+
+\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
 
 .. rst-class:: classref-introduction-group
 

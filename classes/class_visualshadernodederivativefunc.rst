@@ -29,11 +29,13 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------------+-------------------------------------------------------------------------+-------+
-   | :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` | :ref:`function<class_VisualShaderNodeDerivativeFunc_property_function>` | ``0`` |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------+-------+
-   | :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>`     | :ref:`op_type<class_VisualShaderNodeDerivativeFunc_property_op_type>`   | ``0`` |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------+-------+
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>`   | :ref:`function<class_VisualShaderNodeDerivativeFunc_property_function>`   | ``0`` |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>`       | :ref:`op_type<class_VisualShaderNodeDerivativeFunc_property_op_type>`     | ``0`` |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------+-------+
+   | :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` | :ref:`precision<class_VisualShaderNodeDerivativeFunc_property_precision>` | ``0`` |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------+-------+
 
 .. rst-class:: classref-section-separator
 
@@ -132,6 +134,48 @@ Derivative in ``y`` using local differencing.
 
 Represents the size of the :ref:`Function<enum_VisualShaderNodeDerivativeFunc_Function>` enum.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_VisualShaderNodeDerivativeFunc_Precision:
+
+.. rst-class:: classref-enumeration
+
+enum **Precision**:
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_PRECISION_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **PRECISION_NONE** = ``0``
+
+No precision is specified, the GPU driver is allowed to use whatever level of precision it chooses. This is the default option and is equivalent to using ``dFdx()`` or ``dFdy()`` in text shaders.
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_PRECISION_COARSE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **PRECISION_COARSE** = ``1``
+
+The derivative will be calculated using the current fragment's neighbors (which may not include the current fragment). This tends to be faster than using :ref:`PRECISION_FINE<class_VisualShaderNodeDerivativeFunc_constant_PRECISION_FINE>`, but may not be suitable when more precision is needed. This is equivalent to using ``dFdxCoarse()`` or ``dFdyCoarse()`` in text shaders.
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_PRECISION_FINE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **PRECISION_FINE** = ``2``
+
+The derivative will be calculated using the current fragment and its immediate neighbors. This tends to be slower than using :ref:`PRECISION_COARSE<class_VisualShaderNodeDerivativeFunc_constant_PRECISION_COARSE>`, but may be necessary when more precision is needed. This is equivalent to using ``dFdxFine()`` or ``dFdyFine()`` in text shaders.
+
+.. _class_VisualShaderNodeDerivativeFunc_constant_PRECISION_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **PRECISION_MAX** = ``3``
+
+Represents the size of the :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` enum.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -170,6 +214,23 @@ A derivative function type. See :ref:`Function<enum_VisualShaderNodeDerivativeFu
 - :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` **get_op_type** **(** **)**
 
 A type of operands and returned value. See :ref:`OpType<enum_VisualShaderNodeDerivativeFunc_OpType>` for options.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VisualShaderNodeDerivativeFunc_property_precision:
+
+.. rst-class:: classref-property
+
+:ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **precision** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_precision** **(** :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` value **)**
+- :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **get_precision** **(** **)**
+
+Sets the level of precision to use for the derivative function. See :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` for options. When using the GL_Compatibility renderer, this setting has no effect.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

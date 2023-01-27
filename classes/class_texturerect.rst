@@ -36,19 +36,19 @@ Properties
 .. table::
    :widths: auto
 
-   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`                           | ``false``                                                             |
-   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`                           | ``false``                                                             |
-   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                          | :ref:`ignore_texture_size<class_TextureRect_property_ignore_texture_size>` | ``false``                                                             |
-   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                               | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
-   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>`               | ``0``                                                                 |
-   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>`                | :ref:`texture<class_TextureRect_property_texture>`                         |                                                                       |
-   +--------------------------------------------------+----------------------------------------------------------------------------+-----------------------------------------------------------------------+
+   +--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`ExpandMode<enum_TextureRect_ExpandMode>`   | :ref:`expand_mode<class_TextureRect_property_expand_mode>`   | ``0``                                                                 |
+   +--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`flip_h<class_TextureRect_property_flip_h>`             | ``false``                                                             |
+   +--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                          | :ref:`flip_v<class_TextureRect_property_flip_v>`             | ``false``                                                             |
+   +--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>`     | mouse_filter                                                 | ``1`` (overrides :ref:`Control<class_Control_property_mouse_filter>`) |
+   +--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` | ``0``                                                                 |
+   +--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>`                | :ref:`texture<class_TextureRect_property_texture>`           |                                                                       |
+   +--------------------------------------------------+--------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -58,6 +58,64 @@ Properties
 
 Enumerations
 ------------
+
+.. _enum_TextureRect_ExpandMode:
+
+.. rst-class:: classref-enumeration
+
+enum **ExpandMode**:
+
+.. _class_TextureRect_constant_EXPAND_KEEP_SIZE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ExpandMode<enum_TextureRect_ExpandMode>` **EXPAND_KEEP_SIZE** = ``0``
+
+The minimum size will be equal to texture size, i.e. **TextureRect** can't be smaller than the texture.
+
+.. _class_TextureRect_constant_EXPAND_IGNORE_SIZE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ExpandMode<enum_TextureRect_ExpandMode>` **EXPAND_IGNORE_SIZE** = ``1``
+
+The size of the texture won't be considered for minimum size calculation, so the **TextureRect** can be shrunk down past the texture size.
+
+.. _class_TextureRect_constant_EXPAND_FIT_WIDTH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ExpandMode<enum_TextureRect_ExpandMode>` **EXPAND_FIT_WIDTH** = ``2``
+
+The height of the texture will be ignored. Minimum width will be equal to the current height. Useful for horizontal layouts, e.g. inside :ref:`HBoxContainer<class_HBoxContainer>`.
+
+.. _class_TextureRect_constant_EXPAND_FIT_WIDTH_PROPORTIONAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ExpandMode<enum_TextureRect_ExpandMode>` **EXPAND_FIT_WIDTH_PROPORTIONAL** = ``3``
+
+Same as :ref:`EXPAND_FIT_WIDTH<class_TextureRect_constant_EXPAND_FIT_WIDTH>`, but keeps texture's aspect ratio.
+
+.. _class_TextureRect_constant_EXPAND_FIT_HEIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ExpandMode<enum_TextureRect_ExpandMode>` **EXPAND_FIT_HEIGHT** = ``4``
+
+The width of the texture will be ignored. Minimum height will be equal to the current width. Useful for vertical layouts, e.g. inside :ref:`VBoxContainer<class_VBoxContainer>`.
+
+.. _class_TextureRect_constant_EXPAND_FIT_HEIGHT_PROPORTIONAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ExpandMode<enum_TextureRect_ExpandMode>` **EXPAND_FIT_HEIGHT_PROPORTIONAL** = ``5``
+
+Same as :ref:`EXPAND_FIT_HEIGHT<class_TextureRect_constant_EXPAND_FIT_HEIGHT>`, but keeps texture's aspect ratio.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _enum_TextureRect_StretchMode:
 
@@ -130,6 +188,23 @@ Scale the texture so that the shorter side fits the bounding rectangle. The othe
 Property Descriptions
 ---------------------
 
+.. _class_TextureRect_property_expand_mode:
+
+.. rst-class:: classref-property
+
+:ref:`ExpandMode<enum_TextureRect_ExpandMode>` **expand_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_expand_mode** **(** :ref:`ExpandMode<enum_TextureRect_ExpandMode>` value **)**
+- :ref:`ExpandMode<enum_TextureRect_ExpandMode>` **get_expand_mode** **(** **)**
+
+Defines how minimum size is determined based on the texture's size. See :ref:`ExpandMode<enum_TextureRect_ExpandMode>` for options.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextureRect_property_flip_h:
 
 .. rst-class:: classref-property
@@ -159,23 +234,6 @@ If ``true``, texture is flipped horizontally.
 - :ref:`bool<class_bool>` **is_flipped_v** **(** **)**
 
 If ``true``, texture is flipped vertically.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_TextureRect_property_ignore_texture_size:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **ignore_texture_size** = ``false``
-
-.. rst-class:: classref-property-setget
-
-- void **set_ignore_texture_size** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_ignore_texture_size** **(** **)**
-
-If ``true``, the size of the texture won't be considered for minimum size calculation, so the **TextureRect** can be shrunk down past the texture size. Useful for preventing **TextureRect**\ s from breaking GUI layout regardless of their texture size.
 
 .. rst-class:: classref-item-separator
 

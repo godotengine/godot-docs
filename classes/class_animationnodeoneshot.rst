@@ -61,6 +61,40 @@ Properties
 Enumerations
 ------------
 
+.. _enum_AnimationNodeOneShot_OneShotRequest:
+
+.. rst-class:: classref-enumeration
+
+enum **OneShotRequest**:
+
+.. _class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OneShotRequest<enum_AnimationNodeOneShot_OneShotRequest>` **ONE_SHOT_REQUEST_NONE** = ``0``
+
+
+
+.. _class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_FIRE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OneShotRequest<enum_AnimationNodeOneShot_OneShotRequest>` **ONE_SHOT_REQUEST_FIRE** = ``1``
+
+
+
+.. _class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_ABORT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`OneShotRequest<enum_AnimationNodeOneShot_OneShotRequest>` **ONE_SHOT_REQUEST_ABORT** = ``2``
+
+
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_AnimationNodeOneShot_MixMode:
 
 .. rst-class:: classref-enumeration

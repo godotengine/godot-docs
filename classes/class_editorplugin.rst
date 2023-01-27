@@ -103,6 +103,8 @@ Methods
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`add_node_3d_gizmo_plugin<class_EditorPlugin_method_add_node_3d_gizmo_plugin>` **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**                                                                                  |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                      | :ref:`add_resource_conversion_plugin<class_EditorPlugin_method_add_resource_conversion_plugin>` **(** :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>` plugin **)**                                                        |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`add_scene_format_importer_plugin<class_EditorPlugin_method_add_scene_format_importer_plugin>` **(** :ref:`EditorSceneFormatImporter<class_EditorSceneFormatImporter>` scene_format_importer, :ref:`bool<class_bool>` first_priority=false **)** |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`add_scene_post_import_plugin<class_EditorPlugin_method_add_scene_post_import_plugin>` **(** :ref:`EditorScenePostImportPlugin<class_EditorScenePostImportPlugin>` scene_import_plugin, :ref:`bool<class_bool>` first_priority=false **)**       |
@@ -148,6 +150,8 @@ Methods
    | void                                                      | :ref:`remove_inspector_plugin<class_EditorPlugin_method_remove_inspector_plugin>` **(** :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>` plugin **)**                                                                                        |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`remove_node_3d_gizmo_plugin<class_EditorPlugin_method_remove_node_3d_gizmo_plugin>` **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**                                                                            |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                      | :ref:`remove_resource_conversion_plugin<class_EditorPlugin_method_remove_resource_conversion_plugin>` **(** :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>` plugin **)**                                                  |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`remove_scene_format_importer_plugin<class_EditorPlugin_method_remove_scene_format_importer_plugin>` **(** :ref:`EditorSceneFormatImporter<class_EditorSceneFormatImporter>` scene_format_importer **)**                                         |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -527,6 +531,8 @@ void **_edit** **(** :ref:`Variant<class_Variant>` object **)** |virtual|
 
 This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.
 
+\ ``object`` can be ``null`` if the plugin was editing an object, but there is no longer any selected object handled by this plugin. It can be used to cleanup editing state.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -676,7 +682,7 @@ Called by the engine when the 2D editor's viewport is updated. Use the ``overlay
 
     func _forward_canvas_draw_over_viewport(overlay):
         # Draw a circle at cursor position.
-        overlay.draw_circle(overlay.get_local_mouse_position(), 64, Color.white)
+        overlay.draw_circle(overlay.get_local_mouse_position(), 64, Color.WHITE)
     
     func _forward_canvas_gui_input(event):
         if event is InputEventMouseMotion:
@@ -982,7 +988,7 @@ Restore the state saved by :ref:`_get_state<class_EditorPlugin_method__get_state
 
     func _set_state(data):
         zoom = data.get("zoom", 1.0)
-        preferred_color = data.get("my_color", Color.white)
+        preferred_color = data.get("my_color", Color.WHITE)
 
 .. rst-class:: classref-item-separator
 
@@ -1000,7 +1006,7 @@ Restore the plugin GUI layout and data saved by :ref:`_get_window_layout<class_E
 
     func _set_window_layout(configuration):
         $Window.position = configuration.get_value("MyPlugin", "window_position", Vector2())
-        $Icon.modulate = configuration.get_value("MyPlugin", "icon_color", Color.white)
+        $Icon.modulate = configuration.get_value("MyPlugin", "icon_color", Color.WHITE)
 
 .. rst-class:: classref-item-separator
 
@@ -1165,6 +1171,20 @@ void **add_node_3d_gizmo_plugin** **(** :ref:`EditorNode3DGizmoPlugin<class_Edit
 Registers a new :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>`. Gizmo plugins are used to add custom gizmos to the 3D preview viewport for a :ref:`Node3D<class_Node3D>`.
 
 See :ref:`add_inspector_plugin<class_EditorPlugin_method_add_inspector_plugin>` for an example of how to register a plugin.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorPlugin_method_add_resource_conversion_plugin:
+
+.. rst-class:: classref-method
+
+void **add_resource_conversion_plugin** **(** :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>` plugin **)**
+
+Registers a new :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>`. Resource conversion plugins are used to add custom resource converters to the editor inspector.
+
+See :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>` for an example of how to create a resource conversion plugin.
 
 .. rst-class:: classref-item-separator
 
@@ -1451,6 +1471,18 @@ Removes an inspector plugin registered by :ref:`add_import_plugin<class_EditorPl
 void **remove_node_3d_gizmo_plugin** **(** :ref:`EditorNode3DGizmoPlugin<class_EditorNode3DGizmoPlugin>` plugin **)**
 
 Removes a gizmo plugin registered by :ref:`add_node_3d_gizmo_plugin<class_EditorPlugin_method_add_node_3d_gizmo_plugin>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorPlugin_method_remove_resource_conversion_plugin:
+
+.. rst-class:: classref-method
+
+void **remove_resource_conversion_plugin** **(** :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>` plugin **)**
+
+Removes a resource conversion plugin registered by :ref:`add_resource_conversion_plugin<class_EditorPlugin_method_add_resource_conversion_plugin>`.
 
 .. rst-class:: classref-item-separator
 

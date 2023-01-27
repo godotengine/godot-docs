@@ -62,17 +62,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`advance<class_AnimationTree_method_advance>` **(** :ref:`float<class_float>` delta **)**                                                              |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`       | :ref:`get_root_motion_position<class_AnimationTree_method_get_root_motion_position>` **(** **)** |const|                                                    |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Quaternion<class_Quaternion>` | :ref:`get_root_motion_rotation<class_AnimationTree_method_get_root_motion_rotation>` **(** **)** |const|                                                    |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`       | :ref:`get_root_motion_scale<class_AnimationTree_method_get_root_motion_scale>` **(** **)** |const|                                                          |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`rename_parameter<class_AnimationTree_method_rename_parameter>` **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)** |
-   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`_post_process_key_value<class_AnimationTree_method__post_process_key_value>` **(** :ref:`Animation<class_Animation>` animation, :ref:`int<class_int>` track, :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` object, :ref:`int<class_int>` object_idx **)** |virtual| |const| |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`advance<class_AnimationTree_method_advance>` **(** :ref:`float<class_float>` delta **)**                                                                                                                                                                                                       |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`       | :ref:`get_root_motion_position<class_AnimationTree_method_get_root_motion_position>` **(** **)** |const|                                                                                                                                                                                             |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quaternion<class_Quaternion>` | :ref:`get_root_motion_rotation<class_AnimationTree_method_get_root_motion_rotation>` **(** **)** |const|                                                                                                                                                                                             |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`       | :ref:`get_root_motion_scale<class_AnimationTree_method_get_root_motion_scale>` **(** **)** |const|                                                                                                                                                                                                   |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`rename_parameter<class_AnimationTree_method_rename_parameter>` **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)**                                                                                                                                          |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -248,7 +250,7 @@ The process mode of this **AnimationTree**. See :ref:`AnimationProcessCallback<e
 
 The path to the Animation track used for root motion. Paths must be valid scene-tree paths to a node, and must be specified starting from the parent node of the node that will reproduce the animation. To specify a track that controls properties or bones, append its name after the path, separated by ``":"``. For example, ``"character/skeleton:ankle"`` or ``"character/mesh:transform/local"``.
 
-If the track has type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>` or :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` the transformation will be cancelled visually, and the animation will appear to stay in place. See also :ref:`get_root_motion_position<class_AnimationTree_method_get_root_motion_position>`, :ref:`get_root_motion_rotation<class_AnimationTree_method_get_root_motion_rotation>`, :ref:`get_root_motion_scale<class_AnimationTree_method_get_root_motion_scale>` and :ref:`RootMotionView<class_RootMotionView>`.
+If the track has type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>` or :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>` the transformation will be canceled visually, and the animation will appear to stay in place. See also :ref:`get_root_motion_position<class_AnimationTree_method_get_root_motion_position>`, :ref:`get_root_motion_rotation<class_AnimationTree_method_get_root_motion_rotation>`, :ref:`get_root_motion_scale<class_AnimationTree_method_get_root_motion_scale>` and :ref:`RootMotionView<class_RootMotionView>`.
 
 .. rst-class:: classref-item-separator
 
@@ -275,6 +277,18 @@ The root animation node of this **AnimationTree**. See :ref:`AnimationNode<class
 
 Method Descriptions
 -------------------
+
+.. _class_AnimationTree_method__post_process_key_value:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **_post_process_key_value** **(** :ref:`Animation<class_Animation>` animation, :ref:`int<class_int>` track, :ref:`Variant<class_Variant>` value, :ref:`Object<class_Object>` object, :ref:`int<class_int>` object_idx **)** |virtual| |const|
+
+A virtual function for processing after key getting during playback.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_AnimationTree_method_advance:
 

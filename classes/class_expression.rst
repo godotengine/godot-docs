@@ -50,7 +50,7 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
     
     public override void _Ready()
     {
-        GetNode("LineEdit").TextSubmitted += OnTextEntered;
+        GetNode<LineEdit>("LineEdit").TextSubmitted += OnTextEntered;
     }
     
     private void OnTextEntered(string command)
