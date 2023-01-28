@@ -522,6 +522,31 @@ Use ``Godot.Collections.Dictionary``.
 ``Godot.Collections.Dictionary<T>`` is a type-safe wrapper around ``Godot.Collections.Dictionary``.
 Use the ``Godot.Collections.Dictionary<T>(Godot.Collections.Dictionary)`` constructor to create one.
 
+List of Godot's Dictionary methods and their equivalent in C#:
+
+=======================  ==============================================================
+GDScript                 C#
+=======================  ==============================================================
+clear                    Clear
+duplicate                Duplicate
+erase                    Remove
+find_key                 N/A
+get                      Dictionary[Variant] indexer or TryGetValue
+has                      ContainsKey
+has_all                  N/A
+hash                     GD.Hash
+is_empty                 Use ``Count == 0``
+is_read_only             IsReadOnly
+keys                     Keys
+make_read_only           MakeReadOnly
+merge                    Merge
+size                     Count
+values                   Values
+operator !=              !RecursiveEqual
+operator ==              RecursiveEqual
+operator []              Dictionary[Variant] indexer, Add or TryGetValue
+=======================  ==============================================================
+
 Variant
 -------
 
