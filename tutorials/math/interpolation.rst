@@ -49,9 +49,9 @@ Here is example pseudo-code for going from point A to B using interpolation:
 
     private float _t = 0.0f;
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        _t += delta * 0.4f;
+        _t += (float)delta * 0.4f;
 
         Marker2D a = GetNode<Marker2D>("A");
         Marker2D b = GetNode<Marker2D>("B");
@@ -90,9 +90,9 @@ Using the following pseudocode:
 
     private float _t = 0.0f;
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        _t += delta;
+        _t += (float)delta;
 
         Marker3D p1 = GetNode<Marker3D>("Position1");
         Marker3D p2 = GetNode<Marker3D>("Position2");
@@ -125,13 +125,13 @@ Interpolation can be used to smooth movement, rotation, etc. Here is an example 
 
     private const float FollowSpeed = 4.0f;
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         Vector2 mousePos = GetLocalMousePosition();
 
         Sprite2D sprite = GetNode<Sprite2D>("Sprite2D");
 
-        sprite.Position = sprite.Position.Lerp(mousePos, delta * FollowSpeed);
+        sprite.Position = sprite.Position.Lerp(mousePos, (float)delta * FollowSpeed);
     }
 
 Here is how it looks:

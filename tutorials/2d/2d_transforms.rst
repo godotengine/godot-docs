@@ -104,7 +104,9 @@ way:
  .. code-tab:: csharp
 
     var localPos = new Vector2(10,20); // local to Control/Node2D
-    var ie = new InputEventMouseButton();
-    ie.ButtonIndex = (int)ButtonList.Left;
-    ie.Position = (GetViewportTransform() * GetGlobalTransform()).Xform(localPos);
+    var ie = new InputEventMouseButton()
+    {
+        ButtonIndex = MouseButton.Left,
+        Position = GetViewportTransform() * (GetGlobalTransform() * localPos),
+    };
     GetTree().InputEvent(ie);

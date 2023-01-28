@@ -178,7 +178,7 @@ NavigationServer2D and a NavigationAgent2D for path movement.
                 return;
             }
 
-            Vector2 currentAgentPosition = GlobalTransform.origin;
+            Vector2 currentAgentPosition = GlobalTransform.Origin;
             Vector2 nextPathPosition = _navigationAgent.GetNextLocation();
 
             Vector2 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();

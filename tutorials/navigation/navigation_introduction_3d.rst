@@ -185,7 +185,7 @@ a NavigationAgent3D for path movement.
                 return;
             }
 
-            Vector3 currentAgentPosition = GlobalTransform.origin;
+            Vector3 currentAgentPosition = GlobalTransform.Origin;
             Vector3 nextPathPosition = _navigationAgent.GetNextLocation();
 
             Vector3 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();

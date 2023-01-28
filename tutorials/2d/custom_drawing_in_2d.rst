@@ -84,7 +84,7 @@ redrawn if modified:
 
     using Godot;
 
-    public partial class CustomNode2D : Node2D
+    public partial class MyNode2D : Node2D
     {
         private Texture _texture;
         public Texture Texture
@@ -133,7 +133,7 @@ call ``queue_redraw()`` from the ``_process()`` callback, like this:
             // Your draw commands here
         }
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
             QueueRedraw();
         }
@@ -387,7 +387,7 @@ using ``get_node()``.
 
     using Godot;
 
-    public partial class CustomNode2D : Node2D
+    public partial class MyNode2D : Node2D
     {
         private float _rotationAngle = 50;
         private float _angleFrom = 75;
@@ -421,7 +421,7 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         _angleFrom += _rotationAngle;
         _angleTo += _rotationAngle;
@@ -490,7 +490,7 @@ smaller value, which directly depends on the rendering speed.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         _angleFrom += _rotationAngle * delta;
         _angleTo += _rotationAngle * delta;
