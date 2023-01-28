@@ -506,6 +506,7 @@ values                   Values
 operator !=              !RecursiveEqual
 operator ==              RecursiveEqual
 operator []              Dictionary[Variant] indexer, Add or TryGetValue
+======================= ==============================================================
 
 Variant
 -------
