@@ -50,9 +50,7 @@ To receive safe_velocity signals for avoidance for the agent a callback needs to
     extends Node3D
     
     var agent_rid : RID = NavigationServer3D.agent_create()
-    var agent_node3d : Node3D = self
-    var callback_function_name : StringName = "on_safe_velocity_computed"
-    NavigationServer3D.agent_set_callback(agent_rid, agent_node3d, callback_function_name)
+    NavigationServer3D.agent_set_callback(agent_rid, self.on_safe_velocity_computed)
     
     func on_safe_velocity_computed(safe_velocity : Vector3):
         # do your avoidance movement

@@ -127,8 +127,10 @@ used to create or delete avoidance callbacks for the agent RID.
     extends NavigationAgent2D
 
     var agent : RID = get_rid()
-    NavigationServer2D::get_singleton()->agent_set_callback(agent, self, "_avoidance_done")
-    NavigationServer2D::get_singleton()->agent_set_callback(agent, null, "_avoidance_done")
+    # Enable
+    NavigationServer2D::get_singleton()->agent_set_callback(agent, self._avoidance_done)
+    # Disable
+    NavigationServer2D::get_singleton()->agent_set_callback(agent, Callable())
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -136,8 +138,10 @@ used to create or delete avoidance callbacks for the agent RID.
     extends NavigationAgent3D
 
     var agent : RID = get_rid()
-    NavigationServer3D::get_singleton()->agent_set_callback(agent, self, "_avoidance_done")
-    NavigationServer3D::get_singleton()->agent_set_callback(agent, null, "_avoidance_done")
+    # Enable
+    NavigationServer3D::get_singleton()->agent_set_callback(agent, self._avoidance_done)
+    # Disable
+    NavigationServer3D::get_singleton()->agent_set_callback(agent, Callable())
 
 NavigationAgent Script Templates
 --------------------------------
