@@ -26,16 +26,16 @@ NavigationAgent Pathfinding
 
 To use NavigationAgents for pathfinding, place a NavigationAgent2D/3D Node below a Node2D/3D inheriting parent node.
 
-To have the agent query a path to a target position use the ``set_target_location()`` method.
+To have the agent query a path to a target position use the ``set_target_position()`` method.
 Once the target has been set, the next position to follow in the path
-can be retrieved with the ``get_next_location()`` function. Move the parent actor node
+can be retrieved with the ``get_next_path_position()`` function. Move the parent actor node
 to this position with your own movement code. On the next ``physics_frame``, call
-``get_next_location()`` again for the next position and repeat this until the path ends.
+``get_next_path_position()`` again for the next position and repeat this until the path ends.
 
 NavigationAgents have their own internal logic to proceed with the current path and call for updates.
 NavigationAgents recognize by distance when a path point or the final target is reached.
 NavigationAgents refresh a path automatically when too far away from the current pathpoint.
-The important updates are all triggered with the ``get_next_location()`` function
+The important updates are all triggered with the ``get_next_path_position()`` function
 when called in ``_physics_process()``.
 
 Be careful calling other NavigationAgent functions not required for path movement
@@ -160,12 +160,12 @@ This script adds basic navigation movement to a Node3D with a NavigationAgent3D 
     var movement_delta : float
 
     func set_movement_target(movement_target : Vector3):
-        navigation_agent.set_target_location(movement_target)
+        navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
 
         movement_delta = movement_speed * delta
-        var next_path_position : Vector3 = navigation_agent.get_next_location()
+        var next_path_position : Vector3 = navigation_agent.get_next_path_position()
         var current_agent_position : Vector3 = global_transform.origin
         var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
         navigation_agent.set_velocity(new_velocity)
@@ -190,12 +190,12 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
     var movement_delta : float
 
     func set_movement_target(movement_target : Vector3):
-        navigation_agent.set_target_location(movement_target)
+        navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
 
         movement_delta = movement_speed * delta
-        var next_path_position : Vector3 = navigation_agent.get_next_location()
+        var next_path_position : Vector3 = navigation_agent.get_next_path_position()
         var current_agent_position : Vector3 = global_transform.origin
         var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
         navigation_agent.set_velocity(new_velocity)
@@ -219,11 +219,11 @@ This script adds basic navigation movement to a RigidBody3D with a NavigationAge
     @onready var navigation_agent : NavigationAgent3D = get_node("NavigationAgent3D")
 
     func set_movement_target(movement_target : Vector3):
-        navigation_agent.set_target_location(movement_target)
+        navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
 
-        var next_path_position : Vector3 = navigation_agent.get_next_location()
+        var next_path_position : Vector3 = navigation_agent.get_next_path_position()
         var current_agent_position : Vector3 = global_transform.origin
         var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * velocity
         navigation_agent.set_velocity(new_velocity)
