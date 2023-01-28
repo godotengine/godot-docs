@@ -62,7 +62,7 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 +-----------------+----------------------------------------------------------+
 | **editor**      | Running on an editor build                               |
 +-----------------+----------------------------------------------------------+
-| **standalone**  | Running on a non-editor build                            |
+| **template**    | Running on a non-editor (export template) build          |
 +-----------------+----------------------------------------------------------+
 | **double**      | Running on a double-precision build                      |
 +-----------------+----------------------------------------------------------+
