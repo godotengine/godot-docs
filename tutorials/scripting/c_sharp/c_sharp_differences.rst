@@ -445,15 +445,6 @@ Structs cannot have parameterless constructors in C#. Therefore, ``new Quaternio
 initializes all primitive members to their default value.
 Please use ``Quaternion.Identity`` for the equivalent of ``Quaternion()`` in GDScript and C++.
 
-The following methods were converted to a property with a different name:
-
-=====================  =============================================================
-GDScript               C#
-=====================  =============================================================
-``length()``           ``Length``
-``length_squared()``   ``LengthSquared``
-=====================  =============================================================
-
 Color
 -----
 
