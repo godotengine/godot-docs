@@ -82,6 +82,7 @@ external editor of choice. Godot currently supports the following
 external editors:
 
 - Visual Studio 2019
+- Visual Studio 2022
 - Visual Studio Code
 - MonoDevelop
 - Visual Studio for Mac
@@ -187,10 +188,11 @@ Project setup and workflow
 When you create the first C# script, Godot initializes the C# project files
 for your Godot project. This includes generating a C# solution (``.sln``)
 and a project file (``.csproj``), as well as some utility files and folders
-(``.mono`` and ``Properties/AssemblyInfo.cs``).
-All of these but ``.mono`` are important and should be committed to your
-version control system. ``.mono`` can be safely added to the ignore list of your VCS.
-When troubleshooting, it can sometimes help to delete the ``.mono`` folder
+(``.godot/mono``).
+All of these but ``.godot/mono`` are important and should be committed to your
+version control system. Everything under ``.godot`` can be safely added to the
+ignore list of your VCS.
+When troubleshooting, it can sometimes help to delete the ``.godot/mono`` folder
 and let it regenerate.
 
 Example
@@ -248,8 +250,9 @@ For more information, see the :ref:`doc_c_sharp_differences` page.
     You need to (re)build the project assemblies whenever you want to see new
     exported variables or signals in the editor. This build can be manually
     triggered by clicking the word **Build** in the top right corner of the
-    editor. You can also click **Mono** at the bottom of the editor window
-    to reveal the Mono panel, then click the **Build Project** button.
+    editor. You can also click **MSBuild** at the bottom of the editor window
+    to reveal the MSBuild panel, then click the **Build** button to reveal a
+    dropdown, then click the **Build Solution** option.
 
     You will also need to rebuild the project assemblies to apply changes in
     "tool" scripts.
@@ -261,7 +264,7 @@ As C# support is quite new in Godot, there are some growing pains and things
 that need to be ironed out. Below is a list of the most important issues
 you should be aware of when diving into C# in Godot, but if in doubt, also
 take a look over the official
-`issue tracker for Mono issues <https://github.com/godotengine/godot/labels/topic%3Amono>`_.
+`issue tracker for .NET issues <https://github.com/godotengine/godot/labels/topic%3Adotnet>`_.
 
 - Writing editor plugins is possible, but it is currently quite convoluted.
 - State is currently not saved and restored when hot-reloading,
@@ -274,11 +277,13 @@ take a look over the official
   So when using e.g. ``CallDeferred("AddChild")``, ``AddChild`` will not work because
   the API is expecting the original ``snake_case`` version ``add_child``. However, you
   can use any custom properties or methods without this limitation.
+  Prefer using the exposed ``StringName`` in the ``PropertyName``, ``MethodName`` and
+  ``SignalName`` to avoid extra ``StringName`` allocations and worrying about snake_case naming.
 
 
-As of Godot 3.2.2, exporting Mono projects is supported for desktop platforms
-(Linux, Windows and macOS), Android, HTML5, and iOS. The only platform not
-supported yet is UWP.
+As of Godot 4.0, exporting .NET projects is supported for desktop platforms
+(Linux, Windows and macOS). Other platforms will gain support in future 4.x
+releases.
 
 Performance of C# in Godot
 --------------------------
@@ -299,7 +304,7 @@ a single code location:
 
     using Godot;
 
-    public class YourCustomClass : Node3D
+    public partial class YourCustomClass : Node3D
     {
         private void ExpensiveReposition()
         {
