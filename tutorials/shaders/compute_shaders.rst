@@ -3,36 +3,38 @@
 Using compute shaders
 =====================
 
+This tutorial will walk you through the process of creating a minimal compute
+shader. But first, a bit of background on compute shaders and how they work with
+Godot.
 
-Think of compute shaders as blocks of code that are executed on the GPU for any purpose we want.
-Compute shaders are independent from the graphics pipeline and do not have much fixed-functionality.
-Contrast this with fragment shaders which are used specifically for assigning a color to a fragment in a render target.
-The big benefit of compute shaders over code executed on a CPU is the high amount of parallelization that GPUs provide.
+.. note::
 
-Because compute shaders are independent of the graphics pipeline we don't have any user defined inputs or outputs
-(like a mesh going into the vertex shader or a texture coming out of a fragment shader). Instead, compute shaders
-make changes directly to memory stored on the GPU from which we can read and write using scripts.
+   This tutorial assumes familiarity with non-compute shaders. If you are new to
+   shaders please read :ref:`doc_introduction_to_shaders` and :ref:`your first
+   shader <toc-your-first-shader>` before proceeding with this tutorial.
 
-How they work
--------------
+A compute shader is a special type of shader program that is orientated towards
+general purpose programming. In other words, they are more flexible than vertex
+shaders and fragment shaders as they don't have a fixed purpose (i.e.
+transforming vertices or writing colors to an image). Unlike fragment shaders
+and vertex shaders compute shaders have very little going on behind the scenes,
+the code you write is what the GPU runs and very little else. This can make them
+a very useful tool to offload heavy calculations to the GPU.
 
-Compute shaders can be thought of as a mass of small computers called work groups.
-Much like super computers they are aligned in rows and columns but also stacked on top of each other
-essentially forming a 3D array of them.
+Now let's get started by creating a short compute shader.
 
-When creating a compute shader we can specify the number of work groups we wish to use.
-Keep in mind that these work groups are independent from each other and therefore can not depend on the results from other work groups.
+First, in the text editor of your choice create a new file called
+"compute_example.glsl". When you write compute shaders in Godot, you write them
+in GLSL directly. The Godot shader language is based off of GLSL so if you are
+familiar with normal shaders in Godot the syntax below will look somewhat
+familiar.
 
-In each work group we have another 3D array of threads called invocations, but unlike work groups, invocations can communicate with each other. The number of invocations in each work group is specified inside the shader.
+.. note::
 
-So now lets work with a compute shader to see how it really works.
-
-Creating a ComputeShader
-------------------------
-
-To begin using compute shaders, ensure you are using a Vulkan based renderer (the Forward+ or Mobile options), as compute shaders are currently only supported on Vulkan.
-
-Create a new text file called "compute_example.glsl". When you write compute shaders in Godot, you write them in GLSL directly. The Godot shader language is based off of GLSL so if you are familiar with normal shaders in Godot the syntax below will look somewhat familiar.
+   Compute shaders can only be used from RenderingDevice-based renderers (the
+   Forward+ or Mobile renderer). To follow along with this tutorial, ensure that
+   you are using the Forward+ or Mobile renderer. The setting for which is
+   located in the top right-hand corner of the editor.
 
 Let's take a look at this compute shader code:
 
@@ -56,17 +58,104 @@ Let's take a look at this compute shader code:
         my_data_buffer.data[gl_GlobalInvocationID.x] *= 2.0;
     }
 
-This code takes an array of floats, multiplies each element by 2 and store the results back in the buffer array.
- 
+This code takes an array of floats, multiplies each element by 2 and store the
+results back in the buffer array. Now let's look at it line-by-line.
 
-To continue copy the code above into your newly created "compute_example.glsl" file.
+.. code-block:: glsl
+
+    #[compute]
+    #version 450
+
+These two lines communicate two things:
+
+ 1. The following code is a compute shader. This is a godot specific hint that is needed for the editor to properly import the shader file.
+ 2. The code is using GLSL version 450.
+
+For your custom compute shaders you should never have to change these two lines.
+
+.. code-block:: glsl
+
+    // Invocations in the (x, y, z) dimension
+    layout(local_size_x = 2, local_size_y = 1, local_size_z = 1) in;
+
+Next we communicate the number of invocations to be used in each workgroup.
+Invocations are instances of the shader that are running within the same
+workgroup. When we launch a compute shader from the CPU, we tell it how many
+workgroups to run. Workgroups run in parellel to each other. While running one
+workgroup, you cannot access information in another workgroup. Invocations in
+the same workgroup however, can have some limited access to other invocations.
+
+Think about workgroups and invocations as a giant nested ``for`` loop.
+
+.. code-block:: glsl
+
+    for (int x = 0; x < workgroup_size_x; x++) {
+      for (int y = 0; y < workgroup_size_y; y++) {
+         for (int z = 0; z < workgroup_size_z; z++) {
+            // Each workgroup runs independently and in parellel.
+            for (int local_x = 0; local_x < invocation_size_x; local_x++) {
+               for (int local_y = 0; local_y < invocation_size_y; local_y++) {
+                  for (int local_z = 0; local_z < invocation_size_z; local_z++) {
+                     // Compute shader runs here.
+                  }
+               }
+            }
+         }
+      }
+    }
+            
+
+Workgroups and invocations are an advanced topic, for now remember that we will
+be running two invocations per workgroup.
+
+.. code-block:: glsl
+
+    // A binding to the buffer we create in our script
+    layout(set = 0, binding = 0, std430) restrict buffer MyDataBuffer {
+        float data[];
+    }
+    my_data_buffer;
+
+Here we provide information about the memory that the compute shader will have
+access to. The ``layout`` property allows us to tell the shader where to look
+for the buffer, we will need to match these ``set`` and ``binding`` positions
+from the CPU side later. 
+
+The ``restrict`` keyword tells the shader that this buffer is only going to be
+accessed from one place in this shader. In other words, we won't bind this
+buffer in another ``set`` or ``binding`` index. This is important as it allows
+the shader compiler to optimize the shader code. Always use ``restrict`` when
+you can.
+
+This is an unsized buffer meaning that it can be any size. So we need to be
+careful not to read from an index larger than the size of the buffer.
+
+.. code-block:: glsl
+
+    // The code we want to execute in each invocation
+    void main() {
+        // gl_GlobalInvocationID.x uniquely identifies this invocation across all work groups
+        my_data_buffer.data[gl_GlobalInvocationID.x] *= 2.0;
+    }
+
+Finally, we write the ``main`` function which is where all the logic happens. We
+access a position in the storage buffer using the ``gl_GlobalInvocationID``
+built in variables. ``gl_GlobalInvocationID`` gives you the global unique ID for
+the current invocation.
+
+To continue copy the code above into your newly created "compute_example.glsl"
+file.
 
 Create a local RenderingDevice
 ------------------------------
 
-To interact and execute a compute shader we need a script. So go ahead and create a new script in the language of your choice and attach it to any Node in your scene.
+To interact with and execute a compute shader we need a script. So go ahead and
+create a new script in the language of your choice and attach it to any Node in
+your scene.
 
-Now to execute our shader we need a local :ref:`RenderingDevice <class_RenderingDevice>` which can be created using the :ref:`RenderingServer <class_RenderingServer>`:
+Now to execute our shader we need a local :ref:`RenderingDevice
+<class_RenderingDevice>` which can be created using the :ref:`RenderingServer
+<class_RenderingServer>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -79,7 +168,8 @@ Now to execute our shader we need a local :ref:`RenderingDevice <class_Rendering
     // Create a local rendering device.
     var rd = RenderingServer.CreateLocalRenderingDevice();
 
-After that we can load the newly created shader file "compute_example.glsl" and create a pre-compiled version of it using this:
+After that we can load the newly created shader file "compute_example.glsl" and
+create a pre-compiled version of it using this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -100,10 +190,13 @@ After that we can load the newly created shader file "compute_example.glsl" and 
 Provide input data
 ------------------
 
-As you might remember we want to pass an input array to our shader, multiply each element by 2 and get the results.
+As you might remember we want to pass an input array to our shader, multiply
+each element by 2 and get the results.
 
-To pass values to a compute shader we need to create a buffer. We are dealing with an array of floats, so we will use a storage buffer for this example.
-A storage buffer takes an array of bytes and allows the CPU to transfer data to and from the GPU.
+To pass values to a compute shader we need to create a buffer. We are dealing
+with an array of floats, so we will use a storage buffer for this example. A
+storage buffer takes an array of bytes and allows the CPU to transfer data to
+and from the GPU.
 
 So let's initialize an array of floats and create a storage buffer:
 
@@ -129,8 +222,9 @@ So let's initialize an array of floats and create a storage buffer:
     // Each float has 8 byte (32 bit) so 10 x 8 = 80 bytes
     var buffer = rd.StorageBufferCreate((uint)inputBytes.Length, inputBytes);
 
-With the buffer in place we need to tell the rendering device to use this buffer.
-To do that we will need to create a uniform (like in normal shaders) and assign it to a uniform set which we can pass to our shader later.
+With the buffer in place we need to tell the rendering device to use this
+buffer. To do that we will need to create a uniform (like in normal shaders) and
+assign it to a uniform set which we can pass to our shader later.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -165,7 +259,7 @@ The steps we need to do to compute our result are:
 2. Begin a list of instructions for our GPU to execute.
 3. Bind our compute list to our pipeline
 4. Bind our buffer uniform to our pipeline
-5. Execute the logic of our shader
+5. Specify how many workgroups to use
 6. End the list of instructions
 
 .. tabs::
@@ -189,18 +283,22 @@ The steps we need to do to compute our result are:
     rd.ComputeListDispatch(computeList, xGroups: 5, yGroups: 1, zGroups: 1);
     rd.ComputeListEnd();
 
-Note that we are dispatching the compute shader with 5 work groups in the x-axis, and one in the others.
-Since we have 2 local invocations in the x-axis (specified in our shader) 10 compute shader invocations will be launched in total.
-If you read or write to indices outside of the range of your buffer, you may access memory outside of your shaders control or parts of other variables which may cause issues on some hardware.
-
+Note that we are dispatching the compute shader with 5 work groups in the
+x-axis, and one in the others. Since we have 2 local invocations in the x-axis
+(specified in our shader) 10 compute shader invocations will be launched in
+total. If you read or write to indices outside of the range of your buffer, you
+may access memory outside of your shaders control or parts of other variables
+which may cause issues on some hardware.
 
 Execute a compute shader
 ------------------------
 
-After all of this we are done, kind of.
-We still need to execute our pipeline, everything we did so far was only definition not execution.
+After all of this we are almost done, we still need to execute our pipeline. So
+far we have only recorded what we would like the GPU to do, we have not actually
+run the shader program.
 
-To execute our compute shader we just need to submit the pipeline to the GPU and wait for the execution to finish:
+To execute our compute shader we just need to submit the pipeline to the GPU and
+wait for the execution to finish:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -215,16 +313,19 @@ To execute our compute shader we just need to submit the pipeline to the GPU and
     rd.Submit();
     rd.Sync();
 
-Ideally, you would not synchronize the RenderingDevice right away as it will cause the CPU to wait for the GPU to finish working. In our example we synchronize right away because we want our data available for reading right away. In general, you will want to wait at least a few frames before synchronizing so that the GPU is able to run in parellel with the CPU.
-
-Congratulations you created and executed a compute shader. But wait, where are the results now?
+Ideally, you would not call ``sync()`` to synchronize the RenderingDevice right
+away as it will cause the CPU to wait for the GPU to finish working. In our
+example we synchronize right away because we want our data available for reading
+right away. In general, you will want to wait at least a few frames before
+synchronizing so that the GPU is able to run in parellel with the CPU.
 
 Retrieving results
 ------------------
 
-You may remember from the beginning of this tutorial that compute shaders don't have inputs and outputs, they simply change memory. This means we can retrieve the data from our buffer we created at the start of this tutorial.
-The shader read from our array and stored the data in the same array again so our results are already there.
-Let's retrieve the data and print the results to our console.
+You may have noticed in the example shader we modified the contents of the
+storage buffer. I.e the shader read from our array and stored the data in the
+same array again so our results are already there. Let's retrieve the data and
+print the results to our console.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -244,7 +345,5 @@ Let's retrieve the data and print the results to our console.
     GD.Print("Input: ", input)
     GD.Print("Output: ", output)
 
-Conclusion
-----------
-
-Working with compute shaders is a little cumbersome to start, but once you have the basics working in your program  you can scale up the complexity of your shader without making many changes to your script.
+With that, you have everything you need to get started working with compute
+shaders.
