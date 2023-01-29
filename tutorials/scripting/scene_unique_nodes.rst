@@ -19,11 +19,11 @@ Creation and usage
 ------------------
 
 In the Scene tree dock, right-click on a node and select
-**Access as Scene Unique Name** in the context menu.
+**Access as Unique Name** in the context menu.
 
 .. image:: img/unique_name.png
 
-After checking this, the node will now have a percent symbol (**%**) next
+After selecting the option, the node will now have a percent symbol (**%**) next
 to its name in the scene tree:
 
 .. image:: img/percent.png
