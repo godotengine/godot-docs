@@ -71,7 +71,7 @@ the **Hilt** node from the **Player** script using scene unique nodes:
 - ``get_node("Hand/Sword/%Hilt")`` also returns the **Hilt** node.
 
 Scene unique names don't only work at the end of a node path. They can be used
-in the middle to navigate from one node to another. For example, the Sword node
+in the middle to navigate from one node to another. For example, the **Sword** node
 is marked as a scene unique node in the **Player** scene, so this is possible:
 
 - ``get_node("%Sword/%Hilt")`` returns the **Hilt** node.
