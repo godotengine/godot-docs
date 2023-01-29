@@ -54,17 +54,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`_can_do_next_pass<class_Material_method__can_do_next_pass>` **(** **)** |virtual| |const|               |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`_can_use_render_priority<class_Material_method__can_use_render_priority>` **(** **)** |virtual| |const| |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | :ref:`Mode<enum_Shader_Mode>` | :ref:`_get_shader_mode<class_Material_method__get_shader_mode>` **(** **)** |virtual| |const|                 |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`         | :ref:`_get_shader_rid<class_Material_method__get_shader_rid>` **(** **)** |virtual| |const|                   |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
-   | void                          | :ref:`inspect_native_shader_code<class_Material_method_inspect_native_shader_code>` **(** **)**               |
-   +-------------------------------+---------------------------------------------------------------------------------------------------------------+
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`_can_do_next_pass<class_Material_method__can_do_next_pass>` **(** **)** |virtual| |const|               |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`_can_use_render_priority<class_Material_method__can_use_render_priority>` **(** **)** |virtual| |const| |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`Mode<enum_Shader_Mode>`   | :ref:`_get_shader_mode<class_Material_method__get_shader_mode>` **(** **)** |virtual| |const|                 |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`           | :ref:`_get_shader_rid<class_Material_method__get_shader_rid>` **(** **)** |virtual| |const|                   |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`create_placeholder<class_Material_method_create_placeholder>` **(** **)** |const|                       |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
+   | void                            | :ref:`inspect_native_shader_code<class_Material_method_inspect_native_shader_code>` **(** **)**               |
+   +---------------------------------+---------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -196,6 +198,18 @@ Method Descriptions
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Material_method_create_placeholder:
+
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **create_placeholder** **(** **)** |const|
+
+Creates a placeholder version of this resource (:ref:`PlaceholderMaterial<class_PlaceholderMaterial>`).
 
 .. rst-class:: classref-item-separator
 

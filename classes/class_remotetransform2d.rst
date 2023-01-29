@@ -12,16 +12,16 @@ RemoteTransform2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`CanvasItem<class_CanvasItem>` derived Node in the scene.
+RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`Node2D<class_Node2D>` derived node in the scene.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`CanvasItem<class_CanvasItem>` derived Node (called the remote node) in the scene.
+RemoteTransform2D pushes its own :ref:`Transform2D<class_Transform2D>` to another :ref:`Node2D<class_Node2D>` derived node (called the remote node) in the scene.
 
-It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
+It can be set to update another node's position, rotation and/or scale. It can use either global or local coordinates.
 
 .. rst-class:: classref-reftable-group
 

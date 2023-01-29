@@ -37,6 +37,7 @@ name:
  .. code-tab:: gdscript GDScript
 
     get_node("%RedButton").text = "Hello"
+    %RedButton.text = "Hello" # Shorter syntax
 
  .. code-tab:: csharp
 

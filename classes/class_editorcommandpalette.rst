@@ -37,7 +37,7 @@ Command key names use slash delimiters to distinguish sections, for example: ``"
 
     EditorCommandPalette commandPalette = GetEditorInterface().GetCommandPalette();
     // ExternalCommand is a function that will be called with the command is executed.
-    Callable commandCallable = new Callable(this, nameof(ExternalCommand));
+    Callable commandCallable = new Callable(this, MethodName.ExternalCommand);
     commandPalette.AddCommand("command", "test/command", commandCallable)
 
 

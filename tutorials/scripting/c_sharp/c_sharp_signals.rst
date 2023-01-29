@@ -21,7 +21,7 @@ You can handle these events, as any other event, with the ``+=`` and ``-=`` oper
     myTimer.Timeout += () => GD.Print("Timeout!");
 
 In addition, you can always access signal names associated with a node type through its nested
-``SignalName`` class. This is useful when, for example, you want to await on a signal (see :ref:`doc_c_sharp_differences_yield`).
+``SignalName`` class. This is useful when, for example, you want to await on a signal (see :ref:`doc_c_sharp_differences_await`).
 
 .. code-block:: csharp
 

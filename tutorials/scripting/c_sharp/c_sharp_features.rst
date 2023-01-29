@@ -125,7 +125,7 @@ Or you can detect which engine your code is in, useful for making cross-engine l
     #elif UNITY_5_3_OR_NEWER
             print("This is Unity.");
     #else
-            throw new InvalidWorkflowException("Only Godot and Unity are supported.");
+            throw new NotSupportedException("Only Godot and Unity are supported.");
     #endif
         }
 
@@ -134,6 +134,10 @@ Full list of defines
 
 * ``GODOT`` is always defined for Godot projects.
 
+* ``TOOLS`` is defined when building with the Debug configuration (editor and editor player).
+
+* ``GODOT_REAL_T_IS_DOUBLE`` is defined when the ``GodotFloat64`` property is set to ``true``.
+
 * One of ``GODOT_64`` or ``GODOT_32`` is defined depending on if the architecture is 64-bit or 32-bit.
 
 * One of ``GODOT_LINUXBSD``, ``GODOT_WINDOWS``, ``GODOT_OSX``,
@@ -141,7 +145,7 @@ Full list of defines
   depending on the OS. These names may change in the future.
   These are created from the ``get_name()`` method of the
   :ref:`OS <class_OS>` singleton, but not every possible OS
-  the method returns is an OS that Godot with Mono runs on.
+  the method returns is an OS that Godot with .NET runs on.
 
 When **exporting**, the following may also be defined depending on the export features:
 
@@ -152,8 +156,6 @@ When **exporting**, the following may also be defined depending on the export fe
 * One of ``GODOT_ARM64`` or ``GODOT_ARMV7`` on iOS only depending on the architecture.
 
 * Any of ``GODOT_S3TC``, ``GODOT_ETC``, and ``GODOT_ETC2`` depending on the texture compression type.
-
-* Any custom features added in the export menu will be capitalized and prefixed: ``foo`` -> ``GODOT_FOO``.
 
 To see an example project, see the OS testing demo:
 https://github.com/godotengine/godot-demo-projects/tree/master/misc/os_test

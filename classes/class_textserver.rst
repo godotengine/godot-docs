@@ -280,7 +280,7 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`parse_number<class_TextServer_method_parse_number>` **(** :ref:`String<class_String>` number, :ref:`String<class_String>` language="" **)** |const|                                                                                                                                                                                                              |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2i[]<class_Vector2i>`                               | :ref:`parse_structured_text<class_TextServer_method_parse_structured_text>` **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser_type, :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |const|                                                                                                                        |
+   | :ref:`Vector3i[]<class_Vector3i>`                               | :ref:`parse_structured_text<class_TextServer_method_parse_structured_text>` **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser_type, :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |const|                                                                                                                        |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                     | :ref:`percent_sign<class_TextServer_method_percent_sign>` **(** :ref:`String<class_String>` language="" **)** |const|                                                                                                                                                                                                                                                  |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -547,6 +547,14 @@ Text is written from left to right.
 :ref:`Direction<enum_TextServer_Direction>` **DIRECTION_RTL** = ``2``
 
 Text is written from right to left.
+
+.. _class_TextServer_constant_DIRECTION_INHERITED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Direction<enum_TextServer_Direction>` **DIRECTION_INHERITED** = ``3``
+
+Text writing direction is the same as base string writing direction. Used for BiDi override only.
 
 .. rst-class:: classref-item-separator
 
@@ -1362,7 +1370,7 @@ enum **StructuredTextParser**:
 
 :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **STRUCTURED_TEXT_DEFAULT** = ``0``
 
-Use default behavior. Same as :ref:`STRUCTURED_TEXT_NONE<class_TextServer_constant_STRUCTURED_TEXT_NONE>` unless specified otherwise in the control description.
+Use default Unicode BiDi algorithm.
 
 .. _class_TextServer_constant_STRUCTURED_TEXT_URI:
 
@@ -1398,13 +1406,13 @@ BiDi override for lists.
 
 Structured text options: list separator ``String``.
 
-.. _class_TextServer_constant_STRUCTURED_TEXT_NONE:
+.. _class_TextServer_constant_STRUCTURED_TEXT_GDSCRIPT:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **STRUCTURED_TEXT_NONE** = ``5``
+:ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` **STRUCTURED_TEXT_GDSCRIPT** = ``5``
 
-Use default Unicode BiDi algorithm.
+BiDi override for GDScript.
 
 .. _class_TextServer_constant_STRUCTURED_TEXT_CUSTOM:
 
@@ -2985,7 +2993,7 @@ Converts ``number`` from the numeral systems used in ``language`` to Western Ara
 
 .. rst-class:: classref-method
 
-:ref:`Vector2i[]<class_Vector2i>` **parse_structured_text** **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser_type, :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |const|
+:ref:`Vector3i[]<class_Vector3i>` **parse_structured_text** **(** :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` parser_type, :ref:`Array<class_Array>` args, :ref:`String<class_String>` text **)** |const|
 
 Default implementation of the BiDi algorithm override function. See :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>` for more info.
 

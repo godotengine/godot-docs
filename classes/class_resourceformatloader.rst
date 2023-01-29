@@ -42,6 +42,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_recognized_extensions<class_ResourceFormatLoader_method__get_recognized_extensions>` **(** **)** |virtual| |const|                                                                                                              |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`_get_resource_script_class<class_ResourceFormatLoader_method__get_resource_script_class>` **(** :ref:`String<class_String>` path **)** |virtual| |const|                                                                             |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`_get_resource_type<class_ResourceFormatLoader_method__get_resource_type>` **(** :ref:`String<class_String>` path **)** |virtual| |const|                                                                                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`_get_resource_uid<class_ResourceFormatLoader_method__get_resource_uid>` **(** :ref:`String<class_String>` path **)** |virtual| |const|                                                                                               |
@@ -152,6 +154,18 @@ If implemented, gets the dependencies of a given resource. If ``add_types`` is `
 :ref:`PackedStringArray<class_PackedStringArray>` **_get_recognized_extensions** **(** **)** |virtual| |const|
 
 Gets the list of extensions for files this loader is able to read.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceFormatLoader_method__get_resource_script_class:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_resource_script_class** **(** :ref:`String<class_String>` path **)** |virtual| |const|
+
+Returns the script class name associated with the :ref:`Resource<class_Resource>` under the given ``path``. If the resource has no script or the script isn't a named class, it should return ``""``.
 
 .. rst-class:: classref-item-separator
 

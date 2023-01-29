@@ -617,11 +617,19 @@ Undoes the previous action.
 
 Redoes the previous action.
 
+.. _class_TextEdit_constant_MENU_SUBMENU_TEXT_DIR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_SUBMENU_TEXT_DIR** = ``7``
+
+ID of "Text Writing Direction" submenu.
+
 .. _class_TextEdit_constant_MENU_DIR_INHERITED:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DIR_INHERITED** = ``7``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DIR_INHERITED** = ``8``
 
 Sets text direction to inherited.
 
@@ -629,7 +637,7 @@ Sets text direction to inherited.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DIR_AUTO** = ``8``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DIR_AUTO** = ``9``
 
 Sets text direction to automatic.
 
@@ -637,7 +645,7 @@ Sets text direction to automatic.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DIR_LTR** = ``9``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DIR_LTR** = ``10``
 
 Sets text direction to left-to-right.
 
@@ -645,7 +653,7 @@ Sets text direction to left-to-right.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DIR_RTL** = ``10``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DIR_RTL** = ``11``
 
 Sets text direction to right-to-left.
 
@@ -653,15 +661,23 @@ Sets text direction to right-to-left.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DISPLAY_UCC** = ``11``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_DISPLAY_UCC** = ``12``
 
 Toggles control character display.
+
+.. _class_TextEdit_constant_MENU_SUBMENU_INSERT_UCC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_SUBMENU_INSERT_UCC** = ``13``
+
+ID of "Insert Control Character" submenu.
 
 .. _class_TextEdit_constant_MENU_INSERT_LRM:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_LRM** = ``12``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_LRM** = ``14``
 
 Inserts left-to-right mark (LRM) character.
 
@@ -669,7 +685,7 @@ Inserts left-to-right mark (LRM) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_RLM** = ``13``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_RLM** = ``15``
 
 Inserts right-to-left mark (RLM) character.
 
@@ -677,7 +693,7 @@ Inserts right-to-left mark (RLM) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_LRE** = ``14``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_LRE** = ``16``
 
 Inserts start of left-to-right embedding (LRE) character.
 
@@ -685,7 +701,7 @@ Inserts start of left-to-right embedding (LRE) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_RLE** = ``15``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_RLE** = ``17``
 
 Inserts start of right-to-left embedding (RLE) character.
 
@@ -693,7 +709,7 @@ Inserts start of right-to-left embedding (RLE) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_LRO** = ``16``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_LRO** = ``18``
 
 Inserts start of left-to-right override (LRO) character.
 
@@ -701,7 +717,7 @@ Inserts start of left-to-right override (LRO) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_RLO** = ``17``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_RLO** = ``19``
 
 Inserts start of right-to-left override (RLO) character.
 
@@ -709,7 +725,7 @@ Inserts start of right-to-left override (RLO) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_PDF** = ``18``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_PDF** = ``20``
 
 Inserts pop direction formatting (PDF) character.
 
@@ -717,7 +733,7 @@ Inserts pop direction formatting (PDF) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_ALM** = ``19``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_ALM** = ``21``
 
 Inserts Arabic letter mark (ALM) character.
 
@@ -725,7 +741,7 @@ Inserts Arabic letter mark (ALM) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_LRI** = ``20``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_LRI** = ``22``
 
 Inserts left-to-right isolate (LRI) character.
 
@@ -733,7 +749,7 @@ Inserts left-to-right isolate (LRI) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_RLI** = ``21``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_RLI** = ``23``
 
 Inserts right-to-left isolate (RLI) character.
 
@@ -741,7 +757,7 @@ Inserts right-to-left isolate (RLI) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_FSI** = ``22``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_FSI** = ``24``
 
 Inserts first strong isolate (FSI) character.
 
@@ -749,7 +765,7 @@ Inserts first strong isolate (FSI) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_PDI** = ``23``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_PDI** = ``25``
 
 Inserts pop direction isolate (PDI) character.
 
@@ -757,7 +773,7 @@ Inserts pop direction isolate (PDI) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_ZWJ** = ``24``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_ZWJ** = ``26``
 
 Inserts zero width joiner (ZWJ) character.
 
@@ -765,7 +781,7 @@ Inserts zero width joiner (ZWJ) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_ZWNJ** = ``25``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_ZWNJ** = ``27``
 
 Inserts zero width non-joiner (ZWNJ) character.
 
@@ -773,7 +789,7 @@ Inserts zero width non-joiner (ZWNJ) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_WJ** = ``26``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_WJ** = ``28``
 
 Inserts word joiner (WJ) character.
 
@@ -781,7 +797,7 @@ Inserts word joiner (WJ) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_SHY** = ``27``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_INSERT_SHY** = ``29``
 
 Inserts soft hyphen (SHY) character.
 
@@ -789,7 +805,7 @@ Inserts soft hyphen (SHY) character.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_MAX** = ``28``
+:ref:`MenuItems<enum_TextEdit_MenuItems>` **MENU_MAX** = ``30``
 
 Represents the size of the :ref:`MenuItems<enum_TextEdit_MenuItems>` enum.
 
@@ -2280,6 +2296,51 @@ Returns the local mouse position adjusted for the text direction.
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this **TextEdit**. By default, this menu is displayed when right-clicking on the **TextEdit**.
 
+You can add custom menu items or remove standard ones. Make sure your IDs don't conflict with the standard ones (see :ref:`MenuItems<enum_TextEdit_MenuItems>`). For example:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _ready():
+        var menu = get_menu()
+        # Remove all items after "Redo".
+        menu.item_count = menu.get_item_index(MENU_REDO) + 1
+        # Add custom items.
+        menu.add_separator()
+        menu.add_item("Insert Date", MENU_MAX + 1)
+        # Connect callback.
+        menu.id_pressed.connect(_on_item_pressed)
+    
+    func _on_item_pressed(id):
+        if id == MENU_MAX + 1:
+            insert_text_at_caret(Time.get_date_string_from_system())
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        var menu = GetMenu();
+        // Remove all items after "Redo".
+        menu.ItemCount = menu.GetItemIndex(TextEdit.MenuItems.Redo) + 1;
+        // Add custom items.
+        menu.AddSeparator();
+        menu.AddItem("Insert Date", TextEdit.MenuItems.Max + 1);
+        // Add event handler.
+        menu.IdPressed += OnItemPressed;
+    }
+    
+    public void OnItemPressed(int id)
+    {
+        if (id == TextEdit.MenuItems.Max + 1)
+        {
+            InsertTextAtCaret(Time.GetDateStringFromSystem());
+        }
+    }
+
+
+
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`Window.visible<class_Window_property_visible>` property.
 
 .. rst-class:: classref-item-separator
@@ -2788,7 +2849,7 @@ Returns whether the user is in overtype mode.
 
 void **menu_option** **(** :ref:`int<class_int>` option **)**
 
-Triggers a right-click menu action by the specified index. See :ref:`MenuItems<enum_TextEdit_MenuItems>` for a list of available indexes.
+Executes a given action as defined in the :ref:`MenuItems<enum_TextEdit_MenuItems>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2812,7 +2873,7 @@ Merge the gutters from ``from_line`` into ``to_line``. Only overwritable gutters
 
 void **merge_overlapping_carets** **(** **)**
 
-Merges any overlapping carets. Will favour the newest caret, or the caret with a selection.
+Merges any overlapping carets. Will favor the newest caret, or the caret with a selection.
 
 \ **Note:** This is not called when a caret changes position but after certain actions, so it is possible to get into a state where carets overlap.
 
@@ -2924,19 +2985,19 @@ In the returned vector, ``x`` is the column, ``y`` is the line. If no results ar
  .. code-tab:: gdscript
 
     var result = search("print", SEARCH_WHOLE_WORDS, 0, 0)
-    if  result.x != -1:
+    if result.x != -1:
         # Result found.
         var line_number = result.y
         var column_number = result.x
 
  .. code-tab:: csharp
 
-    Vector2i result = Search("print", (uint)TextEdit.SearchFlags.WholeWords, 0, 0);
-    if (result.Length > 0)
+    Vector2I result = Search("print", (uint)TextEdit.SearchFlags.WholeWords, 0, 0);
+    if (result.X != -1)
     {
         // Result found.
-        int lineNumber = result.y;
-        int columnNumber = result.x;
+        int lineNumber = result.Y;
+        int columnNumber = result.X;
     }
 
 

@@ -107,25 +107,25 @@ Emitted when a button on this tracker is released.
 
 ----
 
-.. _class_XRPositionalTracker_signal_input_axis_changed:
+.. _class_XRPositionalTracker_signal_input_float_changed:
 
 .. rst-class:: classref-signal
 
-**input_axis_changed** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` vector **)**
+**input_float_changed** **(** :ref:`String<class_String>` name, :ref:`float<class_float>` value **)**
 
-Emitted when a thumbstick or thumbpad on this tracker moves.
+Emitted when a trigger or similar input on this tracker changes value.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_XRPositionalTracker_signal_input_value_changed:
+.. _class_XRPositionalTracker_signal_input_vector2_changed:
 
 .. rst-class:: classref-signal
 
-**input_value_changed** **(** :ref:`String<class_String>` name, :ref:`float<class_float>` value **)**
+**input_vector2_changed** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` vector **)**
 
-Emitted when a trigger or similar input on this tracker changes value.
+Emitted when a thumbstick or thumbpad on this tracker moves.
 
 .. rst-class:: classref-item-separator
 

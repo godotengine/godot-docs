@@ -103,7 +103,7 @@ Methods
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`clear<class_Tree_method_clear>` **(** **)**                                                                                                                                                |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TreeItem<class_TreeItem>`                  | :ref:`create_item<class_Tree_method_create_item>` **(** :ref:`TreeItem<class_TreeItem>` parent=null, :ref:`int<class_int>` idx=-1 **)**                                                          |
+   | :ref:`TreeItem<class_TreeItem>`                  | :ref:`create_item<class_Tree_method_create_item>` **(** :ref:`TreeItem<class_TreeItem>` parent=null, :ref:`int<class_int>` index=-1 **)**                                                        |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`deselect_all<class_Tree_method_deselect_all>` **(** **)**                                                                                                                                  |
    +--------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -375,7 +375,7 @@ Emitted when a mouse button is clicked in the empty space of the tree.
 
 **item_activated** **(** **)**
 
-Emitted when an item's label is double-clicked.
+Emitted when an item is double-clicked, or selected with a ``ui_accept`` input event (e.g. using :kbd:`Enter` or :kbd:`Space` on the keyboard).
 
 .. rst-class:: classref-item-separator
 
@@ -405,18 +405,6 @@ Emitted when a custom button is pressed (i.e. in a :ref:`TreeItem.CELL_MODE_CUST
 
 ----
 
-.. _class_Tree_signal_item_double_clicked:
-
-.. rst-class:: classref-signal
-
-**item_double_clicked** **(** **)**
-
-Emitted when an item's icon is double-clicked.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Tree_signal_item_edited:
 
 .. rst-class:: classref-signal
@@ -424,6 +412,18 @@ Emitted when an item's icon is double-clicked.
 **item_edited** **(** **)**
 
 Emitted when an item is edited.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tree_signal_item_icon_double_clicked:
+
+.. rst-class:: classref-signal
+
+**item_icon_double_clicked** **(** **)**
+
+Emitted when an item's icon is double-clicked. For a signal that emits when any part of the item is double-clicked, see :ref:`item_activated<class_Tree_signal_item_activated>`.
 
 .. rst-class:: classref-item-separator
 
@@ -777,13 +777,13 @@ Clears the tree. This removes all items.
 
 .. rst-class:: classref-method
 
-:ref:`TreeItem<class_TreeItem>` **create_item** **(** :ref:`TreeItem<class_TreeItem>` parent=null, :ref:`int<class_int>` idx=-1 **)**
+:ref:`TreeItem<class_TreeItem>` **create_item** **(** :ref:`TreeItem<class_TreeItem>` parent=null, :ref:`int<class_int>` index=-1 **)**
 
 Creates an item in the tree and adds it as a child of ``parent``, which can be either a valid :ref:`TreeItem<class_TreeItem>` or ``null``.
 
 If ``parent`` is ``null``, the root item will be the parent, or the new item will be the root itself if the tree is empty.
 
-The new item will be the ``idx``\ th child of parent, or it will be the last child if there are not enough siblings.
+The new item will be the ``index``-th child of parent, or it will be the last child if there are not enough siblings.
 
 .. rst-class:: classref-item-separator
 

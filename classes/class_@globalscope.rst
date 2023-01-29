@@ -205,6 +205,8 @@ Methods
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`is_nan<class_@GlobalScope_method_is_nan>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`is_same<class_@GlobalScope_method_is_same>` **(** :ref:`Variant<class_Variant>` a, :ref:`Variant<class_Variant>` b **)**                                                                                                                                                                                                                                                 |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                         | :ref:`is_zero_approx<class_@GlobalScope_method_is_zero_approx>` **(** :ref:`float<class_float>` x **)**                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                   | :ref:`lerp<class_@GlobalScope_method_lerp>` **(** :ref:`Variant<class_Variant>` from, :ref:`Variant<class_Variant>` to, :ref:`Variant<class_Variant>` weight **)**                                                                                                                                                                                                             |
@@ -1373,22 +1375,6 @@ Number 8 on the numeric keypad.
 
 Number 9 on the numeric keypad.
 
-.. _class_@GlobalScope_constant_KEY_SUPER_L:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_SUPER_L** = ``4194368``
-
-Left Super key (Windows key).
-
-.. _class_@GlobalScope_constant_KEY_SUPER_R:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_SUPER_R** = ``4194369``
-
-Right Super key (Windows key).
-
 .. _class_@GlobalScope_constant_KEY_MENU:
 
 .. rst-class:: classref-enumeration-constant
@@ -1397,21 +1383,13 @@ Right Super key (Windows key).
 
 Context menu key.
 
-.. _class_@GlobalScope_constant_KEY_HYPER_L:
+.. _class_@GlobalScope_constant_KEY_HYPER:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_HYPER_L** = ``4194371``
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_HYPER** = ``4194371``
 
-Left Hyper key.
-
-.. _class_@GlobalScope_constant_KEY_HYPER_R:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_HYPER_R** = ``4194372``
-
-Right Hyper key.
+Hyper key. (On Linux/X11 only).
 
 .. _class_@GlobalScope_constant_KEY_HELP:
 
@@ -1420,22 +1398,6 @@ Right Hyper key.
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_HELP** = ``4194373``
 
 Help key.
-
-.. _class_@GlobalScope_constant_KEY_DIRECTION_L:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_DIRECTION_L** = ``4194374``
-
-Left Direction key.
-
-.. _class_@GlobalScope_constant_KEY_DIRECTION_R:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_DIRECTION_R** = ``4194375``
-
-Right Direction key.
 
 .. _class_@GlobalScope_constant_KEY_BACK:
 
@@ -1492,46 +1454,6 @@ Mute volume key.
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_VOLUMEUP** = ``4194382``
 
 Volume up key.
-
-.. _class_@GlobalScope_constant_KEY_BASSBOOST:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_BASSBOOST** = ``4194383``
-
-Bass Boost key.
-
-.. _class_@GlobalScope_constant_KEY_BASSUP:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_BASSUP** = ``4194384``
-
-Bass up key.
-
-.. _class_@GlobalScope_constant_KEY_BASSDOWN:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_BASSDOWN** = ``4194385``
-
-Bass down key.
-
-.. _class_@GlobalScope_constant_KEY_TREBLEUP:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_TREBLEUP** = ``4194386``
-
-Treble up key.
-
-.. _class_@GlobalScope_constant_KEY_TREBLEDOWN:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_TREBLEDOWN** = ``4194387``
-
-Treble down key.
 
 .. _class_@GlobalScope_constant_KEY_MEDIAPLAY:
 
@@ -1761,7 +1683,7 @@ Launch Shortcut F key.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_UNKNOWN** = ``16777215``
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_UNKNOWN** = ``8388607``
 
 Unknown key.
 
@@ -2317,46 +2239,6 @@ Z key.
 
 ~ key.
 
-.. _class_@GlobalScope_constant_KEY_NOBREAKSPACE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_NOBREAKSPACE** = ``160``
-
-Non-breakable space key.
-
-.. _class_@GlobalScope_constant_KEY_EXCLAMDOWN:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_EXCLAMDOWN** = ``161``
-
-¡ key.
-
-.. _class_@GlobalScope_constant_KEY_CENT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_CENT** = ``162``
-
-¢ key.
-
-.. _class_@GlobalScope_constant_KEY_STERLING:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_STERLING** = ``163``
-
-£ key.
-
-.. _class_@GlobalScope_constant_KEY_CURRENCY:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_CURRENCY** = ``164``
-
-¤ key.
-
 .. _class_@GlobalScope_constant_KEY_YEN:
 
 .. rst-class:: classref-enumeration-constant
@@ -2364,14 +2246,6 @@ Non-breakable space key.
 :ref:`Key<enum_@GlobalScope_Key>` **KEY_YEN** = ``165``
 
 ¥ key.
-
-.. _class_@GlobalScope_constant_KEY_BROKENBAR:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_BROKENBAR** = ``166``
-
-¦ key.
 
 .. _class_@GlobalScope_constant_KEY_SECTION:
 
@@ -2381,469 +2255,37 @@ Non-breakable space key.
 
 § key.
 
-.. _class_@GlobalScope_constant_KEY_DIAERESIS:
+.. _class_@GlobalScope_constant_KEY_GLOBE:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_DIAERESIS** = ``168``
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_GLOBE** = ``4194416``
 
-¨ key.
+"Globe" key on Mac / iPad keyboard.
 
-.. _class_@GlobalScope_constant_KEY_COPYRIGHT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_COPYRIGHT** = ``169``
-
-© key.
-
-.. _class_@GlobalScope_constant_KEY_ORDFEMININE:
+.. _class_@GlobalScope_constant_KEY_KEYBOARD:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ORDFEMININE** = ``170``
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_KEYBOARD** = ``4194417``
 
-ª key.
+"On-screen keyboard" key iPad keyboard.
 
-.. _class_@GlobalScope_constant_KEY_GUILLEMOTLEFT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_GUILLEMOTLEFT** = ``171``
-
-« key.
-
-.. _class_@GlobalScope_constant_KEY_NOTSIGN:
+.. _class_@GlobalScope_constant_KEY_JIS_EISU:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_NOTSIGN** = ``172``
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_EISU** = ``4194418``
 
-¬ key.
+英数 key on Mac keyboard.
 
-.. _class_@GlobalScope_constant_KEY_HYPHEN:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_HYPHEN** = ``173``
-
-Soft hyphen key.
-
-.. _class_@GlobalScope_constant_KEY_REGISTERED:
+.. _class_@GlobalScope_constant_KEY_JIS_KANA:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_REGISTERED** = ``174``
+:ref:`Key<enum_@GlobalScope_Key>` **KEY_JIS_KANA** = ``4194419``
 
-® key.
-
-.. _class_@GlobalScope_constant_KEY_MACRON:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_MACRON** = ``175``
-
-¯ key.
-
-.. _class_@GlobalScope_constant_KEY_DEGREE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_DEGREE** = ``176``
-
-° key.
-
-.. _class_@GlobalScope_constant_KEY_PLUSMINUS:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_PLUSMINUS** = ``177``
-
-± key.
-
-.. _class_@GlobalScope_constant_KEY_TWOSUPERIOR:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_TWOSUPERIOR** = ``178``
-
-² key.
-
-.. _class_@GlobalScope_constant_KEY_THREESUPERIOR:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_THREESUPERIOR** = ``179``
-
-³ key.
-
-.. _class_@GlobalScope_constant_KEY_ACUTE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ACUTE** = ``180``
-
-´ key.
-
-.. _class_@GlobalScope_constant_KEY_MU:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_MU** = ``181``
-
-µ key.
-
-.. _class_@GlobalScope_constant_KEY_PARAGRAPH:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_PARAGRAPH** = ``182``
-
-¶ key.
-
-.. _class_@GlobalScope_constant_KEY_PERIODCENTERED:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_PERIODCENTERED** = ``183``
-
-· key.
-
-.. _class_@GlobalScope_constant_KEY_CEDILLA:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_CEDILLA** = ``184``
-
-¸ key.
-
-.. _class_@GlobalScope_constant_KEY_ONESUPERIOR:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ONESUPERIOR** = ``185``
-
-¹ key.
-
-.. _class_@GlobalScope_constant_KEY_MASCULINE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_MASCULINE** = ``186``
-
-º key.
-
-.. _class_@GlobalScope_constant_KEY_GUILLEMOTRIGHT:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_GUILLEMOTRIGHT** = ``187``
-
-» key.
-
-.. _class_@GlobalScope_constant_KEY_ONEQUARTER:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ONEQUARTER** = ``188``
-
-¼ key.
-
-.. _class_@GlobalScope_constant_KEY_ONEHALF:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ONEHALF** = ``189``
-
-½ key.
-
-.. _class_@GlobalScope_constant_KEY_THREEQUARTERS:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_THREEQUARTERS** = ``190``
-
-¾ key.
-
-.. _class_@GlobalScope_constant_KEY_QUESTIONDOWN:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_QUESTIONDOWN** = ``191``
-
-¿ key.
-
-.. _class_@GlobalScope_constant_KEY_AGRAVE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_AGRAVE** = ``192``
-
-À key.
-
-.. _class_@GlobalScope_constant_KEY_AACUTE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_AACUTE** = ``193``
-
-Á key.
-
-.. _class_@GlobalScope_constant_KEY_ACIRCUMFLEX:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ACIRCUMFLEX** = ``194``
-
-Â key.
-
-.. _class_@GlobalScope_constant_KEY_ATILDE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ATILDE** = ``195``
-
-Ã key.
-
-.. _class_@GlobalScope_constant_KEY_ADIAERESIS:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ADIAERESIS** = ``196``
-
-Ä key.
-
-.. _class_@GlobalScope_constant_KEY_ARING:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ARING** = ``197``
-
-Å key.
-
-.. _class_@GlobalScope_constant_KEY_AE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_AE** = ``198``
-
-Æ key.
-
-.. _class_@GlobalScope_constant_KEY_CCEDILLA:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_CCEDILLA** = ``199``
-
-Ç key.
-
-.. _class_@GlobalScope_constant_KEY_EGRAVE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_EGRAVE** = ``200``
-
-È key.
-
-.. _class_@GlobalScope_constant_KEY_EACUTE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_EACUTE** = ``201``
-
-É key.
-
-.. _class_@GlobalScope_constant_KEY_ECIRCUMFLEX:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ECIRCUMFLEX** = ``202``
-
-Ê key.
-
-.. _class_@GlobalScope_constant_KEY_EDIAERESIS:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_EDIAERESIS** = ``203``
-
-Ë key.
-
-.. _class_@GlobalScope_constant_KEY_IGRAVE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_IGRAVE** = ``204``
-
-Ì key.
-
-.. _class_@GlobalScope_constant_KEY_IACUTE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_IACUTE** = ``205``
-
-Í key.
-
-.. _class_@GlobalScope_constant_KEY_ICIRCUMFLEX:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ICIRCUMFLEX** = ``206``
-
-Î key.
-
-.. _class_@GlobalScope_constant_KEY_IDIAERESIS:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_IDIAERESIS** = ``207``
-
-Ï key.
-
-.. _class_@GlobalScope_constant_KEY_ETH:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ETH** = ``208``
-
-Ð key.
-
-.. _class_@GlobalScope_constant_KEY_NTILDE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_NTILDE** = ``209``
-
-Ñ key.
-
-.. _class_@GlobalScope_constant_KEY_OGRAVE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_OGRAVE** = ``210``
-
-Ò key.
-
-.. _class_@GlobalScope_constant_KEY_OACUTE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_OACUTE** = ``211``
-
-Ó key.
-
-.. _class_@GlobalScope_constant_KEY_OCIRCUMFLEX:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_OCIRCUMFLEX** = ``212``
-
-Ô key.
-
-.. _class_@GlobalScope_constant_KEY_OTILDE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_OTILDE** = ``213``
-
-Õ key.
-
-.. _class_@GlobalScope_constant_KEY_ODIAERESIS:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_ODIAERESIS** = ``214``
-
-Ö key.
-
-.. _class_@GlobalScope_constant_KEY_MULTIPLY:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_MULTIPLY** = ``215``
-
-× key.
-
-.. _class_@GlobalScope_constant_KEY_OOBLIQUE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_OOBLIQUE** = ``216``
-
-Ø key.
-
-.. _class_@GlobalScope_constant_KEY_UGRAVE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_UGRAVE** = ``217``
-
-Ù key.
-
-.. _class_@GlobalScope_constant_KEY_UACUTE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_UACUTE** = ``218``
-
-Ú key.
-
-.. _class_@GlobalScope_constant_KEY_UCIRCUMFLEX:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_UCIRCUMFLEX** = ``219``
-
-Û key.
-
-.. _class_@GlobalScope_constant_KEY_UDIAERESIS:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_UDIAERESIS** = ``220``
-
-Ü key.
-
-.. _class_@GlobalScope_constant_KEY_YACUTE:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_YACUTE** = ``221``
-
-Ý key.
-
-.. _class_@GlobalScope_constant_KEY_THORN:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_THORN** = ``222``
-
-Þ key.
-
-.. _class_@GlobalScope_constant_KEY_SSHARP:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_SSHARP** = ``223``
-
-ß key.
-
-.. _class_@GlobalScope_constant_KEY_DIVISION:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_DIVISION** = ``247``
-
-÷ key.
-
-.. _class_@GlobalScope_constant_KEY_YDIAERESIS:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`Key<enum_@GlobalScope_Key>` **KEY_YDIAERESIS** = ``255``
-
-ÿ key.
+かな key on Mac keyboard.
 
 .. rst-class:: classref-item-separator
 
@@ -4432,19 +3874,27 @@ The property is a script variable which should be serialized and saved in the sc
 
 The property is an array.
 
-.. _class_@GlobalScope_constant_PROPERTY_USAGE_DO_NOT_SHARE_ON_DUPLICATE:
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_ALWAYS_DUPLICATE:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DO_NOT_SHARE_ON_DUPLICATE** = ``524288``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_ALWAYS_DUPLICATE** = ``524288``
 
-If the property is a :ref:`Resource<class_Resource>`, a new copy of it is always created when calling :ref:`Node.duplicate<class_Node_method_duplicate>` or :ref:`Resource.duplicate<class_Resource_method_duplicate>`.
+When duplicating a resource with :ref:`Resource.duplicate<class_Resource_method_duplicate>`, and this flag is set on a property of that resource, the property should always be duplicated, regardless of the ``subresources`` bool parameter.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_NEVER_DUPLICATE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NEVER_DUPLICATE** = ``1048576``
+
+When duplicating a resource with :ref:`Resource.duplicate<class_Resource_method_duplicate>`, and this flag is set on a property of that resource, the property should never be duplicated, regardless of the ``subresources`` bool parameter.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_HIGH_END_GFX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_HIGH_END_GFX** = ``1048576``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_HIGH_END_GFX** = ``2097152``
 
 The property is only shown in the editor if modern renderers are supported (GLES3 is excluded).
 
@@ -4452,7 +3902,7 @@ The property is only shown in the editor if modern renderers are supported (GLES
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NODE_PATH_FROM_SCENE_ROOT** = ``2097152``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NODE_PATH_FROM_SCENE_ROOT** = ``4194304``
 
 
 
@@ -4460,7 +3910,7 @@ The property is only shown in the editor if modern renderers are supported (GLES
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_RESOURCE_NOT_PERSISTENT** = ``4194304``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_RESOURCE_NOT_PERSISTENT** = ``8388608``
 
 
 
@@ -4468,7 +3918,7 @@ The property is only shown in the editor if modern renderers are supported (GLES
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_KEYING_INCREMENTS** = ``8388608``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_KEYING_INCREMENTS** = ``16777216``
 
 
 
@@ -4476,7 +3926,7 @@ The property is only shown in the editor if modern renderers are supported (GLES
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFERRED_SET_RESOURCE** = ``16777216``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFERRED_SET_RESOURCE** = ``33554432``
 
 
 
@@ -4484,7 +3934,7 @@ The property is only shown in the editor if modern renderers are supported (GLES
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR_INSTANTIATE_OBJECT** = ``33554432``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR_INSTANTIATE_OBJECT** = ``67108864``
 
 
 
@@ -4492,7 +3942,7 @@ The property is only shown in the editor if modern renderers are supported (GLES
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR_BASIC_SETTING** = ``67108864``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_EDITOR_BASIC_SETTING** = ``134217728``
 
 
 
@@ -4500,7 +3950,7 @@ The property is only shown in the editor if modern renderers are supported (GLES
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_READ_ONLY** = ``134217728``
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_READ_ONLY** = ``268435456``
 
 The property is read-only in the :ref:`EditorInspector<class_EditorInspector>`.
 
@@ -6187,9 +5637,18 @@ Produces:
 
 Returns the integer hash of the passed ``variable``.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     print(hash("a")) # Prints 177670
+
+ .. code-tab:: csharp
+
+    GD.Print(GD.Hash("a")); // Prints 177670
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6203,13 +5662,33 @@ Returns the integer hash of the passed ``variable``.
 
 Returns the :ref:`Object<class_Object>` that corresponds to ``instance_id``. All Objects have a unique instance ID. See also :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var foo = "bar"
+    
     func _ready():
         var id = get_instance_id()
         var inst = instance_from_id(id)
         print(inst.foo) # Prints bar
+
+ .. code-tab:: csharp
+
+    public partial class MyNode : Node
+    {
+        public string Foo { get; set; } = "bar";
+    
+        public override void _Ready()
+        {
+            ulong id = GetInstanceId();
+            var inst = (MyNode)InstanceFromId(Id);
+            GD.Print(inst.Foo); // Prints bar
+        }
+    }
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6315,13 +5794,45 @@ Returns ``true`` if ``x`` is a NaN ("Not a Number" or invalid) value.
 
 ----
 
+.. _class_@GlobalScope_method_is_same:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_same** **(** :ref:`Variant<class_Variant>` a, :ref:`Variant<class_Variant>` b **)**
+
+Returns ``true``, for value types, if ``a`` and ``b`` share the same value. Returns ``true``, for reference types, if the references of ``a`` and ``b`` are the same.
+
+::
+
+    # Vector2 is a value type
+    var vec2_a = Vector2(0, 0)
+    var vec2_b = Vector2(0, 0)
+    var vec2_c = Vector2(1, 1)
+    is_same(vec2_a, vec2_a)  # true
+    is_same(vec2_a, vec2_b)  # true
+    is_same(vec2_a, vec2_c)  # false
+    
+    # Array is a reference type
+    var arr_a = []
+    var arr_b = []
+    is_same(arr_a, arr_a)  # true
+    is_same(arr_a, arr_b)  # false
+
+These are :ref:`Variant<class_Variant>` value types: ``null``, :ref:`bool<class_bool>`, :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`String<class_String>`, :ref:`StringName<class_StringName>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`, :ref:`Rect2<class_Rect2>`, :ref:`Rect2i<class_Rect2i>`, :ref:`Transform2D<class_Transform2D>`, :ref:`Transform3D<class_Transform3D>`, :ref:`Plane<class_Plane>`, :ref:`Quaternion<class_Quaternion>`, :ref:`AABB<class_AABB>`, :ref:`Basis<class_Basis>`, :ref:`Projection<class_Projection>`, :ref:`Color<class_Color>`, :ref:`NodePath<class_NodePath>`, :ref:`RID<class_RID>`, :ref:`Callable<class_Callable>` and :ref:`Signal<class_Signal>`.
+
+These are :ref:`Variant<class_Variant>` reference types: :ref:`Object<class_Object>`, :ref:`Dictionary<class_Dictionary>`, :ref:`Array<class_Array>`, :ref:`PackedByteArray<class_PackedByteArray>`, :ref:`PackedInt32Array<class_PackedInt32Array>`, :ref:`PackedInt64Array<class_PackedInt64Array>`, :ref:`PackedFloat32Array<class_PackedFloat32Array>`, :ref:`PackedFloat64Array<class_PackedFloat64Array>`, :ref:`PackedStringArray<class_PackedStringArray>`, :ref:`PackedVector2Array<class_PackedVector2Array>`, :ref:`PackedVector3Array<class_PackedVector3Array>` and :ref:`PackedColorArray<class_PackedColorArray>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GlobalScope_method_is_zero_approx:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **is_zero_approx** **(** :ref:`float<class_float>` x **)**
 
-Returns ``true`` if ``x`` is zero or almost zero.
+Returns ``true`` if ``x`` is zero or almost zero. The comparison is done using a tolerance calculation with a small internal epsilon.
 
 This function is faster than using :ref:`is_equal_approx<class_@GlobalScope_method_is_equal_approx>` with one value as zero.
 
@@ -6663,10 +6174,20 @@ void **print** **(** ... **)** |vararg|
 
 Converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var a = [1, 2, 3]
     print("a", "b", a) # Prints ab[1, 2, 3]
+
+ .. code-tab:: csharp
+
+    var a = new Godot.Collections.Array { 1, 2, 3 };
+    GD.Print("a", "b", a); // Prints ab[1, 2, 3]
+
+
 
 \ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>` or :ref:`print_rich<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
 
@@ -6684,9 +6205,18 @@ Converts one or more arguments of any type to string in the best way possible an
 
 When printing to standard output, the supported subset of BBCode is converted to ANSI escape codes for the terminal emulator to display. Displaying ANSI escape codes is currently only supported on Linux and macOS. Support for ANSI escape codes may vary across terminal emulators, especially for italic and strikethrough.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     print_rich("[code][b]Hello world![/b][/code]") # Prints out: [b]Hello world![/b]
+
+ .. code-tab:: csharp
+
+    GD.PrintRich("[code][b]Hello world![/b][/code]"); // Prints out: [b]Hello world![/b]
+
+
 
 \ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>` or :ref:`print_rich<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
 
@@ -6714,9 +6244,18 @@ void **printerr** **(** ... **)** |vararg|
 
 Prints one or more arguments to strings in the best way possible to standard error line.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     printerr("prints to stderr")
+
+ .. code-tab:: csharp
+
+    GD.PrintErr("prints to stderr");
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6730,12 +6269,24 @@ void **printraw** **(** ... **)** |vararg|
 
 Prints one or more arguments to strings in the best way possible to the OS terminal. Unlike :ref:`print<class_@GlobalScope_method_print>`, no newline is automatically added at the end.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     printraw("A")
     printraw("B")
     printraw("C")
     # Prints ABC to terminal
+
+ .. code-tab:: csharp
+
+    GD.PrintRaw("A");
+    GD.PrintRaw("B");
+    GD.PrintRaw("C");
+    // Prints ABC to terminal
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6749,9 +6300,18 @@ void **prints** **(** ... **)** |vararg|
 
 Prints one or more arguments to the console with a space between each argument.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     prints("A", "B", "C") # Prints A B C
+
+ .. code-tab:: csharp
+
+    GD.PrintS("A", "B", "C"); // Prints A B C
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6765,9 +6325,18 @@ void **printt** **(** ... **)** |vararg|
 
 Prints one or more arguments to the console with a tab between each argument.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     printt("A", "B", "C") # Prints A       B       C
+
+ .. code-tab:: csharp
+
+    GD.PrintT("A", "B", "C"); // Prints A       B       C
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6781,9 +6350,18 @@ void **push_error** **(** ... **)** |vararg|
 
 Pushes an error message to Godot's built-in debugger and to the OS terminal.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     push_error("test error") # Prints "test error" to debugger and terminal as error call
+
+ .. code-tab:: csharp
+
+    GD.PushError("test error"); // Prints "test error" to debugger and terminal as error call
+
+
 
 \ **Note:** This function does not pause project execution. To print an error message and pause project execution in debug builds, use ``assert(false, "test error")`` instead.
 
@@ -6799,9 +6377,18 @@ void **push_warning** **(** ... **)** |vararg|
 
 Pushes a warning message to Godot's built-in debugger and to the OS terminal.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     push_warning("test warning") # Prints "test warning" to debugger and terminal as warning call
+
+ .. code-tab:: csharp
+
+    GD.PushWarning("test warning"); // Prints "test warning" to debugger and terminal as warning call
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6854,9 +6441,18 @@ Given a ``seed``, returns a :ref:`PackedInt64Array<class_PackedInt64Array>` of s
 
 Returns a random floating point value between ``0.0`` and ``1.0`` (inclusive).
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     randf() # Returns e.g. 0.375671
+
+ .. code-tab:: csharp
+
+    GD.Randf(); // Returns e.g. 0.375671
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6870,10 +6466,20 @@ Returns a random floating point value between ``0.0`` and ``1.0`` (inclusive).
 
 Returns a random floating point value between ``from`` and ``to`` (inclusive).
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     randf_range(0, 20.5) # Returns e.g. 7.45315
     randf_range(-10, 10) # Returns e.g. -3.844535
+
+ .. code-tab:: csharp
+
+    GD.RandRange(0.0, 20.5);   // Returns e.g. 7.45315
+    GD.RandRange(-10.0, 10.0); // Returns e.g. -3.844535
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6899,12 +6505,24 @@ Returns a normally-distributed pseudo-random floating point value using Box-Mull
 
 Returns a random unsigned 32-bit integer. Use remainder to obtain a random value in the interval ``[0, N - 1]`` (where N is smaller than 2^32).
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     randi()           # Returns random integer between 0 and 2^32 - 1
     randi() % 20      # Returns random integer between 0 and 19
     randi() % 100     # Returns random integer between 0 and 99
     randi() % 100 + 1 # Returns random integer between 1 and 100
+
+ .. code-tab:: csharp
+
+    GD.Randi();           // Returns random integer between 0 and 2^32 - 1
+    GD.Randi() % 20;      // Returns random integer between 0 and 19
+    GD.Randi() % 100;     // Returns random integer between 0 and 99
+    GD.Randi() % 100 + 1; // Returns random integer between 1 and 100
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -6918,10 +6536,20 @@ Returns a random unsigned 32-bit integer. Use remainder to obtain a random value
 
 Returns a random signed 32-bit integer between ``from`` and ``to`` (inclusive). If ``to`` is lesser than ``from``, they are swapped.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     randi_range(0, 1)      # Returns either 0 or 1
     randi_range(-10, 1000) # Returns random integer between -10 and 1000
+
+ .. code-tab:: csharp
+
+    GD.RandRange(0, 1);      // Returns either 0 or 1
+    GD.RandRange(-10, 1000); // Returns random integer between -10 and 1000
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -7041,7 +6669,10 @@ void **seed** **(** :ref:`int<class_int>` base **)**
 
 Sets the seed for the random number generator to ``base``. Setting the seed manually can ensure consistent, repeatable results for most random functions.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var my_seed = "Godot Rocks".hash()
     seed(my_seed)
@@ -7049,6 +6680,17 @@ Sets the seed for the random number generator to ``base``. Setting the seed manu
     seed(my_seed)
     var b = randf() + randi()
     # a and b are now identical
+
+ .. code-tab:: csharp
+
+    ulong mySeed = (ulong)GD.Hash("Godot Rocks");
+    GD.Seed(mySeed);
+    var a = GD.Randf() + GD.Randi();
+    GD.Seed(mySeed);
+    var b = GD.Randf() + GD.Randi();
+    // a and b are now identical
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -7294,11 +6936,22 @@ Converts one or more arguments of any :ref:`Variant<class_Variant>` type to :ref
 
 Converts a formatted ``string`` that was returned by :ref:`var_to_str<class_@GlobalScope_method_var_to_str>` to the original :ref:`Variant<class_Variant>`.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var a = '{ "a": 1, "b": 2 }' # a is a String
     var b = str_to_var(a)        # b is a Dictionary
     print(b["a"])                # Prints 1
+
+ .. code-tab:: csharp
+
+    string a = "{ \"a\": 1, \"b\": 2 }";        // a is a string
+    var b = GD.StrToVar(a).AsGodotDictionary(); // b is a Dictionary
+    GD.Print(b["a"]);                           // Prints 1
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -7393,18 +7046,28 @@ Encodes a :ref:`Variant<class_Variant>` value to a byte array. Encoding objects 
 
 Converts a :ref:`Variant<class_Variant>` ``variable`` to a formatted :ref:`String<class_String>` that can then be parsed using :ref:`str_to_var<class_@GlobalScope_method_str_to_var>`.
 
-::
 
-    a = { "a": 1, "b": 2 }
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var a = { "a": 1, "b": 2 }
     print(var_to_str(a))
+
+ .. code-tab:: csharp
+
+    var a = new Godot.Collections.Dictionary { ["a"] = 1, ["b"] = 2 };
+    GD.Print(GD.VarToStr(a));
+
+
 
 Prints:
 
 ::
 
     {
-    "a": 1,
-    "b": 2
+        "a": 1,
+        "b": 2
     }
 
 .. rst-class:: classref-item-separator

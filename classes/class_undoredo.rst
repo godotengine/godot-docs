@@ -38,7 +38,7 @@ Here's an example on how to add an action to the Godot editor's own **UndoRedo**
     func undo_something():
         pass # Put here the code that reverts what's done by "do_something()".
     
-    func _on_MyButton_pressed():
+    func _on_my_button_pressed():
         var node = get_node("MyNode2D")
         undo_redo.create_action("Move the node")
         undo_redo.add_do_method(self, "do_something")
@@ -70,10 +70,10 @@ Here's an example on how to add an action to the Godot editor's own **UndoRedo**
     {
         var node = GetNode<Node2D>("MyNode2D");
         UndoRedo.CreateAction("Move the node");
-        UndoRedo.AddDoMethod(this, nameof(DoSomething));
-        UndoRedo.AddUndoMethod(this, nameof(UndoSomething));
-        UndoRedo.AddDoProperty(node, "position", new Vector2(100, 100));
-        UndoRedo.AddUndoProperty(node, "position", node.Position);
+        UndoRedo.AddDoMethod(this, MethodName.DoSomething);
+        UndoRedo.AddUndoMethod(this, MethodName.UndoSomething);
+        UndoRedo.AddDoProperty(node, Node2D.PropertyName.Position, new Vector2(100, 100));
+        UndoRedo.AddUndoProperty(node, Node2D.PropertyName.Position, node.Position);
         UndoRedo.CommitAction();
     }
 

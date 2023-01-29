@@ -39,7 +39,7 @@ Here's the minimum code required to start an immersive VR session:
     func _ready():
         # We assume this node has a button as a child.
         # This button is for the user to consent to entering immersive VR mode.
-        $Button.pressed.connect(self._on_Button_pressed)
+        $Button.pressed.connect(self._on_button_pressed)
     
         webxr_interface = XRServer.find_interface("WebXR")
         if webxr_interface:
@@ -59,7 +59,7 @@ Here's the minimum code required to start an immersive VR session:
         if session_mode == 'immersive-vr':
             vr_supported = supported
     
-    func _on_Button_pressed():
+    func _on_button_pressed():
         if not vr_supported:
             OS.alert("Your browser doesn't support VR")
             return
@@ -118,7 +118,7 @@ You can use both methods to allow your game or app to support a wider or narrowe
 Tutorials
 ---------
 
-- `How to make a VR game for WebXR with Godot <https://www.snopekgames.com/blog/2020/how-make-vr-game-webxr-godot>`__
+- `How to make a VR game for WebXR with Godot 4 <https://www.snopekgames.com/tutorial/2023/how-make-vr-game-webxr-godot-4>`__
 
 .. rst-class:: classref-reftable-group
 

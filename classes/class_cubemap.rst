@@ -27,6 +27,35 @@ To create such a texture file yourself, reimport your image files using the Godo
 
 \ **Note:** Godot doesn't support using cubemaps in a :ref:`PanoramaSkyMaterial<class_PanoramaSkyMaterial>`. You can use `this tool <https://danilw.github.io/GLSL-howto/cubemap_to_panorama_js/cubemap_to_panorama.html>`__ to convert a cubemap to an equirectangular sky map.
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`create_placeholder<class_Cubemap_method_create_placeholder>` **(** **)** |const| |
+   +---------------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_Cubemap_method_create_placeholder:
+
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **create_placeholder** **(** **)** |const|
+
+Creates a placeholder version of this resource (:ref:`PlaceholderCubemap<class_PlaceholderCubemap>`).
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

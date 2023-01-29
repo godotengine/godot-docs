@@ -23,6 +23,8 @@ Description
 
 This resource is used in :ref:`EditorScenePostImport<class_EditorScenePostImport>`. Some parameters are referring to bones in :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`Skin<class_Skin>`, :ref:`Animation<class_Animation>`, and some other nodes are rewritten based on the parameters of **SkeletonProfile**.
 
+\ **Note:** These parameters need to be set only when creating a custom profile. In :ref:`SkeletonProfileHumanoid<class_SkeletonProfileHumanoid>`, they are defined internally as read-only values.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -174,9 +176,9 @@ Property Descriptions
 - void **set_bone_size** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_bone_size** **(** **)**
 
-.. container:: contribute
+The amount of bones in retargeting section's :ref:`BoneMap<class_BoneMap>` editor. For example, :ref:`SkeletonProfileHumanoid<class_SkeletonProfileHumanoid>` has 56 bones.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The size of elements in :ref:`BoneMap<class_BoneMap>` updates when changing this property in it's assigned **SkeletonProfile**.
 
 .. rst-class:: classref-item-separator
 
@@ -193,9 +195,9 @@ Property Descriptions
 - void **set_group_size** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_group_size** **(** **)**
 
-.. container:: contribute
+The amount of groups of bones in retargeting section's :ref:`BoneMap<class_BoneMap>` editor. For example, :ref:`SkeletonProfileHumanoid<class_SkeletonProfileHumanoid>` has 4 groups.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+This property exists to separate the bone list into several sections in the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -212,9 +214,7 @@ Property Descriptions
 - void **set_root_bone** **(** :ref:`StringName<class_StringName>` value **)**
 - :ref:`StringName<class_StringName>` **get_root_bone** **(** **)**
 
-A name of bone that will be used as the root bone in :ref:`AnimationTree<class_AnimationTree>`.
-
-\ **Note:** In most cases, it is the bone of the parent of the hips that exists at the world origin in the humanoid model.
+A bone name that will be used as the root bone in :ref:`AnimationTree<class_AnimationTree>`. This should be the bone of the parent of hips that exists at the world origin.
 
 .. rst-class:: classref-item-separator
 
@@ -231,9 +231,7 @@ A name of bone that will be used as the root bone in :ref:`AnimationTree<class_A
 - void **set_scale_base_bone** **(** :ref:`StringName<class_StringName>` value **)**
 - :ref:`StringName<class_StringName>` **get_scale_base_bone** **(** **)**
 
-A name of bone which height will be used as the coefficient for normalization.
-
-\ **Note:** In most cases, it is hips in the humanoid model.
+A bone name which will use model's height as the coefficient for normalization. For example, :ref:`SkeletonProfileHumanoid<class_SkeletonProfileHumanoid>` defines it as ``Hips``.
 
 .. rst-class:: classref-section-separator
 

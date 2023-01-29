@@ -52,7 +52,7 @@ Method Descriptions
 
 void **register_server** **(** :ref:`String<class_String>` name, :ref:`Callable<class_Callable>` create_callback **)**
 
-Register a :ref:`PhysicsServer3D<class_PhysicsServer3D>` implementation by passing a ``name`` and a :ref:`Callable<class_Callable>` that returns a :ref:`PhysicsServer2D<class_PhysicsServer2D>` object.
+Register a :ref:`PhysicsServer3D<class_PhysicsServer3D>` implementation by passing a ``name`` and a :ref:`Callable<class_Callable>` that returns a :ref:`PhysicsServer3D<class_PhysicsServer3D>` object.
 
 .. rst-class:: classref-item-separator
 

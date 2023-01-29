@@ -43,11 +43,13 @@ Methods
    :widths: auto
 
    +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                            | :ref:`get_axis<class_XRController3D_method_get_axis>` **(** :ref:`StringName<class_StringName>` name **)** |const|                   |
+   | :ref:`float<class_float>`                                | :ref:`get_float<class_XRController3D_method_get_float>` **(** :ref:`StringName<class_StringName>` name **)** |const|                 |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                            | :ref:`get_input<class_XRController3D_method_get_input>` **(** :ref:`StringName<class_StringName>` name **)** |const|                 |
    +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TrackerHand<enum_XRPositionalTracker_TrackerHand>` | :ref:`get_tracker_hand<class_XRController3D_method_get_tracker_hand>` **(** **)** |const|                                            |
    +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                | :ref:`get_value<class_XRController3D_method_get_value>` **(** :ref:`StringName<class_StringName>` name **)** |const|                 |
+   | :ref:`Vector2<class_Vector2>`                            | :ref:`get_vector2<class_XRController3D_method_get_vector2>` **(** :ref:`StringName<class_StringName>` name **)** |const|             |
    +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                  | :ref:`is_button_pressed<class_XRController3D_method_is_button_pressed>` **(** :ref:`StringName<class_StringName>` name **)** |const| |
    +----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
@@ -85,25 +87,25 @@ Emitted when a button on this controller is released.
 
 ----
 
-.. _class_XRController3D_signal_input_axis_changed:
+.. _class_XRController3D_signal_input_float_changed:
 
 .. rst-class:: classref-signal
 
-**input_axis_changed** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` value **)**
+**input_float_changed** **(** :ref:`String<class_String>` name, :ref:`float<class_float>` value **)**
 
-Emitted when a thumbstick or thumbpad on this controller is moved.
+Emitted when a trigger or similar input on this controller changes value.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_XRController3D_signal_input_value_changed:
+.. _class_XRController3D_signal_input_vector2_changed:
 
 .. rst-class:: classref-signal
 
-**input_value_changed** **(** :ref:`String<class_String>` name, :ref:`float<class_float>` value **)**
+**input_vector2_changed** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` value **)**
 
-Emitted when a trigger or similar input on this controller changes value.
+Emitted when a thumbstick or thumbpad on this controller is moved.
 
 .. rst-class:: classref-section-separator
 
@@ -114,13 +116,25 @@ Emitted when a trigger or similar input on this controller changes value.
 Method Descriptions
 -------------------
 
-.. _class_XRController3D_method_get_axis:
+.. _class_XRController3D_method_get_float:
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_axis** **(** :ref:`StringName<class_StringName>` name **)** |const|
+:ref:`float<class_float>` **get_float** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns a :ref:`Vector2<class_Vector2>` for the input with the given ``name``. This is used for thumbsticks and thumbpads found on many controllers.
+Returns a numeric value for the input with the given ``name``. This is used for triggers and grip sensors.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_XRController3D_method_get_input:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_input** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns a :ref:`Variant<class_Variant>` for the input with the given ``name``. This works for any input type, the variant will be typed according to the actions configuration.
 
 .. rst-class:: classref-item-separator
 
@@ -138,13 +152,13 @@ Returns the hand holding this controller, if known. See :ref:`TrackerHand<enum_X
 
 ----
 
-.. _class_XRController3D_method_get_value:
+.. _class_XRController3D_method_get_vector2:
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **get_value** **(** :ref:`StringName<class_StringName>` name **)** |const|
+:ref:`Vector2<class_Vector2>` **get_vector2** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns a numeric value for the input with the given ``name``. This is used for triggers and grip sensors.
+Returns a :ref:`Vector2<class_Vector2>` for the input with the given ``name``. This is used for thumbsticks and thumbpads found on many controllers.
 
 .. rst-class:: classref-item-separator
 

@@ -25,6 +25,8 @@ This node implements all the physics logic needed to simulate a car. It is based
 
 \ **Note:** This class has known issues and isn't designed to provide realistic 3D vehicle physics. If you want advanced vehicle physics, you will probably have to write your own physics integration using another :ref:`PhysicsBody3D<class_PhysicsBody3D>` class.
 
+\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

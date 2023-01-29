@@ -23,6 +23,8 @@ Editor facility for creating and editing collision shapes in 3D space. Set the :
 
 You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area3D<class_Area3D>` to give it a detection shape, or add it to a :ref:`PhysicsBody3D<class_PhysicsBody3D>` to create a solid object.
 
+\ **Warning:** A non-uniformly scaled CollisionShape3D node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size of its :ref:`shape<class_CollisionShape3D_property_shape>` resource instead.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

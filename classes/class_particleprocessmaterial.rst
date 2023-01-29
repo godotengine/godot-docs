@@ -849,7 +849,9 @@ The particles' friction. Values range from ``0`` (frictionless) to ``1`` (maximu
 
 The particles' collision mode.
 
-\ **Note:** Particles can only collide with :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` nodes, not :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes. To make particles collide with various objects, you can add :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` nodes as children of :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes.
+\ **Note:** 3D Particles can only collide with :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` nodes, not :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes. To make particles collide with various objects, you can add :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` nodes as children of :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes.
+
+\ **Note:** 2D Particles can only collide with :ref:`LightOccluder2D<class_LightOccluder2D>` nodes, not :ref:`PhysicsBody2D<class_PhysicsBody2D>` nodes.
 
 .. rst-class:: classref-item-separator
 

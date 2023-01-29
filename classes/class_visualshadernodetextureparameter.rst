@@ -38,6 +38,8 @@ Properties
    +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
    | :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` | :ref:`texture_repeat<class_VisualShaderNodeTextureParameter_property_texture_repeat>` | ``0`` |
    +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
+   | :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` | :ref:`texture_source<class_VisualShaderNodeTextureParameter_property_texture_source>` | ``0`` |
+   +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
    | :ref:`TextureType<enum_VisualShaderNodeTextureParameter_TextureType>`     | :ref:`texture_type<class_VisualShaderNodeTextureParameter_property_texture_type>`     | ``0`` |
    +---------------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------+
 
@@ -258,6 +260,56 @@ Texture will not repeat.
 
 Represents the size of the :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` enum.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_VisualShaderNodeTextureParameter_TextureSource:
+
+.. rst-class:: classref-enumeration
+
+enum **TextureSource**:
+
+.. _class_VisualShaderNodeTextureParameter_constant_SOURCE_NONE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **SOURCE_NONE** = ``0``
+
+The texture source is not specified in the shader.
+
+.. _class_VisualShaderNodeTextureParameter_constant_SOURCE_SCREEN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **SOURCE_SCREEN** = ``1``
+
+The texture source is the screen texture which captures all opaque objects drawn this frame.
+
+.. _class_VisualShaderNodeTextureParameter_constant_SOURCE_DEPTH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **SOURCE_DEPTH** = ``2``
+
+The texture source is the depth texture from the depth prepass.
+
+.. _class_VisualShaderNodeTextureParameter_constant_SOURCE_NORMAL_ROUGHNESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **SOURCE_NORMAL_ROUGHNESS** = ``3``
+
+The texture source is the normal-roughness buffer from the depth prepass.
+
+.. _class_VisualShaderNodeTextureParameter_constant_SOURCE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **SOURCE_MAX** = ``4``
+
+Represents the size of the :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` enum.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -313,6 +365,23 @@ Sets the texture filtering mode. See :ref:`TextureFilter<enum_VisualShaderNodeTe
 - :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` **get_texture_repeat** **(** **)**
 
 Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTextureParameter_TextureRepeat>` for options.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VisualShaderNodeTextureParameter_property_texture_source:
+
+.. rst-class:: classref-property
+
+:ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **texture_source** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture_source** **(** :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` value **)**
+- :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **get_texture_source** **(** **)**
+
+Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture. see :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` for options.
 
 .. rst-class:: classref-item-separator
 

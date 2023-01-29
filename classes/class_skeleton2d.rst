@@ -88,7 +88,7 @@ Method Descriptions
 
 void **execute_modifications** **(** :ref:`float<class_float>` delta, :ref:`int<class_int>` execution_mode **)**
 
-Executes all the modifications on the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`, if the Skeleton3D has one assigned.
+Executes all the modifications on the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>`, if the Skeleton2D has one assigned.
 
 .. rst-class:: classref-item-separator
 

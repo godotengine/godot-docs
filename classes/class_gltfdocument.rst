@@ -60,7 +60,7 @@ Method Descriptions
 
 :ref:`Error<enum_@GlobalScope_Error>` **append_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` bytes, :ref:`String<class_String>` base_path, :ref:`GLTFState<class_GLTFState>` state, :ref:`int<class_int>` flags=0 **)**
 
-Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a gLTF and returns a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
+Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a GLTF and imports the data to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
 \ **Note:** The ``base_path`` tells :ref:`append_from_buffer<class_GLTFDocument_method_append_from_buffer>` where to find dependencies and can be empty.
 
@@ -74,7 +74,7 @@ Takes a :ref:`PackedByteArray<class_PackedByteArray>` defining a gLTF and return
 
 :ref:`Error<enum_@GlobalScope_Error>` **append_from_file** **(** :ref:`String<class_String>` path, :ref:`GLTFState<class_GLTFState>` state, :ref:`int<class_int>` flags=0, :ref:`String<class_String>` base_path="" **)**
 
-Takes a path to a gLTF file and returns a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
+Takes a path to a GLTF file and imports the data at that file path to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
 \ **Note:** The ``base_path`` tells :ref:`append_from_file<class_GLTFDocument_method_append_from_file>` where to find dependencies and can be empty.
 
@@ -88,7 +88,7 @@ Takes a path to a gLTF file and returns a :ref:`GLTFState<class_GLTFState>` obje
 
 :ref:`Error<enum_@GlobalScope_Error>` **append_from_scene** **(** :ref:`Node<class_Node>` node, :ref:`GLTFState<class_GLTFState>` state, :ref:`int<class_int>` flags=0 **)**
 
-Takes a Godot Engine scene node and returns a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
+Takes a Godot Engine scene node and exports it and its descendants to the given :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -100,7 +100,7 @@ Takes a Godot Engine scene node and returns a :ref:`GLTFState<class_GLTFState>` 
 
 :ref:`PackedByteArray<class_PackedByteArray>` **generate_buffer** **(** :ref:`GLTFState<class_GLTFState>` state **)**
 
-Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a gLTF :ref:`PackedByteArray<class_PackedByteArray>`.
+Takes a :ref:`GLTFState<class_GLTFState>` object through the ``state`` parameter and returns a GLTF :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 

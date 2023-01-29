@@ -195,7 +195,7 @@ Returns whether this modification has been successfully setup or not.
 
 :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` **get_modification_stack** **(** **)**
 
-Returns the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` that this modification is bound to. Through the modification stack, you can access the Skeleton3D the modification is operating on.
+Returns the :ref:`SkeletonModificationStack2D<class_SkeletonModificationStack2D>` that this modification is bound to. Through the modification stack, you can access the Skeleton2D the modification is operating on.
 
 .. rst-class:: classref-item-separator
 

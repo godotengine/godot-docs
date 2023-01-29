@@ -50,7 +50,7 @@ Text tutorials
 
 - `FinepointCGI website by Mitch <http://finepointcgi.io/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
-- `Godot Recipes by KidsCanCode <http://godotrecipes.com/>`__
+- `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__
 
 Devlogs
@@ -58,6 +58,7 @@ Devlogs
 
 - `Andrea Catania (Physics & AI) <https://www.youtube.com/channel/UCm4RuvYtgpgFDTCgaEUT5uQ/videos>`_
 - `Bastiaan Olij (AR & VR) <https://www.youtube.com/channel/UCrbLJYzJjDf2p-vJC011lYw/videos>`_
+- `DevDuck (2D) <https://www.youtube.com/@devduck/videos>`_
 
 Resources
 ---------
