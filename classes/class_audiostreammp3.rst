@@ -130,11 +130,10 @@ You can load a file without having to import it beforehand using the code snippe
  .. code-tab:: gdscript
 
     func load_mp3(path):
-        var file = File.new()
-        file.open(path, File.READ)
+        var file = FileAccess.open(path, FileAccess.READ)
         var sound = AudioStreamMP3.new()
         sound.data = file.get_buffer(file.get_length())
-        file.close()
+        file = null
         return sound
 
  .. code-tab:: csharp

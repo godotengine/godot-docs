@@ -292,14 +292,12 @@ method. Our sample code is a bit long, so let's split in a few parts:
 ::
 
     func _import(source_file, save_path, options, r_platform_variants, r_gen_files):
-        var file = File.new()
-        var err = file.open(source_file, File.READ)
-        if err != OK:
-            return err
+        var file = FileAccess.open(source_file, FileAccess.READ)
+        if file == null:
+            return FileAccess.get_open_error()
 
         var line = file.get_line()
-
-        file.close()
+        file = null
 
 The first part of our import method opens and reads the source file. We use the
 :ref:`FileAccess <class_FileAccess>` class to do that, passing the ``source_file``

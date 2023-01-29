@@ -36,16 +36,15 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
 
     @tool
     extends EditorTranslationParserPlugin
-    
+
     func _parse_file(path, msgids, msgids_context_plural):
-        var file = File.new()
-        file.open(path, File.READ)
+        var file = FileAccess.open(path, FileAccess.READ)
         var text = file.get_as_text()
         var split_strs = text.split(",", false)
         for s in split_strs:
             msgids.append(s)
             #print("Extracted string: " + s)
-    
+
     func _get_recognized_extensions():
         return ["csv"]
 
@@ -53,7 +52,7 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
 
     using Godot;
     using System;
-    
+
     [Tool]
     public class CustomParser : EditorTranslationParserPlugin
     {
@@ -69,7 +68,7 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
                 //GD.Print("Extracted string: " + s)
             }
         }
-    
+
         public override Godot.Collections.Array GetRecognizedExtensions()
         {
             return new Godot.Collections.Array{"csv"};
@@ -116,7 +115,7 @@ For example:
         var res = ResourceLoader.load(path, "Script")
         var text = res.source_code
         # Parsing logic.
-    
+
     func _get_recognized_extensions():
         return ["gd"]
 
@@ -128,7 +127,7 @@ For example:
         string text = res.SourceCode;
         // Parsing logic.
     }
-    
+
     public override Godot.Collections.Array GetRecognizedExtensions()
     {
         return new Godot.Collections.Array{"gd"};

@@ -32,38 +32,38 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
 
     @tool
     extends EditorImportPlugin
-    
+
     func _get_importer_name():
         return "my.special.plugin"
-    
+
     func _get_visible_name():
         return "Special Mesh"
-    
+
     func _get_recognized_extensions():
         return ["special", "spec"]
-    
+
     func _get_save_extension():
         return "mesh"
-    
+
     func _get_resource_type():
         return "Mesh"
-    
+
     func _get_preset_count():
         return 1
-    
+
     func _get_preset_name(i):
         return "Default"
-    
+
     func _get_import_options(i):
         return [{"name": "my_option", "default_value": false}]
-    
+
     func _import(source_file, save_path, options, platform_variants, gen_files):
-        var file = File.new()
-        if file.open(source_file, File.READ) != OK:
+        var file = FileAccess.open(source_file, FileAccess.READ)
+        if file == null:
             return FAILED
         var mesh = ArrayMesh.new()
         # Fill the Mesh with data read in "file", left as an exercise to the reader.
-    
+
         var filename = save_path + "." + _get_save_extension()
         return ResourceSaver.save(mesh, filename)
 
@@ -71,49 +71,49 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
 
     using Godot;
     using System;
-    
+
     public class MySpecialPlugin : EditorImportPlugin
     {
         public override String GetImporterName()
         {
             return "my.special.plugin";
         }
-    
+
         public override String GetVisibleName()
         {
             return "Special Mesh";
         }
-    
+
         public override Godot.Collections.Array GetRecognizedExtensions()
         {
             return new Godot.Collections.Array{"special", "spec"};
         }
-    
+
         public override String GetSaveExtension()
         {
             return "mesh";
         }
-    
+
         public override String GetResourceType()
         {
             return "Mesh";
         }
-    
+
         public override int GetPresetCount()
         {
             return 1;
         }
-    
+
         public override String GetPresetName(int i)
         {
             return "Default";
         }
-    
+
         public override Godot.Collections.Array GetImportOptions(int i)
         {
             return new Godot.Collections.Array{new Godot.Collections.Dictionary{{"name", "myOption"}, {"defaultValue", false}}};
         }
-    
+
         public override int Import(String sourceFile, String savePath, Godot.Collections.Dictionary options, Godot.Collections.Array platformVariants, Godot.Collections.Array genFiles)
         {
             var file = new File();
@@ -121,7 +121,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
             {
                 return (int)Error.Failed;
             }
-    
+
             var mesh = new ArrayMesh();
             // Fill the Mesh with data read in "file", left as an exercise to the reader.
             String filename = savePath + "." + GetSaveExtension();
@@ -236,7 +236,7 @@ This method can be overridden to hide specific import options if conditions are 
         # Only show the lossy quality setting if the compression mode is set to "Lossy".
         if option == "compress/lossy_quality" and options.has("compress/mode"):
             return int(options["compress/mode"]) == COMPRESS_LOSSY # This is a constant that you set
-    
+
         return true
 
  .. code-tab:: csharp
@@ -248,7 +248,7 @@ This method can be overridden to hide specific import options if conditions are 
         {
             return (int)options["compress/mode"] == COMPRESS_LOSSY; // This is a constant you set
         }
-    
+
         return true;
     }
 

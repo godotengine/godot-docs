@@ -29,17 +29,18 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
  .. code-tab:: gdscript
 
     const CHUNK_SIZE = 102
-    
+
     func hash_file(path):
-        var ctx = HashingContext.new()
-        var file = File.new()
-        # Start a SHA-256 context.
-        ctx.start(HashingContext.HASH_SHA256)
         # Check that file exists.
-        if not file.file_exists(path):
+        if not FileAccess.file_exists(path):
             return
+
+        # Start a SHA-256 context.
+        var ctx = HashingContext.new()
+        ctx.start(HashingContext.HASH_SHA256)
+
         # Open the file to hash.
-        file.open(path, File.READ)
+        var file = FileAccess.open(path, FileAccess.READ)
         # Update the context after reading each chunk.
         while not file.eof_reached():
             ctx.update(file.get_buffer(CHUNK_SIZE))
@@ -51,7 +52,7 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
  .. code-tab:: csharp
 
     public const int ChunkSize = 1024;
-    
+
     public void HashFile(string path)
     {
         var ctx = new HashingContext();
@@ -73,7 +74,7 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
         // Get the computed hash.
         byte[] res = ctx.Finish();
         // Print the result as hex string and array.
-    
+
         GD.PrintT(res.HexEncode(), res);
     }
 
