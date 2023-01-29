@@ -39,19 +39,19 @@ a change in API:
 
     public partial class Game : Node
     {
-        public readonly Script MyNodeScr = (Script)ResourceLoader.Load("MyNode.cs");
-        public readonly PackedScene MySceneScn = (PackedScene)ResourceLoader.Load("MyScene.tscn");
-        public Node ANode;
-        public Node MyNode;
-        public Node MyScene;
-        public Node MyInheritedScene;
+        public static CSharpScript MyNode { get; } = GD.Load<CSharpScript>("MyNode.cs");
+        public static PackedScene MyScene { get; } = GD.Load<PackedScene>("MyScene.tscn");
+        private Node _node;
+        private Node _myNode;
+        private Node _myScene;
+        private Node _myInheritedScene;
 
         public Game()
         {
-            ANode = new Node();
-            MyNode = new MyNode(); // Same syntax
-            MyScene = MySceneScn.Instantiate(); // Different. Instantiated from a PackedScene
-            MyInheritedScene = MySceneScn.Instantiate(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
+            _node = new Node();
+            _myNode = MyNode.New().As<Node>();
+            _myScene = MyScene.Instantiate(); // Different. Instantiated from a PackedScene
+            _myInheritedScene = MyScene.Instantiate(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
         }
     }
 
@@ -170,7 +170,7 @@ with it, and finally adds it as a child of the ``Main`` node:
         {
             Child = new Node();
             Child.Name = "Child";
-            Child.Script = ResourceLoader.Load<Script>("child.gd");
+            Child.SetScript(GD.Load<Script>("child.gd"));
             Child.Owner = this;
             AddChild(Child);
         }
@@ -207,8 +207,8 @@ In the end, the best approach is to consider the following:
     .. code-tab:: gdscript GDScript
 
       # game.gd
-      class_name Game # extends Reference, so it won't show up in the node creation dialog
-      extends Reference
+      class_name Game # extends RefCounted, so it won't show up in the node creation dialog
+      extends RefCounted
 
       const MyScene = preload("my_scene.tscn")
 
@@ -216,3 +216,20 @@ In the end, the best approach is to consider the following:
       extends Node
       func _ready():
           add_child(Game.MyScene.instantiate())
+
+    .. code-tab:: csharp
+
+      // Game.cs
+      public partial class Game : RefCounted
+      {
+          public static PackedScene MyScene { get; } = GD.Load<PackedScene>("MyScene.tscn");
+      }
+      
+      // Main.cs
+      public partial class Main : Node
+      {
+          public override void _Ready()
+          {
+              AddChild(Game.MyScene.Instantiate());
+          }
+      }
