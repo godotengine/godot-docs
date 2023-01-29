@@ -42,7 +42,7 @@ A class reference's page tells you:
    links to jump to parent classes and see the properties and methods a type
    inherits.
 
-   .. image:: img/manual_class_reference_inheritance.png
+   .. image:: img/manual_class_reference_inheritance.webp
 
 2. A summary of the class's role and use cases.
 
