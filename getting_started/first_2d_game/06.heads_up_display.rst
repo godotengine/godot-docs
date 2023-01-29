@@ -36,14 +36,14 @@ Inspector. The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following:
 
-1. Under "Theme Overrides > Fonts", choose "New Font".
+1. Under "Theme Overrides > Fonts", choose "New FontVariation".
 
-.. image:: img/custom_font1.png
+.. image:: img/custom_font1.webp
 
-2. Click on the "Font" you added, and under "Font/Data/0",
+2. Click on the "FontVariation" you added, and under "Base Font",
    choose "Load" and select the "Xolonium-Regular.ttf" file.
 
-.. image:: img/custom_font2.png
+.. image:: img/custom_font2.webp
 
 Once you've done this on the ``ScoreLabel``, you can click the down arrow next
 to the Font property and choose "Copy", then "Paste" it in the same place
@@ -51,7 +51,7 @@ on the other two Control nodes.
 Set the "Font Size" property of the ``ScoreLabel`` under "Theme Overrides > Font Sizes".
 A setting of ``64`` works well.
 
-.. image:: img/custom_font3.png
+.. image:: img/custom_font3.webp
 
 .. note:: **Anchors and Margins:** ``Control`` nodes have a position and size,
           but they also have anchors and margins. Anchors define the origin -
@@ -338,7 +338,7 @@ Now that we're done creating the ``HUD`` scene, go back to ``Main``. Instance
 the ``HUD`` scene in ``Main`` like you did the ``Player`` scene. The scene tree
 should look like this, so make sure you didn't miss anything:
 
-.. image:: img/completed_main_scene.png
+.. image:: img/completed_main_scene.webp
 
 Now we need to connect the ``HUD`` functionality to our ``Main`` script. This
 requires a few additions to the ``Main`` scene:
@@ -413,7 +413,7 @@ In the ``Mob`` scene, select the root node and click the "Node" tab next to the
 Inspector (the same place where you find the node's signals). Next to "Signals",
 click "Groups" and you can type a new group name and click "Add".
 
-.. image:: img/group_tab.png
+.. image:: img/group_tab.webp
 
 Now all mobs will be in the "mobs" group. We can then add the following line to
 the ``new_game()`` function in ``Main``:
