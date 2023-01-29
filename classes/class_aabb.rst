@@ -280,7 +280,7 @@ Returns a copy of this **AABB** expanded to include a given point.
  .. code-tab:: csharp
 
     // position (-3, 2, 0), size (1, 1, 1)
-    var box = new AABB(new Vector3(-3, 2, 0), new Vector3(1, 1, 1));
+    var box = new Aabb(new Vector3(-3, 2, 0), new Vector3(1, 1, 1));
     // position (-3, -1, 0), size (3, 4, 2), so we fit both the original AABB and Vector3(0, -1, 2)
     var box2 = box.Expand(new Vector3(0, -1, 2));
 

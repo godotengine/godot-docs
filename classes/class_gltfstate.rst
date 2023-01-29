@@ -71,6 +71,8 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`GLTFCamera[]<class_GLTFCamera>`                 | :ref:`get_cameras<class_GLTFState_method_get_cameras>` **(** **)**                                                                                                                   |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                 | :ref:`get_handle_binary_image<class_GLTFState_method_get_handle_binary_image>` **(** **)**                                                                                           |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Texture2D[]<class_Texture2D>`                   | :ref:`get_images<class_GLTFState_method_get_images>` **(** **)**                                                                                                                     |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`GLTFLight[]<class_GLTFLight>`                   | :ref:`get_lights<class_GLTFState_method_get_lights>` **(** **)**                                                                                                                     |
@@ -107,6 +109,8 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`set_cameras<class_GLTFState_method_set_cameras>` **(** :ref:`GLTFCamera[]<class_GLTFCamera>` cameras **)**                                                                     |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                  | :ref:`set_handle_binary_image<class_GLTFState_method_set_handle_binary_image>` **(** :ref:`int<class_int>` method **)**                                                              |
+   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`set_images<class_GLTFState_method_set_images>` **(** :ref:`Texture2D[]<class_Texture2D>` images **)**                                                                          |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`set_lights<class_GLTFState_method_set_lights>` **(** :ref:`GLTFLight[]<class_GLTFLight>` lights **)**                                                                          |
@@ -131,6 +135,39 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`set_unique_names<class_GLTFState_method_set_unique_names>` **(** :ref:`String[]<class_String>` unique_names **)**                                                              |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Constants
+---------
+
+.. _class_GLTFState_constant_HANDLE_BINARY_DISCARD_TEXTURES:
+
+.. rst-class:: classref-constant
+
+**HANDLE_BINARY_DISCARD_TEXTURES** = ``0``
+
+
+
+.. _class_GLTFState_constant_HANDLE_BINARY_EXTRACT_TEXTURES:
+
+.. rst-class:: classref-constant
+
+**HANDLE_BINARY_EXTRACT_TEXTURES** = ``1``
+
+
+
+.. _class_GLTFState_constant_HANDLE_BINARY_EMBED_AS_BASISU:
+
+.. rst-class:: classref-constant
+
+**HANDLE_BINARY_EMBED_AS_BASISU** = ``2``
+
+
 
 .. rst-class:: classref-section-separator
 
@@ -446,6 +483,20 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 ----
 
+.. _class_GLTFState_method_get_handle_binary_image:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_handle_binary_image** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GLTFState_method_get_images:
 
 .. rst-class:: classref-method
@@ -687,6 +738,20 @@ void **set_buffer_views** **(** :ref:`GLTFBufferView[]<class_GLTFBufferView>` bu
 .. rst-class:: classref-method
 
 void **set_cameras** **(** :ref:`GLTFCamera[]<class_GLTFCamera>` cameras **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFState_method_set_handle_binary_image:
+
+.. rst-class:: classref-method
+
+void **set_handle_binary_image** **(** :ref:`int<class_int>` method **)**
 
 .. container:: contribute
 

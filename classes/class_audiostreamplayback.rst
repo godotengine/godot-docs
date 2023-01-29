@@ -12,7 +12,7 @@ AudioStreamPlayback
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>`
+**Inherited By:** :ref:`AudioStreamPlaybackPolyphonic<class_AudioStreamPlaybackPolyphonic>`, :ref:`AudioStreamPlaybackResampled<class_AudioStreamPlaybackResampled>`
 
 Meta class for playing back audio.
 

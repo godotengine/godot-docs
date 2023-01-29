@@ -35,12 +35,12 @@ In GDScript, signals can be declared with the ``signal`` keyword. In C#, you may
  .. code-tab:: csharp
 
     [Signal]
-    delegate void Attacked();
+    delegate void AttackedEventHandler();
     
     // Additional arguments may be declared.
     // These arguments must be passed when the signal is emitted.
     [Signal]
-    delegate void ItemDropped(itemName: string, amount: int);
+    delegate void ItemDroppedEventHandler(string itemName, int amount);
 
 
 

@@ -34,7 +34,6 @@ Special cases:
 =======================  ===========================================================
 GDScript                 C#
 =======================  ===========================================================
-``SPKEY``                ``GD.SpKey``
 ``TYPE_*``               ``Variant.Type`` enum
 ``OP_*``                 ``Variant.Operator`` enum
 =======================  ===========================================================
@@ -46,17 +45,29 @@ Math global functions, like ``abs``, ``acos``, ``asin``, ``atan`` and ``atan2``,
 located under ``Mathf`` as ``Abs``, ``Acos``, ``Asin``, ``Atan`` and ``Atan2``.
 The ``PI`` constant can be found as ``Mathf.Pi``.
 
+C# also provides static `System.Math`_ and `System.MathF`_ classes that may
+contain other useful mathematical operations.
+
+.. _System.Math: https://learn.microsoft.com/en-us/dotnet/api/system.math
+.. _System.MathF: https://learn.microsoft.com/en-us/dotnet/api/system.mathf
+
 Random functions
 ^^^^^^^^^^^^^^^^
 
 Random global functions, like ``rand_range`` and ``rand_seed``, are located under ``GD``.
 Example: ``GD.RandRange`` and ``GD.RandSeed``.
 
+Consider using `System.Random`_ or, if you need cryptographically strong randomness,
+`System.Security.Cryptography.RandomNumberGenerator`_.
+
+.. _System.Random: https://learn.microsoft.com/en-us/dotnet/api/system.random
+.. _System.Security.Cryptography.RandomNumberGenerator: https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator
+
 Other functions
 ^^^^^^^^^^^^^^^
 
-Many other global functions like ``print`` and ``var2str`` are located under ``GD``.
-Example: ``GD.Print`` and ``GD.Var2Str``.
+Many other global functions like ``print`` and ``var_to_str`` are located under ``GD``.
+Example: ``GD.Print`` and ``GD.VarToStr``.
 
 Exceptions:
 
@@ -87,10 +98,10 @@ Example:
         }
     }
 
-Export keyword
---------------
+``@export`` annotation
+----------------------
 
-Use the ``[Export]`` attribute instead of the GDScript ``export`` keyword.
+Use the ``[Export]`` attribute instead of the GDScript ``@export`` annotation.
 This attribute can also be provided with optional :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` and ``hintString`` parameters.
 Default values can be set by assigning a value.
 
@@ -115,8 +126,10 @@ Example:
         private string _icon;
     }
 
-Signal keyword
---------------
+See also: :ref:`doc_c_sharp_exports`.
+
+``signal`` keyword
+------------------
 
 Use the ``[Signal]`` attribute to declare a signal instead of the GDScript ``signal`` keyword.
 This attribute should be used on a `delegate`, whose name signature will be used to define the signal.
@@ -185,8 +198,8 @@ Example:
 
 .. code-block:: csharp
 
-    string text = "Bigrams";
-    string[] bigrams = text.Bigrams(); // ["Bi", "ig", "gr", "ra", "am", "ms"]
+    string text = "Get up!";
+    string[] bigrams = text.Bigrams(); // ["Ge", "et", "t ", " u", "up", "p!"]
 
 Strings are immutable in .NET, so all methods that manipulate a string don't
 modify the original string and return a newly created string with the
@@ -406,17 +419,6 @@ GDScript              C#
 ``get_scale()``       ``Scale``
 ====================  ==============================================================
 
-Plane
------
-
-The following method was converted to a property with a *slightly* different name:
-
-================  ==================================================================
-GDScript          C#
-================  ==================================================================
-``center()``      ``Center``
-================  ==================================================================
-
 Rect2
 -----
 
@@ -443,14 +445,42 @@ Structs cannot have parameterless constructors in C#. Therefore, ``new Quaternio
 initializes all primitive members to their default value.
 Please use ``Quaternion.Identity`` for the equivalent of ``Quaternion()`` in GDScript and C++.
 
-The following methods were converted to a property with a different name:
+Color
+-----
 
-=====================  =============================================================
-GDScript               C#
-=====================  =============================================================
-``length()``           ``Length``
-``length_squared()``   ``LengthSquared``
-=====================  =============================================================
+Structs cannot have parameterless constructors in C#. Therefore, ``new Color()``
+initializes all primitive members to their default value (which represents the transparent black color).
+Please use ``Colors.Black`` for the equivalent of ``Color()`` in GDScript and C++.
+
+The global ``Color8`` method to construct a Color from bytes is available as a static method
+in the Color type.
+
+The Color constants are available in the ``Colors`` static class as readonly properties.
+
+The following method was converted to a property with a different name:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_luminance()``   ``Luminance``
+====================  ==============================================================
+
+The following method was converted to a method with a different name:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``html(String)``      ``FromHtml(ReadOnlySpan<char>)``
+====================  ==============================================================
+
+The following methods are available as constructors:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``hex(int)``          ``Color(uint)``
+``hex64(int)``        ``Color(ulong)``
+====================  ==============================================================
 
 Array
 -----
@@ -483,25 +513,80 @@ Use ``Godot.Collections.Dictionary``.
 ``Godot.Collections.Dictionary<T>`` is a type-safe wrapper around ``Godot.Collections.Dictionary``.
 Use the ``Godot.Collections.Dictionary<T>(Godot.Collections.Dictionary)`` constructor to create one.
 
+List of Godot's Dictionary methods and their equivalent in C#:
+
+=======================  ==============================================================
+GDScript                 C#
+=======================  ==============================================================
+clear                    Clear
+duplicate                Duplicate
+erase                    Remove
+find_key                 N/A
+get                      Dictionary[Variant] indexer or TryGetValue
+has                      ContainsKey
+has_all                  N/A
+hash                     GD.Hash
+is_empty                 Use ``Count == 0``
+is_read_only             IsReadOnly
+keys                     Keys
+make_read_only           MakeReadOnly
+merge                    Merge
+size                     Count
+values                   Values
+operator !=              !RecursiveEqual
+operator ==              RecursiveEqual
+operator []              Dictionary[Variant] indexer, Add or TryGetValue
+=======================  ==============================================================
+
 Variant
 -------
 
-``System.Object`` (``object``) is used instead of ``Variant``.
+``Godot.Variant`` is used to represent the Godot's native :ref:`Variant <doc_variant_class>` type. Any Variant-compatible type can be converted from/to it.
+We recommend avoiding ``Godot.Variant`` unless it is necessary to interact with untyped engine APIs.
+Take advantage of C#'s type safety when possible.
+
+Any of ``Variant.As{TYPE}`` methods or the generic ``Variant.As<T>`` method can be used to convert
+a ``Godot.Variant`` to a C# type. Since the ``Godot.Variant`` type contains implicit conversions
+defined for all the supported types calling these methods directly is usually not necessary.
+
+Use ``CreateFrom`` method overloads or the generic ``From<T>`` method to convert a C# type
+to a ``Godot.Variant``.
 
 Communicating with other scripting languages
 --------------------------------------------
 
 This is explained extensively in :ref:`doc_cross_language_scripting`.
 
-.. _doc_c_sharp_differences_yield:
+.. _doc_c_sharp_differences_await:
 
-Yield
------
+``await`` keyword
+-----------------
 
-Something similar to GDScript's ``yield`` with a single parameter can be achieved with
-C#'s `yield keyword <https://docs.microsoft.com/en-US/dotnet/csharp/language-reference/keywords/yield>`_.
+Something similar to GDScript's ``await`` keyword can be achieved with C#'s
+`await keyword <https://docs.microsoft.com/en-US/dotnet/csharp/language-reference/keywords/await>`_.
 
-The equivalent of yield on signal can be achieved with async/await and ``Godot.Object.ToSignal``.
+The ``await`` keyword in C# can be used with any awaitable expression. It's commonly
+used with operands of the types `Task`_, `Task<TResult>`_, `ValueTask`_, or `ValueTask<TResult>`_.
+
+An expression ``t`` is awaitable if one of the following holds:
+
+* ``t`` is of compile-time type ``dynamic``.
+* ``t`` has an accessible instance or extension method called ``GetAwaiter`` with no
+  parameters and no type parameters, and a return type ``A`` for which all of the
+  following hold:
+
+  * ``A`` implements the interface ``System.Runtime.CompilerServices.INotifyCompletion``.
+  * ``A`` has an accessible, readable instance property ``IsCompleted`` of type ``bool``.
+  * ``A`` has an accessible instance method ``GetResult`` with no parameters and no type
+    parameters.
+
+.. _Task: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task
+.. _Task<TResult>: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1
+.. _ValueTask: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.valuetask
+.. _ValueTask<TResult>: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.valuetask-1
+
+An equivalent of awaiting a signal in GDScript can be achieved with the ``await`` keyword and
+``Godot.Object.ToSignal``.
 
 Example:
 
@@ -521,9 +606,13 @@ Other differences:
 ================  ==================================================================
 GDScript          C#
 ================  ==================================================================
-``Color8``        ``Color.Color8``
-``is_inf``        ``float.IsInfinity``
-``is_nan``        ``float.IsNaN``
-``dict2inst``     TODO
-``inst2dict``     TODO
+``is_inf``        `float.IsInfinity`_ or `double.IsInfinity`_
+``is_nan``        `float.IsNaN`_ or `double.IsNaN`_
+``dict_to_inst``  TODO
+``inst_to_dict``  TODO
 ================  ==================================================================
+
+.. _float.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.single.isinfinity
+.. _float.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.single.isnan
+.. _double.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.double.isinfinity
+.. _double.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.double.isnan

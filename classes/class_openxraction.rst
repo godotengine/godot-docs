@@ -21,7 +21,7 @@ Description
 
 This resource defines an OpenXR action. Actions can be used both for inputs (buttons/joystick/trigger/etc) and outputs (haptics).
 
-OpenXR performs automatic conversion between action type and input type whenever possible. An analogue trigger bound to a boolean action will thus return ``false`` if the trigger is depressed and ``true`` if pressed fully.
+OpenXR performs automatic conversion between action type and input type whenever possible. An analog trigger bound to a boolean action will thus return ``false`` if the trigger is depressed and ``true`` if pressed fully.
 
 Actions are not directly bound to specific devices, instead OpenXR recognizes a limited number of top level paths that identify devices by usage. We can restrict which devices an action can be bound to by these top level paths. For instance an action that should only be used for hand held controllers can have the top level paths "/user/hand/left" and "/user/hand/right" associated with them. See the `reserved path section in the OpenXR specification <https://www.khronos.org/registry/OpenXR/specs/1.0/html/xrspec.html#semantic-path-reserved>`__ for more info on the top level paths.
 
@@ -72,7 +72,7 @@ This action provides a boolean value.
 
 :ref:`ActionType<enum_OpenXRAction_ActionType>` **OPENXR_ACTION_FLOAT** = ``1``
 
-This action provides a float value between ``0.0`` and ``1.0`` for any analogue input such as triggers.
+This action provides a float value between ``0.0`` and ``1.0`` for any analog input such as triggers.
 
 .. _class_OpenXRAction_constant_OPENXR_ACTION_VECTOR2:
 

@@ -1249,10 +1249,47 @@ is used, it can be scalar or vector.
 | vec4 **textureGather** (samplerCube s, vec3 p [, int comps])                |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | vec_type **dFdx** (vec_type p)                                              | Derivative in ``x`` using local differencing.                       |
+|                                                                             | Internally, can use either ``dFdxCoarse`` or ``dFdxFine``, but the  |
+|                                                                             | decision for which to use is made by the GPU driver.                |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **dFdxCoarse** (vec_type p)                                        | Calculates derivative with respect to ``x`` window coordinate using |
+|                                                                             | local differencing based on the value of ``p`` for the current      |
+|                                                                             | fragment neighbour(s), and will possibly, but not necessarily,      |
+|                                                                             | include the value for the current fragment.                         |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **dFdxFine** (vec_type p)                                          | Calculates derivative with respect to ``x`` window coordinate using |
+|                                                                             | local differencing based on the value of ``p`` for the current      |
+|                                                                             | fragment and its immediate neighbour(s).                            |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | vec_type **dFdy** (vec_type p)                                              | Derivative in ``y`` using local differencing.                       |
+|                                                                             | Internally, can use either ``dFdyCoarse`` or ``dFdyFine``, but the  |
+|                                                                             | decision for which to use is made by the GPU driver.                |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **dFdyCoarse** (vec_type p)                                        | Calculates derivative with respect to ``y`` window coordinate using |
+|                                                                             | local differencing based on the value of ``p`` for the current      |
+|                                                                             | fragment neighbour(s), and will possibly, but not necessarily,      |
+|                                                                             | include the value for the current fragment.                         |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **dFdyFine** (vec_type p)                                          | Calculates derivative with respect to ``y`` window coordinate using |
+|                                                                             | local differencing based on the value of ``p`` for the current      |
+|                                                                             | fragment and its immediate neighbour(s).                            |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | vec_type **fwidth** (vec_type p)                                            | Sum of absolute derivative in ``x`` and ``y``.                      |
+|                                                                             | This is the equivalent of using ``abs(dFdx(p)) + abs(dFdy(p))``.    |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **fwidthCoarse** (vec_type p)                                      | Sum of absolute derivative in ``x`` and ``y``.                      |
+|                                                                             | This is the equivalent of using                                     |
+|                                                                             | ``abs(dFdxCoarse(p)) + abs(dFdyCoarse(p))``.                        |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **fwidthFine** (vec_type p)                                        | Sum of absolute derivative in ``x`` and ``y``.                      |
+|                                                                             | This is the equivalent of using                                     |
+|                                                                             | ``abs(dFdxFine(p)) + abs(dFdyFine(p))``.                            |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | uint **packHalf2x16** (vec2 v)                                              | Convert two 32-bit floating-point numbers into 16-bit               |
 |                                                                             | and pack them into a 32-bit unsigned integer and vice-versa.        |

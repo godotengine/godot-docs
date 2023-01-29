@@ -472,7 +472,7 @@ This approximation makes straight segments between each point, then subdivides t
 
 Returns a list of points along the curve, with almost uniform density. ``max_stages`` controls how many subdivisions a curve segment may face before it is considered approximate enough. Each subdivision splits the segment in half, so the default 5 stages may mean up to 32 subdivisions per curve segment. Increase with care!
 
-\ ``tolerance_length`` controls the maximal distance between two neighbouring points, before the segment has to be subdivided.
+\ ``tolerance_length`` controls the maximal distance between two neighboring points, before the segment has to be subdivided.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

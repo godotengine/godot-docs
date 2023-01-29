@@ -58,25 +58,25 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`clear_custom_color<class_TreeItem_method_clear_custom_color>` **(** :ref:`int<class_int>` column **)**                                                                                                                                             |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`create_child<class_TreeItem_method_create_child>` **(** :ref:`int<class_int>` idx=-1 **)**                                                                                                                                                         |
+   | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`create_child<class_TreeItem_method_create_child>` **(** :ref:`int<class_int>` index=-1 **)**                                                                                                                                                       |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`deselect<class_TreeItem_method_deselect>` **(** :ref:`int<class_int>` column **)**                                                                                                                                                                 |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`erase_button<class_TreeItem_method_erase_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)**                                                                                                                       |
+   | void                                                              | :ref:`erase_button<class_TreeItem_method_erase_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)**                                                                                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Texture2D<class_Texture2D>`                                 | :ref:`get_button<class_TreeItem_method_get_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|                                                                                                                   |
+   | :ref:`Texture2D<class_Texture2D>`                                 | :ref:`get_button<class_TreeItem_method_get_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)** |const|                                                                                                                 |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_button_by_id<class_TreeItem_method_get_button_by_id>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` id **)** |const|                                                                                                               |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_button_count<class_TreeItem_method_get_button_count>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                                         |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                             | :ref:`get_button_id<class_TreeItem_method_get_button_id>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|                                                                                                             |
+   | :ref:`int<class_int>`                                             | :ref:`get_button_id<class_TreeItem_method_get_button_id>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)** |const|                                                                                                           |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                                       | :ref:`get_button_tooltip_text<class_TreeItem_method_get_button_tooltip_text>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|                                                                                         |
+   | :ref:`String<class_String>`                                       | :ref:`get_button_tooltip_text<class_TreeItem_method_get_button_tooltip_text>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)** |const|                                                                                       |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>`                   | :ref:`get_cell_mode<class_TreeItem_method_get_cell_mode>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                                               |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_child<class_TreeItem_method_get_child>` **(** :ref:`int<class_int>` idx **)**                                                                                                                                                                  |
+   | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_child<class_TreeItem_method_get_child>` **(** :ref:`int<class_int>` index **)**                                                                                                                                                                |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_child_count<class_TreeItem_method_get_child_count>` **(** **)**                                                                                                                                                                                |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -140,7 +140,7 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`is_any_collapsed<class_TreeItem_method_is_any_collapsed>` **(** :ref:`bool<class_bool>` only_visible=false **)**                                                                                                                                   |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                           | :ref:`is_button_disabled<class_TreeItem_method_is_button_disabled>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|                                                                                                   |
+   | :ref:`bool<class_bool>`                                           | :ref:`is_button_disabled<class_TreeItem_method_is_button_disabled>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)** |const|                                                                                                 |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`is_checked<class_TreeItem_method_is_checked>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -164,11 +164,11 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`select<class_TreeItem_method_select>` **(** :ref:`int<class_int>` column **)**                                                                                                                                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`set_button<class_TreeItem_method_set_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Texture2D<class_Texture2D>` button **)**                                                                                 |
+   | void                                                              | :ref:`set_button<class_TreeItem_method_set_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`Texture2D<class_Texture2D>` button **)**                                                                               |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`set_button_color<class_TreeItem_method_set_button_color>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Color<class_Color>` color **)**                                                                              |
+   | void                                                              | :ref:`set_button_color<class_TreeItem_method_set_button_color>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`Color<class_Color>` color **)**                                                                            |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`set_button_disabled<class_TreeItem_method_set_button_disabled>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`bool<class_bool>` disabled **)**                                                                       |
+   | void                                                              | :ref:`set_button_disabled<class_TreeItem_method_set_button_disabled>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`bool<class_bool>` disabled **)**                                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`set_cell_mode<class_TreeItem_method_set_cell_mode>` **(** :ref:`int<class_int>` column, :ref:`TreeCellMode<enum_TreeItem_TreeCellMode>` mode **)**                                                                                                 |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -374,7 +374,7 @@ Method Descriptions
 
 void **add_button** **(** :ref:`int<class_int>` column, :ref:`Texture2D<class_Texture2D>` button, :ref:`int<class_int>` id=-1, :ref:`bool<class_bool>` disabled=false, :ref:`String<class_String>` tooltip_text="" **)**
 
-Adds a button with :ref:`Texture2D<class_Texture2D>` ``button`` at column ``column``. The ``id`` is used to identify the button. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_method_get_button_count>` immediately before this method. Optionally, the button can be ``disabled`` and have a ``tooltip_text``.
+Adds a button with :ref:`Texture2D<class_Texture2D>` ``button`` at column ``column``. The ``id`` is used to identify the button in the according :ref:`Tree.button_clicked<class_Tree_signal_button_clicked>` signal and can be different from the buttons index. If not specified, the next available index is used, which may be retrieved by calling :ref:`get_button_count<class_TreeItem_method_get_button_count>` immediately before this method. Optionally, the button can be ``disabled`` and have a ``tooltip_text``.
 
 .. rst-class:: classref-item-separator
 
@@ -420,11 +420,11 @@ Resets the color for the given column to default.
 
 .. rst-class:: classref-method
 
-:ref:`TreeItem<class_TreeItem>` **create_child** **(** :ref:`int<class_int>` idx=-1 **)**
+:ref:`TreeItem<class_TreeItem>` **create_child** **(** :ref:`int<class_int>` index=-1 **)**
 
 Creates an item and adds it as a child.
 
-The new item will be inserted as position ``idx`` (the default value ``-1`` means the last position), or it will be the last child if ``idx`` is higher than the child count.
+The new item will be inserted as position ``index`` (the default value ``-1`` means the last position), or it will be the last child if ``index`` is higher than the child count.
 
 .. rst-class:: classref-item-separator
 
@@ -446,9 +446,9 @@ Deselects the given column.
 
 .. rst-class:: classref-method
 
-void **erase_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)**
+void **erase_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)**
 
-Removes the button at index ``button_idx`` in column ``column``.
+Removes the button at index ``button_index`` in column ``column``.
 
 .. rst-class:: classref-item-separator
 
@@ -458,9 +458,9 @@ Removes the button at index ``button_idx`` in column ``column``.
 
 .. rst-class:: classref-method
 
-:ref:`Texture2D<class_Texture2D>` **get_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|
+:ref:`Texture2D<class_Texture2D>` **get_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)** |const|
 
-Returns the :ref:`Texture2D<class_Texture2D>` of the button at index ``button_idx`` in column ``column``.
+Returns the :ref:`Texture2D<class_Texture2D>` of the button at index ``button_index`` in column ``column``.
 
 .. rst-class:: classref-item-separator
 
@@ -494,9 +494,9 @@ Returns the number of buttons in column ``column``.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **get_button_id** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|
+:ref:`int<class_int>` **get_button_id** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)** |const|
 
-Returns the ID for the button at index ``button_idx`` in column ``column``.
+Returns the ID for the button at index ``button_index`` in column ``column``.
 
 .. rst-class:: classref-item-separator
 
@@ -506,9 +506,9 @@ Returns the ID for the button at index ``button_idx`` in column ``column``.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **get_button_tooltip_text** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|
+:ref:`String<class_String>` **get_button_tooltip_text** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)** |const|
 
-Returns the tooltip text for the button at index ``button_idx`` in column ``column``.
+Returns the tooltip text for the button at index ``button_index`` in column ``column``.
 
 .. rst-class:: classref-item-separator
 
@@ -530,9 +530,9 @@ Returns the column's cell mode.
 
 .. rst-class:: classref-method
 
-:ref:`TreeItem<class_TreeItem>` **get_child** **(** :ref:`int<class_int>` idx **)**
+:ref:`TreeItem<class_TreeItem>` **get_child** **(** :ref:`int<class_int>` index **)**
 
-Returns a child item by its index (see :ref:`get_child_count<class_TreeItem_method_get_child_count>`). This method is often used for iterating all children of an item.
+Returns a child item by its ``index`` (see :ref:`get_child_count<class_TreeItem_method_get_child_count>`). This method is often used for iterating all children of an item.
 
 Negative indices access the children from the last one.
 
@@ -926,9 +926,9 @@ If ``only_visible`` is ``true`` it ignores non-visible **TreeItem**\ s.
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx **)** |const|
+:ref:`bool<class_bool>` **is_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)** |const|
 
-Returns ``true`` if the button at index ``button_idx`` for the given ``column`` is disabled.
+Returns ``true`` if the button at index ``button_index`` for the given ``column`` is disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -1076,9 +1076,9 @@ Selects the given ``column``.
 
 .. rst-class:: classref-method
 
-void **set_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Texture2D<class_Texture2D>` button **)**
+void **set_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`Texture2D<class_Texture2D>` button **)**
 
-Sets the given column's button :ref:`Texture2D<class_Texture2D>` at index ``button_idx`` to ``button``.
+Sets the given column's button :ref:`Texture2D<class_Texture2D>` at index ``button_index`` to ``button``.
 
 .. rst-class:: classref-item-separator
 
@@ -1088,9 +1088,9 @@ Sets the given column's button :ref:`Texture2D<class_Texture2D>` at index ``butt
 
 .. rst-class:: classref-method
 
-void **set_button_color** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`Color<class_Color>` color **)**
+void **set_button_color** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`Color<class_Color>` color **)**
 
-Sets the given column's button color at index ``button_idx`` to ``color``.
+Sets the given column's button color at index ``button_index`` to ``color``.
 
 .. rst-class:: classref-item-separator
 
@@ -1100,9 +1100,9 @@ Sets the given column's button color at index ``button_idx`` to ``color``.
 
 .. rst-class:: classref-method
 
-void **set_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_idx, :ref:`bool<class_bool>` disabled **)**
+void **set_button_disabled** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`bool<class_bool>` disabled **)**
 
-If ``true``, disables the button at index ``button_idx`` in the given ``column``.
+If ``true``, disables the button at index ``button_index`` in the given ``column``.
 
 .. rst-class:: classref-item-separator
 

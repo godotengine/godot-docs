@@ -31,11 +31,13 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------+-------------------------------------------------------------+--------+
-   | :ref:`int<class_int>`       | :ref:`bone_idx<class_BoneAttachment3D_property_bone_idx>`   | ``-1`` |
-   +-----------------------------+-------------------------------------------------------------+--------+
-   | :ref:`String<class_String>` | :ref:`bone_name<class_BoneAttachment3D_property_bone_name>` | ``""`` |
-   +-----------------------------+-------------------------------------------------------------+--------+
+   +-----------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`       | :ref:`bone_idx<class_BoneAttachment3D_property_bone_idx>`           | ``-1``    |
+   +-----------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`bone_name<class_BoneAttachment3D_property_bone_name>`         | ``""``    |
+   +-----------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`override_pose<class_BoneAttachment3D_property_override_pose>` | ``false`` |
+   +-----------------------------+---------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -48,19 +50,11 @@ Methods
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`NodePath<class_NodePath>` | :ref:`get_external_skeleton<class_BoneAttachment3D_method_get_external_skeleton>` **(** **)** |const|                                               |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`           | :ref:`get_override_mode<class_BoneAttachment3D_method_get_override_mode>` **(** **)** |const|                                                       |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`         | :ref:`get_override_pose<class_BoneAttachment3D_method_get_override_pose>` **(** **)** |const|                                                       |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`         | :ref:`get_use_external_skeleton<class_BoneAttachment3D_method_get_use_external_skeleton>` **(** **)** |const|                                       |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                            | :ref:`on_bone_pose_update<class_BoneAttachment3D_method_on_bone_pose_update>` **(** :ref:`int<class_int>` bone_index **)**                          |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                            | :ref:`set_external_skeleton<class_BoneAttachment3D_method_set_external_skeleton>` **(** :ref:`NodePath<class_NodePath>` external_skeleton **)**     |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_override_mode<class_BoneAttachment3D_method_set_override_mode>` **(** :ref:`int<class_int>` override_mode **)**                           |
-   +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                            | :ref:`set_override_pose<class_BoneAttachment3D_method_set_override_pose>` **(** :ref:`bool<class_bool>` override_pose **)**                         |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                            | :ref:`set_use_external_skeleton<class_BoneAttachment3D_method_set_use_external_skeleton>` **(** :ref:`bool<class_bool>` use_external_skeleton **)** |
    +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -104,6 +98,23 @@ The index of the attached bone.
 
 The name of the attached bone.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_BoneAttachment3D_property_override_pose:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **override_pose** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_override_pose** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_override_pose** **(** **)**
+
+Whether the BoneAttachment3D node will override the bone pose of the bone it is attached to. When set to ``true``, the BoneAttachment3D node can change the pose of the bone. When set to ``false``, the BoneAttachment3D will always be set to the bone's transform.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -120,32 +131,6 @@ Method Descriptions
 :ref:`NodePath<class_NodePath>` **get_external_skeleton** **(** **)** |const|
 
 Returns the :ref:`NodePath<class_NodePath>` to the external :ref:`Skeleton3D<class_Skeleton3D>` node, if one has been set.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_BoneAttachment3D_method_get_override_mode:
-
-.. rst-class:: classref-method
-
-:ref:`int<class_int>` **get_override_mode** **(** **)** |const|
-
-Deprecated. Local pose overrides will be removed.
-
-Returns the override mode for the BoneAttachment3D node (0=global / 1=local).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_BoneAttachment3D_method_get_override_pose:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **get_override_pose** **(** **)** |const|
-
-Returns whether the BoneAttachment3D node is overriding the bone pose of the bone it's attached to.
 
 .. rst-class:: classref-item-separator
 
@@ -182,32 +167,6 @@ A function that is called automatically when the :ref:`Skeleton3D<class_Skeleton
 void **set_external_skeleton** **(** :ref:`NodePath<class_NodePath>` external_skeleton **)**
 
 Sets the :ref:`NodePath<class_NodePath>` to the external skeleton that the BoneAttachment3D node should use. The external :ref:`Skeleton3D<class_Skeleton3D>` node is only used when ``use_external_skeleton`` is set to ``true``.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_BoneAttachment3D_method_set_override_mode:
-
-.. rst-class:: classref-method
-
-void **set_override_mode** **(** :ref:`int<class_int>` override_mode **)**
-
-Deprecated. Local pose overrides will be removed.
-
-Sets the override mode for the BoneAttachment3D node (0=global / 1=local). The override mode defines which of the bone poses the BoneAttachment3D node will override.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_BoneAttachment3D_method_set_override_pose:
-
-.. rst-class:: classref-method
-
-void **set_override_pose** **(** :ref:`bool<class_bool>` override_pose **)**
-
-Sets whether the BoneAttachment3D node will override the bone pose of the bone it is attached to. When set to ``true``, the BoneAttachment3D node can change the pose of the bone.
 
 .. rst-class:: classref-item-separator
 

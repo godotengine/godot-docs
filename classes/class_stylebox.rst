@@ -54,21 +54,17 @@ Methods
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`_draw<class_StyleBox_method__draw>` **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|                 |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`       | :ref:`_get_center_size<class_StyleBox_method__get_center_size>` **(** **)** |virtual| |const|                                                                |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2<class_Rect2>`           | :ref:`_get_draw_rect<class_StyleBox_method__get_draw_rect>` **(** :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|                                     |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`           | :ref:`_get_style_margin<class_StyleBox_method__get_style_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |virtual| |const|                     |
+   | :ref:`Vector2<class_Vector2>`       | :ref:`_get_minimum_size<class_StyleBox_method__get_minimum_size>` **(** **)** |virtual| |const|                                                              |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`_test_mask<class_StyleBox_method__test_mask>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** |virtual| |const|        |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`draw<class_StyleBox_method_draw>` **(** :ref:`RID<class_RID>` canvas_item, :ref:`Rect2<class_Rect2>` rect **)** |const|                                |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`       | :ref:`get_center_size<class_StyleBox_method_get_center_size>` **(** **)** |const|                                                                            |
+   | :ref:`float<class_float>`           | :ref:`get_content_margin<class_StyleBox_method_get_content_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                           |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`CanvasItem<class_CanvasItem>` | :ref:`get_current_item_drawn<class_StyleBox_method_get_current_item_drawn>` **(** **)** |const|                                                              |
-   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`           | :ref:`get_default_margin<class_StyleBox_method_get_default_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                           |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`           | :ref:`get_margin<class_StyleBox_method_get_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|                                           |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -76,9 +72,9 @@ Methods
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`       | :ref:`get_offset<class_StyleBox_method_get_offset>` **(** **)** |const|                                                                                      |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`set_default_margin<class_StyleBox_method_set_default_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)** |
+   | void                                | :ref:`set_content_margin<class_StyleBox_method_set_content_margin>` **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)** |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`set_default_margin_all<class_StyleBox_method_set_default_margin_all>` **(** :ref:`float<class_float>` offset **)**                                     |
+   | void                                | :ref:`set_content_margin_all<class_StyleBox_method_set_content_margin_all>` **(** :ref:`float<class_float>` offset **)**                                     |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`test_mask<class_StyleBox_method_test_mask>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Rect2<class_Rect2>` rect **)** |const|                    |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -100,8 +96,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
-- :ref:`float<class_float>` **get_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- void **set_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
+- :ref:`float<class_float>` **get_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 The bottom margin for the contents of this style box. Increasing this value reduces the space available to the contents from the bottom.
 
@@ -123,8 +119,8 @@ It is up to the code using this style box to decide what these contents are: for
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
-- :ref:`float<class_float>` **get_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- void **set_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
+- :ref:`float<class_float>` **get_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 The left margin for the contents of this style box.	Increasing this value reduces the space available to the contents from the left.
 
@@ -142,8 +138,8 @@ Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bott
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
-- :ref:`float<class_float>` **get_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- void **set_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
+- :ref:`float<class_float>` **get_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 The right margin for the contents of this style box. Increasing this value reduces the space available to the contents from the right.
 
@@ -161,8 +157,8 @@ Refer to :ref:`content_margin_bottom<class_StyleBox_property_content_margin_bott
 
 .. rst-class:: classref-property-setget
 
-- void **set_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
-- :ref:`float<class_float>` **get_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
+- void **set_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
+- :ref:`float<class_float>` **get_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
 The top margin for the contents of this style box. Increasing this value reduces the space available to the contents from the top.
 
@@ -191,20 +187,6 @@ void **_draw** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rec
 
 ----
 
-.. _class_StyleBox_method__get_center_size:
-
-.. rst-class:: classref-method
-
-:ref:`Vector2<class_Vector2>` **_get_center_size** **(** **)** |virtual| |const|
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_StyleBox_method__get_draw_rect:
 
 .. rst-class:: classref-method
@@ -219,15 +201,13 @@ void **_draw** **(** :ref:`RID<class_RID>` to_canvas_item, :ref:`Rect2<class_Rec
 
 ----
 
-.. _class_StyleBox_method__get_style_margin:
+.. _class_StyleBox_method__get_minimum_size:
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **_get_style_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |virtual| |const|
+:ref:`Vector2<class_Vector2>` **_get_minimum_size** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to be implemented by the user. Returns a custom minimum size that the stylebox must respect when drawing. By default :ref:`get_minimum_size<class_StyleBox_method_get_minimum_size>` only takes content margins into account. This method can be overridden to add another size restriction. A combination of the default behavior and the output of this method will be used, to account for both sizes.
 
 .. rst-class:: classref-item-separator
 
@@ -261,13 +241,13 @@ The :ref:`RID<class_RID>` value can either be the result of :ref:`CanvasItem.get
 
 ----
 
-.. _class_StyleBox_method_get_center_size:
+.. _class_StyleBox_method_get_content_margin:
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_center_size** **(** **)** |const|
+:ref:`float<class_float>` **get_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
 
-Returns the size of this **StyleBox** without the margins.
+Returns the default margin of the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
 .. rst-class:: classref-item-separator
 
@@ -280,18 +260,6 @@ Returns the size of this **StyleBox** without the margins.
 :ref:`CanvasItem<class_CanvasItem>` **get_current_item_drawn** **(** **)** |const|
 
 Returns the :ref:`CanvasItem<class_CanvasItem>` that handles its :ref:`CanvasItem.NOTIFICATION_DRAW<class_CanvasItem_constant_NOTIFICATION_DRAW>` or :ref:`CanvasItem._draw<class_CanvasItem_method__draw>` callback at this moment.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_StyleBox_method_get_default_margin:
-
-.. rst-class:: classref-method
-
-:ref:`float<class_float>` **get_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin **)** |const|
-
-Returns the default margin of the specified :ref:`Side<enum_@GlobalScope_Side>`.
 
 .. rst-class:: classref-item-separator
 
@@ -335,11 +303,11 @@ Returns the "offset" of a stylebox. This helper function returns a value equival
 
 ----
 
-.. _class_StyleBox_method_set_default_margin:
+.. _class_StyleBox_method_set_content_margin:
 
 .. rst-class:: classref-method
 
-void **set_default_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
+void **set_content_margin** **(** :ref:`Side<enum_@GlobalScope_Side>` margin, :ref:`float<class_float>` offset **)**
 
 Sets the default value of the specified :ref:`Side<enum_@GlobalScope_Side>` to ``offset`` pixels.
 
@@ -347,11 +315,11 @@ Sets the default value of the specified :ref:`Side<enum_@GlobalScope_Side>` to `
 
 ----
 
-.. _class_StyleBox_method_set_default_margin_all:
+.. _class_StyleBox_method_set_content_margin_all:
 
 .. rst-class:: classref-method
 
-void **set_default_margin_all** **(** :ref:`float<class_float>` offset **)**
+void **set_content_margin_all** **(** :ref:`float<class_float>` offset **)**
 
 Sets the default margin to ``offset`` pixels for all sides.
 

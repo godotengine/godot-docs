@@ -76,7 +76,7 @@ Height map data, pool array must be of :ref:`map_width<class_HeightMapShape3D_pr
 - void **set_map_depth** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_map_depth** **(** **)**
 
-Depth of the height map data. Changing this will resize the :ref:`map_data<class_HeightMapShape3D_property_map_data>`.
+Number of vertices in the depth of the height map. Changing this will resize the :ref:`map_data<class_HeightMapShape3D_property_map_data>`.
 
 .. rst-class:: classref-item-separator
 
@@ -93,7 +93,7 @@ Depth of the height map data. Changing this will resize the :ref:`map_data<class
 - void **set_map_width** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_map_width** **(** **)**
 
-Width of the height map data. Changing this will resize the :ref:`map_data<class_HeightMapShape3D_property_map_data>`.
+Number of vertices in the width of the height map. Changing this will resize the :ref:`map_data<class_HeightMapShape3D_property_map_data>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

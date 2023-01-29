@@ -36,6 +36,7 @@ name in the path for ``get_node()``. For example:
  .. code-tab:: gdscript GDScript
 
     get_node("%RedButton").text = "Hello"
+    %RedButton.text = "Hello" # Shorter syntax
 
  .. code-tab:: csharp
 
