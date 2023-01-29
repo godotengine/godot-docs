@@ -10,7 +10,7 @@
 EditorUndoRedoManager
 =====================
 
-**Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Object<class_Object>`
 
 Manages undo history of scenes opened in the editor.
 

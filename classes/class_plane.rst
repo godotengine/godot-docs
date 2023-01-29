@@ -79,9 +79,9 @@ Methods
    :widths: auto
 
    +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>` | :ref:`center<class_Plane_method_center>` **(** **)** |const|                                                                                              |
-   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`distance_to<class_Plane_method_distance_to>` **(** :ref:`Vector3<class_Vector3>` point **)** |const|                                                |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`get_center<class_Plane_method_get_center>` **(** **)** |const|                                                                                      |
    +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`has_point<class_Plane_method_has_point>` **(** :ref:`Vector3<class_Vector3>` point, :ref:`float<class_float>` tolerance=1e-05 **)** |const|         |
    +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -184,7 +184,7 @@ In the scalar equation of the plane ``ax + by + cz = d``, this is ``d``, while t
 
 :ref:`Vector3<class_Vector3>` **normal** = ``Vector3(0, 0, 0)``
 
-The normal of the plane, which must be normalized.
+The normal of the plane, which must be a unit vector.
 
 In the scalar equation of the plane ``ax + by + cz = d``, this is the vector ``(a, b, c)``, where ``d`` is the :ref:`d<class_Plane_property_d>` property.
 
@@ -271,6 +271,8 @@ Creates a plane from the four parameters. The three components of the resulting 
 
 Creates a plane from the normal vector. The plane will intersect the origin.
 
+The ``normal`` of the plane must be a unit vector.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -281,6 +283,8 @@ Creates a plane from the normal vector. The plane will intersect the origin.
 
 Creates a plane from the normal vector and the plane's distance from the origin.
 
+The ``normal`` of the plane must be a unit vector.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -290,6 +294,8 @@ Creates a plane from the normal vector and the plane's distance from the origin.
 :ref:`Plane<class_Plane>` **Plane** **(** :ref:`Vector3<class_Vector3>` normal, :ref:`Vector3<class_Vector3>` point **)**
 
 Creates a plane from the normal vector and a point on the plane.
+
+The ``normal`` of the plane must be a unit vector.
 
 .. rst-class:: classref-item-separator
 
@@ -310,18 +316,6 @@ Creates a plane from the three points, given in clockwise order.
 Method Descriptions
 -------------------
 
-.. _class_Plane_method_center:
-
-.. rst-class:: classref-method
-
-:ref:`Vector3<class_Vector3>` **center** **(** **)** |const|
-
-Returns the center of the plane.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Plane_method_distance_to:
 
 .. rst-class:: classref-method
@@ -329,6 +323,18 @@ Returns the center of the plane.
 :ref:`float<class_float>` **distance_to** **(** :ref:`Vector3<class_Vector3>` point **)** |const|
 
 Returns the shortest distance from the plane to the position ``point``. If the point is above the plane, the distance will be positive. If below, the distance will be negative.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Plane_method_get_center:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_center** **(** **)** |const|
+
+Returns the center of the plane.
 
 .. rst-class:: classref-item-separator
 

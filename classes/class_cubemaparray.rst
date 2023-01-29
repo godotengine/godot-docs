@@ -29,6 +29,35 @@ To create such a texture file yourself, reimport your image files using the Godo
 
 \ **Note:** **CubemapArray** is not supported in the OpenGL 3 rendering backend.
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`create_placeholder<class_CubemapArray_method_create_placeholder>` **(** **)** |const| |
+   +---------------------------------+---------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_CubemapArray_method_create_placeholder:
+
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **create_placeholder** **(** **)** |const|
+
+Creates a placeholder version of this resource (:ref:`PlaceholderCubemapArray<class_PlaceholderCubemapArray>`).
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

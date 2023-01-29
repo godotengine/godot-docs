@@ -200,18 +200,6 @@ Emitted when the GraphNode is requested to be closed. Happens on clicking the cl
 
 ----
 
-.. _class_GraphNode_signal_deselected:
-
-.. rst-class:: classref-signal
-
-**deselected** **(** **)**
-
-Emitted when the GraphNode is deselected.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_GraphNode_signal_dragged:
 
 .. rst-class:: classref-signal
@@ -219,6 +207,30 @@ Emitted when the GraphNode is deselected.
 **dragged** **(** :ref:`Vector2<class_Vector2>` from, :ref:`Vector2<class_Vector2>` to **)**
 
 Emitted when the GraphNode is dragged.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphNode_signal_node_deselected:
+
+.. rst-class:: classref-signal
+
+**node_deselected** **(** **)**
+
+Emitted when the GraphNode is deselected.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GraphNode_signal_node_selected:
+
+.. rst-class:: classref-signal
+
+**node_selected** **(** **)**
+
+Emitted when the GraphNode is selected.
 
 .. rst-class:: classref-item-separator
 
@@ -255,18 +267,6 @@ Emitted when the GraphNode is requested to be displayed over other ones. Happens
 **resize_request** **(** :ref:`Vector2<class_Vector2>` new_minsize **)**
 
 Emitted when the GraphNode is requested to be resized. Happens on dragging the resizer handle (see :ref:`resizable<class_GraphNode_property_resizable>`).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GraphNode_signal_selected:
-
-.. rst-class:: classref-signal
-
-**selected** **(** **)**
-
-Emitted when the GraphNode is selected.
 
 .. rst-class:: classref-item-separator
 

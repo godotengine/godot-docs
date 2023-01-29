@@ -33,7 +33,7 @@ A tween animation is created by adding :ref:`Tweener<class_Tweener>`\ s to the *
  .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
-    tween.tween_property($Sprite, "modulate", Color.red, 1)
+    tween.tween_property($Sprite, "modulate", Color.RED, 1)
     tween.tween_property($Sprite, "scale", Vector2(), 1)
     tween.tween_callback($Sprite.queue_free)
 
@@ -42,7 +42,7 @@ A tween animation is created by adding :ref:`Tweener<class_Tweener>`\ s to the *
     Tween tween = GetTree().CreateTween();
     tween.TweenProperty(GetNode("Sprite"), "modulate", Colors.Red, 1.0f);
     tween.TweenProperty(GetNode("Sprite"), "scale", Vector2.Zero, 1.0f);
-    tween.TweenCallback(new Callable(GetNode("Sprite").QueueFree));
+    tween.TweenCallback(Callable.From(GetNode("Sprite").QueueFree));
 
 
 
@@ -56,7 +56,7 @@ When a :ref:`Tweener<class_Tweener>` is created with one of the ``tween_*`` meth
  .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
-    tween.tween_property($Sprite, "modulate", Color.red, 1).set_trans(Tween.TRANS_SINE)
+    tween.tween_property($Sprite, "modulate", Color.RED, 1).set_trans(Tween.TRANS_SINE)
     tween.tween_property($Sprite, "scale", Vector2(), 1).set_trans(Tween.TRANS_BOUNCE)
     tween.tween_callback($Sprite.queue_free)
 
@@ -65,7 +65,7 @@ When a :ref:`Tweener<class_Tweener>` is created with one of the ``tween_*`` meth
     Tween tween = GetTree().CreateTween();
     tween.TweenProperty(GetNode("Sprite"), "modulate", Colors.Red, 1.0f).SetTrans(Tween.TransitionType.Sine);
     tween.TweenProperty(GetNode("Sprite"), "scale", Vector2.Zero, 1.0f).SetTrans(Tween.TransitionType.Bounce);
-    tween.TweenCallback(new Callable(GetNode("Sprite").QueueFree));
+    tween.TweenCallback(Callable.From(GetNode("Sprite").QueueFree));
 
 
 
@@ -77,7 +77,7 @@ Most of the **Tween** methods can be chained this way too. In the following exam
  .. code-tab:: gdscript
 
     var tween = get_tree().create_tween().bind_node(self).set_trans(Tween.TRANS_ELASTIC)
-    tween.tween_property($Sprite, "modulate", Color.red, 1)
+    tween.tween_property($Sprite, "modulate", Color.RED, 1)
     tween.tween_property($Sprite, "scale", Vector2(), 1)
     tween.tween_callback($Sprite.queue_free)
 
@@ -86,7 +86,7 @@ Most of the **Tween** methods can be chained this way too. In the following exam
     var tween = GetTree().CreateTween().BindNode(this).SetTrans(Tween.TransitionType.Elastic);
     tween.TweenProperty(GetNode("Sprite"), "modulate", Colors.Red, 1.0f);
     tween.TweenProperty(GetNode("Sprite"), "scale", Vector2.Zero, 1.0f);
-    tween.TweenCallback(new Callable(GetNode("Sprite").QueueFree));
+    tween.TweenCallback(Callable.From(GetNode("Sprite").QueueFree));
 
 
 
@@ -777,7 +777,7 @@ Creates and appends a :ref:`CallbackTweener<class_CallbackTweener>`. This method
  .. code-tab:: csharp
 
     Tween tween = GetTree().CreateTween().SetLoops();
-    tween.TweenCallback(new Callable(Shoot)).SetDelay(1.0f);
+    tween.TweenCallback(Callable.From(Shoot)).SetDelay(1.0f);
 
 
 
@@ -789,15 +789,15 @@ Creates and appends a :ref:`CallbackTweener<class_CallbackTweener>`. This method
  .. code-tab:: gdscript
 
     var tween = get_tree().create_tween()
-    tween.tween_callback($Sprite.set_modulate.bind(Color.red)).set_delay(2)
-    tween.tween_callback($Sprite.set_modulate.bind(Color.blue)).set_delay(2)
+    tween.tween_callback($Sprite.set_modulate.bind(Color.RED)).set_delay(2)
+    tween.tween_callback($Sprite.set_modulate.bind(Color.BLUE)).set_delay(2)
 
  .. code-tab:: csharp
 
     Tween tween = GetTree().CreateTween();
     Sprite2D sprite = GetNode<Sprite2D>("Sprite");
-    tween.TweenCallback(new Callable(() => sprite.Modulate = Colors.Red)).SetDelay(2.0f);
-    tween.TweenCallback(new Callable(() => sprite.Modulate = Colors.Blue)).SetDelay(2.0f);
+    tween.TweenCallback(Callable.From(() => sprite.Modulate = Colors.Red)).SetDelay(2.0f);
+    tween.TweenCallback(Callable.From(() => sprite.Modulate = Colors.Blue)).SetDelay(2.0f);
 
 
 
@@ -851,10 +851,10 @@ Creates and appends an :ref:`IntervalTweener<class_IntervalTweener>`. This metho
 
     Tween tween = CreateTween().SetLoops();
     tween.TweenProperty(GetNode("Sprite"), "position:x", 200.0f, 1.0f).AsRelative();
-    tween.TweenCallback(new Callable(Jump));
+    tween.TweenCallback(Callable.From(Jump));
     tween.TweenInterval(2.0f);
     tween.TweenProperty(GetNode("Sprite"), "position:x", -200.0f, 1.0f).AsRelative();
-    tween.TweenCallback(new Callable(Jump));
+    tween.TweenCallback(Callable.From(Jump));
     tween.TweenInterval(2.0f);
 
 
@@ -884,7 +884,7 @@ Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is 
  .. code-tab:: csharp
 
     Tween tween = CreateTween();
-    tween.TweenMethod(new Callable(() => LookAt(Vector3.Up)), new Vector3(-1.0f, 0.0f, -1.0f), new Vector3(1.0f, 0.0f, -1.0f), 1.0f); // The LookAt() method takes up vector as second argument.
+    tween.TweenMethod(Callable.From(() => LookAt(Vector3.Up)), new Vector3(-1.0f, 0.0f, -1.0f), new Vector3(1.0f, 0.0f, -1.0f), 1.0f); // The LookAt() method takes up vector as second argument.
 
 
 
@@ -909,7 +909,7 @@ Creates and appends a :ref:`MethodTweener<class_MethodTweener>`. This method is 
         base._Ready();
     
         Tween tween = CreateTween();
-        tween.TweenMethod(new Callable(SetLabelText), 0.0f, 10.0f, 1.0f).SetDelay(1.0f);
+        tween.TweenMethod(Callable.From<int>(SetLabelText), 0.0f, 10.0f, 1.0f).SetDelay(1.0f);
     }
     
     private void SetLabelText(int value)

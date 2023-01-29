@@ -415,7 +415,7 @@ Generates normals from vertices so you do not have to do it manually. If ``flip`
 
 \ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` only works if the primitive type to be set to :ref:`Mesh.PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`.
 
-\ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` takes smooth groups into account. If you don't specify any smooth group for each vertex, :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` will smooth normals for you.
+\ **Note:** :ref:`generate_normals<class_SurfaceTool_method_generate_normals>` takes smooth groups into account. To generate smooth normals, set the smooth group to a value greater than or equal to ``0`` using :ref:`set_smooth_group<class_SurfaceTool_method_set_smooth_group>` or leave the smooth group at the default of ``0``. To generate flat normals, set the smooth group to ``-1`` using :ref:`set_smooth_group<class_SurfaceTool_method_set_smooth_group>` prior to adding vertices.
 
 .. rst-class:: classref-item-separator
 
@@ -609,7 +609,7 @@ By default, only 4 bone influences are used (:ref:`SKIN_4_WEIGHTS<class_SurfaceT
 
 void **set_smooth_group** **(** :ref:`int<class_int>` index **)**
 
-Specifies whether the current vertex (if using only vertex arrays) or current index (if also using index arrays) should use smooth normals for normal calculation.
+Specifies the smooth group to use for the *next* vertex. If this is never called, all vertices will have the default smooth group of ``0`` and will be smoothed with adjacent vertices of the same group. To produce a mesh with flat normals, set the smooth group to ``-1``.
 
 .. rst-class:: classref-item-separator
 

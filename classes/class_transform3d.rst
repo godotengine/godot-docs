@@ -251,9 +251,7 @@ Constructs a Transform3D from a :ref:`Basis<class_Basis>` and :ref:`Vector3<clas
 
 :ref:`Transform3D<class_Transform3D>` **Transform3D** **(** :ref:`Projection<class_Projection>` from **)**
 
-.. container:: contribute
-
-	There is currently no description for this constructor. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Constructs a Transform3D from a :ref:`Projection<class_Projection>` by trimming the last row of the projection matrix (``from.x.w``, ``from.y.w``, ``from.z.w``, and ``from.w.w`` are not copied over).
 
 .. rst-class:: classref-item-separator
 

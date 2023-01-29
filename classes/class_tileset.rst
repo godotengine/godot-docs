@@ -1546,7 +1546,7 @@ Sets a terrain's name.
 
 void **set_terrain_set_mode** **(** :ref:`int<class_int>` terrain_set, :ref:`TerrainMode<enum_TileSet_TerrainMode>` mode **)**
 
-Sets a terrain mode. Each mode determines which bits of a tile shape is used to match the neighbouring tiles' terrains.
+Sets a terrain mode. Each mode determines which bits of a tile shape is used to match the neighboring tiles' terrains.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

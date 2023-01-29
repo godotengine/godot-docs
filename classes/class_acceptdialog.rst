@@ -98,11 +98,11 @@ Theme Properties
 Signals
 -------
 
-.. _class_AcceptDialog_signal_cancelled:
+.. _class_AcceptDialog_signal_canceled:
 
 .. rst-class:: classref-signal
 
-**cancelled** **(** **)**
+**canceled** **(** **)**
 
 Emitted when the dialog is closed or the button created with :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` is pressed.
 
@@ -307,7 +307,7 @@ Registers a :ref:`LineEdit<class_LineEdit>` in the dialog. When the enter key is
 
 void **remove_button** **(** :ref:`Control<class_Control>` button **)**
 
-Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button<class_AcceptDialog_method_add_button>` or :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` or :ref:`cancelled<class_AcceptDialog_signal_cancelled>` signals.
+Removes the ``button`` from the dialog. Does NOT free the ``button``. The ``button`` must be a :ref:`Button<class_Button>` added with :ref:`add_button<class_AcceptDialog_method_add_button>` or :ref:`add_cancel_button<class_AcceptDialog_method_add_cancel_button>` method. After removal, pressing the ``button`` will no longer emit this dialog's :ref:`custom_action<class_AcceptDialog_signal_custom_action>` or :ref:`canceled<class_AcceptDialog_signal_canceled>` signals.
 
 .. rst-class:: classref-section-separator
 

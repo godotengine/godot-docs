@@ -207,7 +207,7 @@ Processing callback. See :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallb
 
 The timer's remaining time in seconds. Returns 0 if the timer is inactive.
 
-\ **Note:** You cannot set this value. To change the timer's remaining time, use :ref:`start<class_Timer_method_start>`.
+\ **Note:** This value is read-only and cannot be set. It is based on :ref:`wait_time<class_Timer_property_wait_time>`, which can be set using :ref:`start<class_Timer_method_start>`.
 
 .. rst-class:: classref-item-separator
 

@@ -1630,7 +1630,7 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``(x, y)`` to ``color``.
     var img = Image.new()
     img.create(img_width, img_height, false, Image.FORMAT_RGBA8)
     
-    img.set_pixel(1, 2, Color.red) # Sets the color at (1, 2) to red.
+    img.set_pixel(1, 2, Color.RED) # Sets the color at (1, 2) to red.
 
  .. code-tab:: csharp
 
@@ -1669,7 +1669,7 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``point`` to ``color``.
     var img = Image.new()
     img.create(img_width, img_height, false, Image.FORMAT_RGBA8)
     
-    img.set_pixelv(Vector2i(1, 2), Color.red) # Sets the color at (1, 2) to red.
+    img.set_pixelv(Vector2i(1, 2), Color.RED) # Sets the color at (1, 2) to red.
 
  .. code-tab:: csharp
 
@@ -1678,7 +1678,7 @@ Sets the :ref:`Color<class_Color>` of the pixel at ``point`` to ``color``.
     var img = new Image();
     img.Create(imgWidth, imgHeight, false, Image.Format.Rgba8);
     
-    img.SetPixelv(new Vector2i(1, 2), Colors.Red); // Sets the color at (1, 2) to red.
+    img.SetPixelv(new Vector2I(1, 2), Colors.Red); // Sets the color at (1, 2) to red.
 
 
 

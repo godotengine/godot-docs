@@ -113,6 +113,8 @@ Methods
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i[]<class_Vector2i>`           | :ref:`get_used_cells<class_TileMap_method_get_used_cells>` **(** :ref:`int<class_int>` layer **)** |const|                                                                                                                                                                              |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2i[]<class_Vector2i>`           | :ref:`get_used_cells_by_id<class_TileMap_method_get_used_cells_by_id>` **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)** |const|                    |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Rect2i<class_Rect2i>`                 | :ref:`get_used_rect<class_TileMap_method_get_used_rect>` **(** **)**                                                                                                                                                                                                                    |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                     | :ref:`is_layer_enabled<class_TileMap_method_is_layer_enabled>` **(** :ref:`int<class_int>` layer **)** |const|                                                                                                                                                                          |
@@ -445,7 +447,9 @@ Returns the tile atlas coordinates ID of the cell on layer ``layer`` at coordina
 
 :ref:`int<class_int>` **get_cell_source_id** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|
 
-Returns the tile source ID of the cell on layer ``layer`` at coordinates ``coords``. If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+Returns the tile source ID of the cell on layer ``layer`` at coordinates ``coords``. Returns ``-1`` if the cell does not exist.
+
+If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
 
 .. rst-class:: classref-item-separator
 
@@ -457,9 +461,19 @@ Returns the tile source ID of the cell on layer ``layer`` at coordinates ``coord
 
 :ref:`TileData<class_TileData>` **get_cell_tile_data** **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` coords, :ref:`bool<class_bool>` use_proxies=false **)** |const|
 
-Returns the :ref:`TileData<class_TileData>` object associated with the given cell, or ``null`` if the cell is not a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`.
+Returns the :ref:`TileData<class_TileData>` object associated with the given cell, or ``null`` if the cell does not exist or is not a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`.
 
 If ``use_proxies`` is ``false``, ignores the :ref:`TileSet<class_TileSet>`'s tile proxies, returning the raw alternative identifier. See :ref:`TileSet.map_tile_proxy<class_TileSet_method_map_tile_proxy>`.
+
+::
+
+    func get_clicked_tile_power():
+        var clicked_cell = tile_map.local_to_map(tile_map.get_local_mouse_position())
+        var data = tile_map.get_cell_tile_data(0, clicked_cell)
+        if data:
+            return data.get_custom_data("power")
+        else:
+            return 0
 
 .. rst-class:: classref-item-separator
 
@@ -579,7 +593,23 @@ Returns the list of all neighbourings cells to the one at ``coords``
 
 :ref:`Vector2i[]<class_Vector2i>` **get_used_cells** **(** :ref:`int<class_int>` layer **)** |const|
 
-Returns a :ref:`Vector2<class_Vector2>` array with the positions of all cells containing a tile in the given layer. A cell is considered empty if its source identifier equals -1, its atlas coordinates identifiers is ``Vector2(-1, -1)`` and its alternative identifier is -1.
+Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells containing a tile in the given layer. A cell is considered empty if its source identifier equals -1, its atlas coordinates identifiers is ``Vector2(-1, -1)`` and its alternative identifier is -1.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_method_get_used_cells_by_id:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2i[]<class_Vector2i>` **get_used_cells_by_id** **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)** |const|
+
+Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells containing a tile in the given layer. Tiles may be filtered according to their source (``source_id``), their atlas coordinates (``atlas_coords``) or alternative id (``source_id``).
+
+If a parameter has it's value set to the default one, this parameter is not used to filter a cell. Thus, if all parameters have their respective default value, this method returns the same result as :ref:`get_used_cells<class_TileMap_method_get_used_cells>`.
+
+A cell is considered empty if its source identifier equals -1, its atlas coordinates identifiers is ``Vector2(-1, -1)`` and its alternative identifier is -1.
 
 .. rst-class:: classref-item-separator
 

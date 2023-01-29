@@ -89,6 +89,8 @@ Methods
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Mesh<class_Mesh>`                                   | :ref:`create_outline<class_Mesh_method_create_outline>` **(** :ref:`float<class_float>` margin **)** |const|                                                      |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>`                           | :ref:`create_placeholder<class_Mesh_method_create_placeholder>` **(** **)** |const|                                                                               |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` | :ref:`create_trimesh_shape<class_Mesh_method_create_trimesh_shape>` **(** **)** |const|                                                                           |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TriangleMesh<class_TriangleMesh>`                   | :ref:`generate_triangle_mesh<class_Mesh_method_generate_triangle_mesh>` **(** **)** |const|                                                                       |
@@ -259,7 +261,7 @@ Contains custom color channel 3. :ref:`PackedByteArray<class_PackedByteArray>` i
 
 :ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_BONES** = ``10``
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` or :ref:`PackedInt32Array<class_PackedInt32Array>` of bone indices. Each element is a group of 4 numbers.
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` or :ref:`PackedInt32Array<class_PackedInt32Array>` of bone indices. Contains either 4 or 8 numbers per vertex depending on the presence of the :ref:`ARRAY_FLAG_USE_8_BONE_WEIGHTS<class_Mesh_constant_ARRAY_FLAG_USE_8_BONE_WEIGHTS>` flag.
 
 .. _class_Mesh_constant_ARRAY_WEIGHTS:
 
@@ -267,7 +269,7 @@ Contains custom color channel 3. :ref:`PackedByteArray<class_PackedByteArray>` i
 
 :ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_WEIGHTS** = ``11``
 
-:ref:`PackedFloat32Array<class_PackedFloat32Array>` of bone weights. Each element in groups of 4 floats.
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` or :ref:`PackedFloat64Array<class_PackedFloat64Array>` of bone weights in the range ``0.0`` to ``1.0`` (inclusive). Contains either 4 or 8 numbers per vertex depending on the presence of the :ref:`ARRAY_FLAG_USE_8_BONE_WEIGHTS<class_Mesh_constant_ARRAY_FLAG_USE_8_BONE_WEIGHTS>` flag.
 
 .. _class_Mesh_constant_ARRAY_INDEX:
 
@@ -579,6 +581,14 @@ Flag indices that the mesh data will use ``GL_DYNAMIC_DRAW`` on GLES. Unused on 
 
 Flag used to mark that the mesh contains up to 8 bone influences per vertex. This flag indicates that :ref:`ARRAY_BONES<class_Mesh_constant_ARRAY_BONES>` and :ref:`ARRAY_WEIGHTS<class_Mesh_constant_ARRAY_WEIGHTS>` elements will have double length.
 
+.. _class_Mesh_constant_ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY** = ``268435456``
+
+Flag used to mark that the mesh intentionally contains no vertex array.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -857,6 +867,18 @@ If ``simplify`` is ``true``, the geometry can be further simplified to reduce th
 Calculate an outline mesh at a defined offset (margin) from the original mesh.
 
 \ **Note:** This method typically returns the vertices in reverse order (e.g. clockwise to counterclockwise).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Mesh_method_create_placeholder:
+
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **create_placeholder** **(** **)** |const|
+
+Creates a placeholder version of this resource (:ref:`PlaceholderMesh<class_PlaceholderMesh>`).
 
 .. rst-class:: classref-item-separator
 

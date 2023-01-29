@@ -169,7 +169,7 @@ Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to disable a meth
 
 :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_ANY_PEER** = ``1``
 
-Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely by any peer. Analogous to the ``@rpc(any)`` annotation. Calls are accepted from all remote peers, no matter if they are node's authority or not.
+Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely by any peer. Analogous to the ``@rpc("any")`` annotation. Calls are accepted from all remote peers, no matter if they are node's authority or not.
 
 .. _class_MultiplayerAPI_constant_RPC_MODE_AUTHORITY:
 
@@ -177,7 +177,7 @@ Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method t
 
 :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_AUTHORITY** = ``2``
 
-Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely only by the current multiplayer authority (which is the server by default). Analogous to the ``@rpc(authority)`` annotation. See :ref:`Node.set_multiplayer_authority<class_Node_method_set_multiplayer_authority>`.
+Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely only by the current multiplayer authority (which is the server by default). Analogous to the ``@rpc("authority")`` annotation. See :ref:`Node.set_multiplayer_authority<class_Node_method_set_multiplayer_authority>`.
 
 .. rst-class:: classref-section-separator
 

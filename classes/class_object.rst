@@ -10,7 +10,7 @@
 Object
 ======
 
-**Inherited By:** :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`DisplayServer<class_DisplayServer>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorPaths<class_EditorPaths>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`EngineDebugger<class_EngineDebugger>`, :ref:`GDExtensionManager<class_GDExtensionManager>`, :ref:`Geometry2D<class_Geometry2D>`, :ref:`Geometry3D<class_Geometry3D>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`IP<class_IP>`, :ref:`JavaClassWrapper<class_JavaClassWrapper>`, :ref:`JavaScriptBridge<class_JavaScriptBridge>`, :ref:`JNISingleton<class_JNISingleton>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Marshalls<class_Marshalls>`, :ref:`MovieWriter<class_MovieWriter>`, :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>`, :ref:`NavigationServer2D<class_NavigationServer2D>`, :ref:`NavigationServer3D<class_NavigationServer3D>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`, :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`, :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`, :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>`, :ref:`PhysicsServer2D<class_PhysicsServer2D>`, :ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>`, :ref:`PhysicsServer3D<class_PhysicsServer3D>`, :ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>`, :ref:`PhysicsServer3DRenderingServerHandler<class_PhysicsServer3DRenderingServerHandler>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`RefCounted<class_RefCounted>`, :ref:`RenderingDevice<class_RenderingDevice>`, :ref:`RenderingServer<class_RenderingServer>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`ResourceUID<class_ResourceUID>`, :ref:`ScriptLanguage<class_ScriptLanguage>`, :ref:`TextServerManager<class_TextServerManager>`, :ref:`ThemeDB<class_ThemeDB>`, :ref:`TileData<class_TileData>`, :ref:`Time<class_Time>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`WorkerThreadPool<class_WorkerThreadPool>`, :ref:`XRServer<class_XRServer>`
+**Inherited By:** :ref:`AudioServer<class_AudioServer>`, :ref:`CameraServer<class_CameraServer>`, :ref:`ClassDB<class_ClassDB>`, :ref:`DisplayServer<class_DisplayServer>`, :ref:`EditorFileSystemDirectory<class_EditorFileSystemDirectory>`, :ref:`EditorPaths<class_EditorPaths>`, :ref:`EditorSelection<class_EditorSelection>`, :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>`, :ref:`EditorVCSInterface<class_EditorVCSInterface>`, :ref:`Engine<class_Engine>`, :ref:`EngineDebugger<class_EngineDebugger>`, :ref:`GDExtensionManager<class_GDExtensionManager>`, :ref:`Geometry2D<class_Geometry2D>`, :ref:`Geometry3D<class_Geometry3D>`, :ref:`GodotSharp<class_GodotSharp>`, :ref:`Input<class_Input>`, :ref:`InputMap<class_InputMap>`, :ref:`IP<class_IP>`, :ref:`JavaClassWrapper<class_JavaClassWrapper>`, :ref:`JavaScriptBridge<class_JavaScriptBridge>`, :ref:`JNISingleton<class_JNISingleton>`, :ref:`JSONRPC<class_JSONRPC>`, :ref:`MainLoop<class_MainLoop>`, :ref:`Marshalls<class_Marshalls>`, :ref:`MovieWriter<class_MovieWriter>`, :ref:`NavigationMeshGenerator<class_NavigationMeshGenerator>`, :ref:`NavigationServer2D<class_NavigationServer2D>`, :ref:`NavigationServer3D<class_NavigationServer3D>`, :ref:`Node<class_Node>`, :ref:`OS<class_OS>`, :ref:`Performance<class_Performance>`, :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>`, :ref:`PhysicsDirectBodyState3D<class_PhysicsDirectBodyState3D>`, :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`, :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>`, :ref:`PhysicsServer2D<class_PhysicsServer2D>`, :ref:`PhysicsServer2DManager<class_PhysicsServer2DManager>`, :ref:`PhysicsServer3D<class_PhysicsServer3D>`, :ref:`PhysicsServer3DManager<class_PhysicsServer3DManager>`, :ref:`PhysicsServer3DRenderingServerHandler<class_PhysicsServer3DRenderingServerHandler>`, :ref:`ProjectSettings<class_ProjectSettings>`, :ref:`RefCounted<class_RefCounted>`, :ref:`RenderingDevice<class_RenderingDevice>`, :ref:`RenderingServer<class_RenderingServer>`, :ref:`ResourceLoader<class_ResourceLoader>`, :ref:`ResourceSaver<class_ResourceSaver>`, :ref:`ResourceUID<class_ResourceUID>`, :ref:`ScriptLanguage<class_ScriptLanguage>`, :ref:`TextServerManager<class_TextServerManager>`, :ref:`ThemeDB<class_ThemeDB>`, :ref:`TileData<class_TileData>`, :ref:`Time<class_Time>`, :ref:`TranslationServer<class_TranslationServer>`, :ref:`TreeItem<class_TreeItem>`, :ref:`UndoRedo<class_UndoRedo>`, :ref:`WorkerThreadPool<class_WorkerThreadPool>`, :ref:`XRServer<class_XRServer>`
 
 Base class for all other classes in the engine.
 
@@ -53,6 +53,8 @@ Lastly, every object can also contain metadata (data about data). :ref:`set_meta
 
 Tutorials
 ---------
+
+- :doc:`Object class introduction <../contributing/development/core_and_modules/object_class>`
 
 - :doc:`When and how to avoid using nodes for everything <../tutorials/best_practices/node_alternatives>`
 
@@ -649,7 +651,7 @@ Calls the ``method`` on the object and returns the result. This method supports 
  .. code-tab:: csharp
 
     var node = new Node3D();
-    node.Call("rotate", new Vector3(1f, 0f, 0f), 1.571f);
+    node.Call(Node3D.MethodName.Rotate, new Vector3(1f, 0f, 0f), 1.571f);
 
 
 
@@ -678,7 +680,7 @@ Calls the ``method`` on the object during idle time. This method supports a vari
  .. code-tab:: csharp
 
     var node = new Node3D();
-    node.CallDeferred("rotate", new Vector3(1f, 0f, 0f), 1.571f);
+    node.CallDeferred(Node3D.MethodName.Rotate, new Vector3(1f, 0f, 0f), 1.571f);
 
 
 
@@ -707,7 +709,7 @@ Calls the ``method`` on the object and returns the result. Unlike :ref:`call<cla
  .. code-tab:: csharp
 
     var node = new Node3D();
-    node.Callv("rotate", new Godot.Collections.Array { new Vector3(1f, 0f, 0f), 1.571f });
+    node.Callv(Node3D.MethodName.Rotate, new Godot.Collections.Array { new Vector3(1f, 0f, 0f), 1.571f });
 
 
 
@@ -778,8 +780,8 @@ Connecting signals is one of the most common operations in Godot and the API giv
     
         // This assumes that a `Player` class exists, which defines a `Hit` signal.
         var player = new Player();
-        // Signals as events (`player.Hit += OnPlayerHit;`) do not support argument binding. You have to use:
-        player.Hit.Connect(OnPlayerHit, new Godot.Collections.Array {"sword", 100 });
+        // We can use lambdas when we need to bind additional parameters.
+        player.Hit += () => OnPlayerHit("sword", 100);
     }
     
     private void OnButtonDown()
@@ -789,7 +791,7 @@ Connecting signals is one of the most common operations in Godot and the API giv
     
     private void OnPlayerHit(string weaponType, int damage)
     {
-        GD.Print(String.Format("Hit with weapon {0} for {1} damage.", weaponType, damage));
+        GD.Print($"Hit with weapon {weaponType} for {damage} damage.");
     }
 
 
@@ -822,16 +824,12 @@ As seen above, the recommended method to connect signals is not :ref:`connect<cl
     public override void _Ready()
     {
         var button = new Button();
-        // Option 1: Object.Connect() with an implicit Callable for the defined function.
-        button.Connect("button_down", OnButtonDown);
-        // Option 2: Object.connect() with a constructed Callable using a target object and method name.
-        button.Connect("button_down", new Callable(self, nameof(OnButtonDown)));
-        // Option 3: Signal.connect() with an implicit Callable for the defined function.
-        button.ButtonDown.Connect(OnButtonDown);
-        // Option 3b: In C#, we can use signals as events and connect with this more idiomatic syntax:
+        // Option 1: In C#, we can use signals as events and connect with this idiomatic syntax:
         button.ButtonDown += OnButtonDown;
-        // Option 4: Signal.connect() with a constructed Callable using a target object and method name.
-        button.ButtonDown.Connect(new Callable(self, nameof(OnButtonDown)));
+        // Option 2: Object.Connect() with a constructed Callable from a method group.
+        button.Connect(Button.SignalName.ButtonDown, Callable.From(OnButtonDown));
+        // Option 3: Object.Connect() with a constructed Callable using a target object and method name.
+        button.Connect(Button.SignalName.ButtonDown, new Callable(this, MethodName.OnButtonDown));
     }
     
     private void OnButtonDown()
@@ -857,6 +855,7 @@ When calling :ref:`emit_signal<class_Object_method_emit_signal>`, the signal par
     func _ready():
         # This assumes that a `Player` class exists, which defines a `hit` signal.
         var player = Player.new()
+        # Using Callable.bind().
         player.hit.connect(_on_player_hit.bind("sword", 100))
     
         # Parameters added when emitting the signal are passed first.
@@ -873,20 +872,19 @@ When calling :ref:`emit_signal<class_Object_method_emit_signal>`, the signal par
     {
         // This assumes that a `Player` class exists, which defines a `Hit` signal.
         var player = new Player();
-        // Option 1: Using Callable.Bind(). This way we can still use signals as events.
-        player.Hit += OnPlayerHit.Bind("sword", 100);
-        // Option 2: Using a `binds` Array in Signal.Connect().
-        player.Hit.Connect(OnPlayerHit, new Godot.Collections.Array{ "sword", 100 });
+        // Using lambda expressions that create a closure that captures the additional parameters.
+        // The lambda only receives the parameters defined by the signal's delegate.
+        player.Hit += (hitBy, level) => OnPlayerHit(hitBy, level, "sword", 100);
     
         // Parameters added when emitting the signal are passed first.
-        player.EmitSignal("hit", "Dark lord", 5);
+        player.EmitSignal(SignalName.Hit, "Dark lord", 5);
     }
     
     // We pass two arguments when emitting (`hit_by`, `level`),
     // and bind two more arguments when connecting (`weapon_type`, `damage`).
     private void OnPlayerHit(string hitBy, int level, string weaponType, int damage)
     {
-        GD.Print(String.Format("Hit by {0} (level {1}) with weapon {2} for {3} damage.", hitBy, level, weaponType, damage));
+        GD.Print($"Hit by {hitBy} (level {level}) with weapon {weaponType} for {damage} damage.");
     }
 
 
@@ -927,8 +925,8 @@ Returns :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVA
 
  .. code-tab:: csharp
 
-    EmitSignal("Hit", "sword", 100);
-    EmitSignal("GameOver");
+    EmitSignal(SignalName.Hit, "sword", 100);
+    EmitSignal(SignalName.GameOver);
 
 
 
@@ -1042,7 +1040,7 @@ Gets the object's property indexed by the given ``property_path``. The path shou
 
 
 
-\ **Note:** In C#, ``property_path`` must be in snake_case when referring to built-in Godot properties.
+\ **Note:** In C#, ``property_path`` must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the ``PropertyName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
 
 \ **Note:** This method does not support actual paths to nodes in the :ref:`SceneTree<class_SceneTree>`, only sub-property paths. In the context of nodes, use :ref:`Node.get_node_and_resource<class_Node_method_get_node_and_resource>` instead.
 
@@ -1513,7 +1511,7 @@ Assigns a new ``value`` to the property identified by the ``property_path``. The
 
 
 
-\ **Note:** In C#, ``property_path`` must be in snake_case when referring to built-in Godot properties.
+\ **Note:** In C#, ``property_path`` must be in snake_case when referring to built-in Godot properties. Prefer using the names exposed in the ``PropertyName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
 
 .. rst-class:: classref-item-separator
 
@@ -1537,7 +1535,7 @@ If set to ``true``, allows the object to translate messages with :ref:`tr<class_
 
 void **set_meta** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
 
-Adds or changes the entry ``name`` inside the object's metadata. The metadata ``value`` can be any :ref:`Variant<class_Variant>`, although some types cannot be serialised correctly.
+Adds or changes the entry ``name`` inside the object's metadata. The metadata ``value`` can be any :ref:`Variant<class_Variant>`, although some types cannot be serialized correctly.
 
 If ``value`` is ``null``, the entry is removed. This is the equivalent of using :ref:`remove_meta<class_Object_method_remove_meta>`. See also :ref:`has_meta<class_Object_method_has_meta>` and :ref:`get_meta<class_Object_method_get_meta>`.
 

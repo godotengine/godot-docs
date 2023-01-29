@@ -217,6 +217,14 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`   | :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>`                                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/external_programs/3d_model_editor<class_EditorSettings_property_filesystem/external_programs/3d_model_editor>`                                                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/external_programs/audio_editor<class_EditorSettings_property_filesystem/external_programs/audio_editor>`                                                           |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/external_programs/raster_image_editor<class_EditorSettings_property_filesystem/external_programs/raster_image_editor>`                                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/external_programs/vector_image_editor<class_EditorSettings_property_filesystem/external_programs/vector_image_editor>`                                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/display_mode<class_EditorSettings_property_filesystem/file_dialog/display_mode>`                                                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`filesystem/file_dialog/show_hidden_files<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>`                                                             |
@@ -1569,7 +1577,7 @@ The size to use for port previews in the visual shader uniforms (toggled by clic
 
 :ref:`String<class_String>` **filesystem/directories/autoscan_project_path**
 
-The folder where projects should be scanned for (recursively), in a way similar to the project manager's **Scan**\ button. This can be set to the same value as :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>` for convenience.
+The folder where projects should be scanned for (recursively), in a way similar to the project manager's **Scan** button. This can be set to the same value as :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>` for convenience.
 
 \ **Note:** Setting this path to a folder with very large amounts of files/folders can slow down the project manager startup significantly. To keep the project manager quick to start up, it is recommended to set this value to a folder as "specific" as possible.
 
@@ -1584,6 +1592,54 @@ The folder where projects should be scanned for (recursively), in a way similar 
 :ref:`String<class_String>` **filesystem/directories/default_project_path**
 
 The folder where new projects should be created by default when clicking the project manager's **New Project** button. This can be set to the same value as :ref:`filesystem/directories/autoscan_project_path<class_EditorSettings_property_filesystem/directories/autoscan_project_path>` for convenience.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/external_programs/3d_model_editor:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/external_programs/3d_model_editor**
+
+The program that opens 3D model scene files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/external_programs/audio_editor:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/external_programs/audio_editor**
+
+The program that opens audio files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/external_programs/raster_image_editor:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/external_programs/raster_image_editor**
+
+The program that opens raster image files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_filesystem/external_programs/vector_image_editor:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/external_programs/vector_image_editor**
+
+The program that opens vector image files when clicking "Open in External Program" option in Filesystem Dock. If not specified, the file will be opened in the system's default program.
 
 .. rst-class:: classref-item-separator
 
@@ -1803,7 +1859,7 @@ If set to **Custom**, the scaling value in :ref:`interface/editor/custom_display
 
 The language to use for the editor interface.
 
-Translations are provided by the community. If you spot a mistake, `contribute to editor translations on Weblate! <https://docs.godotengine.org/en/latest/community/contributing/editor_and_docs_localization.html>`__
+Translations are provided by the community. If you spot a mistake, :doc:`contribute to editor translations on Weblate! <../contributing/documentation/editor_and_docs_localization>`
 
 .. rst-class:: classref-item-separator
 
@@ -2743,7 +2799,7 @@ When using tab indentation, determines the length of each tab. When using space 
 
 The indentation style to use (tabs or spaces).
 
-\ **Note:** The `GDScript style guide <https://docs.godotengine.org/en/latest/getting_started/scripting/gdscript/gdscript_styleguide.html>`__ recommends using tabs for indentation. It is advised to change this setting only if you need to work on a project that currently uses spaces for indentation.
+\ **Note:** The :doc:`GDScript style guide <../getting_started/scripting/gdscript/gdscript_styleguide>` recommends using tabs for indentation. It is advised to change this setting only if you need to work on a project that currently uses spaces for indentation.
 
 .. rst-class:: classref-item-separator
 
@@ -2903,7 +2959,7 @@ If ``true``, the code completion tooltip will appear below the current line unle
 
 :ref:`bool<class_bool>` **text_editor/completion/use_single_quotes**
 
-If ``true``, performs string autocompletion with single quotes. If ``false``, performs string autocompletion with double quotes (which matches the `GDScript style guide <https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_styleguide.html>`__).
+If ``true``, performs string autocompletion with single quotes. If ``false``, performs string autocompletion with double quotes (which matches the :doc:`GDScript style guide <../tutorials/scripting/gdscript/gdscript_styleguide>`).
 
 .. rst-class:: classref-item-separator
 

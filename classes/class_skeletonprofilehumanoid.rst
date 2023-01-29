@@ -12,6 +12,8 @@ SkeletonProfileHumanoid
 
 **Inherits:** :ref:`SkeletonProfile<class_SkeletonProfile>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A humanoid :ref:`SkeletonProfile<class_SkeletonProfile>` preset.
+
 .. rst-class:: classref-introduction-group
 
 Description

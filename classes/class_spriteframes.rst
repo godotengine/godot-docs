@@ -21,8 +21,6 @@ Description
 
 Sprite frame library for an :ref:`AnimatedSprite2D<class_AnimatedSprite2D>` or :ref:`AnimatedSprite3D<class_AnimatedSprite3D>` node. Contains frames and animation data for playback.
 
-\ **Note:** You can associate a set of normal or specular maps by creating additional **SpriteFrames** resources with a ``_normal`` or ``_specular`` suffix. For example, having 3 **SpriteFrames** resources ``run``, ``run_normal``, and ``run_specular`` will make it so the ``run`` animation uses normal and specular maps.
-
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -82,7 +80,7 @@ Method Descriptions
 
 void **add_animation** **(** :ref:`StringName<class_StringName>` anim **)**
 
-Adds a new animation to the library.
+Adds a new ``anim`` animation to the library.
 
 .. rst-class:: classref-item-separator
 
@@ -94,7 +92,7 @@ Adds a new animation to the library.
 
 void **add_frame** **(** :ref:`StringName<class_StringName>` anim, :ref:`Texture2D<class_Texture2D>` texture, :ref:`float<class_float>` duration=1.0, :ref:`int<class_int>` at_position=-1 **)**
 
-Adds a frame to the given animation.
+Adds a frame to the ``anim`` animation. If ``at_position`` is ``-1``, the frame will be added to the end of the animation.
 
 .. rst-class:: classref-item-separator
 
@@ -106,7 +104,7 @@ Adds a frame to the given animation.
 
 void **clear** **(** :ref:`StringName<class_StringName>` anim **)**
 
-Removes all frames from the given animation.
+Removes all frames from the ``anim`` animation.
 
 .. rst-class:: classref-item-separator
 
@@ -118,7 +116,7 @@ Removes all frames from the given animation.
 
 void **clear_all** **(** **)**
 
-Removes all animations. A "default" animation will be created.
+Removes all animations. An empty ``default`` animation will be created.
 
 .. rst-class:: classref-item-separator
 
@@ -208,7 +206,7 @@ Returns the texture of the frame ``idx`` in the ``anim`` animation.
 
 :ref:`bool<class_bool>` **has_animation** **(** :ref:`StringName<class_StringName>` anim **)** |const|
 
-If ``true``, the named animation exists.
+Returns ``true`` if the ``anim`` animation exists.
 
 .. rst-class:: classref-item-separator
 
@@ -220,7 +218,7 @@ If ``true``, the named animation exists.
 
 void **remove_animation** **(** :ref:`StringName<class_StringName>` anim **)**
 
-Removes the given animation.
+Removes the ``anim`` animation.
 
 .. rst-class:: classref-item-separator
 
@@ -232,7 +230,7 @@ Removes the given animation.
 
 void **remove_frame** **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx **)**
 
-Removes the animation's selected frame.
+Removes the ``anim`` animation's frame ``idx``.
 
 .. rst-class:: classref-item-separator
 
@@ -244,7 +242,7 @@ Removes the animation's selected frame.
 
 void **rename_animation** **(** :ref:`StringName<class_StringName>` anim, :ref:`StringName<class_StringName>` newname **)**
 
-Changes the animation's name to ``newname``.
+Changes the ``anim`` animation's name to ``newname``.
 
 .. rst-class:: classref-item-separator
 
@@ -256,7 +254,7 @@ Changes the animation's name to ``newname``.
 
 void **set_animation_loop** **(** :ref:`StringName<class_StringName>` anim, :ref:`bool<class_bool>` loop **)**
 
-If ``true``, the animation will loop.
+If ``loop`` is ``true``, the ``anim`` animation will loop when it reaches the end, or the start if it is played in reverse.
 
 .. rst-class:: classref-item-separator
 
@@ -280,7 +278,7 @@ Sets the speed for the ``anim`` animation in frames per second.
 
 void **set_frame** **(** :ref:`StringName<class_StringName>` anim, :ref:`int<class_int>` idx, :ref:`Texture2D<class_Texture2D>` texture, :ref:`float<class_float>` duration=1.0 **)**
 
-Sets the texture and the duration of the frame ``idx`` in the ``anim`` animation.
+Sets the ``texture`` and the ``duration`` of the frame ``idx`` in the ``anim`` animation.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

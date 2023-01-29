@@ -21,7 +21,9 @@ Description
 
 2D particle node used to create a variety of particle systems and effects. **GPUParticles2D** features an emitter that generates some number of particles at a given rate.
 
-Use the ``process_material`` property to add a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
+Use the :ref:`process_material<class_GPUParticles2D_property_process_material>` property to add a :ref:`ParticleProcessMaterial<class_ParticleProcessMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
+
+2D particles can optionally collide with :ref:`LightOccluder2D<class_LightOccluder2D>` nodes (note: they don't collide with :ref:`PhysicsBody2D<class_PhysicsBody2D>` nodes).
 
 .. rst-class:: classref-introduction-group
 
@@ -230,9 +232,7 @@ Number of particles emitted in one emission cycle.
 - void **set_collision_base_size** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_collision_base_size** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Multiplier for particle's collision radius. ``1.0`` corresponds to the size of the sprite.
 
 .. rst-class:: classref-item-separator
 

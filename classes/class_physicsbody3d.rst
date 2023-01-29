@@ -21,7 +21,9 @@ Base class for all objects affected by physics in 3D space.
 Description
 -----------
 
-PhysicsBody3D is an abstract base class for implementing a physics body. All \*Body types inherit from it.
+PhysicsBody3D is an abstract base class for implementing a physics body. All \*Body3D types inherit from it.
+
+\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
 
 .. rst-class:: classref-introduction-group
 
