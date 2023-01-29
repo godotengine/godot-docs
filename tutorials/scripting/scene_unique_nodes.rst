@@ -6,12 +6,12 @@ Scene Unique Nodes
 Introduction
 ------------
 
-There are times in a project when a node needs to be referenced from
-a script. However, the node's position within the tree of its scene might change
-over time as adjustments are made to the scene, such as moving a
-button in a UI scene into a different panel.
+Using ``get_node()`` to reference nodes from a script can sometimes be fragile.
+If you move a button in a UI scene from one panel to another, the button's node
+path changes, and if a script uses ``get_node()`` with a hard-coded node path,
+the script will not be able to find the button anymore.
 
-In situations like this, a node can be turned into a scene
+In situations like this, the node can be turned into a scene
 unique node to avoid having to update the script every time
 the node's path is changed.
 
@@ -28,8 +28,9 @@ to its name in the scene tree:
 
 .. image:: img/percent.png
 
-To use a unique node in a script, use the ``%`` symbol and the node's
-name to create a path for ``get_node()``. For example:
+You can now use the node in your script. For example, you can reference it with
+a ``get_node()`` method call by typing the % symbol, followed by the node's
+name:
 
 .. tabs::
 
@@ -44,21 +45,8 @@ name to create a path for ``get_node()``. For example:
 Same-scene limitation
 ---------------------
 
-A scene unique node can only be retrieved by a node inside the same scene.
-
-If the same scene is instantiated twice, a node inside the first instance
-calling ``get_node("%RedButton")`` will get the button in the first instance,
-not the button in the second instance.
-
-This limitation is perfect for a UI scene like a health bar, where each instance
-of the health bar must not interact with other instances.
-
-When a scene is instantiated inside another scene, the nodes in the outer scene
-can't access scene unique nodes in the inner scene using the scene unique name.
-Likewise, nodes in the inner scene can't access scene unique nodes in the outer
-scene using the scene unique name.
-
-To demonstrate this limitation, consider this example **Player** scene that
+A scene unique node can only be retrieved by a node inside the same scene. To
+demonstrate this limitation, consider this example **Player** scene that
 instances a **Sword** scene:
 
 .. image:: img/unique_name_scene_instance_example.png
@@ -93,10 +81,8 @@ Alternatives
 Scene unique nodes are a useful tool to navigate a scene. However, there are
 some situations where other techniques may be better.
 
-A :ref:`Group <doc_groups>` allows locating a node from any other node, no
-matter what scene the two nodes are located in. Scene unique nodes are usually
-not suitable to find a **Player** node from an **Enemy** node, for example, but a group
-with the **Player** node in it is a typical solution.
+A :ref:`Group <doc_groups>` allows locating a node (or a group of many nodes)
+from any other node, no matter what scene the two nodes are located in.
 
 A :ref:`Singleton (AutoLoad) <doc_singletons_autoload>` is an always loaded node
 that can be accessed directly by any node regardless of the scene. These are useful
@@ -106,5 +92,6 @@ when some data or functionality is shared globally.
 without knowing its full path. This seems similar to a scene unique node, but
 this method is able to find nodes in nested scenes, and doesn't require marking
 the node in the scene editor in any way. However, this method is slow. Scene
-unique nodes are cached by Godot and are fast to retrieve, but ``find_child()``
-needs to search the tree while the game is running.
+unique nodes are cached by Godot and are fast to retrieve, but each time the
+method is called, ``find_child()`` needs to check every descendant (every child,
+grandchild, and so on).
