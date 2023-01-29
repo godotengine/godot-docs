@@ -118,7 +118,7 @@ may be used. For example:
     {
         var spaceState = GetWorld2D().DirectSpaceState;
         // use global coordinates, not local to node
-        var query = PhysicsRayQueryParameters2D.Create(new Vector2(0, 0), new Vector2(50, 100));
+        var query = PhysicsRayQueryParameters2D.Create(Vector2.Zero, new Vector2(50, 100));
         var result = spaceState.IntersectRay(query);
     }
 

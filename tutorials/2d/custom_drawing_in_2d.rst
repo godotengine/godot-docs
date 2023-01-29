@@ -492,8 +492,8 @@ smaller value, which directly depends on the rendering speed.
 
     public override void _Process(double delta)
     {
-        _angleFrom += _rotationAngle * delta;
-        _angleTo += _rotationAngle * delta;
+        _angleFrom += _rotationAngle * (float)delta;
+        _angleTo += _rotationAngle * (float)delta;
 
         // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)

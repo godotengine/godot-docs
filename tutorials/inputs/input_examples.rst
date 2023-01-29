@@ -56,7 +56,7 @@ Examples:
         if (Input.IsActionPressed("move_right"))
         {
             // Move as long as the key/button is pressed.
-            position.X += speed * delta;
+            position.X += speed * (float)delta;
         }
     }
 
