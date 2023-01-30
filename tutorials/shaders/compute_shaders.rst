@@ -9,9 +9,9 @@ Godot.
 
 .. note::
 
-   This tutorial assumes familiarity with non-compute shaders. If you are new to
-   shaders please read :ref:`doc_introduction_to_shaders` and :ref:`your first
-   shader <toc-your-first-shader>` before proceeding with this tutorial.
+   This tutorial assumes you are familiar with shaders generally. If you are new
+   to shaders please read :ref:`doc_introduction_to_shaders` and :ref:`your
+   first shader <toc-your-first-shader>` before proceeding with this tutorial.
 
 A compute shader is a special type of shader program that is orientated towards
 general purpose programming. In other words, they are more flexible than vertex
@@ -70,7 +70,7 @@ These two lines communicate two things:
  1. The following code is a compute shader. This is a Godot-specific hint that is needed for the editor to properly import the shader file.
  2. The code is using GLSL version 450.
 
-For your custom compute shaders, you should never have to change these two lines.
+You should never have to change these two lines for your custom compute shaders.
 
 .. code-block:: glsl
 
@@ -191,7 +191,7 @@ Provide input data
 As you might remember, we want to pass an input array to our shader, multiply
 each element by 2 and get the results.
 
-To pass values to a compute shader we need to create a buffer. We are dealing
+We need to create a buffer to pass values to a compute shader. We are dealing
 with an array of floats, so we will use a storage buffer for this example. A
 storage buffer takes an array of bytes and allows the CPU to transfer data to
 and from the GPU.
@@ -291,11 +291,11 @@ which may cause issues on some hardware.
 Execute a compute shader
 ------------------------
 
-After all of this we are almost done, we still need to execute our pipeline. So
-far we have only recorded what we would like the GPU to do, we have not actually
-run the shader program.
+After all of this we are almost done, but we still need to execute our pipeline.
+So far we have only recorded what we would like the GPU to do; we have not
+actually run the shader program.
 
-To execute our compute shader we just need to submit the pipeline to the GPU and
+To execute our compute shader we need to submit the pipeline to the GPU and
 wait for the execution to finish:
 
 .. tabs::
@@ -320,7 +320,7 @@ synchronizing so that the GPU is able to run in parellel with the CPU.
 Retrieving results
 ------------------
 
-You may have noticed that in the example shader, we modified the contents of the
+You may have noticed that, in the example shader, we modified the contents of the
 storage buffer. In other words, the shader read from our array and stored the data
 in the same array again so our results are already there. Let's retrieve
 the data and print the results to our console.
