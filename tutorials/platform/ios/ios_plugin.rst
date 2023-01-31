@@ -72,7 +72,7 @@ To build an iOS plugin:
 
 6. Create a Godot iOS Plugin configuration file to help the system detect and load your plugin:
 
-    -   The configuration file extension must be ``gdip`` (e.g.: ``my_plugin.gdip``).
+    -   The configuration file extension must be ``gdip`` (e.g.: ``MyPlugin.gdip``).
 
     -   The configuration file format is as follow::
 

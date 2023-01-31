@@ -340,7 +340,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
 
     public partial class CBExample : CharacterBody2D
     {
-        private PackedScene _bullet = (PackedScene)GD.Load("res://bullet.tscn");
+        private PackedScene _bullet = (PackedScene)GD.Load("res://Bullet.tscn");
         public int Speed = 200;
 
         public void GetInput()

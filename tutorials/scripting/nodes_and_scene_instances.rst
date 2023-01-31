@@ -192,7 +192,7 @@ steps:
 
  .. code-tab:: csharp
 
-    var scene = GD.Load<PackedScene>("res://my_scene.tscn");
+    var scene = GD.Load<PackedScene>("res://MyScene.tscn");
 
 Preloading the scene can improve the user's experience as the load operation
 happens when the compiler reads the script and not at runtime. This feature is
