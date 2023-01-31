@@ -336,7 +336,7 @@ the crash and debug from there.
 
        ./bin/<godot_binary> --test --test-suite="*GDScript*"
 
-Also accepts the ``--print-filenames`` option. See above.
+This also accepts the ``--print-filenames`` option (see above).
 
 If no errors are printed and everything goes well, you're done!
 
