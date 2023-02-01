@@ -188,11 +188,11 @@ all input whose strength is lower than ``0.2``. An ideal dead zone value is high
 enough to ignore the input caused by joystick drifting, but is low enough to not
 ignore actual input from the player.
 
-Godot features a built-in dead zone system to tackle this problem. The default
-value is ``0.2``, but you can increase it or decrease it on a per-action basis
-in the Project Settings' Input Map tab.
-For ``Input.get_vector()``, the deadzone can be specified, or otherwise it
-will calculate the average deadzone value from all of the actions in the vector.
+Godot features a built-in deadzone system to tackle this problem. The default
+value is ``0.5``, but you can adjust it on a per-action basis in the Project
+Settings' Input Map tab. For ``Input.get_vector()``, the deadzone can be
+specified as an optional 5th parameter. If not specified, it will calculate the
+average deadzone value from all of the actions in the vector.
 
 "Echo" events
 ^^^^^^^^^^^^^
