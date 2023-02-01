@@ -36,7 +36,7 @@ In addition, you can always access signal names associated with a node type thro
 Custom signals as C# events
 ---------------------------
 
-To declare a custom event in your C# script, use the ``[Signal]`` attribute on a delegate type.
+To declare a custom event in your C# script, use the ``[Signal]`` attribute on a public delegate type.
 Note that the name of this delegate needs to end with ``EventHandler``.
 
 .. code-block:: csharp
