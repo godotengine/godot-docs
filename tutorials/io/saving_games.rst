@@ -62,10 +62,10 @@ The save function will look like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
-
+    
     func save():
         var save_dict = {
-            "filename" : get_filename(),
+            "filename" : get_filename(), # get_filename is not a function in Godot. Make sure to have a variable with the info
             "parent" : get_parent().get_path(),
             "pos_x" : position.x, # Vector2 is not supported by JSON
             "pos_y" : position.y,
@@ -136,10 +136,10 @@ way to pull the data out of the file as well.
     # Go through everything in the persist category and ask them to return a
     # dict of relevant variables.
     func save_game():
-        var save_game = File.new()
-        save_game.open("user://savegame.save", File.WRITE)
-        var save_nodes = get_tree().get_nodes_in_group("Persist")
-        for node in save_nodes:
+        var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+        var to_save = get_tree().get_nodes_in_group("Persist")
+        
+        for node in to_save:
             # Check the node is an instanced scene so it can be instanced again during load.
             if node.filename.empty():
                 print("persistent node '%s' is not an instanced scene, skipped" % node.name)
@@ -158,7 +158,8 @@ way to pull the data out of the file as well.
 
             # Store the save dictionary as a new line in the save file.
             save_game.store_line(json_string)
-        save_game.close()
+            
+        save_game = null
 
  .. code-tab:: csharp
 
@@ -212,8 +213,7 @@ load function:
     # Note: This can be called from anywhere inside the tree. This function
     # is path independent.
     func load_game():
-        var save_game = File.new()
-        if not save_game.file_exists("user://savegame.save"):
+        if not FileAccess.file_exists("user://savegame.save"):
             return # Error! We don't have a save to load.
 
         # We need to revert the game state so we're not cloning objects
@@ -226,32 +226,30 @@ load function:
 
         # Load the file line by line and process that dictionary to restore
         # the object it represents.
-        save_game.open("user://savegame.save", File.READ)
-        while save_game.get_position() < save_game.get_len():
+        var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+        
+        while save_file.get_position() < save_file.get_length():
             # Creates the helper class to interact with JSON
             var json = JSON.new()
 
             # Check if there is any error while parsing the JSON string, skip in case of failure
-            var parse_result = json.parse(json_string)
-            if not parse_result == OK:
-                print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
-                continue
-
-            # Get the data from the JSON object
-            var node_data = json.get_data()
-
-            # Firstly, we need to create the object and add it to the tree and set its position.
-            var new_object = load(node_data["filename"]).instantiate()
-            get_node(node_data["parent"]).add_child(new_object)
-            new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
-
-            # Now we set the remaining variables.
-            for i in node_data.keys():
-                if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
-                    continue
-                new_object.set(i, node_data[i])
-
-        save_game.close()
+            var error = json.parse(save_file.get_line())
+            if error == OK:
+                # Get the data from the JSON object
+                var node_data = json.data
+                
+                # Firstly, we need to create the object and add it to the tree and set its position.
+                var new_object = load(node_data["filename"]).instantiate()
+                get_node(node_data["parent"]).add_child(new_object)
+                new_object.global_position = Vector2(node_data["pos_x"], node_data["pos_y"])
+                
+                # Now we set the remaining variables.
+                for i in node_data.keys():
+                    if key == "filename" or key == "parent" or key == "pos_x" or key == "pos_y":
+                        continue
+                    new_object.set(i, node_data[i])
+                    
+            save_file = null
 
  .. code-tab:: csharp
 
