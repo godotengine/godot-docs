@@ -318,7 +318,7 @@ The only exception to that rule is the ternary operator:
 
 ::
 
-   next_state = "fall" if not is_on_floor() else "idle"
+   next_state = "idle" if is_on_floor() else "fall"
 
 Format multiline statements for readability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
