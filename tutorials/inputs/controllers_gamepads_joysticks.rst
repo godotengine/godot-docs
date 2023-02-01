@@ -136,6 +136,30 @@ In Godot versions before 3.4, such as 3.3, ``Input.get_vector()`` and
 ``Input.get_axis()`` aren't available. Only ``Input.get_action_strength()``
 and ``Input.is_action_pressed()`` are available in Godot 3.3.
 
+Vibration
+---------
+
+Vibration (also called *haptic feedback*) can be used to enhance the feel of a
+game. For instance, in a racing game, you can convey the surface the car is
+currently driving on through vibration, or create a sudden vibration on a crash.
+
+Use the Input singleton's
+:ref:`start_joy_vibration<class_Input_method_start_joy_vibration>` method to
+start vibrating a gamepad. Use
+:ref:`stop_joy_vibration<class_Input_method_stop_joy_vibration>` to stop
+vibration early (useful if no duration was specified when starting).
+
+On mobile devices, you can also use
+:ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` to vibrate the
+device itself (independently from the gamepad). On Android, this requires the
+``VIBRATE`` permission to be enabled in the Android export preset before
+exporting the project.
+
+.. note::
+
+   Vibration can be uncomfortable for certain players. Make sure to provide an
+   in-game slider to disable vibration or reduce its intensity.
+
 Differences between keyboard/mouse and controller input
 -------------------------------------------------------
 
