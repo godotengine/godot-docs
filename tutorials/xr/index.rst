@@ -19,7 +19,7 @@ Advanced topics
    :maxdepth: 1
    :name: openxr-advanced-topics
 
-   openxr_action_map
+   xr_action_map
    openxr_hand_tracking
 
 .. note:
