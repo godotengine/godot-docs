@@ -55,8 +55,8 @@ to each other. Additionally a baked navmesh can be moved at runtime and
 agents will still be able to navigate onto it from another region.
 For example, navigating onto a moving platform that has stopped will work.
 
-NavigationAgent3D
------------------
+NavigationAgent
+---------------
 
 Navigation agent nodes are what actually does the pathfinding in a scene,
 one can be attached to the root node of an entity that needs to navigate.
@@ -83,8 +83,8 @@ agents, this is the :ref:`max neighbors<class_NavigationAgent_property_max_neigh
 property of an agent and can be adjusted. This is **not** a limit for
 how many agents can use a navigation region at the same time.
 
-NavigationObstacle3D
---------------------
+NavigationObstacle
+------------------
 
 This node is used to mark physics bodies that move around a navigation area
 that agents need to avoid (this will only work if you use RVO processing).
