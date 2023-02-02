@@ -40,7 +40,7 @@ You will then find the XR Action Map interface in the bottom of the screen:
   In the end, it's a limitation of the system.
 
 The default action map
-======================
+----------------------
 
 Godot will automatically create a default action map if no action map file is found.
 
@@ -57,7 +57,7 @@ This will clear out all actions.
 You might also want to remove the controllers that you do not wish to setup, more on this later.
 
 Action sets
-===========
+-----------
 
 .. note::
   Before we dive in, you will see the term XR runtime used throughout this document.
@@ -127,7 +127,7 @@ The columns in our table are as follows:
       If multiple active action sets have actions bound to the same controllers inputs or outputs, the action set with the highest priority value will determine the action that is updated.
 
 Actions
-=======
+-------
 
 In the XR action map, actions are the entities that your game/application will interact with.
 For instance, we can define an action ``Shoot`` and the input bound to that action will trigger the ``button_pressed`` signal on the relevant :ref:`XRController3D <class_xrcontroller3d>` node in your scene with ``Shoot`` as the ``name`` parameter of the signal.
@@ -253,7 +253,7 @@ The appropriate :ref:`XRController3D <class_xrcontroller3d>` node will emit the 
 Now that we have our basic actions defined, it's time to hook them up.
 
 Profiles
-========
+--------
 
 In OpenXR controller bindings are captured in so-called "Interaction Profiles".
 We've simply shortened it to "Profiles" because it takes up less space.
