@@ -281,7 +281,7 @@ Whether or not the mesh is used in baked lightmaps.
 - **Enable:** The mesh is used in baked lightmaps.
 - **Gen Lightmaps:** The mesh is used in baked lightmaps, and unwraps a second UV layer for lightmaps.
 
-.. note:: For more information on light baking see :ref:`doc_baked_lightmaps`.
+.. note:: For more information on light baking see :ref:`doc_using_lightmap_gi`.
 
 External Files
 ~~~~~~~~~~~~~~

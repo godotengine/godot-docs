@@ -14,7 +14,7 @@ result. Light can come from several types of sources in a scene:
 -  Light Nodes: Directional, Omni and Spot.
 -  Ambient Light in the
    :ref:`Environment <class_Environment>`.
--  Baked Light (read :ref:`doc_baked_lightmaps`).
+-  Baked Light (read :ref:`doc_using_lightmap_gi`).
 
 The emission color is a material property. You can read more about it
 in the :ref:`doc_standard_material_3d` tutorial.
@@ -35,7 +35,7 @@ Each one has a specific function:
 -  **Indirect Energy**: Secondary multiplier used with indirect light (light bounces). This works in baked light or GIProbe.
 -  **Negative**: Light becomes subtractive instead of additive. It's sometimes useful to manually compensate some dark corners.
 -  **Specular**: Affects the intensity of the specular blob in objects affected by this light. At zero, this light becomes a pure diffuse light.
--  **Bake Mode**: Sets the bake mode for the light. For more information see :ref:`doc_baked_lightmaps`
+-  **Bake Mode**: Sets the bake mode for the light. For more information see :ref:`doc_using_lightmap_gi`
 -  **Cull Mask**: Objects that are in the selected layers below will be affected by this light.
    Note that objects disabled via this cull mask will still cast shadows.
    If you don't want disabled objects to cast shadows, adjust the ``cast_shadow`` property on the

@@ -3,108 +3,166 @@
 Reflection probes
 =================
 
-Introduction
-------------
+As stated in the :ref:`doc_standard_material_3d`, objects can show reflected and/or
+diffuse light. Reflection probes are used as a source of reflected *and* ambient
+light for objects inside their area of influence. They can be used to provide
+more accurate reflections than :ref:`VoxelGI <doc_using_voxel_gi>` and
+:ref:`SDFGI <doc_sdfgi>` while being fairly cheap on system resources.
 
-As stated in the :ref:`doc_standard_material_3d`, objects can show reflected or diffuse light.
-Reflection probes are used as a source of reflected and ambient light for objects inside their area of influence.
+Since reflection probes can also store ambient light, they can be used as a
+low-end alternative to VoxelGI and SDFGI when :ref:`baked lightmaps
+<doc_using_lightmap_gi>` aren't viable (e.g. in procedurally generated levels).
 
-A probe of this type captures the surroundings (as a sort of 360 degrees image), and stores versions
-of it with increasing levels of *blur*. This is used to simulate roughness in materials, as well as ambient lighting.
+Reflection probes can also be used at the same time as screen-space reflections
+to provide reflections for off-screen objects. In this case, Godot will blend
+together the screen-space reflections and reflections from reflection probes.
 
-While these probes are an efficient way of storing reflections, they have a few shortcomings:
+.. seealso::
 
-* They are efficient to render, but expensive to compute. This leads to a default behavior where they only capture on scene load.
-* They work best for rectangular shaped rooms or places, otherwise the reflections shown are not as faithful (especially when roughness is 0).
+    Not sure if ReflectionProbe is suited to your needs?
+    See :ref:`doc_introduction_to_global_illumination_comparison`
+    for a comparison of GI techniques available in Godot 4.
 
-Setting up
-----------
+Visual comparison
+-----------------
 
-Create a ReflectionProbe node and wrap it around the area where you want to have reflections:
+.. figure:: img/gi_none.webp
+   :align: center
+   :alt: Reflection probe disabled. Environment sky is used as a fallback.
 
-.. image:: img/refprobe_setup.png
+   Reflection probe disabled. Environment sky is used as a fallback.
 
-This should result in immediate local reflections. If you are using a Sky texture,
-reflections are by default blended with it.
+.. figure:: img/gi_none_reflection_probe.webp
+   :align: center
+   :alt: Reflection probe enabled.
 
-By default, on interiors, reflections may appear not to have much consistence.
-In this scenario, make sure to tick the *"Box Correct"* property.
+   Reflection probe enabled.
 
-.. image:: img/refprobe_box_property.png
+By combining reflection probes with screen-space reflections, you can get the
+best of both worlds: high-quality reflections for general room structure (that
+remain present when off-screen), while also having real-time reflections for
+small details.
 
+.. figure:: img/reflection_probes_reflection_probe.webp
+   :align: center
+   :alt: Reflections in a room using ReflectionProbe only.
 
-This setting changes the reflection from an infinite skybox to reflecting
-a box the size of the probe:
+   Reflections in a room using ReflectionProbe only. Notice how small details
+   don't have any reflections.
 
-.. image:: img/refprobe_boxcorrect.png
+.. figure:: img/reflection_probes_ssr.webp
+   :align: center
+   :alt: Reflections in a room using screen-space reflections only.
 
-Adjusting the box walls may help improve the reflection a bit, but it will
-always look best in box shaped rooms.
+   Reflections in a room using screen-space reflections only. Notice how the
+   reflection on the sides of the room's walls is partly missing due to being
+   off-screen.
 
-The probe captures the surrounding from the center of the gizmo. If, for some
-reason, the room shape or contents occlude the center, it
-can be displaced to an empty place by moving the handles in the center:
+.. figure:: img/reflection_probes_reflection_probe_ssr.webp
+   :align: center
+   :alt: Reflections in a room using ReflectionProbe and screen-space reflections together.
 
-.. image:: img/refprobe_center_gizmo.png
+   Reflections in a room using ReflectionProbe and screen-space reflections together.
+   The screen-space reflections are blended with the reflection probe,
+   acting as a fallback in situations where the reflection probe fails to display
+   any reflection.
 
-By default, shadow mapping is disabled when rendering probes (only in the
-rendered image inside the probe, not the actual scene). This is
-a way to save on performance and memory. If you want shadows in the probe,
-they can be toggled on/off with the *Enable Shadow* setting:
+Setting up a ReflectionProbe
+----------------------------
 
-.. image:: img/refprobe_shadows.png
+- Add a :ref:`class_ReflectionProbe` node.
+- Configure the ReflectionProbe's extents in the inspector to fit your scene. To
+  get reasonably accurate reflections, you should generally have one
+  ReflectionProbe node per room (sometimes more for large rooms).
 
-Finally, keep in mind that you may not want the Reflection Probe to render some
-objects. A typical scenario is an enemy inside the room which will
-move around. To keep objects from being rendered in the reflections,
-use the *Cull Mask* setting:
+.. tip::
 
-.. image:: img/refprobe_cullmask.png
+    Remember that ReflectionProbe extents don't have to be square, and you can
+    even rotate the ReflectionProbe node to fit rooms that aren't aligned with
+    the X/Z grid. Use this to your advantage to better cover rooms without
+    having to place too many ReflectionProbe nodes.
 
-Interior vs exterior
---------------------
+ReflectionProbe properties
+--------------------------
 
-If you are using reflection probes in an interior setting, it is recommended
-that the **Interior** property be enabled. This stops
-the probe from rendering the sky and also allows custom ambient lighting settings.
+- **Update Mode:** Controls when the reflection probe updates.
+  **Once** only renders the scene once every time the ReflectionProbe is moved.
+  This makes it much faster to render compared to the **Always** update mode,
+  which forces the probe to re-render everything around it every frame.
+  Leave this property on **Once** (default) unless you need the reflection probe
+  to update every frame.
+- **Intensity:** The brightness of the reflections and ambient lighting. This
+  usually doesn't need to be changed from its default value of ``1.0``, but you
+  can decrease it ``1.0`` if you find that reflections look too strong.
+- **Max Distance:** Controls the maximum distance used by the ReflectionProbe's
+  internal camera. The distance is always at least equal to the **Extents**, but
+  this can be increased to make objects located outside the extents visible in
+  reflections. *This property does not affect the maximum distance at which the
+  ReflectionProbe itself is visible.*
+- **Extents:** The area that will be affected by the ReflectionProbe's lighting
+  and reflections.
+- **Origin Offset:** The origin to use for the internal camera used for
+  reflection probe rendering. This must always be constrained within the
+  **Extents**. If needed, adjust this to prevent the reflection from being
+  obstructed by a solid object located exactly at the center of the
+  ReflectionProbe.
+- **Box Projection:** Controls whether parallax correction should be used when
+  rendering the reflection probe. This adjusts the reflection's appearance
+  depending on the camera's position (relative to the reflection probe). This
+  has a small performance cost, but the quality increase is often worth it in
+  box-shaped rooms. Note that this effect doesn't work quite as well in rooms
+  with less regular shapes (such as ellipse-shaped rooms).
+- **Interior:** If enabled, ambient lighting will not be sourced from the
+  environment sky, and the background sky won't be rendered onto the reflection
+  probe.
+- **Enable Shadows:** Controls whether real-time light shadows should be
+  rendered within the reflection probe. Enable this to improve reflection
+  quality at the cost of performance. This should be left disabled for
+  reflection probes with the **Always** mode, as it's very expensive to render
+  reflections with shadows every frame. Fully :ref:`baked light <doc_using_lightmap_gi>`
+  shadows are not affected by this setting and will be rendered in the
+  reflection probe regardless.
+- **Cull Mask:** Controls which objects are visible in the reflection. This can
+  be used to improve performance by excluding small objects from the reflection.
+  This can also be used to prevent an object from having self-reflection
+  artifacts in situations where **Origin Offset** can't be used.
+- **Mesh LOD Threshold:** The automatic level of detail threshold to use for
+  rendering meshes within the reflection. This only affects meshes that have
+  automatic LODs generated for them. Higher values can improve performance by
+  using less detailed geometry, especially for objects that are far away from
+  the reflection's origin. The visual difference of using less detailed objects
+  is usually not very noticeable during gameplay, especially in rough
+  reflections.
 
-.. image:: img/refprobe_ambient.png
+The Ambient category features several properties to adjust ambient lighting
+rendered by the ReflectionProbe:
 
-When probes are set to **Interior**, custom constant ambient lighting can be
-specified per probe. Just choose a color and an energy.
+- **Mode:** If set to **Disabled**, no ambient light is added by the probe. If
+  set to **Environment**, the ambient light color is automatically sampled from
+  the environment sky (if **Interior** is disabled) and the reflection's average
+  color. If set to **Constant Color**, the color specified in the **Color**
+  property is used instead. The **Constant Color** mode can be used as an
+  approximation of area lighting.
+- **Color:** The color to use when the ambient light mode is set to **Constant Mode**.
+- **Color Energy:** The multiplier to use for the ambient light custom
+  **Color**. This only has an effect when the ambient light mode is **Custom
+  Color**.
 
-Optionally, you can blend this ambient light with the probe diffuse capture by
-tweaking the **Ambient Contribution** property (0.0 means pure ambient color,
-while 1.0 means pure diffuse capture).
+ReflectionProbe blending
+------------------------
 
-Blending
---------
+To make transitions between reflection sources smoother, Godot supports automatic
+probe blending:
 
-Multiple reflection probes can be used, and Godot will blend them where they overlap using a smart algorithm:
+- Up to 4 ReflectionProbes can be blended together at a given location.
+  A ReflectionProbe will also fade out smoothly back to environment lighting
+  when it isn't touching any other ReflectionProbe node.
+- SDFGI and VoxelGI will blend in smoothly with ReflectionProbes if used.
+  This allows placing ReflectionProbes strategically to get more accurate (or fully real-time)
+  reflections where needed, while still having rough reflections available in the
+  VoxelGI or SDFGI's area of influence.
 
-.. image:: img/refprobe_blending.png
-
-As you can see, this blending is never perfect (after all, these are
-box reflections, not real reflections), but these artifacts
-are only visible when using perfectly mirrored reflections.
-Normally, scenes have normal mapping and varying levels of roughness, which
-can hide this.
-
-Alternatively, Reflection Probes work well blended together with Screen Space
-Reflections to solve these problems. Combining them makes local reflections appear
-more faithful, while probes are only used as a fallback when no screen-space information is found:
-
-.. image:: img/refprobe_ssr.png
-
-Finally, blending interior and exterior probes is the recommended approach when making
-levels that combine both interiors and exteriors. Near the door, a probe can
-be marked as *exterior* (so it will get sky reflections) while on the inside, it can be interior.
-
-Reflection atlas
-----------------
-
-In the current renderer implementation, all probes are the same size and
-are fit into a Reflection Atlas. The size and amount of probes can be
-customized in Project Settings -> Quality -> Reflections
-
-.. image:: img/refprobe_atlas.png
+To make several ReflectionProbes blend with each other, you need to have part of
+each ReflectionProbe overlap each other's area. The extents should only overlap
+as little possible with other reflection probes to improve rendering performance
+(typically a few units in 3D space).
