@@ -87,13 +87,7 @@ your custom signal names are listed under the nested ``SignalName`` class.
 
 In contrast with other C# events, you cannot use ``Invoke`` to raise events tied to Godot signals.
 
-Signals support arguments of:
-
-* All the `built-in value types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_,
-  except ``decimal``, ``nint`` and ``nuint``
-* ``string``
-* Classes derived from :ref:`GodotObject <class_Object>`
-* Collections types defined in the ``Godot.Collections`` namespace
+Signals support arguments of any :ref:`Variant-compatible <doc_c_sharp_variant>` type.
 
 Consequently, any ``Node`` or ``Reference`` will be compatible automatically, but custom data objects will need
 to inherit from ``GodotObject`` or one of its subclasses.
