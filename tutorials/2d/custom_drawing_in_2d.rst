@@ -352,7 +352,7 @@ the same as before, except that we draw a polygon instead of lines:
         for (int i = 0; i <= nbPoints; i++)
         {
             float anglePoint = Mathf.DegToRad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90);
-            pointsArc[i+1] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
+            pointsArc[i + 1] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
         }
 
         DrawPolygon(pointsArc, colors);
