@@ -108,8 +108,8 @@ and randomly choose one of the three animation types:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        $AnimatedSprite2D.playing = true
-        var mob_types = $AnimatedSprite2D.frames.get_animation_names()
+        $AnimatedSprite2D.play()
+        var mob_types = $AnimatedSprite2D.get_sprite_frames().get_animation_names()
         $AnimatedSprite2D.animation = mob_types[randi() % mob_types.size()]
 
  .. code-tab:: csharp
