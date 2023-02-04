@@ -270,9 +270,11 @@ You can add explicit values using a colon::
 
     @export_flags("Self:4", "Allies:8", "Foes:16") var spell_targets = 0
 
-You can also combine several flags::
+Only power of 2 values are valid as bit flags options. The lowest allowed value
+is 1, as 0 means that nothing is selected. You can also add options that are a
+combination of other flags::
 
-    @export_flags("Self:4", "Self and Allies:12", "Foes:16")
+    @export_flags("Self:4", "Allies:8", "Self and Allies:12", "Foes:16")
     var spell_targets = 0
 
 Export annotations are also provided for the physics, render, and navigation layers defined in the project settings::
@@ -290,9 +292,9 @@ If in doubt, use boolean variables instead.
 Exporting enums
 ---------------
 
-Properties can be exported with a type hint referencing an enum. The editor will
-create a widget in the Inspector, enumerating the following as "Thing 1", "Thing 2",
-"Another Thing". The value will be stored as an integer.
+Properties can be exported with a type hint referencing an enum to limit their values
+to the values of the enumeration. The editor will create a widget in the Inspector, enumerating
+the following as "Thing 1", "Thing 2", "Another Thing". The value will be stored as an integer.
 
 ::
 
