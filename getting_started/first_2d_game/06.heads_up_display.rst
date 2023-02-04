@@ -48,44 +48,54 @@ A setting of ``64`` works well.
 
 .. image:: img/custom_font_size.webp
 
-.. note:: **Anchors and Margins:** ``Control`` nodes have a position and size,
-          but they also have anchors and margins. Anchors define the origin -
-          the reference point for the edges of the node. Margins update
-          automatically when you move or resize a control node. They represent
-          the distance from the control node's edges to its anchor.
+.. note:: **Anchors:** ``Control`` nodes have a position and size,
+          but they also have anchors. Anchors define the origin -
+          the reference point for the edges of the node.
 
-Arrange the nodes as shown below. Click the "Layout" button to set a Control
-node's layout:
-
-.. image:: img/ui_anchor.png
-
+Arrange the nodes as shown below.
 You can drag the nodes to place them manually, or for more precise placement,
-use the following settings:
+use "Anchor Presets" with the following settings:
+
+.. image:: img/ui_anchor.webp
 
 ScoreLabel
 ~~~~~~~~~~
 
--  *Layout* : "Top Wide"
--  *Text* : ``0``
--  *Alignment* : "Center"
+Layout :
+
+-  Anchor Preset : ``Center Top``
+
+Label settings :
+
+-  Text : ``0``
+-  Horizontal Alignment : ``Center``
+-  Vertical Alignment : ``Center``
 
 Message
 ~~~~~~~~~~~~
 
--  *Layout* : "HCenter Wide"
--  *Text* : ``Dodge the Creeps!``
--  *Alignment* : "Center"
--  *Autowrap* : "On"
+Layout :
+
+-  Anchor Preset : ``Center``
+
+Label settings :
+
+-  Text : ``Dodge the Creeps!``
+-  Horizontal Alignment : ``Center``
+-  Vertical Alignment : ``Center``
+-  Autowrap Mode : ``Word``
 
 StartButton
 ~~~~~~~~~~~
 
--  *Text* : ``Start``
--  *Layout* : "Center Bottom"
--  *Margin* :
+Layout :
 
-   -  Top: ``-200``
-   -  Bottom: ``-100``
+-  Anchor Preset : ``Center Bottom``
+
+Button settings :
+
+-  Text : ``Start``
+-  Position Y : ``580`` (Control - Layout/Transform)
 
 On the ``MessageTimer``, set the ``Wait Time`` to ``2`` and set the ``One Shot``
 property to "On".

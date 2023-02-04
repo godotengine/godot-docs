@@ -87,7 +87,7 @@ fit, so next to "Shape" in the Inspector, click "[empty]" -> "New
 CapsuleShape2D". Using the two size handles, resize the shape to cover the
 sprite:
 
-.. image:: img/player_coll_shape.png
+.. image:: img/player_coll_shape.webp
 
 When you're finished, your ``Player`` scene should look like this:
 

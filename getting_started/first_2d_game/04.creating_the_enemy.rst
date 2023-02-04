@@ -35,11 +35,11 @@ Set up the :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` like you did for the
 player. This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. There
 are two images for each animation in the art folder.
 
-Adjust the "Speed (FPS)" to ``3`` for all animations.
+The ``Animation Speed`` property has to be set for each individual animation. Adjust it to ``3`` for all 3 animations.
 
-.. image:: img/mob_animations.gif
+.. image:: img/mob_animations.webp
 
-Set the ``Playing`` property in the Inspector to "On".
+You can use the "Play Animation" buttons on the right of the ``Animation Speed`` input field to preview your animations.
 
 We'll select one of these animations randomly so that the mobs will have some
 variety.

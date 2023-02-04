@@ -7,7 +7,7 @@ In this short first part, we'll set up and organize the project.
 
 Launch Godot and create a new project.
 
-.. image:: img/new-project-button.png
+.. image:: img/new-project-button.webp
 
 .. tabs::
  .. tab:: GDScript
