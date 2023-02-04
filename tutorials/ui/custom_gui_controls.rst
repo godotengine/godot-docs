@@ -144,7 +144,7 @@ Simply override it in your control. No processing needs to be set.
 
     public override void _GuiInput(InputEvent @event)
     {
-        if (@event is InputEventMouseButton mbe && mbe.ButtonIndex == (int)ButtonList.Left && mbe.Pressed)
+        if (@event is InputEventMouseButton mbe && mbe.ButtonIndex == MouseButton.Left && mbe.Pressed)
         {
             GD.Print("Left mouse button was pressed!");
         }

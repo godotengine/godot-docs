@@ -76,14 +76,14 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
 
     using Godot;
 
-    public partial class YourClassName : MultiMeshInstance3D
+    public partial class MyMultiMeshInstance3D : MultiMeshInstance3D
     {
         public override void _Ready()
         {
             // Create the multimesh.
             Multimesh = new MultiMesh();
             // Set the format first.
-            Multimesh.TransformFormat = MultiMesh.TransformFormatEnum.Transform3d;
+            Multimesh.TransformFormat = MultiMesh.TransformFormatEnum.Transform3D;
             Multimesh.ColorFormat = MultiMesh.ColorFormatEnum.None;
             Multimesh.CustomDataFormat = MultiMesh.CustomDataFormatEnum.None;
             // Then resize (otherwise, changing the format is not allowed)

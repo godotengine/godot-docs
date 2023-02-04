@@ -97,8 +97,8 @@ The individual components of the vector can be accessed directly by name.
     var a = new Vector2(2, 5);
     // create a vector and assign x and y manually
     var b = new Vector2();
-    b.x = 3;
-    b.y = 1;
+    b.X = 3;
+    b.Y = 1;
 
 Adding vectors
 --------------
@@ -345,9 +345,9 @@ The cross product is calculated like this:
  .. code-tab:: csharp
 
     var c = new Vector3();
-    c.x = (a.y * b.z) - (a.z * b.y);
-    c.y = (a.z * b.x) - (a.x * b.z);
-    c.z = (a.x * b.y) - (a.y * b.x);
+    c.X = (a.Y * b.Z) - (a.Z * b.Y);
+    c.Y = (a.Z * b.X) - (a.X * b.Z);
+    c.Z = (a.X * b.Y) - (a.Y * b.X);
 
 
 

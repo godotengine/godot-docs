@@ -87,7 +87,7 @@ with :ref:`new() <class_CSharpScript_method_new>`.
 
     For example, MyCoolNode.cs should contain a class named MyCoolNode.
 
-    The C# class needs to derive a Godot class, for example ``Godot.Object``.
+    The C# class needs to derive a Godot class, for example ``GodotObject``.
     Otherwise, the same error will occur.
 
     You also need to check your ``.cs`` file is referenced in the project's
@@ -101,8 +101,8 @@ be instantiated with :ref:`GDScript.New() <class_GDScript_method_new>`.
 
 .. code-block:: csharp
 
-    GDScript MyGDScript = (GDScript) GD.Load("res://path_to_gd_file.gd");
-    Object myGDScriptNode = (Godot.Object) MyGDScript.New(); // This is a Godot.Object
+    GDScript MyGDScript = (GDScript)GD.Load("res://path_to_gd_file.gd");
+    GodotObject myGDScriptNode = (GodotObject)MyGDScript.New(); // This is a GodotObject
 
 Here we are using an :ref:`class_Object`, but you can use type conversion like
 explained in :ref:`doc_c_sharp_features_type_conversion_and_casting`.
@@ -126,8 +126,8 @@ Accessing GDScript fields from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As C# is statically typed, accessing GDScript from C# is a bit more
-convoluted, you will have to use :ref:`Object.Get() <class_Object_method_get>`
-and :ref:`Object.Set() <class_Object_method_set>`. The first argument is the name of the field you want to access.
+convoluted, you will have to use :ref:`GodotObject.Get() <class_Object_method_get>`
+and :ref:`GodotObject.Set() <class_Object_method_set>`. The first argument is the name of the field you want to access.
 
 .. code-block:: csharp
 
@@ -164,7 +164,7 @@ Calling GDScript methods from C#
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To call GDScript methods from C# you'll need to use
-:ref:`Object.Call() <class_Object_method_call>`. The first argument is the
+:ref:`GodotObject.Call() <class_Object_method_call>`. The first argument is the
 name of the method you want to call. The following arguments will be passed
 to said method.
 

@@ -84,7 +84,7 @@ redrawn if modified:
 
     using Godot;
 
-    public partial class CustomNode2D : Node2D
+    public partial class MyNode2D : Node2D
     {
         private Texture _texture;
         public Texture Texture
@@ -133,7 +133,7 @@ call ``queue_redraw()`` from the ``_process()`` callback, like this:
             // Your draw commands here
         }
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
             QueueRedraw();
         }
@@ -336,7 +336,7 @@ the same as before, except that we draw a polygon instead of lines:
         var colors = PackedColorArray([color])
 
         for i in range(nb_points + 1):
-            var angle_point = deg2rad(angle_from + i * (angle_to - angle_from) / nb_points - 90)
+            var angle_point = deg_to_rad(angle_from + i * (angle_to - angle_from) / nb_points - 90)
             points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
         draw_polygon(points_arc, colors)
 
@@ -345,14 +345,14 @@ the same as before, except that we draw a polygon instead of lines:
     public void DrawCircleArcPoly(Vector2 center, float radius, float angleFrom, float angleTo, Color color)
     {
         int nbPoints = 32;
-        var pointsArc = new Vector2[nbPoints + 1];
+        var pointsArc = new Vector2[nbPoints + 2];
         pointsArc[0] = center;
         var colors = new Color[] { color };
 
         for (int i = 0; i <= nbPoints; i++)
         {
-            float anglePoint = Mathf.Deg2Rad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90);
-            pointsArc[i] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
+            float anglePoint = Mathf.DegToRad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90);
+            pointsArc[i + 1] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
         }
 
         DrawPolygon(pointsArc, colors);
@@ -387,7 +387,7 @@ using ``get_node()``.
 
     using Godot;
 
-    public partial class CustomNode2D : Node2D
+    public partial class MyNode2D : Node2D
     {
         private float _rotationAngle = 50;
         private float _angleFrom = 75;
@@ -421,7 +421,7 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         _angleFrom += _rotationAngle;
         _angleTo += _rotationAngle;
@@ -490,10 +490,10 @@ smaller value, which directly depends on the rendering speed.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        _angleFrom += _rotationAngle * delta;
-        _angleTo += _rotationAngle * delta;
+        _angleFrom += _rotationAngle * (float)delta;
+        _angleTo += _rotationAngle * (float)delta;
 
         // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)

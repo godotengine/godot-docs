@@ -119,7 +119,7 @@ deltatime methods as needed.
     {
 
         // Called every frame, even when the engine detects no input.
-        public void _Process(float delta)
+        public void _Process(double delta)
         {
             if (Input.IsActionJustPressed("ui_select"))
                 GD.Print(delta);
@@ -130,11 +130,9 @@ deltatime methods as needed.
         {
             switch (event)
             {
-                case InputEventKey keyEvent:
+                case InputEventKey:
                     if (Input.IsActionJustPressed("ui_accept"))
                         GD.Print(GetProcessDeltaTime());
-                    break;
-                default:
                     break;
             }
         }
@@ -187,7 +185,7 @@ instantiation:
             set
             {
                 _test = value;
-                GD.Print("Setting: " + _test);
+                GD.Print($"Setting: {_test}");
             }
         }
 

@@ -105,7 +105,7 @@ point light texture (right-click > **Save Image As…**):
 
    Neutral point light texture
 
-If you need different falloff you can procedurally create a texture by assigning
+If you need different falloff, you can procedurally create a texture by assigning
 a **New GradientTexture2D** on the light's **Texture** property. After creating
 the resource, expand its **Fill** section and set the fill mode to **Radial**.
 You will then have to adjust the gradient itself to start from opaque white to
@@ -338,3 +338,29 @@ weaker. To resolve this, increase the **Height** property on your PointLight2D
 and DirectionalLight2D nodes. You may also want to increase the lights's
 **Energy** property slightly to get closer to how your lighting's intensity
 looked prior to enabling normal mapping.
+
+Using additive sprites as a faster alternative to 2D lights
+-----------------------------------------------------------
+
+If you run into performance issues when using 2D lights, it may be worth
+replacing some of them with Sprite2D nodes that use additive blending. This is
+particularly suited for short-lived dynamic effects, such as bullets or explosions.
+
+Additive sprites are much faster to render, since they don't need to go through
+a separate rendering pipeline. Additionally, it is possible to use this approach
+with AnimatedSprite2D (or Sprite2D + AnimationPlayer), which allows for animated
+2D "lights" to be created.
+
+However, additive sprites have a few downsides compared to 2D lights:
+
+- The blending formula is inaccurate compared to "actual" 2D lighting. This is
+  usually not a problem in sufficiently lit areas, but this prevents additive
+  sprites from correctly lighting up areas that are fully dark.
+- Additive sprites cannot cast shadows, since they are not lights.
+- Additive sprites ignore normal and specular maps used on other sprites.
+
+To display a sprite with additive blending, create a Sprite2D node and assign a
+texture to it. In the inspector, scroll down to the **CanvasItem > Material**
+section, unfold it and click the dropdown next to the **Material** property.
+Choose **New CanvasItemMaterial**, click the newly created material to edit it,
+then set **Blend Mode** to **Add**.

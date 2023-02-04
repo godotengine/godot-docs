@@ -91,6 +91,11 @@ are seven different processor functions.
     enabled in the Project Settings. It's enabled by default on mobile
     platforms.
 
+.. note::
+
+   Godot also exposes an API for users to write totally custom GLSL shaders. For
+   more information see :ref:`doc_compute_shaders`.
+
 Shader types
 ------------
 

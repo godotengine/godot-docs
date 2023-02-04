@@ -219,9 +219,9 @@ Let's do an example with the following pseudocode:
 
     private float _t = 0.0f;
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        _t += delta;
+        _t += (float)delta;
         Position = CubicBezier(p0, p1, p2, p3, _t);
     }
 
@@ -268,9 +268,9 @@ Traversal at constant speed, then, can be done with the following pseudo-code:
 
     private float _t = 0.0f;
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        _t += delta;
+        _t += (float)delta;
         Position = curve.InterpolateBaked(_t * curve.GetBakedLength(), true);
     }
 

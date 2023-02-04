@@ -89,7 +89,7 @@ annotation.
     @export_category("Main Category")
     @export var number = 3
     @export var string = ""
-    
+
     @export_category("Extra Category")
     @export var flag = false
 
@@ -266,6 +266,17 @@ has value 1, ``Water`` has value 2, ``Earth`` has value 4 and ``Wind``
 corresponds to value 8. Usually, constants should be defined accordingly (e.g.
 ``const ELEMENT_WIND = 8`` and so on).
 
+You can add explicit values using a colon::
+
+    @export_flags("Self:4", "Allies:8", "Foes:16") var spell_targets = 0
+
+Only power of 2 values are valid as bit flags options. The lowest allowed value
+is 1, as 0 means that nothing is selected. You can also add options that are a
+combination of other flags::
+
+    @export_flags("Self:4", "Allies:8", "Self and Allies:12", "Foes:16")
+    var spell_targets = 0
+
 Export annotations are also provided for the physics, render, and navigation layers defined in the project settings::
 
     @export_flags_2d_physics var layers_2d_physics
@@ -283,7 +294,7 @@ Exporting enums
 
 Properties can be exported with a type hint referencing an enum to limit their values
 to the values of the enumeration. The editor will create a widget in the Inspector, enumerating
-the following as THING_1, THING_2, ANOTHER_THING. The value will be stored as an integer.
+the following as "Thing 1", "Thing 2", "Another Thing". The value will be stored as an integer.
 
 ::
 
@@ -298,13 +309,21 @@ of the selected option (i.e. ``0``, ``1``,  or ``2``).
 
 ::
 
-    @export_enum("Warrior", "Magician", "Thief") var character_class
+    @export_enum("Warrior", "Magician", "Thief") var character_class: int
+
+You can add explicit values using a colon::
+
+    @export_enum("Slow:30", "Average:60", "Very Fast:200") var character_speed: int
 
 If the type is String, the value will be stored as a string.
 
 ::
 
     @export_enum("Rebecca", "Mary", "Leah") var character_name: String
+
+If you want to set an initial value, you must specify it explicitly::
+
+    @export_enum("Rebecca", "Mary", "Leah") var character_name: String = "Rebecca"
 
 Exporting arrays
 ----------------

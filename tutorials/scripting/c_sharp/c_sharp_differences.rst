@@ -71,12 +71,14 @@ Example: ``GD.Print`` and ``GD.VarToStr``.
 
 Exceptions:
 
-===========================  =======================================================
-GDScript                     C#
-===========================  =======================================================
-``weakref(obj)``             ``Object.WeakRef(obj)``
-``is_instance_valid(obj)``   ``Object.IsInstanceValid(obj)``
-===========================  =======================================================
+============================  =======================================================
+GDScript                      C#
+============================  =======================================================
+``weakref(obj)``              ``GodotObject.WeakRef(obj)``
+``instance_from_id(id)``      ``GodotObject.InstanceFromId(id)``
+``is_instance_id_valid(id)``  ``GodotObject.IsInstanceIdValid(id)``
+``is_instance_valid(obj)``    ``GodotObject.IsInstanceValid(obj)``
+============================  =======================================================
 
 Tips
 ^^^^
@@ -97,6 +99,159 @@ Example:
             Print("Hello"); // Instead of GD.Print("Hello");
         }
     }
+
+Full list of equivalences
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+List of Godot's global scope functions and their equivalent in C#:
+
+===============================  ==============================================================
+GDScript                         C#
+===============================  ==============================================================
+abs                              Mathf.Abs
+absf                             Mathf.Abs
+absi                             Mathf.Abs
+acos                             Mathf.Acos
+asin                             Mathf.Asin
+atan                             Mathf.Atan
+atan2                            Mathf.Atan2
+bezier_derivative                Mathf.BezierDerivative
+bezier_interpolate               Mathf.BezierInterpolate
+bytes_to_var                     GD.BytesToVar
+bytes_to_var_with_objects        GD.BytesToVarWithObjects
+ceil                             Mathf.Ceil
+ceilf                            Mathf.Ceil
+ceili                            Mathf.CeilToInt
+clamp                            Mathf.Clamp
+clampf                           Mathf.Clamp
+clampi                           Mathf.Clamp
+cos                              Mathf.Cos
+cosh                             Mathf.Cosh
+cubic_interpolate                Mathf.CubicInterpolate
+cubic_interpoalte_angle          Mathf.CubicInterpolateAngle
+cubic_interpolate_angle_in_time  Mathf.CubicInterpolateInTime
+cubic_interpolate_in_time        Mathf.CubicInterpolateAngleInTime
+db_to_linear                     Mathf.DbToLinear
+deg_to_rad                       Mathf.DegToRad
+ease                             Mathf.Ease
+error_string                     Error.ToString
+exp                              Mathf.Exp
+floor                            Mathf.Floor
+floorf                           Mathf.Floor
+floori                           Mathf.FloorToInt
+fmod                             operator %
+fposmod                          Mathf.PosMod
+hash                             GD.Hash
+instance_from_id                 GodotObject.InstanceFromId
+inverse_lerp                     Mathf.InverseLerp
+is_equal_approx                  Mathf.IsEqualApprox
+is_finite                        Mathf.IsFinite or `float.IsFinite`_ or `double.IsFinite`_
+is_inf                           Mathf.IsInf or `float.IsInfinity`_ or `double.IsInfinity`_
+is_instance_id_valid             GodotObject.IsInstanceIdValid
+is_instance_valid                GodotObject.IsInstanceValid
+is_nan                           Mathf.IsNaN or `float.IsNaN`_ or `double.IsNaN`_
+is_same                          operator == or `object.ReferenceEquals`_
+is_zero_approx                   Mathf.IsZeroApprox
+lerp                             Mathf.Lerp
+lerp_angle                       Mathf.LerpAngle
+lerpf                            Mathf.Lerp
+linear_to_db                     Mathf.LinearToDb
+log                              Mathf.Log
+max                              Mathf.Max
+maxf                             Mathf.Max
+maxi                             Mathf.Max
+min                              Mathf.Min
+minf                             Mathf.Min
+mini                             Mathf.Min
+move_toward                      Mathf.MoveToward
+nearest_po2                      Mathf.NearestPo2
+pingpong                         Mathf.PingPong
+posmod                           Mathf.PosMod
+pow                              Mathf.Pow
+print                            GD.Print
+print_rich                       GD.PrintRich
+print_verbose                    Use OS.IsStdoutVerbose and GD.Print
+printerr                         GD.PrintErr
+printraw                         GD.PrintRaw
+prints                           GD.PrintS
+printt                           GD.PrintT
+push_error                       GD.PushError
+push_warning                     GD.PushWarning
+rad_to_deg                       Mathf.RadToDeg
+rand_from_seed                   GD.RandFromSeed
+randf                            GD.Randf
+randf_range                      GD.RandRange
+randfn                           GD.Randfn
+randi                            GD.Randi
+randi_range                      GD.RandRange
+randomize                        GD.Randomize
+remap                            Mathf.Remap
+rid_allocate_id                  N/A
+rid_from_int64                   N/A
+round                            Mathf.Round
+roundf                           Mathf.Round
+roundi                           Mathf.RoundToInt
+seed                             GD.Seed
+sign                             Mathf.Sign
+signf                            Mathf.Sign
+signi                            Mathf.Sign
+sin                              Mathf.Sin
+sinh                             Mathf.Sinh
+smoothstep                       Mathf.SmoothStep
+snapped                          Mathf.Snapped
+snappedf                         Mathf.Snapped
+snappedi                         Mathf.Snapped
+sqrt                             Mathf.Sqrt
+step_decimals                    Mathf.StepDecimals
+str                              Use `$ string interpolation`_
+str_to_var                       GD.StrToVar
+tan                              Mathf.Tan
+tanh                             Mathf.Tanh
+typeof                           Variant.VariantType
+var_to_bytes                     GD.VarToBytes
+var_to_bytes_with_objects        GD.VarToBytesWithObjects
+var_to_str                       GD.VarToStr
+weakref                          GodotObject.WeakRef
+wrap                             Mathf.Wrap
+wrapf                            Mathf.Wrap
+wrapi                            Mathf.Wrap
+===============================  ==============================================================
+
+.. _$ string interpolation: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
+.. _double.IsFinite: https://learn.microsoft.com/en-us/dotnet/api/system.double.isfinite
+.. _double.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.double.isinfinity
+.. _double.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.double.isnan
+.. _float.IsFinite: https://learn.microsoft.com/en-us/dotnet/api/system.single.isfinite
+.. _float.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.single.isinfinity
+.. _float.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.single.isnan
+.. _object.ReferenceEquals: https://learn.microsoft.com/en-us/dotnet/api/system.object.referenceequals
+
+List of GDScript utility functions and their equivalent in C#:
+
+=======================  ==============================================================
+GDScript                 C#
+=======================  ==============================================================
+assert                   `System.Diagnostics.Debug.Assert`_
+char                     Use explicit conversion: ``(char)65``
+convert                  GD.Convert
+dict_to_inst             N/A
+get_stack                `System.Environment.StackTrace`_
+inst_to_dict             N/A
+len                      N/A
+load                     GD.Load
+preload                  N/A
+print_debug              N/A
+print_stack              GD.Print(`System.Environment.StackTrace`_)
+range                    GD.Range or `System.Linq.Enumerable.Range`_
+type_exists              ClassDB.ClassExists(type)
+=======================  ==============================================================
+
+.. _System.Diagnostics.Debug.Assert: https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.assert
+.. _System.Environment.StackTrace: https://learn.microsoft.com/en-us/dotnet/api/system.environment.stacktrace
+.. _System.Linq.Enumerable.Range: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.range
+
+``preload``, as it works in GDScript, is not available in C#.
+Use ``GD.Load`` or ``ResourceLoader.Load`` instead.
 
 ``@export`` annotation
 ----------------------
@@ -177,9 +332,9 @@ Example:
     Input.IsActionPressed("ui_down")
 
 However, in some very rare cases this is not enough. For example, you may want
-to access a member from the base class ``Godot.Object``, like ``Connect``.
+to access a member from the base class ``GodotObject``, like ``Connect``.
 For such use cases we provide a static property named ``Singleton`` that returns
-the singleton instance. The type of this instance is ``Godot.Object``.
+the singleton instance. The type of this instance is ``GodotObject``.
 
 Example:
 
@@ -388,6 +543,59 @@ hex_encode                 StringExtensions.HexEncode (Consider using `System.Co
 .. _System.Uri.EscapeDataString: https://learn.microsoft.com/en-us/dotnet/api/system.uri.escapedatastring
 .. _System.Uri.UnescapeDataString: https://learn.microsoft.com/en-us/dotnet/api/system.uri.unescapedatastring
 
+Signal
+------
+
+The following methods were converted to properties with their respective names changed:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_name()``        ``Name``
+``get_object()``      ``Owner``
+====================  ==============================================================
+
+The ``Signal`` type implements the awaitable pattern which means it can be used with
+the ``await`` keyword. See :ref:`_doc_c_sharp_differences_await`.
+
+Instead of using the ``Signal`` type, the recommended way to use Godot signals in C# is
+to use the generated C# events. See :ref:`doc_c_sharp_signals`.
+
+Callable
+--------
+
+The following methods were converted to properties with their respective names changed:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_object()``      ``Target``
+``get_method()``      ``Method``
+====================  ==============================================================
+
+Currently C# supports ``Callable`` if one of the following holds:
+
+* ``Callable`` was created using the C# ``Callable`` type.
+* ``Callable`` is a basic version of the engine's ``Callable``. Custom ``Callable``\ s
+  are unsupported. A ``Callable`` is custom when any of the following holds:
+
+  * ``Callable`` has bound information (``Callable``\ s created with ``bind``/``unbind`` are unsupported).
+  * ``Callable`` was created from other languages through the GDExtension API.
+
+Some methods such as ``bind`` and ``unbind`` are not implemented, use lambdas instead:
+
+.. code-block:: csharp
+
+    string name = "John Doe";
+    Callable callable = Callable.From(() => SayHello(name));
+
+    void SayHello(string name)
+    {
+        GD.Print($"Hello {name}");
+    }
+
+The lambda captures the ``name`` variable so it can be bound to the ``SayHello`` method.
+
 Basis
 -----
 
@@ -505,6 +713,79 @@ GDScript                C#
 ``Godot.Collections.Array<T>`` is a type-safe wrapper around ``Godot.Collections.Array``.
 Use the ``Godot.Collections.Array<T>(Godot.Collections.Array)`` constructor to create one.
 
+List of Godot's Array methods and their equivalent in C#:
+
+=======================  ==============================================================
+GDScript                 C#
+=======================  ==============================================================
+all                      `System.Linq.Enumerable.All`_
+any                      `System.Linq.Enumerable.Any`_
+append                   Add
+append_array             AddRange
+back                     ``Array[^1]`` or `System.Linq.Enumerable.Last`_ or `System.Linq.Enumerable.LastOrDefault`_
+bsearch                  BinarySearch
+bsearch_custom           N/A
+clear                    Clear
+count                    `System.Linq.Enumerable.Count`_
+duplicate                Duplicate
+erase                    Remove
+fill                     Fill
+filter                   Use `System.Linq.Enumerable.Where`_
+find                     IndexOf
+front                    ``Array[0]`` or `System.Linq.Enumerable.First`_ or `System.Linq.Enumerable.FirstOrDefault`_
+get_typed_builtin        N/A
+get_typed_class_name     N/A
+get_typed_script         N/A
+has                      Contains
+hash                     GD.Hash
+insert                   Insert
+is_empty                 Use ``Count == 0``
+is_read_only             IsReadOnly
+is_typed                 N/A
+make_read_only           MakeReadOnly
+map                      `System.Linq.Enumerable.Select`_
+max                      Max
+min                      Min
+pick_random              PickRandom (Consider using `System.Random`_)
+pop_at                   ``Array[i]`` with ``RemoveAt(i)``
+pop_back                 ``Array[^1]`` with ``RemoveAt(Count - 1)``
+pop_front                ``Array[0]`` with ``RemoveAt(0)``
+push_back                ``Insert(Count, item)``
+push_front               ``Insert(0, item)``
+reduce                   `System.Linq.Enumerable.Aggregate`_
+remove_at                RemoveAt
+resize                   Resize
+reverse                  Reverse
+rfind                    LastIndexOf
+shuffle                  Shuffle
+size                     Count
+slice                    Slice
+sort                     Sort
+sort_custom              `System.Linq.Enumerable.OrderBy`_
+typed_assign             N/A
+operator !=              !RecursiveEqual
+operator +               operator +
+operator <               N/A
+operator <=              N/A
+operator ==              RecursiveEqual
+operator >               N/A
+operator >=              N/A
+operator []              Array[int] indexer
+=======================  ==============================================================
+
+.. _System.Random: https://learn.microsoft.com/en-us/dotnet/api/system.random
+.. _System.Linq.Enumerable.Aggregate: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.aggregate
+.. _System.Linq.Enumerable.All: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.all
+.. _System.Linq.Enumerable.Any: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.any
+.. _System.Linq.Enumerable.Count: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.count
+.. _System.Linq.Enumerable.First: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.first
+.. _System.Linq.Enumerable.FirstOrDefault: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.firstordefault
+.. _System.Linq.Enumerable.Last: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.last
+.. _System.Linq.Enumerable.LastOrDefault: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.lastordefault
+.. _System.Linq.Enumerable.OrderBy: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.orderby
+.. _System.Linq.Enumerable.Select: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.select
+.. _System.Linq.Enumerable.Where: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where
+
 Dictionary
 ----------
 
@@ -541,16 +822,9 @@ operator []              Dictionary[Variant] indexer, Add or TryGetValue
 Variant
 -------
 
-``Godot.Variant`` is used to represent the Godot's native :ref:`Variant <doc_variant_class>` type. Any Variant-compatible type can be converted from/to it.
-We recommend avoiding ``Godot.Variant`` unless it is necessary to interact with untyped engine APIs.
-Take advantage of C#'s type safety when possible.
+``Godot.Variant`` is used to represent Godot's native :ref:`Variant <class_Variant>` type. Any Variant-compatible type can be converted from/to it.
 
-Any of ``Variant.As{TYPE}`` methods or the generic ``Variant.As<T>`` method can be used to convert
-a ``Godot.Variant`` to a C# type. Since the ``Godot.Variant`` type contains implicit conversions
-defined for all the supported types calling these methods directly is usually not necessary.
-
-Use ``CreateFrom`` method overloads or the generic ``From<T>`` method to convert a C# type
-to a ``Godot.Variant``.
+See also: :ref:`doc_c_sharp_variant`.
 
 Communicating with other scripting languages
 --------------------------------------------
@@ -586,7 +860,7 @@ An expression ``t`` is awaitable if one of the following holds:
 .. _ValueTask<TResult>: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.valuetask-1
 
 An equivalent of awaiting a signal in GDScript can be achieved with the ``await`` keyword and
-``Godot.Object.ToSignal``.
+``GodotObject.ToSignal``.
 
 Example:
 
@@ -594,25 +868,3 @@ Example:
 
   await ToSignal(timer, "timeout");
   GD.Print("After timeout");
-
-Other differences
------------------
-
-``preload``, as it works in GDScript, is not available in C#.
-Use ``GD.Load`` or ``ResourceLoader.Load`` instead.
-
-Other differences:
-
-================  ==================================================================
-GDScript          C#
-================  ==================================================================
-``is_inf``        `float.IsInfinity`_ or `double.IsInfinity`_
-``is_nan``        `float.IsNaN`_ or `double.IsNaN`_
-``dict_to_inst``  TODO
-``inst_to_dict``  TODO
-================  ==================================================================
-
-.. _float.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.single.isinfinity
-.. _float.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.single.isnan
-.. _double.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.double.isinfinity
-.. _double.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.double.isnan

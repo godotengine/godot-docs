@@ -126,7 +126,7 @@ but has the downside that it will not be dynamic. Sometimes, this is a trade-off
 worth making.
 
 In general, if several lights need to affect a scene, it's best to use
-:ref:`doc_baked_lightmaps`. Baking can also improve the scene quality by adding
+:ref:`doc_using_lightmap_gi`. Baking can also improve the scene quality by adding
 indirect light bounces.
 
 Animation and skinning

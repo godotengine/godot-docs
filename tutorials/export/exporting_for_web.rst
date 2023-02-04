@@ -270,56 +270,102 @@ of its original size with gzip compression.
 Calling JavaScript from script
 ------------------------------
 
-In web builds, the ``JavaScript`` singleton is implemented. It offers a single
+In web builds, the ``JavaScriptBridge`` singleton is implemented. It offers a single
 method called ``eval`` that works similarly to the JavaScript function of the
 same name. It takes a string as an argument and executes it as JavaScript code.
 This allows interacting with the browser in ways not possible with script
 languages integrated into Godot.
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     func my_func():
-        JavaScript.eval("alert('Calling JavaScript per GDScript!');")
+        JavaScriptBridge.eval("alert('Calling JavaScript per GDScript!');")
+
+ .. code-tab:: csharp
+     
+    private void MyFunc()
+    {
+        JavaScriptBridge.Eval("alert('Calling JavaScript per C#!');")
+    }
 
 The value of the last JavaScript statement is converted to a GDScript value and
 returned by ``eval()`` under certain circumstances:
 
- * JavaScript ``number`` is returned as GDScript :ref:`class_float`
- * JavaScript ``boolean`` is returned as GDScript :ref:`class_bool`
- * JavaScript ``string`` is returned as GDScript :ref:`class_String`
- * JavaScript ``ArrayBuffer``, ``TypedArray`` and ``DataView`` are returned as
-   GDScript :ref:`PackedByteArray<class_PackedByteArray>`
+ * JavaScript ``number`` is returned as :ref:`class_float`
+ * JavaScript ``boolean`` is returned as :ref:`class_bool`
+ * JavaScript ``string`` is returned as :ref:`class_String`
+ * JavaScript ``ArrayBuffer``, ``TypedArray`` and ``DataView`` are returned as :ref:`PackedByteArray<class_PackedByteArray>`
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     func my_func2():
-        var js_return = JavaScript.eval("var myNumber = 1; myNumber + 2;")
+        var js_return = JavaScriptBridge.eval("var myNumber = 1; myNumber + 2;")
         print(js_return) # prints '3.0'
+
+ .. code-tab:: csharp
+
+    private void MyFunc2()
+    {
+        var jsReturn = JavaScriptBridge.Eval("var myNumber = 1; myNumber + 2;");
+        GD.Print(jsReturn); // prints '3.0'
+    }
 
 Any other JavaScript value is returned as ``null``.
 
 HTML5 export templates may be :ref:`built <doc_compiling_for_web>` without
 support for the singleton to improve security. With such templates, and on
-platforms other than HTML5, calling ``JavaScript.eval`` will also return
+platforms other than HTML5, calling ``JavaScriptBridge.eval`` will also return
 ``null``. The availability of the singleton can be checked with the
-``JavaScript`` :ref:`feature tag <doc_feature_tags>`::
+``web`` :ref:`feature tag <doc_feature_tags>`:
+
+.. tabs::
+ .. code-tab:: gdscript
 
     func my_func3():
-        if OS.has_feature('JavaScript'):
-            JavaScript.eval("""
-                console.log('The JavaScript singleton is available')
+        if OS.has_feature('web'):
+            JavaScriptBridge.eval("""
+                console.log('The JavaScriptBridge singleton is available')
             """)
         else:
-            print("The JavaScript singleton is NOT available")
+            print("The JavaScriptBridge singleton is NOT available")
+
+ .. code-tab:: csharp
+    
+    private void MyFunc3()
+    {
+        if (OS.HasFeature("web"))
+        {
+            JavaScriptBridge.Eval("console.log('The JavaScriptBridge singleton is available')");
+        }
+        else
+        {
+            GD.Print("The JavaScriptBridge singleton is NOT available");
+        }
+    }
 
 .. tip:: GDScript's multi-line strings, surrounded by 3 quotes ``"""`` as in
          ``my_func3()`` above, are useful to keep JavaScript code readable.
 
 The ``eval`` method also accepts a second, optional Boolean argument, which
 specifies whether to execute the code in the global execution context,
-defaulting to ``false`` to prevent polluting the global namespace::
+defaulting to ``false`` to prevent polluting the global namespace:
+
+.. tabs::
+ .. code-tab:: gdscript
 
     func my_func4():
         # execute in global execution context,
         # thus adding a new JavaScript global variable `SomeGlobal`
-        JavaScript.eval("var SomeGlobal = {};", true)
+        JavaScriptBridge.eval("var SomeGlobal = {};", true)
+
+ .. code-tab:: csharp
+
+    private void MyFunc4()
+    {
+        // execute in global execution context,
+        // thus adding a new JavaScript global variable `SomeGlobal`
+        JavaScriptBridge.Eval("var SomeGlobal = {};", true);
+    }
+

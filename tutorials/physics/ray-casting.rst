@@ -60,9 +60,9 @@ Use the following code in 2D:
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        var spaceRid = GetWorld2d().Space;
+        var spaceRid = GetWorld2D().Space;
         var spaceState = Physics2DServer.SpaceGetDirectState(spaceRid);
     }
 
@@ -76,9 +76,9 @@ Or more directly:
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        var spaceState = GetWorld2d().DirectSpaceState;
+        var spaceState = GetWorld2D().DirectSpaceState;
     }
 
 And in 3D:
@@ -91,9 +91,9 @@ And in 3D:
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        var spaceState = GetWorld3d().DirectSpaceState;
+        var spaceState = GetWorld3D().DirectSpaceState;
     }
 
 Raycast query
@@ -114,11 +114,11 @@ may be used. For example:
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        var spaceState = GetWorld2d().DirectSpaceState;
+        var spaceState = GetWorld2D().DirectSpaceState;
         // use global coordinates, not local to node
-        var query = PhysicsRayQueryParameters2D.create(new Vector2(), new Vector2(50, 100));
+        var query = PhysicsRayQueryParameters2D.Create(Vector2.Zero, new Vector2(50, 100));
         var result = spaceState.IntersectRay(query);
     }
 
@@ -182,13 +182,13 @@ from a CharacterBody2D or any other collision object node:
 
     using Godot;
 
-    public partial class Body : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            var spaceState = GetWorld2d().DirectSpaceState;
-            var query = PhysicsRayQueryParameters2D.create(globalPosition, enemyPosition);
-            query.Exclude = new Godot.Collections.Array { this };
+            var spaceState = GetWorld2D().DirectSpaceState;
+            var query = PhysicsRayQueryParameters2D.Create(globalPosition, enemyPosition);
+            query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
             var result = spaceState.IntersectRay(query);
         }
     }
@@ -221,13 +221,13 @@ member variable. The array of exceptions can be supplied as the last argument as
 
     using Godot;
 
-    public partial class Body : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            var spaceState = GetWorld2d().DirectSpaceState;
-            var query = PhysicsRayQueryParameters2D.create(globalPosition, enemyPosition,
-                CollisionMask, new Godot.Collections.Array { this });
+            var spaceState = GetWorld2D().DirectSpaceState;
+            var query = PhysicsRayQueryParameters2D.Create(globalPosition, enemyPosition,
+                CollisionMask, new Godot.Collections.Array<Rid> { GetRid() });
             var result = spaceState.IntersectRay(query);
         }
     }
@@ -270,11 +270,11 @@ To obtain it using a camera, the following code can be used:
 
     public override void _Input(InputEvent @event)
     {
-        if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == 1)
+        if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == MouseButton.Left)
         {
-            var camera3d = GetNode<Camera3D>("Camera3D");
-            var from = camera3d.ProjectRayOrigin(eventMouseButton.Position);
-            var to = from + camera3d.ProjectRayNormal(eventMouseButton.Position) * RayLength;
+            var camera3D = GetNode<Camera3D>("Camera3D");
+            var from = camera3D.ProjectRayOrigin(eventMouseButton.Position);
+            var to = from + camera3D.ProjectRayNormal(eventMouseButton.Position) * RayLength;
         }
     }
 
