@@ -81,8 +81,19 @@ otherwise it returns true. Note that using the ``is`` operator against ``null`` 
         // This block can never happen.
     }
 
-For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
+**Type test with variable declaration**
 
+You can use `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_
+to check if the node can be cast to Sprite2D, and if so, store the result in a
+new variable.
+
+.. code-block:: csharp
+
+    if (GetNode("MySprite") is Sprite2D mySprite)
+    {
+        // The mySprite variable only exists inside this block, and it's never null.
+        mySprite.SetFrame(0);
+    }
 
 Preprocessor defines
 --------------------
