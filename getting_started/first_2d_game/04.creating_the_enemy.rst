@@ -108,8 +108,8 @@ and randomly choose one of the three animation types:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        $AnimatedSprite2D.playing = true
-        var mob_types = $AnimatedSprite2D.frames.get_animation_names()
+        $AnimatedSprite2D.play()
+        var mob_types = $AnimatedSprite2D.get_sprite_frames().get_animation_names()
         $AnimatedSprite2D.animation = mob_types[randi() % mob_types.size()]
 
  .. code-tab:: csharp
@@ -117,8 +117,8 @@ and randomly choose one of the three animation types:
     public override void _Ready()
     {
         var animSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        animSprite2D.Playing = true;
-        string[] mobTypes = animSprite2D.Frames.GetAnimationNames();
+        animSprite2D.Play();
+        string[] mobTypes = animSprite2D.SpriteFrames.GetAnimationNames();
         animSprite2D.Animation = mobTypes[GD.Randi() % mobTypes.Length];
     }
 
