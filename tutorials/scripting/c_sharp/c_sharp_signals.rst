@@ -92,15 +92,17 @@ Signals support arguments of:
 * All the `built-in value types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_,
   except ``decimal``, ``nint`` and ``nuint``
 * ``string``
-* Classes derived from :ref:`Godot.Object <class_Object>`
+* Classes derived from :ref:`GodotObject <class_Object>`
 * Collections types defined in the ``Godot.Collections`` namespace
 
 Consequently, any ``Node`` or ``Reference`` will be compatible automatically, but custom data objects will need
-to inherit from ``Godot.Object`` or one of its subclasses.
+to inherit from ``GodotObject`` or one of its subclasses.
 
 .. code-block:: csharp
 
-    public partial class DataObject : Godot.Object
+    using Godot;
+
+    public partial class DataObject : GodotObject
     {
         public string MyFirstString { get; set; }
         public string MySecondString { get; set; }

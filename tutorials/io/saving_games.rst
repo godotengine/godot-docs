@@ -94,8 +94,8 @@ The save function will look like this:
         {
             { "Filename", SceneFilePath },
             { "Parent", GetParent().GetPath() },
-            { "PosX", Position.x }, // Vector2 is not supported by JSON
-            { "PosY", Position.y },
+            { "PosX", Position.X }, // Vector2 is not supported by JSON
+            { "PosY", Position.Y },
             { "Attack", Attack },
             { "Defense", Defense },
             { "CurrentHealth", CurrentHealth },
@@ -152,7 +152,7 @@ way to pull the data out of the file as well.
             # Call the node's save function.
             var node_data = node.call("save")
 
-            # JSON provides a static method to serialized JSON string
+            # JSON provides a static method to serialized JSON string.
             var json_string = JSON.stringify(node_data)
 
             # Store the save dictionary as a new line in the save file.
@@ -188,8 +188,8 @@ way to pull the data out of the file as well.
             // Call the node's save function.
             var nodeData = saveNode.Call("Save");
 
-            // JSON provides a static method to serialized JSON string
-            var jsonString = JSON.Stringify(nodeData);
+            // Json provides a static method to serialized JSON string.
+            var jsonString = Json.Stringify(nodeData);
 
             // Store the save dictionary as a new line in the save file.
             saveGame.StoreLine(jsonString);
@@ -257,7 +257,9 @@ load function:
     public void LoadGame()
     {
         if (!FileAccess.FileExists("user://savegame.save"))
+        {
             return; // Error! We don't have a save to load.
+        }
 
         // We need to revert the game state so we're not cloning objects during loading.
         // This will vary wildly depending on the needs of a project, so take care with
@@ -265,7 +267,9 @@ load function:
         // For our example, we will accomplish this by deleting saveable objects.
         var saveNodes = GetTree().GetNodesInGroup("Persist");
         foreach (Node saveNode in saveNodes)
+        {
             saveNode.QueueFree();
+        }
 
         // Load the file line by line and process that dictionary to restore the object
         // it represents.
@@ -276,7 +280,7 @@ load function:
             var jsonString = saveGame.GetLine();
 
             // Creates the helper class to interact with JSON
-            var json = new JSON();
+            var json = new Json();
             var parseResult = json.Parse(jsonString);
             if (parseResult != Error.Ok)
             {
@@ -288,18 +292,19 @@ load function:
             var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
 
             // Firstly, we need to create the object and add it to the tree and set its position.
-            var newObjectScene = (PackedScene)ResourceLoader.Load(nodeData["Filename"].ToString());
-            var newObject = (Node)newObjectScene.Instantiate();
+            var newObjectScene = GD.Load<PackedScene>(nodeData["Filename"].ToString());
+            var newObject = newObjectScene.Instantiate<Node>();
             GetNode(nodeData["Parent"].ToString()).AddChild(newObject);
-            newObject.Set("position", new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
+            newObject.Set(Node2D.PropertyName.Position, new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
 
             // Now we set the remaining variables.
-            foreach (KeyValuePair<string, Variant> entry in nodeData)
+            foreach (var (key, value) in nodeData)
             {
-                string key = entry.Key;
                 if (key == "Filename" || key == "Parent" || key == "PosX" || key == "PosY")
+                {
                     continue;
-                newObject.Set(key, entry.Value);
+                }
+                newObject.Set(key, value);
             }
         }
     }

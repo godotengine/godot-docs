@@ -468,6 +468,6 @@ terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
 
         for (int i = 0; i < 100; i++)
         {
-            GD.Print(_noise.GetNoise1d(i));
+            GD.Print(_noise.GetNoise1D(i));
         }
     }

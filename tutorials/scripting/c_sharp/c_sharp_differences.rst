@@ -74,8 +74,8 @@ Exceptions:
 ===========================  =======================================================
 GDScript                     C#
 ===========================  =======================================================
-``weakref(obj)``             ``Object.WeakRef(obj)``
-``is_instance_valid(obj)``   ``Object.IsInstanceValid(obj)``
+``weakref(obj)``             ``GodotObject.WeakRef(obj)``
+``is_instance_valid(obj)``   ``GodotObject.IsInstanceValid(obj)``
 ===========================  =======================================================
 
 Tips
@@ -177,9 +177,9 @@ Example:
     Input.IsActionPressed("ui_down")
 
 However, in some very rare cases this is not enough. For example, you may want
-to access a member from the base class ``Godot.Object``, like ``Connect``.
+to access a member from the base class ``GodotObject``, like ``Connect``.
 For such use cases we provide a static property named ``Singleton`` that returns
-the singleton instance. The type of this instance is ``Godot.Object``.
+the singleton instance. The type of this instance is ``GodotObject``.
 
 Example:
 
@@ -586,7 +586,7 @@ An expression ``t`` is awaitable if one of the following holds:
 .. _ValueTask<TResult>: https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.valuetask-1
 
 An equivalent of awaiting a signal in GDScript can be achieved with the ``await`` keyword and
-``Godot.Object.ToSignal``.
+``GodotObject.ToSignal``.
 
 Example:
 
