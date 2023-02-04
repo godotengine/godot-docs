@@ -107,7 +107,7 @@ a NavigationAgent3D for path movement.
     extends CharacterBody3D
 
     var movement_speed : float = 2.0
-    var movement_target_position : Vector3 = Vector2(-3.0,0.0,2.0)
+    var movement_target_position : Vector3 = Vector3(-3.0,0.0,2.0)
 
     @onready var navigation_agent : NavigationAgent3D = $NavigationAgent3D
 
@@ -128,14 +128,14 @@ a NavigationAgent3D for path movement.
         set_movement_target(movement_target_position)
 
     func set_movement_target(movement_target : Vector3):
-        navigation_agent.set_target_location(movement_target)
+        navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
         if navigation_agent.is_target_reached():
             return
 
         var current_agent_position : Vector3 = global_transform.origin
-        var next_path_position : Vector3 = navigation_agent.get_next_location()
+        var next_path_position : Vector3 = navigation_agent.get_next_path_position()
 
         var new_velocity : Vector3 = next_path_position - current_agent_position
         new_velocity = new_velocity.normalized()
@@ -157,8 +157,8 @@ a NavigationAgent3D for path movement.
 
         public Vector3 MovementTarget
         {
-            get { return _navigationAgent.TargetLocation; }
-            set { _navigationAgent.TargetLocation = value; }
+            get { return _navigationAgent.TargetPosition; }
+            set { _navigationAgent.TargetPosition = value; }
         }
 
         public override void _Ready()
@@ -186,7 +186,7 @@ a NavigationAgent3D for path movement.
             }
 
             Vector3 currentAgentPosition = GlobalTransform.Origin;
-            Vector3 nextPathPosition = _navigationAgent.GetNextLocation();
+            Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
 
             Vector3 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();
             newVelocity *= _movementSpeed;
