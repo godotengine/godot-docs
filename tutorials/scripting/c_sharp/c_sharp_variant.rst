@@ -11,7 +11,7 @@ Take advantage of C#'s type safety when possible.
 
 Any of ``Variant.As{TYPE}`` methods or the generic ``Variant.As<T>`` method can be used to convert
 a ``Godot.Variant`` to a C# type. Since the ``Godot.Variant`` type contains implicit conversions
-defined for all the supported types calling these methods directly is usually not necessary.
+defined for all the supported types, calling these methods directly is usually not necessary.
 
 Use ``CreateFrom`` method overloads or the generic ``Variant.From<T>`` method to convert a C# type
 to a ``Godot.Variant``.
@@ -80,7 +80,7 @@ Variant.Type             C# Type
     Godot uses 64-bit integers and floats in Variant. Smaller integer and float types
     such as ``int``, ``short`` and ``float`` are supported since they can fit in the
     bigger type. Be aware that an implicit conversion is performed so using the wrong
-    type will result in potential precission loss.
+    type will result in potential precision loss.
 
 .. warning::
 
