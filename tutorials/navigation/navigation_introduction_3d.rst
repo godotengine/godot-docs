@@ -135,7 +135,7 @@ a NavigationAgent3D for path movement.
             return
 
         var current_agent_position : Vector3 = global_transform.origin
-        var next_path_position : Vector3 = navigation_agent.get_next_location()
+        var next_path_position : Vector3 = navigation_agent.get_next_path_position()
 
         var new_velocity : Vector3 = next_path_position - current_agent_position
         new_velocity = new_velocity.normalized()
@@ -157,8 +157,8 @@ a NavigationAgent3D for path movement.
 
         public Vector3 MovementTarget
         {
-            get { return _navigationAgent.TargetLocation; }
-            set { _navigationAgent.TargetLocation = value; }
+            get { return _navigationAgent.TargetPosition; }
+            set { _navigationAgent.TargetPosition = value; }
         }
 
         public override void _Ready()
@@ -186,7 +186,7 @@ a NavigationAgent3D for path movement.
             }
 
             Vector3 currentAgentPosition = GlobalTransform.origin;
-            Vector3 nextPathPosition = _navigationAgent.GetNextLocation();
+            Vector3 nextPathPosition = _navigationAgent.GetNextPathPosition();
 
             Vector3 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();
             newVelocity *= _movementSpeed;
