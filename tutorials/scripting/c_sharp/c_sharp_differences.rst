@@ -769,16 +769,9 @@ operator []              Dictionary[Variant] indexer, Add or TryGetValue
 Variant
 -------
 
-``Godot.Variant`` is used to represent the Godot's native :ref:`Variant <doc_variant_class>` type. Any Variant-compatible type can be converted from/to it.
-We recommend avoiding ``Godot.Variant`` unless it is necessary to interact with untyped engine APIs.
-Take advantage of C#'s type safety when possible.
+``Godot.Variant`` is used to represent Godot's native :ref:`Variant <class_Variant>` type. Any Variant-compatible type can be converted from/to it.
 
-Any of ``Variant.As{TYPE}`` methods or the generic ``Variant.As<T>`` method can be used to convert
-a ``Godot.Variant`` to a C# type. Since the ``Godot.Variant`` type contains implicit conversions
-defined for all the supported types calling these methods directly is usually not necessary.
-
-Use ``CreateFrom`` method overloads or the generic ``From<T>`` method to convert a C# type
-to a ``Godot.Variant``.
+See also: :ref:`doc_c_sharp_variant`.
 
 Communicating with other scripting languages
 --------------------------------------------
