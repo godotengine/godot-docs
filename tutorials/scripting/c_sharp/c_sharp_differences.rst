@@ -543,6 +543,59 @@ hex_encode                 StringExtensions.HexEncode (Consider using `System.Co
 .. _System.Uri.EscapeDataString: https://learn.microsoft.com/en-us/dotnet/api/system.uri.escapedatastring
 .. _System.Uri.UnescapeDataString: https://learn.microsoft.com/en-us/dotnet/api/system.uri.unescapedatastring
 
+Signal
+------
+
+The following methods were converted to properties with their respective names changed:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_name()``        ``Name``
+``get_object()``      ``Owner``
+====================  ==============================================================
+
+The ``Signal`` type implements the awaitable pattern which means it can be used with
+the ``await`` keyword. See :ref:`_doc_c_sharp_differences_await`.
+
+Instead of using the ``Signal`` type, the recommended way to use Godot signals in C# is
+to use the generated C# events. See :ref:`doc_c_sharp_signals`.
+
+Callable
+--------
+
+The following methods were converted to properties with their respective names changed:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_object()``      ``Target``
+``get_method()``      ``Method``
+====================  ==============================================================
+
+Currently C# supports ``Callable`` if one of the following holds:
+
+* ``Callable`` was created using the C# ``Callable`` type.
+* ``Callable`` is a basic version of the engine's ``Callable``. Custom ``Callable``\ s
+  are unsupported. A ``Callable`` is custom when any of the following holds:
+
+  * ``Callable`` has bound information (``Callable``\ s created with ``bind``/``unbind`` are unsupported).
+  * ``Callable`` was created from other languages through the GDExtension API.
+
+Some methods such as ``bind`` and ``unbind`` are not implemented, use lambdas instead:
+
+.. code-block:: csharp
+
+    string name = "John Doe";
+    Callable callable = Callable.From(() => SayHello(name));
+
+    void SayHello(string name)
+    {
+        GD.Print($"Hello {name}");
+    }
+
+The lambda captures the ``name`` variable so it can be bound to the ``SayHello`` method.
+
 Basis
 -----
 
