@@ -421,7 +421,7 @@ GDScript              C#
 Currently C# supports ``Callable`` if one of the following holds:
 
 * ``Callable`` was created using the C# ``Callable`` type.
-* ``Callable`` is a basic version of the engine's ``Callable``. Custom ``Callable``s
+* ``Callable`` is a basic version of the engine's ``Callable``. Custom ``Callable``\ s
   are unsupported. A ``Callable`` is custom when any of the following holds:
 
   * ``Callable`` has bound information (``Callable``s created with ``bind``/``unbind`` are unsupported).
