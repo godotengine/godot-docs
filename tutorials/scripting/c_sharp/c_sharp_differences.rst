@@ -424,7 +424,7 @@ Currently C# supports ``Callable`` if one of the following holds:
 * ``Callable`` is a basic version of the engine's ``Callable``. Custom ``Callable``\ s
   are unsupported. A ``Callable`` is custom when any of the following holds:
 
-  * ``Callable`` has bound information (``Callable``s created with ``bind``/``unbind`` are unsupported).
+  * ``Callable`` has bound information (``Callable``\ s created with ``bind``/``unbind`` are unsupported).
   * ``Callable`` was created from other languages through the GDExtension API.
 
 Some methods such as ``bind`` and ``unbind`` are not implemented, use lambdas instead:
