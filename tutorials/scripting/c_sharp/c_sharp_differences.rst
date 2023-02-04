@@ -71,12 +71,14 @@ Example: ``GD.Print`` and ``GD.VarToStr``.
 
 Exceptions:
 
-===========================  =======================================================
-GDScript                     C#
-===========================  =======================================================
-``weakref(obj)``             ``GodotObject.WeakRef(obj)``
-``is_instance_valid(obj)``   ``GodotObject.IsInstanceValid(obj)``
-===========================  =======================================================
+============================  =======================================================
+GDScript                      C#
+============================  =======================================================
+``weakref(obj)``              ``GodotObject.WeakRef(obj)``
+``instance_from_id(id)``      ``GodotObject.InstanceFromId(id)``
+``is_instance_id_valid(id)``  ``GodotObject.IsInstanceIdValid(id)``
+``is_instance_valid(obj)``    ``GodotObject.IsInstanceValid(obj)``
+============================  =======================================================
 
 Tips
 ^^^^
@@ -97,6 +99,159 @@ Example:
             Print("Hello"); // Instead of GD.Print("Hello");
         }
     }
+
+Full list of equivalences
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+List of Godot's global scope functions and their equivalent in C#:
+
+===============================  ==============================================================
+GDScript                         C#
+===============================  ==============================================================
+abs                              Mathf.Abs
+absf                             Mathf.Abs
+absi                             Mathf.Abs
+acos                             Mathf.Acos
+asin                             Mathf.Asin
+atan                             Mathf.Atan
+atan2                            Mathf.Atan2
+bezier_derivative                Mathf.BezierDerivative
+bezier_interpolate               Mathf.BezierInterpolate
+bytes_to_var                     GD.BytesToVar
+bytes_to_var_with_objects        GD.BytesToVarWithObjects
+ceil                             Mathf.Ceil
+ceilf                            Mathf.Ceil
+ceili                            Mathf.CeilToInt
+clamp                            Mathf.Clamp
+clampf                           Mathf.Clamp
+clampi                           Mathf.Clamp
+cos                              Mathf.Cos
+cosh                             Mathf.Cosh
+cubic_interpolate                Mathf.CubicInterpolate
+cubic_interpoalte_angle          Mathf.CubicInterpolateAngle
+cubic_interpolate_angle_in_time  Mathf.CubicInterpolateInTime
+cubic_interpolate_in_time        Mathf.CubicInterpolateAngleInTime
+db_to_linear                     Mathf.DbToLinear
+deg_to_rad                       Mathf.DegToRad
+ease                             Mathf.Ease
+error_string                     Error.ToString
+exp                              Mathf.Exp
+floor                            Mathf.Floor
+floorf                           Mathf.Floor
+floori                           Mathf.FloorToInt
+fmod                             operator %
+fposmod                          Mathf.PosMod
+hash                             GD.Hash
+instance_from_id                 GodotObject.InstanceFromId
+inverse_lerp                     Mathf.InverseLerp
+is_equal_approx                  Mathf.IsEqualApprox
+is_finite                        Mathf.IsFinite or `float.IsFinite`_ or `double.IsFinite`_
+is_inf                           Mathf.IsInf or `float.IsInfinity`_ or `double.IsInfinity`_
+is_instance_id_valid             GodotObject.IsInstanceIdValid
+is_instance_valid                GodotObject.IsInstanceValid
+is_nan                           Mathf.IsNaN or `float.IsNaN`_ or `double.IsNaN`_
+is_same                          operator == or `object.ReferenceEquals`_
+is_zero_approx                   Mathf.IsZeroApprox
+lerp                             Mathf.Lerp
+lerp_angle                       Mathf.LerpAngle
+lerpf                            Mathf.Lerp
+linear_to_db                     Mathf.LinearToDb
+log                              Mathf.Log
+max                              Mathf.Max
+maxf                             Mathf.Max
+maxi                             Mathf.Max
+min                              Mathf.Min
+minf                             Mathf.Min
+mini                             Mathf.Min
+move_toward                      Mathf.MoveToward
+nearest_po2                      Mathf.NearestPo2
+pingpong                         Mathf.PingPong
+posmod                           Mathf.PosMod
+pow                              Mathf.Pow
+print                            GD.Print
+print_rich                       GD.PrintRich
+print_verbose                    Use OS.IsStdoutVerbose and GD.Print
+printerr                         GD.PrintErr
+printraw                         GD.PrintRaw
+prints                           GD.PrintS
+printt                           GD.PrintT
+push_error                       GD.PushError
+push_warning                     GD.PushWarning
+rad_to_deg                       Mathf.RadToDeg
+rand_from_seed                   GD.RandFromSeed
+randf                            GD.Randf
+randf_range                      GD.RandRange
+randfn                           GD.Randfn
+randi                            GD.Randi
+randi_range                      GD.RandRange
+randomize                        GD.Randomize
+remap                            Mathf.Remap
+rid_allocate_id                  N/A
+rid_from_int64                   N/A
+round                            Mathf.Round
+roundf                           Mathf.Round
+roundi                           Mathf.RoundToInt
+seed                             GD.Seed
+sign                             Mathf.Sign
+signf                            Mathf.Sign
+signi                            Mathf.Sign
+sin                              Mathf.Sin
+sinh                             Mathf.Sinh
+smoothstep                       Mathf.SmoothStep
+snapped                          Mathf.Snapped
+snappedf                         Mathf.Snapped
+snappedi                         Mathf.Snapped
+sqrt                             Mathf.Sqrt
+step_decimals                    Mathf.StepDecimals
+str                              Use `$ string interpolation`_
+str_to_var                       GD.StrToVar
+tan                              Mathf.Tan
+tanh                             Mathf.Tanh
+typeof                           Variant.VariantType
+var_to_bytes                     GD.VarToBytes
+var_to_bytes_with_objects        GD.VarToBytesWithObjects
+var_to_str                       GD.VarToStr
+weakref                          GodotObject.WeakRef
+wrap                             Mathf.Wrap
+wrapf                            Mathf.Wrap
+wrapi                            Mathf.Wrap
+===============================  ==============================================================
+
+.. _$ string interpolation: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
+.. _double.IsFinite: https://learn.microsoft.com/en-us/dotnet/api/system.double.isfinite
+.. _double.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.double.isinfinity
+.. _double.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.double.isnan
+.. _float.IsFinite: https://learn.microsoft.com/en-us/dotnet/api/system.single.isfinite
+.. _float.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.single.isinfinity
+.. _float.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.single.isnan
+.. _object.ReferenceEquals: https://learn.microsoft.com/en-us/dotnet/api/system.object.referenceequals
+
+List of GDScript utility functions and their equivalent in C#:
+
+=======================  ==============================================================
+GDScript                 C#
+=======================  ==============================================================
+assert                   `System.Diagnostics.Debug.Assert`_
+char                     Use explicit conversion: ``(char)65``
+convert                  GD.Convert
+dict_to_inst             N/A
+get_stack                `System.Environment.StackTrace`_
+inst_to_dict             N/A
+len                      N/A
+load                     GD.Load
+preload                  N/A
+print_debug              N/A
+print_stack              GD.Print(`System.Environment.StackTrace`_)
+range                    GD.Range or `System.Linq.Enumerable.Range`_
+type_exists              ClassDB.ClassExists(type)
+=======================  ==============================================================
+
+.. _System.Diagnostics.Debug.Assert: https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.debug.assert
+.. _System.Environment.StackTrace: https://learn.microsoft.com/en-us/dotnet/api/system.environment.stacktrace
+.. _System.Linq.Enumerable.Range: https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.range
+
+``preload``, as it works in GDScript, is not available in C#.
+Use ``GD.Load`` or ``ResourceLoader.Load`` instead.
 
 ``@export`` annotation
 ----------------------
@@ -594,25 +749,3 @@ Example:
 
   await ToSignal(timer, "timeout");
   GD.Print("After timeout");
-
-Other differences
------------------
-
-``preload``, as it works in GDScript, is not available in C#.
-Use ``GD.Load`` or ``ResourceLoader.Load`` instead.
-
-Other differences:
-
-================  ==================================================================
-GDScript          C#
-================  ==================================================================
-``is_inf``        `float.IsInfinity`_ or `double.IsInfinity`_
-``is_nan``        `float.IsNaN`_ or `double.IsNaN`_
-``dict_to_inst``  TODO
-``inst_to_dict``  TODO
-================  ==================================================================
-
-.. _float.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.single.isinfinity
-.. _float.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.single.isnan
-.. _double.IsInfinity: https://learn.microsoft.com/en-us/dotnet/api/system.double.isinfinity
-.. _double.IsNaN: https://learn.microsoft.com/en-us/dotnet/api/system.double.isnan
