@@ -38,4 +38,5 @@ Tools
    :maxdepth: 1
    :name: toc-learn-features-2d-tools
 
+   using_tilesets
    using_tilemaps
