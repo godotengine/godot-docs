@@ -885,11 +885,36 @@ To declare the return type of a function, use ``-> <type>``:
 Inferred types
 ~~~~~~~~~~~~~~
 
-In most cases you can let the compiler infer the type, using ``:=``::
+In most cases you can let the compiler infer the type, using ``:=``.
+Prefer ``:=`` when the type is written on the same line as the assignment,
+otherwise prefer writing the type explicitly.
 
-    var health := 0  # The compiler will use the int type.
+**Good**:
 
-However, in a few cases when context is missing, the compiler falls back to
+.. rst-class:: code-example-good
+
+::
+
+   var health: int = 0 # The type can be int or float, and thus should be stated explicitly.
+   var direction := Vector3(1, 2, 3) # The type is clearly inferred as Vector3.
+
+Include the type hint when the type is ambiguous, and
+omit the type hint when it's redundant.
+
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
+
+   var health := 0 # Typed as int, but it could be that float was intended.
+   var direction: Vector3 = Vector3(1, 2, 3) # The type hint has redundant information.
+
+   # What type is this? It's not immediately clear to the reader, so it's bad.
+   var value := complex_function()
+
+In some cases, the type must be stated explicitly, otherwise the behavior
+will not be as expected because the compiler will only be able to use
 the function's return type. For example, ``get_node()`` cannot infer a type
 unless the scene or file of the node is loaded in memory. In this case, you
 should set the type explicitly.
