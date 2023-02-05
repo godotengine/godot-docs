@@ -67,7 +67,8 @@ Generic methods are also provided to make this type conversion transparent.
 
 To check if the node can be cast to Sprite2D, you can use the ``is`` operator.
 The ``is`` operator returns false if the node cannot be cast to Sprite2D,
-otherwise it returns true. Note that using the ``is`` operator against ``null`` is always going to be falsy.
+otherwise it returns true. Note that when the ``is`` operator is used against ``null``
+the result is always going to be ``false``.
 
 .. code-block:: csharp
 
