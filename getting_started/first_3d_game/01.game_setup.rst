@@ -82,7 +82,7 @@ the Z axis.
 
 
 Collision shapes are invisible. We need to add a visual floor that goes along
-with it. Select the ``Ground`` node and add a :ref:`MeshInstance <class_MeshInstance3D>` as its child.
+with it. Select the ``Ground`` node and add a :ref:`MeshInstance3D <class_MeshInstance3D>` as its child.
 
 .. image:: img/01.game_setup/10.mesh_instance3d.png
 
