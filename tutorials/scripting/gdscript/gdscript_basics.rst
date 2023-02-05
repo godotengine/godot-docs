@@ -163,7 +163,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | break      | Exits the execution of the current ``for`` or ``while`` loop.                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| continue   | Immediately skips to the next iteration of the ``for`` or ``while`` loop. Stops execution in ``match`` and looks for a match in patterns below it |
+| continue   | Immediately skips to the next iteration of the ``for`` or ``while`` loop.                                                                         |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | pass       | Used where a statement is required syntactically but execution of code is undesired, e.g. in empty functions.                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1174,7 +1174,6 @@ Basic syntax::
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
-You can use ``continue`` to stop execution in the current block and check for an additional match in the patterns below it.
 
 There are 6 pattern types:
 

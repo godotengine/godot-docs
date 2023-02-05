@@ -25,6 +25,35 @@ A Texture2DArray is also different from an :ref:`AtlasTexture<class_AtlasTexture
 
 To create such a texture file yourself, reimport your image files using the Godot Editor import presets.
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-----------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`create_placeholder<class_Texture2DArray_method_create_placeholder>` **(** **)** |const| |
+   +---------------------------------+-----------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_Texture2DArray_method_create_placeholder:
+
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **create_placeholder** **(** **)** |const|
+
+Creates a placeholder version of this resource (:ref:`PlaceholderTexture2DArray<class_PlaceholderTexture2DArray>`).
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

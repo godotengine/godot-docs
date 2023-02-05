@@ -21,7 +21,7 @@ You can handle these events, as any other event, with the ``+=`` and ``-=`` oper
     myTimer.Timeout += () => GD.Print("Timeout!");
 
 In addition, you can always access signal names associated with a node type through its nested
-``SignalName`` class. This is useful when, for example, you want to await on a signal (see :ref:`doc_c_sharp_differences_yield`).
+``SignalName`` class. This is useful when, for example, you want to await on a signal (see :ref:`doc_c_sharp_differences_await`).
 
 .. code-block:: csharp
 
@@ -36,7 +36,7 @@ In addition, you can always access signal names associated with a node type thro
 Custom signals as C# events
 ---------------------------
 
-To declare a custom event in your C# script, use the ``[Signal]`` attribute on a delegate type.
+To declare a custom event in your C# script, use the ``[Signal]`` attribute on a public delegate type.
 Note that the name of this delegate needs to end with ``EventHandler``.
 
 .. code-block:: csharp
@@ -87,20 +87,16 @@ your custom signal names are listed under the nested ``SignalName`` class.
 
 In contrast with other C# events, you cannot use ``Invoke`` to raise events tied to Godot signals.
 
-Signals support arguments of:
-
-* All the `built-in value types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_,
-  except ``decimal``, ``nint`` and ``nuint``
-* ``string``
-* Classes derived from :ref:`Godot.Object <class_Object>`
-* Collections types defined in the ``Godot.Collections`` namespace
+Signals support arguments of any :ref:`Variant-compatible <doc_c_sharp_variant>` type.
 
 Consequently, any ``Node`` or ``Reference`` will be compatible automatically, but custom data objects will need
-to inherit from ``Godot.Object`` or one of its subclasses.
+to inherit from ``GodotObject`` or one of its subclasses.
 
 .. code-block:: csharp
 
-    public partial class DataObject : Godot.Object
+    using Godot;
+
+    public partial class DataObject : GodotObject
     {
         public string MyFirstString { get; set; }
         public string MySecondString { get; set; }

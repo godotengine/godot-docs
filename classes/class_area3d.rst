@@ -25,6 +25,8 @@ To give the area its shape, add a :ref:`CollisionShape3D<class_CollisionShape3D>
 
 \ **Warning:** See :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` (also called "trimesh") for a warning about possibly unexpected behavior when using that shape for an area.
 
+\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

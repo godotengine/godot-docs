@@ -58,9 +58,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_command_or_control_pressed<class_InputEventWithModifiers_method_is_command_or_control_pressed>` **(** **)** |const| |
-   +-------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` | :ref:`get_modifiers_mask<class_InputEventWithModifiers_method_get_modifiers_mask>` **(** **)** |const|                       |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`is_command_or_control_pressed<class_InputEventWithModifiers_method_is_command_or_control_pressed>` **(** **)** |const| |
+   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -160,6 +162,18 @@ State of the :kbd:`Shift` modifier.
 
 Method Descriptions
 -------------------
+
+.. _class_InputEventWithModifiers_method_get_modifiers_mask:
+
+.. rst-class:: classref-method
+
+:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **get_modifiers_mask** **(** **)** |const|
+
+Returns the keycode combination of modifier keys.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_InputEventWithModifiers_method_is_command_or_control_pressed:
 

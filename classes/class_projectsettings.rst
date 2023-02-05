@@ -145,6 +145,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/assert_always_true<class_ProjectSettings_property_debug/gdscript/warnings/assert_always_true>`                                                                               | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/confusable_identifier<class_ProjectSettings_property_debug/gdscript/warnings/confusable_identifier>`                                                                         | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/constant_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/constant_used_as_function>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/deprecated_keyword<class_ProjectSettings_property_debug/gdscript/warnings/deprecated_keyword>`                                                                               | ``1``                                                                                            |
@@ -295,7 +297,11 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/size/extend_to_title<class_ProjectSettings_property_display/window/size/extend_to_title>`                                                                                             | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>`                                                                                               | ``-2``                                                                                           |
+   | :ref:`Vector2i<class_Vector2i>`                   | :ref:`display/window/size/initial_position<class_ProjectSettings_property_display/window/size/initial_position>`                                                                                           | ``Vector2i(0, 0)``                                                                               |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`display/window/size/initial_position_type<class_ProjectSettings_property_display/window/size/initial_position_type>`                                                                                 | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>`                                                                                               | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`display/window/size/mode<class_ProjectSettings_property_display/window/size/mode>`                                                                                                                   | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -315,6 +321,10 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`display/window/vsync/vsync_mode<class_ProjectSettings_property_display/window/vsync/vsync_mode>`                                                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`dotnet/project/assembly_name<class_ProjectSettings_property_dotnet/project/assembly_name>`                                                                                                           | ``""``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`dotnet/project/solution_directory<class_ProjectSettings_property_dotnet/project/solution_directory>`                                                                                                 | ``""``                                                                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`editor/movie_writer/disable_vsync<class_ProjectSettings_property_editor/movie_writer/disable_vsync>`                                                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editor/movie_writer/fps<class_ProjectSettings_property_editor/movie_writer/fps>`                                                                                                                     | ``60``                                                                                           |
@@ -327,9 +337,13 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`editor/movie_writer/speaker_mode<class_ProjectSettings_property_editor/movie_writer/speaker_mode>`                                                                                                   | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`editor/node_naming/name_casing<class_ProjectSettings_property_editor/node_naming/name_casing>`                                                                                                       | ``0``                                                                                            |
+   | :ref:`String<class_String>`                       | :ref:`editor/naming/default_signal_callback_name<class_ProjectSettings_property_editor/naming/default_signal_callback_name>`                                                                               | ``"_on_{node_name}_{signal_name}"``                                                              |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`editor/node_naming/name_num_separator<class_ProjectSettings_property_editor/node_naming/name_num_separator>`                                                                                         | ``0``                                                                                            |
+   | :ref:`String<class_String>`                       | :ref:`editor/naming/default_signal_callback_to_self_name<class_ProjectSettings_property_editor/naming/default_signal_callback_to_self_name>`                                                               | ``"_on_{signal_name}"``                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`editor/naming/node_name_casing<class_ProjectSettings_property_editor/naming/node_name_casing>`                                                                                                       | ``0``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`editor/naming/node_name_num_separator<class_ProjectSettings_property_editor/naming/node_name_num_separator>`                                                                                         | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`editor/run/main_run_args<class_ProjectSettings_property_editor/run/main_run_args>`                                                                                                                   | ``""``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -372,6 +386,8 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`gui/theme/default_theme_scale<class_ProjectSettings_property_gui/theme/default_theme_scale>`                                                                                                         | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`gui/theme/lcd_subpixel_layout<class_ProjectSettings_property_gui/theme/lcd_subpixel_layout>`                                                                                                         | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`gui/timers/button_shortcut_feedback_highlight_time<class_ProjectSettings_property_gui/timers/button_shortcut_feedback_highlight_time>`                                                               | ``0.2``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`gui/timers/incremental_search_max_interval_msec<class_ProjectSettings_property_gui/timers/incremental_search_max_interval_msec>`                                                                     | ``2000``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1339,6 +1355,8 @@ Methods
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`         | :ref:`get_setting<class_ProjectSettings_method_get_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` default_value=null **)** |const|                                 |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`         | :ref:`get_setting_with_override<class_ProjectSettings_method_get_setting_with_override>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                               |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`           | :ref:`globalize_path<class_ProjectSettings_method_globalize_path>` **(** :ref:`String<class_String>` path **)** |const|                                                                             |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`               | :ref:`has_setting<class_ProjectSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                   |
@@ -2006,6 +2024,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/assert_always_true** = ``1``
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when an ``assert`` call always evaluates to true.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/confusable_identifier:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/confusable_identifier** = ``1``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when an identifier contains characters that can be confused with something else, like when mixing different alphabets.
 
 .. rst-class:: classref-item-separator
 
@@ -2923,13 +2953,43 @@ Main window content is expanded to the full size of the window. Unlike a borderl
 
 ----
 
+.. _class_ProjectSettings_property_display/window/size/initial_position:
+
+.. rst-class:: classref-property
+
+:ref:`Vector2i<class_Vector2i>` **display/window/size/initial_position** = ``Vector2i(0, 0)``
+
+Main window initial position (in virtual desktop coordinates), this settings is used only if :ref:`display/window/size/initial_position_type<class_ProjectSettings_property_display/window/size/initial_position_type>` is set to "Absolute" (``0``).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_display/window/size/initial_position_type:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **display/window/size/initial_position_type** = ``1``
+
+Main window initial position.
+
+\ ``0`` - "Absolute", :ref:`display/window/size/initial_position<class_ProjectSettings_property_display/window/size/initial_position>` is used to set window position.
+
+\ ``1`` - "Primary Screen Center".
+
+\ ``2`` - "Other Screen Center", :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>` is used to set window position.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_display/window/size/initial_screen:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **display/window/size/initial_screen** = ``-2``
+:ref:`int<class_int>` **display/window/size/initial_screen** = ``0``
 
-Main window initial screen.
+Main window initial screen, this settings is used only if :ref:`display/window/size/initial_position_type<class_ProjectSettings_property_display/window/size/initial_position_type>` is set to "Other Screen Center" (``2``).
 
 .. rst-class:: classref-item-separator
 
@@ -3051,7 +3111,35 @@ Sets the V-Sync mode for the main game window.
 
 See :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` for possible values and how they affect the behavior of your application.
 
-Depending on the platform and used renderer, the engine will fall back to ``Enabled``, if the desired mode is not supported.
+Depending on the platform and used renderer, the engine will fall back to ``Enabled`` if the desired mode is not supported.
+
+\ **Note:** This property is only read when the project starts. To change the V-Sync mode at runtime, call :ref:`DisplayServer.window_set_vsync_mode<class_DisplayServer_method_window_set_vsync_mode>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_dotnet/project/assembly_name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **dotnet/project/assembly_name** = ``""``
+
+Name of the .NET assembly. This name is used as the name of the ``.csproj`` and ``.sln`` files. By default, it's set to the name of the project (:ref:`application/config/name<class_ProjectSettings_property_application/config/name>`) allowing to change it in the future without affecting the .NET assembly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_dotnet/project/solution_directory:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **dotnet/project/solution_directory** = ``""``
+
+Directory that contains the ``.sln`` file. By default, the ``.sln`` files is in the root of the project directory, next to the ``project.godot`` and ``.csproj`` files.
+
+Changing this value allows setting up a multi-project scenario where there are multiple ``.csproj``. Keep in mind that the Godot project is considered one of the C# projects in the workspace and it's root directory should contain the ``project.godot`` and ``.csproj`` next to each other.
 
 .. rst-class:: classref-item-separator
 
@@ -3145,11 +3233,35 @@ The speaker mode to use in the recorded audio when writing a movie. See :ref:`Sp
 
 ----
 
-.. _class_ProjectSettings_property_editor/node_naming/name_casing:
+.. _class_ProjectSettings_property_editor/naming/default_signal_callback_name:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/node_naming/name_casing** = ``0``
+:ref:`String<class_String>` **editor/naming/default_signal_callback_name** = ``"_on_{node_name}_{signal_name}"``
+
+The format of the default signal callback name (in the Signal Connection Dialog). The following substitutions are available: ``{NodeName}``, ``{nodeName}``, ``{node_name}``, ``{SignalName}``, ``{signalName}``, and ``{signal_name}``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_editor/naming/default_signal_callback_to_self_name:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **editor/naming/default_signal_callback_to_self_name** = ``"_on_{signal_name}"``
+
+The format of the default signal callback name when a signal connects to the same node that emits it (in the Signal Connection Dialog). The following substitutions are available: ``{NodeName}``, ``{nodeName}``, ``{node_name}``, ``{SignalName}``, ``{signalName}``, and ``{signal_name}``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_editor/naming/node_name_casing:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editor/naming/node_name_casing** = ``0``
 
 When creating node names automatically, set the type of casing in this project. This is mostly an editor setting.
 
@@ -3157,11 +3269,11 @@ When creating node names automatically, set the type of casing in this project. 
 
 ----
 
-.. _class_ProjectSettings_property_editor/node_naming/name_num_separator:
+.. _class_ProjectSettings_property_editor/naming/node_name_num_separator:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **editor/node_naming/name_num_separator** = ``0``
+:ref:`int<class_int>` **editor/naming/node_name_num_separator** = ``0``
 
 What to use to separate node name from number. This is mostly an editor setting.
 
@@ -3440,6 +3552,18 @@ The default scale factor for :ref:`Control<class_Control>`\ s, when not overridd
 :ref:`int<class_int>` **gui/theme/lcd_subpixel_layout** = ``1``
 
 LCD subpixel layout used for font anti-aliasing. See :ref:`FontLCDSubpixelLayout<enum_TextServer_FontLCDSubpixelLayout>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_gui/timers/button_shortcut_feedback_highlight_time:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **gui/timers/button_shortcut_feedback_highlight_time** = ``0.2``
+
+When :ref:`BaseButton.shortcut_feedback<class_BaseButton_property_shortcut_feedback>` is enabled, this is the time the :ref:`BaseButton<class_BaseButton>` will remain highlighted after a shortcut.
 
 .. rst-class:: classref-item-separator
 
@@ -9607,6 +9731,39 @@ Returns the value of the setting identified by ``name``. If the setting doesn't 
     GD.Print(ProjectSettings.GetSetting("application/config/custom_description", "No description specified."));
 
 
+
+\ **Note:** This method doesn't take potential feature overrides into account automatically. Use :ref:`get_setting_with_override<class_ProjectSettings_method_get_setting_with_override>` to handle seamlessly.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_method_get_setting_with_override:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_setting_with_override** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Similar to :ref:`get_setting<class_ProjectSettings_method_get_setting>`, but applies feature tag overrides if any exists and is valid.
+
+\ **Example:**\ 
+
+If the following setting override exists "application/config/name.windows", and the following code is executed:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    print(ProjectSettings.get_setting_with_override("application/config/name"))
+
+ .. code-tab:: csharp
+
+    GD.Print(ProjectSettings.GetSettingWithOverride("application/config/name"));
+
+
+
+Then the overridden setting will be returned instead if the project is running on the *Windows* operating system.
 
 .. rst-class:: classref-item-separator
 

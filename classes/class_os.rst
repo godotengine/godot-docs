@@ -155,13 +155,13 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`open_midi_inputs<class_OS_method_open_midi_inputs>` **(** **)**                                                                                                                                                                                                                                                                                                    |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`                       | :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` **(** :ref:`bool<class_bool>` block=true **)**                                                                                                                                                                                                                                                     |
+   | :ref:`String<class_String>`                       | :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` **(** **)**                                                                                                                                                                                                                                                                                        |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`request_permission<class_OS_method_request_permission>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                                                                                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`request_permissions<class_OS_method_request_permissions>` **(** **)**                                                                                                                                                                                                                                                                                              |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`set_environment<class_OS_method_set_environment>` **(** :ref:`String<class_String>` variable, :ref:`String<class_String>` value **)** |const|                                                                                                                                                                                                                      |
+   | void                                              | :ref:`set_environment<class_OS_method_set_environment>` **(** :ref:`String<class_String>` variable, :ref:`String<class_String>` value **)** |const|                                                                                                                                                                                                                      |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`set_restart_on_exit<class_OS_method_set_restart_on_exit>` **(** :ref:`bool<class_bool>` restart, :ref:`PackedStringArray<class_PackedStringArray>` arguments=PackedStringArray() **)**                                                                                                                                                                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -170,6 +170,8 @@ Methods
    | void                                              | :ref:`set_use_file_access_save_and_swap<class_OS_method_set_use_file_access_save_and_swap>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                                  |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`shell_open<class_OS_method_shell_open>` **(** :ref:`String<class_String>` uri **)**                                                                                                                                                                                                                                                                                |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`unset_environment<class_OS_method_unset_environment>` **(** :ref:`String<class_String>` variable **)** |const|                                                                                                                                                                                                                                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -1276,7 +1278,7 @@ The method takes only global paths, so you may need to use :ref:`ProjectSettings
 
 void **open_midi_inputs** **(** **)**
 
-Initialises the singleton for the system MIDI driver.
+Initializes the singleton for the system MIDI driver.
 
 \ **Note:** This method is implemented on Linux, macOS and Windows.
 
@@ -1288,11 +1290,11 @@ Initialises the singleton for the system MIDI driver.
 
 .. rst-class:: classref-method
 
-:ref:`String<class_String>` **read_string_from_stdin** **(** :ref:`bool<class_bool>` block=true **)**
+:ref:`String<class_String>` **read_string_from_stdin** **(** **)**
 
-Reads a user input string from the standard input (usually the terminal).
+Reads a user input string from the standard input (usually the terminal). This operation is *blocking*, which causes the window to freeze if :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` is called on the main thread. The thread calling :ref:`read_string_from_stdin<class_OS_method_read_string_from_stdin>` will block until the program receives a line break in standard input (usually by the user pressing :kbd:`Enter`).
 
-\ **Note:** This method is implemented on Linux, macOS and Windows. Non-blocking reads are not currently supported on any platform.
+\ **Note:** This method is implemented on Linux, macOS and Windows.
 
 .. rst-class:: classref-item-separator
 
@@ -1328,11 +1330,11 @@ With this function, you can request dangerous permissions since normal permissio
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **set_environment** **(** :ref:`String<class_String>` variable, :ref:`String<class_String>` value **)** |const|
+void **set_environment** **(** :ref:`String<class_String>` variable, :ref:`String<class_String>` value **)** |const|
 
 Sets the value of the environment variable ``variable`` to ``value``. The environment variable will be set for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`set_environment<class_OS_method_set_environment>`. The environment variable will *not* persist to processes run after the Godot process was terminated.
 
-\ **Note:** Double-check the casing of ``variable``. Environment variable names are case-sensitive on all platforms except Windows.
+\ **Note:** Environment variable names are case-sensitive on all platforms except Windows. The ``variable`` name cannot be empty or include the ``=`` character. On Windows, there is a 32767 characters limit for the combined length of ``variable``, ``value``, and the ``=`` and null terminator characters that will be registered in the environment block.
 
 .. rst-class:: classref-item-separator
 
@@ -1397,6 +1399,20 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_unset_environment:
+
+.. rst-class:: classref-method
+
+void **unset_environment** **(** :ref:`String<class_String>` variable **)** |const|
+
+Removes the environment ``variable`` from the current environment, if it exists. The environment variable will be removed for the Godot process and any process executed with :ref:`execute<class_OS_method_execute>` after running :ref:`unset_environment<class_OS_method_unset_environment>`. The removal of the environment variable will *not* persist to processes run after the Godot process was terminated.
+
+\ **Note:** Environment variable names are case-sensitive on all platforms except Windows. The ``variable`` name cannot be empty or include the ``=`` character.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

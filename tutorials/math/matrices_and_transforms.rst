@@ -170,9 +170,9 @@ Here's how that would be done in code (place the script on a Node2D):
 
     float rot = 0.5f; // The rotation to apply.
     Transform2D t = Transform2D.Identity;
-    t.x.x = t.y.y = Mathf.Cos(rot);
-    t.x.y = t.y.x = Mathf.Sin(rot);
-    t.y.x *= -1;
+    t.X.X = t.Y.Y = Mathf.Cos(rot);
+    t.X.Y = t.Y.X = Mathf.Sin(rot);
+    t.Y.X *= -1;
     Transform = t; // Change the node's transform to what we calculated.
 
 To calculate the object's rotation from an existing transformation
@@ -265,15 +265,15 @@ you to try and reproduce the screenshot without looking at the code!
 
     Transform2D t = Transform2D.Identity;
     // Translation
-    t.origin = new Vector2(350, 150);
+    t.Origin = new Vector2(350, 150);
     // Rotation
     float rot = -0.5f; // The rotation to apply.
-    t.x.x = t.y.y = Mathf.Cos(rot);
-    t.x.y = t.y.x = Mathf.Sin(rot);
-    t.y.x *= -1;
+    t.X.X = t.Y.Y = Mathf.Cos(rot);
+    t.X.Y = t.Y.X = Mathf.Sin(rot);
+    t.Y.X *= -1;
     // Scale
-    t.x *= 3;
-    t.y *= 3;
+    t.X *= 3;
+    t.Y *= 3;
     Transform = t; // Change the node's transform to what we calculated.
 
 Shearing the transformation matrix (advanced)
@@ -435,7 +435,7 @@ This code moves an object 100 units to its own right:
  .. code-tab:: csharp
 
     Transform2D t = Transform;
-    t.origin += t.x * 100;
+    t.Origin += t.X * 100;
     Transform = t;
 
 For moving in 3D, you would need to replace "x" with "basis.x".
@@ -500,11 +500,11 @@ the code we would use:
 
     // Calculate the child's world space transform
     // origin = (2, 0) * 100 + (0, 1) * 100 + (100, 200)
-    Vector2 origin = parent.x * child.origin.x + parent.y * child.origin.y + parent.origin;
+    Vector2 origin = parent.X * child.Origin.X + parent.Y * child.Origin.Y + parent.Origin;
     // basisX = (2, 0) * 0.5 + (0, 1) * 0 = (0.5, 0)
-    Vector2 basisX = parent.x * child.x.x + parent.y * child.x.y;
+    Vector2 basisX = parent.X * child.X.X + parent.Y * child.X.Y;
     // basisY = (2, 0) * 0 + (0, 1) * 0.5 = (0.5, 0)
-    Vector2 basisY = parent.x * child.y.x + parent.y * child.y.y;
+    Vector2 basisY = parent.X * child.Y.X + parent.Y * child.Y.Y;
 
     // Change the node's transform to what we calculated.
     Transform = new Transform2D(basisX, basisY, origin);

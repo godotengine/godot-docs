@@ -27,7 +27,7 @@ Rich text can contain custom text, fonts, images and some basic formatting. The 
 
 \ **Note:** ``push_*/pop`` functions won't affect BBCode.
 
-\ **Note:** Unlike :ref:`Label<class_Label>`, RichTextLabel doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>` property.
+\ **Note:** Unlike :ref:`Label<class_Label>`, RichTextLabel doesn't have a *property* to horizontally align text to the center. Instead, enable :ref:`bbcode_enabled<class_RichTextLabel_property_bbcode_enabled>` and surround the text in a ``[center]`` tag as follows: ``[center]Example[/center]``. There is currently no built-in way to vertically align text either, but this can be emulated by relying on anchors/containers and the :ref:`fit_content<class_RichTextLabel_property_fit_content>` property.
 
 .. rst-class:: classref-introduction-group
 
@@ -61,7 +61,7 @@ Properties
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                     | :ref:`deselect_on_focus_loss_enabled<class_RichTextLabel_property_deselect_on_focus_loss_enabled>`               | ``true``                                                                  |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                                     | :ref:`fit_content_height<class_RichTextLabel_property_fit_content_height>`                                       | ``false``                                                                 |
+   | :ref:`bool<class_bool>`                                                     | :ref:`fit_content<class_RichTextLabel_property_fit_content>`                                                     | ``false``                                                                 |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                     | :ref:`hint_underlined<class_RichTextLabel_property_hint_underlined>`                                             | ``true``                                                                  |
    +-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -174,6 +174,8 @@ Methods
    | void                                | :ref:`push_cell<class_RichTextLabel_method_push_cell>` **(** **)**                                                                                                                                                                                                                                                                                                                     |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`push_color<class_RichTextLabel_method_push_color>` **(** :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                                                                   |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`push_customfx<class_RichTextLabel_method_push_customfx>` **(** :ref:`RichTextEffect<class_RichTextEffect>` effect, :ref:`Dictionary<class_Dictionary>` env **)**                                                                                                                                                                                                                 |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`push_dropcap<class_RichTextLabel_method_push_dropcap>` **(** :ref:`String<class_String>` string, :ref:`Font<class_Font>` font, :ref:`int<class_int>` size, :ref:`Rect2<class_Rect2>` dropcap_margins=Rect2(0, 0, 0, 0), :ref:`Color<class_Color>` color=Color(1, 1, 1, 1), :ref:`int<class_int>` outline_size=0, :ref:`Color<class_Color>` outline_color=Color(0, 0, 0, 0) **)** |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -720,20 +722,18 @@ If ``true``, the selected text will be deselected when focus is lost.
 
 ----
 
-.. _class_RichTextLabel_property_fit_content_height:
+.. _class_RichTextLabel_property_fit_content:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **fit_content_height** = ``false``
+:ref:`bool<class_bool>` **fit_content** = ``false``
 
 .. rst-class:: classref-property-setget
 
-- void **set_fit_content_height** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_fit_content_height_enabled** **(** **)**
+- void **set_fit_content** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_fit_content_enabled** **(** **)**
 
-If ``true``, the label's height will be automatically updated to fit its content.
-
-\ **Note:** This property is used as a workaround to fix issues with **RichTextLabel** in :ref:`Container<class_Container>`\ s, but it's unreliable in some cases and will be removed in future versions.
+If ``true``, the label's minimum size will be automatically updated to fit its content, matching the behavior of :ref:`Label<class_Label>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1477,6 +1477,18 @@ Adds a ``[color]`` tag to the tag stack.
 
 ----
 
+.. _class_RichTextLabel_method_push_customfx:
+
+.. rst-class:: classref-method
+
+void **push_customfx** **(** :ref:`RichTextEffect<class_RichTextEffect>` effect, :ref:`Dictionary<class_Dictionary>` env **)**
+
+Adds a custom effect tag to the tag stack. The effect does not need to be in :ref:`custom_effects<class_RichTextLabel_property_custom_effects>`. The environment is directly passed to the effect.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RichTextLabel_method_push_dropcap:
 
 .. rst-class:: classref-method
@@ -1519,9 +1531,7 @@ Adds a ``[font]`` tag to the tag stack. Overrides default fonts for its duration
 
 void **push_font_size** **(** :ref:`int<class_int>` font_size **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Adds a ``[font_size]`` tag to the tag stack. Overrides default font size for its duration.
 
 .. rst-class:: classref-item-separator
 

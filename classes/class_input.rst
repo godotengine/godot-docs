@@ -109,6 +109,8 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`is_joy_known<class_Input_method_is_joy_known>` **(** :ref:`int<class_int>` device **)**                                                                                                                                                                                                                |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                   | :ref:`is_key_label_pressed<class_Input_method_is_key_label_pressed>` **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|                                                                                                                                                                           |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`is_key_pressed<class_Input_method_is_key_pressed>` **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|                                                                                                                                                                                       |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`is_mouse_button_pressed<class_Input_method_is_mouse_button_pressed>` **(** :ref:`MouseButton<enum_@GlobalScope_MouseButton>` button **)** |const|                                                                                                                                                      |
@@ -776,13 +778,25 @@ Returns ``true`` if the system knows the specified device. This means that it se
 
 ----
 
+.. _class_Input_method_is_key_label_pressed:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_key_label_pressed** **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|
+
+Returns ``true`` if you are pressing the key with the ``keycode`` printed on it. You can pass a :ref:`Key<enum_@GlobalScope_Key>` constant or any Unicode character code.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Input_method_is_key_pressed:
 
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **is_key_pressed** **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|
 
-Returns ``true`` if you are pressing the key in the current keyboard layout. You can pass a :ref:`Key<enum_@GlobalScope_Key>` constant.
+Returns ``true`` if you are pressing the Latin key in the current keyboard layout. You can pass a :ref:`Key<enum_@GlobalScope_Key>` constant.
 
 \ :ref:`is_key_pressed<class_Input_method_is_key_pressed>` is only recommended over :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>` in non-game applications. This ensures that shortcut keys behave as expected depending on the user's keyboard layout, as keyboard shortcuts are generally dependent on the keyboard layout in non-game applications. If in doubt, use :ref:`is_physical_key_pressed<class_Input_method_is_physical_key_pressed>`.
 
@@ -894,6 +908,8 @@ Sets a custom mouse cursor image, which is only visible inside the game window. 
 \ **Note:** :ref:`AnimatedTexture<class_AnimatedTexture>`\ s aren't supported as custom mouse cursors. If using an :ref:`AnimatedTexture<class_AnimatedTexture>`, only the first frame will be displayed.
 
 \ **Note:** Only images imported with the **Lossless**, **Lossy** or **Uncompressed** compression modes are supported. The **Video RAM** compression mode can't be used for custom cursors.
+
+\ **Note:** On the web platform, the maximum allowed cursor image size is 128×128. Cursor images larger than 32×32 will also only be displayed if the mouse cursor image is entirely located within the page for `security reasons <https://chromestatus.com/feature/5825971391299584>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1012,6 +1028,8 @@ void **warp_mouse** **(** :ref:`Vector2<class_Vector2>` position **)**
 Sets the mouse position to the specified vector, provided in pixels and relative to an origin at the upper left corner of the currently focused Window Manager game window.
 
 Mouse position is clipped to the limits of the screen resolution, or to the limits of the game window if :ref:`MouseMode<enum_Input_MouseMode>` is set to :ref:`MOUSE_MODE_CONFINED<class_Input_constant_MOUSE_MODE_CONFINED>` or :ref:`MOUSE_MODE_CONFINED_HIDDEN<class_Input_constant_MOUSE_MODE_CONFINED_HIDDEN>`.
+
+\ **Note:** :ref:`warp_mouse<class_Input_method_warp_mouse>` is only supported on Windows, macOS and Linux. It has no effect on Android, iOS and Web.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

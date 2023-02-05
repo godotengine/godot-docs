@@ -329,6 +329,7 @@ Resources
     class_audiostreammicrophone
     class_audiostreammp3
     class_audiostreamoggvorbis
+    class_audiostreampolyphonic
     class_audiostreamrandomizer
     class_audiostreamwav
     class_basematerial3d
@@ -424,6 +425,7 @@ Resources
     class_inputeventscreentouch
     class_inputeventshortcut
     class_inputeventwithmodifiers
+    class_json
     class_labelsettings
     class_lightmapgidata
     class_material
@@ -495,15 +497,7 @@ Resources
     class_skeletonmodification2dphysicalbones
     class_skeletonmodification2dstackholder
     class_skeletonmodification2dtwoboneik
-    class_skeletonmodification3d
-    class_skeletonmodification3dccdik
-    class_skeletonmodification3dfabrik
-    class_skeletonmodification3djiggle
-    class_skeletonmodification3dlookat
-    class_skeletonmodification3dstackholder
-    class_skeletonmodification3dtwoboneik
     class_skeletonmodificationstack2d
-    class_skeletonmodificationstack3d
     class_skeletonprofile
     class_skeletonprofilehumanoid
     class_skin
@@ -671,6 +665,7 @@ Other objects
     class_audiostreamgeneratorplayback
     class_audiostreamplayback
     class_audiostreamplaybackoggvorbis
+    class_audiostreamplaybackpolyphonic
     class_audiostreamplaybackresampled
     class_callbacktweener
     class_camerafeed
@@ -733,7 +728,6 @@ Other objects
     class_javascriptbridge
     class_javascriptobject
     class_jnisingleton
-    class_json
     class_jsonrpc
     class_kinematiccollision2d
     class_kinematiccollision3d

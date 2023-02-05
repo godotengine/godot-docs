@@ -507,15 +507,15 @@ Here's the code for the player body:
             Vector2 velocity = Velocity;
 
             // Add the gravity.
-            velocity.y += Gravity * (float)delta;
+            velocity.Y += Gravity * (float)delta;
 
             // Handle jump.
             if (Input.IsActionJustPressed("jump") && IsOnFloor())
-                velocity.y = JumpSpeed;
+                velocity.Y = JumpSpeed;
 
             // Get the input direction.
             Vector2 direction = Input.GetAxis("ui_left", "ui_right");
-            velocity.x = direction * Speed;
+            velocity.X = direction * Speed;
 
             Velocity = velocity;
             MoveAndSlide();

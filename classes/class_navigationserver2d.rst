@@ -85,7 +85,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`link_create<class_NavigationServer2D_method_link_create>` **(** **)**                                                                                                                                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                       | :ref:`link_get_end_location<class_NavigationServer2D_method_link_get_end_location>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                            |
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`link_get_end_position<class_NavigationServer2D_method_link_get_end_position>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`link_get_enter_cost<class_NavigationServer2D_method_link_get_enter_cost>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,7 +95,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`link_get_owner_id<class_NavigationServer2D_method_link_get_owner_id>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                    |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                       | :ref:`link_get_start_location<class_NavigationServer2D_method_link_get_start_location>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                        |
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`link_get_start_position<class_NavigationServer2D_method_link_get_start_position>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`link_get_travel_cost<class_NavigationServer2D_method_link_get_travel_cost>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                              |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -103,7 +103,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_bidirectional<class_NavigationServer2D_method_link_set_bidirectional>` **(** :ref:`RID<class_RID>` link, :ref:`bool<class_bool>` bidirectional **)**                                                                                                           |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`link_set_end_location<class_NavigationServer2D_method_link_set_end_location>` **(** :ref:`RID<class_RID>` link, :ref:`Vector2<class_Vector2>` location **)**                                                                                                            |
+   | void                                                | :ref:`link_set_end_position<class_NavigationServer2D_method_link_set_end_position>` **(** :ref:`RID<class_RID>` link, :ref:`Vector2<class_Vector2>` position **)**                                                                                                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_enter_cost<class_NavigationServer2D_method_link_set_enter_cost>` **(** :ref:`RID<class_RID>` link, :ref:`float<class_float>` enter_cost **)**                                                                                                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,7 +113,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_owner_id<class_NavigationServer2D_method_link_set_owner_id>` **(** :ref:`RID<class_RID>` link, :ref:`int<class_int>` owner_id **)**                                                                                                                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`link_set_start_location<class_NavigationServer2D_method_link_set_start_location>` **(** :ref:`RID<class_RID>` link, :ref:`Vector2<class_Vector2>` location **)**                                                                                                        |
+   | void                                                | :ref:`link_set_start_position<class_NavigationServer2D_method_link_set_start_position>` **(** :ref:`RID<class_RID>` link, :ref:`Vector2<class_Vector2>` position **)**                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_travel_cost<class_NavigationServer2D_method_link_set_travel_cost>` **(** :ref:`RID<class_RID>` link, :ref:`float<class_float>` travel_cost **)**                                                                                                               |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -400,19 +400,19 @@ Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationSer
 
 :ref:`RID<class_RID>` **link_create** **(** **)**
 
-Create a new link between two locations on a map.
+Create a new link between two positions on a map.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_NavigationServer2D_method_link_get_end_location:
+.. _class_NavigationServer2D_method_link_get_end_position:
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **link_get_end_location** **(** :ref:`RID<class_RID>` link **)** |const|
+:ref:`Vector2<class_Vector2>` **link_get_end_position** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the ending location of this ``link``.
+Returns the ending position of this ``link``.
 
 .. rst-class:: classref-item-separator
 
@@ -466,13 +466,13 @@ Returns the ``ObjectID`` of the object which manages this link.
 
 ----
 
-.. _class_NavigationServer2D_method_link_get_start_location:
+.. _class_NavigationServer2D_method_link_get_start_position:
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **link_get_start_location** **(** :ref:`RID<class_RID>` link **)** |const|
+:ref:`Vector2<class_Vector2>` **link_get_start_position** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the starting location of this ``link``.
+Returns the starting position of this ``link``.
 
 .. rst-class:: classref-item-separator
 
@@ -514,13 +514,13 @@ Sets whether this ``link`` can be travelled in both directions.
 
 ----
 
-.. _class_NavigationServer2D_method_link_set_end_location:
+.. _class_NavigationServer2D_method_link_set_end_position:
 
 .. rst-class:: classref-method
 
-void **link_set_end_location** **(** :ref:`RID<class_RID>` link, :ref:`Vector2<class_Vector2>` location **)**
+void **link_set_end_position** **(** :ref:`RID<class_RID>` link, :ref:`Vector2<class_Vector2>` position **)**
 
-Sets the exit location for the ``link``.
+Sets the exit position for the ``link``.
 
 .. rst-class:: classref-item-separator
 
@@ -574,13 +574,13 @@ Set the ``ObjectID`` of the object which manages this link.
 
 ----
 
-.. _class_NavigationServer2D_method_link_set_start_location:
+.. _class_NavigationServer2D_method_link_set_start_position:
 
 .. rst-class:: classref-method
 
-void **link_set_start_location** **(** :ref:`RID<class_RID>` link, :ref:`Vector2<class_Vector2>` location **)**
+void **link_set_start_position** **(** :ref:`RID<class_RID>` link, :ref:`Vector2<class_Vector2>` position **)**
 
-Sets the entry location for this ``link``.
+Sets the entry position for this ``link``.
 
 .. rst-class:: classref-item-separator
 

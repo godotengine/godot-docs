@@ -68,7 +68,7 @@ You can access a dictionary's value by referencing its corresponding key. In the
 
  .. code-tab:: gdscript
 
-    @export(String, "White", "Yellow", "Orange") var my_color
+    @export_enum("White", "Yellow", "Orange") var my_color: String
     var points_dict = {"White": 50, "Yellow": 75, "Orange": 100}
     func _ready():
         # We can't use dot syntax here as `my_color` is a variable.
@@ -243,7 +243,11 @@ Methods
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_empty<class_Dictionary_method_is_empty>` **(** **)** |const|                                                                           |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_read_only<class_Dictionary_method_is_read_only>` **(** **)** |const|                                                                   |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`           | :ref:`keys<class_Dictionary_method_keys>` **(** **)** |const|                                                                                   |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`make_read_only<class_Dictionary_method_make_read_only>` **(** **)**                                                                       |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`merge<class_Dictionary_method_merge>` **(** :ref:`Dictionary<class_Dictionary>` dictionary, :ref:`bool<class_bool>` overwrite=false **)** |
    +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -482,6 +486,18 @@ Returns ``true`` if the dictionary is empty (its size is ``0``). See also :ref:`
 
 ----
 
+.. _class_Dictionary_method_is_read_only:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_read_only** **(** **)** |const|
+
+Returns ``true`` if the dictionary is read-only. See :ref:`make_read_only<class_Dictionary_method_make_read_only>`. Dictionaries are automatically read-only if declared with ``const`` keyword.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Dictionary_method_keys:
 
 .. rst-class:: classref-method
@@ -489,6 +505,18 @@ Returns ``true`` if the dictionary is empty (its size is ``0``). See also :ref:`
 :ref:`Array<class_Array>` **keys** **(** **)** |const|
 
 Returns the list of keys in the dictionary.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Dictionary_method_make_read_only:
+
+.. rst-class:: classref-method
+
+void **make_read_only** **(** **)**
+
+Makes the dictionary read-only, i.e. disabled modifying of the dictionary's contents. Does not apply to nested content, e.g. content of nested dicitonaries.
 
 .. rst-class:: classref-item-separator
 

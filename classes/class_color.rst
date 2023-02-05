@@ -1635,7 +1635,7 @@ Method Descriptions
 
 :ref:`Color<class_Color>` **blend** **(** :ref:`Color<class_Color>` over **)** |const|
 
-Returns a new color resulting from overlaying this color over the given color. In a painting program, you can imagine it as the ``over`` color painted over this colour (including alpha).
+Returns a new color resulting from overlaying this color over the given color. In a painting program, you can imagine it as the ``over`` color painted over this color (including alpha).
 
 
 .. tabs::

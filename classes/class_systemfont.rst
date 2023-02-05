@@ -58,6 +58,10 @@ Properties
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`Hinting<enum_TextServer_Hinting>`                         | :ref:`hinting<class_SystemFont_property_hinting>`                                                       | ``1``                   |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`msdf_pixel_range<class_SystemFont_property_msdf_pixel_range>`                                     | ``16``                  |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`msdf_size<class_SystemFont_property_msdf_size>`                                                   | ``48``                  |
+   +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                                         | :ref:`multichannel_signed_distance_field<class_SystemFont_property_multichannel_signed_distance_field>` | ``false``               |
    +-----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+-------------------------+
    | :ref:`float<class_float>`                                       | :ref:`oversampling<class_SystemFont_property_oversampling>`                                             | ``0.0``                 |
@@ -239,6 +243,40 @@ If set to ``true``, generate mipmaps for the font textures.
 - :ref:`Hinting<enum_TextServer_Hinting>` **get_hinting** **(** **)**
 
 Font hinting mode.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SystemFont_property_msdf_pixel_range:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **msdf_pixel_range** = ``16``
+
+.. rst-class:: classref-property-setget
+
+- void **set_msdf_pixel_range** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_msdf_pixel_range** **(** **)**
+
+The width of the range around the shape between the minimum and maximum representable signed distance. If using font outlines, :ref:`msdf_pixel_range<class_SystemFont_property_msdf_pixel_range>` must be set to at least *twice* the size of the largest font outline. The default :ref:`msdf_pixel_range<class_SystemFont_property_msdf_pixel_range>` value of ``16`` allows outline sizes up to ``8`` to look correct.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SystemFont_property_msdf_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **msdf_size** = ``48``
+
+.. rst-class:: classref-property-setget
+
+- void **set_msdf_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_msdf_size** **(** **)**
+
+Source font size used to generate MSDF textures. Higher values allow for more precision, but are slower to render and require more memory. Only increase this value if you notice a visible lack of precision in glyph rendering.
 
 .. rst-class:: classref-item-separator
 

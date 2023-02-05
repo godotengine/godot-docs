@@ -83,9 +83,11 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID[]<class_RID>`                             | :ref:`get_maps<class_NavigationServer3D_method_get_maps>` **(** **)** |const|                                                                                                                                                                                                 |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_process_info<class_NavigationServer3D_method_get_process_info>` **(** :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` process_info **)** |const|                                                                                                            |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`link_create<class_NavigationServer3D_method_link_create>` **(** **)**                                                                                                                                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                       | :ref:`link_get_end_location<class_NavigationServer3D_method_link_get_end_location>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                            |
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`link_get_end_position<class_NavigationServer3D_method_link_get_end_position>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`link_get_enter_cost<class_NavigationServer3D_method_link_get_enter_cost>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -95,7 +97,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`link_get_owner_id<class_NavigationServer3D_method_link_get_owner_id>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                                    |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector3<class_Vector3>`                       | :ref:`link_get_start_location<class_NavigationServer3D_method_link_get_start_location>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                        |
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`link_get_start_position<class_NavigationServer3D_method_link_get_start_position>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`link_get_travel_cost<class_NavigationServer3D_method_link_get_travel_cost>` **(** :ref:`RID<class_RID>` link **)** |const|                                                                                                                                              |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -103,7 +105,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_bidirectional<class_NavigationServer3D_method_link_set_bidirectional>` **(** :ref:`RID<class_RID>` link, :ref:`bool<class_bool>` bidirectional **)**                                                                                                           |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`link_set_end_location<class_NavigationServer3D_method_link_set_end_location>` **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` location **)**                                                                                                            |
+   | void                                                | :ref:`link_set_end_position<class_NavigationServer3D_method_link_set_end_position>` **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` position **)**                                                                                                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_enter_cost<class_NavigationServer3D_method_link_set_enter_cost>` **(** :ref:`RID<class_RID>` link, :ref:`float<class_float>` enter_cost **)**                                                                                                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -113,7 +115,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_owner_id<class_NavigationServer3D_method_link_set_owner_id>` **(** :ref:`RID<class_RID>` link, :ref:`int<class_int>` owner_id **)**                                                                                                                            |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`link_set_start_location<class_NavigationServer3D_method_link_set_start_location>` **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` location **)**                                                                                                        |
+   | void                                                | :ref:`link_set_start_position<class_NavigationServer3D_method_link_set_start_position>` **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` position **)**                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`link_set_travel_cost<class_NavigationServer3D_method_link_set_travel_cost>` **(** :ref:`RID<class_RID>` link, :ref:`float<class_float>` travel_cost **)**                                                                                                               |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -228,6 +230,93 @@ Emitted when a navigation map is updated, when a region moves or is modified.
 **navigation_debug_changed** **(** **)**
 
 Emitted when navigation debug settings are changed. Only available in debug builds.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_NavigationServer3D_ProcessInfo:
+
+.. rst-class:: classref-enumeration
+
+enum **ProcessInfo**:
+
+.. _class_NavigationServer3D_constant_INFO_ACTIVE_MAPS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_ACTIVE_MAPS** = ``0``
+
+Constant to get the number of active navigation maps.
+
+.. _class_NavigationServer3D_constant_INFO_REGION_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_REGION_COUNT** = ``1``
+
+Constant to get the number of active navigation regions.
+
+.. _class_NavigationServer3D_constant_INFO_AGENT_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_AGENT_COUNT** = ``2``
+
+Constant to get the number of active navigation agents processing avoidance.
+
+.. _class_NavigationServer3D_constant_INFO_LINK_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_LINK_COUNT** = ``3``
+
+Constant to get the number of active navigation links.
+
+.. _class_NavigationServer3D_constant_INFO_POLYGON_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_POLYGON_COUNT** = ``4``
+
+Constant to get the number of navigation mesh polygons.
+
+.. _class_NavigationServer3D_constant_INFO_EDGE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_EDGE_COUNT** = ``5``
+
+Constant to get the number of navigation mesh polygon edges.
+
+.. _class_NavigationServer3D_constant_INFO_EDGE_MERGE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_EDGE_MERGE_COUNT** = ``6``
+
+Constant to get the number of navigation mesh polygon edges that were merged due to edge key overlap.
+
+.. _class_NavigationServer3D_constant_INFO_EDGE_CONNECTION_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_EDGE_CONNECTION_COUNT** = ``7``
+
+Constant to get the number of navigation mesh polygon edges that are considered connected by edge proximity.
+
+.. _class_NavigationServer3D_constant_INFO_EDGE_FREE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` **INFO_EDGE_FREE_COUNT** = ``8``
+
+Constant to get the number of navigation mesh polygon edges that could not be merged but may be still connected by edge proximity or with links.
 
 .. rst-class:: classref-section-separator
 
@@ -420,25 +509,37 @@ Returns all created navigation map :ref:`RID<class_RID>`\ s on the NavigationSer
 
 ----
 
+.. _class_NavigationServer3D_method_get_process_info:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` process_info **)** |const|
+
+Returns information about the current state of the NavigationServer. See :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` for a list of available states.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer3D_method_link_create:
 
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **link_create** **(** **)**
 
-Create a new link between two locations on a map.
+Create a new link between two positions on a map.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_NavigationServer3D_method_link_get_end_location:
+.. _class_NavigationServer3D_method_link_get_end_position:
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **link_get_end_location** **(** :ref:`RID<class_RID>` link **)** |const|
+:ref:`Vector3<class_Vector3>` **link_get_end_position** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the ending location of this ``link``.
+Returns the ending position of this ``link``.
 
 .. rst-class:: classref-item-separator
 
@@ -492,13 +593,13 @@ Returns the ``ObjectID`` of the object which manages this link.
 
 ----
 
-.. _class_NavigationServer3D_method_link_get_start_location:
+.. _class_NavigationServer3D_method_link_get_start_position:
 
 .. rst-class:: classref-method
 
-:ref:`Vector3<class_Vector3>` **link_get_start_location** **(** :ref:`RID<class_RID>` link **)** |const|
+:ref:`Vector3<class_Vector3>` **link_get_start_position** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the starting location of this ``link``.
+Returns the starting position of this ``link``.
 
 .. rst-class:: classref-item-separator
 
@@ -540,13 +641,13 @@ Sets whether this ``link`` can be travelled in both directions.
 
 ----
 
-.. _class_NavigationServer3D_method_link_set_end_location:
+.. _class_NavigationServer3D_method_link_set_end_position:
 
 .. rst-class:: classref-method
 
-void **link_set_end_location** **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` location **)**
+void **link_set_end_position** **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the exit location for the ``link``.
+Sets the exit position for the ``link``.
 
 .. rst-class:: classref-item-separator
 
@@ -600,13 +701,13 @@ Set the ``ObjectID`` of the object which manages this link.
 
 ----
 
-.. _class_NavigationServer3D_method_link_set_start_location:
+.. _class_NavigationServer3D_method_link_set_start_position:
 
 .. rst-class:: classref-method
 
-void **link_set_start_location** **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` location **)**
+void **link_set_start_position** **(** :ref:`RID<class_RID>` link, :ref:`Vector3<class_Vector3>` position **)**
 
-Sets the entry location for this ``link``.
+Sets the entry position for this ``link``.
 
 .. rst-class:: classref-item-separator
 

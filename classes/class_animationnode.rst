@@ -65,6 +65,8 @@ Methods
    +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                   | :ref:`_has_filter<class_AnimationNode_method__has_filter>` **(** **)** |virtual| |const|                                                                                                                                                                                                                                                                                                                    |
    +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`_is_parameter_read_only<class_AnimationNode_method__is_parameter_read_only>` **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|                                                                                                                                                                                                                                              |
+   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                 | :ref:`_process<class_AnimationNode_method__process>` **(** :ref:`float<class_float>` time, :ref:`bool<class_bool>` seek, :ref:`bool<class_bool>` is_external_seeking **)** |virtual| |const|                                                                                                                                                                                                                |
    +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                      | :ref:`add_input<class_AnimationNode_method_add_input>` **(** :ref:`String<class_String>` name **)**                                                                                                                                                                                                                                                                                                         |
@@ -252,6 +254,18 @@ When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implemen
 :ref:`bool<class_bool>` **_has_filter** **(** **)** |virtual| |const|
 
 When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return whether the blend tree editor should display filter editing on this node.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNode_method__is_parameter_read_only:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_is_parameter_read_only** **(** :ref:`StringName<class_StringName>` parameter **)** |virtual| |const|
+
+When inheriting from :ref:`AnimationRootNode<class_AnimationRootNode>`, implement this virtual method to return whether the ``parameter`` is read-only. Parameters are custom local memory used for your nodes, given a resource can be reused in multiple trees.
 
 .. rst-class:: classref-item-separator
 

@@ -19,9 +19,9 @@ NavigationAgent2D
 Description
 -----------
 
-2D Agent that is used in navigation to reach a location while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance. The agent needs navigation data to work correctly. **NavigationAgent2D** is physics safe.
+2D Agent that is used in navigation to reach a position while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance. The agent needs navigation data to work correctly. **NavigationAgent2D** is physics safe.
 
-\ **Note:** After setting :ref:`target_location<class_NavigationAgent2D_property_target_location>` it is required to use the :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` function once every physics frame to update the internal path logic of the NavigationAgent. The returned vector position from this function should be used as the next movement position for the agent's parent Node.
+\ **Note:** After setting :ref:`target_position<class_NavigationAgent2D_property_target_position>` it is required to use the :ref:`get_next_path_position<class_NavigationAgent2D_method_get_next_path_position>` function once every physics frame to update the internal path logic of the NavigationAgent. The returned vector position from this function should be used as the next movement position for the agent's parent Node.
 
 .. rst-class:: classref-introduction-group
 
@@ -43,25 +43,25 @@ Properties
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`                                                            | :ref:`max_neighbors<class_NavigationAgent2D_property_max_neighbors>`                     | ``10``            |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`max_speed<class_NavigationAgent2D_property_max_speed>`                             | ``200.0``         |
+   | :ref:`float<class_float>`                                                        | :ref:`max_speed<class_NavigationAgent2D_property_max_speed>`                             | ``100.0``         |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`                                                            | :ref:`navigation_layers<class_NavigationAgent2D_property_navigation_layers>`             | ``1``             |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
    | :ref:`float<class_float>`                                                        | :ref:`neighbor_distance<class_NavigationAgent2D_property_neighbor_distance>`             | ``500.0``         |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`path_desired_distance<class_NavigationAgent2D_property_path_desired_distance>`     | ``1.0``           |
+   | :ref:`float<class_float>`                                                        | :ref:`path_desired_distance<class_NavigationAgent2D_property_path_desired_distance>`     | ``20.0``          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`path_max_distance<class_NavigationAgent2D_property_path_max_distance>`             | ``3.0``           |
+   | :ref:`float<class_float>`                                                        | :ref:`path_max_distance<class_NavigationAgent2D_property_path_max_distance>`             | ``100.0``         |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
    | :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` | :ref:`path_metadata_flags<class_NavigationAgent2D_property_path_metadata_flags>`         | ``7``             |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
    | :ref:`float<class_float>`                                                        | :ref:`radius<class_NavigationAgent2D_property_radius>`                                   | ``10.0``          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`target_desired_distance<class_NavigationAgent2D_property_target_desired_distance>` | ``1.0``           |
+   | :ref:`float<class_float>`                                                        | :ref:`target_desired_distance<class_NavigationAgent2D_property_target_desired_distance>` | ``10.0``          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                                                    | :ref:`target_location<class_NavigationAgent2D_property_target_location>`                 | ``Vector2(0, 0)`` |
+   | :ref:`Vector2<class_Vector2>`                                                    | :ref:`target_position<class_NavigationAgent2D_property_target_position>`                 | ``Vector2(0, 0)`` |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`time_horizon<class_NavigationAgent2D_property_time_horizon>`                       | ``20.0``          |
+   | :ref:`float<class_float>`                                                        | :ref:`time_horizon<class_NavigationAgent2D_property_time_horizon>`                       | ``1.0``           |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-reftable-group
@@ -81,13 +81,13 @@ Methods
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>` | :ref:`get_current_navigation_result<class_NavigationAgent2D_method_get_current_navigation_result>` **(** **)** |const|                                                     |
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                                         | :ref:`get_final_location<class_NavigationAgent2D_method_get_final_location>` **(** **)**                                                                                   |
+   | :ref:`Vector2<class_Vector2>`                                         | :ref:`get_final_position<class_NavigationAgent2D_method_get_final_position>` **(** **)**                                                                                   |
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`get_navigation_layer_value<class_NavigationAgent2D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                 | :ref:`get_navigation_map<class_NavigationAgent2D_method_get_navigation_map>` **(** **)** |const|                                                                           |
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Vector2<class_Vector2>`                                         | :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` **(** **)**                                                                                     |
+   | :ref:`Vector2<class_Vector2>`                                         | :ref:`get_next_path_position<class_NavigationAgent2D_method_get_next_path_position>` **(** **)**                                                                           |
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                 | :ref:`get_rid<class_NavigationAgent2D_method_get_rid>` **(** **)** |const|                                                                                                 |
    +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -123,7 +123,7 @@ Notifies when a navigation link has been reached.
 
 The details dictionary may contain the following keys depending on the value of :ref:`path_metadata_flags<class_NavigationAgent2D_property_path_metadata_flags>`:
 
-- ``location``: The start location of the link that was reached.
+- ``position``: The start position of the link that was reached.
 
 - ``type``: Always :ref:`NavigationPathQueryResult2D.PATH_SEGMENT_TYPE_LINK<class_NavigationPathQueryResult2D_constant_PATH_SEGMENT_TYPE_LINK>`.
 
@@ -141,7 +141,7 @@ The details dictionary may contain the following keys depending on the value of 
 
 **navigation_finished** **(** **)**
 
-Notifies when the final location is reached.
+Notifies when the final position is reached.
 
 .. rst-class:: classref-item-separator
 
@@ -165,7 +165,7 @@ Notifies when the navigation path changes.
 
 **target_reached** **(** **)**
 
-Notifies when the player-defined :ref:`target_location<class_NavigationAgent2D_property_target_location>` is reached.
+Notifies when the player-defined :ref:`target_position<class_NavigationAgent2D_property_target_position>` is reached.
 
 .. rst-class:: classref-item-separator
 
@@ -193,7 +193,7 @@ Notifies when a waypoint along the path has been reached.
 
 The details dictionary may contain the following keys depending on the value of :ref:`path_metadata_flags<class_NavigationAgent2D_property_path_metadata_flags>`:
 
-- ``location``: The location of the waypoint that was reached.
+- ``position``: The position of the waypoint that was reached.
 
 - ``type``: The type of navigation primitive (region or link) that contains this waypoint.
 
@@ -248,7 +248,7 @@ The maximum number of neighbors for the agent to consider.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **max_speed** = ``200.0``
+:ref:`float<class_float>` **max_speed** = ``100.0``
 
 .. rst-class:: classref-property-setget
 
@@ -299,7 +299,7 @@ The distance to search for other agents.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **path_desired_distance** = ``1.0``
+:ref:`float<class_float>` **path_desired_distance** = ``20.0``
 
 .. rst-class:: classref-property-setget
 
@@ -316,14 +316,14 @@ The distance threshold before a path point is considered to be reached. This wil
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **path_max_distance** = ``3.0``
+:ref:`float<class_float>` **path_max_distance** = ``100.0``
 
 .. rst-class:: classref-property-setget
 
 - void **set_path_max_distance** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_path_max_distance** **(** **)**
 
-The maximum distance the agent is allowed away from the ideal path to the final location. This can happen due to trying to avoid collisions. When the maximum distance is exceeded, it recalculates the ideal path.
+The maximum distance the agent is allowed away from the ideal path to the final position. This can happen due to trying to avoid collisions. When the maximum distance is exceeded, it recalculates the ideal path.
 
 .. rst-class:: classref-item-separator
 
@@ -369,7 +369,7 @@ Does not affect normal pathfinding. To change an actor's pathfinding radius bake
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **target_desired_distance** = ``1.0``
+:ref:`float<class_float>` **target_desired_distance** = ``10.0``
 
 .. rst-class:: classref-property-setget
 
@@ -382,18 +382,18 @@ The distance threshold before the final target point is considered to be reached
 
 ----
 
-.. _class_NavigationAgent2D_property_target_location:
+.. _class_NavigationAgent2D_property_target_position:
 
 .. rst-class:: classref-property
 
-:ref:`Vector2<class_Vector2>` **target_location** = ``Vector2(0, 0)``
+:ref:`Vector2<class_Vector2>` **target_position** = ``Vector2(0, 0)``
 
 .. rst-class:: classref-property-setget
 
-- void **set_target_location** **(** :ref:`Vector2<class_Vector2>` value **)**
-- :ref:`Vector2<class_Vector2>` **get_target_location** **(** **)**
+- void **set_target_position** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_target_position** **(** **)**
 
-The user-defined target location. Setting this property will clear the current navigation path.
+The user-defined target position. Setting this property will clear the current navigation path.
 
 .. rst-class:: classref-item-separator
 
@@ -403,7 +403,7 @@ The user-defined target location. Setting this property will clear the current n
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **time_horizon** = ``20.0``
+:ref:`float<class_float>` **time_horizon** = ``1.0``
 
 .. rst-class:: classref-property-setget
 
@@ -427,7 +427,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **distance_to_target** **(** **)** |const|
 
-Returns the distance to the target location, using the agent's global position. The user must set :ref:`target_location<class_NavigationAgent2D_property_target_location>` in order for this to be accurate.
+Returns the distance to the target position, using the agent's global position. The user must set :ref:`target_position<class_NavigationAgent2D_property_target_position>` in order for this to be accurate.
 
 .. rst-class:: classref-item-separator
 
@@ -439,7 +439,7 @@ Returns the distance to the target location, using the agent's global position. 
 
 :ref:`PackedVector2Array<class_PackedVector2Array>` **get_current_navigation_path** **(** **)** |const|
 
-Returns this agent's current path from start to finish in global coordinates. The path only updates when the target location is changed or the agent requires a repath. The path array is not intended to be used in direct path movement as the agent has its own internal path logic that would get corrupted by changing the path array manually. Use the intended :ref:`get_next_location<class_NavigationAgent2D_method_get_next_location>` once every physics frame to receive the next path point for the agents movement as this function also updates the internal path logic.
+Returns this agent's current path from start to finish in global coordinates. The path only updates when the target position is changed or the agent requires a repath. The path array is not intended to be used in direct path movement as the agent has its own internal path logic that would get corrupted by changing the path array manually. Use the intended :ref:`get_next_path_position<class_NavigationAgent2D_method_get_next_path_position>` once every physics frame to receive the next path point for the agents movement as this function also updates the internal path logic.
 
 .. rst-class:: classref-item-separator
 
@@ -469,13 +469,13 @@ Returns the path query result for the path the agent is currently following.
 
 ----
 
-.. _class_NavigationAgent2D_method_get_final_location:
+.. _class_NavigationAgent2D_method_get_final_position:
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_final_location** **(** **)**
+:ref:`Vector2<class_Vector2>` **get_final_position** **(** **)**
 
-Returns the reachable final location in global coordinates. This can change if the navigation path is altered in any way. Because of this, it would be best to check this each frame.
+Returns the reachable final position in global coordinates. This can change if the navigation path is altered in any way. Because of this, it would be best to check this each frame.
 
 .. rst-class:: classref-item-separator
 
@@ -505,13 +505,13 @@ Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationAgent
 
 ----
 
-.. _class_NavigationAgent2D_method_get_next_location:
+.. _class_NavigationAgent2D_method_get_next_path_position:
 
 .. rst-class:: classref-method
 
-:ref:`Vector2<class_Vector2>` **get_next_location** **(** **)**
+:ref:`Vector2<class_Vector2>` **get_next_path_position** **(** **)**
 
-Returns the next location in global coordinates that can be moved to, making sure that there are no static objects in the way. If the agent does not have a navigation path, it will return the position of the agent's parent. The use of this function once every physics frame is required to update the internal path logic of the NavigationAgent.
+Returns the next position in global coordinates that can be moved to, making sure that there are no static objects in the way. If the agent does not have a navigation path, it will return the position of the agent's parent. The use of this function once every physics frame is required to update the internal path logic of the NavigationAgent.
 
 .. rst-class:: classref-item-separator
 
@@ -535,7 +535,7 @@ Returns the :ref:`RID<class_RID>` of this agent on the :ref:`NavigationServer2D<
 
 :ref:`bool<class_bool>` **is_navigation_finished** **(** **)**
 
-Returns true if the navigation path's final location has been reached.
+Returns true if the navigation path's final position has been reached.
 
 .. rst-class:: classref-item-separator
 
@@ -547,7 +547,7 @@ Returns true if the navigation path's final location has been reached.
 
 :ref:`bool<class_bool>` **is_target_reachable** **(** **)**
 
-Returns true if :ref:`target_location<class_NavigationAgent2D_property_target_location>` is reachable.
+Returns true if :ref:`target_position<class_NavigationAgent2D_property_target_position>` is reachable.
 
 .. rst-class:: classref-item-separator
 
@@ -559,7 +559,7 @@ Returns true if :ref:`target_location<class_NavigationAgent2D_property_target_lo
 
 :ref:`bool<class_bool>` **is_target_reached** **(** **)** |const|
 
-Returns true if :ref:`target_location<class_NavigationAgent2D_property_target_location>` is reached. It may not always be possible to reach the target location. It should always be possible to reach the final location though. See :ref:`get_final_location<class_NavigationAgent2D_method_get_final_location>`.
+Returns true if :ref:`target_position<class_NavigationAgent2D_property_target_position>` is reached. It may not always be possible to reach the target position. It should always be possible to reach the final position though. See :ref:`get_final_position<class_NavigationAgent2D_method_get_final_position>`.
 
 .. rst-class:: classref-item-separator
 

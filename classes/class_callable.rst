@@ -32,22 +32,24 @@ Description
     func test():
         var callable = Callable(self, "print_args")
         callable.call("hello", "world")  # Prints "hello world ".
-        callable.call(Vector2.UP, 42, callable)  # Prints "(0, -1) 42 Node(Node.gd)::print_args".
+        callable.call(Vector2.UP, 42, callable)  # Prints "(0, -1) 42 Node(node.gd)::print_args".
         callable.call("invalid")  # Invalid call, should have at least 2 arguments.
 
  .. code-tab:: csharp
 
-    public void PrintArgs(object arg1, object arg2, object arg3 = null)
+    // Default parameter values are not supported.
+    public void PrintArgs(Variant arg1, Variant arg2, Variant arg3 = default)
     {
         GD.PrintS(arg1, arg2, arg3);
     }
     
     public void Test()
     {
-        Callable callable = new Callable(this, nameof(PrintArgs));
-        callable.Call("hello", "world"); // Prints "hello world null".
+        // Invalid calls fail silently.
+        Callable callable = new Callable(this, MethodName.PrintArgs);
+        callable.Call("hello", "world"); // Default parameter values are not supported, should have 3 arguments.
         callable.Call(Vector2.Up, 42, callable); // Prints "(0, -1) 42 Node(Node.cs)::PrintArgs".
-        callable.Call("invalid"); // Invalid call, should have at least 2 arguments.
+        callable.Call("invalid"); // Invalid call, should have 3 arguments.
     }
 
 

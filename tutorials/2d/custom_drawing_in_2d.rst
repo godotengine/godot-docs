@@ -84,7 +84,7 @@ redrawn if modified:
 
     using Godot;
 
-    public partial class CustomNode2D : Node2D
+    public partial class MyNode2D : Node2D
     {
         private Texture _texture;
         public Texture Texture
@@ -133,7 +133,7 @@ call ``queue_redraw()`` from the ``_process()`` callback, like this:
             // Your draw commands here
         }
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
             QueueRedraw();
         }
@@ -158,23 +158,18 @@ by ``0.5`` to keep the line centered as shown below.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Node2D
-
     func _draw():
-        draw_line(Vector2(1.5, 1), Vector2(1.5, 4), Color.GREEN, 1.0)
-        draw_line(Vector2(4, 1), Vector2(4, 4), Color.GREEN, 2.0)
-        draw_line(Vector2(7.5, 1), Vector2(7.5, 4), Color.GREEN, 3.0)
+        draw_line(Vector2(1.5, 1.0), Vector2(1.5, 4.0), Color.GREEN, 1.0)
+        draw_line(Vector2(4.0, 1.0), Vector2(4.0, 4.0), Color.GREEN, 2.0)
+        draw_line(Vector2(7.5, 1.0), Vector2(7.5, 4.0), Color.GREEN, 3.0)
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    public override void _Draw()
     {
-        public override void _Draw()
-        {
-            DrawLine(new Vector2(1.5, 1), new Vector2(1.5, 4), Colors.Green, 1.0)
-            DrawLine(new Vector2(4, 1), new Vector2(4, 4), Colors.Green, 2.0)
-            DrawLine(new Vector2(7.5, 1), new Vector2(7.5, 4), Colors.Green, 3.0)
-        }
+        DrawLine(new Vector2(1.5f, 1.0f), new Vector2(1.5f, 4.0f), Colors.Green, 1.0f);
+        DrawLine(new Vector2(4.0f, 1.0f), new Vector2(4.0f, 4.0f), Colors.Green, 2.0f);
+        DrawLine(new Vector2(7.5f, 1.0f), new Vector2(7.5f, 4.0f), Colors.Green, 3.0f);
     }
 
 The same applies to the ``draw_rect`` method with ``filled = false``.
@@ -184,25 +179,20 @@ The same applies to the ``draw_rect`` method with ``filled = false``.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Node2D
-
     func _draw():
-        draw_rect(Rect2(1, 1, 3, 3), Color.GREEN)
-        draw_rect(Rect2(5.5, 1.5, 2, 2), Color.GREEN, false, 1.0)
-        draw_rect(Rect2(9, 1, 5, 5), Color.GREEN)
-        draw_rect(Rect2(16, 2, 3, 3), Color.GREEN, false, 2.0)
+        draw_rect(Rect2(1.0, 1.0, 3.0, 3.0), Color.GREEN)
+        draw_rect(Rect2(5.5, 1.5, 2.0, 2.0), Color.GREEN, false, 1.0)
+        draw_rect(Rect2(9.0, 1.0, 5.0, 5.0), Color.GREEN)
+        draw_rect(Rect2(16.0, 2.0, 3.0, 3.0), Color.GREEN, false, 2.0)
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    public override void _Draw()
     {
-        public override void _Draw()
-        {
-            DrawRect(new Rect2(1, 1, 3, 3), Colors.Green)
-            DrawRect(new Rect2(5.5, 1.5, 2, 2), Colors.Green, false, 1.0)
-            DrawRect(new Rect2(9, 1, 5, 5), Colors.Green)
-            DrawRect(new Rect2(16, 2, 3, 3), Colors.Green, false, 2.0)
-        }
+        DrawRect(new Rect2(1.0f, 1.0f, 3.0f, 3.0f), Colors.Green);
+        DrawRect(new Rect2(5.5f, 1.5f, 2.0f, 2.0f), Colors.Green, false, 1.0f);
+        DrawRect(new Rect2(9.0f, 1.0f, 5.0f, 5.0f), Colors.Green);
+        DrawRect(new Rect2(16.0f, 2.0f, 3.0f, 3.0f), Colors.Green, false, 2.0f);
     }
 
 An example: drawing circular arcs
@@ -346,7 +336,7 @@ the same as before, except that we draw a polygon instead of lines:
         var colors = PackedColorArray([color])
 
         for i in range(nb_points + 1):
-            var angle_point = deg2rad(angle_from + i * (angle_to - angle_from) / nb_points - 90)
+            var angle_point = deg_to_rad(angle_from + i * (angle_to - angle_from) / nb_points - 90)
             points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
         draw_polygon(points_arc, colors)
 
@@ -355,14 +345,14 @@ the same as before, except that we draw a polygon instead of lines:
     public void DrawCircleArcPoly(Vector2 center, float radius, float angleFrom, float angleTo, Color color)
     {
         int nbPoints = 32;
-        var pointsArc = new Vector2[nbPoints + 1];
+        var pointsArc = new Vector2[nbPoints + 2];
         pointsArc[0] = center;
         var colors = new Color[] { color };
 
         for (int i = 0; i <= nbPoints; i++)
         {
-            float anglePoint = Mathf.Deg2Rad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90);
-            pointsArc[i] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
+            float anglePoint = Mathf.DegToRad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90);
+            pointsArc[i + 1] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
         }
 
         DrawPolygon(pointsArc, colors);
@@ -397,7 +387,7 @@ using ``get_node()``.
 
     using Godot;
 
-    public partial class CustomNode2D : Node2D
+    public partial class MyNode2D : Node2D
     {
         private float _rotationAngle = 50;
         private float _angleFrom = 75;
@@ -431,7 +421,7 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         _angleFrom += _rotationAngle;
         _angleTo += _rotationAngle;
@@ -500,10 +490,10 @@ smaller value, which directly depends on the rendering speed.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        _angleFrom += _rotationAngle * delta;
-        _angleTo += _rotationAngle * delta;
+        _angleFrom += _rotationAngle * (float)delta;
+        _angleTo += _rotationAngle * (float)delta;
 
         // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)

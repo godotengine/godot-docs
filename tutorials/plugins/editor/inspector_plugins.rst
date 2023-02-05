@@ -143,13 +143,13 @@ specifically add :ref:`class_EditorProperty`-based controls.
 
     public partial class MyInspectorPlugin : EditorInspectorPlugin
     {
-        public override bool CanHandle(Object @object)
+        public override bool _CanHandle(Variant @object)
         {
             // We support all objects in this example.
             return true;
         }
 
-        public override bool ParseProperty(Object @object, int type, string path, int hint, string hintText, int usage)
+        public override bool _ParseProperty(GodotObject @object, int type, string name, int hintType, string hintString, int usageFlags, bool wide)
         {
             // We handle properties of type integer.
             if (type == (int)Variant.Type.Int)

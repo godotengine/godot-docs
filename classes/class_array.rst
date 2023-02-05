@@ -163,6 +163,8 @@ Methods
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_typed<class_Array_method_is_typed>` **(** **)** |const|                                                                                                                               |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`make_read_only<class_Array_method_make_read_only>` **(** **)**                                                                                                                           |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`           | :ref:`map<class_Array_method_map>` **(** :ref:`Callable<class_Callable>` method **)** |const|                                                                                                  |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`       | :ref:`max<class_Array_method_max>` **(** **)** |const|                                                                                                                                         |
@@ -191,8 +193,6 @@ Methods
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`rfind<class_Array_method_rfind>` **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=-1 **)** |const|                                                                   |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`set_read_only<class_Array_method_set_read_only>` **(** :ref:`bool<class_bool>` enable **)**                                                                                              |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`set_typed<class_Array_method_set_typed>` **(** :ref:`int<class_int>` type, :ref:`StringName<class_StringName>` class_name, :ref:`Variant<class_Variant>` script **)**                    |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`shuffle<class_Array_method_shuffle>` **(** **)**                                                                                                                                         |
@@ -216,23 +216,23 @@ Operators
 .. table::
    :widths: auto
 
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`operator !=<class_Array_operator_neq_Array>` **(** :ref:`Array<class_Array>` right **)**  |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`operator +<class_Array_operator_sum_Array>` **(** :ref:`Array<class_Array>` right **)**   |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`operator \<<class_Array_operator_lt_Array>` **(** :ref:`Array<class_Array>` right **)**   |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`operator \<=<class_Array_operator_lte_Array>` **(** :ref:`Array<class_Array>` right **)** |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`operator ==<class_Array_operator_eq_Array>` **(** :ref:`Array<class_Array>` right **)**   |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`operator ><class_Array_operator_gt_Array>` **(** :ref:`Array<class_Array>` right **)**    |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`   | :ref:`operator >=<class_Array_operator_gte_Array>` **(** :ref:`Array<class_Array>` right **)**  |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
-   | void                      | :ref:`operator []<class_Array_operator_idx_int>` **(** :ref:`int<class_int>` index **)**        |
-   +---------------------------+-------------------------------------------------------------------------------------------------+
+   +-------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`operator !=<class_Array_operator_neq_Array>` **(** :ref:`Array<class_Array>` right **)**  |
+   +-------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`     | :ref:`operator +<class_Array_operator_sum_Array>` **(** :ref:`Array<class_Array>` right **)**   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`operator \<<class_Array_operator_lt_Array>` **(** :ref:`Array<class_Array>` right **)**   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`operator \<=<class_Array_operator_lte_Array>` **(** :ref:`Array<class_Array>` right **)** |
+   +-------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`operator ==<class_Array_operator_eq_Array>` **(** :ref:`Array<class_Array>` right **)**   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`operator ><class_Array_operator_gt_Array>` **(** :ref:`Array<class_Array>` right **)**    |
+   +-------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`operator >=<class_Array_operator_gte_Array>` **(** :ref:`Array<class_Array>` right **)**  |
+   +-------------------------------+-------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`operator []<class_Array_operator_idx_int>` **(** :ref:`int<class_int>` index **)**        |
+   +-------------------------------+-------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -786,7 +786,7 @@ Returns ``true`` if the array is empty.
 
 :ref:`bool<class_bool>` **is_read_only** **(** **)** |const|
 
-Returns ``true`` if the array is read-only. See :ref:`set_read_only<class_Array_method_set_read_only>`. Arrays are automatically read-only if declared with ``const`` keyword.
+Returns ``true`` if the array is read-only. See :ref:`make_read_only<class_Array_method_make_read_only>`. Arrays are automatically read-only if declared with ``const`` keyword.
 
 .. rst-class:: classref-item-separator
 
@@ -799,6 +799,18 @@ Returns ``true`` if the array is read-only. See :ref:`set_read_only<class_Array_
 :ref:`bool<class_bool>` **is_typed** **(** **)** |const|
 
 Returns ``true`` if the array is typed. Typed arrays can only store elements of their associated type and provide type safety for the ``[]`` operator. Methods of typed array still return :ref:`Variant<class_Variant>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Array_method_make_read_only:
+
+.. rst-class:: classref-method
+
+void **make_read_only** **(** **)**
+
+Makes the array read-only, i.e. disabled modifying of the array's elements. Does not apply to nested content, e.g. content of nested arrays.
 
 .. rst-class:: classref-item-separator
 
@@ -1008,18 +1020,6 @@ Reverses the order of the elements in the array.
 :ref:`int<class_int>` **rfind** **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=-1 **)** |const|
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_Array_method_set_read_only:
-
-.. rst-class:: classref-method
-
-void **set_read_only** **(** :ref:`bool<class_bool>` enable **)**
-
-Makes the **Array** read-only, i.e. disabled modifying of the array's elements. Does not apply to nested content, e.g. content of nested arrays.
 
 .. rst-class:: classref-item-separator
 
@@ -1268,7 +1268,7 @@ Performs a comparison for each index between the left operand **Array** and the 
 
 .. rst-class:: classref-operator
 
-void **operator []** **(** :ref:`int<class_int>` index **)**
+:ref:`Variant<class_Variant>` **operator []** **(** :ref:`int<class_int>` index **)**
 
 Returns a reference to the element of type :ref:`Variant<class_Variant>` at the specified location. Arrays start at index 0. ``index`` can be a zero or positive value to start from the beginning, or a negative value to start from the end. Out-of-bounds array access causes a run-time error, which will result in an error being printed and the project execution pausing if run from the editor.
 

@@ -38,11 +38,9 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** |const| |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`                 | :ref:`new<class_GDScript_method_new>` **(** ... **)** |vararg|                      |
-   +-----------------------------------------------+-------------------------------------------------------------------------------------+
+   +-------------------------------+----------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`new<class_GDScript_method_new>` **(** ... **)** |vararg| |
+   +-------------------------------+----------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -52,18 +50,6 @@ Methods
 
 Method Descriptions
 -------------------
-
-.. _class_GDScript_method_get_as_byte_code:
-
-.. rst-class:: classref-method
-
-:ref:`PackedByteArray<class_PackedByteArray>` **get_as_byte_code** **(** **)** |const|
-
-Returns byte code for the script source code.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _class_GDScript_method_new:
 

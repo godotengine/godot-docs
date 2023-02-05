@@ -12,7 +12,7 @@ be a container for handling game logic. It does not require 2D functionality its
 Click the **Instance** button (represented by a chain link icon) and select your saved
 ``Player.tscn``.
 
-.. image:: img/instance_scene.png
+.. image:: img/instance_scene.webp
 
 Now, add the following nodes as children of ``Main``, and name them as shown
 (values are in seconds):
@@ -43,7 +43,7 @@ location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` node
 named ``MobPath`` as a child of ``Main``. When you select ``Path2D``, you will
 see some new buttons at the top of the editor:
 
-.. image:: img/path2d_buttons.png
+.. image:: img/path2d_buttons.webp
 
 Select the middle one ("Add Point") and draw the path by clicking to add the
 points at the corners shown. To have the points snap to the grid, make sure "Use
@@ -51,7 +51,7 @@ Grid Snap" and "Use Smart Snap" are both selected. These options can be found to
 left of the "Lock" button, appearing as a magnet next to some dots and
 intersecting lines, respectively.
 
-.. image:: img/grid_snap_button.png
+.. image:: img/grid_snap_button.webp
 
 .. important:: Draw the path in *clockwise* order, or your mobs will spawn
                pointing *outwards* instead of *inwards*!
@@ -68,7 +68,7 @@ a random position and direction along the path.
 
 Your scene should look like this:
 
-.. image:: img/main_scene_nodes.png
+.. image:: img/main_scene_nodes.webp
 
 Main script
 ~~~~~~~~~~~

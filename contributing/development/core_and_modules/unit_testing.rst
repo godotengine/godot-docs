@@ -325,11 +325,18 @@ Therefore, the process of writing integration tests for GDScript is the followin
 
        ./bin/<godot_binary> --gdscript-generate-tests godot-source/modules/gdscript/tests/scripts
 
+You may add the ``--print-filenames`` option to see filenames as their test
+outputs are generated. If you are working on a new feature that is causing
+hard crashes, you can use this option to quickly find which test file causes
+the crash and debug from there.
+
 4. Run GDScript tests with:
 
    .. code-block:: shell
 
        ./bin/<godot_binary> --test --test-suite="*GDScript*"
+
+This also accepts the ``--print-filenames`` option (see above).
 
 If no errors are printed and everything goes well, you're done!
 

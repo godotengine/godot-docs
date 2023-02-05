@@ -12,7 +12,7 @@ Marshalls
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Data transformation (marshalling) and encoding helpers.
+Data transformation (marshaling) and encoding helpers.
 
 .. rst-class:: classref-introduction-group
 

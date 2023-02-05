@@ -91,7 +91,7 @@ The following code will set ``can_shoot`` to ``false`` and start a timer. This w
             _can_shoot = false
             _cool_down.start()
     
-    func _on_CoolDownTimer_timeout():
+    func _on_cool_down_timer_timeout():
         _can_shoot = true
 
  .. code-tab:: csharp

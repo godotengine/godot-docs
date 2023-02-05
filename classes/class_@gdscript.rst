@@ -482,7 +482,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_NODE_PATH_VALID_TYPES<class_@GlobalSco
 
 ::
 
-    @export_node_path(Button, TouchScreenButton) var some_button
+    @export_node_path("Button", "TouchScreenButton") var some_button
 
 .. rst-class:: classref-item-separator
 
@@ -577,6 +577,8 @@ Add a custom icon to the current script. The script must be registered as a glob
 
 \ **Note:** Only the script can have a custom icon. Inner classes are not supported.
 
+\ **Note:** As annotations describe their subject, the ``@icon`` annotation must be placed before the class definition and inheritance.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -625,6 +627,8 @@ Mark the current script as a tool script, allowing it to be loaded and executed 
 
     @tool
     extends Node
+
+\ **Note:** As annotations describe their subject, the ``@tool`` annotation must be placed before the class definition and inheritance.
 
 .. rst-class:: classref-item-separator
 

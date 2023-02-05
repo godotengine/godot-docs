@@ -49,11 +49,11 @@ This would be a basic setup:
 
 
     func _enter_tree():
-        add_node3d_gizmo_plugin(gizmo_plugin)
+        add_node_3d_gizmo_plugin(gizmo_plugin)
 
 
     func _exit_tree():
-        remove_node3d_gizmo_plugin(gizmo_plugin)
+        remove_node_3d_gizmo_plugin(gizmo_plugin)
 
 
 For simple gizmos, inheriting :ref:`EditorNode3DGizmoPlugin <class_EditorNode3DGizmoPlugin>`

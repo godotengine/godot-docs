@@ -19,7 +19,7 @@ Convex polygon shape resource for 3D physics.
 Description
 -----------
 
-3D convex polygon shape resource to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. Unlike :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, **ConvexPolygonShape3D** cannot store concave polygon shapes. :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`\ s can be manually drawn in the editor using the :ref:`CollisionPolygon3D<class_CollisionPolygon3D>` node.
+3D convex polygon shape resource to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. Unlike :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, **ConvexPolygonShape3D** cannot store concave polygon shapes. **ConvexPolygonShape3D**\ s can be manually drawn in the editor using the :ref:`CollisionPolygon3D<class_CollisionPolygon3D>` node.
 
 \ **Convex decomposition:** Concave objects' collisions can be represented accurately using *several* **ConvexPolygonShape3D**\ s. This allows dynamic physics bodies to have complex concave collisions (at a performance cost). This is available in the editor by selecting the :ref:`MeshInstance3D<class_MeshInstance3D>`, going to the **Mesh** menu and choosing **Create Multiple Convex Collision Siblings**. Alternatively, :ref:`MeshInstance3D.create_multiple_convex_collisions<class_MeshInstance3D_method_create_multiple_convex_collisions>` can be called in a script to perform this decomposition at run-time.
 

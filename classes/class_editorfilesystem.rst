@@ -50,8 +50,6 @@ Methods
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`update_file<class_EditorFileSystem_method_update_file>` **(** :ref:`String<class_String>` path **)**                              |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                              | :ref:`update_script_classes<class_EditorFileSystem_method_update_script_classes>` **(** **)**                                           |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -93,6 +91,18 @@ Emitted if a resource is reimported.
 **resources_reload** **(** :ref:`PackedStringArray<class_PackedStringArray>` resources **)**
 
 Emitted if at least one resource is reloaded when the filesystem is scanned.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileSystem_signal_script_classes_updated:
+
+.. rst-class:: classref-signal
+
+**script_classes_updated** **(** **)**
+
+Emitted when the list of global script classes gets updated.
 
 .. rst-class:: classref-item-separator
 
@@ -224,18 +234,6 @@ void **update_file** **(** :ref:`String<class_String>` path **)**
 Add a file in an existing directory, or schedule file information to be updated on editor restart. Can be used to update text files saved by an external program.
 
 This will not import the file. To reimport, call :ref:`reimport_files<class_EditorFileSystem_method_reimport_files>` or :ref:`scan<class_EditorFileSystem_method_scan>` methods.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorFileSystem_method_update_script_classes:
-
-.. rst-class:: classref-method
-
-void **update_script_classes** **(** **)**
-
-Scans the script files and updates the list of custom class names.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -23,6 +23,8 @@ Description
 
 CollisionObject3D is the base class for physics objects. It can hold any number of collision :ref:`Shape3D<class_Shape3D>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject3D can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
+\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -130,7 +132,7 @@ Emitted when the object receives an unhandled :ref:`InputEvent<class_InputEvent>
 
 Emitted when the mouse pointer enters any of this object's shapes. Requires :ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` bit to be set.
 
-\ **Note:** Due to the lack of continuous collision detection, this signal may not be emitted in the expected order if the mouse moves fast enough and the :ref:`CollisionObject2D<class_CollisionObject2D>`'s area is small. This signal may also not be emitted if another :ref:`CollisionObject2D<class_CollisionObject2D>` is overlapping the :ref:`CollisionObject2D<class_CollisionObject2D>` in question.
+\ **Note:** Due to the lack of continuous collision detection, this signal may not be emitted in the expected order if the mouse moves fast enough and the **CollisionObject3D**'s area is small. This signal may also not be emitted if another **CollisionObject3D** is overlapping the **CollisionObject3D** in question.
 
 .. rst-class:: classref-item-separator
 
@@ -144,7 +146,7 @@ Emitted when the mouse pointer enters any of this object's shapes. Requires :ref
 
 Emitted when the mouse pointer exits all this object's shapes. Requires :ref:`input_ray_pickable<class_CollisionObject3D_property_input_ray_pickable>` to be ``true`` and at least one :ref:`collision_layer<class_CollisionObject3D_property_collision_layer>` bit to be set.
 
-\ **Note:** Due to the lack of continuous collision detection, this signal may not be emitted in the expected order if the mouse moves fast enough and the :ref:`CollisionObject2D<class_CollisionObject2D>`'s area is small. This signal may also not be emitted if another :ref:`CollisionObject2D<class_CollisionObject2D>` is overlapping the :ref:`CollisionObject2D<class_CollisionObject2D>` in question.
+\ **Note:** Due to the lack of continuous collision detection, this signal may not be emitted in the expected order if the mouse moves fast enough and the **CollisionObject3D**'s area is small. This signal may also not be emitted if another **CollisionObject3D** is overlapping the **CollisionObject3D** in question.
 
 .. rst-class:: classref-section-separator
 
@@ -177,7 +179,7 @@ Automatically re-added to the physics simulation when the :ref:`Node<class_Node>
 
 :ref:`DisableMode<enum_CollisionObject3D_DisableMode>` **DISABLE_MODE_MAKE_STATIC** = ``1``
 
-When :ref:`Node.process_mode<class_Node_property_process_mode>` is set to :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`, make the body static. Doesn't affect :ref:`Area2D<class_Area2D>`. :ref:`PhysicsBody3D<class_PhysicsBody3D>` can't be affected by forces or other bodies while static.
+When :ref:`Node.process_mode<class_Node_property_process_mode>` is set to :ref:`Node.PROCESS_MODE_DISABLED<class_Node_constant_PROCESS_MODE_DISABLED>`, make the body static. Doesn't affect :ref:`Area3D<class_Area3D>`. :ref:`PhysicsBody3D<class_PhysicsBody3D>` can't be affected by forces or other bodies while static.
 
 Automatically set :ref:`PhysicsBody3D<class_PhysicsBody3D>` back to its original mode when the :ref:`Node<class_Node>` is processed again.
 

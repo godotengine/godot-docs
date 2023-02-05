@@ -28,7 +28,7 @@ Below a small example of how to use it:
 
  .. code-tab:: gdscript
 
-    # ServerNode.gd
+    # server_node.gd
     extends Node
     
     var dtls := DTLSServer.new()
@@ -111,7 +111,7 @@ Below a small example of how to use it:
 
  .. code-tab:: gdscript
 
-    # ClientNode.gd
+    # client_node.gd
     extends Node
     
     var dtls := PacketPeerDTLS.new()

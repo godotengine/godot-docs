@@ -184,11 +184,27 @@ enum **BakeError**:
 
 Lightmap baking was successful.
 
+.. _class_LightmapGI_constant_BAKE_ERROR_NO_SCENE_ROOT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_NO_SCENE_ROOT** = ``1``
+
+Lightmap baking failed because the root node for the edited scene could not be accessed.
+
+.. _class_LightmapGI_constant_BAKE_ERROR_FOREIGN_DATA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_FOREIGN_DATA** = ``2``
+
+Lightmap baking failed as the lightmap data resource is embedded in a foreign resource.
+
 .. _class_LightmapGI_constant_BAKE_ERROR_NO_LIGHTMAPPER:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_NO_LIGHTMAPPER** = ``1``
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_NO_LIGHTMAPPER** = ``3``
 
 Lightmap baking failed as there is no lightmapper available in this Godot build.
 
@@ -196,7 +212,7 @@ Lightmap baking failed as there is no lightmapper available in this Godot build.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_NO_SAVE_PATH** = ``2``
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_NO_SAVE_PATH** = ``4``
 
 Lightmap baking failed as the :ref:`LightmapGIData<class_LightmapGIData>` save path isn't configured in the resource.
 
@@ -204,7 +220,7 @@ Lightmap baking failed as the :ref:`LightmapGIData<class_LightmapGIData>` save p
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_NO_MESHES** = ``3``
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_NO_MESHES** = ``5``
 
 Lightmap baking failed as there are no meshes whose :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>` is :ref:`GeometryInstance3D.GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>` and with valid UV2 mapping in the current scene. You may need to select 3D scenes in the Import dock and change their global illumination mode accordingly.
 
@@ -212,7 +228,7 @@ Lightmap baking failed as there are no meshes whose :ref:`GeometryInstance3D.gi_
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_MESHES_INVALID** = ``4``
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_MESHES_INVALID** = ``6``
 
 Lightmap baking failed as the lightmapper failed to analyze some of the meshes marked as static for baking.
 
@@ -220,7 +236,7 @@ Lightmap baking failed as the lightmapper failed to analyze some of the meshes m
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_CANT_CREATE_IMAGE** = ``5``
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_CANT_CREATE_IMAGE** = ``7``
 
 Lightmap baking failed as the resulting image couldn't be saved or imported by Godot after it was saved.
 
@@ -228,7 +244,7 @@ Lightmap baking failed as the resulting image couldn't be saved or imported by G
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_USER_ABORTED** = ``6``
+:ref:`BakeError<enum_LightmapGI_BakeError>` **BAKE_ERROR_USER_ABORTED** = ``8``
 
 The user aborted the lightmap baking operation (typically by clicking the **Cancel** button in the progress dialog).
 

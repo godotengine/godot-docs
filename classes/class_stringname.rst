@@ -230,6 +230,8 @@ Methods
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`uri_encode<class_StringName_method_uri_encode>` **(** **)** |const|                                                                                                              |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`validate_filename<class_StringName_method_validate_filename>` **(** **)** |const|                                                                                                |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`validate_node_name<class_StringName_method_validate_node_name>` **(** **)** |const|                                                                                              |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`xml_escape<class_StringName_method_xml_escape>` **(** :ref:`bool<class_bool>` escape_quotes=false **)** |const|                                                                  |
@@ -1759,13 +1761,25 @@ Encodes the string to URL-friendly format. This method is meant to properly enco
 
 ----
 
+.. _class_StringName_method_validate_filename:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **validate_filename** **(** **)** |const|
+
+Returns a copy of the string with all characters that are not allowed in :ref:`is_valid_filename<class_StringName_method_is_valid_filename>` replaced with underscores.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_StringName_method_validate_node_name:
 
 .. rst-class:: classref-method
 
 :ref:`String<class_String>` **validate_node_name** **(** **)** |const|
 
-Removes all characters that are not allowed in :ref:`Node.name<class_Node_property_name>` from the string (``.`` ``:`` ``@`` ``/`` ``"`` ``%``).
+Returns a copy of the string with all characters that are not allowed in :ref:`Node.name<class_Node_property_name>` removed (``.`` ``:`` ``@`` ``/`` ``"`` ``%``).
 
 .. rst-class:: classref-item-separator
 

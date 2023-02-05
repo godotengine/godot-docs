@@ -90,7 +90,7 @@ Use the texture from this shader's normal map built-in.
 
 :ref:`Source<enum_VisualShaderNodeTexture_Source>` **SOURCE_DEPTH** = ``4``
 
-Use the depth texture available for this shader.
+Use the depth texture captured during the depth prepass. Only available when the depth prepass is used (i.e. in spatial shaders and in the forward_plus or gl_compatibility renderers).
 
 .. _class_VisualShaderNodeTexture_constant_SOURCE_PORT:
 
@@ -100,11 +100,27 @@ Use the depth texture available for this shader.
 
 Use the texture provided in the input port for this function.
 
+.. _class_VisualShaderNodeTexture_constant_SOURCE_3D_NORMAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Source<enum_VisualShaderNodeTexture_Source>` **SOURCE_3D_NORMAL** = ``6``
+
+Use the normal buffer captured during the depth prepass. Only available when the normal-roughness buffer is available (i.e. in spatial shaders and in the forward_plus renderer).
+
+.. _class_VisualShaderNodeTexture_constant_SOURCE_ROUGHNESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Source<enum_VisualShaderNodeTexture_Source>` **SOURCE_ROUGHNESS** = ``7``
+
+Use the roughness buffer captured during the depth prepass. Only available when the normal-roughness buffer is available (i.e. in spatial shaders and in the forward_plus renderer).
+
 .. _class_VisualShaderNodeTexture_constant_SOURCE_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`Source<enum_VisualShaderNodeTexture_Source>` **SOURCE_MAX** = ``6``
+:ref:`Source<enum_VisualShaderNodeTexture_Source>` **SOURCE_MAX** = ``8``
 
 Represents the size of the :ref:`Source<enum_VisualShaderNodeTexture_Source>` enum.
 
