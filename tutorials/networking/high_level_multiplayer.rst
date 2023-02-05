@@ -222,11 +222,11 @@ Let's get back to the lobby. Imagine that each player that connects to the serve
     # Connect all functions
 
     func _ready():
-        get_tree().connect("network_peer_connected", self, "_player_connected")
-        get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
-        get_tree().connect("connected_to_server", self, "_connected_ok")
-        get_tree().connect("connection_failed", self, "_connected_fail")
-        get_tree().connect("server_disconnected", self, "_server_disconnected")
+        get_tree().network_peer_connected.connect(_player_connected)
+        get_tree().network_peer_disconnected.connect(_player_disconnected)
+        get_tree().connected_to_server.connect(_connected_ok)
+        get_tree().connection_failed.connect(_connected_fail)
+        get_tree().server_disconnected.connect(_server_disconnected)
 
     # Player info, associate ID to data
     var player_info = {}
@@ -309,18 +309,18 @@ every peer and RPC will work great! Here is an example:
         var selfPeerID = get_tree().get_network_unique_id()
 
         # Load world
-        var world = load(which_level).instance()
+        var world = load(which_level).instantiate()
         get_node("/root").add_child(world)
 
         # Load my player
-        var my_player = preload("res://player.tscn").instance()
+        var my_player = preload("res://player.tscn").instantiate()
         my_player.set_name(str(selfPeerID))
         my_player.set_network_master(selfPeerID) # Will be explained later
         get_node("/root/world/players").add_child(my_player)
 
         # Load other players
         for p in player_info:
-            var player = preload("res://player.tscn").instance()
+            var player = preload("res://player.tscn").instantiate()
             player.set_name(str(p))
             player.set_network_master(p) # Will be explained later
             get_node("/root/world/players").add_child(player)
@@ -392,14 +392,14 @@ If you have paid attention to the previous example, it's possible you noticed th
 
         [...]
         # Load my player
-        var my_player = preload("res://player.tscn").instance()
+        var my_player = preload("res://player.tscn").instantiate()
         my_player.set_name(str(selfPeerID))
         my_player.set_network_master(selfPeerID) # The player belongs to this peer; it has the authority.
         get_node("/root/world/players").add_child(my_player)
 
         # Load other players
         for p in player_info:
-            var player = preload("res://player.tscn").instance()
+            var player = preload("res://player.tscn").instantiate()
             player.set_name(str(p))
             player.set_network_master(p) # Each other connected peer has authority over their own player.
             get_node("/root/world/players").add_child(player)

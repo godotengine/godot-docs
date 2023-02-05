@@ -60,9 +60,9 @@ Use the following code in 2D:
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        var spaceRid = GetWorld2d().Space;
+        var spaceRid = GetWorld2D().Space;
         var spaceState = Physics2DServer.SpaceGetDirectState(spaceRid);
     }
 
@@ -76,9 +76,9 @@ Or more directly:
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        var spaceState = GetWorld2d().DirectSpaceState;
+        var spaceState = GetWorld2D().DirectSpaceState;
     }
 
 And in 3D:
@@ -87,13 +87,13 @@ And in 3D:
  .. code-tab:: gdscript GDScript
 
     func _physics_process(delta):
-        var space_state = get_world().direct_space_state
+        var space_state = get_world_3d().direct_space_state
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        var spaceState = GetWorld().DirectSpaceState;
+        var spaceState = GetWorld3D().DirectSpaceState;
     }
 
 Raycast query
@@ -109,15 +109,17 @@ may be used. For example:
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
         # use global coordinates, not local to node
-        var result = space_state.intersect_ray(Vector2(0, 0), Vector2(50, 100))
+        var query = PhysicsRayQueryParameters2D.create(Vector2(0, 0), Vector2(50, 100))
+        var result = space_state.intersect_ray(query)
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
-        var spaceState = GetWorld2d().DirectSpaceState;
+        var spaceState = GetWorld2D().DirectSpaceState;
         // use global coordinates, not local to node
-        var result = spaceState.IntersectRay(new Vector2(), new Vector2(50, 100));
+        var query = PhysicsRayQueryParameters2D.Create(Vector2.Zero, new Vector2(50, 100));
+        var result = spaceState.IntersectRay(query);
     }
 
 The result is a dictionary. If the ray didn't hit anything, the dictionary will
@@ -161,10 +163,9 @@ as shown in the following image:
 
 .. image:: img/raycast_falsepositive.png
 
-To avoid self-intersection, the ``intersect_ray()`` function can take an
-optional third parameter which is an array of exceptions. This is an
-example of how to use it from a CharacterBody2D or any other
-collision object node:
+To avoid self-intersection, the ``intersect_ray()`` parameters object can take an
+array of exceptions via its ``exclude`` property. This is an example of how to use it 
+from a CharacterBody2D or any other collision object node:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -173,16 +174,22 @@ collision object node:
 
     func _physics_process(delta):
         var space_state = get_world_2d().direct_space_state
-        var result = space_state.intersect_ray(global_position, enemy_position, [self])
+        var query = PhysicsRayQueryParameters2D.create(global_position, enemy_position)
+        query.exclude = [self]
+        var result = space_state.intersect_ray(query)
 
  .. code-tab:: csharp
 
-    class Body : CharacterBody2D
+    using Godot;
+
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            var spaceState = GetWorld2d().DirectSpaceState;
-            var result = spaceState.IntersectRay(globalPosition, enemyPosition, new Godot.Collections.Array { this });
+            var spaceState = GetWorld2D().DirectSpaceState;
+            var query = PhysicsRayQueryParameters2D.Create(globalPosition, enemyPosition);
+            query.Exclude = new Godot.Collections.Array<Rid> { GetRid() };
+            var result = spaceState.IntersectRay(query);
         }
     }
 
@@ -195,9 +202,9 @@ While the exceptions method works fine for excluding the parent body, it becomes
 very inconvenient if you need a large and/or dynamic list of exceptions. In
 this case, it is much more efficient to use the collision layer/mask system.
 
-The optional fourth argument for ``intersect_ray()`` is a collision mask. For
-example, to use the same mask as the parent body, use the ``collision_mask``
-member variable:
+The ``intersect_ray()`` parameters object can also be supplied a collision mask.
+For example, to use the same mask as the parent body, use the ``collision_mask``
+member variable. The array of exceptions can be supplied as the last argument as well:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -205,19 +212,23 @@ member variable:
     extends CharacterBody2D
 
     func _physics_process(delta):
-        var space_state = get_world().direct_space_state
-        var result = space_state.intersect_ray(global_position, enemy_position,
-                                [self], collision_mask)
+        var space_state = get_world_2d().direct_space_state
+        var query = PhysicsRayQueryParameters2D.create(global_position, enemy_position, 
+            collision_mask, [self]) 
+        var result = space_state.intersect_ray(query)
 
  .. code-tab:: csharp
 
-    class Body : CharacterBody2D
+    using Godot;
+
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            var spaceState = GetWorld2d().DirectSpaceState;
-            var result = spaceState.IntersectRay(globalPosition, enemyPosition,
-                            new Godot.Collections.Array { this }, CollisionMask);
+            var spaceState = GetWorld2D().DirectSpaceState;
+            var query = PhysicsRayQueryParameters2D.Create(globalPosition, enemyPosition,
+                CollisionMask, new Godot.Collections.Array<Rid> { GetRid() });
+            var result = spaceState.IntersectRay(query);
         }
     }
 
@@ -259,11 +270,11 @@ To obtain it using a camera, the following code can be used:
 
     public override void _Input(InputEvent @event)
     {
-        if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == 1)
+        if (@event is InputEventMouseButton eventMouseButton && eventMouseButton.Pressed && eventMouseButton.ButtonIndex == MouseButton.Left)
         {
-            var camera3d = GetNode<Camera3D>("Camera3D");
-            var from = camera3d.ProjectRayOrigin(eventMouseButton.Position);
-            var to = from + camera3d.ProjectRayNormal(eventMouseButton.Position) * RayLength;
+            var camera3D = GetNode<Camera3D>("Camera3D");
+            var from = camera3D.ProjectRayOrigin(eventMouseButton.Position);
+            var to = from + camera3D.ProjectRayNormal(eventMouseButton.Position) * RayLength;
         }
     }
 

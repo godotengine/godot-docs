@@ -16,32 +16,44 @@ VisualShaderNodeResizableBase
 
 Base class for resizable nodes in a visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Resizable nodes have a handle that allows the user to adjust their size as needed.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+----------------------------------------------------------------+-------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualShaderNodeResizableBase_property_size>` | ``Vector2(0, 0)`` |
-+-------------------------------+----------------------------------------------------------------+-------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+----------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualShaderNodeResizableBase_property_size>` | ``Vector2(0, 0)`` |
+   +-------------------------------+----------------------------------------------------------------+-------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeResizableBase_property_size:
 
-- :ref:`Vector2<class_Vector2>` **size**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``Vector2(0, 0)`` |
-+-----------+-------------------+
-| *Setter*  | set_size(value)   |
-+-----------+-------------------+
-| *Getter*  | get_size()        |
-+-----------+-------------------+
+:ref:`Vector2<class_Vector2>` **size** = ``Vector2(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_size** **(** **)**
 
 The size of the node in the visual shader graph.
 

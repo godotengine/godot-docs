@@ -26,8 +26,8 @@ is to get a reference to an existing object from another acquired instance.
 
   .. code-tab:: csharp
 
-    Object obj = node.Object; // Property access.
-    Object obj = node.GetObject(); // Method access.
+    GodotObject obj = node.Object; // Property access.
+    GodotObject obj = node.GetObject(); // Method access.
 
 The same principle applies for :ref:`RefCounted <class_RefCounted>` objects.
 While users often access :ref:`Node <class_Node>` and
@@ -181,31 +181,35 @@ Nodes likewise have an alternative access point: the SceneTree.
 
   .. code-tab:: csharp
 
-    public class MyNode
+    using Godot;
+    using System;
+    using System.Diagnostics;
+
+    public class MyNode : Node
     {
         // Slow
         public void DynamicLookupWithDynamicNodePath()
         {
-            GD.Print(GetNode(NodePath("Child")));
+            GD.Print(GetNode("Child"));
         }
 
         // Fastest. Lookup node and cache for future access.
         // Doesn't break if node moves later.
-        public Node Child;
+        private Node _child;
         public void _Ready()
         {
-            Child = GetNode(NodePath("Child"));
+            _child = GetNode("Child");
         }
         public void LookupAndCacheForFutureAccess()
         {
-            GD.Print(Child);
+            GD.Print(_child);
         }
 
         // Delegate reference assignment to an external source.
         // Con: need to perform a validation check.
         // Pro: node makes no requirements of its external structure.
         //      'prop' can come from anywhere.
-        public object Prop;
+        public object Prop { get; set; }
         public void CallMeAfterPropIsInitializedByParent()
         {
             // Validate prop in one of three ways.
@@ -223,7 +227,15 @@ Nodes likewise have an alternative access point: the SceneTree.
                 return;
             }
 
+            // Fail with an exception.
+            if (prop == null)
+            {
+                throw new InvalidOperationException("'Prop' wasn't initialized.");
+            }
+
             // Fail and terminate.
+            // Note: Scripts run from a release export template don't
+            // run `Debug.Assert` statements.
             Debug.Assert(Prop, "'Prop' wasn't initialized");
         }
 
@@ -232,10 +244,10 @@ Nodes likewise have an alternative access point: the SceneTree.
         // that manage their own data and don't interfere with other objects.
         public void ReferenceAGlobalAutoloadedVariable()
         {
-            Node globals = GetNode(NodePath("/root/Globals"));
+            MyNode globals = GetNode<MyNode>("/root/Globals");
             GD.Print(globals);
-            GD.Print(globals.prop);
-            GD.Print(globals.my_getter());
+            GD.Print(globals.Prop);
+            GD.Print(globals.MyGetter());
         }
     };
 
@@ -285,7 +297,7 @@ which extend Object.
 Godot provides a variety of options for performing runtime checks on these
 accesses:
 
-- A duck-typed property access. These will property check (as described above).
+- A duck-typed property access. These will be property checks (as described above).
   If the operation isn't supported by the object, execution will halt.
 
   .. tabs::
@@ -481,7 +493,9 @@ accesses:
   .. code-tab:: csharp
 
     // Child.cs
-    public class Child : Node
+    using Godot;
+
+    public partial class Child : Node
     {
         public FuncRef FN = null;
 
@@ -493,7 +507,9 @@ accesses:
     }
 
     // Parent.cs
-    public class Parent : Node
+    using Godot;
+
+    public partial class Parent : Node
     {
         public Node Child;
 

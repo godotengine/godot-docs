@@ -14,6 +14,8 @@ EditorScenePostImport
 
 Post-processes scenes after import.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -47,12 +49,12 @@ The :ref:`_post_import<class_EditorScenePostImport_method__post_import>` callbac
     // This sample changes all node names.
     // Called right after the scene is imported and gets the root node.
     [Tool]
-    public class NodeRenamer : EditorScenePostImport
+    public partial class NodeRenamer : EditorScenePostImport
     {
-        public override Object PostImport(Object scene)
+        public override Object _PostImport(Node scene)
         {
             // Change all node names to "modified_[oldnodename]"
-            Iterate(scene as Node);
+            Iterate(scene);
             return scene; // Remember to return the imported scene
         }
         public void Iterate(Node node)
@@ -70,34 +72,53 @@ The :ref:`_post_import<class_EditorScenePostImport_method__post_import>` callbac
 
 
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `Importing 3D scenes: Custom script <../tutorials/assets_pipeline/importing_scenes.html#custom-script>`__
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`_post_import<class_EditorScenePostImport_method__post_import>` **(** :ref:`Node<class_Node>` scene **)** |virtual| |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>` **(** **)** |const|                           |
-+-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>` | :ref:`_post_import<class_EditorScenePostImport_method__post_import>` **(** :ref:`Node<class_Node>` scene **)** |virtual| |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>` **(** **)** |const|                           |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorScenePostImport_method__post_import:
 
-- :ref:`Object<class_Object>` **_post_import** **(** :ref:`Node<class_Node>` scene **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Object<class_Object>` **_post_import** **(** :ref:`Node<class_Node>` scene **)** |virtual|
 
 Called after the scene was imported. This method must return the modified version of the scene.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImport_method_get_source_file:
 
-- :ref:`String<class_String>` **get_source_file** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_source_file** **(** **)** |const|
 
 Returns the source file path which got imported (e.g. ``res://scene.dae``).
 

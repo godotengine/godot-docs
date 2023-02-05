@@ -12,69 +12,136 @@ WorkerThreadPool
 
 **Inherits:** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`add_group_task<class_WorkerThreadPool_method_add_group_task>` **(** :ref:`Callable<class_Callable>` action, :ref:`int<class_int>` elements, :ref:`int<class_int>` tasks_needed=-1, :ref:`bool<class_bool>` high_priority=false, :ref:`String<class_String>` description="" **)** |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`add_task<class_WorkerThreadPool_method_add_task>` **(** :ref:`Callable<class_Callable>` action, :ref:`bool<class_bool>` high_priority=false, :ref:`String<class_String>` description="" **)**                                                                                    |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`   | :ref:`get_group_processed_element_count<class_WorkerThreadPool_method_get_group_processed_element_count>` **(** :ref:`int<class_int>` group_id **)** |const|                                                                                                                           |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_group_task_completed<class_WorkerThreadPool_method_is_group_task_completed>` **(** :ref:`int<class_int>` group_id **)** |const|                                                                                                                                               |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_task_completed<class_WorkerThreadPool_method_is_task_completed>` **(** :ref:`int<class_int>` task_id **)** |const|                                                                                                                                                            |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`wait_for_group_task_completion<class_WorkerThreadPool_method_wait_for_group_task_completion>` **(** :ref:`int<class_int>` group_id **)**                                                                                                                                         |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`wait_for_task_completion<class_WorkerThreadPool_method_wait_for_task_completion>` **(** :ref:`int<class_int>` task_id **)**                                                                                                                                                      |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`add_group_task<class_WorkerThreadPool_method_add_group_task>` **(** :ref:`Callable<class_Callable>` action, :ref:`int<class_int>` elements, :ref:`int<class_int>` tasks_needed=-1, :ref:`bool<class_bool>` high_priority=false, :ref:`String<class_String>` description="" **)** |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`add_task<class_WorkerThreadPool_method_add_task>` **(** :ref:`Callable<class_Callable>` action, :ref:`bool<class_bool>` high_priority=false, :ref:`String<class_String>` description="" **)**                                                                                    |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`   | :ref:`get_group_processed_element_count<class_WorkerThreadPool_method_get_group_processed_element_count>` **(** :ref:`int<class_int>` group_id **)** |const|                                                                                                                           |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_group_task_completed<class_WorkerThreadPool_method_is_group_task_completed>` **(** :ref:`int<class_int>` group_id **)** |const|                                                                                                                                               |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_task_completed<class_WorkerThreadPool_method_is_task_completed>` **(** :ref:`int<class_int>` task_id **)** |const|                                                                                                                                                            |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`wait_for_group_task_completion<class_WorkerThreadPool_method_wait_for_group_task_completion>` **(** :ref:`int<class_int>` group_id **)**                                                                                                                                         |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`wait_for_task_completion<class_WorkerThreadPool_method_wait_for_task_completion>` **(** :ref:`int<class_int>` task_id **)**                                                                                                                                                      |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WorkerThreadPool_method_add_group_task:
 
-- :ref:`int<class_int>` **add_group_task** **(** :ref:`Callable<class_Callable>` action, :ref:`int<class_int>` elements, :ref:`int<class_int>` tasks_needed=-1, :ref:`bool<class_bool>` high_priority=false, :ref:`String<class_String>` description="" **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **add_group_task** **(** :ref:`Callable<class_Callable>` action, :ref:`int<class_int>` elements, :ref:`int<class_int>` tasks_needed=-1, :ref:`bool<class_bool>` high_priority=false, :ref:`String<class_String>` description="" **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WorkerThreadPool_method_add_task:
 
-- :ref:`int<class_int>` **add_task** **(** :ref:`Callable<class_Callable>` action, :ref:`bool<class_bool>` high_priority=false, :ref:`String<class_String>` description="" **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **add_task** **(** :ref:`Callable<class_Callable>` action, :ref:`bool<class_bool>` high_priority=false, :ref:`String<class_String>` description="" **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WorkerThreadPool_method_get_group_processed_element_count:
 
-- :ref:`int<class_int>` **get_group_processed_element_count** **(** :ref:`int<class_int>` group_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_group_processed_element_count** **(** :ref:`int<class_int>` group_id **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WorkerThreadPool_method_is_group_task_completed:
 
-- :ref:`bool<class_bool>` **is_group_task_completed** **(** :ref:`int<class_int>` group_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_group_task_completed** **(** :ref:`int<class_int>` group_id **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WorkerThreadPool_method_is_task_completed:
 
-- :ref:`bool<class_bool>` **is_task_completed** **(** :ref:`int<class_int>` task_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_task_completed** **(** :ref:`int<class_int>` task_id **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WorkerThreadPool_method_wait_for_group_task_completion:
 
-- void **wait_for_group_task_completion** **(** :ref:`int<class_int>` group_id **)**
+.. rst-class:: classref-method
+
+void **wait_for_group_task_completion** **(** :ref:`int<class_int>` group_id **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WorkerThreadPool_method_wait_for_task_completion:
 
-- void **wait_for_task_completion** **(** :ref:`int<class_int>` task_id **)**
+.. rst-class:: classref-method
+
+void **wait_for_task_completion** **(** :ref:`int<class_int>` task_id **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

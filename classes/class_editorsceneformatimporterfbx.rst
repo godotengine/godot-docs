@@ -14,6 +14,8 @@ EditorSceneFormatImporterFBX
 
 Importer for the ``.fbx`` scene file format.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

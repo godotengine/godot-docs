@@ -14,52 +14,65 @@ CapsuleShape2D
 
 Capsule shape resource for 2D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 2D capsule shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. In 2D, a capsule is a rectangle shape with half-circles at both ends.
 
-\ **Performance:** Being a primitive collision shape, ``CapsuleShape2D`` is fast to check collisions against (though not as fast as :ref:`CircleShape2D<class_CircleShape2D>`).
+\ **Performance:** Being a primitive collision shape, **CapsuleShape2D** is fast to check collisions against (though not as fast as :ref:`CircleShape2D<class_CircleShape2D>`).
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape2D_property_height>` | ``30.0`` |
-+---------------------------+-----------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape2D_property_radius>` | ``10.0`` |
-+---------------------------+-----------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`height<class_CapsuleShape2D_property_height>` | ``30.0`` |
+   +---------------------------+-----------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape2D_property_radius>` | ``10.0`` |
+   +---------------------------+-----------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CapsuleShape2D_property_height:
 
-- :ref:`float<class_float>` **height**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``30.0``          |
-+-----------+-------------------+
-| *Setter*  | set_height(value) |
-+-----------+-------------------+
-| *Getter*  | get_height()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **height** = ``30.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_height** **(** **)**
 
 The capsule's height.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CapsuleShape2D_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``10.0``          |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 The capsule's radius.
 

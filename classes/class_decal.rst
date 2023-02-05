@@ -14,10 +14,12 @@ Decal
 
 Node that projects a texture onto a :ref:`MeshInstance3D<class_MeshInstance3D>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``Decal``\ s are used to project a texture onto a :ref:`Mesh<class_Mesh>` in the scene. Use Decals to add detail to a scene without affecting the underlying :ref:`Mesh<class_Mesh>`. They are often used to add weathering to building, add dirt or mud to the ground, or add variety to props. Decals can be moved at any time, making them suitable for things like blob shadows or laser sight dots.
+**Decal**\ s are used to project a texture onto a :ref:`Mesh<class_Mesh>` in the scene. Use Decals to add detail to a scene without affecting the underlying :ref:`Mesh<class_Mesh>`. They are often used to add weathering to building, add dirt or mud to the ground, or add variety to props. Decals can be moved at any time, making them suitable for things like blob shadows or laser sight dots.
 
 They are made of an :ref:`AABB<class_AABB>` and a group of :ref:`Texture2D<class_Texture2D>`\ s specifying :ref:`Color<class_Color>`, normal, ORM (ambient occlusion, roughness, metallic), and emission. Decals are projected within their :ref:`AABB<class_AABB>` so altering the orientation of the Decal affects the direction in which they are projected. By default, Decals are projected down (i.e. from positive Y to negative Y).
 
@@ -25,330 +27,403 @@ The :ref:`Texture2D<class_Texture2D>`\ s associated with the Decal are automatic
 
 \ **Note:** Decals cannot affect an underlying material's transparency, regardless of its transparency mode (alpha blend, alpha scissor, alpha hash, opaque pre-pass). This means translucent or transparent areas of a material will remain translucent or transparent even if an opaque decal is applied on them.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`         | :ref:`albedo_mix<class_Decal_property_albedo_mix>`                       | ``1.0``               |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`             | :ref:`cull_mask<class_Decal_property_cull_mask>`                         | ``1048575``           |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`         | :ref:`distance_fade_begin<class_Decal_property_distance_fade_begin>`     | ``40.0``              |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`           | :ref:`distance_fade_enabled<class_Decal_property_distance_fade_enabled>` | ``false``             |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`         | :ref:`distance_fade_length<class_Decal_property_distance_fade_length>`   | ``10.0``              |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`         | :ref:`emission_energy<class_Decal_property_emission_energy>`             | ``1.0``               |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`Vector3<class_Vector3>`     | :ref:`extents<class_Decal_property_extents>`                             | ``Vector3(1, 1, 1)``  |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`         | :ref:`lower_fade<class_Decal_property_lower_fade>`                       | ``0.3``               |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`         | :ref:`modulate<class_Decal_property_modulate>`                           | ``Color(1, 1, 1, 1)`` |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`         | :ref:`normal_fade<class_Decal_property_normal_fade>`                     | ``0.0``               |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`texture_albedo<class_Decal_property_texture_albedo>`               |                       |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`texture_emission<class_Decal_property_texture_emission>`           |                       |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`texture_normal<class_Decal_property_texture_normal>`               |                       |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`texture_orm<class_Decal_property_texture_orm>`                     |                       |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`         | :ref:`upper_fade<class_Decal_property_upper_fade>`                       | ``0.3``               |
-+-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`         | :ref:`albedo_mix<class_Decal_property_albedo_mix>`                       | ``1.0``               |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`             | :ref:`cull_mask<class_Decal_property_cull_mask>`                         | ``1048575``           |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`         | :ref:`distance_fade_begin<class_Decal_property_distance_fade_begin>`     | ``40.0``              |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`           | :ref:`distance_fade_enabled<class_Decal_property_distance_fade_enabled>` | ``false``             |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`         | :ref:`distance_fade_length<class_Decal_property_distance_fade_length>`   | ``10.0``              |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`         | :ref:`emission_energy<class_Decal_property_emission_energy>`             | ``1.0``               |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector3<class_Vector3>`     | :ref:`extents<class_Decal_property_extents>`                             | ``Vector3(1, 1, 1)``  |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`         | :ref:`lower_fade<class_Decal_property_lower_fade>`                       | ``0.3``               |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`         | :ref:`modulate<class_Decal_property_modulate>`                           | ``Color(1, 1, 1, 1)`` |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`         | :ref:`normal_fade<class_Decal_property_normal_fade>`                     | ``0.0``               |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`texture_albedo<class_Decal_property_texture_albedo>`               |                       |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`texture_emission<class_Decal_property_texture_emission>`           |                       |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`texture_normal<class_Decal_property_texture_normal>`               |                       |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`texture_orm<class_Decal_property_texture_orm>`                     |                       |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`         | :ref:`upper_fade<class_Decal_property_upper_fade>`                       | ``0.3``               |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`get_texture<class_Decal_method_get_texture>` **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type **)** |const|                                    |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_texture<class_Decal_method_set_texture>` **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type, :ref:`Texture2D<class_Texture2D>` texture **)** |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`get_texture<class_Decal_method_get_texture>` **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type **)** |const|                                    |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_texture<class_Decal_method_set_texture>` **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type, :ref:`Texture2D<class_Texture2D>` texture **)** |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Decal_DecalTexture:
 
-.. _class_Decal_constant_TEXTURE_ALBEDO:
-
-.. _class_Decal_constant_TEXTURE_NORMAL:
-
-.. _class_Decal_constant_TEXTURE_ORM:
-
-.. _class_Decal_constant_TEXTURE_EMISSION:
-
-.. _class_Decal_constant_TEXTURE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **DecalTexture**:
 
-- **TEXTURE_ALBEDO** = **0** --- :ref:`Texture2D<class_Texture2D>` corresponding to :ref:`texture_albedo<class_Decal_property_texture_albedo>`.
+.. _class_Decal_constant_TEXTURE_ALBEDO:
 
-- **TEXTURE_NORMAL** = **1** --- :ref:`Texture2D<class_Texture2D>` corresponding to :ref:`texture_normal<class_Decal_property_texture_normal>`.
+.. rst-class:: classref-enumeration-constant
 
-- **TEXTURE_ORM** = **2** --- :ref:`Texture2D<class_Texture2D>` corresponding to :ref:`texture_orm<class_Decal_property_texture_orm>`.
+:ref:`DecalTexture<enum_Decal_DecalTexture>` **TEXTURE_ALBEDO** = ``0``
 
-- **TEXTURE_EMISSION** = **3** --- :ref:`Texture2D<class_Texture2D>` corresponding to :ref:`texture_emission<class_Decal_property_texture_emission>`.
+:ref:`Texture2D<class_Texture2D>` corresponding to :ref:`texture_albedo<class_Decal_property_texture_albedo>`.
 
-- **TEXTURE_MAX** = **4** --- Max size of :ref:`DecalTexture<enum_Decal_DecalTexture>` enum.
+.. _class_Decal_constant_TEXTURE_NORMAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DecalTexture<enum_Decal_DecalTexture>` **TEXTURE_NORMAL** = ``1``
+
+:ref:`Texture2D<class_Texture2D>` corresponding to :ref:`texture_normal<class_Decal_property_texture_normal>`.
+
+.. _class_Decal_constant_TEXTURE_ORM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DecalTexture<enum_Decal_DecalTexture>` **TEXTURE_ORM** = ``2``
+
+:ref:`Texture2D<class_Texture2D>` corresponding to :ref:`texture_orm<class_Decal_property_texture_orm>`.
+
+.. _class_Decal_constant_TEXTURE_EMISSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DecalTexture<enum_Decal_DecalTexture>` **TEXTURE_EMISSION** = ``3``
+
+:ref:`Texture2D<class_Texture2D>` corresponding to :ref:`texture_emission<class_Decal_property_texture_emission>`.
+
+.. _class_Decal_constant_TEXTURE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DecalTexture<enum_Decal_DecalTexture>` **TEXTURE_MAX** = ``4``
+
+Max size of :ref:`DecalTexture<enum_Decal_DecalTexture>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Decal_property_albedo_mix:
 
-- :ref:`float<class_float>` **albedo_mix**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``1.0``               |
-+-----------+-----------------------+
-| *Setter*  | set_albedo_mix(value) |
-+-----------+-----------------------+
-| *Getter*  | get_albedo_mix()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **albedo_mix** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_albedo_mix** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_albedo_mix** **(** **)**
 
 Blends the albedo :ref:`Color<class_Color>` of the decal with albedo :ref:`Color<class_Color>` of the underlying mesh. This can be set to ``0.0`` to create a decal that only affects normal or ORM. In this case, an albedo texture is still required as its alpha channel will determine where the normal and ORM will be overridden. See also :ref:`modulate<class_Decal_property_modulate>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_cull_mask:
 
-- :ref:`int<class_int>` **cull_mask**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1048575``          |
-+-----------+----------------------+
-| *Setter*  | set_cull_mask(value) |
-+-----------+----------------------+
-| *Getter*  | get_cull_mask()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **cull_mask** = ``1048575``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cull_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_cull_mask** **(** **)**
 
 Specifies which :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` this decal will project on. By default, Decals affect all layers. This is used so you can specify which types of objects receive the Decal and which do not. This is especially useful so you can ensure that dynamic objects don't accidentally receive a Decal intended for the terrain under them.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_distance_fade_begin:
 
-- :ref:`float<class_float>` **distance_fade_begin**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``40.0``                       |
-+-----------+--------------------------------+
-| *Setter*  | set_distance_fade_begin(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_distance_fade_begin()      |
-+-----------+--------------------------------+
+:ref:`float<class_float>` **distance_fade_begin** = ``40.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_distance_fade_begin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_distance_fade_begin** **(** **)**
 
 The distance from the camera at which the Decal begins to fade away (in 3D units).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_distance_fade_enabled:
 
-- :ref:`bool<class_bool>` **distance_fade_enabled**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``false``                       |
-+-----------+---------------------------------+
-| *Setter*  | set_enable_distance_fade(value) |
-+-----------+---------------------------------+
-| *Getter*  | is_distance_fade_enabled()      |
-+-----------+---------------------------------+
+:ref:`bool<class_bool>` **distance_fade_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enable_distance_fade** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_distance_fade_enabled** **(** **)**
 
 If ``true``, decals will smoothly fade away when far from the active :ref:`Camera3D<class_Camera3D>` starting at :ref:`distance_fade_begin<class_Decal_property_distance_fade_begin>`. The Decal will fade out over :ref:`distance_fade_begin<class_Decal_property_distance_fade_begin>` + :ref:`distance_fade_length<class_Decal_property_distance_fade_length>`, after which it will be culled and not sent to the shader at all. Use this to reduce the number of active Decals in a scene and thus improve performance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_distance_fade_length:
 
-- :ref:`float<class_float>` **distance_fade_length**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``10.0``                        |
-+-----------+---------------------------------+
-| *Setter*  | set_distance_fade_length(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_distance_fade_length()      |
-+-----------+---------------------------------+
+:ref:`float<class_float>` **distance_fade_length** = ``10.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_distance_fade_length** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_distance_fade_length** **(** **)**
 
 The distance over which the Decal fades (in 3D units). The Decal becomes slowly more transparent over this distance and is completely invisible at the end. Higher values result in a smoother fade-out transition, which is more suited when the camera moves fast.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_emission_energy:
 
-- :ref:`float<class_float>` **emission_energy**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``1.0``                    |
-+-----------+----------------------------+
-| *Setter*  | set_emission_energy(value) |
-+-----------+----------------------------+
-| *Getter*  | get_emission_energy()      |
-+-----------+----------------------------+
+:ref:`float<class_float>` **emission_energy** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_emission_energy** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_emission_energy** **(** **)**
 
 Energy multiplier for the emission texture. This will make the decal emit light at a higher or lower intensity, independently of the albedo color. See also :ref:`modulate<class_Decal_property_modulate>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(1, 1, 1)`` |
-+-----------+----------------------+
-| *Setter*  | set_extents(value)   |
-+-----------+----------------------+
-| *Getter*  | get_extents()        |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
 
 Sets the size of the :ref:`AABB<class_AABB>` used by the decal. The AABB goes from ``-extents`` to ``extents``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_lower_fade:
 
-- :ref:`float<class_float>` **lower_fade**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.3``               |
-+-----------+-----------------------+
-| *Setter*  | set_lower_fade(value) |
-+-----------+-----------------------+
-| *Getter*  | get_lower_fade()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **lower_fade** = ``0.3``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lower_fade** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_lower_fade** **(** **)**
 
 Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`. Only positive values are valid (negative values will be clamped to ``0.0``). See also :ref:`upper_fade<class_Decal_property_upper_fade>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_modulate:
 
-- :ref:`Color<class_Color>` **modulate**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
-| *Setter*  | set_modulate(value)   |
-+-----------+-----------------------+
-| *Getter*  | get_modulate()        |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_modulate** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_modulate** **(** **)**
 
 Changes the :ref:`Color<class_Color>` of the Decal by multiplying the albedo and emission colors with this value. The alpha component is only taken into account when multiplying the albedo color, not the emission color. See also :ref:`emission_energy<class_Decal_property_emission_energy>` and :ref:`albedo_mix<class_Decal_property_albedo_mix>` to change the emission and albedo intensity independently of each other.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_normal_fade:
 
-- :ref:`float<class_float>` **normal_fade**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.0``                |
-+-----------+------------------------+
-| *Setter*  | set_normal_fade(value) |
-+-----------+------------------------+
-| *Getter*  | get_normal_fade()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **normal_fade** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_normal_fade** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_normal_fade** **(** **)**
 
 Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the target surface becomes too large. A value of ``0`` projects the Decal regardless of angle, a value of ``1`` limits the Decal to surfaces that are nearly perpendicular.
 
 \ **Note:** Setting :ref:`normal_fade<class_Decal_property_normal_fade>` to a value greater than ``0.0`` has a small performance cost due to the added normal angle computations.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Decal_property_texture_albedo:
 
-- :ref:`Texture2D<class_Texture2D>` **texture_albedo**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture2D<class_Texture2D>` **texture_albedo**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type, :ref:`Texture2D<class_Texture2D>` texture **)**
+- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type **)** |const|
 
 :ref:`Texture2D<class_Texture2D>` with the base :ref:`Color<class_Color>` of the Decal. Either this or the :ref:`texture_emission<class_Decal_property_texture_emission>` must be set for the Decal to be visible. Use the alpha channel like a mask to smoothly blend the edges of the decal with the underlying object.
 
-\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
+\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for **Decal** textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_texture_emission:
 
-- :ref:`Texture2D<class_Texture2D>` **texture_emission**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture2D<class_Texture2D>` **texture_emission**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type, :ref:`Texture2D<class_Texture2D>` texture **)**
+- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type **)** |const|
 
 :ref:`Texture2D<class_Texture2D>` with the emission :ref:`Color<class_Color>` of the Decal. Either this or the :ref:`texture_emission<class_Decal_property_texture_emission>` must be set for the Decal to be visible. Use the alpha channel like a mask to smoothly blend the edges of the decal with the underlying object.
 
-\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
+\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for **Decal** textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_texture_normal:
 
-- :ref:`Texture2D<class_Texture2D>` **texture_normal**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture2D<class_Texture2D>` **texture_normal**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type, :ref:`Texture2D<class_Texture2D>` texture **)**
+- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type **)** |const|
 
 :ref:`Texture2D<class_Texture2D>` with the per-pixel normal map for the decal. Use this to add extra detail to decals.
 
-\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
+\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for **Decal** textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
 
 \ **Note:** Setting this texture alone will not result in a visible decal, as :ref:`texture_albedo<class_Decal_property_texture_albedo>` must also be set. To create a normal-only decal, load an albedo texture into :ref:`texture_albedo<class_Decal_property_texture_albedo>` and set :ref:`albedo_mix<class_Decal_property_albedo_mix>` to ``0.0``. The albedo texture's alpha channel will be used to determine where the underlying surface's normal map should be overridden (and its intensity).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_texture_orm:
 
-- :ref:`Texture2D<class_Texture2D>` **texture_orm**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture2D<class_Texture2D>` **texture_orm**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type, :ref:`Texture2D<class_Texture2D>` texture **)**
+- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type **)** |const|
 
 :ref:`Texture2D<class_Texture2D>` storing ambient occlusion, roughness, and metallic for the decal. Use this to add extra detail to decals.
 
-\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for ``Decal`` textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
+\ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for **Decal** textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
 
 \ **Note:** Setting this texture alone will not result in a visible decal, as :ref:`texture_albedo<class_Decal_property_texture_albedo>` must also be set. To create a ORM-only decal, load an albedo texture into :ref:`texture_albedo<class_Decal_property_texture_albedo>` and set :ref:`albedo_mix<class_Decal_property_albedo_mix>` to ``0.0``. The albedo texture's alpha channel will be used to determine where the underlying surface's ORM map should be overridden (and its intensity).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Decal_property_upper_fade:
 
-- :ref:`float<class_float>` **upper_fade**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.3``               |
-+-----------+-----------------------+
-| *Setter*  | set_upper_fade(value) |
-+-----------+-----------------------+
-| *Getter*  | get_upper_fade()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **upper_fade** = ``0.3``
+
+.. rst-class:: classref-property-setget
+
+- void **set_upper_fade** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_upper_fade** **(** **)**
 
 Sets the curve over which the decal will fade as the surface gets further from the center of the :ref:`AABB<class_AABB>`. Only positive values are valid (negative values will be clamped to ``0.0``). See also :ref:`lower_fade<class_Decal_property_lower_fade>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Decal_method_get_texture:
 
-- :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type **)** |const|
 
 Returns the :ref:`Texture2D<class_Texture2D>` associated with the specified :ref:`DecalTexture<enum_Decal_DecalTexture>`. This is a convenience method, in most cases you should access the texture directly.
 
@@ -373,11 +448,15 @@ One case where this is better than accessing the texture directly is when you wa
 
 
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Decal_method_set_texture:
 
-- void **set_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type, :ref:`Texture2D<class_Texture2D>` texture **)**
+.. rst-class:: classref-method
+
+void **set_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type, :ref:`Texture2D<class_Texture2D>` texture **)**
 
 Sets the :ref:`Texture2D<class_Texture2D>` associated with the specified :ref:`DecalTexture<enum_Decal_DecalTexture>`. This is a convenience method, in most cases you should access the texture directly.
 

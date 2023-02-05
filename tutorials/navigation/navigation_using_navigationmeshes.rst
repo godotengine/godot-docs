@@ -7,6 +7,15 @@ Using NavigationMeshes
 :ref:`NavigationPolygon<class_NavigationPolygon>` and
 :ref:`NavigationMesh<class_NavigationMesh>`  respectively.
 
+.. note::
+
+    A navigation mesh describes the traversable safe area for an agent with its center position at zero radius.
+    If you want pathfinding to account for an agent's (collision) size you need to shrink the navigation mesh accordingly.
+
+Navigation works independent from other engine parts like rendering and physics. A navigation mesh is the data format to exchange information from those other systems as it describes the traversable safe area for a specific agent. All the necessary information from other engine parts need to be already factored in when creating a navigation mesh. E.g. like visuals that an agent should not clip through or physics collision shapes that an agent should not collide with. This process of factoring in all those wanted navigation restrictions from other engine parts like visuals and collision is commonly called navigation mesh baking.
+
+If you experience clipping or collision problems while following navigation paths always remember that you need to tell the navigation system through an appropriated navigation mesh what your intentions are. By itself the navigation system will never know "this is a tree / rock / wall collision shape or visual mesh" because it only knows "here I was told I can path safely cause it is on navigation mesh".
+
 .. _doc_navigation_navmesh_baking:
 
 Creating 2D NavigationMeshes
@@ -72,35 +81,35 @@ NavigationMesh rebaking at runtime
 
 To rebake a ``NavigationMesh`` at runtime, use the NavigationRegion3D.bake_navigation_mesh() function.
 Another option is to use the NavigationMeshGenerator.bake() Singleton function with the NavigationMesh resource directly.
-If the navmesh resource is already prepared, the region can be updated with the NavigationServer3D API directly as well.
+If the navigation mesh resource is already prepared, the region can be updated with the NavigationServer3D API directly as well.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends NavigationRegion3D
 
-    func update_navmesh():
+    func update_navigation_mesh():
 
         # use bake and update function of region
         var on_thread : bool = true
         bake_navigation_mesh(on_thread)
 
         # or use the NavigationMeshGenerator Singleton
-        var navigationmesh : NavigationMesh = navmesh
-        NavigationMeshGenerator.bake(navigationmesh, self)
+        var _navigationmesh : NavigationMesh = navigation_mesh
+        NavigationMeshGenerator.bake(_navigationmesh, self)
         # remove old resource first to trigger a full update
-        navmesh = null
-        navmesh = navigationmesh
+        navigation_mesh = null
+        navigation_mesh = _navigationmesh
 
-        # or use NavigationServer API to update region with prepared navmesh
+        # or use NavigationServer API to update region with prepared navigation mesh
         var region_rid : RID = get_region_rid()
-        NavigationServer3D.region_set_navmesh(region_rid, navmesh)
+        NavigationServer3D.region_set_navigation_mesh(region_rid, navigation_mesh)
 
 .. note::
 
     Baking a NavigationMesh at runtime is a costly operation.
-    Complex navmesh take some time to bake and if done on the main thread can freeze a game.
-    (Re)baking a large navmesh is preferably done in a separate thread.
+    Complex navigation mesh take some time to bake and if done on the main thread can freeze a game.
+    (Re)baking a large navigation mesh is preferably done in a separate thread.
 
 .. warning::
 
@@ -131,14 +140,14 @@ navigationmesh from outline data the shapes cannot overlap.
 
     extends NavigationRegion2D
 
-    var navigationpolygon : NavigationPolygon = get_navigation_polygon()
+    var new_navigation_polygon : NavigationPolygon = get_navigation_polygon()
 
     func _ready():
 
         parse_2d_collisionshapes(self)
 
-        navigationpolygon.make_polygons_from_outlines()
-        set_navigation_polygon(navigationpolygon)
+        new_navigation_polygon.make_polygons_from_outlines()
+        set_navigation_polygon(new_navigation_polygon)
 
     func parse_2d_collisionshapes(root_node : Node2D):
 
@@ -156,12 +165,12 @@ navigationmesh from outline data the shapes cannot overlap.
                 for vertex in collisionpolygon:
                     new_collision_outline.append(collisionpolygon_transform.xform(vertex))
 
-                navigationpolygon.add_outline(new_collision_outline)
+                new_navigation_polygon.add_outline(new_collision_outline)
 
-Procedual 2D Navmesh
-~~~~~~~~~~~~~~~~~~~~
+Procedual 2D NavigationMesh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following script creates a new 2D navigation region and fills it with procedual generated navmesh data from a NavigationPolygon resource.
+The following script creates a new 2D navigation region and fills it with procedual generated navigation mesh data from a NavigationPolygon resource.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -173,22 +182,22 @@ The following script creates a new 2D navigation region and fills it with proced
     var default_2d_map_rid : RID = get_world_2d().get_navigation_map()
     NavigationServer2D.region_set_map(new_2d_region_rid, default_2d_map_rid)
 
-    var new_navpoly : NavigationPolygon = NavigationPolygon.new()
+    var new_navigation_polygon : NavigationPolygon = NavigationPolygon.new()
     var new_outline : PackedVector2Array = PackedVector2Array([
         Vector2(0.0, 0.0),
         Vector2(50.0, 0.0),
         Vector2(50.0, 50.0),
         Vector2(0.0, 50.0),
         ])
-    new_navpoly.add_outline(new_outline)
-    new_navpoly.make_polygons_from_outlines()
+    new_navigation_polygon.add_outline(new_outline)
+    new_navigation_polygon.make_polygons_from_outlines()
 
-    NavigationServer2D.region_set_navpoly(new_2d_region_rid, new_navpoly)
+    NavigationServer2D.region_set_navigation_polygon(new_2d_region_rid, new_navigation_polygon)
 
-Procedual 3D Navmesh
-~~~~~~~~~~~~~~~~~~~~
+Procedual 3D NavigationMesh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following script creates a new 3D navigation region and fills it with procedual generated navmesh data from a NavigationMesh resource.
+The following script creates a new 3D navigation region and fills it with procedual generated navigation mesh data from a NavigationMesh resource.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -200,12 +209,12 @@ The following script creates a new 3D navigation region and fills it with proced
     var default_3d_map_rid : RID = get_world_3d().get_navigation_map()
     NavigationServer3D.region_set_map(new_3d_region_rid, default_3d_map_rid)
 
-    var new_navmesh : NavigationMesh = NavigationMesh.new()
+    var new_navigation_mesh : NavigationMesh = NavigationMesh.new()
     var new_plane_mesh : PlaneMesh = PlaneMesh.new()
     new_plane_mesh.size = Vector2(10.0, 10.0)
-    new_navmesh.create_from_mesh(new_plane_mesh)
+    new_navigation_mesh.create_from_mesh(new_plane_mesh)
 
-    NavigationServer3D.region_set_navmesh(new_3d_region_rid, new_navmesh)
+    NavigationServer3D.region_set_navigation_mesh(new_3d_region_rid, new_navigation_mesh)
 
 Navmesh for 3D GridMaps
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -217,17 +226,17 @@ The following script creates a new 3D navmesh from the mesh of a GridMap item, c
 
     extends GridMap
 
-    # enable navmesh for grid items
+    # enable navigation mesh for grid items
     set_bake_navigation(true)
 
-    # get mesh from grid item, bake and set a new navmesh for the library
+    # get mesh from grid item, bake and set a new navigation mesh for the library
     var gridmap_item_list : PackedInt32Array = mesh_library.get_item_list()
     for item in gridmap_item_list:
         var item_mesh : Mesh = mesh_library.get_item_mesh(item)
-        var navmesh : NavigationMesh = NavigationMesh.new()
-        navmesh.create_from_mesh(item_mesh)
-        mesh_library.set_item_navmesh(item, item_mesh)
-        mesh_library.set_item_navmesh_transform(item, Transform3D())
+        var new_item_navigation_mesh : NavigationMesh = NavigationMesh.new()
+        new_item_navigation_mesh.create_from_mesh(item_mesh)
+        mesh_library.set_item_navigation_mesh(item, new_item_navigation_mesh)
+        mesh_library.set_item_navigation_mesh_transform(item, Transform3D())
 
     # clear the cells
     clear()

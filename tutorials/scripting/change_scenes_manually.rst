@@ -12,7 +12,7 @@ scenes which one instances and adds to the tree at runtime:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var simultaneous_scene = preload("res://levels/level2.tscn").instance()
+    var simultaneous_scene = preload("res://levels/level2.tscn").instantiate()
 
     func _add_a_scene_manually():
         # This is like autoloading the scene, only
@@ -25,7 +25,7 @@ scenes which one instances and adds to the tree at runtime:
 
     public MyClass()
     {
-        simultaneousScene = ResourceLoader.Load<PackedScene>("res://levels/level2.tscn").Instance();
+        simultaneousScene = ResourceLoader.Load<PackedScene>("res://levels/level2.tscn").Instantiate();
     }
 
     public void _AddASceneManually()

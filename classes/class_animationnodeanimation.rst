@@ -14,10 +14,14 @@ AnimationNodeAnimation
 
 Input animation to use in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Only features one output set using the :ref:`animation<class_AnimationNodeAnimation_property_animation>` property. Use it as an input for :ref:`AnimationNode<class_AnimationNode>` that blend animations together.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,60 +32,87 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------------+-------------------------------------------------------------------+---------+
-| :ref:`StringName<class_StringName>`                   | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``&""`` |
-+-------------------------------------------------------+-------------------------------------------------------------------+---------+
-| :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` | :ref:`play_mode<class_AnimationNodeAnimation_property_play_mode>` | ``0``   |
-+-------------------------------------------------------+-------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------+-------------------------------------------------------------------+---------+
+   | :ref:`StringName<class_StringName>`                   | :ref:`animation<class_AnimationNodeAnimation_property_animation>` | ``&""`` |
+   +-------------------------------------------------------+-------------------------------------------------------------------+---------+
+   | :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` | :ref:`play_mode<class_AnimationNodeAnimation_property_play_mode>` | ``0``   |
+   +-------------------------------------------------------+-------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_AnimationNodeAnimation_PlayMode:
 
-.. _class_AnimationNodeAnimation_constant_PLAY_MODE_FORWARD:
-
-.. _class_AnimationNodeAnimation_constant_PLAY_MODE_BACKWARD:
+.. rst-class:: classref-enumeration
 
 enum **PlayMode**:
 
-- **PLAY_MODE_FORWARD** = **0**
+.. _class_AnimationNodeAnimation_constant_PLAY_MODE_FORWARD:
 
-- **PLAY_MODE_BACKWARD** = **1**
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **PLAY_MODE_FORWARD** = ``0``
+
+
+
+.. _class_AnimationNodeAnimation_constant_PLAY_MODE_BACKWARD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **PLAY_MODE_BACKWARD** = ``1``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimationNodeAnimation_property_animation:
 
-- :ref:`StringName<class_StringName>` **animation**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``&""``              |
-+-----------+----------------------+
-| *Setter*  | set_animation(value) |
-+-----------+----------------------+
-| *Getter*  | get_animation()      |
-+-----------+----------------------+
+:ref:`StringName<class_StringName>` **animation** = ``&""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_animation** **(** :ref:`StringName<class_StringName>` value **)**
+- :ref:`StringName<class_StringName>` **get_animation** **(** **)**
 
 Animation to use as an output. It is one of the animations provided by :ref:`AnimationTree.anim_player<class_AnimationTree_property_anim_player>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeAnimation_property_play_mode:
 
-- :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **play_mode**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_play_mode(value) |
-+-----------+----------------------+
-| *Getter*  | get_play_mode()      |
-+-----------+----------------------+
+:ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **play_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_play_mode** **(** :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` value **)**
+- :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **get_play_mode** **(** **)**
 
 Determines the playback direction of the animation.
 

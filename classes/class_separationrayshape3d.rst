@@ -14,52 +14,65 @@ SeparationRayShape3D
 
 Separation ray shape resource for 3D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 3D separation ray shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. A ray is not really a collision body; instead, it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
 
-\ **Performance:** Being a primitive collision shape, ``SeparationRayShape3D`` is fast to check collisions against.
+\ **Performance:** Being a primitive collision shape, **SeparationRayShape3D** is fast to check collisions against.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`length<class_SeparationRayShape3D_property_length>`                 | ``1.0``   |
-+---------------------------+---------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`slide_on_slope<class_SeparationRayShape3D_property_slide_on_slope>` | ``false`` |
-+---------------------------+---------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`length<class_SeparationRayShape3D_property_length>`                 | ``1.0``   |
+   +---------------------------+---------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`slide_on_slope<class_SeparationRayShape3D_property_slide_on_slope>` | ``false`` |
+   +---------------------------+---------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SeparationRayShape3D_property_length:
 
-- :ref:`float<class_float>` **length**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_length(value) |
-+-----------+-------------------+
-| *Getter*  | get_length()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **length** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_length** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_length** **(** **)**
 
 The ray's length.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SeparationRayShape3D_property_slide_on_slope:
 
-- :ref:`bool<class_bool>` **slide_on_slope**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``false``                 |
-+-----------+---------------------------+
-| *Setter*  | set_slide_on_slope(value) |
-+-----------+---------------------------+
-| *Getter*  | get_slide_on_slope()      |
-+-----------+---------------------------+
+:ref:`bool<class_bool>` **slide_on_slope** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_slide_on_slope** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_slide_on_slope** **(** **)**
 
 If ``false`` (default), the shape always separates and returns a normal along its own direction.
 

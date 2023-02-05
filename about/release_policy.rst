@@ -88,10 +88,10 @@ on GitHub.
 +-------------+----------------------+--------------------------------------------------------------------------+
 | **Version** | **Release date**     | **Support level**                                                        |
 +-------------+----------------------+--------------------------------------------------------------------------+
-| Godot 4.0   | Q4 2022              | |unstable| *Alpha.* Current focus of development (unstable).             |
+| Godot 4.0   | Q1 2023 (estimate)   | |unstable| *Beta.* Current focus of development (unstable).              |
 +-------------+----------------------+--------------------------------------------------------------------------+
-| Godot 3.6   | Q4 2022              | |supported| *Beta.* Receives new features as well as bug fixes while     |
-|             |                      | under development.                                                       |
+| Godot 3.6   | Q1-Q2 2023 (estimate)| |supported| *Beta.* Receives new features as well as bug fixes while     |
+| (LTS)       |                      | under development. Will be released *after* 4.0.                         |
 +-------------+----------------------+--------------------------------------------------------------------------+
 | Godot 3.5   | August 2022          | |supported| Receives fixes for bugs, security and platform support       |
 |             |                      | issues, as well as backwards-compatible usability enhancements.          |
@@ -130,6 +130,10 @@ on GitHub.
 Pre-release Godot versions aren't intended to be used in production and are
 provided for testing purposes only.
 
+.. seealso::
+
+    See :ref:`doc_upgrading_to_godot_4` for instructions on migrating a project.
+
 .. _doc_release_policy_when_is_next_release_out:
 
 When is the next release out?
@@ -143,7 +147,6 @@ Maintenance (patch) releases are released as needed with potentially very
 short development cycles, to provide users of the current stable branch with
 the latest bug fixes for their production needs.
 
-As for the upcoming Godot 4.0, as of August 2022, we are aiming for a *beta*
-release in Q3 2022, and possibly a stable release by Q4 2022 (but experience
-has shown time and time again that such estimates tend to be overly optimistic).
+As for the upcoming Godot 4.0, as of December 2022, we are well into the *beta*
+phase, and are aiming for a stable release in Q1 2023.
 `Follow the Godot blog <https://godotengine.org/news>`__ for the latest updates.

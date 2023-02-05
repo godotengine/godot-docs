@@ -13,42 +13,54 @@ transferred as close as possible.
 
 Godot supports the following 3D *scene file formats*:
 
-* glTF 2.0 **(recommended)**. Godot has full support for both text (``.gltf``) and binary (``.glb``) formats.
-* DAE (COLLADA), an older format that is fully supported.
-* OBJ (Wavefront) format + their MTL material files. This is also fully supported, but pretty limited (no support for pivots, skeletons, animations, PBR materials, ...).
-* ESCN, a Godot-specific format that Blender can export with a plugin.
-* FBX, supported via a reverse engineered importer. So we recommend using other formats listed above, if suitable
-  for your workflow.
+- glTF 2.0 **(recommended)**. Godot has full support for both text (``.gltf``) and binary (``.glb``) formats.
+- ``.blend`` (Blender). This works by calling Blender to export to glTF in a
+  transparent manner (requires Blender to be installed).
+- DAE (COLLADA), an older format that is fully supported.
+- OBJ (Wavefront) format + their MTL material files. This is also fully
+  supported, but pretty limited given the format's limitations (no support for
+  pivots, skeletons, animations, UV2, PBR materials, ...).
+- FBX, supported via `FBX2glTF <https://github.com/godotengine/FBX2glTF>`__ integration.
+  This requires installing an external program that links against the proprietary FBX SDK,
+  so we recommend using other formats listed above (if suitable for your workflow).
 
 Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
 
 It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose
 or default rest pose before exporting with your favorite 3D editor.
 
-Exporting glTF 2.0 files from Blender
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Exporting glTF 2.0 files from Blender (recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are three ways to export glTF files from Blender. As a glTF binary (``.glb`` file), glTF embedded (``.gltf`` file),
-and with textures (``gltf`` + ``.bin`` + textures).
+There are 3 ways to export glTF files from Blender:
 
-glTF binary files are the smallest of the three options. They include the mesh and textures set up in Blender.
-When brought into Godot the textures are part of the object's material file.
+- As a glTF binary file (``.glb``).
+- As a glTF text-based file with embedded binary data (``.gltf`` file)
+- As a glTF text-based file with separate binary data and textures (``.gltf``
+  file + ``.bin`` file + textures).
 
-glTF embedded files function the same way as binary files. They don't provide extra functionality in Godot,
-and shouldn't be used since they have a larger file size.
+glTF binary files (``.glb``) are the smallest of the three options. They include
+the mesh and textures set up in Blender. When brought into Godot the textures
+are part of the object's material file.
 
-There are two reasons to use glTF with the textures separate. One is to have the scene description in a
-text based format and the binary data in a separate binary file. This can be useful for version control if you want to review
-changes in a text based format. The second is you need the texture files separate from the material file. If you don't need
-either of those glTF binary files are fine.
+glTF embedded files (``.gltf``) function the same way as binary files. They
+don't provide extra functionality in Godot, and shouldn't be used since they
+have a larger file size.
+
+There are two reasons to use glTF with the textures separate. One is to have the
+scene description in a text based format and the binary data in a separate
+binary file. This can be useful for version control if you want to review
+changes in a text-based format. The second is you need the texture files
+separate from the material file. If you don't need either of those, glTF binary
+files are fine.
 
 .. warning::
 
-    If your model contains blend shapes (also known as "shape keys" and "morph targets"),
-    your glTF export setting **Export Deformation Bones Only** needs to be configured to **Enabled**
-    under the Animation export configurations.
+    If your model contains blend shapes (also known as "shape keys" and "morph
+    targets"), your glTF export setting **Export Deformation Bones Only** needs
+    to be configured to **Enabled** under the Animation export configurations.
 
-    Exporting non-deforming bones anyway will lead to incorrect shading in GLES3.
+    Exporting non-deforming bones anyway will lead to incorrect shading.
 
 .. note::
 
@@ -63,27 +75,97 @@ either of those glTF binary files are fine.
     being culled by other faces. To resolve this, enable **Backface Culling** in
     Blender's Materials tab, then export the scene to glTF again.
 
+Importing ``.blend`` files directly within Godot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+    
+    This functionality requires Blender 3.0 or later.
+
+From Godot 4.0 onwards, the editor can directly import ``.blend`` files by
+calling `Blender <https://www.blender.org/>`__'s glTF export functionality in a
+transparent manner.
+
+This allows you to iterate on your 3D scenes faster, as you can save the scene
+in Blender, alt-tab back to Godot then see your changes immediately. When
+working with version control, this is also more efficient as you no longer need
+to commit a copy of the exported glTF file to version control.
+
+To use ``.blend`` import, you must install Blender before opening the Godot
+editor (if opening a project that already contains ``.blend`` files). If you
+keep Blender installed at its default location, Godot should be able to detect
+its path automatically. If this isn't the case, configure the path to the
+Blender executable in the Editor Settings (**Filesystem > Import > Blender >
+Blender 3 Path**).
+
+If you keep ``.blend`` files within your project folder but don't want them to
+be imported by Godot, disable **Filesystem > Import > Blender > Enabled** in the
+advanced Project Settings.
+
+.. note::
+
+    When working in a team, keep in mind using ``.blend`` files in your project
+    will require *all* team members to have Blender installed. While Blender is
+    a free download, this may add friction when working on the project.
+    ``.blend`` import is also not available on the Android and web editors, as
+    these platforms can't call external programs.
+    
+    If this is problematic, consider using glTF scenes exported from Blender
+    instead.
+
 Exporting DAE files from Blender
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Blender has built-in COLLADA support, but it does not work properly for the needs of game engines
-and should not be used as is.
+Blender has built-in COLLADA support, but it does not work properly for the
+needs of game engines and shouldn't be used as-is. However, scenes exported with
+the built-in Collada support may still work for simple scenes without animation.
 
-Godot provides a `Blender plugin <https://github.com/godotengine/collada-exporter>`_
-that will correctly export COLLADA scenes for use in Godot. It does not work in Blender 2.8 or
-newer, but there are plans to update it in the future.
+For complex scenes or scenes that contain animations, Godot provides a
+`Blender plugin <https://github.com/godotengine/collada-exporter>`_
+that will correctly export COLLADA scenes for use in Godot.
 
-Exporting ESCN files from Blender
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Importing OBJ files in Godot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The most powerful one, called `godot-blender-exporter
-<https://github.com/godotengine/godot-blender-exporter>`__.
-It uses a .escn file, which is kind of another name for a .tscn file (Godot scene file);
-it keeps as much information as possible from a Blender scene. However, it is considered
-experimental.
+OBJ is one of the simplest 3D formats out there, so Godot should be able to
+import most OBJ files successfully. However, OBJ is also a very limited format:
+it doesn't support skinning, animation, UV2 or PBR materials.
 
-The ESCN exporter has a detailed `document <escn_exporter/index.html>`__ describing
-its functionality and usage.
+There are 2 ways to use OBJ meshes in Godot:
+
+- Load them directly in a MeshInstance3D node, or any other property that
+  expects as mesh (such as GPUParticles3D). This is the default mode.
+- Change their import mode to **OBJ as Scene** in the Import dock then restart
+  the editor. This allows you to use the same import options as glTF or Collada
+  scenes, such as unwrapping UV2 on import (for :ref:`doc_baked_lightmaps`).
+
+.. note::
+
+    Blender 3.4 and later can export RGB vertex colors in OBJ files (this is a
+    nonstandard extension of the OBJ format). Godot is able to import those
+    vertex colors since Godot 4.0, but they will not be displayed on the
+    material unless you enable **Vertex Color > Use As Albedo** on the material.
+
+    Vertex colors from OBJ meshes keep their original color space once imported
+    (sRGB/linear), but their brightness is clamped to 1.0 (they can't be
+    overbright).
+
+Importing FBX files in Godot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When opening a project containing FBX scenes, you will see a dialog asking you
+to configure FBX import. Click the link in the dialog to download a fbx2gltf
+binary, then extract the ZIP archive, place the binary anywhere you wish, then
+specify its path in the dialog.
+
+If you keep ``.fbx`` files within your project folder but don't want them to
+be imported by Godot, disable **Filesystem > Import > FBX > Enabled** in the
+advanced Project Settings.
+
+.. seealso::
+
+    The full installation process for using FBX in Godot is described on the
+    `FBX import page of the Godot website <https://godotengine.org/fbx-import>`__.
 
 Exporting textures separately
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -281,7 +363,7 @@ Whether or not the mesh is used in baked lightmaps.
 - **Enable:** The mesh is used in baked lightmaps.
 - **Gen Lightmaps:** The mesh is used in baked lightmaps, and unwraps a second UV layer for lightmaps.
 
-.. note:: For more information on light baking see :ref:`doc_baked_lightmaps`.
+.. note:: For more information on light baking see :ref:`doc_using_lightmap_gi`.
 
 External Files
 ~~~~~~~~~~~~~~

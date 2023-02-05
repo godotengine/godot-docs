@@ -35,7 +35,7 @@ However, creating scene chunks (nodes in tree arrangement) outside the active tr
 ::
 
     var enemy_scene = load("res://enemy_scene.scn")
-    var enemy = enemy_scene.instance()
+    var enemy = enemy_scene.instantiate()
     enemy.add_child(weapon) # Set a weapon.
     world.call_deferred("add_child", enemy)
 

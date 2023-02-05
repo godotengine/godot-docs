@@ -14,44 +14,69 @@ MissingResource
 
 This is an internal editor class intended for keeping data of resources of unknown type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-This is an internal editor class intended for keeping data of resources of unknown type (most likely this type was supplied by an extension that is no longer loaded). It can´t be manually instantiated or placed in the scene. Ignore it if you don't know what it is.
+This is an internal editor class intended for keeping data of resources of unknown type (most likely this type was supplied by an extension that is no longer loaded). It can't be manually instantiated or placed in the scene. Ignore it if you don't know what it is.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`original_class<class_MissingResource_property_original_class>`             |
-+-----------------------------+----------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`     | :ref:`recording_properties<class_MissingResource_property_recording_properties>` |
-+-----------------------------+----------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+----------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`original_class<class_MissingResource_property_original_class>`             |
+   +-----------------------------+----------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`     | :ref:`recording_properties<class_MissingResource_property_recording_properties>` |
+   +-----------------------------+----------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_MissingResource_property_original_class:
 
-- :ref:`String<class_String>` **original_class**
+.. rst-class:: classref-property
 
-+----------+---------------------------+
-| *Setter* | set_original_class(value) |
-+----------+---------------------------+
-| *Getter* | get_original_class()      |
-+----------+---------------------------+
+:ref:`String<class_String>` **original_class**
+
+.. rst-class:: classref-property-setget
+
+- void **set_original_class** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_original_class** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MissingResource_property_recording_properties:
 
-- :ref:`bool<class_bool>` **recording_properties**
+.. rst-class:: classref-property
 
-+----------+---------------------------------+
-| *Setter* | set_recording_properties(value) |
-+----------+---------------------------------+
-| *Getter* | is_recording_properties()       |
-+----------+---------------------------------+
+:ref:`bool<class_bool>` **recording_properties**
+
+.. rst-class:: classref-property-setget
+
+- void **set_recording_properties** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_recording_properties** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -14,6 +14,8 @@ VisualShaderNodeDotProduct
 
 Calculates a dot product of two vectors within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

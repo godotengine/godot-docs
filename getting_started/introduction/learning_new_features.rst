@@ -33,7 +33,7 @@ from within the Godot editor. To do so, go to Help -> Search or press
 
 .. image:: img/manual_class_reference_search.png
 
-To browse it online, head to the manual's :ref:`Class Reference <toc-class-ref>`
+To browse it online, head to the manual's :ref:`Class Reference <doc_class_reference>`
 section.
 
 A class reference's page tells you:
@@ -42,7 +42,7 @@ A class reference's page tells you:
    links to jump to parent classes and see the properties and methods a type
    inherits.
 
-   .. image:: img/manual_class_reference_inheritance.png
+   .. image:: img/manual_class_reference_inheritance.webp
 
 2. A summary of the class's role and use cases.
 
@@ -116,7 +116,7 @@ information:
    the code you write affects nodes in your scenes. As a result, you should
    think of those scenes as part of your source code.
 
-   .. image:: img/key_concepts_scene_tree.png
+   .. image:: img/key_concepts_scene_tree.webp
 
    Also, please don't take a picture with your phone, the low quality and screen
    reflections can make it hard to understand the image. Your operating system

@@ -73,7 +73,7 @@ Here is a complete class example based on these guidelines:
         _state.exit()
         self._state = target_state
         _state.enter(msg)
-        Events.emit_signal("player_state_changed", _state.name)
+        Events.player_state_changed.emit(_state.name)
 
 
     func set_is_active(value):
@@ -90,8 +90,9 @@ Here is a complete class example based on these guidelines:
 
     func _on_state_changed(previous, new):
         print("state changed")
-        emit_signal("state_changed")
-        
+        state_changed.emit()
+
+
     class State:
         var foo = 0
 
@@ -274,13 +275,13 @@ Surround functions and class definitions with two blank lines:
     func heal(amount):
         health += amount
         health = min(health, max_health)
-        emit_signal("health_changed", health)
+        health_changed.emit(health)
 
 
     func take_damage(amount, effect=null):
         health -= amount
         health = max(0, health)
-        emit_signal("health_changed", health)
+        health_changed.emit(health)
 
 Use one blank line inside functions to separate logical sections.
 
@@ -328,7 +329,7 @@ The only exception to that rule is the ternary operator:
 
 ::
 
-   next_state = "fall" if not is_on_floor() else "idle"
+   next_state = "idle" if is_on_floor() else "fall"
 
 Format multiline statements for readability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -853,12 +854,12 @@ in that order.
         _state.exit()
         self._state = target_state
         _state.enter(msg)
-        Events.emit_signal("player_state_changed", _state.name)
+        player_state_changed.emit(_state.name)
 
 
     func _on_state_changed(previous, new):
         print("state changed")
-        emit_signal("state_changed")
+        state_changed.emit()
 
 
 Static typing

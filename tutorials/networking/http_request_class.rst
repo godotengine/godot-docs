@@ -38,6 +38,7 @@ Below is all the code we need to make it work. The URL points to an online API m
 
         func _ready():
             $HTTPRequest.connect("request_completed", self, "_on_request_completed")
+            $Button.connect("pressed", self, "_on_Button_pressed")
 
         func _on_Button_pressed():
             $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed")
@@ -48,7 +49,9 @@ Below is all the code we need to make it work. The URL points to an online API m
 
     .. code-tab:: csharp
 
-        class HTTPRequestDemo : CanvasLayer
+        using Godot;
+        
+        public partial class MyCanvasLayer : CanvasLayer
         {
             public override void _Ready()
             {
@@ -56,15 +59,15 @@ Below is all the code we need to make it work. The URL points to an online API m
                 GetNode("Button").Pressed += OnButtonPressed;
             }
 
-            public void OnButtonPressed()
+            private void OnButtonPressed()
             {
-                HTTPRequest httpRequest = GetNode<HTTPRequest>("HTTPRequest");
+                HttpRequest httpRequest = GetNode<HttpRequest>("HTTPRequest");
                 httpRequest.Request("http://www.mocky.io/v2/5185415ba171ea3a00704eed");
             }
 
-            public void OnRequestCompleted(int result, int response_code, string[] headers, byte[] body)
+            private void OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
             {
-                JSONParseResult json = JSON.Parse(Encoding.UTF8.GetString(body));
+                JsonParseResult json = Json.Parse(Encoding.UTF8.GetString(body));
                 GD.Print(json.Result);
             }
         }
@@ -86,7 +89,7 @@ For example, to set a custom user agent (the HTTP ``user-agent`` header) you cou
 
     .. code-tab:: csharp
 
-        HTTPRequest httpRequest = GetNode<HTTPRequest>("HTTPRequest");
+        HttpRequest httpRequest = GetNode<HttpRequest>("HTTPRequest");
         httpRequest.Request("http://www.mocky.io/v2/5185415ba171ea3a00704eed", new string[] { "user-agent: YourCustomUserAgent" });
 
 Please note that, for SSL/TLS encryption and thus HTTPS URLs to work, you may need to take some steps as described :ref:`here <doc_ssl_certificates>`.
@@ -105,20 +108,22 @@ Until now, we have limited ourselves to requesting data from a server. But what 
 
         func _make_post_request(url, data_to_send, use_ssl):
             # Convert data to json string:
-            var query = JSON.print(data_to_send)
+            var query = JSON.stringify(data_to_send)
             # Add 'Content-Type' header:
             var headers = ["Content-Type: application/json"]
             $HTTPRequest.request(url, headers, use_ssl, HTTPClient.METHOD_POST, query)
 
     .. code-tab:: csharp
 
-            public void MakePostRequest(string url, object data_to_send, bool use_ssl)
-            {
-                string query = JSON.Print(data_to_send);
-                HTTPRequest httpRequest = GetNode<HTTPRequest>("HTTPRequest");
-                string[] headers = new string[] { "Content-Type: application/json" };
-                httpRequest.Request(url, headers, use_ssl, HTTPClient.Method.Post, query);
-            }
+        public void MakePostRequest(string url, Variant dataToSend, bool useSsl)
+        {
+            // Convert data to json string:
+            string query = Json.Stringify(dataToSend);
+            // Add 'Content-Type' header:
+            string[] headers = new string[] { "Content-Type: application/json" };
+            HttpRequest httpRequest = GetNode<HttpRequest>("HTTPRequest");
+            httpRequest.Request(url, headers, useSsl, HttpClient.Method.Post, query);
+        }
 
 Keep in mind that you have to wait for a request to finish before sending another one. Making multiple request at once requires you to have one node per request.
 A common strategy is to create and delete HTTPRequest nodes at runtime as necessary.

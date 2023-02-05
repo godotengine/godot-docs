@@ -14,6 +14,8 @@ VisualShaderNodeVectorLen
 
 Returns the length of a :ref:`Vector3<class_Vector3>` within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

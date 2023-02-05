@@ -14,6 +14,8 @@ VisualShaderNodeVectorDistance
 
 Returns the distance between two points. To be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

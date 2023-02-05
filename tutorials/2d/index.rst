@@ -14,3 +14,4 @@
    2d_meshes
    custom_drawing_in_2d
    2d_sprite_animation
+   2d_antialiasing

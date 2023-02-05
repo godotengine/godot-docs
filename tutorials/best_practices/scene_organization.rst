@@ -57,10 +57,10 @@ initialize it:
      .. code-tab:: gdscript GDScript
 
        # Parent
-       $Child.connect("signal_name", object_with_method, "method_on_the_object")
+       $Child.signal_name.connect(method_on_the_object)
 
        # Child
-       emit_signal("signal_name") # Triggers parent-defined behavior.
+       signal_name.emit() # Triggers parent-defined behavior.
 
      .. code-tab:: csharp
 
@@ -179,7 +179,7 @@ in another context without any extra changes to its API.
       // Parent
       GetNode<Left>("Left").Target = GetNode("Right/Receiver");
 
-      public class Left : Node
+      public partial class Left : Node
       {
           public Node Target = null;
 
@@ -189,7 +189,7 @@ in another context without any extra changes to its API.
           }
       }
 
-      public class Right : Node
+      public partial class Right : Node
       {
           public Node Receiver = null;
 

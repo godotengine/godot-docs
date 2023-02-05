@@ -12,7 +12,14 @@ VisualShaderNodeProximityFade
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A visual shader node representing proximity fade effect.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+The proximity fade effect fades out each pixel based on its distance to another object.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

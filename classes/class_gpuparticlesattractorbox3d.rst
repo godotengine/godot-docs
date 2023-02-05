@@ -14,6 +14,8 @@ GPUParticlesAttractorBox3D
 
 Box-shaped 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,27 +23,37 @@ Box-shaped 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticl
 
 \ **Note:** Particle attractors only affect :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`extents<class_GPUParticlesAttractorBox3D_property_extents>` | ``Vector3(1, 1, 1)`` |
-+-------------------------------+-------------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`extents<class_GPUParticlesAttractorBox3D_property_extents>` | ``Vector3(1, 1, 1)`` |
+   +-------------------------------+-------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GPUParticlesAttractorBox3D_property_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(1, 1, 1)`` |
-+-----------+----------------------+
-| *Setter*  | set_extents(value)   |
-+-----------+----------------------+
-| *Getter*  | get_extents()        |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
 
 The attractor box's extents in 3D units.
 

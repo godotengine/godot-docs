@@ -14,6 +14,8 @@ AESContext
 
 Interface to low level AES encryption features.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -95,78 +97,131 @@ This class provides access to AES encryption/decryption of raw data. Both AES-EC
 
 
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`finish<class_AESContext_method_finish>` **(** **)**                                                                                                                                                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_iv_state<class_AESContext_method_get_iv_state>` **(** **)**                                                                                                                                                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_AESContext_method_start>` **(** :ref:`Mode<enum_AESContext_Mode>` mode, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` iv=PackedByteArray() **)** |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`update<class_AESContext_method_update>` **(** :ref:`PackedByteArray<class_PackedByteArray>` src **)**                                                                                                           |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`finish<class_AESContext_method_finish>` **(** **)**                                                                                                                                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`get_iv_state<class_AESContext_method_get_iv_state>` **(** **)**                                                                                                                                                 |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_AESContext_method_start>` **(** :ref:`Mode<enum_AESContext_Mode>` mode, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` iv=PackedByteArray() **)** |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`update<class_AESContext_method_update>` **(** :ref:`PackedByteArray<class_PackedByteArray>` src **)**                                                                                                           |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_AESContext_Mode:
 
-.. _class_AESContext_constant_MODE_ECB_ENCRYPT:
-
-.. _class_AESContext_constant_MODE_ECB_DECRYPT:
-
-.. _class_AESContext_constant_MODE_CBC_ENCRYPT:
-
-.. _class_AESContext_constant_MODE_CBC_DECRYPT:
-
-.. _class_AESContext_constant_MODE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Mode**:
 
-- **MODE_ECB_ENCRYPT** = **0** --- AES electronic codebook encryption mode.
+.. _class_AESContext_constant_MODE_ECB_ENCRYPT:
 
-- **MODE_ECB_DECRYPT** = **1** --- AES electronic codebook decryption mode.
+.. rst-class:: classref-enumeration-constant
 
-- **MODE_CBC_ENCRYPT** = **2** --- AES cipher blocker chaining encryption mode.
+:ref:`Mode<enum_AESContext_Mode>` **MODE_ECB_ENCRYPT** = ``0``
 
-- **MODE_CBC_DECRYPT** = **3** --- AES cipher blocker chaining decryption mode.
+AES electronic codebook encryption mode.
 
-- **MODE_MAX** = **4** --- Maximum value for the mode enum.
+.. _class_AESContext_constant_MODE_ECB_DECRYPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_AESContext_Mode>` **MODE_ECB_DECRYPT** = ``1``
+
+AES electronic codebook decryption mode.
+
+.. _class_AESContext_constant_MODE_CBC_ENCRYPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_AESContext_Mode>` **MODE_CBC_ENCRYPT** = ``2``
+
+AES cipher blocker chaining encryption mode.
+
+.. _class_AESContext_constant_MODE_CBC_DECRYPT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_AESContext_Mode>` **MODE_CBC_DECRYPT** = ``3``
+
+AES cipher blocker chaining decryption mode.
+
+.. _class_AESContext_constant_MODE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Mode<enum_AESContext_Mode>` **MODE_MAX** = ``4``
+
+Maximum value for the mode enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AESContext_method_finish:
 
-- void **finish** **(** **)**
+.. rst-class:: classref-method
+
+void **finish** **(** **)**
 
 Close this AES context so it can be started again. See :ref:`start<class_AESContext_method_start>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AESContext_method_get_iv_state:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **get_iv_state** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **get_iv_state** **(** **)**
 
 Get the current IV state for this context (IV gets updated when calling :ref:`update<class_AESContext_method_update>`). You normally don't need this function.
 
 \ **Note:** This function only makes sense when the context is started with :ref:`MODE_CBC_ENCRYPT<class_AESContext_constant_MODE_CBC_ENCRYPT>` or :ref:`MODE_CBC_DECRYPT<class_AESContext_constant_MODE_CBC_DECRYPT>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AESContext_method_start:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Mode<enum_AESContext_Mode>` mode, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` iv=PackedByteArray() **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`Mode<enum_AESContext_Mode>` mode, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` iv=PackedByteArray() **)**
 
 Start the AES context in the given ``mode``. A ``key`` of either 16 or 32 bytes must always be provided, while an ``iv`` (initialization vector) of exactly 16 bytes, is only needed when ``mode`` is either :ref:`MODE_CBC_ENCRYPT<class_AESContext_constant_MODE_CBC_ENCRYPT>` or :ref:`MODE_CBC_DECRYPT<class_AESContext_constant_MODE_CBC_DECRYPT>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AESContext_method_update:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **update** **(** :ref:`PackedByteArray<class_PackedByteArray>` src **)**
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **update** **(** :ref:`PackedByteArray<class_PackedByteArray>` src **)**
 
 Run the desired operation for this AES context. Will return a :ref:`PackedByteArray<class_PackedByteArray>` containing the result of encrypting (or decrypting) the given ``src``. See :ref:`start<class_AESContext_method_start>` for mode of operation.
 

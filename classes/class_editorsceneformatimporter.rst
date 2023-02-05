@@ -16,85 +16,166 @@ EditorSceneFormatImporter
 
 Imports scenes from third-parties' 3D files.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``EditorSceneFormatImporter`` allows to define an importer script for a third-party 3D format.
+**EditorSceneFormatImporter** allows to define an importer script for a third-party 3D format.
 
-To use ``EditorSceneFormatImporter``, register it using the :ref:`EditorPlugin.add_scene_format_importer_plugin<class_EditorPlugin_method_add_scene_format_importer_plugin>` method first.
+To use **EditorSceneFormatImporter**, register it using the :ref:`EditorPlugin.add_scene_format_importer_plugin<class_EditorPlugin_method_add_scene_format_importer_plugin>` method first.
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_extensions<class_EditorSceneFormatImporter_method__get_extensions>` **(** **)** |virtual| |const|                                                                                                                                |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`_get_import_flags<class_EditorSceneFormatImporter_method__get_import_flags>` **(** **)** |virtual| |const|                                                                                                                            |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`_get_import_options<class_EditorSceneFormatImporter_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                               |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                     | :ref:`_get_option_visibility<class_EditorSceneFormatImporter_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|      |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>`                       | :ref:`_import_scene<class_EditorSceneFormatImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual| |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_extensions<class_EditorSceneFormatImporter_method__get_extensions>` **(** **)** |virtual| |const|                                                                                                                           |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`_get_import_flags<class_EditorSceneFormatImporter_method__get_import_flags>` **(** **)** |virtual| |const|                                                                                                                       |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`_get_import_options<class_EditorSceneFormatImporter_method__get_import_options>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                          |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                     | :ref:`_get_option_visibility<class_EditorSceneFormatImporter_method__get_option_visibility>` **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const| |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>`                       | :ref:`_import_scene<class_EditorSceneFormatImporter_method__import_scene>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options **)** |virtual|                            |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_EditorSceneFormatImporter_constant_IMPORT_SCENE:
 
+.. rst-class:: classref-constant
+
+**IMPORT_SCENE** = ``1``
+
+
+
 .. _class_EditorSceneFormatImporter_constant_IMPORT_ANIMATION:
+
+.. rst-class:: classref-constant
+
+**IMPORT_ANIMATION** = ``2``
+
+
 
 .. _class_EditorSceneFormatImporter_constant_IMPORT_FAIL_ON_MISSING_DEPENDENCIES:
 
+.. rst-class:: classref-constant
+
+**IMPORT_FAIL_ON_MISSING_DEPENDENCIES** = ``4``
+
+
+
 .. _class_EditorSceneFormatImporter_constant_IMPORT_GENERATE_TANGENT_ARRAYS:
+
+.. rst-class:: classref-constant
+
+**IMPORT_GENERATE_TANGENT_ARRAYS** = ``8``
+
+
 
 .. _class_EditorSceneFormatImporter_constant_IMPORT_USE_NAMED_SKIN_BINDS:
 
+.. rst-class:: classref-constant
+
+**IMPORT_USE_NAMED_SKIN_BINDS** = ``16``
+
+
+
 .. _class_EditorSceneFormatImporter_constant_IMPORT_DISCARD_MESHES_AND_MATERIALS:
 
-- **IMPORT_SCENE** = **1**
+.. rst-class:: classref-constant
 
-- **IMPORT_ANIMATION** = **2**
+**IMPORT_DISCARD_MESHES_AND_MATERIALS** = ``32``
 
-- **IMPORT_FAIL_ON_MISSING_DEPENDENCIES** = **4**
 
-- **IMPORT_GENERATE_TANGENT_ARRAYS** = **8**
 
-- **IMPORT_USE_NAMED_SKIN_BINDS** = **16**
+.. rst-class:: classref-section-separator
 
-- **IMPORT_DISCARD_MESHES_AND_MATERIALS** = **32**
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorSceneFormatImporter_method__get_extensions:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **_get_extensions** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **_get_extensions** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSceneFormatImporter_method__get_import_flags:
 
-- :ref:`int<class_int>` **_get_import_flags** **(** **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_import_flags** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSceneFormatImporter_method__get_import_options:
 
-- void **_get_import_options** **(** :ref:`String<class_String>` path **)** |virtual|
+.. rst-class:: classref-method
+
+void **_get_import_options** **(** :ref:`String<class_String>` path **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSceneFormatImporter_method__get_option_visibility:
 
-- :ref:`Variant<class_Variant>` **_get_option_visibility** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **_get_option_visibility** **(** :ref:`String<class_String>` path, :ref:`bool<class_bool>` for_animation, :ref:`String<class_String>` option **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSceneFormatImporter_method__import_scene:
 
-- :ref:`Object<class_Object>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options, :ref:`int<class_int>` bake_fps **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Object<class_Object>` **_import_scene** **(** :ref:`String<class_String>` path, :ref:`int<class_int>` flags, :ref:`Dictionary<class_Dictionary>` options **)** |virtual|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

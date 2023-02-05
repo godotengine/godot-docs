@@ -51,7 +51,8 @@ Editor
    - No support for debugging in threads yet.
 - Visual profiler with CPU and GPU time indications for each step of the
   rendering pipeline.
-- Performance monitoring tools.
+- Performance monitoring tools, including
+  :ref:`custom performance monitors <doc_custom_performance_monitors>`.
 - Live script reloading.
 - Live scene editing.
 
@@ -156,12 +157,6 @@ Vulkan 1.0, with Vulkan 1.1 and 1.2 features optionally used.
 - Perspective, orthographic and frustum-offset cameras.
 - When using the Vulkan Clustered backend (default on desktop), a depth prepass
   is used to improve performance in complex scenes by reducing the cost of overdraw.
-- Support for rendering 3D at a lower resolution while keeping 2D rendering at
-  the original scale. This can be used to improve performance on low-end systems
-  or improve visuals on high-end systems.
-
-  - 3D rendering can be scaled with bilinear filtering or
-    `AMD FidelityFX Super Resolution 1.0 <https://www.amd.com/en/technologies/fidelityfx-super-resolution>`__.
 
 - `OpenGL support planned for a future Godot 4.x release <https://godotengine.org/article/about-godot4-vulkan-gles3-and-gles2>`__.
 
@@ -331,12 +326,23 @@ Vulkan 1.0, with Vulkan 1.1 and 1.2 features optionally used.
 
 **Anti-aliasing:**
 
+- Temporal antialiasing (TAA).
+- Multi-sample antialiasing (MSAA), for both :ref:`doc_2d_antialiasing` and :ref:`doc_3d_antialiasing`.
 - Fast approximate antialiasing (FXAA).
-- Multi-sample antialiasing (MSAA).
 - Super-sample antialiasing (SSAA) using bilinear 3D scaling and a 3D resolution scale above 1.0.
-- Alpha antialiasing, alpha to coverage and alpha hashing on a per-material basis.
+- Alpha antialiasing, MSAA alpha to coverage and alpha hashing on a per-material basis.
 
-Most of these effects can be adjusted for better performance or to further
+**Resolution scaling:**
+
+- Support for rendering 3D at a lower resolution while keeping 2D rendering at
+  the original scale. This can be used to improve performance on low-end systems
+  or improve visuals on high-end systems.
+- Resolution scaling uses bilinear filtering or AMD FidelityFX Super Resolution
+  1.0 (FSR).
+- Texture mipmap LOD bias is adjusted automatically to improve quality at lower
+  resolution scales. It can also be modified with a manual offset.
+
+Most effects listed above can be adjusted for better performance or to further
 improve quality. This can be helpful when using Godot for offline rendering.
 
 3D tools
@@ -468,14 +474,13 @@ Import
    - Ogg Vorbis.
    - MP3.
 
-- *3D scenes:*
+- *3D scenes:* See :ref:`doc_importing_3d_scenes`.
 
    - glTF 2.0 *(recommended)*.
-   - `ESCN <https://github.com/godotengine/godot-blender-exporter>`__
-     (direct export from Blender).
-   - FBX (static meshes only).
+   - ``.blend`` (by calling Blender's glTF export functionality transparently).
+   - FBX (by calling fbx2gltf transparently).
    - Collada (.dae).
-   - Wavefront OBJ (static scenes only, can be loaded directly as a mesh).
+   - Wavefront OBJ (static scenes only, can be loaded directly as a mesh or imported as a 3D scene).
 
 - Support for loading glTF 2.0 scenes at run-time, including from an exported project.
 - 3D meshes use `Mikktspace <http://www.mikktspace.com/>`__ to generate tangents

@@ -12,440 +12,604 @@ TileData
 
 **Inherits:** :ref:`Object<class_Object>`
 
+Settings for a single tile in a :ref:`TileSet<class_TileSet>`.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**TileData** object represents a single tile in a :ref:`TileSet<class_TileSet>`. It is usually edited using the tileset editor, but it can be modified at runtime using :ref:`TileMap._tile_data_runtime_update<class_TileMap_method__tile_data_runtime_update>`.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`         | :ref:`flip_h<class_TileData_property_flip_h>`                 | ``false``             |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`         | :ref:`flip_v<class_TileData_property_flip_v>`                 | ``false``             |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_TileData_property_material>`             |                       |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`       | :ref:`modulate<class_TileData_property_modulate>`             | ``Color(1, 1, 1, 1)`` |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`       | :ref:`probability<class_TileData_property_probability>`       | ``1.0``               |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`terrain<class_TileData_property_terrain>`               | ``-1``                |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`terrain_set<class_TileData_property_terrain_set>`       | ``-1``                |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`Vector2i<class_Vector2i>` | :ref:`texture_offset<class_TileData_property_texture_offset>` | ``Vector2i(0, 0)``    |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`         | :ref:`transpose<class_TileData_property_transpose>`           | ``false``             |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`y_sort_origin<class_TileData_property_y_sort_origin>`   | ``0``                 |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`           | :ref:`z_index<class_TileData_property_z_index>`               | ``0``                 |
-+---------------------------------+---------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`         | :ref:`flip_h<class_TileData_property_flip_h>`                 | ``false``             |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`         | :ref:`flip_v<class_TileData_property_flip_v>`                 | ``false``             |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`Material<class_Material>` | :ref:`material<class_TileData_property_material>`             |                       |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`       | :ref:`modulate<class_TileData_property_modulate>`             | ``Color(1, 1, 1, 1)`` |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`       | :ref:`probability<class_TileData_property_probability>`       | ``1.0``               |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`terrain<class_TileData_property_terrain>`               | ``-1``                |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`terrain_set<class_TileData_property_terrain_set>`       | ``-1``                |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`Vector2i<class_Vector2i>` | :ref:`texture_offset<class_TileData_property_texture_offset>` | ``Vector2i(0, 0)``    |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`         | :ref:`transpose<class_TileData_property_transpose>`           | ``false``             |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`y_sort_origin<class_TileData_property_y_sort_origin>`   | ``0``                 |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`           | :ref:`z_index<class_TileData_property_z_index>`               | ``0``                 |
+   +---------------------------------+---------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`add_collision_polygon<class_TileData_method_add_collision_polygon>` **(** :ref:`int<class_int>` layer_id **)**                                                                                                                 |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                           | :ref:`get_collision_polygon_one_way_margin<class_TileData_method_get_collision_polygon_one_way_margin>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|                                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_collision_polygon_points<class_TileData_method_get_collision_polygon_points>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|                                                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`get_collision_polygons_count<class_TileData_method_get_collision_polygons_count>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                           |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                           | :ref:`get_constant_angular_velocity<class_TileData_method_get_constant_angular_velocity>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                         |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                       | :ref:`get_constant_linear_velocity<class_TileData_method_get_constant_linear_velocity>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                           |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                       | :ref:`get_custom_data<class_TileData_method_get_custom_data>` **(** :ref:`String<class_String>` layer_name **)** |const|                                                                                                             |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                       | :ref:`get_custom_data_by_layer_id<class_TileData_method_get_custom_data_by_layer_id>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                             |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NavigationPolygon<class_NavigationPolygon>`   | :ref:`get_navigation_polygon<class_TileData_method_get_navigation_polygon>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                                       |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`   | :ref:`get_occluder<class_TileData_method_get_occluder>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                                                           |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                               | :ref:`get_terrain_peering_bit<class_TileData_method_get_terrain_peering_bit>` **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit **)** |const|                                                                         |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                             | :ref:`is_collision_polygon_one_way<class_TileData_method_is_collision_polygon_one_way>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|                                                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`remove_collision_polygon<class_TileData_method_remove_collision_polygon>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)**                                                                      |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_collision_polygon_one_way<class_TileData_method_set_collision_polygon_one_way>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`bool<class_bool>` one_way **)**                           |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_collision_polygon_one_way_margin<class_TileData_method_set_collision_polygon_one_way_margin>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`float<class_float>` one_way_margin **)**    |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_collision_polygon_points<class_TileData_method_set_collision_polygon_points>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)** |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_collision_polygons_count<class_TileData_method_set_collision_polygons_count>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygons_count **)**                                                             |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_constant_angular_velocity<class_TileData_method_set_constant_angular_velocity>` **(** :ref:`int<class_int>` layer_id, :ref:`float<class_float>` velocity **)**                                                             |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_constant_linear_velocity<class_TileData_method_set_constant_linear_velocity>` **(** :ref:`int<class_int>` layer_id, :ref:`Vector2<class_Vector2>` velocity **)**                                                           |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_custom_data<class_TileData_method_set_custom_data>` **(** :ref:`String<class_String>` layer_name, :ref:`Variant<class_Variant>` value **)**                                                                                |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_custom_data_by_layer_id<class_TileData_method_set_custom_data_by_layer_id>` **(** :ref:`int<class_int>` layer_id, :ref:`Variant<class_Variant>` value **)**                                                                |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_navigation_polygon<class_TileData_method_set_navigation_polygon>` **(** :ref:`int<class_int>` layer_id, :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon **)**                                         |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_occluder<class_TileData_method_set_occluder>` **(** :ref:`int<class_int>` layer_id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` occluder_polygon **)**                                                               |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                | :ref:`set_terrain_peering_bit<class_TileData_method_set_terrain_peering_bit>` **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit, :ref:`int<class_int>` terrain **)**                                                  |
-+-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`add_collision_polygon<class_TileData_method_add_collision_polygon>` **(** :ref:`int<class_int>` layer_id **)**                                                                                                                 |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get_collision_polygon_one_way_margin<class_TileData_method_get_collision_polygon_one_way_margin>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|                                      |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`get_collision_polygon_points<class_TileData_method_get_collision_polygon_points>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|                                                      |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_collision_polygons_count<class_TileData_method_get_collision_polygons_count>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                           |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                           | :ref:`get_constant_angular_velocity<class_TileData_method_get_constant_angular_velocity>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                         |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`get_constant_linear_velocity<class_TileData_method_get_constant_linear_velocity>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                           |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                       | :ref:`get_custom_data<class_TileData_method_get_custom_data>` **(** :ref:`String<class_String>` layer_name **)** |const|                                                                                                             |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                       | :ref:`get_custom_data_by_layer_id<class_TileData_method_get_custom_data_by_layer_id>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                             |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`NavigationPolygon<class_NavigationPolygon>`   | :ref:`get_navigation_polygon<class_TileData_method_get_navigation_polygon>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                                       |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`   | :ref:`get_occluder<class_TileData_method_get_occluder>` **(** :ref:`int<class_int>` layer_id **)** |const|                                                                                                                           |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_terrain_peering_bit<class_TileData_method_get_terrain_peering_bit>` **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit **)** |const|                                                                         |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`is_collision_polygon_one_way<class_TileData_method_is_collision_polygon_one_way>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|                                                      |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`remove_collision_polygon<class_TileData_method_remove_collision_polygon>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)**                                                                      |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_collision_polygon_one_way<class_TileData_method_set_collision_polygon_one_way>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`bool<class_bool>` one_way **)**                           |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_collision_polygon_one_way_margin<class_TileData_method_set_collision_polygon_one_way_margin>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`float<class_float>` one_way_margin **)**    |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_collision_polygon_points<class_TileData_method_set_collision_polygon_points>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)** |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_collision_polygons_count<class_TileData_method_set_collision_polygons_count>` **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygons_count **)**                                                             |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_constant_angular_velocity<class_TileData_method_set_constant_angular_velocity>` **(** :ref:`int<class_int>` layer_id, :ref:`float<class_float>` velocity **)**                                                             |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_constant_linear_velocity<class_TileData_method_set_constant_linear_velocity>` **(** :ref:`int<class_int>` layer_id, :ref:`Vector2<class_Vector2>` velocity **)**                                                           |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_custom_data<class_TileData_method_set_custom_data>` **(** :ref:`String<class_String>` layer_name, :ref:`Variant<class_Variant>` value **)**                                                                                |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_custom_data_by_layer_id<class_TileData_method_set_custom_data_by_layer_id>` **(** :ref:`int<class_int>` layer_id, :ref:`Variant<class_Variant>` value **)**                                                                |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_navigation_polygon<class_TileData_method_set_navigation_polygon>` **(** :ref:`int<class_int>` layer_id, :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon **)**                                         |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_occluder<class_TileData_method_set_occluder>` **(** :ref:`int<class_int>` layer_id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` occluder_polygon **)**                                                               |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_terrain_peering_bit<class_TileData_method_set_terrain_peering_bit>` **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit, :ref:`int<class_int>` terrain **)**                                                  |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_TileData_signal_changed:
 
-- **changed** **(** **)**
+.. rst-class:: classref-signal
+
+**changed** **(** **)**
+
+Emitted when any of the properties are changed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_TileData_property_flip_h:
 
-- :ref:`bool<class_bool>` **flip_h**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_flip_h(value) |
-+-----------+-------------------+
-| *Getter*  | get_flip_h()      |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **flip_h** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_h** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_flip_h** **(** **)**
+
+If ``true``, the tile will have its texture flipped horizontally.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_flip_v:
 
-- :ref:`bool<class_bool>` **flip_v**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_flip_v(value) |
-+-----------+-------------------+
-| *Getter*  | get_flip_v()      |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **flip_v** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_v** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_flip_v** **(** **)**
+
+If ``true``, the tile will have its texture flipped vertically.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_material:
 
-- :ref:`Material<class_Material>` **material**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
+:ref:`Material<class_Material>` **material**
 
-The :ref:`Material<class_Material>` to use for this ``TileData``. This can be a :ref:`CanvasItemMaterial<class_CanvasItemMaterial>` to use the default shader, or a :ref:`ShaderMaterial<class_ShaderMaterial>` to use a custom shader.
+.. rst-class:: classref-property-setget
+
+- void **set_material** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_material** **(** **)**
+
+The :ref:`Material<class_Material>` to use for this **TileData**. This can be a :ref:`CanvasItemMaterial<class_CanvasItemMaterial>` to use the default shader, or a :ref:`ShaderMaterial<class_ShaderMaterial>` to use a custom shader.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_modulate:
 
-- :ref:`Color<class_Color>` **modulate**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``Color(1, 1, 1, 1)`` |
-+-----------+-----------------------+
-| *Setter*  | set_modulate(value)   |
-+-----------+-----------------------+
-| *Getter*  | get_modulate()        |
-+-----------+-----------------------+
+:ref:`Color<class_Color>` **modulate** = ``Color(1, 1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_modulate** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_modulate** **(** **)**
+
+Color modulation of the tile.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_probability:
 
-- :ref:`float<class_float>` **probability**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_probability(value) |
-+-----------+------------------------+
-| *Getter*  | get_probability()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **probability** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_probability** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_probability** **(** **)**
+
+Relative probability of this tile being selected when drawing a pattern of random tiles.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_terrain:
 
-- :ref:`int<class_int>` **terrain**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``-1``             |
-+-----------+--------------------+
-| *Setter*  | set_terrain(value) |
-+-----------+--------------------+
-| *Getter*  | get_terrain()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **terrain** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_terrain** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_terrain** **(** **)**
+
+ID of the terrain from the terrain set that the tile uses.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_terrain_set:
 
-- :ref:`int<class_int>` **terrain_set**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``-1``                 |
-+-----------+------------------------+
-| *Setter*  | set_terrain_set(value) |
-+-----------+------------------------+
-| *Getter*  | get_terrain_set()      |
-+-----------+------------------------+
+:ref:`int<class_int>` **terrain_set** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_terrain_set** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_terrain_set** **(** **)**
+
+ID of the terrain set that the tile uses.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_texture_offset:
 
-- :ref:`Vector2i<class_Vector2i>` **texture_offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``Vector2i(0, 0)``        |
-+-----------+---------------------------+
-| *Setter*  | set_texture_offset(value) |
-+-----------+---------------------------+
-| *Getter*  | get_texture_offset()      |
-+-----------+---------------------------+
+:ref:`Vector2i<class_Vector2i>` **texture_offset** = ``Vector2i(0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture_offset** **(** :ref:`Vector2i<class_Vector2i>` value **)**
+- :ref:`Vector2i<class_Vector2i>` **get_texture_offset** **(** **)**
+
+Offsets the position of where the tile is drawn.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_transpose:
 
-- :ref:`bool<class_bool>` **transpose**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_transpose(value) |
-+-----------+----------------------+
-| *Getter*  | get_transpose()      |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **transpose** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_transpose** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_transpose** **(** **)**
+
+If ``true``, the tile will display transposed, i.e. with horizontal and vertical texture UVs swapped.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_y_sort_origin:
 
-- :ref:`int<class_int>` **y_sort_origin**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_y_sort_origin(value) |
-+-----------+--------------------------+
-| *Getter*  | get_y_sort_origin()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **y_sort_origin** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_y_sort_origin** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_y_sort_origin** **(** **)**
+
+Vertical point of the tile used for determining y-sorted order.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_property_z_index:
 
-- :ref:`int<class_int>` **z_index**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``0``              |
-+-----------+--------------------+
-| *Setter*  | set_z_index(value) |
-+-----------+--------------------+
-| *Getter*  | get_z_index()      |
-+-----------+--------------------+
+:ref:`int<class_int>` **z_index** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_z_index** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_z_index** **(** **)**
+
+Ordering index of this tile, relative to :ref:`TileMap<class_TileMap>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_TileData_method_add_collision_polygon:
 
-- void **add_collision_polygon** **(** :ref:`int<class_int>` layer_id **)**
+.. rst-class:: classref-method
+
+void **add_collision_polygon** **(** :ref:`int<class_int>` layer_id **)**
 
 Adds a collision polygon to the tile on the given TileSet physics layer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_collision_polygon_one_way_margin:
 
-- :ref:`float<class_float>` **get_collision_polygon_one_way_margin** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_collision_polygon_one_way_margin** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|
 
 Returns the one-way margin (for one-way platforms) of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_collision_polygon_points:
 
-- :ref:`PackedVector2Array<class_PackedVector2Array>` **get_collision_polygon_points** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PackedVector2Array<class_PackedVector2Array>` **get_collision_polygon_points** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|
 
 Returns the points of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_collision_polygons_count:
 
-- :ref:`int<class_int>` **get_collision_polygons_count** **(** :ref:`int<class_int>` layer_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_collision_polygons_count** **(** :ref:`int<class_int>` layer_id **)** |const|
 
 Returns how many polygons the tile has for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_constant_angular_velocity:
 
-- :ref:`float<class_float>` **get_constant_angular_velocity** **(** :ref:`int<class_int>` layer_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_constant_angular_velocity** **(** :ref:`int<class_int>` layer_id **)** |const|
 
 Returns the constant angular velocity applied to objects colliding with this tile.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_constant_linear_velocity:
 
-- :ref:`Vector2<class_Vector2>` **get_constant_linear_velocity** **(** :ref:`int<class_int>` layer_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_constant_linear_velocity** **(** :ref:`int<class_int>` layer_id **)** |const|
 
 Returns the constant linear velocity applied to objects colliding with this tile.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_custom_data:
 
-- :ref:`Variant<class_Variant>` **get_custom_data** **(** :ref:`String<class_String>` layer_name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_custom_data** **(** :ref:`String<class_String>` layer_name **)** |const|
 
 Returns the custom data value for custom data layer named ``layer_name``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_custom_data_by_layer_id:
 
-- :ref:`Variant<class_Variant>` **get_custom_data_by_layer_id** **(** :ref:`int<class_int>` layer_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_custom_data_by_layer_id** **(** :ref:`int<class_int>` layer_id **)** |const|
 
 Returns the custom data value for custom data layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_navigation_polygon:
 
-- :ref:`NavigationPolygon<class_NavigationPolygon>` **get_navigation_polygon** **(** :ref:`int<class_int>` layer_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`NavigationPolygon<class_NavigationPolygon>` **get_navigation_polygon** **(** :ref:`int<class_int>` layer_id **)** |const|
 
 Returns the navigation polygon of the tile for the TileSet navigation layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_occluder:
 
-- :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **get_occluder** **(** :ref:`int<class_int>` layer_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`OccluderPolygon2D<class_OccluderPolygon2D>` **get_occluder** **(** :ref:`int<class_int>` layer_id **)** |const|
 
 Returns the occluder polygon of the tile for the TileSet occlusion layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_get_terrain_peering_bit:
 
-- :ref:`int<class_int>` **get_terrain_peering_bit** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_terrain_peering_bit** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit **)** |const|
 
 Returns the tile's terrain bit for the given ``peering_bit`` direction.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_is_collision_polygon_one_way:
 
-- :ref:`bool<class_bool>` **is_collision_polygon_one_way** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_collision_polygon_one_way** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)** |const|
 
 Returns whether one-way collisions are enabled for the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_remove_collision_polygon:
 
-- void **remove_collision_polygon** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)**
+.. rst-class:: classref-method
+
+void **remove_collision_polygon** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index **)**
 
 Removes the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_collision_polygon_one_way:
 
-- void **set_collision_polygon_one_way** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`bool<class_bool>` one_way **)**
+.. rst-class:: classref-method
+
+void **set_collision_polygon_one_way** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`bool<class_bool>` one_way **)**
 
 Enables/disables one-way collisions on the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_collision_polygon_one_way_margin:
 
-- void **set_collision_polygon_one_way_margin** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`float<class_float>` one_way_margin **)**
+.. rst-class:: classref-method
+
+void **set_collision_polygon_one_way_margin** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`float<class_float>` one_way_margin **)**
 
 Enables/disables one-way collisions on the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_collision_polygon_points:
 
-- void **set_collision_polygon_points** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
+.. rst-class:: classref-method
+
+void **set_collision_polygon_points** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygon_index, :ref:`PackedVector2Array<class_PackedVector2Array>` polygon **)**
 
 Sets the points of the polygon at index ``polygon_index`` for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_collision_polygons_count:
 
-- void **set_collision_polygons_count** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygons_count **)**
+.. rst-class:: classref-method
+
+void **set_collision_polygons_count** **(** :ref:`int<class_int>` layer_id, :ref:`int<class_int>` polygons_count **)**
 
 Sets the polygons count for TileSet physics layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_constant_angular_velocity:
 
-- void **set_constant_angular_velocity** **(** :ref:`int<class_int>` layer_id, :ref:`float<class_float>` velocity **)**
+.. rst-class:: classref-method
+
+void **set_constant_angular_velocity** **(** :ref:`int<class_int>` layer_id, :ref:`float<class_float>` velocity **)**
 
 Sets the constant angular velocity. This does not rotate the tile. This angular velocity is applied to objects colliding with this tile.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_constant_linear_velocity:
 
-- void **set_constant_linear_velocity** **(** :ref:`int<class_int>` layer_id, :ref:`Vector2<class_Vector2>` velocity **)**
+.. rst-class:: classref-method
+
+void **set_constant_linear_velocity** **(** :ref:`int<class_int>` layer_id, :ref:`Vector2<class_Vector2>` velocity **)**
 
 Sets the constant linear velocity. This does not move the tile. This linear velocity is applied to objects colliding with this tile. This is useful to create conveyor belts.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_custom_data:
 
-- void **set_custom_data** **(** :ref:`String<class_String>` layer_name, :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+void **set_custom_data** **(** :ref:`String<class_String>` layer_name, :ref:`Variant<class_Variant>` value **)**
 
 Sets the tile's custom data value for the TileSet custom data layer with name ``layer_name``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_custom_data_by_layer_id:
 
-- void **set_custom_data_by_layer_id** **(** :ref:`int<class_int>` layer_id, :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+void **set_custom_data_by_layer_id** **(** :ref:`int<class_int>` layer_id, :ref:`Variant<class_Variant>` value **)**
 
 Sets the tile's custom data value for the TileSet custom data layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_navigation_polygon:
 
-- void **set_navigation_polygon** **(** :ref:`int<class_int>` layer_id, :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon **)**
+.. rst-class:: classref-method
+
+void **set_navigation_polygon** **(** :ref:`int<class_int>` layer_id, :ref:`NavigationPolygon<class_NavigationPolygon>` navigation_polygon **)**
 
 Sets the navigation polygon for the TileSet navigation layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_occluder:
 
-- void **set_occluder** **(** :ref:`int<class_int>` layer_id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` occluder_polygon **)**
+.. rst-class:: classref-method
+
+void **set_occluder** **(** :ref:`int<class_int>` layer_id, :ref:`OccluderPolygon2D<class_OccluderPolygon2D>` occluder_polygon **)**
 
 Sets the occluder for the TileSet occlusion layer with index ``layer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_TileData_method_set_terrain_peering_bit:
 
-- void **set_terrain_peering_bit** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit, :ref:`int<class_int>` terrain **)**
+.. rst-class:: classref-method
+
+void **set_terrain_peering_bit** **(** :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` peering_bit, :ref:`int<class_int>` terrain **)**
 
 Sets the tile's terrain bit for the given ``peering_bit`` direction.
 

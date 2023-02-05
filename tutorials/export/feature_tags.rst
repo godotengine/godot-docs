@@ -19,9 +19,14 @@ Each *feature* is represented as a string, which can refer to many of the follow
 
 Features can be queried at run-time from the singleton API by calling:
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     OS.has_feature(name)
+
+ .. code-tab:: csharp
+
+    OS.HasFeature(name);
 
 OS feature tags are used by GDExtension to determine which libraries to load.
 For example, a library for ``linux.debug.editor.x86_64`` will be
@@ -38,11 +43,6 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 | **android**     | Running on Android                                       |
 +-----------------+----------------------------------------------------------+
 | **bsd**         | Running on \*BSD                                         |
-+-----------------+----------------------------------------------------------+
-| **html5**       | Running on HTML5                                         |
-+-----------------+----------------------------------------------------------+
-| **javascript**  | :ref:`JavaScript singleton <doc_javascript_eval>` is     |
-|                 | available                                                |
 +-----------------+----------------------------------------------------------+
 | **linux**       | Running on Linux                                         |
 +-----------------+----------------------------------------------------------+
@@ -62,7 +62,11 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 +-----------------+----------------------------------------------------------+
 | **editor**      | Running on an editor build                               |
 +-----------------+----------------------------------------------------------+
-| **standalone**  | Running on a non-editor build                            |
+| **template**    | Running on a non-editor (export template) build          |
++-----------------+----------------------------------------------------------+
+| **double**      | Running on a double-precision build                      |
++-----------------+----------------------------------------------------------+
+| **single**      | Running on a single-precision build                      |
 +-----------------+----------------------------------------------------------+
 | **64**          | Running on a 64-bit build (any architecture)             |
 +-----------------+----------------------------------------------------------+

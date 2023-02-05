@@ -14,6 +14,8 @@ VisibleOnScreenEnabler3D
 
 Enables certain nodes only when approximately visible.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,62 +27,101 @@ If you just want to receive notifications, use :ref:`VisibleOnScreenNotifier3D<c
 
 \ **Note:** VisibleOnScreenEnabler3D will not affect nodes added after scene initialization.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------+
-| :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` | :ref:`enable_mode<class_VisibleOnScreenEnabler3D_property_enable_mode>`           | ``0``              |
-+-------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------+
-| :ref:`NodePath<class_NodePath>`                             | :ref:`enable_node_path<class_VisibleOnScreenEnabler3D_property_enable_node_path>` | ``NodePath("..")`` |
-+-------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------+
+   | :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` | :ref:`enable_mode<class_VisibleOnScreenEnabler3D_property_enable_mode>`           | ``0``              |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------+
+   | :ref:`NodePath<class_NodePath>`                             | :ref:`enable_node_path<class_VisibleOnScreenEnabler3D_property_enable_node_path>` | ``NodePath("..")`` |
+   +-------------------------------------------------------------+-----------------------------------------------------------------------------------+--------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisibleOnScreenEnabler3D_EnableMode:
 
-.. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_INHERIT:
-
-.. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_ALWAYS:
-
-.. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_WHEN_PAUSED:
+.. rst-class:: classref-enumeration
 
 enum **EnableMode**:
 
-- **ENABLE_MODE_INHERIT** = **0**
+.. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_INHERIT:
 
-- **ENABLE_MODE_ALWAYS** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **ENABLE_MODE_WHEN_PAUSED** = **2**
+:ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **ENABLE_MODE_INHERIT** = ``0``
+
+
+
+.. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_ALWAYS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **ENABLE_MODE_ALWAYS** = ``1``
+
+
+
+.. _class_VisibleOnScreenEnabler3D_constant_ENABLE_MODE_WHEN_PAUSED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **ENABLE_MODE_WHEN_PAUSED** = ``2``
+
+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisibleOnScreenEnabler3D_property_enable_mode:
 
-- :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **enable_mode**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0``                  |
-+-----------+------------------------+
-| *Setter*  | set_enable_mode(value) |
-+-----------+------------------------+
-| *Getter*  | get_enable_mode()      |
-+-----------+------------------------+
+:ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **enable_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enable_mode** **(** :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` value **)**
+- :ref:`EnableMode<enum_VisibleOnScreenEnabler3D_EnableMode>` **get_enable_mode** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibleOnScreenEnabler3D_property_enable_node_path:
 
-- :ref:`NodePath<class_NodePath>` **enable_node_path**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``NodePath("..")``          |
-+-----------+-----------------------------+
-| *Setter*  | set_enable_node_path(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_enable_node_path()      |
-+-----------+-----------------------------+
+:ref:`NodePath<class_NodePath>` **enable_node_path** = ``NodePath("..")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enable_node_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_enable_node_path** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

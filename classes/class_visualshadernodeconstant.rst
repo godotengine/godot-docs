@@ -12,9 +12,16 @@ VisualShaderNodeConstant
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisualShaderNodeBooleanConstant<class_VisualShaderNodeBooleanConstant>`, :ref:`VisualShaderNodeColorConstant<class_VisualShaderNodeColorConstant>`, :ref:`VisualShaderNodeFloatConstant<class_VisualShaderNodeFloatConstant>`, :ref:`VisualShaderNodeIntConstant<class_VisualShaderNodeIntConstant>`, :ref:`VisualShaderNodeTransformConstant<class_VisualShaderNodeTransformConstant>`, :ref:`VisualShaderNodeVec2Constant<class_VisualShaderNodeVec2Constant>`, :ref:`VisualShaderNodeVec3Constant<class_VisualShaderNodeVec3Constant>`, :ref:`VisualShaderNodeVec4Constant<class_VisualShaderNodeVec4Constant>`
+**Inherited By:** :ref:`VisualShaderNodeBooleanConstant<class_VisualShaderNodeBooleanConstant>`, :ref:`VisualShaderNodeColorConstant<class_VisualShaderNodeColorConstant>`, :ref:`VisualShaderNodeFloatConstant<class_VisualShaderNodeFloatConstant>`, :ref:`VisualShaderNodeIntConstant<class_VisualShaderNodeIntConstant>`, :ref:`VisualShaderNodeTransformConstant<class_VisualShaderNodeTransformConstant>`, :ref:`VisualShaderNodeUIntConstant<class_VisualShaderNodeUIntConstant>`, :ref:`VisualShaderNodeVec2Constant<class_VisualShaderNodeVec2Constant>`, :ref:`VisualShaderNodeVec3Constant<class_VisualShaderNodeVec3Constant>`, :ref:`VisualShaderNodeVec4Constant<class_VisualShaderNodeVec4Constant>`
 
 A base type for the constants within the visual shader graph.
+
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This is an abstract class. See the derived types for descriptions of the possible values.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

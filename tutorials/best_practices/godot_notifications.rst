@@ -113,11 +113,13 @@ deltatime methods as needed.
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
 
         // Called every frame, even when the engine detects no input.
-        public void _Process(float delta)
+        public void _Process(double delta)
         {
             if (Input.IsActionJustPressed("ui_select"))
                 GD.Print(delta);
@@ -128,11 +130,9 @@ deltatime methods as needed.
         {
             switch (event)
             {
-                case InputEventKey keyEvent:
+                case InputEventKey:
                     if (Input.IsActionJustPressed("ui_accept"))
                         GD.Print(GetProcessDeltaTime());
-                    break;
-                default:
                     break;
             }
         }
@@ -171,7 +171,9 @@ instantiation:
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
         private string _test = "one";
 
@@ -183,7 +185,7 @@ instantiation:
             set
             {
                 _test = value;
-                GD.Print("Setting: " + _test);
+                GD.Print($"Setting: {_test}");
             }
         }
 
@@ -245,17 +247,19 @@ nodes that one might create at runtime.
             NOTIFICATION_PARENTED:
                 parent_cache = get_parent()
                 if connection_check():
-                    parent_cache.connect("interacted_with", self, "_on_parent_interacted_with")
+                    parent_cache.interacted_with.connect(_on_parent_interacted_with)
             NOTIFICATION_UNPARENTED:
                 if connection_check():
-                    parent_cache.disconnect("interacted_with", self, "_on_parent_interacted_with")
+                    parent_cache.interacted_with.disconnect(_on_parent_interacted_with)
 
     func _on_parent_interacted_with():
         print("I'm reacting to my parent's interaction!")
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
         public Node ParentCache = null;
 

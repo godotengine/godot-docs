@@ -34,24 +34,30 @@ Example of *HBoxContainer* resizing children buttons.
 
 The real strength of containers is that they can be nested (as nodes), allowing the creation of very complex layouts that resize effortlessly.
 
-Size flags
-----------
+Sizing options
+--------------
 
-When adding a node to a container, the way the container treats each child depends mainly on their *size flags*. These flags
-can be found by inspecting any control that is a child of a *Container*.
+When adding a node to a container, the way the container treats each child depends mainly on their *container sizing options*. These options
+can be found by inspecting the layout of any *Control* that is a child of a *Container*.
 
-   .. image:: img/container_size_flags.png
+   .. image:: img/container_sizing_options.webp
 
-Size flags are independent for vertical and horizontal sizing and not all containers make use of them (but most do):
+Sizing options are independent for vertical and horizontal sizing and not all containers make use of them (but most do):
 
 * **Fill**: Ensures the control *fills* the designated area within the container. No matter if
   a control *expands* or not (see below), it will only *fill* the designated area when this is toggled on (it is by default).
 * **Expand**: Attempts to use as much space as possible in the parent container (in each axis).
   Controls that don't expand will be pushed away by those that do. Between expanding controls, the
-  amount of space they take from each other is determined by the *Ratio* (see below).
-* **Shrink Center** When expanding (and if not filling), try to remain at the center of the expanded
-  area (by default it remains at the left or top).
-* **Ratio**: The ratio of how much expanded controls take up the available space in relation to each
+  amount of space they take from each other is determined by the *Stretch Ratio* (see below).
+  This option is only available when the parent Container is of the right type, for example the *HBoxContainer* has this option
+  for horizontal sizing.
+* **Shrink Begin** When expanding, try to remain at the left or top of the expanded
+  area.
+* **Shrink Center** When expanding, try to remain at the center of the expanded
+  area.
+* **Shrink End** When expanding, try to remain at the right or bottom of the expanded
+  area.
+* **Stretch Ratio**: The ratio of how much expanded controls take up the available space in relation to each
   other. A control with "2", will take up twice as much available space as one with "1".
 
 Experimenting with these flags and different containers is recommended to get a better grasp on how they work.
@@ -129,7 +135,7 @@ PanelContainer
 
 A container that draws a *StyleBox*, then expands children to cover its whole area
 (via :ref:`PanelContainer <class_PanelContainer>`, respecting the *StyleBox* margins).
-It respects both the horizontal and vertical size flags.
+It respects both the horizontal and vertical sizing options.
 
    .. image:: img/containers_panel.png
 
@@ -140,7 +146,7 @@ ScrollContainer
 
 Accepts a single child node. If this node is bigger than the container, scrollbars will be added
 to allow panning the node around (via :ref:`ScrollContainer <class_ScrollContainer>`). Both
-vertical and horizontal size flags are respected, and the behavior can be turned on or off
+vertical and horizontal size options are respected, and the behavior can be turned on or off
 per axis in the properties.
 
    .. image:: img/containers_scroll.png
@@ -184,7 +190,7 @@ Here is an example of a container that fits children to its rect size:
 
     using Godot;
 
-    public class CustomContainer : Container
+    public partial class CustomContainer : Container
     {
         public override void _Notification(int what)
         {

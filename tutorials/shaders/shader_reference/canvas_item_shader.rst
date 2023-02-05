@@ -111,7 +111,7 @@ is usually:
 +--------------------------------+----------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**    | Instance custom data.                              |
 +--------------------------------+----------------------------------------------------+
-| in bool **AT_LIGHT_PASS**      | ``true`` if this is a light pass.                  |
+| in bool **AT_LIGHT_PASS**      | Always ``false``.                                  |
 +--------------------------------+----------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE** | Normalized pixel size of default 2D texture.       |
 |                                | For a Sprite2D with a texture of size 64x32px,     |
@@ -164,8 +164,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 |                                             | For a Sprite2D with a texture of size 64x32px,                |
 |                                             | **TEXTURE_PIXEL_SIZE** = :code`vec2(1/64, 1/32)`              |
 +---------------------------------------------+---------------------------------------------------------------+
-| in bool **AT_LIGHT_PASS**                   | If using the compatibility render, ``true`` if this is a      |
-|                                             | light pass. Otherwise ``false``.                              |
+| in bool **AT_LIGHT_PASS**                   | Always ``false``.                                             |
 +---------------------------------------------+---------------------------------------------------------------+
 | sampler2D **SPECULAR_SHININESS_TEXTURE**    |                                                               |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -199,15 +198,14 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 Light built-ins
 ^^^^^^^^^^^^^^^
 
-Light processor functions work differently when using the compatibility renderer then they do when
-using the rendering device based renderers. when using the compatibility renderer, the
-shader is called once for the object being drawn, and then once for each light touching that
-object in the scene. Use render_mode ``unshaded`` if you do not want any light passes to occur
-for that object. Use render_mode ``light_only`` if you only want light passes to occur for
-that object; this can be useful when you only want the object visible where it is covered by light.
+Light processor functions work differently in Godot 4.x than they did in Godot
+3.x. In Godot 4.x all lighting is done during the regular draw pass. In other
+words, Godot no longer draws the object again for each light. 
 
-When using the compatibility renderer and the shader is on a light pass, the ``AT_LIGHT_PASS``
-variable will be ``true``. When using one of the other renderers ``AT_LIGHT_PASS`` will always be false.
+Use render_mode ``unshaded`` if you do not want the light processor function to
+run. Use render_mode ``light_only`` if you only want to see the impact of
+lighting on an object; this can be useful when you only want the object visible
+where it is covered by light.
 
 Below is an example of a light shader that takes a CanvasItem's normal map into account:
 

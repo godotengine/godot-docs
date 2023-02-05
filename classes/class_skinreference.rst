@@ -12,29 +12,56 @@ SkinReference
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`   | :ref:`get_skeleton<class_SkinReference_method_get_skeleton>` **(** **)** |const| |
-+-------------------------+----------------------------------------------------------------------------------+
-| :ref:`Skin<class_Skin>` | :ref:`get_skin<class_SkinReference_method_get_skin>` **(** **)** |const|         |
-+-------------------------+----------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_skeleton<class_SkinReference_method_get_skeleton>` **(** **)** |const| |
+   +-------------------------+----------------------------------------------------------------------------------+
+   | :ref:`Skin<class_Skin>` | :ref:`get_skin<class_SkinReference_method_get_skin>` **(** **)** |const|         |
+   +-------------------------+----------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SkinReference_method_get_skeleton:
 
-- :ref:`RID<class_RID>` **get_skeleton** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_skeleton** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SkinReference_method_get_skin:
 
-- :ref:`Skin<class_Skin>` **get_skin** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Skin<class_Skin>` **get_skin** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

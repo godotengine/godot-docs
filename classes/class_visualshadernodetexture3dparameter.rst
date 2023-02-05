@@ -14,6 +14,8 @@ VisualShaderNodeTexture3DParameter
 
 Provides a 3D texture parameter within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

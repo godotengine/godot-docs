@@ -8,7 +8,7 @@ Measuring performance
 
 We have to know where the "bottlenecks" are to know how to speed up our program.
 Bottlenecks are the slowest parts of the program that limit the rate that
-everything can progress. Focussing on bottlenecks allows us to concentrate our
+everything can progress. Focusing on bottlenecks allows us to concentrate our
 efforts on optimizing the areas which will give us the greatest speed
 improvement, instead of spending a lot of time optimizing functions that will
 lead to small performance improvements.

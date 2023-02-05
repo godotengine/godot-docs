@@ -14,6 +14,8 @@ HashingContext
 
 Context to compute cryptographic hashes over multiple iterations.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -77,58 +79,99 @@ The :ref:`HashType<enum_HashingContext_HashType>` enum shows the supported hashi
 
 
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`finish<class_HashingContext_method_finish>` **(** **)**                                                     |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_HashingContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**    |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`update<class_HashingContext_method_update>` **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)** |
-+-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`finish<class_HashingContext_method_finish>` **(** **)**                                                     |
+   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`start<class_HashingContext_method_start>` **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**    |
+   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`update<class_HashingContext_method_update>` **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)** |
+   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_HashingContext_HashType:
 
-.. _class_HashingContext_constant_HASH_MD5:
-
-.. _class_HashingContext_constant_HASH_SHA1:
-
-.. _class_HashingContext_constant_HASH_SHA256:
+.. rst-class:: classref-enumeration
 
 enum **HashType**:
 
-- **HASH_MD5** = **0** --- Hashing algorithm: MD5.
+.. _class_HashingContext_constant_HASH_MD5:
 
-- **HASH_SHA1** = **1** --- Hashing algorithm: SHA-1.
+.. rst-class:: classref-enumeration-constant
 
-- **HASH_SHA256** = **2** --- Hashing algorithm: SHA-256.
+:ref:`HashType<enum_HashingContext_HashType>` **HASH_MD5** = ``0``
+
+Hashing algorithm: MD5.
+
+.. _class_HashingContext_constant_HASH_SHA1:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HashType<enum_HashingContext_HashType>` **HASH_SHA1** = ``1``
+
+Hashing algorithm: SHA-1.
+
+.. _class_HashingContext_constant_HASH_SHA256:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HashType<enum_HashingContext_HashType>` **HASH_SHA256** = ``2``
+
+Hashing algorithm: SHA-256.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_HashingContext_method_finish:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **finish** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **finish** **(** **)**
 
 Closes the current context, and return the computed hash.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HashingContext_method_start:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **start** **(** :ref:`HashType<enum_HashingContext_HashType>` type **)**
 
 Starts a new hash computation of the given ``type`` (e.g. :ref:`HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` to start computation of a SHA-256).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HashingContext_method_update:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **update** **(** :ref:`PackedByteArray<class_PackedByteArray>` chunk **)**
 
 Updates the computation with the given ``chunk`` of data.
 

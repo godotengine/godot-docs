@@ -50,21 +50,23 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
 
  .. code-tab:: csharp
 
-    class Body : RigidBody
+    using Godot;
+
+    public partial class MyRigidBody3D : RigidBody3D
     {
         private void LookFollow(PhysicsDirectBodyState state, Transform3D currentTransform, Vector3 targetPosition)
         {
             var upDir = new Vector3(0, 1, 0);
-            var curDir = currentTransform.basis.Xform(new Vector3(0, 0, 1));
-            var targetDir = (targetPosition - currentTransform.origin).Normalized();
-            var rotationAngle = Mathf.Acos(curDir.x) - Mathf.Acos(targetDir.x);
+            var curDir = currentTransform.Basis * new Vector3(0, 0, 1);
+            var targetDir = (targetPosition - currentTransform.Origin).Normalized();
+            var rotationAngle = Mathf.Acos(curDir.X) - Mathf.Acos(targetDir.X);
 
             state.SetAngularVelocity(upDir * (rotationAngle / state.GetStep()));
         }
 
         public override void _IntegrateForces(PhysicsDirectBodyState state)
         {
-            var targetPosition = GetNode<Node3D>("my_target_node3d_node").GetGlobalTransform().origin;
+            var targetPosition = GetNode<Node3D>("MyTargetNode3DNode").GetGlobalTransform().Origin;
             LookFollow(state, GetGlobalTransform(), targetPosition);
         }
     }

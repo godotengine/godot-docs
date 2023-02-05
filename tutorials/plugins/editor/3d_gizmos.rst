@@ -49,11 +49,11 @@ This would be a basic setup:
 
 
     func _enter_tree():
-        add_node3d_gizmo_plugin(gizmo_plugin)
+        add_node_3d_gizmo_plugin(gizmo_plugin)
 
 
     func _exit_tree():
-        remove_node3d_gizmo_plugin(gizmo_plugin)
+        remove_node_3d_gizmo_plugin(gizmo_plugin)
 
 
 For simple gizmos, inheriting :ref:`EditorNode3DGizmoPlugin <class_EditorNode3DGizmoPlugin>`
@@ -94,7 +94,7 @@ or all the handle related ones.
     func _redraw(gizmo):
         gizmo.clear()
 
-        var node3d = gizmo.get_node3d()
+        var node3d = gizmo.get_node_3d()
 
         var lines = PackedVector3Array()
 
@@ -107,7 +107,7 @@ or all the handle related ones.
         handles.push_back(Vector3(0, node3d.my_custom_value, 0))
 
         gizmo.add_lines(lines, get_material("main", gizmo), false)
-        gizmo.add_handles(handles, get_material("handles", gizmo))
+        gizmo.add_handles(handles, get_material("handles", gizmo), [])
 
 
     # ...
@@ -139,7 +139,7 @@ So the final plugin would look somewhat like this:
     func _redraw(gizmo):
         gizmo.clear()
 
-        var node3d = gizmo.get_node3d()
+        var node3d = gizmo.get_node_3d()
 
         var lines = PackedVector3Array()
 
@@ -152,7 +152,7 @@ So the final plugin would look somewhat like this:
         handles.push_back(Vector3(0, node3d.my_custom_value, 0))
 
         gizmo.add_lines(lines, get_material("main", gizmo), false)
-        gizmo.add_handles(handles, get_material("handles", gizmo))
+        gizmo.add_handles(handles, get_material("handles", gizmo), [])
 
 
     # You should implement the rest of handle-related callbacks
@@ -210,7 +210,7 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
     func _redraw():
         clear()
 
-        var node3d = get_node3d()
+        var node3d = get_node_3d()
 
         var lines = PackedVector3Array()
 
@@ -226,7 +226,7 @@ This way all the gizmo logic and drawing methods can be implemented in a new cla
         add_lines(lines, material, false)
 
         var handles_material = get_plugin().get_material("handles", self)
-        add_handles(handles, handles_material)
+        add_handles(handles, handles_material, [])
 
 
     # You should implement the rest of handle-related callbacks

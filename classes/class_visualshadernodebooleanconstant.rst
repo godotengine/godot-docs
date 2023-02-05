@@ -14,6 +14,8 @@ VisualShaderNodeBooleanConstant
 
 A boolean constant to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,27 +23,37 @@ Has only one output port and no inputs.
 
 Translated to ``bool`` in the shader language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`constant<class_VisualShaderNodeBooleanConstant_property_constant>` | ``false`` |
-+-------------------------+--------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`constant<class_VisualShaderNodeBooleanConstant_property_constant>` | ``false`` |
+   +-------------------------+--------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeBooleanConstant_property_constant:
 
-- :ref:`bool<class_bool>` **constant**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_constant(value) |
-+-----------+---------------------+
-| *Getter*  | get_constant()      |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **constant** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_constant** **(** **)**
 
 A boolean constant which represents a state of this node.
 

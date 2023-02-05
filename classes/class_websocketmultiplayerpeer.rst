@@ -14,6 +14,8 @@ WebSocketMultiplayerPeer
 
 Base class for WebSocket server and client.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,175 +23,219 @@ Base class for WebSocket server and client, allowing them to be used as multipla
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`handshake_headers<class_WebSocketMultiplayerPeer_property_handshake_headers>`       | ``PackedStringArray()`` |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                         | :ref:`handshake_timeout<class_WebSocketMultiplayerPeer_property_handshake_timeout>`       | ``3.0``                 |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                             | :ref:`inbound_buffer_size<class_WebSocketMultiplayerPeer_property_inbound_buffer_size>`   | ``65535``               |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                             | :ref:`max_queued_packets<class_WebSocketMultiplayerPeer_property_max_queued_packets>`     | ``2048``                |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                             | :ref:`outbound_buffer_size<class_WebSocketMultiplayerPeer_property_outbound_buffer_size>` | ``65535``               |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`supported_protocols<class_WebSocketMultiplayerPeer_property_supported_protocols>`   | ``PackedStringArray()`` |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`handshake_headers<class_WebSocketMultiplayerPeer_property_handshake_headers>`       | ``PackedStringArray()`` |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                         | :ref:`handshake_timeout<class_WebSocketMultiplayerPeer_property_handshake_timeout>`       | ``3.0``                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                             | :ref:`inbound_buffer_size<class_WebSocketMultiplayerPeer_property_inbound_buffer_size>`   | ``65535``               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                             | :ref:`max_queued_packets<class_WebSocketMultiplayerPeer_property_max_queued_packets>`     | ``2048``                |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                             | :ref:`outbound_buffer_size<class_WebSocketMultiplayerPeer_property_outbound_buffer_size>` | ``65535``               |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`supported_protocols<class_WebSocketMultiplayerPeer_property_supported_protocols>`   | ``PackedStringArray()`` |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_client<class_WebSocketMultiplayerPeer_method_create_client>` **(** :ref:`String<class_String>` url, :ref:`bool<class_bool>` verify_tls=true, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)**                                                 |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_server<class_WebSocketMultiplayerPeer_method_create_server>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`CryptoKey<class_CryptoKey>` tls_key=null, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)** |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** |const|                                                                                                                                                                  |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`get_peer_address<class_WebSocketMultiplayerPeer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                       |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`get_peer_port<class_WebSocketMultiplayerPeer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                             |
-+-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_client<class_WebSocketMultiplayerPeer_method_create_client>` **(** :ref:`String<class_String>` url, :ref:`bool<class_bool>` verify_tls=true, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)**                                                 |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_server<class_WebSocketMultiplayerPeer_method_create_server>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`CryptoKey<class_CryptoKey>` tls_key=null, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)** |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** |const|                                                                                                                                                                  |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`               | :ref:`get_peer_address<class_WebSocketMultiplayerPeer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                       |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`get_peer_port<class_WebSocketMultiplayerPeer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                             |
+   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_WebSocketMultiplayerPeer_property_handshake_headers:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **handshake_headers**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``PackedStringArray()``      |
-+-----------+------------------------------+
-| *Setter*  | set_handshake_headers(value) |
-+-----------+------------------------------+
-| *Getter*  | get_handshake_headers()      |
-+-----------+------------------------------+
+:ref:`PackedStringArray<class_PackedStringArray>` **handshake_headers** = ``PackedStringArray()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_handshake_headers** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_handshake_headers** **(** **)**
 
 The extra headers to use during handshake. See :ref:`WebSocketPeer.handshake_headers<class_WebSocketPeer_property_handshake_headers>` for more details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketMultiplayerPeer_property_handshake_timeout:
 
-- :ref:`float<class_float>` **handshake_timeout**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``3.0``                      |
-+-----------+------------------------------+
-| *Setter*  | set_handshake_timeout(value) |
-+-----------+------------------------------+
-| *Getter*  | get_handshake_timeout()      |
-+-----------+------------------------------+
+:ref:`float<class_float>` **handshake_timeout** = ``3.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_handshake_timeout** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_handshake_timeout** **(** **)**
 
 The maximum time each peer can stay in a connecting state before being dropped.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketMultiplayerPeer_property_inbound_buffer_size:
 
-- :ref:`int<class_int>` **inbound_buffer_size**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``65535``                      |
-+-----------+--------------------------------+
-| *Setter*  | set_inbound_buffer_size(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_inbound_buffer_size()      |
-+-----------+--------------------------------+
+:ref:`int<class_int>` **inbound_buffer_size** = ``65535``
+
+.. rst-class:: classref-property-setget
+
+- void **set_inbound_buffer_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_inbound_buffer_size** **(** **)**
 
 The inbound buffer size for connected peers. See :ref:`WebSocketPeer.inbound_buffer_size<class_WebSocketPeer_property_inbound_buffer_size>` for more details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketMultiplayerPeer_property_max_queued_packets:
 
-- :ref:`int<class_int>` **max_queued_packets**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``2048``                      |
-+-----------+-------------------------------+
-| *Setter*  | set_max_queued_packets(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_max_queued_packets()      |
-+-----------+-------------------------------+
+:ref:`int<class_int>` **max_queued_packets** = ``2048``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_queued_packets** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max_queued_packets** **(** **)**
 
 The maximum number of queued packets for connected peers. See :ref:`WebSocketPeer.max_queued_packets<class_WebSocketPeer_property_max_queued_packets>` for more details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketMultiplayerPeer_property_outbound_buffer_size:
 
-- :ref:`int<class_int>` **outbound_buffer_size**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``65535``                       |
-+-----------+---------------------------------+
-| *Setter*  | set_outbound_buffer_size(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_outbound_buffer_size()      |
-+-----------+---------------------------------+
+:ref:`int<class_int>` **outbound_buffer_size** = ``65535``
+
+.. rst-class:: classref-property-setget
+
+- void **set_outbound_buffer_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_outbound_buffer_size** **(** **)**
 
 The outbound buffer size for connected peers. See :ref:`WebSocketPeer.outbound_buffer_size<class_WebSocketPeer_property_outbound_buffer_size>` for more details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketMultiplayerPeer_property_supported_protocols:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **supported_protocols**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``PackedStringArray()``        |
-+-----------+--------------------------------+
-| *Setter*  | set_supported_protocols(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_supported_protocols()      |
-+-----------+--------------------------------+
+:ref:`PackedStringArray<class_PackedStringArray>` **supported_protocols** = ``PackedStringArray()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_supported_protocols** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_supported_protocols** **(** **)**
 
 The supported WebSocket sub-protocols. See :ref:`WebSocketPeer.supported_protocols<class_WebSocketPeer_property_supported_protocols>` for more details.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WebSocketMultiplayerPeer_method_create_client:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` url, :ref:`bool<class_bool>` verify_tls=true, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` url, :ref:`bool<class_bool>` verify_tls=true, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)**
 
 Starts a new multiplayer client connecting to the given ``url``. If ``verify_tls`` is ``false`` certificate validation will be disabled. If specified, the ``tls_certificate`` will be used to verify the TLS host.
 
 \ **Note**: It is recommended to specify the scheme part of the URL, i.e. the ``url`` should start with either ``ws://`` or ``wss://``.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebSocketMultiplayerPeer_method_create_server:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`CryptoKey<class_CryptoKey>` tls_key=null, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`CryptoKey<class_CryptoKey>` tls_key=null, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)**
 
 Starts a new multiplayer server listening on the given ``port``. You can optionally specify a ``bind_address``, and provide a ``tls_key`` and ``tls_certificate`` to use TLS.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketMultiplayerPeer_method_get_peer:
 
-- :ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`WebSocketPeer<class_WebSocketPeer>` **get_peer** **(** :ref:`int<class_int>` peer_id **)** |const|
 
 Returns the :ref:`WebSocketPeer<class_WebSocketPeer>` associated to the given ``peer_id``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketMultiplayerPeer_method_get_peer_address:
 
-- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the IP address of the given peer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketMultiplayerPeer_method_get_peer_port:
 
-- :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the remote port of the given peer.
 

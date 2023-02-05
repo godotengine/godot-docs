@@ -66,7 +66,7 @@ you should remove the instance you have added by calling
     using Godot;
 
     [Tool]
-    public class Plugin : EditorPlugin
+    public partial class Plugin : EditorPlugin
     {
         private MyInspectorPlugin _plugin;
 
@@ -91,7 +91,7 @@ To interact with the inspector dock, your ``MyInspectorPlugin.gd`` script must
 extend the :ref:`class_EditorInspectorPlugin` class. This class provides several
 virtual methods that affect how the inspector handles properties.
 
-To have any effect at all, the script must implement the ``can_handle()``
+To have any effect at all, the script must implement the ``_can_handle()``
 method. This function is called for each edited :ref:`class_Object` and must
 return ``true`` if this plugin should handle the object or its properties.
 
@@ -104,7 +104,7 @@ They can add controls at the top or bottom of the inspector layout by calling
 ``add_custom_control()``.
 
 As the editor parses the object, it calls the ``parse_category()`` and
-``parse_property()`` methods. There, in addition to ``add_custom_control()``,
+``_parse_property()`` methods. There, in addition to ``add_custom_control()``,
 you can call both ``add_property_editor()`` and
 ``add_property_editor_for_multiple_properties()``. Use these last two methods to
 specifically add :ref:`class_EditorProperty`-based controls.
@@ -118,12 +118,12 @@ specifically add :ref:`class_EditorProperty`-based controls.
     var RandomIntEditor = preload("res://addons/my_inspector_plugin/RandomIntEditor.gd")
 
 
-    func can_handle(object):
+    func _can_handle(object):
         # We support all objects in this example.
         return true
 
 
-    func parse_property(object, type, path, hint, hint_text, usage):
+    func _parse_property(object, type, path, hint, hint_text, usage):
         # We handle properties of type integer.
         if type == TYPE_INT:
             # Create an instance of the custom property editor and register
@@ -141,15 +141,15 @@ specifically add :ref:`class_EditorProperty`-based controls.
     #if TOOLS
     using Godot;
 
-    public class MyInspectorPlugin : EditorInspectorPlugin
+    public partial class MyInspectorPlugin : EditorInspectorPlugin
     {
-        public override bool CanHandle(Object @object)
+        public override bool _CanHandle(Variant @object)
         {
             // We support all objects in this example.
             return true;
         }
 
-        public override bool ParseProperty(Object @object, int type, string path, int hint, string hintText, int usage)
+        public override bool _ParseProperty(GodotObject @object, int type, string name, int hintType, string hintString, int usageFlags, bool wide)
         {
             // We handle properties of type integer.
             if (type == (int)Variant.Type.Int)
@@ -180,7 +180,7 @@ There are three essential parts to the script extending
 1. You must define the ``_init()`` method to set up the control nodes'
    structure.
 
-2. You should implement the ``update_property()`` to handle changes to the data
+2. You should implement the ``_update_property()`` to handle changes to the data
    from the outside.
 
 3. A signal must be emitted at some point to inform the inspector that the
@@ -228,7 +228,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
         emit_changed(get_edited_property(), current_value)
 
 
-    func update_property():
+    func _update_property():
         # Read the current value from the property.
         var new_value = get_edited_object()[get_edited_property()]
         if (new_value == current_value):
@@ -243,13 +243,13 @@ followed by ``set_bottom_editor()`` to position it below the name.
     func refresh_control_text():
         property_control.text = "Value: " + str(current_value)
 
- .. code-tab:: none C#
+ .. code-tab:: csharp
 
     // RandomIntEditor.cs
     #if TOOLS
     using Godot;
 
-    public class RandomIntEditor : EditorProperty
+    public partial class RandomIntEditor : EditorProperty
     {
         // The main control for editing the property.
         private Button _propertyControl = new Button();

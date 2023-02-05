@@ -9,6 +9,7 @@ Basic Tutorial
    :name: xr-basic-tutorial
 
    setting_up_xr
+   deploying_to_android
    basic_xr_locomotion
 
 Advanced topics
@@ -18,7 +19,7 @@ Advanced topics
    :maxdepth: 1
    :name: openxr-advanced-topics
 
-   openxr_action_map
+   xr_action_map
    openxr_hand_tracking
 
 .. note:

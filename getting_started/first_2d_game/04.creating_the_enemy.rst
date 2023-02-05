@@ -26,20 +26,20 @@ the Player scene.
 
 In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale``
 to ``0``, so the mob will not fall downward. In addition, under the
-:ref:`CollisionObject2D <class_CollisionObject2D>` section, click the ``Mask`` property and uncheck the first
-box. This will ensure the mobs do not collide with each other.
+:ref:`CollisionObject2D <class_CollisionObject2D>` section, uncheck the ``1`` inside the ``Mask`` property.
+This will ensure the mobs do not collide with each other.
 
-.. image:: img/set_collision_mask.png
+.. image:: img/set_collision_mask.webp
 
 Set up the :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` like you did for the
 player. This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. There
 are two images for each animation in the art folder.
 
-Adjust the "Speed (FPS)" to ``3`` for all animations.
+The ``Animation Speed`` property has to be set for each individual animation. Adjust it to ``3`` for all 3 animations.
 
-.. image:: img/mob_animations.gif
+.. image:: img/mob_animations.webp
 
-Set the ``Playing`` property in the Inspector to "On".
+You can use the "Play Animation" buttons on the right of the ``Animation Speed`` input field to preview your animations.
 
 We'll select one of these animations randomly so that the mobs will have some
 variety.
@@ -65,7 +65,9 @@ Add a script to the ``Mob`` like this:
 
  .. code-tab:: csharp
 
-    public class Mob : RigidBody2D
+    using Godot;
+
+    public partial class Mob : RigidBody2D
     {
         // Don't forget to rebuild the project.
     }
@@ -106,8 +108,8 @@ and randomly choose one of the three animation types:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        $AnimatedSprite2D.playing = true
-        var mob_types = $AnimatedSprite2D.frames.get_animation_names()
+        $AnimatedSprite2D.play()
+        var mob_types = $AnimatedSprite2D.get_sprite_frames().get_animation_names()
         $AnimatedSprite2D.animation = mob_types[randi() % mob_types.size()]
 
  .. code-tab:: csharp
@@ -115,8 +117,8 @@ and randomly choose one of the three animation types:
     public override void _Ready()
     {
         var animSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        animSprite2D.Playing = true;
-        string[] mobTypes = animSprite2D.Frames.GetAnimationNames();
+        animSprite2D.Play();
+        string[] mobTypes = animSprite2D.SpriteFrames.GetAnimationNames();
         animSprite2D.Animation = mobTypes[GD.Randi() % mobTypes.Length];
     }
 
@@ -132,7 +134,7 @@ and randomly choose one of the three animation types:
         godot::Ref<godot::RandomNumberGenerator> random = godot::RandomNumberGenerator::_new();
         random->randomize();
         _animated_sprite = get_node<godot::AnimatedSprite2D>("AnimatedSprite2D");
-        _animated_sprite->_set_playing(true);
+        _animated_sprite->set_playing(true);
         godot::PoolStringArray mob_types = _animated_sprite->get_sprite_frames()->get_animation_names();
         _animated_sprite->set_animation(mob_types[random->randi() % mob_types.size()]);
     }

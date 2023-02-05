@@ -12,7 +12,14 @@ VisualShaderNodeTexture2DArrayParameter
 
 **Inherits:** :ref:`VisualShaderNodeTextureParameter<class_VisualShaderNodeTextureParameter>` **<** :ref:`VisualShaderNodeParameter<class_VisualShaderNodeParameter>` **<** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A visual shader node for shader parameter (uniform) of type :ref:`Texture2DArray<class_Texture2DArray>`.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This parameter allows to provide a collection of textures for the shader. You can use :ref:`VisualShaderNodeTexture2DArray<class_VisualShaderNodeTexture2DArray>` to extract the textures from array.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

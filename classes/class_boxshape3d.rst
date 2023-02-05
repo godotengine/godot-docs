@@ -14,12 +14,16 @@ BoxShape3D
 
 Box shape resource for 3D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 3D box shape to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node.
 
-\ **Performance:** Being a primitive collision shape, ``BoxShape3D`` is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`).
+\ **Performance:** Being a primitive collision shape, **BoxShape3D** is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`).
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -30,27 +34,37 @@ Tutorials
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>` | :ref:`size<class_BoxShape3D_property_size>` | ``Vector3(1, 1, 1)`` |
-+-------------------------------+---------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`size<class_BoxShape3D_property_size>` | ``Vector3(1, 1, 1)`` |
+   +-------------------------------+---------------------------------------------+----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_BoxShape3D_property_size:
 
-- :ref:`Vector3<class_Vector3>` **size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(1, 1, 1)`` |
-+-----------+----------------------+
-| *Setter*  | set_size(value)      |
-+-----------+----------------------+
-| *Getter*  | get_size()           |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
 
 The box's width, height and depth.
 

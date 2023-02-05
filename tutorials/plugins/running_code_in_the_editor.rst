@@ -90,7 +90,7 @@ Here is how a ``_process()`` function might look for you:
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         if (Engine.IsEditorHint())
         {
@@ -129,14 +129,13 @@ and open a script, and change it to this:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     [Tool]
-    public class MySprite : Sprite2D
+    public partial class MySprite : Sprite2D
     {
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
-            Rotation += Mathf.Pi * delta;
+            Rotation += Mathf.Pi * (float)delta;
         }
     }
 
@@ -163,15 +162,15 @@ look like this:
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         if (Engine.IsEditorHint())
         {
-            Rotation += Mathf.Pi * delta;
+            Rotation += Mathf.Pi * (float)delta;
         }
         else
         {
-            Rotation -= Mathf.Pi * delta;
+            Rotation -= Mathf.Pi * (float)delta;
         }
     }
 
@@ -205,29 +204,27 @@ Add and export a variable speed to the script. The function set_speed after
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     [Tool]
-    public class MySprite : Sprite2D
+    public partial class MySprite : Sprite2D
     {
-        private float speed = 1;
+        private float _speed = 1;
 
         [Export]
-        public float Speed {
-            get => speed;
-            set => SetSpeed(value);
+        public float Speed
+        {
+            get => _speed;
+            set
+            {
+                // Update speed and reset the rotation.
+                _speed = value;
+                Rotation = 0;
+            }
         }
 
-        // Update speed and reset the rotation.
-        private void SetSpeed(float newSpeed)
+        public override void _Process(double delta)
         {
-            speed = newSpeed;
-            Rotation = 0;
-        }
-
-        public override void _Process(float delta)
-        {
-            Rotation += Mathf.Pi * delta * speed;
+            Rotation += Mathf.Pi * (float)delta * speed;
         }
     }
 

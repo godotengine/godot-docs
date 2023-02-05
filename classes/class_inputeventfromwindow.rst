@@ -14,29 +14,45 @@ InputEventFromWindow
 
 **Inherited By:** :ref:`InputEventScreenDrag<class_InputEventScreenDrag>`, :ref:`InputEventScreenTouch<class_InputEventScreenTouch>`, :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------+-----------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`window_id<class_InputEventFromWindow_property_window_id>` | ``0`` |
-+-----------------------+-----------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+-----------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`window_id<class_InputEventFromWindow_property_window_id>` | ``0`` |
+   +-----------------------+-----------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventFromWindow_property_window_id:
 
-- :ref:`int<class_int>` **window_id**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_window_id(value) |
-+-----------+----------------------+
-| *Getter*  | get_window_id()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **window_id** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_window_id** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_window_id** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

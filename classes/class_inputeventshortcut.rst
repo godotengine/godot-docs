@@ -12,27 +12,45 @@ InputEventShortcut
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------------+
-| :ref:`Shortcut<class_Shortcut>` | :ref:`shortcut<class_InputEventShortcut_property_shortcut>` |
-+---------------------------------+-------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------------+
+   | :ref:`Shortcut<class_Shortcut>` | :ref:`shortcut<class_InputEventShortcut_property_shortcut>` |
+   +---------------------------------+-------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventShortcut_property_shortcut:
 
-- :ref:`Shortcut<class_Shortcut>` **shortcut**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_shortcut(value) |
-+----------+---------------------+
-| *Getter* | get_shortcut()      |
-+----------+---------------------+
+:ref:`Shortcut<class_Shortcut>` **shortcut**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shortcut** **(** :ref:`Shortcut<class_Shortcut>` value **)**
+- :ref:`Shortcut<class_Shortcut>` **get_shortcut** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

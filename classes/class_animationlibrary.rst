@@ -14,122 +14,202 @@ AnimationLibrary
 
 Container for :ref:`Animation<class_Animation>` resources.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 An animation library stores a set of animations accessible through :ref:`StringName<class_StringName>` keys, for use with :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`Animation tutorial index <../tutorials/animation/index>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------+-----------------------------------------------------+--------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`_data<class_AnimationLibrary_property__data>` | ``{}`` |
-+-------------------------------------+-----------------------------------------------------+--------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+-----------------------------------------------------+--------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`_data<class_AnimationLibrary_property__data>` | ``{}`` |
+   +-------------------------------------+-----------------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_animation<class_AnimationLibrary_method_add_animation>` **(** :ref:`StringName<class_StringName>` name, :ref:`Animation<class_Animation>` animation **)**       |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Animation<class_Animation>`     | :ref:`get_animation<class_AnimationLibrary_method_get_animation>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StringName[]<class_StringName>` | :ref:`get_animation_list<class_AnimationLibrary_method_get_animation_list>` **(** **)** |const|                                                                           |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_animation<class_AnimationLibrary_method_has_animation>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`remove_animation<class_AnimationLibrary_method_remove_animation>` **(** :ref:`StringName<class_StringName>` name **)**                                              |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`rename_animation<class_AnimationLibrary_method_rename_animation>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_animation<class_AnimationLibrary_method_add_animation>` **(** :ref:`StringName<class_StringName>` name, :ref:`Animation<class_Animation>` animation **)**       |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Animation<class_Animation>`     | :ref:`get_animation<class_AnimationLibrary_method_get_animation>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                            |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName[]<class_StringName>` | :ref:`get_animation_list<class_AnimationLibrary_method_get_animation_list>` **(** **)** |const|                                                                           |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`has_animation<class_AnimationLibrary_method_has_animation>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                            |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`remove_animation<class_AnimationLibrary_method_remove_animation>` **(** :ref:`StringName<class_StringName>` name **)**                                              |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`rename_animation<class_AnimationLibrary_method_rename_animation>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)** |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_AnimationLibrary_signal_animation_added:
 
-- **animation_added** **(** :ref:`StringName<class_StringName>` name **)**
+.. rst-class:: classref-signal
+
+**animation_added** **(** :ref:`StringName<class_StringName>` name **)**
 
 Emitted when an :ref:`Animation<class_Animation>` is added, under the key ``name``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationLibrary_signal_animation_changed:
+
+.. rst-class:: classref-signal
+
+**animation_changed** **(** :ref:`StringName<class_StringName>` name **)**
+
+Emitted when there's a change in one of the animations, e.g. tracks are added, moved or have changed paths. ``name`` is the key of the animation that was changed.
+
+See also :ref:`Resource.changed<class_Resource_signal_changed>`, which this acts as a relay for.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationLibrary_signal_animation_removed:
 
-- **animation_removed** **(** :ref:`StringName<class_StringName>` name **)**
+.. rst-class:: classref-signal
+
+**animation_removed** **(** :ref:`StringName<class_StringName>` name **)**
 
 Emitted when an :ref:`Animation<class_Animation>` stored with the key ``name`` is removed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationLibrary_signal_animation_renamed:
 
-- **animation_renamed** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` to_name **)**
+.. rst-class:: classref-signal
+
+**animation_renamed** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` to_name **)**
 
 Emitted when the key for an :ref:`Animation<class_Animation>` is changed, from ``name`` to ``to_name``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimationLibrary_property__data:
 
-- :ref:`Dictionary<class_Dictionary>` **_data**
+.. rst-class:: classref-property
 
-+-----------+--------+
-| *Default* | ``{}`` |
-+-----------+--------+
+:ref:`Dictionary<class_Dictionary>` **_data** = ``{}``
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AnimationLibrary_method_add_animation:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **add_animation** **(** :ref:`StringName<class_StringName>` name, :ref:`Animation<class_Animation>` animation **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **add_animation** **(** :ref:`StringName<class_StringName>` name, :ref:`Animation<class_Animation>` animation **)**
 
 Adds the ``animation`` to the library, accessible by the key ``name``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationLibrary_method_get_animation:
 
-- :ref:`Animation<class_Animation>` **get_animation** **(** :ref:`StringName<class_StringName>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Animation<class_Animation>` **get_animation** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the animation does not exist, ``null`` is returned and an error is logged.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationLibrary_method_get_animation_list:
 
-- :ref:`StringName[]<class_StringName>` **get_animation_list** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`StringName[]<class_StringName>` **get_animation_list** **(** **)** |const|
 
 Returns the keys for the :ref:`Animation<class_Animation>`\ s stored in the library.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationLibrary_method_has_animation:
 
-- :ref:`bool<class_bool>` **has_animation** **(** :ref:`StringName<class_StringName>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_animation** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns ``true`` if the library stores an :ref:`Animation<class_Animation>` with ``name`` as the key.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationLibrary_method_remove_animation:
 
-- void **remove_animation** **(** :ref:`StringName<class_StringName>` name **)**
+.. rst-class:: classref-method
+
+void **remove_animation** **(** :ref:`StringName<class_StringName>` name **)**
 
 Removes the :ref:`Animation<class_Animation>` with the key ``name``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationLibrary_method_rename_animation:
 
-- void **rename_animation** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)**
+.. rst-class:: classref-method
+
+void **rename_animation** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` newname **)**
 
 Changes the key of the :ref:`Animation<class_Animation>` associated with the key ``name`` to ``newname``.
 

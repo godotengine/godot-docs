@@ -14,7 +14,14 @@ Texture
 
 **Inherited By:** :ref:`Texture2D<class_Texture2D>`, :ref:`Texture3D<class_Texture3D>`, :ref:`TextureLayered<class_TextureLayered>`
 
+Base class for all texture types.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**Texture** is the base class for all texture types. Common texture types are :ref:`Texture2D<class_Texture2D>` and :ref:`ImageTexture<class_ImageTexture>`. See also :ref:`Image<class_Image>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

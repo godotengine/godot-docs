@@ -16,6 +16,8 @@ GPUParticlesCollision3D
 
 Abstract class for 3D particle collision shapes affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -31,27 +33,37 @@ Particle collision shapes can be temporarily disabled by hiding them.
 
 \ **Note:** Particles pushed by a collider that is being moved will not be interpolated, which can result in visible stuttering. This can be alleviated by setting :ref:`GPUParticles3D.fixed_fps<class_GPUParticles3D_property_fixed_fps>` to ``0`` or a value that matches or exceeds the target framerate.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------------------+----------------+
-| :ref:`int<class_int>` | :ref:`cull_mask<class_GPUParticlesCollision3D_property_cull_mask>` | ``4294967295`` |
-+-----------------------+--------------------------------------------------------------------+----------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------------------------------+----------------+
+   | :ref:`int<class_int>` | :ref:`cull_mask<class_GPUParticlesCollision3D_property_cull_mask>` | ``4294967295`` |
+   +-----------------------+--------------------------------------------------------------------+----------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GPUParticlesCollision3D_property_cull_mask:
 
-- :ref:`int<class_int>` **cull_mask**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``4294967295``       |
-+-----------+----------------------+
-| *Setter*  | set_cull_mask(value) |
-+-----------+----------------------+
-| *Getter*  | get_cull_mask()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **cull_mask** = ``4294967295``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cull_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_cull_mask** **(** **)**
 
 The particle rendering layers (:ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>`) that will be affected by the collision shape. By default, all particles that have :ref:`ParticleProcessMaterial.collision_mode<class_ParticleProcessMaterial_property_collision_mode>` set to :ref:`ParticleProcessMaterial.COLLISION_RIGID<class_ParticleProcessMaterial_constant_COLLISION_RIGID>` or :ref:`ParticleProcessMaterial.COLLISION_HIDE_ON_CONTACT<class_ParticleProcessMaterial_constant_COLLISION_HIDE_ON_CONTACT>` will be affected by a collision shape.
 

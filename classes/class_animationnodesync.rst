@@ -14,29 +14,41 @@ AnimationNodeSync
 
 **Inherited By:** :ref:`AnimationNodeAdd2<class_AnimationNodeAdd2>`, :ref:`AnimationNodeAdd3<class_AnimationNodeAdd3>`, :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`, :ref:`AnimationNodeBlend3<class_AnimationNodeBlend3>`, :ref:`AnimationNodeOneShot<class_AnimationNodeOneShot>`, :ref:`AnimationNodeTransition<class_AnimationNodeTransition>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeSync_property_sync>` | ``false`` |
-+-------------------------+----------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeSync_property_sync>` | ``false`` |
+   +-------------------------+----------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimationNodeSync_property_sync:
 
-- :ref:`bool<class_bool>` **sync**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_use_sync(value) |
-+-----------+---------------------+
-| *Getter*  | is_using_sync()     |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **sync** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_sync** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_sync** **(** **)**
 
 If ``false``, the blended animations' frame are stopped when the blend value is ``0``.
 

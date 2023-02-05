@@ -14,32 +14,44 @@ VisualShaderNodeIntConstant
 
 A scalar integer constant to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Translated to ``int`` in the shader language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------+----------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`constant<class_VisualShaderNodeIntConstant_property_constant>` | ``0`` |
-+-----------------------+----------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+----------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`constant<class_VisualShaderNodeIntConstant_property_constant>` | ``0`` |
+   +-----------------------+----------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeIntConstant_property_constant:
 
-- :ref:`int<class_int>` **constant**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_constant(value) |
-+-----------+---------------------+
-| *Getter*  | get_constant()      |
-+-----------+---------------------+
+:ref:`int<class_int>` **constant** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_constant** **(** **)**
 
 An integer constant which represents a state of this node.
 

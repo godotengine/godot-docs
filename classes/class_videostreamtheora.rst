@@ -14,6 +14,8 @@ VideoStreamTheora
 
 :ref:`VideoStream<class_VideoStream>` resource for Ogg Theora videos.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,31 +23,48 @@ Description
 
 \ **Note:** While Ogg Theora videos can also have an ``.ogg`` extension, you will have to rename the extension to ``.ogv`` to use those videos within Godot.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_file<class_VideoStreamTheora_method_get_file>` **(** **)**                                  |
-+-----------------------------+-------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`set_file<class_VideoStreamTheora_method_set_file>` **(** :ref:`String<class_String>` file **)** |
-+-----------------------------+-------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_file<class_VideoStreamTheora_method_get_file>` **(** **)**                                  |
+   +-----------------------------+-------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`set_file<class_VideoStreamTheora_method_set_file>` **(** :ref:`String<class_String>` file **)** |
+   +-----------------------------+-------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VideoStreamTheora_method_get_file:
 
-- :ref:`String<class_String>` **get_file** **(** **)**
+.. rst-class:: classref-method
 
-Returns the Ogg Theora video file handled by this ``VideoStreamTheora``.
+:ref:`String<class_String>` **get_file** **(** **)**
+
+Returns the Ogg Theora video file handled by this **VideoStreamTheora**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VideoStreamTheora_method_set_file:
 
-- void **set_file** **(** :ref:`String<class_String>` file **)**
+.. rst-class:: classref-method
 
-Sets the Ogg Theora video file that this ``VideoStreamTheora`` resource handles. The ``file`` name should have the ``.ogv`` extension.
+void **set_file** **(** :ref:`String<class_String>` file **)**
+
+Sets the Ogg Theora video file that this **VideoStreamTheora** resource handles. The ``file`` name should have the ``.ogv`` extension.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

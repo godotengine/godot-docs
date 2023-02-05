@@ -12,7 +12,18 @@ PlaceholderCubemap
 
 **Inherits:** :ref:`PlaceholderTextureLayered<class_PlaceholderTextureLayered>` **<** :ref:`TextureLayered<class_TextureLayered>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Placeholder class for a cubemap texture.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This class is used when loading a project that uses a :ref:`Cubemap<class_Cubemap>` subclass in 2 conditions:
+
+- When running the project exported in dedicated server mode, only the texture's dimensions are kept (as they may be relied upon for gameplay purposes or positioning of other elements). This allows reducing the exported PCK's size significantly.
+
+- When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

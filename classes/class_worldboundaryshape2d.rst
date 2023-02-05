@@ -14,52 +14,65 @@ WorldBoundaryShape2D
 
 World boundary (infinite plane) shape resource for 2D physics.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-2D world boundary shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. ``WorldBoundaryShape2D`` works like an infinite plane and will not allow any physics body to go to the negative side. Note that the :ref:`normal<class_WorldBoundaryShape2D_property_normal>` matters; anything "below" the plane will collide with it. If the ``WorldBoundaryShape2D`` is used in a :ref:`PhysicsBody2D<class_PhysicsBody2D>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
+2D world boundary shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. **WorldBoundaryShape2D** works like an infinite plane and will not allow any physics body to go to the negative side. Note that the :ref:`normal<class_WorldBoundaryShape2D_property_normal>` matters; anything "below" the plane will collide with it. If the **WorldBoundaryShape2D** is used in a :ref:`PhysicsBody2D<class_PhysicsBody2D>`, it will cause colliding objects placed "below" it to teleport "above" the plane.
 
-\ **Performance:** Being a primitive collision shape, ``WorldBoundaryShape2D`` is fast to check collisions against.
+\ **Performance:** Being a primitive collision shape, **WorldBoundaryShape2D** is fast to check collisions against.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------+--------------------+
-| :ref:`float<class_float>`     | :ref:`distance<class_WorldBoundaryShape2D_property_distance>` | ``0.0``            |
-+-------------------------------+---------------------------------------------------------------+--------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`normal<class_WorldBoundaryShape2D_property_normal>`     | ``Vector2(0, -1)`` |
-+-------------------------------+---------------------------------------------------------------+--------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------+--------------------+
+   | :ref:`float<class_float>`     | :ref:`distance<class_WorldBoundaryShape2D_property_distance>` | ``0.0``            |
+   +-------------------------------+---------------------------------------------------------------+--------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`normal<class_WorldBoundaryShape2D_property_normal>`     | ``Vector2(0, -1)`` |
+   +-------------------------------+---------------------------------------------------------------+--------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_WorldBoundaryShape2D_property_distance:
 
-- :ref:`float<class_float>` **distance**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_distance(value) |
-+-----------+---------------------+
-| *Getter*  | get_distance()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **distance** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_distance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_distance** **(** **)**
 
 The line's distance from the origin.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WorldBoundaryShape2D_property_normal:
 
-- :ref:`Vector2<class_Vector2>` **normal**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``Vector2(0, -1)`` |
-+-----------+--------------------+
-| *Setter*  | set_normal(value)  |
-+-----------+--------------------+
-| *Getter*  | get_normal()       |
-+-----------+--------------------+
+:ref:`Vector2<class_Vector2>` **normal** = ``Vector2(0, -1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_normal** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_normal** **(** **)**
 
 The line's normal. Defaults to ``Vector2.UP``.
 

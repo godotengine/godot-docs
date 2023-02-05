@@ -208,7 +208,7 @@ Your complete ``Sprite2D.gd`` code should look like the following.
 
     using Godot;
 
-    public class Sprite : Godot.Sprite2D
+    public partial class Sprite : Sprite2D
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
@@ -258,10 +258,10 @@ Click the script icon next to Sprite2D to jump back to the scripting workspace.
 We need to do two operations to connect the nodes via code:
 
 1. Get a reference to the Timer from the Sprite2D.
-2. Call the Timer's ``connect()`` method.
+2. Call the ``connect()`` method on the Timer's "timeout" signal.
 
 .. note:: To connect to a signal via code, you need to call the ``connect()``
-          method of the node you want to listen to. In this case, we want to
+          method of the signal you want to listen to. In this case, we want to
           listen to the Timer's "timeout" signal.
 
 We want to connect the signal when the scene is instantiated, and we can do that
@@ -370,7 +370,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
-    public class Sprite : Godot.Sprite2D
+    public partial class Sprite : Sprite2D
     {
         private float Speed = 400;
         private float AngularSpeed = Mathf.Pi;
@@ -423,7 +423,7 @@ reaches 0.
 
     using Godot;
 
-    public class CustomSignal : Node2D
+    public partial class CustomSignal : Node2D
     {
         [Signal]
         public delegate void HealthDepletedEventHandler();
@@ -439,7 +439,7 @@ you can connect to them like any other.
 
 .. image:: img/signals_17_custom_signal.png
 
-To emit a signal in your scripts, call ``emit_signal()``.
+To emit a signal in your scripts, call ``emit()`` on the signal.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -447,7 +447,7 @@ To emit a signal in your scripts, call ``emit_signal()``.
     func take_damage(amount):
         health -= amount
         if health <= 0:
-            emit_signal("health_depleted")
+            health_depleted.emit()
 
  .. code-tab:: csharp C#
 
@@ -477,7 +477,7 @@ names between parentheses:
 
     using Godot;
 
-    public class CustomSignal : Node
+    public partial class CustomSignal : Node
     {
         [Signal]
         public delegate void HealthChangedEventHandler(int oldValue, int newValue);
@@ -493,7 +493,7 @@ names between parentheses:
     correct values.
 
 To emit values along with the signal, add them as extra arguments to the
-``emit_signal()`` function:
+``emit()`` function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -501,7 +501,7 @@ To emit values along with the signal, add them as extra arguments to the
     func take_damage(amount):
         var old_health = health
         health -= amount
-        emit_signal("health_changed", old_health, health)
+        health_changed.emit(old_health, health)
 
  .. code-tab:: csharp C#
 

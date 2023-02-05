@@ -56,7 +56,7 @@ After notarization is completed, `staple the ticket <https://developer.apple.com
 If you have an Apple Developer ID Certificate and exporting from Linux or Windows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install `PyOxidizer rcodesign <https://github.com/indygreg/PyOxidizer/tree/main/apple-codesign>`__, and configure the path to ``rcodesign`` in the ``Editor Settings > Export > macOS > rcodesign``.
+Install `PyOxidizer rcodesign <https://github.com/indygreg/apple-platform-rs/tree/main/apple-codesign>`__, and configure the path to ``rcodesign`` in the ``Editor Settings > Export > macOS > rcodesign``.
 
 To sign exported app
 ^^^^^^^^^^^^^^^^^^^^

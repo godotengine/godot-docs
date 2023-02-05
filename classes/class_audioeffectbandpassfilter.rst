@@ -14,10 +14,14 @@ AudioEffectBandPassFilter
 
 Adds a band pass filter to the audio bus.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Attenuates the frequencies inside of a range around the :ref:`AudioEffectFilter.cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` and cuts frequencies outside of this band.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------

@@ -14,6 +14,8 @@ CurveXYZTexture
 
 A texture that shows 3 different curves (stored on the red, green and blue color channels).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,75 +23,96 @@ Renders 3 given :ref:`Curve<class_Curve>`\ s provided to it, on the red, green a
 
 If you only need to store one curve within a single texture, use :ref:`CurveTexture<class_CurveTexture>` instead. See also :ref:`GradientTexture1D<class_GradientTexture1D>` and :ref:`GradientTexture2D<class_GradientTexture2D>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------+---------+
-| :ref:`Curve<class_Curve>` | :ref:`curve_x<class_CurveXYZTexture_property_curve_x>` |         |
-+---------------------------+--------------------------------------------------------+---------+
-| :ref:`Curve<class_Curve>` | :ref:`curve_y<class_CurveXYZTexture_property_curve_y>` |         |
-+---------------------------+--------------------------------------------------------+---------+
-| :ref:`Curve<class_Curve>` | :ref:`curve_z<class_CurveXYZTexture_property_curve_z>` |         |
-+---------------------------+--------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`width<class_CurveXYZTexture_property_width>`     | ``256`` |
-+---------------------------+--------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`Curve<class_Curve>` | :ref:`curve_x<class_CurveXYZTexture_property_curve_x>` |                                                                                        |
+   +---------------------------+--------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`Curve<class_Curve>` | :ref:`curve_y<class_CurveXYZTexture_property_curve_y>` |                                                                                        |
+   +---------------------------+--------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`Curve<class_Curve>` | :ref:`curve_z<class_CurveXYZTexture_property_curve_z>` |                                                                                        |
+   +---------------------------+--------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | resource_local_to_scene                                | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
+   +---------------------------+--------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`width<class_CurveXYZTexture_property_width>`     | ``256``                                                                                |
+   +---------------------------+--------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CurveXYZTexture_property_curve_x:
 
-- :ref:`Curve<class_Curve>` **curve_x**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_curve_x(value) |
-+----------+--------------------+
-| *Getter* | get_curve_x()      |
-+----------+--------------------+
+:ref:`Curve<class_Curve>` **curve_x**
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve_x** **(** :ref:`Curve<class_Curve>` value **)**
+- :ref:`Curve<class_Curve>` **get_curve_x** **(** **)**
 
 The :ref:`Curve<class_Curve>` that is rendered onto the texture's red channel.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CurveXYZTexture_property_curve_y:
 
-- :ref:`Curve<class_Curve>` **curve_y**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_curve_y(value) |
-+----------+--------------------+
-| *Getter* | get_curve_y()      |
-+----------+--------------------+
+:ref:`Curve<class_Curve>` **curve_y**
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve_y** **(** :ref:`Curve<class_Curve>` value **)**
+- :ref:`Curve<class_Curve>` **get_curve_y** **(** **)**
 
 The :ref:`Curve<class_Curve>` that is rendered onto the texture's green channel.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CurveXYZTexture_property_curve_z:
 
-- :ref:`Curve<class_Curve>` **curve_z**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_curve_z(value) |
-+----------+--------------------+
-| *Getter* | get_curve_z()      |
-+----------+--------------------+
+:ref:`Curve<class_Curve>` **curve_z**
+
+.. rst-class:: classref-property-setget
+
+- void **set_curve_z** **(** :ref:`Curve<class_Curve>` value **)**
+- :ref:`Curve<class_Curve>` **get_curve_z** **(** **)**
 
 The :ref:`Curve<class_Curve>` that is rendered onto the texture's blue channel.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CurveXYZTexture_property_width:
 
-- :ref:`int<class_int>` **width**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``256``          |
-+-----------+------------------+
-| *Setter*  | set_width(value) |
-+-----------+------------------+
-| *Getter*  | get_width()      |
-+-----------+------------------+
+:ref:`int<class_int>` **width** = ``256``
+
+.. rst-class:: classref-property-setget
+
+- void **set_width** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_width** **(** **)**
 
 The width of the texture (in pixels). Higher values make it possible to represent high-frequency data better (such as sudden direction changes), at the cost of increased generation time and memory usage.
 

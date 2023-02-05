@@ -14,12 +14,16 @@ CollisionShape2D
 
 Node that represents collision shape data in 2D space.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Editor facility for creating and editing collision shapes in 2D space. Set the :ref:`shape<class_CollisionShape2D_property_shape>` property to configure the shape. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`CollisionObject2D.shape_owner_get_shape<class_CollisionObject2D_method_shape_owner_get_shape>` to get the actual shape.
 
 You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area2D<class_Area2D>` to give it a detection shape, or add it to a :ref:`PhysicsBody2D<class_PhysicsBody2D>` to create a solid object.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -32,101 +36,117 @@ Tutorials
 
 - `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`Color<class_Color>`     | :ref:`debug_color<class_CollisionShape2D_property_debug_color>`                           | ``Color(0, 0, 0, 1)`` |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                                 | ``false``             |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_property_one_way_collision>`               | ``false``             |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`     | :ref:`one_way_collision_margin<class_CollisionShape2D_property_one_way_collision_margin>` | ``1.0``               |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
-| :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       |                       |
-+-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`     | :ref:`debug_color<class_CollisionShape2D_property_debug_color>`                           | ``Color(0, 0, 0, 1)`` |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`disabled<class_CollisionShape2D_property_disabled>`                                 | ``false``             |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`       | :ref:`one_way_collision<class_CollisionShape2D_property_one_way_collision>`               | ``false``             |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`     | :ref:`one_way_collision_margin<class_CollisionShape2D_property_one_way_collision_margin>` | ``1.0``               |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Shape2D<class_Shape2D>` | :ref:`shape<class_CollisionShape2D_property_shape>`                                       |                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CollisionShape2D_property_debug_color:
 
-- :ref:`Color<class_Color>` **debug_color**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Color(0, 0, 0, 1)``  |
-+-----------+------------------------+
-| *Setter*  | set_debug_color(value) |
-+-----------+------------------------+
-| *Getter*  | get_debug_color()      |
-+-----------+------------------------+
+:ref:`Color<class_Color>` **debug_color** = ``Color(0, 0, 0, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_debug_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_debug_color** **(** **)**
 
 The collision shape debug color.
 
 \ **Note:** The default value is :ref:`ProjectSettings.debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`. The ``Color(0, 0, 0, 1)`` value documented here is a placeholder, and not the actual default debug color.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CollisionShape2D_property_disabled:
 
-- :ref:`bool<class_bool>` **disabled**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_disabled(value) |
-+-----------+---------------------+
-| *Getter*  | is_disabled()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **disabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_disabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_disabled** **(** **)**
 
 A disabled collision shape has no effect in the world. This property should be changed with :ref:`Object.set_deferred<class_Object_method_set_deferred>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionShape2D_property_one_way_collision:
 
-- :ref:`bool<class_bool>` **one_way_collision**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``false``                      |
-+-----------+--------------------------------+
-| *Setter*  | set_one_way_collision(value)   |
-+-----------+--------------------------------+
-| *Getter*  | is_one_way_collision_enabled() |
-+-----------+--------------------------------+
+:ref:`bool<class_bool>` **one_way_collision** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_one_way_collision** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_one_way_collision_enabled** **(** **)**
 
 Sets whether this collision shape should only detect collision on one side (top or bottom).
 
-\ **Note:** This property has no effect if this ``CollisionShape2D`` is a child of an :ref:`Area2D<class_Area2D>` node.
+\ **Note:** This property has no effect if this **CollisionShape2D** is a child of an :ref:`Area2D<class_Area2D>` node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionShape2D_property_one_way_collision_margin:
 
-- :ref:`float<class_float>` **one_way_collision_margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``1.0``                             |
-+-----------+-------------------------------------+
-| *Setter*  | set_one_way_collision_margin(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_one_way_collision_margin()      |
-+-----------+-------------------------------------+
+:ref:`float<class_float>` **one_way_collision_margin** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_one_way_collision_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_one_way_collision_margin** **(** **)**
 
 The margin used for one-way collision (in pixels). Higher values will make the shape thicker, and work better for colliders that enter the shape at a high velocity.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionShape2D_property_shape:
 
-- :ref:`Shape2D<class_Shape2D>` **shape**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_shape(value) |
-+----------+------------------+
-| *Getter* | get_shape()      |
-+----------+------------------+
+:ref:`Shape2D<class_Shape2D>` **shape**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shape** **(** :ref:`Shape2D<class_Shape2D>` value **)**
+- :ref:`Shape2D<class_Shape2D>` **get_shape** **(** **)**
 
 The actual shape owned by this collision shape.
 

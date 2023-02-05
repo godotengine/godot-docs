@@ -16,29 +16,51 @@ ImageFormatLoader
 
 Base class to add support for specific image formats.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 The engine supports multiple image formats out of the box (PNG, SVG, JPEG, WebP to name a few), but you can choose to implement support for additional image formats by extending :ref:`ImageFormatLoaderExtension<class_ImageFormatLoaderExtension>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_ImageFormatLoader_LoaderFlags:
 
-.. _class_ImageFormatLoader_constant_FLAG_NONE:
-
-.. _class_ImageFormatLoader_constant_FLAG_FORCE_LINEAR:
-
-.. _class_ImageFormatLoader_constant_FLAG_CONVERT_COLORS:
+.. rst-class:: classref-enumeration
 
 flags **LoaderFlags**:
 
-- **FLAG_NONE** = **0**
+.. _class_ImageFormatLoader_constant_FLAG_NONE:
 
-- **FLAG_FORCE_LINEAR** = **1**
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_CONVERT_COLORS** = **2**
+:ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>` **FLAG_NONE** = ``0``
+
+
+
+.. _class_ImageFormatLoader_constant_FLAG_FORCE_LINEAR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>` **FLAG_FORCE_LINEAR** = ``1``
+
+
+
+.. _class_ImageFormatLoader_constant_FLAG_CONVERT_COLORS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LoaderFlags<enum_ImageFormatLoader_LoaderFlags>` **FLAG_CONVERT_COLORS** = ``2``
+
+
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -12,29 +12,52 @@ PlaceholderTexture3D
 
 **Inherits:** :ref:`Texture3D<class_Texture3D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Placeholder class for a 3-dimensional texture.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This class is used when loading a project that uses a :ref:`Texture3D<class_Texture3D>` subclass in 2 conditions:
+
+- When running the project exported in dedicated server mode, only the texture's dimensions are kept (as they may be relied upon for gameplay purposes or positioning of other elements). This allows reducing the exported PCK's size significantly.
+
+- When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------------+-------------------------------------------------------+-----------------------+
-| :ref:`Vector3i<class_Vector3i>` | :ref:`size<class_PlaceholderTexture3D_property_size>` | ``Vector3i(1, 1, 1)`` |
-+---------------------------------+-------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-------------------------------------------------------+-----------------------+
+   | :ref:`Vector3i<class_Vector3i>` | :ref:`size<class_PlaceholderTexture3D_property_size>` | ``Vector3i(1, 1, 1)`` |
+   +---------------------------------+-------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PlaceholderTexture3D_property_size:
 
-- :ref:`Vector3i<class_Vector3i>` **size**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``Vector3i(1, 1, 1)`` |
-+-----------+-----------------------+
-| *Setter*  | set_size(value)       |
-+-----------+-----------------------+
-| *Getter*  | get_size()            |
-+-----------+-----------------------+
+:ref:`Vector3i<class_Vector3i>` **size** = ``Vector3i(1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3i<class_Vector3i>` value **)**
+- :ref:`Vector3i<class_Vector3i>` **get_size** **(** **)**
+
+The texture's size (in pixels).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

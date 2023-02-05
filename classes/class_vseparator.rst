@@ -14,38 +14,53 @@ VSeparator
 
 Vertical version of :ref:`Separator<class_Separator>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Vertical version of :ref:`Separator<class_Separator>`. Even though it looks vertical, it is used to separate objects horizontally.
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------------------------------------------------+-------+
-| :ref:`int<class_int>`           | :ref:`separation<class_VSeparator_theme_constant_separation>` | ``4`` |
-+---------------------------------+---------------------------------------------------------------+-------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_VSeparator_theme_style_separator>`      |       |
-+---------------------------------+---------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`           | :ref:`separation<class_VSeparator_theme_constant_separation>` | ``4`` |
+   +---------------------------------+---------------------------------------------------------------+-------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`separator<class_VSeparator_theme_style_separator>`      |       |
+   +---------------------------------+---------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_VSeparator_theme_constant_separation:
 
-- :ref:`int<class_int>` **separation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **separation** = ``4``
 
 The width of the area covered by the separator. Effectively works like a minimum width.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VSeparator_theme_style_separator:
 
-- :ref:`StyleBox<class_StyleBox>` **separator**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **separator**
 
 The style for the separator line. Works best with :ref:`StyleBoxLine<class_StyleBoxLine>` (remember to enable :ref:`StyleBoxLine.vertical<class_StyleBoxLine_property_vertical>`).
 

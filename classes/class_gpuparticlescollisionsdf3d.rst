@@ -14,6 +14,8 @@ GPUParticlesCollisionSDF3D
 
 Baked signed distance field 3D particle attractor affecting :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,166 +23,235 @@ Baked signed distance field 3D particle attractor affecting :ref:`GPUParticles3D
 
 Signed distance fields (SDF) allow for efficiently representing approximate collision shapes for convex and concave objects of any shape. This is more flexible than :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`, but it requires a baking step.
 
-\ **Baking:** The signed distance field texture can be baked by selecting the ``GPUParticlesCollisionSDF3D`` node in the editor, then clicking **Bake SDF** at the top of the 3D viewport. Any *visible* :ref:`MeshInstance3D<class_MeshInstance3D>`\ s touching the :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>` will be taken into account for baking, regardless of their :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>`.
+\ **Baking:** The signed distance field texture can be baked by selecting the **GPUParticlesCollisionSDF3D** node in the editor, then clicking **Bake SDF** at the top of the 3D viewport. Any *visible* :ref:`MeshInstance3D<class_MeshInstance3D>`\ s touching the :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>` will be taken into account for baking, regardless of their :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>`.
 
-\ **Note:** Baking a ``GPUParticlesCollisionSDF3D``'s :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` is only possible within the editor, as there is no bake method exposed for use in exported projects. However, it's still possible to load pre-baked :ref:`Texture3D<class_Texture3D>`\ s into its :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` property in an exported project.
+\ **Note:** Baking a **GPUParticlesCollisionSDF3D**'s :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` is only possible within the editor, as there is no bake method exposed for use in exported projects. However, it's still possible to load pre-baked :ref:`Texture3D<class_Texture3D>`\ s into its :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` property in an exported project.
 
 \ **Note:** :ref:`ParticleProcessMaterial.collision_mode<class_ParticleProcessMaterial_property_collision_mode>` must be :ref:`ParticleProcessMaterial.COLLISION_RIGID<class_ParticleProcessMaterial_constant_COLLISION_RIGID>` or :ref:`ParticleProcessMaterial.COLLISION_HIDE_ON_CONTACT<class_ParticleProcessMaterial_constant_COLLISION_HIDE_ON_CONTACT>` on the :ref:`GPUParticles3D<class_GPUParticles3D>`'s process material for collision to work.
 
 \ **Note:** Particle collision only affects :ref:`GPUParticles3D<class_GPUParticles3D>`, not :ref:`CPUParticles3D<class_CPUParticles3D>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
-| :ref:`int<class_int>`                                         | :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>`   | ``4294967295``       |
-+---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
-| :ref:`Vector3<class_Vector3>`                                 | :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>`       | ``Vector3(1, 1, 1)`` |
-+---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
-| :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` | :ref:`resolution<class_GPUParticlesCollisionSDF3D_property_resolution>` | ``2``                |
-+---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
-| :ref:`Texture3D<class_Texture3D>`                             | :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>`       |                      |
-+---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
-| :ref:`float<class_float>`                                     | :ref:`thickness<class_GPUParticlesCollisionSDF3D_property_thickness>`   | ``1.0``              |
-+---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+   | :ref:`int<class_int>`                                         | :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>`   | ``4294967295``       |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                                 | :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>`       | ``Vector3(1, 1, 1)`` |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+   | :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` | :ref:`resolution<class_GPUParticlesCollisionSDF3D_property_resolution>` | ``2``                |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+   | :ref:`Texture3D<class_Texture3D>`                             | :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>`       |                      |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+   | :ref:`float<class_float>`                                     | :ref:`thickness<class_GPUParticlesCollisionSDF3D_property_thickness>`   | ``1.0``              |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_bake_mask_value<class_GPUParticlesCollisionSDF3D_method_get_bake_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_bake_mask_value<class_GPUParticlesCollisionSDF3D_method_set_bake_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-+-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_bake_mask_value<class_GPUParticlesCollisionSDF3D_method_get_bake_mask_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_bake_mask_value<class_GPUParticlesCollisionSDF3D_method_set_bake_mask_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_GPUParticlesCollisionSDF3D_Resolution:
 
-.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_16:
-
-.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_32:
-
-.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_64:
-
-.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_128:
-
-.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_256:
-
-.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_512:
-
-.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Resolution**:
 
-- **RESOLUTION_16** = **0** --- Bake a 16×16×16 signed distance field. This is the fastest option, but also the least precise.
+.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_16:
 
-- **RESOLUTION_32** = **1** --- Bake a 32×32×32 signed distance field.
+.. rst-class:: classref-enumeration-constant
 
-- **RESOLUTION_64** = **2** --- Bake a 64×64×64 signed distance field.
+:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **RESOLUTION_16** = ``0``
 
-- **RESOLUTION_128** = **3** --- Bake a 128×128×128 signed distance field.
+Bake a 16×16×16 signed distance field. This is the fastest option, but also the least precise.
 
-- **RESOLUTION_256** = **4** --- Bake a 256×256×256 signed distance field.
+.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_32:
 
-- **RESOLUTION_512** = **5** --- Bake a 512×512×512 signed distance field. This is the slowest option, but also the most precise.
+.. rst-class:: classref-enumeration-constant
 
-- **RESOLUTION_MAX** = **6** --- Represents the size of the :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` enum.
+:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **RESOLUTION_32** = ``1``
+
+Bake a 32×32×32 signed distance field.
+
+.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_64:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **RESOLUTION_64** = ``2``
+
+Bake a 64×64×64 signed distance field.
+
+.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_128:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **RESOLUTION_128** = ``3``
+
+Bake a 128×128×128 signed distance field.
+
+.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_256:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **RESOLUTION_256** = ``4``
+
+Bake a 256×256×256 signed distance field.
+
+.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_512:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **RESOLUTION_512** = ``5``
+
+Bake a 512×512×512 signed distance field. This is the slowest option, but also the most precise.
+
+.. _class_GPUParticlesCollisionSDF3D_constant_RESOLUTION_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **RESOLUTION_MAX** = ``6``
+
+Represents the size of the :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GPUParticlesCollisionSDF3D_property_bake_mask:
 
-- :ref:`int<class_int>` **bake_mask**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``4294967295``       |
-+-----------+----------------------+
-| *Setter*  | set_bake_mask(value) |
-+-----------+----------------------+
-| *Getter*  | get_bake_mask()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **bake_mask** = ``4294967295``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bake_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_bake_mask** **(** **)**
 
 The visual layers to account for when baking the particle collision SDF. Only :ref:`MeshInstance3D<class_MeshInstance3D>`\ s whose :ref:`VisualInstance3D.layers<class_VisualInstance3D_property_layers>` match with this :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>` will be included in the generated particle collision SDF. By default, all objects are taken into account for the particle collision SDF baking.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GPUParticlesCollisionSDF3D_property_extents:
 
-- :ref:`Vector3<class_Vector3>` **extents**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``Vector3(1, 1, 1)`` |
-+-----------+----------------------+
-| *Setter*  | set_extents(value)   |
-+-----------+----------------------+
-| *Getter*  | get_extents()        |
-+-----------+----------------------+
+:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
 
 The collision SDF's extents in 3D units. To improve SDF quality, the :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>` should be set as small as possible while covering the parts of the scene you need.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GPUParticlesCollisionSDF3D_property_resolution:
 
-- :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **resolution**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``2``                 |
-+-----------+-----------------------+
-| *Setter*  | set_resolution(value) |
-+-----------+-----------------------+
-| *Getter*  | get_resolution()      |
-+-----------+-----------------------+
+:ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **resolution** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_resolution** **(** :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` value **)**
+- :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **get_resolution** **(** **)**
 
 The bake resolution to use for the signed distance field :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>`. The texture must be baked again for changes to the :ref:`resolution<class_GPUParticlesCollisionSDF3D_property_resolution>` property to be effective. Higher resolutions have a greater performance cost and take more time to bake. Higher resolutions also result in larger baked textures, leading to increased VRAM and storage space requirements. To improve performance and reduce bake times, use the lowest resolution possible for the object you're representing the collision of.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GPUParticlesCollisionSDF3D_property_texture:
 
-- :ref:`Texture3D<class_Texture3D>` **texture**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture3D<class_Texture3D>` **texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`Texture3D<class_Texture3D>` value **)**
+- :ref:`Texture3D<class_Texture3D>` **get_texture** **(** **)**
 
 The 3D texture representing the signed distance field.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GPUParticlesCollisionSDF3D_property_thickness:
 
-- :ref:`float<class_float>` **thickness**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1.0``              |
-+-----------+----------------------+
-| *Setter*  | set_thickness(value) |
-+-----------+----------------------+
-| *Getter*  | get_thickness()      |
-+-----------+----------------------+
+:ref:`float<class_float>` **thickness** = ``1.0``
 
-The collision shape's thickness. Unlike other particle colliders, ``GPUParticlesCollisionSDF3D`` is actually hollow on the inside. :ref:`thickness<class_GPUParticlesCollisionSDF3D_property_thickness>` can be increased to prevent particles from tunneling through the collision shape at high speeds, or when the ``GPUParticlesCollisionSDF3D`` is moved.
+.. rst-class:: classref-property-setget
+
+- void **set_thickness** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_thickness** **(** **)**
+
+The collision shape's thickness. Unlike other particle colliders, **GPUParticlesCollisionSDF3D** is actually hollow on the inside. :ref:`thickness<class_GPUParticlesCollisionSDF3D_property_thickness>` can be increased to prevent particles from tunneling through the collision shape at high speeds, or when the **GPUParticlesCollisionSDF3D** is moved.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GPUParticlesCollisionSDF3D_method_get_bake_mask_value:
 
-- :ref:`bool<class_bool>` **get_bake_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_bake_mask_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
 Returns whether or not the specified layer of the :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>` is enabled, given a ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GPUParticlesCollisionSDF3D_method_set_bake_mask_value:
 
-- void **set_bake_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+.. rst-class:: classref-method
+
+void **set_bake_mask_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
 Based on ``value``, enables or disables the specified layer in the :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>`, given a ``layer_number`` between 1 and 32.
 

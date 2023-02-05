@@ -112,9 +112,9 @@ A default basis (unmodified) is akin to:
 
     // Instead we can use the Identity property.
     var identityBasis = Basis.Identity;
-    GD.Print(identityBasis.x); // prints: (1, 0, 0)
-    GD.Print(identityBasis.y); // prints: (0, 1, 0)
-    GD.Print(identityBasis.z); // prints: (0, 0, 1)
+    GD.Print(identityBasis.X); // prints: (1, 0, 0)
+    GD.Print(identityBasis.Y); // prints: (0, 1, 0)
+    GD.Print(identityBasis.Z); // prints: (0, 0, 1)
 
     // The Identity basis is equivalent to:
     var basis = new Basis(Vector3.Right, Vector3.Up, Vector3.Back);
@@ -161,9 +161,9 @@ It is possible to rotate a transform, either by multiplying its basis by another
     Vector3 axis = new Vector3(1, 0, 0); // Or Vector3.Right
     float rotationAmount = 0.1f;
     // Rotate the transform around the X axis by 0.1 radians.
-    transform.basis = new Basis(axis, rotationAmount) * transform.basis;
+    transform.Basis = new Basis(axis, rotationAmount) * transform.Basis;
     // shortened
-    transform.basis = transform.basis.Rotated(axis, rotationAmount);
+    transform.Basis = transform.Basis.Rotated(axis, rotationAmount);
 
 A method in Node3D simplifies this:
 
@@ -246,7 +246,7 @@ Imagine you need to shoot a bullet in the direction your player is facing. Just 
  .. code-tab:: csharp
 
     bullet.Transform = transform;
-    bullet.LinearVelocity = transform.basis.z * BulletSpeed;
+    bullet.LinearVelocity = transform.Basis.Z * BulletSpeed;
 
 Is the enemy looking at the player? Use the dot product for this (see the :ref:`doc_vector_math` tutorial for an explanation of the dot product):
 
@@ -261,8 +261,8 @@ Is the enemy looking at the player? Use the dot product for this (see the :ref:`
  .. code-tab:: csharp
 
     // Get the direction vector from player to enemy
-    Vector3 direction = enemy.Transform.origin - player.Transform.origin;
-    if (direction.Dot(enemy.Transform.basis.z) > 0)
+    Vector3 direction = enemy.Transform.Origin - player.Transform.Origin;
+    if (direction.Dot(enemy.Transform.Basis.Z) > 0)
     {
         enemy.ImWatchingYou(player);
     }
@@ -281,7 +281,7 @@ Strafe left:
     // Remember that +X is right
     if (Input.IsActionPressed("strafe_left"))
     {
-        TranslateObjectLocal(-Transform.basis.x);
+        TranslateObjectLocal(-Transform.Basis.X);
     }
 
 Jump:
@@ -299,7 +299,7 @@ Jump:
 
     // Keep in mind Y is up-axis
     if (Input.IsActionJustPressed("jump"))
-        velocity.y = JumpSpeed;
+        velocity.Y = JumpSpeed;
 
     velocity = MoveAndSlide(velocity);
 
@@ -341,12 +341,12 @@ Example of looking around, FPS style:
         if (@event is InputEventMouseMotion mouseMotion)
         {
             // modify accumulated mouse rotation
-            _rotationX += mouseMotion.Relative.x * LookAroundSpeed;
-            _rotationY += mouseMotion.Relative.y * LookAroundSpeed;
+            _rotationX += mouseMotion.Relative.X * LookAroundSpeed;
+            _rotationY += mouseMotion.Relative.Y * LookAroundSpeed;
 
             // reset rotation
             Transform3D transform = Transform;
-            transform.basis = Basis.Identity;
+            transform.Basis = Basis.Identity;
             Transform = transform;
 
             RotateObjectLocal(Vector3.Up, _rotationX); // first rotate about Y
@@ -377,12 +377,12 @@ Converting a rotation to quaternion is straightforward.
  .. code-tab:: csharp
 
     // Convert basis to quaternion, keep in mind scale is lost
-    var a = transform.basis.Quaternion();
-    var b = transform2.basis.Quaternion();
+    var a = transform.Basis.GetQuaternion();
+    var b = transform2.Basis.GetQuaternion();
     // Interpolate using spherical-linear interpolation (SLERP).
     var c = a.Slerp(b, 0.5f); // find halfway point between a and b
     // Apply back
-    transform.basis = new Basis(c);
+    transform.Basis = new Basis(c);
 
 The :ref:`class_Quaternion` type reference has more information on the datatype (it
 can also do transform accumulation, transform points, etc., though this is used

@@ -14,161 +14,216 @@ AnimatedTexture
 
 Proxy texture for simple frame-based animations.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``AnimatedTexture`` is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture2D<class_Texture2D>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
+**AnimatedTexture** is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`, it isn't a :ref:`Node<class_Node>`, but has the advantage of being usable anywhere a :ref:`Texture2D<class_Texture2D>` resource can be used, e.g. in a :ref:`TileSet<class_TileSet>`.
 
 The playback of the animation is controlled by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>` property, as well as each frame's duration (see :ref:`set_frame_duration<class_AnimatedTexture_method_set_frame_duration>`). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame.
 
-\ ``AnimatedTexture`` currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.
+\ **AnimatedTexture** currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one.
 
 \ **Note:** AnimatedTexture doesn't support using :ref:`AtlasTexture<class_AtlasTexture>`\ s. Each frame needs to be a separate :ref:`Texture2D<class_Texture2D>`.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`current_frame<class_AnimatedTexture_property_current_frame>` |           |
-+---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>`               | ``1``     |
-+---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`one_shot<class_AnimatedTexture_property_one_shot>`           | ``false`` |
-+---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`pause<class_AnimatedTexture_property_pause>`                 | ``false`` |
-+---------------------------+--------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>`     | ``1.0``   |
-+---------------------------+--------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`current_frame<class_AnimatedTexture_property_current_frame>` |                                                                                        |
+   +---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`     | :ref:`frames<class_AnimatedTexture_property_frames>`               | ``1``                                                                                  |
+   +---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`one_shot<class_AnimatedTexture_property_one_shot>`           | ``false``                                                                              |
+   +---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`pause<class_AnimatedTexture_property_pause>`                 | ``false``                                                                              |
+   +---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | resource_local_to_scene                                            | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
+   +---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>`     | ``1.0``                                                                                |
+   +---------------------------+--------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`         | :ref:`get_frame_duration<class_AnimatedTexture_method_get_frame_duration>` **(** :ref:`int<class_int>` frame **)** |const|                                  |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture2D<class_Texture2D>` | :ref:`get_frame_texture<class_AnimatedTexture_method_get_frame_texture>` **(** :ref:`int<class_int>` frame **)** |const|                                    |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_frame_duration<class_AnimatedTexture_method_set_frame_duration>` **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` duration **)**      |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                              | :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>` **(** :ref:`int<class_int>` frame, :ref:`Texture2D<class_Texture2D>` texture **)** |
-+-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`         | :ref:`get_frame_duration<class_AnimatedTexture_method_get_frame_duration>` **(** :ref:`int<class_int>` frame **)** |const|                                  |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture2D<class_Texture2D>` | :ref:`get_frame_texture<class_AnimatedTexture_method_get_frame_texture>` **(** :ref:`int<class_int>` frame **)** |const|                                    |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_frame_duration<class_AnimatedTexture_method_set_frame_duration>` **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` duration **)**      |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>` **(** :ref:`int<class_int>` frame, :ref:`Texture2D<class_Texture2D>` texture **)** |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_AnimatedTexture_constant_MAX_FRAMES:
 
-- **MAX_FRAMES** = **256** --- The maximum number of frames supported by ``AnimatedTexture``. If you need more frames in your animation, use :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`.
+.. rst-class:: classref-constant
+
+**MAX_FRAMES** = ``256``
+
+The maximum number of frames supported by **AnimatedTexture**. If you need more frames in your animation, use :ref:`AnimationPlayer<class_AnimationPlayer>` or :ref:`AnimatedSprite2D<class_AnimatedSprite2D>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimatedTexture_property_current_frame:
 
-- :ref:`int<class_int>` **current_frame**
+.. rst-class:: classref-property
 
-+----------+--------------------------+
-| *Setter* | set_current_frame(value) |
-+----------+--------------------------+
-| *Getter* | get_current_frame()      |
-+----------+--------------------------+
+:ref:`int<class_int>` **current_frame**
+
+.. rst-class:: classref-property-setget
+
+- void **set_current_frame** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_current_frame** **(** **)**
 
 Sets the currently visible frame of the texture.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedTexture_property_frames:
 
-- :ref:`int<class_int>` **frames**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1``             |
-+-----------+-------------------+
-| *Setter*  | set_frames(value) |
-+-----------+-------------------+
-| *Getter*  | get_frames()      |
-+-----------+-------------------+
+:ref:`int<class_int>` **frames** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_frames** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_frames** **(** **)**
 
 Number of frames to use in the animation. While you can create the frames independently with :ref:`set_frame_texture<class_AnimatedTexture_method_set_frame_texture>`, you need to set this value for the animation to take new frames into account. The maximum number of frames is :ref:`MAX_FRAMES<class_AnimatedTexture_constant_MAX_FRAMES>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedTexture_property_one_shot:
 
-- :ref:`bool<class_bool>` **one_shot**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_one_shot(value) |
-+-----------+---------------------+
-| *Getter*  | get_one_shot()      |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **one_shot** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_one_shot** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_one_shot** **(** **)**
 
 If ``true``, the animation will only play once and will not loop back to the first frame after reaching the end. Note that reaching the end will not set :ref:`pause<class_AnimatedTexture_property_pause>` to ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedTexture_property_pause:
 
-- :ref:`bool<class_bool>` **pause**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``false``        |
-+-----------+------------------+
-| *Setter*  | set_pause(value) |
-+-----------+------------------+
-| *Getter*  | get_pause()      |
-+-----------+------------------+
+:ref:`bool<class_bool>` **pause** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pause** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_pause** **(** **)**
 
 If ``true``, the animation will pause where it currently is (i.e. at :ref:`current_frame<class_AnimatedTexture_property_current_frame>`). The animation will continue from where it was paused when changing this property to ``false``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedTexture_property_speed_scale:
 
-- :ref:`float<class_float>` **speed_scale**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_speed_scale(value) |
-+-----------+------------------------+
-| *Getter*  | get_speed_scale()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **speed_scale** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_speed_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_speed_scale** **(** **)**
 
 The animation speed is multiplied by this value. If set to a negative value, the animation is played in reverse.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AnimatedTexture_method_get_frame_duration:
 
-- :ref:`float<class_float>` **get_frame_duration** **(** :ref:`int<class_int>` frame **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_frame_duration** **(** :ref:`int<class_int>` frame **)** |const|
 
 Returns the given ``frame``'s duration, in seconds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedTexture_method_get_frame_texture:
 
-- :ref:`Texture2D<class_Texture2D>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Texture2D<class_Texture2D>` **get_frame_texture** **(** :ref:`int<class_int>` frame **)** |const|
 
 Returns the given frame's :ref:`Texture2D<class_Texture2D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedTexture_method_set_frame_duration:
 
-- void **set_frame_duration** **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` duration **)**
+.. rst-class:: classref-method
+
+void **set_frame_duration** **(** :ref:`int<class_int>` frame, :ref:`float<class_float>` duration **)**
 
 Sets the duration of any given ``frame``. The final duration is affected by the :ref:`speed_scale<class_AnimatedTexture_property_speed_scale>`. If set to ``0``, the frame is skipped during playback.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimatedTexture_method_set_frame_texture:
 
-- void **set_frame_texture** **(** :ref:`int<class_int>` frame, :ref:`Texture2D<class_Texture2D>` texture **)**
+.. rst-class:: classref-method
+
+void **set_frame_texture** **(** :ref:`int<class_int>` frame, :ref:`Texture2D<class_Texture2D>` texture **)**
 
 Assigns a :ref:`Texture2D<class_Texture2D>` to the given frame. Frame IDs start at 0, so the first frame has ID 0, and the last frame of the animation has ID :ref:`frames<class_AnimatedTexture_property_frames>` - 1.
 

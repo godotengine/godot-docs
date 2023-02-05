@@ -14,6 +14,8 @@ VisualShaderNodeTransformCompose
 
 Composes a :ref:`Transform3D<class_Transform3D>` from four :ref:`Vector3<class_Vector3>`\ s within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

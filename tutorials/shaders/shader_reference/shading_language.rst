@@ -512,7 +512,7 @@ Godot Shading language supports the most common types of flow control:
 
     } while (cond);
 
-Keep in mind that, in modern GPUs, an infinite loop can exist and can freeze
+Keep in mind that in modern GPUs, an infinite loop can exist and can freeze
 your application (including editor). Godot can't protect you from this, so be
 careful not to make this mistake!
 
@@ -727,13 +727,13 @@ from within the shader.
 You can set uniforms in the editor in the material. Or you can set them through
 GDScript:
 
-::
+.. code-block:: gdscript
 
-  material.set_shader_uniform("some_value", some_value)
+  material.set_shader_parameter("some_value", some_value)
 
-  material.set_shader_uniform("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
+  material.set_shader_parameter("colors", [Vector3(1, 0, 0), Vector3(0, 1, 0), Vector3(0, 0, 1)])
 
-.. note:: The first argument to ``set_shader_uniform`` is the name of the uniform
+.. note:: The first argument to ``set_shader_parameter`` is the name of the uniform
           in the shader. It must match *exactly* to the name of the uniform in
           the shader or else it will not be recognized.
 
@@ -748,40 +748,41 @@ used, and how the editor should allow users to modify it.
     uniform vec4 color : source_color;
     uniform float amount : hint_range(0, 1);
     uniform vec4 other_color : source_color = vec4(1.0);
+    uniform sampler2D image : source_color;
 
 It's important to understand that textures that are supplied as color require
-hints for proper sRGB->linear conversion (i.e. ``hint_albedo``), as Godot's 3D
+hints for proper sRGB->linear conversion (i.e. ``source_color``), as Godot's 3D
 engine renders in linear color space.
 
 Full list of hints below:
 
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| Type                 | Hint                                           | Description                                                                 |
-+======================+================================================+=============================================================================+
-| **vec3, vec4**       | source_color                                   | Used as color.                                                              |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **int, float**       | hint_range(min, max[, step])                   | Restricted to values in a range (with min/max/step).                        |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | source_color                                   | Used as albedo color.                                                       |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | hint_normal                                    | Used as normalmap.                                                          |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | hint_default_white                             | As value or albedo color, default to opaque white.                          |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | hint_default_black                             | As value or albedo color, default to opaque black.                          |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | hint_default_transparent                       | As value or albedo color, default to transparent black.                     |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | hint_anisotropy                                | As flowmap, default to right.                                               |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | hint_roughness[_r, _g, _b, _a, _normal, _gray] | Used for roughness limiter on import (attempts reducing specular aliasing). |
-|                      |                                                | ``_normal`` is a normal map that guides the roughness limiter,              |
-|                      |                                                | with roughness increasing in areas that have high-frequency detail.         |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | filter[_nearest, _linear][_mipmap][_aniso]     | Enabled specified texture filtering.                                        |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
-| **sampler2D**        | repeat[_enable, _disable]                      | Enabled texture repeating.                                                  |
-+----------------------+------------------------------------------------+-----------------------------------------------------------------------------+
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| Type                 | Hint                                             | Description                                                                 |
++======================+==================================================+=============================================================================+
+| **vec3, vec4**       | source_color                                     | Used as color.                                                              |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **int, float**       | hint_range(min, max[, step])                     | Restricted to values in a range (with min/max/step).                        |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | source_color                                     | Used as albedo color.                                                       |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_normal                                      | Used as normalmap.                                                          |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_default_white                               | As value or albedo color, default to opaque white.                          |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_default_black                               | As value or albedo color, default to opaque black.                          |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_default_transparent                         | As value or albedo color, default to transparent black.                     |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_anisotropy                                  | As flowmap, default to right.                                               |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_roughness[_r, _g, _b, _a, _normal, _gray]   | Used for roughness limiter on import (attempts reducing specular aliasing). |
+|                      |                                                  | ``_normal`` is a normal map that guides the roughness limiter,              |
+|                      |                                                  | with roughness increasing in areas that have high-frequency detail.         |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | filter[_nearest, _linear][_mipmap][_anisotropic] | Enabled specified texture filtering.                                        |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | repeat[_enable, _disable]                        | Enabled texture repeating.                                                  |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 
 GDScript uses different variable types than GLSL does, so when passing variables
 from GDScript to shaders, Godot converts the type automatically. Below is a
@@ -822,22 +823,171 @@ Uniforms can also be assigned default values:
 
 If you need to make multiple uniforms to be grouped in the specific category of an inspector, you can use a `group_uniform` keyword like:
 
-::
+.. code-block:: glsl
 
     group_uniforms MyGroup;
     uniform sampler2D test;
 
 You can close the group by using:
 
-::
+.. code-block:: glsl
 
     group_uniforms;
 
 The syntax also supports subgroups (it's not mandatory to declare the base group before this):
 
-::
+.. code-block:: glsl
 
     group_uniforms MyGroup.MySubgroup;
+
+Global uniforms
+~~~~~~~~~~~~~~~
+
+Sometimes, you want to modify a parameter in many different shaders at once.
+With a regular uniform, this takes a lot of work as all these shaders need to be
+tracked and the uniform needs to be set for each of them. Global uniforms allow
+you to create and update uniforms that will be available in all shaders, in
+every shader type (``canvas_item``, ``spatial``, ``particles``, ``sky`` and
+``fog``).
+
+Global uniforms are especially useful for environmental effects that affect many
+objects in a scene, like having foliage bend when the player is nearby, or having
+objects move with the wind.
+
+To create a global uniform, open the **Project Settings** then go to the
+**Shader Globals** tab. Specify a name for the uniform (case-sensitive) and a
+type, then click **Add** in the top-right corner of the dialog. You can then
+edit the value assigned to the uniform by clicking the value in the list of
+uniforms:
+
+.. figure:: img/shading_language_adding_global_uniforms.webp
+   :align: center
+   :alt: Adding a global uniform in the Shader Globals tab of the Project Settings
+
+   Adding a global uniform in the Shader Globals tab of the Project Settings
+
+After creating a global uniform, you can use it in a shader as follows:
+
+.. code-block:: glsl
+
+    shader_type canvas_item;
+
+    global uniform vec4 my_color;
+
+    void fragment() {
+        COLOR = my_color.rgb;
+    }
+
+Note that the global uniform *must* exist in the Project Settings at the time
+the shader is saved, or compilation will fail. While you can assign a default
+value using ``global uniform vec4 my_color = ...`` in the shader code, it will
+be ignored as the global uniform must always be defined in the Project Settings
+anyway.
+
+To change the value of a global uniform at run-time, use the
+:ref:`RenderingServer.global_shader_parameter_set <class_RenderingServer_method_global_shader_parameter_set>`
+method in a script:
+
+.. code-block:: gdscript
+
+    RenderingServer.global_shader_parameter_set("my_color", Color(0.3, 0.6, 1.0))
+
+Assigning global uniform values can be done as many times as desired without
+impacting performance, as setting data doesn't require synchronization between
+the CPU and GPU.
+
+You can also add or remove global uniforms at run-time:
+
+.. code-block:: gdscript
+
+    RenderingServer.global_shader_parameter_add("my_color", RenderingServer.GLOBAL_VAR_TYPE_COLOR, Color(0.3, 0.6, 1.0))
+    RenderingServer.global_shader_parameter_remove("my_color")
+
+Adding or removing global uniforms at run-time has a performance cost, although
+it's not as pronounced compared to getting global uniform values from a script
+(see the warning below).
+
+.. warning::
+
+    While you *can* query the value of a global uniform at run-time in a script
+    using ``RenderingServer.global_shader_parameter_get("uniform_name")``, this
+    has a large performance penalty as the rendering thread needs to synchronize
+    with the calling thread.
+
+    Therefore, it's not recommended to read global shader uniform values
+    continuously in a script. If you need to read values in a script after
+    setting them, consider creating an :ref:`autoload <doc_singletons_autoload>`
+    where you store the values you need to query at the same time you're setting
+    them as global uniforms.
+
+.. _doc_shading_language_per_instance_uniforms:
+
+Per-instance uniforms
+~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+    Per-instance uniforms are only available in ``spatial`` (3D) shaders.
+
+Sometimes, you want to modify a parameter on each node using the material. As an
+example, in a forest full of trees, when you want each tree to have a slightly
+different color that is editable by hand. Without per-instance uniforms, this
+requires creating a unique material for each tree (each with a slightly
+different hue). This makes material management more complex, and also has a
+performance overhead due to the scene requiring more unique material instances.
+Vertex colors could also be used here, but they'd require creating unique copies
+of the mesh for each different color, which also has a performance overhead.
+
+Per-instance uniforms are set on each GeometryInstance3D, rather than on each
+Material instance. Take this into account when working with meshes that have
+multiple materials assigned to them, or MultiMesh setups.
+
+.. code-block:: glsl
+
+    shader_type spatial;
+
+    // Provide a hint to edit as a color. Optionally, a default value can be provided.
+    // If no default value is provided, the type's default is used (e.g. opaque black for colors).
+    instance uniform vec4 my_color : source_color = vec4(1.0, 0.5, 0.0, 1.0);
+
+    void fragment() {
+        ALBEDO = my_color.rgb;
+    }
+
+After saving the shader, you can change the per-instance uniform's value using
+the inspector:
+
+.. figure:: img/shading_language_per_instance_uniforms_inspector.webp
+   :align: center
+   :alt: Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
+
+   Setting a per-instance uniform's value in the GeometryInstance3D section of the inspector
+
+Per-instance uniform values can also be set at run-time using
+`set_instance_shader_parameter<class_GeometryInstance3D_method_set_instance_shader_parameter>`
+method on a node that inherits from :ref:`class_GeometryInstance3D`:
+
+.. code-block:: gdscript
+
+    $MeshInstance3D.set_instance_shader_parameter("my_color", Color(0.3, 0.6, 1.0))
+
+When using per-instance uniforms, there are some restrictions you should be aware of:
+
+- **Per-instance uniforms do not support textures**, only regular scalar and
+  vector types. As a workaround, you can pass a texture array as a regular
+  uniform, then pass the index of the texture to be drawn using a per-instance
+  uniform.
+- There is a practical maximum limit of 16 instance uniforms per shader.
+- If your mesh uses multiple materials, the parameters for the first mesh
+  material found will "win" over the subsequent ones, unless they have the same
+  name, index *and* type. In this case, all parameters are affected correctly.
+- If you run into the above situation, you can avoid clashes by manually
+  specifying the index (0-15) of the instance uniform by using the
+  ``instance_index`` hint:
+
+.. code-block:: glsl
+
+    instance uniform vec4 my_color : source_color, instance_index(5);
 
 Built-in variables
 ------------------
@@ -1010,8 +1160,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec2 **textureSize** (gsampler2D s, int lod)                               | Get the size of a texture.                                          |
 |                                                                             |                                                                     |
-| ivec3 **textureSize** (gsampler2DArray s, int lod)                          |                                                                     |
-|                                                                             |                                                                     |
+| ivec3 **textureSize** (gsampler2DArray s, int lod)                          | The LOD defines which mipmap level is used. An LOD value of 0 will  |
+|                                                                             | use the full resolution texture.                                    |
 | ivec3 **textureSize** (gsampler3D s, int lod)                               |                                                                     |
 |                                                                             |                                                                     |
 | ivec2 **textureSize** (samplerCube s, int lod)                              |                                                                     |
@@ -1052,8 +1202,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureLod** (gsampler2D s, vec2 p, float lod)                 | Perform a texture read at custom mipmap.                            |
 |                                                                             |                                                                     |
-| gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            |                                                                     |
-|                                                                             |                                                                     |
+| gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            | The LOD defines which mipmap level is used. An LOD value of 0.0     |
+|                                                                             | will use the full resolution texture.                               |
 | gvec4_type **textureLod** (gsampler3D s, vec3 p, float lod)                 |                                                                     |
 |                                                                             |                                                                     |
 | vec4 **textureLod** (samplerCube s, vec3 p, float lod)                      |                                                                     |
@@ -1062,8 +1212,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureProjLod** (gsampler2D s, vec3 p, float lod)             | Performs a texture read with projection/LOD.                        |
 |                                                                             |                                                                     |
-| gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             |                                                                     |
-|                                                                             |                                                                     |
+| gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             | The LOD defines which mipmap level is used. An LOD value of 0.0     |
+|                                                                             | will use the full resolution texture.                               |
 | gvec4_type **textureProjLod** (gsampler3D s, vec4 p, float lod)             |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureGrad** (gsampler2D s, vec2 p, vec2 dPdx,                | Performs a texture read with explicit gradients.                    |
@@ -1088,8 +1238,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **texelFetch** (gsampler2D s, ivec2 p, int lod)                  | Fetches a single texel using integer coordinates.                   |
 |                                                                             |                                                                     |
-| gvec4_type **texelFetch** (gsampler2DArray s, ivec3 p, int lod)             |                                                                     |
-|                                                                             |                                                                     |
+| gvec4_type **texelFetch** (gsampler2DArray s, ivec3 p, int lod)             | The LOD defines which mipmap level is used. An LOD value of 0 will  |
+|                                                                             | use the full resolution texture.                                    |
 | gvec4_type **texelFetch** (gsampler3D s, ivec3 p, int lod)                  |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureGather** (gsampler2D s, vec2 p [, int comps])           | Gathers four texels from a texture.                                 |
@@ -1099,10 +1249,47 @@ is used, it can be scalar or vector.
 | vec4 **textureGather** (samplerCube s, vec3 p [, int comps])                |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | vec_type **dFdx** (vec_type p)                                              | Derivative in ``x`` using local differencing.                       |
+|                                                                             | Internally, can use either ``dFdxCoarse`` or ``dFdxFine``, but the  |
+|                                                                             | decision for which to use is made by the GPU driver.                |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **dFdxCoarse** (vec_type p)                                        | Calculates derivative with respect to ``x`` window coordinate using |
+|                                                                             | local differencing based on the value of ``p`` for the current      |
+|                                                                             | fragment neighbour(s), and will possibly, but not necessarily,      |
+|                                                                             | include the value for the current fragment.                         |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **dFdxFine** (vec_type p)                                          | Calculates derivative with respect to ``x`` window coordinate using |
+|                                                                             | local differencing based on the value of ``p`` for the current      |
+|                                                                             | fragment and its immediate neighbour(s).                            |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | vec_type **dFdy** (vec_type p)                                              | Derivative in ``y`` using local differencing.                       |
+|                                                                             | Internally, can use either ``dFdyCoarse`` or ``dFdyFine``, but the  |
+|                                                                             | decision for which to use is made by the GPU driver.                |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **dFdyCoarse** (vec_type p)                                        | Calculates derivative with respect to ``y`` window coordinate using |
+|                                                                             | local differencing based on the value of ``p`` for the current      |
+|                                                                             | fragment neighbour(s), and will possibly, but not necessarily,      |
+|                                                                             | include the value for the current fragment.                         |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **dFdyFine** (vec_type p)                                          | Calculates derivative with respect to ``y`` window coordinate using |
+|                                                                             | local differencing based on the value of ``p`` for the current      |
+|                                                                             | fragment and its immediate neighbour(s).                            |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | vec_type **fwidth** (vec_type p)                                            | Sum of absolute derivative in ``x`` and ``y``.                      |
+|                                                                             | This is the equivalent of using ``abs(dFdx(p)) + abs(dFdy(p))``.    |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **fwidthCoarse** (vec_type p)                                      | Sum of absolute derivative in ``x`` and ``y``.                      |
+|                                                                             | This is the equivalent of using                                     |
+|                                                                             | ``abs(dFdxCoarse(p)) + abs(dFdyCoarse(p))``.                        |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------+
+| vec_type **fwidthFine** (vec_type p)                                        | Sum of absolute derivative in ``x`` and ``y``.                      |
+|                                                                             | This is the equivalent of using                                     |
+|                                                                             | ``abs(dFdxFine(p)) + abs(dFdyFine(p))``.                            |
+|                                                                             | This function is not available on ``gl_compatibility`` profile.     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | uint **packHalf2x16** (vec2 v)                                              | Convert two 32-bit floating-point numbers into 16-bit               |
 |                                                                             | and pack them into a 32-bit unsigned integer and vice-versa.        |
@@ -1150,7 +1337,7 @@ is used, it can be scalar or vector.
 |                                                                             |                                                                     |
 | uvec_type **findMSB** (uvec_type value)                                     |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
-| void **imulExtended** (ivec_type x, ivec_type y, out ivec_type msb,         | Adds two 32-bit numbers and produce a 64-bit result.                |
+| void **imulExtended** (ivec_type x, ivec_type y, out ivec_type msb,         | Multiplies two 32-bit numbers and produce a 64-bit result.          |
 | out ivec_type lsb)                                                          | ``x`` - the first number.                                           |
 |                                                                             | ``y`` - the second number.                                          |
 | void **umulExtended** (uvec_type x, uvec_type y, out uvec_type msb,         | ``msb`` - will contain the most significant bits.                   |

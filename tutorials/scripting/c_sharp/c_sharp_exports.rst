@@ -1,6 +1,6 @@
 .. _doc_c_sharp_exports:
 
-C# Exports
+C# exports
 ==========
 
 Introduction to exports
@@ -13,7 +13,9 @@ Exporting is done by using the ``[Export]`` attribute.
 
 .. code-block:: csharp
 
-    public class ExportExample : Node3D
+    using Godot;
+
+    public partial class ExportExample : Node3D
     {
         [Export]
         private int Number = 5;
@@ -58,6 +60,51 @@ the following to list them:
 
     [Export]
     private Resource Resource;
+
+Grouping exports
+----------------
+
+It is possible to group your exported properties inside the Inspector with the ``[ExportGroup]``
+attribute. Every exported property after this attribute will be added to the group. Start a new
+group or use ``[ExportGroup("")]`` to break out.
+
+.. code-block:: csharp
+
+    [ExportGroup("My Properties")]
+    [Export]
+    private int Number = 3;
+
+The second argument of the attribute can be used to only group properties with the specified prefix.
+
+Groups cannot be nested, use ``[ExportSubgroup]`` to create subgroups within a group.
+
+.. code-block:: csharp
+
+    [ExportSubgroup("Extra Properties")]
+    [Export]
+    private string Text = "";
+    [Export]
+    private bool Flag = false;
+
+You can also change the name of your main category, or create additional categories in the property
+list with the ``[ExportCategory]`` attribute.
+
+.. code-block:: csharp
+
+    [ExportCategory("Main Category")]
+    [Export]
+    private int Number = 3;
+    [Export]
+    private string Text = "";
+
+    [ExportCategory("Extra Category")]
+    [Export]
+    private bool Flag = false;
+
+.. note::
+
+    The list of properties is organized based on the class inheritance, and new categories break
+    that expectation. Use them carefully, especially when creating projects for public use.
 
 ..
 	Commenting out enum examples because I have been told they
@@ -285,14 +332,14 @@ Export annotations are also provided for the physics and render layers defined i
 
 .. code-block:: csharp
 
-    [Export(PropertyHint.Layers2dPhysics)]
-    private int Layers2dPhysics;
-    [Export(PropertyHint.Layers2dRender)]
-    private int Layers2dRender;
-    [Export(PropertyHint.Layers3dPhysics)]
-    private int layers3dPhysics;
-    [Export(PropertyHint.Layers3dRender)]
-    private int layers3dRender;
+    [Export(PropertyHint.Layers2DPhysics)]
+    private int Layers2DPhysics;
+    [Export(PropertyHint.Layers2DRender)]
+    private int Layers2DRender;
+    [Export(PropertyHint.Layers3DPhysics)]
+    private int layers3DPhysics;
+    [Export(PropertyHint.Layers3DRender)]
+    private int layers3DRender;
 
 Using bit flags requires some understanding of bitwise operations.
 If in doubt, use boolean variables instead.
@@ -305,9 +352,9 @@ Exported arrays should be initialized empty.
 .. code-block:: csharp
 
     [Export]
-    private Vector3[] Vector3s = new Vector3[0];
+    private Vector3[] Vector3s = System.Array.Empty<Vector3>();
     [Export]
-    private String[] String = new String[0];
+    private string[] Strings = System.Array.Empty<string>();
 
 
 You can omit the default value, but then it would be null if not assigned.

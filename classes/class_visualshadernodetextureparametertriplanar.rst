@@ -14,6 +14,8 @@ VisualShaderNodeTextureParameterTriplanar
 
 Performs a uniform texture lookup with triplanar within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

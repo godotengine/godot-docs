@@ -12,6 +12,8 @@ PackedStringArray
 
 A packed array of :ref:`String<class_String>`\ s.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,308 +27,449 @@ If you want to join the strings in the array, use :ref:`String.join<class_String
     var string = " ".join(string_array)
     print(string) # "hello world"
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
 
+.. rst-class:: classref-reftable-group
+
 Constructors
 ------------
 
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`PackedStringArray<class_PackedStringArray_constructor_PackedStringArray>` **(** **)**                                                        |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`PackedStringArray<class_PackedStringArray_constructor_PackedStringArray>` **(** :ref:`PackedStringArray<class_PackedStringArray>` from **)** |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`PackedStringArray<class_PackedStringArray_constructor_PackedStringArray>` **(** :ref:`Array<class_Array>` from **)**                         |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`PackedStringArray<class_PackedStringArray_constructor_PackedStringArray>` **(** **)**                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`PackedStringArray<class_PackedStringArray_constructor_PackedStringArray>` **(** :ref:`PackedStringArray<class_PackedStringArray>` from **)** |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`PackedStringArray<class_PackedStringArray_constructor_PackedStringArray>` **(** :ref:`Array<class_Array>` from **)**                         |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`append<class_PackedStringArray_method_append>` **(** :ref:`String<class_String>` value **)**                                        |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`append_array<class_PackedStringArray_method_append_array>` **(** :ref:`PackedStringArray<class_PackedStringArray>` array **)**      |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`bsearch<class_PackedStringArray_method_bsearch>` **(** :ref:`String<class_String>` value, :ref:`bool<class_bool>` before=true **)** |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`clear<class_PackedStringArray_method_clear>` **(** **)**                                                                            |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`count<class_PackedStringArray_method_count>` **(** :ref:`String<class_String>` value **)** |const|                                  |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`duplicate<class_PackedStringArray_method_duplicate>` **(** **)**                                                                    |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`fill<class_PackedStringArray_method_fill>` **(** :ref:`String<class_String>` value **)**                                            |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`find<class_PackedStringArray_method_find>` **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=0 **)** |const|      |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`has<class_PackedStringArray_method_has>` **(** :ref:`String<class_String>` value **)** |const|                                      |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`insert<class_PackedStringArray_method_insert>` **(** :ref:`int<class_int>` at_index, :ref:`String<class_String>` value **)**        |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`is_empty<class_PackedStringArray_method_is_empty>` **(** **)** |const|                                                              |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`push_back<class_PackedStringArray_method_push_back>` **(** :ref:`String<class_String>` value **)**                                  |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`remove_at<class_PackedStringArray_method_remove_at>` **(** :ref:`int<class_int>` index **)**                                        |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`resize<class_PackedStringArray_method_resize>` **(** :ref:`int<class_int>` new_size **)**                                           |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`reverse<class_PackedStringArray_method_reverse>` **(** **)**                                                                        |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`rfind<class_PackedStringArray_method_rfind>` **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=-1 **)** |const|   |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`set<class_PackedStringArray_method_set>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` value **)**                 |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                             | :ref:`size<class_PackedStringArray_method_size>` **(** **)** |const|                                                                      |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`slice<class_PackedStringArray_method_slice>` **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647 **)** |const|  |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                              | :ref:`sort<class_PackedStringArray_method_sort>` **(** **)**                                                                              |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`to_byte_array<class_PackedStringArray_method_to_byte_array>` **(** **)** |const|                                                    |
-+---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`append<class_PackedStringArray_method_append>` **(** :ref:`String<class_String>` value **)**                                        |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`append_array<class_PackedStringArray_method_append_array>` **(** :ref:`PackedStringArray<class_PackedStringArray>` array **)**      |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`bsearch<class_PackedStringArray_method_bsearch>` **(** :ref:`String<class_String>` value, :ref:`bool<class_bool>` before=true **)** |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`clear<class_PackedStringArray_method_clear>` **(** **)**                                                                            |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`count<class_PackedStringArray_method_count>` **(** :ref:`String<class_String>` value **)** |const|                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`duplicate<class_PackedStringArray_method_duplicate>` **(** **)**                                                                    |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`fill<class_PackedStringArray_method_fill>` **(** :ref:`String<class_String>` value **)**                                            |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`find<class_PackedStringArray_method_find>` **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=0 **)** |const|      |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`has<class_PackedStringArray_method_has>` **(** :ref:`String<class_String>` value **)** |const|                                      |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`insert<class_PackedStringArray_method_insert>` **(** :ref:`int<class_int>` at_index, :ref:`String<class_String>` value **)**        |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_empty<class_PackedStringArray_method_is_empty>` **(** **)** |const|                                                              |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`push_back<class_PackedStringArray_method_push_back>` **(** :ref:`String<class_String>` value **)**                                  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`remove_at<class_PackedStringArray_method_remove_at>` **(** :ref:`int<class_int>` index **)**                                        |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`resize<class_PackedStringArray_method_resize>` **(** :ref:`int<class_int>` new_size **)**                                           |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`reverse<class_PackedStringArray_method_reverse>` **(** **)**                                                                        |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`rfind<class_PackedStringArray_method_rfind>` **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=-1 **)** |const|   |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`set<class_PackedStringArray_method_set>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` value **)**                 |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`size<class_PackedStringArray_method_size>` **(** **)** |const|                                                                      |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`slice<class_PackedStringArray_method_slice>` **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647 **)** |const|  |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`sort<class_PackedStringArray_method_sort>` **(** **)**                                                                              |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`     | :ref:`to_byte_array<class_PackedStringArray_method_to_byte_array>` **(** **)** |const|                                                    |
+   +---------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Operators
 ---------
 
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`operator !=<class_PackedStringArray_operator_neq_bool>` **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**             |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`operator +<class_PackedStringArray_operator_sum_PackedStringArray>` **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)** |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                           | :ref:`operator ==<class_PackedStringArray_operator_eq_bool>` **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**              |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                       | :ref:`operator []<class_PackedStringArray_operator_idx_String>` **(** :ref:`int<class_int>` index **)**                                       |
-+---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`operator !=<class_PackedStringArray_operator_neq_PackedStringArray>` **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)** |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`operator +<class_PackedStringArray_operator_sum_PackedStringArray>` **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`operator ==<class_PackedStringArray_operator_eq_PackedStringArray>` **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                       | :ref:`operator []<class_PackedStringArray_operator_idx_int>` **(** :ref:`int<class_int>` index **)**                                           |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constructor Descriptions
 ------------------------
 
 .. _class_PackedStringArray_constructor_PackedStringArray:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **PackedStringArray** **(** **)**
+.. rst-class:: classref-constructor
 
-Constructs an empty ``PackedStringArray``.
+:ref:`PackedStringArray<class_PackedStringArray>` **PackedStringArray** **(** **)**
 
-----
+Constructs an empty **PackedStringArray**.
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **PackedStringArray** **(** :ref:`PackedStringArray<class_PackedStringArray>` from **)**
-
-Constructs a ``PackedStringArray`` as a copy of the given ``PackedStringArray``.
+.. rst-class:: classref-item-separator
 
 ----
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **PackedStringArray** **(** :ref:`Array<class_Array>` from **)**
+.. rst-class:: classref-constructor
 
-Constructs a new ``PackedStringArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+:ref:`PackedStringArray<class_PackedStringArray>` **PackedStringArray** **(** :ref:`PackedStringArray<class_PackedStringArray>` from **)**
+
+Constructs a **PackedStringArray** as a copy of the given **PackedStringArray**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. rst-class:: classref-constructor
+
+:ref:`PackedStringArray<class_PackedStringArray>` **PackedStringArray** **(** :ref:`Array<class_Array>` from **)**
+
+Constructs a new **PackedStringArray**. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PackedStringArray_method_append:
 
-- :ref:`bool<class_bool>` **append** **(** :ref:`String<class_String>` value **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **append** **(** :ref:`String<class_String>` value **)**
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PackedStringArray_method_push_back>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_append_array:
 
-- void **append_array** **(** :ref:`PackedStringArray<class_PackedStringArray>` array **)**
+.. rst-class:: classref-method
 
-Appends a ``PackedStringArray`` at the end of this array.
+void **append_array** **(** :ref:`PackedStringArray<class_PackedStringArray>` array **)**
+
+Appends a **PackedStringArray** at the end of this array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_bsearch:
 
-- :ref:`int<class_int>` **bsearch** **(** :ref:`String<class_String>` value, :ref:`bool<class_bool>` before=true **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **bsearch** **(** :ref:`String<class_String>` value, :ref:`bool<class_bool>` before=true **)**
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
 \ **Note:** Calling :ref:`bsearch<class_PackedStringArray_method_bsearch>` on an unsorted array results in unexpected behavior.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PackedStringArray_method_clear:
 
-- void **clear** **(** **)**
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
 
 Clears the array. This is equivalent to using :ref:`resize<class_PackedStringArray_method_resize>` with a size of ``0``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_count:
 
-- :ref:`int<class_int>` **count** **(** :ref:`String<class_String>` value **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **count** **(** :ref:`String<class_String>` value **)** |const|
 
 Returns the number of times an element is in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_duplicate:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **duplicate** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **duplicate** **(** **)**
 
 Creates a copy of the array, and returns it.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_fill:
 
-- void **fill** **(** :ref:`String<class_String>` value **)**
+.. rst-class:: classref-method
+
+void **fill** **(** :ref:`String<class_String>` value **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PackedStringArray_method_resize>` to create an array with a given size and initialized elements.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_find:
 
-- :ref:`int<class_int>` **find** **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=0 **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **find** **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=0 **)** |const|
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_has:
 
-- :ref:`bool<class_bool>` **has** **(** :ref:`String<class_String>` value **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has** **(** :ref:`String<class_String>` value **)** |const|
 
 Returns ``true`` if the array contains ``value``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_insert:
 
-- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` at_index, :ref:`String<class_String>` value **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` at_index, :ref:`String<class_String>` value **)**
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_is_empty:
 
-- :ref:`bool<class_bool>` **is_empty** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_empty** **(** **)** |const|
 
 Returns ``true`` if the array is empty.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_push_back:
 
-- :ref:`bool<class_bool>` **push_back** **(** :ref:`String<class_String>` value **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **push_back** **(** :ref:`String<class_String>` value **)**
 
 Appends a string element at end of the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_remove_at:
 
-- void **remove_at** **(** :ref:`int<class_int>` index **)**
+.. rst-class:: classref-method
+
+void **remove_at** **(** :ref:`int<class_int>` index **)**
 
 Removes an element from the array by index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_resize:
 
-- :ref:`int<class_int>` **resize** **(** :ref:`int<class_int>` new_size **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **resize** **(** :ref:`int<class_int>` new_size **)**
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_reverse:
 
-- void **reverse** **(** **)**
+.. rst-class:: classref-method
+
+void **reverse** **(** **)**
 
 Reverses the order of the elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_rfind:
 
-- :ref:`int<class_int>` **rfind** **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=-1 **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **rfind** **(** :ref:`String<class_String>` value, :ref:`int<class_int>` from=-1 **)** |const|
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_set:
 
-- void **set** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` value **)**
+.. rst-class:: classref-method
+
+void **set** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` value **)**
 
 Changes the :ref:`String<class_String>` at the given index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **size** **(** **)** |const|
 
 Returns the number of elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_slice:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647 **)** |const|
+.. rst-class:: classref-method
 
-Returns the slice of the ``PackedStringArray``, from ``begin`` (inclusive) to ``end`` (exclusive), as a new ``PackedStringArray``.
+:ref:`PackedStringArray<class_PackedStringArray>` **slice** **(** :ref:`int<class_int>` begin, :ref:`int<class_int>` end=2147483647 **)** |const|
+
+Returns the slice of the **PackedStringArray**, from ``begin`` (inclusive) to ``end`` (exclusive), as a new **PackedStringArray**.
 
 The absolute value of ``begin`` and ``end`` will be clamped to the array size, so the default value for ``end`` makes it slice to the size of the array by default (i.e. ``arr.slice(1)`` is a shorthand for ``arr.slice(1, arr.size())``).
 
 If either ``begin`` or ``end`` are negative, they will be relative to the end of the array (i.e. ``arr.slice(0, -2)`` is a shorthand for ``arr.slice(0, arr.size() - 2)``).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PackedStringArray_method_sort:
 
-- void **sort** **(** **)**
+.. rst-class:: classref-method
+
+void **sort** **(** **)**
 
 Sorts the elements of the array in ascending order.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_method_to_byte_array:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **to_byte_array** **(** **)** |const|
 
 Returns a :ref:`PackedByteArray<class_PackedByteArray>` with each string encoded as bytes.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Operator Descriptions
 ---------------------
 
-.. _class_PackedStringArray_operator_neq_bool:
+.. _class_PackedStringArray_operator_neq_PackedStringArray:
 
-- :ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator !=** **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**
 
 Returns ``true`` if contents of the arrays differ.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PackedStringArray_operator_sum_PackedStringArray:
 
-- :ref:`PackedStringArray<class_PackedStringArray>` **operator +** **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**
+.. rst-class:: classref-operator
 
-Returns a new ``PackedStringArray`` with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedStringArray_method_append_array>` instead.
+:ref:`PackedStringArray<class_PackedStringArray>` **operator +** **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**
+
+Returns a new **PackedStringArray** with contents of ``right`` added at the end of this array. For better performance, consider using :ref:`append_array<class_PackedStringArray_method_append_array>` instead.
+
+.. rst-class:: classref-item-separator
 
 ----
 
-.. _class_PackedStringArray_operator_eq_bool:
+.. _class_PackedStringArray_operator_eq_PackedStringArray:
 
-- :ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**
+.. rst-class:: classref-operator
+
+:ref:`bool<class_bool>` **operator ==** **(** :ref:`PackedStringArray<class_PackedStringArray>` right **)**
 
 Returns ``true`` if contents of both arrays are the same, i.e. they have all equal :ref:`String<class_String>`\ s at the corresponding indices.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-.. _class_PackedStringArray_operator_idx_String:
+.. _class_PackedStringArray_operator_idx_int:
 
-- :ref:`String<class_String>` **operator []** **(** :ref:`int<class_int>` index **)**
+.. rst-class:: classref-operator
+
+:ref:`String<class_String>` **operator []** **(** :ref:`int<class_int>` index **)**
 
 Returns the :ref:`String<class_String>` at index ``index``. Negative indices can be used to access the elements starting from the end. Using index out of array's bounds will result in an error.
 

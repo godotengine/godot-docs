@@ -14,50 +14,63 @@ VisualShaderNodeTransformParameter
 
 A :ref:`Transform3D<class_Transform3D>` parameter for use within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Translated to ``uniform mat4`` in the shader language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform3D<class_Transform3D>` | :ref:`default_value<class_VisualShaderNodeTransformParameter_property_default_value>`                 | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`default_value_enabled<class_VisualShaderNodeTransformParameter_property_default_value_enabled>` | ``false``                                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`default_value<class_VisualShaderNodeTransformParameter_property_default_value>`                 | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`default_value_enabled<class_VisualShaderNodeTransformParameter_property_default_value_enabled>` | ``false``                                           |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeTransformParameter_property_default_value:
 
-- :ref:`Transform3D<class_Transform3D>` **default_value**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------------+
-| *Default* | ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)`` |
-+-----------+-----------------------------------------------------+
-| *Setter*  | set_default_value(value)                            |
-+-----------+-----------------------------------------------------+
-| *Getter*  | get_default_value()                                 |
-+-----------+-----------------------------------------------------+
+:ref:`Transform3D<class_Transform3D>` **default_value** = ``Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value** **(** :ref:`Transform3D<class_Transform3D>` value **)**
+- :ref:`Transform3D<class_Transform3D>` **get_default_value** **(** **)**
 
 A default value to be assigned within the shader.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeTransformParameter_property_default_value_enabled:
 
-- :ref:`bool<class_bool>` **default_value_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``false``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_default_value_enabled(value) |
-+-----------+----------------------------------+
-| *Getter*  | is_default_value_enabled()       |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_default_value_enabled** **(** **)**
 
 Enables usage of the :ref:`default_value<class_VisualShaderNodeTransformParameter_property_default_value>`.
 

@@ -14,6 +14,8 @@ Crypto
 
 Access to advanced cryptographic functionalities.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -88,81 +90,114 @@ For now, this includes generating cryptographically secure random bytes, RSA key
 
 
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`constant_time_compare<class_Crypto_method_constant_time_compare>` **(** :ref:`PackedByteArray<class_PackedByteArray>` trusted, :ref:`PackedByteArray<class_PackedByteArray>` received **)**                                                                                                                                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`decrypt<class_Crypto_method_decrypt>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` ciphertext **)**                                                                                                                                                                                       |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`encrypt<class_Crypto_method_encrypt>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` plaintext **)**                                                                                                                                                                                        |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`generate_random_bytes<class_Crypto_method_generate_random_bytes>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`generate_rsa<class_Crypto_method_generate_rsa>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                                  |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`generate_self_signed_certificate<class_Crypto_method_generate_self_signed_certificate>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`String<class_String>` issuer_name="CN=myserver,O=myorganisation,C=IT", :ref:`String<class_String>` not_before="20140101000000", :ref:`String<class_String>` not_after="20340101000000" **)** |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`hmac_digest<class_Crypto_method_hmac_digest>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` msg **)**                                                                                                                 |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`sign<class_Crypto_method_sign>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                                                                                          |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`verify<class_Crypto_method_verify>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`PackedByteArray<class_PackedByteArray>` signature, :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                             |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`constant_time_compare<class_Crypto_method_constant_time_compare>` **(** :ref:`PackedByteArray<class_PackedByteArray>` trusted, :ref:`PackedByteArray<class_PackedByteArray>` received **)**                                                                                                                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`decrypt<class_Crypto_method_decrypt>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` ciphertext **)**                                                                                                                                                                                       |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`encrypt<class_Crypto_method_encrypt>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` plaintext **)**                                                                                                                                                                                        |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`generate_random_bytes<class_Crypto_method_generate_random_bytes>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`CryptoKey<class_CryptoKey>`             | :ref:`generate_rsa<class_Crypto_method_generate_rsa>` **(** :ref:`int<class_int>` size **)**                                                                                                                                                                                                                                                  |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`X509Certificate<class_X509Certificate>` | :ref:`generate_self_signed_certificate<class_Crypto_method_generate_self_signed_certificate>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`String<class_String>` issuer_name="CN=myserver,O=myorganisation,C=IT", :ref:`String<class_String>` not_before="20140101000000", :ref:`String<class_String>` not_after="20340101000000" **)** |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`hmac_digest<class_Crypto_method_hmac_digest>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` msg **)**                                                                                                                 |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`sign<class_Crypto_method_sign>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                                                                                          |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`verify<class_Crypto_method_verify>` **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`PackedByteArray<class_PackedByteArray>` signature, :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                             |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Crypto_method_constant_time_compare:
 
-- :ref:`bool<class_bool>` **constant_time_compare** **(** :ref:`PackedByteArray<class_PackedByteArray>` trusted, :ref:`PackedByteArray<class_PackedByteArray>` received **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **constant_time_compare** **(** :ref:`PackedByteArray<class_PackedByteArray>` trusted, :ref:`PackedByteArray<class_PackedByteArray>` received **)**
 
 Compares two :ref:`PackedByteArray<class_PackedByteArray>`\ s for equality without leaking timing information in order to prevent timing attacks.
 
 See `this blog post <https://paragonie.com/blog/2015/11/preventing-timing-attacks-on-string-comparison-with-double-hmac-strategy>`__ for more information.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Crypto_method_decrypt:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **decrypt** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` ciphertext **)**
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **decrypt** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` ciphertext **)**
 
 Decrypt the given ``ciphertext`` with the provided private ``key``.
 
 \ **Note:** The maximum size of accepted ciphertext is limited by the key size.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Crypto_method_encrypt:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **encrypt** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` plaintext **)**
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **encrypt** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`PackedByteArray<class_PackedByteArray>` plaintext **)**
 
 Encrypt the given ``plaintext`` with the provided public ``key``.
 
 \ **Note:** The maximum size of accepted plaintext is limited by the key size.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Crypto_method_generate_random_bytes:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **generate_random_bytes** **(** :ref:`int<class_int>` size **)**
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **generate_random_bytes** **(** :ref:`int<class_int>` size **)**
 
 Generates a :ref:`PackedByteArray<class_PackedByteArray>` of cryptographically secure random bytes with given ``size``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Crypto_method_generate_rsa:
 
-- :ref:`CryptoKey<class_CryptoKey>` **generate_rsa** **(** :ref:`int<class_int>` size **)**
+.. rst-class:: classref-method
+
+:ref:`CryptoKey<class_CryptoKey>` **generate_rsa** **(** :ref:`int<class_int>` size **)**
 
 Generates an RSA :ref:`CryptoKey<class_CryptoKey>` that can be used for creating self-signed certificates and passed to :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Crypto_method_generate_self_signed_certificate:
 
-- :ref:`X509Certificate<class_X509Certificate>` **generate_self_signed_certificate** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`String<class_String>` issuer_name="CN=myserver,O=myorganisation,C=IT", :ref:`String<class_String>` not_before="20140101000000", :ref:`String<class_String>` not_after="20340101000000" **)**
+.. rst-class:: classref-method
+
+:ref:`X509Certificate<class_X509Certificate>` **generate_self_signed_certificate** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`String<class_String>` issuer_name="CN=myserver,O=myorganisation,C=IT", :ref:`String<class_String>` not_before="20140101000000", :ref:`String<class_String>` not_after="20340101000000" **)**
 
 Generates a self-signed :ref:`X509Certificate<class_X509Certificate>` from the given :ref:`CryptoKey<class_CryptoKey>` and ``issuer_name``. The certificate validity will be defined by ``not_before`` and ``not_after`` (first valid date and last valid date). The ``issuer_name`` must contain at least "CN=" (common name, i.e. the domain name), "O=" (organization, i.e. your company name), "C=" (country, i.e. 2 lettered ISO-3166 code of the country the organization is based in).
 
@@ -189,29 +224,41 @@ A small example to generate an RSA key and a X509 self-signed certificate.
 
 
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Crypto_method_hmac_digest:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **hmac_digest** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` msg **)**
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **hmac_digest** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` key, :ref:`PackedByteArray<class_PackedByteArray>` msg **)**
 
 Generates an `HMAC <https://en.wikipedia.org/wiki/HMAC>`__ digest of ``msg`` using ``key``. The ``hash_type`` parameter is the hashing algorithm that is used for the inner and outer hashes.
 
 Currently, only :ref:`HashingContext.HASH_SHA256<class_HashingContext_constant_HASH_SHA256>` and :ref:`HashingContext.HASH_SHA1<class_HashingContext_constant_HASH_SHA1>` are supported.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Crypto_method_sign:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **sign** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`CryptoKey<class_CryptoKey>` key **)**
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **sign** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`CryptoKey<class_CryptoKey>` key **)**
 
 Sign a given ``hash`` of type ``hash_type`` with the provided private ``key``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Crypto_method_verify:
 
-- :ref:`bool<class_bool>` **verify** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`PackedByteArray<class_PackedByteArray>` signature, :ref:`CryptoKey<class_CryptoKey>` key **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **verify** **(** :ref:`HashType<enum_HashingContext_HashType>` hash_type, :ref:`PackedByteArray<class_PackedByteArray>` hash, :ref:`PackedByteArray<class_PackedByteArray>` signature, :ref:`CryptoKey<class_CryptoKey>` key **)**
 
 Verify that a given ``signature`` for ``hash`` of type ``hash_type`` against the provided public ``key``.
 

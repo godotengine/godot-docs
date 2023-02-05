@@ -12,29 +12,48 @@ VisualShaderNodeParticleMultiplyByAxisAngle
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+A visual shader helper node for multiplying position and rotation of particles.
 
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This node helps to multiply a position input vector by rotation using specific axis. Intended to work with emitters.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`degrees_mode<class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode>` | ``true`` |
-+-------------------------+----------------------------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`degrees_mode<class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode>` | ``true`` |
+   +-------------------------+----------------------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeParticleMultiplyByAxisAngle_property_degrees_mode:
 
-- :ref:`bool<class_bool>` **degrees_mode**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``true``                |
-+-----------+-------------------------+
-| *Setter*  | set_degrees_mode(value) |
-+-----------+-------------------------+
-| *Getter*  | is_degrees_mode()       |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **degrees_mode** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_degrees_mode** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_degrees_mode** **(** **)**
+
+If ``true``, the angle will be interpreted in degrees instead of radians.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

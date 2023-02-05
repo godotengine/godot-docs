@@ -14,84 +14,111 @@ AudioStreamMP3
 
 MP3 audio stream driver.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 MP3 audio stream driver. See :ref:`data<class_AudioStreamMP3_property_data>` if you want to load an MP3 file at run-time.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                         | :ref:`bar_beats<class_AudioStreamMP3_property_bar_beats>`     | ``4``                 |
-+-----------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`int<class_int>`                         | :ref:`beat_count<class_AudioStreamMP3_property_beat_count>`   | ``0``                 |
-+-----------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                     | :ref:`bpm<class_AudioStreamMP3_property_bpm>`                 | ``0.0``               |
-+-----------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`data<class_AudioStreamMP3_property_data>`               | ``PackedByteArray()`` |
-+-----------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`bool<class_bool>`                       | :ref:`loop<class_AudioStreamMP3_property_loop>`               | ``false``             |
-+-----------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`float<class_float>`                     | :ref:`loop_offset<class_AudioStreamMP3_property_loop_offset>` | ``0.0``               |
-+-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                         | :ref:`bar_beats<class_AudioStreamMP3_property_bar_beats>`     | ``4``                 |
+   +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                         | :ref:`beat_count<class_AudioStreamMP3_property_beat_count>`   | ``0``                 |
+   +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                     | :ref:`bpm<class_AudioStreamMP3_property_bpm>`                 | ``0.0``               |
+   +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>` | :ref:`data<class_AudioStreamMP3_property_data>`               | ``PackedByteArray()`` |
+   +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`loop<class_AudioStreamMP3_property_loop>`               | ``false``             |
+   +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                     | :ref:`loop_offset<class_AudioStreamMP3_property_loop_offset>` | ``0.0``               |
+   +-----------------------------------------------+---------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioStreamMP3_property_bar_beats:
 
-- :ref:`int<class_int>` **bar_beats**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``4``                |
-+-----------+----------------------+
-| *Setter*  | set_bar_beats(value) |
-+-----------+----------------------+
-| *Getter*  | get_bar_beats()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **bar_beats** = ``4``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bar_beats** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_bar_beats** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamMP3_property_beat_count:
 
-- :ref:`int<class_int>` **beat_count**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_beat_count(value) |
-+-----------+-----------------------+
-| *Getter*  | get_beat_count()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **beat_count** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_beat_count** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_beat_count** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamMP3_property_bpm:
 
-- :ref:`float<class_float>` **bpm**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``0.0``        |
-+-----------+----------------+
-| *Setter*  | set_bpm(value) |
-+-----------+----------------+
-| *Getter*  | get_bpm()      |
-+-----------+----------------+
+:ref:`float<class_float>` **bpm** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bpm** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_bpm** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamMP3_property_data:
 
-- :ref:`PackedByteArray<class_PackedByteArray>` **data**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``PackedByteArray()`` |
-+-----------+-----------------------+
-| *Setter*  | set_data(value)       |
-+-----------+-----------------------+
-| *Getter*  | get_data()            |
-+-----------+-----------------------+
+:ref:`PackedByteArray<class_PackedByteArray>` **data** = ``PackedByteArray()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_data** **(** :ref:`PackedByteArray<class_PackedByteArray>` value **)**
+- :ref:`PackedByteArray<class_PackedByteArray>` **get_data** **(** **)**
 
 Contains the audio data in bytes.
 
@@ -124,35 +151,37 @@ You can load a file without having to import it beforehand using the code snippe
 
 
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_AudioStreamMP3_property_loop:
 
-- :ref:`bool<class_bool>` **loop**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_loop(value) |
-+-----------+-----------------+
-| *Getter*  | has_loop()      |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **loop** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_loop** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **has_loop** **(** **)**
 
 If ``true``, the stream will automatically loop when it reaches the end.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamMP3_property_loop_offset:
 
-- :ref:`float<class_float>` **loop_offset**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.0``                |
-+-----------+------------------------+
-| *Setter*  | set_loop_offset(value) |
-+-----------+------------------------+
-| *Getter*  | get_loop_offset()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **loop_offset** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_loop_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_loop_offset** **(** **)**
 
 Time in seconds at which the stream starts after being looped.
 

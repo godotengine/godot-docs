@@ -12,6 +12,8 @@ Variant
 
 The most important data type in Godot.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -62,7 +64,7 @@ The global :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>` function
             # To get the name of the underlying Object type, you need the `get_class()` method.
             print("foo is a(n) %s" % foo.get_class()) # inject the class name into a formatted string.
             # Note also that there is not yet any way to get a script's `class_name` string easily.
-            # To fetch that value, you need to dig deeply into a hidden ProjectSettings setting: an Array of Dictionaries called "_global_script_classes".
+            # To fetch that value, you can parse the [code]res://.godot/global_script_class_cache.cfg[/code] file with the [ConfigFile] API.
             # Open your project.godot file to see it up close.
 
  .. code-tab:: csharp
@@ -109,10 +111,12 @@ A Variant:
 
 Modifications to a container will modify all references to it. A :ref:`Mutex<class_Mutex>` should be created to lock it if multi-threaded access is desired.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
-- :doc:`Variant class <../development/cpp/variant_class>`
+- :doc:`Variant class introduction <../contributing/development/core_and_modules/variant_class>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

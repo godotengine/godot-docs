@@ -14,6 +14,8 @@ VisualShaderNodeIf
 
 Compares two floating-point numbers in order to return a required vector within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 

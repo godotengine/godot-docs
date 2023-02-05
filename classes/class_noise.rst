@@ -16,6 +16,8 @@ Noise
 
 Abstract base class for noise generators.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,79 +27,116 @@ A default get_seamless_noise() implementation is provided for libraries that do 
 
 Inheriting noise classes can optionally override this function to provide a more optimal algorithm.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>` | :ref:`get_image<class_Noise_method_get_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` invert=false, :ref:`bool<class_bool>` in_3d_space=false **)** |const|                                                        |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_1d<class_Noise_method_get_noise_1d>` **(** :ref:`float<class_float>` x **)** |const|                                                                                                                                                                 |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_2d<class_Noise_method_get_noise_2d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)** |const|                                                                                                                                    |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_2dv<class_Noise_method_get_noise_2dv>` **(** :ref:`Vector2<class_Vector2>` v **)** |const|                                                                                                                                                           |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_3d<class_Noise_method_get_noise_3d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)** |const|                                                                                                       |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_noise_3dv<class_Noise_method_get_noise_3dv>` **(** :ref:`Vector3<class_Vector3>` v **)** |const|                                                                                                                                                           |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Image<class_Image>` | :ref:`get_seamless_image<class_Noise_method_get_seamless_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` invert=false, :ref:`bool<class_bool>` in_3d_space=false, :ref:`float<class_float>` skirt=0.1 **)** |const| |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>` | :ref:`get_image<class_Noise_method_get_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` invert=false, :ref:`bool<class_bool>` in_3d_space=false **)** |const|                                                        |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_noise_1d<class_Noise_method_get_noise_1d>` **(** :ref:`float<class_float>` x **)** |const|                                                                                                                                                                 |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_noise_2d<class_Noise_method_get_noise_2d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)** |const|                                                                                                                                    |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_noise_2dv<class_Noise_method_get_noise_2dv>` **(** :ref:`Vector2<class_Vector2>` v **)** |const|                                                                                                                                                           |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_noise_3d<class_Noise_method_get_noise_3d>` **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)** |const|                                                                                                       |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_noise_3dv<class_Noise_method_get_noise_3dv>` **(** :ref:`Vector3<class_Vector3>` v **)** |const|                                                                                                                                                           |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>` | :ref:`get_seamless_image<class_Noise_method_get_seamless_image>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` invert=false, :ref:`bool<class_bool>` in_3d_space=false, :ref:`float<class_float>` skirt=0.1 **)** |const| |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Noise_method_get_image:
 
-- :ref:`Image<class_Image>` **get_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` invert=false, :ref:`bool<class_bool>` in_3d_space=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Image<class_Image>` **get_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` invert=false, :ref:`bool<class_bool>` in_3d_space=false **)** |const|
 
 Returns a 2D :ref:`Image<class_Image>` noise image.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Noise_method_get_noise_1d:
 
-- :ref:`float<class_float>` **get_noise_1d** **(** :ref:`float<class_float>` x **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_noise_1d** **(** :ref:`float<class_float>` x **)** |const|
 
 Returns the 1D noise value at the given (x) coordinate.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Noise_method_get_noise_2d:
 
-- :ref:`float<class_float>` **get_noise_2d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_noise_2d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y **)** |const|
 
 Returns the 2D noise value at the given position.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Noise_method_get_noise_2dv:
 
-- :ref:`float<class_float>` **get_noise_2dv** **(** :ref:`Vector2<class_Vector2>` v **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_noise_2dv** **(** :ref:`Vector2<class_Vector2>` v **)** |const|
 
 Returns the 2D noise value at the given position.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Noise_method_get_noise_3d:
 
-- :ref:`float<class_float>` **get_noise_3d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_noise_3d** **(** :ref:`float<class_float>` x, :ref:`float<class_float>` y, :ref:`float<class_float>` z **)** |const|
 
 Returns the 3D noise value at the given position.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Noise_method_get_noise_3dv:
 
-- :ref:`float<class_float>` **get_noise_3dv** **(** :ref:`Vector3<class_Vector3>` v **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_noise_3dv** **(** :ref:`Vector3<class_Vector3>` v **)** |const|
 
 Returns the 3D noise value at the given position.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Noise_method_get_seamless_image:
 
-- :ref:`Image<class_Image>` **get_seamless_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` invert=false, :ref:`bool<class_bool>` in_3d_space=false, :ref:`float<class_float>` skirt=0.1 **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Image<class_Image>` **get_seamless_image** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`bool<class_bool>` invert=false, :ref:`bool<class_bool>` in_3d_space=false, :ref:`float<class_float>` skirt=0.1 **)** |const|
 
 Returns a seamless 2D :ref:`Image<class_Image>` noise image.
 
