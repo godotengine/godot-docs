@@ -74,33 +74,25 @@ reliable to block even fast-moving objects.
 
 A box's wireframe appears in the viewport with three orange dots. You can click
 and drag these to edit the shape's extents interactively. We can also precisely
-set the size in the inspector. Click on the *BoxShape3D* to expand the resource.
-Set its *Extents* to ``30`` on the X axis, ``1`` for the Y axis, and ``30`` for
+set the size in the inspector. Click on the :ref:`BoxShape3D <class_BoxShape3D>` to expand the resource.
+Set its *Size* to ``60`` on the X axis, ``2`` for the Y axis, and ``60`` for
 the Z axis.
 
-.. image:: img/01.game_setup/09.box_extents.webp
+.. image:: img/01.game_setup/09.box_size.webp
 
-.. note::
-
-    In 3D, translation and size units are in meters. The box's total size is
-    twice its extents: ``60`` by ``60`` meters on the ground plane and ``2``
-    units tall. The ground plane is defined by the X and Z axes, while the Y
-    axis represents the height.
 
 Collision shapes are invisible. We need to add a visual floor that goes along
-with it. Select the ``Ground`` node and add a :ref:`MeshInstance <class_MeshInstance3D>` as its child.
+with it. Select the ``Ground`` node and add a :ref:`MeshInstance3D <class_MeshInstance3D>` as its child.
 
 .. image:: img/01.game_setup/10.mesh_instance3d.png
 
-In the *Inspector*, click on the field next to *Mesh* and create a *BoxMesh*
-resource to create a visible cube.
+In the *Inspector*, click on the field next to *Mesh* and create a `BoxMesh <class_BoxMesh>`
+resource to create a visible box.
 
 .. image:: img/01.game_setup/11.box_mesh.webp
 
-Once again, it's too small by default. Click the cube icon to expand the
-resource and set its *Size* to ``60``, ``2``, and ``60``. As the cube
-resource works with a size rather than extents, we need to use these values so
-it matches our collision shape.
+Once again, it's too small by default. Click the box icon to expand the
+resource and set its *Size* to ``60``, ``2``, and ``60``.
 
 .. image:: img/01.game_setup/12.cube_resized.png
 
