@@ -1,6 +1,6 @@
 .. _doc_c_sharp_exports:
 
-C# Exports
+C# exports
 ==========
 
 Introduction to exports

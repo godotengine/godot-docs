@@ -1,6 +1,6 @@
 .. _doc_c_sharp_signals:
 
-C# Signals
+C# signals
 ==========
 
 For a detailed explanation of signals in general, see the :ref:`doc_signals` section in the step
