@@ -81,8 +81,8 @@ otherwise it returns true. Note that using the ``is`` operator against ``null`` 
         // This block can never happen.
     }
 
-You can add a variable declaration to conditionally store the result of the cast
-if the ``is`` operator returns true.
+You can also declare a new variable to conditionally store the result of the cast
+if the ``is`` operator returns ``true``.
 
 .. code-block:: csharp
 
