@@ -82,6 +82,17 @@ the result is always going to be ``false``.
         // This block can never happen.
     }
 
+You can also declare a new variable to conditionally store the result of the cast
+if the ``is`` operator returns ``true``.
+
+.. code-block:: csharp
+
+    if (GetNode("MySprite") is Sprite2D mySprite)
+    {
+        // The mySprite variable only exists inside this block, and it's never null.
+        mySprite.SetFrame(0);
+    }
+
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
 
 
