@@ -882,11 +882,11 @@ otherwise prefer writing the type explicitly.
 
 ::
 
-   var health: int = 0 # The type should be stated explicitly.
-   var direction := Vector3(1, 2, 3) # The type is obviously Vector3.
+   var health: int = 0 # The type can be int or float, and thus should be stated explicitly.
+   var direction := Vector3(1, 2, 3) # The type is clearly inferred as Vector3.
 
-Don't exclude the type hint when it's not obvious, and
-don't include the type hint when it's redundant.
+Include the type hint when the type is ambiguous, and
+omit the type hint when it's redundant.
 
 **Bad**:
 
