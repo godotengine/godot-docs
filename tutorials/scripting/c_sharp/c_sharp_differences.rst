@@ -543,6 +543,17 @@ hex_encode                 StringExtensions.HexEncode (Consider using `System.Co
 .. _System.Uri.EscapeDataString: https://learn.microsoft.com/en-us/dotnet/api/system.uri.escapedatastring
 .. _System.Uri.UnescapeDataString: https://learn.microsoft.com/en-us/dotnet/api/system.uri.unescapedatastring
 
+NodePath
+--------
+
+The following method was converted to a property with a different name:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``is_empty()``        ``IsEmpty``
+====================  ==============================================================
+
 Signal
 ------
 
@@ -596,6 +607,20 @@ Some methods such as ``bind`` and ``unbind`` are not implemented, use lambdas in
 
 The lambda captures the ``name`` variable so it can be bound to the ``SayHello`` method.
 
+RID
+---
+
+This type is named ``Rid`` in C# to follow the .NET naming convention.
+
+The following methods were converted to properties with their respective names changed:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_id()``          ``Id``
+``is_valid()``        ``IsValid``
+====================  ==============================================================
+
 Basis
 -----
 
@@ -625,6 +650,23 @@ GDScript              C#
 ====================  ==============================================================
 ``get_rotation()``    ``Rotation``
 ``get_scale()``       ``Scale``
+``get_skew()``        ``Skew``
+====================  ==============================================================
+
+Transform3D
+-----------
+
+Structs cannot have parameterless constructors in C#. Therefore, ``new Transform3D()``
+initializes all primitive members to their default value.
+Please use ``Transform3D.Identity`` for the equivalent of ``Transform3D()`` in GDScript and C++.
+
+The following methods were converted to properties with their respective names changed:
+
+====================  ==============================================================
+GDScript              C#
+====================  ==============================================================
+``get_rotation()``    ``Rotation``
+``get_scale()``       ``Scale``
 ====================  ==============================================================
 
 Rect2
@@ -646,12 +688,53 @@ GDScript          C#
 ``get_area()``    ``Area``
 ================  ==================================================================
 
+Rect2i
+------
+
+This type is named ``Rect2I`` in C# to follow the .NET naming convention.
+
+The following field was converted to a property with a *slightly* different name:
+
+================  ==================================================================
+GDScript          C#
+================  ==================================================================
+``end``           ``End``
+================  ==================================================================
+
+The following method was converted to a property with a different name:
+
+================  ==================================================================
+GDScript          C#
+================  ==================================================================
+``get_area()``    ``Area``
+================  ==================================================================
+
+AABB
+----
+
+This type is named ``Aabb`` in C# to follow the .NET naming convention.
+
+The following methods was converted to a property with a different name:
+
+================  ==================================================================
+GDScript          C#
+================  ==================================================================
+``get_volume()``  ``Volume``
+================  ==================================================================
+
 Quaternion
 ----------
 
 Structs cannot have parameterless constructors in C#. Therefore, ``new Quaternion()``
 initializes all primitive members to their default value.
 Please use ``Quaternion.Identity`` for the equivalent of ``Quaternion()`` in GDScript and C++.
+
+Projection
+----------
+
+Structs cannot have parameterless constructors in C#. Therefore, ``new Projection()``
+initializes all primitive members to their default value.
+Please use ``Projection.Identity`` for the equivalent of ``Projection()`` in GDScript and C++.
 
 Color
 -----
