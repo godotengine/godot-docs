@@ -9,23 +9,27 @@ Frequently asked questions
 What can I do with Godot? How much does it cost? What are the license terms?
 ----------------------------------------------------------------------------
 
-Godot is `Free and Open-Source Software <https://en.wikipedia.org/wiki/Free_and_open-source_software>`_ available under the `OSI-approved <https://opensource.org/licenses/MIT>`_ MIT license. This means it is free as in "free speech" as well as in "free beer."
+Godot is `Free and Open-Source Software <https://en.wikipedia.org/wiki/Free_and_open-source_software>`_
+available under the `OSI-approved <https://opensource.org/licenses/MIT>`_ MIT license. This means it is
+free as in "free speech" as well as in "free beer."
 
 In short:
 
 * You are free to download and use Godot for any purpose: personal, non-profit, commercial, or otherwise.
-* You are free to modify, distribute, redistribute, and remix Godot to your heart's content, for any reason, both non-commercially and commercially.
+* You are free to modify, distribute, redistribute, and remix Godot to your heart's content, for any reason,
+  both non-commercially and commercially.
 
-All the contents of this accompanying documentation are published under
-the permissive Creative Commons Attribution 3.0 (`CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with attribution
+All the contents of this accompanying documentation are published under the permissive Creative Commons
+Attribution 3.0 (`CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/>`_) license, with attribution
 to "Juan Linietsky, Ariel Manzur and the Godot Engine community."
 
 Logos and icons are generally under the same Creative Commons license. Note
 that some third-party libraries included with Godot's source code may have
 different licenses.
 
-For full details, look at the `COPYRIGHT.txt <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_ as well
-as the `LICENSE.txt <https://github.com/godotengine/godot/blob/master/LICENSE.txt>`_ and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.md>`_ files
+For full details, look at the `COPYRIGHT.txt <https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt>`_
+as well as the `LICENSE.txt <https://github.com/godotengine/godot/blob/master/LICENSE.txt>`_
+and `LOGO_LICENSE.txt <https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.md>`_ files
 in the Godot repository.
 
 Also, see `the license page on the Godot website <https://godotengine.org/license>`_.
@@ -82,8 +86,8 @@ we recommend that you first do some due diligence yourself. Searching through
 discussions on `open issues <https://github.com/godotengine/godot/issues>`_ is a
 great way to start your troubleshooting.
 
-As for new languages, support is possible via third parties with GDExtensions. (See the question about plugins below.)
-Work is currently underway, for example, on unofficial bindings for Godot
+As for new languages, support is possible via third parties with GDExtensions. (See the question
+about plugins below.) Work is currently underway, for example, on unofficial bindings for Godot
 to `Python <https://github.com/touilleMan/godot-python>`_ and `Nim <https://github.com/pragmagic/godot-nim>`_.
 
 .. _doc_faq_what_is_gdscript:
@@ -137,9 +141,10 @@ The main reasons for creating a custom scripting language for Godot were:
    (Lua, Python, Squirrel, JavaScript, ActionScript, etc.).
 2. Poor class-extending support in most script VMs, and adapting to
    the way Godot works is highly inefficient (Lua, Python, JavaScript).
-3. Many existing languages have horrible interfaces for binding to C++, resulting in a large amount of
-   code, bugs, bottlenecks, and general inefficiency (Lua, Python,
-   Squirrel, JavaScript, etc.) We wanted to focus on a great engine, not a great number of integrations.
+3. Many existing languages have horrible interfaces for binding to C++, resulting in a
+   large amount of code, bugs, bottlenecks, and general inefficiency (Lua, Python,
+   Squirrel, JavaScript, etc.) We wanted to focus on a great engine, not a great number
+   of integrations.
 4. No native vector types (vector3, matrix4, etc.), resulting in highly
    reduced performance when using custom types (Lua, Python, Squirrel,
    JavaScript, ActionScript, etc.).
@@ -386,45 +391,47 @@ I would like to contribute! How can I get started?
 Awesome! As an open-source project, Godot thrives off of the innovation and
 the ambition of developers like you.
 
-The first place to get started is in the `issues <https://github.com/godotengine/godot/issues>`_.
-Find an issue that resonates with you, then proceed to the `How to Contribute <https://github.com/godotengine/godot/blob/master/CONTRIBUTING.md#contributing-pull-requests>`_
-guide to learn how to fork, modify, and submit a Pull Request (PR) with your changes.
+The best way to start contributing to Godot is by using it and reporting
+any `issues <https://github.com/godotengine/godot/issues>`_ that you might experience.
+A good bug report with clear reproduction steps helps your fellow contributors
+fix bugs quickly and efficiently. You can also report issues you find in the
+`online documentation <https://github.com/godotengine/godot-docs/issues>`_.
+
+If you feel ready to submit your first PR, pick any issue that resonates with you from
+one of the links above and try your hand at fixing it. You will need to learn how to
+compile the engine from sources, or how to build the documentation. You also need to
+get familiar with Git, a version control system that Godot developers use.
+
+We explain how to work with the engine source, how to edit the documentation, and
+what other ways to contribute are there in our :ref:`documentation for contributors <doc_ways_to_contribute>`.
 
 I have a great idea for Godot. How can I share it?
 --------------------------------------------------
 
-It might be tempting to want to bring ideas to Godot, like ones that
-result in massive core changes, some sort of mimicry of what another
-game engine does, or alternative workflows that you'd like built into
-the editor. These are great, and we are thankful to have such motivated
-people want to contribute, but Godot's focus is and always will be the
-core functionality as outlined in the `Roadmap <https://github.com/godotengine/godot-roadmap/blob/master/ROADMAP.md>`_,
-`squashing bugs and addressing issues <https://github.com/godotengine/godot/issues>`_,
-and conversations between Godot community members.
+We are always looking for suggestions about how to improve the engine. User feedback
+is the main driving force behind our decision-making process, and limitations that
+you might face while working on your project are a great data point for us when considering
+engine enhancements.
 
-Most developers in the Godot community will be more interested to learn
-about things like:
+If you experience a usability problem or are missing a feature in the current version of
+Godot, start by discussing it with our `community <https://godotengine.org/community/>`_.
+There may be other, perhaps better, ways to achieve the desired result that community members
+could suggest. And you can learn if other users experience the same issue, and figure out
+a good solution together.
 
--  Your experience using the software and the problems you have (we
-   care about this much more than ideas on how to improve it).
--  The features you would like to see implemented because you need them
-   for your project.
--  The concepts that were difficult to understand while learning the software.
--  The parts of your workflow you would like to see optimized.
--  Parts where you missed clear tutorials or where the documentation wasn't clear.
+If you come up with a well-defined idea for the engine, feel free to open a 
+`proposal issue <https://github.com/godotengine/godot-proposals/issues>`_.
+Try to be specific and concrete while describing your problem and your proposed
+solution — only actionable proposals can be considered. It is not required, but
+if you want to implement it yourself, that's always appreciated!
 
-Please don't feel like your ideas for Godot are unwelcome. Instead,
-try to reformulate them as a problem first, so developers and the community
-have a functional foundation to ground your ideas on.
+If you only have a general idea without specific details, you can open a 
+`proposal discussion <https://github.com/godotengine/godot-proposals/discussions>`_.
+These can be anything you want, and allow for a free-form discussion in search of
+a solution. Once you find one, a proposal issue can be opened.
 
-A good way to approach sharing your ideas and problems with the community
-is as a set of user stories. Explain what you are trying to do, what behavior
-you expect to happen, and then what behavior actually happened. Framing problems
-and ideas this way will help the whole community stay focused on improving
-developer experiences as a whole.
-
-Bonus points for bringing screenshots, concrete numbers, test cases, or example
-projects (if applicable).
+Please, read the `readme <https://github.com/godotengine/godot-proposals/blob/master/README.md>`_
+document before creating a proposal to learn more about the process.
 
 .. _doc_faq_non_game_applications:
 
@@ -489,11 +496,17 @@ Like many other libraries (Qt as an example), Godot does not make use of
 STL. We believe STL is a great general-purpose library, but we had special
 requirements for Godot.
 
-* STL templates create very large symbols, which results in huge debug binaries. We use few templates with very short names instead.
-* Most of our containers cater to special needs, like Vector, which uses copy on write and we use to pass data around, or the RID system, which requires O(1) access time for performance. Likewise, our hash map implementations are designed to integrate seamlessly with internal engine types.
+* STL templates create very large symbols, which results in huge debug binaries. We use few
+  templates with very short names instead.
+* Most of our containers cater to special needs, like Vector, which uses copy on write and we
+  use to pass data around, or the RID system, which requires O(1) access time for performance.
+  Likewise, our hash map implementations are designed to integrate seamlessly with internal
+  engine types.
 * Our containers have memory tracking built-in, which helps better track memory usage.
-* For large arrays, we use pooled memory, which can be mapped to either a preallocated buffer or virtual memory.
-* We use our custom String type, as the one provided by STL is too basic and lacks proper internationalization support.
+* For large arrays, we use pooled memory, which can be mapped to either a preallocated buffer
+  or virtual memory.
+* We use our custom String type, as the one provided by STL is too basic and lacks proper
+  internationalization support.
 
 Why does Godot not use exceptions?
 ----------------------------------
