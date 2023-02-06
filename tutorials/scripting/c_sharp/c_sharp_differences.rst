@@ -714,7 +714,7 @@ AABB
 
 This type is named ``Aabb`` in C# to follow the .NET naming convention.
 
-The following methods was converted to a property with a different name:
+The following method was converted to a property with a different name:
 
 ================  ==================================================================
 GDScript          C#
