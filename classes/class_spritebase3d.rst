@@ -31,39 +31,47 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>`     | :ref:`alpha_cut<class_SpriteBase3D_property_alpha_cut>`             | ``0``                 |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | Vector3.Axis                                            | :ref:`axis<class_SpriteBase3D_property_axis>`                       | ``2``                 |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>` | :ref:`billboard<class_SpriteBase3D_property_billboard>`             | ``0``                 |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`centered<class_SpriteBase3D_property_centered>`               | ``true``              |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`double_sided<class_SpriteBase3D_property_double_sided>`       | ``true``              |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`fixed_size<class_SpriteBase3D_property_fixed_size>`           | ``false``             |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`flip_h<class_SpriteBase3D_property_flip_h>`                   | ``false``             |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`flip_v<class_SpriteBase3D_property_flip_v>`                   | ``false``             |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`                               | :ref:`modulate<class_SpriteBase3D_property_modulate>`               | ``Color(1, 1, 1, 1)`` |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`no_depth_test<class_SpriteBase3D_property_no_depth_test>`     | ``false``             |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector2<class_Vector2>`                           | :ref:`offset<class_SpriteBase3D_property_offset>`                   | ``Vector2(0, 0)``     |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                               | :ref:`pixel_size<class_SpriteBase3D_property_pixel_size>`           | ``0.01``              |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                                   | :ref:`render_priority<class_SpriteBase3D_property_render_priority>` | ``0``                 |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`shaded<class_SpriteBase3D_property_shaded>`                   | ``false``             |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>` | :ref:`texture_filter<class_SpriteBase3D_property_texture_filter>`   | ``3``                 |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                 | :ref:`transparent<class_SpriteBase3D_property_transparent>`         | ``true``              |
-   +---------------------------------------------------------+---------------------------------------------------------------------+-----------------------+
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                       | :ref:`alpha_antialiasing_edge<class_SpriteBase3D_property_alpha_antialiasing_edge>` | ``0.0``               |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` | :ref:`alpha_antialiasing_mode<class_SpriteBase3D_property_alpha_antialiasing_mode>` | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>`             | :ref:`alpha_cut<class_SpriteBase3D_property_alpha_cut>`                             | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                       | :ref:`alpha_hash_scale<class_SpriteBase3D_property_alpha_hash_scale>`               | ``1.0``               |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                       | :ref:`alpha_scissor_threshold<class_SpriteBase3D_property_alpha_scissor_threshold>` | ``0.5``               |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | Vector3.Axis                                                    | :ref:`axis<class_SpriteBase3D_property_axis>`                                       | ``2``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`BillboardMode<enum_BaseMaterial3D_BillboardMode>`         | :ref:`billboard<class_SpriteBase3D_property_billboard>`                             | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`centered<class_SpriteBase3D_property_centered>`                               | ``true``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`double_sided<class_SpriteBase3D_property_double_sided>`                       | ``true``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`fixed_size<class_SpriteBase3D_property_fixed_size>`                           | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`flip_h<class_SpriteBase3D_property_flip_h>`                                   | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`flip_v<class_SpriteBase3D_property_flip_v>`                                   | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                                       | :ref:`modulate<class_SpriteBase3D_property_modulate>`                               | ``Color(1, 1, 1, 1)`` |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`no_depth_test<class_SpriteBase3D_property_no_depth_test>`                     | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector2<class_Vector2>`                                   | :ref:`offset<class_SpriteBase3D_property_offset>`                                   | ``Vector2(0, 0)``     |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                       | :ref:`pixel_size<class_SpriteBase3D_property_pixel_size>`                           | ``0.01``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                           | :ref:`render_priority<class_SpriteBase3D_property_render_priority>`                 | ``0``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`shaded<class_SpriteBase3D_property_shaded>`                                   | ``false``             |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`TextureFilter<enum_BaseMaterial3D_TextureFilter>`         | :ref:`texture_filter<class_SpriteBase3D_property_texture_filter>`                   | ``3``                 |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`transparent<class_SpriteBase3D_property_transparent>`                         | ``true``              |
+   +-----------------------------------------------------------------+-------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -180,6 +188,14 @@ This mode only allows fully transparent or fully opaque pixels. Harsh edges will
 
 This mode draws fully opaque pixels in the depth prepass. This is slower than :ref:`ALPHA_CUT_DISABLED<class_SpriteBase3D_constant_ALPHA_CUT_DISABLED>` or :ref:`ALPHA_CUT_DISCARD<class_SpriteBase3D_constant_ALPHA_CUT_DISCARD>`, but it allows displaying translucent areas and smooth edges while using proper sorting.
 
+.. _class_SpriteBase3D_constant_ALPHA_CUT_HASH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **ALPHA_CUT_HASH** = ``3``
+
+This mode draws cuts off all values below a spatially-deterministic threshold, the rest will remain opaque.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -188,6 +204,40 @@ This mode draws fully opaque pixels in the depth prepass. This is slower than :r
 
 Property Descriptions
 ---------------------
+
+.. _class_SpriteBase3D_property_alpha_antialiasing_edge:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **alpha_antialiasing_edge** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alpha_antialiasing_edge** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_alpha_antialiasing_edge** **(** **)**
+
+Threshold at which antialiasing will be applied on the alpha channel.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpriteBase3D_property_alpha_antialiasing_mode:
+
+.. rst-class:: classref-property
+
+:ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **alpha_antialiasing_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alpha_antialiasing** **(** :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` value **)**
+- :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **get_alpha_antialiasing** **(** **)**
+
+The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_SpriteBase3D_property_alpha_cut:
 
@@ -201,6 +251,40 @@ Property Descriptions
 - :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` **get_alpha_cut_mode** **(** **)**
 
 The alpha cutting mode to use for the sprite. See :ref:`AlphaCutMode<enum_SpriteBase3D_AlphaCutMode>` for possible values.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpriteBase3D_property_alpha_hash_scale:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **alpha_hash_scale** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alpha_hash_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_alpha_hash_scale** **(** **)**
+
+The hashing scale for Alpha Hash. Recommended values between ``0`` and ``2``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpriteBase3D_property_alpha_scissor_threshold:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **alpha_scissor_threshold** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alpha_scissor_threshold** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_alpha_scissor_threshold** **(** **)**
+
+Threshold at which the alpha scissor will discard values.
 
 .. rst-class:: classref-item-separator
 

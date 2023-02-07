@@ -111,6 +111,8 @@ Methods
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_custom_data_layers_count<class_TileSet_method_get_custom_data_layers_count>` **(** **)** |const|                                                                                                                                                                                                                                          |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`get_navigation_layer_layer_value<class_TileSet_method_get_navigation_layer_layer_value>` **(** :ref:`int<class_int>` layer_index, :ref:`int<class_int>` layer_number **)** |const|                                                                                                                                                            |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_navigation_layer_layers<class_TileSet_method_get_navigation_layer_layers>` **(** :ref:`int<class_int>` layer_index **)** |const|                                                                                                                                                                                                          |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_navigation_layers_count<class_TileSet_method_get_navigation_layers_count>` **(** **)** |const|                                                                                                                                                                                                                                            |
@@ -204,6 +206,8 @@ Methods
    | void                                                | :ref:`set_custom_data_layer_name<class_TileSet_method_set_custom_data_layer_name>` **(** :ref:`int<class_int>` layer_index, :ref:`String<class_String>` layer_name **)**                                                                                                                                                                            |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`set_custom_data_layer_type<class_TileSet_method_set_custom_data_layer_type>` **(** :ref:`int<class_int>` layer_index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` layer_type **)**                                                                                                                                                    |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_navigation_layer_layer_value<class_TileSet_method_set_navigation_layer_layer_value>` **(** :ref:`int<class_int>` layer_index, :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**                                                                                                                                     |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`set_navigation_layer_layers<class_TileSet_method_set_navigation_layer_layers>` **(** :ref:`int<class_int>` layer_index, :ref:`int<class_int>` layers **)**                                                                                                                                                                                    |
    +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -838,6 +842,18 @@ Returns the custom data layers count.
 
 ----
 
+.. _class_TileSet_method_get_navigation_layer_layer_value:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_navigation_layer_layer_value** **(** :ref:`int<class_int>` layer_index, :ref:`int<class_int>` layer_number **)** |const|
+
+Returns whether or not the specified navigation layer of the TileSet navigation data layer identified by the given ``layer_index`` is enabled, given a navigation_layers ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TileSet_method_get_navigation_layer_layers:
 
 .. rst-class:: classref-method
@@ -1411,6 +1427,18 @@ Sets the name of the custom data layer identified by the given index. Names are 
 void **set_custom_data_layer_type** **(** :ref:`int<class_int>` layer_index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` layer_type **)**
 
 Sets the type of the custom data layer identified by the given index.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileSet_method_set_navigation_layer_layer_value:
+
+.. rst-class:: classref-method
+
+void **set_navigation_layer_layer_value** **(** :ref:`int<class_int>` layer_index, :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+
+Based on ``value``, enables or disables the specified navigation layer of the TileSet navigation data layer identified by the given ``layer_index``, given a navigation_layers ``layer_number`` between 1 and 32.
 
 .. rst-class:: classref-item-separator
 

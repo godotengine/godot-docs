@@ -114,13 +114,13 @@ Methods
    +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`_get_unique_id<class_MultiplayerAPIExtension_method__get_unique_id>` **(** **)** |virtual| |const|                                                                                                                |
    +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`_object_configuration_add<class_MultiplayerAPIExtension_method__object_configuration_add>` **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|                  |
+   | :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`_object_configuration_add<class_MultiplayerAPIExtension_method__object_configuration_add>` **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|                  |
    +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`_object_configuration_remove<class_MultiplayerAPIExtension_method__object_configuration_remove>` **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|            |
+   | :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`_object_configuration_remove<class_MultiplayerAPIExtension_method__object_configuration_remove>` **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|            |
    +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`_poll<class_MultiplayerAPIExtension_method__poll>` **(** **)** |virtual|                                                                                                                                          |
+   | :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`_poll<class_MultiplayerAPIExtension_method__poll>` **(** **)** |virtual|                                                                                                                                          |
    +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                           | :ref:`_rpc<class_MultiplayerAPIExtension_method__rpc>` **(** :ref:`int<class_int>` peer, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, :ref:`Array<class_Array>` args **)** |virtual| |
+   | :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`_rpc<class_MultiplayerAPIExtension_method__rpc>` **(** :ref:`int<class_int>` peer, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, :ref:`Array<class_Array>` args **)** |virtual| |
    +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                            | :ref:`_set_multiplayer_peer<class_MultiplayerAPIExtension_method__set_multiplayer_peer>` **(** :ref:`MultiplayerPeer<class_MultiplayerPeer>` multiplayer_peer **)** |virtual|                                           |
    +-------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -186,7 +186,7 @@ Callback for :ref:`MultiplayerAPI.get_unique_id<class_MultiplayerAPI_method_get_
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_object_configuration_add** **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_object_configuration_add** **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|
 
 Callback for :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>`.
 
@@ -198,7 +198,7 @@ Callback for :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_object_configuration_remove** **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_object_configuration_remove** **(** :ref:`Object<class_Object>` object, :ref:`Variant<class_Variant>` configuration **)** |virtual|
 
 Callback for :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>`.
 
@@ -210,7 +210,7 @@ Callback for :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerA
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_poll** **(** **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_poll** **(** **)** |virtual|
 
 Callback for :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_method_poll>`.
 
@@ -222,7 +222,7 @@ Callback for :ref:`MultiplayerAPI.poll<class_MultiplayerAPI_method_poll>`.
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_rpc** **(** :ref:`int<class_int>` peer, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, :ref:`Array<class_Array>` args **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_rpc** **(** :ref:`int<class_int>` peer, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` method, :ref:`Array<class_Array>` args **)** |virtual|
 
 Callback for :ref:`MultiplayerAPI.rpc<class_MultiplayerAPI_method_rpc>`.
 

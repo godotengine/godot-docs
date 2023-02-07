@@ -1840,8 +1840,6 @@ Returns a new color from ``rgba``, an HTML hexadecimal color string. ``rgba`` is
 
 \ ``rgba`` must be a valid three-digit or six-digit hexadecimal color string, and may contain an alpha channel value. If ``rgba`` does not contain an alpha channel value, an alpha channel value of 1.0 is applied. If ``rgba`` is invalid, returns an empty color.
 
-\ **Note:** In C#, this method is not implemented. The same functionality is provided by the Color constructor.
-
 
 .. tabs::
 
@@ -1886,13 +1884,13 @@ Returns ``true`` if ``color`` is a valid HTML hexadecimal color string. The stri
 
  .. code-tab:: csharp
 
-    Color.IsHtmlValid("#55AAFF");   // Returns true
-    Color.IsHtmlValid("#55AAFF20"); // Returns true
-    Color.IsHtmlValid("55AAFF");    // Returns true
-    Color.IsHtmlValid("#F2C");      // Returns true
+    Color.HtmlIsValid("#55AAFF");   // Returns true
+    Color.HtmlIsValid("#55AAFF20"); // Returns true
+    Color.HtmlIsValid("55AAFF");    // Returns true
+    Color.HtmlIsValid("#F2C");      // Returns true
     
-    Color.IsHtmlValid("#AABBC");    // Returns false
-    Color.IsHtmlValid("#55aaFF5");  // Returns false
+    Color.HtmlIsValid("#AABBC");    // Returns false
+    Color.HtmlIsValid("#55aaFF5");  // Returns false
 
 
 

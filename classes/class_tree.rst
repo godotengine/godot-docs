@@ -393,18 +393,6 @@ Emitted when an item is collapsed by a click on the folding arrow.
 
 ----
 
-.. _class_Tree_signal_item_custom_button_pressed:
-
-.. rst-class:: classref-signal
-
-**item_custom_button_pressed** **(** **)**
-
-Emitted when a custom button is pressed (i.e. in a :ref:`TreeItem.CELL_MODE_CUSTOM<class_TreeItem_constant_CELL_MODE_CUSTOM>` mode cell).
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Tree_signal_item_edited:
 
 .. rst-class:: classref-signal

@@ -49,6 +49,8 @@ Properties
    +--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
    | :ref:`String<class_String>`                                                    | :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`                   |                    |
    +--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`int<class_int>`                                                          | :ref:`audio_max_polyphony<class_AnimationPlayer_property_audio_max_polyphony>`                 | ``32``             |
+   +--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
    | :ref:`String<class_String>`                                                    | :ref:`autoplay<class_AnimationPlayer_property_autoplay>`                                       | ``""``             |
    +--------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+--------------------+
    | :ref:`String<class_String>`                                                    | :ref:`current_animation<class_AnimationPlayer_property_current_animation>`                     | ``""``             |
@@ -307,6 +309,25 @@ Property Descriptions
 - :ref:`String<class_String>` **get_assigned_animation** **(** **)**
 
 If playing, the the current animation's key, otherwise, the animation last played. When set, this changes the animation, but will not play it unless already playing. See also :ref:`current_animation<class_AnimationPlayer_property_current_animation>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationPlayer_property_audio_max_polyphony:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **audio_max_polyphony** = ``32``
+
+.. rst-class:: classref-property-setget
+
+- void **set_audio_max_polyphony** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_audio_max_polyphony** **(** **)**
+
+The number of possible simultaneous sounds for each of the assigned AudioStreamPlayers.
+
+For example, if this value is ``32`` and the animation has two audio tracks, the two :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`\ s assigned can play simultaneously up to ``32`` voices each.
 
 .. rst-class:: classref-item-separator
 

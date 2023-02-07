@@ -47,6 +47,8 @@ Properties
    +------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
    | :ref:`NodePath<class_NodePath>`                                              | :ref:`anim_player<class_AnimationTree_property_anim_player>`                                   | ``NodePath("")``  |
    +------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`int<class_int>`                                                        | :ref:`audio_max_polyphony<class_AnimationTree_property_audio_max_polyphony>`                   | ``32``            |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
    | :ref:`AnimationProcessCallback<enum_AnimationTree_AnimationProcessCallback>` | :ref:`process_callback<class_AnimationTree_property_process_callback>`                         | ``1``             |
    +------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------------------+
    | :ref:`NodePath<class_NodePath>`                                              | :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>`                       | ``NodePath("")``  |
@@ -72,8 +74,6 @@ Methods
    | :ref:`Quaternion<class_Quaternion>` | :ref:`get_root_motion_rotation<class_AnimationTree_method_get_root_motion_rotation>` **(** **)** |const|                                                                                                                                                                                             |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`       | :ref:`get_root_motion_scale<class_AnimationTree_method_get_root_motion_scale>` **(** **)** |const|                                                                                                                                                                                                   |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`rename_parameter<class_AnimationTree_method_rename_parameter>` **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)**                                                                                                                                          |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -215,6 +215,25 @@ The path to the :ref:`Node<class_Node>` used to evaluate the AnimationNode :ref:
 - :ref:`NodePath<class_NodePath>` **get_animation_player** **(** **)**
 
 The path to the :ref:`AnimationPlayer<class_AnimationPlayer>` used for animating.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationTree_property_audio_max_polyphony:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **audio_max_polyphony** = ``32``
+
+.. rst-class:: classref-property-setget
+
+- void **set_audio_max_polyphony** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_audio_max_polyphony** **(** **)**
+
+The number of possible simultaneous sounds for each of the assigned AudioStreamPlayers.
+
+For example, if this value is ``32`` and the animation has two audio tracks, the two :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`\ s assigned can play simultaneously up to ``32`` voices each.
 
 .. rst-class:: classref-item-separator
 
@@ -398,20 +417,6 @@ The most basic example is applying scale to :ref:`CharacterBody3D<class_Characte
         set_scale(current_scale * scale_accum)
 
 
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_AnimationTree_method_rename_parameter:
-
-.. rst-class:: classref-method
-
-void **rename_parameter** **(** :ref:`String<class_String>` old_name, :ref:`String<class_String>` new_name **)**
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

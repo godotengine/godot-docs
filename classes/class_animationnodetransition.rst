@@ -40,15 +40,15 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+------------------------------------------------------------------------------+----------+
-   | :ref:`int<class_int>`     | :ref:`enabled_inputs<class_AnimationNodeTransition_property_enabled_inputs>` | ``0``    |
-   +---------------------------+------------------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`   | :ref:`reset<class_AnimationNodeTransition_property_reset>`                   | ``true`` |
-   +---------------------------+------------------------------------------------------------------------------+----------+
-   | :ref:`Curve<class_Curve>` | :ref:`xfade_curve<class_AnimationNodeTransition_property_xfade_curve>`       |          |
-   +---------------------------+------------------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>` | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`         | ``0.0``  |
-   +---------------------------+------------------------------------------------------------------------------+----------+
+   +---------------------------+--------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`allow_transition_to_self<class_AnimationNodeTransition_property_allow_transition_to_self>` | ``false`` |
+   +---------------------------+--------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`     | :ref:`input_count<class_AnimationNodeTransition_property_input_count>`                           | ``0``     |
+   +---------------------------+--------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`Curve<class_Curve>` | :ref:`xfade_curve<class_AnimationNodeTransition_property_xfade_curve>`                           |           |
+   +---------------------------+--------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`xfade_time<class_AnimationNodeTransition_property_xfade_time>`                             | ``0.0``   |
+   +---------------------------+--------------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -58,17 +58,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`       | :ref:`find_input_caption<class_AnimationNodeTransition_method_find_input_caption>` **(** :ref:`String<class_String>` caption **)** |const|                               |
-   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>` | :ref:`get_input_caption<class_AnimationNodeTransition_method_get_input_caption>` **(** :ref:`int<class_int>` input **)** |const|                                         |
-   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`     | :ref:`is_input_set_as_auto_advance<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>` **(** :ref:`int<class_int>` input **)** |const|                   |
-   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                        | :ref:`set_input_as_auto_advance<class_AnimationNodeTransition_method_set_input_as_auto_advance>` **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)** |
-   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                        | :ref:`set_input_caption<class_AnimationNodeTransition_method_set_input_caption>` **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**            |
-   +-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_input_reset<class_AnimationNodeTransition_method_is_input_reset>` **(** :ref:`int<class_int>` input **)** |const|                                               |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_input_set_as_auto_advance<class_AnimationNodeTransition_method_is_input_set_as_auto_advance>` **(** :ref:`int<class_int>` input **)** |const|                   |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_input_as_auto_advance<class_AnimationNodeTransition_method_set_input_as_auto_advance>` **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)** |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_input_reset<class_AnimationNodeTransition_method_set_input_reset>` **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)**                     |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -79,35 +77,35 @@ Methods
 Property Descriptions
 ---------------------
 
-.. _class_AnimationNodeTransition_property_enabled_inputs:
+.. _class_AnimationNodeTransition_property_allow_transition_to_self:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **enabled_inputs** = ``0``
+:ref:`bool<class_bool>` **allow_transition_to_self** = ``false``
 
 .. rst-class:: classref-property-setget
 
-- void **set_enabled_inputs** **(** :ref:`int<class_int>` value **)**
-- :ref:`int<class_int>` **get_enabled_inputs** **(** **)**
+- void **set_allow_transition_to_self** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_allow_transition_to_self** **(** **)**
 
-The number of enabled input ports for this node. The maximum is ``31``.
+If ``true``, allows transition to the self state. When the reset option is enabled in input, the animation is restarted. If ``false``, nothing happens on the transition to the self state.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_AnimationNodeTransition_property_reset:
+.. _class_AnimationNodeTransition_property_input_count:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **reset** = ``true``
+:ref:`int<class_int>` **input_count** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_reset** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_reset** **(** **)**
+- void **set_input_count** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_input_count** **(** **)**
 
-If ``true``, the destination animation is played back from the beginning when switched.
+The number of enabled input ports for this node.
 
 .. rst-class:: classref-item-separator
 
@@ -152,25 +150,13 @@ Cross-fading time (in seconds) between each animation connected to the inputs.
 Method Descriptions
 -------------------
 
-.. _class_AnimationNodeTransition_method_find_input_caption:
+.. _class_AnimationNodeTransition_method_is_input_reset:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **find_input_caption** **(** :ref:`String<class_String>` caption **)** |const|
+:ref:`bool<class_bool>` **is_input_reset** **(** :ref:`int<class_int>` input **)** |const|
 
-Returns the input index which corresponds to ``caption``. If not found, returns ``-1``.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_AnimationNodeTransition_method_get_input_caption:
-
-.. rst-class:: classref-method
-
-:ref:`String<class_String>` **get_input_caption** **(** :ref:`int<class_int>` input **)** |const|
-
-Returns the name of the input at the given ``input`` index. This name is displayed in the editor next to the node input.
+Returns whether the animation restarts when the animation transitions from the other animation.
 
 .. rst-class:: classref-item-separator
 
@@ -200,13 +186,13 @@ Enables or disables auto-advance for the given ``input`` index. If enabled, stat
 
 ----
 
-.. _class_AnimationNodeTransition_method_set_input_caption:
+.. _class_AnimationNodeTransition_method_set_input_reset:
 
 .. rst-class:: classref-method
 
-void **set_input_caption** **(** :ref:`int<class_int>` input, :ref:`String<class_String>` caption **)**
+void **set_input_reset** **(** :ref:`int<class_int>` input, :ref:`bool<class_bool>` enable **)**
 
-Sets the name of the input at the given ``input`` index. This name is displayed in the editor next to the node input.
+If ``true``, the destination animation is restarted when the animation transitions.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

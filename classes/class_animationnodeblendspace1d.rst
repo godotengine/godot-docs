@@ -42,17 +42,19 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>`   | :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`     | ``1.0``     |
-   +-----------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>`   | :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>`     | ``-1.0``    |
-   +-----------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`float<class_float>`   | :ref:`snap<class_AnimationNodeBlendSpace1D_property_snap>`               | ``0.1``     |
-   +-----------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`bool<class_bool>`     | :ref:`sync<class_AnimationNodeBlendSpace1D_property_sync>`               | ``false``   |
-   +-----------------------------+--------------------------------------------------------------------------+-------------+
-   | :ref:`String<class_String>` | :ref:`value_label<class_AnimationNodeBlendSpace1D_property_value_label>` | ``"value"`` |
-   +-----------------------------+--------------------------------------------------------------------------+-------------+
+   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
+   | :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` | :ref:`blend_mode<class_AnimationNodeBlendSpace1D_property_blend_mode>`   | ``0``       |
+   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>`                                  | :ref:`max_space<class_AnimationNodeBlendSpace1D_property_max_space>`     | ``1.0``     |
+   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>`                                  | :ref:`min_space<class_AnimationNodeBlendSpace1D_property_min_space>`     | ``-1.0``    |
+   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
+   | :ref:`float<class_float>`                                  | :ref:`snap<class_AnimationNodeBlendSpace1D_property_snap>`               | ``0.1``     |
+   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`sync<class_AnimationNodeBlendSpace1D_property_sync>`               | ``false``   |
+   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
+   | :ref:`String<class_String>`                                | :ref:`value_label<class_AnimationNodeBlendSpace1D_property_value_label>` | ``"value"`` |
+   +------------------------------------------------------------+--------------------------------------------------------------------------+-------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -84,8 +86,64 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Enumerations
+------------
+
+.. _enum_AnimationNodeBlendSpace1D_BlendMode:
+
+.. rst-class:: classref-enumeration
+
+enum **BlendMode**:
+
+.. _class_AnimationNodeBlendSpace1D_constant_BLEND_MODE_INTERPOLATED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` **BLEND_MODE_INTERPOLATED** = ``0``
+
+The interpolation between animations is linear.
+
+.. _class_AnimationNodeBlendSpace1D_constant_BLEND_MODE_DISCRETE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` **BLEND_MODE_DISCRETE** = ``1``
+
+The blend space plays the animation of the node the blending position is closest to. Useful for frame-by-frame 2D animations.
+
+.. _class_AnimationNodeBlendSpace1D_constant_BLEND_MODE_DISCRETE_CARRY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` **BLEND_MODE_DISCRETE_CARRY** = ``2``
+
+Similar to :ref:`BLEND_MODE_DISCRETE<class_AnimationNodeBlendSpace1D_constant_BLEND_MODE_DISCRETE>`, but starts the new animation at the last animation's playback position.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Property Descriptions
 ---------------------
+
+.. _class_AnimationNodeBlendSpace1D_property_blend_mode:
+
+.. rst-class:: classref-property
+
+:ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` **blend_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_blend_mode** **(** :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` value **)**
+- :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` **get_blend_mode** **(** **)**
+
+Controls the interpolation between animations. See :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` constants.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_AnimationNodeBlendSpace1D_property_max_space:
 

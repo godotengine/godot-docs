@@ -38,8 +38,7 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
     extends EditorTranslationParserPlugin
     
     func _parse_file(path, msgids, msgids_context_plural):
-        var file = File.new()
-        file.open(path, File.READ)
+        var file = FileAccess.open(path, FileAccess.READ)
         var text = file.get_as_text()
         var split_strs = text.split(",", false)
         for s in split_strs:
@@ -52,27 +51,25 @@ Below shows an example of a custom parser that extracts strings from a CSV file 
  .. code-tab:: csharp
 
     using Godot;
-    using System;
     
     [Tool]
-    public class CustomParser : EditorTranslationParserPlugin
+    public partial class CustomParser : EditorTranslationParserPlugin
     {
-        public override void ParseFile(string path, Godot.Collections.Array msgids, Godot.Collections.Array msgidsContextPlural)
+        public override void _ParseFile(string path, Godot.Collections.Array<string> msgids, Godot.Collections.Array<Godot.Collections.Array> msgidsContextPlural)
         {
-            var file = new File();
-            file.Open(path, File.ModeFlags.Read);
+            using var file = FileAccess.Open(path, FileAccess.ModeFlags.Read);
             string text = file.GetAsText();
-            string[] splitStrs = text.Split(",", false);
-            foreach (var s in splitStrs)
+            string[] splitStrs = text.Split(",", allowEmpty: false);
+            foreach (string s in splitStrs)
             {
                 msgids.Add(s);
-                //GD.Print("Extracted string: " + s)
+                //GD.Print($"Extracted string: {s}");
             }
         }
     
-        public override Godot.Collections.Array GetRecognizedExtensions()
+        public override string[] _GetRecognizedExtensions()
         {
-            return new Godot.Collections.Array{"csv"};
+            return new string[] { "csv" };
         }
     }
 
@@ -122,16 +119,16 @@ For example:
 
  .. code-tab:: csharp
 
-    public override void ParseFile(string path, Godot.Collections.Array msgids, Godot.Collections.Array msgidsContextPlural)
+    public override void _ParseFile(string path, Godot.Collections.Array<string> msgids, Godot.Collections.Array<Godot.Collections.Array> msgidsContextPlural)
     {
         var res = ResourceLoader.Load<Script>(path, "Script");
         string text = res.SourceCode;
         // Parsing logic.
     }
     
-    public override Godot.Collections.Array GetRecognizedExtensions()
+    public override string[] _GetRecognizedExtensions()
     {
-        return new Godot.Collections.Array{"gd"};
+        return new string[] { "gd" };
     }
 
 

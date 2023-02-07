@@ -59,7 +59,7 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`agent_is_map_changed<class_NavigationServer2D_method_agent_is_map_changed>` **(** :ref:`RID<class_RID>` agent **)** |const|                                                                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`agent_set_callback<class_NavigationServer2D_method_agent_set_callback>` **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` object_id, :ref:`StringName<class_StringName>` method, :ref:`Variant<class_Variant>` userdata=null **)**                               |
+   | void                                                | :ref:`agent_set_callback<class_NavigationServer2D_method_agent_set_callback>` **(** :ref:`RID<class_RID>` agent, :ref:`Callable<class_Callable>` callback **)**                                                                                                               |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`agent_set_map<class_NavigationServer2D_method_agent_set_map>` **(** :ref:`RID<class_RID>` agent, :ref:`RID<class_RID>` map **)**                                                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -203,6 +203,18 @@ Signals
 
 Emitted when a navigation map is updated, when a region moves or is modified.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_signal_navigation_debug_changed:
+
+.. rst-class:: classref-signal
+
+**navigation_debug_changed** **(** **)**
+
+Emitted when navigation debug settings are changed. Only available in debug builds.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -252,11 +264,11 @@ Returns true if the map got changed the previous frame.
 
 .. rst-class:: classref-method
 
-void **agent_set_callback** **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` object_id, :ref:`StringName<class_StringName>` method, :ref:`Variant<class_Variant>` userdata=null **)**
+void **agent_set_callback** **(** :ref:`RID<class_RID>` agent, :ref:`Callable<class_Callable>` callback **)**
 
-Sets the callback ``object_id`` and ``method`` that gets called after each avoidance processing step for the ``agent``. The calculated ``safe_velocity`` will be dispatched with a signal to the object just before the physics calculations.
+Sets the callback that gets called after each avoidance processing step for the ``agent``. The calculated ``safe_velocity`` will be passed as the first parameter just before the physics calculations.
 
-\ **Note:** Created callbacks are always processed independently of the SceneTree state as long as the agent is on a navigation map and not freed. To disable the dispatch of a callback from an agent use :ref:`agent_set_callback<class_NavigationServer2D_method_agent_set_callback>` again with a ``0`` ObjectID as the ``object_id``.
+\ **Note:** Created callbacks are always processed independently of the SceneTree state as long as the agent is on a navigation map and not freed. To disable the dispatch of a callback from an agent use :ref:`agent_set_callback<class_NavigationServer2D_method_agent_set_callback>` again with an empty :ref:`Callable<class_Callable>`.
 
 .. rst-class:: classref-item-separator
 

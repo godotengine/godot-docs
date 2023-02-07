@@ -34,7 +34,7 @@ A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
  .. code-tab:: csharp
 
     // The RichTextEffect will be usable like this: `[example]Some text[/example]`
-    public string bbcode = "example";
+    string bbcode = "example";
 
 
 

@@ -53,9 +53,9 @@ Methods
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                          | :ref:`destroy<class_ENetConnection_method_destroy>` **(** **)**                                                                                                                                                                                                                                                      |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`dtls_client_setup<class_ENetConnection_method_dtls_client_setup>` **(** :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`String<class_String>` hostname, :ref:`bool<class_bool>` verify=true **)**                                                                                             |
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`dtls_client_setup<class_ENetConnection_method_dtls_client_setup>` **(** :ref:`String<class_String>` hostname, :ref:`TLSOptions<class_TLSOptions>` client_options=null **)**                                                                                                                                    |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`dtls_server_setup<class_ENetConnection_method_dtls_server_setup>` **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`X509Certificate<class_X509Certificate>` certificate **)**                                                                                                                                 |
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`dtls_server_setup<class_ENetConnection_method_dtls_server_setup>` **(** :ref:`TLSOptions<class_TLSOptions>` server_options **)**                                                                                                                                                                               |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                          | :ref:`flush<class_ENetConnection_method_flush>` **(** **)**                                                                                                                                                                                                                                                          |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -334,9 +334,9 @@ Destroys the host and all resources associated with it.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **dtls_client_setup** **(** :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`String<class_String>` hostname, :ref:`bool<class_bool>` verify=true **)**
+:ref:`Error<enum_@GlobalScope_Error>` **dtls_client_setup** **(** :ref:`String<class_String>` hostname, :ref:`TLSOptions<class_TLSOptions>` client_options=null **)**
 
-Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet clients. Call this before :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` to have ENet connect using DTLS with ``certificate`` and ``hostname`` verification. Verification can be optionally turned off via the ``verify`` parameter.
+Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet clients. Call this before :ref:`connect_to_host<class_ENetConnection_method_connect_to_host>` to have ENet connect using DTLS validating the server certificate against ``hostname``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 
@@ -346,9 +346,9 @@ Configure this ENetHost to use the custom Godot extension allowing DTLS encrypti
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **dtls_server_setup** **(** :ref:`CryptoKey<class_CryptoKey>` key, :ref:`X509Certificate<class_X509Certificate>` certificate **)**
+:ref:`Error<enum_@GlobalScope_Error>` **dtls_server_setup** **(** :ref:`TLSOptions<class_TLSOptions>` server_options **)**
 
-Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet servers. Call this right after :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` to have ENet expect peers to connect using DTLS.
+Configure this ENetHost to use the custom Godot extension allowing DTLS encryption for ENet servers. Call this right after :ref:`create_host_bound<class_ENetConnection_method_create_host_bound>` to have ENet expect peers to connect using DTLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 

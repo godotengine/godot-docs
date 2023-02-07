@@ -45,14 +45,14 @@ Supported font formats:
  .. code-tab:: gdscript
 
     var f = load("res://BarlowCondensed-Bold.ttf")
-    $"Label".set("custom_fonts/font", f)
-    $"Label".set("custom_fonts/font_size", 64)
+    $Label.add_theme_font_override("font", f)
+    $Label.add_theme_font_size_override("font_size", 64)
 
  .. code-tab:: csharp
 
     var f = ResourceLoader.Load<FontFile>("res://BarlowCondensed-Bold.ttf");
-    GetNode("Label").Set("custom_fonts/font", f);
-    GetNode("Label").Set("custom_font_sizes/font_size", 64);
+    GetNode("Label").AddThemeFontOverride("font", f);
+    GetNode("Label").AddThemeFontSizeOverride("font_size", 64);
 
 
 
@@ -673,9 +673,7 @@ Returns number of the font cache entries.
 
 :ref:`float<class_float>` **get_cache_descent** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the font descent (number of pixels below the baseline).
 
 .. rst-class:: classref-item-separator
 
@@ -687,9 +685,7 @@ Returns number of the font cache entries.
 
 :ref:`float<class_float>` **get_cache_scale** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns scaling factor of the color bitmap font.
 
 .. rst-class:: classref-item-separator
 
@@ -701,9 +697,7 @@ Returns number of the font cache entries.
 
 :ref:`float<class_float>` **get_cache_underline_position** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns pixel offset of the underline below the baseline.
 
 .. rst-class:: classref-item-separator
 
@@ -715,9 +709,7 @@ Returns number of the font cache entries.
 
 :ref:`float<class_float>` **get_cache_underline_thickness** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns thickness of the underline in pixels.
 
 .. rst-class:: classref-item-separator
 
@@ -1123,9 +1115,7 @@ Renders the range of characters to the font cache texture.
 
 void **set_cache_ascent** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` ascent **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the font ascent (number of pixels above the baseline).
 
 .. rst-class:: classref-item-separator
 
@@ -1137,9 +1127,7 @@ void **set_cache_ascent** **(** :ref:`int<class_int>` cache_index, :ref:`int<cla
 
 void **set_cache_descent** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` descent **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the font descent (number of pixels below the baseline).
 
 .. rst-class:: classref-item-separator
 
@@ -1151,9 +1139,7 @@ void **set_cache_descent** **(** :ref:`int<class_int>` cache_index, :ref:`int<cl
 
 void **set_cache_scale** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` scale **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets scaling factor of the color bitmap font.
 
 .. rst-class:: classref-item-separator
 
@@ -1165,9 +1151,7 @@ void **set_cache_scale** **(** :ref:`int<class_int>` cache_index, :ref:`int<clas
 
 void **set_cache_underline_position** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` underline_position **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets pixel offset of the underline below the baseline.
 
 .. rst-class:: classref-item-separator
 
@@ -1179,9 +1163,7 @@ void **set_cache_underline_position** **(** :ref:`int<class_int>` cache_index, :
 
 void **set_cache_underline_thickness** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size, :ref:`float<class_float>` underline_thickness **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets thickness of the underline in pixels.
 
 .. rst-class:: classref-item-separator
 

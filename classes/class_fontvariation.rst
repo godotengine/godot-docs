@@ -30,17 +30,17 @@ To use simulated bold font variant:
 
     var fv = FontVariation.new()
     fv.set_base_font(load("res://BarlowCondensed-Regular.ttf"))
-    fv.set_variation_embolden(1.2);
-    $"Label".set("custom_fonts/font", fv)
-    $"Label".set("custom_fonts/font_size", 64)
+    fv.set_variation_embolden(1.2)
+    $Label.add_theme_font_override("font", fv)
+    $Label.add_theme_font_size_override("font_size", 64)
 
  .. code-tab:: csharp
 
     var fv = new FontVariation();
     fv.SetBaseFont(ResourceLoader.Load<FontFile>("res://BarlowCondensed-Regular.ttf"));
     fv.SetVariationEmbolden(1.2);
-    GetNode("Label").Set("custom_fonts/font", fv);
-    GetNode("Label").Set("custom_font_sizes/font_size", 64);
+    GetNode("Label").AddThemeFontOverride("font", fv);
+    GetNode("Label").AddThemeFontSizeOverride("font_size", 64);
 
 
 

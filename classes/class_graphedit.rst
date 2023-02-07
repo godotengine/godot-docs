@@ -780,8 +780,9 @@ In this example a connection to same node is suppressed:
 
  .. code-tab:: csharp
 
-    public override bool _IsNodeHoverValid(String from, int fromSlot, String to, int toSlot) {
-        return from != to;
+    public override bool _IsNodeHoverValid(StringName fromNode, int fromPort, StringName toNode, int toPort)
+    {
+        return fromNode != toNode;
     }
 
 

@@ -524,7 +524,7 @@ Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsig
 
  .. code-tab:: csharp
 
-    PutData("Hello World".ToUTF8());
+    PutData("Hello World".ToUtf8());
 
 
 

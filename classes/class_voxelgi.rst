@@ -49,7 +49,7 @@ Properties
    +-------------------------------------------------+--------------------------------------------------------------------+-------------------------+
    | :ref:`VoxelGIData<class_VoxelGIData>`           | :ref:`data<class_VoxelGI_property_data>`                           |                         |
    +-------------------------------------------------+--------------------------------------------------------------------+-------------------------+
-   | :ref:`Vector3<class_Vector3>`                   | :ref:`extents<class_VoxelGI_property_extents>`                     | ``Vector3(10, 10, 10)`` |
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`size<class_VoxelGI_property_size>`                           | ``Vector3(20, 20, 20)`` |
    +-------------------------------------------------+--------------------------------------------------------------------+-------------------------+
    | :ref:`Subdiv<enum_VoxelGI_Subdiv>`              | :ref:`subdiv<class_VoxelGI_property_subdiv>`                       | ``1``                   |
    +-------------------------------------------------+--------------------------------------------------------------------+-------------------------+
@@ -166,20 +166,20 @@ The :ref:`VoxelGIData<class_VoxelGIData>` resource that holds the data for this 
 
 ----
 
-.. _class_VoxelGI_property_extents:
+.. _class_VoxelGI_property_size:
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(10, 10, 10)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(20, 20, 20)``
 
 .. rst-class:: classref-property-setget
 
-- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
 
-The size of the area covered by the **VoxelGI**. If you make the extents larger without increasing the subdivisions with :ref:`subdiv<class_VoxelGI_property_subdiv>`, the size of each cell will increase and result in lower detailed lighting.
+The size of the area covered by the **VoxelGI**. If you make the size larger without increasing the subdivisions with :ref:`subdiv<class_VoxelGI_property_subdiv>`, the size of each cell will increase and result in lower detailed lighting.
 
-\ **Note:** Extents are clamped to 1.0 unit or more on each axis.
+\ **Note:** Size is clamped to 1.0 unit or more on each axis.
 
 .. rst-class:: classref-item-separator
 

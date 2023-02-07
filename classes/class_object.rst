@@ -388,7 +388,7 @@ The example below displays ``hammer_type`` in the Inspector dock, only if ``hold
  .. code-tab:: csharp
 
     [Tool]
-    public class MyNode2D : Node2D
+    public partial class MyNode2D : Node2D
     {
         private bool _holdingHammer;
     
@@ -826,9 +826,9 @@ As seen above, the recommended method to connect signals is not :ref:`connect<cl
         var button = new Button();
         // Option 1: In C#, we can use signals as events and connect with this idiomatic syntax:
         button.ButtonDown += OnButtonDown;
-        // Option 2: Object.Connect() with a constructed Callable from a method group.
+        // Option 2: GodotObject.Connect() with a constructed Callable from a method group.
         button.Connect(Button.SignalName.ButtonDown, Callable.From(OnButtonDown));
-        // Option 3: Object.Connect() with a constructed Callable using a target object and method name.
+        // Option 3: GodotObject.Connect() with a constructed Callable using a target object and method name.
         button.Connect(Button.SignalName.ButtonDown, new Callable(this, MethodName.OnButtonDown));
     }
     
@@ -1158,7 +1158,7 @@ Returns an :ref:`Array<class_Array>` of connections for the given ``signal`` nam
 
 - ``signal`` is a reference to the :ref:`Signal<class_Signal>`;
 
-- ``callable`` is a reference to the :ref:`Callable<class_Callable>`;
+- ``callable`` is a reference to the connected :ref:`Callable<class_Callable>`;
 
 - ``flags`` is a combination of :ref:`ConnectFlags<enum_Object_ConnectFlags>`.
 
@@ -1266,10 +1266,10 @@ Returns ``true`` if the object inherits from the given ``class``. See also :ref:
 
  .. code-tab:: csharp
 
-    var sprite2d = new Sprite2D();
-    sprite2d.IsClass("Sprite2D"); // Returns true
-    sprite2d.IsClass("Node");     // Returns true
-    sprite2d.IsClass("Node3D");   // Returns false
+    var sprite2D = new Sprite2D();
+    sprite2D.IsClass("Sprite2D"); // Returns true
+    sprite2D.IsClass("Node");     // Returns true
+    sprite2D.IsClass("Node3D");   // Returns false
 
 
 
@@ -1335,10 +1335,10 @@ If ``reversed`` is ``true``, the call order is reversed.
     player.SetScript(GD.Load("res://player.gd"));
     
     player.Notification(NotificationEnterTree);
-    // The call order is Object -> Node -> Node2D -> player.gd.
+    // The call order is GodotObject -> Node -> Node2D -> player.gd.
     
-    player.notification(NotificationEnterTree, true);
-    // The call order is player.gd -> Node2D -> Node -> Object.
+    player.Notification(NotificationEnterTree, true);
+    // The call order is player.gd -> Node2D -> Node -> GodotObject.
 
 
 

@@ -49,8 +49,6 @@ Properties
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`AnchorMode<enum_Camera2D_AnchorMode>`                           | :ref:`anchor_mode<class_Camera2D_property_anchor_mode>`                               | ``1``             |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`                                               | :ref:`current<class_Camera2D_property_current>`                                       | ``false``         |
-   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`Node<class_Node>`                                               | :ref:`custom_viewport<class_Camera2D_property_custom_viewport>`                       |                   |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`float<class_float>`                                             | :ref:`drag_bottom_margin<class_Camera2D_property_drag_bottom_margin>`                 | ``0.2``           |
@@ -74,6 +72,8 @@ Properties
    | :ref:`bool<class_bool>`                                               | :ref:`editor_draw_limits<class_Camera2D_property_editor_draw_limits>`                 | ``false``         |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`editor_draw_screen<class_Camera2D_property_editor_draw_screen>`                 | ``true``          |
+   +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                                               | :ref:`enabled<class_Camera2D_property_enabled>`                                       | ``true``          |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`ignore_rotation<class_Camera2D_property_ignore_rotation>`                       | ``true``          |
    +-----------------------------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
@@ -122,6 +122,10 @@ Methods
    | :ref:`Vector2<class_Vector2>` | :ref:`get_screen_center_position<class_Camera2D_method_get_screen_center_position>` **(** **)** |const|                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>` | :ref:`get_target_position<class_Camera2D_method_get_target_position>` **(** **)** |const|                                                                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`is_current<class_Camera2D_method_is_current>` **(** **)** |const|                                                                                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`make_current<class_Camera2D_method_make_current>` **(** **)**                                                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                          | :ref:`reset_smoothing<class_Camera2D_method_reset_smoothing>` **(** **)**                                                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -208,23 +212,6 @@ Property Descriptions
 - :ref:`AnchorMode<enum_Camera2D_AnchorMode>` **get_anchor_mode** **(** **)**
 
 The Camera2D's anchor point. See :ref:`AnchorMode<enum_Camera2D_AnchorMode>` constants.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_Camera2D_property_current:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **current** = ``false``
-
-.. rst-class:: classref-property-setget
-
-- void **set_current** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_current** **(** **)**
-
-If ``true``, the camera acts as the active camera for its :ref:`Viewport<class_Viewport>` ancestor. Only one camera can be current in a given viewport, so setting a different camera in the same viewport ``current`` will disable whatever camera was already active in that viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -433,6 +420,25 @@ If ``true``, draws the camera's limits rectangle in the editor.
 - :ref:`bool<class_bool>` **is_screen_drawing_enabled** **(** **)**
 
 If ``true``, draws the camera's screen rectangle in the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Camera2D_property_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **enabled** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_enabled** **(** **)**
+
+Controls whether the camera can be active or not. If ``true``, the **Camera2D** will become the main camera when it enters the scene tree and there is no active camera currently (see :ref:`Viewport.get_camera_2d<class_Viewport_method_get_camera_2d>`).
+
+When the camera is currently active and :ref:`enabled<class_Camera2D_property_enabled>` is set to ``false``, the next enabled **Camera2D** in the scene tree will become active.
 
 .. rst-class:: classref-item-separator
 
@@ -741,6 +747,30 @@ Returns the center of the screen from this camera's point of view, in global coo
 Returns this camera's target position, in global coordinates.
 
 \ **Note:** The returned value is not the same as :ref:`Node2D.global_position<class_Node2D_property_global_position>`, as it is affected by the drag properties. It is also not the same as the current position if :ref:`position_smoothing_enabled<class_Camera2D_property_position_smoothing_enabled>` is ``true`` (see :ref:`get_screen_center_position<class_Camera2D_method_get_screen_center_position>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Camera2D_method_is_current:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_current** **(** **)** |const|
+
+Returns ``true`` if this **Camera2D** is the active camera (see :ref:`Viewport.get_camera_2d<class_Viewport_method_get_camera_2d>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Camera2D_method_make_current:
+
+.. rst-class:: classref-method
+
+void **make_current** **(** **)**
+
+Forces this **Camera2D** to become the current active one. :ref:`enabled<class_Camera2D_property_enabled>` must be ``true``.
 
 .. rst-class:: classref-item-separator
 

@@ -231,9 +231,9 @@ void **allocate** **(** :ref:`Transform3D<class_Transform3D>` to_cell_xform, :re
 
 :ref:`AABB<class_AABB>` **get_bounds** **(** **)** |const|
 
-Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which should match :ref:`VoxelGI.extents<class_VoxelGI_property_extents>` after being baked (which only contains the size as a :ref:`Vector3<class_Vector3>`).
+Returns the bounds of the baked voxel data as an :ref:`AABB<class_AABB>`, which should match :ref:`VoxelGI.size<class_VoxelGI_property_size>` after being baked (which only contains the size as a :ref:`Vector3<class_Vector3>`).
 
-\ **Note:** If the extents were modified without baking the VoxelGI data, then the value of :ref:`get_bounds<class_VoxelGIData_method_get_bounds>` and :ref:`VoxelGI.extents<class_VoxelGI_property_extents>` will not match.
+\ **Note:** If the size was modified without baking the VoxelGI data, then the value of :ref:`get_bounds<class_VoxelGIData_method_get_bounds>` and :ref:`VoxelGI.size<class_VoxelGI_property_size>` will not match.
 
 .. rst-class:: classref-item-separator
 

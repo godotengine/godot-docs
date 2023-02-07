@@ -530,6 +530,7 @@ Resources
     class_translation
     class_tubetrailmesh
     class_videostream
+    class_videostreamplayback
     class_videostreamtheora
     class_viewporttexture
     class_visualshader
@@ -847,6 +848,7 @@ Other objects
     class_thread
     class_tiledata
     class_time
+    class_tlsoptions
     class_translationserver
     class_treeitem
     class_trianglemesh

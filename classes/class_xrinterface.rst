@@ -69,6 +69,8 @@ Methods
    +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                          | :ref:`get_render_target_size<class_XRInterface_method_get_render_target_size>` **(** **)**                                                                                                                                                                                                                                              |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                              | :ref:`get_supported_environment_blend_modes<class_XRInterface_method_get_supported_environment_blend_modes>` **(** **)**                                                                                                                                                                                                                |
+   +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TrackingStatus<enum_XRInterface_TrackingStatus>` | :ref:`get_tracking_status<class_XRInterface_method_get_tracking_status>` **(** **)** |const|                                                                                                                                                                                                                                            |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform3D<class_Transform3D>`                  | :ref:`get_transform_for_view<class_XRInterface_method_get_transform_for_view>` **(** :ref:`int<class_int>` view, :ref:`Transform3D<class_Transform3D>` cam_transform **)**                                                                                                                                                              |
@@ -82,6 +84,8 @@ Methods
    | :ref:`bool<class_bool>`                                | :ref:`is_passthrough_enabled<class_XRInterface_method_is_passthrough_enabled>` **(** **)**                                                                                                                                                                                                                                              |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                | :ref:`is_passthrough_supported<class_XRInterface_method_is_passthrough_supported>` **(** **)**                                                                                                                                                                                                                                          |
+   +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`set_environment_blend_mode<class_XRInterface_method_set_environment_blend_mode>` **(** :ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` mode **)**                                                                                                                                                              |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                | :ref:`set_play_area_mode<class_XRInterface_method_set_play_area_mode>` **(** :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` mode **)**                                                                                                                                                                                              |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -284,6 +288,40 @@ Player is free to move around, full positional tracking.
 
 Same as roomscale but origin point is fixed to the center of the physical space, XRServer.center_on_hmd disabled.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_XRInterface_EnvironmentBlendMode:
+
+.. rst-class:: classref-enumeration
+
+enum **EnvironmentBlendMode**:
+
+.. _class_XRInterface_constant_XR_ENV_BLEND_MODE_OPAQUE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` **XR_ENV_BLEND_MODE_OPAQUE** = ``0``
+
+Opaque blend mode. This is typically used for VR devices.
+
+.. _class_XRInterface_constant_XR_ENV_BLEND_MODE_ADDITIVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` **XR_ENV_BLEND_MODE_ADDITIVE** = ``1``
+
+Additive blend mode. This is typically used for AR devices or VR devices with passthrough.
+
+.. _class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` **XR_ENV_BLEND_MODE_ALPHA_BLEND** = ``2``
+
+Alpha blend mode. This is typically used for AR or VR devices with passthrough capabilities. The alpha channel controls how much of the passthrough is visible. Alpha of 0.0 means the passthrough is visible and this pixel works in ADDITIVE mode. Alpha of 1.0 means that the passthrough is not visible and this pixel works in OPAQUE mode.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -421,6 +459,18 @@ Returns the resolution at which we should render our intermediate results before
 
 ----
 
+.. _class_XRInterface_method_get_supported_environment_blend_modes:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_supported_environment_blend_modes** **(** **)**
+
+Returns the an array of supported environment blend modes, see :ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_XRInterface_method_get_tracking_status:
 
 .. rst-class:: classref-method
@@ -512,6 +562,36 @@ Is ``true`` if passthrough is enabled.
 :ref:`bool<class_bool>` **is_passthrough_supported** **(** **)**
 
 Is ``true`` if this interface supports passthrough.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_XRInterface_method_set_environment_blend_mode:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **set_environment_blend_mode** **(** :ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` mode **)**
+
+Sets the active environment blend mode.
+
+\ ``mode`` is the :ref:`EnvironmentBlendMode<enum_XRInterface_EnvironmentBlendMode>` starting with the next frame.
+
+\ **Note:** Not all runtimes support all environment blend modes, so it is important to check this at startup. For example:
+
+::
+
+                    func _ready():
+                        var xr_interface : XRInterface = XRServer.find_interface("OpenXR")
+                        if xr_interface and xr_interface.is_initialized():
+                            var vp : Viewport = get_viewport()
+                            vp.use_xr = true
+                            var acceptable_modes = [ XRInterface.XR_ENV_BLEND_MODE_OPAQUE, XRInterface.XR_ENV_BLEND_MODE_ADDITIVE ]
+                            var modes = xr_interface.get_supported_environment_blend_modes()
+                            for mode in acceptable_modes:
+                                if mode in modes:
+                                    xr_interface.set_environment_blend_mode(mode)
+                                    break
 
 .. rst-class:: classref-item-separator
 

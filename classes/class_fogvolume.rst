@@ -34,11 +34,11 @@ Properties
    :widths: auto
 
    +------------------------------------------------------------+----------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>`                              | :ref:`extents<class_FogVolume_property_extents>`   | ``Vector3(1, 1, 1)`` |
-   +------------------------------------------------------------+----------------------------------------------------+----------------------+
    | :ref:`Material<class_Material>`                            | :ref:`material<class_FogVolume_property_material>` |                      |
    +------------------------------------------------------------+----------------------------------------------------+----------------------+
    | :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` | :ref:`shape<class_FogVolume_property_shape>`       | ``3``                |
+   +------------------------------------------------------------+----------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                              | :ref:`size<class_FogVolume_property_size>`         | ``Vector3(2, 2, 2)`` |
    +------------------------------------------------------------+----------------------------------------------------+----------------------+
 
 .. rst-class:: classref-section-separator
@@ -49,27 +49,6 @@ Properties
 
 Property Descriptions
 ---------------------
-
-.. _class_FogVolume_property_extents:
-
-.. rst-class:: classref-property
-
-:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
-
-.. rst-class:: classref-property-setget
-
-- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
-
-The size of the **FogVolume** when :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>`.
-
-\ **Note:** Thin fog volumes may appear to flicker when the camera moves or rotates. This can be alleviated by increasing :ref:`ProjectSettings.rendering/environment/volumetric_fog/volume_depth<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_depth>` (at a performance cost) or by decreasing :ref:`Environment.volumetric_fog_length<class_Environment_property_volumetric_fog_length>` (at no performance cost, but at the cost of lower fog range). Alternatively, the **FogVolume** can be made thicker and use a lower density in the :ref:`material<class_FogVolume_property_material>`.
-
-\ **Note:** If :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>`, the cone/cylinder will be adjusted to fit within the extents. Non-uniform scaling of cone/cylinder shapes via the :ref:`extents<class_FogVolume_property_extents>` property is not supported, but you can scale the **FogVolume** node instead.
-
-.. rst-class:: classref-item-separator
-
-----
 
 .. _class_FogVolume_property_material:
 
@@ -100,6 +79,27 @@ The :ref:`Material<class_Material>` used by the **FogVolume**. Can be either a b
 - :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **get_shape** **(** **)**
 
 The shape of the **FogVolume**. This can be set to either :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_WORLD<class_RenderingServer_constant_FOG_VOLUME_SHAPE_WORLD>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FogVolume_property_size:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+
+The size of the **FogVolume** when :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_ELLIPSOID<class_RenderingServer_constant_FOG_VOLUME_SHAPE_ELLIPSOID>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>`, :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_BOX<class_RenderingServer_constant_FOG_VOLUME_SHAPE_BOX>`.
+
+\ **Note:** Thin fog volumes may appear to flicker when the camera moves or rotates. This can be alleviated by increasing :ref:`ProjectSettings.rendering/environment/volumetric_fog/volume_depth<class_ProjectSettings_property_rendering/environment/volumetric_fog/volume_depth>` (at a performance cost) or by decreasing :ref:`Environment.volumetric_fog_length<class_Environment_property_volumetric_fog_length>` (at no performance cost, but at the cost of lower fog range). Alternatively, the **FogVolume** can be made thicker and use a lower density in the :ref:`material<class_FogVolume_property_material>`.
+
+\ **Note:** If :ref:`shape<class_FogVolume_property_shape>` is :ref:`RenderingServer.FOG_VOLUME_SHAPE_CONE<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CONE>` or :ref:`RenderingServer.FOG_VOLUME_SHAPE_CYLINDER<class_RenderingServer_constant_FOG_VOLUME_SHAPE_CYLINDER>`, the cone/cylinder will be adjusted to fit within the size. Non-uniform scaling of cone/cylinder shapes via the :ref:`size<class_FogVolume_property_size>` property is not supported, but you can scale the **FogVolume** node instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

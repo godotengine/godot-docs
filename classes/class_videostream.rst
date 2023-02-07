@@ -23,6 +23,71 @@ Description
 
 Base resource type for all video streams. Classes that derive from **VideoStream** can all be used as resource types to play back videos in :ref:`VideoStreamPlayer<class_VideoStreamPlayer>`.
 
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-----------------------------+----------------------------------------------+--------+
+   | :ref:`String<class_String>` | :ref:`file<class_VideoStream_property_file>` | ``""`` |
+   +-----------------------------+----------------------------------------------+--------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`VideoStreamPlayback<class_VideoStreamPlayback>` | :ref:`_instantiate_playback<class_VideoStream_method__instantiate_playback>` **(** **)** |virtual| |
+   +-------------------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_VideoStream_property_file:
+
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **file** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_file** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_file** **(** **)**
+
+The video file path or URI that this **VideoStream** resource handles.
+
+For :ref:`VideoStreamTheora<class_VideoStreamTheora>`, this filename should be an Ogg Theora video file with the ``.ogv`` extension.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_VideoStream_method__instantiate_playback:
+
+.. rst-class:: classref-method
+
+:ref:`VideoStreamPlayback<class_VideoStreamPlayback>` **_instantiate_playback** **(** **)** |virtual|
+
+Called when the video starts playing, to initialize and return a subclass of :ref:`VideoStreamPlayback<class_VideoStreamPlayback>`.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

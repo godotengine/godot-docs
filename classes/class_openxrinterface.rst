@@ -50,9 +50,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Array<class_Array>` | :ref:`get_available_display_refresh_rates<class_OpenXRInterface_method_get_available_display_refresh_rates>` **(** **)** |const| |
-   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_action_sets<class_OpenXRInterface_method_get_action_sets>` **(** **)** |const|                                                                      |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_available_display_refresh_rates<class_OpenXRInterface_method_get_available_display_refresh_rates>` **(** **)** |const|                              |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`is_action_set_active<class_OpenXRInterface_method_is_action_set_active>` **(** :ref:`String<class_String>` name **)** |const|                           |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_action_set_active<class_OpenXRInterface_method_set_action_set_active>` **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` active **)** |
+   +---------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -150,6 +156,18 @@ The display refresh rate for the current HMD. Only functional if this feature is
 Method Descriptions
 -------------------
 
+.. _class_OpenXRInterface_method_get_action_sets:
+
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_action_sets** **(** **)** |const|
+
+Returns a list of action sets registered with Godot (loaded from the action map at runtime).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OpenXRInterface_method_get_available_display_refresh_rates:
 
 .. rst-class:: classref-method
@@ -157,6 +175,30 @@ Method Descriptions
 :ref:`Array<class_Array>` **get_available_display_refresh_rates** **(** **)** |const|
 
 Returns display refresh rates supported by the current HMD. Only returned if this feature is supported by the OpenXR runtime and after the interface has been initialized.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_method_is_action_set_active:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_action_set_active** **(** :ref:`String<class_String>` name **)** |const|
+
+Returns ``true`` if the given action set is active.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_method_set_action_set_active:
+
+.. rst-class:: classref-method
+
+void **set_action_set_active** **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` active **)**
+
+Sets the given action set as active or inactive.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

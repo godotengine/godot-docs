@@ -151,7 +151,7 @@ Constants
 
 **HANDLE_BINARY_DISCARD_TEXTURES** = ``0``
 
-
+Discards all embedded textures and uses untextured materials.
 
 .. _class_GLTFState_constant_HANDLE_BINARY_EXTRACT_TEXTURES:
 
@@ -159,7 +159,7 @@ Constants
 
 **HANDLE_BINARY_EXTRACT_TEXTURES** = ``1``
 
-
+Extracts embedded textures to be reimported and compressed. Editor only. Acts as uncompressed at runtime.
 
 .. _class_GLTFState_constant_HANDLE_BINARY_EMBED_AS_BASISU:
 
@@ -167,7 +167,15 @@ Constants
 
 **HANDLE_BINARY_EMBED_AS_BASISU** = ``2``
 
+Embeds textures VRAM compressed with Basis Universal into the generated scene.
 
+.. _class_GLTFState_constant_HANDLE_BINARY_EMBED_AS_UNCOMPRESSED:
+
+.. rst-class:: classref-constant
+
+**HANDLE_BINARY_EMBED_AS_UNCOMPRESSED** = ``3``
+
+Embeds textures compressed losslessly into the generated scene, matching old behavior.
 
 .. rst-class:: classref-section-separator
 

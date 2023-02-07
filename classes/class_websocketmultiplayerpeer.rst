@@ -53,17 +53,17 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_client<class_WebSocketMultiplayerPeer_method_create_client>` **(** :ref:`String<class_String>` url, :ref:`bool<class_bool>` verify_tls=true, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)**                                                 |
-   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_server<class_WebSocketMultiplayerPeer_method_create_server>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`CryptoKey<class_CryptoKey>` tls_key=null, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)** |
-   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** |const|                                                                                                                                                                  |
-   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`               | :ref:`get_peer_address<class_WebSocketMultiplayerPeer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                       |
-   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                     | :ref:`get_peer_port<class_WebSocketMultiplayerPeer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                             |
-   +-------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_client<class_WebSocketMultiplayerPeer_method_create_client>` **(** :ref:`String<class_String>` url, :ref:`TLSOptions<class_TLSOptions>` tls_client_options=null **)**                                          |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`create_server<class_WebSocketMultiplayerPeer_method_create_server>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`TLSOptions<class_TLSOptions>` tls_server_options=null **)** |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`WebSocketPeer<class_WebSocketPeer>` | :ref:`get_peer<class_WebSocketMultiplayerPeer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)** |const|                                                                                                           |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`               | :ref:`get_peer_address<class_WebSocketMultiplayerPeer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`get_peer_port<class_WebSocketMultiplayerPeer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                      |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -185,9 +185,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` url, :ref:`bool<class_bool>` verify_tls=true, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)**
+:ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` url, :ref:`TLSOptions<class_TLSOptions>` tls_client_options=null **)**
 
-Starts a new multiplayer client connecting to the given ``url``. If ``verify_tls`` is ``false`` certificate validation will be disabled. If specified, the ``tls_certificate`` will be used to verify the TLS host.
+Starts a new multiplayer client connecting to the given ``url``. TLS certificates will be verified against the hostname when connecting using the ``wss://`` protocol. You can pass the optional ``tls_client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
 \ **Note**: It is recommended to specify the scheme part of the URL, i.e. the ``url`` should start with either ``ws://`` or ``wss://``.
 
@@ -199,9 +199,9 @@ Starts a new multiplayer client connecting to the given ``url``. If ``verify_tls
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`CryptoKey<class_CryptoKey>` tls_key=null, :ref:`X509Certificate<class_X509Certificate>` tls_certificate=null **)**
+:ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`TLSOptions<class_TLSOptions>` tls_server_options=null **)**
 
-Starts a new multiplayer server listening on the given ``port``. You can optionally specify a ``bind_address``, and provide a ``tls_key`` and ``tls_certificate`` to use TLS.
+Starts a new multiplayer server listening on the given ``port``. You can optionally specify a ``bind_address``, and provide valiid ``tls_server_options`` to use TLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 

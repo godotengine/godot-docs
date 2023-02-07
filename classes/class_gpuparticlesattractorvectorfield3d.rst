@@ -34,7 +34,7 @@ Properties
    :widths: auto
 
    +-----------------------------------+---------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>`     | :ref:`extents<class_GPUParticlesAttractorVectorField3D_property_extents>` | ``Vector3(1, 1, 1)`` |
+   | :ref:`Vector3<class_Vector3>`     | :ref:`size<class_GPUParticlesAttractorVectorField3D_property_size>`       | ``Vector3(2, 2, 2)`` |
    +-----------------------------------+---------------------------------------------------------------------------+----------------------+
    | :ref:`Texture3D<class_Texture3D>` | :ref:`texture<class_GPUParticlesAttractorVectorField3D_property_texture>` |                      |
    +-----------------------------------+---------------------------------------------------------------------------+----------------------+
@@ -48,18 +48,18 @@ Properties
 Property Descriptions
 ---------------------
 
-.. _class_GPUParticlesAttractorVectorField3D_property_extents:
+.. _class_GPUParticlesAttractorVectorField3D_property_size:
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
 
 .. rst-class:: classref-property-setget
 
-- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
 
-The extents of the vector field box in 3D units.
+The size of the vector field box in 3D units.
 
 .. rst-class:: classref-item-separator
 
@@ -78,7 +78,7 @@ The extents of the vector field box in 3D units.
 
 The 3D texture to be used. Values are linearly interpolated between the texture's pixels.
 
-\ **Note:** To get better performance, the 3D texture's resolution should reflect the :ref:`extents<class_GPUParticlesAttractorVectorField3D_property_extents>` of the attractor. Since particle attraction is usually low-frequency data, the texture can be kept at a low resolution such as 64×64×64.
+\ **Note:** To get better performance, the 3D texture's resolution should reflect the :ref:`size<class_GPUParticlesAttractorVectorField3D_property_size>` of the attractor. Since particle attraction is usually low-frequency data, the texture can be kept at a low resolution such as 64×64×64.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -1142,7 +1142,7 @@ Removes a set of characters defined in ``chars`` from the string's beginning. Se
 
 :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)** |const|
 
-Does a simple expression match, where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except a period (``.``). An empty string or empty expression always evaluates to ``false``.
+Does a simple expression match (also called "glob" or "globbing"), where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except a period (``.``). An empty string or empty expression always evaluates to ``false``.
 
 .. rst-class:: classref-item-separator
 

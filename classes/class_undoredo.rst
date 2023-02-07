@@ -49,11 +49,11 @@ Here's an example on how to add an action to the Godot editor's own **UndoRedo**
 
  .. code-tab:: csharp
 
-    public UndoRedo UndoRedo;
+    private UndoRedo _undoRedo;
     
     public override void _Ready()
     {
-        UndoRedo = GetUndoRedo(); // Method of EditorPlugin.
+        _undoRedo = GetUndoRedo(); // Method of EditorPlugin.
     }
     
     public void DoSomething()
@@ -69,12 +69,12 @@ Here's an example on how to add an action to the Godot editor's own **UndoRedo**
     private void OnMyButtonPressed()
     {
         var node = GetNode<Node2D>("MyNode2D");
-        UndoRedo.CreateAction("Move the node");
-        UndoRedo.AddDoMethod(this, MethodName.DoSomething);
-        UndoRedo.AddUndoMethod(this, MethodName.UndoSomething);
-        UndoRedo.AddDoProperty(node, Node2D.PropertyName.Position, new Vector2(100, 100));
-        UndoRedo.AddUndoProperty(node, Node2D.PropertyName.Position, node.Position);
-        UndoRedo.CommitAction();
+        _undoRedo.CreateAction("Move the node");
+        _undoRedo.AddDoMethod(new Callable(this, MethodName.DoSomething));
+        _undoRedo.AddUndoMethod(new Callable(this, MethodName.UndoSomething));
+        _undoRedo.AddDoProperty(node, "position", new Vector2(100, 100));
+        _undoRedo.AddUndoProperty(node, "position", node.Position);
+        _undoRedo.CommitAction();
     }
 
 

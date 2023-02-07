@@ -157,6 +157,8 @@ Methods
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_ready<class_RichTextLabel_method_is_ready>` **(** **)** |const|                                                                                                                                                                                                                                                                                                               |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`menu_option<class_RichTextLabel_method_menu_option>` **(** :ref:`int<class_int>` option **)**                                                                                                                                                                                                                                                                                    |
+   +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`newline<class_RichTextLabel_method_newline>` **(** **)**                                                                                                                                                                                                                                                                                                                         |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`parse_bbcode<class_RichTextLabel_method_parse_bbcode>` **(** :ref:`String<class_String>` bbcode **)**                                                                                                                                                                                                                                                                            |
@@ -625,6 +627,40 @@ enum **ItemType**:
 :ref:`ItemType<enum_RichTextLabel_ItemType>` **ITEM_CUSTOMFX** = ``26``
 
 
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_RichTextLabel_MenuItems:
+
+.. rst-class:: classref-enumeration
+
+enum **MenuItems**:
+
+.. _class_RichTextLabel_constant_MENU_COPY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MenuItems<enum_RichTextLabel_MenuItems>` **MENU_COPY** = ``0``
+
+Copies the selected text.
+
+.. _class_RichTextLabel_constant_MENU_SELECT_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MenuItems<enum_RichTextLabel_MenuItems>` **MENU_SELECT_ALL** = ``1``
+
+Selects the whole **RichTextLabel** text.
+
+.. _class_RichTextLabel_constant_MENU_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`MenuItems<enum_RichTextLabel_MenuItems>` **MENU_MAX** = ``2``
+
+Represents the size of the :ref:`MenuItems<enum_RichTextLabel_MenuItems>` enum.
 
 .. rst-class:: classref-section-separator
 
@@ -1199,6 +1235,51 @@ Returns the vertical offset of the line found at the provided index.
 
 Returns the :ref:`PopupMenu<class_PopupMenu>` of this **RichTextLabel**. By default, this menu is displayed when right-clicking on the **RichTextLabel**.
 
+You can add custom menu items or remove standard ones. Make sure your IDs don't conflict with the standard ones (see :ref:`MenuItems<enum_RichTextLabel_MenuItems>`). For example:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _ready():
+        var menu = get_menu()
+        # Remove "Select All" item.
+        menu.remove_item(MENU_SELECT_ALL)
+        # Add custom items.
+        menu.add_separator()
+        menu.add_item("Duplicate Text", MENU_MAX + 1)
+        # Connect callback.
+        menu.id_pressed.connect(_on_item_pressed)
+    
+    func _on_item_pressed(id):
+        if id == MENU_MAX + 1:
+            add_text("\n" + get_parsed_text())
+
+ .. code-tab:: csharp
+
+    public override void _Ready()
+    {
+        var menu = GetMenu();
+        // Remove "Select All" item.
+        menu.RemoveItem(RichTextLabel.MenuItems.SelectAll);
+        // Add custom items.
+        menu.AddSeparator();
+        menu.AddItem("Duplicate Text", RichTextLabel.MenuItems.Max + 1);
+        // Add event handler.
+        menu.IdPressed += OnItemPressed;
+    }
+    
+    public void OnItemPressed(int id)
+    {
+        if (id == TextEdit.MenuItems.Max + 1)
+        {
+            AddText("\n" + GetParsedText());
+        }
+    }
+
+
+
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`Window.visible<class_Window_property_visible>` property.
 
 .. rst-class:: classref-item-separator
@@ -1364,6 +1445,18 @@ Returns whether the menu is visible. Use this instead of ``get_menu().visible`` 
 :ref:`bool<class_bool>` **is_ready** **(** **)** |const|
 
 If :ref:`threaded<class_RichTextLabel_property_threaded>` is enabled, returns ``true`` if the background thread has finished text processing, otherwise always return ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RichTextLabel_method_menu_option:
+
+.. rst-class:: classref-method
+
+void **menu_option** **(** :ref:`int<class_int>` option **)**
+
+Executes a given action as defined in the :ref:`MenuItems<enum_RichTextLabel_MenuItems>` enum.
 
 .. rst-class:: classref-item-separator
 

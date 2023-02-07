@@ -57,9 +57,9 @@ To receive input events from MIDI devices, you need to call :ref:`OS.open_midi_i
         GD.Print(OS.GetConnectedMidiInputs());
     }
     
-    public override void _Input(InputEvent inputEvent)
+    public override void _Input(InputEvent @event)
     {
-        if (inputEvent is InputEventMIDI midiEvent)
+        if (@event is InputEventMIDI midiEvent)
         {
             PrintMIDIInfo(midiEvent);
         }
@@ -68,14 +68,14 @@ To receive input events from MIDI devices, you need to call :ref:`OS.open_midi_i
     private void PrintMIDIInfo(InputEventMIDI midiEvent)
     {
         GD.Print(midiEvent);
-        GD.Print("Channel " + midiEvent.Channel);
-        GD.Print("Message " + midiEvent.Message);
-        GD.Print("Pitch " + midiEvent.Pitch);
-        GD.Print("Velocity " + midiEvent.Velocity);
-        GD.Print("Instrument " + midiEvent.Instrument);
-        GD.Print("Pressure " + midiEvent.Pressure);
-        GD.Print("Controller number: " + midiEvent.ControllerNumber);
-        GD.Print("Controller value: " + midiEvent.ControllerValue);
+        GD.Print($"Channel {midiEvent.Channel}");
+        GD.Print($"Message {midiEvent.Message}");
+        GD.Print($"Pitch {midiEvent.Pitch}");
+        GD.Print($"Velocity {midiEvent.Velocity}");
+        GD.Print($"Instrument {midiEvent.Instrument}");
+        GD.Print($"Pressure {midiEvent.Pressure}");
+        GD.Print($"Controller number: {midiEvent.ControllerNumber}");
+        GD.Print($"Controller value: {midiEvent.ControllerValue}");
     }
 
 

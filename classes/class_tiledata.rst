@@ -44,7 +44,7 @@ Properties
    +---------------------------------+---------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`           | :ref:`terrain_set<class_TileData_property_terrain_set>`       | ``-1``                |
    +---------------------------------+---------------------------------------------------------------+-----------------------+
-   | :ref:`Vector2i<class_Vector2i>` | :ref:`texture_offset<class_TileData_property_texture_offset>` | ``Vector2i(0, 0)``    |
+   | :ref:`Vector2i<class_Vector2i>` | :ref:`texture_origin<class_TileData_property_texture_origin>` | ``Vector2i(0, 0)``    |
    +---------------------------------+---------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`         | :ref:`transpose<class_TileData_property_transpose>`           | ``false``             |
    +---------------------------------+---------------------------------------------------------------+-----------------------+
@@ -256,16 +256,16 @@ ID of the terrain set that the tile uses.
 
 ----
 
-.. _class_TileData_property_texture_offset:
+.. _class_TileData_property_texture_origin:
 
 .. rst-class:: classref-property
 
-:ref:`Vector2i<class_Vector2i>` **texture_offset** = ``Vector2i(0, 0)``
+:ref:`Vector2i<class_Vector2i>` **texture_origin** = ``Vector2i(0, 0)``
 
 .. rst-class:: classref-property-setget
 
-- void **set_texture_offset** **(** :ref:`Vector2i<class_Vector2i>` value **)**
-- :ref:`Vector2i<class_Vector2i>` **get_texture_offset** **(** **)**
+- void **set_texture_origin** **(** :ref:`Vector2i<class_Vector2i>` value **)**
+- :ref:`Vector2i<class_Vector2i>` **get_texture_origin** **(** **)**
 
 Offsets the position of where the tile is drawn.
 

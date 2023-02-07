@@ -209,6 +209,8 @@ The update mode when the sub-viewport is used as a render target.
 
 The width and height of the sub-viewport. Must be set to a value greater than or equal to 2 pixels on both dimensions. Otherwise, nothing will be displayed.
 
+\ **Note:** If the parent node is a :ref:`SubViewportContainer<class_SubViewportContainer>` and its :ref:`SubViewportContainer.stretch<class_SubViewportContainer_property_stretch>` is ``true``, the viewport size cannot be changed manually.
+
 .. rst-class:: classref-item-separator
 
 ----

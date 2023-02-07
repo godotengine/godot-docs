@@ -75,7 +75,7 @@ Methods
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`close<class_HTTPClient_method_close>` **(** **)**                                                                                                                                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_tls=false, :ref:`bool<class_bool>` verify_host=true **)**                                     |
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`connect_to_host<class_HTTPClient_method_connect_to_host>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`TLSOptions<class_TLSOptions>` tls_options=null **)**                                                                |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_response_body_length<class_HTTPClient_method_get_response_body_length>` **(** **)** |const|                                                                                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -870,15 +870,11 @@ Closes the current connection, allowing reuse of this **HTTPClient**.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`bool<class_bool>` use_tls=false, :ref:`bool<class_bool>` verify_host=true **)**
+:ref:`Error<enum_@GlobalScope_Error>` **connect_to_host** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port=-1, :ref:`TLSOptions<class_TLSOptions>` tls_options=null **)**
 
 Connects to a host. This needs to be done before any requests are sent.
 
-The host should not have http:// prepended but will strip the protocol identifier if provided.
-
-If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 for HTTP and 443 for HTTPS (if ``use_tls`` is enabled).
-
-\ ``verify_host`` will check the TLS identity of the host if set to ``true``.
+If no ``port`` is specified (or ``-1`` is used), it is automatically set to 80 for HTTP and 443 for HTTPS. You can pass the optional ``tls_options`` parameter to customize the trusted certification authorities, or the common name verification when using HTTPS. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1011,7 +1007,7 @@ Generates a GET/POST application/x-www-form-urlencoded style query string from a
  .. code-tab:: csharp
 
     var fields = new Godot.Collections.Dictionary { { "username", "user" }, { "password", "pass" } };
-    string queryString = new HTTPClient().QueryStringFromDict(fields);
+    string queryString = httpClient.QueryStringFromDict(fields);
     // Returns "username=user&password=pass"
 
 
@@ -1029,8 +1025,13 @@ Furthermore, if a key has a ``null`` value, only the key itself is added, withou
 
  .. code-tab:: csharp
 
-    var fields = new Godot.Collections.Dictionary{{"single", 123}, {"notValued", null}, {"multiple", new Godot.Collections.Array{22, 33, 44}}};
-    string queryString = new HTTPClient().QueryStringFromDict(fields);
+    var fields = new Godot.Collections.Dictionary
+    {
+        { "single", 123 },
+        { "notValued", default },
+        { "multiple", new Godot.Collections.Array { 22, 33, 44 } },
+    };
+    string queryString = httpClient.QueryStringFromDict(fields);
     // Returns "single=123&not_valued&multiple=22&multiple=33&multiple=44"
 
 
@@ -1079,7 +1080,7 @@ To create a POST request with query strings to push to the server, do:
 
     var fields = new Godot.Collections.Dictionary { { "username", "user" }, { "password", "pass" } };
     string queryString = new HTTPClient().QueryStringFromDict(fields);
-    string[] headers = {"Content-Type: application/x-www-form-urlencoded", "Content-Length: " + queryString.Length};
+    string[] headers = { "Content-Type: application/x-www-form-urlencoded", $"Content-Length: {queryString.Length}" };
     var result = new HTTPClient().Request(HTTPClient.Method.Post, "index.php", headers, queryString);
 
 

@@ -45,9 +45,9 @@ Properties
    +-----------------------------+------------------------------------------------------------------------------+---------------+
    | :ref:`int<class_int>`       | :ref:`bus_count<class_AudioServer_property_bus_count>`                       | ``1``         |
    +-----------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`String<class_String>` | :ref:`capture_device<class_AudioServer_property_capture_device>`             | ``"Default"`` |
+   | :ref:`String<class_String>` | :ref:`input_device<class_AudioServer_property_input_device>`                 | ``"Default"`` |
    +-----------------------------+------------------------------------------------------------------------------+---------------+
-   | :ref:`String<class_String>` | :ref:`device<class_AudioServer_property_device>`                             | ``"Default"`` |
+   | :ref:`String<class_String>` | :ref:`output_device<class_AudioServer_property_output_device>`               | ``"Default"`` |
    +-----------------------------+------------------------------------------------------------------------------+---------------+
    | :ref:`float<class_float>`   | :ref:`playback_speed_scale<class_AudioServer_property_playback_speed_scale>` | ``1.0``       |
    +-----------------------------+------------------------------------------------------------------------------+---------------+
@@ -64,8 +64,6 @@ Methods
    | void                                                  | :ref:`add_bus<class_AudioServer_method_add_bus>` **(** :ref:`int<class_int>` at_position=-1 **)**                                                                                             |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`add_bus_effect<class_AudioServer_method_add_bus_effect>` **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_AudioEffect>` effect, :ref:`int<class_int>` at_position=-1 **)**  |
-   +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>`     | :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>` **(** **)**                                                                                                  |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`AudioBusLayout<class_AudioBusLayout>`           | :ref:`generate_bus_layout<class_AudioServer_method_generate_bus_layout>` **(** **)** |const|                                                                                                  |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,9 +87,11 @@ Methods
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                             | :ref:`get_bus_volume_db<class_AudioServer_method_get_bus_volume_db>` **(** :ref:`int<class_int>` bus_idx **)** |const|                                                                        |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>`     | :ref:`get_device_list<class_AudioServer_method_get_device_list>` **(** **)**                                                                                                                  |
+   | :ref:`PackedStringArray<class_PackedStringArray>`     | :ref:`get_input_device_list<class_AudioServer_method_get_input_device_list>` **(** **)**                                                                                                      |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                             | :ref:`get_mix_rate<class_AudioServer_method_get_mix_rate>` **(** **)** |const|                                                                                                                |
+   +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`     | :ref:`get_output_device_list<class_AudioServer_method_get_output_device_list>` **(** **)**                                                                                                    |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                             | :ref:`get_output_latency<class_AudioServer_method_get_output_latency>` **(** **)** |const|                                                                                                    |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -230,18 +230,18 @@ Number of available audio buses.
 
 ----
 
-.. _class_AudioServer_property_capture_device:
+.. _class_AudioServer_property_input_device:
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **capture_device** = ``"Default"``
+:ref:`String<class_String>` **input_device** = ``"Default"``
 
 .. rst-class:: classref-property-setget
 
-- void **capture_set_device** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **capture_get_device** **(** **)**
+- void **set_input_device** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_input_device** **(** **)**
 
-Name of the current device for audio input (see :ref:`capture_get_device_list<class_AudioServer_method_capture_get_device_list>`). On systems with multiple audio inputs (such as analog, USB and HDMI audio), this can be used to select the audio input device. The value ``"Default"`` will record audio on the system-wide default audio input. If an invalid device name is set, the value will be reverted back to ``"Default"``.
+Name of the current device for audio input (see :ref:`get_input_device_list<class_AudioServer_method_get_input_device_list>`). On systems with multiple audio inputs (such as analog, USB and HDMI audio), this can be used to select the audio input device. The value ``"Default"`` will record audio on the system-wide default audio input. If an invalid device name is set, the value will be reverted back to ``"Default"``.
 
 \ **Note:** :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
 
@@ -249,18 +249,18 @@ Name of the current device for audio input (see :ref:`capture_get_device_list<cl
 
 ----
 
-.. _class_AudioServer_property_device:
+.. _class_AudioServer_property_output_device:
 
 .. rst-class:: classref-property
 
-:ref:`String<class_String>` **device** = ``"Default"``
+:ref:`String<class_String>` **output_device** = ``"Default"``
 
 .. rst-class:: classref-property-setget
 
-- void **set_device** **(** :ref:`String<class_String>` value **)**
-- :ref:`String<class_String>` **get_device** **(** **)**
+- void **set_output_device** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_output_device** **(** **)**
 
-Name of the current device for audio output (see :ref:`get_device_list<class_AudioServer_method_get_device_list>`). On systems with multiple audio outputs (such as analog, USB and HDMI audio), this can be used to select the audio output device. The value ``"Default"`` will play audio on the system-wide default audio output. If an invalid device name is set, the value will be reverted back to ``"Default"``.
+Name of the current device for audio output (see :ref:`get_output_device_list<class_AudioServer_method_get_output_device_list>`). On systems with multiple audio outputs (such as analog, USB and HDMI audio), this can be used to select the audio output device. The value ``"Default"`` will play audio on the system-wide default audio output. If an invalid device name is set, the value will be reverted back to ``"Default"``.
 
 .. rst-class:: classref-item-separator
 
@@ -307,20 +307,6 @@ Adds a bus at ``at_position``.
 void **add_bus_effect** **(** :ref:`int<class_int>` bus_idx, :ref:`AudioEffect<class_AudioEffect>` effect, :ref:`int<class_int>` at_position=-1 **)**
 
 Adds an :ref:`AudioEffect<class_AudioEffect>` effect to the bus ``bus_idx`` at ``at_position``.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_AudioServer_method_capture_get_device_list:
-
-.. rst-class:: classref-method
-
-:ref:`PackedStringArray<class_PackedStringArray>` **capture_get_device_list** **(** **)**
-
-Returns the names of all audio input devices detected on the system.
-
-\ **Note:** :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
 
 .. rst-class:: classref-item-separator
 
@@ -458,13 +444,15 @@ Returns the volume of the bus at index ``bus_idx`` in dB.
 
 ----
 
-.. _class_AudioServer_method_get_device_list:
+.. _class_AudioServer_method_get_input_device_list:
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_device_list** **(** **)**
+:ref:`PackedStringArray<class_PackedStringArray>` **get_input_device_list** **(** **)**
 
-Returns the names of all audio devices detected on the system.
+Returns the names of all audio input devices detected on the system.
+
+\ **Note:** :ref:`ProjectSettings.audio/driver/enable_input<class_ProjectSettings_property_audio/driver/enable_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
 
 .. rst-class:: classref-item-separator
 
@@ -477,6 +465,18 @@ Returns the names of all audio devices detected on the system.
 :ref:`float<class_float>` **get_mix_rate** **(** **)** |const|
 
 Returns the sample rate at the output of the **AudioServer**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioServer_method_get_output_device_list:
+
+.. rst-class:: classref-method
+
+:ref:`PackedStringArray<class_PackedStringArray>` **get_output_device_list** **(** **)**
+
+Returns the names of all audio output devices detected on the system.
 
 .. rst-class:: classref-item-separator
 

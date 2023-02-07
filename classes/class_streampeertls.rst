@@ -32,37 +32,25 @@ Tutorials
 
 .. rst-class:: classref-reftable-group
 
-Properties
-----------
-
-.. table::
-   :widths: auto
-
-   +-------------------------+----------------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>` | :ref:`blocking_handshake<class_StreamPeerTLS_property_blocking_handshake>` | ``true`` |
-   +-------------------------+----------------------------------------------------------------------------+----------+
-
-.. rst-class:: classref-reftable-group
-
 Methods
 -------
 
 .. table::
    :widths: auto
 
-   +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`accept_stream<class_StreamPeerTLS_method_accept_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`CryptoKey<class_CryptoKey>` private_key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)**      |
-   +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`connect_to_stream<class_StreamPeerTLS_method_connect_to_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="", :ref:`X509Certificate<class_X509Certificate>` valid_certificate=null **)** |
-   +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                     | :ref:`disconnect_from_stream<class_StreamPeerTLS_method_disconnect_from_stream>` **(** **)**                                                                                                                                                                                                   |
-   +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Status<enum_StreamPeerTLS_Status>` | :ref:`get_status<class_StreamPeerTLS_method_get_status>` **(** **)** |const|                                                                                                                                                                                                                   |
-   +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`StreamPeer<class_StreamPeer>`      | :ref:`get_stream<class_StreamPeerTLS_method_get_stream>` **(** **)** |const|                                                                                                                                                                                                                   |
-   +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                     | :ref:`poll<class_StreamPeerTLS_method_poll>` **(** **)**                                                                                                                                                                                                                                       |
-   +------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`accept_stream<class_StreamPeerTLS_method_accept_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`TLSOptions<class_TLSOptions>` server_options **)**                                                       |
+   +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`    | :ref:`connect_to_stream<class_StreamPeerTLS_method_connect_to_stream>` **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`String<class_String>` common_name, :ref:`TLSOptions<class_TLSOptions>` client_options=null **)** |
+   +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                     | :ref:`disconnect_from_stream<class_StreamPeerTLS_method_disconnect_from_stream>` **(** **)**                                                                                                                                    |
+   +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Status<enum_StreamPeerTLS_Status>` | :ref:`get_status<class_StreamPeerTLS_method_get_status>` **(** **)** |const|                                                                                                                                                    |
+   +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StreamPeer<class_StreamPeer>`      | :ref:`get_stream<class_StreamPeerTLS_method_get_stream>` **(** **)** |const|                                                                                                                                                    |
+   +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                     | :ref:`poll<class_StreamPeerTLS_method_poll>` **(** **)**                                                                                                                                                                        |
+   +------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -125,30 +113,6 @@ An error status that shows a mismatch in the TLS certificate domain presented by
 
 .. rst-class:: classref-descriptions-group
 
-Property Descriptions
----------------------
-
-.. _class_StreamPeerTLS_property_blocking_handshake:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **blocking_handshake** = ``true``
-
-.. rst-class:: classref-property-setget
-
-- void **set_blocking_handshake_enabled** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_blocking_handshake_enabled** **(** **)**
-
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-section-separator
-
-----
-
-.. rst-class:: classref-descriptions-group
-
 Method Descriptions
 -------------------
 
@@ -156,9 +120,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **accept_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`CryptoKey<class_CryptoKey>` private_key, :ref:`X509Certificate<class_X509Certificate>` certificate, :ref:`X509Certificate<class_X509Certificate>` chain=null **)**
+:ref:`Error<enum_@GlobalScope_Error>` **accept_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`TLSOptions<class_TLSOptions>` server_options **)**
 
-Accepts a peer connection as a server using the given ``private_key`` and providing the given ``certificate`` to the client. You can pass the optional ``chain`` parameter to provide additional CA chain information along with the certificate.
+Accepts a peer connection as a server using the given ``server_options``. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 
@@ -168,11 +132,9 @@ Accepts a peer connection as a server using the given ``private_key`` and provid
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`bool<class_bool>` validate_certs=false, :ref:`String<class_String>` for_hostname="", :ref:`X509Certificate<class_X509Certificate>` valid_certificate=null **)**
+:ref:`Error<enum_@GlobalScope_Error>` **connect_to_stream** **(** :ref:`StreamPeer<class_StreamPeer>` stream, :ref:`String<class_String>` common_name, :ref:`TLSOptions<class_TLSOptions>` client_options=null **)**
 
-Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream``. If ``validate_certs`` is ``true``, **StreamPeerTLS** will validate that the certificate presented by the peer matches the ``for_hostname``.
-
-\ **Note:** Specifying a custom ``valid_certificate`` is not supported in Web exports due to browsers restrictions.
+Connects to a peer using an underlying :ref:`StreamPeer<class_StreamPeer>` ``stream`` and verifying the remote certificate is correctly signed for the given ``common_name``. You can pass the optional ``client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 

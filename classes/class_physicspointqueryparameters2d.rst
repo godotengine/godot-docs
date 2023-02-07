@@ -65,6 +65,8 @@ Property Descriptions
 
 If different from ``0``, restricts the query to a specific canvas layer specified by its instance ID. See :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`.
 
+If ``0``, restricts the query to the Viewport's default canvas layer.
+
 .. rst-class:: classref-item-separator
 
 ----

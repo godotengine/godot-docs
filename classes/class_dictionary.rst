@@ -78,7 +78,7 @@ You can access a dictionary's value by referencing its corresponding key. In the
 
     [Export(PropertyHint.Enum, "White,Yellow,Orange")]
     public string MyColor { get; set; }
-    public Godot.Collections.Dictionary pointsDict = new Godot.Collections.Dictionary
+    private Godot.Collections.Dictionary _pointsDict = new Godot.Collections.Dictionary
     {
         {"White", 50},
         {"Yellow", 75},
@@ -87,7 +87,7 @@ You can access a dictionary's value by referencing its corresponding key. In the
     
     public override void _Ready()
     {
-        int points = (int)pointsDict[MyColor];
+        int points = (int)_pointsDict[MyColor];
     }
 
 
@@ -297,7 +297,7 @@ Constructs an empty **Dictionary**.
 
 :ref:`Dictionary<class_Dictionary>` **Dictionary** **(** :ref:`Dictionary<class_Dictionary>` from **)**
 
-Returns the same array as ``from``. If you need a copy of the array, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
+Returns the same dictionary as ``from``. If you need a copy of the dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
 
 .. rst-class:: classref-section-separator
 
@@ -516,7 +516,7 @@ Returns the list of keys in the dictionary.
 
 void **make_read_only** **(** **)**
 
-Makes the dictionary read-only, i.e. disabled modifying of the dictionary's contents. Does not apply to nested content, e.g. content of nested dicitonaries.
+Makes the dictionary read-only, i.e. disables modification of the dictionary's contents. Does not apply to nested content, e.g. content of nested dictionaries.
 
 .. rst-class:: classref-item-separator
 

@@ -97,6 +97,8 @@ Methods
    +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
    | :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` | :ref:`get_stream_playback<class_AudioStreamPlayer3D_method_get_stream_playback>` **(** **)**               |
    +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                               | :ref:`has_stream_playback<class_AudioStreamPlayer3D_method_has_stream_playback>` **(** **)**               |
+   +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`play<class_AudioStreamPlayer3D_method_play>` **(** :ref:`float<class_float>` from_position=0.0 **)** |
    +-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`seek<class_AudioStreamPlayer3D_method_seek>` **(** :ref:`float<class_float>` to_position **)**       |
@@ -576,6 +578,18 @@ Returns the position in the :ref:`AudioStream<class_AudioStream>`.
 :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` **get_stream_playback** **(** **)**
 
 Returns the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object associated with this **AudioStreamPlayer3D**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AudioStreamPlayer3D_method_has_stream_playback:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_stream_playback** **(** **)**
+
+Returns whether the :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` can return the :ref:`AudioStreamPlayback<class_AudioStreamPlayback>` object or not.
 
 .. rst-class:: classref-item-separator
 

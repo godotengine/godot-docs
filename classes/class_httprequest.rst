@@ -81,7 +81,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
         // Perform a POST request. The URL below returns JSON as of writing.
         // Note: Don't make simultaneous requests using a single HTTPRequest node.
         // The snippet below is provided for reference only.
-        string body = new JSON().Stringify(new Godot.Collections.Dictionary
+        string body = new Json().Stringify(new Godot.Collections.Dictionary
         {
             { "name", "Godette" }
         });
@@ -93,14 +93,14 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     }
     
     // Called when the HTTP request is completed.
-    private void HttpRequestCompleted(int result, int responseCode, string[] headers, byte[] body)
+    private void HttpRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
     {
-        var json = new JSON();
-        json.Parse(body.GetStringFromUTF8());
-        var response = json.GetData() as Godot.Collections.Dictionary;
+        var json = new Json();
+        json.Parse(body.GetStringFromUtf8());
+        var response = json.GetData().AsGodotDictionary();
     
         // Will print the user agent string used by the HTTPRequest node (as recognized by httpbin.org).
-        GD.Print((response["headers"] as Godot.Collections.Dictionary)["User-Agent"]);
+        GD.Print((response["headers"].AsGodotDictionary())["User-Agent"]);
     }
 
 
@@ -158,9 +158,9 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
     }
     
     // Called when the HTTP request is completed.
-    private void HttpRequestCompleted(int result, int responseCode, string[] headers, byte[] body)
+    private void HttpRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
     {
-        if (result != (int)HTTPRequest.Result.Success)
+        if (result != (long)HTTPRequest.Result.Success)
         {
             GD.PushError("Image couldn't be downloaded. Try a different image.");
         }
@@ -225,23 +225,25 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`cancel_request<class_HTTPRequest_method_cancel_request>` **(** **)**                                                                                                                                                                                                                                                                                                     |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`get_body_size<class_HTTPRequest_method_get_body_size>` **(** **)** |const|                                                                                                                                                                                                                                                                                               |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`get_downloaded_bytes<class_HTTPRequest_method_get_downloaded_bytes>` **(** **)** |const|                                                                                                                                                                                                                                                                                 |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Status<enum_HTTPClient_Status>` | :ref:`get_http_client_status<class_HTTPRequest_method_get_http_client_status>` **(** **)** |const|                                                                                                                                                                                                                                                                             |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` tls_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**                                              |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request_raw<class_HTTPRequest_method_request_raw>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` tls_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)** |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_http_proxy<class_HTTPRequest_method_set_http_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                                                                                                                                        |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_https_proxy<class_HTTPRequest_method_set_https_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                                                                                                                                      |
-   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`cancel_request<class_HTTPRequest_method_cancel_request>` **(** **)**                                                                                                                                                                                                                                                   |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_body_size<class_HTTPRequest_method_get_body_size>` **(** **)** |const|                                                                                                                                                                                                                                             |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_downloaded_bytes<class_HTTPRequest_method_get_downloaded_bytes>` **(** **)** |const|                                                                                                                                                                                                                               |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Status<enum_HTTPClient_Status>` | :ref:`get_http_client_status<class_HTTPRequest_method_get_http_client_status>` **(** **)** |const|                                                                                                                                                                                                                           |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request<class_HTTPRequest_method_request>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**                                              |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`request_raw<class_HTTPRequest_method_request_raw>` **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)** |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_http_proxy<class_HTTPRequest_method_set_http_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                                                                                      |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_https_proxy<class_HTTPRequest_method_set_https_proxy>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                                                                                                                                                                    |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_tls_options<class_HTTPRequest_method_set_tls_options>` **(** :ref:`TLSOptions<class_TLSOptions>` client_options **)**                                                                                                                                                                                              |
+   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -582,7 +584,7 @@ Returns the current status of the underlying :ref:`HTTPClient<class_HTTPClient>`
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` tls_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
+:ref:`Error<enum_@GlobalScope_Error>` **request** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`String<class_String>` request_data="" **)**
 
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>`. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
 
@@ -600,7 +602,7 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if request is suc
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **request_raw** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`bool<class_bool>` tls_validate_domain=true, :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)**
+:ref:`Error<enum_@GlobalScope_Error>` **request_raw** **(** :ref:`String<class_String>` url, :ref:`PackedStringArray<class_PackedStringArray>` custom_headers=PackedStringArray(), :ref:`Method<enum_HTTPClient_Method>` method=0, :ref:`PackedByteArray<class_PackedByteArray>` request_data_raw=PackedByteArray() **)**
 
 Creates request on the underlying :ref:`HTTPClient<class_HTTPClient>` using a raw array of bytes for the request body. If there is no configuration errors, it tries to connect using :ref:`HTTPClient.connect_to_host<class_HTTPClient_method_connect_to_host>` and passes parameters onto :ref:`HTTPClient.request<class_HTTPClient_method_request>`.
 
@@ -633,6 +635,18 @@ void **set_https_proxy** **(** :ref:`String<class_String>` host, :ref:`int<class
 Sets the proxy server for HTTPS requests.
 
 The proxy server is unset if ``host`` is empty or ``port`` is -1.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_HTTPRequest_method_set_tls_options:
+
+.. rst-class:: classref-method
+
+void **set_tls_options** **(** :ref:`TLSOptions<class_TLSOptions>` client_options **)**
+
+Sets the :ref:`TLSOptions<class_TLSOptions>` to be used when connecting to an HTTPS server. See :ref:`TLSOptions.client<class_TLSOptions_method_client>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

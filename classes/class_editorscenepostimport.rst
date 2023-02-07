@@ -30,12 +30,14 @@ The :ref:`_post_import<class_EditorScenePostImport_method__post_import>` callbac
 
     @tool # Needed so it runs in editor.
     extends EditorScenePostImport
+    
     # This sample changes all node names.
     # Called right after the scene is imported and gets the root node.
     func _post_import(scene):
         # Change all node names to "modified_[oldnodename]"
         iterate(scene)
         return scene # Remember to return the imported scene
+    
     func iterate(node):
         if node != null:
             node.name = "modified_" + node.name
@@ -51,17 +53,18 @@ The :ref:`_post_import<class_EditorScenePostImport_method__post_import>` callbac
     [Tool]
     public partial class NodeRenamer : EditorScenePostImport
     {
-        public override Object _PostImport(Node scene)
+        public override GodotObject _PostImport(Node scene)
         {
             // Change all node names to "modified_[oldnodename]"
             Iterate(scene);
             return scene; // Remember to return the imported scene
         }
+    
         public void Iterate(Node node)
         {
             if (node != null)
             {
-                node.Name = "modified_" + node.Name;
+                node.Name = $"modified_{node.Name}";
                 foreach (Node child in node.GetChildren())
                 {
                     Iterate(child);

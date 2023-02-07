@@ -36,13 +36,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+--------------------------------------------------------------+
-   | void                                  | :ref:`post<class_Semaphore_method_post>` **(** **)**         |
-   +---------------------------------------+--------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`try_wait<class_Semaphore_method_try_wait>` **(** **)** |
-   +---------------------------------------+--------------------------------------------------------------+
-   | void                                  | :ref:`wait<class_Semaphore_method_wait>` **(** **)**         |
-   +---------------------------------------+--------------------------------------------------------------+
+   +-------------------------+--------------------------------------------------------------+
+   | void                    | :ref:`post<class_Semaphore_method_post>` **(** **)**         |
+   +-------------------------+--------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`try_wait<class_Semaphore_method_try_wait>` **(** **)** |
+   +-------------------------+--------------------------------------------------------------+
+   | void                    | :ref:`wait<class_Semaphore_method_wait>` **(** **)**         |
+   +-------------------------+--------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -69,9 +69,9 @@ Lowers the **Semaphore**, allowing one more thread in.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **try_wait** **(** **)**
+:ref:`bool<class_bool>` **try_wait** **(** **)**
 
-Like :ref:`wait<class_Semaphore_method_wait>`, but won't block, so if the value is zero, fails immediately and returns :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>`. If non-zero, it returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` to report success.
+Like :ref:`wait<class_Semaphore_method_wait>`, but won't block, so if the value is zero, fails immediately and returns ``false``. If non-zero, it returns ``true`` to report success.
 
 .. rst-class:: classref-item-separator
 

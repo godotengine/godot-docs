@@ -39,10 +39,9 @@ Scripts extending this class and implementing its :ref:`_run<class_EditorScript_
  .. code-tab:: csharp
 
     using Godot;
-    using System;
     
     [Tool]
-    public class HelloEditor : EditorScript
+    public partial class HelloEditor : EditorScript
     {
         public override void _Run()
         {

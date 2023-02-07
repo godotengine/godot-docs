@@ -12,9 +12,22 @@ RenderingDevice
 
 **Inherits:** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Abstraction for working with modern low-level graphics APIs.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**RenderingDevice** is an abstraction for working with modern low-level graphics APIs such as Vulkan.
+
+On startup, Godot creates a global **RenderingDevice** which can be retrieved using :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>`. This global RenderingDevice performs drawing to the screen.
+
+Internally, **RenderingDevice** is used in Godot to provide support for several modern low-level graphics APIs while reducing the amount of code duplication required.
+
+\ **Local RenderingDevices:** Using :ref:`RenderingServer.create_local_rendering_device<class_RenderingServer_method_create_local_rendering_device>`, you can create "secondary" rendering devices to perform drawing and GPU compute operations on separate threads.
+
+\ **Note:** **RenderingDevice** is not available when running in headless mode or when using the OpenGL renderer.
 
 .. rst-class:: classref-reftable-group
 
@@ -2213,7 +2226,7 @@ enum **TextureType**:
 
 :ref:`TextureType<enum_RenderingDevice_TextureType>` **TEXTURE_TYPE_1D** = ``0``
 
-
+1-dimensional texture.
 
 .. _class_RenderingDevice_constant_TEXTURE_TYPE_2D:
 
@@ -2221,7 +2234,7 @@ enum **TextureType**:
 
 :ref:`TextureType<enum_RenderingDevice_TextureType>` **TEXTURE_TYPE_2D** = ``1``
 
-
+2-dimensional texture.
 
 .. _class_RenderingDevice_constant_TEXTURE_TYPE_3D:
 
@@ -2229,7 +2242,7 @@ enum **TextureType**:
 
 :ref:`TextureType<enum_RenderingDevice_TextureType>` **TEXTURE_TYPE_3D** = ``2``
 
-
+3-dimensional texture.
 
 .. _class_RenderingDevice_constant_TEXTURE_TYPE_CUBE:
 
@@ -2237,7 +2250,7 @@ enum **TextureType**:
 
 :ref:`TextureType<enum_RenderingDevice_TextureType>` **TEXTURE_TYPE_CUBE** = ``3``
 
-
+:ref:`Cubemap<class_Cubemap>` texture.
 
 .. _class_RenderingDevice_constant_TEXTURE_TYPE_1D_ARRAY:
 
@@ -2245,7 +2258,7 @@ enum **TextureType**:
 
 :ref:`TextureType<enum_RenderingDevice_TextureType>` **TEXTURE_TYPE_1D_ARRAY** = ``4``
 
-
+Array of 1-dimensional textures.
 
 .. _class_RenderingDevice_constant_TEXTURE_TYPE_2D_ARRAY:
 
@@ -2253,7 +2266,7 @@ enum **TextureType**:
 
 :ref:`TextureType<enum_RenderingDevice_TextureType>` **TEXTURE_TYPE_2D_ARRAY** = ``5``
 
-
+Array of 2-dimensional textures.
 
 .. _class_RenderingDevice_constant_TEXTURE_TYPE_CUBE_ARRAY:
 
@@ -2261,7 +2274,7 @@ enum **TextureType**:
 
 :ref:`TextureType<enum_RenderingDevice_TextureType>` **TEXTURE_TYPE_CUBE_ARRAY** = ``6``
 
-
+Array of :ref:`Cubemap<class_Cubemap>` textures.
 
 .. _class_RenderingDevice_constant_TEXTURE_TYPE_MAX:
 
@@ -2269,7 +2282,7 @@ enum **TextureType**:
 
 :ref:`TextureType<enum_RenderingDevice_TextureType>` **TEXTURE_TYPE_MAX** = ``7``
 
-
+Represents the size of the :ref:`TextureType<enum_RenderingDevice_TextureType>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2343,7 +2356,7 @@ enum **TextureSamples**:
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **TEXTURE_SAMPLES_MAX** = ``7``
 
-
+Represents the size of the :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2559,7 +2572,7 @@ enum **SamplerFilter**:
 
 :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **SAMPLER_FILTER_NEAREST** = ``0``
 
-
+Nearest-neighbor sampler filtering. Sampling at higher resolutions than the source will result in a pixelated look.
 
 .. _class_RenderingDevice_constant_SAMPLER_FILTER_LINEAR:
 
@@ -2567,7 +2580,7 @@ enum **SamplerFilter**:
 
 :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **SAMPLER_FILTER_LINEAR** = ``1``
 
-
+Bilinear sampler filtering. Sampling at higher resolutions than the source will result in a blurry look.
 
 .. rst-class:: classref-item-separator
 
@@ -2877,7 +2890,7 @@ enum **RenderPrimitive**:
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_POINTS** = ``0``
 
-
+Point rendering primitive (with constant size, regardless of distance from camera).
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_LINES:
 
@@ -2885,7 +2898,7 @@ enum **RenderPrimitive**:
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_LINES** = ``1``
 
-
+Line rendering primitive.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_LINES_WITH_ADJACENCY:
 
@@ -3255,7 +3268,7 @@ enum **LogicOperation**:
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_XOR** = ``6``
 
-
+Exclusive or (XOR) logic operation.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_OR:
 
@@ -3523,7 +3536,7 @@ enum **BlendOperation**:
 
 :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` **BLEND_OP_ADD** = ``0``
 
-
+Additive blending operation (``source + destination``).
 
 .. _class_RenderingDevice_constant_BLEND_OP_SUBTRACT:
 
@@ -3531,7 +3544,7 @@ enum **BlendOperation**:
 
 :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` **BLEND_OP_SUBTRACT** = ``1``
 
-
+Subtractive blending operation (``source - destination``).
 
 .. _class_RenderingDevice_constant_BLEND_OP_REVERSE_SUBTRACT:
 
@@ -3539,7 +3552,7 @@ enum **BlendOperation**:
 
 :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` **BLEND_OP_REVERSE_SUBTRACT** = ``2``
 
-
+Reverse subtractive blending operation (``destination - source``).
 
 .. _class_RenderingDevice_constant_BLEND_OP_MINIMUM:
 
@@ -3547,7 +3560,7 @@ enum **BlendOperation**:
 
 :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` **BLEND_OP_MINIMUM** = ``3``
 
-
+Minimum blending operation (keep the lowest value of the two).
 
 .. _class_RenderingDevice_constant_BLEND_OP_MAXIMUM:
 
@@ -3555,7 +3568,7 @@ enum **BlendOperation**:
 
 :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` **BLEND_OP_MAXIMUM** = ``4``
 
-
+Maximum blending operation (keep the highest value of the two).
 
 .. _class_RenderingDevice_constant_BLEND_OP_MAX:
 
@@ -3563,7 +3576,7 @@ enum **BlendOperation**:
 
 :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` **BLEND_OP_MAX** = ``5``
 
-
+Represents the size of the :ref:`BlendOperation<enum_RenderingDevice_BlendOperation>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -4001,7 +4014,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_TEXTURE_SIZE_1D** = ``11``
 
-
+Maximum supported 1-dimensional texture size (in pixels on a single axis).
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_TEXTURE_SIZE_2D:
 
@@ -4009,7 +4022,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_TEXTURE_SIZE_2D** = ``12``
 
-
+Maximum supported 2-dimensional texture size (in pixels on a single axis).
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_TEXTURE_SIZE_3D:
 
@@ -4017,7 +4030,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_TEXTURE_SIZE_3D** = ``13``
 
-
+Maximum supported 3-dimensional texture size (in pixels on a single axis).
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_TEXTURE_SIZE_CUBE:
 
@@ -4025,7 +4038,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_TEXTURE_SIZE_CUBE** = ``14``
 
-
+Maximum supported cubemap texture size (in pixels on a single axis of a single face).
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_TEXTURES_PER_SHADER_STAGE:
 
@@ -4219,7 +4232,7 @@ enum **MemoryType**:
 
 :ref:`MemoryType<enum_RenderingDevice_MemoryType>` **MEMORY_TEXTURES** = ``0``
 
-
+Memory taken by textures.
 
 .. _class_RenderingDevice_constant_MEMORY_BUFFERS:
 
@@ -4227,7 +4240,7 @@ enum **MemoryType**:
 
 :ref:`MemoryType<enum_RenderingDevice_MemoryType>` **MEMORY_BUFFERS** = ``1``
 
-
+Memory taken by buffers.
 
 .. _class_RenderingDevice_constant_MEMORY_TOTAL:
 
@@ -4235,7 +4248,7 @@ enum **MemoryType**:
 
 :ref:`MemoryType<enum_RenderingDevice_MemoryType>` **MEMORY_TOTAL** = ``2``
 
-
+Total memory taken. This is greater than the sum of :ref:`MEMORY_TEXTURES<class_RenderingDevice_constant_MEMORY_TEXTURES>` and :ref:`MEMORY_BUFFERS<class_RenderingDevice_constant_MEMORY_BUFFERS>`, as it also includes miscellaneous memory usage.
 
 .. rst-class:: classref-section-separator
 
@@ -4252,7 +4265,7 @@ Constants
 
 **INVALID_ID** = ``-1``
 
-
+Returned by functions that return an ID if a value is invalid.
 
 .. _class_RenderingDevice_constant_INVALID_FORMAT_ID:
 
@@ -4260,7 +4273,7 @@ Constants
 
 **INVALID_FORMAT_ID** = ``-1``
 
-
+Returned by functions that return a format ID if a value is invalid.
 
 .. rst-class:: classref-section-separator
 

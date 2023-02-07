@@ -44,51 +44,51 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`angular_damp<class_Area3D_property_angular_damp>`                                 | ``0.1``               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` | :ref:`angular_damp_space_override<class_Area3D_property_angular_damp_space_override>`   | ``0``                 |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`StringName<class_StringName>`             | :ref:`audio_bus_name<class_Area3D_property_audio_bus_name>`                             | ``&"Master"``         |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`audio_bus_override<class_Area3D_property_audio_bus_override>`                     | ``false``             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`gravity<class_Area3D_property_gravity>`                                           | ``9.8``               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector3<class_Vector3>`                   | :ref:`gravity_direction<class_Area3D_property_gravity_direction>`                       | ``Vector3(0, -1, 0)`` |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`gravity_point<class_Area3D_property_gravity_point>`                               | ``false``             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector3<class_Vector3>`                   | :ref:`gravity_point_center<class_Area3D_property_gravity_point_center>`                 | ``Vector3(0, -1, 0)`` |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`gravity_point_distance_scale<class_Area3D_property_gravity_point_distance_scale>` | ``0.0``               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` | :ref:`gravity_space_override<class_Area3D_property_gravity_space_override>`             | ``0``                 |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`linear_damp<class_Area3D_property_linear_damp>`                                   | ``0.1``               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` | :ref:`linear_damp_space_override<class_Area3D_property_linear_damp_space_override>`     | ``0``                 |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`monitorable<class_Area3D_property_monitorable>`                                   | ``true``              |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area3D_property_monitoring>`                                     | ``true``              |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`priority<class_Area3D_property_priority>`                                         | ``0.0``               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`reverb_bus_amount<class_Area3D_property_reverb_bus_amount>`                       | ``0.0``               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`reverb_bus_enabled<class_Area3D_property_reverb_bus_enabled>`                     | ``false``             |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`StringName<class_StringName>`             | :ref:`reverb_bus_name<class_Area3D_property_reverb_bus_name>`                           | ``&"Master"``         |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`reverb_bus_uniformity<class_Area3D_property_reverb_bus_uniformity>`               | ``0.0``               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`wind_attenuation_factor<class_Area3D_property_wind_attenuation_factor>`           | ``0.0``               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`wind_force_magnitude<class_Area3D_property_wind_force_magnitude>`                 | ``0.0``               |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`NodePath<class_NodePath>`                 | :ref:`wind_source_path<class_Area3D_property_wind_source_path>`                         | ``NodePath("")``      |
-   +-------------------------------------------------+-----------------------------------------------------------------------------------------+-----------------------+
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                       | :ref:`angular_damp<class_Area3D_property_angular_damp>`                               | ``0.1``               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` | :ref:`angular_damp_space_override<class_Area3D_property_angular_damp_space_override>` | ``0``                 |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`StringName<class_StringName>`             | :ref:`audio_bus_name<class_Area3D_property_audio_bus_name>`                           | ``&"Master"``         |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`audio_bus_override<class_Area3D_property_audio_bus_override>`                   | ``false``             |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                       | :ref:`gravity<class_Area3D_property_gravity>`                                         | ``9.8``               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`gravity_direction<class_Area3D_property_gravity_direction>`                     | ``Vector3(0, -1, 0)`` |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`gravity_point<class_Area3D_property_gravity_point>`                             | ``false``             |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector3<class_Vector3>`                   | :ref:`gravity_point_center<class_Area3D_property_gravity_point_center>`               | ``Vector3(0, -1, 0)`` |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                       | :ref:`gravity_point_unit_distance<class_Area3D_property_gravity_point_unit_distance>` | ``0.0``               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` | :ref:`gravity_space_override<class_Area3D_property_gravity_space_override>`           | ``0``                 |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                       | :ref:`linear_damp<class_Area3D_property_linear_damp>`                                 | ``0.1``               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`SpaceOverride<enum_Area3D_SpaceOverride>` | :ref:`linear_damp_space_override<class_Area3D_property_linear_damp_space_override>`   | ``0``                 |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`monitorable<class_Area3D_property_monitorable>`                                 | ``true``              |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area3D_property_monitoring>`                                   | ``true``              |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                       | :ref:`priority<class_Area3D_property_priority>`                                       | ``0.0``               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                       | :ref:`reverb_bus_amount<class_Area3D_property_reverb_bus_amount>`                     | ``0.0``               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`reverb_bus_enabled<class_Area3D_property_reverb_bus_enabled>`                   | ``false``             |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`StringName<class_StringName>`             | :ref:`reverb_bus_name<class_Area3D_property_reverb_bus_name>`                         | ``&"Master"``         |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                       | :ref:`reverb_bus_uniformity<class_Area3D_property_reverb_bus_uniformity>`             | ``0.0``               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                       | :ref:`wind_attenuation_factor<class_Area3D_property_wind_attenuation_factor>`         | ``0.0``               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                       | :ref:`wind_force_magnitude<class_Area3D_property_wind_force_magnitude>`               | ``0.0``               |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`NodePath<class_NodePath>`                 | :ref:`wind_source_path<class_Area3D_property_wind_source_path>`                       | ``NodePath("")``      |
+   +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -453,18 +453,20 @@ If gravity is a point (see :ref:`gravity_point<class_Area3D_property_gravity_poi
 
 ----
 
-.. _class_Area3D_property_gravity_point_distance_scale:
+.. _class_Area3D_property_gravity_point_unit_distance:
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **gravity_point_distance_scale** = ``0.0``
+:ref:`float<class_float>` **gravity_point_unit_distance** = ``0.0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_gravity_point_distance_scale** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_gravity_point_distance_scale** **(** **)**
+- void **set_gravity_point_unit_distance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_gravity_point_unit_distance** **(** **)**
 
-The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
+The distance at which the gravity strength is equal to :ref:`gravity<class_Area3D_property_gravity>`. For example, on a planet 100 meters in radius with a surface gravity of 4.0 m/s², set the :ref:`gravity<class_Area3D_property_gravity>` to 4.0 and the unit distance to 100.0. The gravity will have falloff according to the inverse square law, so in the example, at 200 meters from the center the gravity will be 1.0 m/s² (twice the distance, 1/4th the gravity), at 50 meters it will be 16.0 m/s² (half the distance, 4x the gravity), and so on.
+
+The above is true only when the unit distance is a positive number. When this is set to 0.0, the gravity will be constant regardless of distance.
 
 .. rst-class:: classref-item-separator
 

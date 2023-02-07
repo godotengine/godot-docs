@@ -161,7 +161,7 @@ Methods
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                         | :ref:`_gui_input<class_Control_method__gui_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                                                                                 |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                      | :ref:`_has_point<class_Control_method__has_point>` **(** :ref:`Vector2<class_Vector2>` position **)** |virtual| |const|                                                                                                                                            |
+   | :ref:`bool<class_bool>`                      | :ref:`_has_point<class_Control_method__has_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |virtual| |const|                                                                                                                                               |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Object<class_Object>`                  | :ref:`_make_custom_tooltip<class_Control_method__make_custom_tooltip>` **(** :ref:`String<class_String>` for_text **)** |virtual| |const|                                                                                                                          |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1888,11 +1888,11 @@ This method should only be used to test the data. Process the data in :ref:`_dro
 
  .. code-tab:: csharp
 
-    public override bool CanDropData(Vector2 position, object data)
+    public override bool _CanDropData(Vector2 atPosition, Variant data)
     {
         // Check position if it is relevant to you
         // Otherwise, just check data
-        return data is Godot.Collections.Dictionary && (data as Godot.Collections.Dictionary).Contains("expected");
+        return data.VariantType == Variant.Type.Dictionary && data.AsGodotDictionary().Contains("expected");
     }
 
 
@@ -1916,18 +1916,20 @@ Godot calls this method to pass you the ``data`` from a control's :ref:`_get_dra
 
     func _can_drop_data(position, data):
         return typeof(data) == TYPE_DICTIONARY and data.has("color")
+    
     func _drop_data(position, data):
         var color = data["color"]
 
  .. code-tab:: csharp
 
-    public override bool CanDropData(Vector2 position, object data)
+    public override bool _CanDropData(Vector2 atPosition, Variant data)
     {
-        return data is Godot.Collections.Dictionary && (data as Godot.Collections.Dictionary).Contains("color");
+        return data.VariantType == Variant.Type.Dictionary && dict.AsGodotDictionary().Contains("color");
     }
-    public override void DropData(Vector2 position, object data)
+    
+    public override void _DropData(Vector2 atPosition, Variant data)
     {
-        Color color = (Color)(data as Godot.Collections.Dictionary)["color"];
+        Color color = data.AsGodotDictionary()["color"].AsColor();
     }
 
 
@@ -1958,11 +1960,11 @@ A preview that will follow the mouse that should represent the data can be set w
 
  .. code-tab:: csharp
 
-    public override object GetDragData(Vector2 position)
+    public override Variant _GetDragData(Vector2 atPosition)
     {
-        object mydata = MakeData(); // This is your custom method generating the drag data.
-        SetDragPreview(MakePreview(mydata)); // This is your custom method generating the preview of the drag data.
-        return mydata;
+        var myData = MakeData(); // This is your custom method generating the drag data.
+        SetDragPreview(MakePreview(myData)); // This is your custom method generating the preview of the drag data.
+        return myData;
     }
 
 
@@ -2011,10 +2013,9 @@ Virtual method to be implemented by the user. Use this method to process and acc
 
     public override void _GuiInput(InputEvent @event)
     {
-        if (@event is InputEventMouseButton)
+        if (@event is InputEventMouseButton mb)
         {
-            var mb = @event as InputEventMouseButton;
-            if (mb.ButtonIndex == (int)ButtonList.Left && mb.Pressed)
+            if (mb.ButtonIndex == MouseButton.Left && mb.Pressed)
             {
                 GD.Print("I've been clicked D:");
             }
@@ -2045,13 +2046,13 @@ The event won't trigger if:
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_has_point** **(** :ref:`Vector2<class_Vector2>` position **)** |virtual| |const|
+:ref:`bool<class_bool>` **_has_point** **(** :ref:`Vector2<class_Vector2>` point **)** |virtual| |const|
 
-Virtual method to be implemented by the user. Returns whether the given ``position`` is inside this control.
+Virtual method to be implemented by the user. Returns whether the given ``point`` is inside this control.
 
 If not overridden, default behavior is checking if the point is within control's Rect.
 
-\ **Note:** If you want to check if a point is inside the control, you can use ``get_rect().has_point(point)``.
+\ **Note:** If you want to check if a point is inside the control, you can use ``Rect2(Vector2.ZERO, size).has_point(point)``.
 
 .. rst-class:: classref-item-separator
 
@@ -2087,7 +2088,7 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
 
  .. code-tab:: csharp
 
-    public override Godot.Control _MakeCustomTooltip(String forText)
+    public override Control _MakeCustomTooltip(string forText)
     {
         var label = new Label();
         label.Text = forText;
@@ -2110,7 +2111,7 @@ The returned node will be added as child to a :ref:`PopupPanel<class_PopupPanel>
 
  .. code-tab:: csharp
 
-    public override Godot.Control _MakeCustomTooltip(String forText)
+    public override Control _MakeCustomTooltip(string forText)
     {
         Node tooltip = ResourceLoader.Load<PackedScene>("res://some_tooltip_scene.tscn").Instantiate();
         tooltip.GetNode<Label>("Label").Text = forText;
@@ -2176,11 +2177,11 @@ See also :ref:`get_theme_color<class_Control_method_get_theme_color>`.
  .. code-tab:: csharp
 
     // Given the child Label node "MyLabel", override its font color with a custom value.
-    GetNode<Label>("MyLabel").AddThemeColorOverride("font_color", new Color(1, 0.5f, 0))
+    GetNode<Label>("MyLabel").AddThemeColorOverride("font_color", new Color(1, 0.5f, 0));
     // Reset the font color of the child label.
-    GetNode<Label>("MyLabel").RemoveThemeColorOverride("font_color")
+    GetNode<Label>("MyLabel").RemoveThemeColorOverride("font_color");
     // Alternatively it can be overridden with the default value from the Label type.
-    GetNode<Label>("MyLabel").AddThemeColorOverride("font_color", GetThemeColor("font_color", "Label"))
+    GetNode<Label>("MyLabel").AddThemeColorOverride("font_color", GetThemeColor("font_color", "Label"));
 
 
 
@@ -2702,13 +2703,13 @@ Creates an :ref:`InputEventMouseButton<class_InputEventMouseButton>` that attemp
  .. code-tab:: gdscript
 
     func _process(delta):
-        grab_click_focus() #when clicking another Control node, this node will be clicked instead
+        grab_click_focus() # When clicking another Control node, this node will be clicked instead.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        GrabClickFocus(); //when clicking another Control node, this node will be clicked instead
+        GrabClickFocus(); // When clicking another Control node, this node will be clicked instead.
     }
 
 
@@ -3141,16 +3142,16 @@ Shows the given control at the mouse pointer. A good time to call this method is
  .. code-tab:: csharp
 
     [Export]
-    public Color Color = new Color(1, 0, 0, 1);
+    private Color _color = new Color(1, 0, 0, 1);
     
-    public override object GetDragData(Vector2 position)
+    public override Variant _GetDragData(Vector2 atPosition)
     {
         // Use a control that is not in the tree
         var cpb = new ColorPickerButton();
-        cpb.Color = Color;
-        cpb.RectSize = new Vector2(50, 50);
+        cpb.Color = _color;
+        cpb.Size = new Vector2(50, 50);
         SetDragPreview(cpb);
-        return Color;
+        return _color;
     }
 
 

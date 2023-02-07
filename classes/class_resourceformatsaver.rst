@@ -38,7 +38,7 @@ Methods
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`_recognize_path<class_ResourceFormatSaver_method__recognize_path>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path **)** |virtual| |const|  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_save<class_ResourceFormatSaver_method__save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual| |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_set_uid<class_ResourceFormatSaver_method__set_uid>` **(** :ref:`String<class_String>` path, :ref:`int<class_int>` uid **)** |virtual|                                       |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -94,7 +94,7 @@ If this method is not implemented, the default behavior returns whether the path
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|
+:ref:`Error<enum_@GlobalScope_Error>` **_save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path, :ref:`int<class_int>` flags **)** |virtual|
 
 Saves the given resource object to a file at the target ``path``. ``flags`` is a bitmask composed with :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` constants.
 

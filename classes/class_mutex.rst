@@ -36,13 +36,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+----------------------------------------------------------+
-   | void                                  | :ref:`lock<class_Mutex_method_lock>` **(** **)**         |
-   +---------------------------------------+----------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`try_lock<class_Mutex_method_try_lock>` **(** **)** |
-   +---------------------------------------+----------------------------------------------------------+
-   | void                                  | :ref:`unlock<class_Mutex_method_unlock>` **(** **)**     |
-   +---------------------------------------+----------------------------------------------------------+
+   +-------------------------+----------------------------------------------------------+
+   | void                    | :ref:`lock<class_Mutex_method_lock>` **(** **)**         |
+   +-------------------------+----------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`try_lock<class_Mutex_method_try_lock>` **(** **)** |
+   +-------------------------+----------------------------------------------------------+
+   | void                    | :ref:`unlock<class_Mutex_method_unlock>` **(** **)**     |
+   +-------------------------+----------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -71,9 +71,9 @@ Locks this **Mutex**, blocks until it is unlocked by the current owner.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **try_lock** **(** **)**
+:ref:`bool<class_bool>` **try_lock** **(** **)**
 
-Tries locking this **Mutex**, but does not block. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success, :ref:`@GlobalScope.ERR_BUSY<class_@GlobalScope_constant_ERR_BUSY>` otherwise.
+Tries locking this **Mutex**, but does not block. Returns ``true`` on success, ``false`` otherwise.
 
 \ **Note:** This function returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the thread already has ownership of the mutex.
 

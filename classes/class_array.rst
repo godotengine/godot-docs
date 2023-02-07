@@ -123,11 +123,13 @@ Methods
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`append_array<class_Array_method_append_array>` **(** :ref:`Array<class_Array>` array **)**                                                                                               |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`assign<class_Array_method_assign>` **(** :ref:`Array<class_Array>` array **)**                                                                                                           |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`       | :ref:`back<class_Array_method_back>` **(** **)** |const|                                                                                                                                       |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`bsearch<class_Array_method_bsearch>` **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=true **)**                                                                |
+   | :ref:`int<class_int>`               | :ref:`bsearch<class_Array_method_bsearch>` **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=true **)** |const|                                                        |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`               | :ref:`bsearch_custom<class_Array_method_bsearch_custom>` **(** :ref:`Variant<class_Variant>` value, :ref:`Callable<class_Callable>` func, :ref:`bool<class_bool>` before=true **)**            |
+   | :ref:`int<class_int>`               | :ref:`bsearch_custom<class_Array_method_bsearch_custom>` **(** :ref:`Variant<class_Variant>` value, :ref:`Callable<class_Callable>` func, :ref:`bool<class_bool>` before=true **)** |const|    |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`clear<class_Array_method_clear>` **(** **)**                                                                                                                                             |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -161,6 +163,8 @@ Methods
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_read_only<class_Array_method_is_read_only>` **(** **)** |const|                                                                                                                       |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_same_typed<class_Array_method_is_same_typed>` **(** :ref:`Array<class_Array>` array **)** |const|                                                                                     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`is_typed<class_Array_method_is_typed>` **(** **)** |const|                                                                                                                               |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`make_read_only<class_Array_method_make_read_only>` **(** **)**                                                                                                                           |
@@ -193,8 +197,6 @@ Methods
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`rfind<class_Array_method_rfind>` **(** :ref:`Variant<class_Variant>` what, :ref:`int<class_int>` from=-1 **)** |const|                                                                   |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`set_typed<class_Array_method_set_typed>` **(** :ref:`int<class_int>` type, :ref:`StringName<class_StringName>` class_name, :ref:`Variant<class_Variant>` script **)**                    |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`shuffle<class_Array_method_shuffle>` **(** **)**                                                                                                                                         |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`size<class_Array_method_size>` **(** **)** |const|                                                                                                                                       |
@@ -204,8 +206,6 @@ Methods
    | void                                | :ref:`sort<class_Array_method_sort>` **(** **)**                                                                                                                                               |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`sort_custom<class_Array_method_sort_custom>` **(** :ref:`Callable<class_Callable>` func **)**                                                                                            |
-   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`             | :ref:`typed_assign<class_Array_method_typed_assign>` **(** :ref:`Array<class_Array>` array **)**                                                                                               |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -259,7 +259,7 @@ Constructs an empty **Array**.
 
 :ref:`Array<class_Array>` **Array** **(** :ref:`Array<class_Array>` base, :ref:`int<class_int>` type, :ref:`StringName<class_StringName>` class_name, :ref:`Variant<class_Variant>` script **)**
 
-Creates a typed array from the ``base`` array. The base array can't be already typed. See :ref:`set_typed<class_Array_method_set_typed>` for more details.
+Creates a typed array from the ``base`` array.
 
 .. rst-class:: classref-item-separator
 
@@ -269,7 +269,7 @@ Creates a typed array from the ``base`` array. The base array can't be already t
 
 :ref:`Array<class_Array>` **Array** **(** :ref:`Array<class_Array>` from **)**
 
-Constructs an **Array** as a copy of the given **Array**.
+Returns the same array as ``from``. If you need a copy of the array, use :ref:`duplicate<class_Array_method_duplicate>`.
 
 .. rst-class:: classref-item-separator
 
@@ -467,6 +467,18 @@ Appends another array at the end of this array.
 
 ----
 
+.. _class_Array_method_assign:
+
+.. rst-class:: classref-method
+
+void **assign** **(** :ref:`Array<class_Array>` array **)**
+
+Assigns elements of another ``array`` into the array. Resizes the array to match ``array``. Performs type conversions if the array is typed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Array_method_back:
 
 .. rst-class:: classref-method
@@ -485,7 +497,7 @@ Returns the last element of the array. Prints an error and returns ``null`` if t
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **bsearch** **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=true **)**
+:ref:`int<class_int>` **bsearch** **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` before=true **)** |const|
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array.
 
@@ -499,7 +511,7 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Callable<class_Callable>` func, :ref:`bool<class_bool>` before=true **)**
+:ref:`int<class_int>` **bsearch_custom** **(** :ref:`Variant<class_Variant>` value, :ref:`Callable<class_Callable>` func, :ref:`bool<class_bool>` before=true **)** |const|
 
 Finds the index of an existing value (or the insertion index that maintains sorting order, if the value is not yet present in the array) using binary search and a custom comparison method. Optionally, a ``before`` specifier can be passed. If ``false``, the returned index comes after all existing entries of the value in the array. The custom method receives two arguments (an element from the array and the value searched for) and must return ``true`` if the first argument is less than the second, and return ``false`` otherwise.
 
@@ -584,7 +596,7 @@ Assigns the given value to all elements in the array. This can typically be used
 
  .. code-tab:: csharp
 
-    var array = new Godot.Collections.Array{};
+    var array = new Godot.Collections.Array();
     array.Resize(10);
     array.Fill(0); // Initialize the 10 elements to 0.
 
@@ -703,7 +715,7 @@ Returns ``true`` if the array contains the given value.
 
  .. code-tab:: csharp
 
-    var arr = new Godot.Collections.Array{"inside", 7};
+    var arr = new Godot.Collections.Array { "inside", 7 };
     // has is renamed to Contains
     GD.Print(arr.Contains("inside")); // True
     GD.Print(arr.Contains("outside")); // False
@@ -726,7 +738,7 @@ Returns ``true`` if the array contains the given value.
  .. code-tab:: csharp
 
     // As there is no "in" keyword in C#, you have to use Contains
-    var array = new Godot.Collections.Array{2, 4, 6, 8};
+    var array = new Godot.Collections.Array { 2, 4, 6, 8 };
     if (array.Contains(2))
     {
         GD.Print("Contains!");
@@ -787,6 +799,18 @@ Returns ``true`` if the array is empty.
 :ref:`bool<class_bool>` **is_read_only** **(** **)** |const|
 
 Returns ``true`` if the array is read-only. See :ref:`make_read_only<class_Array_method_make_read_only>`. Arrays are automatically read-only if declared with ``const`` keyword.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Array_method_is_same_typed:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_same_typed** **(** :ref:`Array<class_Array>` array **)** |const|
+
+Returns ``true`` if the array is typed the same as ``array``.
 
 .. rst-class:: classref-item-separator
 
@@ -873,10 +897,20 @@ Returns the minimum value contained in the array if all elements are of comparab
 
 Returns a random value from the target array.
 
-::
+
+.. tabs::
+
+ .. code-tab:: gdscript
 
     var array: Array[int] = [1, 2, 3, 4]
     print(array.pick_random())  # Prints either of the four numbers.
+
+ .. code-tab:: csharp
+
+    var array = new Godot.Collections.Array { 1, 2, 3, 4 };
+    GD.Print(array.PickRandom()); // Prints either of the four numbers.
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -1025,20 +1059,6 @@ Searches the array in reverse order. Optionally, a start search index can be pas
 
 ----
 
-.. _class_Array_method_set_typed:
-
-.. rst-class:: classref-method
-
-void **set_typed** **(** :ref:`int<class_int>` type, :ref:`StringName<class_StringName>` class_name, :ref:`Variant<class_Variant>` script **)**
-
-Makes the **Array** typed. The ``type`` should be one of the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` constants. ``class_name`` is optional and can only be provided for :ref:`@GlobalScope.TYPE_OBJECT<class_@GlobalScope_constant_TYPE_OBJECT>`. ``script`` can only be provided if ``class_name`` is not empty.
-
-The method fails if an array is already typed.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Array_method_shuffle:
 
 .. rst-class:: classref-method
@@ -1075,7 +1095,7 @@ The absolute value of ``begin`` and ``end`` will be clamped to the array size, s
 
 If either ``begin`` or ``end`` are negative, they will be relative to the end of the array (i.e. ``arr.slice(0, -2)`` is a shorthand for ``arr.slice(0, arr.size() - 2)``).
 
-If specified, ``step`` is the relative index between source elements. It can be negative, then ``begin`` must be higher than ``end``. For example, ``[0, 1, 2, 3, 4, 5].slice(5, 1, -2)`` returns ``[5, 3]``).
+If specified, ``step`` is the relative index between source elements. It can be negative, then ``begin`` must be higher than ``end``. For example, ``[0, 1, 2, 3, 4, 5].slice(5, 1, -2)`` returns ``[5, 3]``.
 
 If ``deep`` is true, each element will be copied by value rather than by reference.
 
@@ -1106,7 +1126,9 @@ Sorts the array.
 
  .. code-tab:: csharp
 
-    // There is no sort support for Godot.Collections.Array
+    var strings = new Godot.Collections.Array { "string1", "string2", "string10", "string11" };
+    strings.Sort();
+    GD.Print(strings); // Prints [string1, string10, string11, string2]
 
 
 
@@ -1158,18 +1180,6 @@ Sorts the array using a custom method. The custom method receives two arguments 
     // There is no custom sort support for Godot.Collections.Array
 
 
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_Array_method_typed_assign:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **typed_assign** **(** :ref:`Array<class_Array>` array **)**
-
-Assigns a different **Array** to this array reference. It the array is typed, the new array's type must be compatible and its elements will be automatically converted.
 
 .. rst-class:: classref-section-separator
 

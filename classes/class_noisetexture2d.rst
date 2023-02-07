@@ -58,6 +58,8 @@ Properties
    +---------------------------------+---------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
    | :ref:`Noise<class_Noise>`       | :ref:`noise<class_NoiseTexture2D_property_noise>`                               |                                                                                        |
    +---------------------------------+---------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`normalize<class_NoiseTexture2D_property_normalize>`                       | ``true``                                                                               |
+   +---------------------------------+---------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`         | resource_local_to_scene                                                         | ``false`` (overrides :ref:`Resource<class_Resource_property_resource_local_to_scene>`) |
    +---------------------------------+---------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`         | :ref:`seamless<class_NoiseTexture2D_property_seamless>`                         | ``false``                                                                              |
@@ -211,6 +213,25 @@ If ``true``, inverts the noise texture. White becomes black, black becomes white
 - :ref:`Noise<class_Noise>` **get_noise** **(** **)**
 
 The instance of the :ref:`Noise<class_Noise>` object.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NoiseTexture2D_property_normalize:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **normalize** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_normalize** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_normalized** **(** **)**
+
+If ``true``, the noise image coming from the noise generator is normalized to the range ``0.0`` to ``1.0``.
+
+Turning normalization off can affect the contrast and allows you to generate non repeating tileable noise textures.
 
 .. rst-class:: classref-item-separator
 

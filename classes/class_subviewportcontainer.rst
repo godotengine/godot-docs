@@ -61,6 +61,8 @@ Property Descriptions
 
 If ``true``, the sub-viewport will be automatically resized to the control's size.
 
+\ **Note:** If ``true``, this will prohibit changing :ref:`SubViewport.size<class_SubViewport_property_size>` of its children manually.
+
 .. rst-class:: classref-item-separator
 
 ----

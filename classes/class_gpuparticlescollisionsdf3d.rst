@@ -23,7 +23,7 @@ Baked signed distance field 3D particle attractor affecting :ref:`GPUParticles3D
 
 Signed distance fields (SDF) allow for efficiently representing approximate collision shapes for convex and concave objects of any shape. This is more flexible than :ref:`GPUParticlesCollisionHeightField3D<class_GPUParticlesCollisionHeightField3D>`, but it requires a baking step.
 
-\ **Baking:** The signed distance field texture can be baked by selecting the **GPUParticlesCollisionSDF3D** node in the editor, then clicking **Bake SDF** at the top of the 3D viewport. Any *visible* :ref:`MeshInstance3D<class_MeshInstance3D>`\ s touching the :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>` will be taken into account for baking, regardless of their :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>`.
+\ **Baking:** The signed distance field texture can be baked by selecting the **GPUParticlesCollisionSDF3D** node in the editor, then clicking **Bake SDF** at the top of the 3D viewport. Any *visible* :ref:`MeshInstance3D<class_MeshInstance3D>`\ s within the :ref:`size<class_GPUParticlesCollisionSDF3D_property_size>` will be taken into account for baking, regardless of their :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>`.
 
 \ **Note:** Baking a **GPUParticlesCollisionSDF3D**'s :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` is only possible within the editor, as there is no bake method exposed for use in exported projects. However, it's still possible to load pre-baked :ref:`Texture3D<class_Texture3D>`\ s into its :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>` property in an exported project.
 
@@ -42,9 +42,9 @@ Properties
    +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
    | :ref:`int<class_int>`                                         | :ref:`bake_mask<class_GPUParticlesCollisionSDF3D_property_bake_mask>`   | ``4294967295``       |
    +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>`                                 | :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>`       | ``Vector3(1, 1, 1)`` |
-   +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
    | :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` | :ref:`resolution<class_GPUParticlesCollisionSDF3D_property_resolution>` | ``2``                |
+   +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                                 | :ref:`size<class_GPUParticlesCollisionSDF3D_property_size>`             | ``Vector3(2, 2, 2)`` |
    +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
    | :ref:`Texture3D<class_Texture3D>`                             | :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>`       |                      |
    +---------------------------------------------------------------+-------------------------------------------------------------------------+----------------------+
@@ -162,23 +162,6 @@ The visual layers to account for when baking the particle collision SDF. Only :r
 
 ----
 
-.. _class_GPUParticlesCollisionSDF3D_property_extents:
-
-.. rst-class:: classref-property
-
-:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
-
-.. rst-class:: classref-property-setget
-
-- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
-
-The collision SDF's extents in 3D units. To improve SDF quality, the :ref:`extents<class_GPUParticlesCollisionSDF3D_property_extents>` should be set as small as possible while covering the parts of the scene you need.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_GPUParticlesCollisionSDF3D_property_resolution:
 
 .. rst-class:: classref-property
@@ -191,6 +174,23 @@ The collision SDF's extents in 3D units. To improve SDF quality, the :ref:`exten
 - :ref:`Resolution<enum_GPUParticlesCollisionSDF3D_Resolution>` **get_resolution** **(** **)**
 
 The bake resolution to use for the signed distance field :ref:`texture<class_GPUParticlesCollisionSDF3D_property_texture>`. The texture must be baked again for changes to the :ref:`resolution<class_GPUParticlesCollisionSDF3D_property_resolution>` property to be effective. Higher resolutions have a greater performance cost and take more time to bake. Higher resolutions also result in larger baked textures, leading to increased VRAM and storage space requirements. To improve performance and reduce bake times, use the lowest resolution possible for the object you're representing the collision of.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GPUParticlesCollisionSDF3D_property_size:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+
+The collision SDF's size in 3D units. To improve SDF quality, the :ref:`size<class_GPUParticlesCollisionSDF3D_property_size>` should be set as small as possible while covering the parts of the scene you need.
 
 .. rst-class:: classref-item-separator
 

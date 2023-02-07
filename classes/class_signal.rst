@@ -209,7 +209,13 @@ Emits this signal. All :ref:`Callable<class_Callable>`\ s connected to this sign
 
 :ref:`Array<class_Array>` **get_connections** **(** **)** |const|
 
-Returns the list of :ref:`Callable<class_Callable>`\ s connected to this signal.
+Returns an :ref:`Array<class_Array>` of connections for this signal. Each connection is represented as a :ref:`Dictionary<class_Dictionary>` that contains three entries:
+
+- ``signal`` is a reference to this signal;
+
+- ``callable`` is a reference to the connected :ref:`Callable<class_Callable>`;
+
+- ``flags`` is a combination of :ref:`ConnectFlags<enum_Object_ConnectFlags>`.
 
 .. rst-class:: classref-item-separator
 

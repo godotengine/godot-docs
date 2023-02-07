@@ -54,7 +54,7 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`_recognize_path<class_ResourceFormatLoader_method__recognize_path>` **(** :ref:`String<class_String>` path, :ref:`StringName<class_StringName>` type **)** |virtual| |const|                                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`_rename_dependencies<class_ResourceFormatLoader_method__rename_dependencies>` **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` renames **)** |virtual| |const|                                            |
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_rename_dependencies<class_ResourceFormatLoader_method__rename_dependencies>` **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` renames **)** |virtual| |const|                                            |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -245,7 +245,7 @@ If it is not implemented, the default behavior returns whether the path's extens
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **_rename_dependencies** **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` renames **)** |virtual| |const|
+:ref:`Error<enum_@GlobalScope_Error>` **_rename_dependencies** **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` renames **)** |virtual| |const|
 
 If implemented, renames dependencies within the given resource and saves it. ``renames`` is a dictionary ``{ String => String }`` mapping old dependency paths to new paths.
 

@@ -33,15 +33,15 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`connect_to_peer<class_PacketPeerDTLS_method_connect_to_peer>` **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` packet_peer, :ref:`bool<class_bool>` validate_certs=true, :ref:`String<class_String>` for_hostname="", :ref:`X509Certificate<class_X509Certificate>` valid_certificate=null **)** |
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`disconnect_from_peer<class_PacketPeerDTLS_method_disconnect_from_peer>` **(** **)**                                                                                                                                                                                                             |
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Status<enum_PacketPeerDTLS_Status>` | :ref:`get_status<class_PacketPeerDTLS_method_get_status>` **(** **)** |const|                                                                                                                                                                                                                         |
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`poll<class_PacketPeerDTLS_method_poll>` **(** **)**                                                                                                                                                                                                                                             |
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`connect_to_peer<class_PacketPeerDTLS_method_connect_to_peer>` **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` packet_peer, :ref:`String<class_String>` hostname, :ref:`TLSOptions<class_TLSOptions>` client_options=null **)** |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`disconnect_from_peer<class_PacketPeerDTLS_method_disconnect_from_peer>` **(** **)**                                                                                                                                            |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Status<enum_PacketPeerDTLS_Status>` | :ref:`get_status<class_PacketPeerDTLS_method_get_status>` **(** **)** |const|                                                                                                                                                        |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`poll<class_PacketPeerDTLS_method_poll>` **(** **)**                                                                                                                                                                            |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -111,9 +111,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **connect_to_peer** **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` packet_peer, :ref:`bool<class_bool>` validate_certs=true, :ref:`String<class_String>` for_hostname="", :ref:`X509Certificate<class_X509Certificate>` valid_certificate=null **)**
+:ref:`Error<enum_@GlobalScope_Error>` **connect_to_peer** **(** :ref:`PacketPeerUDP<class_PacketPeerUDP>` packet_peer, :ref:`String<class_String>` hostname, :ref:`TLSOptions<class_TLSOptions>` client_options=null **)**
 
-Connects a ``packet_peer`` beginning the DTLS handshake using the underlying :ref:`PacketPeerUDP<class_PacketPeerUDP>` which must be connected (see :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`). If ``validate_certs`` is ``true``, **PacketPeerDTLS** will validate that the certificate presented by the remote peer and match it with the ``for_hostname`` argument. You can specify a custom :ref:`X509Certificate<class_X509Certificate>` to use for validation via the ``valid_certificate`` argument.
+Connects a ``packet_peer`` beginning the DTLS handshake using the underlying :ref:`PacketPeerUDP<class_PacketPeerUDP>` which must be connected (see :ref:`PacketPeerUDP.connect_to_host<class_PacketPeerUDP_method_connect_to_host>`). You can optionally specify the ``client_options`` to be used while verifying the TLS connections. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
 .. rst-class:: classref-item-separator
 

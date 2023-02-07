@@ -296,6 +296,20 @@ This signal can be used to handle window closing, e.g. by connecting it to :ref:
 
 ----
 
+.. _class_Window_signal_dpi_changed:
+
+.. rst-class:: classref-signal
+
+**dpi_changed** **(** **)**
+
+Emitted when the **Window**'s DPI changes as a result of OS-level changes (e.g. moving the window from a Retina display to a lower resolution one).
+
+\ **Note:** Only implemented on macOS.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Window_signal_files_dropped:
 
 .. rst-class:: classref-signal

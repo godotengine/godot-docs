@@ -30,7 +30,13 @@ Properties
    :widths: auto
 
    +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                 | :ref:`alpha_antialiasing_edge<class_Label3D_property_alpha_antialiasing_edge>`                             | ``0.0``                                                                                    |
+   +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`           | :ref:`alpha_antialiasing_mode<class_Label3D_property_alpha_antialiasing_mode>`                             | ``0``                                                                                      |
+   +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
    | :ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>`                            | :ref:`alpha_cut<class_Label3D_property_alpha_cut>`                                                         | ``0``                                                                                      |
+   +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                                 | :ref:`alpha_hash_scale<class_Label3D_property_alpha_hash_scale>`                                           | ``1.0``                                                                                    |
    +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                                 | :ref:`alpha_scissor_threshold<class_Label3D_property_alpha_scissor_threshold>`                             | ``0.5``                                                                                    |
    +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
@@ -202,6 +208,14 @@ This mode draws fully opaque pixels in the depth prepass. This is slower than :r
 
 \ **Note:** When using text with overlapping glyphs (e.g., cursive scripts), this mode might have transparency sorting issues between the main text and the outline.
 
+.. _class_Label3D_constant_ALPHA_CUT_HASH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **ALPHA_CUT_HASH** = ``3``
+
+This mode draws cuts off all values below a spatially-deterministic threshold, the rest will remain opaque.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -210,6 +224,40 @@ This mode draws fully opaque pixels in the depth prepass. This is slower than :r
 
 Property Descriptions
 ---------------------
+
+.. _class_Label3D_property_alpha_antialiasing_edge:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **alpha_antialiasing_edge** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alpha_antialiasing_edge** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_alpha_antialiasing_edge** **(** **)**
+
+Threshold at which antialiasing will be applied on the alpha channel.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label3D_property_alpha_antialiasing_mode:
+
+.. rst-class:: classref-property
+
+:ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **alpha_antialiasing_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alpha_antialiasing** **(** :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` value **)**
+- :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>` **get_alpha_antialiasing** **(** **)**
+
+The type of alpha antialiasing to apply. See :ref:`AlphaAntiAliasing<enum_BaseMaterial3D_AlphaAntiAliasing>`.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_Label3D_property_alpha_cut:
 
@@ -223,6 +271,23 @@ Property Descriptions
 - :ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **get_alpha_cut_mode** **(** **)**
 
 The alpha cutting mode to use for the sprite. See :ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` for possible values.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label3D_property_alpha_hash_scale:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **alpha_hash_scale** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alpha_hash_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_alpha_hash_scale** **(** **)**
+
+The hashing scale for Alpha Hash. Recommended values between ``0`` and ``2``.
 
 .. rst-class:: classref-item-separator
 

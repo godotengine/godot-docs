@@ -25,6 +25,8 @@ The **ReflectionProbe** is used to create high-quality reflections at a low perf
 
 \ **Note:** Unlike :ref:`VoxelGI<class_VoxelGI>` and SDFGI, **ReflectionProbe**\ s only source their environment from a :ref:`WorldEnvironment<class_WorldEnvironment>` node. If you specify an :ref:`Environment<class_Environment>` resource within a :ref:`Camera3D<class_Camera3D>` node, it will be ignored by the **ReflectionProbe**. This can lead to incorrect lighting within the **ReflectionProbe**.
 
+\ **Note:** When using the Mobile rendering method, reflection probes will only correctly affect meshes whose visibility AABB intersects with the reflection probe's AABB. If using a shader to deform the mesh in a way that makes it go outside its AABB, :ref:`GeometryInstance3D.extra_cull_margin<class_GeometryInstance3D_property_extra_cull_margin>` must be increased on the mesh. Otherwise, the reflection probe may not be visible on the mesh.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -53,8 +55,6 @@ Properties
    +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                              | :ref:`enable_shadows<class_ReflectionProbe_property_enable_shadows>`             | ``false``               |
    +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
-   | :ref:`Vector3<class_Vector3>`                        | :ref:`extents<class_ReflectionProbe_property_extents>`                           | ``Vector3(10, 10, 10)`` |
-   +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
    | :ref:`float<class_float>`                            | :ref:`intensity<class_ReflectionProbe_property_intensity>`                       | ``1.0``                 |
    +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
    | :ref:`bool<class_bool>`                              | :ref:`interior<class_ReflectionProbe_property_interior>`                         | ``false``               |
@@ -64,6 +64,8 @@ Properties
    | :ref:`float<class_float>`                            | :ref:`mesh_lod_threshold<class_ReflectionProbe_property_mesh_lod_threshold>`     | ``1.0``                 |
    +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
    | :ref:`Vector3<class_Vector3>`                        | :ref:`origin_offset<class_ReflectionProbe_property_origin_offset>`               | ``Vector3(0, 0, 0)``    |
+   +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector3<class_Vector3>`                        | :ref:`size<class_ReflectionProbe_property_size>`                                 | ``Vector3(20, 20, 20)`` |
    +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
    | :ref:`UpdateMode<enum_ReflectionProbe_UpdateMode>`   | :ref:`update_mode<class_ReflectionProbe_property_update_mode>`                   | ``0``                   |
    +------------------------------------------------------+----------------------------------------------------------------------------------+-------------------------+
@@ -115,7 +117,7 @@ enum **AmbientMode**:
 
 :ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` **AMBIENT_DISABLED** = ``0``
 
-Do not apply any ambient lighting inside the **ReflectionProbe**'s :ref:`extents<class_ReflectionProbe_property_extents>`.
+Do not apply any ambient lighting inside the **ReflectionProbe**'s :ref:`size<class_ReflectionProbe_property_size>`.
 
 .. _class_ReflectionProbe_constant_AMBIENT_ENVIRONMENT:
 
@@ -123,7 +125,7 @@ Do not apply any ambient lighting inside the **ReflectionProbe**'s :ref:`extents
 
 :ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` **AMBIENT_ENVIRONMENT** = ``1``
 
-Apply automatically-sourced environment lighting inside the **ReflectionProbe**'s :ref:`extents<class_ReflectionProbe_property_extents>`.
+Apply automatically-sourced environment lighting inside the **ReflectionProbe**'s :ref:`size<class_ReflectionProbe_property_size>`.
 
 .. _class_ReflectionProbe_constant_AMBIENT_COLOR:
 
@@ -131,7 +133,7 @@ Apply automatically-sourced environment lighting inside the **ReflectionProbe**'
 
 :ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` **AMBIENT_COLOR** = ``2``
 
-Apply custom ambient lighting inside the **ReflectionProbe**'s :ref:`extents<class_ReflectionProbe_property_extents>`. See :ref:`ambient_color<class_ReflectionProbe_property_ambient_color>` and :ref:`ambient_color_energy<class_ReflectionProbe_property_ambient_color_energy>`.
+Apply custom ambient lighting inside the **ReflectionProbe**'s :ref:`size<class_ReflectionProbe_property_size>`. See :ref:`ambient_color<class_ReflectionProbe_property_ambient_color>` and :ref:`ambient_color_energy<class_ReflectionProbe_property_ambient_color_energy>`.
 
 .. rst-class:: classref-section-separator
 
@@ -153,7 +155,7 @@ Property Descriptions
 - void **set_ambient_color** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_ambient_color** **(** **)**
 
-The custom ambient color to use within the **ReflectionProbe**'s :ref:`extents<class_ReflectionProbe_property_extents>`. Only effective if :ref:`ambient_mode<class_ReflectionProbe_property_ambient_mode>` is :ref:`AMBIENT_COLOR<class_ReflectionProbe_constant_AMBIENT_COLOR>`.
+The custom ambient color to use within the **ReflectionProbe**'s :ref:`size<class_ReflectionProbe_property_size>`. Only effective if :ref:`ambient_mode<class_ReflectionProbe_property_ambient_mode>` is :ref:`AMBIENT_COLOR<class_ReflectionProbe_constant_AMBIENT_COLOR>`.
 
 .. rst-class:: classref-item-separator
 
@@ -170,7 +172,7 @@ The custom ambient color to use within the **ReflectionProbe**'s :ref:`extents<c
 - void **set_ambient_color_energy** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_ambient_color_energy** **(** **)**
 
-The custom ambient color energy to use within the **ReflectionProbe**'s :ref:`extents<class_ReflectionProbe_property_extents>`. Only effective if :ref:`ambient_mode<class_ReflectionProbe_property_ambient_mode>` is :ref:`AMBIENT_COLOR<class_ReflectionProbe_constant_AMBIENT_COLOR>`.
+The custom ambient color energy to use within the **ReflectionProbe**'s :ref:`size<class_ReflectionProbe_property_size>`. Only effective if :ref:`ambient_mode<class_ReflectionProbe_property_ambient_mode>` is :ref:`AMBIENT_COLOR<class_ReflectionProbe_constant_AMBIENT_COLOR>`.
 
 .. rst-class:: classref-item-separator
 
@@ -187,7 +189,7 @@ The custom ambient color energy to use within the **ReflectionProbe**'s :ref:`ex
 - void **set_ambient_mode** **(** :ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` value **)**
 - :ref:`AmbientMode<enum_ReflectionProbe_AmbientMode>` **get_ambient_mode** **(** **)**
 
-The ambient color to use within the **ReflectionProbe**'s :ref:`extents<class_ReflectionProbe_property_extents>`. The ambient color will smoothly blend with other **ReflectionProbe**\ s and the rest of the scene (outside the **ReflectionProbe**'s :ref:`extents<class_ReflectionProbe_property_extents>`).
+The ambient color to use within the **ReflectionProbe**'s :ref:`size<class_ReflectionProbe_property_size>`. The ambient color will smoothly blend with other **ReflectionProbe**\ s and the rest of the scene (outside the **ReflectionProbe**'s :ref:`size<class_ReflectionProbe_property_size>`).
 
 .. rst-class:: classref-item-separator
 
@@ -246,25 +248,6 @@ If ``true``, computes shadows in the reflection probe. This makes the reflection
 
 ----
 
-.. _class_ReflectionProbe_property_extents:
-
-.. rst-class:: classref-property
-
-:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(10, 10, 10)``
-
-.. rst-class:: classref-property-setget
-
-- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
-
-The size of the reflection probe. The larger the extents, the more space covered by the probe, which will lower the perceived resolution. It is best to keep the extents only as large as you need them.
-
-\ **Note:** To better fit areas that are not aligned to the grid, you can rotate the **ReflectionProbe** node.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ReflectionProbe_property_intensity:
 
 .. rst-class:: classref-property
@@ -312,7 +295,7 @@ If ``true``, reflections will ignore sky contribution.
 
 The maximum distance away from the **ReflectionProbe** an object can be before it is culled. Decrease this to improve performance, especially when using the :ref:`UPDATE_ALWAYS<class_ReflectionProbe_constant_UPDATE_ALWAYS>` :ref:`update_mode<class_ReflectionProbe_property_update_mode>`.
 
-\ **Note:** The maximum reflection distance is always at least equal to the :ref:`extents<class_ReflectionProbe_property_extents>`. This means that decreasing :ref:`max_distance<class_ReflectionProbe_property_max_distance>` will not always cull objects from reflections, especially if the reflection probe's :ref:`extents<class_ReflectionProbe_property_extents>` are already large.
+\ **Note:** The maximum reflection distance is always at least equal to the probe's extents. This means that decreasing :ref:`max_distance<class_ReflectionProbe_property_max_distance>` will not always cull objects from reflections, especially if the reflection probe's :ref:`size<class_ReflectionProbe_property_size>` is already large.
 
 .. rst-class:: classref-item-separator
 
@@ -349,6 +332,25 @@ The automatic LOD bias to use for meshes rendered within the **ReflectionProbe**
 - :ref:`Vector3<class_Vector3>` **get_origin_offset** **(** **)**
 
 Sets the origin offset to be used when this **ReflectionProbe** is in :ref:`box_projection<class_ReflectionProbe_property_box_projection>` mode. This can be set to a non-zero value to ensure a reflection fits a rectangle-shaped room, while reducing the number of objects that "get in the way" of the reflection.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ReflectionProbe_property_size:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(20, 20, 20)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+
+The size of the reflection probe. The larger the size, the more space covered by the probe, which will lower the perceived resolution. It is best to keep the size only as large as you need it.
+
+\ **Note:** To better fit areas that are not aligned to the grid, you can rotate the **ReflectionProbe** node.
 
 .. rst-class:: classref-item-separator
 

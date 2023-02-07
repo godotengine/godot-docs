@@ -47,6 +47,18 @@ Tutorials
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`allow_transition_to_self<class_AnimationNodeStateMachine_property_allow_transition_to_self>` | ``false`` |
+   +-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
@@ -92,6 +104,28 @@ Methods
    +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                                  | :ref:`set_node_position<class_AnimationNodeStateMachine_method_set_node_position>` **(** :ref:`StringName<class_StringName>` name, :ref:`Vector2<class_Vector2>` position **)**                                                                                             |
    +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_AnimationNodeStateMachine_property_allow_transition_to_self:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **allow_transition_to_self** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_allow_transition_to_self** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_allow_transition_to_self** **(** **)**
+
+If ``true``, allows teleport to the self state with :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>`. When the reset option is enabled in :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>`, the animation is restarted. If ``false``, nothing happens on the teleportation to the self state.
 
 .. rst-class:: classref-section-separator
 

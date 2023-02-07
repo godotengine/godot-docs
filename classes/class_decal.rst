@@ -27,6 +27,8 @@ The :ref:`Texture2D<class_Texture2D>`\ s associated with the Decal are automatic
 
 \ **Note:** Decals cannot affect an underlying material's transparency, regardless of its transparency mode (alpha blend, alpha scissor, alpha hash, opaque pre-pass). This means translucent or transparent areas of a material will remain translucent or transparent even if an opaque decal is applied on them.
 
+\ **Note:** When using the Mobile rendering method, decals will only correctly affect meshes whose visibility AABB intersects with the decal's AABB. If using a shader to deform the mesh in a way that makes it go outside its AABB, :ref:`GeometryInstance3D.extra_cull_margin<class_GeometryInstance3D_property_extra_cull_margin>` must be increased on the mesh. Otherwise, the decal may not be visible on the mesh.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -48,13 +50,13 @@ Properties
    +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`         | :ref:`emission_energy<class_Decal_property_emission_energy>`             | ``1.0``               |
    +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector3<class_Vector3>`     | :ref:`extents<class_Decal_property_extents>`                             | ``Vector3(1, 1, 1)``  |
-   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`         | :ref:`lower_fade<class_Decal_property_lower_fade>`                       | ``0.3``               |
    +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
    | :ref:`Color<class_Color>`         | :ref:`modulate<class_Decal_property_modulate>`                           | ``Color(1, 1, 1, 1)`` |
    +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`         | :ref:`normal_fade<class_Decal_property_normal_fade>`                     | ``0.0``               |
+   +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector3<class_Vector3>`     | :ref:`size<class_Decal_property_size>`                                   | ``Vector3(2, 2, 2)``  |
    +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`texture_albedo<class_Decal_property_texture_albedo>`               |                       |
    +-----------------------------------+--------------------------------------------------------------------------+-----------------------+
@@ -247,23 +249,6 @@ Energy multiplier for the emission texture. This will make the decal emit light 
 
 ----
 
-.. _class_Decal_property_extents:
-
-.. rst-class:: classref-property
-
-:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
-
-.. rst-class:: classref-property-setget
-
-- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
-
-Sets the size of the :ref:`AABB<class_AABB>` used by the decal. The AABB goes from ``-extents`` to ``extents``.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Decal_property_lower_fade:
 
 .. rst-class:: classref-property
@@ -312,6 +297,23 @@ Changes the :ref:`Color<class_Color>` of the Decal by multiplying the albedo and
 Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the target surface becomes too large. A value of ``0`` projects the Decal regardless of angle, a value of ``1`` limits the Decal to surfaces that are nearly perpendicular.
 
 \ **Note:** Setting :ref:`normal_fade<class_Decal_property_normal_fade>` to a value greater than ``0.0`` has a small performance cost due to the added normal angle computations.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Decal_property_size:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+
+Sets the size of the :ref:`AABB<class_AABB>` used by the decal. The AABB goes from ``-size/2`` to ``size/2``.
 
 .. rst-class:: classref-item-separator
 

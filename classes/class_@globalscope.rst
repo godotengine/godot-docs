@@ -3417,7 +3417,7 @@ Additionally, other keywords can be included: ``"exp"`` for exponential range ed
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_ENUM** = ``2``
 
-Hints that an :ref:`int<class_int>`, :ref:`float<class_float>`, or :ref:`String<class_String>` property is an enumerated value to pick in a list specified via a hint string.
+Hints that an :ref:`int<class_int>` or :ref:`String<class_String>` property is an enumerated value to pick in a list specified via a hint string.
 
 The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. Whitespaces are **not** removed from either end of a name. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
 
@@ -6922,7 +6922,14 @@ Returns the position of the first non-zero digit, after the decimal point. Note 
 
 :ref:`String<class_String>` **str** **(** ... **)** |vararg|
 
-Converts one or more arguments of any :ref:`Variant<class_Variant>` type to :ref:`String<class_String>` in the best way possible.
+Converts one or more arguments of any :ref:`Variant<class_Variant>` type to a :ref:`String<class_String>` in the best way possible.
+
+::
+
+    var a = [10, 20, 30]
+    var b = str(a)
+    print(len(a)) # Prints 3 (the number of elements in the array).
+    print(len(b)) # Prints 12 (the length of the string "[10, 20, 30]").
 
 .. rst-class:: classref-item-separator
 

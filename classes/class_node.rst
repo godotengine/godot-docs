@@ -2104,7 +2104,7 @@ Requests that ``_ready`` be called again. Note that the method won't be called i
 
 :ref:`Error<enum_@GlobalScope_Error>` **rpc** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behavior depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>`. Methods are not exposed to RPCs by default. Returns ``null``.
+Sends a remote procedure call request for the given ``method`` to peers on the network (and locally), optionally sending all additional arguments as arguments to the method called by the RPC. The call request will only be received by nodes with the same :ref:`NodePath<class_NodePath>`, including the exact same node name. Behavior depends on the RPC configuration for the given method, see :ref:`rpc_config<class_Node_method_rpc_config>` and :ref:`@GDScript.@rpc<class_@GDScript_annotation_@rpc>`. Methods are not exposed to RPCs by default. Returns ``null``.
 
 \ **Note:** You can only safely use RPCs on clients after you received the ``connected_to_server`` signal from the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. You also need to keep track of the connection state, either by the :ref:`MultiplayerAPI<class_MultiplayerAPI>` signals like ``server_disconnected`` or by checking ``get_multiplayer().peer.get_connection_status() == CONNECTION_CONNECTED``.
 
@@ -2129,7 +2129,7 @@ Changes the RPC mode for the given ``method`` with the given ``config`` which sh
         channel = 0,
     }
 
-See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` and :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`. An alternative is annotating methods and properties with the corresponding annotation (``@rpc("any")``, ``@rpc("authority")``). By default, methods are not exposed to networking (and RPCs).
+See :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` and :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`. An alternative is annotating methods and properties with the corresponding :ref:`@GDScript.@rpc<class_@GDScript_annotation_@rpc>` annotation (``@rpc("any_peer")``, ``@rpc("authority")``). By default, methods are not exposed to networking (and RPCs).
 
 .. rst-class:: classref-item-separator
 

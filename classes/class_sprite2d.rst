@@ -345,11 +345,11 @@ Returns a :ref:`Rect2<class_Rect2>` representing the Sprite2D's boundary in loca
 
  .. code-tab:: csharp
 
-    public override void _Input(InputEvent inputEvent)
+    public override void _Input(InputEvent @event)
     {
-        if (inputEvent is InputEventMouseButton inputEventMouse)
+        if (@event is InputEventMouseButton inputEventMouse)
         {
-            if (inputEventMouse.Pressed && inputEventMouse.ButtonIndex == (int)ButtonList.Left)
+            if (inputEventMouse.Pressed && inputEventMouse.ButtonIndex == MouseButton.Left)
             {
                 if (GetRect().HasPoint(ToLocal(inputEventMouse.Position)))
                 {

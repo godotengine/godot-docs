@@ -98,11 +98,15 @@ Methods
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`audio_track_insert_key<class_Animation_method_audio_track_insert_key>` **(** :ref:`int<class_int>` track_idx, :ref:`float<class_float>` time, :ref:`Resource<class_Resource>` stream, :ref:`float<class_float>` start_offset=0, :ref:`float<class_float>` end_offset=0 **)**                         |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`audio_track_is_use_blend<class_Animation_method_audio_track_is_use_blend>` **(** :ref:`int<class_int>` track_idx **)** |const|                                                                                                                                                                       |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                       | :ref:`audio_track_set_key_end_offset<class_Animation_method_audio_track_set_key_end_offset>` **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` offset **)**                                                                                                  |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                       | :ref:`audio_track_set_key_start_offset<class_Animation_method_audio_track_set_key_start_offset>` **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`float<class_float>` offset **)**                                                                                              |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                       | :ref:`audio_track_set_key_stream<class_Animation_method_audio_track_set_key_stream>` **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`Resource<class_Resource>` stream **)**                                                                                                    |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                       | :ref:`audio_track_set_use_blend<class_Animation_method_audio_track_set_use_blend>` **(** :ref:`int<class_int>` track_idx, :ref:`bool<class_bool>` enable **)**                                                                                                                                             |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                              | :ref:`bezier_track_get_key_in_handle<class_Animation_method_bezier_track_get_key_in_handle>` **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx **)** |const|                                                                                                                            |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -651,6 +655,18 @@ Inserts an Audio Track key at the given ``time`` in seconds. The ``track_idx`` m
 
 ----
 
+.. _class_Animation_method_audio_track_is_use_blend:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **audio_track_is_use_blend** **(** :ref:`int<class_int>` track_idx **)** |const|
+
+Returns ``true`` if the track at ``idx`` will be blended with other animations.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Animation_method_audio_track_set_key_end_offset:
 
 .. rst-class:: classref-method
@@ -682,6 +698,18 @@ Sets the start offset of the key identified by ``key_idx`` to value ``offset``. 
 void **audio_track_set_key_stream** **(** :ref:`int<class_int>` track_idx, :ref:`int<class_int>` key_idx, :ref:`Resource<class_Resource>` stream **)**
 
 Sets the stream of the key identified by ``key_idx`` to value ``stream``. The ``track_idx`` must be the index of an Audio Track.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Animation_method_audio_track_set_use_blend:
+
+.. rst-class:: classref-method
+
+void **audio_track_set_use_blend** **(** :ref:`int<class_int>` track_idx, :ref:`bool<class_bool>` enable **)**
+
+Sets whether the track will be blended with other animations. If ``true``, the audio playback volume changes depending on the blend value.
 
 .. rst-class:: classref-item-separator
 

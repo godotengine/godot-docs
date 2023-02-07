@@ -605,7 +605,7 @@ Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells 
 
 :ref:`Vector2i[]<class_Vector2i>` **get_used_cells_by_id** **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` source_id=-1, :ref:`Vector2i<class_Vector2i>` atlas_coords=Vector2i(-1, -1), :ref:`int<class_int>` alternative_tile=-1 **)** |const|
 
-Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells containing a tile in the given layer. Tiles may be filtered according to their source (``source_id``), their atlas coordinates (``atlas_coords``) or alternative id (``source_id``).
+Returns a :ref:`Vector2i<class_Vector2i>` array with the positions of all cells containing a tile in the given layer. Tiles may be filtered according to their source (``source_id``), their atlas coordinates (``atlas_coords``) or alternative id (``alternative_tile``).
 
 If a parameter has it's value set to the default one, this parameter is not used to filter a cell. Thus, if all parameters have their respective default value, this method returns the same result as :ref:`get_used_cells<class_TileMap_method_get_used_cells>`.
 
@@ -683,7 +683,7 @@ Returns for the given coordinate ``coords_in_pattern`` in a :ref:`TileMapPattern
 
 Returns the centered position of a cell in the TileMap's local coordinate space. To convert the returned value into global coordinates, use :ref:`Node2D.to_global<class_Node2D_method_to_global>`. See also :ref:`local_to_map<class_TileMap_method_local_to_map>`.
 
-\ **Note:** This may not correspond to the visual position of the tile, i.e. it ignores the :ref:`TileData.texture_offset<class_TileData_property_texture_offset>` property of individual tiles.
+\ **Note:** This may not correspond to the visual position of the tile, i.e. it ignores the :ref:`TileData.texture_origin<class_TileData_property_texture_origin>` property of individual tiles.
 
 .. rst-class:: classref-item-separator
 
@@ -723,9 +723,9 @@ Sets the tile indentifiers for the cell on layer ``layer`` at coordinates ``coor
 
 - The source identifier ``source_id`` identifies a :ref:`TileSetSource<class_TileSetSource>` identifier. See :ref:`TileSet.set_source_id<class_TileSet_method_set_source_id>`,
 
-- The atlas coordinates identifier ``atlas_coords`` identifies a tile coordinates in the atlas (if the source is a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`. For :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` it should always be ``Vector2i(0, 0)``),
+- The atlas coordinates identifier ``atlas_coords`` identifies a tile coordinates in the atlas (if the source is a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`). For :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>` it should always be ``Vector2i(0, 0)``),
 
-- The alternative tile identifier ``alternative_tile`` identifies a tile alternative the source is a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`, and the scene for a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>`.
+- The alternative tile identifier ``alternative_tile`` identifies a tile alternative in the atlas (if the source is a :ref:`TileSetAtlasSource<class_TileSetAtlasSource>`), and the scene for a :ref:`TileSetScenesCollectionSource<class_TileSetScenesCollectionSource>`.
 
 If ``source_id`` is set to ``-1``, ``atlas_coords`` to ``Vector2i(-1, -1)`` or ``alternative_tile`` to ``-1``, the cell will be erased. An erased cell gets **all** its identifiers automatically set to their respective invalid values, namely ``-1``, ``Vector2i(-1, -1)`` and ``-1``.
 

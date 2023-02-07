@@ -441,15 +441,14 @@ The operation may result in an outer polygon (boundary) and inner polygon (hole)
     var polygon = PackedVector2Array([Vector2(0, 0), Vector2(100, 0), Vector2(100, 100), Vector2(0, 100)])
     var offset = Vector2(50, 50)
     polygon = Transform2D(0, offset) * polygon
-    print(polygon) # prints [Vector2(50, 50), Vector2(150, 50), Vector2(150, 150), Vector2(50, 150)]
+    print(polygon) # prints [(50, 50), (150, 50), (150, 150), (50, 150)]
 
  .. code-tab:: csharp
 
     var polygon = new Vector2[] { new Vector2(0, 0), new Vector2(100, 0), new Vector2(100, 100), new Vector2(0, 100) };
     var offset = new Vector2(50, 50);
-    // TODO: This code is not valid right now. Ping @aaronfranke about it before Godot 4.0 is out.
-    //polygon = (Vector2[]) new Transform2D(0, offset).Xform(polygon);
-    //GD.Print(polygon); // prints [Vector2(50, 50), Vector2(150, 50), Vector2(150, 150), Vector2(50, 150)]
+    polygon = new Transform2D(0, offset) * polygon;
+    GD.Print((Variant)polygon); // prints [(50, 50), (150, 50), (150, 150), (50, 150)]
 
 
 

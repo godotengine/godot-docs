@@ -35,10 +35,10 @@ As opposed to :ref:`Timer<class_Timer>`, it does not require the instantiation o
 
  .. code-tab:: csharp
 
-    public async void SomeFunction()
+    public async Task SomeFunction()
     {
         GD.Print("Timer started.");
-        await ToSignal(GetTree().CreateTimer(1.0f), "timeout");
+        await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
         GD.Print("Timer ended.");
     }
 

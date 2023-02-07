@@ -126,13 +126,13 @@ You should avoid using more than one **Tween** per object's property. If two or 
 
  .. code-tab:: csharp
 
-    private Tween tween;
+    private Tween _tween;
     
     public void Animate()
     {
-        if (tween != null)
-            tween.Kill(); // Abort the previous animation
-        tween = CreateTween();
+        if (_tween != null)
+            _tween.Kill(); // Abort the previous animation
+        _tween = CreateTween();
     }
 
 

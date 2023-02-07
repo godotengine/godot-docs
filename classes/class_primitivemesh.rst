@@ -147,7 +147,9 @@ The current :ref:`Material<class_Material>` of the primitive mesh.
 - void **set_uv2_padding** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_uv2_padding** **(** **)**
 
-If :ref:`add_uv2<class_PrimitiveMesh_property_add_uv2>` is set, specifies the padding in pixels applied along seams of the mesh. If at generation the size of the lightmap texture can't be determined, the UVs are calculated assuming a texture size of 1024x1024.
+If :ref:`add_uv2<class_PrimitiveMesh_property_add_uv2>` is set, specifies the padding in pixels applied along seams of the mesh. Lower padding values allow making better use of the lightmap texture (resulting in higher texel density), but may introduce visible lightmap bleeding along edges.
+
+If the size of the lightmap texture can't be determined when generating the mesh, UV2 is calculated assuming a texture size of 1024x1024.
 
 .. rst-class:: classref-section-separator
 

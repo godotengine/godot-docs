@@ -69,11 +69,11 @@ Here is an example on how to iterate through the files of a directory:
             {
                 if (dir.CurrentIsDir())
                 {
-                    GD.Print("Found directory: " + fileName);
+                    GD.Print($"Found directory: {fileName}");
                 }
                 else
                 {
-                    GD.Print("Found file: " + fileName);
+                    GD.Print($"Found file: {fileName}");
                 }
                 fileName = dir.GetNext();
             }

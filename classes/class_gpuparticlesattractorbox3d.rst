@@ -31,9 +31,9 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------+-------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>` | :ref:`extents<class_GPUParticlesAttractorBox3D_property_extents>` | ``Vector3(1, 1, 1)`` |
-   +-------------------------------+-------------------------------------------------------------------+----------------------+
+   +-------------------------------+-------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>` | :ref:`size<class_GPUParticlesAttractorBox3D_property_size>` | ``Vector3(2, 2, 2)`` |
+   +-------------------------------+-------------------------------------------------------------+----------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -44,18 +44,18 @@ Properties
 Property Descriptions
 ---------------------
 
-.. _class_GPUParticlesAttractorBox3D_property_extents:
+.. _class_GPUParticlesAttractorBox3D_property_size:
 
 .. rst-class:: classref-property
 
-:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
 
 .. rst-class:: classref-property-setget
 
-- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
 
-The attractor box's extents in 3D units.
+The attractor box's size in 3D units.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

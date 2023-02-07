@@ -836,8 +836,8 @@ To store a signed integer, use :ref:`store_64<class_FileAccess_method_store_64>`
         f.Seek(0); // Go back to start to read the stored value.
         ushort read1 = f.Get16(); // 65494
         ushort read2 = f.Get16(); // 121
-        short converted1 = BitConverter.ToInt16(BitConverter.GetBytes(read1), 0); // -42
-        short converted2 = BitConverter.ToInt16(BitConverter.GetBytes(read2), 0); // 121
+        short converted1 = (short)read1; // -42
+        short converted2 = (short)read2; // 121
     }
 
 

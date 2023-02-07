@@ -63,8 +63,6 @@ Methods
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`           | :ref:`range<class_@GDScript_method_range>` **(** ... **)** |vararg|                                                                                                 |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`         | :ref:`str<class_@GDScript_method_str>` **(** ... **)** |vararg|                                                                                                     |
-   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`             | :ref:`type_exists<class_@GDScript_method_type_exists>` **(** :ref:`StringName<class_StringName>` type **)**                                                         |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -201,15 +199,28 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_DIR<class_@GlobalScope_constant_PROPER
 
 **@export_enum** **(** :ref:`String<class_String>` names, ... **)** |vararg|
 
-Export a :ref:`String<class_String>` or integer property as an enumerated list of options. If the property is an integer field, then the index of the value is stored, in the same order the values are provided. You can add specific identifiers for allowed values using a colon.
+Export an :ref:`int<class_int>` or :ref:`String<class_String>` property as an enumerated list of options. If the property is an :ref:`int<class_int>`, then the index of the value is stored, in the same order the values are provided. You can add specific identifiers for allowed values using a colon. If the property is a :ref:`String<class_String>`, then the value is stored.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`.
 
 ::
 
-    @export_enum("Rebecca", "Mary", "Leah") var character_name: String
     @export_enum("Warrior", "Magician", "Thief") var character_class: int
     @export_enum("Slow:30", "Average:60", "Very Fast:200") var character_speed: int
+    @export_enum("Rebecca", "Mary", "Leah") var character_name: String
+
+If you want to set an initial value, you must specify it explicitly:
+
+::
+
+    @export_enum("Rebecca", "Mary", "Leah") var character_name: String = "Rebecca"
+
+If you want to use named GDScript enums, then use :ref:`@export<class_@GDScript_annotation_@export>` instead:
+
+::
+
+    enum CharacterName {REBECCA, MARY, LEAH}
+    @export var character_name: CharacterName
 
 .. rst-class:: classref-item-separator
 
@@ -512,7 +523,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_PLACEHOLDER_TEXT<class_@GlobalScope_co
 
 **@export_range** **(** :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`float<class_float>` step=1.0, :ref:`String<class_String>` extra_hints="", ... **)** |vararg|
 
-Export a numeric property as a range value. The range must be defined by ``min`` and ``max``, as well as an optional ``step`` and a variety of extra hints. The ``step`` defaults to ``1`` for integer properties. For floating-point numbers this value depends on your ``EditorSettings.interface/inspector/default_float_step`` setting.
+Export an :ref:`int<class_int>` or :ref:`float<class_float>` property as a range value. The range must be defined by ``min`` and ``max``, as well as an optional ``step`` and a variety of extra hints. The ``step`` defaults to ``1`` for integer properties. For floating-point numbers this value depends on your ``EditorSettings.interface/inspector/default_float_step`` setting.
 
 If hints ``"or_greater"`` and ``"or_less"`` are provided, the editor widget will not cap the value at range boundaries. The ``"exp"`` hint will make the edited values on range to change exponentially. The ``"hide_slider"`` hint will hide the slider element of the editor widget.
 
@@ -579,6 +590,8 @@ Add a custom icon to the current script. The script must be registered as a glob
 
 \ **Note:** As annotations describe their subject, the ``@icon`` annotation must be placed before the class definition and inheritance.
 
+\ **Note:** Unlike other annotations, the argument of the ``@icon`` annotation must be a string literal (constant expressions are not supported).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -603,13 +616,22 @@ Mark the following property as assigned on :ref:`Node<class_Node>`'s ready state
 
 .. rst-class:: classref-annotation
 
-**@rpc** **(** :ref:`String<class_String>` mode="", :ref:`String<class_String>` sync="", :ref:`String<class_String>` transfer_mode="", :ref:`int<class_int>` transfer_channel=0, ... **)** |vararg|
+**@rpc** **(** :ref:`String<class_String>` mode="authority", :ref:`String<class_String>` sync="call_remote", :ref:`String<class_String>` transfer_mode="unreliable", :ref:`int<class_int>` transfer_channel=0, ... **)** |vararg|
 
 Mark the following method for remote procedure calls. See :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`.
 
+The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter and all arguments can be omitted, but ``transfer_channel`` always has to be the last argument. The accepted values for ``mode`` are ``"any_peer"`` or ``"authority"``, for ``sync`` are ``"call_remote"`` or ``"call_local"`` and for ``transfer_mode`` are ``"unreliable"``, ``"unreliable_ordered"`` or ``"reliable"``.
+
 ::
 
-    @rpc()
+    @rpc
+    func fn(): pass
+    
+    @rpc("any_peer", "unreliable_ordered")
+    func fn_update_pos(): pass
+    
+    @rpc("authority", "call_remote", "unreliable", 0) # Equivalent to @rpc
+    func fn_default(): pass
 
 .. rst-class:: classref-item-separator
 
@@ -979,25 +1001,6 @@ Output:
     0.3
     0.2
     0.1
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_@GDScript_method_str:
-
-.. rst-class:: classref-method
-
-:ref:`String<class_String>` **str** **(** ... **)** |vararg|
-
-Converts one or more arguments to a :ref:`String<class_String>` in the best way possible.
-
-::
-
-    var a = [10, 20, 30]
-    var b = str(a);
-    len(a) # Returns 3
-    len(b) # Returns 12
 
 .. rst-class:: classref-item-separator
 

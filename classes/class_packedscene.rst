@@ -117,7 +117,7 @@ Properties
    :widths: auto
 
    +-------------------------------------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` | ``{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 2 }`` |
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` | ``{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 3 }`` |
    +-------------------------------------+------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
@@ -204,7 +204,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`Dictionary<class_Dictionary>` **_bundled** = ``{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 2 }``
+:ref:`Dictionary<class_Dictionary>` **_bundled** = ``{ "conn_count": 0, "conns": PackedInt32Array(), "editable_instances": [], "names": PackedStringArray(), "node_count": 0, "node_paths": [], "nodes": PackedInt32Array(), "variants": [], "version": 3 }``
 
 A dictionary representation of the scene contents.
 

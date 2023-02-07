@@ -476,27 +476,21 @@ Constant to set/get gravity vector/center in an area.
 
 Constant to set/get whether the gravity vector of an area is a direction, or a center point.
 
-.. _class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY_DISTANCE_SCALE:
+.. _class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY_POINT_UNIT_DISTANCE:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_GRAVITY_DISTANCE_SCALE** = ``4``
+:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_GRAVITY_POINT_UNIT_DISTANCE** = ``4``
 
-Constant to set/get the falloff factor for point gravity of an area. The greater this value is, the faster the strength of gravity decreases with the square of distance.
+Constant to set/get the distance at which the gravity strength is equal to the gravity controlled by :ref:`AREA_PARAM_GRAVITY<class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY>`. For example, on a planet 100 pixels in radius with a surface gravity of 4.0 px/s², set the gravity to 4.0 and the unit distance to 100.0. The gravity will have falloff according to the inverse square law, so in the example, at 200 pixels from the center the gravity will be 1.0 px/s² (twice the distance, 1/4th the gravity), at 50 pixels it will be 16.0 px/s² (half the distance, 4x the gravity), and so on.
 
-.. _class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY_POINT_ATTENUATION:
-
-.. rst-class:: classref-enumeration-constant
-
-:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_GRAVITY_POINT_ATTENUATION** = ``5``
-
-This constant was used to set/get the falloff factor for point gravity. It has been superseded by :ref:`AREA_PARAM_GRAVITY_DISTANCE_SCALE<class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY_DISTANCE_SCALE>`.
+The above is true only when the unit distance is a positive number. When the unit distance is set to 0.0, the gravity will be constant regardless of distance.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_LINEAR_DAMP_OVERRIDE_MODE:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_LINEAR_DAMP_OVERRIDE_MODE** = ``6``
+:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_LINEAR_DAMP_OVERRIDE_MODE** = ``5``
 
 Constant to set/get linear damping override mode in an area. See :ref:`AreaSpaceOverrideMode<enum_PhysicsServer2D_AreaSpaceOverrideMode>` for possible values.
 
@@ -504,7 +498,7 @@ Constant to set/get linear damping override mode in an area. See :ref:`AreaSpace
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_LINEAR_DAMP** = ``7``
+:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_LINEAR_DAMP** = ``6``
 
 Constant to set/get the linear damping factor of an area.
 
@@ -512,7 +506,7 @@ Constant to set/get the linear damping factor of an area.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_ANGULAR_DAMP_OVERRIDE_MODE** = ``8``
+:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_ANGULAR_DAMP_OVERRIDE_MODE** = ``7``
 
 Constant to set/get angular damping override mode in an area. See :ref:`AreaSpaceOverrideMode<enum_PhysicsServer2D_AreaSpaceOverrideMode>` for possible values.
 
@@ -520,7 +514,7 @@ Constant to set/get angular damping override mode in an area. See :ref:`AreaSpac
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_ANGULAR_DAMP** = ``9``
+:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_ANGULAR_DAMP** = ``8``
 
 Constant to set/get the angular damping factor of an area.
 
@@ -528,7 +522,7 @@ Constant to set/get the angular damping factor of an area.
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_PRIORITY** = ``10``
+:ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_PRIORITY** = ``9``
 
 Constant to set/get the priority (order of processing) of an area.
 

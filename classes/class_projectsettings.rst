@@ -159,17 +159,29 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/function_used_as_property<class_ProjectSettings_property_debug/gdscript/warnings/function_used_as_property>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/get_node_default_without_onready<class_ProjectSettings_property_debug/gdscript/warnings/get_node_default_without_onready>`                                                   | ``2``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/incompatible_ternary<class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary>`                                                                           | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/int_assigned_to_enum<class_ProjectSettings_property_debug/gdscript/warnings/int_assigned_to_enum>`                                                                           | ``1``                                                                                            |
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/inference_on_variant<class_ProjectSettings_property_debug/gdscript/warnings/inference_on_variant>`                                                                           | ``2``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/int_as_enum_without_cast<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_cast>`                                                                   | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/int_as_enum_without_match<class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_match>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/integer_division<class_ProjectSettings_property_debug/gdscript/warnings/integer_division>`                                                                                   | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/narrowing_conversion<class_ProjectSettings_property_debug/gdscript/warnings/narrowing_conversion>`                                                                           | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/native_method_override<class_ProjectSettings_property_debug/gdscript/warnings/native_method_override>`                                                                       | ``2``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/onready_with_export<class_ProjectSettings_property_debug/gdscript/warnings/onready_with_export>`                                                                             | ``2``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/property_used_as_function<class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/redundant_await<class_ProjectSettings_property_debug/gdscript/warnings/redundant_await>`                                                                                     | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/renamed_in_godot_4_hint<class_ProjectSettings_property_debug/gdscript/warnings/renamed_in_godot_4_hint>`                                                                     | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/return_value_discarded<class_ProjectSettings_property_debug/gdscript/warnings/return_value_discarded>`                                                                       | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -203,6 +215,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unsafe_property_access<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_property_access>`                                                                       | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unsafe_void_return<class_ProjectSettings_property_debug/gdscript/warnings/unsafe_void_return>`                                                                               | ``1``                                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_local_constant<class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant>`                                                                         | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unused_parameter<class_ProjectSettings_property_debug/gdscript/warnings/unused_parameter>`                                                                                   | ``1``                                                                                            |
@@ -235,7 +249,15 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`debug/shapes/collision/shape_color<class_ProjectSettings_property_debug/shapes/collision/shape_color>`                                                                                               | ``Color(0, 0.6, 0.7, 0.42)``                                                                     |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`                         | :ref:`debug/shapes/navigation/agent_path_color<class_ProjectSettings_property_debug/shapes/navigation/agent_path_color>`                                                                                   | ``Color(1, 0, 0, 1)``                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`debug/shapes/navigation/agent_path_point_size<class_ProjectSettings_property_debug/shapes/navigation/agent_path_point_size>`                                                                         | ``4.0``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                         | :ref:`debug/shapes/navigation/edge_connection_color<class_ProjectSettings_property_debug/shapes/navigation/edge_connection_color>`                                                                         | ``Color(1, 0, 1, 1)``                                                                            |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`debug/shapes/navigation/enable_agent_paths<class_ProjectSettings_property_debug/shapes/navigation/enable_agent_paths>`                                                                               | ``true``                                                                                         |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`debug/shapes/navigation/enable_agent_paths_xray<class_ProjectSettings_property_debug/shapes/navigation/enable_agent_paths_xray>`                                                                     | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`debug/shapes/navigation/enable_edge_connections<class_ProjectSettings_property_debug/shapes/navigation/enable_edge_connections>`                                                                     | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1299,13 +1321,9 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/lossless_compression/force_png<class_ProjectSettings_property_rendering/textures/lossless_compression/force_png>`                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_bptc<class_ProjectSettings_property_rendering/textures/vram_compression/import_bptc>`                                                                     | ``false``                                                                                        |
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2_astc<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc>`                                                                       | ``false``                                                                                        |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2>`                                                                     | ``true``                                                                                         |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc>`                                                                     | ``true``                                                                                         |
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc_bptc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/textures/webp_compression/compression_method<class_ProjectSettings_property_rendering/textures/webp_compression/compression_method>`                                                       | ``2``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1350,6 +1368,8 @@ Methods
    | void                                  | :ref:`add_property_info<class_ProjectSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` hint **)**                                                                       |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`clear<class_ProjectSettings_method_clear>` **(** :ref:`String<class_String>` name **)**                                                                                                       |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>` | :ref:`get_global_class_list<class_ProjectSettings_method_get_global_class_list>` **(** **)**                                                                                                        |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_order<class_ProjectSettings_method_get_order>` **(** :ref:`String<class_String>` name **)** |const|                                                                                       |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2113,6 +2133,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/get_node_default_without_onready:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/get_node_default_without_onready** = ``2``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when :ref:`Node.get_node<class_Node_method_get_node>` (or the shorthand ``$``) is used as default value of a class variable without the ``@onready`` annotation.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/incompatible_ternary:
 
 .. rst-class:: classref-property
@@ -2125,13 +2157,37 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
-.. _class_ProjectSettings_property_debug/gdscript/warnings/int_assigned_to_enum:
+.. _class_ProjectSettings_property_debug/gdscript/warnings/inference_on_variant:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/gdscript/warnings/int_assigned_to_enum** = ``1``
+:ref:`int<class_int>` **debug/gdscript/warnings/inference_on_variant** = ``2``
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when trying to assign an integer to a variable that expects an enum value.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a static inferred type uses a :ref:`Variant<class_Variant>` as initial value, which makes the static type to also be Variant.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_cast:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/int_as_enum_without_cast** = ``1``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when trying to use an integer as an enum without an explicit cast.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/int_as_enum_without_match:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/int_as_enum_without_match** = ``1``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when trying to use an integer as an enum when there is no matching enum member for that numeric value.
 
 .. rst-class:: classref-item-separator
 
@@ -2161,6 +2217,30 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/native_method_override:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/native_method_override** = ``2``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when a method in the script overrides a native method, because it may not behave as expected.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/onready_with_export:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/onready_with_export** = ``2``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when the ``@onready`` annotation is used together with the ``@export`` annotation, since it may not behave as expected.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/property_used_as_function:
 
 .. rst-class:: classref-property
@@ -2180,6 +2260,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 :ref:`int<class_int>` **debug/gdscript/warnings/redundant_await** = ``1``
 
 When set to ``warn`` or ``error``, produces a warning or an error respectively when a function that is not a coroutine is called with await.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/gdscript/warnings/renamed_in_godot_4_hint:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **debug/gdscript/warnings/renamed_in_godot_4_hint** = ``1``
+
+When enabled, using a property, enum, or function that was renamed since Godot 3 will produce a hint if an error occurs.
 
 .. rst-class:: classref-item-separator
 
@@ -2377,6 +2469,18 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
+.. _class_ProjectSettings_property_debug/gdscript/warnings/unsafe_void_return:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **debug/gdscript/warnings/unsafe_void_return** = ``1``
+
+When set to ``warn`` or ``error``, produces a warning or an error respectively when returning a call from a ``void`` function when such call cannot be guaranteed to be also ``void``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unused_local_constant:
 
 .. rst-class:: classref-property
@@ -2569,6 +2673,30 @@ Color of the collision shapes, visible when "Visible Collision Shapes" is enable
 
 ----
 
+.. _class_ProjectSettings_property_debug/shapes/navigation/agent_path_color:
+
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **debug/shapes/navigation/agent_path_color** = ``Color(1, 0, 0, 1)``
+
+Color to display enabled navigation agent paths when an agent has debug enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/shapes/navigation/agent_path_point_size:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **debug/shapes/navigation/agent_path_point_size** = ``4.0``
+
+Rasterized size (pixel) used to render navigation agent path points when an agent has debug enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_debug/shapes/navigation/edge_connection_color:
 
 .. rst-class:: classref-property
@@ -2576,6 +2704,30 @@ Color of the collision shapes, visible when "Visible Collision Shapes" is enable
 :ref:`Color<class_Color>` **debug/shapes/navigation/edge_connection_color** = ``Color(1, 0, 1, 1)``
 
 Color to display edge connections between navigation regions, visible when "Visible Navigation" is enabled in the Debug menu.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/shapes/navigation/enable_agent_paths:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_agent_paths** = ``true``
+
+If enabled, displays navigation agent paths when an agent has debug enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_debug/shapes/navigation/enable_agent_paths_xray:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **debug/shapes/navigation/enable_agent_paths_xray** = ``true``
+
+If enabled, displays navigation agent paths through geometry when an agent has debug enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -7182,7 +7334,7 @@ The default gravity strength in 2D (in pixels per second squared).
  .. code-tab:: csharp
 
     // Set the default gravity strength to 980.
-    PhysicsServer2D.AreaSetParam(GetViewport().FindWorld2d().Space, PhysicsServer2D.AreaParameter.Gravity, 980);
+    PhysicsServer2D.AreaSetParam(GetViewport().FindWorld2D().Space, PhysicsServer2D.AreaParameter.Gravity, 980);
 
 
 
@@ -7211,7 +7363,7 @@ The default gravity direction in 2D.
  .. code-tab:: csharp
 
     // Set the default gravity direction to `Vector2(0, 1)`.
-    PhysicsServer2D.AreaSetParam(GetViewport().FindWorld2d().Space, PhysicsServer2D.AreaParameter.GravityVector, Vector2.Down)
+    PhysicsServer2D.AreaSetParam(GetViewport().FindWorld2D().Space, PhysicsServer2D.AreaParameter.GravityVector, Vector2.Down)
 
 
 
@@ -9369,13 +9521,13 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 ----
 
-.. _class_ProjectSettings_property_rendering/textures/vram_compression/import_bptc:
+.. _class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_bptc** = ``false``
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2_astc** = ``false``
 
-If ``true``, the texture importer will import VRAM-compressed textures using the BPTC algorithm. This texture compression algorithm is only supported on desktop platforms, and only when using the Vulkan renderer.
+If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm for lower quality textures and normalmaps and Adaptable Scalable Texture Compression algorithm for high quality textures (in 4x4 block size).
 
 \ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.godot/imported/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
 
@@ -9383,41 +9535,13 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 ----
 
-.. _class_ProjectSettings_property_rendering/textures/vram_compression/import_etc:
+.. _class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc** = ``false``
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_s3tc_bptc** = ``true``
 
-If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression algorithm. This algorithm doesn't support alpha channels in textures.
-
-\ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.godot/imported/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2** = ``true``
-
-If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm. This texture compression algorithm is only supported when using the Vulkan renderer.
-
-\ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.godot/imported/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_s3tc** = ``true``
-
-If ``true``, the texture importer will import VRAM-compressed textures using the S3 Texture Compression algorithm. This algorithm is only supported on desktop platforms and consoles.
+If ``true``, the texture importer will import VRAM-compressed textures using the S3 Texture Compression algorithm (DXT1-5) for lower quality textures and the the BPTC algorithm (BC6H and BC7) for high quality textures. This algorithm is only supported on PC desktop platforms and consoles.
 
 \ **Note:** Changing this setting does *not* impact textures that were already imported before. To make this setting apply to textures that were already imported, exit the editor, remove the ``.godot/imported/`` folder located inside the project folder then restart the editor (see :ref:`application/config/use_hidden_project_data_directory<class_ProjectSettings_property_application/config/use_hidden_project_data_directory>`).
 
@@ -9690,6 +9814,30 @@ Adds a custom property info to a property. The dictionary must contain:
 void **clear** **(** :ref:`String<class_String>` name **)**
 
 Clears the whole configuration (not recommended, may break things).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_method_get_global_class_list:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary[]<class_Dictionary>` **get_global_class_list** **(** **)**
+
+Returns an :ref:`Array<class_Array>` of registered global classes. Each global class is represented as a :ref:`Dictionary<class_Dictionary>` that contains the following entries:
+
+- ``base`` is a name of the base class;
+
+- ``class`` is a name of the registered global class;
+
+- ``icon`` is a path to a custom icon of the global class, if it has any;
+
+- ``language`` is a name of a programming language in which the global class is written;
+
+- ``path`` is a path to a file containing the global class.
+
+\ **Note:** Both the script and the icon paths are local to the project filesystem, i.e. they start with ``res://``.
 
 .. rst-class:: classref-item-separator
 

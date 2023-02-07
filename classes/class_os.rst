@@ -1155,7 +1155,7 @@ Returns ``true`` if the Godot binary used to run the project is a *debug* export
 
 Returns ``false`` if the Godot binary used to run the project is a *release* export template.
 
-To check whether the Godot binary used to run the project is an export template (debug or release), use ``OS.has_feature("standalone")`` instead.
+To check whether the Godot binary used to run the project is an export template (debug or release), use ``OS.has_feature("template")`` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -1258,12 +1258,12 @@ The method takes only global paths, so you may need to use :ref:`ProjectSettings
 
  .. code-tab:: gdscript
 
-    var file_to_remove = "user://slot1.sav"
+    var file_to_remove = "user://slot1.save"
     OS.move_to_trash(ProjectSettings.globalize_path(file_to_remove))
 
  .. code-tab:: csharp
 
-    var fileToRemove = "user://slot1.sav";
+    var fileToRemove = "user://slot1.save";
     OS.MoveToTrash(ProjectSettings.GlobalizePath(fileToRemove));
 
 

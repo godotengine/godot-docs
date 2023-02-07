@@ -44,7 +44,7 @@ Accessing the settings can be done using the following methods, such as:
     settings.SetSetting("some/property", Value);
     // `settings.get("some/property", value)` also works as this class overrides `_get()` internally.
     settings.GetSetting("some/property");
-    Godot.Collections.Array listOfSettings = settings.GetPropertyList();
+    Godot.Collections.Array<Godot.Collections.Dictionary> listOfSettings = settings.GetPropertyList();
 
 
 
@@ -314,6 +314,8 @@ Properties
    | :ref:`String<class_String>`   | :ref:`interface/theme/custom_theme<class_EditorSettings_property_interface/theme/custom_theme>`                                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/theme/draw_extra_borders<class_EditorSettings_property_interface/theme/draw_extra_borders>`                                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/theme/enable_touchscreen_touch_area<class_EditorSettings_property_interface/theme/enable_touchscreen_touch_area>`                                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`interface/theme/icon_and_font_color<class_EditorSettings_property_interface/theme/icon_and_font_color>`                                                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2222,6 +2224,20 @@ The custom theme resource to use for the editor. Must be a Godot theme resource 
 :ref:`bool<class_bool>` **interface/theme/draw_extra_borders**
 
 If ``true``, draws additional borders around interactive UI elements in the editor. This is automatically enabled when using the **Black (OLED)** theme preset, as this theme preset uses a fully black background.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/theme/enable_touchscreen_touch_area:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/theme/enable_touchscreen_touch_area**
+
+If ``true``, increases the touch area for the UI elements to improve usability on touchscreen devices.
+
+\ **Note:** Defaults to ``true`` on touchscreen devices.
 
 .. rst-class:: classref-item-separator
 

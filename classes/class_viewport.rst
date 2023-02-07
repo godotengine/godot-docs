@@ -99,6 +99,8 @@ Properties
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>`                         | ``false``      |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
+   | :ref:`bool<class_bool>`                                                                       | :ref:`physics_object_picking_sort<class_Viewport_property_physics_object_picking_sort>`               | ``false``      |
+   +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`positional_shadow_atlas_16_bits<class_Viewport_property_positional_shadow_atlas_16_bits>`       | ``true``       |
    +-----------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------+
    | :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalShadowAtlasQuadrantSubdiv>` | :ref:`positional_shadow_atlas_quad_0<class_Viewport_property_positional_shadow_atlas_quad_0>`         | ``2``          |
@@ -1291,6 +1293,25 @@ If ``true``, the viewport will use a unique copy of the :ref:`World3D<class_Worl
 - :ref:`bool<class_bool>` **get_physics_object_picking** **(** **)**
 
 If ``true``, the objects rendered by viewport become subjects of mouse picking process.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Viewport_property_physics_object_picking_sort:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **physics_object_picking_sort** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_physics_object_picking_sort** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_physics_object_picking_sort** **(** **)**
+
+If ``true``, objects receive mouse picking events sorted primarily by their :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` and secondarily by their position in the scene tree. If ``false``, the order is undetermined.
+
+\ **Note:** This setting is disabled by default because of its potential expensive computational cost.
 
 .. rst-class:: classref-item-separator
 

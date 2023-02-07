@@ -38,11 +38,11 @@ Properties
    :widths: auto
 
    +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
-   | :ref:`Vector3<class_Vector3>`                                         | :ref:`extents<class_GPUParticlesCollisionHeightField3D_property_extents>`                             | ``Vector3(1, 1, 1)`` |
-   +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`bool<class_bool>`                                               | :ref:`follow_camera_enabled<class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled>` | ``false``            |
    +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` | :ref:`resolution<class_GPUParticlesCollisionHeightField3D_property_resolution>`                       | ``2``                |
+   +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
+   | :ref:`Vector3<class_Vector3>`                                         | :ref:`size<class_GPUParticlesCollisionHeightField3D_property_size>`                                   | ``Vector3(2, 2, 2)`` |
    +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
    | :ref:`UpdateMode<enum_GPUParticlesCollisionHeightField3D_UpdateMode>` | :ref:`update_mode<class_GPUParticlesCollisionHeightField3D_property_update_mode>`                     | ``0``                |
    +-----------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------+
@@ -153,23 +153,6 @@ Update the heightmap every frame. This has a significant performance cost. This 
 Property Descriptions
 ---------------------
 
-.. _class_GPUParticlesCollisionHeightField3D_property_extents:
-
-.. rst-class:: classref-property
-
-:ref:`Vector3<class_Vector3>` **extents** = ``Vector3(1, 1, 1)``
-
-.. rst-class:: classref-property-setget
-
-- void **set_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
-- :ref:`Vector3<class_Vector3>` **get_extents** **(** **)**
-
-The collision heightmap's extents in 3D units. To improve heightmap quality, :ref:`extents<class_GPUParticlesCollisionHeightField3D_property_extents>` should be set as small as possible while covering the parts of the scene you need.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_GPUParticlesCollisionHeightField3D_property_follow_camera_enabled:
 
 .. rst-class:: classref-property
@@ -201,6 +184,23 @@ Following the camera has a performance cost, as it will force the heightmap to u
 - :ref:`Resolution<enum_GPUParticlesCollisionHeightField3D_Resolution>` **get_resolution** **(** **)**
 
 Higher resolutions can represent small details more accurately in large scenes, at the cost of lower performance. If :ref:`update_mode<class_GPUParticlesCollisionHeightField3D_property_update_mode>` is :ref:`UPDATE_MODE_ALWAYS<class_GPUParticlesCollisionHeightField3D_constant_UPDATE_MODE_ALWAYS>`, consider using the lowest resolution possible.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GPUParticlesCollisionHeightField3D_property_size:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **size** = ``Vector3(2, 2, 2)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
+
+The collision heightmap's size in 3D units. To improve heightmap quality, :ref:`size<class_GPUParticlesCollisionHeightField3D_property_size>` should be set as small as possible while covering the parts of the scene you need.
 
 .. rst-class:: classref-item-separator
 

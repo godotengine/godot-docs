@@ -46,7 +46,7 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
 
  .. code-tab:: csharp
 
-    public Expression expression = new Expression();
+    private Expression _expression = new Expression();
     
     public override void _Ready()
     {
@@ -55,14 +55,14 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
     
     private void OnTextEntered(string command)
     {
-        Error error = expression.Parse(command);
+        Error error = _expression.Parse(command);
         if (error != Error.Ok)
         {
-            GD.Print(expression.GetErrorText());
+            GD.Print(_expression.GetErrorText());
             return;
         }
-        object result = expression.Execute();
-        if (!expression.HasExecuteFailed())
+        Variant result = _expression.Execute();
+        if (!_expression.HasExecuteFailed())
         {
             GetNode<LineEdit>("LineEdit").Text = result.ToString();
         }
