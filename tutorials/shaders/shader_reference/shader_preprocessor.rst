@@ -33,14 +33,16 @@ General syntax
 ^^^^^^^^^^^^^^
 
 - Preprocessor directives do not use brackets (``{}``), but can use parentheses.
-- Preprocessor directives **never** end with semicolons.
+- Preprocessor directives **never** end with semicolons (with the exception of ``#define``,
+  where this is allowed but potentially dangerous).
 - Preprocessor directives can span several lines by ending each line with a
   blackslash (``\``). The first line break *not* featuring a backslash will end
   the preprocessor statement.
 
 #define
 ^^^^^^^
-\ **Syntax:** ``#define <identifier> [replacement_code]``.
+
+**Syntax:** ``#define <identifier> [replacement_code]``.
 
 Defines the identifier after that directive as a macro, and replaces all
 successive occurrences of it with the replacement code given in the shader.
@@ -55,8 +57,9 @@ If the replacement code is not defined, the identifier may only be used with
 ``#ifdef`` or ``#ifndef`` directives.
 
 Compared to constants (``const CONSTANT = value;``), ``#define`` can be used
-anywhere within the shader. ``#define`` can also be used to insert arbitrary
-shader code at any location, while constants can't do that.
+anywhere within the shader (including in uniform hints).
+``#define`` can also be used to insert arbitrary shader code at any location,
+while constants can't do that.
 
 .. code-block:: glsl
 
@@ -64,6 +67,8 @@ shader code at any location, while constants can't do that.
 
     // Notice the lack of semicolon at the end of the line, as the replacement text
     // shouldn't insert a semicolon on its own.
+    // If the directive ends with a semicolon, the semicolon is inserted in every usage
+    // of the directive, even when this causes a syntax error.
     #define USE_MY_COLOR
     #define MY_COLOR vec3(1, 0, 0)
 
@@ -143,7 +148,7 @@ by a ``#else`` block, but **must** be ended with the ``#endif`` directive.
 Using the ``defined()`` *preprocessor function*, you can check whether the
 passed identifier is defined a by ``#define`` placed above that directive. This
 is useful for creating multiple shader versions in the same file. It may be
-continued by a `#else` block, but must be ended with the ``#endif`` directive.
+continued by a ``#else`` block, but must be ended with the ``#endif`` directive.
 
 The ``defined()`` function's result can be negated by using the ``!`` (boolean NOT)
 symbol in front of it. This can be used to check whether a define is *not* set.
@@ -250,7 +255,7 @@ Like with ``#if``, the ``defined()`` preprocessor function can be used:
 This is a shorthand for ``#if defined(...)``. Checks whether the passed
 identifier is defined by ``#define`` placed above that directive. This is useful
 for creating multiple shader versions in the same file. It may be continued by a
-``#else`` block, but must be ended with the `#endif` directive.
+``#else`` block, but must be ended with the ``#endif`` directive.
 
 .. code-block:: glsl
 
@@ -283,7 +288,7 @@ than two branches:
 **Syntax:** ``#ifndef <identifier>``
 
 This is a shorthand for ``#if !defined(...)``. Similar to ``#ifdef``, but checks
-whether the passed identifier is **not** defined by `#define` before that
+whether the passed identifier is **not** defined by ``#define`` before that
 directive.
 
 This is the exact opposite of ``#ifdef``; it will always match in situations
@@ -306,7 +311,7 @@ where ``#ifdef`` would never match, and vice versa.
 
 **Syntax:** ``#else``
 
-Defines the optional block which is included when the previously defined `#if`,
+Defines the optional block which is included when the previously defined ``#if``,
 ``#ifdef` or `#ifndef`` directive evaluates to false.
 
 .. code-block:: glsl
@@ -332,7 +337,8 @@ Used as terminator for the ``#if``, ``#`ifdef``, ``#ifndef`` or subsequent ``#el
 
 #include
 ^^^^^^^^
-\ **Syntax:** `#include "path"`.
+
+**Syntax:** ``#include "path"``
 
 The ``#include`` directive includes the *entire* content of a shader include
 file in a shader. ``"path"`` can be an absolute ``res://`` path or relative to
@@ -386,9 +392,10 @@ Example base shader (using the include file we created above):
 
 #pragma
 ^^^^^^^
-\ **Syntax:** `#pragma value`.
 
-The `#pragma` directive provides additional information to the preprocessor or compiler.
+**Syntax:** ``#pragma value``
+
+The ``#pragma`` directive provides additional information to the preprocessor or compiler.
 
 Currently, it may have only one value: ``disable_preprocessor``. If you don't need
 the preprocessor, use that directive to speed up shader compilation by excluding
