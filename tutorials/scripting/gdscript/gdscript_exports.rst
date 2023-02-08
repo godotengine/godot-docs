@@ -224,7 +224,7 @@ annotation:
 
 ::
 
-    @export_node_path(Button, TouchScreenButton) var some_button
+    @export_node_path("Button", "TouchScreenButton") var some_button
 
 Resources
 ---------
