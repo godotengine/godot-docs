@@ -57,7 +57,7 @@ Exported members can specify a default value; otherwise, the `default value of t
     private int _number; // Defaults to '0'
 
     [Export]
-    private string _text; // Defaults to 'null' becase it's a reference type
+    private string _text; // Defaults to 'null' because it's a reference type
 
     [Export]
     private string _greeting = "Hello World"; // Exported field specifies a default value
@@ -350,7 +350,7 @@ You can add explicit values using a colon:
     [Export(PropertyHint.Flags, "Self:4,Allies:8,Foes:16")]
     public int SpellTargets { get; set; } = 0;
 
-Only power of 2 values are valid as bit flags options. The lowest allowe value
+Only power of 2 values are valid as bit flags options. The lowest allowed value
 is 1, as 0 means that nothing is selected. You can also add options that are a
 combination of other flags:
 
