@@ -130,10 +130,16 @@ the linked class descriptions.
 Identifiers
 ~~~~~~~~~~~
 
-Any string that restricts itself to alphabetic characters (``a`` to
-``z`` and ``A`` to ``Z``), digits (``0`` to ``9``) and ``_`` qualifies
-as an identifier. Additionally, identifiers must not begin with a digit.
-Identifiers are case-sensitive (``foo`` is different from ``FOO``).
+Any string that restricts itself to alphabetic characters (``a`` to ``z`` and
+``A`` to ``Z``), digits (``0`` to ``9``) and ``_`` qualifies as an identifier.
+Additionally, identifiers must not begin with a digit. Identifiers are
+case-sensitive (``foo`` is different from ``FOO``).
+
+Identifiers may also contain most Unicode characters part of
+`UAX#31 <https://www.unicode.org/reports/tr31/>`__. This allows you to use
+identifier names written in languages other than English. Unicode characters
+that are considered "confusable" for ASCII characters and emoji are not allowed
+in identifiers.
 
 Keywords
 ~~~~~~~~
