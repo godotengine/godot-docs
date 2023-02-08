@@ -358,7 +358,7 @@ The speed of all rotations across the axes.
 
 :ref:`Param<enum_Generic6DOFJoint3D_Param>` **PARAM_ANGULAR_DAMPING** = ``13``
 
-The amount of rotational damping across the axes. The lower, the more dampening occurs.
+The amount of rotational damping across the axes. The lower, the more damping occurs.
 
 .. _class_Generic6DOFJoint3D_constant_PARAM_ANGULAR_RESTITUTION:
 
@@ -656,7 +656,7 @@ The minimum rotation in positive direction to break loose and rotate around the 
 - void **set_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param_y** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
 
-The amount of rotational damping across the Y axis. The lower, the more dampening occurs.
+The amount of rotational damping across the Y axis. The lower, the more damping occurs.
 
 .. rst-class:: classref-item-separator
 
@@ -792,7 +792,7 @@ The minimum rotation in positive direction to break loose and rotate around the 
 - void **set_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param_z** **(** :ref:`Param<enum_Generic6DOFJoint3D_Param>` param **)** |const|
 
-The amount of rotational damping across the Z axis. The lower, the more dampening occurs.
+The amount of rotational damping across the Z axis. The lower, the more damping occurs.
 
 .. rst-class:: classref-item-separator
 

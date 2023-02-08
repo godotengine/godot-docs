@@ -852,7 +852,7 @@ A factor that gets multiplied onto all rotations across the axes.
 
 :ref:`G6DOFJointAxisParam<enum_PhysicsServer3D_G6DOFJointAxisParam>` **G6DOF_JOINT_ANGULAR_DAMPING** = ``13``
 
-The amount of rotational damping across the axes. The lower, the more dampening occurs.
+The amount of rotational damping across the axes. The lower, the more damping occurs.
 
 .. _class_PhysicsServer3D_constant_G6DOF_JOINT_ANGULAR_RESTITUTION:
 
@@ -1314,7 +1314,7 @@ Constant to set/get a body's gravity multiplier.
 
 :ref:`BodyParameter<enum_PhysicsServer3D_BodyParameter>` **BODY_PARAM_LINEAR_DAMP_MODE** = ``6``
 
-Constant to set/get a body's linear dampening mode. See :ref:`BodyDampMode<enum_PhysicsServer3D_BodyDampMode>` for possible values.
+Constant to set/get a body's linear damping mode. See :ref:`BodyDampMode<enum_PhysicsServer3D_BodyDampMode>` for possible values.
 
 .. _class_PhysicsServer3D_constant_BODY_PARAM_ANGULAR_DAMP_MODE:
 
@@ -1322,7 +1322,7 @@ Constant to set/get a body's linear dampening mode. See :ref:`BodyDampMode<enum_
 
 :ref:`BodyParameter<enum_PhysicsServer3D_BodyParameter>` **BODY_PARAM_ANGULAR_DAMP_MODE** = ``7``
 
-Constant to set/get a body's angular dampening mode. See :ref:`BodyDampMode<enum_PhysicsServer3D_BodyDampMode>` for possible values.
+Constant to set/get a body's angular damping mode. See :ref:`BodyDampMode<enum_PhysicsServer3D_BodyDampMode>` for possible values.
 
 .. _class_PhysicsServer3D_constant_BODY_PARAM_LINEAR_DAMP:
 
@@ -1330,7 +1330,7 @@ Constant to set/get a body's angular dampening mode. See :ref:`BodyDampMode<enum
 
 :ref:`BodyParameter<enum_PhysicsServer3D_BodyParameter>` **BODY_PARAM_LINEAR_DAMP** = ``8``
 
-Constant to set/get a body's linear dampening factor.
+Constant to set/get a body's linear damping factor.
 
 .. _class_PhysicsServer3D_constant_BODY_PARAM_ANGULAR_DAMP:
 
@@ -1338,7 +1338,7 @@ Constant to set/get a body's linear dampening factor.
 
 :ref:`BodyParameter<enum_PhysicsServer3D_BodyParameter>` **BODY_PARAM_ANGULAR_DAMP** = ``9``
 
-Constant to set/get a body's angular dampening factor.
+Constant to set/get a body's angular damping factor.
 
 .. _class_PhysicsServer3D_constant_BODY_PARAM_MAX:
 

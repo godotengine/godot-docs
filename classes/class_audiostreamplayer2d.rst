@@ -19,7 +19,7 @@ Plays positional sound in 2D space.
 Description
 -----------
 
-Plays audio that dampens with distance from a given position.
+Plays audio that is attenuated with distance to the listener.
 
 By default, audio is heard from the screen center. This can be changed by adding an :ref:`AudioListener2D<class_AudioListener2D>` node to the scene and enabling it by calling :ref:`AudioListener2D.make_current<class_AudioListener2D_method_make_current>` on it.
 
@@ -144,7 +144,7 @@ Determines which :ref:`Area2D<class_Area2D>` layers affect the sound for reverb 
 - void **set_attenuation** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_attenuation** **(** **)**
 
-Dampens audio over distance with this as an exponent.
+The volume is attenuated over distance with this as an exponent.
 
 .. rst-class:: classref-item-separator
 
@@ -315,7 +315,7 @@ If ``true``, the playback is paused. You can resume it by setting ``stream_pause
 - void **set_volume_db** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_volume_db** **(** **)**
 
-Base volume without dampening.
+Base volume before attenuation.
 
 .. rst-class:: classref-section-separator
 

@@ -19,7 +19,7 @@ Plays positional sound in 3D space.
 Description
 -----------
 
-Plays a sound effect with directed sound effects, dampens with distance if needed, generates effect of hearable position in space. For greater realism, a low-pass filter is automatically applied to distant sounds. This can be disabled by setting :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>` to ``20500``.
+Plays audio with positional sound effects, based on the relative position of the audio listener. Positional effects include distance attenuation, directionality, and the Doppler effect. For greater realism, a low-pass filter is applied to distant sounds. This can be disabled by setting :ref:`attenuation_filter_cutoff_hz<class_AudioStreamPlayer3D_property_attenuation_filter_cutoff_hz>` to ``20500``.
 
 By default, audio is heard from the camera position. This can be changed by adding an :ref:`AudioListener3D<class_AudioListener3D>` node to the scene and enabling it by calling :ref:`AudioListener3D.make_current<class_AudioListener3D_method_make_current>` on it.
 
@@ -144,7 +144,7 @@ enum **AttenuationModel**:
 
 :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **ATTENUATION_INVERSE_DISTANCE** = ``0``
 
-Linear dampening of loudness according to distance.
+Attenuation of loudness according to linear distance.
 
 .. _class_AudioStreamPlayer3D_constant_ATTENUATION_INVERSE_SQUARE_DISTANCE:
 
@@ -152,7 +152,7 @@ Linear dampening of loudness according to distance.
 
 :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **ATTENUATION_INVERSE_SQUARE_DISTANCE** = ``1``
 
-Squared dampening of loudness according to distance.
+Attenuation of loudness according to squared distance.
 
 .. _class_AudioStreamPlayer3D_constant_ATTENUATION_LOGARITHMIC:
 
@@ -160,7 +160,7 @@ Squared dampening of loudness according to distance.
 
 :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **ATTENUATION_LOGARITHMIC** = ``2``
 
-Logarithmic dampening of loudness according to distance.
+Attenuation of loudness according to logarithmic distance.
 
 .. _class_AudioStreamPlayer3D_constant_ATTENUATION_DISABLED:
 
@@ -168,7 +168,7 @@ Logarithmic dampening of loudness according to distance.
 
 :ref:`AttenuationModel<enum_AudioStreamPlayer3D_AttenuationModel>` **ATTENUATION_DISABLED** = ``3``
 
-No dampening of loudness according to distance. The sound will still be heard positionally, unlike an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`. :ref:`ATTENUATION_DISABLED<class_AudioStreamPlayer3D_constant_ATTENUATION_DISABLED>` can be combined with a :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` value greater than ``0.0`` to achieve linear attenuation clamped to a sphere of a defined size.
+No attenuation of loudness according to distance. The sound will still be heard positionally, unlike an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`. :ref:`ATTENUATION_DISABLED<class_AudioStreamPlayer3D_constant_ATTENUATION_DISABLED>` can be combined with a :ref:`max_distance<class_AudioStreamPlayer3D_property_max_distance>` value greater than ``0.0`` to achieve linear attenuation clamped to a sphere of a defined size.
 
 .. rst-class:: classref-item-separator
 
@@ -241,7 +241,7 @@ Determines which :ref:`Area3D<class_Area3D>` layers affect the sound for reverb 
 - void **set_attenuation_filter_cutoff_hz** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_attenuation_filter_cutoff_hz** **(** **)**
 
-Dampens audio using a low-pass filter above this frequency, in Hz. To disable the dampening effect entirely, set this to ``20500`` as this frequency is above the human hearing limit.
+The cutoff frequency of the attenuation low-pass filter, in Hz. A sound above this frequency is attenuated more than a sound below this frequency. To disable this effect, set this to ``20500`` as this frequency is above the human hearing limit.
 
 .. rst-class:: classref-item-separator
 
@@ -345,7 +345,7 @@ Decides in which step the Doppler effect should be calculated.
 - void **set_emission_angle** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_emission_angle** **(** **)**
 
-The angle in which the audio reaches cameras undampened.
+The angle in which the audio reaches a listener unattenuated.
 
 .. rst-class:: classref-item-separator
 
@@ -362,7 +362,7 @@ The angle in which the audio reaches cameras undampened.
 - void **set_emission_angle_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_emission_angle_enabled** **(** **)**
 
-If ``true``, the audio should be dampened according to the direction of the sound.
+If ``true``, the audio should be attenuated according to the direction of the sound.
 
 .. rst-class:: classref-item-separator
 
@@ -379,7 +379,7 @@ If ``true``, the audio should be dampened according to the direction of the soun
 - void **set_emission_angle_filter_attenuation_db** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_emission_angle_filter_attenuation_db** **(** **)**
 
-Dampens audio if camera is outside of :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>` and :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>` is set by this factor, in decibels.
+Attenuation factor used if listener is outside of :ref:`emission_angle_degrees<class_AudioStreamPlayer3D_property_emission_angle_degrees>` and :ref:`emission_angle_enabled<class_AudioStreamPlayer3D_property_emission_angle_enabled>` is set, in decibels.
 
 .. rst-class:: classref-item-separator
 
@@ -548,7 +548,7 @@ The factor for the attenuation effect. Higher values make the sound audible over
 - void **set_volume_db** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_volume_db** **(** **)**
 
-The base sound level unaffected by dampening, in decibels.
+The base sound level before attenuation, in decibels.
 
 .. rst-class:: classref-section-separator
 

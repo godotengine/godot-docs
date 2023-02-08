@@ -199,7 +199,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_DIR<class_@GlobalScope_constant_PROPER
 
 **@export_enum** **(** :ref:`String<class_String>` names, ... **)** |vararg|
 
-Export an :ref:`int<class_int>` or :ref:`String<class_String>` property as an enumerated list of options. If the property is an :ref:`int<class_int>`, then the index of the value is stored, in the same order the values are provided. You can add specific identifiers for allowed values using a colon. If the property is a :ref:`String<class_String>`, then the value is stored.
+Export an :ref:`int<class_int>` or :ref:`String<class_String>` property as an enumerated list of options. If the property is an :ref:`int<class_int>`, then the index of the value is stored, in the same order the values are provided. You can add explicit values using a colon. If the property is a :ref:`String<class_String>`, then the value is stored.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`.
 
@@ -280,6 +280,27 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_FLAGS<class_@GlobalScope_constant_PROP
 ::
 
     @export_flags("Fire", "Water", "Earth", "Wind") var spell_elements = 0
+
+You can add explicit values using a colon:
+
+::
+
+    @export_flags("Self:4", "Allies:8", "Foes:16") var spell_targets = 0
+
+You can also combine several flags:
+
+::
+
+    @export_flags("Self:4", "Allies:8", "Self and Allies:12", "Foes:16")
+    var spell_targets = 0
+
+\ **Note:** A flag value must be at least ``1`` and at most ``2 ** 32 - 1``.
+
+\ **Note:** Unlike :ref:`@export_enum<class_@GDScript_annotation_@export_enum>`, the previous explicit value is not taken into account. In the following example, A is 16, B is 2, C is 4.
+
+::
+
+    @export_flags("A:16", "B", "C") var x
 
 .. rst-class:: classref-item-separator
 

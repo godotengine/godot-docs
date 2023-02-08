@@ -682,7 +682,7 @@ Constant to set/get a body's gravity multiplier.
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_LINEAR_DAMP_MODE** = ``6``
 
-Constant to set/get a body's linear dampening mode. See :ref:`BodyDampMode<enum_PhysicsServer2D_BodyDampMode>` for possible values.
+Constant to set/get a body's linear damping mode. See :ref:`BodyDampMode<enum_PhysicsServer2D_BodyDampMode>` for possible values.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_ANGULAR_DAMP_MODE:
 
@@ -690,7 +690,7 @@ Constant to set/get a body's linear dampening mode. See :ref:`BodyDampMode<enum_
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_ANGULAR_DAMP_MODE** = ``7``
 
-Constant to set/get a body's angular dampening mode. See :ref:`BodyDampMode<enum_PhysicsServer2D_BodyDampMode>` for possible values.
+Constant to set/get a body's angular damping mode. See :ref:`BodyDampMode<enum_PhysicsServer2D_BodyDampMode>` for possible values.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_LINEAR_DAMP:
 
@@ -698,7 +698,7 @@ Constant to set/get a body's angular dampening mode. See :ref:`BodyDampMode<enum
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_LINEAR_DAMP** = ``8``
 
-Constant to set/get a body's linear dampening factor.
+Constant to set/get a body's linear damping factor.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_ANGULAR_DAMP:
 
@@ -706,7 +706,7 @@ Constant to set/get a body's linear dampening factor.
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_ANGULAR_DAMP** = ``9``
 
-Constant to set/get a body's angular dampening factor.
+Constant to set/get a body's angular damping factor.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_MAX:
 

@@ -119,7 +119,7 @@ Property Descriptions
 - void **set_damping** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_damping** **(** **)**
 
-The default amount of dampening applied to the Jiggle joints, if they are not overridden. Higher values lead to more of the calculated velocity being applied.
+The default amount of damping applied to the Jiggle joints, if they are not overridden. Higher values lead to more of the calculated velocity being applied.
 
 .. rst-class:: classref-item-separator
 
@@ -394,7 +394,7 @@ Sets the bone index, ``bone_idx``, of the Jiggle joint at ``joint_idx``. When po
 
 void **set_jiggle_joint_damping** **(** :ref:`int<class_int>` joint_idx, :ref:`float<class_float>` damping **)**
 
-Sets the amount of dampening of the Jiggle joint at ``joint_idx``.
+Sets the amount of damping of the Jiggle joint at ``joint_idx``.
 
 .. rst-class:: classref-item-separator
 

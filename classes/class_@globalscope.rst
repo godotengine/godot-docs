@@ -3419,7 +3419,7 @@ Additionally, other keywords can be included: ``"exp"`` for exponential range ed
 
 Hints that an :ref:`int<class_int>` or :ref:`String<class_String>` property is an enumerated value to pick in a list specified via a hint string.
 
-The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. Whitespaces are **not** removed from either end of a name. For integer and float properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
+The hint string is a comma separated list of names such as ``"Hello,Something,Else"``. Whitespaces are **not** removed from either end of a name. For integer properties, the first name in the list has value 0, the next 1, and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"Zero,One,Three:3,Four,Six:6"``.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_ENUM_SUGGESTION:
 
@@ -3453,7 +3453,13 @@ Hints that a vector property should allow its components to be linked. For examp
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_FLAGS** = ``6``
 
-Hints that an :ref:`int<class_int>` property is a bitmask with named bit flags. For example, to allow toggling bits 0, 1, 2 and 4, the hint could be something like ``"Bit0,Bit1,Bit2,,Bit4"``.
+Hints that an :ref:`int<class_int>` property is a bitmask with named bit flags.
+
+The hint string is a comma separated list of names such as ``"Bit0,Bit1,Bit2,Bit3"``. Whitespaces are **not** removed from either end of a name. The first name in the list has value 1, the next 2, then 4, 8, 16 and so on. Explicit values can also be specified by appending ``:integer`` to the name, e.g. ``"A:4,B:8,C:16"``. You can also combine several flags (``"A:4,B:8,AB:12,C:16"``).
+
+\ **Note:** A flag value must be at least ``1`` and at most ``2 ** 32 - 1``.
+
+\ **Note:** Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`, the previous explicit value is not taken into account. For the hint ``"A:16,B,C"``, A is 16, B is 2, C is 4.
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_2D_RENDER:
 

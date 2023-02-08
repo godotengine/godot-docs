@@ -169,7 +169,7 @@ Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to disable a meth
 
 :ref:`RPCMode<enum_MultiplayerAPI_RPCMode>` **RPC_MODE_ANY_PEER** = ``1``
 
-Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely by any peer. Analogous to the ``@rpc("any")`` annotation. Calls are accepted from all remote peers, no matter if they are node's authority or not.
+Used with :ref:`Node.rpc_config<class_Node_method_rpc_config>` to set a method to be callable remotely by any peer. Analogous to the ``@rpc("any_peer")`` annotation. Calls are accepted from all remote peers, no matter if they are node's authority or not.
 
 .. _class_MultiplayerAPI_constant_RPC_MODE_AUTHORITY:
 
