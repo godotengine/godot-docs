@@ -105,6 +105,14 @@ of *printable* (visible) ASCII characters.
 Make sure the **Character Ranges** option doesn't exceed the number of
 **Columns** × **Rows** defined. Otherwise, the font will fail to import.
 
+If your font image contains margins not used for font glyphs (such as
+attribution information), try adjusting **Image Margin**. This is a margin
+applied only once around the whole image.
+
+If your font image contains guides (in the form of lines between glyphs) or
+if spacing between characters appears incorrect, try adjusting **Character
+Margin**. This margin is applied for every imported glyph.
+
 Loading a font file
 -------------------
 
@@ -202,6 +210,15 @@ best quality, at the cost of longer rasterization times.
 
 Changing antialiasing, hinting and subpixel positioning has the most visible
 effect at smaller font sizes.
+
+.. warning::
+
+   Fonts that have a pixel art appearance should have their subpixel positioning
+   mode set to **Disabled**. Otherwise, the font may appear to have uneven pixel
+   sizes.
+
+   This step is not required for bitmap fonts, as subpixel positioning is only
+   relevant for dynamic fonts (which are usually made of vector elements).
 
 .. _doc_using_fonts_mipmaps:
 
