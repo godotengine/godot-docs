@@ -21,7 +21,7 @@ A Viewport creates a different view into the screen, or a sub-view inside anothe
 
 Optionally, a viewport can have its own 2D or 3D world, so they don't share what they draw with other viewports.
 
-If a viewport is a child of a :ref:`ViewportContainer<class_ViewportContainer>`, it will automatically take up its size, otherwise it must be set manually.
+If a viewport is a child of a :ref:`ViewportContainer<class_ViewportContainer>`, the viewport will automatically take up the viewportcontainer's size, otherwise it must be set manually.
 
 Viewports can also choose to be audio listeners, so they generate positional audio depending on a 2D or 3D camera child of it.
 
