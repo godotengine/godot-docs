@@ -412,11 +412,11 @@ Scripting
 :ref:`C#: <toc-learn-scripting-C#>`
 
 - Packaged in a separate binary to keep file sizes and dependencies down.
-- Uses Mono 6.x.
+- Uses .NET 6.
 
-   - Full support for the C# 8.0 syntax and features.
+   - Full support for the C# 10.0 syntax and features.
 
-- Supports all platforms.
+- Supports Windows, Linux and macOS.
 - Using an external editor is recommended to benefit from IDE functionality.
 
 **GDExtension (C, C++, Rust, D, ...):**

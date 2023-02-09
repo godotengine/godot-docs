@@ -172,7 +172,7 @@ use the following labels:
    merge conflicts and its author is not active anymore. However, it can still
    be picked up by an external contributor to bring it to a mergeable state.
    To do so, you need to open a new pull request based on the original pull request.
--  *Topic:Mono*: the issue is about C# support in Godot.
+-  *Topic:Dotnet*: the issue is about C# support in Godot.
 -  *Topic:Website*: the issue relates to the Sphinx/Read the Docs frontend or backend,
    not the documentation contents.
 
