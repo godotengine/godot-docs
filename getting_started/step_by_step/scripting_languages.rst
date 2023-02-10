@@ -109,14 +109,14 @@ thanks to a generous donation from Microsoft.
 C# offers a good tradeoff between performance and ease of use, although you
 should be aware of its garbage collector.
 
-.. note:: You must use the Mono edition of the Godot editor to script in C#. You
+.. note:: You must use the .NET edition of the Godot editor to script in C#. You
           can download it on the Godot website's `download
           <https://godotengine.org/download/>`_ page.
 
-Since Godot uses the `Mono <https://mono-project.com>`_ .NET runtime, in theory,
-you can use any third-party .NET library or framework in Godot, as well as any
-Common Language Infrastructure-compliant programming language, such as F#, Boo,
-or ClojureCLR. However, C# is the only officially supported .NET option.
+Since Godot uses .NET 6, in theory, you can use any third-party .NET library or
+framework in Godot, as well as any Common Language Infrastructure-compliant
+programming language, such as F#, Boo, or ClojureCLR. However, C# is the only
+officially supported .NET option.
 
 .. note:: GDScript code itself doesn't execute as fast as compiled C# or C++.
           However, most script code calls functions written with fast algorithms
