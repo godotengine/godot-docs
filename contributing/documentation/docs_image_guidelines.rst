@@ -41,8 +41,7 @@ Linux programs will support saving screenshots in this format, macOS and the
 Snip & Sketch program on Windows do not. For images that don't need editing,
 such as precise cropping or adding outlines, Squoosh can be used.
 `Squoosh <https://squoosh.app/>`_ is a converter developed by Google, is open
-source, and doesn't give Google any image rights by using it. There is also a
-experimental CLI version which can be found `here <https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli>`_.
+source, and doesn't give Google any image rights by using it.
 
 If you already have an image editor such as GIMP, Krita or Photoshop installed
 it may have the ability to open an image then save it as a WebP file.
@@ -61,7 +60,7 @@ have cropping built in it's not always easy to get something precise. And while
 Krita is designed as a painting program the cropping tool gives you pixel precision
 by default. Of course, feel free to use a different program you are familiar with.
 
-If you've never used Krita before download it from the `official website <https://krita.org/en/download/krita-desktop/>`_,
+If you've never used Krita before download it from the `official Krita website <https://krita.org/en/download/krita-desktop/>`_,
 on Linux you may also be able to download it from your distributions repository,
 flathub is also an option. Once it's installed on your computer open Krita then
 open the image you want to crop. This button on the left panel is the crop tool.
@@ -108,7 +107,7 @@ Outlines arrows and text
 Sometimes an image needs something extra to properly direct the readers
 attention, or make something clear. Outlines and arrows can be used
 for this purpose. For these types of edits Inkscape is the recommended open
-source program, it can be downloaded `here <https://inkscape.org/release/inkscape-1.2.1/>`_.
+source program, it can be downloaded from the `official Inkscape website <https://inkscape.org/release/inkscape-1.2.1/>`_.
 Like Krita, if you're on linux you can also check your distributions repository
 or get it from Flathub.
 

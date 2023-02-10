@@ -137,7 +137,7 @@ There are 2 ways to use OBJ meshes in Godot:
   expects as mesh (such as GPUParticles3D). This is the default mode.
 - Change their import mode to **OBJ as Scene** in the Import dock then restart
   the editor. This allows you to use the same import options as glTF or Collada
-  scenes, such as unwrapping UV2 on import (for :ref:`doc_baked_lightmaps`).
+  scenes, such as unwrapping UV2 on import (for :ref:`doc_using_lightmap_gi`).
 
 .. note::
 
