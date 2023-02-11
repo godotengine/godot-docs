@@ -573,10 +573,10 @@ Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contain
 
  .. code-tab:: csharp
 
-    for (int i = 0; i < GetSlideCount(); i++)
+    for (int i = 0; i < GetSlideCollisionCount(); i++)
     {
         KinematicCollision2D collision = GetSlideCollision(i);
-        GD.Print("Collided with: ", (collision.Collider as Node).Name);
+        GD.Print("Collided with: ", (collision.GetCollider() as Node).Name);
     }
 
 
