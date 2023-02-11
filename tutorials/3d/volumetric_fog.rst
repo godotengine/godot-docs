@@ -204,6 +204,8 @@ the following properties in FogMaterial:
   of the FogVolume. This can be used to vary fog density within the FogVolume
   with any kind of static pattern. For animated effects, consider using a custom
   :ref:`fog shader <doc_fog_shader>`.
+  You can import any image as a 3D texture by
+  :ref:`changing its import type in the Import dock <doc_importing_images_changing_import_type>`.
 
 Custom FogVolume shaders
 ------------------------
