@@ -234,8 +234,8 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
  .. code-tab:: gdscript GDScript
 
    func _physics_process(delta):
-       #...
-       # Iterate through all collisions that occurred this frame
+        #...
+        # Iterate through all collisions that occurred this frame
         # in C this would be for(int i = 0; i < collisions.Count; i++)
         for index in range(get_slide_collision_count()):
             # We get one of the collisions with the player
@@ -288,7 +288,7 @@ the :ref:`CharacterBody3D <class_CharacterBody3D>` class and are related to
 :ref:`KinematicCollision3D<class_KinematicCollision3D>` object that holds
 information about where and how the collision occurred. For example, we use its
 ``get_collider`` property to check if we collided with a "mob" by calling
-``is_in_group()`` on it: ``collision.get_collider(index).is_in_group("mob")``.
+``is_in_group()`` on it: ``collision.get_collider().is_in_group("mob")``.
 
 .. note::
 
