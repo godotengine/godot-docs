@@ -217,7 +217,7 @@ So let's initialize an array of floats and create a storage buffer:
     Buffer.BlockCopy(input, 0, inputBytes, 0, inputBytes.Length);
 
     // Create a storage buffer that can hold our float values.
-    // Each float has 4 byte (32 bit) so 10 x 4 = 40 bytes
+    // Each float has 4 bytes (32 bit) so 10 x 4 = 40 bytes
     var buffer = rd.StorageBufferCreate((uint)inputBytes.Length, inputBytes);
 
 With the buffer in place we need to tell the rendering device to use this
