@@ -26,25 +26,25 @@ In scripts the following helper functions can be used to work with the navigatio
  .. code-tab:: gdscript GDScript
     
     func change_layers():
-        var region : NavigationRegion3D = get_node("NavigationRegion3D)
+        var region : NavigationRegion3D = get_node("NavigationRegion3D")
         # enables 4-th layer for this region
-        region.navigation = enable_bitmask_inx(region.navigation, 4)
+        region.navigation_layers = enable_bitmask_inx(region.navigation_layers, 4)
         # disables 1-rst layer for this region
-        region.navigation = disable_bitmask_inx(region.navigation, 1)
-    
-        var agent : NavigationAgent3D = get_node("NavigationAgent3D)
-        # make future path queries of this agent ignore regions with 4-th layer
-        agent.navigation = disable_bitmask_inx(agent.navigation, 4)
+        region.navigation_layers = disable_bitmask_inx(region.navigation_layers, 1)
         
-        var path_query_layers : int = 0
-        path_query_layers = enable_bitmask_inx(path_layers, 2)
+        var agent : NavigationAgent3D = get_node("NavigationAgent3D")
+        # make future path queries of this agent ignore regions with 4-th layer
+        agent.navigation_layers = disable_bitmask_inx(agent.navigation_layers, 4)
+        
+        var path_query_navigation_layers : int = 0
+        path_query_navigation_layers = enable_bitmask_inx(path_query_navigation_layers, 2)
         # get a path that only considers 2-nd layer regions
         var path : PoolVector3Array = NavigationServer3D.map_get_path(
             map,
             start_position,
             target_position,
             true,
-            path_query_layers
+            path_query_navigation_layers
             )
     
     static func is_bitmask_inx_enabled(_bitmask : int, _index : int) -> bool:
