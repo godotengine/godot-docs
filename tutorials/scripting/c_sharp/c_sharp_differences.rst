@@ -567,7 +567,7 @@ GDScript              C#
 ====================  ==============================================================
 
 The ``Signal`` type implements the awaitable pattern which means it can be used with
-the ``await`` keyword. See :ref:`_doc_c_sharp_differences_await`.
+the ``await`` keyword. See :ref:`doc_c_sharp_differences_await`.
 
 Instead of using the ``Signal`` type, the recommended way to use Godot signals in C# is
 to use the generated C# events. See :ref:`doc_c_sharp_signals`.
