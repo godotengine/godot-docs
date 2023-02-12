@@ -45,7 +45,7 @@ Godot supports the following dynamic font formats:
 - TrueType Font or Collection (``.ttf``, ``.ttc``)
 - OpenType Font or Collection (``.otf``, ``.otc``)
 - Web Open Font Format 1 (``.woff``)
-- Web Open Font Format 2 (``.woff2``, since Godot 4.0)
+- Web Open Font Format 2 (``.woff2``, since Godot 3.5)
 
 While ``.woff`` and especially ``.woff2`` tend to result in smaller file sizes,
 there is no universally "better" font format. In most situations, it's
@@ -127,6 +127,19 @@ font file in question:
 
 You can also drag-and-drop a font file from the FileSystem dock to the inspector
 property that accepts a Font resource.
+
+.. warning::
+
+   In Godot 4.0 and later, texture filter and repeat properties are defined in
+   the location where the texture is used, rather than on the texture itself.
+   This also applies to fonts (both dynamic fonts and bitmap fonts).
+
+   Fonts that have a pixel art appearance should have bilinear filtering disabled
+   by changing the **Rendering > Textures > Canvas Textures > Default Texture Filter**
+   project setting to **Nearest**. Otherwise, the font may appear to look blurry.
+
+   The texture filter mode can also be set on individual nodes that inherit from CanvasItem
+   by setting :ref:`CanvasItem.texture_filter <class_CanvasItem_property_texture_filter>`.
 
 Advanced font features
 ----------------------
