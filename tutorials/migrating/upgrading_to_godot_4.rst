@@ -564,9 +564,9 @@ The most notable examples of this are:
   before, replace ``call_group(...)`` with
   ``call_group_flags(SceneTree.GROUP_CALL_DEFERRED, ...)`` (and do the same with
   ``set_group()`` and ``notify_group()`` respectively).
-- The ``rotation_degrees`` property was removed in favor of ``rotation`` property,
-  which is still in radians but is automatically displayed as degrees in the
-  editor. This breaks animations, as these are not converted automatically by the
+- Instead of ``rotation_degrees``, the ``rotation`` property is exposed to the 
+  editor, which is automatically displayed as degrees in the Inspector 
+  dock. This may break animations, as the conversion is not handled automatically by the
   conversion tool.
 - :ref:`class_AABB`'s ``has_no_surface()`` was inverted and renamed to ``has_surface()``.
 - :ref:`class_AABB` and :ref:`class_Rect2`'s ``has_no_area()`` was inverted and
@@ -694,7 +694,7 @@ ArrayMesh resource again.
 List of automatically renamed methods, properties, signals and constants
 ------------------------------------------------------------------------
 
-The `editor/project_converter_3_to_4.cpp <https://github.com/godotengine/godot/blob/master/editor/project_converter_3_to_4.cpp>`__
+The `editor/renames_map_3_to_4.cpp <https://github.com/godotengine/godot/blob/master/editor/renames_map_3_to_4.cpp>`__
 source file lists all automatic renames performed by the project upgrade tool.
 Lines that are commented out refer to API renames that :ref:`cannot be performed automatically <doc_upgrading_to_godot_4_manual_rename>`.
 
