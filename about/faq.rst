@@ -9,7 +9,7 @@ Frequently asked questions
 What can I do with Godot? How much does it cost? What are the license terms?
 ----------------------------------------------------------------------------
 
-Godot is `Free and Open-Source Software <https://en.wikipedia.org/wiki/Free_and_open-source_software>`_
+Godot is `Free and open source Software <https://en.wikipedia.org/wiki/Free_and_open source_software>`_
 available under the `OSI-approved <https://opensource.org/licenses/MIT>`_ MIT license. This means it is
 free as in "free speech" as well as in "free beer."
 
@@ -43,6 +43,7 @@ Which platforms are supported by Godot?
 * macOS
 * Linux, \*BSD
 * Android (experimental)
+* `Web <https://editor.godotengine.org/>`__ (experimental)
 
 **For exporting your games:**
 
@@ -54,14 +55,15 @@ Which platforms are supported by Godot?
 * Web
 
 Both 32- and 64-bit binaries are supported where it makes sense, with 64
-being the default.
+being the default. Official macOS builds support Apple Silicon natively as well as x86_64.
 
 Some users also report building and using Godot successfully on ARM-based
 systems with Linux, like the Raspberry Pi.
 
-Additionally, there is some unofficial third-party work being done on building
-for some consoles. However, none of this is included in the default build
-scripts or export templates at this time.
+The Godot team can't provide an open source console export due to the licensing
+terms imposed by console manufacturers. Regardless of the engine you use,
+though, releasing games on consoles is always a lot of work. You can read more
+on that here: :ref:`doc_consoles`
 
 For more on this, see the sections on :ref:`exporting <toc-learn-workflow-export>`
 and :ref:`compiling Godot yourself <toc-devel-compiling>`.
@@ -81,7 +83,7 @@ way of developing your games.
 
 Note that C# support is still relatively new, and as such, you may encounter some
 issues along the way. Our friendly and hard-working development community is always
-ready to tackle new problems as they arise, but since this is an open-source project,
+ready to tackle new problems as they arise, but since this is an open source project,
 we recommend that you first do some due diligence yourself. Searching through
 discussions on `open issues <https://github.com/godotengine/godot/issues>`_ is a
 great way to start your troubleshooting.
@@ -102,8 +104,8 @@ If you've ever written anything in a language like Python before, then you'll fe
 right at home. For examples and a complete overview of the power GDScript offers
 you, check out the :ref:`GDScript scripting guide <doc_gdscript>`.
 
-There are several reasons to use GDScript--especially when you are prototyping, in
-alpha/beta stages of your project, or are not creating the next AAA title--but the
+There are several reasons to use GDScript, especially when you are prototyping, in
+alpha/beta stages of your project, or are not creating the next AAA title. The
 most salient reason is the overall **reduction of complexity**.
 
 The original intent of creating a tightly integrated, custom scripting language for
@@ -114,7 +116,7 @@ the dimensionality of issues, and allows the developers of the engine to focus o
 bugs and improving features related to the engine core--rather than spending a lot of time
 trying to get a small set of incremental features working across a large set of languages.
 
-Since Godot is an open-source project, it was imperative from the start to prioritize a
+Since Godot is an open source project, it was imperative from the start to prioritize a
 more integrated and seamless experience over attracting additional users by supporting
 more familiar programming languages--especially when supporting those more familiar
 languages would result in a worse experience. We understand if you would rather use
@@ -159,37 +161,27 @@ GDScript was designed to curtail the issues above, and more.
 What 3D model formats does Godot support?
 -----------------------------------------
 
-Godot supports the following formats:
-
-- glTF 2.0 *(recommended)*
-- Collada
-- OBJ
-- FBX (static meshes only)
-
-FBX support is the fruit of reverse engineering via the Open Asset Import library.
-However, FBX is proprietary so we recommend using other formats listed above,
-if suitable for your workflow.
-
-You can find more detailed information on supported formats, and how to export
-and import them for Godot :ref:`here <doc_importing_3d_scenes>`.
+You can find detailed information on supported formats, how to export them from
+your 3D DCC, and how to import them for Godot in the
+:ref:`doc_importing_3d_scenes` documentation.
 
 Will [insert closed SDK such as FMOD, GameWorks, etc.] be supported in Godot?
 -----------------------------------------------------------------------------
 
-The aim of Godot is to create a free and open-source MIT-licensed engine that
+The aim of Godot is to create a free and open source MIT-licensed engine that
 is modular and extendable. There are no plans for the core engine development
 community to support any third-party, closed-source/proprietary SDKs, as integrating
 with these would go against Godot's ethos.
 
-That said, because Godot is open-source and modular, nothing prevents you or
+That said, because Godot is open source and modular, nothing prevents you or
 anyone else interested in adding those libraries as a module and shipping your
-game with them--as either open- or closed-source.
+game with them, as either open- or closed-source.
 
 To see how support for your SDK of choice could still be provided, look at the
 Plugins question below.
 
 If you know of a third-party SDK that is not supported by Godot but that offers
-free and open-source integration, consider starting the integration work yourself.
+free and open source integration, consider starting the integration work yourself.
 Godot is not owned by one person; it belongs to the community, and it grows along
 with ambitious community contributors like you.
 
@@ -388,7 +380,7 @@ information.
 I would like to contribute! How can I get started?
 --------------------------------------------------
 
-Awesome! As an open-source project, Godot thrives off of the innovation and
+Awesome! As an open source project, Godot thrives off of the innovation and
 the ambition of developers like you.
 
 The best way to start contributing to Godot is by using it and reporting
@@ -419,13 +411,13 @@ There may be other, perhaps better, ways to achieve the desired result that comm
 could suggest. And you can learn if other users experience the same issue, and figure out
 a good solution together.
 
-If you come up with a well-defined idea for the engine, feel free to open a 
+If you come up with a well-defined idea for the engine, feel free to open a
 `proposal issue <https://github.com/godotengine/godot-proposals/issues>`_.
 Try to be specific and concrete while describing your problem and your proposed
 solution — only actionable proposals can be considered. It is not required, but
 if you want to implement it yourself, that's always appreciated!
 
-If you only have a general idea without specific details, you can open a 
+If you only have a general idea without specific details, you can open a
 `proposal discussion <https://github.com/godotengine/godot-proposals/discussions>`_.
 These can be anything you want, and allow for a free-form discussion in search of
 a solution. Once you find one, a proposal issue can be opened.

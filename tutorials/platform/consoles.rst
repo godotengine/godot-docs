@@ -28,6 +28,9 @@ to a console platform is as follows:
 Due to the complexity of the process, the budget to publish a game by yourself on a
 single console often exceeds $1,000 (this is a rough figure).
 
+You can read more about the console publishing process in this article:
+`Godot and consoles, all you need to know <https://godotengine.org/article/godot-consoles-all-you-need-know/>`__
+
 Official support
 ----------------
 

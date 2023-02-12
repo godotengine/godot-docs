@@ -169,13 +169,13 @@ is required in the submission form here as well.
     The URL to your asset's icon (which will be used as a thumbnail
     in the AssetLib search results and on the asset's page). Should be an image
     in either the PNG or JPG format.
-    
+
     The **icon** must be square (1:1 aspect ratio). It should have a minimum
     resolution of 128×128 pixels.
-  
+
 * **License**:
     The license under which you are distributing the asset. The list
-    includes a variety of free and open-source software licenses, such as GPL
+    includes a variety of free and open source software licenses, such as GPL
     (v2 and v3), MIT, BSD and Boost Software License. You can visit `OpenSource.org <https://opensource.org>`_
     for a detailed description of each of the listed licenses.
 * **Description**:
