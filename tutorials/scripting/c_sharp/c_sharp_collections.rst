@@ -13,7 +13,7 @@ The main difference between the `.NET collections <https://learn.microsoft.com/e
 and the Godot collections is that the .NET collections are implemented in C# while
 the Godot collections are implemented in C++ and the Godot C# API is a wrapper over it,
 this is an important distinction since it means every operation on a Godot collection
-requires marshaling which can be expensive specially inside in a loop.
+requires marshaling which can be expensive especially inside a loop.
 
 Due to the performance implications, using Godot collections is only recommended
 when absolutely necessary (such as interacting with the Godot API). Godot only
