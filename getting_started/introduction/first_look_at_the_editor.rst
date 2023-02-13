@@ -25,7 +25,7 @@ ones, and more.
 .. image:: img/editor_intro_project_manager.webp
 
 At the top of the window, there is another tab named "Templates". You can search
-for demo projects in the open-source asset library, which includes many projects
+for demo projects in the open source asset library, which includes many projects
 developed by the community.
 
 .. seealso:: To learn the project manager's ins and outs, read
@@ -120,7 +120,7 @@ auto-completion, and built-in code reference.
 
 .. image:: img/editor_intro_workspace_script.webp
 
-Finally, the **AssetLib** is a library of free and open-source add-ons, scripts,
+Finally, the **AssetLib** is a library of free and open source add-ons, scripts,
 and assets to use in your projects.
 
 .. image:: img/editor_intro_workspace_assetlib.webp
@@ -139,7 +139,7 @@ signal by any one of the following methods:
 * Pressing :kbd:`F1` (or :kbd:`Alt + Space` on macOS) anywhere in the editor.
 * Clicking the "Search Help" button in the top-right of the Script main screen.
 * Clicking on the Help menu and Search Help.
-* Clicking while pressing the :kbd:`Ctrl` key on a class name, function name, 
+* Clicking while pressing the :kbd:`Ctrl` key on a class name, function name,
   or built-in variable in the script editor.
 
 
