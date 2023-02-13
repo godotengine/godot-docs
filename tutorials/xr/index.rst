@@ -21,6 +21,7 @@ Advanced topics
    :name: openxr-advanced-topics
 
    xr_action_map
+   xr_room_scale
    openxr_hand_tracking
 
 .. note:
