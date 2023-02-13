@@ -83,12 +83,12 @@ NavigationServer2D and a NavigationAgent2D for path movement.
         Leave enough margin between the navpolygon edges and collision objects to not get path
         following actors repeatedly stuck on collision.
 
-#. Add a CharacterBody2D below the region node with a basic collision shape and a sprite or mesh
+#. Add a CharacterBody2D node in the scene with a basic collision shape and a sprite or mesh
    for visuals.
 
 #. Add a NavigationAgent2D node below the character node.
 
-   .. image:: img/nav_2d_min_setup_step3.png
+   .. image:: img/nav_2d_min_setup_step3.webp
 
 #. Add the following script to the CharacterBody2D node. We make sure to set a movement target
    after the scene has fully loaded and the NavigationServer had time to sync.

@@ -91,11 +91,11 @@ a NavigationAgent3D for path movement.
 
    .. image:: img/nav_3d_min_setup_step3.png
 
-#. Add a CharacterBody3D below the region node with a basic collision shape and some mesh for visuals.
+#. Add a CharacterBody3D node in the scene with a basic collision shape and some mesh for visuals.
 
 #. Add a NavigationAgent3D node below the character node.
 
-   .. image:: img/nav_3d_min_setup_step4.png
+   .. image:: img/nav_3d_min_setup_step4.webp
 
 #. Add a script to the CharacterBody3D node with the following content. We make sure to set a
    movement target after the scene has fully loaded and the NavigationServer had time to sync.
