@@ -92,6 +92,10 @@ Under ``_ready()``, create a new Array.
   .. code-tab:: gdscript GDScript
 
     var surface_array = []
+  
+  .. code-tab:: csharp C#
+
+    var surfaceArray = new Godot.Collections.Array();
 
 This will be the array that we keep our surface information in - it will hold
 all the arrays of data that the surface needs. Godot will expect it to be of
@@ -102,6 +106,11 @@ size ``Mesh.ARRAY_MAX``, so resize it accordingly.
 
     var surface_array = []
     surface_array.resize(Mesh.ARRAY_MAX)
+  
+ .. code-tab:: csharp C#
+
+    var surfaceArray = new Godot.Collections.Array();
+    surfaceArray.Resize((int)Mesh.ArrayType.Max);
 
 Next create the arrays for each data type you will use.
 
@@ -112,6 +121,13 @@ Next create the arrays for each data type you will use.
     var uvs = PackedVector2Array()
     var normals = PackedVector3Array()
     var indices = PackedInt32Array()
+
+ .. code-tab:: csharp C#
+
+    var verts = new Vector3[] { };
+    var uvs = new Vector2[] { };
+    var normals = new Vector3[] { };
+    var indices = new int[] { };
 
 Once you have filled your data arrays with your geometry you can create a mesh
 by adding each array to ``surface_array`` and then committing to the mesh.
@@ -125,6 +141,19 @@ by adding each array to ``surface_array`` and then committing to the mesh.
     surface_array[Mesh.ARRAY_INDEX] = indices
 
     mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array) # No blendshapes, lods, or compression used.
+
+ .. code-tab:: csharp C#
+
+    surfaceArray[(int)Mesh.ArrayType.Vertex] = verts;
+    surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs;
+    surfaceArray[(int)Mesh.ArrayType.Normal] = normals;
+    surfaceArray[(int)Mesh.ArrayType.Index] = indices;
+
+    var arrMesh = Mesh as ArrayMesh;
+    if (arrMesh != null)
+    {
+        arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray); // No blendshapes, lods, or compression used.
+    }
 
 .. note:: In this example, we used ``Mesh.PRIMITIVE_TRIANGLES``, but you can use any primitive type
           available from mesh.
@@ -158,6 +187,40 @@ Put together, the full code looks like:
 
         # Create mesh surface from mesh array.
         mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array) # No blendshapes, lods, or compression used.
+
+ .. code-tab:: csharp C#
+
+    public partial class ArrayMeshInstance : MeshInstance3D
+    {
+        public override void _Ready()
+        {
+            var surfaceArray = new Godot.Collections.Array();
+            surfaceArray.Resize((int)Mesh.ArrayType.Max);
+
+            // Arrays for mesh construction
+            var verts = new Vector3[] { };
+            var uvs = new Vector2[] { };
+            var normals = new Vector3[] { };
+            var indices = new int[] { };
+
+            /***********************************
+              * Insert code here to generate mesh
+              * *********************************/
+
+            // Assign arrays to surface array
+            surfaceArray[(int)Mesh.ArrayType.Vertex] = verts;
+            surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs;
+            surfaceArray[(int)Mesh.ArrayType.Normal] = normals;
+            surfaceArray[(int)Mesh.ArrayType.Index] = indices;
+
+            var arrMesh = Mesh as ArrayMesh;
+            if (arrMesh != null)
+            {
+                // Create mesh surface from mesh array
+                arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray); // No blendshapes, lods, or compression used.
+            }
+        }
+    }
 
 
 The code that goes in the middle can be whatever you want. Below we will present some
@@ -233,6 +296,90 @@ that you find online.
 
       # Insert committing to the ArrayMesh here.
 
+ .. code-tab:: csharp C#
+
+    public partial class ArrayMeshInstance : MeshInstance3D
+    {
+        public override void _Ready()
+        {
+            // Insert setting up the surface array here.
+
+            var vertList = new List<Vector3>();
+            var uvList = new List<Vector2>();
+            var normalList = new List<Vector3>();
+            var indexList = new List<int>();
+
+            var rings = 50;
+            var radialSegments = 50;
+            var height = 1;
+            var radius = 1;
+
+            // Vertex indices.
+            var thisRow = 0;
+            var prevRow = 0;
+            var point = 0;
+
+            // Loop over rings.
+            for (var i = 0; i < rings + 1; i++)
+            {
+                var v = ((float)i) / rings;
+                var w = Mathf.Sin(Mathf.Pi * v);
+                var y = Mathf.Cos(Mathf.Pi * v);
+
+                // Loop over segments in ring.
+                for (var j = 0; j < radialSegments; j++)
+                {
+                    var u = ((float)j) / radialSegments;
+                    var x = Mathf.Sin(u * Mathf.Pi * 2);
+                    var z = Mathf.Cos(u * Mathf.Pi * 2);
+                    var vert = new Vector3(x * radius * w, y, z * radius * w);
+                    vertList.Add(vert);
+                    normalList.Add(vert.Normalized());
+                    uvList.Add(new Vector2(u, v));
+                    point += 1;
+
+                    // Create triangles in ring using indices.
+                    if (i > 0 && j > 0)
+                    {
+                        indexList.Add(prevRow + j - 1);
+                        indexList.Add(prevRow + j);
+                        indexList.Add(thisRow + j - 1);
+
+                        indexList.Add(prevRow + j);
+                        indexList.Add(thisRow + j);
+                        indexList.Add(thisRow + j - 1);
+                    }
+                }
+
+                if (i > 0)
+                {
+                    indexList.Add(prevRow + radialSegments - 1);
+                    indexList.Add(prevRow);
+                    indexList.Add(thisRow + radialSegments - 1);
+
+                    indexList.Add(prevRow);
+                    indexList.Add(prevRow + radialSegments);
+                    indexList.Add(thisRow + radialSegments - 1);
+                }
+
+                prevRow = thisRow;
+                thisRow = point;
+            }
+
+            var verts = vertList.ToArray();
+            var uvs = uvList.ToArray();
+            var normals = normalList.ToArray();
+            var indices = indexList.ToArray();
+
+            surfaceArray[(int)Mesh.ArrayType.Vertex] = verts;
+            surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs;
+            surfaceArray[(int)Mesh.ArrayType.Normal] = normals;
+            surfaceArray[(int)Mesh.ArrayType.Index] = indices;
+
+            // Insert committing to the ArrayMesh here.
+        }
+    }
+
 Saving
 ------
 
@@ -244,3 +391,8 @@ This is useful when you want to generate a mesh and then use it later without ha
 
     # Saves mesh to a .tres file with compression enabled.
     ResourceSaver.save(mesh, "res://sphere.tres", ResourceSaver.FLAG_COMPRESS)
+
+ .. code-tab:: csharp C#
+
+    // Saves mesh to a .tres file with compression enabled.
+    ResourceSaver.Save(Mesh, "res://sphere.tres", ResourceSaver.SaverFlags.Compress);
