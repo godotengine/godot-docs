@@ -124,10 +124,10 @@ Next create the arrays for each data type you will use.
 
  .. code-tab:: csharp C#
 
-    var verts = new Vector3[] { };
-    var uvs = new Vector2[] { };
-    var normals = new Vector3[] { };
-    var indices = new int[] { };
+    var vertList = new List<Vector3>();
+    var uvList = new List<Vector2>();
+    var normalList = new List<Vector3>();
+    var indexList = new List<int>();
 
 Once you have filled your data arrays with your geometry you can create a mesh
 by adding each array to ``surface_array`` and then committing to the mesh.
@@ -144,6 +144,11 @@ by adding each array to ``surface_array`` and then committing to the mesh.
 
  .. code-tab:: csharp C#
 
+    var verts = vertList.ToArray();
+    var uvs = uvList.ToArray();
+    var normals = normalList.ToArray();
+    var indices = indexList.ToArray();
+    
     surfaceArray[(int)Mesh.ArrayType.Vertex] = verts;
     surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs;
     surfaceArray[(int)Mesh.ArrayType.Normal] = normals;
@@ -197,15 +202,21 @@ Put together, the full code looks like:
             var surfaceArray = new Godot.Collections.Array();
             surfaceArray.Resize((int)Mesh.ArrayType.Max);
 
-            // Arrays for mesh construction
-            var verts = new Vector3[] { };
-            var uvs = new Vector2[] { };
-            var normals = new Vector3[] { };
-            var indices = new int[] { };
+            // C# arrays cannot be resized or expanded, so use Lists to create geometry.
+            var vertList = new List<Vector3>();
+            var uvList = new List<Vector2>();
+            var normalList = new List<Vector3>();
+            var indexList = new List<int>();
 
             /***********************************
-              * Insert code here to generate mesh
-              * *********************************/
+            * Insert code here to generate mesh.
+            * *********************************/
+
+            // Convert lists to arrays for mesh construction.
+            var verts = vertList.ToArray();
+            var uvs = uvList.ToArray();
+            var normals = normalList.ToArray();
+            var indices = indexList.ToArray();
 
             // Assign arrays to surface array
             surfaceArray[(int)Mesh.ArrayType.Vertex] = verts;
@@ -302,12 +313,7 @@ that you find online.
     {
         public override void _Ready()
         {
-            // Insert setting up the surface array here.
-
-            var vertList = new List<Vector3>();
-            var uvList = new List<Vector2>();
-            var normalList = new List<Vector3>();
-            var indexList = new List<int>();
+            // Insert setting up the surface array and lists here.
 
             var rings = 50;
             var radialSegments = 50;
@@ -365,16 +371,6 @@ that you find online.
                 prevRow = thisRow;
                 thisRow = point;
             }
-
-            var verts = vertList.ToArray();
-            var uvs = uvList.ToArray();
-            var normals = normalList.ToArray();
-            var indices = indexList.ToArray();
-
-            surfaceArray[(int)Mesh.ArrayType.Vertex] = verts;
-            surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs;
-            surfaceArray[(int)Mesh.ArrayType.Normal] = normals;
-            surfaceArray[(int)Mesh.ArrayType.Index] = indices;
 
             // Insert committing to the ArrayMesh here.
         }
