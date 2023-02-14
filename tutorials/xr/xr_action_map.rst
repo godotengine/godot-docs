@@ -135,11 +135,10 @@ For instance, we can define an action ``Shoot`` and the input bound to that acti
 You can also poll the current state of an action.
 :ref:`XRController3D <class_xrcontroller3d>` for instance has an ``is_button_pressed`` method.
 
-Actions can be used for both input and output.
-Each action has a type that defines the type of input or output it can operate on.
+Actions can be used for both input and output and each action has a type that defines its behavior.
 
-* The type ``Bool`` is used for discrete input like buttons.
-* The type ``Float`` is used for analogue inputs like triggers.
+* The ``Bool`` type is used for discrete input like buttons.
+* The ``Float`` type is used for analogue input like triggers.
 
 These two are special as they are the only ones that are interchangeable.
 OpenXR will handle conversions between ``Bool`` and ``Float`` inputs and actions.
@@ -151,12 +150,12 @@ It emits the ``input_float_changed`` signal when changed.
   This threshold is currently managed exclusively by the XR runtime.
   There are plans to extend Godot to provide some level of control over these thresholds in the future.
 
-The type ``Vector2`` defines the input as an axis input.
+The ``Vector2`` type defines the input as an axis input.
 Touchpads, thumbsticks and similar inputs are exposed as vectors.
 You can get the value of a ``Vector2`` type action by calling the method ``get_vector2`` on your :ref:`XRController3D <class_xrcontroller3d>` node.
 It emits the ``input_vector2_changed`` signal when changed.
 
-The type ``Pose`` defines a spatially tracked input.
+The ``Pose`` type defines a spatially tracked input.
 Multiple "pose" inputs are available in OpenXR: ``aim``, ``grip`` and ``palm``.
 Your :ref:`XRController3D <class_xrcontroller3d>` node is automatically positioned based on the pose action assigned to ``pose`` property of this node.
 More about poses later.
@@ -168,7 +167,7 @@ More about poses later.
   It is thus always present if hand tracking is supported.
   You don't need to bind actions to this pose to use it.
 
-Finally, the only output type ``Haptic`` allows us to set the intensity of haptic feedback, such as controller vibration.
+Finally, the only output type is ``Haptic`` and it allows us to set the intensity of haptic feedback, such as controller vibration.
 Controllers can have multiple haptic outputs and support for haptic vests is coming to OpenXR.
 
 So lets add an action for our aim pose, we do this by clicking on the ``+`` button for our action set:
@@ -337,7 +336,7 @@ It is likely that we would want to use the left hand thumbstick for a different 
 
 In developing your game/application you have to account for the possibility that the user changes the binding and binds the movement to the left hand thumbstick. 
 
-Also note that our shoot and grab boolean actions are linked to inputs of type ``float``.
+Also note that our shoot and grab boolean actions are linked to inputs of type ``Float``.
 As mentioned before OpenXR will do conversions between the two, but do read the warning given on that subject earlier in this document.
 
 .. note::
