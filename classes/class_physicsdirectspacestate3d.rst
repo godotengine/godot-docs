@@ -43,7 +43,7 @@ Methods
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedFloat32Array<class_PackedFloat32Array>`   | :ref:`cast_motion<class_PhysicsDirectSpaceState3D_method_cast_motion>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters **)**                                               |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector2Array[]<class_PackedVector2Array>` | :ref:`collide_shape<class_PhysicsDirectSpaceState3D_method_collide_shape>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)**     |
+   | :ref:`PackedVector3Array[]<class_PackedVector3Array>` | :ref:`collide_shape<class_PhysicsDirectSpaceState3D_method_collide_shape>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)**     |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                   | :ref:`get_rest_info<class_PhysicsDirectSpaceState3D_method_get_rest_info>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters **)**                                           |
    +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -83,7 +83,7 @@ Returns an array with the safe and unsafe proportions (between 0 and 1) of the m
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector2Array[]<class_PackedVector2Array>` **collide_shape** **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)**
+:ref:`PackedVector3Array[]<class_PackedVector3Array>` **collide_shape** **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)**
 
 Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` object, against the space. The resulting array contains a list of points where the shape intersects another. Like with :ref:`intersect_shape<class_PhysicsDirectSpaceState3D_method_intersect_shape>`, the number of returned results can be limited to save processing time.
 

@@ -12,7 +12,7 @@ NavigationServer2D
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Server interface for low-level 2D navigation access
+Server interface for low-level 2D navigation access.
 
 .. rst-class:: classref-introduction-group
 

@@ -400,7 +400,7 @@ Returns the spacing for the given ``type`` (see :ref:`SpacingType<enum_TextServe
 
 :ref:`Vector2<class_Vector2>` **get_string_size** **(** :ref:`String<class_String>` text, :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` alignment=0, :ref:`float<class_float>` width=-1, :ref:`int<class_int>` font_size=16, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3, :ref:`Direction<enum_TextServer_Direction>` direction=0, :ref:`Orientation<enum_TextServer_Orientation>` orientation=0 **)** |const|
 
-Returns the size of a bounding box of a single-line string, taking kerning and advance into account. See also :ref:`get_multiline_string_size<class_Font_method_get_multiline_string_size>` and :ref:`draw_string<class_Font_method_draw_string>`.
+Returns the size of a bounding box of a single-line string, taking kerning, advance and subpixel positioning into account. See also :ref:`get_multiline_string_size<class_Font_method_get_multiline_string_size>` and :ref:`draw_string<class_Font_method_draw_string>`.
 
 For example, to get the string size as displayed by a single-line Label, use:
 
@@ -417,6 +417,8 @@ For example, to get the string size as displayed by a single-line Label, use:
     Vector2 stringSize = label.GetThemeFont("font").GetStringSize(label.Text, HorizontalAlignment.Left, -1, label.GetThemeFontSize("font_size"));
 
 
+
+\ **Note:** Since kerning, advance and subpixel positioning are taken into account by :ref:`get_string_size<class_Font_method_get_string_size>`, using separate :ref:`get_string_size<class_Font_method_get_string_size>` calls on substrings of a string then adding the results together will return a different result compared to using a single :ref:`get_string_size<class_Font_method_get_string_size>` call on the full string.
 
 \ **Note:** Real height of the string is context-dependent and can be significantly different from the value returned by :ref:`get_height<class_Font_method_get_height>`.
 

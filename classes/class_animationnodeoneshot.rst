@@ -21,6 +21,41 @@ Description
 
 A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. This node will execute a sub-animation and return once it finishes. Blend times for fading in and out can be customized, as well as filters.
 
+After setting the request and changing the animation playback, the one-shot node automatically clears the request on the next process frame by setting its ``request`` value to :ref:`ONE_SHOT_REQUEST_NONE<class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_NONE>`.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # Play child animation connected to "shot" port.
+    animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+    
+    # Abort child animation connected to "shot" port.
+    animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT
+    
+    # Get current state (read-only).
+    animation_tree.get("parameters/OneShot/active"))
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/active"]
+
+ .. code-tab:: csharp
+
+    // Play child animation connected to "shot" port.
+    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+    
+    // Abort child animation connected to "shot" port.
+    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
+    
+    // Get current state (read-only).
+    animationTree.Get("parameters/OneShot/active");
+
+
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -73,7 +108,7 @@ enum **OneShotRequest**:
 
 :ref:`OneShotRequest<enum_AnimationNodeOneShot_OneShotRequest>` **ONE_SHOT_REQUEST_NONE** = ``0``
 
-
+The default state of the request. Nothing is done.
 
 .. _class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_FIRE:
 
@@ -81,7 +116,7 @@ enum **OneShotRequest**:
 
 :ref:`OneShotRequest<enum_AnimationNodeOneShot_OneShotRequest>` **ONE_SHOT_REQUEST_FIRE** = ``1``
 
-
+The request to play the animation connected to "shot" port.
 
 .. _class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_ABORT:
 
@@ -89,7 +124,7 @@ enum **OneShotRequest**:
 
 :ref:`OneShotRequest<enum_AnimationNodeOneShot_OneShotRequest>` **ONE_SHOT_REQUEST_ABORT** = ``2``
 
-
+The request to stop the animation connected to "shot" port.
 
 .. rst-class:: classref-item-separator
 
@@ -107,7 +142,7 @@ enum **MixMode**:
 
 :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **MIX_MODE_BLEND** = ``0``
 
-
+Blends two animations. See also :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`.
 
 .. _class_AnimationNodeOneShot_constant_MIX_MODE_ADD:
 
@@ -115,7 +150,7 @@ enum **MixMode**:
 
 :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **MIX_MODE_ADD** = ``1``
 
-
+Blends two animations additively. See also :ref:`AnimationNodeAdd2<class_AnimationNodeAdd2>`.
 
 .. rst-class:: classref-section-separator
 
@@ -138,6 +173,8 @@ Property Descriptions
 - :ref:`bool<class_bool>` **has_autorestart** **(** **)**
 
 If ``true``, the sub-animation will restart automatically after finishing.
+
+In other words, to start auto restarting, the animation must be played once with the :ref:`ONE_SHOT_REQUEST_FIRE<class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_FIRE>` request. The :ref:`ONE_SHOT_REQUEST_ABORT<class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_ABORT>` request stops the auto restarting, but it does not disable the :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` itself. So, the :ref:`ONE_SHOT_REQUEST_FIRE<class_AnimationNodeOneShot_constant_ONE_SHOT_REQUEST_FIRE>` request will start auto restarting again.
 
 .. rst-class:: classref-item-separator
 
@@ -188,9 +225,7 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 - void **set_fadein_time** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_fadein_time** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The fade-in duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a crossfade that starts at 0 second and ends at 1 second during the animation.
 
 .. rst-class:: classref-item-separator
 
@@ -207,9 +242,7 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 - void **set_fadeout_time** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_fadeout_time** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The fade-out duration. For example, setting this to ``1.0`` for a 5 second length animation will produce a crossfade that starts at 4 second and ends at 5 second during the animation.
 
 .. rst-class:: classref-item-separator
 
@@ -226,9 +259,7 @@ If :ref:`autorestart<class_AnimationNodeOneShot_property_autorestart>` is ``true
 - void **set_mix_mode** **(** :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` value **)**
 - :ref:`MixMode<enum_AnimationNodeOneShot_MixMode>` **get_mix_mode** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The blend type.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

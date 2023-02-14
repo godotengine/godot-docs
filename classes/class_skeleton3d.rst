@@ -703,7 +703,7 @@ Sets the global pose transform, ``pose``, for the bone at ``bone_idx``.
 
 \ ``amount`` is the interpolation strength that will be used when applying the pose, and ``persistent`` determines if the applied pose will remain.
 
-\ **Note:** The pose transform needs to be a global pose! To convert a world transform from a :ref:`Node3D<class_Node3D>` to a global bone pose, multiply the :ref:`Transform3D.affine_inverse<class_Transform3D_method_affine_inverse>` of the node's :ref:`Node3D.global_transform<class_Node3D_property_global_transform>` by the desired world transform
+\ **Note:** The pose transform needs to be a global pose! To convert a world transform from a :ref:`Node3D<class_Node3D>` to a global bone pose, multiply the :ref:`Transform3D.affine_inverse<class_Transform3D_method_affine_inverse>` of the node's :ref:`Node3D.global_transform<class_Node3D_property_global_transform>` by the desired world transform.
 
 .. rst-class:: classref-item-separator
 

@@ -25,6 +25,8 @@ The VisibleOnScreenNotifier2D detects when it is visible on the screen. It also 
 
 If you want nodes to be disabled automatically when they exit the screen, use :ref:`VisibleOnScreenEnabler2D<class_VisibleOnScreenEnabler2D>` instead.
 
+\ **Note:** VisibleOnScreenNotifier2D uses the render culling code to determine whether it's visible on screen, which also means that its :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` must be ``true`` to work correctly.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

@@ -593,8 +593,8 @@ Returns the index of the **first** occurrence of ``what`` in this string, or ``-
     GD.Print("Team".Find("I")); // Prints -1
     
     GD.Print("Potato".Find("t"));    // Prints 2
-    GD.print("Potato".Find("t", 3)); // Prints 4
-    GD.print("Potato".Find("t", 5)); // Prints -1
+    GD.Print("Potato".Find("t", 3)); // Prints 4
+    GD.Print("Potato".Find("t", 5)); // Prints -1
 
 
 
@@ -644,6 +644,8 @@ Some additional handling is performed when ``values`` is an :ref:`Array<class_Ar
     print("User {id} is {name}.".format([["id", 42], ["name", "Godot"]]))
 
 See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
+
+\ **Note:** In C#, it's recommended to `interpolate strings with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`__, instead.
 
 .. rst-class:: classref-item-separator
 
@@ -1060,7 +1062,7 @@ Returns the concatenation of ``parts``' elements, with each element separated by
     var fruits = new string[] {"Apple", "Orange", "Pear", "Kiwi"};
     
     // In C#, this method is static.
-    GD.Print(string.Join(", ", fruits);   // Prints "Apple, Orange, Pear, Kiwi"
+    GD.Print(string.Join(", ", fruits));  // Prints "Apple, Orange, Pear, Kiwi"
     GD.Print(string.Join("---", fruits)); // Prints "Apple---Orange---Pear---Kiwi"
 
 
@@ -2001,9 +2003,7 @@ Returns ``true`` if this **String** is not equivalent to the given :ref:`StringN
 
 :ref:`String<class_String>` **operator %** **(** :ref:`Variant<class_Variant>` right **)**
 
-Formats the **String**, replacing the placeholders with one or more parameters.
-
-To pass multiple parameters, ``right`` needs to be an :ref:`Array<class_Array>`.
+Formats the **String**, replacing the placeholders with one or more parameters. To pass multiple parameters, ``right`` needs to be an :ref:`Array<class_Array>`.
 
 ::
 
@@ -2014,9 +2014,9 @@ To pass multiple parameters, ``right`` needs to be an :ref:`Array<class_Array>`.
     var speed = 40.3485
     print(my_message % [location, speed]) # Prints "Travelling to Deep Valley, at 40.35 km/h."
 
-In C#, there is no direct equivalent to this operator. Use the :ref:`format<class_String_method_format>` method, instead.
-
 For more information, see the :doc:`GDScript format strings <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
+
+\ **Note:** In C#, this operator is not available. Instead, see `how to interpolate strings with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -2040,9 +2040,7 @@ Appends ``right`` at the end of this **String**, also known as a string concaten
 
 :ref:`String<class_String>` **operator +** **(** :ref:`StringName<class_StringName>` right **)**
 
-.. container:: contribute
-
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Appends ``right`` at the end of this **String**, returning a **String**. This is also known as a string concatenation.
 
 .. rst-class:: classref-item-separator
 

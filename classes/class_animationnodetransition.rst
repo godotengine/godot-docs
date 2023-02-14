@@ -21,6 +21,43 @@ Description
 
 Simple state machine for cases which don't require a more advanced :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`. Animations can be connected to the inputs and transition times can be specified.
 
+After setting the request and changing the animation playback, the transition node automatically clears the request on the next process frame by setting its ``transition_request`` value to empty.
+
+\ **Note:** When using a cross-fade, ``current_state`` and ``current_index`` change to the next state immediately after the cross-fade begins.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    # Play child animation connected to "state_2" port.
+    animation_tree.set("parameters/Transition/transition_request", "state_2")
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Transition/transition_request"] = "state_2"
+    
+    # Get current state name (read-only).
+    animation_tree.get("parameters/Transition/current_state")
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Transition/current_state"]
+    
+    # Get current state index (read-only).
+    animation_tree.get("parameters/Transition/current_index"))
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Transition/current_index"]
+
+ .. code-tab:: csharp
+
+    // Play child animation connected to "state_2" port.
+    animationTree.Set("parameters/Transition/transition_request", "state_2");
+    
+    // Get current state name (read-only).
+    animationTree.Get("parameters/Transition/current_state");
+    
+    // Get current state index (read-only).
+    animationTree.Get("parameters/Transition/current_index");
+
+
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

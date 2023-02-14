@@ -113,8 +113,6 @@ Stretches the center texture across the NinePatchRect. This may cause the textur
 
 Repeats the center texture across the NinePatchRect. This won't cause any visible distortion. The texture must be seamless for this to work without displaying artifacts between edges.
 
-\ **Note:** Only supported when using the Vulkan renderer. When using the OpenGL renderer, this will behave like :ref:`AXIS_STRETCH_MODE_STRETCH<class_NinePatchRect_constant_AXIS_STRETCH_MODE_STRETCH>`.
-
 .. _class_NinePatchRect_constant_AXIS_STRETCH_MODE_TILE_FIT:
 
 .. rst-class:: classref-enumeration-constant
@@ -122,8 +120,6 @@ Repeats the center texture across the NinePatchRect. This won't cause any visibl
 :ref:`AxisStretchMode<enum_NinePatchRect_AxisStretchMode>` **AXIS_STRETCH_MODE_TILE_FIT** = ``2``
 
 Repeats the center texture across the NinePatchRect, but will also stretch the texture to make sure each tile is visible in full. This may cause the texture to be distorted, but less than :ref:`AXIS_STRETCH_MODE_STRETCH<class_NinePatchRect_constant_AXIS_STRETCH_MODE_STRETCH>`. The texture must be seamless for this to work without displaying artifacts between edges.
-
-\ **Note:** Only supported when using the Vulkan renderer. When using the OpenGL renderer, this will behave like :ref:`AXIS_STRETCH_MODE_STRETCH<class_NinePatchRect_constant_AXIS_STRETCH_MODE_STRETCH>`.
 
 .. rst-class:: classref-section-separator
 

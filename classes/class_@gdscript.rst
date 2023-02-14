@@ -17,7 +17,7 @@ Built-in GDScript functions.
 Description
 -----------
 
-A list of GDScript-specific utility functions accessed in any script.
+A list of GDScript-specific utility functions and annotations accessible from any script.
 
 For the list of the global functions and constants see :ref:`@GlobalScope<class_@GlobalScope>`.
 
@@ -124,12 +124,14 @@ Annotations
 
 **@export** **(** **)**
 
-Mark the following property as exported (editable in the Inspector dock and saved to disk). To control the type of the exported property use the type hint notation.
+Mark the following property as exported (editable in the Inspector dock and saved to disk). To control the type of the exported property, use the type hint notation.
 
 ::
 
+    @export var string = ""
     @export var int_number = 5
     @export var float_number: float = 5
+    @export var image : Image
 
 .. rst-class:: classref-item-separator
 
@@ -147,11 +149,11 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_CATEGORY<class_@GlobalScope_constant_
 
 ::
 
-    @export_category("My Properties")
-    @export var number = 3
-    @export var string = ""
+    @export_category("Statistics")
+    @export var hp = 30
+    @export var speed = 1.25
 
-\ **Note:** Categories in the property list are supposed to indicate different base types, so the use of this annotation is not encouraged. See :ref:`@export_group<class_@GDScript_annotation_@export_group>` and :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>` instead.
+\ **Note:** Categories in the Inspector dock's list usually divide properties coming from different classes (Node, Node2D, Sprite, etc.). For better clarity, it's recommended to use :ref:`@export_group<class_@GDScript_annotation_@export_group>` and :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>`, instead.
 
 .. rst-class:: classref-item-separator
 
@@ -163,13 +165,13 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_CATEGORY<class_@GlobalScope_constant_
 
 **@export_color_no_alpha** **(** **)**
 
-Export a :ref:`Color<class_Color>` property without transparency (its alpha fixed as ``1.0``).
+Export a :ref:`Color<class_Color>` property without allowing its transparency (:ref:`Color.a<class_Color_property_a>`) to be edited.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA<class_@GlobalScope_constant_PROPERTY_HINT_COLOR_NO_ALPHA>`.
 
 ::
 
-    @export_color_no_alpha var modulate_color: Color
+    @export_color_no_alpha var dye_color : Color
 
 .. rst-class:: classref-item-separator
 
@@ -187,7 +189,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_DIR<class_@GlobalScope_constant_PROPER
 
 ::
 
-    @export_dir var sprite_folder: String
+    @export_dir var sprite_folder_path: String
 
 .. rst-class:: classref-item-separator
 
@@ -260,8 +262,8 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_FILE<class_@GlobalScope_constant_PROPE
 
 ::
 
-    @export_file var sound_effect_file: String
-    @export_file("*.txt") var notes_file: String
+    @export_file var sound_effect_path: String
+    @export_file("*.txt") var notes_path: String
 
 .. rst-class:: classref-item-separator
 
@@ -420,13 +422,13 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_LAYERS_3D_RENDER<class_@GlobalScope_co
 
 **@export_global_dir** **(** **)**
 
-Export a :ref:`String<class_String>` property as a path to a directory. The path can be picked from the entire filesystem. See :ref:`@export_dir<class_@GDScript_annotation_@export_dir>` to limit it to the project folder and its subfolders.
+Export a :ref:`String<class_String>` property as an absolute path to a directory. The path can be picked from the entire filesystem. See :ref:`@export_dir<class_@GDScript_annotation_@export_dir>` to limit it to the project folder and its subfolders.
 
 See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_DIR<class_@GlobalScope_constant_PROPERTY_HINT_GLOBAL_DIR>`.
 
 ::
 
-    @export_global_dir var sprite_folder: String
+    @export_global_dir var sprite_folder_path: String
 
 .. rst-class:: classref-item-separator
 
@@ -438,7 +440,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_DIR<class_@GlobalScope_constant
 
 **@export_global_file** **(** :ref:`String<class_String>` filter="", ... **)** |vararg|
 
-Export a :ref:`String<class_String>` property as a path to a file. The path can be picked from the entire filesystem. See :ref:`@export_file<class_@GDScript_annotation_@export_file>` to limit it to the project folder and its subfolders.
+Export a :ref:`String<class_String>` property as an absolute path to a file. The path can be picked from the entire filesystem. See :ref:`@export_file<class_@GDScript_annotation_@export_file>` to limit it to the project folder and its subfolders.
 
 If ``filter`` is provided, only matching files will be available for picking.
 
@@ -446,8 +448,8 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_FILE<class_@GlobalScope_constan
 
 ::
 
-    @export_global_file var sound_effect_file: String
-    @export_global_file("*.txt") var notes_file: String
+    @export_global_file var sound_effect_path: String
+    @export_global_file("*.txt") var notes_path: String
 
 .. rst-class:: classref-item-separator
 
@@ -469,13 +471,13 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_GROUP<class_@GlobalScope_constant_PRO
 
 ::
 
-    @export_group("My Properties")
-    @export var number = 3
-    @export var string = ""
+    @export_group("Racer Properties")
+    @export var nickname = "Nick"
+    @export var age = 26
     
-    @export_group("Prefixed Properties", "prefix_")
-    @export var prefix_number = 3
-    @export var prefix_string = ""
+    @export_group("Car Properties", "car_")
+    @export var car_label = "Speedy"
+    @export var car_number = 3
     
     @export_group("", "")
     @export var ungrouped_number = 3
@@ -581,13 +583,13 @@ See also :ref:`@GlobalScope.PROPERTY_USAGE_SUBGROUP<class_@GlobalScope_constant_
 
 ::
 
-    @export_group("My Properties")
-    @export var number = 3
-    @export var string = ""
+    @export_group("Racer Properties")
+    @export var nickname = "Nick"
+    @export var age = 26
     
-    @export_subgroup("My Prefixed Properties", "prefix_")
-    @export var prefix_number = 3
-    @export var prefix_string = ""
+    @export_subgroup("Car Properties", "car_")
+    @export var car_label = "Speedy"
+    @export var car_number = 3
 
 \ **Note:** Subgroups cannot be nested, they only provide one extra level of depth. Just like the next group ends the previous group, so do the subsequent subgroups.
 
@@ -623,7 +625,7 @@ Add a custom icon to the current script. The script must be registered as a glob
 
 **@onready** **(** **)**
 
-Mark the following property as assigned on :ref:`Node<class_Node>`'s ready state change. Values for these properties are not assigned immediately upon the node's creation, and instead are computed and stored right before :ref:`Node._ready<class_Node_method__ready>`.
+Mark the following property as assigned when the :ref:`Node<class_Node>` is ready. Values for these properties are not assigned immediately when the node is initialized (:ref:`Object._init<class_Object_method__init>`), and instead are computed and stored right before :ref:`Node._ready<class_Node_method__ready>`.
 
 ::
 
@@ -712,7 +714,7 @@ Returns a :ref:`Color<class_Color>` constructed from red (``r8``), green (``g8``
 
 ::
 
-    var red = Color8(255, 0, 0)             # Same as Color(1, 0, 0)
+    var red = Color8(255, 0, 0)             # Same as Color(1, 0, 0).
     var dark_blue = Color8(0, 0, 51)        # Same as Color(0, 0, 0.2).
     var my_color = Color8(306, 255, 0, 102) # Same as Color(1.2, 1, 0, 0.4).
 
@@ -736,10 +738,10 @@ An optional ``message`` can be shown in addition to the generic "Assertion faile
 
     # Imagine we always want speed to be between 0 and 20.
     var speed = -10
-    assert(speed < 20) # True, the program will continue
-    assert(speed >= 0) # False, the program will stop
-    assert(speed >= 0 and speed < 20) # You can also combine the two conditional statements in one check
-    assert(speed < 20, "the speed limit is 20") # Show a message
+    assert(speed < 20) # True, the program will continue.
+    assert(speed >= 0) # False, the program will stop.
+    assert(speed >= 0 and speed < 20) # You can also combine the two conditional statements in one check.
+    assert(speed < 20, "the speed limit is 20") # Show a message.
 
 .. rst-class:: classref-item-separator
 
@@ -886,7 +888,7 @@ Returns the length of the given Variant ``var``. The length can be the character
 
 Returns a :ref:`Resource<class_Resource>` from the filesystem located at the absolute ``path``. Unless it's already referenced elsewhere (such as in another script or in the scene), the resource is loaded from disk on function call, which might cause a slight delay, especially when loading large scenes. To avoid unnecessary delays when loading something multiple times, either store the resource in a variable or use :ref:`preload<class_@GDScript_method_preload>`.
 
-\ **Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
+\ **Note:** Resource paths can be obtained by right-clicking on a resource in the FileSystem dock and choosing "Copy Path", or by dragging the file from the FileSystem dock into the current script.
 
 ::
 
@@ -911,7 +913,7 @@ This function is a simplified version of :ref:`ResourceLoader.load<class_Resourc
 
 Returns a :ref:`Resource<class_Resource>` from the filesystem located at ``path``. During run-time, the resource is loaded when the script is being parsed. This function effectively acts as a reference to that resource. Note that this function requires ``path`` to be a constant :ref:`String<class_String>`. If you want to load a resource from a dynamic/variable path, use :ref:`load<class_@GDScript_method_load>`.
 
-\ **Note:** Resource paths can be obtained by right clicking on a resource in the Assets Panel and choosing "Copy Path" or by dragging the file from the FileSystem dock into the script.
+\ **Note:** Resource paths can be obtained by right-clicking on a resource in the Assets Panel and choosing "Copy Path", or by dragging the file from the FileSystem dock into the current script.
 
 ::
 

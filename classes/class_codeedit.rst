@@ -777,7 +777,7 @@ Sets whether line folding is allowed.
 - void **set_line_length_guidelines** **(** :ref:`int[]<class_int>` value **)**
 - :ref:`int[]<class_int>` **get_line_length_guidelines** **(** **)**
 
-Draws vertical lines at the provided columns. The first entry is considered a main hard guideline and is draw more prominently
+Draws vertical lines at the provided columns. The first entry is considered a main hard guideline and is draw more prominently.
 
 .. rst-class:: classref-item-separator
 

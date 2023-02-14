@@ -19,6 +19,8 @@ GraphEdit is a control responsible for displaying and manipulating graph-like da
 Description
 -----------
 
+**Note:** Please be aware that this node will undergo extensive refactoring in a future 4.x version involving compatibility-breaking API changes.
+
 GraphEdit provides tools for creation, manipulation, and display of various graphs. Its main purpose in the engine is to power the visual programming systems, such as visual shaders, but it is also available for use in user projects.
 
 GraphEdit by itself is only an empty container, representing an infinite grid where :ref:`GraphNode<class_GraphNode>`\ s can be placed. Each :ref:`GraphNode<class_GraphNode>` represent a node in the graph, a single unit of data in the connected scheme. GraphEdit, in turn, helps to control various interactions with nodes and between nodes. When the user attempts to connect, disconnect, or close a :ref:`GraphNode<class_GraphNode>`, a signal is emitted in the GraphEdit, but no action is taken by default. It is the responsibility of the programmer utilizing this control to implement the necessary logic to determine how each request should be handled.

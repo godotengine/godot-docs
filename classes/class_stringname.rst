@@ -19,7 +19,7 @@ Description
 
 **StringName**\ s are immutable strings designed for general-purpose representation of unique names (also called "string interning"). **StringName** ensures that only one instance of a given name exists (so two **StringName**\ s with the same value are the same object). Comparing them is much faster than with regular :ref:`String<class_String>`\ s, because only the pointers are compared, not the whole strings.
 
-You will usually just pass a :ref:`String<class_String>` to methods expecting a **StringName** and it will be automatically converted, but you may occasionally want to construct a **StringName** ahead of time with **StringName** or, in GDScript, the literal syntax ``&"example"``.
+You will usually just pass a :ref:`String<class_String>` to methods expecting a **StringName** and it will be automatically converted, but you may occasionally want to construct a **StringName** ahead of time with the **StringName** constructor or, in GDScript, the literal syntax ``&"example"``.
 
 See also :ref:`NodePath<class_NodePath>`, which is a similar concept specifically designed to store pre-parsed node paths.
 
@@ -547,8 +547,8 @@ Returns the index of the **first** occurrence of ``what`` in this string, or ``-
     GD.Print("Team".Find("I")); // Prints -1
     
     GD.Print("Potato".Find("t"));    // Prints 2
-    GD.print("Potato".Find("t", 3)); // Prints 4
-    GD.print("Potato".Find("t", 5)); // Prints -1
+    GD.Print("Potato".Find("t", 3)); // Prints 4
+    GD.Print("Potato".Find("t", 5)); // Prints -1
 
 
 
@@ -598,6 +598,8 @@ Some additional handling is performed when ``values`` is an :ref:`Array<class_Ar
     print("User {id} is {name}.".format([["id", 42], ["name", "Godot"]]))
 
 See also the :doc:`GDScript format string <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
+
+\ **Note:** In C#, it's recommended to `interpolate strings with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`__, instead.
 
 .. rst-class:: classref-item-separator
 
@@ -1000,7 +1002,7 @@ Returns the concatenation of ``parts``' elements, with each element separated by
     var fruits = new string[] {"Apple", "Orange", "Pear", "Kiwi"};
     
     // In C#, this method is static.
-    GD.Print(string.Join(", ", fruits);   // Prints "Apple, Orange, Pear, Kiwi"
+    GD.Print(string.Join(", ", fruits));  // Prints "Apple, Orange, Pear, Kiwi"
     GD.Print(string.Join("---", fruits)); // Prints "Apple---Orange---Pear---Kiwi"
 
 
@@ -1844,9 +1846,11 @@ Returns ``true`` if the **StringName** and ``right`` do not refer to the same na
 
 :ref:`String<class_String>` **operator %** **(** :ref:`Variant<class_Variant>` right **)**
 
-.. container:: contribute
+Formats the **StringName**, replacing the placeholders with one or more parameters, returning a :ref:`String<class_String>`. To pass multiple parameters, ``right`` needs to be an :ref:`Array<class_Array>`.
 
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+For more information, see the :doc:`GDScript format strings <../tutorials/scripting/gdscript/gdscript_format_string>` tutorial.
+
+\ **Note:** In C#, this operator is not available. Instead, see `how to interpolate strings with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1858,9 +1862,7 @@ Returns ``true`` if the **StringName** and ``right`` do not refer to the same na
 
 :ref:`String<class_String>` **operator +** **(** :ref:`String<class_String>` right **)**
 
-.. container:: contribute
-
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Appends ``right`` at the end of this **StringName**, returning a :ref:`String<class_String>`. This is also known as a string concatenation.
 
 .. rst-class:: classref-item-separator
 
@@ -1872,9 +1874,7 @@ Returns ``true`` if the **StringName** and ``right`` do not refer to the same na
 
 :ref:`String<class_String>` **operator +** **(** :ref:`StringName<class_StringName>` right **)**
 
-.. container:: contribute
-
-	There is currently no description for this operator. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Appends ``right`` at the end of this **StringName**, returning a :ref:`String<class_String>`. This is also known as a string concatenation.
 
 .. rst-class:: classref-item-separator
 

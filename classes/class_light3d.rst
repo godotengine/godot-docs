@@ -450,9 +450,11 @@ If ``true``, the light only appears in the editor and will not be visible at run
 - void **set_param** **(** :ref:`Param<enum_Light3D_Param>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light3D_Param>` param **)** |const|
 
-The light's angular size in degrees. Increasing this will make shadows softer at greater distances. Only available for :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s. For reference, the Sun from the Earth is approximately ``0.5``.
+The light's angular size in degrees. Increasing this will make shadows softer at greater distances (also called percentage-closer soft shadows, or PCSS). Only available for :ref:`DirectionalLight3D<class_DirectionalLight3D>`\ s. For reference, the Sun from the Earth is approximately ``0.5``. Increasing this value above ``0.0`` for lights with shadows enabled will have a noticeable performance cost due to PCSS.
 
 \ **Note:** :ref:`light_angular_distance<class_Light3D_property_light_angular_distance>` is not affected by :ref:`Node3D.scale<class_Node3D_property_scale>` (the light's scale or its parent's scale).
+
+\ **Note:** PCSS for directional lights is only supported in the Forward+ rendering method, not Mobile or Compatibility.
 
 .. rst-class:: classref-item-separator
 
@@ -619,6 +621,8 @@ If ``true``, the light's effect is reversed, darkening areas and casting bright 
 
 \ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for light projector textures is set globally with :ref:`ProjectSettings.rendering/textures/light_projectors/filter<class_ProjectSettings_property_rendering/textures/light_projectors/filter>`.
 
+\ **Note:** Light projector textures are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -634,9 +638,11 @@ If ``true``, the light's effect is reversed, darkening areas and casting bright 
 - void **set_param** **(** :ref:`Param<enum_Light3D_Param>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light3D_Param>` param **)** |const|
 
-The size of the light in Godot units. Only available for :ref:`OmniLight3D<class_OmniLight3D>`\ s and :ref:`SpotLight3D<class_SpotLight3D>`\ s. Increasing this value will make the light fade out slower and shadows appear blurrier. This can be used to simulate area lights to an extent.
+The size of the light in Godot units. Only available for :ref:`OmniLight3D<class_OmniLight3D>`\ s and :ref:`SpotLight3D<class_SpotLight3D>`\ s. Increasing this value will make the light fade out slower and shadows appear blurrier (also called percentage-closer soft shadows, or PCSS). This can be used to simulate area lights to an extent. Increasing this value above ``0.0`` for lights with shadows enabled will have a noticeable performance cost due to PCSS.
 
 \ **Note:** :ref:`light_size<class_Light3D_property_light_size>` is not affected by :ref:`Node3D.scale<class_Node3D_property_scale>` (the light's scale or its parent's scale).
+
+\ **Note:** PCSS for positional lights is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 .. rst-class:: classref-item-separator
 

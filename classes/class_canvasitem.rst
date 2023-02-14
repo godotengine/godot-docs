@@ -1091,6 +1091,8 @@ void **draw_set_transform** **(** :ref:`Vector2<class_Vector2>` position, :ref:`
 
 Sets a custom transform for drawing via components. Anything drawn afterwards will be transformed by this.
 
+\ **Note:** :ref:`FontFile.oversampling<class_FontFile_property_oversampling>` does *not* take ``scale`` into account. This means that scaling up/down will cause bitmap fonts and rasterized (non-MSDF) dynamic fonts to appear blurry or pixelated. To ensure text remains crisp regardless of scale, you can enable MSDF font rendering by enabling :ref:`ProjectSettings.gui/theme/default_font_multichannel_signed_distance_field<class_ProjectSettings_property_gui/theme/default_font_multichannel_signed_distance_field>` (applies to the default project font only), or enabling **Multichannel Signed Distance Field** in the import options of a DynamicFont for custom fonts. On system fonts, :ref:`SystemFont.multichannel_signed_distance_field<class_SystemFont_property_multichannel_signed_distance_field>` can be enabled in the inspector.
+
 .. rst-class:: classref-item-separator
 
 ----

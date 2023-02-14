@@ -328,6 +328,8 @@ Gets an UTF-8 string with byte-length ``bytes`` from the stream (this decodes th
 
 Gets a Variant from the stream. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
+Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.bytes_to_var<class_@GlobalScope_method_bytes_to_var>` method.
+
 \ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 .. rst-class:: classref-item-separator
@@ -539,6 +541,8 @@ Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsig
 void **put_var** **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` full_objects=false **)**
 
 Puts a Variant into the stream. If ``full_objects`` is ``true`` encoding objects is allowed (and can potentially include code).
+
+Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes<class_@GlobalScope_method_var_to_bytes>` method.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -262,7 +262,9 @@ The Light2D's energy value. The larger the value, the stronger the light.
 - void **set_item_cull_mask** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_item_cull_mask** **(** **)**
 
-The layer mask. Only objects with a matching mask will be affected by the Light2D.
+The layer mask. Only objects with a matching :ref:`CanvasItem.light_mask<class_CanvasItem_property_light_mask>` will be affected by the Light2D. See also :ref:`shadow_item_cull_mask<class_Light2D_property_shadow_item_cull_mask>`, which affects which objects can cast shadows.
+
+\ **Note:** :ref:`range_item_cull_mask<class_Light2D_property_range_item_cull_mask>` is ignored by :ref:`DirectionalLight2D<class_DirectionalLight2D>`, which will always light a 2D node regardless of the 2D node's :ref:`CanvasItem.light_mask<class_CanvasItem_property_light_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -415,7 +417,7 @@ Smoothing value for shadows. Higher values will result in softer shadows, at the
 - void **set_item_shadow_cull_mask** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_item_shadow_cull_mask** **(** **)**
 
-The shadow mask. Used with :ref:`LightOccluder2D<class_LightOccluder2D>` to cast shadows. Only occluders with a matching light mask will cast shadows.
+The shadow mask. Used with :ref:`LightOccluder2D<class_LightOccluder2D>` to cast shadows. Only occluders with a matching :ref:`CanvasItem.light_mask<class_CanvasItem_property_light_mask>` will cast shadows. See also :ref:`range_item_cull_mask<class_Light2D_property_range_item_cull_mask>`, which affects which objects can *receive* the light.
 
 .. rst-class:: classref-section-separator
 

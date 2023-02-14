@@ -604,6 +604,8 @@ The global contrast value of the rendered scene (default value is 1). Effective 
 
 If ``true``, enables the ``adjustment_*`` properties provided by this resource. If ``false``, modifications to the ``adjustment_*`` properties will have no effect on the rendered scene.
 
+\ **Note:** Adjustments are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1001,6 +1003,8 @@ The bloom's intensity. If set to a value higher than ``0``, this will make glow 
 
 If ``true``, the glow effect is enabled.
 
+\ **Note:** Glow is only supported in the Forward+ and Mobile rendering methods, not Compatibility. When using the Mobile rendering method, glow will look different due to the lower dynamic range available in the Mobile rendering method.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1050,7 +1054,7 @@ The bleed scale of the HDR glow.
 - void **set_glow_hdr_bleed_threshold** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_glow_hdr_bleed_threshold** **(** **)**
 
-The lower threshold of the HDR glow. When using the OpenGL renderer (which doesn't support HDR), this needs to be below ``1.0`` for glow to be visible. A value of ``0.9`` works well in this case.
+The lower threshold of the HDR glow. When using the Mobile rendering method (which only supports a lower dynamic range up to ``2.0``), this may need to be below ``1.0`` for glow to be visible. A value of ``0.9`` works well in this case. This value also needs to be decreased below ``1.0`` when using glow in 2D, as 2D rendering is performed in SDR.
 
 .. rst-class:: classref-item-separator
 
@@ -1067,7 +1071,7 @@ The lower threshold of the HDR glow. When using the OpenGL renderer (which doesn
 - void **set_glow_intensity** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_glow_intensity** **(** **)**
 
-The overall brightness multiplier of the glow effect. When using the OpenGL renderer, this should be increased to ``1.5`` to compensate for the lack of HDR rendering.
+The overall brightness multiplier of the glow effect. When using the Mobile rendering method (which only supports a lower dynamic range up to ``2.0``), this should be increased to ``1.5`` to compensate.
 
 .. rst-class:: classref-item-separator
 
@@ -1273,7 +1277,7 @@ If ``true``, glow levels will be normalized so that summed together their intens
 - void **set_glow_strength** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_glow_strength** **(** **)**
 
-The strength of the glow effect. This applies as the glow is blurred across the screen and increases the distance and intensity of the blur. When using the OpenGL renderer, this should be increased to 1.3 to compensate for the lack of HDR rendering.
+The strength of the glow effect. This applies as the glow is blurred across the screen and increases the distance and intensity of the blur. When using the Mobile rendering method, this should be increased to compensate for the lower dynamic range.
 
 .. rst-class:: classref-item-separator
 
@@ -1363,6 +1367,8 @@ The number of cascades to use for SDFGI (between 1 and 8). A higher number of ca
 - :ref:`bool<class_bool>` **is_sdfgi_enabled** **(** **)**
 
 If ``true``, enables signed distance field global illumination for meshes that have their :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>` set to :ref:`GeometryInstance3D.GI_MODE_STATIC<class_GeometryInstance3D_constant_GI_MODE_STATIC>`. SDFGI is a real-time global illumination technique that works well with procedurally generated and user-built levels, including in situations where geometry is created during gameplay. The signed distance field is automatically generated around the camera as it moves. Dynamic lights are supported, but dynamic occluders and emissive surfaces are not.
+
+\ **Note:** SDFGI is only supported in the Forward+ rendering method, not Mobile or Compatibility.
 
 \ **Performance:** SDFGI is relatively demanding on the GPU and is not suited to low-end hardware such as integrated graphics (consider :ref:`LightmapGI<class_LightmapGI>` instead). To improve SDFGI performance, enable :ref:`ProjectSettings.rendering/global_illumination/gi/use_half_resolution<class_ProjectSettings_property_rendering/global_illumination/gi/use_half_resolution>` in the Project Settings.
 
@@ -1610,6 +1616,8 @@ Sets the strength of the additional level of detail for the screen-space ambient
 
 If ``true``, the screen-space ambient occlusion effect is enabled. This darkens objects' corners and cavities to simulate ambient light not reaching the entire object as in real life. This works well for small, dynamic objects, but baked lighting or ambient occlusion textures will do a better job at displaying ambient occlusion on large static objects. Godot uses a form of SSAO called Adaptive Screen Space Ambient Occlusion which is itself a form of Horizon Based Ambient Occlusion.
 
+\ **Note:** SSAO is only supported in the Forward+ rendering method, not Mobile or Compatibility.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1729,6 +1737,8 @@ The amount that the screen-space ambient occlusion effect is allowed to blur ove
 
 If ``true``, the screen-space indirect lighting effect is enabled. Screen space indirect lighting is a form of indirect lighting that allows diffuse light to bounce between nearby objects. Screen-space indirect lighting works very similarly to screen-space ambient occlusion, in that it only affects a limited range. It is intended to be used along with a form of proper global illumination like SDFGI or :ref:`VoxelGI<class_VoxelGI>`. Screen-space indirect lighting is not affected by individual light's :ref:`Light3D.light_indirect_energy<class_Light3D_property_light_indirect_energy>`.
 
+\ **Note:** SSIL is only supported in the Forward+ rendering method, not Mobile or Compatibility.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1830,6 +1840,8 @@ The depth tolerance for screen-space reflections.
 - :ref:`bool<class_bool>` **is_ssr_enabled** **(** **)**
 
 If ``true``, screen-space reflections are enabled. Screen-space reflections are more accurate than reflections from :ref:`VoxelGI<class_VoxelGI>`\ s or :ref:`ReflectionProbe<class_ReflectionProbe>`\ s, but are slower and can't reflect surfaces occluded by others.
+
+\ **Note:** SSR is only supported in the Forward+ rendering method, not Mobile or Compatibility.
 
 .. rst-class:: classref-item-separator
 
@@ -2075,7 +2087,7 @@ The brightness of the emitted light from the volumetric fog.
 
 Enables the volumetric fog effect. Volumetric fog uses a screen-aligned froxel buffer to calculate accurate volumetric scattering in the short to medium range. Volumetric fog interacts with :ref:`FogVolume<class_FogVolume>`\ s and lights to calculate localized and global fog. Volumetric fog uses a PBR single-scattering model based on extinction, scattering, and emission which it exposes to users as density, albedo, and emission.
 
-\ **Note:** Volumetric fog is only available in the forward plus renderer. It is not available in the mobile renderer or the compatibility renderer.
+\ **Note:** Volumetric fog is only supported in the Forward+ rendering method, not Mobile or Compatibility.
 
 .. rst-class:: classref-item-separator
 

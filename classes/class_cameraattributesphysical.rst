@@ -25,6 +25,8 @@ When used in a :ref:`WorldEnvironment<class_WorldEnvironment>` it provides defau
 
 The default settings are intended for use in an outdoor environment, tips for settings for use in an indoor environment can be found in each setting's documentation.
 
+\ **Note:** Depth of field blur is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
+
 .. rst-class:: classref-reftable-group
 
 Properties

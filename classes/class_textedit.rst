@@ -2353,7 +2353,7 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 
 :ref:`int<class_int>` **get_minimap_line_at_pos** **(** :ref:`Vector2i<class_Vector2i>` position **)** |const|
 
-Returns the equivalent minimap line at ``position``
+Returns the equivalent minimap line at ``position``.
 
 .. rst-class:: classref-item-separator
 
@@ -2429,7 +2429,7 @@ Returns the local position and size for the grapheme at the given ``line`` and `
 
 :ref:`int<class_int>` **get_saved_version** **(** **)** |const|
 
-Returns the last tagged saved version from :ref:`tag_saved_version<class_TextEdit_method_tag_saved_version>`
+Returns the last tagged saved version from :ref:`tag_saved_version<class_TextEdit_method_tag_saved_version>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3350,7 +3350,7 @@ Sets the tab size for the **TextEdit** to use.
 
 void **set_tooltip_request_func** **(** :ref:`Callable<class_Callable>` callback **)**
 
-Provide custom tooltip text. The callback method must take the following args: ``hovered_word: String``
+Provide custom tooltip text. The callback method must take the following args: ``hovered_word: String``.
 
 .. rst-class:: classref-item-separator
 

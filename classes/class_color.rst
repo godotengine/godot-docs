@@ -1791,7 +1791,7 @@ Returns the light intensity of the color, as a value between 0.0 and 1.0 (inclus
 
 :ref:`Color<class_Color>` **hex** **(** :ref:`int<class_int>` hex **)** |static|
 
-Returns the **Color** associated with the provided ``hex`` integer in 32-bit ARGB format (8 bits per channel, alpha channel first).
+Returns the **Color** associated with the provided ``hex`` integer in 32-bit RGBA format (8 bits per channel, alpha channel first).
 
 In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix).
 
@@ -1800,15 +1800,15 @@ In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecima
 
  .. code-tab:: gdscript
 
-    var red = Color.hex(0xffff0000)
-    var dark_cyan = Color.hex(0xff008b8b)
-    var my_color = Color.hex(0xa4bbefd2)
+    var red = Color.hex(0xff0000ff)
+    var dark_cyan = Color.hex(0x008b8bff)
+    var my_color = Color.hex(0xbbefd2a4)
 
  .. code-tab:: csharp
 
-    var red = new Color(0xffff0000);
-    var dark_cyan = new Color(0xff008b8b);
-    var my_color = new Color(0xa4bbefd2);
+    var red = new Color(0xff0000ff);
+    var dark_cyan = new Color(0x008b8bff);
+    var my_color = new Color(0xbbefd2a4);
 
 
 
@@ -1822,7 +1822,7 @@ In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecima
 
 :ref:`Color<class_Color>` **hex64** **(** :ref:`int<class_int>` hex **)** |static|
 
-Returns the **Color** associated with the provided ``hex`` integer in 64-bit ARGB format (16 bits per channel, alpha channel first).
+Returns the **Color** associated with the provided ``hex`` integer in 64-bit RGBA format (16 bits per channel, alpha channel first).
 
 In GDScript and C#, the :ref:`int<class_int>` is best visualized with hexadecimal notation (``"0x"`` prefix).
 

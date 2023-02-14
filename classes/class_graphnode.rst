@@ -19,6 +19,8 @@ GraphNode is a :ref:`Container<class_Container>` control that represents a singl
 Description
 -----------
 
+**Note:** Please be aware that this node will undergo extensive refactoring in a future 4.x version involving compatibility-breaking API changes.
+
 GraphNode allows to create nodes for a :ref:`GraphEdit<class_GraphEdit>` graph with customizable content based on its child :ref:`Control<class_Control>`\ s. GraphNode is a :ref:`Container<class_Container>` and is responsible for placing its children on screen. This works similar to :ref:`VBoxContainer<class_VBoxContainer>`. Children, in turn, provide GraphNode with so-called slots, each of which can have a connection port on either side. This is similar to how :ref:`TabContainer<class_TabContainer>` uses children to create the tabs.
 
 Each GraphNode slot is defined by its index and can provide the node with up to two ports: one on the left, and one on the right. By convention the left port is also referred to as the input port and the right port is referred to as the output port. Each port can be enabled and configured individually, using different type and color. The type is an arbitrary value that you can define using your own considerations. The parent :ref:`GraphEdit<class_GraphEdit>` will receive this information on each connect and disconnect request.

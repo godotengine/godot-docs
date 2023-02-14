@@ -1685,7 +1685,9 @@ Helper property to access :ref:`rotation<class_Control_property_rotation>` in de
 
 The node's scale, relative to its :ref:`size<class_Control_property_size>`. Change this property to scale the node around its :ref:`pivot_offset<class_Control_property_pivot_offset>`. The Control's :ref:`tooltip_text<class_Control_property_tooltip_text>` will also scale according to this value.
 
-\ **Note:** This property is mainly intended to be used for animation purposes. Text inside the Control will look pixelated or blurry when the Control is scaled. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the :doc:`documentation <../tutorials/rendering/multiple_resolutions>` instead of scaling Controls individually.
+\ **Note:** This property is mainly intended to be used for animation purposes. To support multiple resolutions in your project, use an appropriate viewport stretch mode as described in the :doc:`documentation <../tutorials/rendering/multiple_resolutions>` instead of scaling Controls individually.
+
+\ **Note:** :ref:`FontFile.oversampling<class_FontFile_property_oversampling>` does *not* take **Control** :ref:`scale<class_Control_property_scale>` into account. This means that scaling up/down will cause bitmap fonts and rasterized (non-MSDF) dynamic fonts to appear blurry or pixelated. To ensure text remains crisp regardless of scale, you can enable MSDF font rendering by enabling :ref:`ProjectSettings.gui/theme/default_font_multichannel_signed_distance_field<class_ProjectSettings_property_gui/theme/default_font_multichannel_signed_distance_field>` (applies to the default project font only), or enabling **Multichannel Signed Distance Field** in the import options of a DynamicFont for custom fonts. On system fonts, :ref:`SystemFont.multichannel_signed_distance_field<class_SystemFont_property_multichannel_signed_distance_field>` can be enabled in the inspector.
 
 \ **Note:** If the Control node is a child of a :ref:`Container<class_Container>` node, the scale will be reset to ``Vector2(1, 1)`` when the scene is instantiated. To set the Control's scale when it's instantiated, wait for one frame using ``await get_tree().process_frame`` then set its :ref:`scale<class_Control_property_scale>` property.
 
@@ -2726,7 +2728,7 @@ void **grab_focus** **(** **)**
 
 Steal the focus from another control and become the focused control (see :ref:`focus_mode<class_Control_property_focus_mode>`).
 
-\ **Note**: Using this method together with :ref:`Callable.call_deferred<class_Callable_method_call_deferred>` makes it more reliable, especially when called inside :ref:`Node._ready<class_Node_method__ready>`.
+\ **Note:** Using this method together with :ref:`Callable.call_deferred<class_Callable_method_call_deferred>` makes it more reliable, especially when called inside :ref:`Node._ready<class_Node_method__ready>`.
 
 .. rst-class:: classref-item-separator
 

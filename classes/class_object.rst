@@ -713,7 +713,7 @@ Calls the ``method`` on the object and returns the result. Unlike :ref:`call<cla
 
 
 
-\ **Note:** In C#, ``method`` must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the ``MethodName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call
+\ **Note:** In C#, ``method`` must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the ``MethodName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
 
 .. rst-class:: classref-item-separator
 

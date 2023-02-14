@@ -189,7 +189,7 @@ Method Descriptions
 
 Starts a new multiplayer client connecting to the given ``url``. TLS certificates will be verified against the hostname when connecting using the ``wss://`` protocol. You can pass the optional ``tls_client_options`` parameter to customize the trusted certification authorities, or disable the common name verification. See :ref:`TLSOptions.client<class_TLSOptions_method_client>` and :ref:`TLSOptions.client_unsafe<class_TLSOptions_method_client_unsafe>`.
 
-\ **Note**: It is recommended to specify the scheme part of the URL, i.e. the ``url`` should start with either ``ws://`` or ``wss://``.
+\ **Note:** It is recommended to specify the scheme part of the URL, i.e. the ``url`` should start with either ``ws://`` or ``wss://``.
 
 .. rst-class:: classref-item-separator
 

@@ -25,7 +25,7 @@ The VisibleOnScreenNotifier3D detects when it is visible on the screen. It also 
 
 If you want nodes to be disabled automatically when they exit the screen, use :ref:`VisibleOnScreenEnabler3D<class_VisibleOnScreenEnabler3D>` instead.
 
-\ **Note:** VisibleOnScreenNotifier3D uses an approximate heuristic for performance reasons. It doesn't take walls and other occlusion into account. The heuristic is an implementation detail and may change in future versions. If you need precise visibility checking, use another method such as adding an :ref:`Area3D<class_Area3D>` node as a child of a :ref:`Camera3D<class_Camera3D>` node and/or :ref:`Vector3.dot<class_Vector3_method_dot>`.
+\ **Note:** VisibleOnScreenNotifier3D uses the render culling code to determine whether it's visible on screen, which also means that its :ref:`Node3D.visible<class_Node3D_property_visible>` must be ``true`` to work correctly.
 
 .. rst-class:: classref-reftable-group
 

@@ -197,8 +197,6 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/static_called_on_instance<class_ProjectSettings_property_debug/gdscript/warnings/static_called_on_instance>`                                                                 | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`debug/gdscript/warnings/treat_warnings_as_errors<class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors>`                                                                   | ``false``                                                                                        |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unassigned_variable<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable>`                                                                             | ``1``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`debug/gdscript/warnings/unassigned_variable_op_assign<class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable_op_assign>`                                                         | ``1``                                                                                            |
@@ -2361,18 +2359,6 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 ----
 
-.. _class_ProjectSettings_property_debug/gdscript/warnings/treat_warnings_as_errors:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **debug/gdscript/warnings/treat_warnings_as_errors** = ``false``
-
-If ``true``, all warnings will be reported as if they are errors.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ProjectSettings_property_debug/gdscript/warnings/unassigned_variable:
 
 .. rst-class:: classref-property
@@ -3263,7 +3249,9 @@ Sets the V-Sync mode for the main game window.
 
 See :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` for possible values and how they affect the behavior of your application.
 
-Depending on the platform and used renderer, the engine will fall back to ``Enabled`` if the desired mode is not supported.
+Depending on the platform and used renderer, the engine will fall back to **Enabled** if the desired mode is not supported.
+
+\ **Note:** V-Sync modes other than **Enabled** are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 \ **Note:** This property is only read when the project starts. To change the V-Sync mode at runtime, call :ref:`DisplayServer.window_set_vsync_mode<class_DisplayServer_method_window_set_vsync_mode>` instead.
 
@@ -3621,7 +3609,7 @@ Path to a custom :ref:`Font<class_Font>` resource to use as default for all GUI 
 
 :ref:`int<class_int>` **gui/theme/default_font_antialiasing** = ``1``
 
-Font anti-aliasing mode. See :ref:`FontFile.antialiasing<class_FontFile_property_antialiasing>`,
+Font anti-aliasing mode. See :ref:`FontFile.antialiasing<class_FontFile_property_antialiasing>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4169,7 +4157,7 @@ macOS specific override for the shortcut to delete a word.
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_above**
 
-Default :ref:`InputEventAction<class_InputEventAction>` to add an additional caret above every caret of a text
+Default :ref:`InputEventAction<class_InputEventAction>` to add an additional caret above every caret of a text.
 
 .. rst-class:: classref-item-separator
 
@@ -4181,7 +4169,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to add an additional car
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_above.macos**
 
-macOS specific override for the shortcut to add a caret above every caret
+macOS specific override for the shortcut to add a caret above every caret.
 
 .. rst-class:: classref-item-separator
 
@@ -4193,7 +4181,7 @@ macOS specific override for the shortcut to add a caret above every caret
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_below**
 
-Default :ref:`InputEventAction<class_InputEventAction>` to add an additional caret below every caret of a text
+Default :ref:`InputEventAction<class_InputEventAction>` to add an additional caret below every caret of a text.
 
 .. rst-class:: classref-item-separator
 
@@ -4205,7 +4193,7 @@ Default :ref:`InputEventAction<class_InputEventAction>` to add an additional car
 
 :ref:`Dictionary<class_Dictionary>` **input/ui_text_caret_add_below.macos**
 
-macOS specific override for the shortcut to add a caret below every caret
+macOS specific override for the shortcut to add a caret below every caret.
 
 .. rst-class:: classref-item-separator
 
@@ -6907,7 +6895,7 @@ Optional name for the 3D render layer 13. If left empty, the layer will display 
 
 :ref:`String<class_String>` **layer_names/3d_render/layer_14** = ``""``
 
-Optional name for the 3D render layer 14. If left empty, the layer will display as "Layer 14"
+Optional name for the 3D render layer 14. If left empty, the layer will display as "Layer 14".
 
 .. rst-class:: classref-item-separator
 
@@ -7869,6 +7857,8 @@ The number of fixed iterations per second. This controls how often physics simul
 
 Sets the number of MSAA samples to use for 2D/Canvas rendering (as a power of two). MSAA is used to reduce aliasing around the edges of polygons. A higher MSAA value results in smoother edges but can be significantly slower on some hardware. This has no effect on shader-induced aliasing or texture aliasing.
 
+\ **Note:** MSAA is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -7880,6 +7870,8 @@ Sets the number of MSAA samples to use for 2D/Canvas rendering (as a power of tw
 :ref:`int<class_int>` **rendering/anti_aliasing/quality/msaa_3d** = ``0``
 
 Sets the number of MSAA samples to use for 3D rendering (as a power of two). MSAA is used to reduce aliasing around the edges of polygons. A higher MSAA value results in smoother edges but can be significantly slower on some hardware. See also bilinear scaling 3d :ref:`rendering/scaling_3d/mode<class_ProjectSettings_property_rendering/scaling_3d/mode>` for supersampling, which provides higher quality but is much more expensive. This has no effect on shader-induced aliasing or texture aliasing.
+
+\ **Note:** MSAA is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 .. rst-class:: classref-item-separator
 
@@ -7894,6 +7886,8 @@ Sets the number of MSAA samples to use for 3D rendering (as a power of two). MSA
 Sets the screen-space antialiasing mode for the default screen :ref:`Viewport<class_Viewport>`. Screen-space antialiasing works by selectively blurring edges in a post-process shader. It differs from MSAA which takes multiple coverage samples while rendering objects. Screen-space AA methods are typically faster than MSAA and will smooth out specular aliasing, but tend to make scenes appear blurry. The blurriness is partially counteracted by automatically using a negative mipmap LOD bias (see :ref:`rendering/textures/default_filters/texture_mipmap_bias<class_ProjectSettings_property_rendering/textures/default_filters/texture_mipmap_bias>`).
 
 Another way to combat specular aliasing is to enable :ref:`rendering/anti_aliasing/screen_space_roughness_limiter/enabled<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/enabled>`.
+
+\ **Note:** Screen-space antialiasing is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 .. rst-class:: classref-item-separator
 
@@ -7923,7 +7917,9 @@ In some cases, debanding may introduce a slightly noticeable dithering pattern. 
 
 Enables Temporal Anti-Aliasing for the default screen :ref:`Viewport<class_Viewport>`. TAA works by jittering the camera and accumulating the images of the last rendered frames, motion vector rendering is used to account for camera and object motion. Enabling TAA can make the image blurrier, which is partially counteracted by automatically using a negative mipmap LOD bias (see :ref:`rendering/textures/default_filters/texture_mipmap_bias<class_ProjectSettings_property_rendering/textures/default_filters/texture_mipmap_bias>`).
 
-\ **Note:** The implementation is not complete yet, some visual instances such as particles and skinned meshes may show artifacts.
+\ **Note:** The implementation is not complete yet. Some visual instances such as particles and skinned meshes may show ghosting artifacts in motion.
+
+\ **Note:** TAA is only supported in the Forward+ rendering method, not Mobile or Compatibility.
 
 .. rst-class:: classref-item-separator
 
@@ -7949,9 +7945,9 @@ Enables Temporal Anti-Aliasing for the default screen :ref:`Viewport<class_Viewp
 
 :ref:`bool<class_bool>` **rendering/anti_aliasing/screen_space_roughness_limiter/enabled** = ``true``
 
-.. container:: contribute
+If ``true``, enables a spatial filter to limit roughness in areas with high-frequency detail. This can help reduce specular aliasing to an extent, though not as much as enabling :ref:`rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`. This filter has a small performance cost, so consider disabling it if it doesn't benefit your scene noticeably.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** TAA is only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 .. rst-class:: classref-item-separator
 
@@ -8027,7 +8023,7 @@ Disables :ref:`rendering/driver/depth_prepass/enable<class_ProjectSettings_prope
 
 If ``true``, performs a previous depth pass before rendering 3D materials. This increases performance significantly in scenes with high overdraw, when complex materials and lighting are used. However, in scenes with few occluded surfaces, the depth prepass may reduce performance. If your game is viewed from a fixed angle that makes it easy to avoid overdraw (such as top-down or side-scrolling perspective), consider disabling the depth prepass to improve performance. This setting can be changed at run-time to optimize performance depending on the scene currently being viewed.
 
-\ **Note:** Only supported when using the Vulkan Clustered backend or the OpenGL backend. When using Vulkan Mobile there is no depth prepass performed.
+\ **Note:** Depth prepass is only supported when using the Forward+ or Compatibility rendering method. When using the Mobile rendering method, there is no depth prepass performed.
 
 .. rst-class:: classref-item-separator
 
@@ -8881,6 +8877,8 @@ Enables the use of physically based units for light sources. Physically based un
 
 Max number of omnilights and spotlights renderable per object. At the default value of 8, this means that each surface can be affected by up to 8 omnilights and 8 spotlights. This is further limited by hardware support and :ref:`rendering/limits/opengl/max_renderable_lights<class_ProjectSettings_property_rendering/limits/opengl/max_renderable_lights>`. Setting this low will slightly reduce memory usage, may decrease shader compile times, and may result in faster rendering on low-end, mobile, or web devices.
 
+\ **Note:** This setting is only effective when using the Compatibility rendering method, not Forward+ and Mobile.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -8893,6 +8891,8 @@ Max number of omnilights and spotlights renderable per object. At the default va
 
 Max number of elements renderable in a frame. If more elements than this are visible per frame, they will not be drawn. Keep in mind elements refer to mesh surfaces and not meshes themselves. Setting this low will slightly reduce memory usage and may decrease shader compile times, particularly on web. For most uses, the default value is suitable, but consider lowering as much as possible on web export.
 
+\ **Note:** This setting is only effective when using the Compatibility rendering method, not Forward+ and Mobile.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -8904,6 +8904,8 @@ Max number of elements renderable in a frame. If more elements than this are vis
 :ref:`int<class_int>` **rendering/limits/opengl/max_renderable_lights** = ``32``
 
 Max number of positional lights renderable in a frame. If more lights than this number are used, they will be ignored. Setting this low will slightly reduce memory usage and may decrease shader compile times, particularly on web. For most uses, the default value is suitable, but consider lowering as much as possible on web export.
+
+\ **Note:** This setting is only effective when using the Compatibility rendering method, not Forward+ and Mobile.
 
 .. rst-class:: classref-item-separator
 
@@ -9301,7 +9303,9 @@ Determines how sharp the upscaled image will be when using the FSR upscaling mod
 
 :ref:`int<class_int>` **rendering/scaling_3d/mode** = ``0``
 
-Sets the scaling 3D mode. Bilinear scaling renders at different resolution to either undersample or supersample the viewport. FidelityFX Super Resolution 1.0, abbreviated to FSR, is an upscaling technology that produces high quality images at fast framerates by using a spatially aware upscaling algorithm. FSR is slightly more expensive than bilinear, but it produces significantly higher image quality. FSR should be used where possible.
+Sets the scaling 3D mode. Bilinear scaling renders at different resolution to either undersample or supersample the viewport. FidelityFX Super Resolution 1.0, abbreviated to FSR, is an upscaling technology that produces high quality images at fast framerates by using a spatially-aware upscaling algorithm. FSR is slightly more expensive than bilinear, but it produces significantly higher image quality. On particularly low-end GPUs, the added cost of FSR may not be worth it (compared to using bilinear scaling with a slightly higher resolution scale to match performance).
+
+\ **Note:** FSR is only effective when using the Forward+ rendering method, not Mobile or Compatibility. If using an incompatible rendering method, FSR will fall back to bilinear scaling.
 
 .. rst-class:: classref-item-separator
 
@@ -9419,6 +9423,8 @@ Lower-end override for :ref:`rendering/shading/overrides/force_lambert_over_burl
 
 If ``true``, forces vertex shading for all rendering. This can increase performance a lot, but also reduces quality immensely. Can be used to optimize performance on low-end mobile devices.
 
+\ **Note:** This setting currently has no effect, as vertex shading is not implemented yet.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -9430,6 +9436,8 @@ If ``true``, forces vertex shading for all rendering. This can increase performa
 :ref:`bool<class_bool>` **rendering/shading/overrides/force_vertex_shading.mobile** = ``true``
 
 Lower-end override for :ref:`rendering/shading/overrides/force_vertex_shading<class_ProjectSettings_property_rendering/shading/overrides/force_vertex_shading>` on mobile devices, due to performance concerns or driver support.
+
+\ **Note:** This setting currently has no effect, as vertex shading is not implemented yet.
 
 .. rst-class:: classref-item-separator
 

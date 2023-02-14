@@ -94,9 +94,11 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_in_physics_frame<class_Engine_method_is_in_physics_frame>` **(** **)** |const|                                                                      |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`register_script_language<class_Engine_method_register_script_language>` **(** :ref:`ScriptLanguage<class_ScriptLanguage>` language **)**               |
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`register_script_language<class_Engine_method_register_script_language>` **(** :ref:`ScriptLanguage<class_ScriptLanguage>` language **)**               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`register_singleton<class_Engine_method_register_singleton>` **(** :ref:`StringName<class_StringName>` name, :ref:`Object<class_Object>` instance **)** |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`unregister_script_language<class_Engine_method_unregister_script_language>` **(** :ref:`ScriptLanguage<class_ScriptLanguage>` language **)**           |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`unregister_singleton<class_Engine_method_unregister_singleton>` **(** :ref:`StringName<class_StringName>` name **)**                                   |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -644,9 +646,17 @@ Returns ``true`` if the game is inside the fixed process and physics phase of th
 
 .. rst-class:: classref-method
 
-void **register_script_language** **(** :ref:`ScriptLanguage<class_ScriptLanguage>` language **)**
+:ref:`Error<enum_@GlobalScope_Error>` **register_script_language** **(** :ref:`ScriptLanguage<class_ScriptLanguage>` language **)**
 
 Registers a :ref:`ScriptLanguage<class_ScriptLanguage>` instance to be available with ``ScriptServer``.
+
+Returns:
+
+- :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success
+
+- :ref:`@GlobalScope.ERR_UNAVAILABLE<class_@GlobalScope_constant_ERR_UNAVAILABLE>` if ``ScriptServer`` has reached it limit and cannot register any new language
+
+- :ref:`@GlobalScope.ERR_ALREADY_EXISTS<class_@GlobalScope_constant_ERR_ALREADY_EXISTS>` if ``ScriptServer`` already contains a language with similar extension/name/type
 
 .. rst-class:: classref-item-separator
 
@@ -659,6 +669,24 @@ Registers a :ref:`ScriptLanguage<class_ScriptLanguage>` instance to be available
 void **register_singleton** **(** :ref:`StringName<class_StringName>` name, :ref:`Object<class_Object>` instance **)**
 
 Registers the given object as a singleton, globally available under ``name``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Engine_method_unregister_script_language:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **unregister_script_language** **(** :ref:`ScriptLanguage<class_ScriptLanguage>` language **)**
+
+Unregisters the :ref:`ScriptLanguage<class_ScriptLanguage>` instance from ``ScriptServer``.
+
+Returns:
+
+- :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success
+
+- :ref:`@GlobalScope.ERR_DOES_NOT_EXIST<class_@GlobalScope_constant_ERR_DOES_NOT_EXIST>` if the language is already not registered in ``ScriptServer``
 
 .. rst-class:: classref-item-separator
 

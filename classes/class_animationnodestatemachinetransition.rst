@@ -12,9 +12,16 @@ AnimationNodeStateMachineTransition
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+A resource to connect each node to make a path for :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+The path generated when using :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>` is limited to the nodes connected by **AnimationNodeStateMachineTransition**.
+
+You can set the timing and conditions of the transition in detail.
 
 .. rst-class:: classref-introduction-group
 

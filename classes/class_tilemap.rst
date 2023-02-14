@@ -105,6 +105,8 @@ Methods
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                       | :ref:`get_layers_count<class_TileMap_method_get_layers_count>` **(** **)** |const|                                                                                                                                                                                                      |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                       | :ref:`get_navigation_map<class_TileMap_method_get_navigation_map>` **(** :ref:`int<class_int>` layer **)** |const|                                                                                                                                                                      |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`             | :ref:`get_neighbor_cell<class_TileMap_method_get_neighbor_cell>` **(** :ref:`Vector2i<class_Vector2i>` coords, :ref:`CellNeighbor<enum_TileSet_CellNeighbor>` neighbor **)** |const|                                                                                                    |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TileMapPattern<class_TileMapPattern>` | :ref:`get_pattern<class_TileMap_method_get_pattern>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i[]<class_Vector2i>` coords_array **)**                                                                                                                                            |
@@ -148,6 +150,8 @@ Methods
    | void                                        | :ref:`set_layer_y_sort_origin<class_TileMap_method_set_layer_y_sort_origin>` **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` y_sort_origin **)**                                                                                                                               |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                        | :ref:`set_layer_z_index<class_TileMap_method_set_layer_z_index>` **(** :ref:`int<class_int>` layer, :ref:`int<class_int>` z_index **)**                                                                                                                                                 |
+   +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                        | :ref:`set_navigation_map<class_TileMap_method_set_navigation_map>` **(** :ref:`int<class_int>` layer, :ref:`RID<class_RID>` map **)**                                                                                                                                                   |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                        | :ref:`set_pattern<class_TileMap_method_set_pattern>` **(** :ref:`int<class_int>` layer, :ref:`Vector2i<class_Vector2i>` position, :ref:`TileMapPattern<class_TileMapPattern>` pattern **)**                                                                                             |
    +---------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -551,6 +555,22 @@ Returns the number of layers in the TileMap.
 
 ----
 
+.. _class_TileMap_method_get_navigation_map:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_navigation_map** **(** :ref:`int<class_int>` layer **)** |const|
+
+Returns the :ref:`NavigationServer2D<class_NavigationServer2D>` navigation map :ref:`RID<class_RID>` currently assigned to the specified TileMap ``layer``.
+
+By default the TileMap uses the default :ref:`World2D<class_World2D>` navigation map for the first TileMap layer. For each additional TileMap layer a new navigation map is created for the additional layer.
+
+In order to make :ref:`NavigationAgent2D<class_NavigationAgent2D>` switch between TileMap layer navigation maps use :ref:`NavigationAgent2D.set_navigation_map<class_NavigationAgent2D_method_set_navigation_map>` with the navigation map received from :ref:`get_navigation_map<class_TileMap_method_get_navigation_map>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TileMap_method_get_neighbor_cell:
 
 .. rst-class:: classref-method
@@ -581,7 +601,7 @@ Creates a new :ref:`TileMapPattern<class_TileMapPattern>` from the given layer a
 
 :ref:`Vector2i[]<class_Vector2i>` **get_surrounding_cells** **(** :ref:`Vector2i<class_Vector2i>` coords **)**
 
-Returns the list of all neighbourings cells to the one at ``coords``
+Returns the list of all neighbourings cells to the one at ``coords``.
 
 .. rst-class:: classref-item-separator
 
@@ -669,7 +689,7 @@ Returns the map coordinates of the cell containing the given ``local_position``.
 
 :ref:`Vector2i<class_Vector2i>` **map_pattern** **(** :ref:`Vector2i<class_Vector2i>` position_in_tilemap, :ref:`Vector2i<class_Vector2i>` coords_in_pattern, :ref:`TileMapPattern<class_TileMapPattern>` pattern **)**
 
-Returns for the given coordinate ``coords_in_pattern`` in a :ref:`TileMapPattern<class_TileMapPattern>` the corresponding cell coordinates if the pattern was pasted at the ``position_in_tilemap`` coordinates (see :ref:`set_pattern<class_TileMap_method_set_pattern>`). This mapping is required as in half-offset tile shapes, the mapping might not work by calculating ``position_in_tile_map + coords_in_pattern``
+Returns for the given coordinate ``coords_in_pattern`` in a :ref:`TileMapPattern<class_TileMapPattern>` the corresponding cell coordinates if the pattern was pasted at the ``position_in_tilemap`` coordinates (see :ref:`set_pattern<class_TileMap_method_set_pattern>`). This mapping is required as in half-offset tile shapes, the mapping might not work by calculating ``position_in_tile_map + coords_in_pattern``.
 
 .. rst-class:: classref-item-separator
 
@@ -848,6 +868,22 @@ void **set_layer_z_index** **(** :ref:`int<class_int>` layer, :ref:`int<class_in
 Sets a layers Z-index value. This Z-index is added to each tile's Z-index value.
 
 If ``layer`` is negative, the layers are accessed from the last one.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TileMap_method_set_navigation_map:
+
+.. rst-class:: classref-method
+
+void **set_navigation_map** **(** :ref:`int<class_int>` layer, :ref:`RID<class_RID>` map **)**
+
+Assigns a :ref:`NavigationServer2D<class_NavigationServer2D>` navigation map :ref:`RID<class_RID>` to the specified TileMap ``layer``.
+
+By default the TileMap uses the default :ref:`World2D<class_World2D>` navigation map for the first TileMap layer. For each additional TileMap layer a new navigation map is created for the additional layer.
+
+In order to make :ref:`NavigationAgent2D<class_NavigationAgent2D>` switch between TileMap layer navigation maps use :ref:`NavigationAgent2D.set_navigation_map<class_NavigationAgent2D_method_set_navigation_map>` with the navigation map received from :ref:`get_navigation_map<class_TileMap_method_get_navigation_map>`.
 
 .. rst-class:: classref-item-separator
 

@@ -171,8 +171,7 @@ Can be used to make HTTP requests, i.e. download or upload files or web content 
             GD.PushError("Couldn't load the image.");
         }
     
-        var texture = new ImageTexture();
-        texture.CreateFromImage(image);
+        var texture = ImageTexture.CreateFromImage(image);
     
         // Display the image in a TextureRect node.
         var textureRect = new TextureRect();

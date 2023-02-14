@@ -12,7 +12,7 @@ Area3D
 
 **Inherits:** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-3D area for detection and physics and audio influence.
+3D area for detection, as well as physics and audio influence.
 
 .. rst-class:: classref-introduction-group
 

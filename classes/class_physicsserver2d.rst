@@ -21,7 +21,21 @@ Server interface for low-level 2D physics access.
 Description
 -----------
 
-PhysicsServer2D is the server responsible for all 2D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
+PhysicsServer2D is the server responsible for all 2D physics. It can directly create and manipulate all physics objects:
+
+- A *space* is a self-contained world for a physics simulation. It contains bodies, areas, and joints. Its state can be queried for collision and intersection information, and several parameters of the simulation can be modified.
+
+- A *shape* is a geometric figure such as a circle, a rectangle, a capsule, or a polygon. It can be used for collision detection by adding it to a body/area, possibly with an extra transformation relative to the body/area's origin. Bodies/areas can have multiple (transformed) shapes added to them, and a single shape can be added to bodies/areas multiple times with different local transformations.
+
+- A *body* is a physical object which can be in static, kinematic, or rigid mode. Its state (such as position and velocity) can be queried and updated. A force integration callback can be set to customize the body's physics.
+
+- An *area* is a region in space which can be used to detect bodies and areas entering and exiting it. A body monitoring callback can be set to report entering/exiting body shapes, and similarly an area monitoring callback can be set. Gravity and damping can be overridden within the area by setting area parameters.
+
+- A *joint* is a constraint, either between two bodies or on one body relative to a point. Parameters such as the joint bias and the rest length of a spring joint can be adjusted.
+
+Physics objects in the physics server may be created and manipulated independently; they do not have to be tied to nodes in the scene tree.
+
+\ **Note:** All the physics nodes use the physics server internally. Adding a physics node to the scene tree will cause a corresponding physics object to be created in the physics server. A rigid body node registers a callback that updates the node's transform with the transform of the respective body object in the physics server (every physics update). An area node registers a callback to inform the area node about overlaps with the respective area object in the physics server. The raycast node queries the direct state of the relevant space in the physics server.
 
 .. rst-class:: classref-reftable-group
 
@@ -286,7 +300,7 @@ enum **SpaceParameter**:
 
 :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` **SPACE_PARAM_CONTACT_RECYCLE_RADIUS** = ``0``
 
-Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated.
+Constant to set/get the maximum distance a pair of bodies has to move before their collision status has to be recalculated. The default value of this parameter is :ref:`ProjectSettings.physics/2d/solver/contact_recycle_radius<class_ProjectSettings_property_physics/2d/solver/contact_recycle_radius>`.
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_MAX_SEPARATION:
 
@@ -294,7 +308,7 @@ Constant to set/get the maximum distance a pair of bodies has to move before the
 
 :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` **SPACE_PARAM_CONTACT_MAX_SEPARATION** = ``1``
 
-Constant to set/get the maximum distance a shape can be from another before they are considered separated and the contact is discarded.
+Constant to set/get the maximum distance a shape can be from another before they are considered separated and the contact is discarded. The default value of this parameter is :ref:`ProjectSettings.physics/2d/solver/contact_max_separation<class_ProjectSettings_property_physics/2d/solver/contact_max_separation>`.
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION:
 
@@ -302,7 +316,7 @@ Constant to set/get the maximum distance a shape can be from another before they
 
 :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` **SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION** = ``2``
 
-Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision.
+Constant to set/get the maximum distance a shape can penetrate another shape before it is considered a collision. The default value of this parameter is :ref:`ProjectSettings.physics/2d/solver/contact_max_allowed_penetration<class_ProjectSettings_property_physics/2d/solver/contact_max_allowed_penetration>`.
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_CONTACT_DEFAULT_BIAS:
 
@@ -310,7 +324,7 @@ Constant to set/get the maximum distance a shape can penetrate another shape bef
 
 :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` **SPACE_PARAM_CONTACT_DEFAULT_BIAS** = ``3``
 
-Constant to set/get the default solver bias for all physics contacts. A solver bias is a factor controlling how much two objects "rebound", after overlapping, to avoid leaving them in that state because of numerical imprecision.
+Constant to set/get the default solver bias for all physics contacts. A solver bias is a factor controlling how much two objects "rebound", after overlapping, to avoid leaving them in that state because of numerical imprecision. The default value of this parameter is :ref:`ProjectSettings.physics/2d/solver/default_contact_bias<class_ProjectSettings_property_physics/2d/solver/default_contact_bias>`.
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD:
 
@@ -318,7 +332,7 @@ Constant to set/get the default solver bias for all physics contacts. A solver b
 
 :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` **SPACE_PARAM_BODY_LINEAR_VELOCITY_SLEEP_THRESHOLD** = ``4``
 
-Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+Constant to set/get the threshold linear velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given. The default value of this parameter is :ref:`ProjectSettings.physics/2d/sleep_threshold_linear<class_ProjectSettings_property_physics/2d/sleep_threshold_linear>`.
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD:
 
@@ -326,7 +340,7 @@ Constant to set/get the threshold linear velocity of activity. A body marked as 
 
 :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` **SPACE_PARAM_BODY_ANGULAR_VELOCITY_SLEEP_THRESHOLD** = ``5``
 
-Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given.
+Constant to set/get the threshold angular velocity of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after the time given. The default value of this parameter is :ref:`ProjectSettings.physics/2d/sleep_threshold_angular<class_ProjectSettings_property_physics/2d/sleep_threshold_angular>`.
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_BODY_TIME_TO_SLEEP:
 
@@ -334,7 +348,7 @@ Constant to set/get the threshold angular velocity of activity. A body marked as
 
 :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` **SPACE_PARAM_BODY_TIME_TO_SLEEP** = ``6``
 
-Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time.
+Constant to set/get the maximum time of activity. A body marked as potentially inactive for both linear and angular velocity will be put to sleep after this time. The default value of this parameter is :ref:`ProjectSettings.physics/2d/time_before_sleep<class_ProjectSettings_property_physics/2d/time_before_sleep>`.
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS:
 
@@ -342,7 +356,7 @@ Constant to set/get the maximum time of activity. A body marked as potentially i
 
 :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` **SPACE_PARAM_CONSTRAINT_DEFAULT_BIAS** = ``7``
 
-Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision.
+Constant to set/get the default solver bias for all physics constraints. A solver bias is a factor controlling how much two objects "rebound", after violating a constraint, to avoid leaving them in that state because of numerical imprecision. The default value of this parameter is :ref:`ProjectSettings.physics/2d/solver/default_constraint_bias<class_ProjectSettings_property_physics/2d/solver/default_constraint_bias>`.
 
 .. _class_PhysicsServer2D_constant_SPACE_PARAM_SOLVER_ITERATIONS:
 
@@ -350,7 +364,7 @@ Constant to set/get the default solver bias for all physics constraints. A solve
 
 :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` **SPACE_PARAM_SOLVER_ITERATIONS** = ``8``
 
-Constant to set/get the number of solver iterations for all contacts and constraints. The greater the number of iterations, the more accurate the collisions will be. However, a greater number of iterations requires more CPU power, which can decrease performance.
+Constant to set/get the number of solver iterations for all contacts and constraints. The greater the number of iterations, the more accurate the collisions will be. However, a greater number of iterations requires more CPU power, which can decrease performance. The default value of this parameter is :ref:`ProjectSettings.physics/2d/solver/solver_iterations<class_ProjectSettings_property_physics/2d/solver/solver_iterations>`.
 
 .. rst-class:: classref-item-separator
 
@@ -416,7 +430,7 @@ This is the constant for creating capsule shapes. A capsule shape is defined by 
 
 :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>` **SHAPE_CONVEX_POLYGON** = ``6``
 
-This is the constant for creating convex polygon shapes. A polygon is defined by a list of points. It can be used for intersections and inside/outside checks. Unlike the :ref:`CollisionPolygon2D.polygon<class_CollisionPolygon2D_property_polygon>` property, polygons modified with :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` do not verify that the points supplied form is a convex polygon.
+This is the constant for creating convex polygon shapes. A polygon is defined by a list of points. It can be used for intersections and inside/outside checks.
 
 .. _class_PhysicsServer2D_constant_SHAPE_CONCAVE_POLYGON:
 
@@ -450,7 +464,7 @@ enum **AreaParameter**:
 
 :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_GRAVITY_OVERRIDE_MODE** = ``0``
 
-Constant to set/get gravity override mode in an area. See :ref:`AreaSpaceOverrideMode<enum_PhysicsServer2D_AreaSpaceOverrideMode>` for possible values.
+Constant to set/get gravity override mode in an area. See :ref:`AreaSpaceOverrideMode<enum_PhysicsServer2D_AreaSpaceOverrideMode>` for possible values. The default value of this parameter is :ref:`AREA_SPACE_OVERRIDE_DISABLED<class_PhysicsServer2D_constant_AREA_SPACE_OVERRIDE_DISABLED>`.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY:
 
@@ -458,7 +472,7 @@ Constant to set/get gravity override mode in an area. See :ref:`AreaSpaceOverrid
 
 :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_GRAVITY** = ``1``
 
-Constant to set/get gravity strength in an area.
+Constant to set/get gravity strength in an area. The default value of this parameter is ``9.80665``.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY_VECTOR:
 
@@ -466,7 +480,7 @@ Constant to set/get gravity strength in an area.
 
 :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_GRAVITY_VECTOR** = ``2``
 
-Constant to set/get gravity vector/center in an area.
+Constant to set/get gravity vector/center in an area. The default value of this parameter is ``Vector2(0, -1)``.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY_IS_POINT:
 
@@ -474,7 +488,7 @@ Constant to set/get gravity vector/center in an area.
 
 :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_GRAVITY_IS_POINT** = ``3``
 
-Constant to set/get whether the gravity vector of an area is a direction, or a center point.
+Constant to set/get whether the gravity vector of an area is a direction, or a center point. The default value of this parameter is ``false``.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY_POINT_UNIT_DISTANCE:
 
@@ -484,7 +498,7 @@ Constant to set/get whether the gravity vector of an area is a direction, or a c
 
 Constant to set/get the distance at which the gravity strength is equal to the gravity controlled by :ref:`AREA_PARAM_GRAVITY<class_PhysicsServer2D_constant_AREA_PARAM_GRAVITY>`. For example, on a planet 100 pixels in radius with a surface gravity of 4.0 px/s², set the gravity to 4.0 and the unit distance to 100.0. The gravity will have falloff according to the inverse square law, so in the example, at 200 pixels from the center the gravity will be 1.0 px/s² (twice the distance, 1/4th the gravity), at 50 pixels it will be 16.0 px/s² (half the distance, 4x the gravity), and so on.
 
-The above is true only when the unit distance is a positive number. When the unit distance is set to 0.0, the gravity will be constant regardless of distance.
+The above is true only when the unit distance is a positive number. When the unit distance is set to 0.0, the gravity will be constant regardless of distance. The default value of this parameter is ``0.0``.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_LINEAR_DAMP_OVERRIDE_MODE:
 
@@ -492,7 +506,7 @@ The above is true only when the unit distance is a positive number. When the uni
 
 :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_LINEAR_DAMP_OVERRIDE_MODE** = ``5``
 
-Constant to set/get linear damping override mode in an area. See :ref:`AreaSpaceOverrideMode<enum_PhysicsServer2D_AreaSpaceOverrideMode>` for possible values.
+Constant to set/get linear damping override mode in an area. See :ref:`AreaSpaceOverrideMode<enum_PhysicsServer2D_AreaSpaceOverrideMode>` for possible values. The default value of this parameter is :ref:`AREA_SPACE_OVERRIDE_DISABLED<class_PhysicsServer2D_constant_AREA_SPACE_OVERRIDE_DISABLED>`.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_LINEAR_DAMP:
 
@@ -500,7 +514,7 @@ Constant to set/get linear damping override mode in an area. See :ref:`AreaSpace
 
 :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_LINEAR_DAMP** = ``6``
 
-Constant to set/get the linear damping factor of an area.
+Constant to set/get the linear damping factor of an area. The default value of this parameter is ``0.1``.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_ANGULAR_DAMP_OVERRIDE_MODE:
 
@@ -508,7 +522,7 @@ Constant to set/get the linear damping factor of an area.
 
 :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_ANGULAR_DAMP_OVERRIDE_MODE** = ``7``
 
-Constant to set/get angular damping override mode in an area. See :ref:`AreaSpaceOverrideMode<enum_PhysicsServer2D_AreaSpaceOverrideMode>` for possible values.
+Constant to set/get angular damping override mode in an area. See :ref:`AreaSpaceOverrideMode<enum_PhysicsServer2D_AreaSpaceOverrideMode>` for possible values. The default value of this parameter is :ref:`AREA_SPACE_OVERRIDE_DISABLED<class_PhysicsServer2D_constant_AREA_SPACE_OVERRIDE_DISABLED>`.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_ANGULAR_DAMP:
 
@@ -516,7 +530,7 @@ Constant to set/get angular damping override mode in an area. See :ref:`AreaSpac
 
 :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_ANGULAR_DAMP** = ``8``
 
-Constant to set/get the angular damping factor of an area.
+Constant to set/get the angular damping factor of an area. The default value of this parameter is ``1.0``.
 
 .. _class_PhysicsServer2D_constant_AREA_PARAM_PRIORITY:
 
@@ -524,7 +538,7 @@ Constant to set/get the angular damping factor of an area.
 
 :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` **AREA_PARAM_PRIORITY** = ``9``
 
-Constant to set/get the priority (order of processing) of an area.
+Constant to set/get the priority (order of processing) of an area. The default value of this parameter is ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -634,7 +648,7 @@ enum **BodyParameter**:
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_BOUNCE** = ``0``
 
-Constant to set/get a body's bounce factor.
+Constant to set/get a body's bounce factor. The default value of this parameter is ``0.0``.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_FRICTION:
 
@@ -642,7 +656,7 @@ Constant to set/get a body's bounce factor.
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_FRICTION** = ``1``
 
-Constant to set/get a body's friction.
+Constant to set/get a body's friction. The default value of this parameter is ``1.0``.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_MASS:
 
@@ -650,7 +664,11 @@ Constant to set/get a body's friction.
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_MASS** = ``2``
 
-Constant to set/get a body's mass.
+Constant to set/get a body's mass. The default value of this parameter is ``1.0``. If the body's mode is set to :ref:`BODY_MODE_RIGID<class_PhysicsServer2D_constant_BODY_MODE_RIGID>`, then setting this parameter will have the following additional effects:
+
+- If the parameter :ref:`BODY_PARAM_CENTER_OF_MASS<class_PhysicsServer2D_constant_BODY_PARAM_CENTER_OF_MASS>` has never been set explicitly, then the value of that parameter will be recalculated based on the body's shapes.
+
+- If the parameter :ref:`BODY_PARAM_INERTIA<class_PhysicsServer2D_constant_BODY_PARAM_INERTIA>` is set to a value ``<= 0.0``, then the value of that parameter will be recalculated based on the body's shapes, mass, and center of mass.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_INERTIA:
 
@@ -658,7 +676,7 @@ Constant to set/get a body's mass.
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_INERTIA** = ``3``
 
-Constant to set/get a body's inertia.
+Constant to set/get a body's inertia. The default value of this parameter is ``0.0``. If the body's inertia is set to a value ``<= 0.0``, then the inertia will be recalculated based on the body's shapes, mass, and center of mass.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_CENTER_OF_MASS:
 
@@ -666,7 +684,7 @@ Constant to set/get a body's inertia.
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_CENTER_OF_MASS** = ``4``
 
-Constant to set/get a body's center of mass position in the body's local coordinate system.
+Constant to set/get a body's center of mass position in the body's local coordinate system. The default value of this parameter is ``Vector2(0,0)``. If this parameter is never set explicitly, then it is recalculated based on the body's shapes when setting the parameter :ref:`BODY_PARAM_MASS<class_PhysicsServer2D_constant_BODY_PARAM_MASS>` or when calling :ref:`body_set_space<class_PhysicsServer2D_method_body_set_space>`.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_GRAVITY_SCALE:
 
@@ -674,7 +692,7 @@ Constant to set/get a body's center of mass position in the body's local coordin
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_GRAVITY_SCALE** = ``5``
 
-Constant to set/get a body's gravity multiplier.
+Constant to set/get a body's gravity multiplier. The default value of this parameter is ``1.0``.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_LINEAR_DAMP_MODE:
 
@@ -682,7 +700,7 @@ Constant to set/get a body's gravity multiplier.
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_LINEAR_DAMP_MODE** = ``6``
 
-Constant to set/get a body's linear damping mode. See :ref:`BodyDampMode<enum_PhysicsServer2D_BodyDampMode>` for possible values.
+Constant to set/get a body's linear damping mode. See :ref:`BodyDampMode<enum_PhysicsServer2D_BodyDampMode>` for possible values. The default value of this parameter is :ref:`BODY_DAMP_MODE_COMBINE<class_PhysicsServer2D_constant_BODY_DAMP_MODE_COMBINE>`.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_ANGULAR_DAMP_MODE:
 
@@ -690,7 +708,7 @@ Constant to set/get a body's linear damping mode. See :ref:`BodyDampMode<enum_Ph
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_ANGULAR_DAMP_MODE** = ``7``
 
-Constant to set/get a body's angular damping mode. See :ref:`BodyDampMode<enum_PhysicsServer2D_BodyDampMode>` for possible values.
+Constant to set/get a body's angular damping mode. See :ref:`BodyDampMode<enum_PhysicsServer2D_BodyDampMode>` for possible values. The default value of this parameter is :ref:`BODY_DAMP_MODE_COMBINE<class_PhysicsServer2D_constant_BODY_DAMP_MODE_COMBINE>`.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_LINEAR_DAMP:
 
@@ -698,7 +716,7 @@ Constant to set/get a body's angular damping mode. See :ref:`BodyDampMode<enum_P
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_LINEAR_DAMP** = ``8``
 
-Constant to set/get a body's linear damping factor.
+Constant to set/get a body's linear damping factor. The default value of this parameter is ``0.0``.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_ANGULAR_DAMP:
 
@@ -706,7 +724,7 @@ Constant to set/get a body's linear damping factor.
 
 :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` **BODY_PARAM_ANGULAR_DAMP** = ``9``
 
-Constant to set/get a body's angular damping factor.
+Constant to set/get a body's angular damping factor. The default value of this parameter is ``0.0``.
 
 .. _class_PhysicsServer2D_constant_BODY_PARAM_MAX:
 
@@ -850,7 +868,9 @@ enum **JointParam**:
 
 :ref:`JointParam<enum_PhysicsServer2D_JointParam>` **JOINT_PARAM_BIAS** = ``0``
 
+Constant to set/get how fast the joint pulls the bodies back to satisfy the joint constraint. The lower the value, the more the two bodies can pull on the joint. The default value of this parameter is ``0.0``.
 
+\ **Note:** In Godot Physics, this parameter is only used for pin joints and groove joints.
 
 .. _class_PhysicsServer2D_constant_JOINT_PARAM_MAX_BIAS:
 
@@ -858,7 +878,9 @@ enum **JointParam**:
 
 :ref:`JointParam<enum_PhysicsServer2D_JointParam>` **JOINT_PARAM_MAX_BIAS** = ``1``
 
+Constant to set/get the maximum speed with which the joint can apply corrections. The default value of this parameter is ``3.40282e+38``.
 
+\ **Note:** In Godot Physics, this parameter is only used for groove joints.
 
 .. _class_PhysicsServer2D_constant_JOINT_PARAM_MAX_FORCE:
 
@@ -866,7 +888,9 @@ enum **JointParam**:
 
 :ref:`JointParam<enum_PhysicsServer2D_JointParam>` **JOINT_PARAM_MAX_FORCE** = ``2``
 
+Constant to set/get the maximum force that the joint can use to act on the two bodies. The default value of this parameter is ``3.40282e+38``.
 
+\ **Note:** In Godot Physics, this parameter is only used for groove joints.
 
 .. rst-class:: classref-item-separator
 
@@ -884,7 +908,7 @@ enum **PinJointParam**:
 
 :ref:`PinJointParam<enum_PhysicsServer2D_PinJointParam>` **PIN_JOINT_SOFTNESS** = ``0``
 
-
+Constant to set/get a how much the bond of the pin joint can flex. The default value of this parameter is ``0.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -902,7 +926,7 @@ enum **DampedSpringParam**:
 
 :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` **DAMPED_SPRING_REST_LENGTH** = ``0``
 
-Sets the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
+Sets the resting length of the spring joint. The joint will always try to go to back this length when pulled apart. The default value of this parameter is the distance between the joint's anchor points.
 
 .. _class_PhysicsServer2D_constant_DAMPED_SPRING_STIFFNESS:
 
@@ -910,7 +934,7 @@ Sets the resting length of the spring joint. The joint will always try to go to 
 
 :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` **DAMPED_SPRING_STIFFNESS** = ``1``
 
-Sets the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
+Sets the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length. The default value of this parameter is ``20.0``.
 
 .. _class_PhysicsServer2D_constant_DAMPED_SPRING_DAMPING:
 
@@ -918,7 +942,7 @@ Sets the stiffness of the spring joint. The joint applies a force equal to the s
 
 :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` **DAMPED_SPRING_DAMPING** = ``2``
 
-Sets the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
+Sets the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping). The default value of this parameter is ``1.5``.
 
 .. rst-class:: classref-item-separator
 
@@ -936,7 +960,7 @@ enum **CCDMode**:
 
 :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` **CCD_MODE_DISABLED** = ``0``
 
-Disables continuous collision detection. This is the fastest way to detect body collisions, but can miss small, fast-moving objects.
+Disables continuous collision detection. This is the fastest way to detect body collisions, but it can miss small and/or fast-moving objects.
 
 .. _class_PhysicsServer2D_constant_CCD_MODE_CAST_RAY:
 
@@ -1029,7 +1053,7 @@ Method Descriptions
 
 void **area_add_shape** **(** :ref:`RID<class_RID>` area, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` transform=Transform2D(1, 0, 0, 1, 0, 0), :ref:`bool<class_bool>` disabled=false **)**
 
-Adds a shape to the area, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
+Adds a shape to the area, with the given local transform. The shape (together with its ``transform`` and ``disabled`` properties) is added to an array of shapes, and the shapes of an area are usually referenced by their index in this array.
 
 .. rst-class:: classref-item-separator
 
@@ -1041,9 +1065,7 @@ Adds a shape to the area, along with a transform matrix. Shapes are usually refe
 
 void **area_attach_canvas_instance_id** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` id **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Attaches the ``ObjectID`` of a canvas to the area. Use :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` to get the ``ObjectID`` of a :ref:`CanvasLayer<class_CanvasLayer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1055,7 +1077,7 @@ void **area_attach_canvas_instance_id** **(** :ref:`RID<class_RID>` area, :ref:`
 
 void **area_attach_object_instance_id** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` id **)**
 
-Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist in the node tree.
+Attaches the ``ObjectID`` of an :ref:`Object<class_Object>` to the area. Use :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` to get the ``ObjectID`` of a :ref:`CollisionObject2D<class_CollisionObject2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1067,7 +1089,7 @@ Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist
 
 void **area_clear_shapes** **(** :ref:`RID<class_RID>` area **)**
 
-Removes all shapes from an area. It does not delete the shapes, so they can be reassigned later.
+Removes all shapes from the area. This does not delete the shapes themselves, so they can continue to be used elsewhere or added back later.
 
 .. rst-class:: classref-item-separator
 
@@ -1079,7 +1101,7 @@ Removes all shapes from an area. It does not delete the shapes, so they can be r
 
 :ref:`RID<class_RID>` **area_create** **(** **)**
 
-Creates an :ref:`Area2D<class_Area2D>`. After creating an :ref:`Area2D<class_Area2D>` with this method, assign it to a space using :ref:`area_set_space<class_PhysicsServer2D_method_area_set_space>` to use the created :ref:`Area2D<class_Area2D>` in the physics world.
+Creates a 2D area object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`area_add_shape<class_PhysicsServer2D_method_area_add_shape>` to add shapes to it, use :ref:`area_set_transform<class_PhysicsServer2D_method_area_set_transform>` to set its transform, and use :ref:`area_set_space<class_PhysicsServer2D_method_area_set_space>` to add the area to a space.
 
 .. rst-class:: classref-item-separator
 
@@ -1091,9 +1113,7 @@ Creates an :ref:`Area2D<class_Area2D>`. After creating an :ref:`Area2D<class_Are
 
 :ref:`int<class_int>` **area_get_canvas_instance_id** **(** :ref:`RID<class_RID>` area **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the ``ObjectID`` of the canvas attached to the area. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to retrieve a :ref:`CanvasLayer<class_CanvasLayer>` from a nonzero ``ObjectID``.
 
 .. rst-class:: classref-item-separator
 
@@ -1105,7 +1125,7 @@ Creates an :ref:`Area2D<class_Area2D>`. After creating an :ref:`Area2D<class_Are
 
 :ref:`int<class_int>` **area_get_collision_layer** **(** :ref:`RID<class_RID>` area **)** |const|
 
-Returns the physics layer or layers an area belongs to.
+Returns the physics layer or layers the area belongs to, as a bitmask.
 
 .. rst-class:: classref-item-separator
 
@@ -1117,7 +1137,7 @@ Returns the physics layer or layers an area belongs to.
 
 :ref:`int<class_int>` **area_get_collision_mask** **(** :ref:`RID<class_RID>` area **)** |const|
 
-Returns the physics layer or layers an area can contact with.
+Returns the physics layer or layers the area can contact with, as a bitmask.
 
 .. rst-class:: classref-item-separator
 
@@ -1129,7 +1149,7 @@ Returns the physics layer or layers an area can contact with.
 
 :ref:`int<class_int>` **area_get_object_instance_id** **(** :ref:`RID<class_RID>` area **)** |const|
 
-Gets the instance ID of the object the area is assigned to.
+Returns the ``ObjectID`` attached to the area. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to retrieve an :ref:`Object<class_Object>` from a nonzero ``ObjectID``.
 
 .. rst-class:: classref-item-separator
 
@@ -1141,7 +1161,7 @@ Gets the instance ID of the object the area is assigned to.
 
 :ref:`Variant<class_Variant>` **area_get_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` param **)** |const|
 
-Returns an area parameter value. See :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` for a list of available parameters.
+Returns the value of the given area parameter. See :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -1153,7 +1173,7 @@ Returns an area parameter value. See :ref:`AreaParameter<enum_PhysicsServer2D_Ar
 
 :ref:`RID<class_RID>` **area_get_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)** |const|
 
-Returns the :ref:`RID<class_RID>` of the nth shape of an area.
+Returns the :ref:`RID<class_RID>` of the shape with the given index in the area's array of shapes.
 
 .. rst-class:: classref-item-separator
 
@@ -1165,7 +1185,7 @@ Returns the :ref:`RID<class_RID>` of the nth shape of an area.
 
 :ref:`int<class_int>` **area_get_shape_count** **(** :ref:`RID<class_RID>` area **)** |const|
 
-Returns the number of shapes assigned to an area.
+Returns the number of shapes added to the area.
 
 .. rst-class:: classref-item-separator
 
@@ -1177,7 +1197,7 @@ Returns the number of shapes assigned to an area.
 
 :ref:`Transform2D<class_Transform2D>` **area_get_shape_transform** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)** |const|
 
-Returns the transform matrix of a shape within an area.
+Returns the local transform matrix of the shape with the given index in the area's array of shapes.
 
 .. rst-class:: classref-item-separator
 
@@ -1189,7 +1209,7 @@ Returns the transform matrix of a shape within an area.
 
 :ref:`RID<class_RID>` **area_get_space** **(** :ref:`RID<class_RID>` area **)** |const|
 
-Returns the space assigned to the area.
+Returns the :ref:`RID<class_RID>` of the space assigned to the area. Returns ``RID()`` if no space is assigned.
 
 .. rst-class:: classref-item-separator
 
@@ -1201,7 +1221,7 @@ Returns the space assigned to the area.
 
 :ref:`Transform2D<class_Transform2D>` **area_get_transform** **(** :ref:`RID<class_RID>` area **)** |const|
 
-Returns the transform matrix for an area.
+Returns the transform matrix of the area.
 
 .. rst-class:: classref-item-separator
 
@@ -1213,7 +1233,7 @@ Returns the transform matrix for an area.
 
 void **area_remove_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx **)**
 
-Removes a shape from an area. It does not delete the shape, so it can be reassigned later.
+Removes the shape with the given index from the area's array of shapes. The shape itself is not deleted, so it can continue to be used elsewhere or added back later. As a result of this operation, the area's shapes which used to have indices higher than ``shape_idx`` will have their index decreased by one.
 
 .. rst-class:: classref-item-separator
 
@@ -1225,9 +1245,19 @@ Removes a shape from an area. It does not delete the shape, so it can be reassig
 
 void **area_set_area_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)**
 
-.. container:: contribute
+Sets the area's area monitor callback. This callback will be called when any other (shape of an) area enters or exits (a shape of) the given area, and must take the following five parameters:
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+1. an integer ``status``: either :ref:`AREA_BODY_ADDED<class_PhysicsServer2D_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer2D_constant_AREA_BODY_REMOVED>` depending on whether the other area's shape entered or exited the area,
+
+2. an :ref:`RID<class_RID>` ``area_rid``: the :ref:`RID<class_RID>` of the other area that entered or exited the area,
+
+3. an integer ``instance_id``: the ``ObjectID`` attached to the other area,
+
+4. an integer ``area_shape_idx``: the index of the shape of the other area that entered or exited the area,
+
+5. an integer ``self_shape_idx``: the index of the shape of the area where the other area entered or exited.
+
+By counting (or keeping track of) the shapes that enter and exit, it can be determined if an area (with all its shapes) is entering for the first time or exiting for the last time.
 
 .. rst-class:: classref-item-separator
 
@@ -1239,7 +1269,7 @@ void **area_set_area_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`
 
 void **area_set_collision_layer** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` layer **)**
 
-Assigns the area to one or many physics layers.
+Assigns the area to one or many physics layers, via a bitmask.
 
 .. rst-class:: classref-item-separator
 
@@ -1251,7 +1281,7 @@ Assigns the area to one or many physics layers.
 
 void **area_set_collision_mask** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` mask **)**
 
-Sets which physics layers the area will monitor.
+Sets which physics layers the area will monitor, via a bitmask.
 
 .. rst-class:: classref-item-separator
 
@@ -1263,17 +1293,19 @@ Sets which physics layers the area will monitor.
 
 void **area_set_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)**
 
-Sets the function to call when any body/area enters or exits the area. This callback will be called for any object interacting with the area, and takes five parameters:
+Sets the area's body monitor callback. This callback will be called when any other (shape of a) body enters or exits (a shape of) the given area, and must take the following five parameters:
 
-1: :ref:`AREA_BODY_ADDED<class_PhysicsServer2D_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer2D_constant_AREA_BODY_REMOVED>`, depending on whether the object entered or exited the area.
+1. an integer ``status``: either :ref:`AREA_BODY_ADDED<class_PhysicsServer2D_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer2D_constant_AREA_BODY_REMOVED>` depending on whether the other body shape entered or exited the area,
 
-2: :ref:`RID<class_RID>` of the object that entered/exited the area.
+2. an :ref:`RID<class_RID>` ``body_rid``: the :ref:`RID<class_RID>` of the body that entered or exited the area,
 
-3: Instance ID of the object that entered/exited the area.
+3. an integer ``instance_id``: the ``ObjectID`` attached to the body,
 
-4: The shape index of the object that entered/exited the area.
+4. an integer ``body_shape_idx``: the index of the shape of the body that entered or exited the area,
 
-5: The shape index of the area where the object entered/exited.
+5. an integer ``self_shape_idx``: the index of the shape of the area where the body entered or exited.
+
+By counting (or keeping track of) the shapes that enter and exit, it can be determined if a body (with all its shapes) is entering for the first time or exiting for the last time.
 
 .. rst-class:: classref-item-separator
 
@@ -1285,9 +1317,7 @@ Sets the function to call when any body/area enters or exits the area. This call
 
 void **area_set_monitorable** **(** :ref:`RID<class_RID>` area, :ref:`bool<class_bool>` monitorable **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets whether the area is monitorable or not. If ``monitorable`` is ``true``, the area monitoring callback of other areas will be called when this area enters or exits them.
 
 .. rst-class:: classref-item-separator
 
@@ -1299,7 +1329,7 @@ void **area_set_monitorable** **(** :ref:`RID<class_RID>` area, :ref:`bool<class
 
 void **area_set_param** **(** :ref:`RID<class_RID>` area, :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` param, :ref:`Variant<class_Variant>` value **)**
 
-Sets the value for an area parameter. See :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` for a list of available parameters.
+Sets the value of the given area parameter. See :ref:`AreaParameter<enum_PhysicsServer2D_AreaParameter>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -1311,7 +1341,7 @@ Sets the value for an area parameter. See :ref:`AreaParameter<enum_PhysicsServer
 
 void **area_set_shape** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`RID<class_RID>` shape **)**
 
-Substitutes a given area shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_RID>`.
+Replaces the area's shape at the given index by another shape, while not affecting the ``transform`` and ``disabled`` properties at the same index.
 
 .. rst-class:: classref-item-separator
 
@@ -1323,7 +1353,7 @@ Substitutes a given area shape by another. The old shape is selected by its inde
 
 void **area_set_shape_disabled** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disabled **)**
 
-Disables a given shape in an area.
+Sets the disabled property of the area's shape with the given index. If ``disabled`` is ``true``, then the shape will not detect any other shapes entering or exiting it.
 
 .. rst-class:: classref-item-separator
 
@@ -1335,7 +1365,7 @@ Disables a given shape in an area.
 
 void **area_set_shape_transform** **(** :ref:`RID<class_RID>` area, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_Transform2D>` transform **)**
 
-Sets the transform matrix for an area shape.
+Sets the local transform matrix of the area's shape with the given index.
 
 .. rst-class:: classref-item-separator
 
@@ -1347,7 +1377,9 @@ Sets the transform matrix for an area shape.
 
 void **area_set_space** **(** :ref:`RID<class_RID>` area, :ref:`RID<class_RID>` space **)**
 
-Assigns a space to the area.
+Adds the area to the given space, after removing the area from the previously assigned space (if any).
+
+\ **Note:** To remove an area from a space without immediately adding it back elsewhere, use ``PhysicsServer2D.area_set_space(area, RID())``.
 
 .. rst-class:: classref-item-separator
 
@@ -1359,7 +1391,7 @@ Assigns a space to the area.
 
 void **area_set_transform** **(** :ref:`RID<class_RID>` area, :ref:`Transform2D<class_Transform2D>` transform **)**
 
-Sets the transform matrix for an area.
+Sets the transform matrix of the area.
 
 .. rst-class:: classref-item-separator
 
@@ -1371,7 +1403,7 @@ Sets the transform matrix for an area.
 
 void **body_add_collision_exception** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**
 
-Adds a body to the list of bodies exempt from collisions.
+Adds ``excepted_body`` to the body's list of collision exceptions, so that collisions with it are ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -1383,7 +1415,7 @@ Adds a body to the list of bodies exempt from collisions.
 
 void **body_add_constant_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**
 
-Adds a constant directional force without affecting rotation that keeps being applied over time until cleared with ``body_set_constant_force(body, Vector2(0, 0))``.
+Adds a constant directional force to the body. The force does not affect rotation. The force remains applied over time until cleared with ``PhysicsServer2D.body_set_constant_force(body, Vector2(0, 0))``.
 
 This is equivalent to using :ref:`body_add_constant_force<class_PhysicsServer2D_method_body_add_constant_force>` at the body's center of mass.
 
@@ -1397,7 +1429,7 @@ This is equivalent to using :ref:`body_add_constant_force<class_PhysicsServer2D_
 
 void **body_add_constant_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
 
-Adds a constant positioned force to the body that keeps being applied over time until cleared with ``body_set_constant_force(body, Vector2(0, 0))``.
+Adds a constant positioned force to the body. The force can affect rotation if ``position`` is different from the body's center of mass. The force remains applied over time until cleared with ``PhysicsServer2D.body_set_constant_force(body, Vector2(0, 0))``.
 
 \ ``position`` is the offset from the body origin in global coordinates.
 
@@ -1411,7 +1443,7 @@ Adds a constant positioned force to the body that keeps being applied over time 
 
 void **body_add_constant_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**
 
-Adds a constant rotational force without affecting position that keeps being applied over time until cleared with ``body_set_constant_torque(body, 0)``.
+Adds a constant rotational force to the body. The force does not affect position. The force remains applied over time until cleared with ``PhysicsServer2D.body_set_constant_torque(body, 0)``.
 
 .. rst-class:: classref-item-separator
 
@@ -1423,7 +1455,7 @@ Adds a constant rotational force without affecting position that keeps being app
 
 void **body_add_shape** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` shape, :ref:`Transform2D<class_Transform2D>` transform=Transform2D(1, 0, 0, 1, 0, 0), :ref:`bool<class_bool>` disabled=false **)**
 
-Adds a shape to the body, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
+Adds a shape to the area, with the given local transform. The shape (together with its ``transform`` and ``disabled`` properties) is added to an array of shapes, and the shapes of a body are usually referenced by their index in this array.
 
 .. rst-class:: classref-item-separator
 
@@ -1435,7 +1467,7 @@ Adds a shape to the body, along with a transform matrix. Shapes are usually refe
 
 void **body_apply_central_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**
 
-Applies a directional force without affecting rotation. A force is time dependent and meant to be applied every physics update.
+Applies a directional force to the body, at the body's center of mass. The force does not affect rotation. A force is time dependent and meant to be applied every physics update.
 
 This is equivalent to using :ref:`body_apply_force<class_PhysicsServer2D_method_body_apply_force>` at the body's center of mass.
 
@@ -1449,7 +1481,7 @@ This is equivalent to using :ref:`body_apply_force<class_PhysicsServer2D_method_
 
 void **body_apply_central_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse **)**
 
-Applies a directional impulse without affecting rotation.
+Applies a directional impulse to the body, at the body's center of mass. The impulse does not affect rotation.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
@@ -1465,7 +1497,7 @@ This is equivalent to using :ref:`body_apply_impulse<class_PhysicsServer2D_metho
 
 void **body_apply_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
 
-Applies a positioned force to the body. A force is time dependent and meant to be applied every physics update.
+Applies a positioned force to the body. The force can affect rotation if ``position`` is different from the body's center of mass. A force is time dependent and meant to be applied every physics update.
 
 \ ``position`` is the offset from the body origin in global coordinates.
 
@@ -1479,7 +1511,7 @@ Applies a positioned force to the body. A force is time dependent and meant to b
 
 void **body_apply_impulse** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` impulse, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
 
-Applies a positioned impulse to the body.
+Applies a positioned impulse to the body. The impulse can affect rotation if ``position`` is different from the body's center of mass.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
@@ -1495,7 +1527,7 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 
 void **body_apply_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**
 
-Applies a rotational force without affecting position. A force is time dependent and meant to be applied every physics update.
+Applies a rotational force to the body. The force does not affect position. A force is time dependent and meant to be applied every physics update.
 
 .. rst-class:: classref-item-separator
 
@@ -1507,7 +1539,7 @@ Applies a rotational force without affecting position. A force is time dependent
 
 void **body_apply_torque_impulse** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` impulse **)**
 
-Applies a rotational impulse to the body without affecting the position.
+Applies a rotational impulse to the body. The impulse does not affect position.
 
 An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise).
 
@@ -1521,9 +1553,7 @@ An impulse is time-independent! Applying an impulse every frame would result in 
 
 void **body_attach_canvas_instance_id** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` id **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Attaches the ``ObjectID`` of a canvas to the body. Use :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` to get the ``ObjectID`` of a :ref:`CanvasLayer<class_CanvasLayer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1535,7 +1565,7 @@ void **body_attach_canvas_instance_id** **(** :ref:`RID<class_RID>` body, :ref:`
 
 void **body_attach_object_instance_id** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` id **)**
 
-Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist in the node tree.
+Attaches the ``ObjectID`` of an :ref:`Object<class_Object>` to the body. Use :ref:`Object.get_instance_id<class_Object_method_get_instance_id>` to get the ``ObjectID`` of a :ref:`CollisionObject2D<class_CollisionObject2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1547,7 +1577,7 @@ Assigns the area to a descendant of :ref:`Object<class_Object>`, so it can exist
 
 void **body_clear_shapes** **(** :ref:`RID<class_RID>` body **)**
 
-Removes all shapes from a body.
+Removes all shapes from the body. This does not delete the shapes themselves, so they can continue to be used elsewhere or added back later.
 
 .. rst-class:: classref-item-separator
 
@@ -1559,7 +1589,7 @@ Removes all shapes from a body.
 
 :ref:`RID<class_RID>` **body_create** **(** **)**
 
-Creates a physics body.
+Creates a 2D body object in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`body_add_shape<class_PhysicsServer2D_method_body_add_shape>` to add shapes to it, use :ref:`body_set_state<class_PhysicsServer2D_method_body_set_state>` to set its transform, and use :ref:`body_set_space<class_PhysicsServer2D_method_body_set_space>` to add the body to a space.
 
 .. rst-class:: classref-item-separator
 
@@ -1571,9 +1601,7 @@ Creates a physics body.
 
 :ref:`int<class_int>` **body_get_canvas_instance_id** **(** :ref:`RID<class_RID>` body **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the ``ObjectID`` of the canvas attached to the body. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to retrieve a :ref:`CanvasLayer<class_CanvasLayer>` from a nonzero ``ObjectID``.
 
 .. rst-class:: classref-item-separator
 
@@ -1585,7 +1613,7 @@ Creates a physics body.
 
 :ref:`int<class_int>` **body_get_collision_layer** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the physics layer or layers a body belongs to.
+Returns the physics layer or layers the body belongs to, as a bitmask.
 
 .. rst-class:: classref-item-separator
 
@@ -1597,7 +1625,7 @@ Returns the physics layer or layers a body belongs to.
 
 :ref:`int<class_int>` **body_get_collision_mask** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the physics layer or layers a body can collide with.
+Returns the physics layer or layers the body can collide with, as a bitmask.
 
 .. rst-class:: classref-item-separator
 
@@ -1609,7 +1637,7 @@ Returns the physics layer or layers a body can collide with.
 
 :ref:`float<class_float>` **body_get_collision_priority** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the body's collision priority.
+Returns the body's collision priority. This is used in the depenetration phase of :ref:`body_test_motion<class_PhysicsServer2D_method_body_test_motion>`. The higher the priority is, the lower the penetration into the body will be.
 
 .. rst-class:: classref-item-separator
 
@@ -1621,7 +1649,7 @@ Returns the body's collision priority.
 
 :ref:`Vector2<class_Vector2>` **body_get_constant_force** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the body's total constant positional forces applied during each physics update.
+Returns the body's total constant positional force applied during each physics update.
 
 See :ref:`body_add_constant_force<class_PhysicsServer2D_method_body_add_constant_force>` and :ref:`body_add_constant_central_force<class_PhysicsServer2D_method_body_add_constant_central_force>`.
 
@@ -1635,7 +1663,7 @@ See :ref:`body_add_constant_force<class_PhysicsServer2D_method_body_add_constant
 
 :ref:`float<class_float>` **body_get_constant_torque** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the body's total constant rotational forces applied during each physics update.
+Returns the body's total constant rotational force applied during each physics update.
 
 See :ref:`body_add_constant_torque<class_PhysicsServer2D_method_body_add_constant_torque>`.
 
@@ -1649,7 +1677,7 @@ See :ref:`body_add_constant_torque<class_PhysicsServer2D_method_body_add_constan
 
 :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` **body_get_continuous_collision_detection_mode** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the continuous collision detection mode.
+Returns the body's continuous collision detection mode (see :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1661,7 +1689,7 @@ Returns the continuous collision detection mode.
 
 :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` **body_get_direct_state** **(** :ref:`RID<class_RID>` body **)**
 
-Returns the :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` of the body. Returns ``null`` if the body is destroyed or removed from the physics space.
+Returns the :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` of the body. Returns ``null`` if the body is destroyed or not assigned to a space.
 
 .. rst-class:: classref-item-separator
 
@@ -1673,7 +1701,7 @@ Returns the :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` of t
 
 :ref:`int<class_int>` **body_get_max_contacts_reported** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the maximum contacts that can be reported. See :ref:`body_set_max_contacts_reported<class_PhysicsServer2D_method_body_set_max_contacts_reported>`.
+Returns the maximum number of contacts that the body can report. See :ref:`body_set_max_contacts_reported<class_PhysicsServer2D_method_body_set_max_contacts_reported>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1685,7 +1713,7 @@ Returns the maximum contacts that can be reported. See :ref:`body_set_max_contac
 
 :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` **body_get_mode** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the body mode.
+Returns the body's mode (see :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1697,7 +1725,7 @@ Returns the body mode.
 
 :ref:`int<class_int>` **body_get_object_instance_id** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Gets the instance ID of the object the area is assigned to.
+Returns the ``ObjectID`` attached to the body. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to retrieve an :ref:`Object<class_Object>` from a nonzero ``ObjectID``.
 
 .. rst-class:: classref-item-separator
 
@@ -1709,7 +1737,7 @@ Gets the instance ID of the object the area is assigned to.
 
 :ref:`Variant<class_Variant>` **body_get_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` param **)** |const|
 
-Returns the value of a body parameter. See :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` for a list of available parameters.
+Returns the value of the given body parameter. See :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -1721,7 +1749,7 @@ Returns the value of a body parameter. See :ref:`BodyParameter<enum_PhysicsServe
 
 :ref:`RID<class_RID>` **body_get_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** |const|
 
-Returns the :ref:`RID<class_RID>` of the nth shape of a body.
+Returns the :ref:`RID<class_RID>` of the shape with the given index in the body's array of shapes.
 
 .. rst-class:: classref-item-separator
 
@@ -1733,7 +1761,7 @@ Returns the :ref:`RID<class_RID>` of the nth shape of a body.
 
 :ref:`int<class_int>` **body_get_shape_count** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the number of shapes assigned to a body.
+Returns the number of shapes added to the body.
 
 .. rst-class:: classref-item-separator
 
@@ -1745,7 +1773,7 @@ Returns the number of shapes assigned to a body.
 
 :ref:`Transform2D<class_Transform2D>` **body_get_shape_transform** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)** |const|
 
-Returns the transform matrix of a body shape.
+Returns the local transform matrix of the shape with the given index in the area's array of shapes.
 
 .. rst-class:: classref-item-separator
 
@@ -1757,7 +1785,7 @@ Returns the transform matrix of a body shape.
 
 :ref:`RID<class_RID>` **body_get_space** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns the :ref:`RID<class_RID>` of the space assigned to a body.
+Returns the :ref:`RID<class_RID>` of the space assigned to the body. Returns ``RID()`` if no space is assigned.
 
 .. rst-class:: classref-item-separator
 
@@ -1769,7 +1797,7 @@ Returns the :ref:`RID<class_RID>` of the space assigned to a body.
 
 :ref:`Variant<class_Variant>` **body_get_state** **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_PhysicsServer2D_BodyState>` state **)** |const|
 
-Returns a body state.
+Returns the value of the given state of the body. See :ref:`BodyState<enum_PhysicsServer2D_BodyState>` for the list of available states.
 
 .. rst-class:: classref-item-separator
 
@@ -1781,7 +1809,7 @@ Returns a body state.
 
 :ref:`bool<class_bool>` **body_is_omitting_force_integration** **(** :ref:`RID<class_RID>` body **)** |const|
 
-Returns whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>`).
+Returns ``true`` if the body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1793,7 +1821,7 @@ Returns whether a body uses a callback function to calculate its own physics (se
 
 void **body_remove_collision_exception** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` excepted_body **)**
 
-Removes a body from the list of bodies exempt from collisions.
+Removes ``excepted_body`` from the body's list of collision exceptions, so that collisions with it are no longer ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -1805,7 +1833,7 @@ Removes a body from the list of bodies exempt from collisions.
 
 void **body_remove_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx **)**
 
-Removes a shape from a body. The shape is not deleted, so it can be reused afterwards.
+Removes the shape with the given index from the body's array of shapes. The shape itself is not deleted, so it can continue to be used elsewhere or added back later. As a result of this operation, the body's shapes which used to have indices higher than ``shape_idx`` will have their index decreased by one.
 
 .. rst-class:: classref-item-separator
 
@@ -1817,7 +1845,7 @@ Removes a shape from a body. The shape is not deleted, so it can be reused after
 
 void **body_reset_mass_properties** **(** :ref:`RID<class_RID>` body **)**
 
-Restores the default inertia and center of mass based on shapes to cancel any custom values previously set using :ref:`body_set_param<class_PhysicsServer2D_method_body_set_param>`.
+Restores the default inertia and center of mass of the body based on its shapes. This undoes any custom values previously set using :ref:`body_set_param<class_PhysicsServer2D_method_body_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1829,7 +1857,7 @@ Restores the default inertia and center of mass based on shapes to cancel any cu
 
 void **body_set_axis_velocity** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` axis_velocity **)**
 
-Sets an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
+Modifies the body's linear velocity so that its projection to the axis ``axis_velocity.normalized()`` is exactly ``axis_velocity.length()``. This is useful for jumping behavior.
 
 .. rst-class:: classref-item-separator
 
@@ -1841,7 +1869,7 @@ Sets an axis velocity. The velocity in the given vector axis will be set as the 
 
 void **body_set_collision_layer** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` layer **)**
 
-Sets the physics layer or layers a body belongs to.
+Sets the physics layer or layers the body belongs to, via a bitmask.
 
 .. rst-class:: classref-item-separator
 
@@ -1853,7 +1881,7 @@ Sets the physics layer or layers a body belongs to.
 
 void **body_set_collision_mask** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` mask **)**
 
-Sets the physics layer or layers a body can collide with.
+Sets the physics layer or layers the body can collide with, via a bitmask.
 
 .. rst-class:: classref-item-separator
 
@@ -1865,7 +1893,7 @@ Sets the physics layer or layers a body can collide with.
 
 void **body_set_collision_priority** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` priority **)**
 
-Sets the body's collision priority.
+Sets the body's collision priority. This is used in the depenetration phase of :ref:`body_test_motion<class_PhysicsServer2D_method_body_test_motion>`. The higher the priority is, the lower the penetration into the body will be.
 
 .. rst-class:: classref-item-separator
 
@@ -1877,7 +1905,7 @@ Sets the body's collision priority.
 
 void **body_set_constant_force** **(** :ref:`RID<class_RID>` body, :ref:`Vector2<class_Vector2>` force **)**
 
-Sets the body's total constant positional forces applied during each physics update.
+Sets the body's total constant positional force applied during each physics update.
 
 See :ref:`body_add_constant_force<class_PhysicsServer2D_method_body_add_constant_force>` and :ref:`body_add_constant_central_force<class_PhysicsServer2D_method_body_add_constant_central_force>`.
 
@@ -1891,7 +1919,7 @@ See :ref:`body_add_constant_force<class_PhysicsServer2D_method_body_add_constant
 
 void **body_set_constant_torque** **(** :ref:`RID<class_RID>` body, :ref:`float<class_float>` torque **)**
 
-Sets the body's total constant rotational forces applied during each physics update.
+Sets the body's total constant rotational force applied during each physics update.
 
 See :ref:`body_add_constant_torque<class_PhysicsServer2D_method_body_add_constant_torque>`.
 
@@ -1907,7 +1935,7 @@ void **body_set_continuous_collision_detection_mode** **(** :ref:`RID<class_RID>
 
 Sets the continuous collision detection mode using one of the :ref:`CCDMode<enum_PhysicsServer2D_CCDMode>` constants.
 
-Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided.
+Continuous collision detection tries to predict where a moving body would collide in between physics updates, instead of moving it and correcting its movement if it collided.
 
 .. rst-class:: classref-item-separator
 
@@ -1919,13 +1947,15 @@ Continuous collision detection tries to predict where a moving body will collide
 
 void **body_set_force_integration_callback** **(** :ref:`RID<class_RID>` body, :ref:`Callable<class_Callable>` callable, :ref:`Variant<class_Variant>` userdata=null **)**
 
-Sets the function used to calculate physics for an object, if that object allows it (see :ref:`body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`).
+Sets the function used to calculate physics for the body, if that body allows it (see :ref:`body_set_omit_force_integration<class_PhysicsServer2D_method_body_set_omit_force_integration>`).
 
-The force integration function takes 2 arguments:
+The force integration function takes the following two parameters:
 
-\ ``state:`` :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` used to retrieve and modify the body's state.
+1. a :ref:`PhysicsDirectBodyState2D<class_PhysicsDirectBodyState2D>` ``state``: used to retrieve and modify the body's state,
 
-\ ``userdata:`` Optional user data, if it was passed when calling ``body_set_force_integration_callback``.
+2. a :ref:`Variant<class_Variant>` ``userdata``: optional user data.
+
+\ **Note:** This callback is currently not called in Godot Physics.
 
 .. rst-class:: classref-item-separator
 
@@ -1937,7 +1967,7 @@ The force integration function takes 2 arguments:
 
 void **body_set_max_contacts_reported** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` amount **)**
 
-Sets the maximum contacts to report. Bodies can keep a log of the contacts with other bodies. This is enabled by setting the maximum number of contacts reported to a number greater than 0.
+Sets the maximum number of contacts that the body can report. If ``amount`` is greater than zero, then the body will keep track of at most this many contacts with other bodies.
 
 .. rst-class:: classref-item-separator
 
@@ -1949,7 +1979,7 @@ Sets the maximum contacts to report. Bodies can keep a log of the contacts with 
 
 void **body_set_mode** **(** :ref:`RID<class_RID>` body, :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` mode **)**
 
-Sets the body mode using one of the :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` constants.
+Sets the body's mode. See :ref:`BodyMode<enum_PhysicsServer2D_BodyMode>` for the list of available modes.
 
 .. rst-class:: classref-item-separator
 
@@ -1961,7 +1991,7 @@ Sets the body mode using one of the :ref:`BodyMode<enum_PhysicsServer2D_BodyMode
 
 void **body_set_omit_force_integration** **(** :ref:`RID<class_RID>` body, :ref:`bool<class_bool>` enable **)**
 
-Sets whether a body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>`).
+Sets whether the body uses a callback function to calculate its own physics (see :ref:`body_set_force_integration_callback<class_PhysicsServer2D_method_body_set_force_integration_callback>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1973,7 +2003,7 @@ Sets whether a body uses a callback function to calculate its own physics (see :
 
 void **body_set_param** **(** :ref:`RID<class_RID>` body, :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` param, :ref:`Variant<class_Variant>` value **)**
 
-Sets a body parameter. See :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` for a list of available parameters.
+Sets the value of the given body parameter. See :ref:`BodyParameter<enum_PhysicsServer2D_BodyParameter>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -1985,7 +2015,7 @@ Sets a body parameter. See :ref:`BodyParameter<enum_PhysicsServer2D_BodyParamete
 
 void **body_set_shape** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`RID<class_RID>` shape **)**
 
-Substitutes a given body shape by another. The old shape is selected by its index, the new one by its :ref:`RID<class_RID>`.
+Replaces the body's shape at the given index by another shape, while not affecting the ``transform``, ``disabled``, and one-way collision properties at the same index.
 
 .. rst-class:: classref-item-separator
 
@@ -1997,7 +2027,7 @@ Substitutes a given body shape by another. The old shape is selected by its inde
 
 void **body_set_shape_as_one_way_collision** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` margin **)**
 
-Enables one way collision on body if ``enable`` is ``true``.
+Sets the one-way collision properties of the body's shape with the given index. If ``enable`` is ``true``, the one-way collision direction given by the shape's local upward axis ``body_get_shape_transform(body, shape_idx).y`` will be used to ignore collisions with the shape in the opposite direction, and to ensure depenetration of kinematic bodies happens in this direction.
 
 .. rst-class:: classref-item-separator
 
@@ -2009,7 +2039,7 @@ Enables one way collision on body if ``enable`` is ``true``.
 
 void **body_set_shape_disabled** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`bool<class_bool>` disabled **)**
 
-Disables shape in body if ``disabled`` is ``true``.
+Sets the disabled property of the body's shape with the given index. If ``disabled`` is ``true``, then the shape will be ignored in all collision detection.
 
 .. rst-class:: classref-item-separator
 
@@ -2021,7 +2051,7 @@ Disables shape in body if ``disabled`` is ``true``.
 
 void **body_set_shape_transform** **(** :ref:`RID<class_RID>` body, :ref:`int<class_int>` shape_idx, :ref:`Transform2D<class_Transform2D>` transform **)**
 
-Sets the transform matrix for a body shape.
+Sets the local transform matrix of the body's shape with the given index.
 
 .. rst-class:: classref-item-separator
 
@@ -2033,7 +2063,13 @@ Sets the transform matrix for a body shape.
 
 void **body_set_space** **(** :ref:`RID<class_RID>` body, :ref:`RID<class_RID>` space **)**
 
-Assigns a space to the body (see :ref:`space_create<class_PhysicsServer2D_method_space_create>`).
+Adds the body to the given space, after removing the body from the previously assigned space (if any). If the body's mode is set to :ref:`BODY_MODE_RIGID<class_PhysicsServer2D_constant_BODY_MODE_RIGID>`, then adding the body to a space will have the following additional effects:
+
+- If the parameter :ref:`BODY_PARAM_CENTER_OF_MASS<class_PhysicsServer2D_constant_BODY_PARAM_CENTER_OF_MASS>` has never been set explicitly, then the value of that parameter will be recalculated based on the body's shapes.
+
+- If the parameter :ref:`BODY_PARAM_INERTIA<class_PhysicsServer2D_constant_BODY_PARAM_INERTIA>` is set to a value ``<= 0.0``, then the value of that parameter will be recalculated based on the body's shapes, mass, and center of mass.
+
+\ **Note:** To remove a body from a space without immediately adding it back elsewhere, use ``PhysicsServer2D.body_set_space(body, RID())``.
 
 .. rst-class:: classref-item-separator
 
@@ -2045,9 +2081,9 @@ Assigns a space to the body (see :ref:`space_create<class_PhysicsServer2D_method
 
 void **body_set_state** **(** :ref:`RID<class_RID>` body, :ref:`BodyState<enum_PhysicsServer2D_BodyState>` state, :ref:`Variant<class_Variant>` value **)**
 
-Sets a body state using one of the :ref:`BodyState<enum_PhysicsServer2D_BodyState>` constants.
+Sets the value of a body's state. See :ref:`BodyState<enum_PhysicsServer2D_BodyState>` for the list of available states.
 
-Note that the method doesn't take effect immediately. The state will change on the next physics frame.
+\ **Note:** The state change doesn't take effect immediately. The state will change on the next physics frame.
 
 .. rst-class:: classref-item-separator
 
@@ -2059,7 +2095,7 @@ Note that the method doesn't take effect immediately. The state will change on t
 
 :ref:`bool<class_bool>` **body_test_motion** **(** :ref:`RID<class_RID>` body, :ref:`PhysicsTestMotionParameters2D<class_PhysicsTestMotionParameters2D>` parameters, :ref:`PhysicsTestMotionResult2D<class_PhysicsTestMotionResult2D>` result=null **)**
 
-Returns ``true`` if a collision would result from moving along a motion vector from a given point in space. :ref:`PhysicsTestMotionParameters2D<class_PhysicsTestMotionParameters2D>` is passed to set motion parameters. :ref:`PhysicsTestMotionResult2D<class_PhysicsTestMotionResult2D>` can be passed to return additional information.
+Returns ``true`` if a collision would result from moving the body along a motion vector from a given point in space. See :ref:`PhysicsTestMotionParameters2D<class_PhysicsTestMotionParameters2D>` for the available motion parameters. Optionally a :ref:`PhysicsTestMotionResult2D<class_PhysicsTestMotionResult2D>` object can be passed, which will be used to store the information about the resulting collision.
 
 .. rst-class:: classref-item-separator
 
@@ -2071,9 +2107,7 @@ Returns ``true`` if a collision would result from moving along a motion vector f
 
 :ref:`RID<class_RID>` **capsule_shape_create** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a 2D capsule shape in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` to set the capsule's height and radius.
 
 .. rst-class:: classref-item-separator
 
@@ -2085,9 +2119,7 @@ Returns ``true`` if a collision would result from moving along a motion vector f
 
 :ref:`RID<class_RID>` **circle_shape_create** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a 2D circle shape in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` to set the circle's radius.
 
 .. rst-class:: classref-item-separator
 
@@ -2099,9 +2131,7 @@ Returns ``true`` if a collision would result from moving along a motion vector f
 
 :ref:`RID<class_RID>` **concave_polygon_shape_create** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a 2D concave polygon shape in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` to set the concave polygon's segments.
 
 .. rst-class:: classref-item-separator
 
@@ -2113,9 +2143,7 @@ Returns ``true`` if a collision would result from moving along a motion vector f
 
 :ref:`RID<class_RID>` **convex_polygon_shape_create** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a 2D convex polygon shape in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` to set the convex polygon's points.
 
 .. rst-class:: classref-item-separator
 
@@ -2127,7 +2155,7 @@ Returns ``true`` if a collision would result from moving along a motion vector f
 
 :ref:`float<class_float>` **damped_spring_joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` param **)** |const|
 
-Returns the value of a damped spring joint parameter. See :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` for a list of available parameters.
+Returns the value of the given damped spring joint parameter. See :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -2139,7 +2167,7 @@ Returns the value of a damped spring joint parameter. See :ref:`DampedSpringPara
 
 void **damped_spring_joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` param, :ref:`float<class_float>` value **)**
 
-Sets a damped spring joint parameter. See :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` for a list of available parameters.
+Sets the value of the given damped spring joint parameter. See :ref:`DampedSpringParam<enum_PhysicsServer2D_DampedSpringParam>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -2151,7 +2179,7 @@ Sets a damped spring joint parameter. See :ref:`DampedSpringParam<enum_PhysicsSe
 
 void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
-Destroys any of the objects created by PhysicsServer2D. If the :ref:`RID<class_RID>` passed is not one of the objects that can be created by PhysicsServer2D, an error will be sent to the console.
+Destroys any of the objects created by PhysicsServer2D. If the :ref:`RID<class_RID>` passed is not one of the objects that can be created by PhysicsServer2D, an error will be printed to the console.
 
 .. rst-class:: classref-item-separator
 
@@ -2163,7 +2191,7 @@ Destroys any of the objects created by PhysicsServer2D. If the :ref:`RID<class_R
 
 :ref:`int<class_int>` **get_process_info** **(** :ref:`ProcessInfo<enum_PhysicsServer2D_ProcessInfo>` process_info **)**
 
-Returns information about the current state of the 2D physics engine. See :ref:`ProcessInfo<enum_PhysicsServer2D_ProcessInfo>` for a list of available states.
+Returns information about the current state of the 2D physics engine. See :ref:`ProcessInfo<enum_PhysicsServer2D_ProcessInfo>` for the list of available states.
 
 .. rst-class:: classref-item-separator
 
@@ -2175,9 +2203,7 @@ Returns information about the current state of the 2D physics engine. See :ref:`
 
 void **joint_clear** **(** :ref:`RID<class_RID>` joint **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Destroys the joint with the given :ref:`RID<class_RID>`, creates a new uninitialized joint, and makes the :ref:`RID<class_RID>` refer to this new joint.
 
 .. rst-class:: classref-item-separator
 
@@ -2189,9 +2215,7 @@ void **joint_clear** **(** :ref:`RID<class_RID>` joint **)**
 
 :ref:`RID<class_RID>` **joint_create** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a 2D joint in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. To set the joint type, use :ref:`joint_make_damped_spring<class_PhysicsServer2D_method_joint_make_damped_spring>`, :ref:`joint_make_groove<class_PhysicsServer2D_method_joint_make_groove>` or :ref:`joint_make_pin<class_PhysicsServer2D_method_joint_make_pin>`. Use :ref:`joint_set_param<class_PhysicsServer2D_method_joint_set_param>` to set generic joint parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -2215,7 +2239,7 @@ Sets whether the bodies attached to the :ref:`Joint2D<class_Joint2D>` will colli
 
 :ref:`float<class_float>` **joint_get_param** **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param **)** |const|
 
-Returns the value of a joint parameter.
+Returns the value of the given joint parameter. See :ref:`JointParam<enum_PhysicsServer2D_JointParam>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -2227,7 +2251,7 @@ Returns the value of a joint parameter.
 
 :ref:`JointType<enum_PhysicsServer2D_JointType>` **joint_get_type** **(** :ref:`RID<class_RID>` joint **)** |const|
 
-Returns a joint's type (see :ref:`JointType<enum_PhysicsServer2D_JointType>`).
+Returns the joint's type (see :ref:`JointType<enum_PhysicsServer2D_JointType>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2251,9 +2275,7 @@ Returns whether the bodies attached to the :ref:`Joint2D<class_Joint2D>` will co
 
 void **joint_make_damped_spring** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` anchor_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Makes the joint a damped spring joint, attached at the point ``anchor_a`` (given in global coordinates) on the body ``body_a`` and at the point ``anchor_b`` (given in global coordinates) on the body ``body_b``. To set the parameters which are specific to the damped spring, see :ref:`damped_spring_joint_set_param<class_PhysicsServer2D_method_damped_spring_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2265,9 +2287,7 @@ void **joint_make_damped_spring** **(** :ref:`RID<class_RID>` joint, :ref:`Vecto
 
 void **joint_make_groove** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` groove1_a, :ref:`Vector2<class_Vector2>` groove2_a, :ref:`Vector2<class_Vector2>` anchor_b, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Makes the joint a groove joint.
 
 .. rst-class:: classref-item-separator
 
@@ -2279,9 +2299,7 @@ void **joint_make_groove** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<clas
 
 void **joint_make_pin** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_Vector2>` anchor, :ref:`RID<class_RID>` body_a, :ref:`RID<class_RID>` body_b **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Makes the joint a pin joint. If ``body_b`` is ``RID()``, then ``body_a`` is pinned to the point ``anchor`` (given in global coordinates); otherwise, ``body_a`` is pinned to ``body_b`` at the point ``anchor`` (given in global coordinates). To set the parameters which are specific to the pin joint, see :ref:`pin_joint_set_param<class_PhysicsServer2D_method_pin_joint_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2293,7 +2311,7 @@ void **joint_make_pin** **(** :ref:`RID<class_RID>` joint, :ref:`Vector2<class_V
 
 void **joint_set_param** **(** :ref:`RID<class_RID>` joint, :ref:`JointParam<enum_PhysicsServer2D_JointParam>` param, :ref:`float<class_float>` value **)**
 
-Sets a joint parameter. See :ref:`JointParam<enum_PhysicsServer2D_JointParam>` for a list of available parameters.
+Sets the value of the given joint parameter. See :ref:`JointParam<enum_PhysicsServer2D_JointParam>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -2329,9 +2347,7 @@ Sets a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJoin
 
 :ref:`RID<class_RID>` **rectangle_shape_create** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a 2D rectangle shape in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` to set the rectangle's half-extents.
 
 .. rst-class:: classref-item-separator
 
@@ -2343,9 +2359,7 @@ Sets a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJoin
 
 :ref:`RID<class_RID>` **segment_shape_create** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a 2D segment shape in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` to set the segment's start and end points.
 
 .. rst-class:: classref-item-separator
 
@@ -2357,9 +2371,7 @@ Sets a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJoin
 
 :ref:`RID<class_RID>` **separation_ray_shape_create** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a 2D separation ray shape in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` to set the shape's ``length`` and ``slide_on_slope`` properties.
 
 .. rst-class:: classref-item-separator
 
@@ -2371,7 +2383,7 @@ Sets a pin joint parameter. See :ref:`PinJointParam<enum_PhysicsServer2D_PinJoin
 
 void **set_active** **(** :ref:`bool<class_bool>` active **)**
 
-Activates or deactivates the 2D physics engine.
+Activates or deactivates the 2D physics server. If ``active`` is ``false``, then the physics server will not do anything in its physics step.
 
 .. rst-class:: classref-item-separator
 
@@ -2383,7 +2395,7 @@ Activates or deactivates the 2D physics engine.
 
 :ref:`Variant<class_Variant>` **shape_get_data** **(** :ref:`RID<class_RID>` shape **)** |const|
 
-Returns the shape data.
+Returns the shape data that defines the configuration of the shape, such as the half-extents of a rectangle or the segments of a concave shape. See :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` for the precise format of this data in each case.
 
 .. rst-class:: classref-item-separator
 
@@ -2395,7 +2407,7 @@ Returns the shape data.
 
 :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>` **shape_get_type** **(** :ref:`RID<class_RID>` shape **)** |const|
 
-Returns a shape's type (see :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>`).
+Returns the shape's type (see :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2407,7 +2419,25 @@ Returns a shape's type (see :ref:`ShapeType<enum_PhysicsServer2D_ShapeType>`).
 
 void **shape_set_data** **(** :ref:`RID<class_RID>` shape, :ref:`Variant<class_Variant>` data **)**
 
-Sets the shape data that defines its shape and size. The data to be passed depends on the kind of shape created :ref:`shape_get_type<class_PhysicsServer2D_method_shape_get_type>`.
+Sets the shape data that defines the configuration of the shape. The ``data`` to be passed depends on the shape's type (see :ref:`shape_get_type<class_PhysicsServer2D_method_shape_get_type>`):
+
+- :ref:`SHAPE_WORLD_BOUNDARY<class_PhysicsServer2D_constant_SHAPE_WORLD_BOUNDARY>`: an array of length two containing a :ref:`Vector2<class_Vector2>` ``normal`` direction and a ``float`` distance ``d``,
+
+- :ref:`SHAPE_SEPARATION_RAY<class_PhysicsServer2D_constant_SHAPE_SEPARATION_RAY>`: a dictionary containing the key ``length`` with a ``float`` value and the key ``slide_on_slope`` with a ``bool`` value,
+
+- :ref:`SHAPE_SEGMENT<class_PhysicsServer2D_constant_SHAPE_SEGMENT>`: a :ref:`Rect2<class_Rect2>` ``rect`` containing the first point of the segment in ``rect.position`` and the second point of the segment in ``rect.size``,
+
+- :ref:`SHAPE_CIRCLE<class_PhysicsServer2D_constant_SHAPE_CIRCLE>`: a ``float`` ``radius``,
+
+- :ref:`SHAPE_RECTANGLE<class_PhysicsServer2D_constant_SHAPE_RECTANGLE>`: a :ref:`Vector2<class_Vector2>` ``half_extents``,
+
+- :ref:`SHAPE_CAPSULE<class_PhysicsServer2D_constant_SHAPE_CAPSULE>`: an array of length two (or a :ref:`Vector2<class_Vector2>`) containing a ``float`` ``height`` and a ``float`` ``radius``,
+
+- :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`: either a :ref:`PackedVector2Array<class_PackedVector2Array>` of points defining a convex polygon in counterclockwise order (the clockwise outward normal of each segment formed by consecutive points is calculated internally), or a :ref:`PackedFloat32Array<class_PackedFloat32Array>` of length divisible by four so that every 4-tuple of ``float``\ s contains the coordinates of a point followed by the coordinates of the clockwise outward normal vector to the segment between the current point and the next point,
+
+- :ref:`SHAPE_CONCAVE_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONCAVE_POLYGON>`: a :ref:`PackedVector2Array<class_PackedVector2Array>` of length divisible by two (each pair of points forms one segment).
+
+\ **Warning**: In the case of :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`, this method does not check if the points supplied actually form a convex polygon (unlike the :ref:`CollisionPolygon2D.polygon<class_CollisionPolygon2D_property_polygon>` property).
 
 .. rst-class:: classref-item-separator
 
@@ -2419,7 +2449,7 @@ Sets the shape data that defines its shape and size. The data to be passed depen
 
 :ref:`RID<class_RID>` **space_create** **(** **)**
 
-Creates a space. A space is a collection of parameters for the physics engine that can be assigned to an area or a body. It can be assigned to an area with :ref:`area_set_space<class_PhysicsServer2D_method_area_set_space>`, or to a body with :ref:`body_set_space<class_PhysicsServer2D_method_body_set_space>`.
+Creates a 2D space in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. A space contains bodies and areas, and controls the stepping of the physics simulation of the objects in it.
 
 .. rst-class:: classref-item-separator
 
@@ -2431,7 +2461,7 @@ Creates a space. A space is a collection of parameters for the physics engine th
 
 :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **space_get_direct_state** **(** :ref:`RID<class_RID>` space **)**
 
-Returns the state of a space, a :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`. This object can be used to make collision/intersection queries.
+Returns the state of a space, a :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`. This object can be used for collision/intersection queries.
 
 .. rst-class:: classref-item-separator
 
@@ -2443,7 +2473,7 @@ Returns the state of a space, a :ref:`PhysicsDirectSpaceState2D<class_PhysicsDir
 
 :ref:`float<class_float>` **space_get_param** **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` param **)** |const|
 
-Returns the value of a space parameter.
+Returns the value of the given space parameter. See :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -2455,7 +2485,7 @@ Returns the value of a space parameter.
 
 :ref:`bool<class_bool>` **space_is_active** **(** :ref:`RID<class_RID>` space **)** |const|
 
-Returns whether the space is active.
+Returns ``true`` if the space is active.
 
 .. rst-class:: classref-item-separator
 
@@ -2467,7 +2497,7 @@ Returns whether the space is active.
 
 void **space_set_active** **(** :ref:`RID<class_RID>` space, :ref:`bool<class_bool>` active **)**
 
-Marks a space as active. It will not have an effect, unless it is assigned to an area or body.
+Activates or deactivates the space. If ``active`` is ``false``, then the physics server will not do anything with this space in its physics step.
 
 .. rst-class:: classref-item-separator
 
@@ -2479,7 +2509,7 @@ Marks a space as active. It will not have an effect, unless it is assigned to an
 
 void **space_set_param** **(** :ref:`RID<class_RID>` space, :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` param, :ref:`float<class_float>` value **)**
 
-Sets the value for a space parameter. See :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` for a list of available parameters.
+Sets the value of the given space parameter. See :ref:`SpaceParameter<enum_PhysicsServer2D_SpaceParameter>` for the list of available parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -2491,9 +2521,7 @@ Sets the value for a space parameter. See :ref:`SpaceParameter<enum_PhysicsServe
 
 :ref:`RID<class_RID>` **world_boundary_shape_create** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a 2D world boundary shape in the physics server, and returns the :ref:`RID<class_RID>` that identifies it. Use :ref:`shape_set_data<class_PhysicsServer2D_method_shape_set_data>` to set the shape's normal direction and distance properties.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -689,6 +689,8 @@ Returns a SHA-256 :ref:`String<class_String>` representing the file at the given
 
 Returns the next :ref:`Variant<class_Variant>` value from the file. If ``allow_objects`` is ``true``, decoding objects is allowed.
 
+Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.bytes_to_var<class_@GlobalScope_method_bytes_to_var>` method.
+
 \ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 
 .. rst-class:: classref-item-separator
@@ -1001,6 +1003,8 @@ Appends ``string`` to the file without a line return, encoding the text as UTF-8
 void **store_var** **(** :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` full_objects=false **)**
 
 Stores any Variant value in the file. If ``full_objects`` is ``true``, encoding objects is allowed (and can potentially include code).
+
+Internally, this uses the same encoding mechanism as the :ref:`@GlobalScope.var_to_bytes<class_@GlobalScope_method_var_to_bytes>` method.
 
 \ **Note:** Not all properties are included. Only properties that are configured with the :ref:`@GlobalScope.PROPERTY_USAGE_STORAGE<class_@GlobalScope_constant_PROPERTY_USAGE_STORAGE>` flag set will be serialized. You can add a new usage flag to a property by overriding the :ref:`Object._get_property_list<class_Object_method__get_property_list>` method in your class. You can also check how property usage is configured by calling :ref:`Object._get_property_list<class_Object_method__get_property_list>`. See :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` for the possible usage flags.
 

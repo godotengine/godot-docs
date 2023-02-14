@@ -12,7 +12,7 @@ NavigationServer3D
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Server interface for low-level 3D navigation access
+Server interface for low-level 3D navigation access.
 
 .. rst-class:: classref-introduction-group
 

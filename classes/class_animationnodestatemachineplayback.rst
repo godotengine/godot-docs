@@ -102,9 +102,9 @@ Method Descriptions
 
 :ref:`float<class_float>` **get_current_length** **(** **)** |const|
 
-.. container:: contribute
+Returns the current state length.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** It is possible that any :ref:`AnimationRootNode<class_AnimationRootNode>` can be nodes as well as animations. This means that there can be multiple animations within a single state. Which animation length has priority depends on the nodes connected inside it. Also, if a transition does not reset, the remaining length at that point will be returned.
 
 .. rst-class:: classref-item-separator
 
@@ -117,6 +117,8 @@ Method Descriptions
 :ref:`StringName<class_StringName>` **get_current_node** **(** **)** |const|
 
 Returns the currently playing animation state.
+
+\ **Note:** When using a cross-fade, the current state changes to the next state immediately after the cross-fade begins.
 
 .. rst-class:: classref-item-separator
 

@@ -586,6 +586,34 @@ The body's moment of inertia. This is like mass, but for rotation: it determines
 
 If set to ``Vector3.ZERO``, inertia is automatically computed (default value).
 
+\ **Note:** This value does not change when inertia is automatically computed. Use :ref:`PhysicsServer3D<class_PhysicsServer3D>` to get the computed inertia.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    @onready var ball = $Ball
+    
+    func get_ball_inertia():
+        return PhysicsServer3D.body_get_direct_state(ball.get_rid()).inverse_inertia.inverse()
+
+ .. code-tab:: csharp
+
+    private RigidBody3D _ball;
+    
+    public override void _Ready()
+    {
+        _ball = GetNode<RigidBody3D>("Ball");
+    }
+    
+    private Vector3 GetBallInertia()
+    {
+        return PhysicsServer3D.BodyGetDirectState(_ball.GetRid()).InverseInertia.Inverse();
+    }
+
+
+
 .. rst-class:: classref-item-separator
 
 ----

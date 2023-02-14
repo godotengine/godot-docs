@@ -616,6 +616,34 @@ The body's moment of inertia. This is like mass, but for rotation: it determines
 
 If set to ``0``, inertia is automatically computed (default value).
 
+\ **Note:** This value does not change when inertia is automatically computed. Use :ref:`PhysicsServer2D<class_PhysicsServer2D>` to get the computed inertia.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    @onready var ball = $Ball
+    
+    func get_ball_inertia():
+        return 1.0 / PhysicsServer2D.body_get_direct_state(ball.get_rid()).inverse_inertia
+
+ .. code-tab:: csharp
+
+    private RigidBody2D _ball;
+    
+    public override void _Ready()
+    {
+        _ball = GetNode<RigidBody2D>("Ball");
+    }
+    
+    private float GetBallInertia()
+    {
+        return 1.0f / PhysicsServer2D.BodyGetDirectState(_ball.GetRid()).InverseInertia;
+    }
+
+
+
 .. rst-class:: classref-item-separator
 
 ----

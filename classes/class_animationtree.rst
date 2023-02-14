@@ -71,9 +71,15 @@ Methods
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`       | :ref:`get_root_motion_position<class_AnimationTree_method_get_root_motion_position>` **(** **)** |const|                                                                                                                                                                                             |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`       | :ref:`get_root_motion_position_accumulator<class_AnimationTree_method_get_root_motion_position_accumulator>` **(** **)** |const|                                                                                                                                                                     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Quaternion<class_Quaternion>` | :ref:`get_root_motion_rotation<class_AnimationTree_method_get_root_motion_rotation>` **(** **)** |const|                                                                                                                                                                                             |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Quaternion<class_Quaternion>` | :ref:`get_root_motion_rotation_accumulator<class_AnimationTree_method_get_root_motion_rotation_accumulator>` **(** **)** |const|                                                                                                                                                                     |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`       | :ref:`get_root_motion_scale<class_AnimationTree_method_get_root_motion_scale>` **(** **)** |const|                                                                                                                                                                                                   |
+   +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`       | :ref:`get_root_motion_scale_accumulator<class_AnimationTree_method_get_root_motion_scale_accumulator>` **(** **)** |const|                                                                                                                                                                           |
    +-------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -327,7 +333,7 @@ Manually advance the animations by the specified time (in seconds).
 
 :ref:`Vector3<class_Vector3>` **get_root_motion_position** **(** **)** |const|
 
-Retrieve the motion of position with the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
+Retrieve the motion delta of position with the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
 
 If :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` is not a path to a track of type :ref:`Animation.TYPE_POSITION_3D<class_Animation_constant_TYPE_POSITION_3D>`, returns ``Vector3(0, 0, 0)``.
 
@@ -352,6 +358,58 @@ The most basic example is applying position to :ref:`CharacterBody3D<class_Chara
 
 
 
+By using this in combination with :ref:`get_root_motion_position_accumulator<class_AnimationTree_method_get_root_motion_position_accumulator>`, you can apply the root motion position more correctly to account for the rotation of the node.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    func _process(delta):
+        if Input.is_action_just_pressed("animate"):
+            state_machine.travel("Animate")
+        set_quaternion(get_quaternion() * animation_tree.get_root_motion_rotation())
+        var velocity: Vector3 = (animation_tree.get_root_motion_rotation_accumulator().inverse() * get_quaternion()) * animation_tree.get_root_motion_position() / delta
+        set_velocity(velocity)
+        move_and_slide()
+
+
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationTree_method_get_root_motion_position_accumulator:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_root_motion_position_accumulator** **(** **)** |const|
+
+Retrieve the blended value of the position tracks with the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
+
+This is useful in cases where you want to respect the initial key values of the animation.
+
+For example, if an animation with only one key ``Vector3(0, 0, 0)`` is played in the previous frame and then an animation with only one key ``Vector3(1, 0, 1)`` is played in the next frame, the difference can be calculated as follows:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var prev_root_motion_position_accumulator: Vector3
+    
+    func _process(delta):
+        if Input.is_action_just_pressed("animate"):
+            state_machine.travel("Animate")
+        var current_root_motion_position_accumulator: Vector3 = animation_tree.get_root_motion_position_accumulator()
+        var difference: Vector3 = current_root_motion_position_accumulator - prev_root_motion_position_accumulator
+        prev_root_motion_position_accumulator = current_root_motion_position_accumulator
+        transform.origin += difference
+
+
+
+However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -362,7 +420,7 @@ The most basic example is applying position to :ref:`CharacterBody3D<class_Chara
 
 :ref:`Quaternion<class_Quaternion>` **get_root_motion_rotation** **(** **)** |const|
 
-Retrieve the motion of rotation with the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Quaternion<class_Quaternion>` that can be used elsewhere.
+Retrieve the motion delta of rotation with the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Quaternion<class_Quaternion>` that can be used elsewhere.
 
 If :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` is not a path to a track of type :ref:`Animation.TYPE_ROTATION_3D<class_Animation_constant_TYPE_ROTATION_3D>`, returns ``Quaternion(0, 0, 0, 1)``.
 
@@ -386,13 +444,50 @@ The most basic example is applying rotation to :ref:`CharacterBody3D<class_Chara
 
 ----
 
+.. _class_AnimationTree_method_get_root_motion_rotation_accumulator:
+
+.. rst-class:: classref-method
+
+:ref:`Quaternion<class_Quaternion>` **get_root_motion_rotation_accumulator** **(** **)** |const|
+
+Retrieve the blended value of the rotation tracks with the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Quaternion<class_Quaternion>` that can be used elsewhere.
+
+This is necessary to apply the root motion position correctly, taking rotation into account. See also :ref:`get_root_motion_position<class_AnimationTree_method_get_root_motion_position>`.
+
+Also, this is useful in cases where you want to respect the initial key values of the animation.
+
+For example, if an animation with only one key ``Quaternion(0, 0, 0, 1)`` is played in the previous frame and then an animation with only one key ``Quaternion(0, 0.707, 0, 0.707)`` is played in the next frame, the difference can be calculated as follows:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var prev_root_motion_rotation_accumulator: Quaternion
+    
+    func _process(delta):
+        if Input.is_action_just_pressed("animate"):
+            state_machine.travel("Animate")
+        var current_root_motion_rotation_accumulator: Quaternion = animation_tree.get_root_motion_Quaternion_accumulator()
+        var difference: Quaternion = prev_root_motion_rotation_accumulator.inverse() * current_root_motion_rotation_accumulator
+        prev_root_motion_rotation_accumulator = current_root_motion_rotation_accumulator
+        transform.basis *= difference
+
+
+
+However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AnimationTree_method_get_root_motion_scale:
 
 .. rst-class:: classref-method
 
 :ref:`Vector3<class_Vector3>` **get_root_motion_scale** **(** **)** |const|
 
-Retrieve the motion of scale with the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
+Retrieve the motion delta of scale with the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
 
 If :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` is not a path to a track of type :ref:`Animation.TYPE_SCALE_3D<class_Animation_constant_TYPE_SCALE_3D>`, returns ``Vector3(0, 0, 0)``.
 
@@ -417,6 +512,39 @@ The most basic example is applying scale to :ref:`CharacterBody3D<class_Characte
         set_scale(current_scale * scale_accum)
 
 
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationTree_method_get_root_motion_scale_accumulator:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_root_motion_scale_accumulator** **(** **)** |const|
+
+Retrieve the blended value of the scale tracks with the :ref:`root_motion_track<class_AnimationTree_property_root_motion_track>` as a :ref:`Vector3<class_Vector3>` that can be used elsewhere.
+
+For example, if an animation with only one key ``Vector3(1, 1, 1)`` is played in the previous frame and then an animation with only one key ``Vector3(2, 2, 2)`` is played in the next frame, the difference can be calculated as follows:
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var prev_root_motion_scale_accumulator: Vector3
+    
+    func _process(delta):
+        if Input.is_action_just_pressed("animate"):
+            state_machine.travel("Animate")
+        var current_root_motion_scale_accumulator: Vector3 = animation_tree.get_root_motion_scale_accumulator()
+        var difference: Vector3 = current_root_motion_scale_accumulator - prev_root_motion_scale_accumulator
+        prev_root_motion_scale_accumulator = current_root_motion_scale_accumulator
+        transform.basis = transform.basis.scaled(difference)
+
+
+
+However, if the animation loops, an unintended discrete change may occur, so this is only useful for some simple use cases.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

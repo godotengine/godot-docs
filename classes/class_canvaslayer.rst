@@ -172,7 +172,7 @@ Scales the layer when using :ref:`follow_viewport_enabled<class_CanvasLayer_prop
 - void **set_layer** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_layer** **(** **)**
 
-Layer index for draw order. Lower values are drawn first.
+Layer index for draw order. Lower values are drawn behind higher values.
 
 .. rst-class:: classref-item-separator
 

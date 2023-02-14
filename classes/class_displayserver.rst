@@ -744,7 +744,7 @@ I-beam cursor shape. This is used by default when hovering a control that accept
 
 :ref:`CursorShape<enum_DisplayServer_CursorShape>` **CURSOR_POINTING_HAND** = ``2``
 
-Pointing hand cursor shape. This is used by default when hovering a :ref:`LinkButton<class_LinkButton>` or an URL tag in a :ref:`RichTextLabel<class_RichTextLabel>`.⋅
+Pointing hand cursor shape. This is used by default when hovering a :ref:`LinkButton<class_LinkButton>` or an URL tag in a :ref:`RichTextLabel<class_RichTextLabel>`.
 
 .. _class_DisplayServer_constant_CURSOR_CROSS:
 
@@ -1118,7 +1118,7 @@ enum **VSyncMode**:
 
 :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` **VSYNC_DISABLED** = ``0``
 
-No vertical synchronization, which means the engine will display frames as fast as possible (tearing may be visible). Framerate is unlimited (nonwithstanding :ref:`Engine.max_fps<class_Engine_property_max_fps>`).
+No vertical synchronization, which means the engine will display frames as fast as possible (tearing may be visible). Framerate is unlimited (nonwithstanding :ref:`Engine.max_fps<class_Engine_property_max_fps>`). Not supported when using the Compatibility rendering method.
 
 .. _class_DisplayServer_constant_VSYNC_ENABLED:
 
@@ -1134,7 +1134,7 @@ Default vertical synchronization mode, the image is displayed only on vertical b
 
 :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` **VSYNC_ADAPTIVE** = ``2``
 
-Behaves like :ref:`VSYNC_DISABLED<class_DisplayServer_constant_VSYNC_DISABLED>` when the framerate drops below the screen's refresh rate to reduce stuttering (tearing may be visible). Otherwise, vertical synchronization is enabled to avoid tearing. Framerate is limited by the monitor refresh rate (nonwithstanding :ref:`Engine.max_fps<class_Engine_property_max_fps>`).
+Behaves like :ref:`VSYNC_DISABLED<class_DisplayServer_constant_VSYNC_DISABLED>` when the framerate drops below the screen's refresh rate to reduce stuttering (tearing may be visible). Otherwise, vertical synchronization is enabled to avoid tearing. Framerate is limited by the monitor refresh rate (nonwithstanding :ref:`Engine.max_fps<class_Engine_property_max_fps>`). Not supported when using the Compatibility rendering method.
 
 .. _class_DisplayServer_constant_VSYNC_MAILBOX:
 
@@ -1144,7 +1144,7 @@ Behaves like :ref:`VSYNC_DISABLED<class_DisplayServer_constant_VSYNC_DISABLED>` 
 
 Displays the most recent image in the queue on vertical blanking intervals, while rendering to the other images (no tearing is visible). Framerate is unlimited (nonwithstanding :ref:`Engine.max_fps<class_Engine_property_max_fps>`).
 
-Although not guaranteed, the images can be rendered as fast as possible, which may reduce input lag (also called "Fast" V-Sync mode). :ref:`VSYNC_MAILBOX<class_DisplayServer_constant_VSYNC_MAILBOX>` works best when at least twice as many frames as the display refresh rate are rendered.
+Although not guaranteed, the images can be rendered as fast as possible, which may reduce input lag (also called "Fast" V-Sync mode). :ref:`VSYNC_MAILBOX<class_DisplayServer_constant_VSYNC_MAILBOX>` works best when at least twice as many frames as the display refresh rate are rendered. Not supported when using the Compatibility rendering method.
 
 .. rst-class:: classref-item-separator
 
@@ -2263,7 +2263,7 @@ Sets number of state of an multistate item. See :ref:`global_menu_add_multistate
 
 void **global_menu_set_item_radio_checkable** **(** :ref:`String<class_String>` menu_root, :ref:`int<class_int>` idx, :ref:`bool<class_bool>` checkable **)**
 
-Sets the type of the item at the specified index ``idx`` to radio button. If ``false``, sets the type of the item to plain text
+Sets the type of the item at the specified index ``idx`` to radio button. If ``false``, sets the type of the item to plain text.
 
 \ **Note:** This is purely cosmetic; you must add the logic for checking/unchecking items in radio groups.
 
@@ -3602,6 +3602,8 @@ Sets the V-Sync mode of the given window. See also :ref:`ProjectSettings.display
 See :ref:`VSyncMode<enum_DisplayServer_VSyncMode>` for possible values and how they affect the behavior of your application.
 
 Depending on the platform and used renderer, the engine will fall back to :ref:`VSYNC_ENABLED<class_DisplayServer_constant_VSYNC_ENABLED>` if the desired mode is not supported.
+
+\ **Note:** V-Sync modes other than :ref:`VSYNC_ENABLED<class_DisplayServer_constant_VSYNC_ENABLED>` are only supported in the Forward+ and Mobile rendering methods, not Compatibility.
 
 .. rst-class:: classref-item-separator
 

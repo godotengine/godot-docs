@@ -27,6 +27,8 @@ The :ref:`Texture2D<class_Texture2D>`\ s associated with the Decal are automatic
 
 \ **Note:** Decals cannot affect an underlying material's transparency, regardless of its transparency mode (alpha blend, alpha scissor, alpha hash, opaque pre-pass). This means translucent or transparent areas of a material will remain translucent or transparent even if an opaque decal is applied on them.
 
+\ **Note:** Decals are only supported in the Forward+ and Mobile rendering methods, not Compatibility. When using the Mobile rendering method, only 8 decals can be displayed on each mesh resource. Attempting to display more than 8 decals on a single mesh resource will result in decals flickering in and out as the camera moves.
+
 \ **Note:** When using the Mobile rendering method, decals will only correctly affect meshes whose visibility AABB intersects with the decal's AABB. If using a shader to deform the mesh in a way that makes it go outside its AABB, :ref:`GeometryInstance3D.extra_cull_margin<class_GeometryInstance3D_property_extra_cull_margin>` must be increased on the mesh. Otherwise, the decal may not be visible on the mesh.
 
 .. rst-class:: classref-reftable-group
@@ -313,7 +315,9 @@ Fades the Decal if the angle between the Decal's :ref:`AABB<class_AABB>` and the
 - void **set_size** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_size** **(** **)**
 
-Sets the size of the :ref:`AABB<class_AABB>` used by the decal. The AABB goes from ``-size/2`` to ``size/2``.
+Sets the size of the :ref:`AABB<class_AABB>` used by the decal. All dimensions must be set to a value greater than zero (they will be clamped to ``0.001`` if this is not the case). The AABB goes from ``-size/2`` to ``size/2``.
+
+\ **Note:** To improve culling efficiency of "hard surface" decals, set their :ref:`upper_fade<class_Decal_property_upper_fade>` and :ref:`lower_fade<class_Decal_property_lower_fade>` to ``0.0`` and set the Y component of the :ref:`size<class_Decal_property_size>` as low as possible. This will reduce the decals' AABB size without affecting their appearance.
 
 .. rst-class:: classref-item-separator
 

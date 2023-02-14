@@ -2351,7 +2351,7 @@ Command (on macOS) or Meta/Windows key mask.
 
 :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **KEY_MASK_CTRL** = ``268435456``
 
-Ctrl key mask.
+Control key mask.
 
 .. _class_@GlobalScope_constant_KEY_MASK_KPAD:
 
@@ -2417,7 +2417,7 @@ Middle mouse button.
 
 :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **MOUSE_BUTTON_WHEEL_UP** = ``4``
 
-Mouse wheel up.
+Mouse wheel scrolling up.
 
 .. _class_@GlobalScope_constant_MOUSE_BUTTON_WHEEL_DOWN:
 
@@ -2425,7 +2425,7 @@ Mouse wheel up.
 
 :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **MOUSE_BUTTON_WHEEL_DOWN** = ``5``
 
-Mouse wheel down.
+Mouse wheel scrolling down.
 
 .. _class_@GlobalScope_constant_MOUSE_BUTTON_WHEEL_LEFT:
 
@@ -3716,7 +3716,7 @@ Hints that a string property is a password, and every character is replaced with
 
 :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``37``
 
-
+Represents the size of the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3902,7 +3902,7 @@ When duplicating a resource with :ref:`Resource.duplicate<class_Resource_method_
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_HIGH_END_GFX** = ``2097152``
 
-The property is only shown in the editor if modern renderers are supported (GLES3 is excluded).
+The property is only shown in the editor if modern renderers are supported (the Compatibility rendering method is excluded).
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NODE_PATH_FROM_SCENE_ROOT:
 
@@ -6166,7 +6166,8 @@ In GDScript, this is the equivalent of the ``**`` operator.
 
 ::
 
-    pow(2, 5) # Returns 32
+    pow(2, 5)   # Returns 32.0
+    pow(4, 1.5) # Returns 8.0
 
 .. rst-class:: classref-item-separator
 
@@ -6954,15 +6955,15 @@ Converts a formatted ``string`` that was returned by :ref:`var_to_str<class_@Glo
 
  .. code-tab:: gdscript
 
-    var a = '{ "a": 1, "b": 2 }' # a is a String
-    var b = str_to_var(a)        # b is a Dictionary
-    print(b["a"])                # Prints 1
+    var data = '{ "a": 1, "b": 2 }' # data is a String
+    var dict = str_to_var(data)     # dict is a Dictionary
+    print(dict["a"])                # Prints 1
 
  .. code-tab:: csharp
 
-    string a = "{ \"a\": 1, \"b\": 2 }";        // a is a string
-    var b = GD.StrToVar(a).AsGodotDictionary(); // b is a Dictionary
-    GD.Print(b["a"]);                           // Prints 1
+    string data = "{ \"a\": 1, \"b\": 2 }";           // data is a string
+    var dict = GD.StrToVar(data).AsGodotDictionary(); // dict is a Dictionary
+    GD.Print(dict["a"]);                              // Prints 1
 
 
 

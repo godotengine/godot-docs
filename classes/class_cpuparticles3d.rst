@@ -810,7 +810,7 @@ Maximum damping.
 - void **set_param_min** **(** :ref:`Parameter<enum_CPUParticles3D_Parameter>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_CPUParticles3D_Parameter>` param **)** |const|
 
-Minimum damping
+Minimum damping.
 
 .. rst-class:: classref-item-separator
 

@@ -67,7 +67,7 @@ enum **PlayMode**:
 
 :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **PLAY_MODE_FORWARD** = ``0``
 
-
+Plays animation in forward direction.
 
 .. _class_AnimationNodeAnimation_constant_PLAY_MODE_BACKWARD:
 
@@ -75,7 +75,7 @@ enum **PlayMode**:
 
 :ref:`PlayMode<enum_AnimationNodeAnimation_PlayMode>` **PLAY_MODE_BACKWARD** = ``1``
 
-
+Plays animation in backward direction.
 
 .. rst-class:: classref-section-separator
 

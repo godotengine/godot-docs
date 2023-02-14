@@ -667,6 +667,8 @@ The angular, asymptotic speed of the camera's rotation smoothing effect when :re
 
 The camera's zoom. A zoom of ``Vector(2, 2)`` doubles the size seen in the viewport. A zoom of ``Vector(0.5, 0.5)`` halves the size seen in the viewport.
 
+\ **Note:** :ref:`FontFile.oversampling<class_FontFile_property_oversampling>` does *not* take **Camera2D** zoom into account. This means that zooming in/out will cause bitmap fonts and rasterized (non-MSDF) dynamic fonts to appear blurry or pixelated unless the font is part of a :ref:`CanvasLayer<class_CanvasLayer>` that makes it ignore camera zoom. To ensure text remains crisp regardless of zoom, you can enable MSDF font rendering by enabling :ref:`ProjectSettings.gui/theme/default_font_multichannel_signed_distance_field<class_ProjectSettings_property_gui/theme/default_font_multichannel_signed_distance_field>` (applies to the default project font only), or enabling **Multichannel Signed Distance Field** in the import options of a DynamicFont for custom fonts. On system fonts, :ref:`SystemFont.multichannel_signed_distance_field<class_SystemFont_property_multichannel_signed_distance_field>` can be enabled in the inspector.
+
 .. rst-class:: classref-section-separator
 
 ----

@@ -1939,6 +1939,8 @@ Popups the **Window** at the center of the current screen, with optionally given
 
 If the **Window** is embedded, it will be centered in the parent :ref:`Viewport<class_Viewport>` instead.
 
+\ **Note:** Calling it with the default value of ``minsize`` is equivalent to calling it with :ref:`size<class_Window_property_size>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1952,6 +1954,8 @@ void **popup_centered_clamped** **(** :ref:`Vector2i<class_Vector2i>` minsize=Ve
 Popups the **Window** centered inside its parent **Window**.
 
 \ ``fallback_ratio`` determines the maximum size of the **Window**, in relation to its parent.
+
+\ **Note:** Calling it with the default value of ``minsize`` is equivalent to calling it with :ref:`size<class_Window_property_size>`.
 
 .. rst-class:: classref-item-separator
 

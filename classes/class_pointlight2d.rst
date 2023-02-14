@@ -19,7 +19,7 @@ Positional 2D light source.
 Description
 -----------
 
-Casts light in a 2D environment. This light's shape is defined by a (usually grayscale) texture
+Casts light in a 2D environment. This light's shape is defined by a (usually grayscale) texture.
 
 .. rst-class:: classref-introduction-group
 

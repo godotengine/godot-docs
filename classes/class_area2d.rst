@@ -12,7 +12,7 @@ Area2D
 
 **Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-2D area for detection and physics and audio influence.
+2D area for detection, as well as physics and audio influence.
 
 .. rst-class:: classref-introduction-group
 

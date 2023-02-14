@@ -176,7 +176,7 @@ Extra spacing at the bottom of the line in pixels.
 - void **set_spacing** **(** :ref:`SpacingType<enum_TextServer_SpacingType>` spacing, :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_spacing** **(** **)**
 
-Extra spacing between graphical glyphs
+Extra spacing between graphical glyphs.
 
 .. rst-class:: classref-item-separator
 
