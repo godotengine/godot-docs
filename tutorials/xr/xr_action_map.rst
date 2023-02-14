@@ -240,8 +240,8 @@ The appropriate :ref:`XRController3D <class_xrcontroller3d>` node will emit the 
   You can bind the same action to multiple inputs for the same controller on the same profile.
   In this case the XR runtime will attempt to combine the inputs.
   
-  * For ``Bool``, this will perform an ``OR`` operation between the buttons.
-  * For ``Float``, this will take the highest value of the bound inputs.
+  * For ``Bool`` inputs, this will perform an ``OR`` operation between the buttons.
+  * For ``Float`` inputs, this will take the highest value of the bound inputs.
   * The behavior for ``Pose`` inputs is undefined, but the first bound input is likely to be used.
 
   You shouldn't bind multiple actions of the same action set to the same controller input.
@@ -377,7 +377,7 @@ This is why many XR runtimes only use it as a last resort and will attempt to us
 
   It is the recommendation from the OpenXR Working Group that only bindings for controllers actually tested by the developer are setup.
   The XR runtimes are designed with this in mind.
-  They can perform a better job of rebinding a provided binding than a developer can makes educated guesses.
+  They can perform a better job of rebinding a provided binding than a developer can make educated guesses.
   Especially as the developer can't test if this leads to a comfortable experience for the end user.
 
   This is our advice as well: limit your action map to the interaction profiles for devices you have actually tested your game with.
