@@ -206,7 +206,7 @@ So let's initialize an array of floats and create a storage buffer:
     var input_bytes := input.to_byte_array()
 
     # Create a storage buffer that can hold our float values.
-    # Each float has 8 byte (32 bit) so 10 x 8 = 80 bytes
+    # Each float has 4 bytes (32 bit) so 10 x 4 = 40 bytes
     var buffer := rd.storage_buffer_create(input_bytes.size(), input_bytes)
 
  .. code-tab:: csharp
@@ -217,7 +217,7 @@ So let's initialize an array of floats and create a storage buffer:
     Buffer.BlockCopy(input, 0, inputBytes, 0, inputBytes.Length);
 
     // Create a storage buffer that can hold our float values.
-    // Each float has 8 byte (32 bit) so 10 x 8 = 80 bytes
+    // Each float has 4 bytes (32 bit) so 10 x 4 = 40 bytes
     var buffer = rd.StorageBufferCreate((uint)inputBytes.Length, inputBytes);
 
 With the buffer in place we need to tell the rendering device to use this
