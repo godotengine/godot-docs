@@ -77,7 +77,7 @@ The concept here is that you could have different sets that provide bindings in 
 You could have:
 
   * a ``Character control`` set for when you're walking around,
-  * a ``Vehicle control`` setfor when you're operating a vehicle,
+  * a ``Vehicle control`` set for when you're operating a vehicle,
   * a ``Menu`` set for when a menu is open.
 
 Only the action set applicable to the current state of your game/application can then be enabled.
@@ -95,7 +95,7 @@ OpenXR will only bind an input or output to a single action.
 If the same input or output is bound to multiple actions the one in the active action set with the highest priority will be the one updated/used.
 So in our above example it will thus be important that only one action set is active.
 
-For your first XR game/application we highly recommend starting with just a single action set and not over-engineer things.
+For your first XR game/application we highly recommend starting with just a single action set and to not over-engineer things.
 
 For our walkthrough in this document we will thus create a single action set called ``my_first_action_set``.
 We do this by pressing the ``Add action set`` button:
@@ -136,10 +136,11 @@ You can also poll the current state of an action.
 :ref:`XRController3D <class_xrcontroller3d>` for instance has an ``is_button_pressed`` method.
 
 Actions can be used for both input and output.
-Each action has a type that defines the type of in- or output it can operate on.
+Each action has a type that defines the type of input or output it can operate on.
 
-The type ``Bool`` is used for discrete input like buttons.
-The type ``Float`` is used for analogue inputs like triggers.
+* The type ``Bool`` is used for discrete input like buttons.
+* The type ``Float`` is used for analogue inputs like triggers.
+
 These two are special as they are the only ones that are interchangeable.
 OpenXR will handle conversions between ``Bool`` and ``Float`` inputs and actions.
 You can get the value of a ``Float`` type action by calling the method ``get_float`` on your :ref:`XRController3D <class_xrcontroller3d>` node.
@@ -197,8 +198,8 @@ The columns in our table are as follows:
     - Pose
     - The type of this action.
 
-OpenXR defines a number of input poses that are commonly available for controllers and can thus be bound.
-There is no rule which poses are supported for different controllers.
+OpenXR defines a number of bindable input poses that are commonly available for controllers.
+There are no rules for which poses are supported for different controllers.
 The poses OpenXR currently defines are:
 
   * The aim pose on most controllers is positioned slightly infront of the controller and aims forward.
@@ -209,21 +210,21 @@ The poses OpenXR currently defines are:
     This is a new pose that is not available on all XR runtimes.
 
  .. note::
-  If hand tracking is used there are currently big differences in implementations between the different XR runtimes.
+  If hand tracking is used, there are currently big differences in implementations between the different XR runtimes.
   As a result the action map is currently not suitable for hand tracking. Work is being done on this so stay tuned.
 
-Lets complete our list of actions for a very simple shooting game/application:
+Let's complete our list of actions for a very simple shooting game/application:
 
 .. image:: img/xr_all_actions.webp
 
 The actions we have added are:
 
   * movement, which allows the user to move around outside of normal room scale tracking.
-  * grab, which detects the user wants to hold something.
-  * shoot, which detects the user wants to fire the weapon they are holding.
+  * grab, which detects that the user wants to hold something.
+  * shoot, which detects that the user wants to fire the weapon they are holding.
   * haptic, which allows us to output haptic feedback.
 
-Now note that we don't make a difference between the left and right hand.
+Now note that we don't distinguish between the left and right hand.
 This is something that is determined at the next stage.
 We've implemented the action system in such a way that you can bind the same action to both hands.
 The appropriate :ref:`XRController3D <class_xrcontroller3d>` node will emit the signal.
@@ -239,11 +240,12 @@ The appropriate :ref:`XRController3D <class_xrcontroller3d>` node will emit the 
 .. note::
   You can bind the same action to multiple inputs for the same controller on the same profile.
   In this case the XR runtime will attempt to combine the inputs.
-  For ``Bool`` this will perform an ``OR`` operation between the buttons.
-  For ``Float`` this will take the highest value of the bound inputs.
-  For ``Pose`` this is not defined but will likely result in the first input being bound being used.
+  
+  * For ``Bool``, this will perform an ``OR`` operation between the buttons.
+  * For ``Float``, this will take the highest value of the bound inputs.
+  * The behavior for ``Pose`` inputs is undefined, but the first bound input is likely to be used.
 
-  You shouldn't bind multiple actions of the same action set to the same input of a controller.
+  You shouldn't bind multiple actions of the same action set to the same controller input.
   If you do this, or if actions are bound from multiple action sets but they have overlapping priorities, the behavior is undefined.
   The XR runtime may simply not accept your action map, or it may take this on a first come first serve basis.
 
@@ -267,7 +269,7 @@ There are also provisions for devices such as treadmills, haptic vests and such 
   The core specification identifies a number of controllers and similar devices with their supported inputs and outputs.
   Every XR runtime must accept these interaction profiles even if they aren't applicable.
 
-  New devices are added through extensions and XR runtimes must specify which they support.
+  New devices are added through extensions and XR runtimes must specify which ones they support.
   XR runtimes that do not support a device added through extensions will not accept these profiles.
   XR runtimes that do not support added input or output types will often crash if supplied.
 
@@ -278,19 +280,19 @@ There are also provisions for devices such as treadmills, haptic vests and such 
   This does mean that in order to support new devices, you might need to update to a more recent version of Godot.
 
 It is however also important to note that the action map has been designed with this in mind.
-When new devices enter the market, or when your users use devices that you do not have access to, the action map system puts the onus with the XR runtime.
-It is the XR runtimes job to choose the best fitting interaction profile that has been specified and adapt it for the controller the user is using.
+When new devices enter the market, or when your users use devices that you do not have access to, the action map system relies on the XR runtime.
+It is the XR runtime's job to choose the best fitting interaction profile that has been specified and adapt it for the controller the user is using.
 
 How the XR runtime does this is left to the implementation of the runtime and there are thus vast differences between the runtimes.
 Some runtimes might even permit users to edit the bindings themselves.
 
 A common approach for a runtime is to look for a matching interaction profile first.
 If this is not found it will check the most common profiles such as that of the "Touch controller" and do a conversion.
-If all else fails, it will check the generic "Simple controller", more on that one in a bit.
+If all else fails, it will check the generic :ref:`"Simple controller"<The simple controller>`.
 
 .. note::
   There is an important conclusion to be made here:
-  When a controller is found and the action map applied to it, the XR runtime is not limited to the exact configurations you set up in Godot's action map editor.
+  When a controller is found, and the action map is applied to it, the XR runtime is not limited to the exact configurations you set up in Godot's action map editor.
   While the runtime will generally choose a suitable mapping based on one of the bindings you set up in the action map, it can deviate from it.
 
   For example, when the Touch controller profile is used any of the following scenarios could be true:
@@ -312,19 +314,20 @@ If all else fails, it will check the generic "Simple controller", more on that o
 Our first controller binding
 ----------------------------
 
-Let's setup our first controller binding and we'll do so for the Touch controller.
+Let's set up our first controller binding, using the Touch controller as an example.
 
-Press "Add profile" and find the touch controller and add it, if it is not in the list it may already have been added:
+Press "Add profile", find the Touch controller, and add it.
+If it is not in the list, then it may already have been added.
 
 .. image:: img/xr_add_touch_controller.webp
 
-Our UI now shows a panel for the left controller, and for the right controller.
-It shows all the possible inputs and outputs of the controller in this UI.
+Our UI now shows panels for both the left and right controllers.
+The panels contain all of the possible inputs and outputs for each controller.
 We can use the ``+`` next to each entry to bind it to an action:
 
 .. image:: img/xr_select_action.webp
 
-Lets finish our configuration:
+Let's finish our configuration:
 
 .. image:: img/xr_touch_completed.webp
 
@@ -341,14 +344,16 @@ As mentioned before OpenXR will do conversions between the two, but do read the 
   Some of the inputs seem to appear in our list multiple times.
   
   For instance we can find the ``X`` button twice, once as ``X click`` and then as ``X touch``.
-  This is due to the Touch controller having capacitive sensor.
-  ``X touch`` will be true if the user is merely touching the X button.
-  ``X click`` will be true when the user is actually pressing down on the button.
+  This is due to the Touch controller having a capacitive sensor.
+  
+  * ``X touch`` will be true if the user is merely touching the X button.
+  * ``X click`` will be true when the user is actually pressing down on the button.
 
   Similarly for the thumbstick we have:
-  ``Thumbstick touch`` which will be true if the user is touching the thumbstick.
-  ``Thumbstick`` which gives a value for the direction the thumbstick is pushed to.
-  ``Thumbstick click`` which is true when the user is pressing down on the thumbstick.
+  
+  * ``Thumbstick touch`` which will be true if the user is touching the thumbstick.
+  * ``Thumbstick`` which gives a value for the direction the thumbstick is pushed to.
+  * ``Thumbstick click`` which is true when the user is pressing down on the thumbstick.
 
   It is important to note that only a select number of XR controllers support touch sensors or have click features on thumbsticks.
   Keep that in mind when designing your game/application. 
@@ -373,7 +378,7 @@ This is why many XR runtimes only use it as a last resort and will attempt to us
 
   It is the recommendation from the OpenXR Working Group that only bindings for controllers actually tested by the developer are setup.
   The XR runtimes are designed with this in mind.
-  They can do a better job at rebinding a provided binding, then a developer who takes a best stab at bindings.
+  They can perform a better job of rebinding a provided binding than a developer can makes educated guesses.
   Especially as the developer can't test if this leads to a comfortable experience for the end user.
 
   This is our advice as well: limit your action map to the interaction profiles for devices you have actually tested your game with.
