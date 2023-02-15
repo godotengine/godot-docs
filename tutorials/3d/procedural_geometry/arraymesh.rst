@@ -247,7 +247,6 @@ that you find online.
 
     var rings = 50
     var radial_segments = 50
-    var height = 1
     var radius = 1
 
     func _ready():
@@ -310,7 +309,6 @@ that you find online.
 
             var rings = 50;
             var radialSegments = 50;
-            var height = 1;
             var radius = 1;
 
             // Vertex indices.
