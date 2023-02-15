@@ -140,7 +140,8 @@ by adding each array to ``surface_array`` and then committing to the mesh.
     surface_array[Mesh.ARRAY_NORMAL] = normals
     surface_array[Mesh.ARRAY_INDEX] = indices
 
-    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array) # No blendshapes, lods, or compression used.
+    # No blendshapes, lods, or compression used.
+    mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array)
 
  .. code-tab:: csharp C#
 
@@ -157,7 +158,8 @@ by adding each array to ``surface_array`` and then committing to the mesh.
     var arrMesh = Mesh as ArrayMesh;
     if (arrMesh != null)
     {
-        arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray); // No blendshapes, lods, or compression used.
+        // No blendshapes, lods, or compression used.
+        arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray); 
     }
 
 .. note:: In this example, we used ``Mesh.PRIMITIVE_TRIANGLES``, but you can use any primitive type
@@ -191,7 +193,8 @@ Put together, the full code looks like:
         surface_array[Mesh.ARRAY_INDEX] = indices
 
         # Create mesh surface from mesh array.
-        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array) # No blendshapes, lods, or compression used.
+        # No blendshapes, lods, or compression used.
+        mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, surface_array)
 
  .. code-tab:: csharp C#
 
@@ -228,7 +231,8 @@ Put together, the full code looks like:
             if (arrMesh != null)
             {
                 // Create mesh surface from mesh array
-                arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray); // No blendshapes, lods, or compression used.
+                // No blendshapes, lods, or compression used.
+                arrMesh.AddSurfaceFromArrays(Mesh.PrimitiveType.Triangles, surfaceArray);
             }
         }
     }
