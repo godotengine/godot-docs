@@ -20,24 +20,6 @@ The table of contents below and in the sidebar should let you easily access the
 documentation for your topic of interest. You can also use the search function
 in the top left corner.
 
-.. note:: Godot Engine is an open source project developed by a community of
-          volunteers. The documentation team can always use your
-          feedback and help to improve the tutorials and class reference. If
-          you don't understand something, or cannot find what you
-          are looking for in the docs, help us make the documentation better
-          by letting us know!
-
-          Submit an issue or pull request on the `GitHub repository
-          <https://github.com/godotengine/godot-docs/issues>`_,
-          help us `translate the documentation
-          <https://hosted.weblate.org/engage/godot-engine/>`_ into your
-          language, or talk to us on either the ``#documentation``
-          channel on `Discord <https://discord.gg/zH7NUgz>`_, or the
-          ``#godotengine-doc`` channel on `irc.freenode.net
-          <http://webchat.freenode.net/?channels=#godotengine-doc>`_!
-
-.. centered:: |weblate_widget|
-
 The main documentation for the site is organized into the following sections:
 
 .. toctree::
