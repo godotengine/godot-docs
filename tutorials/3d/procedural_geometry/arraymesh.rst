@@ -124,10 +124,10 @@ Next create the arrays for each data type you will use.
 
  .. code-tab:: csharp C#
 
-    var vertList = new List<Vector3>();
-    var uvList = new List<Vector2>();
-    var normalList = new List<Vector3>();
-    var indexList = new List<int>();
+    var verts = new List<Vector3>();
+    var uvs = new List<Vector2>();
+    var normals = new List<Vector3>();
+    var indices = new List<int>();
 
 Once you have filled your data arrays with your geometry you can create a mesh
 by adding each array to ``surface_array`` and then committing to the mesh.
@@ -145,15 +145,10 @@ by adding each array to ``surface_array`` and then committing to the mesh.
 
  .. code-tab:: csharp C#
 
-    var verts = vertList.ToArray();
-    var uvs = uvList.ToArray();
-    var normals = normalList.ToArray();
-    var indices = indexList.ToArray();
-    
-    surfaceArray[(int)Mesh.ArrayType.Vertex] = verts;
-    surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs;
-    surfaceArray[(int)Mesh.ArrayType.Normal] = normals;
-    surfaceArray[(int)Mesh.ArrayType.Index] = indices;
+    surfaceArray[(int)Mesh.ArrayType.Vertex] = verts.ToArray();
+    surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs.ToArray();
+    surfaceArray[(int)Mesh.ArrayType.Normal] = normals.ToArray();
+    surfaceArray[(int)Mesh.ArrayType.Index] = indices.ToArray()
 
     var arrMesh = Mesh as ArrayMesh;
     if (arrMesh != null)
@@ -206,26 +201,20 @@ Put together, the full code looks like:
             surfaceArray.Resize((int)Mesh.ArrayType.Max);
 
             // C# arrays cannot be resized or expanded, so use Lists to create geometry.
-            var vertList = new List<Vector3>();
-            var uvList = new List<Vector2>();
-            var normalList = new List<Vector3>();
-            var indexList = new List<int>();
+            var verts = new List<Vector3>();
+            var uvs = new List<Vector2>();
+            var normals = new List<Vector3>();
+            var indices = new List<int>();
 
             /***********************************
             * Insert code here to generate mesh.
             * *********************************/
 
-            // Convert lists to arrays for mesh construction.
-            var verts = vertList.ToArray();
-            var uvs = uvList.ToArray();
-            var normals = normalList.ToArray();
-            var indices = indexList.ToArray();
-
-            // Assign arrays to surface array
-            surfaceArray[(int)Mesh.ArrayType.Vertex] = verts;
-            surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs;
-            surfaceArray[(int)Mesh.ArrayType.Normal] = normals;
-            surfaceArray[(int)Mesh.ArrayType.Index] = indices;
+            // Convert Lists to arrays and assign to surface array
+            surfaceArray[(int)Mesh.ArrayType.Vertex] = verts.ToArray();
+            surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs.ToArray();
+            surfaceArray[(int)Mesh.ArrayType.Normal] = normals.ToArray();
+            surfaceArray[(int)Mesh.ArrayType.Index] = indices.ToArray()
 
             var arrMesh = Mesh as ArrayMesh;
             if (arrMesh != null)
@@ -343,33 +332,33 @@ that you find online.
                     var x = Mathf.Sin(u * Mathf.Pi * 2);
                     var z = Mathf.Cos(u * Mathf.Pi * 2);
                     var vert = new Vector3(x * radius * w, y, z * radius * w);
-                    vertList.Add(vert);
-                    normalList.Add(vert.Normalized());
-                    uvList.Add(new Vector2(u, v));
+                    verts.Add(vert);
+                    normals.Add(vert.Normalized());
+                    uvs.Add(new Vector2(u, v));
                     point += 1;
 
                     // Create triangles in ring using indices.
                     if (i > 0 && j > 0)
                     {
-                        indexList.Add(prevRow + j - 1);
-                        indexList.Add(prevRow + j);
-                        indexList.Add(thisRow + j - 1);
+                        indices.Add(prevRow + j - 1);
+                        indices.Add(prevRow + j);
+                        indices.Add(thisRow + j - 1);
 
-                        indexList.Add(prevRow + j);
-                        indexList.Add(thisRow + j);
-                        indexList.Add(thisRow + j - 1);
+                        indices.Add(prevRow + j);
+                        indices.Add(thisRow + j);
+                        indices.Add(thisRow + j - 1);
                     }
                 }
 
                 if (i > 0)
                 {
-                    indexList.Add(prevRow + radialSegments - 1);
-                    indexList.Add(prevRow);
-                    indexList.Add(thisRow + radialSegments - 1);
+                    indices.Add(prevRow + radialSegments - 1);
+                    indices.Add(prevRow);
+                    indices.Add(thisRow + radialSegments - 1);
 
-                    indexList.Add(prevRow);
-                    indexList.Add(prevRow + radialSegments);
-                    indexList.Add(thisRow + radialSegments - 1);
+                    indices.Add(prevRow);
+                    indices.Add(prevRow + radialSegments);
+                    indices.Add(thisRow + radialSegments - 1);
                 }
 
                 prevRow = thisRow;
