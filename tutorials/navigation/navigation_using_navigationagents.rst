@@ -167,6 +167,8 @@ This script adds basic navigation movement to a Node3D with a NavigationAgent3D 
         navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
+        if navigation_agent.is_navigation_finished():
+            return
 
         movement_delta = movement_speed * delta
         var next_path_position : Vector3 = navigation_agent.get_next_path_position()
@@ -197,6 +199,8 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
         navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
+        if navigation_agent.is_navigation_finished():
+            return
 
         movement_delta = movement_speed * delta
         var next_path_position : Vector3 = navigation_agent.get_next_path_position()
@@ -226,6 +230,8 @@ This script adds basic navigation movement to a RigidBody3D with a NavigationAge
         navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
+        if navigation_agent.is_navigation_finished():
+            return
 
         var next_path_position : Vector3 = navigation_agent.get_next_path_position()
         var current_agent_position : Vector3 = global_transform.origin
