@@ -1,33 +1,15 @@
 Godot Docs – *3.1* branch
 =========================
 
-.. only:: not i18n
+.. caution::
 
-  .. note:: Godot's documentation is available in various languages and versions.
-            Expand the "Read the Docs" panel at the bottom of the sidebar to see
-            the list.
+    This is the documentation for Godot 3.1, released in 2019. This version
+    is no longer supported, but its documentation is still available for
+    reference.
 
-  .. tip:: This is the documentation for the stable 3.1 branch.
-         Looking for the documentation of the current **development** branch?
-         `Have a look here <https://docs.godotengine.org/en/latest>`_.
-         You can also browse the documentation for the the stable
-         `2.1 <https://docs.godotengine.org/en/2.1>`_ and
-         `3.0 <https://docs.godotengine.org/en/3.0>`_ branches.
-
-.. only:: i18n
-
-  .. note:: This documentation is translated from the `original English one
-            <https://docs.godotengine.org/en/latest>`_ by community members
-            on `Weblate <https://hosted.weblate.org/projects/godot-engine/godot-docs>`_.
-
-            Depending on the translation effort's completion level, you may
-            find paragraphs or whole pages which are still in English. You can
-            help the community by providing new translations or reviewing existing
-            ones on Weblate.
-
-            For the time being, localized translations are only available for
-            the "latest" (development) branch, but should be suitable to learn
-            how to use stable Godot releases nevertheless.
+    Please refer to the `stable <https://docs.godotengine.org/en/stable>`_
+    and `latest <https://docs.godotengine.org/en/latest>`_ branches of the
+    documentation for up-to-date information.
 
 Welcome to the official documentation of Godot Engine, the free and open source
 community-driven 2D and 3D game engine! If you are new to this documentation,
