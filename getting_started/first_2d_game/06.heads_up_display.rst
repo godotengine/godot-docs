@@ -387,8 +387,8 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
 
         _hud->show_game_over();
 
-We also don't want to start the new game automatically, so remove the call to
-``new_game()`` in ``_ready()``.
+Just a reminder: we don't want to start the new game automatically, so
+remove the call to ``new_game()`` in ``_ready()`` if you haven't yet.
 
 Finally, add this to ``_on_ScoreTimer_timeout()`` to keep the display in sync
 with the changing score:
