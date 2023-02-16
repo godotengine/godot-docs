@@ -123,7 +123,7 @@ NavigationServer2D and a NavigationAgent2D for path movement.
         navigation_agent.set_target_location(movement_target)
 
     func _physics_process(delta):
-        if navigation_agent.is_target_reached():
+        if navigation_agent.is_navigation_finished():
             return
 
         var current_agent_position : Vector2 = global_transform.origin
@@ -173,7 +173,7 @@ NavigationServer2D and a NavigationAgent2D for path movement.
         {
             base._PhysicsProcess(delta);
 
-            if (_navigationAgent.IsTargetReached())
+            if (_navigationAgent.IsNavigationFinished())
             {
                 return;
             }

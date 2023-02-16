@@ -131,7 +131,7 @@ a NavigationAgent3D for path movement.
         navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
-        if navigation_agent.is_target_reached():
+        if navigation_agent.is_navigation_finished():
             return
 
         var current_agent_position : Vector3 = global_transform.origin
@@ -180,7 +180,7 @@ a NavigationAgent3D for path movement.
         {
             base._PhysicsProcess(delta);
 
-            if (_navigationAgent.IsTargetReached())
+            if (_navigationAgent.IsNavigationFinished())
             {
                 return;
             }
