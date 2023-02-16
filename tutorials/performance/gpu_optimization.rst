@@ -110,11 +110,11 @@ triangles. This meant that every frame:
 1. All vertices had to be transformed by the CPU (including clipping).
 2. All vertices had to be sent to the GPU memory from the main RAM.
 
-Nowadays, all this is handled inside the GPU, greatly increasing performance.
-3D artists usually have the wrong feeling about polycount performance because 3D
-DCCs (such as Blender, Max, etc.) need to keep geometry in CPU memory for it to
-be edited, reducing actual performance. Game engines rely on the GPU more, so
-they can render many triangles much more efficiently.
+Nowadays, all this is handled inside the GPU, greatly increasing performance. 3D
+artists usually have the wrong feeling about polycount performance because 3D
+modeling software (such as Blender, 3ds Max, etc.) need to keep geometry in CPU
+memory for it to be edited, reducing actual performance. Game engines rely on
+the GPU more, so they can render many triangles much more efficiently.
 
 On mobile devices, the story is different. PC and console GPUs are
 brute-force monsters that can pull as much electricity as they need from

@@ -8,12 +8,13 @@ Godot scene importer
 
 When dealing with 3D assets, Godot has a flexible and configurable importer.
 
-Godot works with *scenes*. This means that the entire scene being worked on in your favorite 3D DCC will be
-transferred as close as possible.
+Godot works with *scenes*. This means that the entire scene being worked on in
+your favorite 3D modeling software will be transferred as close as possible.
 
 Godot supports the following 3D *scene file formats*:
 
-- glTF 2.0 **(recommended)**. Godot has full support for both text (``.gltf``) and binary (``.glb``) formats.
+- glTF 2.0 **(recommended)**. Godot has full support for both text (``.gltf``)
+  and binary (``.glb``) formats.
 - ``.blend`` (Blender). This works by calling Blender to export to glTF in a
   transparent manner (requires Blender to be installed).
 - DAE (COLLADA), an older format that is fully supported.
@@ -24,13 +25,12 @@ Godot supports the following 3D *scene file formats*:
   This requires installing an external program that links against the proprietary FBX SDK,
   so we recommend using other formats listed above (if suitable for your workflow).
 
-Just copy the scene file together with the texture to the project repository, and Godot will do a full import.
-
-It is important that the mesh is not deformed by bones when exporting. Make sure that the skeleton is reset to its T-pose
-or default rest pose before exporting with your favorite 3D editor.
+Copy the scene file together with the textures and mesh data (if separate) to
+the project repository, then Godot will do a full import when focusing the
+editor window.
 
 Exporting glTF 2.0 files from Blender (recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---------------------------------------------------
 
 There are 3 ways to export glTF files from Blender:
 
@@ -76,10 +76,10 @@ files are fine.
     Blender's Materials tab, then export the scene to glTF again.
 
 Importing ``.blend`` files directly within Godot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------------------
 
 .. note::
-    
+
     This functionality requires Blender 3.0 or later.
 
 From Godot 4.0 onwards, the editor can directly import ``.blend`` files by
@@ -109,12 +109,12 @@ advanced Project Settings.
     a free download, this may add friction when working on the project.
     ``.blend`` import is also not available on the Android and web editors, as
     these platforms can't call external programs.
-    
+
     If this is problematic, consider using glTF scenes exported from Blender
     instead.
 
 Exporting DAE files from Blender
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--------------------------------
 
 Blender has built-in COLLADA support, but it does not work properly for the
 needs of game engines and shouldn't be used as-is. However, scenes exported with
@@ -125,7 +125,7 @@ For complex scenes or scenes that contain animations, Godot provides a
 that will correctly export COLLADA scenes for use in Godot.
 
 Importing OBJ files in Godot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 OBJ is one of the simplest 3D formats out there, so Godot should be able to
 import most OBJ files successfully. However, OBJ is also a very limited format:
@@ -151,7 +151,7 @@ There are 2 ways to use OBJ meshes in Godot:
     overbright).
 
 Importing FBX files in Godot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 When opening a project containing FBX scenes, you will see a dialog asking you
 to configure FBX import. Click the link in the dialog to download a fbx2gltf
@@ -168,7 +168,7 @@ advanced Project Settings.
     `FBX import page of the Godot website <https://godotengine.org/fbx-import>`__.
 
 Exporting textures separately
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 While textures can be exported with a model in certain file formats, such as glTF 2.0, you can also export them
 separately. Godot uses PBR (physically based rendering) for its materials, so if a texturing program can export PBR
@@ -178,7 +178,7 @@ textures they can work in Godot. This includes the `Substance suite <https://www
 .. note:: For more information on Godot's materials, see :ref:`doc_standard_material_3d`.
 
 Exporting considerations
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 Since GPUs can only render triangles, meshes that contain quads or N-gons have
 to be *triangulated* before they can be rendered. Godot can triangulate meshes
@@ -188,327 +188,559 @@ the scene will lead to more consistent results and should be done whenever
 possible.
 
 To avoid issues with incorrect triangulation after importing in Godot, it is
-recommended to make the 3D DCC triangulate objects on its own. In Blender, this
-can be done by adding a Triangulate modifier to your objects and making sure
-**Apply Modifiers** is checked in the export dialog. Alternatively, depending on
-the exporter, you may be able to find and enable a **Triangulate Faces** option
-in the export dialog.
+recommended to make the 3D modeling software triangulate objects on its own. In
+Blender, this can be done by adding a Triangulate modifier to your objects and
+making sure **Apply Modifiers** is checked in the export dialog. Alternatively,
+depending on the exporter, you may be able to find and enable a **Triangulate
+Faces** option in the export dialog.
 
 To avoid issues with 3D selection in the editor, it is recommended to apply the
-object transform in the 3D DCC before exporting the scene.
+object transform in the 3D modeling software before exporting the scene.
+
+.. note::
+
+    It is important that the mesh is not deformed by bones when exporting. Make sure
+    that the skeleton is reset to its T-pose or default rest pose before exporting
+    with your favorite 3D editor.
 
 Import workflows
 ----------------
 
-Godot scene importer allows different workflows regarding how data is imported. Depending on many options, it is possible to
-import a scene with:
+Since Godot can only save its own scene format (``.tscn``/``.scn``), Godot
+cannot save over the original 3D scene file (which uses a different format).
+This is also a safer approach as it avoids making accidental changes to the
+source file.
 
-* External materials (default): Where each material is saved to a file resource. Modifications to them are kept.
-* External meshes: Where each mesh is saved to a different file. Many users prefer to deal with meshes directly.
-* External animations: Allowing saved animations to be modified and merged when sources change.
-* External scenes: Save each of the root nodes of the imported scenes as a separate scene.
-* Single scene: A single scene file with everything built in.
+To allow customizing the scene and its materials, Godot's scene importer allows
+for different workflows regarding how data is imported.
 
-.. image:: img/scene_import1.png
+.. figure:: img/importing_3d_scenes_import_dock.webp
+   :align: center
+   :alt: Import dock after selecting a 3D scene in the FileSystem dock
 
-As different developers have different needs, this import process is highly customizable.
+   Import dock after selecting a 3D scene in the FileSystem dock
 
-Import options
---------------
+This import process is customizable using 3 separate interfaces, depending on your needs:
 
-The importer has several options, which will be discussed below:
+- The **Import** dock, after selecting the 3D scene by clicking it once in the
+  FileSystem dock.
+- The **Advanced Import Settings** dialog, which can be accessed by double-clicking
+  the 3D scene in the FileSystem dock or by clicking the **Advanced…** button in
+  the Import dock. This allows you to customize per-object options in Godot.
+- :ref:`Import hints <doc_importing_3d_scenes_import_hints>`, which are special
+  suffixes added to object names in the 3D modeling software. This allows you to
+  customize per-object options in the 3D modeling software.
 
-.. image:: img/scene_import2.png
+For basic customization, using the Import dock suffices. However, for more
+complex operations such as defining material overrides on a per-material basis,
+you'll need to use the Advanced Import Settings dialog, import hints, or possibly both.
 
-Nodes
-~~~~~
+.. _doc_importing_3d_scenes_using_the_import_dock:
 
-Root Type
-^^^^^^^^^
+Using the Import dock
+^^^^^^^^^^^^^^^^^^^^^
 
-By default, the type of the root node in imported scenes is "Node3D", but this can be modified.
+The following options can be adjusted in the Import dock after selecting a 3D
+scene in the FileSystem dock:
 
-Root Name
-^^^^^^^^^
+- **Root Type:** The node type to use as a root node. Using node types that
+  inherit from Node3D is recommended. Otherwise, you'll lose the ability to
+  position the node directly in the 3D editor.
+- **Root Name:** The name of the root node in the imported scene. This is
+  generally not noticeable when instancing the scene in the editor (or
+  drag-and-dropping from the FileSystem dock), as the root node is renamed to
+  match the filename in this case.
+- **Apply Root Scale:** If enabled, **Root Scale** will be *applied* on the
+  meshes and animations directly, while keeping the root node's scale to the
+  default `(1, 1, 1)`. This means that if you add a child node later on within
+  the imported scene, it won't be scaled. If disabled, **Root Scale** will
+  multiply the scale of the root node instead.
 
-Allows setting a specific name to the generated root node.
+**Meshes**
 
-Root Scale
-^^^^^^^^^^
+- **Ensure Tangents:** If checked, generate vertex tangents using
+  `Mikktspace <http://www.mikktspace.com/>`__ if the input meshes don't have
+  tangent data. When possible, it's recommended to let the 3D modeling software
+  generate tangents on export instead on relying on this option. Tangents are
+  required for correct display of normal and height maps, along with any
+  material/shader features that require tangents. If you don't need material
+  features that require tangents, disabling this can reduce output file size and
+  speed up importing if the source 3D file doesn't contain tangents.
+- **Generate LODs:** If checked, generates lower detail variants of the
+  mesh which will be displayed in the distance to improve rendering performance.
+  Not all meshes benefit from LOD, especially if they are never rendered from
+  far away. Disabling this can reduce output file size and speed up importing.
+  See :ref:`doc_mesh_lod` for more information.
+- **Create Shadow Meshes:** If checked, enables the generation of
+  shadow meshes on import. This optimizes shadow rendering without reducing
+  quality by welding vertices together when possible. This in turn reduces the
+  memory bandwidth required to render shadows. Shadow mesh generation currently
+  doesn't support using a lower detail level than the source mesh (but shadow
+  rendering will make use of LODs when relevant).
+- **Light Baking:** Configures the meshes'
+  :ref:`global illumination mode <class_GeometryInstance3D_property_gi_mode>`
+  in the 3D scene. If set to **Static Lightmaps**, sets the meshes' GI mode to
+  **Static** and generates UV2 on import for :ref:`lightmap baking <doc_using_lightmap_gi>`.
+- **Lightmap Texel Size:** Only visible if **Light Baking** is set to **Static
+  Lightmaps**. Controls the size of each texel on the baked lightmap. A smaller
+  value results in more precise lightmaps, at the cost of larger lightmap sizes
+  and longer bake times.
 
-The scale of the root node.
+**Skins**
 
-Custom Script
-^^^^^^^^^^^^^
+- **Use Named Skins:** If checked, use named :ref:`Skins <class_Skin>` for animation.
+  The :ref:`class_MeshInstance3D` node contains 3 properties of relevance here: a skeleton
+  NodePath pointing to the Skeleton3D node (usually ``..``), a mesh, and a skin:
 
-A special script to process the whole scene after import can be provided.
-This is great for post processing, changing materials, doing funny stuff
-with the geometry etc.
+  - The :ref:`class_Skeleton3D` node contains a list of bones with names, their pose and rest,
+    a name and a parent bone.
+  - The mesh is all of the raw vertex data needed to display a mesh. In terms of the mesh,
+    it knows how vertices are weight-painted and uses some internal numbering
+    often imported from 3D modeling software.
+  - The skin contains the information necessary to bind this mesh onto this Skeleton3D.
+    For every one of the internal bone IDs chosen by the 3D modeling software, it contains two things.
+    Firstly, a Matrix known as the Bind Pose Matrix, Inverse Bind Matrix, or IBM for short.
+    Secondly, the Skin contains each bone's name (if **Use Named Skins** is enabled),
+    or the bone's index within the Skeleton3D list (if **Use Named Skins** is disabled).
 
-Create a script like this:
-
-::
-
-    tool # Needed so it runs in the editor.
-    extends EditorScenePostImport
-
-
-    func post_import(scene):
-        # Do your stuff here.
-        return scene # remember to return the imported scene
-
-The ``post_import`` function takes the imported scene as argument (the
-parameter is actually the root node of the scene). The scene that
-will finally be used must be returned. It can be a different one.
-
-Storage
-^^^^^^^
-
-By default, Godot imports a single scene. This option allows specifying
-that nodes below the root will each be a separate scene and instanced
-into the imported one.
-
-Of course, instancing such imported scenes in other places manually works, too.
+Together, this information is enough to tell Godot how to use the bone poses in
+the Skeleton3D node to render the mesh from each MeshInstance3D. Note that each
+MeshInstance3D may share binds, as is common in models exported from Blender, or
+each MeshInstance3D may use a separate Skin object, as is common in models
+exported from other tools such as Maya.
 
 
-Materials
-~~~~~~~~~
+**Animation**
 
-Location
-^^^^^^^^
+- **Import:** If checked, import animations from the 3D scene.
+- **FPS:** The number of frames per second to use for baking animation curves to
+  a series of points with linear interpolation. It's recommended to configure
+  this value to match the value you're using as a baseline in your 3D modeling
+  software. Higher values result in more precise animation with fast movement
+  changes, at the cost of higher file sizes and memory usage. Thanks to
+  interpolation, there is usually not much benefit in going above 30 FPS (as the
+  animation will still appear smooth at higher rendering framerates).
+- **Trimming:** Trim the beginning and end of animations if there are no
+  keyframe changes. This can reduce output file size and memory usage with
+  certain 3D scenes, depending on the contents of their animation tracks.
+- **Remove Immutable Tracks:** Remove animation tracks that only contain default
+  values. This can reduce output file size and memory usage with certain 3D
+  scenes, depending on the contents of their animation tracks.
 
-Godot supports materials in meshes or nodes. By default, materials will be put
-on each node.
+**Import Script**
 
-Storage
-^^^^^^^
+- **Path:** Path to an import script, which can run code *after*
+  the import process has completed for custom processing.
+  See :ref:`doc_importing_3d_scenes_import_script` for more information.
 
-Materials can be stored within the scene or in external files. By default,
-they are stored in external files so editing them is possible. This is because
-most 3D DCCs don't have the same material options as those present in Godot.
+**glTF**
 
-When materials are built-in, they will be lost each time the source scene
-is modified and re-imported.
+- **Embedded Texture Handling:** Controls how textures embedded within glTF
+  scenes should be handled. **Discard All Textures** will not import any
+  textures, which is useful if you wish to manually set up materials in Godot
+  instead. **Extract Textures** extracts textures to external images, resulting
+  in smaller file sizes and more control over import options. **Embed as Basis
+  Universal** and **Embed as Uncompressed** keeps the textures embedded in the
+  imported scene, with and without VRAM compression respectively.
+
+Using the Advanced Import Settings dialog
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The first tab you'll see is the **Scene** tab. The options available in the
+panel on the right are identical to the Import dock, but you have access to a 3D
+preview. The 3D preview can be rotated by holding down the left mouse button
+then dragging the mouse. Zoom can be adjusted using the mouse wheel.
+
+.. figure:: img/importing_3d_scenes_advanced_import_settings_scene.webp
+   :align: center
+   :alt: Advanced Import Settings dialog (Scene tab)
+
+   Advanced Import Settings dialog (Scene tab).
+   Credit: `Modern Arm Chair 01 - Poly Haven <https://polyhaven.com/a/modern_arm_chair_01>`__
+
+**Configuring node import options**
+
+You can select individual nodes that compose the scene while in the **Scene**
+tab using the tree view at the left:
+
+.. figure:: img/importing_3d_scenes_advanced_import_settings_node.webp
+   :align: center
+   :alt: Selecting a node in the Advanced Import Settings dialog (Scene tab)
+
+   Selecting a node in the Advanced Import Settings dialog (Materials tab)
+
+This exposes several per-node import options:
+
+- **Skip Import:** If checked, the node will not be present in the final
+  imported scene. Enabling this disables all other options.
+- **Generate > Physics:** If checked, generates a PhysicsBody3D *parent* node
+  with collision shapes that are *siblings* to the MeshInstance3D node.
+- **Generate > NavMesh:** If checked, generates a NavigationRegion3D *child*
+  node for :ref:`navigation <doc_navigation_overview_3d>`. **Mesh + NavMesh**
+  will keep the original mesh visible, while **NavMesh Only** will only import
+  the navigation mesh (without a visual representation). **NavMesh Only** is
+  meant to be used when you've manually authored a simplified mesh for navigation.
+- **Generate > NavMesh:** If checked, generates an OccluderInstance3D *sibling*
+  node for :ref:`occlusion culling <doc_occlusion_culling>` using the mesh's
+  geometry as a basis for the occluder's shape. **Mesh + Occluder** will keep
+  the original mesh visible, while **Occluder Only** will only import the
+  occluder (without a visual representation). **Occluder Only** is meant to be
+  used when you've manually authored a simplified mesh for occlusion culling.
+
+These options are only visible if some of the above options are enabled:
+
+- **Physics > Body Type:** Only visible if **Generate > Physics** is enabled.
+  Controls the PhysicsBody3D that should be created. **Static** creates a
+  StaticBody3D, **Dynamic** creates a RigidBody3D, **Area** creates an Area3D.
+- **Physics > Shape Type:** Only visible if **Generate > Physics** is enabled.
+  **Trimesh** allows for precise per-triangle collision, but it can only be used
+  with a **Static** body type. Other types are less precise and may require
+  manual configuration, but can be used with any body type. For static level
+  geometry, use **Trimesh**. For dynamic geometry, use primitive shapes if
+  possible for better performance, or use one of the convex decomposition modes
+  if the shape is large and complex.
+- **Decomposition > Advanced:** Only visible if **Physics > Shape Type** is
+  **Decompose Convex**. If checked, allows adjusting advanced decomposition
+  options. If disabled, only a preset **Precision** can be adjusted (which is
+  usually sufficient).
+- **Decomposition > Precision:** Only visible if **Physics > Shape Type** is
+  **Decompose Convex**. Controls the precision to use for convex decomposition.
+  Higher values result in more detailed collision, at the cost of slower
+  generation and increased CPU usage during physics simulation. To improve
+  performance, it's recommended to keep this value as low as possible for your
+  use cases.
+- **Occluder > Simplification Distance:** Only visible if **Generate >
+  Occluder** is set to **Mesh + Occluder** or **Occluder Only**. Higher values
+  result in a occluder mesh with fewer vertices (resulting in decreased CPU
+  utilization), at the cost of more occlusion culling issues (such as false
+  positives or false negatives). If you run into objects disappearing when they
+  shouldn't when the camera is near a certain mesh, try decreasing this value.
+
+**Configuring mesh and material import options**
+
+In the Advanced Import Settings dialog, there are 2 ways to select individual
+meshes or materials:
+
+- Switch to the **Meshes** or **Materials** tab in the top-left corner of the dialog.
+- Stay in the **Scene** tab, but unfold the options on the tree view on the
+  left. After choosing a mesh or material, this presents the same information as
+  the **Meshes** and **Materials** tabs, but in a tree view instead of a list.
+
+If you select a mesh, different options will appear in the panel on the right:
+
+.. figure:: img/importing_3d_scenes_advanced_import_settings_meshes.webp
+   :align: center
+   :alt: Advanced Import Settings dialog (Meshes tab)
+
+   Advanced Import Settings dialog (Meshes tab)
+
+The options are as follows:
+
+- **Save to File:** Saves the :ref:`class_Mesh` *resource* to an external file
+  (this isn't a scene file). You generally don't need to use this for placing
+  the mesh in a 3D scene – instead, you should instance the 3D scene directly.
+  However, having direct access to the Mesh resource is useful for specific
+  nodes, such as :ref:`class_MeshInstance3D`, :ref:`class_MultiMeshInstance3D`,
+  :ref:`class_GPUParticles3D` or :ref:`class_CPUParticles3D`.
+  - You will also need to specify an output file path using the option that
+  appears after enabling **Save to File**. It's recommended to use the ``.res``
+  output file extension for smaller file sizes and faster loading speeds, as
+  ``.tres`` is inefficient for writing large amounts of data.
+- **Generate > Shadow Meshes:** Per-mesh override for the **Meshes > Create
+  Shadow Meshes** scene-wide import option described in
+  :ref:`doc_importing_3d_scenes_using_the_import_dock`. **Default** will use the
+  scene-wide import option, while **Enable** or **Disable** can forcibly enable
+  or disable this behavior on a specific mesh.
+- **Generate > Lightmap UV:** Per-mesh override for the **Meshes > Light
+  Baking** scene-wide import option described in
+  :ref:`doc_importing_3d_scenes_using_the_import_dock`. **Default** will use the
+  scene-wide import option, while **Enable** or **Disable** can forcibly enable
+  or disable this behavior on a specific mesh.
+  - Setting this to **Enable** on a scene with the **Static** light baking mode
+  is equivalent to configuring this mesh to use **Static Lightmaps**. Setting this
+  to **Disable** on a scene with the **Static Lightmaps** light baking mode is
+  equivalent to configuring this mesh to use **Static** instead.
+- **Generate > LODs:** Per-mesh override for the **Meshes > Generate LODs**
+  scene-wide import option described in
+  :ref:`doc_importing_3d_scenes_using_the_import_dock`. **Default** will use the
+  scene-wide import option, while **Enable** or **Disable** can forcibly enable
+  or disable this behavior on a specific mesh.
+- **LODs > Normal Split Angle:** The minimum angle difference between two
+  vertices required to preserve a geometry edge in mesh LOD generation. If
+  running into visual issues with LOD generation, decreasing this value may help
+  (at the cost of less efficient LOD generation).
+- **LODs > Normal Merge Angle:** The minimum angle difference between two
+  vertices required to preserve a geometry edge in mesh LOD generation. If
+  running into visual issues with LOD generation, decreasing this value may help
+  (at the cost of less efficient LOD generation).
+
+If you select a material, only one option will appear in the panel on the right:
+
+.. figure:: img/importing_3d_scenes_advanced_import_settings_materials.webp
+   :align: center
+   :alt: Advanced Import Settings dialog (Materials tab)
+
+   Advanced Import Settings dialog (Materials tab)
+
+When **Use External** is checked and an output path is specified, this lets you
+use an external material instead of the material that is included in the
+original 3D scene file; see the section below.
+
+Extracting materials to separate files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While Godot can import materials authored in 3D modeling software, the default
+configuration may not be suitable for your needs. For example:
+
+- You want to configure material features not supported by your 3D application.
+- You want to use a different texture filtering mode, as this option is
+  configured in the material since Godot 4.0 (and not in the image).
+- You want to replace one of the materials with an entirely different material,
+  such as a custom shader.
+
+To be able to modify the 3D scene's materials in the Godot editor, you need to
+use *external* material resources.
+
+In the top-left corner of the Advanced Import Settings dialog, choose
+**Actions… > Extract Materials**:
+
+.. figure:: img/importing_3d_scenes_advanced_import_settings_extract_materials.webp
+   :align: center
+   :alt: Extracting all built-in materials to external resources in the Advanced Import Settings dialog
+
+   Extracting all built-in materials to external resources in the Advanced Import Settings dialog
+
+After choosing this option, select a folder to extract material ``.tres`` files
+to, then confirm the extraction:
+
+.. figure:: img/importing_3d_scenes_advanced_import_settings_extract_materials_confirm.webp
+   :align: center
+   :alt: Confirming material extraction in the Advanced Import Settings subdialog
+
+   Confirming material extraction in the Advanced Import Settings subdialog
 
 .. note::
 
-    Godot will not reimport materials that are stored in external files unless
-    you remove the associated ``.material`` file before reimporting.
+    After extracting materials, the 3D scene will automatically be configured to
+    use external material references. As a result, you don't need to manually
+    enable **Use External** on every material to make the external ``.tres``
+    material effective.
 
-    To force reimporting materials every time the 3D scene is reimported, change
-    the material storage mode in the 3D scene by selecting it in the FileSystem
-    dock, going to the Import dock then setting **Material > Storage** to
-    **Built-In** instead of **Files**.
+When **Use External** is enabled, remember that the Advanced Import Settings
+dialog will keep displaying the mesh's original materials (the ones designed in
+the 3D modeling software). This means your customizations to the materials won't
+be visible within this dialog. To preview your modified materials, you need to
+place the imported 3D scene in another scene using the editor.
 
-Keep On Reimport
-^^^^^^^^^^^^^^^^
+Godot will not overwrite changes made to extracted materials when the source 3D
+scene is reimported. However, if the material name is changed in the source 3D
+file, the link between the original material and the extracted material will be
+lost. As a result, you'll need to use the Advanced Import Settings dialog to
+associate the renamed material to the existing extracted material.
 
-Once materials are edited to use Godot features, the importer will keep the
-edited ones and ignore the ones coming from the source scene. This option
-is only present if materials are saved as files.
+The above can be done in the dialog's **Materials** tab by selecting the
+material, enabling **Save to File**, then specifying the save path using the
+**Path** option that appears after enabling **Save to File**.
 
-Meshes
-~~~~~~
+.. _doc_importing_3d_scenes_import_script:
 
-Compress
-^^^^^^^^
+Using import scripts for automation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Makes meshes use less precise numbers for multiple aspects of the mesh in order
-to save space.
+A special script to process the whole scene after import can be provided.
+This is great for post-processing, changing materials, doing funny stuff with
+the geometry, and more.
 
-These are:
- * Transform Matrix (Location, rotation, and scale)             : 32-bit float to 16-bit signed integer.
- * Vertices                                                     : 32-bit float to 16-bit signed integer.
- * Normals                                                      : 32-bit float to 32-bit unsigned integer.
- * Tangents                                                     : 32-bit float to 32-bit unsigned integer.
- * Vertex Colors                                                : 32-bit float to 32-bit unsigned integer.
- * UV                                                           : 32-bit float to 32-bit unsigned integer.
- * UV2                                                          : 32-bit float to 32-bit unsigned integer.
- * Vertex weights                                               : 32-bit float to 16-bit unsigned integer.
- * Armature bones                                               : 32-bit float to 16-bit unsigned integer.
- * Array index                                                  : 32-bit or 16-bit unsigned integer based on how many elements there are.
+Create a script that is not attached to any node by right-clicking in the
+FileSystem dock and choosing **New > Script…**. In the script editor, write the
+following:
 
-Additional info:
- * UV2 = The second UV channel for detail textures and baked lightmap textures.
- * Array index = An array of numbers that number each element of the arrays above; i.e. they number the vertices and normals.
+::
 
-In some cases, this might lead to loss of precision, so disabling this option
-may be needed. For instance, if a mesh is very big or there are multiple meshes
-being imported that cover a large area, compressing the import of this mesh(es)
-may lead to gaps in geometry or vertices not being exactly where they should be.
+    @tool # Needed so it runs in editor.
+    extends EditorScenePostImport
 
-Ensure Tangents
-^^^^^^^^^^^^^^^
+    # This sample changes all node names.
+    # Called right after the scene is imported and gets the root node.
+    func _post_import(scene):
+        # Change all node names to "modified_[oldnodename]"
+        iterate(scene)
+        return scene # Remember to return the imported scene
 
-If textures with normal mapping are to be used, meshes need to have tangent arrays.
-This option ensures that these are generated if not present in the source scene.
-Godot uses `Mikktspace <http://www.mikktspace.com/>`__ for this,
-but it's always better to have them generated in the exporter.
+    # Recursive function that is called on every node
+    # (for demonstration purposes; EditorScenePostImport only requires a `_post_import(scene)` function).
+    func iterate(node):
+        if node != null:
+            print_rich("Post-import: [b]%s[/b] -> [b]%s[/b]" % [node.name, "modified_" + node.name])
+            node.name = "modified_" + node.name
+            for child in node.get_children():
+                iterate(child)
 
-Storage
-^^^^^^^
 
-Meshes can be stored in separate files (resources) instead of built-in. This does
-not have much practical use unless one wants to build objects with them directly.
+The ``_post_import(scene: Node)`` function takes the imported scene as argument
+(the parameter is actually the root node of the scene). The scene that will
+finally be used **must** be returned (even if the scene can be entirely different).
 
-This option is provided to help those who prefer working directly with meshes
-instead of scenes.
+Using animation libraries
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Light Baking
-^^^^^^^^^^^^
+As of Godot 4.0, you can choose to import **only** animations from a glTF file and
+nothing else. This is used in some asset pipelines to distribute animations
+separately from models. For example, this allows you to use one set of
+animations for several characters, without having to duplicate animation data in
+every character.
 
-Whether or not the mesh is used in baked lightmaps.
+To do so, select the glTF file in the FileSystem dock, then change the import
+mode to Animation Library in the Import dock:
 
-- **Disabled:** The mesh is not used in baked lightmaps.
-- **Enable:** The mesh is used in baked lightmaps.
-- **Gen Lightmaps:** The mesh is used in baked lightmaps, and unwraps a second UV layer for lightmaps.
+.. figure:: img/importing_3d_scenes_changing_import_type.webp
+   :align: center
+   :alt: Changing the import type to Animation Library in the Import dock
 
-.. note:: For more information on light baking see :ref:`doc_using_lightmap_gi`.
+   Changing the import type to Animation Library in the Import dock
 
-External Files
-~~~~~~~~~~~~~~
+Click **Reimport** and restart the editor when prompted. After restarting, the
+glTF file will be imported as an :ref:`class_AnimationLibrary` instead of a
+:ref:`class_PackedScene`. This animation library can then be referenced in an
+:ref:`class_AnimationPlayer` node.
 
-Generated meshes and materials can be optionally stored in a subdirectory with the
-name of the scene.
+The import options that are visible after changing the import mode to Animation
+Library act the same as when using the Scene import mode. See
+:ref:`doc_importing_3d_scenes_using_the_import_dock` for more information.
 
-Animation options
------------------
+Filter script
+^^^^^^^^^^^^^
 
-Godot provides many options regarding how animation data is dealt with. Some exporters
-(such as Blender) can generate many animations in a single file. Others, such as
-3DS Max or Maya, need many animations put into the same timeline or, at worst, put
-each animation in a separate file.
+It is possible to specify a filter script in a special syntax to decide which
+tracks from which animations should be kept.
 
-.. image:: img/scene_import3.png
+The filter script is executed against each imported animation. The syntax
+consists of two types of statements, the first for choosing which animations to
+filter, and the second for filtering individual tracks within the matched
+animation. All name patterns are performed using a case-insensitive expression
+match, with support for ``?`` and ``*`` wildcards (using
+:ref:`String.matchn() <class_String_method_matchn>` under the hood).
 
-Import of animations is enabled by default.
-
-.. attention::
-
-    To modify animations from an imported 3D scene, you need to change the animation
-    storage option from **Built-In** to **Files** in the Import dock. Otherwise,
-    changes made to animations from Godot will be lost when the project is run.
-
-FPS
-~~~
-
-Most 3D export formats store animation timeline in seconds instead of frames. To ensure
-animations are imported as faithfully as possible, please specify the frames per second
-used to edit them. Failing to do this may result in shaky animations.
-
-Filter Script
-~~~~~~~~~~~~~
-
-It is possible to specify a filter script in a special syntax to decide which tracks from which
-animations should be kept.
-
-The filter script is executed against each imported animation. The syntax consists of two types of
-statements, the first for choosing which animations to filter, and the second for filtering
-individual tracks within the matched animation. All name patterns are performed using a case
-insensitive expression match, using ``?`` and ``*`` wildcards (using ``String.matchn()`` under the
-hood).
-
-The script must start with an animation filter statement (as denoted by the line beginning with an
-``@``). For example, if we would like to apply filters to all imported animations which have a name
-ending in ``"_Loop"``::
+The script must start with an animation filter statement (as denoted by the line
+beginning with an ``@``). For example, if we would like to apply filters to all
+imported animations which have a name ending in ``"_Loop"``::
 
     @+*_Loop
 
-Similarly, additional patterns can be added to the same line, separated by commas. Here is a
-modified example to additionally *include* all animations with names that begin with ``"Arm_Left"``,
-but also *exclude* all animations which have names ending in ``"Attack"``::
+Similarly, additional patterns can be added to the same line, separated by
+commas. Here is a modified example to additionally *include* all animations with
+names that begin with ``"Arm_Left"``, but also *exclude* all animations which
+have names ending in ``"Attack"``::
 
     @+*_Loop, +Arm_Left*, -*Attack
 
-Following the animation selection filter statement, we add track filtering patterns to indicate
-which animation tracks should be kept or discarded. If no track filter patterns are specified, then
-all tracks within the matched animations will be discarded!
+Following the animation selection filter statement, we add track filtering
+patterns to indicate which animation tracks should be kept or discarded. If no
+track filter patterns are specified, then all tracks within the matched
+animations will be discarded!
 
-It's important to note that track filter statements are applied in order for each track within the
-animation, this means that one line may include a track, a later rule can still discard it.
-Similarly, a track excluded by an early rule may then be re-included once again by a filter rule
-further down in the filter script.
+It's important to note that track filter statements are applied in order for
+each track within the animation, this means that one line may include a track, a
+later rule can still discard it. Similarly, a track excluded by an early rule
+may then be re-included once again by a filter rule further down in the filter
+script.
 
-For example: include all tracks in animations with names ending in ``"_Loop"``, but discard any
-tracks affecting a ``"Skeleton"`` which end in ``"Control"``, unless they have ``"Arm"`` in their
-name::
+For example: include all tracks in animations with names ending in ``"_Loop"``,
+but discard any tracks affecting a ``"Skeleton"`` which end in ``"Control"``,
+unless they have ``"Arm"`` in their name::
 
     @+*_Loop
     +*
     -Skeleton:*Control
     +*Arm*
 
-In the above example, tracks like ``"Skeleton:Leg_Control"`` would be discarded, while tracks such
-as ``"Skeleton:Head"`` or ``"Skeleton:Arm_Left_Control"`` would be retained.
+In the above example, tracks like ``"Skeleton:Leg_Control"`` would be discarded,
+while tracks such as ``"Skeleton:Head"`` or ``"Skeleton:Arm_Left_Control"``
+would be retained.
 
 Any track filter lines that do not begin with a ``+`` or ``-`` are ignored.
 
 Storage
-~~~~~~~
+^^^^^^^
 
-By default, animations are saved as built-in. It is possible to save them to a file instead. This
-allows adding custom tracks to the animations and keeping them after a reimport.
+By default, animations are saved as built-in. It is possible to save them to a
+file instead. This allows adding custom tracks to the animations and keeping
+them after a reimport.
 
 Optimizer
-~~~~~~~~~
+^^^^^^^^^
 
-When animations are imported, an optimizer is run, which reduces the size of the animation considerably.
-In general, this should always be turned on unless you suspect that an animation might be broken due to it being enabled.
+When animations are imported, an optimizer is run, which reduces the size of the
+animation considerably. In general, this should always be turned on unless you
+suspect that an animation might be broken due to it being enabled.
 
 Clips
-~~~~~
+^^^^^
 
-It is possible to specify multiple animations from a single timeline as clips. For this to work, the model
-must have only one animation that is named ``default``. To create clips, change the clip amount to something
-greater than zero. You can then name a clip, specify which frames it starts and stops on, and choose whether
-the animation loops or not.
-
-.. If this PR (https://github.com/godotengine/godot/pull/36709) is merged for Godot 4.0 this section must
-   be updated to reflect that for the 4.0 documentation.
+It is possible to specify multiple animations from a single timeline as clips.
+For this to work, the model must have only one animation that is named
+``default``. To create clips, change the clip amount to something greater than
+zero. You can then name a clip, specify which frames it starts and stops on, and
+choose whether the animation loops or not.
 
 Scene inheritance
 -----------------
 
-In many cases, it may be desired to make modifications to the imported scene. By default, this is not possible because
-if the source asset changes (source ``.dae``, ``.gltf``, ``.obj`` file re-exported from 3D modelling app), Godot will re-import the whole scene.
+In many cases, it may be desired to make manual modifications to the imported
+scene. By default, this is not possible because if the source 3D asset changes,
+Godot will re-import the *whole* scene.
 
-It is possible, however, to make local modifications by using *Scene Inheritance*. Try to open the imported scene and the
-following dialog will appear:
+However, it is possible to make local modifications by using *scene
+inheritance*. If you try to open the imported scene using **Scene > Open
+Scene…** or **Scene > Quick Open Scene…**, the following dialog will appear:
 
-.. image:: img/scene_import4.png
+.. figure:: img/importing_3d_scenes_create_inherited_scene_dialog.webp
+   :align: center
+   :alt: Dialog when opening an imported 3D scene in the editor
 
-In inherited scenes, the only limitations for modifications are:
+   Dialog when opening an imported 3D scene in the editor
 
-* Nodes can't be removed (but can be added anywhere).
-* Sub-Resources can't be edited (save them externally as described above for this)
+In inherited scenes, the only limitations for modification are:
 
-Other than that, everything is allowed!
+- Nodes from the base scene can't be removed, but additional nodes can be added
+  anywhere.
+- Subresources can't be edited. Instead, you need to save them externally as
+  described above.
+
+Other than that, everything is allowed.
+
+.. _doc_importing_3d_scenes_import_hints:
 
 Import hints
 ------------
 
-Many times, when editing a scene, there are common tasks that need to be done after exporting:
+Many times, when editing a scene, there are common tasks that need to be done
+after exporting:
 
 - Adding collision detection to objects.
 - Setting objects as navigation meshes.
-- Deleting nodes that are not used in the game engine (like specific lights used for modelling).
+- Deleting nodes that are not used in the game engine (like specific lights used
+  for modelling).
 
 To simplify this workflow, Godot offers several suffixes that can be added to
 the names of the objects in your 3D modelling software. When imported, Godot
 will detect suffixes in object names and will perform actions automatically.
 
-.. note::
+.. warning::
 
-    All the suffixes described below are *case-sensitive*.
+    All the suffixes described below are **case-sensitive**.
 
 Remove nodes (-noimp)
-~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 Objects that have the ``-noimp`` suffix will be removed at import-time no matter
 what their type is. They will not appear in the imported scene.
 
+This is equivalent to enabling **Skip Import** for a node in the Advanced Import
+Settings dialog.
+
 Create collisions (-col, -convcol, -colonly, -convcolonly)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The option ``-col`` will work only for Mesh objects. If it is detected, a child
 static collision node will be added, using the same geometry as the mesh. This
@@ -533,19 +765,24 @@ To solve this, the ``-colonly`` modifier exists. It will remove the mesh upon
 importing and will create a :ref:`class_StaticBody3D` collision instead.
 This helps the visual mesh and actual collision to be separated.
 
-The option ``-convcolonly`` works in a similar way, but will create a :ref:`class_ConvexPolygonShape3D` instead.
+The option ``-convcolonly`` works in a similar way, but will create a
+:ref:`class_ConvexPolygonShape3D` instead using convex decomposition.
 
-With Collada files the option ``-colonly`` can also be used with Blender's empty objects.
-On import, it will create a :ref:`class_StaticBody3D` with
-a collision node as a child. The collision node will have one of a number of predefined shapes,
-depending on Blender's empty draw type:
+With Collada files, the option ``-colonly`` can also be used with Blender's
+empty objects. On import, it will create a :ref:`class_StaticBody3D` with a
+collision node as a child. The collision node will have one of a number of
+predefined shapes, depending on Blender's empty draw type:
 
-.. image:: img/3dimp_BlenderEmptyDrawTypes.png
+.. figure:: img/importing_3d_scenes_blender_empty_draw_types.webp
+   :align: center
+   :alt: Choosing a draw type for an Empty on creation in Blender
 
--  Single arrow will create a :ref:`class_SeparationRayShape3D`.
--  Cube will create a :ref:`class_BoxShape3D`.
--  Image will create a :ref:`class_WorldBoundaryShape3D`.
--  Sphere (and the others not listed) will create a :ref:`class_SphereShape3D`.
+   Choosing a draw type for an Empty on creation in Blender
+
+- Single arrow will create a :ref:`class_SeparationRayShape3D`.
+- Cube will create a :ref:`class_BoxShape3D`.
+- Image will create a :ref:`class_WorldBoundaryShape3D`.
+- Sphere (and the others not listed) will create a :ref:`class_SphereShape3D`.
 
 When possible, **try to use a few primitive collision shapes** instead of triangle
 mesh or convex shapes. Primitive shapes often have the best performance and
@@ -566,33 +803,33 @@ reliability.
     shapes.
 
 Create navigation (-navmesh)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A mesh node with the ``-navmesh`` suffix will be converted to a navigation mesh.
 The original Mesh object will be removed at import-time.
 
 Create a VehicleBody (-vehicle)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A mesh node with the ``-vehicle`` suffix will be imported as a child to a
 :ref:`class_VehicleBody3D` node.
 
 Create a VehicleWheel (-wheel)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A mesh node with the ``-wheel`` suffix will be imported as a child to a
 :ref:`class_VehicleWheel3D` node.
 
 Rigid Body (-rigid)
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 A mesh node with the ``-rigid`` suffix will be imported as a :ref:`class_RigidBody3D`.
 
 Animation loop (-loop, -cycle)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Animation clips in the COLLADA document that start or end with the token ``loop`` or ``cycle``
-will be imported as a Godot Animation with the loop flag set.
+Animation clips in the source 3D file that start or end with the token ``loop`` or ``cycle``
+will be imported as a Godot :ref:`class_Animation` with the loop flag set.
 **Unlike the other suffixes described above, this does not require a hyphen.**
 
 In Blender, this requires using the NLA Editor and naming the Action with the ``loop`` or
