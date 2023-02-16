@@ -148,7 +148,7 @@ by adding each array to ``surface_array`` and then committing to the mesh.
     surfaceArray[(int)Mesh.ArrayType.Vertex] = verts.ToArray();
     surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs.ToArray();
     surfaceArray[(int)Mesh.ArrayType.Normal] = normals.ToArray();
-    surfaceArray[(int)Mesh.ArrayType.Index] = indices.ToArray()
+    surfaceArray[(int)Mesh.ArrayType.Index] = indices.ToArray();
 
     var arrMesh = Mesh as ArrayMesh;
     if (arrMesh != null)
@@ -214,7 +214,7 @@ Put together, the full code looks like:
             surfaceArray[(int)Mesh.ArrayType.Vertex] = verts.ToArray();
             surfaceArray[(int)Mesh.ArrayType.TexUV] = uvs.ToArray();
             surfaceArray[(int)Mesh.ArrayType.Normal] = normals.ToArray();
-            surfaceArray[(int)Mesh.ArrayType.Index] = indices.ToArray()
+            surfaceArray[(int)Mesh.ArrayType.Index] = indices.ToArray();
 
             var arrMesh = Mesh as ArrayMesh;
             if (arrMesh != null)
