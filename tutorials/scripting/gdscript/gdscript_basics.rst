@@ -1137,6 +1137,7 @@ If you want to assign values on an array as it is being iterated through, it
 is best to use ``for i in array.size()``.
 
 ::
+
     for i in array.size():
 	    array[i] = "Hello World"
 
@@ -1146,6 +1147,7 @@ the value on the array. Objects passed by reference (such as nodes) can still
 be manipulated by calling methods on the loop variable.
 
 ::
+
     for string in string_array:
         string = "Hello World" # This has no effect
 
