@@ -8,11 +8,9 @@ Compiling with .NET
 Requirements
 ------------
 
-- `.NET SDK 6.0 <https://dotnet.microsoft.com/download>`_ or greater
-  (generally 64 bit)
+- `.NET SDK 6.0+ <https://dotnet.microsoft.com/download>`_
 
-You can use ``dotnet --list-sdks`` to check if you have a compatible .NET SDK
-installed.
+  You can use ``dotnet --info`` to check which .NET SDK versions are installed.
 
 Enable the .NET module
 ----------------------
@@ -71,11 +69,11 @@ the ``build_assemblies.py`` script::
 If everything went well, the ``GodotSharp`` directory, containing the managed
 libraries, should have been created in the in the ``bin`` directory.
 
-.. note:: Due to NuGet package caching, rebuilding the managed libraries does
-          not reliably update all projects using them. To solve this issue
-          either use ``GODOT_VERSION_STATUS`` to give every build a unique
-          version or delete ``GodotNuGetFallbackFolder`` to clear the package
-          cache.
+.. note:: By default, all development builds share a version number, which can
+          cause some issues with caching of the NuGet packages. To solve this
+          issue either use ``GODOT_VERSION_STATUS`` to give every build a unique
+          version or delete ``GodotNuGetFallbackFolder`` after every build to
+          clear the package cache.
 
 Unlike "classical" Godot builds, when building with the Mono module enabled
 (and depending on the target platform), a data directory may be created both
