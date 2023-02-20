@@ -14,7 +14,7 @@ Both Godot users on Linux and end-users on Linux running Godot games need to ens
 
 For example, on Arch-based systems, Godot requires ``spd-say``, ``festival``, and ``espeakup``.
 
-Best Practices
+Best practices
 --------------
 
 The best practices for text-to-speech, in terms of the ideal player experience for blind players, is to integrate directly with the screen-reader APIs (such as NVDA's API) to send output directly to it. This provides advanced functionality for blind players, such as being able to traverse previous output forwards and backwards, to replay, and to play at a faster or slower rate as suits them. Godot currently doesn't support screen-reader API integration.
