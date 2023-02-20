@@ -11,11 +11,8 @@ This page aims to list all features currently supported by Godot.
     Godot (4.0.alpha). Some of these features may not be available in the
     `current stable release series (3.x) <https://docs.godotengine.org/en/stable/about/list_of_features.html>`__.
 
-Features
---------
-
 Platforms
-^^^^^^^^^
+---------
 
 **Can run both the editor and exported projects:**
 
@@ -38,7 +35,7 @@ Godot aims to be as platform-independent as possible and can be ported to new
 platforms with relative ease.
 
 Editor
-^^^^^^
+------
 
 **Features:**
 
@@ -79,7 +76,7 @@ Editor
   in the project manager and import them directly.
 
 2D graphics
-^^^^^^^^^^^
+-----------
 
 Vulkan renderer.
 
@@ -120,7 +117,7 @@ Vulkan renderer.
 - CPU-based particles.
 
 2D tools
-^^^^^^^^
+--------
 
 - 2D camera with built-in smoothing and drag margins.
 - Path2D node to represent a path in 2D space.
@@ -132,7 +129,7 @@ Vulkan renderer.
 - Line2D node to draw textured 2D lines.
 
 2D physics
-^^^^^^^^^^
+----------
 
 **Physics bodies:**
 
@@ -148,7 +145,7 @@ Vulkan renderer.
 - Collision polygons (can be drawn manually or generated from a sprite in the editor).
 
 3D graphics
-^^^^^^^^^^^
+-----------
 
 Vulkan renderer compatible with desktop and mobile platforms. Requires full support for
 Vulkan 1.0, with Vulkan 1.1 and 1.2 features optionally used.
@@ -346,7 +343,7 @@ Most effects listed above can be adjusted for better performance or to further
 improve quality. This can be helpful when using Godot for offline rendering.
 
 3D tools
-^^^^^^^^
+--------
 
 - Built-in meshes: cube, cylinder/cone, (hemi)sphere, prism, plane, quad, ribbon, tube.
 - Tools for :ref:`procedural geometry generation <doc_procedural_geometry>`.
@@ -361,7 +358,7 @@ improve quality. This can be helpful when using Godot for offline rendering.
   and at run-time from an exported project.
 
 3D physics
-^^^^^^^^^^
+----------
 
 **Physics bodies:**
 
@@ -381,7 +378,7 @@ improve quality. This can be helpful when using Godot for offline rendering.
 - Generate one or several convex collision shapes for any mesh from the editor.
 
 Shaders
-^^^^^^^
+-------
 
 - *2D:* Custom vertex, fragment, and light shaders.
 - *3D:* Custom vertex, fragment, light, and sky shaders.
@@ -391,7 +388,7 @@ Shaders
    - Support for visual shader plugins.
 
 Scripting
-^^^^^^^^^
+---------
 
 **General:**
 
@@ -433,7 +430,7 @@ Scripting
 - Maintained D, Kotlin, Python, Nim, and Rust bindings provided by the community.
 
 Audio
-^^^^^
+-----
 
 **Features:**
 
@@ -461,7 +458,7 @@ Audio
 - *Linux:* PulseAudio or ALSA.
 
 Import
-^^^^^^
+------
 
 - Support for :ref:`custom import plugins <doc_import_plugins>`.
 
@@ -487,7 +484,7 @@ Import
   on import, which ensures consistency with other 3D applications such as Blender.
 
 Input
-^^^^^
+-----
 
 - Input mapping system using hardcoded input events or remappable input actions.
 
@@ -508,14 +505,14 @@ Input
 - Pen/tablet input with pressure support.
 
 Navigation
-^^^^^^^^^^
+----------
 
 - A* algorithm in 2D and 3D.
 - Navigation meshes with dynamic obstacle avoidance.
 - Generate navigation meshes from the editor or at run-time (including from an exported project).
 
 Networking
-^^^^^^^^^^
+----------
 
 - Low-level TCP networking using StreamPeer and TCP_Server.
 - Low-level UDP networking using PacketPeer and UDPServer.
@@ -535,7 +532,7 @@ Networking
   a server behind a NAT.
 
 Internationalization
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 
 - Full support for Unicode including emoji.
 - Store localization strings using :ref:`CSV <doc_internationalizing_games>`
@@ -551,7 +548,7 @@ Internationalization
 - Support for pseudolocalization to test your project for i18n-friendliness.
 
 Windowing and OS integration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 - Move, resize, minimize, and maximize windows spawned by the project.
 - Change the window title and icon.
@@ -576,13 +573,13 @@ Windowing and OS integration
   This allows running the engine without a GPU or display server.
 
 Mobile
-^^^^^^
+------
 
 - In-app purchases on Android and iOS.
 - Support for advertisements using third-party modules.
 
 XR support (AR and VR)
-^^^^^^^^^^^^^^^^^^^^^^
+----------------------
 
 - Out of the box support for OpenXR.
 
@@ -592,7 +589,7 @@ XR support (AR and VR)
 - Support for the OpenVR APIs.
 
 GUI system
-^^^^^^^^^^
+----------
 
 Godot's GUI is built using the same Control nodes used to make games in Godot.
 The editor UI can easily be extended in many ways using add-ons.
@@ -641,7 +638,7 @@ Godot's small distribution size can make it a suitable alternative to frameworks
 like Electron or Qt.
 
 Animation
-^^^^^^^^^
+---------
 
 - Direct kinematics and inverse kinematics.
 - Support for animating any property with customizable interpolation.
@@ -650,7 +647,7 @@ Animation
 - Support for Bézier curves in animation.
 
 File formats
-^^^^^^^^^^^^
+------------
 
 - Scenes and resources can be saved in :ref:`text-based <doc_tscn_file_format>` or binary formats.
 
@@ -673,7 +670,7 @@ File formats
   by the engine to support mods and DLCs.
 
 Miscellaneous
-^^^^^^^^^^^^^
+-------------
 
 - :ref:`Low-level access to servers <doc_using_servers>` which allows bypassing
   the scene tree's overhead when needed.
