@@ -8,11 +8,11 @@ Requirements for functionality
 
 Godot includes text-to-speech functionality. You can find these under the :ref:`DisplayServer class <class_DisplayServer>`.
 
-Godot depends on system libraries for text-to-speech functionality. These libraries are installed by default on Windows and MacOS, but not on all Linux distros. If they are not present, text-to-speech functionality will not work. Speifically, the ``tts_get_voices`` method will return an empty list, indicating that there are no usable voices.
+Godot depends on system libraries for text-to-speech functionality. These libraries are installed by default on Windows and macOS, but not on all Linux distributions. If they are not present, text-to-speech functionality will not work. Specifically, the ``tts_get_voices()`` method will return an empty list, indicating that there are no usable voices.
 
-Both Godot users on Linux and end-users on Linux running Godot games need to ensure that their system includes the system libraries for text-to-speech to work. Please consult with your own distro's documentation to determine what libraries you need to install.
+Both Godot users on Linux and end-users on Linux running Godot games need to ensure that their system includes the system libraries for text-to-speech to work. Please consult with your own distibution's documentation to determine what libraries you need to install.
 
-For example, on Arch-based systems, Godot requires ``spd-say``, ``festival``, and ``espeakup``.
+For example, on Arch Linux-based systems, Godot requires ``spd-say``, ``festival``, and ``espeakup``.
 
 Best practices
 --------------
