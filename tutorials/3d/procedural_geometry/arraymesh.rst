@@ -303,13 +303,13 @@ that you find online.
 
     public partial class MyMeshInstance3D : MeshInstance3D
     {
+        private int _rings = 50;
+        private int _radialSegments = 50;
+        private float _radius = 1;
+
         public override void _Ready()
         {
             // Insert setting up the surface array and lists here.
-
-            var rings = 50;
-            var radialSegments = 50;
-            var radius = 1;
 
             // Vertex indices.
             var thisRow = 0;
@@ -317,19 +317,19 @@ that you find online.
             var point = 0;
 
             // Loop over rings.
-            for (var i = 0; i < rings + 1; i++)
+            for (var i = 0; i < _rings + 1; i++)
             {
-                var v = ((float)i) / rings;
+                var v = ((float)i) / _rings;
                 var w = Mathf.Sin(Mathf.Pi * v);
                 var y = Mathf.Cos(Mathf.Pi * v);
 
                 // Loop over segments in ring.
-                for (var j = 0; j < radialSegments; j++)
+                for (var j = 0; j < _radialSegments; j++)
                 {
-                    var u = ((float)j) / radialSegments;
+                    var u = ((float)j) / _radialSegments;
                     var x = Mathf.Sin(u * Mathf.Pi * 2);
                     var z = Mathf.Cos(u * Mathf.Pi * 2);
-                    var vert = new Vector3(x * radius * w, y, z * radius * w);
+                    var vert = new Vector3(x * _radius * w, y, z * _radius * w);
                     verts.Add(vert);
                     normals.Add(vert.Normalized());
                     uvs.Add(new Vector2(u, v));
@@ -350,13 +350,13 @@ that you find online.
 
                 if (i > 0)
                 {
-                    indices.Add(prevRow + radialSegments - 1);
+                    indices.Add(prevRow + _radialSegments - 1);
                     indices.Add(prevRow);
-                    indices.Add(thisRow + radialSegments - 1);
+                    indices.Add(thisRow + _radialSegments - 1);
 
                     indices.Add(prevRow);
-                    indices.Add(prevRow + radialSegments);
-                    indices.Add(thisRow + radialSegments - 1);
+                    indices.Add(prevRow + _radialSegments);
+                    indices.Add(thisRow + _radialSegments - 1);
                 }
 
                 prevRow = thisRow;
