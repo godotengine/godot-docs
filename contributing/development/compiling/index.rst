@@ -15,6 +15,6 @@ Building from source
    cross-compiling_for_ios_on_linux
    compiling_for_uwp
    compiling_for_web
-   compiling_with_mono
+   compiling_with_dotnet
    optimizing_for_size
    compiling_with_script_encryption_key

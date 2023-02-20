@@ -1,6 +1,6 @@
-.. _doc_compiling_with_mono:
+.. _doc_compiling_with_dotnet:
 
-Compiling with Mono
+Compiling with .NET
 ===================
 
 .. highlight:: shell
@@ -8,14 +8,22 @@ Compiling with Mono
 Requirements
 ------------
 
-- .NET SDK 6.0 or greater (generally 64 bit)
+- `.NET SDK 6.0 <https://dotnet.microsoft.com/download>`_ or greater
+  (generally 64 bit)
 
-You can use ``dotnet --version`` to check your .NET version.
+You can use ``dotnet --list-sdks`` to check if you have a compatible .NET SDK
+installed.
 
-Enable the Mono module
+Enable the .NET module
 ----------------------
 
-By default, the Mono module is disabled when building. To enable it, add the
+.. note:: C# support for Godot has historically used the
+          `Mono <https://www.mono-project.com/>`_ runtime instead of the
+          `.NET Runtime <https://github.com/dotnet/runtime>`_ and internally
+          many things are still named ``mono`` instead of ``dotnet`` or
+          otherwise referred to as ``mono``.
+
+By default, the .NET module is disabled when building. To enable it, add the
 option ``module_mono_enabled=yes`` to the SCons command line, while otherwise
 following the instructions for building the desired Godot binaries.
 
@@ -55,8 +63,8 @@ used to generate the Mono glue.
 Building the managed libraries
 ------------------------------
 
-Once you have generated the Mono glue, you can builds the managed libraries with
-the ``build_assemblies.py`` script.::
+Once you have generated the Mono glue, you can build the managed libraries with
+the ``build_assemblies.py`` script::
 
     ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir=./bin
 
@@ -75,6 +83,58 @@ for the editor and for exported projects. This directory is important for
 proper functioning and must be distributed together with Godot.
 More details about this directory in
 :ref:`Data directory<compiling_with_mono_data_directory>`.
+
+Build Platform
+^^^^^^^^^^^^^^
+
+Provide the ``--godot-platform=<platform>`` argument to control for which
+platform specific the libraries are built. Omit this argument to build for the
+current system.
+
+This currently only controls the inclusion of the support for Visual Studio as
+an external editor, the libraries are otherwise identical.
+
+NuGet packages
+^^^^^^^^^^^^^^
+
+The API assemblies, source generators, and custom MSBuild project SDK are
+distributed as NuGet packages. This is all transparent to the user, but it can
+make things complicated during development.
+
+In order to use Godot with a development version of those packages, a local
+NuGet source must be created where MSBuild can find them. This can be done with
+the .NET CLI:
+
+::
+
+    dotnet nuget add source ~/MyLocalNugetSource --name MyLocalNugetSource
+
+The Godot NuGet packages must be added to that local source. Additionally, we
+must make sure there are no other versions of the package in the NuGet cache, as
+MSBuild may pick one of those instead.
+
+In order to simplify this process, the ``build_assemblies.py`` script provides
+the following ``--push-nupkgs-local`` option:
+
+::
+
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local ~/MyLocalNugetSource
+
+This option ensures the packages will be added to the specified local NuGet
+source and that conflicting versions of the package are removed from the NuGet
+cache. It's recommended to always use this option when building the C# solutions
+during development to avoid mistakes.
+
+Double Precision Support (REAL_T_IS_DOUBLE)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When building Godot with double precision support, i.e. the ``precision=double``
+argument for scons, the managed libraries must be adjusted to match by passing
+the ``--precision=double`` argument:
+
+::
+
+    ./modules/mono/build_scripts/build_assemblies.py --godot-output-dir ./bin --push-nupkgs-local ~/MyLocalNugetSource --precision=double
 
 Examples
 --------
@@ -129,7 +189,7 @@ The name of the data directory for the Godot editor will always be
 API assemblies and a ``Tools`` subdirectory with the tools required by the
 editor, like the ``GodotTools`` assemblies and its dependencies.
 
-On macOS, if the Godot editor is distributed as a bundle, ``GodotSharp``
+On macOS, if the Godot editor is distributed as a bundle, the ``GodotSharp``
 directory may be placed in the ``<bundle_name>.app/Contents/Resources/``
 directory inside the bundle.
 

@@ -56,7 +56,8 @@ Download and install the latest stable version of the SDK from the
     if you are using the 64-bit version of Godot.
 
 If you are building Godot from source, make sure to follow the steps to enable
-.NET support in your build as outlined in the :ref:`doc_compiling_with_mono` page.
+.NET support in your build as outlined in the :ref:`doc_compiling_with_dotnet`
+page.
 
 Configuring an external editor
 ------------------------------

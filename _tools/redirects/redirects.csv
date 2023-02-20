@@ -25,6 +25,7 @@ source,destination
 /content/3d/making_trees.html,/tutorials/content/making_trees.html
 /contributing/_contributing.html,/community/contributing/
 /contributing/bug_triage_guidelines.html,/community/contributing/bug_triage_guidelines.html
+/contributing/development/compiling/compiling_with_mono.html,/contributing/development/compiling/compiling_with_dotnet.html
 /contributing/development/core_and_modules/introduction_to_godot_development.html,/contributing/development/core_and_modules/index.html
 /contributing/doc_and_l10n_guidelines.html,/community/contributing/doc_and_l10n_guidelines.html
 /contributing/updating_the_class_reference.html,/community/contributing/updating_the_class_reference.html
