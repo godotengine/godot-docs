@@ -193,7 +193,7 @@ Put together, the full code looks like:
 
  .. code-tab:: csharp C#
 
-    public partial class ArrayMeshInstance : MeshInstance3D
+    public partial class MyMeshInstance3D : MeshInstance3D
     {
         public override void _Ready()
         {
@@ -301,7 +301,7 @@ that you find online.
 
  .. code-tab:: csharp C#
 
-    public partial class ArrayMeshInstance : MeshInstance3D
+    public partial class MyMeshInstance3D : MeshInstance3D
     {
         public override void _Ready()
         {
