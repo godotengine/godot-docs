@@ -1,6 +1,6 @@
 .. _doc_text_to_speech:
 
-Text to Speech
+Text to speech
 ==============
 
 Requirements for functionality
