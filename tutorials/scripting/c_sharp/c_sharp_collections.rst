@@ -3,11 +3,12 @@
 C# collections
 ==============
 
+The .NET base class library contains multiple collection types that can be
+used to store and manipulate data. Godot also provide some collection types
+that are tightly integrated with the rest of the engine.
+
 Choose a collection
 -------------------
-
-The .NET base class library contains multiple collection types that can be
-used to store and manipulate data. Godot also provide some collection types.
 
 The main difference between the `.NET collections <https://learn.microsoft.com/en-us/dotnet/standard/collections/>`_
 and the Godot collections is that the .NET collections are implemented in C# while
@@ -47,7 +48,7 @@ To choose which collection type to use for each situation, consider the followin
 
    * If yes, since Godot only supports :ref:`Variant-compatible <doc_c_sharp_variant>`
      types, use a Godot collection.
-   * If not, consider `choosing an appropiate .NET collection <https://learn.microsoft.com/en-us/dotnet/standard/collections/selecting-a-collection-class>`_.
+   * If not, consider `choosing an appropriate .NET collection <https://learn.microsoft.com/en-us/dotnet/standard/collections/selecting-a-collection-class>`_.
 
 * Do you need a Godot collection that represents a list or sequential set of data?
 
