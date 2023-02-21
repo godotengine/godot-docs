@@ -50,6 +50,8 @@ version of Godot.
 Download and install the latest stable version of the SDK from the
 `.NET download page <https://dotnet.microsoft.com/download>`__.
 
+Additionally, as of 02.2023, you will need to download `The Developer pack for The 4.7.2 version of .NET Framework <https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472>`__.
+
 .. important::
 
     Be sure to install the 64-bit version of the SDK(s)
