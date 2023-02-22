@@ -24,6 +24,7 @@
    mesh_lod
    visibility_ranges
    occlusion_culling
+   variable_rate_shading
 
 Global illumination
 -------------------

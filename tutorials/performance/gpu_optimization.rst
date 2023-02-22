@@ -178,6 +178,12 @@ amount of work the GPU has to do. You can do this by simplifying the shader
 Also, when using non-unshaded particles, consider forcing vertex shading in
 their material to decrease the shading cost.
 
+.. seealso::
+
+    On supported hardware, :ref:`doc_variable_rate_shading` can be used to
+    reduce shading processing costs without impacting the sharpness of edges on
+    the final image.
+
 **When targeting mobile devices, consider using the simplest possible shaders
 you can reasonably afford to use.**
 
