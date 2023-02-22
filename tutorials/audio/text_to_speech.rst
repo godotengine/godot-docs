@@ -63,6 +63,7 @@ This provides your blind players with the most flexibility and comfort available
 Caveats and Other Information
 -----------------------------
 
+- Expect delays when you call `tts_speak` and `tts_stop`. The actual delay time varies depending on both the OS and on your machine's specifications.
 - Non-English text doesn't seem to be supported; even on Linux, with language-specific voices such as Arabic, the text reads out letter by letter.
 - Non-ASCII characters, such as umlaut, are similarly not supported (e.g. ö reads as "o umlaut")
 - Most blind players also use Windows with the NVDA screen reader.
