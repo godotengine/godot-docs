@@ -200,7 +200,7 @@ Light built-ins
 
 Light processor functions work differently in Godot 4.x than they did in Godot
 3.x. In Godot 4.x all lighting is done during the regular draw pass. In other
-words, Godot no longer draws the object again for each light. 
+words, Godot no longer draws the object again for each light.
 
 Use render_mode ``unshaded`` if you do not want the light processor function to
 run. Use render_mode ``light_only`` if you only want to see the impact of
@@ -264,8 +264,14 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 SDF functions
 ^^^^^^^^^^^^^
 
-There are a few additional functions implemented to support an SDF (Signed Distance Field) feature.
-They are available for Fragment and Light functions of CanvasItem shader.
+There are a few additional functions implemented to sample an automatically
+generated Signed Distance Field texture. These functions available for Fragment
+and Light functions of CanvasItem shaders.
+
+The signed distance field is generated from :ref:`class_LightOccluder2D` nodes
+present in the scene with the **SDF Collision** property enabled (which is the
+default). See the :ref:`2D lights and shadows <doc_2d_lights_and_shadows_setting_up_shadows>`
+documentation for more information.
 
 +-----------------------------------------------+----------------------------------------+
 | Function                                      | Description                            |
