@@ -221,16 +221,20 @@ having too many branches) can still slow down shader execution significantly.
 
 The ``#elif`` directive stands for "else if" and checks the condition passed if
 the above ``#if`` evaluated to ``false``. ``#elif`` can only be used within an
-``#if`` block. It is possible to use several ``#elif``s in the same ``#if`` statement.
+``#if`` block. It is possible to use several ``#elif`` statements after an ``#if`` statement.
 
 .. code-block:: glsl
 
-    #define VAR 3
-    #define USE_LIGHT 0 // Evaluates to `false`.
-    #define USE_COLOR 1 // Evaluates to `true`.
+    #define VAR 2
 
-    #if VAR == 3 && (USE_LIGHT || USE_COLOR)
+    #if VAR == 0
+    // Not included.
+    #elif VAR == 1
+    // Not included.
+    #elif VAR == 2
     // Condition is `true`. Include this portion in the final shader.
+    #else
+    // Not included.
     #endif
 
 Like with ``#if``, the ``defined()`` preprocessor function can be used:
@@ -260,8 +264,9 @@ for creating multiple shader versions in the same file. It may be continued by a
 .. code-block:: glsl
 
     #define USE_LIGHT
-    #ifdef USE_LIGHT
 
+    #ifdef USE_LIGHT
+    // USE_LIGHT is defined. Include this portion in the final shader.
     #endif
 
 The processor does *not* support ``#elifdef`` as a shortcut for ``#elif defined(...)``.
@@ -312,7 +317,7 @@ where ``#ifdef`` would never match, and vice versa.
 **Syntax:** ``#else``
 
 Defines the optional block which is included when the previously defined ``#if``,
-``#ifdef` or `#ifndef`` directive evaluates to false.
+``#elif``, ``#ifdef`` or ``#ifndef`` directive evaluates to false.
 
 .. code-block:: glsl
 
@@ -321,7 +326,7 @@ Defines the optional block which is included when the previously defined ``#if``
     #define MY_COLOR vec3(1.0, 0, 0)
 
     void fragment() {
-    #ifndef MY_COLOR
+    #ifdef MY_COLOR
         ALBEDO = MY_COLOR;
     #else
         ALBEDO = vec3(0, 0, 1.0);
@@ -333,7 +338,7 @@ Defines the optional block which is included when the previously defined ``#if``
 
 **Syntax:** ``#endif``
 
-Used as terminator for the ``#if``, ``#`ifdef``, ``#ifndef`` or subsequent ``#else`` directives.
+Used as terminator for the ``#if``, ``#ifdef``, ``#ifndef`` or subsequent ``#else`` directives.
 
 #include
 ^^^^^^^^
