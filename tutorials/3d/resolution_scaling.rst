@@ -1,3 +1,5 @@
+.. _doc_resolution_scaling:
+
 Resolution scaling
 ==================
 

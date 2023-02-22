@@ -208,6 +208,8 @@ called the :ref:`TranslationServer <class_TranslationServer>`.
 Translations can be added or removed during run-time;
 the current language can also be changed at run-time.
 
+.. _doc_internationalizing_games_bidi:
+
 Bidirectional text and UI Mirroring
 -----------------------------------
 
