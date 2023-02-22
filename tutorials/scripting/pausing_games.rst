@@ -57,14 +57,15 @@ You can also alter the property with code:
         PauseMode = Node.PauseModeEnum.Process;
     }
 
-This is what each mode tells a node to do:  
+This is what each mode tells a node to do:
 
--  **Inherit**: Process depending on the state of the parent,
-   grandparent, etc. The first parent that has a non-Inherit state.
--  **Stop**: Stop the node no matter what (and children in Inherit
-   mode). When paused this node will not process.
--  **Process**: Process the node no matter what (and children in Inherit
-   mode). Paused or not this node will process.
+-  **Inherit**: Process depending on the state of the parent, grandparent, etc.
+   The first parent that has a state other than Inherit determines the effective
+   value that will be used.
+-  **Stop**: If the scene tree is paused, pause the node no matter what (and
+   children in Inherit mode). When paused, this node *will not* process.
+-  **Process**: Even if the scene tree is paused, process the node no matter
+   what (and children in Inherit mode). Paused or not, this node *will* process.
 
 By default, all nodes have this property in the "Inherit" state. If the
 parent is set to "Inherit", then the grandparent will be checked and so
