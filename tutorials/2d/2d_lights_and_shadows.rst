@@ -170,6 +170,8 @@ of the Light2D base class:
   depending on the other nodes' enabled visual layers **Occluder Light Mask**.
   This can be used to prevent certain objects from receiving light.
 
+.. _doc_2d_lights_and_shadows_setting_up_shadows:
+
 Setting up shadows
 ------------------
 
