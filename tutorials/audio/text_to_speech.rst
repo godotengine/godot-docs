@@ -3,6 +3,39 @@
 Text to speech
 ==============
 
+Basic Usage
+-----------
+
+Basic usage of text-to-speech involves the following one-time steps:
+
+- Query the system for a list of usable voices
+- Store the ID of the voice you want to use
+
+Once you have the voice ID, you can use it to speak some text:
+
+::
+
+    # One-time steps
+    var voices:Array = DisplayServer.tts_get_voices()
+    # Pick a voice. Here, we arbitrarily pick the first voice.
+    var voice_data:Dictionary = voices[0]
+
+    # Say "Hello, World!"
+    DisplayServer.tts_speak("Hello, World!", voice_data["id"])
+
+    # Say a longer sentence, and then interrupt it.
+    # Note that this method is asynchronous: execution proceeds
+    # to the next line immediately, before the voice finishes speaking.
+    
+    var long_message:String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur"
+
+    DisplayServer.tts_speak(long_message)
+
+    # Immediately stop the current text mid-sentence and say goodbye instead
+    DisplayServer.tts_stop()
+    DisplayServer.tts_speak("Goodbye!")
+
+
 Requirements for functionality
 ------------------------------
 
@@ -26,3 +59,12 @@ With the current state of the Godot text-to-speech APIs, best practices include:
 - Allow players to control the speech rate, and save/persist that selection across game sessions
 
 This provides your blind players with the most flexibility and comfort available when not using a screen reader, and minimizes the chance of frustrating and alienating them.
+
+Caveats and Other Information
+-----------------------------
+
+- Non-English text doesn't seem to be supported; even on Linux, with language-specific voices such as Arabic, the text reads out letter by letter.
+- Non-ASCII characters, such as umlaut, are similarly not supported (e.g. ö reads as "o umlaut")
+- Most blind players also use Windows with the NVDA screen reader.
+- Windows text-to-speech APIs generally perform better than their equivalents on other systems (e.g. `tts_stop` followed by `tts_speak` immediately speaks the new message).
+- Some systems, such as Linux, provide several voices, including voices with different accents and for different languages.
