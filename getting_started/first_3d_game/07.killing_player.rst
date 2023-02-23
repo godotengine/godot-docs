@@ -75,7 +75,7 @@ a ``die()`` function that helps us put a descriptive label on the code.
        queue_free()
 
 
-   func _on_mob_detector_body_entered(_body):
+   func _on_mob_detector_body_entered(body):
        die()
 
  .. code-tab:: csharp
@@ -106,7 +106,7 @@ the character should die when an enemy runs into the collider. Note that without
 .. tabs::
    .. code-tab:: gdscript GDScript
 
-    var player_position = $Player.transform.origin
+    var player_position = $Player.position
 
 gives error because there is no $Player!
 
@@ -269,8 +269,8 @@ Next is ``Mob.gd``.
         queue_free()
 
     func squash():
-       squashed.emit()
-       queue_free() # Destroy this node
+        squashed.emit()
+        queue_free() # Destroy this node
  .. code-tab:: csharp
 
     using Godot;
@@ -321,6 +321,7 @@ Finally, the longest script, ``Player.gd``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
+
     extends CharacterBody3D
 
     signal hit
@@ -329,6 +330,7 @@ Finally, the longest script, ``Player.gd``:
     @export var speed = 14
     # The downward acceleration while in the air, in meters per second squared.
     @export var fall_acceleration = 75
+    # Vertical impulse applied to the character upon jumping in meters per second.
     @export var jump_impulse = 20
     # Vertical impulse applied to the character upon bouncing over a mob
     # in meters per second.
@@ -356,14 +358,14 @@ Finally, the longest script, ``Player.gd``:
         # Prevent diagonal moving fast af
         if direction != Vector3.ZERO:
             direction = direction.normalized()
-            $Pivot.look_at(position + direction,Vector3.UP)
+            $Pivot.look_at(position + direction, Vector3.UP)
 
         # Ground Velocity
         target_velocity.x = direction.x * speed
         target_velocity.z = direction.z * speed
 
         # Vertical Velocity
-        if not is_on_floor(): # If in the air, fall towards the floor
+        if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
             target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 
         # Jumping.

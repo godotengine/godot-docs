@@ -11,7 +11,7 @@ you will have monsters roaming the game board.
 Double-click on ``Main.tscn`` in the *FileSystem* dock to open the ``Main`` scene.
 
 Before drawing the path, we're going to change the game resolution. Our game has
-a default window size of ``1024x600``. We're going to set it to ``720x540``, a
+a default window size of ``1152x648``. We're going to set it to ``720x540``, a
 nice little box.
 
 Go to *Project -> Project Settings*.

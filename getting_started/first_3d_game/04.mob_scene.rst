@@ -104,15 +104,15 @@ and ``max_speed``, to define a random speed range, which we will later use to de
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends CharacterBody3D
+    extends CharacterBody3D
 
-   # Minimum speed of the mob in meters per second.
-   @export var min_speed = 10
-   # Maximum speed of the mob in meters per second.
-   @export var max_speed = 18
+    # Minimum speed of the mob in meters per second.
+    @export var min_speed = 10
+    # Maximum speed of the mob in meters per second.
+    @export var max_speed = 18
 
 
-   func _physics_process(_delta):
+    func _physics_process(_delta):
         move_and_slide()
 
  .. code-tab:: csharp
@@ -150,7 +150,7 @@ The function will take a ``start_position``,the mob's spawn position, and the
 
 We position the mob at ``start_position`` and turn it towards the player using
 the ``look_at_from_position()`` method, and randomize the angle by rotating a
-random amount around the Y axis. Below, ``rand_range()`` outputs a random value
+random amount around the Y axis. Below, ``randf_range()`` outputs a random value
 between ``-PI / 4`` radians and ``PI / 4`` radians.
 
 .. tabs::
@@ -253,7 +253,7 @@ Here is the complete ``Mob.gd`` script for reference.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   extends CharacterBody3D
+    extends CharacterBody3D
 
     # Minimum speed of the mob in meters per second.
     @export var min_speed = 10
