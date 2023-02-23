@@ -33,7 +33,7 @@ Once you have the voice ID, you can use it to speak some text:
 
     # Immediately stop the current text mid-sentence and say goodbye instead
     DisplayServer.tts_stop()
-    DisplayServer.tts_speak("Goodbye!")
+    DisplayServer.tts_speak("Goodbye!", voice_data["id"])
 
 
 Requirements for functionality
