@@ -81,6 +81,6 @@ which reparses the pseudolocalization properties and reloads the pseudolocalizat
 The following code snippet shall turn on ``replace_with_accents`` and ``double_vowels`` properties
 and then call ``reload_pseudolocalization()`` for the changes to get reflected::
 
-    ProjectSettings.set("internationalization/pseudolocalization/replace_with_accents", true)
-    ProjectSettings.set("internationalization/pseudolocalization/double_vowels", true)
+    ProjectSettings.set_setting("internationalization/pseudolocalization/replace_with_accents", true)
+    ProjectSettings.set_setting("internationalization/pseudolocalization/double_vowels", true)
     TranslationServer.reload_pseudolocalization()
