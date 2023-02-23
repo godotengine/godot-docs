@@ -72,7 +72,7 @@ Corresponds to :ref:`Node.PROCESS_MODE_ALWAYS<class_Node_constant_PROCESS_MODE_A
 
 :ref:`EnableMode<enum_VisibleOnScreenEnabler2D_EnableMode>` **ENABLE_MODE_WHEN_PAUSED** = ``2``
 
-Corresponds to [constant Node.PROCESS_MODE_WHEN_PAUSED.
+Corresponds to :ref:`Node.PROCESS_MODE_WHEN_PAUSED<class_Node_constant_PROCESS_MODE_WHEN_PAUSED>`.
 
 .. rst-class:: classref-section-separator
 

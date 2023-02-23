@@ -34,7 +34,7 @@ Description
 Tutorials
 ---------
 
-- :doc:`GI probes <../tutorials/3d/gi_probes>`
+- :doc:`VoxelGI <../tutorials/3d/using_voxel_gi>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

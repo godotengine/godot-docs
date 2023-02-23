@@ -661,7 +661,7 @@ Inserts an Audio Track key at the given ``time`` in seconds. The ``track_idx`` m
 
 :ref:`bool<class_bool>` **audio_track_is_use_blend** **(** :ref:`int<class_int>` track_idx **)** |const|
 
-Returns ``true`` if the track at ``idx`` will be blended with other animations.
+Returns ``true`` if the track at ``track_idx`` will be blended with other animations.
 
 .. rst-class:: classref-item-separator
 

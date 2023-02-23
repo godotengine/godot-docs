@@ -2009,7 +2009,7 @@ Formats the **String**, replacing the placeholders with one or more parameters. 
 
     print("I caught %d fishes!" % 2) # Prints "I caught 2 fishes!"
     
-    var my_message = "Travelling to %s, at %2.2f per second."
+    var my_message = "Travelling to %s, at %2.2f km/h."
     var location = "Deep Valley"
     var speed = 40.3485
     print(my_message % [location, speed]) # Prints "Travelling to Deep Valley, at 40.35 km/h."

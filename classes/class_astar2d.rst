@@ -331,7 +331,7 @@ If you change the 2nd point's weight to 3, then the result will be ``[1, 4, 3]``
 
 :ref:`int<class_int>` **get_point_capacity** **(** **)** |const|
 
-Returns the capacity of the structure backing the points, useful in conjunction with ``reserve_space``.
+Returns the capacity of the structure backing the points, useful in conjunction with :ref:`reserve_space<class_AStar2D_method_reserve_space>`.
 
 .. rst-class:: classref-item-separator
 

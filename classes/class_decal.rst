@@ -353,7 +353,7 @@ Sets the size of the :ref:`AABB<class_AABB>` used by the decal. All dimensions m
 - void **set_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type, :ref:`Texture2D<class_Texture2D>` texture **)**
 - :ref:`Texture2D<class_Texture2D>` **get_texture** **(** :ref:`DecalTexture<enum_Decal_DecalTexture>` type **)** |const|
 
-:ref:`Texture2D<class_Texture2D>` with the emission :ref:`Color<class_Color>` of the Decal. Either this or the :ref:`texture_emission<class_Decal_property_texture_emission>` must be set for the Decal to be visible. Use the alpha channel like a mask to smoothly blend the edges of the decal with the underlying object.
+:ref:`Texture2D<class_Texture2D>` with the emission :ref:`Color<class_Color>` of the Decal. Either this or the :ref:`texture_albedo<class_Decal_property_texture_albedo>` must be set for the Decal to be visible. Use the alpha channel like a mask to smoothly blend the edges of the decal with the underlying object.
 
 \ **Note:** Unlike :ref:`BaseMaterial3D<class_BaseMaterial3D>` whose filter mode can be adjusted on a per-material basis, the filter mode for **Decal** textures is set globally with :ref:`ProjectSettings.rendering/textures/decals/filter<class_ProjectSettings_property_rendering/textures/decals/filter>`.
 

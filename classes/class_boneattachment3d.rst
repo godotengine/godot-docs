@@ -166,7 +166,7 @@ A function that is called automatically when the :ref:`Skeleton3D<class_Skeleton
 
 void **set_external_skeleton** **(** :ref:`NodePath<class_NodePath>` external_skeleton **)**
 
-Sets the :ref:`NodePath<class_NodePath>` to the external skeleton that the BoneAttachment3D node should use. The external :ref:`Skeleton3D<class_Skeleton3D>` node is only used when ``use_external_skeleton`` is set to ``true``.
+Sets the :ref:`NodePath<class_NodePath>` to the external skeleton that the BoneAttachment3D node should use. See :ref:`set_use_external_skeleton<class_BoneAttachment3D_method_set_use_external_skeleton>` to enable the external :ref:`Skeleton3D<class_Skeleton3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -178,7 +178,7 @@ Sets the :ref:`NodePath<class_NodePath>` to the external skeleton that the BoneA
 
 void **set_use_external_skeleton** **(** :ref:`bool<class_bool>` use_external_skeleton **)**
 
-Sets whether the BoneAttachment3D node will use an extenral :ref:`Skeleton3D<class_Skeleton3D>` node rather than attenpting to use its parent node as the :ref:`Skeleton3D<class_Skeleton3D>`. When set to ``true``, the BoneAttachment3D node will use the external :ref:`Skeleton3D<class_Skeleton3D>` node set in ``set_external_skeleton``.
+Sets whether the BoneAttachment3D node will use an extenral :ref:`Skeleton3D<class_Skeleton3D>` node rather than attenpting to use its parent node as the :ref:`Skeleton3D<class_Skeleton3D>`. When set to ``true``, the BoneAttachment3D node will use the external :ref:`Skeleton3D<class_Skeleton3D>` node set in :ref:`set_external_skeleton<class_BoneAttachment3D_method_set_external_skeleton>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

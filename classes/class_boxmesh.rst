@@ -21,7 +21,7 @@ Description
 
 Generate an axis-aligned box :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
-The box's UV layout is arranged in a 3×2 layout that allows texturing each face individually. To apply the same texture on all faces, change the material's UV property to ``Vector3(3, 2, 1)``.
+The box's UV layout is arranged in a 3×2 layout that allows texturing each face individually. To apply the same texture on all faces, change the material's UV property to ``Vector3(3, 2, 1)``. This is equivalent to adding ``UV *= vec2(3.0, 2.0)`` in a vertex shader.
 
 \ **Note:** When using a large textured **BoxMesh** (e.g. as a floor), you may stumble upon UV jittering issues depending on the camera angle. To solve this, increase :ref:`subdivide_depth<class_BoxMesh_property_subdivide_depth>`, :ref:`subdivide_height<class_BoxMesh_property_subdivide_height>` and :ref:`subdivide_width<class_BoxMesh_property_subdivide_width>` until you no longer notice UV jittering.
 

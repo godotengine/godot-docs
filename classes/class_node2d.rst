@@ -239,6 +239,8 @@ Position, relative to the node's parent.
 
 Rotation in radians, relative to the node's parent.
 
+\ **Note:** This property is edited in the inspector in degrees. If you want to use degrees in a script, use :ref:`rotation_degrees<class_Node2D_property_rotation_degrees>`.
+
 .. rst-class:: classref-item-separator
 
 ----

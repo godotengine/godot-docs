@@ -21,7 +21,7 @@ Most basic 3D game object, parent of all 3D-related nodes.
 Description
 -----------
 
-Most basic 3D game object, with a 3D :ref:`Transform3D<class_Transform3D>` and visibility settings. All other 3D game objects inherit from Node3D. Use **Node3D** as a parent node to move, scale, rotate and show/hide children in a 3D project.
+Most basic 3D game object, with a :ref:`Transform3D<class_Transform3D>` and visibility settings. All other 3D game objects inherit from Node3D. Use **Node3D** as a parent node to move, scale, rotate and show/hide children in a 3D project.
 
 Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the **Node3D** object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the **Node3D**'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the **Node3D** object itself is referred to as object-local coordinate system.
 
@@ -413,6 +413,8 @@ Access to the node rotation as a :ref:`Quaternion<class_Quaternion>`. This prope
 Rotation part of the local transformation in radians, specified in terms of Euler angles. The angles construct a rotaton in the order specified by the :ref:`rotation_order<class_Node3D_property_rotation_order>` property.
 
 \ **Note:** In the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating-point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
+
+\ **Note:** This property is edited in the inspector in degrees. If you want to use degrees in a script, use :ref:`rotation_degrees<class_Node3D_property_rotation_degrees>`.
 
 .. rst-class:: classref-item-separator
 

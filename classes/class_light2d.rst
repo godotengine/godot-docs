@@ -121,7 +121,7 @@ Percentage closer filtering (5 samples) applies to the shadow map. This is slowe
 
 :ref:`ShadowFilter<enum_Light2D_ShadowFilter>` **SHADOW_FILTER_PCF13** = ``2``
 
-Percentage closer filtering (13 samples) applies to the shadow map. This is the slowest shadow filtereing mode, and should be used sparingly. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
+Percentage closer filtering (13 samples) applies to the shadow map. This is the slowest shadow filtering mode, and should be used sparingly. See :ref:`shadow_filter<class_Light2D_property_shadow_filter>`.
 
 .. rst-class:: classref-item-separator
 

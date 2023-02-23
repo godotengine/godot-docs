@@ -81,6 +81,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`free_rid<class_NavigationServer3D_method_free_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                                                                                                                                               |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`get_debug_enabled<class_NavigationServer3D_method_get_debug_enabled>` **(** **)** |const|                                                                                                                                                                               |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID[]<class_RID>`                             | :ref:`get_maps<class_NavigationServer3D_method_get_maps>` **(** **)** |const|                                                                                                                                                                                                 |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`get_process_info<class_NavigationServer3D_method_get_process_info>` **(** :ref:`ProcessInfo<enum_NavigationServer3D_ProcessInfo>` process_info **)** |const|                                                                                                            |
@@ -159,8 +161,6 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`map_set_up<class_NavigationServer3D_method_map_set_up>` **(** :ref:`RID<class_RID>` map, :ref:`Vector3<class_Vector3>` up **)**                                                                                                                                         |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`process<class_NavigationServer3D_method_process>` **(** :ref:`float<class_float>` delta_time **)**                                                                                                                                                                      |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`query_path<class_NavigationServer3D_method_query_path>` **(** :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>` parameters, :ref:`NavigationPathQueryResult3D<class_NavigationPathQueryResult3D>` result **)** |const|                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`region_bake_navigation_mesh<class_NavigationServer3D_method_region_bake_navigation_mesh>` **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)**                                                                    |
@@ -200,6 +200,8 @@ Methods
    | void                                                | :ref:`region_set_travel_cost<class_NavigationServer3D_method_region_set_travel_cost>` **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` travel_cost **)**                                                                                                         |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`set_active<class_NavigationServer3D_method_set_active>` **(** :ref:`bool<class_bool>` active **)**                                                                                                                                                                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_debug_enabled<class_NavigationServer3D_method_set_debug_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                       |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -492,6 +494,18 @@ Sets the current velocity of the agent.
 void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
 Destroys the given RID.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_get_debug_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_debug_enabled** **(** **)** |const|
+
+Returns ``true`` when the NavigationServer has debug enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -971,22 +985,6 @@ Sets the map up direction.
 
 ----
 
-.. _class_NavigationServer3D_method_process:
-
-.. rst-class:: classref-method
-
-void **process** **(** :ref:`float<class_float>` delta_time **)**
-
-Process the collision avoidance agents.
-
-The result of this process is needed by the physics server, so this must be called in the main thread.
-
-\ **Note:** This function is not thread safe.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_NavigationServer3D_method_query_path:
 
 .. rst-class:: classref-method
@@ -1226,6 +1224,18 @@ Sets the ``travel_cost`` for this ``region``.
 void **set_active** **(** :ref:`bool<class_bool>` active **)**
 
 Control activation of this server.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer3D_method_set_debug_enabled:
+
+.. rst-class:: classref-method
+
+void **set_debug_enabled** **(** :ref:`bool<class_bool>` enabled **)**
+
+If ``true`` enables debug mode on the NavigationServer.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

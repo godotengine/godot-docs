@@ -141,6 +141,10 @@ The details dictionary may contain the following keys depending on the value of 
 
 - ``owner``: The object which manages the link (usually :ref:`NavigationLink2D<class_NavigationLink2D>`).
 
+- ``link_entry_position``: If ``owner`` is available and the owner is a :ref:`NavigationLink2D<class_NavigationLink2D>`, it will contain the global position of the link's point the agent is entering.
+
+- ``link_exit_position``: If ``owner`` is available and the owner is a :ref:`NavigationLink2D<class_NavigationLink2D>`, it will contain the global position of the link's point which the agent is exiting.
+
 .. rst-class:: classref-item-separator
 
 ----

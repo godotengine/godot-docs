@@ -81,6 +81,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`free_rid<class_NavigationServer2D_method_free_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                                                                                                                                               |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`get_debug_enabled<class_NavigationServer2D_method_get_debug_enabled>` **(** **)** |const|                                                                                                                                                                               |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID[]<class_RID>`                             | :ref:`get_maps<class_NavigationServer2D_method_get_maps>` **(** **)** |const|                                                                                                                                                                                                 |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`link_create<class_NavigationServer2D_method_link_create>` **(** **)**                                                                                                                                                                                                   |
@@ -184,6 +186,8 @@ Methods
    | void                                                | :ref:`region_set_transform<class_NavigationServer2D_method_region_set_transform>` **(** :ref:`RID<class_RID>` region, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`region_set_travel_cost<class_NavigationServer2D_method_region_set_travel_cost>` **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` travel_cost **)**                                                                                                         |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`set_debug_enabled<class_NavigationServer2D_method_set_debug_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                       |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -389,6 +393,18 @@ Sets the current velocity of the agent.
 void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
 Destroys the given RID.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_get_debug_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_debug_enabled** **(** **)** |const|
+
+Returns ``true`` when the NavigationServer has debug enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -1023,6 +1039,18 @@ Sets the global transformation for the region.
 void **region_set_travel_cost** **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` travel_cost **)**
 
 Sets the ``travel_cost`` for this ``region``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_set_debug_enabled:
+
+.. rst-class:: classref-method
+
+void **set_debug_enabled** **(** :ref:`bool<class_bool>` enabled **)**
+
+If ``true`` enables debug mode on the NavigationServer.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

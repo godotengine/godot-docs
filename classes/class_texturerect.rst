@@ -201,6 +201,8 @@ Property Descriptions
 
 Defines how minimum size is determined based on the texture's size. See :ref:`ExpandMode<enum_TextureRect_ExpandMode>` for options.
 
+\ **Note:** Using :ref:`EXPAND_FIT_WIDTH<class_TextureRect_constant_EXPAND_FIT_WIDTH>`, :ref:`EXPAND_FIT_WIDTH_PROPORTIONAL<class_TextureRect_constant_EXPAND_FIT_WIDTH_PROPORTIONAL>`, :ref:`EXPAND_FIT_HEIGHT<class_TextureRect_constant_EXPAND_FIT_HEIGHT>` or :ref:`EXPAND_FIT_HEIGHT_PROPORTIONAL<class_TextureRect_constant_EXPAND_FIT_HEIGHT_PROPORTIONAL>` may result in unstable behavior in some containers. This functionality is being re-evaluated and will change in the future.
+
 .. rst-class:: classref-item-separator
 
 ----

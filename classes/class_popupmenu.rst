@@ -434,7 +434,7 @@ void **add_check_item** **(** :ref:`String<class_String>` label, :ref:`int<class
 
 Adds a new checkable item with text ``label``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 \ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
@@ -466,7 +466,7 @@ void **add_icon_check_item** **(** :ref:`Texture2D<class_Texture2D>` texture, :r
 
 Adds a new checkable item with text ``label`` and icon ``texture``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 \ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
@@ -498,7 +498,7 @@ void **add_icon_item** **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`St
 
 Adds a new item with text ``label`` and icon ``texture``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 .. rst-class:: classref-item-separator
 
@@ -550,7 +550,7 @@ void **add_item** **(** :ref:`String<class_String>` label, :ref:`int<class_int>`
 
 Adds a new item with text ``label``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 \ **Note:** The provided ``id`` is used only in :ref:`id_pressed<class_PopupMenu_signal_id_pressed>` and :ref:`id_focused<class_PopupMenu_signal_id_focused>` signals. It's not related to the ``index`` arguments in e.g. :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>`.
 
@@ -568,7 +568,7 @@ Adds a new multistate item with text ``label``.
 
 Contrarily to normal binary items, multistate items can have more than two states, as defined by ``max_states``. Each press or activate of the item will increase the state by one. The default value is defined by ``default_state``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 .. rst-class:: classref-item-separator
 
@@ -582,7 +582,7 @@ void **add_radio_check_item** **(** :ref:`String<class_String>` label, :ref:`int
 
 Adds a new radio check button with text ``label``.
 
-An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided then the default ``0`` will be assigned to it. See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
+An ``id`` can optionally be provided, as well as an accelerator (``accel``). If no ``id`` is provided, one will be created from the index. If no ``accel`` is provided, then the default value of 0 (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`) will be assigned to the item (which means it won't have any accelerator). See :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` for more info on accelerators.
 
 \ **Note:** Checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`set_item_checked<class_PopupMenu_method_set_item_checked>` for more info on how to control it.
 
@@ -678,7 +678,7 @@ Returns the index of the currently focused item. Returns ``-1`` if no item is fo
 
 :ref:`Key<enum_@GlobalScope_Key>` **get_item_accelerator** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the accelerator of the item at the given ``index``. Accelerators are special combinations of keys that activate the item, no matter which control is focused.
+Returns the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The return value is an integer which is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`). If no accelerator is defined for the specified ``index``, :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` returns ``0`` (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`).
 
 .. rst-class:: classref-item-separator
 
@@ -940,7 +940,7 @@ Passing ``-1`` as the index makes so that no item is focused.
 
 void **set_item_accelerator** **(** :ref:`int<class_int>` index, :ref:`Key<enum_@GlobalScope_Key>` accel **)**
 
-Sets the accelerator of the item at the given ``index``. Accelerators are special combinations of keys that activate the item, no matter which control is focused.
+Sets the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. ``accel`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
 .. rst-class:: classref-item-separator
 

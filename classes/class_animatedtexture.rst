@@ -27,6 +27,8 @@ The playback of the animation is controlled by the :ref:`speed_scale<class_Anima
 
 \ **Note:** AnimatedTexture doesn't support using :ref:`AtlasTexture<class_AtlasTexture>`\ s. Each frame needs to be a separate :ref:`Texture2D<class_Texture2D>`.
 
+\ **Warning:** AnimatedTexture is deprecated, and might be removed in a future release. Its current implementation is not efficient for the modern renderers.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -104,7 +106,7 @@ Property Descriptions
 - void **set_current_frame** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_current_frame** **(** **)**
 
-Sets the currently visible frame of the texture.
+Sets the currently visible frame of the texture. Setting this frame while playing resets the current frame time, so the newly selected frame plays for its whole configured frame duration.
 
 .. rst-class:: classref-item-separator
 

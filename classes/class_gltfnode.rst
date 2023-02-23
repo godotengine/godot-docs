@@ -43,8 +43,6 @@ Properties
    +-------------------------------------------------+---------------------------------------------------+-----------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`height<class_GLTFNode_property_height>`     | ``-1``                                              |
    +-------------------------------------------------+---------------------------------------------------+-----------------------------------------------------+
-   | :ref:`bool<class_bool>`                         | :ref:`joint<class_GLTFNode_property_joint>`       | ``false``                                           |
-   +-------------------------------------------------+---------------------------------------------------+-----------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`light<class_GLTFNode_property_light>`       | ``-1``                                              |
    +-------------------------------------------------+---------------------------------------------------+-----------------------------------------------------+
    | :ref:`int<class_int>`                           | :ref:`mesh<class_GLTFNode_property_mesh>`         | ``-1``                                              |
@@ -135,25 +133,6 @@ Property Descriptions
 
 - void **set_height** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_height** **(** **)**
-
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GLTFNode_property_joint:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **joint** = ``false``
-
-.. rst-class:: classref-property-setget
-
-- void **set_joint** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **get_joint** **(** **)**
 
 .. container:: contribute
 

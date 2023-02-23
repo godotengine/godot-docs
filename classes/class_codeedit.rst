@@ -881,7 +881,7 @@ Adds a comment delimiter.
 
 Both the start and end keys must be symbols. Only the start key has to be unique.
 
-Line only denotes if the region should continue until the end of the line or carry over on to the next line. If the end key is blank this is automatically set to ``true``.
+\ ``line_only`` denotes if the region should continue until the end of the line or carry over on to the next line. If the end key is blank this is automatically set to ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -897,7 +897,7 @@ Adds a string delimiter.
 
 Both the start and end keys must be symbols. Only the start key has to be unique.
 
-Line only denotes if the region should continue until the end of the line or carry over on to the next line. If the end key is blank this is automatically set to ``true``.
+\ ``line_only`` denotes if the region should continue until the end of the line or carry over on to the next line. If the end key is blank this is automatically set to ``true``.
 
 .. rst-class:: classref-item-separator
 

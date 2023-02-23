@@ -898,7 +898,7 @@ Minimized window mode, i.e. :ref:`Window<class_Window>` is not visible and avail
 
 :ref:`WindowMode<enum_DisplayServer_WindowMode>` **WINDOW_MODE_MAXIMIZED** = ``2``
 
-Maximized window mode, i.e. :ref:`Window<class_Window>` will occupy whole screen area except task bar and still display its borders. Normally happens when the minimize button is pressed.
+Maximized window mode, i.e. :ref:`Window<class_Window>` will occupy whole screen area except task bar and still display its borders. Normally happens when the maximize button is pressed.
 
 .. _class_DisplayServer_constant_WINDOW_MODE_FULLSCREEN:
 
@@ -1613,6 +1613,8 @@ Adds a new checkable item with text ``label`` to the global menu with ID ``menu_
 
 Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
 
+An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+
 \ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
 
 \ **Note:** This method is implemented on macOS.
@@ -1637,6 +1639,8 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 Adds a new checkable item with text ``label`` and icon ``icon`` to the global menu with ID ``menu_root``.
 
 Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+
+An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
 \ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
 
@@ -1663,6 +1667,8 @@ Adds a new item with text ``label`` and icon ``icon`` to the global menu with ID
 
 Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
 
+An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+
 \ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
 
 \ **Note:** This method is implemented on macOS.
@@ -1687,6 +1693,8 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 Adds a new radio-checkable item with text ``label`` and icon ``icon`` to the global menu with ID ``menu_root``.
 
 Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+
+An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
 \ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`global_menu_set_item_checked<class_DisplayServer_method_global_menu_set_item_checked>` for more info on how to control it.
 
@@ -1715,6 +1723,8 @@ Adds a new item with text ``label`` to the global menu with ID ``menu_root``.
 
 Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
 
+An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+
 \ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
 
 \ **Note:** This method is implemented on macOS.
@@ -1742,6 +1752,8 @@ Contrarily to normal binary items, multistate items can have more than two state
 
 Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
 
+An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+
 \ **Note:** By default, there's no indication of the current item state, it should be changed manually.
 
 \ **Note:** The ``callback`` and ``key_callback`` Callables need to accept exactly one Variant parameter, the parameter passed to the Callables will be the value passed to ``tag``.
@@ -1768,6 +1780,8 @@ Returns index of the inserted item, it's not guaranteed to be the same as ``inde
 Adds a new radio-checkable item with text ``label`` to the global menu with ID ``menu_root``.
 
 Returns index of the inserted item, it's not guaranteed to be the same as ``index`` value.
+
+An ``accelerator`` can optionally be defined, which is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The ``accelerator`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
 \ **Note:** Radio-checkable items just display a checkmark, but don't have any built-in checking behavior and must be checked/unchecked manually. See :ref:`global_menu_set_item_checked<class_DisplayServer_method_global_menu_set_item_checked>` for more info on how to control it.
 
@@ -2131,7 +2145,7 @@ Removes the item at index ``idx`` from the global menu ``menu_root``.
 
 void **global_menu_set_item_accelerator** **(** :ref:`String<class_String>` menu_root, :ref:`int<class_int>` idx, :ref:`Key<enum_@GlobalScope_Key>` keycode **)**
 
-Sets the accelerator of the item at index ``idx``.
+Sets the accelerator of the item at index ``idx``. ``keycode`` can be a single :ref:`Key<enum_@GlobalScope_Key>`, or a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
 \ **Note:** This method is implemented on macOS.
 
@@ -2840,6 +2854,8 @@ Each :ref:`Dictionary<class_Dictionary>` contains two :ref:`String<class_String>
 - ``id`` is voice identifier.
 
 - ``language`` is language code in ``lang_Variant`` format. ``lang`` part is a 2 or 3-letter code based on the ISO-639 standard, in lowercase. And ``Variant`` part is an engine dependent string describing country, region or/and dialect.
+
+Note that Godot depends on system libraries for text-to-speech functionality. These libraries are installed by default on Windows and MacOS, but not on all Linux distributions. If they are not present, this method will return an empty list. This applies to both Godot users on Linux, as well as end-users on Linux running Godot games that use text-to-speech.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 

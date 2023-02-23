@@ -1651,6 +1651,8 @@ The node's position, relative to its containing node. It corresponds to the rect
 
 The node's rotation around its pivot, in radians. See :ref:`pivot_offset<class_Control_property_pivot_offset>` to change the pivot's position.
 
+\ **Note:** This property is edited in the inspector in degrees. If you want to use degrees in a script, use :ref:`rotation_degrees<class_Control_property_rotation_degrees>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3131,7 +3133,7 @@ Shows the given control at the mouse pointer. A good time to call this method is
 
  .. code-tab:: gdscript
 
-    export (Color, RGBA) var color = Color(1, 0, 0, 1)
+    @export var color = Color(1, 0, 0, 1)
     
     func _get_drag_data(position):
         # Use a control that is not in the tree

@@ -1694,7 +1694,7 @@ Texture used to control the backlight effect per-pixel. Added to :ref:`backlight
 - void **set_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag, :ref:`bool<class_bool>` enable **)**
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_BaseMaterial3D_Flags>` flag **)** |const|
 
-If ``true``, the shader will keep the scale set for the mesh. Otherwise, the scale is lost when billboarding. Only applies when :ref:`billboard_mode<class_BaseMaterial3D_property_billboard_mode>` is :ref:`BILLBOARD_ENABLED<class_BaseMaterial3D_constant_BILLBOARD_ENABLED>`.
+If ``true``, the shader will keep the scale set for the mesh. Otherwise, the scale is lost when billboarding. Only applies when :ref:`billboard_mode<class_BaseMaterial3D_property_billboard_mode>` is not :ref:`BILLBOARD_DISABLED<class_BaseMaterial3D_constant_BILLBOARD_DISABLED>`.
 
 .. rst-class:: classref-item-separator
 

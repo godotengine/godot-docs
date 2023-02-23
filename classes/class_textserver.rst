@@ -1437,7 +1437,7 @@ Method Descriptions
 
 :ref:`RID<class_RID>` **create_font** **(** **)**
 
-Creates new, empty font cache entry resource. To free the resulting resourec, use :ref:`free_rid<class_TextServer_method_free_rid>` method.
+Creates new, empty font cache entry resource. To free the resulting resource, use :ref:`free_rid<class_TextServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 

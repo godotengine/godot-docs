@@ -51,6 +51,8 @@ Methods
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>` | :ref:`inst_to_dict<class_@GDScript_method_inst_to_dict>` **(** :ref:`Object<class_Object>` instance **)**                                                           |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`is_instance_of<class_@GDScript_method_is_instance_of>` **(** :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` type **)**                    |
+   +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`len<class_@GDScript_method_len>` **(** :ref:`Variant<class_Variant>` var **)**                                                                                |
    +-------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Resource<class_Resource>`     | :ref:`load<class_@GDScript_method_load>` **(** :ref:`String<class_String>` path **)**                                                                               |
@@ -855,6 +857,39 @@ Prints out:
 
     [@subpath, @path, foo]
     [, res://test.gd, bar]
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_@GDScript_method_is_instance_of:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_instance_of** **(** :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` type **)**
+
+Returns ``true`` if ``value`` is an instance of ``type``. The ``type`` value must be one of the following:
+
+- A constant from the :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` enumeration, for example :ref:`@GlobalScope.TYPE_INT<class_@GlobalScope_constant_TYPE_INT>`.
+
+- An :ref:`Object<class_Object>`-derived class which exists in :ref:`ClassDB<class_ClassDB>`, for example :ref:`Node<class_Node>`.
+
+- A :ref:`Script<class_Script>` (you can use any class, including inner one).
+
+Unlike the right operand of the ``is`` operator, ``type`` can be a non-constant value. The ``is`` operator supports more features (such as typed arrays) and is more performant. Use the operator instead of this method if you do not need dynamic type checking.
+
+Examples:
+
+::
+
+    print(is_instance_of(a, TYPE_INT))
+    print(is_instance_of(a, Node))
+    print(is_instance_of(a, MyClass))
+    print(is_instance_of(a, MyClass.InnerClass))
+
+\ **Note:** If ``value`` and/or ``type`` are freed objects (see :ref:`@GlobalScope.is_instance_valid<class_@GlobalScope_method_is_instance_valid>`), or ``type`` is not one of the above options, this method will raise an runtime error.
+
+See also :ref:`@GlobalScope.typeof<class_@GlobalScope_method_typeof>`, :ref:`type_exists<class_@GDScript_method_type_exists>`, :ref:`Array.is_same_typed<class_Array_method_is_same_typed>` (and other :ref:`Array<class_Array>` methods).
 
 .. rst-class:: classref-item-separator
 

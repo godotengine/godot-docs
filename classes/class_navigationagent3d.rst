@@ -63,17 +63,17 @@ Properties
    +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                                        | :ref:`path_desired_distance<class_NavigationAgent3D_property_path_desired_distance>`               | ``1.0``               |
    +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`path_max_distance<class_NavigationAgent3D_property_path_max_distance>`                       | ``3.0``               |
+   | :ref:`float<class_float>`                                                        | :ref:`path_max_distance<class_NavigationAgent3D_property_path_max_distance>`                       | ``5.0``               |
    +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` | :ref:`path_metadata_flags<class_NavigationAgent3D_property_path_metadata_flags>`                   | ``7``                 |
    +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`radius<class_NavigationAgent3D_property_radius>`                                             | ``1.0``               |
+   | :ref:`float<class_float>`                                                        | :ref:`radius<class_NavigationAgent3D_property_radius>`                                             | ``0.5``               |
    +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                                                        | :ref:`target_desired_distance<class_NavigationAgent3D_property_target_desired_distance>`           | ``1.0``               |
    +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`Vector3<class_Vector3>`                                                    | :ref:`target_position<class_NavigationAgent3D_property_target_position>`                           | ``Vector3(0, 0, 0)``  |
    +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`time_horizon<class_NavigationAgent3D_property_time_horizon>`                                 | ``5.0``               |
+   | :ref:`float<class_float>`                                                        | :ref:`time_horizon<class_NavigationAgent3D_property_time_horizon>`                                 | ``1.0``               |
    +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
@@ -142,6 +142,10 @@ The details dictionary may contain the following keys depending on the value of 
 - ``rid``: The :ref:`RID<class_RID>` of the link.
 
 - ``owner``: The object which manages the link (usually :ref:`NavigationLink3D<class_NavigationLink3D>`).
+
+- ``link_entry_position``: If ``owner`` is available and the owner is a :ref:`NavigationLink2D<class_NavigationLink2D>`, it will contain the global position of the link's point the agent is entering.
+
+- ``link_exit_position``: If ``owner`` is available and the owner is a :ref:`NavigationLink2D<class_NavigationLink2D>`, it will contain the global position of the link's point which the agent is exiting.
 
 .. rst-class:: classref-item-separator
 
@@ -430,7 +434,7 @@ The distance threshold before a path point is considered to be reached. This wil
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **path_max_distance** = ``3.0``
+:ref:`float<class_float>` **path_max_distance** = ``5.0``
 
 .. rst-class:: classref-property-setget
 
@@ -464,7 +468,7 @@ Additional information to return with the navigation path.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``1.0``
+:ref:`float<class_float>` **radius** = ``0.5``
 
 .. rst-class:: classref-property-setget
 
@@ -517,7 +521,7 @@ The user-defined target position. Setting this property will clear the current n
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **time_horizon** = ``5.0``
+:ref:`float<class_float>` **time_horizon** = ``1.0``
 
 .. rst-class:: classref-property-setget
 

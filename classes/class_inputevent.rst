@@ -215,7 +215,7 @@ Returns ``true`` if this input event's type is one that can be assigned to an in
 
 :ref:`bool<class_bool>` **is_echo** **(** **)** |const|
 
-Returns ``true`` if this input event is an echo event (only for events of type :ref:`InputEventKey<class_InputEventKey>`).
+Returns ``true`` if this input event is an echo event (only for events of type :ref:`InputEventKey<class_InputEventKey>`). Any other event type returns ``false``.
 
 .. rst-class:: classref-item-separator
 

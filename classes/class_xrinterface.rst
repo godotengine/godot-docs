@@ -170,7 +170,7 @@ This interface supports quad rendering (not yet supported by Godot).
 
 :ref:`Capabilities<enum_XRInterface_Capabilities>` **XR_VR** = ``8``
 
-this interface supports VR.
+This interface supports VR.
 
 .. _class_XRInterface_constant_XR_AR:
 

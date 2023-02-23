@@ -76,6 +76,18 @@ Methods
 Signals
 -------
 
+.. _class_MultiplayerSynchronizer_signal_synchronized:
+
+.. rst-class:: classref-signal
+
+**synchronized** **(** **)**
+
+Emitted when a new synchronization state is received by this synchronizer after the variables have been updated.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_MultiplayerSynchronizer_signal_visibility_changed:
 
 .. rst-class:: classref-signal

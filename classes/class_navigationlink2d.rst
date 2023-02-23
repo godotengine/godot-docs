@@ -19,7 +19,7 @@ Creates a link between two positions that :ref:`NavigationServer2D<class_Navigat
 Description
 -----------
 
-Creates a link between two positions that :ref:`NavigationServer2D<class_NavigationServer2D>` can route agents through.  Links can be used to express navigation methods that aren't just traveling along the surface of the navigation mesh, like zip-lines, teleporters, or jumping across gaps.
+Creates a link between two positions that :ref:`NavigationServer2D<class_NavigationServer2D>` can route agents through. Links can be used to express navigation methods that aren't just traveling along the surface of the navigation mesh, like zip-lines, teleporters, or jumping across gaps.
 
 .. rst-class:: classref-introduction-group
 
@@ -60,11 +60,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`get_navigation_layer_value<class_NavigationLink2D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                    | :ref:`set_navigation_layer_value<class_NavigationLink2D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
-   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_global_end_position<class_NavigationLink2D_method_get_global_end_position>` **(** **)** |const|                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`get_global_start_position<class_NavigationLink2D_method_get_global_start_position>` **(** **)** |const|                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`get_navigation_layer_value<class_NavigationLink2D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_global_end_position<class_NavigationLink2D_method_set_global_end_position>` **(** :ref:`Vector2<class_Vector2>` position **)**                                  |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_global_start_position<class_NavigationLink2D_method_set_global_start_position>` **(** :ref:`Vector2<class_Vector2>` position **)**                              |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_navigation_layer_value<class_NavigationLink2D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -207,6 +215,30 @@ When pathfinding moves along the link the traveled distance is multiplied with `
 Method Descriptions
 -------------------
 
+.. _class_NavigationLink2D_method_get_global_end_position:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_global_end_position** **(** **)** |const|
+
+Returns the :ref:`end_position<class_NavigationLink2D_property_end_position>` that is relative to the link as a global position.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationLink2D_method_get_global_start_position:
+
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_global_start_position** **(** **)** |const|
+
+Returns the :ref:`start_position<class_NavigationLink2D_property_start_position>` that is relative to the link as a global position.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationLink2D_method_get_navigation_layer_value:
 
 .. rst-class:: classref-method
@@ -214,6 +246,30 @@ Method Descriptions
 :ref:`bool<class_bool>` **get_navigation_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
 
 Returns whether or not the specified layer of the :ref:`navigation_layers<class_NavigationLink2D_property_navigation_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationLink2D_method_set_global_end_position:
+
+.. rst-class:: classref-method
+
+void **set_global_end_position** **(** :ref:`Vector2<class_Vector2>` position **)**
+
+Sets the :ref:`end_position<class_NavigationLink2D_property_end_position>` that is relative to the link from a global ``position``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationLink2D_method_set_global_start_position:
+
+.. rst-class:: classref-method
+
+void **set_global_start_position** **(** :ref:`Vector2<class_Vector2>` position **)**
+
+Sets the :ref:`start_position<class_NavigationLink2D_property_start_position>` that is relative to the link from a global ``position``.
 
 .. rst-class:: classref-item-separator
 

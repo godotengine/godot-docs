@@ -54,8 +54,6 @@ Methods
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`             | :ref:`get_bone_angle<class_Bone2D_method_get_bone_angle>` **(** **)** |const|                                                                        |
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`             | :ref:`get_default_length<class_Bone2D_method_get_default_length>` **(** **)** |const|                                                                |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_index_in_skeleton<class_Bone2D_method_get_index_in_skeleton>` **(** **)** |const|                                                          |
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`             | :ref:`get_length<class_Bone2D_method_get_length>` **(** **)** |const|                                                                                |
@@ -65,8 +63,6 @@ Methods
    | void                                  | :ref:`set_autocalculate_length_and_angle<class_Bone2D_method_set_autocalculate_length_and_angle>` **(** :ref:`bool<class_bool>` auto_calculate **)** |
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`set_bone_angle<class_Bone2D_method_set_bone_angle>` **(** :ref:`float<class_float>` angle **)**                                                |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`set_default_length<class_Bone2D_method_set_default_length>` **(** :ref:`float<class_float>` default_length **)**                               |
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`set_length<class_Bone2D_method_set_length>` **(** :ref:`float<class_float>` length **)**                                                       |
    +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -140,18 +136,6 @@ Returns the angle of the bone in the ``Bone2D`` node.
 
 ----
 
-.. _class_Bone2D_method_get_default_length:
-
-.. rst-class:: classref-method
-
-:ref:`float<class_float>` **get_default_length** **(** **)** |const|
-
-Deprecated. Please use  ``get_length`` instead.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_Bone2D_method_get_index_in_skeleton:
 
 .. rst-class:: classref-method
@@ -209,18 +193,6 @@ void **set_bone_angle** **(** :ref:`float<class_float>` angle **)**
 Sets the bone angle for the ``Bone2D`` node. This is typically set to the rotation from the ``Bone2D`` node to a child ``Bone2D`` node.
 
 \ **Note:** This is different from the ``Bone2D``'s rotation. The bone angle is the rotation of the bone shown by the ``Bone2D`` gizmo, and because ``Bone2D`` bones are based on positions, this can vary from the actual rotation of the ``Bone2D`` node.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_Bone2D_method_set_default_length:
-
-.. rst-class:: classref-method
-
-void **set_default_length** **(** :ref:`float<class_float>` default_length **)**
-
-Deprecated. Please use ``set_length`` instead.
 
 .. rst-class:: classref-item-separator
 

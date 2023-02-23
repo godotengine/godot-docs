@@ -285,7 +285,7 @@ Called for this plugin's active gizmos.
 
 void **_set_subgizmo_transform** **(** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` gizmo, :ref:`int<class_int>` subgizmo_id, :ref:`Transform3D<class_Transform3D>` transform **)** |virtual|
 
-Override this method to update the node properties during subgizmo editing (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmoPlugin_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmoPlugin_method__subgizmos_intersect_frustum>`). The ``transform`` is given in the Node3D's local coordinate system.  Called for this plugin's active gizmos.
+Override this method to update the node properties during subgizmo editing (see :ref:`_subgizmos_intersect_ray<class_EditorNode3DGizmoPlugin_method__subgizmos_intersect_ray>` and :ref:`_subgizmos_intersect_frustum<class_EditorNode3DGizmoPlugin_method__subgizmos_intersect_frustum>`). The ``transform`` is given in the Node3D's local coordinate system. Called for this plugin's active gizmos.
 
 .. rst-class:: classref-item-separator
 
@@ -297,7 +297,7 @@ Override this method to update the node properties during subgizmo editing (see 
 
 :ref:`PackedInt32Array<class_PackedInt32Array>` **_subgizmos_intersect_frustum** **(** :ref:`EditorNode3DGizmo<class_EditorNode3DGizmo>` gizmo, :ref:`Camera3D<class_Camera3D>` camera, :ref:`Plane[]<class_Plane>` frustum_planes **)** |virtual| |const|
 
-Override this method to allow selecting subgizmos using mouse drag box selection. Given a ``camera`` and ``frustum_planes``, this method should return which subgizmos are contained within the frustums. The ``frustum_planes`` argument consists of an ``Array`` with all the ``Plane``\ s that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, these identifiers can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmoPlugin_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmoPlugin_method__commit_subgizmos>`.  Called for this plugin's active gizmos.
+Override this method to allow selecting subgizmos using mouse drag box selection. Given a ``camera`` and ``frustum_planes``, this method should return which subgizmos are contained within the frustums. The ``frustum_planes`` argument consists of an ``Array`` with all the ``Plane``\ s that make up the selection frustum. The returned value should contain a list of unique subgizmo identifiers, these identifiers can have any non-negative value and will be used in other virtual methods like :ref:`_get_subgizmo_transform<class_EditorNode3DGizmoPlugin_method__get_subgizmo_transform>` or :ref:`_commit_subgizmos<class_EditorNode3DGizmoPlugin_method__commit_subgizmos>`. Called for this plugin's active gizmos.
 
 .. rst-class:: classref-item-separator
 

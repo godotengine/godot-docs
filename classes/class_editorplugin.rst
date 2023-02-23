@@ -45,7 +45,7 @@ Methods
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`_disable_plugin<class_EditorPlugin_method__disable_plugin>` **(** **)** |virtual|                                                                                                                                                               |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                      | :ref:`_edit<class_EditorPlugin_method__edit>` **(** :ref:`Variant<class_Variant>` object **)** |virtual|                                                                                                                                              |
+   | void                                                      | :ref:`_edit<class_EditorPlugin_method__edit>` **(** :ref:`Object<class_Object>` object **)** |virtual|                                                                                                                                                |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`_enable_plugin<class_EditorPlugin_method__enable_plugin>` **(** **)** |virtual|                                                                                                                                                                 |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -71,7 +71,7 @@ Methods
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`_get_window_layout<class_EditorPlugin_method__get_window_layout>` **(** :ref:`ConfigFile<class_ConfigFile>` configuration **)** |virtual|                                                                                                       |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`_handles<class_EditorPlugin_method__handles>` **(** :ref:`Variant<class_Variant>` object **)** |virtual| |const|                                                                                                                                |
+   | :ref:`bool<class_bool>`                                   | :ref:`_handles<class_EditorPlugin_method__handles>` **(** :ref:`Object<class_Object>` object **)** |virtual| |const|                                                                                                                                  |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`_has_main_screen<class_EditorPlugin_method__has_main_screen>` **(** **)** |virtual| |const|                                                                                                                                                     |
    +-----------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -527,7 +527,7 @@ Called by the engine when the user disables the **EditorPlugin** in the Plugin t
 
 .. rst-class:: classref-method
 
-void **_edit** **(** :ref:`Variant<class_Variant>` object **)** |virtual|
+void **_edit** **(** :ref:`Object<class_Object>` object **)** |virtual|
 
 This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.
 
@@ -906,7 +906,7 @@ Use :ref:`_set_window_layout<class_EditorPlugin_method__set_window_layout>` to r
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **_handles** **(** :ref:`Variant<class_Variant>` object **)** |virtual| |const|
+:ref:`bool<class_bool>` **_handles** **(** :ref:`Object<class_Object>` object **)** |virtual| |const|
 
 Implement this function if your plugin edits a specific type of object (Resource or Node). If you return ``true``, then you will get the functions :ref:`_edit<class_EditorPlugin_method__edit>` and :ref:`_make_visible<class_EditorPlugin_method__make_visible>` called when the editor requests them. If you have declared the methods :ref:`_forward_canvas_gui_input<class_EditorPlugin_method__forward_canvas_gui_input>` and :ref:`_forward_3d_gui_input<class_EditorPlugin_method__forward_3d_gui_input>` these will be called too.
 

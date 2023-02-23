@@ -35,6 +35,8 @@ Methods
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary[]<class_Dictionary>`       | :ref:`_get_documentation<class_ScriptExtension_method__get_documentation>` **(** **)** |virtual| |const|                                                                |
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName<class_StringName>`         | :ref:`_get_global_name<class_ScriptExtension_method__get_global_name>` **(** **)** |virtual| |const|                                                                    |
+   +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StringName<class_StringName>`         | :ref:`_get_instance_base_type<class_ScriptExtension_method__get_instance_base_type>` **(** **)** |virtual| |const|                                                      |
    +---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`ScriptLanguage<class_ScriptLanguage>` | :ref:`_get_language<class_ScriptExtension_method__get_language>` **(** **)** |virtual| |const|                                                                          |
@@ -158,6 +160,20 @@ Method Descriptions
 .. rst-class:: classref-method
 
 :ref:`Dictionary[]<class_Dictionary>` **_get_documentation** **(** **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScriptExtension_method__get_global_name:
+
+.. rst-class:: classref-method
+
+:ref:`StringName<class_StringName>` **_get_global_name** **(** **)** |virtual| |const|
 
 .. container:: contribute
 

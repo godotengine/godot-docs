@@ -56,7 +56,7 @@ Here's a sample on how to write and read from a file:
 
 In the example above, the file will be saved in the user data folder as specified in the :doc:`Data paths <../tutorials/io/data_paths>` documentation.
 
-There is no method to close a file in order to free it from use. Instead, **FileAccess** will close when it's freed, which happens when it goes out of scope or when it gets assigned with ``null``. In C# the reference must be disposed after we are done using it, this can be done with the ``using`` statement or calling the ``Dispose`` method directly.
+\ **FileAccess** will close when it's freed, which happens when it goes out of scope or when it gets assigned with ``null``. In C# the reference must be disposed after we are done using it, this can be done with the ``using`` statement or calling the ``Dispose`` method directly.
 
 
 .. tabs::
@@ -106,6 +106,8 @@ Methods
 .. table::
    :widths: auto
 
+   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`close<class_FileAccess_method_close>` **(** **)**                                                                                                                                                                                                   |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`eof_reached<class_FileAccess_method_eof_reached>` **(** **)** |const|                                                                                                                                                                               |
    +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -325,6 +327,20 @@ If ``true``, the file is read with big-endian `endianness <https://en.wikipedia.
 
 Method Descriptions
 -------------------
+
+.. _class_FileAccess_method_close:
+
+.. rst-class:: classref-method
+
+void **close** **(** **)**
+
+Closes the currently opened file and prevents subsequent read/write operations. Use :ref:`flush<class_FileAccess_method_flush>` to persist the data to disk without closing the file.
+
+\ **Note:** **FileAccess** will automatically close when it's freed, which happens when it goes out of scope or when it gets assigned with ``null``. In C# the reference must be disposed after we are done using it, this can be done with the ``using`` statement or calling the ``Dispose`` method directly.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_FileAccess_method_eof_reached:
 

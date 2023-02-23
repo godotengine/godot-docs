@@ -177,7 +177,7 @@ Method Descriptions
 
 void **reset** **(** **)**
 
-Reset the result object to its initial state.  This is useful to reuse the object across multiple queries.
+Reset the result object to its initial state. This is useful to reuse the object across multiple queries.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

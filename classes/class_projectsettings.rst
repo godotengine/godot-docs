@@ -557,6 +557,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_select_word_under_caret<class_ProjectSettings_property_input/ui_text_select_word_under_caret>`                                                                                         |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_select_word_under_caret.macos<class_ProjectSettings_property_input/ui_text_select_word_under_caret.macos>`                                                                             |                                                                                                  |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_submit<class_ProjectSettings_property_input/ui_text_submit>`                                                                                                                           |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_text_toggle_insert_mode<class_ProjectSettings_property_input/ui_text_toggle_insert_mode>`                                                                                                   |                                                                                                  |
@@ -574,8 +576,6 @@ Properties
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/emulate_mouse_from_touch<class_ProjectSettings_property_input_devices/pointing/emulate_mouse_from_touch>`                                                                     | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>`                                                                     | ``false``                                                                                        |
-   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                         | :ref:`input_devices/pointing/ios/touch_delay<class_ProjectSettings_property_input_devices/pointing/ios/touch_delay>`                                                                                       | ``0.15``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`internationalization/locale/fallback<class_ProjectSettings_property_internationalization/locale/fallback>`                                                                                           | ``"en"``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1319,9 +1319,9 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/lossless_compression/force_png<class_ProjectSettings_property_rendering/textures/lossless_compression/force_png>`                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2_astc<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`                                                           | ``false``                                                                                        |
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2_astc<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`                                                           |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc_bptc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`                                                           | ``true``                                                                                         |
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc_bptc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`                                                           |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/textures/webp_compression/compression_method<class_ProjectSettings_property_rendering/textures/webp_compression/compression_method>`                                                       | ``2``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -3115,7 +3115,7 @@ Main window initial position.
 
 \ ``1`` - "Primary Screen Center".
 
-\ ``2`` - "Other Screen Center", :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>` is used to set window position.
+\ ``2`` - "Other Screen Center", :ref:`display/window/size/initial_screen<class_ProjectSettings_property_display/window/size/initial_screen>` is used to set the screen.
 
 .. rst-class:: classref-item-separator
 
@@ -4713,6 +4713,18 @@ If no selection is currently active, selects the word currently under the caret 
 
 ----
 
+.. _class_ProjectSettings_property_input/ui_text_select_word_under_caret.macos:
+
+.. rst-class:: classref-property
+
+:ref:`Dictionary<class_Dictionary>` **input/ui_text_select_word_under_caret.macos**
+
+macOS specific override for the shortcut to select the word currently under the caret.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_property_input/ui_text_submit:
 
 .. rst-class:: classref-property
@@ -4832,18 +4844,6 @@ If ``true``, sends mouse input events when tapping or swiping on the touchscreen
 :ref:`bool<class_bool>` **input_devices/pointing/emulate_touch_from_mouse** = ``false``
 
 If ``true``, sends touch input events when clicking or dragging the mouse.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ProjectSettings_property_input_devices/pointing/ios/touch_delay:
-
-.. rst-class:: classref-property
-
-:ref:`float<class_float>` **input_devices/pointing/ios/touch_delay** = ``0.15``
-
-Default delay for touch events. This only affects iOS devices.
 
 .. rst-class:: classref-item-separator
 
@@ -9533,7 +9533,7 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2_astc** = ``false``
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2_astc**
 
 If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm for lower quality textures and normalmaps and Adaptable Scalable Texture Compression algorithm for high quality textures (in 4x4 block size).
 
@@ -9547,7 +9547,7 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_s3tc_bptc** = ``true``
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_s3tc_bptc**
 
 If ``true``, the texture importer will import VRAM-compressed textures using the S3 Texture Compression algorithm (DXT1-5) for lower quality textures and the the BPTC algorithm (BC6H and BC7) for high quality textures. This algorithm is only supported on PC desktop platforms and consoles.
 

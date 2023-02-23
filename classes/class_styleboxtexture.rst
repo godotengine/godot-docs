@@ -434,7 +434,7 @@ Sets the expand margin to ``size`` pixels for the specified :ref:`Side<enum_@Glo
 
 void **set_expand_margin_all** **(** :ref:`float<class_float>` size **)**
 
-Sets the expand margin to ``size`` pixels for all margins.
+Sets the expand margin to ``size`` pixels for all sides.
 
 .. rst-class:: classref-item-separator
 

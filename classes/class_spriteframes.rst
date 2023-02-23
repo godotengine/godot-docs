@@ -180,9 +180,9 @@ Returns a relative duration of the frame ``idx`` in the ``anim`` animation (defa
 
 ::
 
-    absolute_duration = relative_duration / (animation_fps * abs(speed_scale))
+    absolute_duration = relative_duration / (animation_fps * abs(playing_speed))
 
-In this example, ``speed_scale`` refers to either :ref:`AnimatedSprite2D.speed_scale<class_AnimatedSprite2D_property_speed_scale>` or :ref:`AnimatedSprite3D.speed_scale<class_AnimatedSprite3D_property_speed_scale>`.
+In this example, ``playing_speed`` refers to either :ref:`AnimatedSprite2D.get_playing_speed<class_AnimatedSprite2D_method_get_playing_speed>` or :ref:`AnimatedSprite3D.get_playing_speed<class_AnimatedSprite3D_method_get_playing_speed>`.
 
 .. rst-class:: classref-item-separator
 

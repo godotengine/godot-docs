@@ -551,7 +551,7 @@ Encodes a 16-bit signed integer number as bytes at the index of ``byte_offset`` 
 
 void **encode_s32** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
 
-Encodes a 32-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
+Encodes a 32-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 4 bytes of space, starting at the offset.
 
 .. rst-class:: classref-item-separator
 
@@ -563,7 +563,7 @@ Encodes a 32-bit signed integer number as bytes at the index of ``byte_offset`` 
 
 void **encode_s64** **(** :ref:`int<class_int>` byte_offset, :ref:`int<class_int>` value **)**
 
-Encodes a 64-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 2 bytes of space, starting at the offset.
+Encodes a 64-bit signed integer number as bytes at the index of ``byte_offset`` bytes. The array must have at least 8 bytes of space, starting at the offset.
 
 .. rst-class:: classref-item-separator
 

@@ -101,7 +101,9 @@ Property Descriptions
 - void **set_param** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param** **(** **)**
 
-The light's attenuation (drop-off) curve. A number of presets are available in the **Inspector** by right-clicking the curve.
+The light's attenuation (drop-off) curve. A number of presets are available in the **Inspector** by right-clicking the curve. Zero and negative values are allowed but can produce unusual effects.
+
+\ **Note:** Very high :ref:`omni_attenuation<class_OmniLight3D_property_omni_attenuation>` values (typically above 10) can impact performance negatively if the light is made to use a larger :ref:`omni_range<class_OmniLight3D_property_omni_range>` to compensate. This is because culling opportunities will become less common and shading costs will be increased (as the light will cover more pixels on screen while resulting in the same amount of brightness). To improve performance, use the lowest :ref:`omni_attenuation<class_OmniLight3D_property_omni_attenuation>` value possible for the visuals you're trying to achieve.
 
 .. rst-class:: classref-item-separator
 

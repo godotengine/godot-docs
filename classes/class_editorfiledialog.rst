@@ -46,6 +46,8 @@ Properties
    +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`FileMode<enum_EditorFileDialog_FileMode>`       | :ref:`file_mode<class_EditorFileDialog_property_file_mode>`                                 | ``4``                                                                                    |
    +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>`     | :ref:`filters<class_EditorFileDialog_property_filters>`                                     | ``PackedStringArray()``                                                                  |
+   +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                               | :ref:`show_hidden_files<class_EditorFileDialog_property_show_hidden_files>`                 | ``false``                                                                                |
    +-------------------------------------------------------+---------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                           | title                                                                                       | ``"Save a File"`` (overrides :ref:`Window<class_Window_property_title>`)                 |
@@ -63,6 +65,8 @@ Methods
    | void                                      | :ref:`add_filter<class_EditorFileDialog_method_add_filter>` **(** :ref:`String<class_String>` filter, :ref:`String<class_String>` description="" **)** |
    +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                      | :ref:`clear_filters<class_EditorFileDialog_method_clear_filters>` **(** **)**                                                                          |
+   +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`LineEdit<class_LineEdit>`           | :ref:`get_line_edit<class_EditorFileDialog_method_get_line_edit>` **(** **)**                                                                          |
    +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`get_vbox<class_EditorFileDialog_method_get_vbox>` **(** **)**                                                                                    |
    +-------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -353,6 +357,23 @@ The dialog's open or save mode, which affects the selection behavior. See :ref:`
 
 ----
 
+.. _class_EditorFileDialog_property_filters:
+
+.. rst-class:: classref-property
+
+:ref:`PackedStringArray<class_PackedStringArray>` **filters** = ``PackedStringArray()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_filters** **(** :ref:`PackedStringArray<class_PackedStringArray>` value **)**
+- :ref:`PackedStringArray<class_PackedStringArray>` **get_filters** **(** **)**
+
+The available file type filters. For example, this shows only ``.png`` and ``.gd`` files: ``set_filters(PackedStringArray(["*.png ; PNG Images","*.gd ; GDScript Files"]))``. Multiple file types can also be specified in a single filter. ``"*.png, *.jpg, *.jpeg ; Supported Images"`` will show both PNG and JPEG files when selected.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorFileDialog_property_show_hidden_files:
 
 .. rst-class:: classref-property
@@ -398,6 +419,20 @@ For example, a ``filter`` of ``"*.tscn, *.scn"`` and a ``description`` of ``"Sce
 void **clear_filters** **(** **)**
 
 Removes all filters except for "All Files (\*)".
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorFileDialog_method_get_line_edit:
+
+.. rst-class:: classref-method
+
+:ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
+
+Returns the LineEdit for the selected file.
+
+\ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
 
 .. rst-class:: classref-item-separator
 

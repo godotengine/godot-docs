@@ -355,7 +355,7 @@ The global illumination mode to use for the whole geometry. To avoid inconsisten
 - void **set_ignore_occlusion_culling** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_ignoring_occlusion_culling** **(** **)**
 
-If ``true``, disables occlusion culling for this instance.  Useful for gizmos that must be rendered even when occlusion culling is in use.
+If ``true``, disables occlusion culling for this instance. Useful for gizmos that must be rendered even when occlusion culling is in use.
 
 .. rst-class:: classref-item-separator
 
@@ -372,7 +372,7 @@ If ``true``, disables occlusion culling for this instance.  Useful for gizmos th
 - void **set_lod_bias** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_lod_bias** **(** **)**
 
-Changes how quickly the mesh transitions to a lower level of detail.  A value of 0 will force the mesh to its lowest level of detail, a value of 1 will use the default settings, and larger values will keep the mesh in a higher level of detail at farther distances.
+Changes how quickly the mesh transitions to a lower level of detail. A value of 0 will force the mesh to its lowest level of detail, a value of 1 will use the default settings, and larger values will keep the mesh in a higher level of detail at farther distances.
 
 Useful for testing level of detail transitions in the editor.
 

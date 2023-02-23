@@ -315,8 +315,6 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/theme/draw_extra_borders<class_EditorSettings_property_interface/theme/draw_extra_borders>`                                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`interface/theme/enable_touchscreen_touch_area<class_EditorSettings_property_interface/theme/enable_touchscreen_touch_area>`                                                   |
-   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`interface/theme/icon_and_font_color<class_EditorSettings_property_interface/theme/icon_and_font_color>`                                                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`interface/theme/icon_saturation<class_EditorSettings_property_interface/theme/icon_saturation>`                                                                               |
@@ -324,6 +322,12 @@ Properties
    | :ref:`String<class_String>`   | :ref:`interface/theme/preset<class_EditorSettings_property_interface/theme/preset>`                                                                                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`     | :ref:`interface/theme/relationship_line_opacity<class_EditorSettings_property_interface/theme/relationship_line_opacity>`                                                           |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/touchscreen/enable_long_press_as_right_click<class_EditorSettings_property_interface/touchscreen/enable_long_press_as_right_click>`                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/touchscreen/enable_pan_and_scale_gestures<class_EditorSettings_property_interface/touchscreen/enable_pan_and_scale_gestures>`                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/touchscreen/increase_scrollbar_touch_area<class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area>`                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`   | :ref:`network/debug/remote_host<class_EditorSettings_property_network/debug/remote_host>`                                                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -667,7 +671,7 @@ The thumbnail size to use in the FileSystem dock (in pixels). See also :ref:`fil
 
 :ref:`float<class_float>` **docks/property_editor/auto_refresh_interval**
 
-The refresh interval to use for the Inspector dock's properties. The effect of this setting is mainly noticeable when adjusting gizmos in the 2D/3D editor and looking at the inspector at the same time. Lower values make the inspector more often, but take up more CPU time.
+The refresh interval to use for the Inspector dock's properties. The effect of this setting is mainly noticeable when adjusting gizmos in the 2D/3D editor and looking at the inspector at the same time. Lower values make the inspector refresh more often, but take up more CPU time.
 
 .. rst-class:: classref-item-separator
 
@@ -2229,20 +2233,6 @@ If ``true``, draws additional borders around interactive UI elements in the edit
 
 ----
 
-.. _class_EditorSettings_property_interface/theme/enable_touchscreen_touch_area:
-
-.. rst-class:: classref-property
-
-:ref:`bool<class_bool>` **interface/theme/enable_touchscreen_touch_area**
-
-If ``true``, increases the touch area for the UI elements to improve usability on touchscreen devices.
-
-\ **Note:** Defaults to ``true`` on touchscreen devices.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_EditorSettings_property_interface/theme/icon_and_font_color:
 
 .. rst-class:: classref-property
@@ -2294,6 +2284,48 @@ The editor theme preset to use.
 :ref:`float<class_float>` **interface/theme/relationship_line_opacity**
 
 The opacity to use when drawing relationship lines in the editor's :ref:`Tree<class_Tree>`-based GUIs (such as the Scene tree dock).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/touchscreen/enable_long_press_as_right_click:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/touchscreen/enable_long_press_as_right_click**
+
+If ``true``, long press on touchscreen is treated as right click.
+
+\ **Note:** Defaults to ``true`` on touchscreen devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/touchscreen/enable_pan_and_scale_gestures:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/touchscreen/enable_pan_and_scale_gestures**
+
+If ``true``, enable two finger pan and scale gestures on touchscreen devices.
+
+\ **Note:** Defaults to ``true`` on touchscreen devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/touchscreen/increase_scrollbar_touch_area**
+
+If ``true``, increases the scrollbar touch area to improve usability on touchscreen devices.
+
+\ **Note:** Defaults to ``true`` on touchscreen devices.
 
 .. rst-class:: classref-item-separator
 
@@ -2815,7 +2847,7 @@ When using tab indentation, determines the length of each tab. When using space 
 
 The indentation style to use (tabs or spaces).
 
-\ **Note:** The :doc:`GDScript style guide <../getting_started/scripting/gdscript/gdscript_styleguide>` recommends using tabs for indentation. It is advised to change this setting only if you need to work on a project that currently uses spaces for indentation.
+\ **Note:** The :doc:`GDScript style guide <../tutorials/scripting/gdscript/gdscript_styleguide>` recommends using tabs for indentation. It is advised to change this setting only if you need to work on a project that currently uses spaces for indentation.
 
 .. rst-class:: classref-item-separator
 

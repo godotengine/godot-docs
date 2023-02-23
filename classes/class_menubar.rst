@@ -19,7 +19,7 @@ A horizontal menu bar, which displays :ref:`PopupMenu<class_PopupMenu>`\ s or sy
 Description
 -----------
 
-New items can be created by adding :ref:`PopupMenu<class_PopupMenu>` nodes to his node.
+New items can be created by adding :ref:`PopupMenu<class_PopupMenu>` nodes to this node.
 
 .. rst-class:: classref-reftable-group
 

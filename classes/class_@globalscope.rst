@@ -6731,7 +6731,7 @@ Returns the same type of :ref:`Variant<class_Variant>` as ``x``, with ``-1`` for
 
 :ref:`float<class_float>` **signf** **(** :ref:`float<class_float>` x **)**
 
-Returns ``-1.0`` if ``x`` is negative, ``1.0`` if ``x`` is positive, and ``0.0`` if if ``x`` is zero.
+Returns ``-1.0`` if ``x`` is negative, ``1.0`` if ``x`` is positive, and ``0.0`` if ``x`` is zero.
 
 ::
 
