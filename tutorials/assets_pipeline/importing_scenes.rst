@@ -249,15 +249,15 @@ Create a script like this:
 
 ::
 
-    tool # Needed so it runs in the editor.
+    @tool # Needed so it runs in the editor.
     extends EditorScenePostImport
 
 
-    func post_import(scene):
+    func _post_import(scene):
         # Do your stuff here.
         return scene # remember to return the imported scene
 
-The ``post_import`` function takes the imported scene as argument (the
+The ``_post_import`` function takes the imported scene as argument (the
 parameter is actually the root node of the scene). The scene that
 will finally be used must be returned. It can be a different one.
 
