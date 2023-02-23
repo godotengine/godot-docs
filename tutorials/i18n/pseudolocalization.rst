@@ -25,12 +25,12 @@ Enabling and configuring pseudolocalization
 
 Enabling pseudolocalization and the configurations related to it is as simple as
 toggling a checkbox in the project settings. These settings can be found in
-**Project → Project Settings → General → Internationalization → Pseudolocalization**:
+**Project → Project Settings → General → Internationalization → Pseudolocalization**
+after enabling the **Advanced** toggle in the project settings dialog:
 
-.. image:: img/pseudolocalization_settings.png
+.. image:: img/pseudolocalization_settings.webp
 
-Pseudolocalization can also be toggled at the runtime through GDScript (more on that 
-at the end of this tutorial).
+Pseudolocalization can also be :ref:`toggled at runtime from a script <doc_pseudolocalization_runtime>`.
 
 Pseudolocalization configurations
 ---------------------------------
@@ -64,13 +64,15 @@ project settings:
 
 All of these properties can be toggled as needed according to the project's use case.
 
-Configuring pseudolocalization at the run-time
-----------------------------------------------
+.. _doc_pseudolocalization_runtime:
 
-Pseudolocalization can be toggled at run-time using the
+Configuring pseudolocalization at runtime
+-----------------------------------------
+
+Pseudolocalization can be toggled at runtime using the
 :ref:`pseudolocalization_enabled<class_TranslationServer_property_pseudolocalization_enabled>` property
 in TranslationServer.
-However, if run-time configuration of pseudolocalization properties is required, 
+However, if runtime configuration of pseudolocalization properties is required, 
 they can be directly configured using
 :ref:`ProjectSettings.set(property, value) <class_ProjectSettings_method_set>`
 and then calling
