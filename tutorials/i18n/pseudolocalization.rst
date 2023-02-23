@@ -39,28 +39,28 @@ Pseudolocalization in Godot can be set up according to the specific use case of 
 project. Here are the pseudolocalization properties that can be configured through 
 project settings:
 
-- ``replace_with_accents``: Replaces all characters in the string with their accented 
-   variants. *"The quick brown fox jumped over the lazy dog"* will be converted to 
-   *"Ŧh̀é q́üíćḱ ḅŕôŵή f́ôx́ ǰüm̀ṕéd́ ôṽéŕ ŧh̀é łáźý d́ôǵ"* when this setting is enabled.
-   This can be used to spot untranslated strings that won't have accents,
-   but is also useful to check for missing glyphs in the font(s) used by the project.
+- ``replace_with_accents``: Replaces all characters in the string with their accented
+  variants. *"The quick brown fox jumped over the lazy dog"* will be converted to
+  *"Ŧh̀é q́üíćḱ ḅŕôŵή f́ôx́ ǰüm̀ṕéd́ ôṽéŕ ŧh̀é łáźý d́ôǵ"* when this setting is enabled.
+  This can be used to spot untranslated strings that won't have accents,
+  but is also useful to check for missing glyphs in the font(s) used by the project.
 - ``double_vowels``: Doubles all the vowels in the string. It is a good approximation
-   to simulate expansion of text during localization.
-   This can be used to check for text that would overflow its container
-   (such as buttons).
+  to simulate expansion of text during localization.
+  This can be used to check for text that would overflow its container
+  (such as buttons).
 - ``fake_bidi``: Fake bidirectional text (simulates right-to-left text). This is useful to
-   simulate right-to-left writing systems to check for potential layout issues that would occur in languages using right-to-left scripts.
-- ``override``: Replaces all the characters in the string with an asterisk (``*``). This is useful for 
-   quickly finding text that isn't being localized.
-- ``expansion_ratio``: Can be used in cases where doubling the vowels isn't a sufficient 
-   approximation. This setting pads the string with underscores (``_``) and expands it by the given ratio.
-   An expansion ratio of ``0.3`` is sufficient for most practical cases; it will increase 
-   the length of the string by 30%.
+  simulate right-to-left writing systems to check for potential layout issues that would occur in languages using right-to-left scripts.
+- ``override``: Replaces all the characters in the string with an asterisk (``*``). This is useful for
+  quickly finding text that isn't being localized.
+- ``expansion_ratio``: Can be used in cases where doubling the vowels isn't a sufficient
+  approximation. This setting pads the string with underscores (``_``) and expands it by the given ratio.
+  An expansion ratio of ``0.3`` is sufficient for most practical cases; it will increase
+  the length of the string by 30%.
 - ``prefix`` and ``suffix``: These properties can be used to specify a prefix and suffix to wrap
-   the text in.
-- ``skip_placeholders``: Skips placeholders for string formatting like ``%s`` and ``%f``. 
-   This is useful to identify places where more arguments are required for the formatted
-   string to display correctly.
+  the text in.
+- ``skip_placeholders``: Skips placeholders for string formatting like ``%s`` and ``%f``.
+  This is useful to identify places where more arguments are required for the formatted
+  string to display correctly.
 
 All of these properties can be toggled as needed according to the project's use case.
 
