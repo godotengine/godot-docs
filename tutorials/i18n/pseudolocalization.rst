@@ -74,7 +74,7 @@ Pseudolocalization can be toggled at runtime using the
 in TranslationServer.
 However, if runtime configuration of pseudolocalization properties is required, 
 they can be directly configured using
-:ref:`ProjectSettings.set(property, value) <class_ProjectSettings_method_set>`
+:ref:`ProjectSettings.set_setting(property, value) <class_ProjectSettings_method_set_setting>`
 and then calling
 :ref:`TranslationServer.reload_pseudolocalization() <class_TranslationServer_method_reload_pseudolocalization>`
 which reparses the pseudolocalization properties and reloads the pseudolocalization. 
