@@ -90,12 +90,12 @@ a ``die()`` function that helps us put a descriptive label on the code.
 
     private void Die()
     {
-        EmitSignal(nameof(Hit));
+        EmitSignal(SignalName.Hit);
         QueueFree();
     }
 
     // We also specified this function name in PascalCase in the editor's connection window
-    public void OnMobDetectorBodyEntered(Node body)
+    private void OnMobDetectorBodyEntered(Node3D body)
     {
         Die();
     }
@@ -107,6 +107,11 @@ the character should die when an enemy runs into the collider. Note that without
    .. code-tab:: gdscript GDScript
 
     var player_position = $Player.position
+
+   .. code-tab:: csharp
+
+    Vector3 playerPosition = GetNode<Player>("Player").Position;
+
 
 gives error because there is no $Player!
 
@@ -137,7 +142,7 @@ Get the timer, and stop it, in the ``_on_player_hit()`` function.
  .. code-tab:: csharp
 
     // We also specified this function name in PascalCase in the editor's connection window
-    public void OnPlayerHit()
+    private void OnPlayerHit()
     {
         GetNode<Timer>("MobTimer").Stop();
     }
@@ -167,9 +172,6 @@ Starting with ``Main.gd``.
 
     @export var mob_scene: PackedScene
 
-    func _ready():
-        randomize()
-
 
     func _on_mob_timer_timeout():
         # Create a new instance of the Mob scene.
@@ -189,42 +191,35 @@ Starting with ``Main.gd``.
 
     func _on_player_hit():
         $MobTimer.stop()
+
  .. code-tab:: csharp
 
     using Godot;
 
     public partial class Main : Node
     {
-    #pragma warning disable 649
         [Export]
-        public PackedScene MobScene;
-    #pragma warning restore 649
+        public PackedScene MobScene { get; set; }
 
-        public override void _Ready()
-        {
-            GD.Randomize();
-        }
-
-        public void OnMobTimerTimeout()
+        private void OnMobTimerTimeout()
         {
             // Create a new instance of the Mob scene.
-            var mob = (Mob)MobScene.Instantiate();
+            Mob mob = MobScene.Instantiate<Mob>();
 
             // Choose a random location on the SpawnPath.
             // We store the reference to the SpawnLocation node.
             var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
             // And give it a random offset.
-            mobSpawnLocation.UnitOffset = GD.Randf();
+            mobSpawnLocation.ProgressRatio = GD.Randf();
 
-            // Communicate the spawn location and the player's location to the mob.
-            Vector3 playerPosition = GetNode<Player>("Player").position;
-            mob.Initialize(mobSpawnLocation.Translation, playerPosition);
+            Vector3 playerPosition = GetNode<Player>("Player").Position;
+            mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
             // Spawn the mob by adding it to the Main scene.
             AddChild(mob);
         }
 
-        public void OnPlayerHit()
+        private void OnPlayerHit()
         {
             GetNode<Timer>("MobTimer").Stop();
         }
@@ -271,6 +266,7 @@ Next is ``Mob.gd``.
     func squash():
         squashed.emit()
         queue_free() # Destroy this node
+
  .. code-tab:: csharp
 
     using Godot;
@@ -283,35 +279,42 @@ Next is ``Mob.gd``.
 
         // Minimum speed of the mob in meters per second
         [Export]
-        public int MinSpeed = 10;
+        public int MinSpeed { get; set; } = 10;
         // Maximum speed of the mob in meters per second
         [Export]
-        public int MaxSpeed = 18;
+        public int MaxSpeed { get; set; } = 18;
 
-        private Vector3 _velocity = Vector3.Zero;
-
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            MoveAndSlide(_velocity);
+            MoveAndSlide();
         }
 
+        // This function will be called from the Main scene.
         public void Initialize(Vector3 startPosition, Vector3 playerPosition)
         {
+            // We position the mob by placing it at startPosition
+            // and rotate it towards playerPosition, so it looks at the player.
             LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
+            // In this rotation^, the mob will move directly towards the player
+            // so we rotate it randomly within range of -90 and +90 degrees.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
-            float randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
-            _velocity = Vector3.Forward * randomSpeed;
-            _velocity = _velocity.Rotated(Vector3.Up, Rotation.y);
+            // We calculate a random speed (integer)
+            int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
+            // We calculate a forward velocity that represents the speed.
+            Velocity = Vector3.Forward * randomSpeed;
+            // We then rotate the velocity vector based on the mob's Y rotation
+            // in order to move in the direction the mob is looking.
+            Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
         }
 
         public void Squash()
         {
-            EmitSignal(nameof(Squashed));
-            QueueFree();
+            EmitSignal(SignalName.Squashed);
+            QueueFree(); // Destroy this node
         }
 
-        public void OnVisibilityNotifierScreenExited()
+        private void OnVisibilityNotifierScreenExited()
         {
             QueueFree();
         }
@@ -402,6 +405,7 @@ Finally, the longest script, ``Player.gd``:
 
     func _on_mob_detector_body_entered(body):
         die()
+
  .. code-tab:: csharp
 
     using Godot;
@@ -414,79 +418,98 @@ Finally, the longest script, ``Player.gd``:
 
         // How fast the player moves in meters per second.
         [Export]
-        public int Speed = 14;
+        public int Speed { get; set; } = 14;
         // The downward acceleration when in the air, in meters per second squared.
         [Export]
-        public int FallAcceleration = 75;
+        public int FallAcceleration { get; set; } = 75;
         // Vertical impulse applied to the character upon jumping in meters per second.
         [Export]
-        public int JumpImpulse = 20;
+        public int JumpImpulse { get; set; } = 20;
         // Vertical impulse applied to the character upon bouncing over a mob in meters per second.
         [Export]
-        public int BounceImpulse = 16;
+        public int BounceImpulse { get; set; } = 16;
 
-        private Vector3 _velocity = Vector3.Zero;
+        private Vector3 _targetVelocity = Vector3.Zero;
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
+            // We create a local variable to store the input direction.
             var direction = Vector3.Zero;
 
+            // We check for each move input and update the direction accordingly.
             if (Input.IsActionPressed("move_right"))
             {
-                direction.x += 1f;
+                direction.X += 1.0f;
             }
             if (Input.IsActionPressed("move_left"))
             {
-                direction.x -= 1f;
+                direction.X -= 1.0f;
             }
             if (Input.IsActionPressed("move_back"))
             {
-                direction.z += 1f;
+                // Notice how we are working with the vector's X and Z axes.
+                // In 3D, the XZ plane is the ground plane.
+                direction.Z += 1.0f;
             }
             if (Input.IsActionPressed("move_forward"))
             {
-                direction.z -= 1f;
+                direction.Z -= 1.0f;
             }
 
+            // Prevent diagonal moving fast af
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
-                GetNode<Node3D>("Pivot").LookAt(Translation + direction, Vector3.Up);
+                GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
             }
 
-            _velocity.x = direction.x * Speed;
-            _velocity.z = direction.z * Speed;
+            // Ground Velocity
+            _targetVelocity.X = direction.X * Speed;
+            _targetVelocity.Z = direction.Z * Speed;
+
+            // Vertical Velocity
+            if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
+            {
+                _targetVelocity.Y -= FallAcceleration * (float)delta;
+            }
 
             // Jumping.
             if (IsOnFloor() && Input.IsActionJustPressed("jump"))
             {
-                _velocity.y += JumpImpulse;
+                _targetVelocity.Y = JumpImpulse;
             }
 
-            _velocity.y -= FallAcceleration * delta;
-            _velocity = MoveAndSlide(_velocity, Vector3.Up);
-
+            // Iterate through all collisions that occurred this frame.
             for (int index = 0; index < GetSlideCount(); index++)
             {
+                // We get one of the collisions with the player.
                 KinematicCollision3D collision = GetSlideCollision(index);
-                if (collision.Collider is Mob mob && mob.IsInGroup("mob"))
+
+                // If the collision is with a mob.
+                if (collision.GetCollider() is Mob mob)
                 {
-                    if (Vector3.Up.Dot(collision.Normal) > 0.1f)
+                    // We check that we are hitting it from above.
+                    if (Vector3.Up.Dot(collision.GetNormal()) > 0.1f)
                     {
+                        // If so, we squash it and bounce.
                         mob.Squash();
-                        _velocity.y = BounceImpulse;
+                        _targetVelocity.Y = BounceImpulse;
                     }
                 }
             }
+
+            // Moving the Character
+            Velocity = _targetVelocity;
+            MoveAndSlide();
         }
 
         private void Die()
         {
-            EmitSignal(nameof(Hit));
+            EmitSignal(SignalName.Hit);
             QueueFree();
         }
 
-        public void OnMobDetectorBodyEntered(Node body)
+        private void OnMobDetectorBodyEntered(Node3D body)
         {
             Die();
         }

@@ -233,13 +233,13 @@ We also need to process what happens when the player loses. The code below will 
         ShowMessage("Game Over");
 
         var messageTimer = GetNode<Timer>("MessageTimer");
-        await ToSignal(messageTimer, "timeout");
+        await ToSignal(messageTimer, Timer.SignalName.Timeout);
 
         var message = GetNode<Label>("Message");
         message.Text = "Dodge the\nCreeps!";
         message.Show();
 
-        await ToSignal(GetTree().CreateTimer(1), "timeout");
+        await ToSignal(GetTree().CreateTimer(1.0), SceneTreeTimer.SignalName.Timeout);
         GetNode<Button>("StartButton").Show();
     }
 
@@ -306,13 +306,13 @@ signal of ``StartButton``, and add the following code to the new functions:
 
  .. code-tab:: csharp
 
-    public void OnStartButtonPressed()
+    private void OnStartButtonPressed()
     {
         GetNode<Button>("StartButton").Hide();
         EmitSignal(SignalName.StartGame);
     }
 
-    public void OnMessageTimerTimeout()
+    private void OnMessageTimerTimeout()
     {
         GetNode<Label>("Message").Hide();
     }
@@ -364,7 +364,7 @@ In ``new_game()``, update the score display and show the "Get Ready" message:
  .. code-tab:: csharp
 
         var hud = GetNode<HUD>("HUD");
-        hud.UpdateScore(Score);
+        hud.UpdateScore(_score);
         hud.ShowMessage("Get Ready!");
 
  .. code-tab:: cpp
@@ -400,7 +400,7 @@ with the changing score:
 
  .. code-tab:: csharp
 
-        GetNode<HUD>("HUD").UpdateScore(Score);
+        GetNode<HUD>("HUD").UpdateScore(_score);
 
  .. code-tab:: cpp
 
@@ -435,7 +435,7 @@ the ``new_game()`` function in ``Main``:
 
         // Note that for calling Godot-provided methods with strings,
         // we have to use the original Godot snake_case name.
-        GetTree().CallGroup("mobs", "queue_free");
+        GetTree().CallGroup("mobs", Node.MethodName.QueueFree);
 
  .. code-tab:: cpp
 

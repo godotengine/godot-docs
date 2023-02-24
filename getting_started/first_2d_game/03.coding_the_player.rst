@@ -91,9 +91,9 @@ value written in the script.
 
 .. warning:: If you're using C#, you need to (re)build the project assemblies
              whenever you want to see new export variables or signals. This
-             build can be manually triggered by clicking the word "Mono" at the
-             bottom of the editor window to reveal the Mono Panel, then clicking
-             the "Build Project" button.
+             build can be manually triggered by clicking the word "MSBuild" at the
+             bottom of the editor window to reveal the MSBuild Panel, then clicking
+             the "Build" button.
 
 .. image:: img/export_variable.webp
 
@@ -390,7 +390,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
 
            .. code-tab:: csharp
 
-             if (velocity.x < 0)
+             if (velocity.X < 0)
              {
                  animatedSprite2D.FlipH = true;
              }
@@ -490,12 +490,12 @@ this code to the function:
 
  .. code-tab:: csharp
 
-    public void OnBodyEntered(PhysicsBody2D body)
+    private void OnBodyEntered(PhysicsBody2D body)
     {
         Hide(); // Player disappears after being hit.
         EmitSignal(SignalName.Hit);
         // Must be deferred as we can't change physics properties on a physics callback.
-        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
+        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
     }
 
  .. code-tab:: cpp
@@ -530,9 +530,9 @@ starting a new game.
 
  .. code-tab:: csharp
 
-    public void Start(Vector2 pos)
+    public void Start(Vector2 position)
     {
-        Position = pos;
+        Position = position;
         Show();
         GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
     }

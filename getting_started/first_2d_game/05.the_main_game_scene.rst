@@ -93,13 +93,10 @@ to instance.
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
-    #pragma warning disable 649
-        // We assign this in the editor, so we don't need the warning about not being assigned.
         [Export]
-        public PackedScene MobScene;
-    #pragma warning restore 649
+        public PackedScene MobScene { get; set; }
 
-        public int Score;
+        private int _score;
     }
 
  .. code-tab:: cpp
@@ -219,7 +216,7 @@ new game:
 
     public void NewGame()
     {
-        Score = 0;
+        _score = 0;
 
         var player = GetNode<Player>("Player");
         var startPosition = GetNode<Marker2D>("StartPosition");
@@ -258,12 +255,12 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 
  .. code-tab:: csharp
 
-    public void OnScoreTimerTimeout()
+    private void OnScoreTimerTimeout()
     {
-        Score++;
+        _score++;
     }
 
-    public void OnStartTimerTimeout()
+    private void OnStartTimerTimeout()
     {
         GetNode<Timer>("MobTimer").Start();
         GetNode<Timer>("ScoreTimer").Start();
@@ -332,14 +329,14 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
  .. code-tab:: csharp
 
-    public void OnMobTimerTimeout()
+    private void OnMobTimerTimeout()
     {
         // Note: Normally it is best to use explicit types rather than the `var`
         // keyword. However, var is acceptable to use here because the types are
         // obviously Mob and PathFollow2D, since they appear later on the line.
 
         // Create a new instance of the Mob scene.
-        var mob = MobScene.Instantiate<Mob>();
+        Mob mob = MobScene.Instantiate<Mob>();
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
