@@ -158,38 +158,57 @@ As a result it's possible to align and format the documentation. Color texts, im
 URLs, animation effects, etc. can be added with the :ref:`bbcode <doc_bbcode_in_richtextlabel>`.
 
 Godot's class reference supports BBCode-like tags. They add nice formatting to the text which could also
-be used in the documentation. Here's the list of available tags:
+be used in the documentation. See also :ref:`class reference bbcode <doc_class_reference_bbcode>`.
+Here's the list of available tags:
 
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| Tag                       | Effect                         | Usage                             | Result                                            |
-+===========================+================================+===================================+===================================================+
-| [Class]                   | Link a class                   | Move the [Sprite2D].              | Move the :ref:`class_Sprite2D`.                   |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method methodname]       | Link to a method in this class | Call [method hide].               | Call :ref:`hide <class_Node3D_method_hide>`.      |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [method Class.methodname] | Link to another class's method | Call [method Node3D.hide].        | Call :ref:`hide <class_Node3D_method_hide>`.      |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_Node2D_property_scale>`.   |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_Node2D_property_scale>`.   |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [br]                      | Line break                     | | Line 1.[br]                     | | Line 1.                                         |
-|                           |                                | | Line 2.                         | | Line 2.                                         |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                               |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [i] [/i]                  | Italic                         | Some [i]italic[/i] text.          | Some *italic* text.                               |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [code] [/code]            | Monospace                      | Some [code]monospace[/code] text. | Some ``monospace`` text.                          |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [kbd] [/kbd]              | Keyboard/mouse shortcut        | Some [kbd]Ctrl + C[/kbd] key.     | Some :kbd:`Ctrl + C` key.                         |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
-| [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                                      |
-+---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| Tag                       | Effect                         | Usage                               | Result                                                                  |
++===========================+================================+=====================================+=========================================================================+
+| [Class]                   | Link a class                   | Move the [Sprite2D].                | Move the :ref:`class_Sprite2D`.                                         |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [annotation name]         | Link to an annotation in this  | See                                 | See                                                                     |
+|                           | class                          | [annotation @export].               | :ref:`@GDScript.@export<class_@GDScript_annotation_@export>`.           |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [annotation Class.name]   | Link to another class's        | See                                 | See                                                                     |
+|                           | annotation, many default       | [annotation @GDScript.@export].     | :ref:`@GDScript.@export<class_@GDScript_annotation_@export>`.           |
+|                           | annotations are in             |                                     |                                                                         |
+|                           | ``@GDScript``                  |                                     |                                                                         |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [constant name]           | Link to a constant in this     | See                                 | See                                                                     |
+|                           | class                          | [constant KEY_ESCAPE].              | :ref:`@GlobalScope.KEY_ESCAPE<class_@GlobalScope_constant_KEY_ESCAPE>`. |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [constant Class.name]     | Link to another class's        | See                                 | See                                                                     |
+|                           | constant                       | [constant @GlobalScope.KEY_ESCAPE]. | :ref:`@GlobalScope.KEY_ESCAPE<class_@GlobalScope_constant_KEY_ESCAPE>`. |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [enum enumname]           | Link to an enum in this class  | See [enum ArrayType].               | See :ref:`ArrayType <enum_Mesh_ArrayType>`.                             |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [enum Class.enumname]     | Link to another class's enum   | See [enum Mesh.ArrayType].          | See :ref:`ArrayType <enum_Mesh_ArrayType>`.                             |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [method methodname]       | Link to a method in this class | Call [method hide].                 | Call :ref:`hide <class_Node3D_method_hide>`.                            |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [method Class.methodname] | Link to another class's method | Call [method Node3D.hide].          | Call :ref:`hide <class_Node3D_method_hide>`.                            |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [member membername]       | Link to a member in this class | Get [member scale].                 | Get :ref:`scale <class_Node2D_property_scale>`.                         |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].          | Get :ref:`scale <class_Node2D_property_scale>`.                         |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].              | Emit :ref:`renamed <class_node_signal_renamed>`.                        |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].         | Emit :ref:`renamed <class_node_signal_renamed>`.                        |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [br]                      | Line break                     | | Line 1.[br]                       | | Line 1.                                                               |
+|                           |                                | | Line 2.                           | | Line 2.                                                               |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [b] [/b]                  | Bold                           | Some [b]bold[/b] text.              | Some **bold** text.                                                     |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [i] [/i]                  | Italic                         | Some [i]italic[/i] text.            | Some *italic* text.                                                     |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [code] [/code]            | Monospace                      | Some [code]monospace[/code] text.   | Some ``monospace`` text.                                                |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [kbd] [/kbd]              | Keyboard/mouse shortcut        | Some [kbd]Ctrl + C[/kbd] key.       | Some :kbd:`Ctrl + C` key.                                               |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
+| [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                        | *See below.*                                                            |
++---------------------------+--------------------------------+-------------------------------------+-------------------------------------------------------------------------+
 
 .. warning:: Use ``[codeblock]`` for pre-formatted code blocks. Inside
              ``[codeblock]``, always use **four spaces** for indentation
