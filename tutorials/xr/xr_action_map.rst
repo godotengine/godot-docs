@@ -287,7 +287,7 @@ Some runtimes might even permit users to edit the bindings themselves.
 
 A common approach for a runtime is to look for a matching interaction profile first.
 If this is not found it will check the most common profiles such as that of the "Touch controller" and do a conversion.
-If all else fails, it will check the generic :ref:`"Simple controller"<The simple controller>`.
+If all else fails, it will check the generic :ref:`"Simple controller" <doc_xr_action_map_simple>`.
 
 .. note::
   There is an important conclusion to be made here:
@@ -357,6 +357,8 @@ As mentioned before OpenXR will do conversions between the two, but do read the 
   It is important to note that only a select number of XR controllers support touch sensors or have click features on thumbsticks.
   Keep that in mind when designing your game/application. 
   Make sure these are used for optional features of your game/application.
+
+.. _doc_xr_action_map_simple:
 
 The simple controller
 ---------------------
