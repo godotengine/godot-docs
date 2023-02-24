@@ -89,11 +89,18 @@ node and you'll see the property now appears in the "Script Variables" section
 of the Inspector. Remember, if you change the value here, it will override the
 value written in the script.
 
-.. warning:: If you're using C#, you need to (re)build the project assemblies
-             whenever you want to see new export variables or signals. This
-             build can be manually triggered by clicking the word "MSBuild" at the
-             bottom of the editor window to reveal the MSBuild Panel, then clicking
-             the "Build" button.
+.. warning::
+
+    If you're using C#, you need to (re)build the project assemblies
+    whenever you want to see new export variables or signals. This
+    build can be manually triggered by clicking the "Build" button at
+    the top right of the editor.
+
+    .. image:: img/build_dotnet.webp
+
+    A manual build can also be triggered from the MSBuild Panel. Click
+    the word "MSBuild" at the bottom of the editor window to reveal the
+    MSBuild Panel, then click the "Build" button.
 
 .. image:: img/export_variable.webp
 
