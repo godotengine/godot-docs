@@ -1,7 +1,12 @@
 {% extends "!layout.html" -%}
 
+{% block htmltitle -%}
+<title>{{ godot_title_prefix }}{{ title|striptags|e }}{{ titlesuffix }}</title>
+{% endblock -%}
+
 {% block extrahead -%}
 <meta name="doc_version" content="{{ version }}">
+<meta name="doc_is_latest" content="{{ godot_is_latest }}">
 {% endblock -%}
 
 {% block linktags -%}
@@ -19,6 +24,28 @@
   {{ super() }}
 {% endblock -%}
 
-{% block htmltitle -%}
-<title>{{ godot_title_prefix }}{{ title|striptags|e }}{{ titlesuffix }}</title>
-{% endblock -%}
+{%- block document %}
+<div itemprop="articleBody">
+  {% if godot_is_latest %}
+  <div class="admonition attention latest-notice">
+    <p class="first admonition-title">Attention</p>
+    <p>
+      You are reading the <code class="docutils literal notranslate"><span class="pre">latest</span></code>
+      (unstable) version of this documentation, which may document features not available
+      or compatible with Godot 3.x.
+    </p>
+    <p class="last latest-notice-link">
+      Checking the stable version of the documentation...
+    </p>
+  </div>
+  {% endif %}
+
+  {% block body %}{% endblock %}
+</div>
+{%- if self.comments()|trim %}
+  <div class="articleComments">
+    {%- block comments %}{% endblock %}
+  </div>
+{%- endif%}
+</div>
+{%- endblock %}

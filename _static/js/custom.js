@@ -1,9 +1,4 @@
 
-// Set this to `true` when the `latest` branch is significantly incompatible with the
-// current `stable` branch, which can lead to confusion for users that land on
-// `latest` instead of `stable`.
-const inDev = true;
-
 // Handle page scroll and adjust sidebar accordingly.
 
 // Each page has two scrolls: the main scroll, which is moving the content of the page;
@@ -296,7 +291,9 @@ $(document).ready(() => {
     }
   }
 
-  if (inDev) {
+  // See `godot_is_latest` in conf.py
+  const isLatest = document.querySelector('meta[name=doc_is_latest]').content.toLowerCase() === 'true';
+  if (isLatest) {
     // Add a compatibility notice using JavaScript so it doesn't end up in the
     // automatically generated `meta description` tag.
 
@@ -306,23 +303,13 @@ $(document).ready(() => {
     const homeUrl = baseUrl.split('/latest/')[0] + '/stable/';
     const searchUrl = homeUrl + 'search.html?q=';
 
-    // Insert the base notice with a placeholder to display as we're making a request.
-    document.querySelector('div[itemprop="articleBody"]').insertAdjacentHTML('afterbegin', `
-      <div class="admonition attention latest-notice">
-        <p class="first admonition-title">Attention</p>
-        <p>
-          You are reading the <code class="docutils literal notranslate"><span class="pre">latest</span></code>
-          (unstable) version of this documentation, which may document features not available
-          or compatible with Godot 3.x.
-        </p>
-        <p class="last latest-notice-link">
-          Checking the <a class="reference" href="${homeUrl}">stable version</a>
-          of the documentation...
-        </p>
-      </div>
-    `);
-
     const noticeLink = document.querySelector('.latest-notice-link');
+
+    // Insert a placeholder to display as we're making a request.
+    noticeLink.innerHTML = `
+    Checking the <a class="reference" href="${homeUrl}">stable version</a>
+    of the documentation...
+    `;
 
     // Make a HEAD request to the possible stable URL to check if the page exists.
     fetch(fallbackUrl, { method: 'HEAD' })
