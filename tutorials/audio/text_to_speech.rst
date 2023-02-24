@@ -17,8 +17,12 @@ Once you have the voice ID, you can use it to speak some text:
 
     # One-time steps
     var voices:Array = DisplayServer.tts_get_voices()
-    # Pick a voice. Here, we arbitrarily pick the first voice.
-    var voice_data:Dictionary = voices[0]
+    # Pick a voice. Here, we arbitrarily pick the first English voice.
+    var voice_data:Dictionary
+    for voice in voices:
+        if "English" in voice["language"]:
+            voice_data = voice
+            break
 
     # Say "Hello, World!"
     DisplayServer.tts_speak("Hello, World!", voice_data["id"])
@@ -33,7 +37,7 @@ Once you have the voice ID, you can use it to speak some text:
 
     # Immediately stop the current text mid-sentence and say goodbye instead
     DisplayServer.tts_stop()
-    DisplayServer.tts_speak("Goodbye!", voice_data["id"])
+    DisplayServer.tts_speak("Goodbye!")
 
 
 Requirements for functionality
@@ -41,16 +45,23 @@ Requirements for functionality
 
 Godot includes text-to-speech functionality. You can find these under the :ref:`DisplayServer class <class_DisplayServer>`.
 
-Godot depends on system libraries for text-to-speech functionality. These libraries are installed by default on Android, Windows, iOS and macOS, but not on all Linux distributions. If they are not present, text-to-speech functionality will not work. Specifically, the ``tts_get_voices()`` method will return an empty list, indicating that there are no usable voices.
+Godot depends on system libraries for text-to-speech functionality. These libraries are installed by default on Windows and macOS, but not on all Linux distributions. If they are not present, text-to-speech functionality will not work. Specifically, the ``tts_get_voices()`` method will return an empty list, indicating that there are no usable voices.
 
-Both Godot users on Linux and end-users on Linux running Godot games need to ensure that their system includes the system libraries for text-to-speech to work. Please consult with your own distibution's documentation to determine what libraries you need to install.
+Both Godot users on Linux and end-users on Linux running Godot games need to ensure that their system includes the system libraries for text-to-speech to work. Please consult the table below or your own distibution's documentation to determine what libraries you need to install.
 
-For example, on Arch Linux-based systems, Godot requires ``spd-say``, ``festival``, and ``espeakup``.
+Distro-specific one-liners
+^^^^^^^^^^^^^^^^^^^^^^^^^^
++------------------+-----------------------------------------------------------------------------------------------------------+
+| **Arch Linux**   | ::                                                                                                        |
+|                  |                                                                                                           |
+|                  |     pacman -S spd-say festival espeakup                                                                   |
++------------------+-----------------------------------------------------------------------------------------------------------+
+
 
 Best practices
 --------------
 
-The best practices for text-to-speech, in terms of the ideal player experience for blind players, is to integrate directly with the screen-reader APIs (such as NVDA's API) to send output directly to it. This provides advanced functionality for blind players, such as being able to traverse previous output forwards and backwards, to replay, and to play at a faster or slower rate as suits them. Godot currently doesn't support screen-reader API integration.
+The best practices for text-to-speech, in terms of the ideal player experience for blind players, is to send output to the player's screen reader. This preserves the choice of language, speed, pitch, etc. that the user set, as well as allows advanced features like allowing players to scroll backward and forward through text. As of now, Godot doesn't provide this level of integration.
 
 With the current state of the Godot text-to-speech APIs, best practices include:
 
@@ -63,9 +74,10 @@ This provides your blind players with the most flexibility and comfort available
 Caveats and Other Information
 -----------------------------
 
-- Expect delays when you call `tts_speak` and `tts_stop`. The actual delay time varies depending on both the OS and on your machine's specifications.
-- Non-English text doesn't seem to be supported; even on Linux, with language-specific voices such as Arabic, the text reads out letter by letter.
-- Non-ASCII characters, such as umlaut, are similarly not supported (e.g. ö reads as "o umlaut")
-- Most blind players also use Windows with the NVDA screen reader.
+- Expect delays when you call `tts_speak` and `tts_stop`. The actual delay time varies depending on both the OS and on your machine's specifications. This is especially critical on Android and Web, where some of the voices depend on web-services, and the actual time to playback depends on server load, network latency, and other factors.
+- Non-English text works if the correct voices are installed and used. On Windows, you can consult the instructions in `this article`_ to enable additional language voices on Windows.
+- Non-ASCII characters, such as umlaut, are pronounced correctly if you select the correct voice.
+- Blind players use a number of screen readers, including JAWS, NVDA, VoiceOver, Narrator, and more.
 - Windows text-to-speech APIs generally perform better than their equivalents on other systems (e.g. `tts_stop` followed by `tts_speak` immediately speaks the new message).
-- Some systems, such as Linux, provide several voices, including voices with different accents and for different languages.
+
+.. _this article: https://www.ghacks.net/2018/08/11/unlock-all-windows-10-tts-voices-system-wide-to-get-more-of-them/
