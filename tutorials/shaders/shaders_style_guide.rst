@@ -344,7 +344,8 @@ the console, extra indentation should **not** be added within ``#if``,
 
 **Bad**:
 
-.. code-block:: glsl
+.. FIXME: An upstream bug in Pygment related to #ifdef.
+.. code-block:: none
 
     #define heightmap_enabled
 

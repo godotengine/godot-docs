@@ -61,7 +61,8 @@ anywhere within the shader (including in uniform hints).
 ``#define`` can also be used to insert arbitrary shader code at any location,
 while constants can't do that.
 
-.. code-block:: glsl
+.. FIXME: An upstream bug (https://github.com/pygments/pygments/pull/2350), fixed but not published yet.
+.. code-block:: none
 
     shader_type spatial;
 
