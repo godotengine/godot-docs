@@ -35,8 +35,8 @@ effect will be applied at all times, including in the editor.
 
 First, create a new MeshInstance3D and set its mesh to a QuadMesh. This creates
 a quad centered at position ``(0, 0, 0)`` with a width and height of ``1``. Set
-the width and height to ``2`` and check off ``flip_faces``. Right now, the quad
-occupies a position in world space at the origin; however, we want it to move
+the width and height to ``2`` and enable **Flip Faces**. Right now, the quad
+occupies a position in world space at the origin. However, we want it to move
 with the camera so that it always covers the entire screen. To do this, we will
 bypass the coordinate transforms that translate the vertex positions through the
 difference coordinate spaces and treat the vertices as if they were already in
