@@ -112,7 +112,7 @@ this feature. There are still several ways to avoid this problem:
 - If you need to render semi-transparent areas of the texture, alpha scissor
   isn't suitable. Instead, setting the StandardMaterial3D's
   **Transparency > Transparency** property to **Depth Pre-Pass** can sometimes
-  work (at a performance cost).
+  work (at a performance cost). You can also try the **Alpha Hash** mode.
 
 - If you want a material to fade with distance, use the StandardMaterial3D
   distance fade mode **Pixel Dither** or **Object Dither** instead of

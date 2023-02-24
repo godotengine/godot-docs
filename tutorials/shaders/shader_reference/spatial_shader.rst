@@ -461,3 +461,7 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
     may exhibit transparency sorting issues. Read the
     :ref:`transparency sorting section in the 3D rendering limitations page <doc_3d_rendering_limitations_transparency_sorting>`
     for more information and ways to avoid issues.
+
+    Transparent materials also cannot cast shadows or appear in
+    ``SCREEN_TEXTURE`` and ``DEPTH_TEXTURE``. This in turn prevents those
+    materials from appearing in screen-space reflections or refraction.
