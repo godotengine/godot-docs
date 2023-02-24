@@ -79,7 +79,7 @@ Editor
   in the project manager and import them directly.
 
 Rendering
-^^^^^^^^^
+---------
 
 3 rendering *methods* (running over 2 rendering *drivers*) are available:
 
