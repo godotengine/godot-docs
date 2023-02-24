@@ -435,7 +435,7 @@ time, or anything else.
 To achieve this, you can use random *noise* functions. Noise functions are
 especially popular in procedural generation to generate realistic-looking
 terrain. Godot provides :ref:`class_fastnoiselite` for this, which supports
-1D, 2D, 3D, and 4D noise. Here's an example with 1D noise:
+1D, 2D and 3D noise. Here's an example with 1D noise:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
