@@ -89,6 +89,16 @@ Two additional properties are offered in the **Temporal Reprojection** section:
   fog, but makes "ghosting" much worse. A lower value reduces ghosting but can
   result in the per-frame temporal jitter becoming visible.
 
+.. note::
+
+    Unlike non-volumetric fog, volumetric fog has a *finite* range. This means
+    volumetric fog cannot entirely cover a large world, as it will eventually
+    stop being rendered in the distance.
+
+    If you wish to hide distant areas from the player, it's recommended to
+    enable both non-volumetric fog and volumetric fog at the same time, and
+    adjust their density accordingly.
+
 Light interaction with volumetric fog
 -------------------------------------
 
