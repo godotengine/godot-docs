@@ -66,7 +66,7 @@ external IDE or editor, such as  `Visual Studio Code <https://code.visualstudio.
 or MonoDevelop. These provide autocompletion, debugging, and other
 useful features for C#. To select an external editor in Godot,
 click on **Editor → Editor Settings** and scroll down to
-**Mono**. Under **Mono**, click on **Editor**, and select your
+**Dotnet**. Under **Dotnet**, click on **Editor**, and select your
 external editor of choice. Godot currently supports the following
 external editors:
 
@@ -87,7 +87,7 @@ After reading the "Prerequisites" section, you can download and install
 
 In Godot's **Editor → Editor Settings** menu:
 
-- Set **Mono** -> **Editor** -> **External Editor** to **JetBrains Rider**.
+- Set **Dotnet** -> **Editor** -> **External Editor** to **JetBrains Rider**.
 
 In Rider:
 
@@ -102,7 +102,7 @@ After reading the "Prerequisites" section, you can download and install
 
 In Godot's **Editor → Editor Settings** menu:
 
-- Set **Mono** -> **Editor** -> **External Editor** to **Visual Studio Code**.
+- Set **Dotnet** -> **Editor** -> **External Editor** to **Visual Studio Code**.
 
 In Visual Studio Code:
 
@@ -138,7 +138,7 @@ While installing Visual Studio, select these workloads:
 
 In Godot's **Editor → Editor Settings** menu:
 
-- Set **Mono** -> **Editor** -> **External Editor** to **Visual Studio**.
+- Set **Dotnet** -> **Editor** -> **External Editor** to **Visual Studio**.
 
 Next, you can download the Godot Visual Studio extension from github
 `here <https://github.com/godotengine/godot-csharp-visualstudio/releases>`__.
