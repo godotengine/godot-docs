@@ -175,6 +175,9 @@ html_context = {
     # Distinguish local development website from production website.
     # This prevents people from looking for changes on the production website after making local changes :)
     "godot_title_prefix": "" if on_rtd else "(DEV) ",
+    # Set this to `True` when in the `latest` branch to clearly indicate to the reader
+    # that they are not reading the `stable` documentation.
+    "godot_is_latest": True,
 }
 
 html_logo = "img/docs_logo.svg"
