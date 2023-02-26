@@ -127,7 +127,7 @@ NavigationServer2D and a NavigationAgent2D for path movement.
             return
 
         var current_agent_position : Vector2 = global_transform.origin
-        var next_path_position : Vector2 = navigation_agent.get_next_location()
+        var next_path_position : Vector2 = navigation_agent.get_next_path_location()
 
         var new_velocity : Vector2 = next_path_position - current_agent_position
         new_velocity = new_velocity.normalized()
