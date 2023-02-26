@@ -109,6 +109,7 @@ Scripting
 - :ref:`doc_debugger_panel`
 - :ref:`doc_creating_script_templates`
 - :ref:`doc_evaluating_expressions`
+- :ref:`doc_what_is_gdextension`
 - :ref:`doc_gdscript_warning_system` (split from :ref:`doc_gdscript_static_typing`)
 
 User Interface (UI)
