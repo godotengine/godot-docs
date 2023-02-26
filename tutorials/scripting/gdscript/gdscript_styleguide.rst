@@ -414,6 +414,7 @@ Prefer the plain English versions of boolean operators, as they are the most acc
 
 - Use ``and`` instead of ``&&``.
 - Use ``or`` instead of ``||``.
+- Use ``not`` instead of ``!``.
 
 You may also use parentheses around boolean operators to clear any ambiguity.
 This can make long expressions easier to read.
