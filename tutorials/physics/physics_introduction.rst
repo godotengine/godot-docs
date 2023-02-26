@@ -26,15 +26,13 @@ In this guide, you will learn:
 Collision objects
 -----------------
 
-Godot offers four kinds of physics bodies, extending :ref:`CollisionObject2D <class_CollisionObject2D>`:
+Godot offers four kinds of collision objects which all extend :ref:`CollisionObject2D <class_CollisionObject2D>`. The last three listed below are physics bodies and additionally extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`.
 
 - :ref:`Area2D <class_Area2D>`
     ``Area2D`` nodes provide **detection** and **influence**. They can detect when
     objects overlap and can emit signals when bodies enter or exit. An ``Area2D``
     can also be used to override physics properties, such as gravity or damping,
     in a defined area.
-
-The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
 
 - :ref:`StaticBody2D <class_StaticBody2D>`
     A static body is one that is not moved by the physics engine. It participates
@@ -83,15 +81,19 @@ These nodes allow you to draw the shape directly in the editor workspace.
 Physics process callback
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The physics engine may spawn multiple threads to improve performance, so
-it can use up to a full frame to process physics. Because of this, the value
-of a body's state variables such as ``position`` or ``linear velocity``
-may not be accurate for the current frame.
+The physics engine runs at a fixed rate (a default of 60 iterations per second). This rate 
+is typically different from the frame rate which fluctuates based on what is rendered and
+available resources.
 
-In order to avoid this inaccuracy, any code that needs to access a body's properties should
-be run in the :ref:`Node._physics_process() <class_Node_method__physics_process>`
-callback, which is called before each physics step at a constant frame rate
-(60 times per second by default). This method will be passed a ``delta``
+It is important that all physics related code runs at this fixed rate. Therefore Godot 
+differentiates :ref:`between physics and idle processing <doc_idle_and_physics_processing>`.
+Code that runs each frame is called idle processing and code that runs on each physics 
+tick is called physics processing. Godot provides two different callbacks, one for each 
+of those processing rates.
+
+The physics callback, :ref:`Node._physics_process() <class_Node_method__physics_process>`, 
+is called before each physics step. Any code that needs to access a body's properties should
+be run in here. This method will be passed a ``delta``
 parameter, which is a floating-point number equal to the time passed in
 *seconds* since the last step. When using the default 60 Hz physics update rate,
 it will typically be equal to ``0.01666...`` (but not always, see below).
