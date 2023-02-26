@@ -131,8 +131,8 @@ For the example above, your Rifle.gd would look like this:
 
 ::
 
-    extends Node2D
     class_name Rifle
+    extends Node2D
 
 If you use ``class_name``, Godot registers the Rifle type globally in
 the editor, and you can use it anywhere, without having to preload it
