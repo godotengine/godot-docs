@@ -408,6 +408,19 @@ Select the *Camera* again and in the *Inspector*, set the *Projection* to
 *Orthogonal* and the *Size* to ``19``. The character should now look flatter and
 the ground should fill the background.
 
+.. note::
+
+    When using an orthogonal camera in Godot 4, directional shadow quality is
+    dependent on the camera's *Far* value. The higher the *Far* value, the
+    further away the camera will be able to see. However, higher *Far* values
+    also decrease shadow quality as the shadow rendering has to cover a greater
+    distance.
+
+    If directional shadows look too blurry after switching to an orthogonal
+    camera, decrease the camera's *Far* property to a lower value such as
+    ``100``. Don't decrease this *Far* property too much, or objects in the
+    distance will start disappearing.
+
 |image10|
 
 Test your scene and you should be able to move in all 8 directions and not glitch through the floor!
