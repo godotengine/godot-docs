@@ -337,7 +337,7 @@ Indicates this custom channel contains half precision float colors, encoded as :
 
 :ref:`ArrayCustomFormat<enum_Mesh_ArrayCustomFormat>` **ARRAY_CUSTOM_R_FLOAT** = ``4``
 
-Indicates this custom channel contains full float colors, in a :ref:`PackedFloat32Array<class_PackedFloat32Array>`. Only the red green channel is used.
+Indicates this custom channel contains full float colors, in a :ref:`PackedFloat32Array<class_PackedFloat32Array>`. Only the red channel is used.
 
 .. _class_Mesh_constant_ARRAY_CUSTOM_RG_FLOAT:
 

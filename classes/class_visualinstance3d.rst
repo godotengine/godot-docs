@@ -104,7 +104,7 @@ For :ref:`Light3D<class_Light3D>`\ s, this can be used to control which **Visual
 - void **set_sorting_offset** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_sorting_offset** **(** **)**
 
-The sorting offset used by this **VisualInstance3D**. Adjusting it to a higher value will make the **VisualInstance3D** reliably draw on top of other **VisualInstance3D**\ s that are otherwise positioned at the same spot.
+The amount by which the depth of this **VisualInstance3D** will be adjusted when sorting by depth. Uses the same units as the engine (which are typically meters). Adjusting it to a higher value will make the **VisualInstance3D** reliably draw on top of other **VisualInstance3D**\ s that are otherwise positioned at the same spot. To ensure it always draws on top of other objects around it (not positioned at the same spot), set the value to be greater than the distance between this **VisualInstance3D** and the other nearby **VisualInstance3D**\ s.
 
 .. rst-class:: classref-item-separator
 

@@ -565,7 +565,7 @@ Returns the ending position of this ``link``.
 
 :ref:`float<class_float>` **link_get_enter_cost** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the ``enter_cost`` of this ``link``.
+Returns the enter cost of this ``link``.
 
 .. rst-class:: classref-item-separator
 
@@ -625,7 +625,7 @@ Returns the starting position of this ``link``.
 
 :ref:`float<class_float>` **link_get_travel_cost** **(** :ref:`RID<class_RID>` link **)** |const|
 
-Returns the ``travel_cost`` of this ``link``.
+Returns the travel cost of this ``link``.
 
 .. rst-class:: classref-item-separator
 
@@ -1063,7 +1063,7 @@ Returns how many connections this ``region`` has with other regions in the map.
 
 :ref:`float<class_float>` **region_get_enter_cost** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns the ``enter_cost`` of this ``region``.
+Returns the enter cost of this ``region``.
 
 .. rst-class:: classref-item-separator
 
@@ -1111,7 +1111,7 @@ Returns the ``ObjectID`` of the object which manages this region.
 
 :ref:`float<class_float>` **region_get_travel_cost** **(** :ref:`RID<class_RID>` region **)** |const|
 
-Returns the ``travel_cost`` of this ``region``.
+Returns the travel cost of this ``region``.
 
 .. rst-class:: classref-item-separator
 
