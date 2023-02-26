@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_custom_gui_controls:
 
 Custom GUI controls

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_introduction_to_godot:
 
 Introduction to Godot

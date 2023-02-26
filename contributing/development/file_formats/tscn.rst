@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_tscn_file_format:
 
 TSCN file format

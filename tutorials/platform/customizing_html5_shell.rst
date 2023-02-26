@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_customizing_html5_shell:
 
 Custom HTML page for Web export

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_gdscript_grammar:
 
 GDScript grammar

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_animating_thousands_of_fish:
 
 Animating thousands of fish with MultiMeshInstance3D

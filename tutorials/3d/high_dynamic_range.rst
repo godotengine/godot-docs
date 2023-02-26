@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_high_dynamic_range:
 
 High dynamic range lighting

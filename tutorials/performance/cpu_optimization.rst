@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_cpu_optimization:
 
 CPU optimization

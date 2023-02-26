@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_particle_systems_2d:
 
 Particle systems (2D)

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_exporting_for_uwp:
 
 Exporting for Universal Windows Platform

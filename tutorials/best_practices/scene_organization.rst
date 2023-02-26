@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_scene_organization:
 
 Scene organization

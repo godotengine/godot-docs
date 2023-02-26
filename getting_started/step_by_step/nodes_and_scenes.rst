@@ -1,4 +1,7 @@
-.. The goal of this page is to explain more than doc_key_concepts_overview about nodes and scenes, get the user to create their first concrete scene.
+:article_outdated: True
+
+.. The goal of this page is to explain more than doc_key_concepts_overview about nodes and scenes,
+   get the user to create their first concrete scene.
 
 .. _doc_nodes_and_scenes:
 

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. Intention: introduce only a handful of key concepts and avoid a big cognitive
    load. Readers will then be reminded of the concepts further in the getting
    started series, reinforcing their learning.

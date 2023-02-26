@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_2d_meshes:
 
 2D meshes
