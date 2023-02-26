@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_scenes_versus_scripts:
 
 When to use scenes versus scripts

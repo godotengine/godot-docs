@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_controlling_thousands_of_fish:
 
 Controlling thousands of fish with Particles

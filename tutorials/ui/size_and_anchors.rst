@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_size_and_anchors:
 
 Size and anchors

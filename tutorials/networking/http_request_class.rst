@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_http_request_class:
 
 Making HTTP requests

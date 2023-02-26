@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_command_line_tutorial:
 
 Command line tutorial

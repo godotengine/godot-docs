@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. Intention: provide the necessary information to make the most of the getting
    started series, answering questions like "do I want to learn Godot?", "how
    does it look and feel?", "how does it work?", and "how do I best learn it?".

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_html5_shell_classref:
 
 HTML5 shell class reference

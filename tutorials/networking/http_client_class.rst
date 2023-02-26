@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_http_client_class:
 
 HTTP client class

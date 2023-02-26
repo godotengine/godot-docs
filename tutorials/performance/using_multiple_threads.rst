@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_using_multiple_threads:
 
 Using multiple threads

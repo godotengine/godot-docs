@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_binary_serialization_api:
 
 Binary serialization API

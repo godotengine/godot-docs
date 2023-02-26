@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_platform_html5:
 
 HTML5

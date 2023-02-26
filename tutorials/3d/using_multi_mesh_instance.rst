@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_using_multi_mesh_instance:
 
 Using MultiMeshInstance3D

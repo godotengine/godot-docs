@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_using_the_web_editor:
 
 Using the Web editor

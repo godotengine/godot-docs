@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_3d_gizmo_plugins:
 
 3D gizmo plugins

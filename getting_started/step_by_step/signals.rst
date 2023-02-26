@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. Intention: give the user a first taste of signals. We should write more
    documentation in the scripting/ section.
 .. Note: GDScript snippets use one line return instead of two because they're

@@ -178,6 +178,9 @@ html_context = {
     # Set this to `True` when in the `latest` branch to clearly indicate to the reader
     # that they are not reading the `stable` documentation.
     "godot_is_latest": True,
+    "godot_version": "4.0",
+    # Enables a banner that displays the up-to-date status of each article.
+    "godot_show_article_status": True,
 }
 
 html_logo = "img/docs_logo.svg"
@@ -192,14 +195,14 @@ html_extra_path = ["robots.txt"]
 html_css_files = [
     'css/algolia.css',
     'https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css',
-    "css/custom.css?7", # Increment the number at the end when the file changes to bust the cache.
+    "css/custom.css?8", # Increment the number at the end when the file changes to bust the cache.
 ]
 
 if not on_rtd:
     html_css_files.append("css/dev.css")
 
 html_js_files = [
-    "js/custom.js?4", # Increment the number at the end when the file changes to bust the cache.
+    "js/custom.js?5", # Increment the number at the end when the file changes to bust the cache.
     ('https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js', {'defer': 'defer'}),
     ('js/algolia.js', {'defer': 'defer'})
 ]

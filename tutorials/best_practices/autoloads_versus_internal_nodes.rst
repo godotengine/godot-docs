@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_autoloads_versus_internal_nodes:
 
 Autoloads versus regular nodes

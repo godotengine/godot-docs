@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_csg_tools:
 
 Prototyping levels with CSG

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_thread_safe_apis:
 
 Thread-safe APIs

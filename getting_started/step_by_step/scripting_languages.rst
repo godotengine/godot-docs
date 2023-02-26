@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. Intention: only introduce what a script does in general and options for
    scripting languages.
 

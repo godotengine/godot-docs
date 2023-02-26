@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_sync_with_audio:
 
 Sync the gameplay with audio and music

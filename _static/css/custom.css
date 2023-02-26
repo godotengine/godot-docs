@@ -936,11 +936,24 @@ code,
 }
 
 /* Admonition tweaks */
+.rst-content .admonition-grid {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    gap: 20px;
+}
+@media screen and (max-width: 1020px) {
+    .rst-content .admonition-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
 
 .rst-content .admonition,
 .rst-content .admonition.note,
 .rst-content .admonition.seealso {
     background-color: var(--admonition-note-background-color);
+    border-radius: 4px;
+    box-shadow: 0px 3px 9px 0px rgb(0 0 0 / 29%);
     color: var(--admonition-note-color);
 }
 
@@ -948,7 +961,17 @@ code,
 .rst-content .admonition.note .admonition-title,
 .rst-content .admonition.seealso .admonition-title {
     background-color: var(--admonition-note-title-background-color);
+    border-radius: 4px 4px 0 0;
     color: var(--admonition-note-title-color);
+    font-weight: 600;
+    font-size: 105%;
+    line-height: 120%;
+    padding: 6px 16px;
+    text-align: right;
+}
+
+.rst-content .admonition .admonition-title:before {
+    margin-right: 9px;
 }
 
 .rst-content .admonition.attention,
@@ -985,6 +1008,10 @@ code,
 .rst-content .admonition.important .admonition-title {
     background-color: var(--admonition-tip-title-background-color);
     color: var(--admonition-tip-title-color);
+}
+
+.article-status strong {
+    color: var(--body-color);
 }
 
 /* Keyboard shortcuts tweaks */

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_what_are_godot_classes:
 
 Applying object-oriented principles in Godot

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_recording_with_microphone:
 
 Recording with microphone

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_android_in_app_purchases:
 
 Android in-app purchases

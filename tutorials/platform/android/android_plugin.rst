@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_android_plugin:
 
 Creating Android plugins

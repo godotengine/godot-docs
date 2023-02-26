@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_release_policy:
 
 Godot release policy

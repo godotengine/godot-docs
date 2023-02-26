@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_high_level_multiplayer:
 
 High-level multiplayer
