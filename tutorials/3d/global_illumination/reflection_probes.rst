@@ -7,7 +7,7 @@ As stated in the :ref:`doc_standard_material_3d`, objects can show reflected and
 diffuse light. Reflection probes are used as a source of reflected *and* ambient
 light for objects inside their area of influence. They can be used to provide
 more accurate reflections than :ref:`VoxelGI <doc_using_voxel_gi>` and
-:ref:`SDFGI <doc_sdfgi>` while being fairly cheap on system resources.
+:ref:`SDFGI <doc_using_sdfgi>` while being fairly cheap on system resources.
 
 Since reflection probes can also store ambient light, they can be used as a
 low-end alternative to VoxelGI and SDFGI when :ref:`baked lightmaps

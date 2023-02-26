@@ -1,5 +1,5 @@
-Input and Output (I/O)
-======================
+File and data I/O
+=================
 
 .. toctree::
     :maxdepth: 1

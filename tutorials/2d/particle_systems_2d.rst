@@ -2,8 +2,8 @@
 
 .. _doc_particle_systems_2d:
 
-Particle systems (2D)
-=====================
+2D particle systems
+===================
 
 Intro
 -----

@@ -1,6 +1,6 @@
 .. _doc_user_interface:
 
-User Interface (UI)
+User interface (UI)
 ===================
 
 In this section of the tutorial we explain the basics of creating a graphical

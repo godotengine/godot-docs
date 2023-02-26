@@ -317,18 +317,18 @@ User work needed
 
 - **ReflectionProbe:** Placed manually by the user.
 
-.. |good| image:: img/good.webp
+.. |good| image:: img/score_good.webp
 
-.. |average| image:: img/average.webp
+.. |average| image:: img/score_average.webp
 
-.. |bad| image:: img/bad.webp
+.. |bad| image:: img/score_bad.webp
 
 Summary
 ^^^^^^^
 
 If you are unsure about which GI technique to use:
 
-- For desktop games, it's a good idea to start with :ref:`SDFGI <doc_sdfgi>`
+- For desktop games, it's a good idea to start with :ref:`SDFGI <doc_using_sdfgi>`
   first as it requires the least amount of setup. Move to other GI techniques
   later if needed. To improve performance on low-end GPUs and integrated
   graphics, consider adding an option to disable SDFGI or :ref:`VoxelGI
