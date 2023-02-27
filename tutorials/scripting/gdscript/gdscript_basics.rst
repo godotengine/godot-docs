@@ -274,7 +274,7 @@ The following is the list of supported operators and their precedence.
 |                                                                                | for_ keyword)                             |
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``not`` ``!``                                                                  | Boolean NOT and its                       |
-|                                                                                | :ref:`aliases<boolean_operators>`          |
+|                                                                                | :ref:`aliases<boolean_operators>`         |
 +--------------------------------------------------------------------------------+-------------------------------------------+
 | ``and`` ``&&``                                                                 | Boolean AND and its                       |
 |                                                                                | :ref:`aliases<boolean_operators>`         |
