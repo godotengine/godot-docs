@@ -246,7 +246,7 @@ We also need to process what happens when the player loses. The code below will 
  .. code-tab:: cpp
 
     // This code goes in `hud.cpp`.
-    // There is no `yield` in GDNative, so we need to have every
+    // There is no `yield` in GDExtension, so we need to have every
     // step be its own method that is called on timer timeout.
     void HUD::show_get_ready() {
         _message_label->set_text("Get Ready");
