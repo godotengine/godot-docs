@@ -29,7 +29,7 @@ The **LightmapGI** node is used to compute and store baked lightmaps. Lightmaps 
 
 \ **Note:** Lightmap baking on :ref:`CSGShape3D<class_CSGShape3D>`\ s and :ref:`PrimitiveMesh<class_PrimitiveMesh>`\ es is not supported, as these cannot store UV2 data required for baking.
 
-\ **Note:** If no custom lightmappers are installed, **LightmapGI** can only be baked when using the Vulkan backend (Clustered or Mobile), not OpenGL.
+\ **Note:** If no custom lightmappers are installed, **LightmapGI** can only be baked when using the Vulkan backend (Forward+ or Mobile), not OpenGL.
 
 .. rst-class:: classref-reftable-group
 
@@ -114,7 +114,7 @@ High bake quality (slow bake times). The quality of this preset can be adjusted 
 
 :ref:`BakeQuality<enum_LightmapGI_BakeQuality>` **BAKE_QUALITY_ULTRA** = ``3``
 
-Highest bake quality (slowest bake times). The quality of this preset can be adjusted by changing :ref:`ProjectSettings.rendering/lightmapping/bake_quality/high_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/high_quality_ray_count>` and :ref:`ProjectSettings.rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count>`.
+Highest bake quality (slowest bake times). The quality of this preset can be adjusted by changing :ref:`ProjectSettings.rendering/lightmapping/bake_quality/ultra_quality_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_ray_count>` and :ref:`ProjectSettings.rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count<class_ProjectSettings_property_rendering/lightmapping/bake_quality/ultra_quality_probe_ray_count>`.
 
 .. rst-class:: classref-item-separator
 

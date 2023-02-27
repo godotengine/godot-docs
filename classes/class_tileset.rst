@@ -1114,7 +1114,7 @@ Returns the number of terrains in the given terrain set.
 
 :ref:`bool<class_bool>` **has_alternative_level_tile_proxy** **(** :ref:`int<class_int>` source_from, :ref:`Vector2i<class_Vector2i>` coords_from, :ref:`int<class_int>` alternative_from **)**
 
-Returns if there is and alternative-level proxy for the given identifiers.
+Returns if there is an alternative-level proxy for the given identifiers.
 
 .. rst-class:: classref-item-separator
 

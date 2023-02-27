@@ -135,19 +135,19 @@ From your script::
         print(singleton.myPluginFunction("World"))
 
 
-Bundling GDNative resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Bundling GDExtension resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An Android plugin can define and provide C/C++ GDNative resources, either to provide and/or access functionality from the game logic.
-The GDNative resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
+An Android plugin can define and provide C/C++ GDExtension resources, either to provide and/or access functionality from the game logic.
+The GDExtension resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
 
-- The shared libraries (``.so``) for the defined GDNative libraries will be automatically bundled by the ``aar`` build system.
+- The shared libraries (``.so``) for the defined GDExtension libraries will be automatically bundled by the ``aar`` build system.
 - Godot ``*.gdnlib`` and ``*.gdns`` resource files must be manually defined in the plugin ``assets`` directory.
   The recommended path for these resources relative to the ``assets`` directory should be: ``godot/plugin/v1/[PluginName]/``.
 
-For GDNative libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method,
-and return the paths to the bundled GDNative libraries config files (``*.gdnlib``). The paths must be relative to the ``assets`` directory.
-At runtime, the plugin will provide these paths to Godot core which will use them to load and initialize the bundled GDNative libraries.
+For GDExtension libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method,
+and return the paths to the bundled GDExtension libraries config files (``*.gdextension``). The paths must be relative to the ``assets`` directory.
+At runtime, the plugin will provide these paths to Godot core which will use them to load and initialize the bundled GDExtension libraries.
 
 Reference implementations
 ^^^^^^^^^^^^^^^^^^^^^^^^^

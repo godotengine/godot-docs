@@ -243,7 +243,7 @@ In general, you should only rely on ambient light alone for simple scenes or
 large exteriors. You may also do so to boost performance. Ambient light is fast
 to render, but it doesn't provide the best lighting quality. It's better to
 generate ambient light from :ref:`ReflectionProbe <doc_reflection_probes>`,
-:ref:`VoxelGI <doc_using_voxel_gi>` or :ref:`SDFGI <doc_sdfgi>`, as these
+:ref:`VoxelGI <doc_using_voxel_gi>` or :ref:`SDFGI <doc_using_sdfgi>`, as these
 will simulate how indirect light propagates more accurately. Below is a comparison,
 in terms of quality, between using a flat ambient color and a VoxelGI:
 
@@ -528,7 +528,7 @@ illumination for off-screen elements (unlike :abbr:`Screen-Space Indirect Lighti
 
 .. seealso::
 
-    See :ref:`doc_sdfgi` for instructions on setting up this global
+    See :ref:`doc_using_sdfgi` for instructions on setting up this global
     illumination technique.
 
 .. image:: img/environment_sdfgi.webp

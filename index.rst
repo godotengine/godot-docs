@@ -114,9 +114,9 @@ the top-level ``index.html`` in a web browser.
    tutorials/assets_pipeline/index
    tutorials/audio/index
    tutorials/export/index
+   tutorials/io/index
    tutorials/i18n/index
    tutorials/inputs/index
-   tutorials/io/index
    tutorials/math/index
    tutorials/navigation/index
    tutorials/networking/index

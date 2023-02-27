@@ -9,5 +9,5 @@ Platform-specific
 
    android/index
    ios/index
-   platform_html5
+   web/index
    consoles
