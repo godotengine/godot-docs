@@ -67,7 +67,7 @@ You can choose the **Export Type** to select which features will be available:
   See `Can I use SharedArrayBuffer <https://caniuse.com/sharedarraybuffer>`__
   for details.
 
-If you plan to use :ref:`VRAM compression <doc_import_images>` make sure that
+If you plan to use :ref:`VRAM compression <doc_importing_images>` make sure that
 **Vram Texture Compression** is enabled for the targeted platforms (enabling
 both **For Desktop** and **For Mobile** will result in a bigger, but more
 compatible export).
