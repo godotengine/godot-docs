@@ -58,10 +58,9 @@ access.
 
     # Must configure from the editor, defaults to null.
     @export var const_script: Script:
-        set = set_const_script
-    func set_const_script(value):
-        if Engine.is_editor_hint():
-            const_script = value
+        set(value):
+            if Engine.is_editor_hint():
+                const_script = value
 
     # Warn users if the value hasn't been set.
     func _get_configuration_warning():
