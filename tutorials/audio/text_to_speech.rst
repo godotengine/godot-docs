@@ -74,7 +74,7 @@ This provides your blind players with the most flexibility and comfort available
 Caveats and Other Information
 -----------------------------
 
-- Expect delays when you call `tts_speak` and `tts_stop`. The actual delay time varies depending on both the OS and on your machine's specifications. This is especially critical on Android and Web, where some of the voices depend on web-services, and the actual time to playback depends on server load, network latency, and other factors.
+- Expect delays when you call `tts_speak` and `tts_stop`. The actual delay time varies depending on both the OS and on your machine's specifications. This is especially critical on Android and Web, where some of the voices depend on web services, and the actual time to playback depends on server load, network latency, and other factors.
 - Non-English text works if the correct voices are installed and used. On Windows, you can consult the instructions in `this article`_ to enable additional language voices on Windows.
 - Non-ASCII characters, such as umlaut, are pronounced correctly if you select the correct voice.
 - Blind players use a number of screen readers, including JAWS, NVDA, VoiceOver, Narrator, and more.
