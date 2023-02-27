@@ -15,11 +15,11 @@ edit your User Interface (UI).
 
 Add a :ref:`Label <class_Label>` node and name it ``ScoreLabel``
 
-|image0|
+|image1|
 
 In the *Inspector*, set the *Label*'s *Text* to a placeholder like "Score: 0".
 
-|image1|
+|image2|
 
 Also, the text is white by default, like our game's background. We need to
 change its color to see it at runtime.
@@ -28,7 +28,7 @@ Scroll down to *Theme Overrides*, and expand *Colors*
 and enable *Font Color* in order to tint the text to black
 (which contrasts well with the white 3D scene)
 
-|image2|
+|image3|
 
 Finally, click and drag on the text in the viewport to move it away from the
 top-left corner.
@@ -67,10 +67,9 @@ In the *FileSystem* dock, expand the ``fonts`` directory and click and drag the
 ``Montserrat-Medium.ttf`` file we included in the project onto the *Default Font*.
 The text will reappear in the theme preview.
 
-The text is a bit small. Set the *Settings -> Default Font Size* to ``22`` pixels to increase
-the text's size.
+The text is a bit small. Set the *Default Font Size* to ``22`` pixels to increase the text's size.
 
-|image9|
+|image7|
 
 Keeping track of the score
 --------------------------
@@ -79,13 +78,13 @@ Let's work on the score next. Attach a new script to the ``ScoreLabel`` and defi
 the ``score`` variable.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+  .. code-tab:: gdscript GDScript
 
-   extends Label
+    extends Label
 
-   var score = 0
+    var score = 0
 
- .. code-tab:: csharp
+  .. code-tab:: csharp
 
     using Godot;
 
@@ -104,7 +103,7 @@ monster.
 Open the script ``Main.gd``. If it's still open, you can click on its name in
 the script editor's left column.
 
-|image10|
+|image8|
 
 Alternatively, you can double-click the ``Main.gd`` file in the *FileSystem*
 dock.
@@ -113,14 +112,14 @@ At the bottom of the ``_on_mob_timer_timeout()`` function, add the following
 line:
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+  .. code-tab:: gdscript GDScript
 
-   func _on_mob_timer_timeout():
+    func _on_mob_timer_timeout():
         #...
         # We connect the mob to the score label to update the score upon squashing one.
         mob.squashed.connect($UserInterface/ScoreLabel._on_Mob_squashed.bind())
 
- .. code-tab:: csharp
+  .. code-tab:: csharp
 
     public void OnMobTimerTimeout()
     {
@@ -138,13 +137,13 @@ callback function.
 There, we increment the score and update the displayed text.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+  .. code-tab:: gdscript GDScript
 
-   func _on_Mob_squashed():
-       score += 1
-       text = "Score: %s" % score
+    func _on_Mob_squashed():
+        score += 1
+        text = "Score: %s" % score
 
- .. code-tab:: csharp
+  .. code-tab:: csharp
 
     public void OnMobSquashed()
     {
@@ -164,13 +163,13 @@ function.
 
 .. note::
 
-   If you get an error when you squash a mob
-   check your capital letters in the signal "_on_Mob_squashed"
+    If you get an error when you squash a mob
+    check your capital letters in the signal "_on_Mob_squashed"
 
 You can now play the game and squash a few enemies to see the score
 increase.
 
-|image11|
+|image9|
 
 .. note::
 
@@ -187,29 +186,29 @@ We'll now add the ability to play again after dying. When the player dies, we'll
 display a message on the screen and wait for input.
 
 Head back to the ``Main.tscn`` scene, select the ``UserInterface`` node, add a
-child node *ColorRect*, and name it ``Retry``. This node fills a
+child node :ref:`ColorRect <class_ColorRect>`, and name it ``Retry``. This node fills a
 rectangle with a uniform color and will serve as an overlay to darken the
 screen.
 
 To make it span over the whole viewport, you can use the *Anchor Preset* menu in the
 toolbar.
 
-|image12|
+|image10|
 
 Open it and apply the *Full Rect* command.
 
-|image13|
+|image11|
 
 Nothing happens. Well, almost nothing; only the four green pins move to the
 corners of the selection box.
 
-|image14|
+|image12|
 
 This is because UI nodes (all the ones with a green icon) work with anchors and
 margins relative to their parent's bounding box. Here, the ``UserInterface`` node
 has a small size and the ``Retry`` one is limited by it.
 
-Select the ``UserInterface`` and apply *Layout -> Full Rect* to it as well. The
+Select the ``UserInterface`` and apply *Anchor Preset -> Full Rect* to it as well. The
 ``Retry`` node should now span the whole viewport.
 
 Let's change its color so it darkens the game area. Select ``Retry`` and in the
@@ -217,17 +216,14 @@ Let's change its color so it darkens the game area. Select ``Retry`` and in the
 in the color picker, drag the *A* slider to the left. It controls the color's
 Alpha channel, that is to say, its opacity/transparency.
 
-|image15|
+|image13|
 
 Next, add a :ref:`Label <class_Label>` as a child of ``Retry`` and give it the *Text*
 "Press Enter to retry."
-
-|image16|
-
-To move it and anchor it in the center of the screen, apply *Layout -> Center*
+To move it and anchor it in the center of the screen, apply *Anchor Preset -> Center*
 to it.
 
-|image17|
+|image14|
 
 Coding the retry option
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -239,13 +235,13 @@ Open the script ``Main.gd``. First, we want to hide the overlay at the start of
 the game. Add this line to the ``_ready()`` function.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+  .. code-tab:: gdscript GDScript
 
-   func _ready():
-       #...
-       $UserInterface/Retry.hide()
+    func _ready():
+        #...
+        $UserInterface/Retry.hide()
 
- .. code-tab:: csharp
+  .. code-tab:: csharp
 
     public override void _Ready()
     {
@@ -256,13 +252,13 @@ the game. Add this line to the ``_ready()`` function.
 Then, when the player gets hit, we show the overlay.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+  .. code-tab:: gdscript GDScript
 
-   func _on_player_hit():
-       #...
-       $UserInterface/Retry.show()
+    func _on_player_hit():
+        #...
+        $UserInterface/Retry.show()
 
- .. code-tab:: csharp
+  .. code-tab:: csharp
 
     public void OnPlayerHit()
     {
@@ -278,14 +274,14 @@ If the player pressed the predefined ``ui_accept`` input action and ``Retry`` is
 visible, we reload the current scene.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+  .. code-tab:: gdscript GDScript
 
-   func _unhandled_input(event):
-       if event.is_action_pressed("ui_accept") and $UserInterface/Retry.visible:
-           # This restarts the current scene.
-           get_tree().reload_current_scene()
+    func _unhandled_input(event):
+        if event.is_action_pressed("ui_accept") and $UserInterface/Retry.visible:
+            # This restarts the current scene.
+            get_tree().reload_current_scene()
 
- .. code-tab:: csharp
+  .. code-tab:: csharp
 
     public override void _UnhandledInput(InputEvent @event)
     {
@@ -315,21 +311,22 @@ You can use the autoload feature to have Godot load a node or a scene
 automatically at the start of the game, outside the current scene. You can also
 use it to create globally accessible objects.
 
-Create a new scene by going to the *Scene* menu and clicking *New Scene*.
+Create a new scene by going to the *Scene* menu and clicking *New Scene*
+or by using the *+* icon next to your currently opened scene.
 
-|image18|
+|image15|
 
 Click the *Other Node* button to create an :ref:`AudioStreamPlayer2D <class_AudioStreamPlayer2D>` and rename it to
 ``MusicPlayer``.
 
-|image19|
+|image16|
 
 We included a music soundtrack in the ``art/`` directory, ``House In a Forest
 Loop.ogg``. Click and drag it onto the *Stream* property in the *Inspector*.
 Also, turn on *Autoplay* so the music plays automatically at the start of the
 game.
 
-|image20|
+|image17|
 
 Save the scene as ``MusicPlayer.tscn``.
 
@@ -340,7 +337,7 @@ In the *Path* field, you want to enter the path to your scene. Click the folder
 icon to open the file browser and double-click on ``MusicPlayer.tscn``. Then,
 click the *Add* button on the right to register the node.
 
-|image21|
+|image18|
 
 ``MusicPlayer.tscn`` now loads into any scene you open or play.
 So if you run the game now, the music will play automatically in any scene.
@@ -349,13 +346,13 @@ Before we wrap up this lesson, here's a quick look at how it works under the
 hood. When you run the game, your *Scene* dock changes to give you two tabs:
 *Remote* and *Local*.
 
-|image22|
+|image19|
 
 The *Remote* tab allows you to visualize the node tree of your running game.
 There, you will see the *Main* node and everything the scene contains and the
 instantiated mobs at the bottom.
 
-|image23|
+|image20|
 
 At the top are the autoloaded ``MusicPlayer`` and a *root* node, which is your
 game's viewport.
@@ -366,7 +363,7 @@ make the game both look and feel much nicer.
 Here is the complete ``Main.gd`` script for reference.
 
 .. tabs::
- .. code-tab:: gdscript GDScript
+  .. code-tab:: gdscript GDScript
 
     extends Node
 
@@ -404,7 +401,7 @@ Here is the complete ``Main.gd`` script for reference.
         if event.is_action_pressed("ui_accept") and $UserInterface/Retry.visible:
             # This restarts the current scene.
             get_tree().reload_current_scene()
- .. code-tab:: csharp
+  .. code-tab:: csharp
 
     using Godot;
 
@@ -451,25 +448,23 @@ Here is the complete ``Main.gd`` script for reference.
     }
 
 
-.. |image0| image:: img/08.score_and_replay/01.label_node.png
-.. |image1| image:: img/08.score_and_replay/02.score_placeholder.png
-.. |image2| image:: img/08.score_and_replay/02.score_custom_color.webp
-.. |image3| image:: img/08.score_and_replay/02.score_color_picker.png
-.. |image4| image:: img/08.score_and_replay/02.score_label_moved.png
-.. |image5| image:: img/08.score_and_replay/03.creating_theme.png
-.. |image6| image:: img/08.score_and_replay/04.theme_preview.png
-.. |image9| image:: img/08.score_and_replay/07.font_size.webp
-.. |image10| image:: img/08.score_and_replay/08.open_main_script.png
-.. |image11| image:: img/08.score_and_replay/09.score_in_game.png
-.. |image12| image:: img/08.score_and_replay/10.layout_icon.png
-.. |image13| image:: img/08.score_and_replay/11.full_rect_option.png
-.. |image14| image:: img/08.score_and_replay/12.anchors_updated.png
-.. |image15| image:: img/08.score_and_replay/retry_color_picker.webp
-.. |image16| image:: img/08.score_and_replay/14.retry_node.png
-.. |image17| image:: img/08.score_and_replay/15.layout_center.png
-.. |image18| image:: img/08.score_and_replay/16.new_scene.png
-.. |image19| image:: img/08.score_and_replay/17.music_player_node.png
-.. |image20| image:: img/08.score_and_replay/18.music_node_properties.png
-.. |image21| image:: img/08.score_and_replay/19.register_autoload.png
-.. |image22| image:: img/08.score_and_replay/20.scene_dock_tabs.png
-.. |image23| image:: img/08.score_and_replay/21.remote_scene_tree.png
+.. |image1| image:: img/08.score_and_replay/01_label_node.webp
+.. |image2| image:: img/08.score_and_replay/02_score_placeholder.webp
+.. |image3| image:: img/08.score_and_replay/03_score_font_color.webp
+.. |image4| image:: img/08.score_and_replay/04_score_label_moved.webp
+.. |image5| image:: img/08.score_and_replay/05_creating_theme.webp
+.. |image6| image:: img/08.score_and_replay/06_theme_preview.webp
+.. |image7| image:: img/08.score_and_replay/07_font_size.webp
+.. |image8| image:: img/08.score_and_replay/08_open_main_script.webp
+.. |image9| image:: img/08.score_and_replay/09_score_in_game.png
+.. |image10| image:: img/08.score_and_replay/10_anchor_preset.webp
+.. |image11| image:: img/08.score_and_replay/11_full_rect_option.webp
+.. |image12| image:: img/08.score_and_replay/12_anchors_updated.webp
+.. |image13| image:: img/08.score_and_replay/13_retry_color_picker.webp
+.. |image14| image:: img/08.score_and_replay/14_center_option.webp
+.. |image15| image:: img/08.score_and_replay/15_new_scene.webp
+.. |image16| image:: img/08.score_and_replay/16_music_player_node.webp
+.. |image17| image:: img/08.score_and_replay/17_music_node_properties.webp
+.. |image18| image:: img/08.score_and_replay/18_register_autoload.webp
+.. |image19| image:: img/08.score_and_replay/19_scene_dock_tabs.webp
+.. |image20| image:: img/08.score_and_replay/20_remote_scene_tree.webp
