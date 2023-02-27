@@ -117,7 +117,7 @@ If you defined input variables in :ref:`parse<class_Expression_method_parse>`, y
 
 :ref:`String<class_String>` **get_error_text** **(** **)** |const|
 
-Returns the error text if :ref:`parse<class_Expression_method_parse>` has failed.
+Returns the error text if :ref:`parse<class_Expression_method_parse>` or :ref:`execute<class_Expression_method_execute>` has failed.
 
 .. rst-class:: classref-item-separator
 

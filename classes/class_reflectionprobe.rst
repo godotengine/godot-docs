@@ -34,7 +34,7 @@ The **ReflectionProbe** is used to create high-quality reflections at a low perf
 Tutorials
 ---------
 
-- :doc:`Reflection probes <../tutorials/3d/reflection_probes>`
+- :doc:`Reflection probes <../tutorials/3d/global_illumination/reflection_probes>`
 
 .. rst-class:: classref-reftable-group
 

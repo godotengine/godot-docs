@@ -5959,7 +5959,7 @@ Returns the natural logarithm of ``x``. This is the amount of time needed to rea
 
 :ref:`Variant<class_Variant>` **max** **(** ... **)** |vararg|
 
-Returns the maximum of the given values. This function can take any number of arguments.
+Returns the maximum of the given numeric values. This function can take any number of arguments.
 
 ::
 
@@ -6009,7 +6009,7 @@ Returns the maximum of two :ref:`int<class_int>` values.
 
 :ref:`Variant<class_Variant>` **min** **(** ... **)** |vararg|
 
-Returns the minimum of the given values. This function can take any number of arguments.
+Returns the minimum of the given numeric values. This function can take any number of arguments.
 
 ::
 

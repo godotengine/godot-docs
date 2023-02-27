@@ -8833,9 +8833,11 @@ Enables the use of physically based units for light sources. Physically based un
 
 :ref:`float<class_float>` **rendering/limits/cluster_builder/max_clustered_elements** = ``512``
 
-.. container:: contribute
+The maximum number of clustered elements (:ref:`OmniLight3D<class_OmniLight3D>` + :ref:`SpotLight3D<class_SpotLight3D>` + :ref:`Decal<class_Decal>` + :ref:`ReflectionProbe<class_ReflectionProbe>`) that can be rendered at once in the camera view. If there are more clustered elements present in the camera view, some of them will not be rendered (leading to pop-in during camera movement). Enabling distance fade on lights and decals (:ref:`Light3D.distance_fade_enabled<class_Light3D_property_distance_fade_enabled>`, :ref:`Decal.distance_fade_enabled<class_Decal_property_distance_fade_enabled>`) can help avoid reaching this limit.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Decreasing this value may improve GPU performance on certain setups, even if the maximum number of clustered elements is never reached in the project.
+
+\ **Note:** This setting is only effective when using the Forward+ rendering method, not Mobile and Compatibility.
 
 .. rst-class:: classref-item-separator
 

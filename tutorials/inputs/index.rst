@@ -1,5 +1,5 @@
-Inputs
-======
+Input handling
+==============
 
 .. toctree::
    :maxdepth: 1

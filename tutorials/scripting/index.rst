@@ -19,6 +19,7 @@ The sections below each focus on a given programming language.
 
    gdscript/index
    c_sharp/index
+   gdextension/index
 
 Core features
 -------------

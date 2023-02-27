@@ -289,13 +289,11 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in int **VIEW_RIGHT**                  |                                                                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| sampler2D **SCREEN_TEXTURE**           | Built-in Texture for reading from the screen. Mipmaps contain increasingly blurred copies.       |
+| sampler2D **SCREEN_TEXTURE**           | Removed in Godot 4. Use a ``sampler2D`` with ``hint_screen_texture`` instead.                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**                  | Screen UV coordinate for current pixel.                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| sampler2D **NORMAL_ROUGHNESS_TEXTURE** |                                                                                                  |
-+----------------------------------------+--------------------------------------------------------------------------------------------------+
-| sampler2D **DEPTH_TEXTURE**            | Built-in Texture for reading depth from the screen. Must convert to linear using INV_PROJECTION. |
+| sampler2D **DEPTH_TEXTURE**            | Removed in Godot 4. Use a ``sampler2D`` with ``hint_depth_texture`` instead.                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | out float **DEPTH**                    | Custom depth value (0..1). If ``DEPTH`` is being written to in any shader branch, then you are   |
 |                                        | responsible for setting the ``DEPTH`` for **all** other branches. Otherwise, the graphics API    |

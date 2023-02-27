@@ -230,7 +230,7 @@ A type of operands and returned value. See :ref:`OpType<enum_VisualShaderNodeDer
 - void **set_precision** **(** :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` value **)**
 - :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` **get_precision** **(** **)**
 
-Sets the level of precision to use for the derivative function. See :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` for options. When using the GL_Compatibility renderer, this setting has no effect.
+Sets the level of precision to use for the derivative function. See :ref:`Precision<enum_VisualShaderNodeDerivativeFunc_Precision>` for options. When using the GL Compatibility renderer, this setting has no effect.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

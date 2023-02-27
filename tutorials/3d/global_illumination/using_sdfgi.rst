@@ -1,4 +1,4 @@
-.. _doc_sdfgi:
+.. _doc_using_sdfgi:
 
 Signed distance field global illumination (SDFGI)
 =================================================
