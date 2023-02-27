@@ -407,6 +407,8 @@ they only reduce readability.
     if (is_colliding()):
         queue_free()
 
+.. _boolean_operators:
+
 Boolean operators
 ~~~~~~~~~~~~~~~~~
 
@@ -414,6 +416,7 @@ Prefer the plain English versions of boolean operators, as they are the most acc
 
 - Use ``and`` instead of ``&&``.
 - Use ``or`` instead of ``||``.
+- Use ``not`` instead of ``!``.
 
 You may also use parentheses around boolean operators to clear any ambiguity.
 This can make long expressions easier to read.
@@ -424,7 +427,7 @@ This can make long expressions easier to read.
 
 ::
 
-    if (foo and bar) or baz:
+    if (foo and bar) or not baz:
         print("condition is true")
 
 **Bad**:
@@ -433,7 +436,7 @@ This can make long expressions easier to read.
 
 ::
 
-    if foo && bar || baz:
+    if foo && bar || !baz:
         print("condition is true")
 
 Comment spacing

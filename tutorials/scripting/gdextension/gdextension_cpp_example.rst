@@ -499,7 +499,7 @@ showing the methods that have changed so don't remove anything we're omitting:
         ...
         ClassDB::bind_method(D_METHOD("get_speed"), &GDExample::get_speed);
         ClassDB::bind_method(D_METHOD("set_speed", "p_speed"), &GDExample::set_speed);
-	    ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
+        ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
     }
 
     void GDExample::GDExample() {
@@ -587,7 +587,7 @@ as follows:
         ADD_SIGNAL(MethodInfo("position_changed", PropertyInfo(Variant::OBJECT, "node"), PropertyInfo(Variant::VECTOR2, "new_pos")));
     }
 
-Here, our ``ADD_SIGNAL`` method can be a single call first taking the
+Here, our ``ADD_SIGNAL`` macro can be a single call first taking the
 signals name, then having pairs of the type specifying the parameter name and
 the value of each parameter we'll send along with this signal.
 
