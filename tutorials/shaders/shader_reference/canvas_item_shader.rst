@@ -172,9 +172,10 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **UV**                              | UV from vertex function.                                      |
 +---------------------------------------------+---------------------------------------------------------------+
-| in vec2 **SCREEN_UV**                       | Screen UV for use with **SCREEN_TEXTURE**.                    |
+| in vec2 **SCREEN_UV**                       | Screen UV coordinate for current pixel.                       |
 +---------------------------------------------+---------------------------------------------------------------+
-| sampler2D **SCREEN_TEXTURE**                | Screen texture, mipmaps contain gaussian blurred versions.    |
+| sampler2D **SCREEN_TEXTURE**                | Removed in Godot 4. Use a ``sampler2D`` with                  |
+|                                             | ``hint_screen_texture`` instead.                              |
 +---------------------------------------------+---------------------------------------------------------------+
 | inout vec3 **NORMAL**                       | Normal read from **NORMAL_TEXTURE**. Writable.                |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -236,7 +237,7 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 |                                  | For a Sprite2D with a texture of size 64x32px,                               |
 |                                  | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`                            |
 +----------------------------------+------------------------------------------------------------------------------+
-| in vec2 **SCREEN_UV**            | **SCREEN_TEXTURE** Coordinate (for using with screen texture).               |
+| in vec2 **SCREEN_UV**            | Screen UV coordinate for current pixel.                                      |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**          | UV for Point Sprite.                                                         |
 +----------------------------------+------------------------------------------------------------------------------+

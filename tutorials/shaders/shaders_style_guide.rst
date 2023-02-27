@@ -36,8 +36,10 @@ Here is a complete shader example based on these guidelines:
     uniform float contrast = 1.5;
     uniform float saturation = 1.8;
 
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
+
     void fragment() {
-        vec3 c = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb;
+        vec3 c = textureLod(screen_texture, SCREEN_UV, 0.0).rgb;
 
         c.rgb = mix(vec3(0.0), c.rgb, brightness);
         c.rgb = mix(vec3(0.5), c.rgb, contrast);

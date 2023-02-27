@@ -783,6 +783,12 @@ Full list of hints below:
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 | **sampler2D**        | repeat[_enable, _disable]                        | Enabled texture repeating.                                                  |
 +----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_screen_texture                              | Texture is the screen texture.                                              |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_depth_texture                               | Texture is the depth texture.                                               |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
+| **sampler2D**        | hint_normal_roughness_texture                    | Texture is the normal roughness texture.                                    |
++----------------------+--------------------------------------------------+-----------------------------------------------------------------------------+
 
 GDScript uses different variable types than GLSL does, so when passing variables
 from GDScript to shaders, Godot converts the type automatically. Below is a
