@@ -448,6 +448,8 @@ World Triplanar
 When using triplanar mapping, it is computed in object local space. This
 option makes it use world space instead.
 
+.. _doc_standard_material_3d_sampling:
+
 Sampling
 --------
 

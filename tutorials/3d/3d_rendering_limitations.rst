@@ -23,6 +23,11 @@ your texture to display correctly on all platforms, you should avoid using
 textures larger than 4096×4096 and use a power of two size if the texture needs
 to repeat.
 
+To limit the size of a specific texture that may be too large to render, you can
+set the **Process > Size Limit** import option to a value greater than ``0``.
+This will reduce the texture's dimensions on import (preserving aspect ratio)
+without affecting the source file.
+
 .. _doc_3d_rendering_limitations_color_banding:
 
 Color banding
