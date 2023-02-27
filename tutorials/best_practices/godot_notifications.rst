@@ -164,7 +164,7 @@ instantiation:
             print("Setting: ", test)
 
     func _init():
-        # "three" is an "init assignment value".
+        # "three" and "four" are both "init assignment value".
         # These DO trigger the setter
         test = "three"
         self.test = "four"
