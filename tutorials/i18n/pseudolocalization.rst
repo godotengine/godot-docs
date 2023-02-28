@@ -17,7 +17,7 @@ internationalization can be recognized early on during development.
 
 .. note:: The official demo for pseudolocalization can be used to play around with 
           the various properties and observe their effects. You can
-          `download it from the godot-demo-projects GitHub repository <https://github.com/godotengine/godot-demo-projects/tree/4.0-dev/gui/pseudolocalization>`_.
+          `download it from the godot-demo-projects GitHub repository <https://github.com/godotengine/godot-demo-projects/tree/master/gui/pseudolocalization>`_.
 
 Enabling and configuring pseudolocalization
 -------------------------------------------
