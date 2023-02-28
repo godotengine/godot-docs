@@ -20,13 +20,24 @@ called **GDScript**:
 
    As shown in the image above, you must enable **Advanced Settings** in order to see the GDScript section.
 
-You can find a list of warnings for the active GDScript file in the
-script editor's status bar. The example below has 2 warnings:
 
-.. figure:: img/typed_gdscript_warning_example.png
-   :alt: Warning system example
+You can find a list of warnings and errors for the active GDScript
+file in the script editor's status bar. The example below has a
+warning and an error:
 
-   Warning system example
+.. figure:: img/typed_gdscript_error_warning_example.png
+   :alt: Warning system example (One error, one warning)
+
+   Warning system example (One error, one warning)
+
+Sometimes, the presence of errors might prevent some warnings from
+being displayed. See below how, upon fixing the error, there are now
+two warnings:
+
+.. figure:: img/typed_gdscript_two_warnings_example.png
+   :alt: Warning system example (Two warnings)
+
+   Warning system example (Two warnings)
 
 To ignore specific warnings in one file, insert an annotation of the
 form ``@warning_ignore(warning_id)``, or click on the ignore link to the
@@ -41,19 +52,3 @@ anymore:
 
 If the list of warnings is not visible, make sure to click on the yellow
 warning symbol on the bottom right of the editor pane.
-
-To ignore all instances of a warning in one file, you can insert the annotation
-below the scripts `extends` statement. You can also choose to ignore multiple warnings
-by passing their ids as a comma separated list to the annotation, e.g.
-``@warning_ignore(unused_variable, unreachable_code)``
-
-Warnings won't prevent the game from running, but you can turn them into
-errors if you'd like. This way your game won't compile unless you fix
-all warnings. Head to the ``GDScript`` section of the Project Settings to
-turn on this option. Here's the same file as the previous example with
-warnings as errors turned on:
-
-.. figure:: img/typed_gdscript_warning_system_errors.png
-   :alt: Warnings as errors
-
-   Warnings as errors
