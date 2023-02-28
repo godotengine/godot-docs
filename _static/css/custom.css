@@ -967,7 +967,7 @@ code,
     font-size: 105%;
     line-height: 120%;
     padding: 6px 16px;
-    text-align: right;
+    text-align: left;
 }
 
 .rst-content .admonition .admonition-title:before {
