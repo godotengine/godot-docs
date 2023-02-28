@@ -28,7 +28,7 @@ There are a few prerequisites you'll need:
 See also :ref:`Compiling <toc-devel-compiling>` as the build tools are identical
 to the ones you need to compile Godot from source.
 
-You can download this repository from GitHub or let Git do the work for you.
+You can download the `godot-cpp repository <https://github.com/godotengine/godot-cpp>`__ from GitHub or let Git do the work for you.
 Note that this repository has different branches for different versions
 of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 and up) and vice versa, so make sure you download the correct branch.
 
@@ -49,11 +49,6 @@ a Git submodule:
     git submodule add -b master https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
-
-If you decide to just download the repositories or clone them into your project
-folder, make sure to keep the folder layout identical to the one described here,
-as much of the code we'll be showcasing here assumes the project follows this
-layout.
 
 Do make sure you clone recursively to pull in both repositories:
 
