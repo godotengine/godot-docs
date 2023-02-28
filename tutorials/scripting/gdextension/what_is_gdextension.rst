@@ -76,7 +76,7 @@ The bindings below are developed and maintained by the community:
 .. Binding developers: Feel free to open a pull request to add your binding if it's well-developed enough to be used in a project.
 .. Please keep languages sorted in alphabetical order.
 
-- `Rust <https://github.com/godot-rust/godot-rust>`__
+- `Rust <https://github.com/godot-rust/gdextension>`__
 
 .. note::
 
