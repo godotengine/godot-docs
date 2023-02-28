@@ -1229,7 +1229,7 @@ The window's title. If the **Window** is non-embedded, title styles set in :ref:
 - void **set_transient** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_transient** **(** **)**
 
-If ``true``, the **Window** is transient, i.e. it's considered a child of another **Window**. Transient window is will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
+If ``true``, the **Window** is transient, i.e. it's considered a child of another **Window**. The Transient window will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
 
 Note that behavior might be different depending on the platform.
 
