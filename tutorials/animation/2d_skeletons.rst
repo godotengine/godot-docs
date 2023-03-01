@@ -195,11 +195,11 @@ is the left arm bone and the 2nd joint is the left forearm bone.
 Once the IK chain is set up, grab the target and move it. You'll see the rest
 of the chain adjust as you adjust its position.
 
-.. image:: img/tutovec_torso4.gif
+.. image:: img/tutovec_torso3.gif
 
 If the IK chain goes backwards, check the **Flip Bend Direction** property.
 
-.. image:: img/tutovec_torso5.gif
+.. image:: img/tutovec_torso4.gif
 
 Animation tips
 ~~~~~~~~~~~~~~
