@@ -29,7 +29,7 @@ programming skills or a developer to port the game for you.
 What can the engine do?
 -----------------------
 
-Godot was initially developed in-house by an Argentinan game studio. Its
+Godot was initially developed in-house by an Argentinian game studio. Its
 development started in 2001, and the engine was rewritten and improved
 tremendously since its open-source release in 2014.
 
