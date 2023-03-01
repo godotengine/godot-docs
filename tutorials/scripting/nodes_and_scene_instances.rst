@@ -28,7 +28,7 @@ To do so, you can use the following code.
     var camera2d
 
     func _ready():
-        sprite2d = get_node("Sprite")
+        sprite2d = get_node("Sprite2D")
         camera2d = get_node("Camera2D")
 
  .. code-tab:: csharp
@@ -40,7 +40,7 @@ To do so, you can use the following code.
     {
         base._Ready();
 
-        _sprite2D = GetNode<Sprite2D>("Sprite");
+        _sprite2D = GetNode<Sprite2D>("Sprite2D");
         _camera2D = GetNode<Camera2D>("Camera2D");
     }
 
@@ -110,7 +110,7 @@ place it before the name or path of the node you want to get.
 .. code-block:: gdscript
 
     @onready var sprite2d = $Sprite2D
-    @onready var tween = $ShieldBar/Tween
+    @onready var animation_player = $ShieldBar/AnimationPlayer
 
 Creating nodes
 --------------
