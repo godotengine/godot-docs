@@ -938,13 +938,18 @@ code,
 /* Admonition tweaks */
 .rst-content .admonition-grid {
     display: grid;
-    grid-template-columns: 4fr 5fr;
+    grid-template-columns: 1fr;
     gap: 20px;
+}
+.rst-content .admonition-grid-2x {
+    grid-template-columns: 4fr 5fr;
 }
 @media screen and (max-width: 1020px) {
     .rst-content .admonition-grid {
-        grid-template-columns: 1fr;
         gap: 12px;
+    }
+    .rst-content .admonition-grid-2x {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -967,7 +972,6 @@ code,
     font-size: 105%;
     line-height: 120%;
     padding: 6px 16px;
-    text-align: right;
 }
 
 .rst-content .admonition .admonition-title:before {
