@@ -4,7 +4,7 @@
 ============
 
 What is cutout animation?
-~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Traditionally, `cutout animation <https://en.wikipedia.org/wiki/Cutout_animation>`__
 is a type of `stop motion animation <https://en.wikipedia.org/wiki/Stop_motion>`__

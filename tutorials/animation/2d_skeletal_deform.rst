@@ -1,12 +1,7 @@
-.. _doc_2d_skeletons:
+.. _doc_2d_skeletal_deform:
 
-2D skeletons
+2D skeletal deform
 ============
-
-.. warning::
-
-    There are known issues with 2D skeletons on mobile and web platforms with the GLES2 renderer. We
-    recommend using the GLES3 renderer if your project relies on Skeleton2D for now.
 
 Introduction
 ------------
@@ -16,8 +11,7 @@ and most 3D modelling applications support it. For 2D, as this function is not
 used as often, it's difficult to find mainstream software aimed for this.
 
 One option is to create animations in third-party software such as Spine or
-Dragonbones. From Godot 3.1 onwards, though, this functionality is supported
-built-in.
+Dragonbones. In Godot, though, this functionality is built-in.
 
 Why would you want to do skeletal animations directly in Godot? The answer is
 that there are many advantages to it:
@@ -37,8 +31,8 @@ Setup
 .. seealso::
 
    Before starting, we recommend you to go through the
-   :ref:`doc_cutout_animation` tutorial to gain a general understanding of
-   animating within Godot.
+   :ref:`doc_2d_skeletons` tutorial to gain a general understanding of
+   skeletons within Godot.
 
 For this tutorial, we will be using a single image to construct our character.
 Download it from :download:`gBot_pieces.png <img/gBot_pieces.png>` or save the
@@ -87,7 +81,7 @@ When you duplicate nodes and the next piece has a similar shape, you can edit
 the previous polygon instead of drawing a new one.
 
 After moving the polygon, remember to update the UV by selecting
-**Edit > Copy Polygon to UV** in the Polygon 2D UV Editor.
+**Edit > Copy Polygon to UV** in the Polygon 2D UV Editor under **Edit**.
 
 .. image:: img/skel2d5.png
 
@@ -95,13 +89,7 @@ Keep doing this until you mapped all pieces.
 
 .. image:: img/skel2d6.png
 
-You will notice that pieces for nodes appear in the same layout as they do in
-the original texture. This is because by default, when you draw a polygon, the
-UV and points are the same.
-
-Rearrange the pieces and build the character. This should be pretty quick. There
-is no need to change pivots, so don't bother making sure rotation pivots for
-each piece are right; you can leave them be for now.
+Rearrange the pieces and build the character. This should be pretty quick.
 
 .. image:: img/skel2d7.png
 
@@ -110,50 +98,15 @@ wrong pieces. Rearrange the order of the nodes to fix this:
 
 .. image:: img/skel2d8.png
 
-And there you go! It was definitely much easier than in the cutout tutorial.
+And there you go!
 
 Creating the skeleton
 ---------------------
 
-Create a ``Skeleton2D`` node as a child of the root node. This will be the base
-of our skeleton:
+Create the same skeleton as in :ref:`doc_2d_skeletons`, just without the ``Sprite2D`` nodes.
+Make sure to set up the IK and the target nodes.
 
 .. image:: img/skel2d9.png
-
-Create a ``Bone2D`` node as a child of the skeleton. Put it on the hip (usually
-skeletons start here). The bone will be pointing to the right, but you can
-ignore this for now.
-
-.. image:: img/skel2d10.png
-
-Keep creating bones in hierarchy and naming them accordingly.
-
-.. image:: img/skel2d11.png
-
-At the end of this chain, there will be a *jaw* node. It is, again, very short
-and pointing to the right. This is normal for bones without children. The length
-of *tip* bones can be changed with a property in the inspector:
-
-.. image:: img/skel2d12.png
-
-In this case, we don't need to rotate the bone (coincidentally the jaw points
-right in the sprite), but in case you need to, feel free to do it. Again, this
-is only really needed for tip bones as nodes with children don't usually need a
-length or a specific rotation.
-
-Keep going and build the whole skeleton:
-
-.. image:: img/skel2d13.png
-
-You will notice that all bones raise an annoying warning about a missing rest
-pose. This means that it's time to set one. Go to the *skeleton* node and create
-a rest pose. This pose is the default one, you can come back to it anytime you
-want (which is very handy for animating):
-
-.. image:: img/skel2d14.png
-
-The warnings will go away. If you modify the skeleton (add/remove bones) you
-will need to set the rest pose again.
 
 Deforming the polygons
 ----------------------
@@ -162,15 +115,11 @@ Select the previously created polygons and assign the skeleton node to their
 ``Skeleton`` property. This will ensure that they can eventually be deformed by
 it.
 
-.. image:: img/skel2d15.png
-
-Click the property highlighted above and select the skeleton node:
-
-.. image:: img/skel2d16.png
+.. image:: img/skel2d10.png
 
 Again, open the UV editor for the polygon and go to the *Bones* section.
 
-.. image:: img/skel2d17.png
+.. image:: img/skel2d11.png
 
 You will not be able to paint weights yet. For this you need to synchronize the
 list of bones from the skeleton with the polygon. This step is done only once
@@ -179,21 +128,19 @@ It ensures that your rigging information is kept in the polygon, even if a
 skeleton node is accidentally lost or the skeleton modified. Push the "Sync
 Bones to Polygon" button to sync the list.
 
-.. image:: img/skel2d18.png
+.. image:: img/skel2d12.png
 
 The list of bones will automatically appear. By default, your polygon has no
 weight assigned to any of them. Select the bones you want to assign weight to
 and paint them:
 
-.. image:: img/skel2d19.png
+.. image:: img/skel2d13.png
 
 Points in white have a full weight assigned, while points in black are not
 influenced by the bone. If the same point is painted white for multiple bones,
 the influence will be distributed amongst them (so usually there is not that
 much need to use shades in-between unless you want to polish the bending
 effect).
-
-.. image:: img/skel2d20.gif
 
 After painting the weights, animating the bones (NOT the polygons!) will have
 the desired effect of modifying and bending the polygons accordingly. As you
@@ -233,7 +180,7 @@ fine-grained control over where triangles go. Experiment by yourself until you
 get the results you like.
 
 **Note:** Don't forget that your newly added internal vertices also need weight
-painting! Go to the *Bones* section again to assign them to the right bones.
+painting! Go to the **Bones** section again to assign them to the right bones.
 
 Once you are all set, you will get much better results:
 
