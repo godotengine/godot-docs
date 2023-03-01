@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_instancing:
 
 Creating instances
@@ -40,9 +38,13 @@ scene.
 In practice
 -----------
 
-Let's use instancing in practice to see how it works in Godot. We invite
-you to download the ball's sample project we prepared for you:
-:download:`instancing.zip <files/instancing.zip>`.
+Let's use instancing in practice to see how it works in Godot. To get you started,
+we created an instancing demo project:
+`Instancing Demo <https://github.com/godotengine/godot-demo-projects/tree/4.0/2d/instancing>`_ 
+
+.. note:: The Godot 4.0 demo projects have not been released to the asset store yet. 
+          In order to download them directly from Github, you can use an exernal service
+          like `download-directory <https://download-directory.github.io/>`_.
 
 Extract the archive on your computer. To import it, you need the project manager.
 The project manager is accessed by opening Godot, or if you already have Godot opened, click on *Project -> Quit to Project List* (:kbd:`Ctrl + Shift + Q`)
@@ -64,13 +66,23 @@ Finally, click the Import & Edit button.
 
 .. image:: img/instancing_import_and_edit_button.png
 
-The project contains two packed scenes: ``Main.tscn``, containing walls against
-which the ball collides, and ``Ball.tscn``. The Main scene should open
-automatically.
+The main scene called ``scene_instancing.tscn`` should open automatically. 
+It contains a packed scene called ``ball.tscn`` and a Node called ``Static``
+which is used to test our collisions.
+
+.. image:: img/instancing_main_scene_with_balls.png
+
+For the purpose of this tutorial, we first are going to delete the existing balls. 
+To do that select all Ball nodes, open the context menu (right-click) and select 
+"Delete Node(s)".
+
+.. image:: img/instancing_delete_balls.png
+
+Now we are ready to practise Instancing.
 
 .. image:: img/instancing_main_scene.png
 
-Let's add a ball as a child of the Main node. In the Scene dock, select the Main
+Let's add a ball as a child of the Main node. In the Scene dock, select the SceneInstancing
 node. Then, click the link icon at the top of the scene dock. This button allows
 you to add an instance of a scene as a child of the currently selected node.
 
@@ -88,7 +100,7 @@ Click on it and drag it towards the center of the view.
 
 .. image:: img/instancing_ball_moved.png
 
-Play the game by pressing F5. You should see it fall.
+Play the game by pressing F5 (:kbd:`Cmd-B` on macOS). You should see it fall. 
 
 Now, we want to create more instances of the Ball node. With the ball still
 selected, press :kbd:`Ctrl-D` (:kbd:`Cmd-D` on macOS) to call the duplicate
@@ -128,17 +140,17 @@ and pressing :kbd:`Enter`.
 
 .. image:: img/instancing_property_bounce_updated.png
 
-Play the game by pressing :kbd:`F5` and notice how all balls now bounce a lot
-more. As the Ball scene is a template for all instances, modifying it and saving
-causes all instances to update accordingly.
+Play the game by pressing :kbd:`F5` (:kbd:`Cmd-B` on macOS) and notice how all 
+balls now bounce a lot more. As the Ball scene is a template for all instances, 
+modifying it and saving causes all instances to update accordingly.
 
 Let's now adjust an individual instance. Head back to the Main scene by clicking
 on the corresponding tab above the viewport.
 
 .. image:: img/instancing_scene_tabs.png
 
-Select one of the instanced Ball nodes and, in the Inspector, set its Gravity
-Scale value to ``10``.
+Select one of the instanced Ball nodes and set its Gravity Scale value to ``10`` 
+in the Inspector.
 
 .. image:: img/instancing_property_gravity_scale.png
 
@@ -161,6 +173,37 @@ Rerun the game and notice how this ball now falls much faster than the others.
 
           Resources are another essential building block of Godot games we will
           cover in a later lesson.
+
+Instancing via code
+-------------------
+
+If you have been playing around with the demo project a bit more, you might have
+noticed that you can spawn new balls by left-clicking your mouse. Obviously these
+aren't balls that we manually created in the editor. Instead they are generated
+in code.
+
+Open the script attached to our BallFactory.
+
+.. image:: img/instancing_ballfactory_script.png
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    @export var ball_scene: PackedScene = preload("res://ball.tscn")
+
+    func spawn(spawn_global_position):
+        var instance = ball_scene.instantiate()
+        instance.global_position = spawn_global_position
+        add_child(instance)
+
+You can see how the packed scene ``ball.tscn`` is preloaded at the top of 
+the script. New instances of this scene are then created by calling its 
+``instantiate`` method. Afterwards we can set the position of the new instance
+and add it to the tree.
+
+Head over to the :ref:`PackedScene <class_PackedScene>` documentation to learn 
+more about how to use Instancing in your scripts.
+
 
 Scene instances as a design language
 ------------------------------------
