@@ -71,10 +71,10 @@ To get the AnimationPlayer node, you would use the following code.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var tween
+    var animation_player
 
     func _ready():
-        tween = get_node("ShieldBar/AnimationPlayer")
+        animation_player = get_node("ShieldBar/AnimationPlayer")
 
  .. code-tab:: csharp
 
