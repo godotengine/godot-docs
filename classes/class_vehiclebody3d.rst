@@ -110,7 +110,9 @@ A negative value will result in the vehicle reversing.
 - void **set_steering** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_steering** **(** **)**
 
-The steering angle for the vehicle, in radians. Setting this to a non-zero value will result in the vehicle turning when it's moving. Wheels that have :ref:`VehicleWheel3D.use_as_steering<class_VehicleWheel3D_property_use_as_steering>` set to ``true`` will automatically be rotated.
+The steering angle for the vehicle. Setting this to a non-zero value will result in the vehicle turning when it's moving. Wheels that have :ref:`VehicleWheel3D.use_as_steering<class_VehicleWheel3D_property_use_as_steering>` set to ``true`` will automatically be rotated.
+
+\ **Note:** This property is edited in the inspector in degrees. In code the property is set in radians.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

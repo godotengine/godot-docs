@@ -652,9 +652,7 @@ Method Descriptions
 
 :ref:`AABB<class_AABB>` **_get_aabb** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the :ref:`AABB<class_AABB>` for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -666,9 +664,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **_get_blend_shape_count** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the number of blend shapes for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -680,9 +676,7 @@ Method Descriptions
 
 :ref:`StringName<class_StringName>` **_get_blend_shape_name** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the retrieval of blend shape names for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -694,9 +688,7 @@ Method Descriptions
 
 :ref:`int<class_int>` **_get_surface_count** **(** **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the surface count for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -708,9 +700,7 @@ Method Descriptions
 
 void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringName<class_StringName>` name **)** |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the names of blend shapes for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -722,9 +712,7 @@ void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringNa
 
 :ref:`int<class_int>` **_surface_get_array_index_len** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the surface array index length for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -736,9 +724,7 @@ void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringNa
 
 :ref:`int<class_int>` **_surface_get_array_len** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the surface array length for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -750,9 +736,7 @@ void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringNa
 
 :ref:`Array<class_Array>` **_surface_get_arrays** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the surface arrays for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -764,9 +748,7 @@ void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringNa
 
 :ref:`Array[]<class_Array>` **_surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the blend shape arrays for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -778,9 +760,7 @@ void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringNa
 
 :ref:`int<class_int>` **_surface_get_format** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the surface format for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -792,9 +772,7 @@ void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringNa
 
 :ref:`Dictionary<class_Dictionary>` **_surface_get_lods** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the surface LODs for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -806,9 +784,7 @@ void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringNa
 
 :ref:`Material<class_Material>` **_surface_get_material** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the surface material for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -820,9 +796,7 @@ void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringNa
 
 :ref:`int<class_int>` **_surface_get_primitive_type** **(** :ref:`int<class_int>` index **)** |virtual| |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the surface primitive type for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 
@@ -834,9 +808,7 @@ void **_set_blend_shape_name** **(** :ref:`int<class_int>` index, :ref:`StringNa
 
 void **_surface_set_material** **(** :ref:`int<class_int>` index, :ref:`Material<class_Material>` material **)** |virtual|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Virtual method to override the setting of a ``material`` at the given ``index`` for a custom class extending **Mesh**.
 
 .. rst-class:: classref-item-separator
 

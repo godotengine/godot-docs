@@ -94,7 +94,9 @@ Method Descriptions
 
 :ref:`bool<class_bool>` **_begin_customize_resources** **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`PackedStringArray<class_PackedStringArray>` features **)** |virtual| |const|
 
-Return true if this plugin will customize resources based on the platform and features used.
+Return ``true`` if this plugin will customize resources based on the platform and features used.
+
+When enabled, :ref:`_get_customization_configuration_hash<class_EditorExportPlugin_method__get_customization_configuration_hash>`, :ref:`_customize_resource<class_EditorExportPlugin_method__customize_resource>` and :ref:`_customize_scene<class_EditorExportPlugin_method__customize_scene>` will be called and must be implemented.
 
 .. rst-class:: classref-item-separator
 
@@ -122,6 +124,8 @@ Customize a resource. If changes are made to it, return the same or a new resour
 
 The *path* argument is only used when customizing an actual file, otherwise this means that this resource is part of another one and it will be empty.
 
+Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_method__begin_customize_resources>` returns ``true``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -133,6 +137,8 @@ The *path* argument is only used when customizing an actual file, otherwise this
 :ref:`Node<class_Node>` **_customize_scene** **(** :ref:`Node<class_Node>` scene, :ref:`String<class_String>` path **)** |virtual|
 
 Customize a scene. If changes are made to it, return the same or a new scene. Otherwise, return ``null``. If a new scene is returned, it is up to you to dispose of the old one.
+
+Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_method__begin_customize_resources>` returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -208,6 +214,8 @@ Calling :ref:`skip<class_EditorExportPlugin_method_skip>` inside this callback w
 
 Return a hash based on the configuration passed (for both scenes and resources). This helps keep separate caches for separate export configurations.
 
+Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_method__begin_customize_resources>` returns ``true``.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -230,7 +238,9 @@ Return a :ref:`PackedStringArray<class_PackedStringArray>` of additional feature
 
 :ref:`String<class_String>` **_get_name** **(** **)** |virtual| |const|
 
-Return the name identifier of this plugin (for future identification by the exporter).
+Return the name identifier of this plugin (for future identification by the exporter). The plugins are sorted by name before exporting.
+
+Implementing this method is required.
 
 .. rst-class:: classref-item-separator
 

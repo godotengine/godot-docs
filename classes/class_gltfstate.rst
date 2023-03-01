@@ -85,8 +85,6 @@ Methods
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Node<class_Node>`                               | :ref:`get_scene_node<class_GLTFState_method_get_scene_node>` **(** :ref:`int<class_int>` idx **)**                                                                                   |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                   | :ref:`get_skeleton_to_node<class_GLTFState_method_get_skeleton_to_node>` **(** **)**                                                                                                 |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`GLTFSkeleton[]<class_GLTFSkeleton>`             | :ref:`get_skeletons<class_GLTFState_method_get_skeletons>` **(** **)**                                                                                                               |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`GLTFSkin[]<class_GLTFSkin>`                     | :ref:`get_skins<class_GLTFState_method_get_skins>` **(** **)**                                                                                                                       |
@@ -120,8 +118,6 @@ Methods
    | void                                                  | :ref:`set_meshes<class_GLTFState_method_set_meshes>` **(** :ref:`GLTFMesh[]<class_GLTFMesh>` meshes **)**                                                                            |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`set_nodes<class_GLTFState_method_set_nodes>` **(** :ref:`GLTFNode[]<class_GLTFNode>` nodes **)**                                                                               |
-   +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                  | :ref:`set_skeleton_to_node<class_GLTFState_method_set_skeleton_to_node>` **(** :ref:`Dictionary<class_Dictionary>` skeleton_to_node **)**                                            |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                  | :ref:`set_skeletons<class_GLTFState_method_set_skeletons>` **(** :ref:`GLTFSkeleton[]<class_GLTFSkeleton>` skeletons **)**                                                           |
    +-------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -589,20 +585,6 @@ The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtensi
 
 ----
 
-.. _class_GLTFState_method_get_skeleton_to_node:
-
-.. rst-class:: classref-method
-
-:ref:`Dictionary<class_Dictionary>` **get_skeleton_to_node** **(** **)**
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_GLTFState_method_get_skeletons:
 
 .. rst-class:: classref-method
@@ -830,20 +812,6 @@ void **set_meshes** **(** :ref:`GLTFMesh[]<class_GLTFMesh>` meshes **)**
 .. rst-class:: classref-method
 
 void **set_nodes** **(** :ref:`GLTFNode[]<class_GLTFNode>` nodes **)**
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_GLTFState_method_set_skeleton_to_node:
-
-.. rst-class:: classref-method
-
-void **set_skeleton_to_node** **(** :ref:`Dictionary<class_Dictionary>` skeleton_to_node **)**
 
 .. container:: contribute
 
