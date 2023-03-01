@@ -1,7 +1,7 @@
 .. _doc_2d_skeletal_deform:
 
 2D skeletal deform
-============
+==================
 
 Introduction
 ------------
