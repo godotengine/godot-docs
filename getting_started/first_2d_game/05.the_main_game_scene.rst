@@ -311,7 +311,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
         # Choose a random location on Path2D.
         var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
-        mob_spawn_location.progress_ratio = randi()
+        mob_spawn_location.progress_ratio = randf()
 
         # Set the mob's direction perpendicular to the path direction.
         var direction = mob_spawn_location.rotation + PI / 2
@@ -343,7 +343,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
-        mobSpawnLocation.ProgressRatio = GD.Randi();
+        mobSpawnLocation.ProgressRatio = GD.Randf();
 
         // Set the mob's direction perpendicular to the path direction.
         float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
@@ -371,7 +371,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         godot::Node *mob = mob_scene->instance();
 
         // Choose a random location on Path2D.
-        _mob_spawn_location->set_progress_ratio((real_t)_random->randi());
+        _mob_spawn_location->set_progress_ratio((real_t)_random->randf());
 
         // Set the mob's direction perpendicular to the path direction.
         real_t direction = _mob_spawn_location->get_rotation() + (real_t)Math_PI / 2;
