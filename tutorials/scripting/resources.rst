@@ -52,7 +52,7 @@ in a :ref:`Sprite2D <class_Sprite2D>` node:
 
 .. image:: img/spriteprop.png
 
-Clicking the resource preview allows us to view and edit the resource's properties.
+Clicking the resource preview allows us to view the resource's properties.
 
 .. image:: img/resourcerobi.png
 

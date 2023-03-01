@@ -66,7 +66,7 @@ node.
 
 .. image:: img/nodes_and_scene_instances_ui_scene_example.png
 
-To get the Tween node, you would use the following code.
+To get the AnimationPlayer node, you would use the following code.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -74,17 +74,17 @@ To get the Tween node, you would use the following code.
     var tween
 
     func _ready():
-        tween = get_node("ShieldBar/Tween")
+        tween = get_node("ShieldBar/AnimationPlayer")
 
  .. code-tab:: csharp
 
-    private Tween _tween;
+    private AnimationPlayer _animationPlayer;
 
     public override void _Ready()
     {
         base._Ready();
 
-        _tween = GetNode<Tween>("ShieldBar/Tween");
+        _animationPlayer = GetNode<AnimationPlayer>("ShieldBar/AnimationPlayer");
     }
 
 .. note:: As with file paths, you can use ".." to get a parent node. The best
