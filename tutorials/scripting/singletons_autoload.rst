@@ -127,10 +127,10 @@ scene contains a label displaying the scene name and a button with its
 ``pressed()`` signal connected. When you run the project, it starts in
 ``Scene1.tscn``. However, pressing the button does nothing.
 
-Global.gd
-~~~~~~~~~
+Creating the script
+~~~~~~~~~~~~~~~~~~~~~
 
-Switch to the **Script** tab and create a new script called ``global.gd``.
+Open the **Script** window and create a new script called ``global.gd``.
 Make sure it inherits from ``Node``:
 
 .. image:: img/autoload_script.webp
