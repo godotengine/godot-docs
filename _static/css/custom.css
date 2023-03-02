@@ -1601,6 +1601,7 @@ p + .classref-constant {
     overflow-y: auto;
     overflow-x: hidden;
     max-height: calc(100% - 348px);
+    padding-bottom: 24px;
 }
 @media screen and (max-width: 768px) {
     .wy-nav-side {
