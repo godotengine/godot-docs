@@ -21,12 +21,12 @@ Creation and usage
 In the Scene tree dock, right-click on a node and select
 **Access as Unique Name** in the context menu.
 
-.. image:: img/unique_name.png
+.. image:: img/unique_name.webp
 
 After selecting the option, the node will now have a percent symbol (**%**) next
 to its name in the scene tree:
 
-.. image:: img/percent.png
+.. image:: img/percent.webp
 
 You can now use the node in your script. For example, you can reference it with
 a ``get_node()`` method call by typing the % symbol, followed by the node's
@@ -50,7 +50,7 @@ A scene unique node can only be retrieved by a node inside the same scene. To
 demonstrate this limitation, consider this example **Player** scene that
 instances a **Sword** scene:
 
-.. image:: img/unique_name_scene_instance_example.png
+.. image:: img/unique_name_scene_instance_example.webp
 
 Here are the results of ``get_node()`` calls inside the **Player** script:
 

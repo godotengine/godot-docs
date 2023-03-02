@@ -17,7 +17,7 @@ guarantees that.
 If, for example,  you have a scene tree like this, and you want to get a reference to the
 Sprite2D and Camera2D nodes to access them in your script.
 
-.. image:: img/nodes_and_scene_instances_player_scene_example.png
+.. image:: img/nodes_and_scene_instances_player_scene_example.webp
 
 To do so, you can use the following code.
 
@@ -47,12 +47,12 @@ To do so, you can use the following code.
 Note that you get nodes using their name, not their type. Above, "Sprite2D" and
 "Camera2D" are the nodes' names in the scene.
 
-.. image:: img/nodes_and_scene_instances_sprite_node.png
+.. image:: img/nodes_and_scene_instances_sprite_node.webp
 
 If you rename the Sprite2D node as Skin in the Scene dock, you have to change the
 line that gets the node to ``get_node("Skin")`` in the script.
 
-.. image:: img/nodes_and_scene_instances_sprite_node_renamed.png
+.. image:: img/nodes_and_scene_instances_sprite_node_renamed.webp
 
 Node paths
 ----------
@@ -64,7 +64,7 @@ separate nodes.
 Take the following example scene, with the script attached to the UserInterface
 node.
 
-.. image:: img/nodes_and_scene_instances_ui_scene_example.png
+.. image:: img/nodes_and_scene_instances_ui_scene_example.webp
 
 To get the AnimationPlayer node, you would use the following code.
 
@@ -159,12 +159,12 @@ the scene and frees the object in memory.
 
 Before calling ``sprite2d.queue_free()``, the remote scene tree looks like this.
 
-.. image:: img/nodes_and_scene_instances_remote_tree_with_sprite.png
+.. image:: img/nodes_and_scene_instances_remote_tree_with_sprite.webp
 
 After the engine freed the node, the remote scene tree doesn't display the
 sprite anymore.
 
-.. image:: img/nodes_and_scene_instances_remote_tree_no_sprite.png
+.. image:: img/nodes_and_scene_instances_remote_tree_no_sprite.webp
 
 You can alternatively call ``free()`` to immediately destroy the node. You
 should do this with care as any reference to it will instantly become ``null``.
