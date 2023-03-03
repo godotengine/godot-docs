@@ -439,8 +439,6 @@ the ground (including slopes) and jump when standing on the ground:
     var jump_speed = -1000
     var gravity = 2500
 
-    var velocity = Vector2()
-
     func get_input():
         velocity.x = 0
         var right = Input.is_action_pressed('ui_right')
@@ -457,7 +455,7 @@ the ground (including slopes) and jump when standing on the ground:
     func _physics_process(delta):
         velocity.y += gravity * delta
         get_input()
-        velocity = move_and_slide(velocity, Vector2(0, -1))
+        move_and_slide()
 
  .. code-tab:: csharp
 
@@ -468,8 +466,6 @@ the ground (including slopes) and jump when standing on the ground:
         private float _runSpeed = 350;
         private float _jumpSpeed = -1000;
         private float _gravity = 2500;
-
-        private Vector2 _velocity = new Vector2();
 
         private void GetInput()
         {
@@ -491,7 +487,7 @@ the ground (including slopes) and jump when standing on the ground:
         {
             _velocity.y += _gravity * delta;
             GetInput();
-            _velocity = MoveAndSlide(_velocity, new Vector2(0,-1));
+            MoveAndSlide();
         }
     }
 

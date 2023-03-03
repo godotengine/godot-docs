@@ -293,7 +293,7 @@ Jump:
     if Input.is_action_just_pressed("jump"):
         velocity.y = JUMP_SPEED
 
-    velocity = move_and_slide(velocity)
+    move_and_slide()
 
  .. code-tab:: csharp
 
@@ -301,7 +301,7 @@ Jump:
     if (Input.IsActionJustPressed("jump"))
         velocity.Y = JumpSpeed;
 
-    velocity = MoveAndSlide(velocity);
+    MoveAndSlide();
 
 All common behaviors and logic can be done with just vectors.
 
