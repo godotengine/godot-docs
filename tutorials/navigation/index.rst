@@ -23,3 +23,4 @@ Navigation
    navigation_different_actor_types
    navigation_different_actor_locomotion
    navigation_different_actor_area_access
+   navigation_optimizing_performance
