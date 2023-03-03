@@ -37,6 +37,11 @@ as *ligatures* (several characters transforming into a single different design).
     Fonts are covered by copyright. Double-check the license of a font before
     using it, as not all fonts allow commercial use without purchasing a license.
 
+.. seealso::
+
+    You can see how fonts work in action using the
+    `BiDI and Font Features demo project <https://github.com/godotengine/godot-demo-projects/tree/master/gui/bidi_and_font_features>`__.
+
 Dynamic fonts
 -------------
 

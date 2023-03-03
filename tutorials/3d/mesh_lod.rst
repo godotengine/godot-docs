@@ -13,6 +13,11 @@ On this page, you'll learn:
 - How to measure mesh LOD's effectiveness in your project
   (and alternatives you can explore if it doesn't meet your expectations).
 
+.. seealso::
+
+    You can see how mesh LOD works in action using the
+    `Occlusion Culling and Mesh LOD demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/occlusion_culling_mesh_lod>`__.
+
 Introduction
 ------------
 

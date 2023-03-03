@@ -25,6 +25,11 @@ back to a more handcrafted, low level implementation of game code.
 
 Still, Godot is designed to work around this problem.
 
+.. seealso::
+
+    You can see how using low-level servers works in action using the
+    `Bullet Shower demo project <https://github.com/godotengine/godot-demo-projects/tree/master/2d/bullet_shower>`__
+
 Servers
 -------
 

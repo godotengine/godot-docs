@@ -19,6 +19,11 @@ result. Light can come from several types of sources in a scene:
 The emission color is a material property. You can read more about it
 in the :ref:`doc_standard_material_3d` tutorial.
 
+.. seealso::
+
+    You can compare various types of lights in action using the
+    `3D Lights and Shadows demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/lights_and_shadows>`__.
+
 Light nodes
 -----------
 

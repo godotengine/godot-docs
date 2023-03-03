@@ -12,6 +12,11 @@ On this page, you'll learn:
 - How to set up occlusion culling in Godot.
 - Troubleshooting common issues with occlusion culling.
 
+.. seealso::
+
+    You can see how occlusion culling works in action using the
+    `Occlusion Culling and Mesh LOD demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/occlusion_culling_mesh_lod>`__.
+
 Why use occlusion culling
 -------------------------
 

@@ -15,9 +15,10 @@ when it comes to locale changes. Pseudolocalization simulates changes that
 might take place during localization. This way, any issues regarding
 internationalization can be recognized early on during development.
 
-.. note:: The official demo for pseudolocalization can be used to play around with 
-          the various properties and observe their effects. You can
-          `download it from the godot-demo-projects GitHub repository <https://github.com/godotengine/godot-demo-projects/tree/master/gui/pseudolocalization>`_.
+.. seealso::
+
+    You can see how pseudolocalization works in action using the
+    `Pseudolocalizaton demo project <https://github.com/godotengine/godot-demo-projects/tree/master/gui/pseudolocalization>`__.
 
 Enabling and configuring pseudolocalization
 -------------------------------------------
@@ -34,8 +35,8 @@ Pseudolocalization can also be :ref:`toggled at runtime from a script <doc_pseud
 Pseudolocalization configurations
 ---------------------------------
 
-Pseudolocalization in Godot can be set up according to the specific use case of the 
-project. Here are the pseudolocalization properties that can be configured through 
+Pseudolocalization in Godot can be set up according to the specific use case of the
+project. Here are the pseudolocalization properties that can be configured through
 project settings:
 
 - ``replace_with_accents``: Replaces all characters in the string with their accented
@@ -71,12 +72,12 @@ Configuring pseudolocalization at runtime
 Pseudolocalization can be toggled at runtime using the
 :ref:`pseudolocalization_enabled<class_TranslationServer_property_pseudolocalization_enabled>` property
 in TranslationServer.
-However, if runtime configuration of pseudolocalization properties is required, 
+However, if runtime configuration of pseudolocalization properties is required,
 they can be directly configured using
 :ref:`ProjectSettings.set_setting(property, value) <class_ProjectSettings_method_set_setting>`
 and then calling
 :ref:`TranslationServer.reload_pseudolocalization() <class_TranslationServer_method_reload_pseudolocalization>`
-which reparses the pseudolocalization properties and reloads the pseudolocalization. 
+which reparses the pseudolocalization properties and reloads the pseudolocalization.
 The following code snippet shall turn on ``replace_with_accents`` and ``double_vowels`` properties
 and then call ``reload_pseudolocalization()`` for the changes to get reflected::
 

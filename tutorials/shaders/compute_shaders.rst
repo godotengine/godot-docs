@@ -17,16 +17,17 @@ A compute shader is a special type of shader program that is orientated towards
 general purpose programming. In other words, they are more flexible than vertex
 shaders and fragment shaders as they don't have a fixed purpose (i.e.
 transforming vertices or writing colors to an image). Unlike fragment shaders
-and vertex shaders, compute shaders have very little going on behind the scenes. The code you write is what the GPU runs and very little else. This can make them
+and vertex shaders, compute shaders have very little going on behind the scenes.
+The code you write is what the GPU runs and very little else. This can make them
 a very useful tool to offload heavy calculations to the GPU.
 
 Now let's get started by creating a short compute shader.
 
 First, in the **external** text editor of your choice, create a new file called
-``compute_example.glsl`` in your project folder. When you write compute shaders in Godot, you write them
-in GLSL directly. The Godot shader language is based on GLSL. If you are
-familiar with normal shaders in Godot, the syntax below will look somewhat
-familiar.
+``compute_example.glsl`` in your project folder. When you write compute shaders
+in Godot, you write them in GLSL directly. The Godot shader language is based on
+GLSL. If you are familiar with normal shaders in Godot, the syntax below will
+look somewhat familiar.
 
 .. note::
 
@@ -34,6 +35,9 @@ familiar.
    Forward+ or Mobile renderer). To follow along with this tutorial, ensure that
    you are using the Forward+ or Mobile renderer. The setting for which is
    located in the top right-hand corner of the editor.
+
+   Note that compute shader support is generally poor on mobile devices (due to
+   driver bugs), even if they are technically supported.
 
 Let's take a look at this compute shader code:
 
@@ -102,7 +106,7 @@ Think about workgroups and invocations as a giant nested ``for`` loop.
          }
       }
     }
-            
+
 
 Workgroups and invocations are an advanced topic. For now, remember that we will
 be running two invocations per workgroup.
@@ -118,7 +122,7 @@ be running two invocations per workgroup.
 Here we provide information about the memory that the compute shader will have
 access to. The ``layout`` property allows us to tell the shader where to look
 for the buffer, we will need to match these ``set`` and ``binding`` positions
-from the CPU side later. 
+from the CPU side later.
 
 The ``restrict`` keyword tells the shader that this buffer is only going to be
 accessed from one place in this shader. In other words, we won't bind this
@@ -345,3 +349,12 @@ the data and print the results to our console.
 
 With that, you have everything you need to get started working with compute
 shaders.
+
+.. seealso::
+
+   The demo projects repository contains a
+   `Compute Shader Heightmap demo <https://github.com/godotengine/godot-demo-projects/tree/master/misc/compute_shader_heightmap>`__
+   This project performs heightmap image generation on the CPU and
+   GPU separately, which lets you compare how a similar algorithm can be
+   implemented in two different ways (with the GPU implementation being faster
+   in most cases).

@@ -1,6 +1,5 @@
 .. _doc_navigation_overview_3d:
 
-
 3D Navigation Overview
 ======================
 
@@ -65,6 +64,11 @@ The 3D navigation meshes are defined with the following resources:
     - The NavigationRegion3D Node uses this resource to define its navigation area.
     - The NavigationServer3D uses this resource to update navmesh of individual regions.
     - The GridMap Editor uses this resource when specific navigation meshes are defined for each gridcell.
+
+.. seealso::
+
+    You can see how 3D navigation works in action using the
+    `3D Navigation demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/navigation>`__.
 
 Setup for 3D scene
 ------------------
