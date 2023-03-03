@@ -196,7 +196,7 @@ Save this scene to a scene file (separate from the scene containing the
 TileMap), then switch to the scene containing the TileMap node. Open the TileSet
 editor, and create a new **Scenes Collection** in the left column:
 
-.. figure:: img/using_tilesets_recreate_tiles_automatically.webp
+.. figure:: img/using_tilesets_creating_scene_collection.webp
    :align: center
    :alt: Creating a scenes collection in the TileSet editor
 
@@ -215,7 +215,7 @@ collection then create a new scene slot:
 Select this scene slot in the right column, then use **Quick Load** (or
 **Load**) to load the scene file containing the particles:
 
-.. figure:: img/using_tilesets_recreate_tiles_automatically.webp
+.. figure:: img/using_tilesets_adding_scene_tile.webp
    :align: center
    :alt: Creating a scene slot, then loading a scene file into it in the TileSet editor
 
