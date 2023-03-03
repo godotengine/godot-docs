@@ -197,7 +197,7 @@ This adds basic support for walking when pressing left and right:
         else:
             velocity.x = 0
 
-        # "move_and_slide" takes delta time into account.
+        # "move_and_slide" already takes delta time into account.
         move_and_slide()
 
  .. code-tab:: csharp
