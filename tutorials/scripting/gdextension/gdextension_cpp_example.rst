@@ -349,9 +349,9 @@ loaded for each platform and the entry function for the module. It is called ``g
 
     [libraries]
 
-    linux.64="res://bin/libgdexample.linux.64.so"
-    windows.x86_64="res://bin/libgdexample.windows.x86_64.dll"
-    macos="res://bin/libgdexample.macos.framework"
+    linux.64="res://demo/bin/libgdexample.linux.64.so"
+    windows.x86_64="res://demo/bin/libgdexample.windows.x86_64.dll"
+    macos="res://demo/bin/libgdexample.macos.framework"
 
 This file contains a ``configuration`` section that controls the entry function of the module.
 
