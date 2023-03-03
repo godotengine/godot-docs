@@ -40,7 +40,7 @@ Setting up the playable area
 
 We're going to create our main scene with a plain :ref:`Node <class_Node>` as its root. In the
 *Scene* dock, click the *Add Child Node* button represented by a "+" icon in the
-top-left and double-click on *Node*. Name the node ``Main``. An alternate method to rename the node is by right clicking on the node and choosing "Rename" (or :kbd:'F2' when the node is highlighted). Alternatively, to add
+top-left and double-click on *Node*. Name the node ``Main``. An alternate method to rename the node is to right-click on the node and choose :menuselection:`Rename` (or :kbd:`F2`). Alternatively, to add
 a node to the scene, you can press :kbd:`Ctrl + a` (or :kbd:`Cmd + a` on macOS).
 
 .. image:: img/01.game_setup/05.main_node.png
