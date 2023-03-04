@@ -11,7 +11,8 @@ Exporting for the Web
 
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for `WebAssembly
-<https://webassembly.org/>`__ and `WebGL <https://www.khronos.org/webgl/>`__
+<https://webassembly.org/>`__, `WebGL <https://www.khronos.org/webgl/>`__ and
+`SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`_
 in the user's browser.
 
 .. important:: Use the browser-integrated developer console, usually opened
@@ -23,6 +24,10 @@ in the user's browser.
                (regardless of the browser). We recommend using
                :ref:`iOS' native export functionality <doc_exporting_for_ios>`
                instead, as it will also result in better performance.
+
+.. warning:: SharedArrayBuffer requires a :ref:`secure context <doc_javascript_secure_contexts>`.
+             Browsers also require that the web page is served with specific
+             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
 .. note::
 
@@ -58,15 +63,6 @@ If a runnable web export template is available, a button appears between the
 *Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
 game in the default browser for testing.
 
-You can choose the **Export Type** to select which features will be available:
-
-- *Regular*: is the most compatible across browsers, will not support threads,
-  nor GDExtension.
-- *Threads*: will require the browser to support `SharedArrayBuffer
-  <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
-  See `Can I use SharedArrayBuffer <https://caniuse.com/sharedarraybuffer>`__
-  for details.
-
 If you plan to use :ref:`VRAM compression <doc_importing_images>` make sure that
 **Vram Texture Compression** is enabled for the targeted platforms (enabling
 both **For Desktop** and **For Mobile** will result in a bigger, but more
@@ -85,9 +81,6 @@ JavaScript APIs, include CSS, or run JavaScript code.
                modifications to that HTML file will be lost in future exports.
                To customize the generated file, use the **Custom HTML shell**
                option.
-
-.. warning:: **Export types** other than *Regular* are not yet supported by the
-             C# version.
 
 Limitations
 -----------
@@ -133,17 +126,6 @@ disconnect if the user switches tabs for a long duration.
 This limitation does not apply to unfocused browser *windows*. Therefore, on the
 user's side, this can be worked around by running the project in a separate
 *window* instead of a separate tab.
-
-Threads
-~~~~~~~
-
-As mentioned :ref:`above <doc_javascript_export_options>` multi-threading is
-only available if the appropriate **Export Type** is set and support for it
-across browsers is still limited.
-
-.. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
-             Browsers also require that the web page is served with specific
-             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
 Full screen and mouse capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
