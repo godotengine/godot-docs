@@ -92,7 +92,7 @@ Next we need to add a script to our root node. Add the following code into this 
 
   .. code-tab:: csharp
 
-    public partial class XRInitializer : Node3D
+    public partial class Main : Node3D
     {
         public override void _Ready()
         {
