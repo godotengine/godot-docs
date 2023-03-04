@@ -114,7 +114,7 @@ Double-click the "pressed" signal to open the node connection window.
 There, you can connect the signal to the Sprite2D node. The node needs a
 receiver method, a function that Godot will call when the Button emits the
 signal. The editor generates one for you. By convention, we name these callback
-methods "_on_NodeName_signal_name". Here, it'll be "_on_Button_pressed".
+methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
 
 .. note::
 
@@ -152,7 +152,7 @@ the ``not`` keyword to invert the value.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Button_pressed():
+    func _on_button_pressed():
         set_process(not is_processing())
 
  .. code-tab:: csharp C#
@@ -203,7 +203,7 @@ Your complete ``Sprite2D.gd`` code should look like the following.
         position += velocity * delta
 
 
-    func _on_Button_pressed():
+    func _on_button_pressed():
         set_process(not is_processing())
 
  .. code-tab:: csharp C#
@@ -361,7 +361,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
         position += velocity * delta
 
 
-    func _on_Button_pressed():
+    func _on_button_pressed():
         set_process(not is_processing())
 
 
