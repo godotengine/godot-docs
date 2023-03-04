@@ -99,9 +99,9 @@ Next we need to add a script to our root node. Add the following code into this 
             XRInterface xrInterface = XRServer.FindInterface("OpenXR");
             if (xrInterface != null && xrInterface.IsInitialized())
             {
-                GetViewport().UseXR = true;
+                GD.Print("OpenXR initialized successfully");
 
-                GD.Print("OpenXR Initialized Successfully!");
+                GetViewport().UseXR = true;
             }
             else
                 GD.Print("OpenXR failed init... check headset connection!");
