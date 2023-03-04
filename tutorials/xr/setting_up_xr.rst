@@ -12,13 +12,13 @@ At the core sits the :ref:`XRServer <class_xrserver>` which acts as a central in
 Each supported XR platform is implemented as an :ref:`XRInterface <class_xrinterface>`. Supported interfaces register themselves with the :ref:`XRServer <class_xrserver>` and can be queried with the ``find_interface`` method on the :ref:`XRServer <class_xrserver>`. When the desired interface is found it can be initialised by calling ``initialize`` on the interface.
 
 .. warning::
-	A registered interface means nothing more than that the interface is available, if the interface is not supported by the host system, initialization may fail and return ``false``. This can have many reasons and sadly the reasons differ from platform to platform. It can be because the user hasn't installed the required software, or that the user simply hasn't plugged in their headset. You as a developer must thus react properly on an interface failing to initialize.
+    A registered interface means nothing more than that the interface is available, if the interface is not supported by the host system, initialization may fail and return ``false``. This can have many reasons and sadly the reasons differ from platform to platform. It can be because the user hasn't installed the required software, or that the user simply hasn't plugged in their headset. You as a developer must thus react properly on an interface failing to initialize.
 
 Due to the special requirements for output in XR, especially for head mounted devices that supply different images to each eye, the :ref:`XRServer <class_xrserver>` in Godot will override various features in the rendering system. For stand-alone devices this means the final output is handled by the :ref:`XRInterface <class_xrinterface>` and Godot's usual output system is disabled. For desktop XR devices that work as a second screen it is possible to dedicate a separate :ref:`Viewport <class_viewport>` to handle the XR output, leaving the main Godot window available for displaying alternative content.
 
 .. note::
-	Note that only one interface can be responsible for handling the output to an XR device, this is known as the primary interface and by default will be the first interface that is initialized. Godot currently thus only supports implementations with a single headset.
-	It is possible, but increasingly uncommon, to have a secondary interface, for example to add tracking to an otherwise 3DOF only device.
+    Note that only one interface can be responsible for handling the output to an XR device, this is known as the primary interface and by default will be the first interface that is initialized. Godot currently thus only supports implementations with a single headset.
+    It is possible, but increasingly uncommon, to have a secondary interface, for example to add tracking to an otherwise 3DOF only device.
 
 There are three XR specific node types that you will find in nearly all XR applications:
 
@@ -36,10 +36,10 @@ While in Godot 3 most things worked out of the box, Godot 4 needs a little more 
 .. image:: img/xr_shaders.png
 
 .. warning::
-	As Godot 4 is still in development, many post process effects have not yet been updated to support stereoscopic rendering. Using these will have adverse effects.
+    As Godot 4 is still in development, many post process effects have not yet been updated to support stereoscopic rendering. Using these will have adverse effects.
 
 .. note::
-	Godot also has the choice between a desktop and mobile Vulkan renderer. There are a number of optimisations added to the mobile renderer that benefit XR applications. You may wish to enable this even on desktop.
+    Godot also has the choice between a desktop and mobile Vulkan renderer. There are a number of optimisations added to the mobile renderer that benefit XR applications. You may wish to enable this even on desktop.
 
 OpenXR
 ------
@@ -76,20 +76,35 @@ Next we need to add a script to our root node. Add the following code into this 
 
 ::
 
-	extends Node3D
+    extends Node3D
 
-	var interface: XRInterface
+    var interface: XRInterface
 
-	func _ready():
-		interface = XRServer.find_interface("OpenXR")
-		if interface and interface.is_initialized():
-			print("OpenXR initialised successfully")
+    func _ready():
+        interface = XRServer.find_interface("OpenXR")
+        if interface and interface.is_initialized():
+            print("OpenXR initialised successfully")
 
-			get_viewport().use_xr = true
-		else:
-			print("OpenXR not initialised, please check if your headset is connected")
+            # Turn off v-sync!
+            DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+
+            # Change our main viewport to output to the HMD
+            get_viewport().use_xr = true
+        else:
+            print("OpenXR not initialised, please check if your headset is connected")
 
 This code fragment assumes we are using OpenXR, if you wish to use any of the other interfaces you can change the ``find_interface`` call.
+
+.. warning::
+
+    As you can see in the code snippet above, we turn off v-sync.
+    When using OpenXR you are outputting the rendering results to an HMD that often requires us to run at 90Hz or higher.
+    If your monitor is a 60hz monitor and v-sync is turned on, you will limit the output to 60 frames per second.
+
+    XR interfaces like OpenXR perform their own sync.
+
+    Also note that by default the physics engine runs at 60Hz as well and this can result in choppy physics.
+    You should set ``Engine.physics_ticks_per_second`` to a higher value.
 
 If you run your project at this point in time, everything will work but you will be in a dark world. So to finish off our starting point add a :ref:`DirectionalLight3D <class_directionallight3d>` and a :ref:`WorldEnvironment <class_worldenvironment>` node to your scene.
 You may wish to also add a mesh instance as a child to each controller node just to temporarily visualise them.
@@ -97,11 +112,8 @@ Make sure you configure a sky in your world environment.
 
 Now run your project, you should be floating somewhere in space and be able to look around.
 
-.. note:
+.. note::
 
-	While traditional level switching can definitely be used with XR applications, where this scene setup is repeated in each level, most find it easier to set this up once and loading levels as a subscene. If you do switch scenes and replicate the XR setup in each one, do make sure you do not run ``initialize`` multiple times. The effect can be unpredictable depending on the XR interface used.
+    While traditional level switching can definitely be used with XR applications, where this scene setup is repeated in each level, most find it easier to set this up once and loading levels as a subscene. If you do switch scenes and replicate the XR setup in each one, do make sure you do not run ``initialize`` multiple times. The effect can be unpredictable depending on the XR interface used.
 
-	For the rest of this basic tutorial series we will create a game that uses a single scene.
-
-
-
+    For the rest of this basic tutorial series we will create a game that uses a single scene.
