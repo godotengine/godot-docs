@@ -312,7 +312,7 @@ object from the ``AnimationTree`` node (it is exported as a property).
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var state_machine = anim_tree["parameters/playback"]
+    var state_machine = anim_tree["parameters/StateMachine/playback"]
 
  .. code-tab:: csharp
 
