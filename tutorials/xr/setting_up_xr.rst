@@ -104,7 +104,9 @@ Next we need to add a script to our root node. Add the following code into this 
                 GetViewport().UseXR = true;
             }
             else
-                GD.Print("OpenXR failed init... check headset connection!");
+            {
+                GD.Print("OpenXR not initialized, please check if your headset is connected");
+            }
         }
     }
 
