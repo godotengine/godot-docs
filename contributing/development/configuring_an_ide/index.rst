@@ -24,3 +24,15 @@ Development Environment), here are setup instructions for some popular ones:
    xcode
 
 It is possible to use other IDEs, but their setup is not documented yet.
+
+If your editor supports the `language server protocol <https://microsoft.github.io/language-server-protocol/>`__,
+you can use `clangd <https://clangd.llvm.org>`__ for completion, diagnostics, and more.
+You can generate a compilation database for use with clangd one of two ways:
+
+.. code-block:: shell
+
+   # Generate compile_commands.json while compiling
+   scons compiledb=yes
+
+   # Generate compile_commands.json without compiling
+   scons compiledb=yes compile_commands.json
