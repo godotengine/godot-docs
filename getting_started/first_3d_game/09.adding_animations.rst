@@ -77,7 +77,7 @@ click any of them to create a keyframe, a time and value pair for the
 corresponding property. The keyframe gets inserted where your time cursor is in
 the timeline.
 
-Let's insert our first keys. Here, we will animate both the translation and the
+Let's insert our first keys. Here, we will animate both the position and the
 rotation of the ``Character`` node.
 
 Select the ``Character`` and in the *Inspector* expand the *Transform* section. Click the key icon next to *Position*, and *Rotation*.
@@ -93,7 +93,7 @@ Two tracks appear in the editor with a diamond icon representing each keyframe.
 |image11|
 
 You can click and drag on the diamonds to move them in time. Move the
-translation key to ``0.2`` seconds and the rotation key to ``0.1`` seconds.
+position key to ``0.2`` seconds and the rotation key to ``0.1`` seconds.
 
 |image12|
 
@@ -163,7 +163,7 @@ Apply an ease-out to the second keyframe in the rotation track.
 
 |image19|
 
-Do the opposite for the second translation keyframe, dragging it to the right.
+Do the opposite for the second position keyframe, dragging it to the right.
 
 |image20|
 
