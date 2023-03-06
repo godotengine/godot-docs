@@ -1,6 +1,6 @@
 .. _doc_singletons_autoload:
 
-Singletons (AutoLoad)
+Singletons (Autoload)
 =====================
 
 Introduction
@@ -37,7 +37,7 @@ Autoloading nodes and scripts can give us these characteristics.
 
 .. note::
 
-    Godot won't make an AutoLoad a "true" singleton as per the singleton design
+    Godot won't make an Autoload a "true" singleton as per the singleton design
     pattern. It may still be instanced more than once by the user if desired.
 
 .. tip::
@@ -46,10 +46,10 @@ Autoloading nodes and scripts can give us these characteristics.
     :ref:`registering it automatically in the Project Settings <doc_making_plugins_autoload>`
     when the plugin is enabled.
 
-AutoLoad
+Autoload
 --------
 
-You can create an AutoLoad to load a scene or a script that inherits from
+You can create an Autoload to load a scene or a script that inherits from
 :ref:`class_Node`.
 
 .. note::
@@ -61,7 +61,7 @@ You can create an AutoLoad to load a scene or a script that inherits from
 .. image:: img/singleton.webp
 
 To autoload a scene or script, select **Project > Project Settings** from the
-menu and switch to the **AutoLoad** tab.
+menu and switch to the **Autoload** tab.
 
 .. image:: img/autoload_tab.webp
 
@@ -136,7 +136,7 @@ Make sure it inherits from ``Node``:
 .. image:: img/autoload_script.webp
 
 The next step is to add this script to the autoLoad list. Open
-**Project > Project Settings** from the menu, switch to the **AutoLoad** tab and
+**Project > Project Settings** from the menu, switch to the **Autoload** tab and
 select the script by clicking the browse button or typing its path:
 ``res://global.gd``. Press **Add** to add it to the autoload list:
 
