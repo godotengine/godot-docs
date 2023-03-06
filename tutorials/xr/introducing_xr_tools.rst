@@ -7,7 +7,8 @@ Out of the box Godot gives you all the basic support to setup an XR project.
 XR specific game mechanics however need to be implemented on top of this foundation.
 While Godot makes this relatively easy this can still be a daunting task.
 
-For this reason Godot has developed a toolkit called `Godot XR Tools <https://github/GodotVR/godot-xr-tools>`_ that implements many of the basic mechanics found in XR games, from locomotion to object interaction to UI interaction. 
+For this reason Godot has developed a toolkit called `Godot XR Tools <https://github.com/GodotVR/godot-xr-tools>`_
+that implements many of the basic mechanics found in XR games, from locomotion to object interaction to UI interaction. 
 
 This toolkit is designed to work with both OpenXR and WebXR runtimes.
 We'll be using this as a base for our documentation here.
