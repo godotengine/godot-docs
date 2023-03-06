@@ -532,26 +532,25 @@ removed at run-time to dynamically add and remove behaviors.
 More information about Godot's design choices can be found in
 `this article <https://godotengine.org/article/why-isnt-godot-ecs-based-game-engine>`__.
 
-Why does Godot not force users to implement DoD (Data-oriented Design)?
+Why does Godot not force users to implement DOD (Data-Oriented Design)?
 -----------------------------------------------------------------------
 
-While Godot internally for a lot of the heavy performance tasks attempts
-to use cache coherency as well as possible, we believe most users don't
-really need to be forced to use DoD practices.
+While Godot internally attempts to use cache coherency as much as possible,
+we believe users don't need to be forced to use DOD practices.
 
-DoD is mostly a cache coherency optimization that can only gain you
+DOD is mostly a cache coherency optimization that can only provide
 significant performance improvements when dealing with dozens of
-thousands of objects (which are processed every frame with little
-modification). As in, if you are moving a few hundred sprites or enemies
-per frame, DoD won't help you, and you should consider a different approach
-to optimization.
+thousands of objects which are processed every frame with little
+modification. That is, if you are moving a few hundred sprites or enemies
+per frame, DOD won't result in a meaningful improvement in performance. In
+such a case, you should consider a different approach to optimization.
 
 The vast majority of games do not need this and Godot provides handy helpers
 to do the job for most cases when you do.
 
-If a game that really needs to process such large amount of objects is
-needed, our recommendation is to use C++ and GDExtension for the high
-performance parts and GDScript (or C#) for the rest of the game.
+If a game needs to process such a large amount of objects, our recommendation 
+is to use C++ and GDExtensions for performance-heavy tasks and GDScript (or C#)
+for the rest of the game.
 
 How can I support Godot development or contribute?
 --------------------------------------------------
