@@ -37,7 +37,7 @@ types of Properties, like String, integer, Vector2, etc., and any of these types
 can become a resource. This means that both nodes and resources can contain
 resources as properties:
 
-.. image:: img/nodes_resources.png
+.. image:: img/nodes_resources.webp
 
 External vs built-in
 --------------------
@@ -50,11 +50,11 @@ There are two ways to save resources. They can be:
 To be more specific, here's a :ref:`Texture2D <class_Texture2D>`
 in a :ref:`Sprite2D <class_Sprite2D>` node:
 
-.. image:: img/spriteprop.png
+.. image:: img/spriteprop.webp
 
-Clicking the resource preview allows us to view and edit the resource's properties.
+Clicking the resource preview allows us to view the resource's properties.
 
-.. image:: img/resourcerobi.png
+.. image:: img/resourcerobi.webp
 
 The path property tells us where the resource comes from. In this case, it comes
 from a PNG image called ``robi.png``. When the resource comes from a file like

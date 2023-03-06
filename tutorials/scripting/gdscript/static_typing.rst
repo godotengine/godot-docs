@@ -59,14 +59,14 @@ options for a class called ``PlayerController``.
 You've probably stored a node in a variable before, and typed a dot to
 be left with no autocomplete suggestions:
 
-.. figure:: img/typed_gdscript_code_completion_dynamic.png
+.. figure:: img/typed_gdscript_code_completion_dynamic.webp
    :alt: code completion options for dynamic
 
 This is due to dynamic code. Godot cannot know what node or value type
 you're passing to the function. If you write the type explicitly
 however, you will get all public methods and variables from the node:
 
-.. figure:: img/typed_gdscript_code_completion_typed.png
+.. figure:: img/typed_gdscript_code_completion_typed.webp
    :alt: code completion options for typed
 
 In the future, typed GDScript will also increase code performance:
@@ -202,7 +202,7 @@ node: ``($Timer as Timer)``, ``($Player as CharacterBody2D)``, etc.
 Godot will ensure the type works and if so, the line number will turn
 green at the left of the script editor.
 
-.. figure:: img/typed_gdscript_safe_unsafe_line.png
+.. figure:: img/typed_gdscript_safe_unsafe_line.webp
    :alt: Unsafe vs Safe Line
 
    Unsafe line (line 7) vs Safe Lines (line 6 and 8)
