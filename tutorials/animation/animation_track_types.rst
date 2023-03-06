@@ -32,7 +32,7 @@ It is designed for animations imported from external 3D models and can reduce re
 Blend Shape Track
 -----------------
 
-A blend shape track is optimized for animating blend shape in :ref:`MeshInstance <class_MeshInstance>`:.
+A blend shape track is optimized for animating blend shape in :ref:`MeshInstance3D <class_MeshInstance3D>`.
 
 It is designed for animations imported from external 3D models and can reduce resource capacity through compression.
 
