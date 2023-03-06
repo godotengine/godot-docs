@@ -31,7 +31,7 @@ object, because it only shows what lies behind:
 
     shader_type canvas_item;
 
-    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
     void fragment() {
         COLOR = textureLod(screen_texture, SCREEN_UV, 0.0);
@@ -56,7 +56,7 @@ and saturation:
 
     shader_type canvas_item;
 
-    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
     uniform float brightness = 1.0;
     uniform float contrast = 1.0;
@@ -152,7 +152,7 @@ The following code retrieves the 3D position below the pixel being drawn:
 
 .. code-block:: glsl
 
-    uniform sampler2D depth_texture : hint_depth_texture, repeat_disabled, filter_nearest;
+    uniform sampler2D depth_texture : hint_depth_texture, repeat_disable, filter_nearest;
 
     void fragment() {
         float depth = textureLod(depth_texture, SCREEN_UV, 0.0).r;
@@ -170,7 +170,7 @@ roughness of objects rendered in the depth prepass. The normal is stored in the
 
 .. code-block:: glsl
 
-    uniform sampler2D normal_roughness_texture : hint_normal_roughness_texture, repeat_disabled, filter_nearest;
+    uniform sampler2D normal_roughness_texture : hint_normal_roughness_texture, repeat_disable, filter_nearest;
 
     void fragment() {
         float screen_roughness = texture(normal_roughness_texture, SCREEN_UV).w;
@@ -191,8 +191,8 @@ filtering.
 
 .. code-block:: glsl
 
-    uniform sampler2D normal_roughness_texture : hint_normal_roughness_texture, repeat_disabled, filter_nearest;
-    uniform sampler2D normal_roughness_texture2 : hint_normal_roughness_texture, repeat_enabled, filter_linear;
+    uniform sampler2D normal_roughness_texture : hint_normal_roughness_texture, repeat_disable, filter_nearest;
+    uniform sampler2D normal_roughness_texture2 : hint_normal_roughness_texture, repeat_enable, filter_linear;
 
     void fragment() {
         float screen_roughness = texture(normal_roughness_texture, SCREEN_UV).w;
