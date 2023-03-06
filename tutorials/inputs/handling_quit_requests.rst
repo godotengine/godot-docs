@@ -41,7 +41,7 @@ Handling the notification is done as follows (on any node):
 
     public override void _Notification(int what)
     {
-        if (what == NotificationWmCloseRequest)
+        if (what == NotificationWMCloseRequest)
             GetTree().Quit(); // default behavior
     }
 
@@ -82,7 +82,7 @@ program termination, you should send the notification yourself:
 
  .. code-tab:: csharp
 
-    GetTree().Root.PropagateNotification((int)NotificationWmCloseRequest);
+    GetTree().Root.PropagateNotification((int)NotificationWMCloseRequest);
 
 Sending this notification will inform all nodes about the program termination,
 but will not terminate the program itself *unlike in 3.X*. In order to achieve

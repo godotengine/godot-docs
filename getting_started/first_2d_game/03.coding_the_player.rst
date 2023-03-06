@@ -206,22 +206,22 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
 
         if (Input.IsActionPressed("move_right"))
         {
-            velocity.x += 1;
+            velocity.X += 1;
         }
 
         if (Input.IsActionPressed("move_left"))
         {
-            velocity.x -= 1;
+            velocity.X -= 1;
         }
 
         if (Input.IsActionPressed("move_down"))
         {
-            velocity.y += 1;
+            velocity.Y += 1;
         }
 
         if (Input.IsActionPressed("move_up"))
         {
-            velocity.y -= 1;
+            velocity.Y -= 1;
         }
 
         var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -297,8 +297,8 @@ the ``_process`` function (make sure it's not indented under the `else`):
 
         Position += velocity * (float)delta;
         Position = new Vector2(
-            x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
-            y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
+            x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
+            y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
         );
 
  .. code-tab:: cpp
@@ -350,17 +350,17 @@ movement. Let's place this code at the end of the ``_process()`` function:
 
  .. code-tab:: csharp
 
-        if (velocity.x != 0)
+        if (velocity.X != 0)
         {
             animatedSprite2D.Animation = "walk";
             animatedSprite2D.FlipV = false;
             // See the note below about boolean assignment.
-            animatedSprite2D.FlipH = velocity.x < 0;
+            animatedSprite2D.FlipH = velocity.X < 0;
         }
-        else if (velocity.y != 0)
+        else if (velocity.Y != 0)
         {
             animatedSprite2D.Animation = "up";
-            animatedSprite2D.FlipV = velocity.y > 0;
+            animatedSprite2D.FlipV = velocity.Y > 0;
         }
 
  .. code-tab:: cpp

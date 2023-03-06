@@ -73,7 +73,7 @@ Your scene should look like this:
 Main script
 ~~~~~~~~~~~
 
-Add a script to ``Main``. At the top of the script, we use 
+Add a script to ``Main``. At the top of the script, we use
 ``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
 to instance.
 
@@ -154,7 +154,7 @@ to instance.
     };
 
     #endif // MAIN_H
-    
+
     // This code goes in `main.cpp`.
     #include "main.hpp"
 
@@ -243,7 +243,7 @@ new game:
     }
 
 Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
-``ScoreTimer`` , and ``MobTimer``) to the main script. ``StartTimer`` will start
+``ScoreTimer``, and ``MobTimer``) to the main script. ``StartTimer`` will start
 the other two timers. ``ScoreTimer`` will increment the score by 1.
 
 .. tabs::

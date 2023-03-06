@@ -9,12 +9,16 @@ mistakes that are hard to spot during development, and that may lead
 to runtime errors.
 
 You can configure warnings in the Project Settings under the section
-called **Gdscript**:
+called **GDScript**:
 
-.. figure:: img/typed_gdscript_warning_system_settings.png
+.. figure:: img/typed_gdscript_warning_system_settings.webp
    :alt: Warning system project settings
 
    Warning system project settings
+
+.. note::
+
+   As shown in the image above, you must enable **Advanced Settings** in order to see the GDScript section.
 
 You can find a list of warnings for the active GDScript file in the
 script editor's status bar. The example below has 3 warnings:

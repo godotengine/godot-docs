@@ -233,7 +233,7 @@ Add and export a variable speed to the script. The function set_speed after
     Code from other nodes doesn't run in the editor. Your access to other nodes
     is limited. You can access the tree and nodes, and their default properties,
     but you can't access user variables. If you want to do so, other nodes have
-    to run in the editor too. AutoLoad nodes cannot be accessed in the editor at
+    to run in the editor too. Autoload nodes cannot be accessed in the editor at
     all.
 
 Reporting node configuration warnings

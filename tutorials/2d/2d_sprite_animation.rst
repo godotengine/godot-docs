@@ -50,13 +50,13 @@ Now select the ``AnimatedSprite2D`` and in its *SpriteFrames* property, select
 Click on the new SpriteFrames resource and you'll see a new panel appear at the
 bottom of the editor window:
 
-.. image:: img/2d_animation_spriteframes.png
+.. image:: img/2d_animation_spriteframes.webp
 
 From the FileSystem dock on the left side, drag the 8 individual images into
 the center part of the SpriteFrames panel. On the left side, change the name
 of the animation from "default" to "run".
 
-.. image:: img/2d_animation_spriteframes_done.png
+.. image:: img/2d_animation_spriteframes_done.webp
 
 Back in the Inspector, check the box for the *Playing* property. You should
 now see the animation playing in the viewport. However, it is a bit slow. To
@@ -127,25 +127,25 @@ Set up your scene tree the same way you did previously when using individual ima
 
 Click on the new SpriteFrames resource. This time, when the bottom panel appears, select "Add frames from a Sprite Sheet".
 
-.. image:: img/2d_animation_add_from_spritesheet.png
+.. image:: img/2d_animation_add_from_spritesheet.webp
 
 You will be prompted to open a file. Select your sprite sheet.
 
 A new window will open, showing your sprite sheet. The first thing you will need to do is to change the number of vertical and horizontal images in your sprite sheet. In this sprite sheet, we have four images horizontally and two images vertically.
 
-.. image:: img/2d_animation_spritesheet_select_rows.png
+.. image:: img/2d_animation_spritesheet_select_rows.webp
 
 Next, select the frames from the sprite sheet that you want to include in your animation. We will select the top four, then click "Add 4 frames" to create the animation.
 
-.. image:: img/2d_animation_spritesheet_selectframes.png
+.. image:: img/2d_animation_spritesheet_selectframes.webp
 
 You will now see your animation under the list of animations in the bottom panel. Double click on default to change the name of the animation to jump.
 
-.. image:: img/2d_animation_spritesheet_animation.png
+.. image:: img/2d_animation_spritesheet_animation.webp
 
-Finally, check Playing on the AnimatedSprite2D in the inspector to see your frog jump!
+Finally, check the play button on the SpriteFrames editor to see your frog jump!
 
-.. image:: img/2d_animation_play_spritesheet_animation.png
+.. image:: img/2d_animation_play_spritesheet_animation.webp
 
 
 Sprite sheet with AnimationPlayer

@@ -136,7 +136,7 @@ and ``get_slide_collision()``:
 
     # Using move_and_slide.
     move_and_slide()
-    for i in get_slide_count():
+    for i in get_slide_collision_count():
         var collision = get_slide_collision(i)
         print("I collided with ", collision.get_collider().name)
 
@@ -151,7 +151,7 @@ and ``get_slide_collision()``:
 
     // Using MoveAndSlide.
     MoveAndSlide();
-    for (int i = 0; i < GetSlideCount(); i++)
+    for (int i = 0; i < GetSlideCollisionCount(); i++)
     {
         var collision = GetSlideCollision(i);
         GD.Print("I collided with ", ((Node)collision.GetCollider()).Name);

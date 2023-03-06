@@ -1,6 +1,6 @@
 .. _doc_singletons_autoload:
 
-Singletons (AutoLoad)
+Singletons (Autoload)
 =====================
 
 Introduction
@@ -37,7 +37,7 @@ Autoloading nodes and scripts can give us these characteristics.
 
 .. note::
 
-    Godot won't make an AutoLoad a "true" singleton as per the singleton design
+    Godot won't make an Autoload a "true" singleton as per the singleton design
     pattern. It may still be instanced more than once by the user if desired.
 
 .. tip::
@@ -46,10 +46,10 @@ Autoloading nodes and scripts can give us these characteristics.
     :ref:`registering it automatically in the Project Settings <doc_making_plugins_autoload>`
     when the plugin is enabled.
 
-AutoLoad
+Autoload
 --------
 
-You can create an AutoLoad to load a scene or a script that inherits from
+You can create an Autoload to load a scene or a script that inherits from
 :ref:`class_Node`.
 
 .. note::
@@ -58,12 +58,12 @@ You can create an AutoLoad to load a scene or a script that inherits from
     attached to it. This node will be added to the root viewport before any
     other scenes are loaded.
 
-.. image:: img/singleton.png
+.. image:: img/singleton.webp
 
 To autoload a scene or script, select **Project > Project Settings** from the
-menu and switch to the **AutoLoad** tab.
+menu and switch to the **Autoload** tab.
 
-.. image:: img/autoload_tab.png
+.. image:: img/autoload_tab.webp
 
 Here you can add any number of scenes or scripts. Each entry in the list
 requires a name, which is assigned as the node's ``name`` property. The order of
@@ -71,7 +71,7 @@ the entries as they are added to the global scene tree can be manipulated using
 the up/down arrow keys. Like regular scenes, the engine will read these nodes
 in top-to-bottom order.
 
-.. image:: img/autoload_example.png
+.. image:: img/autoload_example.webp
 
 This means that any node can access a singleton named "PlayerVariables" with:
 
@@ -103,7 +103,7 @@ Note that autoload objects (scripts and/or scenes) are accessed just like any
 other node in the scene tree. In fact, if you look at the running scene tree,
 you'll see the autoloaded nodes appear:
 
-.. image:: img/autoload_runtime.png
+.. image:: img/autoload_runtime.webp
 
 .. warning::
 
@@ -127,26 +127,26 @@ scene contains a label displaying the scene name and a button with its
 ``pressed()`` signal connected. When you run the project, it starts in
 ``Scene1.tscn``. However, pressing the button does nothing.
 
-Global.gd
-~~~~~~~~~
+Creating the script
+~~~~~~~~~~~~~~~~~~~~~
 
-Switch to the **Script** tab and create a new script called ``Global.gd``.
+Open the **Script** window and create a new script called ``global.gd``.
 Make sure it inherits from ``Node``:
 
-.. image:: img/autoload_script.png
+.. image:: img/autoload_script.webp
 
 The next step is to add this script to the autoLoad list. Open
-**Project > Project Settings** from the menu, switch to the **AutoLoad** tab and
+**Project > Project Settings** from the menu, switch to the **Autoload** tab and
 select the script by clicking the browse button or typing its path:
-``res://Global.gd``. Press **Add** to add it to the autoload list:
+``res://global.gd``. Press **Add** to add it to the autoload list:
 
-.. image:: img/autoload_tutorial1.png
+.. image:: img/autoload_tutorial1.webp
 
 Now whenever we run any scene in the project, this script will always be loaded.
 
 Returning to the script, it needs to fetch the current scene in the
 `_ready()` function. Both the current scene (the one with the button) and
-``Global.gd`` are children of root, but autoloaded nodes are always first. This
+``global.gd`` are children of root, but autoloaded nodes are always first. This
 means that the last child of root is always the loaded scene.
 
 .. tabs::
