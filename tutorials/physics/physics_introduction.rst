@@ -26,7 +26,8 @@ In this guide, you will learn:
 Collision objects
 -----------------
 
-Godot offers four kinds of collision objects which all extend :ref:`CollisionObject2D <class_CollisionObject2D>`. The last three listed below are physics bodies and additionally extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`.
+Godot offers four kinds of collision objects which all extend :ref:`CollisionObject2D <class_CollisionObject2D>`.
+The last three listed below are physics bodies and additionally extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`.
 
 - :ref:`Area2D <class_Area2D>`
     ``Area2D`` nodes provide **detection** and **influence**. They can detect when
@@ -43,7 +44,8 @@ Godot offers four kinds of collision objects which all extend :ref:`CollisionObj
 - :ref:`RigidBody2D <class_RigidBody2D>`
     This is the node that implements simulated 2D physics. You do not control a
     ``RigidBody2D`` directly, but instead you apply forces to it (gravity, impulses,
-    etc.) and the physics engine calculates the resulting movement. :ref:`Read more about using rigid bodies. <doc_rigid_body>`
+    etc.) and the physics engine calculates the resulting movement.
+    :ref:`Read more about using rigid bodies. <doc_rigid_body>`
 
 - :ref:`CharacterBody2D <class_CharacterBody2D>`
     A body that provides collision detection, but no physics. All movement and
