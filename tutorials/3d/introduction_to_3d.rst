@@ -193,7 +193,7 @@ When created from the Project Manager, the 3D environment has a default sky.
 
 .. image:: img/tuto_3d8.png
 
-Given how physically based rendering works, it is advised to always try to
+Given how physically-based rendering works, it is advised to always try to
 work with a default environment in order to provide indirect and reflected
 light to your objects.
 
@@ -230,5 +230,10 @@ each viewport:
 Lights
 ------
 
-There is no limitation on the number of lights, nor of types of lights, in
-Godot. As many as desired can be added (as long as performance allows).
+The background environment emits some ambient light which appears on surfaces.
+Still, without any light sources placed in the scene, the scene will appear
+quite dark unless the background environment is very bright.
+
+Most outdoor scenes have a directional light (the sun or moon), while indoor
+scenes typically have several positional lights (lamps, torches, …).
+See :ref:`doc_lights_and_shadows` for more information on setting up lights in Godot.
