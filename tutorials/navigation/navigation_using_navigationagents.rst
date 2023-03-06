@@ -126,7 +126,7 @@ used to create or delete avoidance callbacks for the agent RID.
 
     extends NavigationAgent2D
 
-    var agent : RID = get_rid()
+    var agent: RID = get_rid()
     # Enable
     NavigationServer2D::get_singleton()->agent_set_callback(agent, self._avoidance_done)
     # Disable
@@ -137,7 +137,7 @@ used to create or delete avoidance callbacks for the agent RID.
 
     extends NavigationAgent3D
 
-    var agent : RID = get_rid()
+    var agent: RID = get_rid()
     # Enable
     NavigationServer3D::get_singleton()->agent_set_callback(agent, self._avoidance_done)
     # Disable
@@ -159,11 +159,11 @@ This script adds basic navigation movement to a Node3D with a NavigationAgent3D 
     extends Node3D
     # script on agent parent node, connect the agent 'velocity_computed' signal for collision avoidance
 
-    @export var movement_speed : float = 4.0
-    @onready var navigation_agent : NavigationAgent3D = get_node("NavigationAgent3D")
-    var movement_delta : float
+    @export var movement_speed: float = 4.0
+    @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
+    var movement_delta: float
 
-    func set_movement_target(movement_target : Vector3):
+    func set_movement_target(movement_target: Vector3):
         navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
@@ -171,12 +171,12 @@ This script adds basic navigation movement to a Node3D with a NavigationAgent3D 
             return
 
         movement_delta = movement_speed * delta
-        var next_path_position : Vector3 = navigation_agent.get_next_path_position()
-        var current_agent_position : Vector3 = global_transform.origin
-        var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
+        var next_path_position: Vector3 = navigation_agent.get_next_path_position()
+        var current_agent_position: Vector3 = global_transform.origin
+        var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
         navigation_agent.set_velocity(new_velocity)
 
-    func _on_NavigationAgent3D_velocity_computed(safe_velocity : Vector3):
+    func _on_NavigationAgent3D_velocity_computed(safe_velocity: Vector3):
         # Move Node3D with the computed `safe_velocity` to avoid dynamic obstacles.
         global_transform.origin = global_transform.origin.move_toward(global_transform.origin + safe_velocity, movement_delta)
 
@@ -191,11 +191,11 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
     extends CharacterBody3D
     # script on agent parent node, connect the agent 'velocity_computed' signal for collision avoidance
 
-    @export var movement_speed : float = 4.0
-    @onready var navigation_agent : NavigationAgent3D = get_node("NavigationAgent3D")
-    var movement_delta : float
+    @export var movement_speed: float = 4.0
+    @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
+    var movement_delta: float
 
-    func set_movement_target(movement_target : Vector3):
+    func set_movement_target(movement_target: Vector3):
         navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
@@ -203,12 +203,12 @@ This script adds basic navigation movement to a CharacterBody3D with a Navigatio
             return
 
         movement_delta = movement_speed * delta
-        var next_path_position : Vector3 = navigation_agent.get_next_path_position()
-        var current_agent_position : Vector3 = global_transform.origin
-        var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
+        var next_path_position: Vector3 = navigation_agent.get_next_path_position()
+        var current_agent_position: Vector3 = global_transform.origin
+        var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * movement_delta
         navigation_agent.set_velocity(new_velocity)
 
-    func _on_NavigationAgent3D_velocity_computed(safe_velocity : Vector3):
+    func _on_NavigationAgent3D_velocity_computed(safe_velocity: Vector3):
         # Move CharacterBody3D with the computed `safe_velocity` to avoid dynamic obstacles.
         velocity = safe_velocity
         move_and_slide()
@@ -224,20 +224,20 @@ This script adds basic navigation movement to a RigidBody3D with a NavigationAge
     extends RigidBody3D
     # script on agent parent node, connect the agent 'velocity_computed' signal for collision avoidance
 
-    @onready var navigation_agent : NavigationAgent3D = get_node("NavigationAgent3D")
+    @onready var navigation_agent: NavigationAgent3D = get_node("NavigationAgent3D")
 
-    func set_movement_target(movement_target : Vector3):
+    func set_movement_target(movement_target: Vector3):
         navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
         if navigation_agent.is_navigation_finished():
             return
 
-        var next_path_position : Vector3 = navigation_agent.get_next_path_position()
-        var current_agent_position : Vector3 = global_transform.origin
-        var new_velocity : Vector3 = (next_path_position - current_agent_position).normalized() * velocity
+        var next_path_position: Vector3 = navigation_agent.get_next_path_position()
+        var current_agent_position: Vector3 = global_transform.origin
+        var new_velocity: Vector3 = (next_path_position - current_agent_position).normalized() * velocity
         navigation_agent.set_velocity(new_velocity)
 
-    func _on_NavigationAgent3D_velocity_computed(safe_velocity : Vector3):
+    func _on_NavigationAgent3D_velocity_computed(safe_velocity: Vector3):
         # Move RigidBody3D with the computed `safe_velocity` to avoid dynamic obstacles.
         set_linear_velocity(safe_velocity)

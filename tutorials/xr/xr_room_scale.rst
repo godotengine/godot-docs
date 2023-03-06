@@ -81,10 +81,10 @@ We determine where the player is right now, and attempt to move our character bo
     var current_velocity = $CharacterBody3D.velocity
 
     # Remember where our player body currently is
-    var org_player_body : Vector3 = $CharacterBody3D.global_transform.origin
+    var org_player_body: Vector3 = $CharacterBody3D.global_transform.origin
 
     # Determine where our player body should be
-    var player_body_location : Vector3 = $XRCamera3D.transform * $XRCamera3D/Neck.transform.origin
+    var player_body_location: Vector3 = $XRCamera3D.transform * $XRCamera3D/Neck.transform.origin
     player_body_location.y = 0.0
     player_body_location = global_transform * player_body_location
 
@@ -130,8 +130,8 @@ This function should obtain the necessary input and return the rotational speed 
 
   func _copy_player_rotation_to_character_body():
     # We only copy our forward direction to our character body, we ignore tilt
-    var camera_forward : Vector3 = -$XRCamera3D.global_transform.basis.z
-    var body_forward : Vector3 = Vector3(camera_forward.x, 0.0, camera_forward.z)
+    var camera_forward: Vector3 = -$XRCamera3D.global_transform.basis.z
+    var body_forward: Vector3 = Vector3(camera_forward.x, 0.0, camera_forward.z)
 
     $CharacterBody3D.global_transform.basis = Basis.looking_at(body_forward, Vector3.UP)
 
@@ -142,7 +142,7 @@ This function should obtain the necessary input and return the rotational speed 
 
     # We are going to rotate the origin around the player
     var player_position = $CharacterBody3D.global_transform.origin - global_transform.origin
-  
+
     t1.origin = -player_position
     t2.origin = player_position
     rot = rot.rotated(Vector3(0.0, 1.0, 0.0), _get_rotational_input() * delta)
@@ -169,7 +169,7 @@ Just like with the rotation the inputs differ from project to project so we are 
 This function should obtain the necessary input and return a directional vector scaled to the required velocity.
 
 .. note:
-  Just like with rotation we're keeping it simple. Here too it is advisable to look at adding comfort settings. 
+  Just like with rotation we're keeping it simple. Here too it is advisable to look at adding comfort settings.
 
 .. code-block:: gdscript
 
@@ -181,14 +181,14 @@ This function should obtain the necessary input and return a directional vector 
 
   func _process_movement_on_input(delta):
     # Remember where our player body currently is
-    var org_player_body : Vector3 = $CharacterBody3D.global_transform.origin
+    var org_player_body: Vector3 = $CharacterBody3D.global_transform.origin
 
     # We start with applying gravity
     $CharacterBody3D.velocity.y -= gravity * delta
 
     # Now we add in our movement
-    var input : Vector2 = _get_movement_input()
-    var movement : Vector3 = ($CharacterBody3D.global_transform.basis * Vector3(input.x, 0, input.y))
+    var input: Vector2 = _get_movement_input()
+    var movement: Vector3 = ($CharacterBody3D.global_transform.basis * Vector3(input.x, 0, input.y))
     $CharacterBody3D.velocity.x = movement.x
     $CharacterBody3D.velocity.z = movement.z
 
@@ -197,7 +197,7 @@ This function should obtain the necessary input and return a directional vector 
 
     # And now apply the actual movement to our origin
     global_transform.origin += $CharacterBody3D.global_transform.origin - org_player_body
-  
+
   func _physics_process(delta):
     var is_colliding = _process_on_physical_movement(delta)
     if !is_colliding:
@@ -237,19 +237,19 @@ This will ensure that the players location stays in sync with the character body
     var current_velocity = velocity
 
     # Start by rotating the player to face the same way our real player is
-    var camera_basis : Basis = origin_node.transform.basis * camera_node.transform.basis
-    var forward : Vector2 = Vector2(camera_basis.z.x, camera_basis.z.z)
-    var angle : float = forward.angle_to(Vector2(0.0, 1.0))
+    var camera_basis: Basis = origin_node.transform.basis * camera_node.transform.basis
+    var forward: Vector2 = Vector2(camera_basis.z.x, camera_basis.z.z)
+    var angle: float = forward.angle_to(Vector2(0.0, 1.0))
 
-    # Rotate our character body 
+    # Rotate our character body
     transform.basis = transform.basis.rotated(Vector3.UP, angle)
 
     # Reverse this rotation our origin node
     origin_node.transform = Transform3D().rotated(Vector3.UP, -angle) * origin_node.transform
 
     # Now apply movement, first move our player body to the right location
-    var org_player_body : Vector3 = global_transform.origin
-    var player_body_location : Vector3 = origin_node.transform * camera_node.transform * neck_position_node.transform.origin
+    var org_player_body: Vector3 = global_transform.origin
+    var player_body_location: Vector3 = origin_node.transform * camera_node.transform * neck_position_node.transform.origin
     player_body_location.y = 0.0
     player_body_location = global_transform * player_body_location
 
@@ -262,7 +262,7 @@ This will ensure that the players location stays in sync with the character body
 
     # Return our value
     velocity = current_velocity
-  
+
     if (player_body_location - global_transform.origin).length() > 0.01:
       # We'll talk more about what we'll do here later on
       return true
@@ -379,7 +379,7 @@ Our solutions up above would allow us to add this logic into the code at the end
 Further improvements to the code presented could be:
 
   - allowing controller input as long as this distance is still small,
-  - still applying gravity to the player even when controller input is disabled. 
+  - still applying gravity to the player even when controller input is disabled.
 
 Further suggestions for improvements
 ------------------------------------

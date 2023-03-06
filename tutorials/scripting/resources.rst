@@ -212,9 +212,9 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
 
     extends Resource
 
-    @export var health : int
-    @export var sub_resource : Resource
-    @export var strings : PackedStringArray
+    @export var health: int
+    @export var sub_resource: Resource
+    @export var strings: PackedStringArray
 
     # Make sure that every parameter has a default value.
     # Otherwise, there will be problems with creating and editing
@@ -265,7 +265,7 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
 
     extends CharacterBody3D
 
-    @export var stats : Resource
+    @export var stats: Resource
 
     func _ready():
         # Uses an implicit, duck-typed interface for any 'health'-compatible resources.
