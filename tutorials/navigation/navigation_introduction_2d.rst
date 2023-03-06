@@ -120,14 +120,14 @@ NavigationServer2D and a NavigationAgent2D for path movement.
         set_movement_target(movement_target_position)
 
     func set_movement_target(movement_target: Vector2):
-        navigation_agent.set_target_location(movement_target)
+        navigation_agent.target_position = movement_target
 
     func _physics_process(delta):
         if navigation_agent.is_navigation_finished():
             return
 
         var current_agent_position: Vector2 = global_transform.origin
-        var next_path_position: Vector2 = navigation_agent.get_next_location()
+        var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
         var new_velocity: Vector2 = next_path_position - current_agent_position
         new_velocity = new_velocity.normalized()
@@ -150,8 +150,8 @@ NavigationServer2D and a NavigationAgent2D for path movement.
 
         public Vector2 MovementTarget
         {
-            get { return _navigationAgent.TargetLocation; }
-            set { _navigationAgent.TargetLocation = value; }
+            get { return _navigationAgent.TargetPosition; }
+            set { _navigationAgent.TargetPosition = value; }
         }
 
         public override void _Ready()
@@ -179,7 +179,7 @@ NavigationServer2D and a NavigationAgent2D for path movement.
             }
 
             Vector2 currentAgentPosition = GlobalTransform.Origin;
-            Vector2 nextPathPosition = _navigationAgent.GetNextLocation();
+            Vector2 nextPathPosition = _navigationAgent.GetNextPathPosition();
 
             Vector2 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();
             newVelocity *= _movementSpeed;
