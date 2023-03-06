@@ -60,7 +60,7 @@ Blend tree
 
 An ``AnimationNodeBlendTree`` can contain both root and regular nodes used for blending. Nodes are added to the graph from a menu:
 
-.. image:: img/animtree3.png
+.. image:: img/animtree3.webp
 
 All blend trees contain an ``Output`` node by default, and something has to be connected to it in order for animations to play.
 
@@ -93,33 +93,64 @@ This node will execute a sub-animation and return once it finishes. Blend times 
 
 .. image:: img/animtree6b.gif
 
-Seek
-^^^^
+After setting the request and changing the animation playback, the one-shot node automatically clears the request on the next process frame by setting its [code]request[/code] value to [constant ONE_SHOT_REQUEST_NONE].
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Play child animation connected to "shot" port.
+    animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+
+    # Abort child animation connected to "shot" port.
+    animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT
+
+    # Get current state (read-only).
+    animation_tree.get("parameters/OneShot/active"))
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/active"]
+
+ .. code-tab:: csharp
+
+    // Play child animation connected to "shot" port.
+    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+
+    // Abort child animation connected to "shot" port.
+    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
+
+    // Get current state (read-only).
+    animationTree.Get("parameters/OneShot/active");
+
+TimeSeek
+^^^^^^^^
 
 This node can be used to cause a seek command to happen to any sub-children of the animation graph. Use this node type to play an ``Animation`` from the start or a certain playback position inside the ``AnimationNodeBlendTree``.
 
-After setting the time and changing the animation playback, the seek node automatically goes into sleep mode on the next process frame by setting its ``seek_position`` value to ``-1.0``.
+After setting the time and changing the animation playback, the seek node automatically goes into sleep mode on the next process frame by setting its ``seek_request`` value to ``-1.0``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     # Play child animation from the start.
-    anim_tree.set("parameters/Seek/seek_position", 0.0)
+    animation_tree.set("parameters/TimeSeek/seek_request", 0.0)
     # Alternative syntax (same result as above).
-    anim_tree["parameters/Seek/seek_position"] = 0.0
+    animation_tree["parameters/TimeSeek/seek_request"] = 0.0
 
     # Play child animation from 12 second timestamp.
-    anim_tree.set("parameters/Seek/seek_position", 12.0)
+    animation_tree.set("parameters/TimeSeek/seek_request", 12.0)
     # Alternative syntax (same result as above).
-    anim_tree["parameters/Seek/seek_position"] = 12.0
+    animation_tree["parameters/TimeSeek/seek_request"] = 12.0
 
  .. code-tab:: csharp
 
     // Play child animation from the start.
-    animTree.Set("parameters/Seek/seek_position", 0.0);
+    animationTree.Set("parameters/TimeSeek/seek_request", 0.0);
 
     // Play child animation from 12 second timestamp.
-    animTree.Set("parameters/Seek/seek_position", 12.0);
+    animationTree.Set("parameters/TimeSeek/seek_request", 12.0);
 
 TimeScale
 ^^^^^^^^^
@@ -130,6 +161,36 @@ Transition
 ^^^^^^^^^^
 
 Very simple state machine (when you don't want to cope with a ``StateMachine`` node). Animations can be connected to the outputs and transition times can be specified.
+After setting the request and changing the animation playback, the transition node automatically clears the request on the next process frame by setting its [code]transition_request[/code] value to empty.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Play child animation connected to "state_2" port.
+    animation_tree.set("parameters/Transition/transition_request", "state_2")
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Transition/transition_request"] = "state_2"
+
+    # Get current state name (read-only).
+    animation_tree.get("parameters/Transition/current_state")
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Transition/current_state"]
+
+    # Get current state index (read-only).
+    animation_tree.get("parameters/Transition/current_index"))
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Transition/current_index"]
+
+ .. code-tab:: csharp
+
+    // Play child animation connected to "state_2" port.
+    animationTree.Set("parameters/Transition/transition_request", "state_2");
+
+    // Get current state name (read-only).
+    animationTree.Get("parameters/Transition/current_state");
+
+    // Get current state index (read-only).
+    animationTree.Get("parameters/Transition/current_index");
 
 BlendSpace2D
 ^^^^^^^^^^^^
@@ -247,11 +308,27 @@ Afterwards, the actual motion can be retrieved via the :ref:`AnimationTree <clas
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    anim_tree.get_root_motion_transform()
+    # Get the motion delta.
+    animation_tree.get_root_motion_position()
+    animation_tree.get_root_motion_rotation()
+    animation_tree.get_root_motion_scale()
+
+    # Get the actual blended value of the animation.
+    animation_tree.get_root_motion_position_accumulator()
+    animation_tree.get_root_motion_rotation_accumulator()
+    animation_tree.get_root_motion_scale_accumulator()
 
  .. code-tab:: csharp
 
-    animTree.GetRootMotionTransform();
+    // Get the motion delta.
+    animationTree.GetRootMotionPosition();
+    animationTree.GetRootMotionRotation();
+    animationTree.GetRootMotionScale();
+
+    // Get the actual blended value of the animation.
+    animationTree.GetRootMotionPositionAccumulator();
+    animationTree.GetRootMotionRotationAccumulator();
+    animationTree.GetRootMotionScaleAccumulator();
 
 This can be fed to functions such as :ref:`CharacterBody3D.move_and_slide <class_CharacterBody3D_method_move_and_slide>` to control the character movement.
 
@@ -259,7 +336,6 @@ There is also a tool node, ``RootMotionView``, that can be placed in a scene and
 character and animations (this node is disabled by default during the game).
 
 .. image:: img/animtree15.gif
-
 
 Controlling from code
 ---------------------
@@ -288,14 +364,13 @@ Which allows setting them or reading them:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    anim_tree.set("parameters/eye_blend/blend_amount", 1.0)
+    animation_tree.set("parameters/eye_blend/blend_amount", 1.0)
     # Simpler alternative form:
-    anim_tree["parameters/eye_blend/blend_amount"] = 1.0
+    animation_tree["parameters/eye_blend/blend_amount"] = 1.0
 
  .. code-tab:: csharp
 
-    animTree.Set("parameters/eye_blend/blend_amount", 1.0);
-
+    animationTree.Set("parameters/eye_blend/blend_amount", 1.0);
 
 State machine travel
 --------------------
@@ -308,15 +383,14 @@ to the destination state.
 To use the travel ability, you should first retrieve the :ref:`AnimationNodeStateMachinePlayback <class_AnimationNodeStateMachinePlayback>`
 object from the ``AnimationTree`` node (it is exported as a property).
 
-
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var state_machine = anim_tree["parameters/playback"]
+    var state_machine = animation_tree["parameters/playback"]
 
  .. code-tab:: csharp
 
-    AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animTree.Get("parameters/playback");
+    AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
 
 Once retrieved, it can be used by calling one of the many functions it offers:
 

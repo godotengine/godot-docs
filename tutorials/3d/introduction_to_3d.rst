@@ -38,21 +38,21 @@ scale.
 3D content
 ~~~~~~~~~~
 
-Unlike 2D, where loading image content and drawing is straightforward,
-3D is a little more difficult. The content needs to be created with
-special 3D tools (usually referred to as Digital Content Creation tools, or
-DCCs) and exported to an exchange file format to be imported in
-Godot. This is required since 3D formats are not as standardized as images.
+Unlike 2D, where loading image content and drawing is straightforward, 3D is a
+little more difficult. The content needs to be created with special 3D tools
+(also called Digital Content Creation tools, or DCCs) and exported to an
+exchange file format to be imported in Godot. This is required since 3D formats
+are not as standardized as images.
 
-DCC-created models
-------------------
+Maually authored models (using 3D modeling software)
+----------------------------------------------------
 
 .. FIXME: Needs update to properly description Godot 3.x workflow
    (used to reference a non existing doc_importing_3d_meshes importer).
 
-There are two pipelines to import 3D models in Godot. The first and most
-common one is by :ref:`doc_importing_3d_scenes`, which allows you to import
-entire scenes (exactly as they look in the DCC), including animation,
+There are two pipelines to import 3D models in Godot. The first and most common
+one is by :ref:`doc_importing_3d_scenes`, which allows you to import entire
+scenes (exactly as they look in the 3D modeling software), including animation,
 skeletal rigs, blend shapes, etc.
 
 The second pipeline is by importing simple .OBJ files as mesh resources,
@@ -130,12 +130,12 @@ system for everything in 3D, with 1 unit being equal to 1 meter.
 Physics and other areas are tuned for this scale. Therefore, attempting to use a
 different scale is usually a bad idea (unless you know what you are doing).
 
-When working with 3D assets, it's always best to work in the correct
-scale (set your DCC to metric). Godot allows scaling post-import and,
-while this works in most cases, in rare situations it may introduce
-floating-point precision issues (and thus, glitches or artifacts) in
-delicate areas such as rendering or physics. Make sure your artists
-always work in the right scale!
+When working with 3D assets, it's always best to work in the correct scale (set
+the unit to metric in your 3D modeling software). Godot allows scaling
+post-import and, while this works in most cases, in rare situations it may
+introduce floating-point precision issues (and thus, glitches or artifacts) in
+delicate areas such as rendering or physics. Make sure your artists always work
+in the right scale!
 
 The Y coordinate is used for "up". As for the horizontal X/Z axes, Godot uses a
 **right-handed** coordinate system. This means that for most objects that need
@@ -193,7 +193,7 @@ When created from the Project Manager, the 3D environment has a default sky.
 
 .. image:: img/tuto_3d8.png
 
-Given how physically based rendering works, it is advised to always try to
+Given how physically-based rendering works, it is advised to always try to
 work with a default environment in order to provide indirect and reflected
 light to your objects.
 
@@ -230,5 +230,10 @@ each viewport:
 Lights
 ------
 
-There is no limitation on the number of lights, nor of types of lights, in
-Godot. As many as desired can be added (as long as performance allows).
+The background environment emits some ambient light which appears on surfaces.
+Still, without any light sources placed in the scene, the scene will appear
+quite dark unless the background environment is very bright.
+
+Most outdoor scenes have a directional light (the sun or moon), while indoor
+scenes typically have several positional lights (lamps, torches, …).
+See :ref:`doc_lights_and_shadows` for more information on setting up lights in Godot.

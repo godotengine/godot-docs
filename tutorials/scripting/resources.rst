@@ -37,7 +37,7 @@ types of Properties, like String, integer, Vector2, etc., and any of these types
 can become a resource. This means that both nodes and resources can contain
 resources as properties:
 
-.. image:: img/nodes_resources.png
+.. image:: img/nodes_resources.webp
 
 External vs built-in
 --------------------
@@ -50,11 +50,11 @@ There are two ways to save resources. They can be:
 To be more specific, here's a :ref:`Texture2D <class_Texture2D>`
 in a :ref:`Sprite2D <class_Sprite2D>` node:
 
-.. image:: img/spriteprop.png
+.. image:: img/spriteprop.webp
 
-Clicking the resource preview allows us to view and edit the resource's properties.
+Clicking the resource preview allows us to view the resource's properties.
 
-.. image:: img/resourcerobi.png
+.. image:: img/resourcerobi.webp
 
 The path property tells us where the resource comes from. In this case, it comes
 from a PNG image called ``robi.png``. When the resource comes from a file like
@@ -212,9 +212,9 @@ Attach a script to it named ``bot_stats.gd`` (or just create a new script, and t
 
     extends Resource
 
-    @export var health : int
-    @export var sub_resource : Resource
-    @export var strings : PackedStringArray
+    @export var health: int
+    @export var sub_resource: Resource
+    @export var strings: PackedStringArray
 
     # Make sure that every parameter has a default value.
     # Otherwise, there will be problems with creating and editing
@@ -265,7 +265,7 @@ Now, create a :ref:`CharacterBody3D <class_CharacterBody3D>`, name it ``Bot``, a
 
     extends CharacterBody3D
 
-    @export var stats : Resource
+    @export var stats: Resource
 
     func _ready():
         # Uses an implicit, duck-typed interface for any 'health'-compatible resources.
