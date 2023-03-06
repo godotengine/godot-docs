@@ -143,8 +143,8 @@ of the 3D editor viewport:
 This will generate a second set of UV2 coordinates which can be used for baking.
 It will also set the texture size automatically.
 
-Unwrap from your 3D DCC
-^^^^^^^^^^^^^^^^^^^^^^^
+Unwrap from your 3D modeling software
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The last option is to do it from your favorite 3D app. This approach is
 generally **not recommended**, but it's explained so that you know it exists.
@@ -161,10 +161,10 @@ size on the mesh after import.
 
 .. image:: img/lightmap_gi_lmsize.png
 
-If you use external meshes on import, the size will be kept.
-Be wary that most unwrappers in 3D DCCs are not quality oriented, as they are
-meant to work quickly. You will mostly need to use seams or other techniques to
-create better unwrapping.
+If you use external meshes on import, the size will be kept. Be wary that most
+unwrappers in 3D modeling software are not quality-oriented, as they are meant
+to work quickly. You will mostly need to use seams or other techniques to create
+better unwrapping.
 
 Checking UV2
 ^^^^^^^^^^^^

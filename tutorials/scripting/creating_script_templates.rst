@@ -6,7 +6,7 @@ Creating script templates
 Godot provides a way to use script templates as seen in the
 ``Script Create Dialog`` while creating a new script:
 
-.. image:: img/script_create_dialog_templates.png
+.. image:: img/script_create_dialog_templates.webp
 
 A set of built-in script templates are provided with the editor, but it is
 also possible to create new ones and set them by default, both per project
@@ -107,7 +107,7 @@ it will be set as the default template for the node in which directory it has be
 
 This is an example of utilizing custom templates at editor and project level:
 
-.. image:: img/script_create_dialog_custom_templates.png
+.. image:: img/script_create_dialog_custom_templates.webp
 
 .. note:: The script templates have the same extension as the regular script
           files. This may lead to an issue of a script parser treating those templates as

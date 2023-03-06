@@ -106,10 +106,10 @@ a NavigationAgent3D for path movement.
 
     extends CharacterBody3D
 
-    var movement_speed : float = 2.0
-    var movement_target_position : Vector3 = Vector3(-3.0,0.0,2.0)
+    var movement_speed: float = 2.0
+    var movement_target_position: Vector3 = Vector3(-3.0,0.0,2.0)
 
-    @onready var navigation_agent : NavigationAgent3D = $NavigationAgent3D
+    @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
     func _ready():
         # These values need to be adjusted for the actor's speed
@@ -127,17 +127,17 @@ a NavigationAgent3D for path movement.
         # Now that the navigation map is no longer empty, set the movement target.
         set_movement_target(movement_target_position)
 
-    func set_movement_target(movement_target : Vector3):
+    func set_movement_target(movement_target: Vector3):
         navigation_agent.set_target_position(movement_target)
 
     func _physics_process(delta):
         if navigation_agent.is_navigation_finished():
             return
 
-        var current_agent_position : Vector3 = global_transform.origin
-        var next_path_position : Vector3 = navigation_agent.get_next_path_position()
+        var current_agent_position: Vector3 = global_transform.origin
+        var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 
-        var new_velocity : Vector3 = next_path_position - current_agent_position
+        var new_velocity: Vector3 = next_path_position - current_agent_position
         new_velocity = new_velocity.normalized()
         new_velocity = new_velocity * movement_speed
 

@@ -20,6 +20,7 @@ Rendering
    3d_rendering_limitations
    standard_material_3d
    lights_and_shadows
+   using_decals
    physical_light_and_camera_units
    high_dynamic_range
    global_illumination/index

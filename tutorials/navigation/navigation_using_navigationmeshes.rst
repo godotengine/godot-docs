@@ -91,18 +91,18 @@ If the navigation mesh resource is already prepared, the region can be updated w
     func update_navigation_mesh():
 
         # use bake and update function of region
-        var on_thread : bool = true
+        var on_thread: bool = true
         bake_navigation_mesh(on_thread)
 
         # or use the NavigationMeshGenerator Singleton
-        var _navigationmesh : NavigationMesh = navigation_mesh
+        var _navigationmesh: NavigationMesh = navigation_mesh
         NavigationMeshGenerator.bake(_navigationmesh, self)
         # remove old resource first to trigger a full update
         navigation_mesh = null
         navigation_mesh = _navigationmesh
 
         # or use NavigationServer API to update region with prepared navigation mesh
-        var region_rid : RID = get_region_rid()
+        var region_rid: RID = get_region_rid()
         NavigationServer3D.region_set_navigation_mesh(region_rid, navigation_mesh)
 
 .. note::
@@ -140,7 +140,7 @@ navigationmesh from outline data the shapes cannot overlap.
 
     extends NavigationRegion2D
 
-    var new_navigation_polygon : NavigationPolygon = get_navigation_polygon()
+    var new_navigation_polygon: NavigationPolygon = get_navigation_polygon()
 
     func _ready():
 
@@ -149,7 +149,7 @@ navigationmesh from outline data the shapes cannot overlap.
         new_navigation_polygon.make_polygons_from_outlines()
         set_navigation_polygon(new_navigation_polygon)
 
-    func parse_2d_collisionshapes(root_node : Node2D):
+    func parse_2d_collisionshapes(root_node: Node2D):
 
         for node in root_node.get_children():
 
@@ -158,9 +158,9 @@ navigationmesh from outline data the shapes cannot overlap.
 
             if node is CollisionPolygon2D:
 
-                var new_collision_outline : PackedVector2Array = PackedVector2Array()
-                var collisionpolygon_transform : Transform2D = node.get_global_transform()
-                var collisionpolygon : CollisionPolygon2D = node.get_polygon()
+                var new_collision_outline: PackedVector2Array = PackedVector2Array()
+                var collisionpolygon_transform: Transform2D = node.get_global_transform()
+                var collisionpolygon: CollisionPolygon2D = node.get_polygon()
 
                 for vertex in collisionpolygon:
                     new_collision_outline.append(collisionpolygon_transform.xform(vertex))
@@ -177,13 +177,13 @@ The following script creates a new 2D navigation region and fills it with proced
 
     extends Node2D
 
-    var new_2d_region_rid : RID = NavigationServer2D.region_create()
+    var new_2d_region_rid: RID = NavigationServer2D.region_create()
 
-    var default_2d_map_rid : RID = get_world_2d().get_navigation_map()
+    var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
     NavigationServer2D.region_set_map(new_2d_region_rid, default_2d_map_rid)
 
-    var new_navigation_polygon : NavigationPolygon = NavigationPolygon.new()
-    var new_outline : PackedVector2Array = PackedVector2Array([
+    var new_navigation_polygon: NavigationPolygon = NavigationPolygon.new()
+    var new_outline: PackedVector2Array = PackedVector2Array([
         Vector2(0.0, 0.0),
         Vector2(50.0, 0.0),
         Vector2(50.0, 50.0),
@@ -204,13 +204,13 @@ The following script creates a new 3D navigation region and fills it with proced
 
     extends Node3D
 
-    var new_3d_region_rid : RID = NavigationServer3D.region_create()
+    var new_3d_region_rid: RID = NavigationServer3D.region_create()
 
-    var default_3d_map_rid : RID = get_world_3d().get_navigation_map()
+    var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
     NavigationServer3D.region_set_map(new_3d_region_rid, default_3d_map_rid)
 
-    var new_navigation_mesh : NavigationMesh = NavigationMesh.new()
-    var new_plane_mesh : PlaneMesh = PlaneMesh.new()
+    var new_navigation_mesh: NavigationMesh = NavigationMesh.new()
+    var new_plane_mesh: PlaneMesh = PlaneMesh.new()
     new_plane_mesh.size = Vector2(10.0, 10.0)
     new_navigation_mesh.create_from_mesh(new_plane_mesh)
 
@@ -230,10 +230,10 @@ The following script creates a new 3D navmesh from the mesh of a GridMap item, c
     set_bake_navigation(true)
 
     # get mesh from grid item, bake and set a new navigation mesh for the library
-    var gridmap_item_list : PackedInt32Array = mesh_library.get_item_list()
+    var gridmap_item_list: PackedInt32Array = mesh_library.get_item_list()
     for item in gridmap_item_list:
-        var item_mesh : Mesh = mesh_library.get_item_mesh(item)
-        var new_item_navigation_mesh : NavigationMesh = NavigationMesh.new()
+        var item_mesh: Mesh = mesh_library.get_item_mesh(item)
+        var new_item_navigation_mesh: NavigationMesh = NavigationMesh.new()
         new_item_navigation_mesh.create_from_mesh(item_mesh)
         mesh_library.set_item_navigation_mesh(item, new_item_navigation_mesh)
         mesh_library.set_item_navigation_mesh_transform(item, Transform3D())
@@ -242,9 +242,9 @@ The following script creates a new 3D navmesh from the mesh of a GridMap item, c
     clear()
 
     # add procedual cells using the first item
-    var _position : Vector3i = Vector3i(global_transform.origin)
-    var _item : int = 0
-    var _orientation : int = 0
+    var _position: Vector3i = Vector3i(global_transform.origin)
+    var _item: int = 0
+    var _orientation: int = 0
     for i in range(0,10):
         for j in range(0,10):
             _position.x = i

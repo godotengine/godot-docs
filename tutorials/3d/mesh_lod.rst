@@ -84,6 +84,20 @@ click **Reimport**:
 
 This will require restarting the editor after clicking **Reimport**.
 
+.. note::
+
+   The mesh LOD generation process is not perfect, and may occasionally
+   introduce rendering issues (especially in skinned meshes). Mesh LOD
+   generation can also take a while on complex meshes.
+
+   If mesh LOD causes a specific mesh to look broken, you can disable LOD
+   generation for it in the Import dock. This will also speed up resource
+   importing. This can be done globally in the 3D scene's import options, or on
+   a per-mesh basis using the Advanced Import Settings dialog.
+
+   See :ref:`Importing 3D scenes <doc_importing_3d_scenes_using_the_import_dock>`
+   for more information.
+
 Comparing mesh LOD visuals and performance
 ------------------------------------------
 

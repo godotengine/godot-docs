@@ -162,7 +162,7 @@ What 3D model formats does Godot support?
 -----------------------------------------
 
 You can find detailed information on supported formats, how to export them from
-your 3D DCC, and how to import them for Godot in the
+your 3D modeling software, and how to import them for Godot in the
 :ref:`doc_importing_3d_scenes` documentation.
 
 Will [insert closed SDK such as FMOD, GameWorks, etc.] be supported in Godot?
