@@ -254,17 +254,17 @@ By default, the warning only updates when closing and reopening the scene.
  .. code-tab:: gdscript GDScript
 
     # Use setters to update the configuration warning automatically.
-    export var title = "":
+    @export var title = "":
         set(p_title):
             if p_title != title:
                 title = p_title
-                update_configuration_warning()
+                update_configuration_warnings()
 
-    export var description = "":
+    @export var description = "":
         set(p_description):
             if p_description != description:
                 description = p_description
-                update_configuration_warning()
+                update_configuration_warnings()
 
 
     func _get_configuration_warning():
