@@ -162,7 +162,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **TEXTURE_PIXEL_SIZE**              | Normalized pixel size of default 2D texture.                  |
 |                                             | For a Sprite2D with a texture of size 64x32px,                |
-|                                             | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`              |
+|                                             | **TEXTURE_PIXEL_SIZE** = :code:`vec2(1/64, 1/32)`             |
 +---------------------------------------------+---------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**                   | Always ``false``.                                             |
 +---------------------------------------------+---------------------------------------------------------------+
