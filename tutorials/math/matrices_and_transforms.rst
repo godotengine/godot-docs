@@ -606,14 +606,6 @@ this project which has colored lines and cubes to help visualize the
 :ref:`class_Basis` vectors and the origin in both 2D and 3D:
 https://github.com/godotengine/godot-demo-projects/tree/master/misc/matrix_transform
 
-.. note:: Spatial's "Matrix" section in Godot 3.2's inspector
-          displays the matrix as transposed, with the columns
-          horizontal and the rows vertical. This may be changed
-          to be less confusing in a future release of Godot.
-
-.. note:: You cannot edit Node2D's transform matrix directly in Godot 3.2's
-          inspector. This may be changed in a future release of Godot.
-
 If you would like additional explanation, you should check out
 3Blue1Brown's excellent video about 3D linear transformations:
 https://www.youtube.com/watch?v=rHLEWRxRGiM
