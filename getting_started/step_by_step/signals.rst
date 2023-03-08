@@ -236,170 +236,37 @@ Connecting a signal via code
 You can connect signals via code instead of using the editor. This is necessary
 when you create nodes or instantiate scenes inside of a script.
 
-Let's use a different node here. Godot has a :ref:`Timer <class_Timer>` node
-that's useful to implement skill cooldown times, weapon reloading, and more.
-
-Head back to the 2D workspace. You can either click the "2D" text at the top of
-the window or press :kbd:`Ctrl + F1` (:kbd:`Alt + 1` on macOS).
-
-In the Scene dock, right-click on the Sprite2D node and add a new child node.
-Search for Timer and add the corresponding node. Your scene should now look like
-this.
-
-.. image:: img/signals_15_scene_tree.png
-
-With the Timer node selected, go to the Inspector and enable the **Autostart**
-property.
-
-.. image:: img/signals_18_timer_autostart.png
-
-Click the script icon next to Sprite2D to jump back to the scripting workspace.
-
-.. image:: img/signals_16_click_script.png
-
-We need to do two operations to connect the nodes via code:
-
-1. Get a reference to the Timer from the Sprite2D.
-2. Call the ``connect()`` method on the Timer's "timeout" signal.
-
-.. note:: To connect to a signal via code, you need to call the ``connect()``
-          method of the signal you want to listen to. In this case, we want to
-          listen to the Timer's "timeout" signal.
-
-We want to connect the signal when the scene is instantiated, and we can do that
-using the :ref:`Node._ready() <class_Node_method__ready>` built-in function,
-which is called automatically by the engine when a node is fully instantiated.
-
-To get a reference to a node relative to the current one, we use the method
-:ref:`Node.get_node() <class_Node_method_get_node>`. We can store the reference
-in a variable.
+In this example we will add a timer to quit our game.
+Godot has a :ref:`Timer <class_Timer>` node
+which is useful to implement skill cooldown times, weapon reloading, and more.
+We create the timer with a wait time of 5 seconds and connect the signal by 
+calling the``connect()`` method with the timer's timeout signal and the function
+we want to connect to. Then we add the timer to the scene tree and start the 
+countdown:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _ready():
-        var timer = get_node("Timer")
+    func exit():
+        get_tree().quit()
 
- .. code-tab:: csharp C#
-
-    public override void _Ready()
-    {
-        var timer = GetNode<Timer>("Timer");
-    }
-
-The function ``get_node()`` looks at the Sprite2D's children and gets nodes by
-their name. For example, if you renamed the Timer node to "BlinkingTimer" in the
-editor, you would have to change the call to ``get_node("BlinkingTimer")``.
-
-.. add seealso to a page that explains node features.
-
-We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    func _ready():
-        var timer = get_node("Timer")
-        timer.timeout.connect(_on_Timer_timeout)
-
- .. code-tab:: csharp C#
-
-    public override void _Ready()
-    {
-        var timer = GetNode<Timer>("Timer");
-        timer.Timeout += OnTimerTimeout;
-    }
-
-The line reads like so: we connect the Timer's "timeout" signal to the node to
-which the script is attached. When the Timer emits ``timeout``, we want to call
-the function ``_on_Timer_timeout()``, that we need to define. Let's add it at the
-bottom of our script and use it to toggle our sprite's visibility.
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    func _on_Timer_timeout():
-        visible = not visible
-
- .. code-tab:: csharp C#
-
-    public void OnTimerTimeout()
-    {
-        Visible = !Visible;
-    }
-
-The ``visible`` property is a boolean that controls the visibility of our node.
-The line ``visible = not visible`` toggles the value. If ``visible`` is
-``true``, it becomes ``false``, and vice-versa.
-
-If you run the scene now, you will see that the sprite blinks on and off, at one
-second intervals.
-
-Complete script
----------------
-
-That's it for our little moving and blinking Godot icon demo!
-Here is the complete ``Sprite2D.gd`` file for reference.
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    extends Sprite2D
-
-    var speed = 400
-    var angular_speed = PI
+    func timed_exit_game():
+        var timer = Timer.new()
+        timer.wait_time = 5.0
+        **timer.connect("timeout",exit)**
+        add_child(timer)
+        timer.start()
 
 
-    func _ready():
-        var timer = get_node("Timer")
-        timer.timeout.connect(_on_Timer_timeout)
+The bold line reads like so: we connect the Timer's "timeout" signal to the ``exit()``
+function within the same script. For custom signals, enter your signal's name 
+instead of ``timeout``. 
 
+If we call the ``timed_exit_game()`` function, a timer of 5 seconds will start, and 
+on timeout emits the ``timeout`` signal which calls the exit function.
 
-    func _process(delta):
-        rotation += angular_speed * delta
-        var velocity = Vector2.UP.rotated(rotation) * speed
-        position += velocity * delta
-
-
-    func _on_Button_pressed():
-        set_process(not is_processing())
-
-
-    func _on_Timer_timeout():
-        visible = not visible
-
- .. code-tab:: csharp C#
-
-    using Godot;
-
-    public partial class Sprite : Sprite2D
-    {
-        private float Speed = 400;
-        private float AngularSpeed = Mathf.Pi;
-
-        public override void _Ready()
-        {
-            var timer = GetNode<Timer>("Timer");
-            timer.Timeout += OnTimerTimeout;
-        }
-
-        public override void _Process(double delta)
-        {
-            Rotation += AngularSpeed * (float)delta;
-            var velocity = Vector2.Up.Rotated(Rotation) * Speed;
-            Position += velocity * (float)delta;
-        }
-
-        public void OnButtonPressed()
-        {
-            SetProcess(!IsProcessing());
-        }
-
-        public void OnTimerTimeout()
-        {
-            Visible = !Visible;
-        }
-    }
+.. note:: Alternatively to ``timer.connect(signal_name, function)``, you can use 
+``timer.timeout.connect(function)`` to use Timer's inbuilt "timeout" signal.
 
 Custom signals
 --------------
