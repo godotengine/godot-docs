@@ -240,7 +240,7 @@ In this example we will add a timer to quit our game.
 Godot has a :ref:`Timer <class_Timer>` node
 which is useful to implement skill cooldown times, weapon reloading, and more.
 We create the timer with a wait time of 5 seconds and connect the signal by 
-calling the``connect()`` method with the timer's timeout signal and the function
+calling the ``connect()`` method with the timer's timeout signal and the function
 we want to connect to. Then we add the timer to the scene tree and start the 
 countdown:
 
