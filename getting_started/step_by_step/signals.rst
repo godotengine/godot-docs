@@ -265,7 +265,7 @@ instead of ``timeout``.
 If we call the ``timed_exit_game()`` function, a timer of 5 seconds will start, and 
 on timeout emits the ``timeout`` signal which calls the exit function.
 
-.. note:: Alternatively to ``timer.connect(signal_name, function)``, you can use 
+.. note:: Alternatively to ``timer.connect("timeout", function)``, you can use 
 ``timer.timeout.connect(function)`` to use Timer's inbuilt "timeout" signal.
 
 Custom signals
