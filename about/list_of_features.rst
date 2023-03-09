@@ -450,7 +450,7 @@ Scripting
 
 - Actively developed GDExtension bindings for `D <https://github.com/godot-dlang/godot-dlang>`__,
   `Haxe <https://hxgodot.github.io/>`__, `Python <https://github.com/touilleMan/godot-python>`__, and `Rust <https://github.com/godot-rust/gdextension>`__
-  bindings provided by the community. (Some of these bindings may be experimental and not production-ready.)
+  bindings provided by the community. (Some of these bindings may be experimental and not production-ready).
 
 Audio
 -----
