@@ -269,7 +269,7 @@ that you find online.
                 var u = float(j) / radial_segments
                 var x = sin(u * PI * 2.0)
                 var z = cos(u * PI * 2.0)
-                var vert = Vector3(x * radius * w, y, z * radius * w)
+                var vert = Vector3(x * radius * w, y * radius, z * radius * w)
                 verts.append(vert)
                 normals.append(vert.normalized())
                 uvs.append(Vector2(u, v))
@@ -329,7 +329,7 @@ that you find online.
                     var u = ((float)j) / _radialSegments;
                     var x = Mathf.Sin(u * Mathf.Pi * 2);
                     var z = Mathf.Cos(u * Mathf.Pi * 2);
-                    var vert = new Vector3(x * _radius * w, y, z * _radius * w);
+                    var vert = new Vector3(x * _radius * w, y * _radius, z * _radius * w);
                     verts.Add(vert);
                     normals.Add(vert.Normalized());
                     uvs.Add(new Vector2(u, v));
