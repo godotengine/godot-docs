@@ -41,7 +41,7 @@ Creating a tree
 
 There are three main types of nodes that can be used in ``AnimationTree``:
 
-1. Animation nodes, which reference an animation from the linked ``AnimationTree``.
+1. Animation nodes, which reference an animation from the linked ``AnimationPlayer``.
 2. Animation Root nodes, which are used to blend sub-nodes.
 3. Animation Blend nodes, which are used within ``AnimationNodeBlendTree`` as single-graph blending via multiple input ports.
 
@@ -377,8 +377,7 @@ State machine travel
 
 One of the nice features in Godot's ``StateMachine`` implementation is the ability to travel. The graph can be instructed to go from the
 current state to another one, while visiting all the intermediate ones. This is done via the A\* algorithm.
-In the absence of any viable set of transitions starting at the current state and finishing at the destination state, the graph teleports
-to the destination state.
+If there is no path of transitions starting at the current state and finishing at the destination state, the graph teleports to the destination state.
 
 To use the travel ability, you should first retrieve the :ref:`AnimationNodeStateMachinePlayback <class_AnimationNodeStateMachinePlayback>`
 object from the ``AnimationTree`` node (it is exported as a property).
