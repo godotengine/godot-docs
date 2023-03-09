@@ -80,7 +80,7 @@ You should never have to change these two lines for your custom compute shaders.
 Next, we communicate the number of invocations to be used in each workgroup.
 Invocations are instances of the shader that are running within the same
 workgroup. When we launch a compute shader from the CPU, we tell it how many
-workgroups to run. Workgroups run in parellel to each other. While running one
+workgroups to run. Workgroups run in parallel to each other. While running one
 workgroup, you cannot access information in another workgroup. However,
 invocations in the same workgroup can have some limited access to other invocations.
 
@@ -91,7 +91,7 @@ Think about workgroups and invocations as a giant nested ``for`` loop.
     for (int x = 0; x < workgroup_size_x; x++) {
       for (int y = 0; y < workgroup_size_y; y++) {
          for (int z = 0; z < workgroup_size_z; z++) {
-            // Each workgroup runs independently and in parellel.
+            // Each workgroup runs independently and in parallel.
             for (int local_x = 0; local_x < invocation_size_x; local_x++) {
                for (int local_y = 0; local_y < invocation_size_y; local_y++) {
                   for (int local_z = 0; local_z < invocation_size_z; local_z++) {
@@ -102,7 +102,7 @@ Think about workgroups and invocations as a giant nested ``for`` loop.
          }
       }
     }
-            
+
 
 Workgroups and invocations are an advanced topic. For now, remember that we will
 be running two invocations per workgroup.
@@ -118,7 +118,7 @@ be running two invocations per workgroup.
 Here we provide information about the memory that the compute shader will have
 access to. The ``layout`` property allows us to tell the shader where to look
 for the buffer, we will need to match these ``set`` and ``binding`` positions
-from the CPU side later. 
+from the CPU side later.
 
 The ``restrict`` keyword tells the shader that this buffer is only going to be
 accessed from one place in this shader. In other words, we won't bind this
@@ -315,7 +315,7 @@ Ideally, you would not call ``sync()`` to synchronize the RenderingDevice right
 away as it will cause the CPU to wait for the GPU to finish working. In our
 example, we synchronize right away because we want our data available for reading
 right away. In general, you will want to wait *at least* 2 or 3 frames before
-synchronizing so that the GPU is able to run in parellel with the CPU.
+synchronizing so that the GPU is able to run in parallel with the CPU.
 
 Retrieving results
 ------------------
