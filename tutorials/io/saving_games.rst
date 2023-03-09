@@ -17,6 +17,11 @@ scale as the game grows more complex.
     If you're looking to save user configuration, you can use the
     :ref:`class_ConfigFile` class for this purpose.
 
+.. seealso::
+
+    You can see how saving and loading works in action using the
+    `Saving and Loading (Serialization) demo project <https://github.com/godotengine/godot-demo-projects/blob/master/loading/serialization>`__.
+
 Identify persistent objects
 ---------------------------
 

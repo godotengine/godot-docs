@@ -16,6 +16,9 @@ Additionally, Godot makes it possible to position Control nodes according to a
 
 .. seealso::
 
+    You can see 3D text in action using the
+    `3D Labels and Texts demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/labels_and_texts>`__.
+
     This page does **not** cover how to display a GUI scene within a 3D
     environment. For information on how to achieve that, see the
     `GUI in 3D <https://github.com/godotengine/godot-demo-projects/tree/master/viewport/gui_in_3d>`__

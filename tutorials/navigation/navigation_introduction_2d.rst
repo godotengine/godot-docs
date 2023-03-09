@@ -61,6 +61,13 @@ The 2D navigationm eshes are defined with the following resources:
     - The NavigationServer2D uses this resource to update navmesh of individual regions.
     - The TileSet Editor creates and uses this resource internally when defining tile navigation areas.
 
+.. seealso::
+
+    You can see how 2D navigation works in action using the
+    `2D Navigation Polygon <https://github.com/godotengine/godot-demo-projects/tree/master/2d/navigation>`__
+    and `Grid-based Navigation with AStarGrid2D <https://github.com/godotengine/godot-demo-projects/tree/master/2d/navigation_astar>`__
+    demo projects.
+
 Setup for 2D scene
 ------------------
 
