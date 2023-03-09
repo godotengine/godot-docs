@@ -28,7 +28,7 @@ Interior environments can be created by using inverted primitives.
 .. seealso::
 
     You can check how to use CSG nodes to build various shapes (such as stairs or roads) using the
-   `Constructive Solid Geometry demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/csg>`__.
+    `Constructive Solid Geometry demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/csg>`__.
 
 Introduction to CSG nodes
 -------------------------
