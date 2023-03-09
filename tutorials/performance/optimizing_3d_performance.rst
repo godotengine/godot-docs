@@ -52,7 +52,7 @@ rendering.
     In some cases, you may have to adapt your level design to add more occlusion
     opportunities. For example, you may have to add more walls to prevent the player
     from seeing too far away, which would decrease performance due to the lost
-    opportunies for occlusion culling.
+    opportunities for occlusion culling.
 
 Other occlusion techniques
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
