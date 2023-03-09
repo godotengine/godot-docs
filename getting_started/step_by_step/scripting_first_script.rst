@@ -49,18 +49,18 @@ click the Other Node button.
 Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D
 to create the node.
 
-.. image:: img/scripting_first_script_add_sprite_node.png
+.. image:: img/scripting_first_script_add_sprite_node.webp
 
 Your Scene tab should now only have a Sprite2D node.
 
-.. image:: img/scripting_first_script_scene_tree.png
+.. image:: img/scripting_first_script_scene_tree.webp
 
 A Sprite2D node needs a texture to display. In the Inspector on the right, you
 can see that the Texture property says "[empty]". To display the Godot icon,
 click and drag the file ``icon.png`` from the FileSystem dock onto the Texture
 slot.
 
-.. image:: img/scripting_first_script_setting_texture.png
+.. image:: img/scripting_first_script_setting_texture.webp
 
 .. note::
 
@@ -79,7 +79,7 @@ Creating a new script
 To create and attach a new script to our node, right-click on Sprite2D in the
 scene dock and select "Attach Script".
 
-.. image:: img/scripting_first_script_attach_script.png
+.. image:: img/scripting_first_script_attach_script.webp
 
 The Attach Node Script window appears. It allows you to select the script's
 language and file path, among other options.
@@ -87,7 +87,7 @@ language and file path, among other options.
 Change the Template from Default to Empty to start with a clean file. Leave the
 other options by default and click the Create button to create the script.
 
-.. image:: img/scripting_first_script_attach_node_script.png
+.. image:: img/scripting_first_script_attach_node_script.webp
 
 The Script workspace should appear with your new ``Sprite2D.gd`` file open and
 the following line of code:
