@@ -81,9 +81,9 @@ user experience. You can still work with external programs as long as
 there is an import plugin for it. Or you can create one, like the `Tiled
 Map Importer <https://github.com/vnen/godot-tiled-importer>`__.
 
-That is also partly why Godot offers its own programming languages
-GDScript and, along with C#. They're designed for the needs
-of game developers and game designers, and they're tightly integrated in
+That is also partly why Godot offers its own programming language
+GDScript along with C#. GDScript is designed for the needs
+of game developers and game designers, and is tightly integrated in
 the engine and the editor.
 
 GDScript lets you write code using an indentation-based syntax,
