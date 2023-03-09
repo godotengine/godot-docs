@@ -343,7 +343,7 @@ If you are unsure about which GI technique to use:
 .. seealso::
 
     You can compare global illumination techniques in action using the
-   `Global Illumination demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/global_illumination>`__.
+    `Global Illumination demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/global_illumination>`__.
 
 .. _doc_introduction_to_global_illumination_gi_mode_recommendations:
 
