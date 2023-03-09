@@ -157,7 +157,7 @@ the ``not`` keyword to invert the value.
 
  .. code-tab:: csharp C#
 
-    public void OnButtonPressed()
+    private void OnButtonPressed()
     {
         SetProcess(!IsProcessing());
     }
@@ -181,8 +181,8 @@ following code, which we saw two lessons ago:
 
     public override void _Process(double delta)
     {
-        Rotation += AngularSpeed * (float)delta;
-        var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+        Rotation += _angularSpeed * (float)delta;
+        var velocity = Vector2.Up.Rotated(Rotation) * _speed;
         Position += velocity * (float)delta;
     }
 
@@ -210,19 +210,19 @@ Your complete ``Sprite2D.gd`` code should look like the following.
 
     using Godot;
 
-    public partial class Sprite : Sprite2D
+    public partial class MySprite2D : Sprite2D
     {
-        private float Speed = 400;
-        private float AngularSpeed = Mathf.Pi;
+        private float _speed = 400;
+        private float _angularSpeed = Mathf.Pi;
 
         public override void _Process(double delta)
         {
-            Rotation += AngularSpeed * (float)delta;
-            var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+            Rotation += _angularSpeed * (float)delta;
+            var velocity = Vector2.Up.Rotated(Rotation) * _speed;
             Position += velocity * (float)delta;
         }
 
-        public void OnButtonPressed()
+        private void OnButtonPressed()
         {
             SetProcess(!IsProcessing());
         }
@@ -323,7 +323,7 @@ bottom of our script and use it to toggle our sprite's visibility.
 
  .. code-tab:: csharp C#
 
-    public void OnTimerTimeout()
+    private void OnTimerTimeout()
     {
         Visible = !Visible;
     }
@@ -372,10 +372,10 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
-    public partial class Sprite : Sprite2D
+    public partial class MySprite2D : Sprite2D
     {
-        private float Speed = 400;
-        private float AngularSpeed = Mathf.Pi;
+        private float _speed = 400;
+        private float _angularSpeed = Mathf.Pi;
 
         public override void _Ready()
         {
@@ -385,17 +385,17 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
         public override void _Process(double delta)
         {
-            Rotation += AngularSpeed * (float)delta;
-            var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+            Rotation += _angularSpeed * (float)delta;
+            var velocity = Vector2.Up.Rotated(Rotation) * _speed;
             Position += velocity * (float)delta;
         }
 
-        public void OnButtonPressed()
+        private void OnButtonPressed()
         {
             SetProcess(!IsProcessing());
         }
 
-        public void OnTimerTimeout()
+        private void OnTimerTimeout()
         {
             Visible = !Visible;
         }
@@ -425,12 +425,12 @@ reaches 0.
 
     using Godot;
 
-    public partial class CustomSignal : Node2D
+    public partial class MyNode2D : Node2D
     {
         [Signal]
         public delegate void HealthDepletedEventHandler();
 
-        private int Health = 10;
+        private int _health = 10;
     }
 
 .. note:: As signals represent events that just occurred, we generally use an
@@ -455,9 +455,9 @@ To emit a signal in your scripts, call ``emit()`` on the signal.
 
     public void TakeDamage(int amount)
     {
-        Health -= amount;
+        _health -= amount;
 
-        if (Health < 0)
+        if (_health <= 0)
         {
             EmitSignal(SignalName.HealthDepleted);
         }
@@ -479,12 +479,12 @@ names between parentheses:
 
     using Godot;
 
-    public partial class CustomSignal : Node
+    public partial class MyNode : Node
     {
         [Signal]
         public delegate void HealthChangedEventHandler(int oldValue, int newValue);
 
-        private int Health = 10;
+        private int _health = 10;
     }
 
 .. note::
@@ -509,9 +509,9 @@ To emit values along with the signal, add them as extra arguments to the
 
     public void TakeDamage(int amount)
     {
-        var oldHealth = Health;
-        Health -= amount;
-        EmitSignal(SignalName.HealthChanged, oldHealth, Health);
+        int oldHealth = _health;
+        _health -= amount;
+        EmitSignal(SignalName.HealthChanged, oldHealth, _health);
     }
 
 Summary

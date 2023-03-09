@@ -122,7 +122,7 @@ the ``jump_impulse``.
     // ...
     // Vertical impulse applied to the character upon jumping in meters per second.
     [Export]
-    public int JumpImpulse = 20;
+    public int JumpImpulse { get; set; } = 20;
 
 Inside ``_physics_process()``, add the following code before the ``move_and_slide()`` codeblock.
 
@@ -140,14 +140,14 @@ Inside ``_physics_process()``, add the following code before the ``move_and_slid
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // ...
 
         // Jumping.
         if (IsOnFloor() && Input.IsActionJustPressed("jump"))
         {
-            _velocity.y = JumpImpulse;
+            _targetVelocity.Y = JumpImpulse;
         }
 
         // ...
@@ -218,7 +218,7 @@ when jumping.
 
     // Vertical impulse applied to the character upon bouncing over a mob in meters per second.
     [Export]
-    public int BounceImpulse = 16;
+    public int BounceImpulse { get; set; } = 16;
 
 Then, after the **Jumping** codeblock we added above in ``_physics_process()``, add the following loop. With
 ``move_and_slide()``, Godot makes the body move sometimes multiple times in a
@@ -235,6 +235,7 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
 
    func _physics_process(delta):
         #...
+
         # Iterate through all collisions that occurred this frame
         # in C this would be for(int i = 0; i < collisions.Count; i++)
         for index in range(get_slide_collision_count()):
@@ -256,23 +257,25 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // ...
 
-        for (int index = 0; index < GetSlideCount(); index++)
+        // Iterate through all collisions that occurred this frame.
+        for (int index = 0; index < GetSlideCollisionCount(); index++)
         {
-            // We check every collision that occurred this frame.
+            // We get one of the collisions with the player.
             KinematicCollision3D collision = GetSlideCollision(index);
-            // If we collide with a monster...
-            if (collision.Collider is Mob mob && mob.IsInGroup("mob"))
+
+            // If the collision is with a mob.
+            if (collision.GetCollider() is Mob mob)
             {
-                // ...we check that we are hitting it from above.
-                if (Vector3.Up.Dot(collision.Normal) > 0.1f)
+                // We check that we are hitting it from above.
+                if (Vector3.Up.Dot(collision.GetNormal()) > 0.1f)
                 {
                     // If so, we squash it and bounce.
                     mob.Squash();
-                    _velocity.y = BounceImpulse;
+                    _targetVelocity.Y = BounceImpulse;
                 }
             }
         }
@@ -328,7 +331,7 @@ destroy the mob.
 
     // Don't forget to rebuild the project so the editor knows about the new signal.
 
-    // Emitted when the played jumped on the mob.
+    // Emitted when the player jumped on the mob.
     [Signal]
     public delegate void SquashedEventHandler();
 
@@ -336,7 +339,7 @@ destroy the mob.
 
     public void Squash()
     {
-        EmitSignal(nameof(Squashed));
+        EmitSignal(SignalName.Squashed);
         QueueFree();
     }
 

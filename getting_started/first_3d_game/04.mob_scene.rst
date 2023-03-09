@@ -125,12 +125,12 @@ and ``max_speed``, to define a random speed range, which we will later use to de
 
         // Minimum speed of the mob in meters per second
         [Export]
-        public int MinSpeed = 10;
+        public int MinSpeed { get; set; } = 10;
         // Maximum speed of the mob in meters per second
         [Export]
-        public int MaxSpeed = 18;
+        public int MaxSpeed { get; set; } = 18;
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
             MoveAndSlide();
         }
@@ -161,17 +161,20 @@ between ``-PI / 4`` radians and ``PI / 4`` radians.
         # We position the mob by placing it at start_position
         # and rotate it towards player_position, so it looks at the player.
         look_at_from_position(start_position, player_position, Vector3.UP)
-        # In this rotation^, the mob will move directly towards the player
-        # so we rotate it randomly within range of -90 and +90 degrees.
+        # Rotate this mob randomly within range of -90 and +90 degrees,
+        # so that it doesn't move directly towards the player.
         rotate_y(randf_range(-PI / 4, PI / 4))
+
  .. code-tab:: csharp
 
-    // We will call this function from the Main scene
+    // This function will be called from the Main scene.
     public void Initialize(Vector3 startPosition, Vector3 playerPosition)
     {
-        // We position the mob and turn it so that it looks at the player.
+        // We position the mob by placing it at startPosition
+        // and rotate it towards playerPosition, so it looks at the player.
         LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
-        // And rotate it randomly so it doesn't move exactly toward the player.
+        // Rotate this mob randomly within range of -90 and +90 degrees,
+        // so that it doesn't move directly towards the player.
         RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
     }
 
@@ -198,12 +201,13 @@ We got a random position, now we need a ``random_speed``. ``randi_range()`` will
     {
         // ...
 
-        // We calculate a random speed.
-        float randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
+        // We calculate a random speed (integer).
+        int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
         // We calculate a forward velocity that represents the speed.
-        _velocity = Vector3.Forward * randomSpeed;
-        // We then rotate the vector based on the mob's Y rotation to move in the direction it's looking
-        _velocity = _velocity.Rotated(Vector3.Up, Rotation.y);
+        Velocity = Vector3.Forward * randomSpeed;
+        // We then rotate the velocity vector based on the mob's Y rotation
+        // in order to move in the direction the mob is looking.
+        Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
     }
 
 Leaving the screen
@@ -239,7 +243,7 @@ method. This function destroy the instance it's called on.
  .. code-tab:: csharp
 
     // We also specified this function name in PascalCase in the editor's connection window
-    public void OnVisibilityNotifierScreenExited()
+    private void OnVisibilityNotifierScreenExited()
     {
         QueueFree();
     }
@@ -268,8 +272,8 @@ Here is the complete ``Mob.gd`` script for reference.
         # We position the mob by placing it at start_position
         # and rotate it towards player_position, so it looks at the player.
         look_at_from_position(start_position, player_position, Vector3.UP)
-        # In this rotation^, the mob will move directly towards the player
-        # so we rotate it randomly within range of -90 and +90 degrees.
+        # Rotate this mob randomly within range of -90 and +90 degrees,
+        # so that it doesn't move directly towards the player.
         rotate_y(randf_range(-PI / 4, PI / 4))
 
         # We calculate a random speed (integer)
@@ -282,39 +286,46 @@ Here is the complete ``Mob.gd`` script for reference.
 
     func _on_visible_on_screen_notifier_3d_screen_exited():
         queue_free()
+
  .. code-tab:: csharp
 
     using Godot;
 
     public partial class Mob : CharacterBody3D
     {
-        // Minimum speed of the mob in meters per second
+        // Minimum speed of the mob in meters per second.
         [Export]
-        public int MinSpeed = 10;
-        // Maximum speed of the mob in meters per second
+        public int MinSpeed { get; set; } = 10;
+        // Maximum speed of the mob in meters per second.
         [Export]
-        public int MaxSpeed = 18;
+        public int MaxSpeed { get; set; } = 18;
 
-        private Vector3 _velocity = Vector3.Zero;
-
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            MoveAndSlide(_velocity);
+            MoveAndSlide();
         }
 
-        // We will call this function from the Main scene
+        // This function will be called from the Main scene.
         public void Initialize(Vector3 startPosition, Vector3 playerPosition)
         {
+            // We position the mob by placing it at startPosition
+            // and rotate it towards playerPosition, so it looks at the player.
             LookAtFromPosition(startPosition, playerPosition, Vector3.Up);
+            // Rotate this mob randomly within range of -90 and +90 degrees,
+            // so that it doesn't move directly towards the player.
             RotateY((float)GD.RandRange(-Mathf.Pi / 4.0, Mathf.Pi / 4.0));
 
-            var randomSpeed = (float)GD.RandRange(MinSpeed, MaxSpeed);
-            _velocity = Vector3.Forward * randomSpeed;
-            _velocity = _velocity.Rotated(Vector3.Up, Rotation.y);
+            // We calculate a random speed (integer).
+            int randomSpeed = GD.RandRange(MinSpeed, MaxSpeed);
+            // We calculate a forward velocity that represents the speed.
+            Velocity = Vector3.Forward * randomSpeed;
+            // We then rotate the velocity vector based on the mob's Y rotation
+            // in order to move in the direction the mob is looking.
+            Velocity = Velocity.Rotated(Vector3.Up, Rotation.Y);
         }
 
         // We also specified this function name in PascalCase in the editor's connection window
-        public void OnVisibilityNotifierScreenExited()
+        private void OnVisibilityNotifierScreenExited()
         {
             QueueFree();
         }

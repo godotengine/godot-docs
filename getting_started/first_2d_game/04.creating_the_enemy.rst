@@ -108,18 +108,16 @@ and randomly choose one of the three animation types:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        $AnimatedSprite2D.play()
-        var mob_types = $AnimatedSprite2D.get_sprite_frames().get_animation_names()
-        $AnimatedSprite2D.animation = mob_types[randi() % mob_types.size()]
+        var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
+        $AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        var animSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        animSprite2D.Play();
-        string[] mobTypes = animSprite2D.SpriteFrames.GetAnimationNames();
-        animSprite2D.Animation = mobTypes[GD.Randi() % mobTypes.Length];
+        var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        string[] mobTypes = animatedSprite2D.SpriteFrames.GetAnimationNames();
+        animatedSprite2D.Play(mobTypes[GD.Randi() % mobTypes.Length]);
     }
 
  .. code-tab:: cpp
@@ -132,7 +130,6 @@ and randomly choose one of the three animation types:
 
     void Mob::_ready() {
         godot::Ref<godot::RandomNumberGenerator> random = godot::RandomNumberGenerator::_new();
-        random->randomize();
         _animated_sprite = get_node<godot::AnimatedSprite2D>("AnimatedSprite2D");
         _animated_sprite->set_playing(true);
         godot::PoolStringArray mob_types = _animated_sprite->get_sprite_frames()->get_animation_names();
@@ -147,10 +144,6 @@ We then need to pick a random number between ``0`` and ``2`` to select one of
 these names from the list (array indices start at ``0``). ``randi() % n``
 selects a random integer between ``0`` and ``n-1``.
 
-.. note:: You must use ``randomize()`` if you want your sequence of "random"
-            numbers to be different every time you run the scene. We're going to
-            use ``randomize()`` in our ``Main`` scene, so we won't need it here.
-
 The last piece is to make the mobs delete themselves when they leave the screen.
 Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node and
 add this code:
@@ -163,7 +156,7 @@ add this code:
 
  .. code-tab:: csharp
 
-    public void OnVisibleOnScreenNotifier2DScreenExited()
+    private void OnVisibleOnScreenNotifier2DScreenExited()
     {
         QueueFree();
     }
