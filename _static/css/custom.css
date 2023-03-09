@@ -108,9 +108,11 @@
     --copybtn-border-color: #d5d8da;
     --copybtn-border-color-hover: #d5d8da;
     --copybtn-icon-color: #57606a;
+    --copybtn-icon-color-success: #1a7f37;
     --copybtn-tooltip-background-color: #24292f;
     --copybtn-box-shadow: 0 1px 0 rgba(27,31,36,0.04), inset 0 1px 0 rgba(255,255,255,0.25);
-
+    --copybtn-border-color-success: #2da44e;
+    
     --contribute-background-color: #d7dee8;
     --contribute-text-color: #646e72;
 
@@ -234,8 +236,10 @@
         --copybtn-border-color: #3e4450;
         --copybtn-border-color-hover: #8b949e;
         --copybtn-icon-color: #8b949e;
+        --copybtn-icon-color-success: #3fb950;
         --copybtn-tooltip-background-color: #6e7681;
         --copybtn-box-shadow: 0 0 transparent, 0 0 transparent;
+        --copybtn-border-color-success: #238636;
 
         --contribute-background-color: #25282d;
         --contribute-text-color: #7f939b;
@@ -1707,16 +1711,17 @@ p + .classref-constant {
 }
 .highlight button.copybtn svg {
     position: absolute;
-    left: 4px;
-    top: 4px;
+    left: 3.5px;
+    top: 3.5px;
     color: var(--copybtn-icon-color);
     pointer-events: none; 
 }
 .highlight button.copybtn.success {
-    border-color: #238636;
+    border-color: var(--copybtn-border-color-success);
+    box-shadow: 0 0 0 0.2em rgb(52 208 88 / 40%);
 }
 .highlight button.copybtn.success svg {
-    color: #238636;
+    color: var(--copybtn-icon-color-success);
 }
 .o-tooltip--left:after {
     background-color: var(--copybtn-tooltip-background-color);
