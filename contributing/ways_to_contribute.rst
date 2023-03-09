@@ -56,7 +56,7 @@ Contributing code
 The possibility to study, use, modify and redistribute modifications of the
 engine's source code are the fundamental rights that
 Godot's `MIT <https://tldrlegal.com/license/mit-license>`_ license grants you,
-making it `free and open source software <https://en.wikipedia.org/wiki/Free_and_open source_software>`_.
+making it `free and open source software <https://en.wikipedia.org/wiki/Free_and_open-source_software>`_.
 
 As such, everyone is entitled to modify
 `Godot's source code <https://github.com/godotengine/godot>`_, and send those
