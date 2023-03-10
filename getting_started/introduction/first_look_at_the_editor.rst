@@ -24,7 +24,7 @@ ones, and more.
 
 .. image:: img/editor_intro_project_manager.webp
 
-At the top of the window, there is another tab named "Templates". You can search
+At the top of the window, there is another tab named "Asset Library Projects". You can search
 for demo projects in the open source asset library, which includes many projects
 developed by the community.
 
