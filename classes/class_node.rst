@@ -2124,7 +2124,7 @@ Changes the RPC mode for the given ``method`` with the given ``config`` which sh
 
     {
         rpc_mode = MultiplayerAPI.RPCMode,
-        transfer_mode = MultiplayerPeer.TranferMode,
+        transfer_mode = MultiplayerPeer.TransferMode,
         call_local = false,
         channel = 0,
     }
