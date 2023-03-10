@@ -41,7 +41,7 @@ The region RID can then be obtained from NavigationRegion Nodes with ``get_regio
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends NavgiationRegion3D
+    extends NavigationRegion3D
 
     var navigationserver_region_rid: RID = get_region_rid()
 
