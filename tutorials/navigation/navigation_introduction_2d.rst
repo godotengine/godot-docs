@@ -52,7 +52,7 @@ The following SceneTree Nodes are available as helpers to work with the Navigati
     that cannot be re(baked) to a navigation mesh efficiently. This node also only works if RVO processing
     is being used.
 
-The 2D navigationm eshes are defined with the following resources:
+The 2D navigation meshes are defined with the following resources:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` Resource
     A resource that holds 2D navigation mesh data and provides polygon drawtools to define navigation areas inside the Editor as well as at runtime.
