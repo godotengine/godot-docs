@@ -274,8 +274,8 @@ but attempting to port it to mobile at the last minute is a recipe for disaster.
 
 In general, you should design your game for the lowest common denominator, then
 add optional enhancements for more powerful platforms. For example, you may want
-to use the GLES2 backend for both desktop and mobile platforms where you target
-both.
+to use the Compatibility rendering method for both desktop and mobile platforms
+where you target both.
 
 Mobile/tiled renderers
 ======================

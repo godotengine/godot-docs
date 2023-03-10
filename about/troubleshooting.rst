@@ -9,19 +9,8 @@ This page lists common issues encountered when using Godot and possible solution
 
 .. seealso::
 
-    See :ref:`doc_using_the_web_editor` for caveats specific to the HTML5 version
+    See :ref:`doc_using_the_web_editor` for caveats specific to the Web version
     of the Godot editor.
-
-Everything I do in the editor or project manager appears delayed by one frame
------------------------------------------------------------------------------
-
-This is a `known bug <https://github.com/godotengine/godot/issues/23069>`__ on
-Intel graphics drivers on Windows. Updating to the latest graphics driver
-version *provided by Intel* should fix the issue.
-
-You should use the graphics driver provided by Intel rather than the one
-provided by your desktop or laptop's manufacturer because their version is often
-outdated.
 
 The editor runs slowly and uses all my CPU and GPU resources, making my computer noisy
 --------------------------------------------------------------------------------------
@@ -49,7 +38,12 @@ The editor stutters and flickers on my variable refresh rate monitor (G-Sync/Fre
 --------------------------------------------------------------------------------------
 
 This is a `known issue <https://github.com/godotengine/godot/issues/38219>`__.
-There are two workarounds for this:
+Variable refresh rate monitors need to adjust their gamma curves continuously to
+emit a consistent amount of light over time. This can cause flicker to appear in
+dark areas of the image when the refresh rate varies a lot, which occurs as
+the Godot editor only redraws when necessary.
+
+There are several workarounds for this:
 
 - Enable **Interface > Editor > Update Continuously** in the Editor Settings. Keep in mind
   this will increase power usage and heat/noise emissions since the editor will
@@ -59,35 +53,28 @@ There are two workarounds for this:
   *microseconds* between frames to render. Higher values will make the editor
   feel less reactive but will help decrease CPU and GPU usage significantly.
 - Alternatively, disable variable refresh rate on your monitor or in the graphics driver.
-
-The grid disappears and meshes turn black when I rotate the 3D camera in the editor
------------------------------------------------------------------------------------
-
-This is a `known bug <https://github.com/godotengine/godot/issues/30330>`__ on
-Intel graphics drivers on Windows.
-
-The only workaround, for now, is to switch to the GLES2 renderer. You can switch
-the renderer in the top-right corner of the editor or the Project Settings.
-
-If you use a computer allowing you to switch your graphics card, like NVIDIA
-Optimus, you can use the dedicated graphics card to run Godot.
+- VRR flicker can be reduced on some displays using the **VRR Control** or
+  **Fine Tune Dark Areas** options in your monitor's OSD. These options may
+  increase input lag or result in crushed blacks.
+- If using an OLED display, use the **Black (OLED)** editor theme preset in the
+  Editor Settings. This hides VRR flicker thanks to OLED's perfect black levels.
 
 The editor or project takes a very long time to start
 -----------------------------------------------------
 
-This is a `known bug <https://github.com/godotengine/godot/issues/20566>`__ on
+When using one of the the Vulkan-based renderers (Forward+ or Forward Mobile),
+the first startup is expected to be relatively long. This is because shaders
+need to be compiled before they can be cached. Shaders also need to be cached
+again after updating Godot, after updating graphics drivers or after switching
+graphics cards.
+
+If the issue persists after the first startup, this is a
+`known bug <https://github.com/godotengine/godot/issues/20566>`__ on
 Windows when you have specific USB peripherals connected. In particular,
 Corsair's iCUE software seems to cause this bug. Try updating your USB
 peripherals' drivers to their latest version. If the bug persists, you need to
 disconnect the specific peripheral before opening the editor. You can then
 connect the peripheral again.
-
-Editor tooltips in the Inspector and Node docks blink when they're displayed
-----------------------------------------------------------------------------
-
-This is a `known issue <https://github.com/godotengine/godot/issues/32990>`__
-caused by the third-party Stardock Fences application on Windows.
-The only known workaround is to disable Stardock Fences while using Godot.
 
 The Godot editor appears frozen after clicking the system console
 -----------------------------------------------------------------
@@ -110,18 +97,6 @@ default values in the NVIDIA Control Panel.
 
 To disable this overlay on Linux, open ``nvidia-settings``, go to **X Screen 0 >
 OpenGL Settings** then uncheck **Enable Graphics API Visual Indicator**.
-
-The project window appears blurry, unlike the editor
-----------------------------------------------------
-
-Unlike the editor, the project isn't marked as DPI-aware by default. This is
-done to improve performance, especially on integrated graphics, where rendering
-3D scenes in hiDPI is slow.
-
-To resolve this, open **Project > Project Settings**, make sure **Advanced
-Settings** is active, and enable **Display >
-Window > DPI > Allow hiDPI**. On top of that, make sure your project is
-configured to support :ref:`multiple resolutions <doc_multiple_resolutions>`.
 
 The project window doesn't appear centered when I run the project
 -----------------------------------------------------------------

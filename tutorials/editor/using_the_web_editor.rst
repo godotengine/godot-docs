@@ -30,8 +30,8 @@ proper threading support is added.
 
 **Mobile browsers are currently not supported.**
 
-The web editor supports both the GLES3 and GLES2 renderers, although GLES2 is
-recommended for better performance and compatibility with old/low-end hardware.
+The web editor only supports the Compatibility rendering method, as there is no
+stable way to run Vulkan applications on the web yet.
 
 .. note::
 
