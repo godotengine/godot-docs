@@ -356,10 +356,10 @@ between parentheses and separated by commas.
 Both of these are the same::
 
     @onready
-    @export_node_path(TextEdit, LineEdit)
+    @export_node_path("TextEdit", "LineEdit")
     var input_field
 
-    @onready @export_node_path(TextEdit, LineEdit) var input_field
+    @onready @export_node_path("TextEdit", "LineEdit") var input_field
 
 .. _doc_gdscript_onready_annotation:
 
