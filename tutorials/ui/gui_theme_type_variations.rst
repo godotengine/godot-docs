@@ -66,7 +66,7 @@ In the inspector dock, under the **Theme** property of a control node,
 you can find the **Theme Type Variation** property. It is empty by default,
 which means that only the base type has an effect on this node.
 
-You can either select a type variations from a dropdown list, or input its name
+You can either select a type variation from a dropdown list, or input its name
 manually. Variations appear on the list only if the type variation belongs to
 the project-wide theme, which you can configure in the project settings. For
 any other case you have to input the name of the variation manually. Click on
