@@ -268,14 +268,16 @@ By default, the warning only updates when closing and reopening the scene.
 
 
     func _get_configuration_warnings():
-        var warning = []
-        if title == "":
-            warning.append("Please set `title` to a non-empty value.")
-        if description.length() >= 100:
-            warning.append("`description` should be less than 100 characters long.")
+        var warnings = []
 
-        # Returning an empty string means "no warning".
-        return warning
+        if title == "":
+            warnings.append("Please set `title` to a non-empty value.")
+
+        if description.length() >= 100:
+            warnings.append("`description` should be less than 100 characters long.")
+
+        # Returning an empty array means "no warning".
+        return warnings
 
 Instancing scenes
 -----------------
