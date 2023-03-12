@@ -93,7 +93,7 @@ Two tracks appear in the editor with a diamond icon representing each keyframe.
 |image11|
 
 You can click and drag on the diamonds to move them in time. Move the
-position key to ``0.2`` seconds and the rotation key to ``0.1`` seconds.
+position key to ``0.3`` seconds and the rotation key to ``0.1`` seconds.
 
 |image12|
 
@@ -106,7 +106,7 @@ In the *Inspector*, set the *Position*'s *Y* axis to ``0.65`` meters and the *Ro
 
 |image13|
 
-Create a keyframe for both properties
+Create a keyframe for both properties by right clicking on the track and choose *Insert Key*
 
 .. image:: img/09.adding_animations/second_keys_both.webp
 
