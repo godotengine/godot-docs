@@ -760,6 +760,16 @@ Valid types are:
 - Script classes declared with the ``class_name`` keyword.
 - Autoloads registered as singletons.
 
+.. note::
+
+    While ``Variant`` is a valid type specification, it's not an actual type. It
+    only means there's no set type and is equivalent to not having a static type
+    at all. Therefore, inference is not allowed by default for ``Variant``,
+    since it's likely a mistake.
+
+    You can turn off this check, or make it only a warning, by changing it in
+    the project settings. See :ref:`doc_gdscript_warning_system` for details.
+
 Casting
 ^^^^^^^
 
