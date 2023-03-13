@@ -39,20 +39,13 @@ in the user's browser.
 WebGL version
 -------------
 
-Depending on your choice of renderer, Godot can target WebGL 1.0 (*GLES2*) or
-WebGL 2.0 (*GLES3*).
+Godot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
+method). There is no stable way to run Vulkan applications on the web yet.
 
-WebGL 1.0 is the recommended option if you want your project to be supported
-on all browsers with the best performance.
-
-Godot's GLES3 renderer targets high end devices, and the performance using
-WebGL 2.0 can be subpar. Some features are also not supported in WebGL 2.0
-specifically.
-
-Additionally, while most browsers support WebGL 2.0, this is not yet the case
-for **Safari**. WebGL 2.0 support is coming in Safari 15 for macOS, and is not
-available yet for any **iOS** browser (all WebKit-based like Safari).
-See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for details.
+See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for a list of browser
+versions supporting WebGL 2.0. Note that Safari has several issues with WebGL
+2.0 support that other browsers don't have, so we recommend using a
+Chromium-based browser or Firefox if possible.
 
 .. _doc_javascript_export_options:
 
@@ -199,12 +192,6 @@ Boot splash is not displayed
 The default HTML page does not display the boot splash while loading. However,
 the image is exported as a PNG file, so :ref:`custom HTML pages <doc_customizing_html5_shell>`
 can display it.
-
-Shader language limitations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
-doesn't support dynamic loops, so shaders using those won't work there.
 
 Serving the files
 -----------------

@@ -229,7 +229,7 @@ to loop over all the instances and set their transform to a random position.
 Running this script will place the fish in random positions in a box around the position of the
 MultiMeshInstance3D.
 
-.. note:: If performance is an issue for you, try running the scene with GLES2 or with fewer fish.
+.. note:: If performance is an issue for you, try running the scene with fewer fish.
 
 Notice how all the fish are all in the same position in their swim cycle? It makes them look very
 robotic. The next step is to give each fish a different position in the swim cycle so the entire

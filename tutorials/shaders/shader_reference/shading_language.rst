@@ -548,11 +548,6 @@ larger the epsilon value should be.
 See `floating-point-gui.de <https://floating-point-gui.de/>`__ for more
 information.
 
-.. warning::
-
-    When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
-    doesn't support dynamic loops, so shaders using those won't work there.
-
 Discarding
 ----------
 
@@ -875,7 +870,7 @@ table of the corresponding types:
 +----------------------+-------------------------+------------------------------------------------------------+
 | **samplerCubeArray** | **CubemapArray**        |                                                            |
 +----------------------+-------------------------+------------------------------------------------------------+
- 
+
 .. note:: Be careful when setting shader uniforms from GDScript, no error will
           be thrown if the type does not match. Your shader will just exhibit
           undefined behavior.

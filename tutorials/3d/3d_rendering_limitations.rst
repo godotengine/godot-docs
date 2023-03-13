@@ -33,23 +33,28 @@ without affecting the source file.
 Color banding
 -------------
 
-When using the GLES3 or Vulkan renderers, Godot's 3D engine renders internally
-in HDR. However, the rendering output will be tonemapped to a low dynamic range
-so it can be displayed on the screen. This can result in visible banding,
-especially when using untextured materials. This can also be seen in 2D projects
-when using smooth gradient textures.
+When using the Forward+ or Forward Mobile rendering methods, Godot's 3D engine
+renders internally in HDR. However, the rendering output will be tonemapped to a
+low dynamic range so it can be displayed on the screen. This can result in
+visible banding, especially when using untextured materials. For performance
+reasons, color precision is also lower when using the Forward Mobile rendering
+method compared to Forward+.
+
+When using the Compatibility rendering method, HDR is not used and the color
+precision is the lowest of all rendering methods. This also applies to 2D
+rendering, where banding may be visible when using smooth gradient textures.
 
 There are two main ways to alleviate banding:
 
-- Enable **Use Debanding** in the Project Settings. This applies a
-  fullscreen debanding shader as a post-processing effect and is very cheap.
-  Fullscreen debanding is only supported when using the GLES3 or Vulkan renderers.
-  It also requires HDR to be enabled in the Project Settings (which is the default).
-- Alternatively, bake some noise into your textures. This is mainly effective in 2D,
-  e.g. for vignetting effects. In 3D, you can also use a
-  `custom debanding shader <https://github.com/fractilegames/godot-gles2-debanding-material>`__
-  to be applied on your *materials*. This technique works even if your project is
-  rendered in LDR, which means it will work when using the GLES2 renderer.
+- If using the Forward+ or Forward Mobile rendering methods, enable **Use
+  Debanding** in the advanced Project Settings. This applies a fullscreen debanding
+  shader as a post-processing effect and is very cheap.
+- Alternatively, bake some noise into your textures. This is mainly effective in
+  2D, e.g. for vignetting effects. In 3D, you can also use a `custom debanding
+  shader <https://github.com/fractilegames/godot-gles2-debanding-material>`__ to
+  be applied on your *materials*. This technique works even if your project is
+  rendered with low color precision, which means it will work when using the
+  Mobile and Compatibility rendering methods.
 
 .. seealso::
 
