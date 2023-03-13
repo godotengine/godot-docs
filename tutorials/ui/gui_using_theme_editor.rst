@@ -3,7 +3,7 @@
 Using the theme editor
 ======================
 
-This articles explains how to create and manage UI themes using the Godot
+This article explains how to create and manage UI themes using the Godot
 editor and its theme editor tool. We recommend getting familiar with the
 basics behind GUI skinning/theming by reading :ref:`doc_gui_skinning` before starting.
 
@@ -148,7 +148,7 @@ remove everything from the type.
 From the **Import Items** tab you can import theme items from other themes. You can
 import items from the default Godot theme, the Godot editor theme, or another custom
 theme. You can import individual or multiple items, and you can decide whether to
-copy or omit their data as well. There are several way you can select and deselect the
+copy or omit their data as well. There are several ways you can select and deselect the
 items, including by hand, by hierarchy, by data type, and everything. Opting to
 include the data will copy all theme items as they are to your theme. Omitting the data
 will create the items of the corresponding data type and name, but will leave them empty,
