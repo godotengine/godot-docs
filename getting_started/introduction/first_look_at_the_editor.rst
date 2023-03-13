@@ -68,7 +68,7 @@ Below is the 3D one.
 
 .. image:: img/editor_intro_toolbar_3d.webp
 
-Let's look at the docks. The **FileSystem** dock lists your project files, be it
+Let's look at the docks. The **FileSystem** dock lists your project files, including
 scripts, images, audio samples, and more.
 
 .. image:: img/editor_intro_filesystem_dock.webp
