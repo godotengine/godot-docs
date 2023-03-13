@@ -1539,7 +1539,7 @@ Properties (setters and getters)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sometimes, you want a class' member variable to do more than just hold data and actually perform
-some validation or computation whenever its value change. It may also be desired to
+some validation or computation whenever its value changes. It may also be desired to
 encapsulate its access in some way.
 
 For this, GDScript provides a special syntax to define properties using the ``set`` and ``get``
