@@ -354,9 +354,20 @@ There are 2 ways to add light probes to a scene:
   to improve precision at the cost of longer bake times and larger output file
   size.
 - **Manual:** In addition or as an alternative to generating probes
-  automatically, you can add light probes manually by adding LightmapProbe nodes
-  to the scene. This can be used to improve lighting detail in areas frequently
-  travelled by dynamic objects.
+  automatically, you can add light probes manually by adding :ref:`class_LightmapProbe`
+  nodes to the scene. This can be used to improve lighting detail in areas frequently
+  travelled by dynamic objects. After placing LightmapProbe nodes in the scene,
+  you must bake lightmaps again for them to be effective.
+
+.. note::
+
+    After baking lightmaps, you will notice white spheres in the 3D scene that
+    represent how baked lighting will affect dynamic objects. These spheres do
+    **not** appear in the running project.
+
+    If you want to hide these spheres in the editor, toggle **View > Gizmos >
+    LightmapGI** at the top of the 3D editor (a "closed eye" icon indicates the
+    gizmo is hidden).
 
 .. _doc_using_lightmap_gi_data:
 
