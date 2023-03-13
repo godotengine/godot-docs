@@ -219,11 +219,11 @@ fall speed separately. Be sure to go back one tab so the lines are inside the
     }
 
 The ``CharacterBody3D.is_on_floor()`` function returns ``true`` if the body collided with the floor in this frame. That's why
-we apply gravity to the ``Player`` only while he is in the air.
+we apply gravity to the ``Player`` only while it is in the air.
 
 For the vertical velocity, we subtract the fall acceleration multiplied by the
 delta time every frame.
-This line of code will cause our character to fall in every frame, as long he is not on the floor, or collides with it.
+This line of code will cause our character to fall in every frame, as long it is not on or collides with the floor.
 
 The physics engine can only detect interactions with walls, the floor, or other
 bodies during a given frame if movement and collisions happen. We will use this
