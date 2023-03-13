@@ -59,7 +59,7 @@ shader by `arlez80 <https://bitbucket.org/arlez80/hex-mosaic/src/master/>`_,
     shader_type canvas_item;
 
     uniform vec2 size = vec2(32.0, 28.0);
-    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
     void fragment() {
             vec2 norm_size = size * SCREEN_PIXEL_SIZE;
@@ -112,7 +112,7 @@ matter.
 
     shader_type canvas_item;
 
-    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
     // Blurs the screen in the X-direction.
     void fragment() {
@@ -132,7 +132,7 @@ matter.
 
     shader_type canvas_item;
 
-    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
     // Blurs the screen in the Y-direction.
     void fragment() {
