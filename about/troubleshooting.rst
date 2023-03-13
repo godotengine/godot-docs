@@ -12,17 +12,6 @@ This page lists common issues encountered when using Godot and possible solution
     See :ref:`doc_using_the_web_editor` for caveats specific to the HTML5 version
     of the Godot editor.
 
-Everything I do in the editor or Project Manager appears delayed by one frame
------------------------------------------------------------------------------
-
-This is a `known bug <https://github.com/godotengine/godot/issues/23069>`__ on
-Intel graphics drivers on Windows. Updating to the latest graphics driver
-version *provided by Intel* should fix the issue.
-
-You should use the graphics driver provided by Intel rather than the one
-provided by your desktop or laptop's manufacturer because their version is often
-outdated.
-
 The editor runs slowly and uses all my CPU and GPU resources, making my computer noisy
 --------------------------------------------------------------------------------------
 
