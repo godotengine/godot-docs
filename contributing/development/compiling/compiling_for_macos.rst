@@ -66,8 +66,8 @@ To support both architectures in a single "Universal 2" binary, run the above tw
 
 If all goes well, the resulting binary executable will be placed in the
 ``bin/`` subdirectory. This executable file contains the whole engine and
-runs without any dependencies. Executing it will bring up the project
-manager.
+runs without any dependencies. Executing it will bring up the Project
+Manager.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable

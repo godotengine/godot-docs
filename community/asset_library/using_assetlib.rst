@@ -109,10 +109,10 @@ In the editor
 .. note::
 
     The editor will display different categories of assets depending on whether
-    you're browsing the project manager's **Asset Library Projects** tab or the editor's
+    you're browsing the Project Manager's **Asset Library Projects** tab or the editor's
     **AssetLib** tab.
 
-    The project manager's **Asset Library Projects** tab will only display assets that are
+    The Project Manager's **Asset Library Projects** tab will only display assets that are
     standalone projects by themselves. This is denoted on the asset library with
     the *Templates*, *Demos* and *Projects* categories.
 

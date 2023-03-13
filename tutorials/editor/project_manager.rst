@@ -2,7 +2,7 @@
 
 .. _doc_project_manager:
 
-Using the Project manager
+Using the Project Manager
 =========================
 
 When you launch Godot, the first window you see is the Project Manager. It lets
@@ -44,7 +44,7 @@ folder based on your project's name.
 Opening and importing projects
 ------------------------------
 
-The next time you open the project manager, you'll see your new project in the
+The next time you open the Project Manager, you'll see your new project in the
 list. Double click on it to open it in the editor.
 
 .. image:: img/editor_ui_intro_project_manager_06.webp

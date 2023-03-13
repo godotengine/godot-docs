@@ -12,7 +12,7 @@ This page lists common issues encountered when using Godot and possible solution
     See :ref:`doc_using_the_web_editor` for caveats specific to the HTML5 version
     of the Godot editor.
 
-Everything I do in the editor or project manager appears delayed by one frame
+Everything I do in the editor or Project Manager appears delayed by one frame
 -----------------------------------------------------------------------------
 
 This is a `known bug <https://github.com/godotengine/godot/issues/23069>`__ on
@@ -100,7 +100,7 @@ the system console. Godot cannot override this system-specific behavior.
 To solve this, select the system console window and press Enter to leave
 selection mode.
 
-Some text such as "NO DC" appears in the top-left corner of the project manager and editor window
+Some text such as "NO DC" appears in the top-left corner of the Project Manager and editor window
 -------------------------------------------------------------------------------------------------
 
 This is caused by the NVIDIA graphics driver injecting an overlay to display information.

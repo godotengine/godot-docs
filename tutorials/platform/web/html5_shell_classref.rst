@@ -297,7 +297,7 @@ Properties
 
       A callback function for handling Godot's ``OS.execute`` calls.
 
-      This is for example used in the Web Editor template to switch between project manager and editor, and for running the game.
+      This is for example used in the Web Editor template to switch between Project Manager and editor, and for running the game.
 
       :param string path:
          The path that Godot's wants executed.
