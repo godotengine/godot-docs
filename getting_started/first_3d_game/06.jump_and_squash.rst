@@ -26,7 +26,7 @@ The important point is that you can use layers and masks to filter physics
 interactions, control performance, and remove the need for extra conditions in
 your code.
 
-By default, all physics bodies and areas are set to both layer and mask ``0``.
+By default, all physics bodies and areas are set to both layer and mask ``1``.
 This means they all collide with each other.
 
 Physics layers are represented by numbers, but we can give them names to keep
