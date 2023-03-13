@@ -36,7 +36,7 @@ General syntax
 - Preprocessor directives **never** end with semicolons (with the exception of ``#define``,
   where this is allowed but potentially dangerous).
 - Preprocessor directives can span several lines by ending each line with a
-  blackslash (``\``). The first line break *not* featuring a backslash will end
+  backslash (``\``). The first line break *not* featuring a backslash will end
   the preprocessor statement.
 
 #define
