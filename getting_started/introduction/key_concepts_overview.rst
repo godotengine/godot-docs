@@ -46,7 +46,7 @@ It is made of a ``CharacterBody2D`` node named "Character", a ``Sprite2D``, a
 ``Camera2D``, and a ``CollisionShape2D``.
 
 .. note:: The node names end with "2D" because this is a 2D scene. Their 3D
-          counterpart have names that end with "3D".
+          counterparts have names that end with "3D".
 
 Notice how nodes and scenes look the same in the editor. When you save a tree of
 nodes as a scene, it then shows as a single node, with its internal structure
