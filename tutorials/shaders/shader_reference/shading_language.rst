@@ -535,7 +535,7 @@ behave differently depending on the hardware.
     }
 
 Instead, always perform a range comparison with an epsilon value. The larger the
-floating-point number (and the less precise the floating-point number, the
+floating-point number (and the less precise the floating-point number), the
 larger the epsilon value should be.
 
 .. code-block:: glsl
@@ -551,8 +551,14 @@ information.
 Discarding
 ----------
 
-Fragment and light functions can use the **discard** keyword. If used, the
+Fragment and light functions can use the ``discard`` keyword. If used, the
 fragment is discarded and nothing is written.
+
+Beware that ``discard`` has a performance cost when used, as it will prevent the
+depth prepass from being effective on any surfaces using the shader. Also, a
+discarded pixel still needs to be rendered in the vertex shader, which means a
+shader that uses ``discard`` on all of its pixels is still more expensive to
+render compared to not rendering any object in the first place.
 
 Functions
 ---------
@@ -574,7 +580,8 @@ syntax:
 
 
 You can only use functions that have been defined above (higher in the editor)
-the function from which you are calling them.
+the function from which you are calling them. Redefining a function that has
+already been defined above (or is a built-in function name) will cause an error.
 
 Function arguments can have special qualifiers:
 
@@ -591,6 +598,14 @@ Example below:
     void sum2(int a, int b, inout int result) {
         result = a + b;
     }
+
+.. note::
+
+    Unlike GLSL, Godot's shader language does **not** support function
+    overloading. This means that a function cannot be defined several times with
+    different argument types or numbers of arguments. As a workaround, use
+    different names for functions that accept a different number of arguments or
+    arguments of different types.
 
 Varyings
 --------
