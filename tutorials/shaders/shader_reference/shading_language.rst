@@ -608,7 +608,7 @@ Example below:
 
     Unlike GLSL, Godot's shader language does **not** support function
     overloading. This means that a function cannot be defined several times with
-    the different argument types or numbers of arguments. As a workaround, use
+    different argument types or numbers of arguments. As a workaround, use
     different names for functions that accept a different number of arguments or
     arguments of different types.
 
