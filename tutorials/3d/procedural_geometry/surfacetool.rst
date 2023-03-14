@@ -15,11 +15,11 @@ Attributes are added before each vertex is added:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    st.add_normal() # Overwritten by normal below.
-    st.add_normal() # Added to next vertex.
-    st.add_color() # Added to next vertex.
+    st.set_normal() # Overwritten by normal below.
+    st.set_normal() # Added to next vertex.
+    st.set_color() # Added to next vertex.
     st.add_vertex() # Captures normal and color above.
-    st.add_normal() # Normal never added to a vertex.
+    st.set_normal() # Normal never added to a vertex.
 
 When finished generating your geometry with the :ref:`SurfaceTool <class_surfacetool>`
 call ``commit()`` to finish generating the mesh. If an :ref:`ArrayMesh <class_ArrayMesh>` is passed
@@ -43,17 +43,17 @@ Code creates a triangle with indices
     st.begin(Mesh.PRIMITIVE_TRIANGLES)
 
     # Prepare attributes for add_vertex.
-    st.add_normal(Vector3(0, 0, 1))
-    st.add_uv(Vector2(0, 0))
+    st.set_normal(Vector3(0, 0, 1))
+    st.set_uv(Vector2(0, 0))
     # Call last for each vertex, adds the above attributes.
     st.add_vertex(Vector3(-1, -1, 0))
 
-    st.add_normal(Vector3(0, 0, 1))
-    st.add_uv(Vector2(0, 1))
+    st.set_normal(Vector3(0, 0, 1))
+    st.set_uv(Vector2(0, 1))
     st.add_vertex(Vector3(-1, 1, 0))
 
-    st.add_normal(Vector3(0, 0, 1))
-    st.add_uv(Vector2(1, 1))
+    st.set_normal(Vector3(0, 0, 1))
+    st.set_uv(Vector2(1, 1))
     st.add_vertex(Vector3(1, 1, 0))
 
     # Commit to a mesh.
