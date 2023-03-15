@@ -3,22 +3,19 @@
 Particle shaders
 ================
 
-Particle shaders are a special type of vertex shader that runs before the
-object is drawn. They are used for calculating material properties such as
-color, position, and rotation. They are drawn with any regular material for
-CanvasItem or Spatial, depending on whether they are 2D or 3D.
+Particle shaders are a special type of shader that runs before the object is
+drawn. They are used for calculating material properties such as color,
+position, and rotation. They are drawn with any regular material for CanvasItem
+or Spatial, depending on whether they are 2D or 3D.
 
-Particle shaders are unique because they are not used to draw the object
-itself; they are used to calculate particle properties, which are then used
-by the CanvasItem of Spatial shader. They contain only a vertex processor
-function that outputs multiple properties (see built-ins below).
+Particle shaders are unique because they are not used to draw the object itself;
+they are used to calculate particle properties, which are then used by the
+CanvasItem of Spatial shader. They contain two processor functions: ``start()``
+and ``process()``.
 
-Particle shaders use a transform feedback shader, which is a special type of
-vertex shader that runs on its own. It takes in data in a buffer like a regular
-vertex shader does, but it also outputs to data buffers instead of outputting
-to the fragment shader for pixel-processing. Because of this, transform feedback
-shaders can build on themselves each run, unlike other shaders that discard the
-data they have calculated once they draw to the frame buffer.
+Unlike other shader types, particle shaders keep the data that was output the
+previous frame. Therefore, particle shaders ca be used for complex effects that
+take place over multiple frames.
 
 .. note::
 

@@ -505,14 +505,12 @@ Godot 3.x, you will have to change its code to call :ref:`class_RenderingServer`
 methods that affect environment effects' quality. Only the "base" toggle of each
 environment effect and its visual knobs remain within the Environment resource.
 
-Updating external shaders
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Updating shaders
+^^^^^^^^^^^^^^^^
 
-**Only shaders that are built-in to a scene file are modified by the project
-upgrade tool.** This means external shaders (saved to ``.gdshader`` files)
-need to be updated manually.
+There have been some changes to shaders that aren't covered by the upgrade tool.
 
-The ``.shader`` file extension is also no longer supported, which means you must
+The ``.shader`` file extension is no longer supported, which means you must
 rename ``.shader`` files to ``.gdshader`` and update references accordingly in
 scene/resource files using an external text editor.
 
@@ -521,7 +519,9 @@ Some notable renames you will need to perform in shaders are:
 - Texture filter and repeat modes are now set on individual uniforms, rather
   than the texture files themselves.
 - ``hint_albedo`` is now ``source_color``.
-- :ref:`Projection matrix variables were renamed. <doc_spatial_shader>`
+- :ref:`Built in matrix variables were renamed. <doc_spatial_shader>`
+- Particles shaders no longer use the ``vertex()`` processor function. Instead
+  they use ``start()`` and ``process()``.
 
 See :ref:`doc_shading_language` for more information.
 
