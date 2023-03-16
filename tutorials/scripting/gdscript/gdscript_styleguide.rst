@@ -35,7 +35,7 @@ Here is a complete class example based on these guidelines:
 
     signal state_changed(previous, new)
 
-    export var initial_state = NodePath()
+    @export var initial_state = NodePath()
     var is_active = true setget set_is_active
 
     @onready var _state = get_node(initial_state) setget set_state
