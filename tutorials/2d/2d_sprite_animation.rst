@@ -58,12 +58,11 @@ of the animation from "default" to "run".
 
 .. image:: img/2d_animation_spriteframes_done.webp
 
-Back in the Inspector, check the box for the *Playing* property. You should
-now see the animation playing in the viewport. However, it is a bit slow. To
-fix this, change the *Speed (FPS)* setting in the SpriteFrames panel to 10.
+The frame rate of the animation is not correct. To fix this, change the
+*Animation Speed (FPS)* setting in the SpriteFrames panel to 10.
 
-You can add additional animations by clicking the "New Animation" button and
-adding additional images.
+You can add additional animations by clicking the "Add frame from file" button
+and adding additional images.
 
 Controlling the animation
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -78,7 +77,7 @@ released.
 
     extends CharacterBody2D
 
-    onready var _animated_sprite = $AnimatedSprite2D
+    @onready var _animated_sprite = $AnimatedSprite2D
 
     func _process(_delta):
         if Input.is_action_pressed("ui_right"):
@@ -116,30 +115,40 @@ released.
 Sprite sheet with AnimatedSprite2D
 ----------------------------------
 
-You can also easily animate from a sprite sheet with the class ``AnimatedSprite2D``. We will use this public domain sprite sheet:
+You can also easily animate from a sprite sheet with the class ``AnimatedSprite2D``.
+We will use this public domain sprite sheet:
 
 .. image:: img/2d_animation_frog_spritesheet.png
 
-Right-click the image and choose "Save Image As" to download it, and then copy the image into your project folder.
+Right-click the image and choose "Save Image As" to download it,and then copy
+the image into your project folder.
 
-Set up your scene tree the same way you did previously when using individual images. Select the ``AnimatedSprite2D`` and in its *SpriteFrames* property, select
+Set up your scene tree the same way you did previously when using individual images.
+Select the ``AnimatedSprite2D`` and in its *SpriteFrames* property, select
 "New SpriteFrames".
 
-Click on the new SpriteFrames resource. This time, when the bottom panel appears, select "Add frames from a Sprite Sheet".
+Click on the new SpriteFrames resource. This time, when the bottom panel appears,
+select "Add frames from a Sprite Sheet".
 
 .. image:: img/2d_animation_add_from_spritesheet.webp
 
 You will be prompted to open a file. Select your sprite sheet.
 
-A new window will open, showing your sprite sheet. The first thing you will need to do is to change the number of vertical and horizontal images in your sprite sheet. In this sprite sheet, we have four images horizontally and two images vertically.
+A new window will open, showing your sprite sheet. The first thing you will
+need to do is to change the number of vertical and horizontal images in your
+sprite sheet. In this sprite sheet, we have four images horizontally and two
+images vertically.
 
 .. image:: img/2d_animation_spritesheet_select_rows.webp
 
-Next, select the frames from the sprite sheet that you want to include in your animation. We will select the top four, then click "Add 4 frames" to create the animation.
+Next, select the frames from the sprite sheet that you want to include in your
+animation. We will select the top four, then click "Add 4 frames" to create
+the animation.
 
 .. image:: img/2d_animation_spritesheet_selectframes.webp
 
-You will now see your animation under the list of animations in the bottom panel. Double click on default to change the name of the animation to jump.
+You will now see your animation under the list of animations in the bottom panel.
+Double click on default to change the name of the animation to jump.
 
 .. image:: img/2d_animation_spritesheet_animation.webp
 
@@ -219,7 +228,7 @@ released.
 
     extends CharacterBody2D
 
-    onready var _animation_player = $AnimationPlayer
+    @onready var _animation_player = $AnimationPlayer
 
     func _process(_delta):
         if Input.is_action_pressed("ui_right"):
