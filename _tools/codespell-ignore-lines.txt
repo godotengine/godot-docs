@@ -7,6 +7,7 @@
 | nd            | North Ndebele                 |
 | ro            | Romanian                      |
 | seh           | Sena                          |
+| shs           | Shuswap                       |
 | te            | Telugu                        |
 | tem           | Timne                         |
 | Beng        | Bengali                     |
@@ -16,3 +17,4 @@
 | MM, BU       | Myanmar                                    |
 | RO           | Romania                                    |
 | VN           | Viet Nam                                   |
+.. image:: img/expres.png

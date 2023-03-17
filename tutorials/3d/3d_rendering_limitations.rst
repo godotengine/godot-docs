@@ -33,23 +33,28 @@ without affecting the source file.
 Color banding
 -------------
 
-When using the GLES3 or Vulkan renderers, Godot's 3D engine renders internally
-in HDR. However, the rendering output will be tonemapped to a low dynamic range
-so it can be displayed on the screen. This can result in visible banding,
-especially when using untextured materials. This can also be seen in 2D projects
-when using smooth gradient textures.
+When using the Forward+ or Forward Mobile rendering methods, Godot's 3D engine
+renders internally in HDR. However, the rendering output will be tonemapped to a
+low dynamic range so it can be displayed on the screen. This can result in
+visible banding, especially when using untextured materials. For performance
+reasons, color precision is also lower when using the Forward Mobile rendering
+method compared to Forward+.
+
+When using the Compatibility rendering method, HDR is not used and the color
+precision is the lowest of all rendering methods. This also applies to 2D
+rendering, where banding may be visible when using smooth gradient textures.
 
 There are two main ways to alleviate banding:
 
-- Enable **Use Debanding** in the Project Settings. This applies a
-  fullscreen debanding shader as a post-processing effect and is very cheap.
-  Fullscreen debanding is only supported when using the GLES3 or Vulkan renderers.
-  It also requires HDR to be enabled in the Project Settings (which is the default).
-- Alternatively, bake some noise into your textures. This is mainly effective in 2D,
-  e.g. for vignetting effects. In 3D, you can also use a
-  `custom debanding shader <https://github.com/fractilegames/godot-gles2-debanding-material>`__
-  to be applied on your *materials*. This technique works even if your project is
-  rendered in LDR, which means it will work when using the GLES2 renderer.
+- If using the Forward+ or Forward Mobile rendering methods, enable **Use
+  Debanding** in the advanced Project Settings. This applies a fullscreen debanding
+  shader as a post-processing effect and is very cheap.
+- Alternatively, bake some noise into your textures. This is mainly effective in
+  2D, e.g. for vignetting effects. In 3D, you can also use a `custom debanding
+  shader <https://github.com/fractilegames/godot-gles2-debanding-material>`__ to
+  be applied on your *materials*. This technique works even if your project is
+  rendered with low color precision, which means it will work when using the
+  Mobile and Compatibility rendering methods.
 
 .. seealso::
 
@@ -91,10 +96,15 @@ Transparency sorting
 In Godot, transparent materials are drawn after opaque materials. Transparent
 objects are sorted back to front before being drawn based on the Node3D's
 position, not the vertex position in world space. Due to this, overlapping
-objects may often be sorted out of order. To fix improperly sorted objects, tweak
-the material's :ref:`Render Priority <class_Material_property_render_priority>`
-property. This will force specific materials to appear in front or behind of
-other transparent materials. Even then, this may not always be sufficient.
+objects may often be sorted out of order. To fix improperly sorted objects,
+tweak the material's
+:ref:`Render Priority <class_Material_property_render_priority>`
+property or the node's
+:ref:`Sorting Offset <class_VisualInstance3D_property_sorting_offset>`.
+Render Priority will force specific materials to appear in front of or behind
+other transparent materials, while Sorting Offset will move the object
+forward or backward for the purpose of sorting. Even then, these may not
+always be sufficient.
 
 Some rendering engines feature *order-independent transparency* techniques to
 alleviate this, but this is costly on the GPU. Godot currently doesn't provide

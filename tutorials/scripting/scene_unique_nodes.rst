@@ -21,12 +21,12 @@ Creation and usage
 In the Scene tree dock, right-click on a node and select
 **Access as Unique Name** in the context menu.
 
-.. image:: img/unique_name.png
+.. image:: img/unique_name.webp
 
 After selecting the option, the node will now have a percent symbol (**%**) next
 to its name in the scene tree:
 
-.. image:: img/percent.png
+.. image:: img/percent.webp
 
 You can now use the node in your script. For example, you can reference it with
 a ``get_node()`` method call by typing the % symbol, followed by the node's
@@ -50,7 +50,7 @@ A scene unique node can only be retrieved by a node inside the same scene. To
 demonstrate this limitation, consider this example **Player** scene that
 instances a **Sword** scene:
 
-.. image:: img/unique_name_scene_instance_example.png
+.. image:: img/unique_name_scene_instance_example.webp
 
 Here are the results of ``get_node()`` calls inside the **Player** script:
 
@@ -85,7 +85,7 @@ some situations where other techniques may be better.
 A :ref:`Group <doc_groups>` allows locating a node (or a group of many nodes)
 from any other node, no matter what scene the two nodes are located in.
 
-A :ref:`Singleton (AutoLoad) <doc_singletons_autoload>` is an always loaded node
+A :ref:`Singleton (Autoload) <doc_singletons_autoload>` is an always loaded node
 that can be accessed directly by any node regardless of the scene. These are useful
 when some data or functionality is shared globally.
 

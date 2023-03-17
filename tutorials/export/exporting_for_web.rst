@@ -11,7 +11,8 @@ Exporting for the Web
 
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for `WebAssembly
-<https://webassembly.org/>`__ and `WebGL <https://www.khronos.org/webgl/>`__
+<https://webassembly.org/>`__, `WebGL <https://www.khronos.org/webgl/>`__ and
+`SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`_
 in the user's browser.
 
 .. important:: Use the browser-integrated developer console, usually opened
@@ -24,6 +25,10 @@ in the user's browser.
                :ref:`iOS' native export functionality <doc_exporting_for_ios>`
                instead, as it will also result in better performance.
 
+.. warning:: SharedArrayBuffer requires a :ref:`secure context <doc_javascript_secure_contexts>`.
+             Browsers also require that the web page is served with specific
+             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
+
 .. note::
 
     If you use Linux, due to
@@ -34,20 +39,13 @@ in the user's browser.
 WebGL version
 -------------
 
-Depending on your choice of renderer, Godot can target WebGL 1.0 (*GLES2*) or
-WebGL 2.0 (*GLES3*).
+Godot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
+method). There is no stable way to run Vulkan applications on the web yet.
 
-WebGL 1.0 is the recommended option if you want your project to be supported
-on all browsers with the best performance.
-
-Godot's GLES3 renderer targets high end devices, and the performance using
-WebGL 2.0 can be subpar. Some features are also not supported in WebGL 2.0
-specifically.
-
-Additionally, while most browsers support WebGL 2.0, this is not yet the case
-for **Safari**. WebGL 2.0 support is coming in Safari 15 for macOS, and is not
-available yet for any **iOS** browser (all WebKit-based like Safari).
-See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for details.
+See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for a list of browser
+versions supporting WebGL 2.0. Note that Safari has several issues with WebGL
+2.0 support that other browsers don't have, so we recommend using a
+Chromium-based browser or Firefox if possible.
 
 .. _doc_javascript_export_options:
 
@@ -57,15 +55,6 @@ Export options
 If a runnable web export template is available, a button appears between the
 *Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
 game in the default browser for testing.
-
-You can choose the **Export Type** to select which features will be available:
-
-- *Regular*: is the most compatible across browsers, will not support threads,
-  nor GDExtension.
-- *Threads*: will require the browser to support `SharedArrayBuffer
-  <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
-  See `Can I use SharedArrayBuffer <https://caniuse.com/sharedarraybuffer>`__
-  for details.
 
 If you plan to use :ref:`VRAM compression <doc_importing_images>` make sure that
 **Vram Texture Compression** is enabled for the targeted platforms (enabling
@@ -85,9 +74,6 @@ JavaScript APIs, include CSS, or run JavaScript code.
                modifications to that HTML file will be lost in future exports.
                To customize the generated file, use the **Custom HTML shell**
                option.
-
-.. warning:: **Export types** other than *Regular* are not yet supported by the
-             C# version.
 
 Limitations
 -----------
@@ -133,17 +119,6 @@ disconnect if the user switches tabs for a long duration.
 This limitation does not apply to unfocused browser *windows*. Therefore, on the
 user's side, this can be worked around by running the project in a separate
 *window* instead of a separate tab.
-
-Threads
-~~~~~~~
-
-As mentioned :ref:`above <doc_javascript_export_options>` multi-threading is
-only available if the appropriate **Export Type** is set and support for it
-across browsers is still limited.
-
-.. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
-             Browsers also require that the web page is served with specific
-             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
 Full screen and mouse capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -218,12 +193,6 @@ The default HTML page does not display the boot splash while loading. However,
 the image is exported as a PNG file, so :ref:`custom HTML pages <doc_customizing_html5_shell>`
 can display it.
 
-Shader language limitations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
-doesn't support dynamic loops, so shaders using those won't work there.
-
 Serving the files
 -----------------
 
@@ -265,6 +234,32 @@ of its original size with gzip compression.
 **Hosts that don't provide on-the-fly compression:** itch.io, GitLab Pages
 (`supports manual gzip precompression <https://webd97.de/post/gitlab-pages-compression/>`__)
 
+.. tip::
+
+    The Godot repository includes a
+    `Python script to host a local web server <https://raw.githubusercontent.com/godotengine/godot/master/platform/web/serve.py>`__.
+    This script is intended for testing the web editor, but it can also be used to test exported projects.
+
+    Save the linked script to a file called ``serve.py``, move this file to the
+    folder containing the exported project's ``index.html``, then run the
+    following command in a command prompt within the same folder:
+
+    ::
+
+        # You may need to replace `python` with `python3` on some platforms.
+        python serve.py --root .
+
+    On Windows, you can open a command prompt in the current folder by holding
+    :kbd:`Shift` and right-clicking on empty space in Windows Explorer, then
+    choosing **Open PowerShell window here**.
+
+    This will serve the contents of the current folder and open the default web
+    browser automatically.
+
+    Note that for production use cases, this Python-based web server should not
+    be used. Instead, you should use an established web server such as Apache or
+    nginx.
+
 .. _doc_javascript_eval:
 
 Calling JavaScript from script
@@ -283,7 +278,7 @@ languages integrated into Godot.
         JavaScriptBridge.eval("alert('Calling JavaScript per GDScript!');")
 
  .. code-tab:: csharp
-     
+
     private void MyFunc()
     {
         JavaScriptBridge.Eval("alert('Calling JavaScript per C#!');")
@@ -332,7 +327,7 @@ platforms other than HTML5, calling ``JavaScriptBridge.eval`` will also return
             print("The JavaScriptBridge singleton is NOT available")
 
  .. code-tab:: csharp
-    
+
     private void MyFunc3()
     {
         if (OS.HasFeature("web"))
@@ -368,4 +363,3 @@ defaulting to ``false`` to prevent polluting the global namespace:
         // thus adding a new JavaScript global variable `SomeGlobal`
         JavaScriptBridge.Eval("var SomeGlobal = {};", true);
     }
-

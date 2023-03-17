@@ -660,6 +660,8 @@ Resumes a paused or stopped **Tween**.
 
 Sets the default ease type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this **Tween**.
 
+If not specified, the default value is :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -739,6 +741,8 @@ Scales the speed of tweening. This affects all :ref:`Tweener<class_Tweener>`\ s 
 :ref:`Tween<class_Tween>` **set_trans** **(** :ref:`TransitionType<enum_Tween_TransitionType>` trans **)**
 
 Sets the default transition type for :ref:`PropertyTweener<class_PropertyTweener>`\ s and :ref:`MethodTweener<class_MethodTweener>`\ s animated by this **Tween**.
+
+If not specified, the default value is :ref:`TRANS_LINEAR<class_Tween_constant_TRANS_LINEAR>`.
 
 .. rst-class:: classref-item-separator
 

@@ -16,16 +16,16 @@ The following two scripts will be used as references throughout this page.
 
     extends Node
 
-    var my_field : String = "foo"
+    var my_field: String = "foo"
 
-    func print_node_name(node : Node) -> void:
+    func print_node_name(node: Node) -> void:
         print(node.get_name())
 
-    func print_array(arr : Array) -> void:
+    func print_array(arr: Array) -> void:
         for element in arr:
             print(element)
 
-    func print_n_times(msg : String, n : int) -> void:
+    func print_n_times(msg: String, n: int) -> void:
         for i in range(n):
             print(msg)
 

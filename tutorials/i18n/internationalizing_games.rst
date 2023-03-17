@@ -226,7 +226,7 @@ For RTL languages, Godot will automatically do the following changes to the UI:
 -  Swaps left and right text alignment.
 -  Mirrors horizontal order of the child controls in the containers, and items in Tree/ItemList controls.
 -  Uses mirrored order of the internal control elements (e.g. OptionButton dropdown button, checkbox alignment, List column order, Tree item icons and connecting line alignment, e.t.c.), in some cases mirrored controls use separate theme styles.
--  Coordinate system is not mirrored, and non-UI nodes (sprites, e.t.c) are not affected.x
+-  Coordinate system is not mirrored, and non-UI nodes (sprites, e.t.c) are not affected.
 
 It is possible to override text and control layout direction by using the following control properties:
 
@@ -236,6 +236,11 @@ It is possible to override text and control layout direction by using the follow
 -  ``layout_direction``, overrides control mirroring.
 
 .. image:: img/ui_mirror.png
+
+.. seealso::
+
+    You can see how right-to-left typesetting works in action using the
+    `BiDI and Font Features demo project <https://github.com/godotengine/godot-demo-projects/tree/master/gui/bidi_and_font_features>`__.
 
 Adding break iterator data to exported project
 ----------------------------------------------

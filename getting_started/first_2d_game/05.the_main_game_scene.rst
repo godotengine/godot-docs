@@ -73,7 +73,7 @@ Your scene should look like this:
 Main script
 ~~~~~~~~~~~
 
-Add a script to ``Main``. At the top of the script, we use 
+Add a script to ``Main``. At the top of the script, we use
 ``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
 to instance.
 
@@ -93,13 +93,10 @@ to instance.
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
-    #pragma warning disable 649
-        // We assign this in the editor, so we don't need the warning about not being assigned.
         [Export]
-        public PackedScene MobScene;
-    #pragma warning restore 649
+        public PackedScene MobScene { get; set; }
 
-        public int Score;
+        private int _score;
     }
 
  .. code-tab:: cpp
@@ -154,7 +151,7 @@ to instance.
     };
 
     #endif // MAIN_H
-    
+
     // This code goes in `main.cpp`.
     #include "main.hpp"
 
@@ -219,7 +216,7 @@ new game:
 
     public void NewGame()
     {
-        Score = 0;
+        _score = 0;
 
         var player = GetNode<Player>("Player");
         var startPosition = GetNode<Marker2D>("StartPosition");
@@ -243,7 +240,7 @@ new game:
     }
 
 Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
-``ScoreTimer`` , and ``MobTimer``) to the main script. ``StartTimer`` will start
+``ScoreTimer``, and ``MobTimer``) to the main script. ``StartTimer`` will start
 the other two timers. ``ScoreTimer`` will increment the score by 1.
 
 .. tabs::
@@ -258,12 +255,12 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 
  .. code-tab:: csharp
 
-    public void OnScoreTimerTimeout()
+    private void OnScoreTimerTimeout()
     {
-        Score++;
+        _score++;
     }
 
-    public void OnStartTimerTimeout()
+    private void OnStartTimerTimeout()
     {
         GetNode<Timer>("MobTimer").Start();
         GetNode<Timer>("ScoreTimer").Start();
@@ -311,7 +308,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
         # Choose a random location on Path2D.
         var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
-        mob_spawn_location.progress_ratio = randi()
+        mob_spawn_location.progress_ratio = randf()
 
         # Set the mob's direction perpendicular to the path direction.
         var direction = mob_spawn_location.rotation + PI / 2
@@ -332,18 +329,18 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
  .. code-tab:: csharp
 
-    public void OnMobTimerTimeout()
+    private void OnMobTimerTimeout()
     {
         // Note: Normally it is best to use explicit types rather than the `var`
         // keyword. However, var is acceptable to use here because the types are
         // obviously Mob and PathFollow2D, since they appear later on the line.
 
         // Create a new instance of the Mob scene.
-        var mob = MobScene.Instantiate<Mob>();
+        Mob mob = MobScene.Instantiate<Mob>();
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
-        mobSpawnLocation.ProgressRatio = GD.Randi();
+        mobSpawnLocation.ProgressRatio = GD.Randf();
 
         // Set the mob's direction perpendicular to the path direction.
         float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
@@ -371,7 +368,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         godot::Node *mob = mob_scene->instance();
 
         // Choose a random location on Path2D.
-        _mob_spawn_location->set_progress_ratio((real_t)_random->randi());
+        _mob_spawn_location->set_progress_ratio((real_t)_random->randf());
 
         // Set the mob's direction perpendicular to the path direction.
         real_t direction = _mob_spawn_location->get_rotation() + (real_t)Math_PI / 2;

@@ -33,6 +33,11 @@ and thin lines on top of the box have almost disappeared:
 To combat this, various antialiasing techniques can be used in Godot. These are
 detailed below.
 
+.. seealso::
+
+    You can compare antialiasing algorithms in action using the
+    `3D Antialiasing demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/antialiasing>`__.
+
 Multisample antialiasing (MSAA)
 -------------------------------
 
@@ -73,6 +78,8 @@ Note that alpha antialiasing is not used here:
 
 .. image:: img/antialiasing_msaa_8x.webp
 
+.. _doc_3d_antialiasing_taa:
+
 Temporal antialiasing (TAA)
 ---------------------------
 
@@ -102,6 +109,8 @@ value of the **Rendering > Anti Aliasing > Quality > Use Taa** setting.
 Comparison between no antialiasing (left) and TAA (right):
 
 .. image:: img/antialiasing_taa.webp
+
+.. _doc_3d_antialiasing_fxaa:
 
 Fast approximate antialiasing (FXAA)
 ------------------------------------

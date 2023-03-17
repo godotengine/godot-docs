@@ -143,8 +143,8 @@ of the 3D editor viewport:
 This will generate a second set of UV2 coordinates which can be used for baking.
 It will also set the texture size automatically.
 
-Unwrap from your 3D DCC
-^^^^^^^^^^^^^^^^^^^^^^^
+Unwrap from your 3D modeling software
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The last option is to do it from your favorite 3D app. This approach is
 generally **not recommended**, but it's explained so that you know it exists.
@@ -161,10 +161,10 @@ size on the mesh after import.
 
 .. image:: img/lightmap_gi_lmsize.png
 
-If you use external meshes on import, the size will be kept.
-Be wary that most unwrappers in 3D DCCs are not quality oriented, as they are
-meant to work quickly. You will mostly need to use seams or other techniques to
-create better unwrapping.
+If you use external meshes on import, the size will be kept. Be wary that most
+unwrappers in 3D modeling software are not quality-oriented, as they are meant
+to work quickly. You will mostly need to use seams or other techniques to create
+better unwrapping.
 
 Checking UV2
 ^^^^^^^^^^^^
@@ -354,9 +354,20 @@ There are 2 ways to add light probes to a scene:
   to improve precision at the cost of longer bake times and larger output file
   size.
 - **Manual:** In addition or as an alternative to generating probes
-  automatically, you can add light probes manually by adding LightmapProbe nodes
-  to the scene. This can be used to improve lighting detail in areas frequently
-  travelled by dynamic objects.
+  automatically, you can add light probes manually by adding :ref:`class_LightmapProbe`
+  nodes to the scene. This can be used to improve lighting detail in areas frequently
+  travelled by dynamic objects. After placing LightmapProbe nodes in the scene,
+  you must bake lightmaps again for them to be effective.
+
+.. note::
+
+    After baking lightmaps, you will notice white spheres in the 3D scene that
+    represent how baked lighting will affect dynamic objects. These spheres do
+    **not** appear in the running project.
+
+    If you want to hide these spheres in the editor, toggle **View > Gizmos >
+    LightmapGI** at the top of the 3D editor (a "closed eye" icon indicates the
+    gizmo is hidden).
 
 .. _doc_using_lightmap_gi_data:
 

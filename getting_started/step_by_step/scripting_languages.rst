@@ -130,7 +130,7 @@ C++ via GDExtension
 ~~~~~~~~~~~~~~~~~~~
 
 GDExtension allows you to write game code in C++ without needing to recompile
-or even restart Godot.
+Godot.
 
 .. image:: img/scripting_cpp.png
 
@@ -149,7 +149,7 @@ Summary
 Scripts are files containing code that you attach to a node to extend its
 functionality.
 
-Godot supports five official scripting languages, offering you flexibility
+Godot supports four official scripting languages, offering you flexibility
 between performance and ease of use.
 
 You can mix languages, for instance, to implement demanding algorithms with C or

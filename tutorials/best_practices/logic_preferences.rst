@@ -141,7 +141,7 @@ If one is creating a large level, which circumstances are most appropriate?
 Should they create the level as one static space? Or should they load the
 level in pieces and shift the world's content as needed?
 
-Well, the simple answer is , "when the performance requires it." The
+Well, the simple answer is, "when the performance requires it." The
 dilemma associated with the two options is one of the age-old programming
 choices: does one optimize memory over speed, or vice versa?
 

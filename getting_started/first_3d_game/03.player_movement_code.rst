@@ -38,12 +38,12 @@ character.
 
         // How fast the player moves in meters per second.
         [Export]
-        public int Speed = 14;
+        public int Speed { get; set; } = 14;
         // The downward acceleration when in the air, in meters per second squared.
         [Export]
-        public int FallAcceleration = 75;
+        public int FallAcceleration { get; set; } = 75;
 
-        private Vector3 _velocity = Vector3.Zero;
+        private Vector3 _targetVelocity = Vector3.Zero;
     }
 
 
@@ -81,29 +81,29 @@ using the global ``Input`` object, in ``_physics_process()``.
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // We create a local variable to store the input direction.
         var direction = Vector3.Zero;
 
-        // We check for each move input and update the direction accordingly
+        // We check for each move input and update the direction accordingly.
         if (Input.IsActionPressed("move_right"))
         {
-            direction.x += 1f;
+            direction.X += 1.0f;
         }
         if (Input.IsActionPressed("move_left"))
         {
-            direction.x -= 1f;
+            direction.X -= 1.0f;
         }
         if (Input.IsActionPressed("move_back"))
         {
-            // Notice how we are working with the vector's x and z axes.
+            // Notice how we are working with the vector's X and Z axes.
             // In 3D, the XZ plane is the ground plane.
-            direction.z += 1f;
+            direction.Z += 1.0f;
         }
         if (Input.IsActionPressed("move_forward"))
         {
-            direction.z -= 1f;
+            direction.Z -= 1.0f;
         }
     }
 
@@ -141,14 +141,14 @@ call its ``normalize()`` method.
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // ...
 
         if (direction != Vector3.Zero)
         {
             direction = direction.Normalized();
-            GetNode<Node3D>("Pivot").LookAt(position + direction, Vector3.Up);
+            GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
         }
     }
 
@@ -192,27 +192,38 @@ fall speed separately. Be sure to go back one tab so the lines are inside the
         # Moving the Character
         velocity = target_velocity
         move_and_slide()
+
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // ...
+        if (direction != Vector3.Zero)
+        {
+            // ...
+        }
 
         // Ground velocity
-        _velocity.x = direction.x * Speed;
-        _velocity.z = direction.z * Speed;
+        _targetVelocity.X = direction.X * Speed;
+        _targetVelocity.Z = direction.Z * Speed;
+
         // Vertical velocity
-        _velocity.y -= FallAcceleration * delta;
+        if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
+        {
+            _targetVelocity.Y -= FallAcceleration * (float)delta;
+        }
+
         // Moving the character
-        _velocity = MoveAndSlide(_velocity, Vector3.Up);
+        Velocity = _targetVelocity;
+        MoveAndSlide();
     }
 
 The ``CharacterBody3D.is_on_floor()`` function returns ``true`` if the body collided with the floor in this frame. That's why
-we apply gravity to the ``Player`` only while he is in the air.
+we apply gravity to the ``Player`` only while it is in the air.
 
 For the vertical velocity, we subtract the fall acceleration multiplied by the
 delta time every frame.
-This line of code will cause our character to fall in every frame, as long he is not on the floor, or collides with it.
+This line of code will cause our character to fall in every frame, as long it is not on or collides with the floor.
 
 The physics engine can only detect interactions with walls, the floor, or other
 bodies during a given frame if movement and collisions happen. We will use this
@@ -269,11 +280,12 @@ Here is the complete ``Player.gd`` code for reference.
 
         # Vertical Velocity
         if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
-	        target_velocity.y = target_velocity.y - (fall_acceleration * delta)
+            target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 
         # Moving the Character
         velocity = target_velocity
         move_and_slide()
+
  .. code-tab:: csharp
 
     using Godot;
@@ -282,51 +294,53 @@ Here is the complete ``Player.gd`` code for reference.
     {
         // How fast the player moves in meters per second.
         [Export]
-        public int Speed = 14;
+        public int Speed { get; set; } = 14;
         // The downward acceleration when in the air, in meters per second squared.
         [Export]
-        public int FallAcceleration = 75;
+        public int FallAcceleration { get; set; } = 75;
 
-        private Vector3 _velocity = Vector3.Zero;
+        private Vector3 _targetVelocity = Vector3.Zero;
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            // We create a local variable to store the input direction.
             var direction = Vector3.Zero;
 
-            // We check for each move input and update the direction accordingly
             if (Input.IsActionPressed("move_right"))
             {
-                direction.x += 1f;
+                direction.X += 1.0f;
             }
             if (Input.IsActionPressed("move_left"))
             {
-                direction.x -= 1f;
+                direction.X -= 1.0f;
             }
             if (Input.IsActionPressed("move_back"))
             {
-                // Notice how we are working with the vector's x and z axes.
-                // In 3D, the XZ plane is the ground plane.
-                direction.z += 1f;
+                direction.Z += 1.0f;
             }
             if (Input.IsActionPressed("move_forward"))
             {
-                direction.z -= 1f;
+                direction.Z -= 1.0f;
             }
 
             if (direction != Vector3.Zero)
             {
                 direction = direction.Normalized();
-                GetNode<Node3D>("Pivot").LookAt(Translation + direction, Vector3.Up);
+                GetNode<Node3D>("Pivot").LookAt(Position + direction, Vector3.Up);
             }
 
             // Ground velocity
-            _velocity.x = direction.x * Speed;
-            _velocity.z = direction.z * Speed;
+            _targetVelocity.X = direction.X * Speed;
+            _targetVelocity.Z = direction.Z * Speed;
+
             // Vertical velocity
-            _velocity.y -= FallAcceleration * delta;
+            if (!IsOnFloor()) // If in the air, fall towards the floor. Literally gravity
+            {
+                _targetVelocity.Y -= FallAcceleration * (float)delta;
+            }
+
             // Moving the character
-            _velocity = MoveAndSlide(_velocity, Vector3.Up);
+            Velocity = _targetVelocity;
+            MoveAndSlide();
         }
     }
 

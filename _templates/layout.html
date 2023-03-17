@@ -1,4 +1,5 @@
 {% extends "!layout.html" -%}
+{# Refer to https://github.com/readthedocs/sphinx_rtd_theme/blob/master/sphinx_rtd_theme/layout.html #}
 
 {% block htmltitle -%}
 <title>{{ godot_title_prefix }}{{ title|striptags|e }}{{ titlesuffix }}</title>
@@ -27,7 +28,7 @@
 {%- block document %}
 <div itemprop="articleBody">
   {% if godot_is_latest or godot_show_article_status %}
-  <div class="admonition-grid">
+  <div class="admonition-grid {% if godot_is_latest and godot_show_article_status %}admonition-grid-2x{% endif %}">
     {% if godot_is_latest %}
     <div class="admonition attention latest-notice">
       <p class="first admonition-title">Attention</p>

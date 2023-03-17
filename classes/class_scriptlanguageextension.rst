@@ -29,8 +29,6 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`_add_named_global_constant<class_ScriptLanguageExtension_method__add_named_global_constant>` **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)** |virtual|                                                                                                                                           |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void*                                             | :ref:`_alloc_instance_binding_data<class_ScriptLanguageExtension_method__alloc_instance_binding_data>` **(** :ref:`Object<class_Object>` object **)** |virtual|                                                                                                                                                                                  |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`_auto_indent_code<class_ScriptLanguageExtension_method__auto_indent_code>` **(** :ref:`String<class_String>` code, :ref:`int<class_int>` from_line, :ref:`int<class_int>` to_line **)** |virtual| |const|                                                                                                                                  |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`_can_inherit_from_file<class_ScriptLanguageExtension_method__can_inherit_from_file>` **(** **)** |virtual| |const|                                                                                                                                                                                                                         |
@@ -59,15 +57,11 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`_debug_parse_stack_level_expression<class_ScriptLanguageExtension_method__debug_parse_stack_level_expression>` **(** :ref:`int<class_int>` level, :ref:`String<class_String>` expression, :ref:`int<class_int>` max_subitems, :ref:`int<class_int>` max_depth **)** |virtual|                                                              |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`_execute_file<class_ScriptLanguageExtension_method__execute_file>` **(** :ref:`String<class_String>` path **)** |virtual|                                                                                                                                                                                                                  |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`_find_function<class_ScriptLanguageExtension_method__find_function>` **(** :ref:`String<class_String>` class_name, :ref:`String<class_String>` function_name **)** |virtual| |const|                                                                                                                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`_finish<class_ScriptLanguageExtension_method__finish>` **(** **)** |virtual|                                                                                                                                                                                                                                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`_frame<class_ScriptLanguageExtension_method__frame>` **(** **)** |virtual|                                                                                                                                                                                                                                                                 |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`_free_instance_binding_data<class_ScriptLanguageExtension_method__free_instance_binding_data>` **(** void* data **)** |virtual|                                                                                                                                                                                                            |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary[]<class_Dictionary>`             | :ref:`_get_built_in_templates<class_ScriptLanguageExtension_method__get_built_in_templates>` **(** :ref:`StringName<class_StringName>` object **)** |virtual| |const|                                                                                                                                                                            |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -120,10 +114,6 @@ Methods
    | void                                              | :ref:`_profiling_start<class_ScriptLanguageExtension_method__profiling_start>` **(** **)** |virtual|                                                                                                                                                                                                                                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`_profiling_stop<class_ScriptLanguageExtension_method__profiling_stop>` **(** **)** |virtual|                                                                                                                                                                                                                                               |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`_refcount_decremented_instance_binding<class_ScriptLanguageExtension_method__refcount_decremented_instance_binding>` **(** :ref:`Object<class_Object>` object **)** |virtual|                                                                                                                                                              |
-   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`_refcount_incremented_instance_binding<class_ScriptLanguageExtension_method__refcount_incremented_instance_binding>` **(** :ref:`Object<class_Object>` object **)** |virtual|                                                                                                                                                              |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`_reload_all_scripts<class_ScriptLanguageExtension_method__reload_all_scripts>` **(** **)** |virtual|                                                                                                                                                                                                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -416,20 +406,6 @@ void **_add_named_global_constant** **(** :ref:`StringName<class_StringName>` na
 
 ----
 
-.. _class_ScriptLanguageExtension_method__alloc_instance_binding_data:
-
-.. rst-class:: classref-method
-
-void* **_alloc_instance_binding_data** **(** :ref:`Object<class_Object>` object **)** |virtual|
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ScriptLanguageExtension_method__auto_indent_code:
 
 .. rst-class:: classref-method
@@ -626,20 +602,6 @@ void* **_debug_get_stack_level_instance** **(** :ref:`int<class_int>` level **)*
 
 ----
 
-.. _class_ScriptLanguageExtension_method__execute_file:
-
-.. rst-class:: classref-method
-
-:ref:`Error<enum_@GlobalScope_Error>` **_execute_file** **(** :ref:`String<class_String>` path **)** |virtual|
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_ScriptLanguageExtension_method__find_function:
 
 .. rst-class:: classref-method
@@ -673,20 +635,6 @@ void **_finish** **(** **)** |virtual|
 .. rst-class:: classref-method
 
 void **_frame** **(** **)** |virtual|
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ScriptLanguageExtension_method__free_instance_binding_data:
-
-.. rst-class:: classref-method
-
-void **_free_instance_binding_data** **(** void* data **)** |virtual|
 
 .. container:: contribute
 
@@ -1051,34 +999,6 @@ void **_profiling_start** **(** **)** |virtual|
 .. rst-class:: classref-method
 
 void **_profiling_stop** **(** **)** |virtual|
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ScriptLanguageExtension_method__refcount_decremented_instance_binding:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **_refcount_decremented_instance_binding** **(** :ref:`Object<class_Object>` object **)** |virtual|
-
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_ScriptLanguageExtension_method__refcount_incremented_instance_binding:
-
-.. rst-class:: classref-method
-
-void **_refcount_incremented_instance_binding** **(** :ref:`Object<class_Object>` object **)** |virtual|
 
 .. container:: contribute
 

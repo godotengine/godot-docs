@@ -24,7 +24,7 @@ ones, and more.
 
 .. image:: img/editor_intro_project_manager.webp
 
-At the top of the window, there is another tab named "Templates". You can search
+At the top of the window, there is another tab named "Asset Library Projects". You can search
 for demo projects in the open source asset library, which includes many projects
 developed by the community.
 
@@ -68,7 +68,7 @@ Below is the 3D one.
 
 .. image:: img/editor_intro_toolbar_3d.webp
 
-Let's look at the docks. The **FileSystem** dock lists your project files, be it
+Let's look at the docks. The **FileSystem** dock lists your project files, including
 scripts, images, audio samples, and more.
 
 .. image:: img/editor_intro_filesystem_dock.webp

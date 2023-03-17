@@ -7,9 +7,9 @@ This page aims to list **all** features currently supported by Godot.
 
 .. note::
 
-    This page lists features supported by the current development version of
-    Godot (4.0.rc). Some of these features may not be available in the
-    `current stable release series (3.x) <https://docs.godotengine.org/en/stable/about/list_of_features.html>`__.
+    This page lists features supported by the current stable version of
+    Godot (4.0). Some of these features may not be available in the
+    `LTS release series (3.x) <https://docs.godotengine.org/en/3.5/about/list_of_features.html>`__.
 
 Platforms
 ---------
@@ -450,7 +450,7 @@ Scripting
 
 - Actively developed GDExtension bindings for `D <https://github.com/godot-dlang/godot-dlang>`__,
   `Haxe <https://hxgodot.github.io/>`__, `Python <https://github.com/touilleMan/godot-python>`__, and `Rust <https://github.com/godot-rust/gdextension>`__
-  bindings provided by the community. (Some of these bindings may be experimental and not production-ready.)
+  bindings provided by the community. (Some of these bindings may be experimental and not production-ready).
 
 Audio
 -----

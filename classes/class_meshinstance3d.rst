@@ -140,7 +140,7 @@ The :ref:`Mesh<class_Mesh>` resource for the instance.
 - void **set_skin** **(** :ref:`Skin<class_Skin>` value **)**
 - :ref:`Skin<class_Skin>` **get_skin** **(** **)**
 
-Sets the skin to be used by this instance.
+The :ref:`Skin<class_Skin>` to be used by this instance.
 
 .. rst-class:: classref-section-separator
 
@@ -209,9 +209,7 @@ This helper creates a :ref:`StaticBody3D<class_StaticBody3D>` child node with a 
 
 :ref:`int<class_int>` **find_blend_shape_by_name** **(** :ref:`StringName<class_StringName>` name **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the index of the blend shape with the given ``name``. Returns ``-1`` if no blend shape with this name exists, including when :ref:`mesh<class_MeshInstance3D_property_mesh>` is ``null``.
 
 .. rst-class:: classref-item-separator
 
@@ -223,7 +221,9 @@ This helper creates a :ref:`StaticBody3D<class_StaticBody3D>` child node with a 
 
 :ref:`Material<class_Material>` **get_active_material** **(** :ref:`int<class_int>` surface **)** |const|
 
-Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<class_Mesh>` when drawing. This can return the :ref:`GeometryInstance3D.material_override<class_GeometryInstance3D_property_material_override>`, the surface override :ref:`Material<class_Material>` defined in this **MeshInstance3D**, or the surface :ref:`Material<class_Material>` defined in the :ref:`Mesh<class_Mesh>`. For example, if :ref:`GeometryInstance3D.material_override<class_GeometryInstance3D_property_material_override>` is used, all surfaces will return the override material.
+Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<class_Mesh>` when drawing. This can return the :ref:`GeometryInstance3D.material_override<class_GeometryInstance3D_property_material_override>`, the surface override :ref:`Material<class_Material>` defined in this **MeshInstance3D**, or the surface :ref:`Material<class_Material>` defined in the :ref:`mesh<class_MeshInstance3D_property_mesh>`. For example, if :ref:`GeometryInstance3D.material_override<class_GeometryInstance3D_property_material_override>` is used, all surfaces will return the override material.
+
+Returns ``null`` if no material is active, including when :ref:`mesh<class_MeshInstance3D_property_mesh>` is ``null``.
 
 .. rst-class:: classref-item-separator
 
@@ -235,9 +235,7 @@ Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<
 
 :ref:`int<class_int>` **get_blend_shape_count** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the number of blend shapes available. Produces an error if :ref:`mesh<class_MeshInstance3D_property_mesh>` is ``null``.
 
 .. rst-class:: classref-item-separator
 
@@ -249,9 +247,7 @@ Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<
 
 :ref:`float<class_float>` **get_blend_shape_value** **(** :ref:`int<class_int>` blend_shape_idx **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the value of the blend shape at the given ``blend_shape_idx``. Returns ``0.0`` and produces an error if :ref:`mesh<class_MeshInstance3D_property_mesh>` is ``null`` or doesn't have a blend shape at that index.
 
 .. rst-class:: classref-item-separator
 
@@ -263,7 +259,7 @@ Returns the :ref:`Material<class_Material>` that will be used by the :ref:`Mesh<
 
 :ref:`Material<class_Material>` **get_surface_override_material** **(** :ref:`int<class_int>` surface **)** |const|
 
-Returns the override :ref:`Material<class_Material>` for the specified surface of the :ref:`Mesh<class_Mesh>` resource.
+Returns the override :ref:`Material<class_Material>` for the specified ``surface`` of the :ref:`Mesh<class_Mesh>` resource.
 
 .. rst-class:: classref-item-separator
 
@@ -287,9 +283,7 @@ Returns the number of surface override materials. This is equivalent to :ref:`Me
 
 void **set_blend_shape_value** **(** :ref:`int<class_int>` blend_shape_idx, :ref:`float<class_float>` value **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the value of the blend shape at ``blend_shape_idx`` to ``value``. Produces an error if :ref:`mesh<class_MeshInstance3D_property_mesh>` is ``null`` or doesn't have a blend shape at that index.
 
 .. rst-class:: classref-item-separator
 
@@ -301,7 +295,7 @@ void **set_blend_shape_value** **(** :ref:`int<class_int>` blend_shape_idx, :ref
 
 void **set_surface_override_material** **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**
 
-Sets the override :ref:`Material<class_Material>` for the specified surface of the :ref:`Mesh<class_Mesh>` resource. This material is associated with this **MeshInstance3D** rather than with the :ref:`Mesh<class_Mesh>` resource.
+Sets the override ``material`` for the specified ``surface`` of the :ref:`Mesh<class_Mesh>` resource. This material is associated with this **MeshInstance3D** rather than with :ref:`mesh<class_MeshInstance3D_property_mesh>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

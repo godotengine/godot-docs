@@ -69,7 +69,7 @@ Putting the above together we can use the following code as a base:
 .. code-block:: gdscript
 
   func enable_passthrough() -> bool:
-    var xr_interface : XRInterface = XRServer.primary_interface
+    var xr_interface: XRInterface = XRServer.primary_interface
     if xr_interface and xr_interface.is_passthrough_supported():
       return xr_interface.start_passthrough()
     else:

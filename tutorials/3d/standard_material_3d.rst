@@ -218,8 +218,8 @@ Choosing this option means vertex color is used as albedo color.
 Is sRGB
 ~~~~~~~
 
-Most 3D DCCs will likely export vertex colors as sRGB, so toggling this
-option on will help them look correct.
+Most 3D modeling software will likely export vertex colors as sRGB, so toggling
+this option on will help them look correct.
 
 Albedo
 ------
@@ -531,8 +531,8 @@ Use Point Size
 ~~~~~~~~~~~~~~~
 
 This option is only effective when the geometry rendered is made of points
-(generally it's made of triangles when imported from 3D DCCs). If so, then
-those points can be resized (see below).
+(generally it's made of triangles when imported from 3D modeling software). If
+so, then those points can be resized (see below).
 
 Point Size
 ~~~~~~~~~~

@@ -95,7 +95,7 @@ viewport, it becomes part of the *scene tree*.
 This means that as explained in previous tutorials, it will get the
 ``_enter_tree()`` and ``_ready()`` callbacks (as well as ``_exit_tree()``).
 
-.. image:: img/activescene.png
+.. image:: img/activescene.webp
 
 When nodes enter the *Scene Tree*, they become active. They get access
 to everything they need to process, get input, display 2D and 3D visuals,
@@ -113,7 +113,7 @@ on. However, children of a node will get called before their parent, also
 in top to bottom order. So the top child node of the top node will get its
 ``_ready()`` function called first.
 
-.. image:: img/toptobottom.png
+.. image:: img/toptobottom.webp
 
 This can also be overridden using the ``process_priority`` node property.
 Nodes with a lower number are called first. For example, nodes with the

@@ -22,8 +22,8 @@ On this page, you'll learn:
 
 .. seealso::
 
-    The Godot demo projects repository contains a
-    `volumetric fog demo <https://github.com/godotengine/godot-demo-projects/tree/master/3d/volumetric_fog>`__.
+    You can see how volumetric fog works in action using the
+    `Volumetric Fog demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/volumetric_fog>`__.
 
 Here is a comparison between traditional fog (which does not interact with lighting)
 and volumetric fog, which is able to interact with lighting:

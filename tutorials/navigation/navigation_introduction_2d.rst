@@ -52,7 +52,7 @@ The following SceneTree Nodes are available as helpers to work with the Navigati
     that cannot be re(baked) to a navigation mesh efficiently. This node also only works if RVO processing
     is being used.
 
-The 2D navigationm eshes are defined with the following resources:
+The 2D navigation meshes are defined with the following resources:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` Resource
     A resource that holds 2D navigation mesh data and provides polygon drawtools to define navigation areas inside the Editor as well as at runtime.
@@ -60,6 +60,13 @@ The 2D navigationm eshes are defined with the following resources:
     - The NavigationRegion2D Node uses this resource to define its navigation area.
     - The NavigationServer2D uses this resource to update navmesh of individual regions.
     - The TileSet Editor creates and uses this resource internally when defining tile navigation areas.
+
+.. seealso::
+
+    You can see how 2D navigation works in action using the
+    `2D Navigation Polygon <https://github.com/godotengine/godot-demo-projects/tree/master/2d/navigation>`__
+    and `Grid-based Navigation with AStarGrid2D <https://github.com/godotengine/godot-demo-projects/tree/master/2d/navigation_astar>`__
+    demo projects.
 
 Setup for 2D scene
 ------------------
@@ -98,10 +105,10 @@ NavigationServer2D and a NavigationAgent2D for path movement.
 
     extends CharacterBody2D
 
-    var movement_speed  : float = 200.0
-    var movement_target_position : Vector2 = Vector2(60.0,180.0)
+    var movement_speed: float = 200.0
+    var movement_target_position: Vector2 = Vector2(60.0,180.0)
 
-    @onready var navigation_agent : NavigationAgent2D = $NavigationAgent2D
+    @onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
     func _ready():
         # These values need to be adjusted for the actor's speed
@@ -119,17 +126,17 @@ NavigationServer2D and a NavigationAgent2D for path movement.
         # Now that the navigation map is no longer empty, set the movement target.
         set_movement_target(movement_target_position)
 
-    func set_movement_target(movement_target : Vector2):
-        navigation_agent.set_target_location(movement_target)
+    func set_movement_target(movement_target: Vector2):
+        navigation_agent.target_position = movement_target
 
     func _physics_process(delta):
         if navigation_agent.is_navigation_finished():
             return
 
-        var current_agent_position : Vector2 = global_transform.origin
-        var next_path_position : Vector2 = navigation_agent.get_next_location()
+        var current_agent_position: Vector2 = global_transform.origin
+        var next_path_position: Vector2 = navigation_agent.get_next_path_position()
 
-        var new_velocity : Vector2 = next_path_position - current_agent_position
+        var new_velocity: Vector2 = next_path_position - current_agent_position
         new_velocity = new_velocity.normalized()
         new_velocity = new_velocity * movement_speed
 
@@ -150,8 +157,8 @@ NavigationServer2D and a NavigationAgent2D for path movement.
 
         public Vector2 MovementTarget
         {
-            get { return _navigationAgent.TargetLocation; }
-            set { _navigationAgent.TargetLocation = value; }
+            get { return _navigationAgent.TargetPosition; }
+            set { _navigationAgent.TargetPosition = value; }
         }
 
         public override void _Ready()
@@ -179,7 +186,7 @@ NavigationServer2D and a NavigationAgent2D for path movement.
             }
 
             Vector2 currentAgentPosition = GlobalTransform.Origin;
-            Vector2 nextPathPosition = _navigationAgent.GetNextLocation();
+            Vector2 nextPathPosition = _navigationAgent.GetNextPathPosition();
 
             Vector2 newVelocity = (nextPathPosition - currentAgentPosition).Normalized();
             newVelocity *= _movementSpeed;
