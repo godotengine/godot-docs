@@ -47,7 +47,7 @@ In summary, you can use the low-level networking API for maximum control and imp
 .. warning:: Adding networking to your game comes with some responsibility.
              It can make your application vulnerable if done wrong and may lead to cheats or exploits.
              It may even allow an attacker to compromise the machines your application runs on
-             and use your servers to send spam, attack others or steal your users data if they play your game.
+             and use your servers to send spam, attack others or steal your users' data if they play your game.
 
              This is always the case when networking is involved and has nothing to do with Godot.
              You can of course experiment, but when you release a networked application,
