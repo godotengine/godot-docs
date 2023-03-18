@@ -72,7 +72,7 @@ either? Let's see an example:
     #
     # 4. It is when one instantiates this script on its own with .new() that
     #    one will load "office.tscn" rather than the exported value.
-    export(PackedScene) var a_building = preload("office.tscn")
+    @export(PackedScene) var a_building = preload("office.tscn")
 
     # Uh oh! This results in an error!
     # One must assign constant values to constants. Because `load` performs a
@@ -121,7 +121,7 @@ consider:
    in exceptional cases, one may wish not to do this:
 
    1. If the 'imported' class is liable to change, then it should be a property
-      instead, initialized either using an ``export`` or a ``load`` (and
+      instead, initialized either using an ``@export`` or a ``load`` (and
       perhaps not even initialized until later).
 
    2. If the script requires a great many dependencies, and one does not wish

@@ -239,7 +239,7 @@ tree structures.
     class_name TreeNode
 
     var _parent: TreeNode = null
-    var _children: = [] setget
+    var _children: = []
 
     func _notification(p_what):
         match p_what:
@@ -282,7 +282,7 @@ Enumerations: int vs. string
 
 Most languages offer an enumeration type option. GDScript is no different, but
 unlike most other languages, it allows one to use either integers or strings for
-the enum values (the latter only when using the ``export`` keyword in GDScript).
+the enum values (the latter only when using the ``@export`` annotation in GDScript).
 The question then arises, "which should one use?"
 
 The short answer is, "whichever you are more comfortable with." This
