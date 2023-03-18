@@ -711,10 +711,10 @@ We suggest to organize GDScript code this way:
     05. signals
     06. enums
     07. constants
-    08. exported variables
+    08. @export variables
     09. public variables
     10. private variables
-    11. onready variables
+    11. @onready variables
 
     12. optional built-in virtual _init method
     13. optional built-in virtual _enter_tree() method
