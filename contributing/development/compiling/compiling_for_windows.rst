@@ -167,7 +167,7 @@ Development in Visual Studio
 
 Using an IDE is not required to compile Godot, as SCons takes care of everything.
 But if you intend to do engine development or debugging of the engine's C++ code,
-you may be interested in configuring a code editor or an IDE.
+you may be interested in :ref:`configuring a code editor or an IDE<doc_configuring_an_ide>`.
 
 Folder-based editors don't require any particular setup to start working with Godot's
 codebase. To edit projects with Visual Studio they need to be set up as a solution.
