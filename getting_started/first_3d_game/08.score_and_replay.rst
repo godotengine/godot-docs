@@ -400,7 +400,7 @@ Here is the complete ``Main.gd`` script for reference.
             # This restarts the current scene.
             get_tree().reload_current_scene()
 
- .. code-tab:: csharp
+  .. code-tab:: csharp
 
     using Godot;
 
