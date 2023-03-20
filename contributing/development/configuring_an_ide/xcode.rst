@@ -99,7 +99,7 @@ To enable debugging support you need to edit the external build target's build a
 - Set the **Executable** to the file you linked in your post-build action script.
 - Check **Debug executable**.
 - You can add two arguments on the **Arguments** tab:
-  the ``-e`` flag opens the editor instead of the project manager, and the ``--path`` argument
+  the ``-e`` flag opens the editor instead of the Project Manager, and the ``--path`` argument
   tells the executable to open the specified project (must be provided as an *absolute* path
   to the project root, not the ``project.godot`` file).
 

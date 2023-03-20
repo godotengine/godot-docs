@@ -79,7 +79,7 @@ To import an existing project, the current process is as follows:
 - Specify a ZIP file to preload on the HTML5 filesystem using the
   **Preload project ZIP** input.
 - Run the editor by clicking **Start Godot editor**.
-  The Godot project manager should appear after 10-20 seconds.
+  The Godot Project Manager should appear after 10-20 seconds.
   On slower machines or connections, loading may take up to a minute.
 - In the dialog that appears at the middle of the window, specify a name for
   the folder to create then click the **Create Folder** button

@@ -136,7 +136,7 @@ metadata is hidden in its ``.git`` subfolder).
           working in Git.
 
 In the following, we will assume as an example that you want to implement a feature in
-Godot's project manager, which is coded in the ``editor/project_manager.cpp``
+Godot's Project Manager, which is coded in the ``editor/project_manager.cpp``
 file.
 
 Branching
@@ -298,7 +298,7 @@ Here's how the shell history could look like on our example:
     # It's nice to know where you're starting from
     $ git log
 
-    # Do changes to the project manager with the nano text editor
+    # Do changes to the Project Manager with the nano text editor
     $ nano editor/project_manager.cpp
 
     # Find an unrelated bug in Control and fix it
@@ -320,7 +320,7 @@ Here's how the shell history could look like on our example:
 
     # Make our second commit
     $ git add editor/project_manager.cpp
-    $ git commit -m "Add a pretty banner to the project manager"
+    $ git commit -m "Add a pretty banner to the Project Manager"
     $ git log
 
 With this, we should have two new commits in our ``better-project-manager``
@@ -476,7 +476,7 @@ to configure your favorite one) with something which may look like this:
 
 .. code-block:: text
 
-    pick 1b4aad7 Add a pretty banner to the project manager
+    pick 1b4aad7 Add a pretty banner to the Project Manager
     pick e07077e Fix a typo in the banner's title
 
 The editor will also show instructions regarding how you can act on those
@@ -489,7 +489,7 @@ so we use:
 
 .. code-block:: text
 
-    pick 1b4aad7 Add a pretty banner to the project manager
+    pick 1b4aad7 Add a pretty banner to the Project Manager
     fixup e07077e Fix a typo in the banner's title
 
 Upon saving and quitting the editor, the rebase will occur. The second commit
@@ -531,7 +531,7 @@ Git branch for the PR. There won't be issues if you don't delete your branch, bu
 good practice to do so. You'll need to do this twice, once for the local branch and another
 for the remote branch on GitHub.
 
-To delete our better project manager branch locally, use this command:
+To delete our better Project Manager branch locally, use this command:
 
 ::
 

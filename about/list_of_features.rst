@@ -76,7 +76,7 @@ Editor
 - :ref:`Create your own plugins <doc_making_plugins>` using GDScript to add new
   features or speed up your workflow.
 - :ref:`Download projects from the asset library <doc_using_assetlib_editor>`
-  in the project manager and import them directly.
+  in the Project Manager and import them directly.
 
 Rendering
 ---------

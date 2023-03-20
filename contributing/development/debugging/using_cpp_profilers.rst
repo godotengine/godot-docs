@@ -68,8 +68,8 @@ VerySleepy
 ^^^^^^^^^^
 
 - Start the Godot editor or your project first.
-  If you start the project manager, make sure to edit or run a project first.
-  Otherwise, the profiler will not track the child process since the project manager
+  If you start the Project Manager, make sure to edit or run a project first.
+  Otherwise, the profiler will not track the child process since the Project Manager
   will spawn a child process for every project edited or run.
 - Open VerySleepy and select the Godot executable in the list of processes on the left:
 

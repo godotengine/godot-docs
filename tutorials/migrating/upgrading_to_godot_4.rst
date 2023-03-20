@@ -113,12 +113,12 @@ Running the project upgrade tool
     You can backup a project by using version control, or by copying the project
     folder to another location.
 
-Using the project manager
+Using the Project Manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To use the project upgrade tool:
 
-1. Open the Godot 4 project manager.
+1. Open the Godot 4 Project Manager.
 2. Import the Godot 3.x project using the **Import** button, or use the **Scan**
    button to find the project within a folder.
 3. Double-click the imported project (or select the project then choose **Edit**).
@@ -129,7 +129,7 @@ To use the project upgrade tool:
    case the conversion tool fails.
 5. Wait until the project conversion process finishes. This can take up to a few
    minutes for large projects with lots of scenes.
-6. When the project manager interface becomes available again, double-click the
+6. When the Project Manager interface becomes available again, double-click the
    project (or select the project then choose **Edit**) to open it in the
    editor.
 

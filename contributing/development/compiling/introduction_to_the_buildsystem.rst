@@ -118,7 +118,7 @@ A Windows binary with the same configuration will look like this:
     C:\godot> dir bin/
     godot.windows.editor.64.exe
 
-Copy that binary to any location you like, as it contains the project manager,
+Copy that binary to any location you like, as it contains the Project Manager,
 editor and all means to execute the game. However, it lacks the data to export
 it to the different platforms. For that the export templates are needed (which
 can be either downloaded from `godotengine.org <https://godotengine.org/>`__, or
@@ -141,7 +141,7 @@ All builds are optimized. Each mode means:
 
 The editor is enabled by default in all PC targets (Linux, Windows, macOS),
 disabled for everything else. Disabling the editor produces a binary that can
-run projects but that does not include the editor or the project manager.
+run projects but that does not include the editor or the Project Manager.
 
 ::
 

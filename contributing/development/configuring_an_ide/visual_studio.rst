@@ -34,9 +34,9 @@ source code, stop at specific points in the code, inspect the current execution 
 and make live changes to the codebase.
 
 You can launch the project with the debugger attached using the **Debug > Start Debugging**
-option from the top menu. However, unless you want to debug the project manager specifically,
+option from the top menu. However, unless you want to debug the Project Manager specifically,
 you'd need to configure debugging options first. This is due to the fact that when the Godot
-project manager opens a project, the initial process is terminated and the debugger gets detached.
+Project Manager opens a project, the initial process is terminated and the debugger gets detached.
 
 - To configure the launch options to use with the debugger use **Project > Properties**
   from the top menu:
@@ -45,7 +45,7 @@ project manager opens a project, the initial process is terminated and the debug
    :align: center
 
 - Open the **Debugging** section and under **Command Arguments** add two new arguments:
-  the ``-e`` flag opens the editor instead of the project manager, and the ``--path`` argument
+  the ``-e`` flag opens the editor instead of the Project Manager, and the ``--path`` argument
   tells the executable to open the specified project (must be provided as an *absolute* path
   to the project root, not the ``project.godot`` file).
 

@@ -12,7 +12,7 @@ the archive here: `Squash the Creeps assets
 <https://github.com/godotengine/godot-3d-dodge-the-creeps/releases/tag/1.1.0>`__.
 
 Once you downloaded it, extract the .zip archive on your computer. Open the
-Godot project manager and click the *Import* button.
+Godot Project Manager and click the *Import* button.
 
 .. image:: img/01.game_setup/01.import_button.png
 

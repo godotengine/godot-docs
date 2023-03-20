@@ -47,7 +47,7 @@ Some important files in the editor are:
 - `editor/editor_node.cpp <https://github.com/godotengine/godot/blob/master/editor/editor_node.cpp>`__:
   Main editor initialization file. Effectively the "main scene" of the editor.
 - `editor/project_manager.cpp <https://github.com/godotengine/godot/blob/master/editor/project_manager.cpp>`__:
-  Main project manager initialization file. Effectively the "main scene" of the project manager.
+  Main Project Manager initialization file. Effectively the "main scene" of the Project Manager.
 - `editor/plugins/canvas_item_editor_plugin.cpp <https://github.com/godotengine/godot/blob/master/editor/plugins/canvas_item_editor_plugin.cpp>`__:
   The 2D editor viewport and related functionality (toolbar at the top, editing modes, overlaid helpers/panels, …).
 - `editor/plugins/node_3d_editor_plugin.cpp <https://github.com/godotengine/godot/blob/master/editor/plugins/node_3d_editor_plugin.cpp>`__:
@@ -84,5 +84,5 @@ Development tips
 
 To iterate quickly on the editor, we recommend to set up a test project and
 :ref:`open it from the command line <doc_command_line_tutorial>` after compiling
-the editor. This way, you don't have to go through the project manager every
+the editor. This way, you don't have to go through the Project Manager every
 time you start Godot.
