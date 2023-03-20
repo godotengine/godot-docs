@@ -295,7 +295,7 @@ editor, you would have to change the call to ``get_node("BlinkingTimer")``.
 
 .. note:: The function ``get_node()`` will return a type of ``Node``. You still can access
           ``Timer`` properties, but for code assist to work properly with GDScript you
-          need to do the conversion explicitly with operator ``as`` - ``(time as Timer)```
+          need to do the conversion explicitly with operator ``as`` - ``(timer as Timer)```
 
 We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
 
