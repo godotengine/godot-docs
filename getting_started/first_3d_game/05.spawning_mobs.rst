@@ -250,7 +250,7 @@ Let's code the mob spawning logic. We're going to:
 
         // Choose a random location on the SpawnPath.
         // We store the reference to the SpawnLocation node.
-        var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
+        var mobSpawnLocation = GetNode<PathFollow3D>("SpawnPath/SpawnLocation");
         // And give it a random offset.
         mobSpawnLocation.ProgressRatio = GD.Randf();
 
