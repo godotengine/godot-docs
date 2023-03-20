@@ -393,8 +393,9 @@ packages the next time it builds the project.
 Profiling your C# code
 ----------------------
 
-- `Mono log profiler <https://www.mono-project.com/docs/debug+profile/profile/profiler/>`_
-  is available for Linux and macOS. Due to a Mono change, it does not work on
-  Windows currently.
-- External Mono profiler like `JetBrains dotTrace <https://www.jetbrains.com/profiler/>`_
-  can be used as described `here <https://github.com/godotengine/godot/pull/34382>`_.
+The following tools may be used for performance and memory profiling of your managed code:
+- JetBrains Rider with dotTrace/dotMemory plugin
+- Standalone JetBrains dotTrace/dotMemory
+- Visual Studio
+
+Profiling managed + unmanaged code at once is possible with both JetBrains tools and Visual Studio, but limited to Windows OS.
