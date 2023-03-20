@@ -103,10 +103,10 @@ program manually:
 
 .. code:: sh
 
-   sphinx-build -b html ./ _build
+   sphinx-build -b html ./ _build/html
 
 You can also specify a list of files to build, which can greatly speed up compilation:
 
 .. code:: sh
 
-  sphinx-build -b html ./ _build classes/class_node.rst classes/class_resource.rst
+  sphinx-build -b html ./ _build/html classes/class_node.rst classes/class_resource.rst
