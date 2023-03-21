@@ -394,8 +394,9 @@ Profiling your C# code
 ----------------------
 
 The following tools may be used for performance and memory profiling of your managed code:
-- JetBrains Rider with dotTrace/dotMemory plugin
-- Standalone JetBrains dotTrace/dotMemory
-- Visual Studio
+
+- JetBrains Rider with dotTrace/dotMemory plugin.
+- Standalone JetBrains dotTrace/dotMemory.
+- Visual Studio.
 
 Profiling managed + unmanaged code at once is possible with both JetBrains tools and Visual Studio, but limited to Windows OS.
