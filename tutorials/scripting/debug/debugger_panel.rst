@@ -101,7 +101,7 @@ FPS+ portion.
 
 .. note::
 
-    Remember that Visual Profiler results will vary **heavily** based on
+    Remember that Visual Profiler results can vary **heavily** based on
     viewport resolution, which is determined by the window size if using the
     ``disabled`` or ``canvas_items`` :ref:`stretch modes
     <doc_multiple_resolutions>`.
