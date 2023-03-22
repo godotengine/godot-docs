@@ -297,11 +297,11 @@ signal of ``StartButton``, and add the following code to the new functions:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_StartButton_pressed():
+    func _on_start_button_pressed():
         $StartButton.hide()
         start_game.emit()
 
-    func _on_MessageTimer_timeout():
+    func _on_message_timer_timeout():
         $Message.hide()
 
  .. code-tab:: csharp

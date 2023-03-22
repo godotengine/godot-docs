@@ -246,10 +246,10 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_ScoreTimer_timeout():
+    func _on_score_timer_timeout():
         score += 1
 
-    func _on_StartTimer_timeout():
+    func _on_start_timer_timeout():
         $MobTimer.start()
         $ScoreTimer.start()
 
@@ -302,7 +302,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_MobTimer_timeout():
+    func _on_mob_timer_timeout():
         # Create a new instance of the Mob scene.
         var mob = mob_scene.instantiate()
 
