@@ -33,7 +33,7 @@ You can download the images here:
 Unzip the images and place them in your project folder. Set up your scene tree
 with the following nodes:
 
-.. image:: img/2d_animation_tree1.png
+.. image:: img/2d_animation_tree1.webp
 
 .. note:: The root node could also be :ref:`Area2D <class_Area2D>` or
           :ref:`RigidBody2D <class_RigidBody2D>`. The animation will still be
@@ -165,7 +165,7 @@ image into your project folder.
 Our goal is to display these images one after another in a loop. Start by
 setting up your scene tree:
 
-.. image:: img/2d_animation_tree2.png
+.. image:: img/2d_animation_tree2.webp
 
 .. note:: The root node could also be :ref:`Area2D <class_Area2D>` or
           :ref:`RigidBody2D <class_RigidBody2D>`. The animation will still be
