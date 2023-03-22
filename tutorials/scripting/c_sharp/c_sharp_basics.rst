@@ -399,4 +399,4 @@ The following tools may be used for performance and memory profiling of your man
 - Standalone JetBrains dotTrace/dotMemory.
 - Visual Studio.
 
-Profiling managed + unmanaged code at once is possible with both JetBrains tools and Visual Studio, but limited to Windows OS.
+Profiling managed and unmanaged code at once is possible with both JetBrains tools and Visual Studio, but limited to Windows.
