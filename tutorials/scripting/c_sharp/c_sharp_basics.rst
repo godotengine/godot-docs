@@ -124,7 +124,7 @@ executable. Now, when you start the debugger in Visual Studio Code, your Godot p
 .. note::
 
     There is also a `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ 
-    Visual Studio Code extension, that is meant to make this setup easier and to provid further usefull tools. 
+    Visual Studio Code extension, that is meant to make this setup easier and to provide further useful tools.
     But it is not yet updated to work with Godot 4.
 
 Visual Studio (Windows only)
