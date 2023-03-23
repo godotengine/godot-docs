@@ -35,10 +35,12 @@ Here is a complete class example based on these guidelines:
 
     signal state_changed(previous, new)
 
-    export var initial_state = NodePath()
-    var is_active = true setget set_is_active
+    @export var initial_state: Node
+    var is_active = true:
+        set = set_is_active
 
-    @onready var _state = get_node(initial_state) setget set_state
+    @onready var _state = initial_state:
+        get = set_state
     @onready var _state_name = _state.name
 
 
@@ -51,7 +53,7 @@ Here is a complete class example based on these guidelines:
         
 
     func _ready():
-        connect("state_changed", self, "_on_state_changed")
+        state_changed.connect(_on_state_changed)
         _state.enter()
 
 
@@ -780,11 +782,13 @@ variables, in that order.
 
    const MAX_LIVES = 3
 
-   export(Jobs) var job = Jobs.KNIGHT
-   export var max_health = 50
-   export var attack = 5
+   @export var job: Jobs = Jobs.KNIGHT
+   @export var max_health = 50
+   @export var attack = 5
 
-   var health = max_health setget set_health
+   var health = max_health:
+       set(new_health):
+           health = new_health
 
    var _speed = 300.0
 
@@ -839,7 +843,7 @@ in that order.
 
 
     func _ready():
-        connect("state_changed", self, "_on_state_changed")
+        state_changed.connect(_on_state_changed)
         _state.enter()
 
 
@@ -857,7 +861,7 @@ in that order.
         _state.exit()
         self._state = target_state
         _state.enter(msg)
-        player_state_changed.emit(_state.name)
+        Events.player_state_changed.emit(_state.name)
 
 
     func _on_state_changed(previous, new):
