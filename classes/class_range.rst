@@ -100,7 +100,7 @@ Emitted when :ref:`min_value<class_Range_property_min_value>`, :ref:`max_value<c
 
 **value_changed** **(** :ref:`float<class_float>` value **)**
 
-Emitted when :ref:`value<class_Range_property_value>` changes. When used on a :ref:`Slider<class_Slider>`, this is called continuously while dragging (potentially every frame). If you are performing an expensive operation in a function connected to :ref:`value_changed<class_Range_signal_value_changed>`, consider using a *debouncing* :ref:`Timer<class_Timer>` to call the function less often.
+Emitted when :ref:`value<class_Range_property_value>` changes (i.e. the new value is different from the previous). When used on a :ref:`Slider<class_Slider>`, this is called continuously while dragging (potentially every frame). If you are performing an expensive operation in a function connected to :ref:`value_changed<class_Range_signal_value_changed>`, consider using a *debouncing* :ref:`Timer<class_Timer>` to call the function less often.
 
 \ **Note:** Unlike signals such as :ref:`LineEdit.text_changed<class_LineEdit_signal_text_changed>`, :ref:`value_changed<class_Range_signal_value_changed>` is also emitted when ``value`` is set directly via code.
 
