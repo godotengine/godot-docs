@@ -49,6 +49,10 @@ click the Other Node button.
 Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D
 to create the node.
 
+.. note::
+
+    The image below shows "Sprite" but in Godot 4 it's "Sprite2D".
+
 .. image:: img/scripting_first_script_add_sprite_node.webp
 
 Your Scene tab should now only have a Sprite2D node.
@@ -57,7 +61,7 @@ Your Scene tab should now only have a Sprite2D node.
 
 A Sprite2D node needs a texture to display. In the Inspector on the right, you
 can see that the Texture property says "[empty]". To display the Godot icon,
-click and drag the file ``icon.png`` from the FileSystem dock onto the Texture
+click and drag the file ``icon.svg`` from the FileSystem dock onto the Texture
 slot.
 
 .. image:: img/scripting_first_script_setting_texture.webp
@@ -84,7 +88,7 @@ scene dock and select "Attach Script".
 The Attach Node Script window appears. It allows you to select the script's
 language and file path, among other options.
 
-Change the Template from Default to Empty to start with a clean file. Leave the
+Change the Template field from "Node: Default" to "Object: Empty" to start with a clean file. Leave the
 other options by default and click the Create button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.webp
@@ -159,7 +163,7 @@ this function.
           it or don't indent a line correctly, the editor will highlight it in
           red and display the following error message: "Indented block expected".
 
-Save the scene if you haven't already, then press :kbd:`F6` (:kbd:`Cmd + R` on macOS)
+Save the scene as ``sprite_2d.tscn`` if you haven't already, then press :kbd:`F6` (:kbd:`Cmd + R` on macOS)
 to run it. Look at the **Output** bottom panel that expands.
 It should display "Hello, world!".
 
@@ -173,7 +177,7 @@ Turning around
 
 It's time to make our node move and rotate. To do so, we're going to add two
 member variables to our script: the movement speed in pixels per second and the
-angular speed in radians per second.
+angular speed in radians per second.  Add the following after the ``extends Sprite2D`` line.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -259,8 +263,8 @@ Run the scene to see the Godot icon turn in-place.
 Moving forward
 ~~~~~~~~~~~~~~
 
-Let's now make the node move. Add the following two lines to the ``_process()``
-function, ensuring the new lines are indented the same way as the one before
+Let's now make the node move. Add the following two lines inside of the ``_process()``
+function, ensuring the new lines are indented the same way as the ``rotation += angular * delta`` line before
 them.
 
 .. tabs::
@@ -282,8 +286,8 @@ defines a local variable: it only exists within the function's scope.
 
 We define a local variable named ``velocity``, a 2D vector representing both a
 direction and a speed. To make the node move forward, we start from the Vector2
-class's constant Vector2.UP, a vector pointing up, and rotate it by calling the
-``Vector2.rotated()`` method. This expression, ``Vector2.UP.rotated(rotation)``,
+class's constant ``Vector2.UP``, a vector pointing up, and rotate it by calling the
+``rotated()`` method on any ``Vector2``. This expression, ``Vector2.UP.rotated(rotation)``,
 is a vector pointing forward relative to our icon. Multiplied by our ``speed``
 property, it gives us a velocity we can use to move the node forward.
 
