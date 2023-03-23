@@ -246,6 +246,31 @@ You can also use your own nodes as return types:
         item.amount += amount
         return item
 
+Define the element type of an Array
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To define the type of an Array, enclose the type name in ``[]``.
+
+An array's type applies to ``for`` loop variables, as well as some operators like ``[]``, ``[]=``, and ``+``.
+Array methods (such as ``push_back``) and other operators (such as ``==``) are still untyped.
+Primitive types, builtin classes, and custom classes may be used as types.
+Nested array types are not supported.
+
+::
+
+    var scores: Array[int] = [10, 20, 30]
+    var vehicles: Array[Node] = [$Car, $Plane]
+    var items: Array[Item] = [Item.new()]
+    # var arrays: Array[Array] -- disallowed
+
+    for score in scores:
+        # score has type `int`
+
+    # The following would be errors:
+    scores += vehicles
+    var s: String = scores[0]
+    scores[0] = "lots"
+
 Typed or dynamic: stick to one style
 ------------------------------------
 
