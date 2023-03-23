@@ -331,7 +331,6 @@ class GDScriptLexer(RegexLexer):
                         "Color",
                         "RID",
                         "Object",
-                        "NodePath",
                         "Dictionary",
                         "Array",
                         "PackedByteArray",
