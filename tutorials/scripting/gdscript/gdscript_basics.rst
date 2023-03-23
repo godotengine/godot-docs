@@ -1137,6 +1137,9 @@ in the loop variable.
     for i in range(2, 8, 2):
         statement # Similar to [2, 4, 6] but does not allocate an array.
 
+    for i in range(8, 2, -2):
+        statement # Similar to [8, 6, 4] but does not allocate an array.
+
     for c in "Hello":
         print(c) # Iterate through all characters in a String, print every letter on new line.
 
