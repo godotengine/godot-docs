@@ -190,7 +190,7 @@ then specify the binaries as custom export templates in your project's export
 presets in the Export dialog.
 
 Compatibility between single-precision and double-precision builds
--------------------------------------------------------------------
+------------------------------------------------------------------
 
 When saving a *binary* resource using the :ref:`class_ResourceSaver` singleton,
 a special flag is stored in the file if the resource was saved using a build
@@ -225,7 +225,7 @@ some limitations when it comes to 3D rendering precision:
 - Shaders using the ``skip_vertex_transform`` or ``world_vertex_coords`` don't
   benefit from increased precision.
 - :ref:`Triplanar mapping <doc_standard_material_3d_triplanar_mapping>` doesn't
-  benefit from increased precision. Materials using triplanr mapping will exhibit
+  benefit from increased precision. Materials using triplanar mapping will exhibit
   visible jittering when far away from the world origin.
 
 2D rendering currently doesn't benefit from increased precision when large world
