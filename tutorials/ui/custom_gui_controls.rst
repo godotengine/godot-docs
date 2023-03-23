@@ -139,7 +139,7 @@ Simply override it in your control. No processing needs to be set.
     extends Control
 
     func _gui_input(event):
-       if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+       if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
            print("Left mouse button was pressed!")
 
  .. code-tab:: csharp
