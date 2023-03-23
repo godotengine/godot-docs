@@ -79,13 +79,13 @@ the minimum size will make sure your custom control is not squished by
 the other controls in the container.
 
 To provide this callback, just override
-:ref:`Control.get_minimum_size() <class_Control_method_get_minimum_size>`,
+:ref:`Control._get_minimum_size() <class_Control_method__get_minimum_size>`,
 for example:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func get_minimum_size():
+    func _get_minimum_size():
         return Vector2(30, 30)
 
  .. code-tab:: csharp
