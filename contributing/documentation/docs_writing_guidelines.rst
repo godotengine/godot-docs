@@ -348,10 +348,10 @@ could use the code snippets in a live project.
 
 **Don't** write made-up examples:
 
-::
+.. code-block:: gdscript
 
-    onready var a = preload("res://MyPath")
-    onready var my_node = $MyNode
+    @onready var a = preload("res://MyPath")
+    @onready var my_node = $MyNode
 
 
     func foo():
@@ -359,10 +359,10 @@ could use the code snippets in a live project.
 
 **Do** write concrete examples:
 
-::
+.. code-block:: gdscript
 
-    onready var sfx_player_gun = preload("res://Assets/Sound/SFXPlayerGun.ogg")
-    onready var audio_player = $Audio/AudioStreamPlayer
+    @onready var sfx_player_gun = preload("res://Assets/Sound/SFXPlayerGun.ogg")
+    @onready var audio_player = $Audio/AudioStreamPlayer
 
 
     func play_shooting_sound():

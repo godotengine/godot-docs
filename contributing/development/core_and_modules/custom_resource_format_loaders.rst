@@ -380,7 +380,7 @@ Then attach the following script to any node::
 
     extends Node
 
-    onready var json_resource = load("res://demo.json")
+    @onready var json_resource = load("res://demo.json")
 
     func _ready():
         print(json_resource.get_dict())

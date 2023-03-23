@@ -78,7 +78,7 @@ released.
 
     extends CharacterBody2D
 
-    onready var _animated_sprite = $AnimatedSprite2D
+    @onready var _animated_sprite = $AnimatedSprite2D
 
     func _process(_delta):
         if Input.is_action_pressed("ui_right"):
@@ -219,7 +219,7 @@ released.
 
     extends CharacterBody2D
 
-    onready var _animation_player = $AnimationPlayer
+    @onready var _animation_player = $AnimationPlayer
 
     func _process(_delta):
         if Input.is_action_pressed("ui_right"):
