@@ -34,4 +34,5 @@ This section covers what you can do by modifying Godot's C++ source code.
    custom_godot_servers
    custom_resource_format_loaders
    custom_audiostreams
+   custom_platform_ports
    unit_testing

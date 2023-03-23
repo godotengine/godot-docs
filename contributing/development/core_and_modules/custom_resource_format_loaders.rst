@@ -12,7 +12,7 @@ path again, the previous loaded Resource will be referenced. Naturally,
 loaded resources must be stateless.
 
 This guide assumes the reader knows how to create C++ modules and Godot
-data types. If not, refer to this guide: :ref:`doc_custom_modules_in_c++`
+data types. If not, refer to this guide: :ref:`doc_custom_modules_in_cpp`
 
 References
 ~~~~~~~~~~

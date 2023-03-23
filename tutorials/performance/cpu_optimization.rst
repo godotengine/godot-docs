@@ -201,7 +201,7 @@ Godot is written in C++. Using C++ will usually result in the fastest code.
 However, on a practical level, it is the most difficult to deploy to end users'
 machines on different platforms. Options for using C++ include
 GDExtensions and
-:ref:`custom modules <doc_custom_modules_in_c++>`.
+:ref:`custom modules <doc_custom_modules_in_cpp>`.
 
 Threads
 =======

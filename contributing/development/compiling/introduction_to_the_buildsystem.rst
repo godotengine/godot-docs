@@ -208,7 +208,7 @@ directory paths containing such modules:
 
 .. seealso::
 
-    :ref:`doc_custom_modules_in_c++`
+    :ref:`doc_custom_modules_in_cpp`
 
 Cleaning generated files
 ------------------------
