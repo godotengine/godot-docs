@@ -466,3 +466,5 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
     Transparent materials also cannot cast shadows or appear in
     ``SCREEN_TEXTURE`` and ``DEPTH_TEXTURE``. This in turn prevents those
     materials from appearing in screen-space reflections or refraction.
+    :ref:`SDFGI <doc_using_sdfgi>` sharp reflections are not visible on transparent
+    materials (only rough reflections are visible on transparent materials).
