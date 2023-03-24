@@ -78,7 +78,7 @@ With this, you should see ``{ "hello": "world" }`` printed on the console, with 
 
 For more information on parsing JSON, see the class references for :ref:`JSON <class_JSON>`. Here you'll also find information how to handle JSON parsing errors.
 
-Note that you may want to check whether the ``result`` equals ``RESULT_SUCCESS``, see :ref:`HTTPRequest <class_HTTPRequest>` for more.
+Note that you may want to check whether the ``result`` equals ``RESULT_SUCCESS``, see :ref:`HTTPRequest <class_HTTPRequest>` for more information.
 
 Of course, you can also set custom HTTP headers. These are given as a string array, with each string containing a header in the format ``"header: value"``.
 For example, to set a custom user agent (the HTTP ``user-agent`` header) you could use the following:
