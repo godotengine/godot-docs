@@ -39,15 +39,15 @@ Below is all the code we need to make it work. The URL points to an online API m
         extends CanvasLayer
 
         func _ready():
-            $HTTPRequest.connect("request_completed", _on_request_completed, CONNECT_ONE_SHOT)
-            $Button.connect("pressed", _on_Button_pressed, CONNECT_ONE_SHOT)
+	        $HTTPRequest.connect("request_completed", _on_request_completed, CONNECT_PERSIST)
+	        $Button.connect("pressed", _on_Button_pressed, CONNECT_PERSIST)
 
         func _on_Button_pressed():
-            $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed")
+	        $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed")
 
         func _on_request_completed(result, response_code, headers, body):
-            var json = JSON.parse(body.get_string_from_utf8())
-            print(json.result)
+	        var jsonData = JSON.parse_string(body.get_string_from_utf8())
+	        print(jsonData)
 
     .. code-tab:: csharp
 
@@ -74,11 +74,11 @@ Below is all the code we need to make it work. The URL points to an online API m
             }
         }
 
-With this, you should see ``(hello:world)`` printed on the console; ``hello`` being a key, ``world`` being a value, and both of them are of type :ref:`String <class_string>`.
+With this, you should see ``{ "hello": "world" }`` printed on the console, with ``hello`` being a key, ``world`` being a value, and both of them are of type :ref:`String <class_string>` (hence the double quotes).
 
-For more information on parsing JSON, see the class references for :ref:`JSON <class_JSON>`.
+For more information on parsing JSON, see the class references for :ref:`JSON <class_JSON>`. Here you'll also find information how to handle JSON parsing errors.
 
-Note that you may want to check whether the ``result`` equals ``RESULT_SUCCESS`` and whether a JSON parsing error occurred, see the JSON class reference and :ref:`HTTPRequest <class_HTTPRequest>` for more.
+Note that you may want to check whether the ``result`` equals ``RESULT_SUCCESS``, see :ref:`HTTPRequest <class_HTTPRequest>` for more.
 
 Of course, you can also set custom HTTP headers. These are given as a string array, with each string containing a header in the format ``"header: value"``.
 For example, to set a custom user agent (the HTTP ``user-agent`` header) you could use the following:
@@ -97,7 +97,7 @@ For example, to set a custom user agent (the HTTP ``user-agent`` header) you cou
 Please note that, for SSL/TLS encryption and thus HTTPS URLs to work, you may need to take some steps as described :ref:`here <doc_ssl_certificates>`.
 
 Also, when calling APIs using authorization, be aware that someone might analyse and decompile your released application and thus may gain access to any embedded authorization information like tokens, usernames or passwords.
-That means it is usually not a good idea to embed things such as database access credentials inside your game. Avoid providing information useful to an attacker whenever possible.
+Therefore, it is usually not a good idea to embed things such as database access credentials inside your game. Avoid providing information useful to an attacker whenever possible!
 
 Sending data to server
 ----------------------
