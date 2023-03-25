@@ -49,65 +49,190 @@ required:
 
 Distro-specific one-liners
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **Alpine Linux** | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     apk add scons pkgconf gcc g++ libx11-dev libxcursor-dev libxinerama-dev libxi-dev libxrandr-dev \     |
-|                  |         mesa-dev libexecinfo-dev eudev-dev alsa-lib-dev pulseaudio-dev                                    |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **Arch Linux**   | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     pacman -S --needed scons pkgconf gcc libxcursor libxinerama libxi libxrandr mesa glu libglvnd \       |
-|                  |         alsa-lib pulseaudio                                                                               |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **Debian** /     | ::                                                                                                        |
-| **Ubuntu**       |                                                                                                           |
-|                  |     sudo apt-get install build-essential scons pkg-config libx11-dev libxcursor-dev libxinerama-dev \     |
-|                  |         libgl1-mesa-dev libglu-dev libasound2-dev libpulse-dev libudev-dev libxi-dev libxrandr-dev        |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **Fedora**       | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     sudo dnf install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \    |
-|                  |         libXi-devel mesa-libGL-devel mesa-libGLU-devel alsa-lib-devel pulseaudio-libs-devel \             |
-|                  |         libudev-devel gcc-c++ libstdc++-static libatomic-static                                           |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **FreeBSD**      | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     sudo pkg install py37-scons pkgconf xorg-libraries libXcursor libXrandr libXi xorgproto libGLU \      |
-|                  |         alsa-lib pulseaudio                                                                               |
-|                  |                                                                                                           |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **Gentoo**       | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     emerge -an dev-util/scons x11-libs/libX11 x11-libs/libXcursor x11-libs/libXinerama x11-libs/libXi \   |
-|                  |         media-libs/mesa media-libs/glu media-libs/alsa-lib media-sound/pulseaudio                         |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **Mageia**       | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     urpmi scons task-c++-devel pkgconfig "pkgconfig(alsa)" "pkgconfig(glu)" "pkgconfig(libpulse)" \       |
-|                  |         "pkgconfig(udev)" "pkgconfig(x11)" "pkgconfig(xcursor)" "pkgconfig(xinerama)" "pkgconfig(xi)" \   |
-|                  |         "pkgconfig(xrandr)"                                                                               |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **OpenBSD**      | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     pkg_add python scons llvm                                                                             |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **openSUSE**     | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     sudo zypper install scons pkgconfig libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel \ |
-|                  |             libXi-devel Mesa-libGL-devel alsa-devel libpulse-devel libudev-devel gcc-c++ libGLU1          |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **NetBSD**       | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     pkg_add pkg-config py37-scons                                                                         |
-|                  |                                                                                                           |
-|                  | For audio support, you can optionally install ``pulseaudio``.                                             |
-+------------------+-----------------------------------------------------------------------------------------------------------+
-| **Solus**        | ::                                                                                                        |
-|                  |                                                                                                           |
-|                  |     sudo eopkg install -c system.devel scons libxcursor-devel libxinerama-devel libxi-devel \             |
-|                  |         libxrandr-devel mesalib-devel libglu alsa-lib-devel pulseaudio-devel                              |
-+------------------+-----------------------------------------------------------------------------------------------------------+
+
+.. tabs::
+
+    .. tab:: Alpine Linux
+
+        ::
+
+            apk add \
+              scons \
+              pkgconf \
+              gcc \
+              g++ \
+              libx11-dev \
+              libxcursor-dev \
+              libxinerama-dev \
+              libxi-dev \
+              libxrandr-dev \
+              mesa-dev \
+              libexecinfo-dev \
+              eudev-dev \
+              alsa-lib-dev \
+              pulseaudio-dev
+
+    .. tab:: Arch Linux
+
+        ::
+
+            pacman -S --needed \
+              scons \
+              pkgconf \
+              gcc \
+              libxcursor \
+              libxinerama \
+              libxi \
+              libxrandr \
+              mesa \
+              glu \
+              libglvnd \
+              alsa-lib \
+              pulseaudio
+
+    .. tab:: Debian/Ubuntu
+
+        ::
+
+            apt-get install \
+              build-essential \
+              scons \
+              pkg-config \
+              libx11-dev \
+              libxcursor-dev \
+              libxinerama-dev \
+              libgl1-mesa-dev \
+              libglu-dev \
+              libasound2-dev \
+              libpulse-dev \
+              libudev-dev \
+              libxi-dev \
+              libxrandr-dev
+
+    .. tab:: Fedora
+
+        ::
+
+            dnf install \
+              scons \
+              pkgconfig \
+              libX11-devel \
+              libXcursor-devel \
+              libXrandr-devel \
+              libXinerama-devel \
+              libXi-devel \
+              mesa-libGL-devel \
+              mesa-libGLU-devel \
+              alsa-lib-devel \
+              pulseaudio-libs-devel \
+              libudev-devel \
+              gcc-c++ \
+              libstdc++-static \
+              libatomic-static
+
+    .. tab:: FreeBSD
+
+        ::
+
+            pkg install \
+              py37-scons \
+              pkgconf \
+              xorg-libraries \
+              libXcursor \
+              libXrandr \
+              libXi \
+              xorgproto libGLU \
+              alsa-lib \
+              pulseaudio
+
+    .. tab:: Gentoo
+
+        ::
+
+            emerge -an \
+              dev-util/scons \
+              x11-libs/libX11 \
+              x11-libs/libXcursor \
+              x11-libs/libXinerama \
+              x11-libs/libXi \
+              media-libs/mesa \
+              media-libs/glu \
+              media-libs/alsa-lib \
+              media-sound/pulseaudio
+
+    .. tab:: Mageia
+
+        ::
+
+            urpmi \
+              scons \
+              task-c++-devel \
+              pkgconfig \
+              "pkgconfig(alsa)" \
+              "pkgconfig(glu)" \
+              "pkgconfig(libpulse)" \
+              "pkgconfig(udev)" \
+              "pkgconfig(x11)" \
+              "pkgconfig(xcursor)" \
+              "pkgconfig(xinerama)" \
+              "pkgconfig(xi)" \
+              "pkgconfig(xrandr)"
+
+    .. tab:: OpenBSD
+
+        ::
+
+            pkg_add \
+              python \
+              scons \
+              llvm
+
+    .. tab:: openSUSE
+
+        ::
+
+            zypper install \
+              scons \
+              pkgconfig \
+              libX11-devel \
+              libXcursor-devel \
+              libXrandr-devel \
+              libXinerama-devel \
+              libXi-devel \
+              Mesa-libGL-devel \
+              alsa-devel \
+              libpulse-devel \
+              libudev-devel \
+              gcc-c++ \
+              libGLU1
+
+    .. tab:: NetBSD
+
+        ::
+
+            pkg_add \
+              pkg-config \
+              py37-scons
+
+        .. hint::
+
+            For audio support, you can optionally install ``pulseaudio``.
+
+    .. tab:: Solus
+
+        ::
+
+            eopkg install -c \
+              system.devel \
+              scons \
+              libxcursor-devel \
+              libxinerama-devel \
+              libxi-devel \
+              libxrandr-devel \
+              mesalib-devel \
+              libglu \
+              alsa-lib-devel \
+              pulseaudio-devel
 
 Compiling
 ---------
