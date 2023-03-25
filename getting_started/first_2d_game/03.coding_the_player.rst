@@ -348,11 +348,13 @@ movement. Let's place this code at the end of the ``_process()`` function:
 
         if velocity.x != 0:
             $AnimatedSprite2D.animation = "walk"
-            $AnimatedSprite2D.flip_v = false
-            # See the note below about boolean assignment.
-            $AnimatedSprite2D.flip_h = velocity.x < 0
         elif velocity.y != 0:
             $AnimatedSprite2D.animation = "up"
+		# Having these two conditions separate will allow you to flip the sprite vertically when either animation is running.
+        if velocity.x != 0:
+            # See the note below about boolean assignment.
+            $AnimatedSprite2D.flip_h = velocity.x < 0
+        if velocity.y != 0:
             $AnimatedSprite2D.flip_v = velocity.y > 0
 
  .. code-tab:: csharp
