@@ -19,11 +19,16 @@ in the user's browser.
                with :kbd:`F12`, to view **debug information** like JavaScript,
                engine, and WebGL errors.
 
-.. attention:: `There are significant bugs when running HTML5 projects on iOS
-               <https://github.com/godotengine/godot/issues?q=is:issue+is:open+label:platform:html5+ios>`__
-               (regardless of the browser). We recommend using
-               :ref:`iOS' native export functionality <doc_exporting_for_ios>`
-               instead, as it will also result in better performance.
+.. attention::
+
+    Godot 4's HTML5 exports currently cannot run on macOS and iOS due to upstream bugs
+    with SharedArrayBuffer and WebGL 2.0. We recommend using
+    :ref:`macOS <doc_exporting_for_macos>` and :ref:`iOS <doc_exporting_for_ios>`
+    native export functionality instead, as it will also result in better performance.
+
+    Godot 3's HTML5 exports are more compatible with various browsers in
+    general, especially when using the GLES2 rendering backend (which only
+    requires WebGL 1.0).
 
 .. warning:: SharedArrayBuffer requires a :ref:`secure context <doc_javascript_secure_contexts>`.
              Browsers also require that the web page is served with specific
