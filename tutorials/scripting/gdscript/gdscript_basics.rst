@@ -799,8 +799,8 @@ result in a ``null`` value.
 
 Many built-in types, such as ``int`` or ``Vector2`` do not derive from each other, and will as such
 not be able to be casted using ``as``. Instead, for casting to primitives such as ``int`` or ``String``,
-use their build in casting methods, for example ``int()`` or ``str()``. For complex objects such as
-``Vector2``s, use the object's constructor instead.
+use their build in casting methods, for example ``int()`` or ``str()``. For complex objects such as a
+``Vector2``, create them from the object's constructor instead.
 
 ::
 
