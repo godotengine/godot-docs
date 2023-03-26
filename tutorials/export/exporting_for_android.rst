@@ -41,7 +41,7 @@ Download and install the Android SDK.
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;32.0.0" "platforms;android-32" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;21.4.7075529"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;32.0.0" "platforms;android-32" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
 
 .. note::
 
