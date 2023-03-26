@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,6 +25,25 @@ jobs:
           bash _tools/format.sh
           codespell -I _tools/codespell-ignore.txt -x _tools/codespell-ignore-lines.txt {about,community,development,getting_started,tutorials}/**/*.rst
 
-      # Use dummy builder to improve performance as we don't need the generated HTML in this workflow.
       - name: Sphinx build
-        run: make SPHINXOPTS='--color -W' dummy
+        run: |
+          # On godotengine, use dummy builder to improve performance as we don't need the generated HTML in this workflow.
+          # On forks, build the HTML site, to push it to gh-pages.
+          case '${{ github.repository }}' in
+            godotengine/godot-docs) TARGET='dummy';;
+            *) TARGET='html';;
+          esac
+          make SPHINXOPTS='--color -W' "$TARGET"
+
+      - name: 🚀 Publish site to GitHub Pages
+        if: github.repository != 'godotengine/godot-docs'
+        run: |
+          cd _build/html
+          touch .nojekyll
+          git init
+          cp ../../.git/config ./.git/config
+          git add .
+          git config --local user.email "gotdot-docs@GitHubActions"
+          git config --local user.name "GitHub Actions"
+          git commit -a -m "update ${{ github.sha }}"
+          git push -u origin +HEAD:gh-pages
