@@ -29,8 +29,8 @@ Download and install the Android SDK.
   - Ensure that the `required packages <https://developer.android.com/studio/intro/update#recommended>`__ are installed as well.
 
     - Android SDK Platform-Tools version 30.0.5 or later
-    - Android SDK Build-Tools version 32.0.0
-    - Android SDK Platform 32
+    - Android SDK Build-Tools version 33.0.2
+    - Android SDK Platform 33
     - Android SDK Command-line Tools (latest)
     - CMake version 3.10.2.4988404
     - NDK version r23c (23.2.8568313)
@@ -41,7 +41,7 @@ Download and install the Android SDK.
 
 ::
 
-    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;32.0.0" "platforms;android-32" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
+    sdkmanager --sdk_root=<android_sdk_path> "platform-tools" "build-tools;33.0.2" "platforms;android-33" "cmdline-tools;latest" "cmake;3.10.2.4988404" "ndk;23.2.8568313"
 
 .. note::
 
