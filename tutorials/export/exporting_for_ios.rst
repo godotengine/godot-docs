@@ -28,6 +28,12 @@ Export window opens, click **Add..** and select **iOS**.
 The **App Store Team ID** and (Bundle) **Identifier** options in the **Application** category
 are required. Leaving them blank will cause the exporter to throw an error.
 
+.. note:: | If you encounter an error during export similar to
+          | ``JSON text did not start with array or object and option to allow fragments not set``
+          | then it might be due to a malformated **App Store Team ID**!
+          | The exporter expects a (10 characters long) code like ``ABCDE12XYZ`` and not, e.g., your name as Xcode likes to display in the *Signing & Capabilities* tab.
+          | You can find the code over at `developer.apple.com <https://developer.apple.com/account/resources/certificates/list>`_ in next to your name in the top right corner.
+
 After you click **Export Project**, there are still two important options left:
 
   * **Path** is an empty folder that will contain the exported Xcode project files.
