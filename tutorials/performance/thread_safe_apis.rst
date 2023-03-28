@@ -35,9 +35,9 @@ If you want to call functions from a thread, the ``call_deferred`` function may 
 
 ::
 
-    # Unsafe:
+    ## Unsafe:
     node.add_child(child_node)
-    # Safe:
+    ## Safe:
     node.call_deferred("add_child", child_node)
 
 Creating scene chunks (nodes in tree arrangement) outside the active tree is also fine. 
@@ -48,7 +48,7 @@ then added in the main thread:
 
     var enemy_scene = load("res://enemy_scene.scn")
     var enemy = enemy_scene.instantiate()
-    # Add a weapon to an enemy.
+    ## Add a weapon to an enemy.
     enemy.add_child(weapon)
     world.call_deferred("add_child", enemy)
 
