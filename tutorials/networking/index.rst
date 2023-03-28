@@ -10,6 +10,7 @@ Networking
    high_level_multiplayer
    http_request_class
    http_client_class
+   port_forwarding_upnp
    ssl_certificates
    websocket
    webrtc
