@@ -10,7 +10,7 @@ LATEXDEPS     = latex dvipng
 FILELIST      =
 
 # User-friendly check for sphinx-build
-ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
+ifneq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 0)
 $(error The '$(SPHINXBUILD)' command was not found. Make sure you have Sphinx installed, then set the SPHINXBUILD make variable to the full path of the '$(SPHINXBUILD)' executable. Alternatively you can add the executable's directory to your PATH. If you don't have Sphinx installed, grab it from http://sphinx-doc.org/)
 endif
 
