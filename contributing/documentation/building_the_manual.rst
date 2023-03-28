@@ -1,7 +1,7 @@
 .. _doc_building_the_manual:
 
 Building the manual with Sphinx
-===============================
+###############################
 
 This page explains how to build a local copy of the Godot manual using the
 Sphinx docs engine. This allows you to have local HTML files and build the
@@ -98,62 +98,68 @@ documentation as a PDF, EPUB, or LaTeX file, for example.
     .. note::
         On Windows, that command will run ``make.bat`` instead of GNU Make (or an alternative).
 
-The compilation will take some time as the ``classes/`` folder contains hundreds
-of files.
-
-.. tip::
-
-    Building the documentation requires at least 8 GB of RAM to run without disk
-    swapping, which slows it down. If you have at least 16 GB of RAM, you can speed
-    up compilation by running:
-
-    .. tabs::
-
-        .. group-tab:: Windows
-
-            .. code:: pwsh
-
-                set SPHINXOPTS=-j2 && make html
-
-        .. group-tab:: Other platforms
-
-            .. code:: sh
-
-                make html SPHINXOPTS=-j2
-
-.. tip::
-
-    You can specify a list of files to build, which can geatly speed up compilation:
+    Alternatively, you can build the documentation by running the sphinx-build program manually:
 
     .. code:: sh
 
-        make FILELIST='classes/class_node.rst classes/class_resource.rst' html
+        sphinx-build -b html ./ _build/html
+
+The compilation will take some time as the ``classes/`` folder contains hundreds of files.
+See :ref:`doc_building_the_manual:performance`.
 
 You can then browse the documentation by opening ``_build/html/index.html`` in
 your web browser.
 
-.. hint::
-    If you run into errors, you may try the following command:
+Dealing with errors
+===================
 
-    .. code:: sh
-
-        make SPHINXBUILD=~/.local/bin/sphinx-build html
-
-.. hint::
-    If you get a ``MemoryError`` or ``EOFError``, you can remove the ``classes/``
-    folder and run ``make`` again.
-    This will drop the class references from the final HTML documentation but will
-    keep the rest intact.
-
-.. note::
-    If you delete the ``classes/`` folder, do not use ``git add .`` when working on
-    a pull request or the whole ``classes/`` folder will be removed when you commit.
-    See `#3157 <https://github.com/godotengine/godot-docs/issues/3157>`__ for more
-    detail.
-
-Alternatively, you can build the documentation by running the sphinx-build
-program manually:
+If you run into errors, you may try the following command:
 
 .. code:: sh
 
-   sphinx-build -b html ./ _build/html
+    make SPHINXBUILD=~/.local/bin/sphinx-build html
+
+If you get a ``MemoryError`` or ``EOFError``, you can remove the ``classes/`` folder and
+run ``make`` again.
+This will drop the class references from the final HTML documentation but will keep the
+rest intact.
+
+.. important::
+    If you delete the ``classes/`` folder, do not use ``git add .`` when working on a pull
+    request or the whole ``classes/`` folder will be removed when you commit.
+    See `#3157 <https://github.com/godotengine/godot-docs/issues/3157>`__ for more detail.
+
+.. _doc_building_the_manual:performance:
+
+Hints for performance
+=====================
+
+RAM usage
+---------
+
+Building the documentation requires at least 8 GB of RAM to run without disk swapping,
+which slows it down.
+If you have at least 16 GB of RAM, you can speed up compilation by running:
+
+.. tabs::
+
+    .. group-tab:: Windows
+
+        .. code:: pwsh
+
+            set SPHINXOPTS=-j2 && make html
+
+    .. group-tab:: Other platforms
+
+        .. code:: sh
+
+            make html SPHINXOPTS=-j2
+
+Specifying a list of files
+--------------------------
+
+You can specify a list of files to build, which can geatly speed up compilation:
+
+.. code:: sh
+
+    make FILELIST='classes/class_node.rst classes/class_resource.rst' html
