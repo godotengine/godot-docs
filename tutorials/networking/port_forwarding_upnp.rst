@@ -1,7 +1,7 @@
 .. _doc_port_forwarding_upnp:
 
 Port Forwarding & Universal Plug n' Play
-======================
+========================================
 
 Why Universal Plug n' Play?
 ---------------------------
