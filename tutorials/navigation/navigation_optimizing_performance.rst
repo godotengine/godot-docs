@@ -98,14 +98,14 @@ This performance drop is "normal" and the result of a too large, too unoptimized
 In normal path searches where the target position can be reached quickly the pathfinding will do an early exit as soon as the position is reached which can hide this lack of optimization for a while.
 If the target position can not be reached the pathfinding has to do a far longer search through the available polygons to confirm that the position is absolutely not reachable.
 
-Performance problems with navigation map synchronisation
+Performance problems with navigation map synchronization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tip::
 
     Merge navigation meshes polygons by vertex instead of by edge connection wherever possible.
 
-When changes are made to e.g. navigation meshes or navigation regions, the NavigationServer needs to synchronise the navigation map.
+When changes are made to e.g. navigation meshes or navigation regions, the NavigationServer needs to synchronize the navigation map.
 Depending on the complexity of navigation meshes, this can take a significant amount of time which may impact the framerate.
 
 The NavigationServer merges navigation meshes either by vertex or by edge connection.

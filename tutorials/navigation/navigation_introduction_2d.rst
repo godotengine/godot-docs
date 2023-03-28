@@ -27,7 +27,7 @@ Godot provides the following objects and classes for 2D navigation:
         - NavMap RID
             Reference to a specific navigation map that holds regions and agents.
             The map will attempt to join changed navigation meshes of regions by proximity.
-            The map will synchronise regions and agents each physics frame.
+            The map will synchronize regions and agents each physics frame.
         - NavRegion RID
             Reference to a specific navigation region that can hold navigation mesh data.
             The region can be enabled / disabled or the use restricted with a navigationlayer bitmask.
@@ -208,5 +208,5 @@ NavigationServer2D and a NavigationAgent2D for path movement.
 
 .. note::
 
-    On the first frame the NavigationServer map has not synchronised region data and any path query
+    On the first frame the NavigationServer map has not synchronized region data and any path query
     will return empty. Await one frame to pause scripts until the NavigationServer had time to sync.
