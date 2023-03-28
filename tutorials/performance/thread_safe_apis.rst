@@ -5,10 +5,9 @@
 Thread-safe APIs
 ================
 
-Some parts of Godot support the use of threads 
-(also commonly referred to as "multi-threading") 
+Some parts of Godot support the use of threads, or "threading", 
 to balance processing power across a system's CPU cores,
-leading to potentially better performance.
+leading to potentially improved performance.
 
 Below lists some ways threads can be used in different areas of Godot.
 
@@ -31,7 +30,7 @@ Scene Tree
 ----------
 
 Interaction with the active scene tree is *not* thread-safe. 
-Ensure that :ref:`Mutexes<class_Mutex>` are used when sending data between threads. 
+Ensure that :ref:`Mutexes<class_Mutex>` are used when data is sent between threads. 
 If you want to call functions from a thread, the ``call_deferred`` function may be used:
 
 ::
@@ -59,15 +58,15 @@ resources (which are only loaded once in Godot) tweaked by the multiple
 threads, resulting in unexpected behaviors or crashes.
 
 Only use more than one thread to generate scene data if you *really* know what
-you are doing and are sure that a single resource is *not* being used or
-set in multiple ones. Otherwise, you are safer using the servers API
-(which is fully thread-safe) directly and not touching scene or resources.
+you're doing and are sure that a single resource is *not* being used or
+set in multiple ones. Otherwise, you're safer using the servers API
+(which is fully thread-safe) directly and not touching scene data or resources.
 
 Rendering
 ---------
 
 Instancing nodes that render anything in 2D or 3D (such as Sprite) is *not* thread-safe by default.
-To make rendering thread-safe, set the **Driver > Threads > Thread Model** project setting to **Multi-Threaded**.
+To make rendering thread-safe, set the **Rendering > Driver > Threads > Thread Model** project setting to **Multi-Threaded**.
 (The **Advanced Settings** toggle also has to be enabled to see this setting.)
 
 .. note::
@@ -90,7 +89,7 @@ Handling references on multiple threads *is* supported, though,
 hence loading resources on a thread is as well - scenes, textures, meshes, etc. 
 can be loaded and manipulated on a thread and then added to the active scene on the main thread. 
 
-The limitation here is as described above, one must be careful not to load the 
+The limitation here is as described above. One must be careful not to load the 
 same resource from multiple threads at once, 
 therefore it is safer to use **one** thread to load and modify resources, 
 and then the main thread to add them.
