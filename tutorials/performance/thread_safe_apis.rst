@@ -5,25 +5,33 @@
 Thread-safe APIs
 ================
 
-Threads
--------
+Some parts of Godot support the use of threads 
+(also commonly referred to as "multithreading") 
+to balance processing power across a system's CPU cores.
 
-Threads are used to balance processing power across CPUs and cores.
-Godot supports multithreading, but not in the whole engine.
+Below lists some ways threads can be used in different areas of Godot.
 
-Below is a list of ways multithreading can be used in different areas of Godot.
+Global Scope and Servers
+------------------------
 
-Global scope
-------------
+:ref:`Global Scope<class_@GlobalScope>` singletons and are thread-safe. 
+Accessing servers from threads is also supported.
 
-:ref:`Global Scope<class_@GlobalScope>` singletons are all thread-safe. Accessing servers from threads is supported (for RenderingServer and Physics servers, ensure threaded or thread-safe operation is enabled in the project settings!).
+This makes them ideal for code that creates thousands of instances in servers 
+and controls them from threads, although this will require more code, 
+as this is used directly and not within the scene tree.
 
-This makes them ideal for code that creates dozens of thousands of instances in servers and controls them from threads. Of course, it requires a bit more code, as this is used directly and not within the scene tree.
+.. note::
 
-Scene tree
+    For :ref:`RenderingServer<class_RenderingServer>` and Physics servers, 
+    ensure threaded or thread-safe operation is enabled in the project settings!
+    
+Scene Tree
 ----------
 
-Interacting with the active scene tree is **NOT** thread-safe. Make sure to use mutexes when sending data between threads. If you want to call functions from a thread, the *call_deferred* function may be used:
+Interacting with the active scene tree is *not* thread-safe. 
+Ensure :ref:`Mutexes<class_Mutex>` is used when data is sent between threads. 
+If you want to call functions from a thread, the ``call_deferred`` function may be used:
 
 ::
 
@@ -32,7 +40,9 @@ Interacting with the active scene tree is **NOT** thread-safe. Make sure to use 
     # Safe:
     node.call_deferred("add_child", child_node)
 
-However, creating scene chunks (nodes in tree arrangement) outside the active tree is fine. This way, parts of a scene can be built or instantiated in a thread, then added in the main thread:
+Creating scene chunks (nodes in tree arrangement) outside the active tree is also fine. 
+This way, parts of a scene can be built or instantiated in a thread, 
+then added in the main thread:
 
 ::
 
@@ -41,7 +51,7 @@ However, creating scene chunks (nodes in tree arrangement) outside the active tr
     enemy.add_child(weapon) # Set a weapon.
     world.call_deferred("add_child", enemy)
 
-Still, this is only really useful if you have **one** thread loading data.
+Still, this is only useful if you have **one** thread loading data.
 Attempting to load or create scene chunks from multiple threads may work, but you risk
 resources (which are only loaded once in Godot) tweaked by the multiple
 threads, resulting in unexpected behaviors or crashes.
