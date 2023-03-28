@@ -15,8 +15,7 @@ jobs:
           - master
           - stable
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         with:
           ref: ${{ matrix.branch }}
 
@@ -25,10 +24,8 @@ jobs:
           sudo pip3 install -r requirements.txt
           sudo pip3 install codespell
 
-      # Build the HTML to upload it.
-      - name: Sphinx build
-        run: |
-          sphinx-build --color -d _build/doctrees . _build/html
+      - name: Sphinx build HTML
+        run: make SPHINXOPTS='--color' html
 
       - uses: actions/upload-artifact@v3
         with:
