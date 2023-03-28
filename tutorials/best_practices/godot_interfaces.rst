@@ -57,7 +57,7 @@ access.
     tool # Must place at top of file.
 
     # Must configure from the editor, defaults to null.
-    @export(Script) var const_script: set(set_const_script)
+    @export(Script) var const_script: set = set_const_script
     func set_const_script(value):
         if Engine.is_editor_hint():
             const_script = value
