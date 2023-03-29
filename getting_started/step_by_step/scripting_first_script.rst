@@ -49,10 +49,6 @@ click the Other Node button.
 Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D
 to create the node.
 
-.. note::
-
-    The image below shows "Sprite" but in Godot 4 it's "Sprite2D".
-
 .. image:: img/scripting_first_script_add_sprite_node.webp
 
 Your Scene tab should now only have a Sprite2D node.
