@@ -37,7 +37,7 @@ The **SurfaceTool** is used to construct a :ref:`Mesh<class_Mesh>` by specifying
     var st = new SurfaceTool();
     st.Begin(Mesh.PrimitiveType.Triangles);
     st.SetColor(new Color(1, 0, 0));
-    st.SetUv(new Vector2(0, 0));
+    st.SetUV(new Vector2(0, 0));
     st.AddVertex(new Vector3(0, 0, 0));
 
 
