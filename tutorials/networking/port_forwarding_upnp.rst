@@ -1,26 +1,29 @@
 .. _doc_port_forwarding_upnp:
 
-Port Forwarding & Universal Plug n' Play
+Port Forwarding & Universal Plug and Play
 ========================================
 
-Why Universal Plug n' Play?
+Why Universal Plug and Play?
 ---------------------------
 
-After you are done testing solo with localhost(127.0.0.1) you want to test on a *real* connection.
-You will be likely overwhelmed with your choices:
+Besides testing locally on your own, you should test on a *real* network connection to make sure your game actually works under real-life networking conditions. There are multiple ways to achieve this:
 
-1. Host a real server and deploy there (deployment of a build will be a chore unless you learn advanced methods like remote ssh deployment which are included in Godot)
+    1. Keep hosting your game locally, but expose it to the public internet. This is easy and quick, but comes with a few downsides. Your public IP is likely dynamically assigned and changes, which requires you to let your testers know each time what to connect to, or to use a dynamic DNS service to point at your changing IP. You also need to deal with any firewalls blocking external access to your local game, most notably on your router, and in the likely case it uses NAT (network address translation), you also need to configure port forwarding on your router. Finally, you open a (small part of) your computer and home entwork to the public internet, which always has some risks.
 
-2. Peer-to-Peer connection, straight to a computer. This includes NAT Holepunching, STUN/TURN and other methods which are overwhelming compared to :abbr:`UPNP (Universal Plug n Play)`.
+    2. Host a real (physical or virtual) server and deploy there. This requires the knowledge to securely administrate and setup a server and deployment of your game to that server.
 
-Before any code, let's look into the router setup; Not all Routers support :abbr:`UPNP (Universal Plug n Play)`, nor do all users have :abbr:`UPNP (Universal Plug n Play)` enabled. For this reason it is suggested you use :abbr:`UPNP (Universal Plug n Play)` for testing instead of your final public deployment. Even if you enable your router's :abbr:`UPNP (Universal Plug n Play)` (assuming it is a choice), you need to port-forward the port, because the IP is public but all your router's ports are closed by default.
+    3. Peer-to-Peer connection using automatic NAT traversal with technologies like STUN/TURN hole punching. Relieves you of the headache of manual firewall and port forwarding configuration, but has some added complexity and may depend on the NAT configurations involved.
 
+    4. Use Universal Plug and Play to automatically open and forward the require port on the local router.
+    In a fully finished game, you may want to use a mix of these depending on your intended networking model. Maybe you expect your players to host their own servers, and just let them deal with it, or mayb you will be hosting all of the game's servers on your own, official servers. Maybe it's a purely peer-to-peer game and you use a mix of STUN/TURN NAT traversal and Universal Plug and Play port forwarding, depending on what works best on each player's machine. Also, some third-party networking solutions (like Steam's Steamworks networking) take care of most of this for you.
+
+Here, we're going to look into using :abbr:`UPNP (Universal Plug and Play)` for port forwarding. Notably, this will only work if the local router supports Universal Plug and Play port forwarding and has it enabled and configured.
 
 How to port-forward
 -------------------
 
-1. Login to your router (username/password is on the router's bottom where it has barcode tag and original wifi password)
-2. Enable UPNP if it exists.
+1. Login to your router (192.168.1.1) through your browser (username/password is on the router's bottom where it has barcode tag and original wifi password)
+2. Enable :abbr:`UPNP (Universal Plug and Play)` if it exists.
 3. Find a section called 'Port Forwarding' or 'Port Mapping'
 4. Add new
 5. Title/Name: "godot_tcp" (do not capitalize)
@@ -60,7 +63,7 @@ Now, let's take the following minimal host/client code:
         peer.create_client(ip, port)
         multiplayer.multiplayer_peer = peer
 
-and convert it into UPNP. Reminder that **only the host must use UPNP**. Because the goal is after all to expose a public IP onto the wide internet, accessible by anyone.
+and convert it so it uses :abbr:`UPNP (Universal Plug and Play)`. Reminder that **only the host needs :abbr:`UPNP (Universal Plug and Play)`**. Because the goal is after all to expose the host's IP onto the wide internet, accessible by anyone.
 
 Let's expand onto start_server()
 
@@ -72,7 +75,7 @@ Let's expand onto start_server()
 
         initialize_UPNP()
 
-As you can see above, :abbr:`UPNP (Universal Plug n Play)` initialization happens **after** your setup. Now let's create the actual :abbr:`UPNP (Universal Plug n Play)` logic.
+As you can see above, :abbr:`UPNP (Universal Plug and Play)` initialization happens **after** your setup. Now let's create the actual :abbr:`UPNP (Universal Plug and Play)` logic.
 
 ::
 
@@ -101,7 +104,7 @@ As you can see above, :abbr:`UPNP (Universal Plug n Play)` initialization happen
                 # which displays the public IP where clients should connect to
                 #$WorldUI/HostIPLabel.text = upnp.query_external_address()
 
-And like every server has a disconnected signal once developed, it is suggested you un-map the port connections when your server/game closes, with the following code:
+And like every server has a disconnected signal once late in development, it is suggested you un-map the port connections when your server/game closes, with the following code:
 
 ::
 
