@@ -96,7 +96,7 @@ of limitations you should be aware of when porting a Godot game to the web.
                usually exempt from such requirement).
 
 .. tip:: Check the `list of open HTML5 issues on GitHub
-         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
+         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:web>`__
          to see if the functionality you're interested in has an issue yet. If
          not, open one to communicate your interest.
 
