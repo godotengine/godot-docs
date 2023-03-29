@@ -158,7 +158,7 @@ If you have at least 16 GB of RAM, you can speed up compilation by running:
 Specifying a list of files
 --------------------------
 
-You can specify a list of files to build, which can geatly speed up compilation:
+You can specify a list of files to build, which can greatly speed up compilation:
 
 .. code:: sh
 
