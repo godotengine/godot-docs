@@ -39,8 +39,8 @@ Below is all the code we need to make it work. The URL points to an online API m
         extends CanvasLayer
 
         func _ready():
-            $HTTPRequest.connect("request_completed", self, "_on_request_completed")
-            $Button.connect("pressed", self, "_on_Button_pressed")
+            $HTTPRequest.connect("request_completed", _on_request_completed)
+            $Button.connect("pressed", _on_Button_pressed)
 
         func _on_Button_pressed():
             $HTTPRequest.request("http://www.mocky.io/v2/5185415ba171ea3a00704eed")
