@@ -487,9 +487,19 @@ Strings can contain the following escape sequences:
 +---------------------+---------------------------------+
 | ``\\``              | Backslash                       |
 +---------------------+---------------------------------+
-| ``\uXXXX``          | Unicode codepoint ``XXXX``      |
+| ``\uXXXX``          | UTF-16 Unicode codepoint        |
+|                     | ``XXXX``                        |
 |                     | (hexadecimal, case-insensitive) |
 +---------------------+---------------------------------+
+| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
+|                     | ``XXXXXX``                      |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+
+There are two ways to represent an escaped Unicode character above 0xFFFF:
+
+- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
+- as a single UTF-32 codepoint ``\UXXXXXX``.
 
 Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line, without
 inserting a newline character in the string itself.
