@@ -204,7 +204,7 @@ Windows
 - Move the Godot executable to a stable location (i.e. outside of your Downloads folder),
   so you don't accidentally move it and break the shortcut in the future.
 - Right-click the Godot executable and choose **Create Shortcut**.
-- Move the created shortcut to ``%LOCALAPPDATA%\Microsoft\Windows\Start Menu\Programs``.
+- Move the created shortcut to ``%APPDATA%\Microsoft\Windows\Start Menu\Programs``.
   This is the user-wide location for shortcuts that will appear in the Start menu.
   You can also pin Godot in the task bar by right-clicking the executable and choosing
   **Pin to Task Bar**.
