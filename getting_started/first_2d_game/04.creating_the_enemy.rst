@@ -13,7 +13,7 @@ of independent mobs in the game.
 Node setup
 ~~~~~~~~~~
 
-Click Scene -> New Scene and add the following nodes:
+Click Scene -> New Scene from the top menu and add the following nodes:
 
 - :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
 
