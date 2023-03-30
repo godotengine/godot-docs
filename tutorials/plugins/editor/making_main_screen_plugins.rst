@@ -5,6 +5,9 @@
 Making main screen plugins
 ==========================
 
+.. note:: This tutorial assumes you already know how to make generic plugins. If
+          in doubt, refer to the :ref:`doc_making_plugins` page.
+
 What this tutorial covers
 -------------------------
 
@@ -107,10 +110,9 @@ Main screen scene
 -----------------
 
 Create a new scene with a root node derived from ``Control`` (for this
-example plugin, we'll make the root node a ``CenterContainer``).
-Select this root node, and in the viewport, click the ``Layout`` menu
-and select ``Full Rect``. You also need to enable the ``Expand``
-vertical size flag in the inspector.
+example plugin, we'll make the root node a ``CenterContainer``). Select the node,
+and in the inspecter, click the ``Layout`` section and set ``Full Rect``
+as the anchors preset. You also need to enable the ``Expand`` vertical size flag.
 The panel now uses all the space available in the main viewport.
 
 Next, let's add a button to our example main screen plugin.
@@ -124,7 +126,7 @@ Add a script to the button like this:
     extends Button
 
 
-    func _on_PrintHello_pressed():
+    func _on_pressed():
         print("Hello from the main screen plugin!")
 
  .. code-tab:: csharp
@@ -134,15 +136,13 @@ Add a script to the button like this:
     [Tool]
     public partial class PrintHello : Button
     {
-        public void OnPrintHelloPressed()
+        public void OnPressed()
         {
             GD.Print("Hello from the main screen plugin!");
         }
     }
 
-
-Then connect the "pressed" signal to itself. If you need help with signals,
-see the :ref:`doc_signals` article.
+We are connecting the Button's "pressed" signal to itself. If you want to learn more, refer to :ref:`doc_signals`
 
 We are done with the main screen panel. Save the scene as ``main_panel.tscn``.
 
