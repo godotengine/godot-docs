@@ -15,9 +15,9 @@ Visual Studio requires a solution file to work on a project. While Godot does no
 with the solution file, it can be generated using SCons.
 
 - Navigate to the Godot root folder and open a Command Prompt or PowerShell window.
-- Run ``scons platform=windows vsproj=yes dev_build=yes`` to generate the solution with debug symbols.
-        The ``vsproj`` parameter signals that you want Visual Studio solution generated.
-        The ``dev_build`` parameter makes sure the debug symbols are included, allowing to e.g. step through code using breakpoints.
+- | Run ``scons platform=windows vsproj=yes dev_build=yes`` to generate the solution with debug symbols.
+  | The ``vsproj`` parameter signals that you want Visual Studio solution generated.
+  | The ``dev_build`` parameter makes sure the debug symbols are included, allowing to e.g. step through code using breakpoints.
 - You can now open the project by double-clicking on the ``godot.sln`` in the project root
   or by using the **Open a project or solution** option inside of the Visual Studio.
 - Use the **Build** top menu to build the project.
