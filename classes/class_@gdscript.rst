@@ -465,7 +465,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_FILE<class_@GlobalScope_constan
 
 Define a new group for the following exported properties. This helps to organize properties in the Inspector dock. Groups can be added with an optional ``prefix``, which would make group to only consider properties that have this prefix. The grouping will break on the first property that doesn't have a prefix. The prefix is also removed from the property's name in the Inspector dock.
 
-If no ``prefix`` is provided, the every following property is added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for parameters, ``@export_group("", "")``.
+If no ``prefix`` is provided, then every following property will be added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for parameters, ``@export_group("", "")``.
 
 Groups cannot be nested, use :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>` to add subgroups within groups.
 
