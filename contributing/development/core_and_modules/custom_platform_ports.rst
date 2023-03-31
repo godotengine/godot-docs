@@ -68,9 +68,9 @@ Required features of a platform port
 
 At the very least, a platform port must have methods from the :ref:`class_OS`
 singleton implemented to be buildable and usable for headless operation.
-A ``logo.png`` (32×32) image must also be present within the platform folder.
-This logo is displayed in the Export dialog for each export preset targeting
-the platform in question.
+A ``logo.svg`` (32×32) vector image must also be present within the platform
+folder. This logo is displayed in the Export dialog for each export preset
+targeting the platform in question.
 
 See `this implementation <https://github.com/godotengine/godot/blob/master/platform/linuxbsd/os_linuxbsd.cpp>`__
 for the Linux/\*BSD platform as an example. See also the
@@ -153,7 +153,7 @@ games.
   export template binary directly by renaming it to match the PCK file. See the
   `EditorExportPlatform header <https://github.com/godotengine/godot/blob/master/editor/export/editor_export_platform.h>`__
   for reference.
-  ``run_icon.png`` (16×16) should be present within the platform folder if
+  ``run_icon.svg`` (16×16) should be present within the platform folder if
   :ref:`doc_one-click_deploy` is implemented for the target platform. This icon
   is displayed at the top of the editor when one-click deploy is set up for the
   target platform.
