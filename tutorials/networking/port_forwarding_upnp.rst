@@ -1,10 +1,10 @@
 .. _doc_port_forwarding_upnp:
 
 Port Forwarding & Universal Plug and Play
-========================================
+==================================================
 
 Why Universal Plug and Play?
----------------------------
+-----------------------------
 
 Besides testing locally on your own, you should test on a *real* network connection to make sure your game actually works under real-life networking conditions. There are multiple ways to achieve this:
 
