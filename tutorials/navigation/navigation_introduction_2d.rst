@@ -27,7 +27,7 @@ Godot provides the following objects and classes for 2D navigation:
         - NavMap RID
             Reference to a specific navigation map that holds regions and agents.
             The map will attempt to join changed navigation meshes of regions by proximity.
-            The map will synchronise regions and agents each physics frame.
+            The map will synchronize regions and agents each physics frame.
         - NavRegion RID
             Reference to a specific navigation region that can hold navigation mesh data.
             The region can be enabled / disabled or the use restricted with a navigationlayer bitmask.
@@ -52,7 +52,7 @@ The following SceneTree Nodes are available as helpers to work with the Navigati
     that cannot be re(baked) to a navigation mesh efficiently. This node also only works if RVO processing
     is being used.
 
-The 2D navigationm eshes are defined with the following resources:
+The 2D navigation meshes are defined with the following resources:
 
 - :ref:`NavigationPolygon<class_NavigationPolygon>` Resource
     A resource that holds 2D navigation mesh data and provides polygon drawtools to define navigation areas inside the Editor as well as at runtime.
@@ -60,6 +60,13 @@ The 2D navigationm eshes are defined with the following resources:
     - The NavigationRegion2D Node uses this resource to define its navigation area.
     - The NavigationServer2D uses this resource to update navmesh of individual regions.
     - The TileSet Editor creates and uses this resource internally when defining tile navigation areas.
+
+.. seealso::
+
+    You can see how 2D navigation works in action using the
+    `2D Navigation Polygon <https://github.com/godotengine/godot-demo-projects/tree/master/2d/navigation>`__
+    and `Grid-based Navigation with AStarGrid2D <https://github.com/godotengine/godot-demo-projects/tree/master/2d/navigation_astar>`__
+    demo projects.
 
 Setup for 2D scene
 ------------------
@@ -201,5 +208,5 @@ NavigationServer2D and a NavigationAgent2D for path movement.
 
 .. note::
 
-    On the first frame the NavigationServer map has not synchronised region data and any path query
+    On the first frame the NavigationServer map has not synchronized region data and any path query
     will return empty. Await one frame to pause scripts until the NavigationServer had time to sync.

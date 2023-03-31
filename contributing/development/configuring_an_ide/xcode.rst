@@ -11,35 +11,40 @@ Importing the project
 
 - From Xcode's main screen create a new project using the **Other > External Build System** template.
 
-.. figure:: img/xcode_1_create_external_build_project.png
+.. figure:: img/xcode_1_create_external_build_project.webp
    :figclass: figure-w480
    :align: center
 
-- Open your build targets from the **Targets** section and select the **Info** tab.
+- Now choose a name for your project and set the path to scons executable in build tool (to find the path you can type ``where scons`` in a terminal).
+
+.. figure:: img/xcode_2_set_external_build_project_parameters.webp
+   :figclass: figure-w480
+   :align: center
+
+- Open the main target from the **Targets** section and select the **Info** tab.
+
+.. figure:: img/xcode_3_configure_scons.webp
+   :figclass: figure-w480
+   :align: center
+
 - Fill out the form with the following settings:
 
-  +------------+------------------------------------------------------------------------------+
-  | Build Tool | A full path to the **scons** executable, e.g. **/usr/local/bin/scons**       |
   +------------+------------------------------------------------------------------------------+
   | Arguments  | See :ref:`doc_introduction_to_the_buildsystem` for a full list of arguments. |
   +------------+------------------------------------------------------------------------------+
   | Directory  | A full path to the Godot root folder                                         |
   +------------+------------------------------------------------------------------------------+
 
-.. figure:: img/xcode_2_configure_scons.png
-   :figclass: figure-w480
-   :align: center
-
 - Add a Command Line Tool target which will be used for indexing the project by
   choosing **File > New > Target...**.
 
-.. figure:: img/xcode_3_add_new_target.png
+.. figure:: img/xcode_4_add_new_target.webp
    :figclass: figure-w480
    :align: center
 
-- Select **OS X > Application > Command Line Tool**.
+- Select **macOS > Application > Command Line Tool**.
 
-.. figure:: img/xcode_4_select_command_line_target.png
+.. figure:: img/xcode_5_select_command_line_target.webp
    :figclass: figure-w480
    :align: center
 
@@ -51,16 +56,10 @@ Importing the project
   end of the path, e.g. ``/Users/me/repos/godot-source/**``.
 
 - Add the Godot source to the project by dragging and dropping it into the project file browser.
-- Uncheck **Create external build system project**.
-
-.. figure:: img/xcode_5_after_add_godot_source_to_project.png
-   :figclass: figure-w480
-   :align: center
-
-- Next select **Create groups** for the **Added folders** option and check *only*
+- Select **Create groups** for the **Added folders** option and check *only*
   your command line indexing target in the **Add to targets** section.
 
-.. figure:: img/xcode_6_after_add_godot_source_to_project_2.png
+.. figure:: img/xcode_6_after_add_godot_source_to_project.webp
    :figclass: figure-w480
    :align: center
 
@@ -84,7 +83,7 @@ To enable debugging support you need to edit the external build target's build a
 
   ln -f ${PROJECT_DIR}/godot/bin/godot.macos.tools.64 ${PROJECT_DIR}/godot/bin/godot
 
-.. figure:: img/xcode_7_setup_build_post_action.png
+.. figure:: img/xcode_7_setup_build_post_action.webp
    :figclass: figure-w480
    :align: center
 
@@ -92,14 +91,14 @@ To enable debugging support you need to edit the external build target's build a
 
 - Open the scheme editor again and select **Run**.
 
-.. figure:: img/xcode_8_setup_run_scheme.png
+.. figure:: img/xcode_8_setup_run_scheme.webp
    :figclass: figure-w480
    :align: center
 
 - Set the **Executable** to the file you linked in your post-build action script.
 - Check **Debug executable**.
 - You can add two arguments on the **Arguments** tab:
-  the ``-e`` flag opens the editor instead of the project manager, and the ``--path`` argument
+  the ``-e`` flag opens the editor instead of the Project Manager, and the ``--path`` argument
   tells the executable to open the specified project (must be provided as an *absolute* path
   to the project root, not the ``project.godot`` file).
 

@@ -30,7 +30,7 @@ available functions and properties when programming. While the manual covers
 general features, concepts, and how to use the editor, the reference is all
 about using Godot's scripting API (Application Programming Interface). You can
 access it both online and offline. We recommend browsing the reference offline,
-from within the Godot editor. To do so, go to Help -> Search or press
+from within the Godot editor. To do so, go to Help -> Search Help or press
 :kbd:`F1`.
 
 .. image:: img/manual_class_reference_search.png
@@ -86,10 +86,10 @@ help to better understand how to achieve something, you can ask other users for
 help on one of the many `active
 communities <https://godotengine.org/community>`_.
 
-The best place to ask for questions and find already answered ones is the
+The best place to ask questions and find already answered ones is the
 official `Questions & Answers <https://godotengine.org/qa/>`_ site. These
 responses show up in search engine results and get saved, allowing other users
-to benefit from discussions on the platform. Once you asked a question there,
+to benefit from discussions on the platform. Once you have asked a question there,
 you can share its link on other social platforms. Before asking a question, be
 sure to look for existing answers that might solve your problem on this website
 or using your preferred search engine.
@@ -141,7 +141,7 @@ information:
    interface evolve rapidly.
 
 Following these guidelines will maximize your chances of getting the answer
-you're looking for. They will save time both to you and the persons helping you.
+you're looking for. They will save time both for you and the persons helping you.
 
 Community tutorials
 -------------------

@@ -152,8 +152,3 @@ The ``Switch`` node returns a vector if the boolean condition is ``true`` or
 boolean, all components of the vector should be above zero.
 
 .. image:: img/vs_switch.png
-
-.. note::
-
-    The ``Switch`` node is only available on the GLES3 backed. If you are
-    targeting GLES2 devices, you cannot use ``switch`` statements.

@@ -121,7 +121,7 @@ line:
 
   .. code-tab:: csharp
 
-    public void OnMobTimerTimeout()
+    private void OnMobTimerTimeout()
     {
         // ...
         // We connect the mob to the score label to update the score upon squashing one.
@@ -148,7 +148,7 @@ There, we increment the score and update the displayed text.
     public void OnMobSquashed()
     {
         _score += 1;
-        Text = string.Format("Score: {0}", _score);
+        Text = $"Score: {_score}";
     }
 
 The second line uses the value of the ``score`` variable to replace the
@@ -159,6 +159,7 @@ function.
 .. seealso::
 
     You can learn more about string formatting here: :ref:`doc_gdscript_printf`.
+    In C#, consider using `string interpolation with "$" <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated>`_.
 
 
 .. note::
@@ -237,15 +238,13 @@ the game. Add this line to the ``_ready()`` function.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    func _ready():
-        #...
-        $UserInterface/Retry.hide()
+   func _ready():
+       $UserInterface/Retry.hide()
 
   .. code-tab:: csharp
 
     public override void _Ready()
     {
-        // ...
         GetNode<Control>("UserInterface/Retry").Hide();
     }
 
@@ -260,7 +259,7 @@ Then, when the player gets hit, we show the overlay.
 
   .. code-tab:: csharp
 
-    public void OnPlayerHit()
+    private void OnPlayerHit()
     {
         //...
         GetNode<Control>("UserInterface/Retry").Show();
@@ -316,7 +315,7 @@ or by using the *+* icon next to your currently opened scene.
 
 |image15|
 
-Click the *Other Node* button to create an :ref:`AudioStreamPlayer2D <class_AudioStreamPlayer2D>` and rename it to
+Click the *Other Node* button to create an :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` and rename it to
 ``MusicPlayer``.
 
 |image16|
@@ -370,7 +369,6 @@ Here is the complete ``Main.gd`` script for reference.
     @export var mob_scene: PackedScene
 
     func _ready():
-        randomize()
         $UserInterface/Retry.hide()
 
 
@@ -401,20 +399,18 @@ Here is the complete ``Main.gd`` script for reference.
         if event.is_action_pressed("ui_accept") and $UserInterface/Retry.visible:
             # This restarts the current scene.
             get_tree().reload_current_scene()
+
   .. code-tab:: csharp
 
     using Godot;
 
     public partial class Main : Node
     {
-    #pragma warning disable 649
         [Export]
-        public PackedScene MobScene;
-    #pragma warning restore 649
+        public PackedScene MobScene { get; set; }
 
         public override void _Ready()
         {
-            GD.Randomize();
             GetNode<Control>("UserInterface/Retry").Hide();
         }
 
@@ -422,25 +418,33 @@ Here is the complete ``Main.gd`` script for reference.
         {
             if (@event.IsActionPressed("ui_accept") && GetNode<Control>("UserInterface/Retry").Visible)
             {
+                // This restarts the current scene.
                 GetTree().ReloadCurrentScene();
             }
         }
 
-        public void OnMobTimerTimeout()
+        private void OnMobTimerTimeout()
         {
-            Mob mob = (Mob)MobScene.Instantiate();
+            // Create a new instance of the Mob scene.
+            Mob mob = MobScene.Instantiate<Mob>();
 
-            var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
-            mobSpawnLocation.UnitOffset = GD.Randf();
+            // Choose a random location on the SpawnPath.
+            // We store the reference to the SpawnLocation node.
+            var mobSpawnLocation = GetNode<PathFollow3D>("SpawnPath/SpawnLocation");
+            // And give it a random offset.
+            mobSpawnLocation.ProgressRatio = GD.Randf();
 
             Vector3 playerPosition = GetNode<Player>("Player").position;
-            mob.Initialize(mobSpawnLocation.Translation, playerPosition);
+            mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
+            // Spawn the mob by adding it to the Main scene.
             AddChild(mob);
+
+            // We connect the mob to the score label to update the score upon squashing one.
             mob.Squashed += GetNode<ScoreLabel>("UserInterface/ScoreLabel").OnMobSquashed;
         }
 
-        public void OnPlayerHit()
+        private void OnPlayerHit()
         {
             GetNode<Timer>("MobTimer").Stop();
             GetNode<Control>("UserInterface/Retry").Show();

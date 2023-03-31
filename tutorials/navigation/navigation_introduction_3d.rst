@@ -1,6 +1,5 @@
 .. _doc_navigation_overview_3d:
 
-
 3D Navigation Overview
 ======================
 
@@ -31,7 +30,7 @@ Godot provides the following objects and classes for 3D navigation:
         - NavMap RID
             Reference to a specific navigation map that holds regions and agents.
             The map will attempt to join changed navigation meshes of regions by proximity.
-            The map will synchronise regions and agents each physics frame.
+            The map will synchronize regions and agents each physics frame.
         - NavRegion RID
             Reference to a specific navigation region that can hold navigation mesh data.
             The region can be enabled / disabled or the use restricted with a navigationlayer bitmask.
@@ -65,6 +64,11 @@ The 3D navigation meshes are defined with the following resources:
     - The NavigationRegion3D Node uses this resource to define its navigation area.
     - The NavigationServer3D uses this resource to update navmesh of individual regions.
     - The GridMap Editor uses this resource when specific navigation meshes are defined for each gridcell.
+
+.. seealso::
+
+    You can see how 3D navigation works in action using the
+    `3D Navigation demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/navigation>`__.
 
 Setup for 3D scene
 ------------------
@@ -208,5 +212,5 @@ a NavigationAgent3D for path movement.
 
 .. note::
 
-    On the first frame the NavigationServer map has not synchronised region data and any path query
+    On the first frame the NavigationServer map has not synchronized region data and any path query
     will return empty. Await one frame to pause scripts until the NavigationServer had time to sync.

@@ -1,8 +1,8 @@
 .. This page is only here to introduce the interface to the user broadly. To
    cover individual areas in greater detail, write the corresponding pages in
    the most appropriate section, and link them. E.g. the animation editor goes
-   to the animation section. General pages, for instance, about the project
-   manager, should go in the editor manual.
+   to the animation section. General pages, for instance, about the Project
+   Manager, should go in the editor manual.
 
 .. _doc_intro_to_the_editor_interface:
 
@@ -15,7 +15,7 @@ look at the different main screens and docks to help you situate yourself.
 .. seealso:: For a comprehensive breakdown of the editor's interface and how to
              use it, see the :ref:`Editor manual <toc-learn-editor>`.
 
-The Project manager
+The Project Manager
 -------------------
 
 When you launch Godot, the first window you see is the Project Manager. In the
@@ -24,11 +24,11 @@ ones, and more.
 
 .. image:: img/editor_intro_project_manager.webp
 
-At the top of the window, there is another tab named "Templates". You can search
+At the top of the window, there is another tab named "Asset Library Projects". You can search
 for demo projects in the open source asset library, which includes many projects
 developed by the community.
 
-.. seealso:: To learn the project manager's ins and outs, read
+.. seealso:: To learn the Project Manager's ins and outs, read
              :ref:`doc_project_manager`.
 
 .. image:: img/editor_intro_project_templates.webp
@@ -68,7 +68,7 @@ Below is the 3D one.
 
 .. image:: img/editor_intro_toolbar_3d.webp
 
-Let's look at the docks. The **FileSystem** dock lists your project files, be it
+Let's look at the docks. The **FileSystem** dock lists your project files, including
 scripts, images, audio samples, and more.
 
 .. image:: img/editor_intro_filesystem_dock.webp

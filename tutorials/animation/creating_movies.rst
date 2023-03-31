@@ -60,11 +60,23 @@ Enabling Movie Maker mode
 To enable Movie Maker mode, click the "movie reel" button in the top-right
 corner of the editor *before* running the project:
 
-.. image:: img/movie_maker_enable.png
+.. figure:: img/creating_movies_enable_movie_maker_mode.webp
+   :align: center
+   :alt: Movie Maker mode is disabled, click the "movie reel" icon to enable
 
-The icon turns red when Movie Maker mode is enabled. Movie Maker status is *not*
-persisted when the editor quits, so you must re-enable Movie Maker mode again
-after restarting the editor if needed.
+   Movie Maker mode is disabled, click the "movie reel" icon to enable
+
+The icon gets a background matching the accent color when Movie Maker mode is
+enabled:
+
+.. figure:: img/creating_movies_disable_movie_maker_mode.webp
+   :align: center
+   :alt: Movie Maker mode is enabled, click the "movie reel" icon again to disable
+
+   Movie Maker mode is enabled, click the "movie reel" icon again to disable
+
+Movie Maker status is **not** persisted when the editor quits, so you must
+re-enable Movie Maker mode again after restarting the editor if needed.
 
 .. note::
 
@@ -74,14 +86,22 @@ after restarting the editor if needed.
 Before you can record video by running the project, you still need to configure
 the output file path. This path can be set for all scenes in the Project Settings:
 
-.. image:: img/movie_maker_project_settings.png
+.. figure:: img/creating_movies_project_settings.webp
+   :align: center
+   :alt: Movie Maker project settings (with Advanced toggle enabled)
+
+   Movie Maker project settings (with Advanced toggle enabled)
 
 Alternatively, you can set the output file path on a per-scene basis by adding a
 String metadata with the name ``movie_file`` to the scene's **root node**. This
 is only used when the main scene is set to the scene in question, or when
 running the scene directly by pressing :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 
-.. image:: img/movie_maker_per_scene_metadata.png
+.. figure:: img/creating_movies_set_per_scene_metadata.webp
+   :align: center
+   :alt: Inspector view after creating a ``movie_file`` metadata of type String
+
+   Inspector view after creating a ``movie_file`` metadata of type String
 
 The path specified in the project settings or metadata can be either absolute,
 or relative to the project root.

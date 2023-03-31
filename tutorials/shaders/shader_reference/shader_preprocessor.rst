@@ -36,7 +36,7 @@ General syntax
 - Preprocessor directives **never** end with semicolons (with the exception of ``#define``,
   where this is allowed but potentially dangerous).
 - Preprocessor directives can span several lines by ending each line with a
-  blackslash (``\``). The first line break *not* featuring a backslash will end
+  backslash (``\``). The first line break *not* featuring a backslash will end
   the preprocessor statement.
 
 #define
@@ -352,10 +352,21 @@ the current shader file. Relative paths are only allowed in shaders that are
 saved to ``.gdshader`` or ``.gdshaderinc`` files, while absolute paths can be
 used in shaders that are built into a scene/resource file.
 
-This directive may be used in any place, but is recommended at
-the beginning of the shader file, after the ``shader_type`` to prevent possible
-errors. The shader include may be created by using a **File > Create Shader
-Include** menu option of the shader editor.
+You can create new shader includes by using the **File > Create Shader Include**
+menu option of the shader editor, or by creating a new :ref:`ShaderInclude<class_ShaderInclude>` resource
+in the FileSystem dock.
+
+Shader includes can be included from within any shader, or other shader include, at
+any point in the file.
+
+When including shader includes in the global scope of a shader, it is recommended
+to do this after the initial ``shader_type`` statement.
+
+You can also include shader includes from within the body a function. Please note that
+the shader editor is likely going to report errors for your shader include's code, as it
+may not be valid outside of the context that it was written for. You can either choose
+to ignore these errors (the shader will still compile fine), or you can wrap the include
+in an ``#ifdef`` block that checks for a define from your shader.
 
 ``#include`` is useful for creating libraries of helper functions (or macros)
 and reducing code duplication. When using ``#include``, be careful about naming

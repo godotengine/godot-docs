@@ -25,7 +25,7 @@ Launch Godot and create a new project.
     and ``fonts/`` directories to your project's directory.
 
     Ensure that you have the required dependencies to use C# in Godot.
-    You need the .NET Core 3.1 SDK, and an editor such as VS Code.
+    You need the latest stable .NET SDK, and an editor such as VS Code.
     See :ref:`doc_c_sharp_setup`.
 
  .. tab:: C++

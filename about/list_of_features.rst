@@ -34,8 +34,8 @@ Platforms
 - iOS 11.0 and later.
 - :ref:`Consoles <doc_consoles>`.
 
-Godot aims to be as platform-independent as possible and can be ported to new
-platforms with relative ease.
+Godot aims to be as platform-independent as possible and can be
+:ref:`ported to new platforms <doc_custom_platform_ports>` with relative ease.
 
 Editor
 ------
@@ -76,7 +76,7 @@ Editor
 - :ref:`Create your own plugins <doc_making_plugins>` using GDScript to add new
   features or speed up your workflow.
 - :ref:`Download projects from the asset library <doc_using_assetlib_editor>`
-  in the project manager and import them directly.
+  in the Project Manager and import them directly.
 
 Rendering
 ---------
@@ -450,7 +450,7 @@ Scripting
 
 - Actively developed GDExtension bindings for `D <https://github.com/godot-dlang/godot-dlang>`__,
   `Haxe <https://hxgodot.github.io/>`__, `Python <https://github.com/touilleMan/godot-python>`__, and `Rust <https://github.com/godot-rust/gdextension>`__
-  bindings provided by the community. (Some of these bindings may be experimental and not production-ready.)
+  bindings provided by the community. (Some of these bindings may be experimental and not production-ready).
 
 Audio
 -----
@@ -718,7 +718,7 @@ Miscellaneous
    - Print colored text to standard output on all platforms using
      :ref:`print_rich <class_@GlobalScope_method_print_rich>`.
 
-- Support for :ref:`C++ modules <doc_custom_modules_in_c++>` statically linked
+- Support for :ref:`C++ modules <doc_custom_modules_in_cpp>` statically linked
   into the engine binary.
 - Engine and editor written in C++17.
 

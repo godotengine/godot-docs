@@ -35,10 +35,12 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
 .. note::
 
     To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
-    you need to use the ``master`` branch of godot-cpp,
-    which is only compatible with Godot 4.0 and follow this example.
+    you need to use the ``4.0`` branch of godot-cpp,
+    which is only compatible with Godot 4.0 and being used here as an example.
+    The ``master`` branch is the development branch and is being updated 
+    regularly to work with godot's ``master`` branch.
 
-If you are versioning your project using Git, it is a good idea to add it as
+If you are versioning your project using Git, it is recommended to add it as
 a Git submodule:
 
 .. code-block:: none
@@ -46,11 +48,11 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b master https://github.com/godotengine/godot-cpp
+    git submodule add -b 4.0 https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
-Do make sure you clone recursively to pull in both repositories:
+Alternatively, you can also clone it to the project folder:
 
 .. code-block:: none
 
@@ -349,9 +351,9 @@ loaded for each platform and the entry function for the module. It is called ``g
 
     [libraries]
 
-    linux.64="res://demo/bin/libgdexample.linux.64.so"
-    windows.x86_64="res://demo/bin/libgdexample.windows.x86_64.dll"
-    macos="res://demo/bin/libgdexample.macos.framework"
+    linux.64="res://bin/libgdexample.linux.64.so"
+    windows.x86_64="res://bin/libgdexample.windows.x86_64.dll"
+    macos="res://bin/libgdexample.macos.framework"
 
 This file contains a ``configuration`` section that controls the entry function of the module.
 
@@ -616,7 +618,7 @@ node. In the **Node** dock, we can find our new signal and link it up by pressin
 the **Connect** button or double-clicking the signal. We've added a script on
 our main node and implemented our signal like this:
 
-.. code-block:: GDScript
+.. code-block:: gdscript
 
     extends Node
 

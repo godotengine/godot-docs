@@ -85,7 +85,7 @@ some situations where other techniques may be better.
 A :ref:`Group <doc_groups>` allows locating a node (or a group of many nodes)
 from any other node, no matter what scene the two nodes are located in.
 
-A :ref:`Singleton (AutoLoad) <doc_singletons_autoload>` is an always loaded node
+A :ref:`Singleton (Autoload) <doc_singletons_autoload>` is an always loaded node
 that can be accessed directly by any node regardless of the scene. These are useful
 when some data or functionality is shared globally.
 

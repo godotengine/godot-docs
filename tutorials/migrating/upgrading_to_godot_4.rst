@@ -113,12 +113,12 @@ Running the project upgrade tool
     You can backup a project by using version control, or by copying the project
     folder to another location.
 
-Using the project manager
+Using the Project Manager
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To use the project upgrade tool:
 
-1. Open the Godot 4 project manager.
+1. Open the Godot 4 Project Manager.
 2. Import the Godot 3.x project using the **Import** button, or use the **Scan**
    button to find the project within a folder.
 3. Double-click the imported project (or select the project then choose **Edit**).
@@ -129,7 +129,7 @@ To use the project upgrade tool:
    case the conversion tool fails.
 5. Wait until the project conversion process finishes. This can take up to a few
    minutes for large projects with lots of scenes.
-6. When the project manager interface becomes available again, double-click the
+6. When the Project Manager interface becomes available again, double-click the
    project (or select the project then choose **Edit**) to open it in the
    editor.
 
@@ -413,7 +413,6 @@ table to find its new name.
 - BaseButton's ``set_event()`` is now ``set_shortcut()``.
 - Camera2D's ``get_v_offset()`` is now ``get_drag_vertical_offset()``.
 - Camera2D's ``set_v_offset()`` is now ``set_drag_vertical_offset()``.
-- Camera2D's ``make_current()`` is now ``set_current()``.
 - CanvasItem's ``update()`` is now ``queue_redraw()``.
 - Control's ``set_tooltip()`` is now ``set_tooltip_text()``.
 - EditorNode3DGizmoPlugin's ``create_gizmo()`` is now ``_create_gizmo()``
@@ -477,7 +476,7 @@ table to find its new name.
 
 - Color names are now uppercase and use underscores between words.
   For example, ``Color.palegreen`` is now ``Color.PALE_GREEN``.
-- MainLoop's ``NOTIFICATION_`` constants were moved to global scope, which means
+- MainLoop's ``NOTIFICATION_`` constants were duplicated to ``Node`` which means
   you can remove the ``MainLoop.`` prefix when referencing them.
 - MainLoop's ``NOTIFICATION_WM_QUIT_REQUEST`` is now ``NOTIFICATION_WM_CLOSE_REQUEST``.
 
@@ -506,14 +505,12 @@ Godot 3.x, you will have to change its code to call :ref:`class_RenderingServer`
 methods that affect environment effects' quality. Only the "base" toggle of each
 environment effect and its visual knobs remain within the Environment resource.
 
-Updating external shaders
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Updating shaders
+^^^^^^^^^^^^^^^^
 
-**Only shaders that are built-in to a scene file are modified by the project
-upgrade tool.** This means external shaders (saved to ``.gdshader`` files)
-need to be updated manually.
+There have been some changes to shaders that aren't covered by the upgrade tool.
 
-The ``.shader`` file extension is also no longer supported, which means you must
+The ``.shader`` file extension is no longer supported, which means you must
 rename ``.shader`` files to ``.gdshader`` and update references accordingly in
 scene/resource files using an external text editor.
 
@@ -522,7 +519,9 @@ Some notable renames you will need to perform in shaders are:
 - Texture filter and repeat modes are now set on individual uniforms, rather
   than the texture files themselves.
 - ``hint_albedo`` is now ``source_color``.
-- :ref:`Projection matrix variables were renamed. <doc_spatial_shader>`
+- :ref:`Built in matrix variables were renamed. <doc_spatial_shader>`
+- Particles shaders no longer use the ``vertex()`` processor function. Instead
+  they use ``start()`` and ``process()``.
 
 See :ref:`doc_shading_language` for more information.
 
@@ -537,10 +536,10 @@ The most notable examples of this are:
 - Both :ref:`class_String` and :ref:`class_StringName` are now exposed to
   GDScript. This allows for greater optimization, as StringName is specifically
   designed to be used for "constant" strings that are created once and reused
-  many times. These types are not equivalent to each other, which means
-  ``"example" == &"example"`` returns ``false`` (``&`` creates a StringName).
-  This should be taken into account for ``if`` and ``match`` comparisons in
-  particular, as you may have to replace ``"example"`` with ``&"example"``.
+  many times. These types are not strictly equivalent to each other, which means
+  ``is_same("example", &"example")`` returns ``false``. Although in most cases
+  they are interchangeable (``"example" == &"example"`` returns ``true``),
+  sometimes you may have to replace ``"example"`` with ``&"example"``.
 - :ref:`GDScript setter and getter syntax <doc_gdscript_basics_setters_getters>`
   was changed, but it's only partially converted by the conversion tool. In most
   cases, manual changes are required to make setters and getters working again.
@@ -564,8 +563,8 @@ The most notable examples of this are:
   before, replace ``call_group(...)`` with
   ``call_group_flags(SceneTree.GROUP_CALL_DEFERRED, ...)`` (and do the same with
   ``set_group()`` and ``notify_group()`` respectively).
-- Instead of ``rotation_degrees``, the ``rotation`` property is exposed to the 
-  editor, which is automatically displayed as degrees in the Inspector 
+- Instead of ``rotation_degrees``, the ``rotation`` property is exposed to the
+  editor, which is automatically displayed as degrees in the Inspector
   dock. This may break animations, as the conversion is not handled automatically by the
   conversion tool.
 - :ref:`class_AABB`'s ``has_no_surface()`` was inverted and renamed to ``has_surface()``.
@@ -576,6 +575,9 @@ The most notable examples of this are:
 - :ref:`class_AnimatedSprite2D` and :ref:`class_AnimatedSprite3D` now allow
   negative ``speed_scale`` values. This may break animations if you relied on
   ``speed_scale`` being internally clamped to ``0.0``.
+- :ref:`class_AnimatedSprite2D` and :ref:`class_AnimatedSprite3D`'s ``playing``
+  property was removed. Use ``play()``/``stop()`` method instead OR configure
+  ``autoplay`` animation via the SpriteFrames bottom panel (but not both at once).
 - :ref:`class_BaseButton`'s signals are now ``button_up`` and ``button_down``.
   The ``pressed`` property is now ``button_pressed``.
 - :ref:`class_Camera2D`'s ``rotating`` property was replaced by

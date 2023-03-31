@@ -11,7 +11,7 @@ auto-formatting tools.
 Since the Godot shader language is close to C-style languages and GLSL, this
 guide is inspired by Godot's own GLSL formatting. You can view an example of a
 GLSL file in Godot's source code
-`here <https://github.com/godotengine/godot/blob/master/drivers/gles2/shaders/copy.glsl>`__.
+`here <https://github.com/godotengine/godot/blob/master/drivers/gles3/shaders/copy.glsl>`__.
 
 Style guides aren't meant as hard rulebooks. At times, you may not be able to
 apply some of the guidelines below. When that happens, use your best judgment,
@@ -36,7 +36,7 @@ Here is a complete shader example based on these guidelines:
     uniform float contrast = 1.5;
     uniform float saturation = 1.8;
 
-    uniform sampler2D screen_texture : hint_screen_texture, repeat_disabled, filter_nearest;
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
 
     void fragment() {
         vec3 c = textureLod(screen_texture, SCREEN_UV, 0.0).rgb;

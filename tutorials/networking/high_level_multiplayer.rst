@@ -47,7 +47,7 @@ In summary, you can use the low-level networking API for maximum control and imp
 .. warning:: Adding networking to your game comes with some responsibility.
              It can make your application vulnerable if done wrong and may lead to cheats or exploits.
              It may even allow an attacker to compromise the machines your application runs on
-             and use your servers to send spam, attack others or steal your users data if they play your game.
+             and use your servers to send spam, attack others or steal your users' data if they play your game.
 
              This is always the case when networking is involved and has nothing to do with Godot.
              You can of course experiment, but when you release a networked application,
@@ -317,14 +317,14 @@ every peer and RPC will work great! Here is an example:
         # Load my player
         var my_player = preload("res://player.tscn").instantiate()
         my_player.set_name(str(selfPeerID))
-        my_player.set_network_master(selfPeerID) # Will be explained later
+        my_player.set_multiplayer_authority(selfPeerID) # Will be explained later
         get_node("/root/world/players").add_child(my_player)
 
         # Load other players
         for p in player_info:
             var player = preload("res://player.tscn").instantiate()
             player.set_name(str(p))
-            player.set_network_master(p) # Will be explained later
+            player.set_multiplayer_authority(p) # Will be explained later
             get_node("/root/world/players").add_child(player)
 
         # Tell server (remember, server is always ID=1) that this peer is done pre-configuring.
@@ -384,7 +384,7 @@ The network master of a node is the peer that has the ultimate authority over it
 When not explicitly set, the network master is inherited from the parent node, which if not changed, is always going to be the server (ID 1). Thus the server has authority over all nodes by default.
 
 The network master can be set
-with the function :ref:``Node.set_network_master(id, recursive)`` (recursive is ``true`` by default and means the network master is recursively set on all child nodes of the node as well).
+with the function :ref:``Node.set_multiplayer_authority(id, recursive)`` (recursive is ``true`` by default and means the network master is recursively set on all child nodes of the node as well).
 
 Checking that a specific node instance on a peer is the network master for this node for all connected peers is done by calling ``Node.is_network_master()``. This will return ``true`` when executed on the server and ``false`` on all client peers.
 
@@ -396,14 +396,14 @@ If you have paid attention to the previous example, it's possible you noticed th
         # Load my player
         var my_player = preload("res://player.tscn").instantiate()
         my_player.set_name(str(selfPeerID))
-        my_player.set_network_master(selfPeerID) # The player belongs to this peer; it has the authority.
+        my_player.set_multiplayer_authority(selfPeerID) # The player belongs to this peer; it has the authority.
         get_node("/root/world/players").add_child(my_player)
 
         # Load other players
         for p in player_info:
             var player = preload("res://player.tscn").instantiate()
             player.set_name(str(p))
-            player.set_network_master(p) # Each other connected peer has authority over their own player.
+            player.set_multiplayer_authority(p) # Each other connected peer has authority over their own player.
             get_node("/root/world/players").add_child(player)
         [...]
 

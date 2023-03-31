@@ -16,8 +16,8 @@ Debugging the editor
 --------------------
 
 When working on the Godot editor keep in mind that by default the executable
-will start in the project manager mode. Opening a project from the project
-manager spawns a new process, which stops the debugging session. To avoid that
+will start in the Project Manager mode. Opening a project from the Project
+Manager spawns a new process, which stops the debugging session. To avoid that
 you should launch directly into the project using ``-e`` and ``--path`` launch
 options.
 

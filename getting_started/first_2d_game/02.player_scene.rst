@@ -65,7 +65,7 @@ display. To create one, find the ``Sprite Frames`` property in the Inspector and
 
 
 On the left is a list of animations. Click the "default" one and rename it to
-"walk". Then click the "New Animation" button to create a second animation named
+"walk". Then click the "Add Animation" button to create a second animation named
 "up". Find the player images in the "FileSystem" tab - they're in the ``art``
 folder you unzipped earlier. Drag the two images for each animation, named
 ``playerGrey_up[1/2]`` and ``playerGrey_walk[1/2]``, into the "Animation Frames"

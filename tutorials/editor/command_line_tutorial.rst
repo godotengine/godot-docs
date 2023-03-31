@@ -52,7 +52,7 @@ Command line reference
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``-e``, ``--editor``                     | Start the editor instead of running the scene (:ref:`target=editor <doc_introduction_to_the_buildsystem_target>` must be used).                              |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ``-p``, ``--project-manager``            | Start the project manager, even if a project is auto-detected (:ref:`target=editor <doc_introduction_to_the_buildsystem_target>` must be used).              |
+| ``-p``, ``--project-manager``            | Start the Project Manager, even if a project is auto-detected (:ref:`target=editor <doc_introduction_to_the_buildsystem_target>` must be used).              |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | ``--debug-server <uri>``                 | Start the editor debug server (``<protocol>://<host/IP>[:<port>]``, e.g. ``tcp://127.0.0.1:6007``)                                                           |
 +------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -262,7 +262,7 @@ Running the editor
 
 Running the editor is done by executing Godot with the ``-e`` flag. This
 must be done from within the project directory or a subdirectory,
-otherwise the command is ignored and the project manager appears.
+otherwise the command is ignored and the Project Manager appears.
 
 ::
 

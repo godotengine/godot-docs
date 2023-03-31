@@ -537,7 +537,7 @@ An example configuration for a full tilesheet may look as follows:
 .. _doc_using_tilemaps_assigning_properties_to_multiple_tiles:
 
 Assigning properties to multiple tiles at once
-----------------------------------------------c
+----------------------------------------------
 
 There are two ways to assign properties to multiple tiles at once.
 Depending on your use cases, one method may be faster than the other:

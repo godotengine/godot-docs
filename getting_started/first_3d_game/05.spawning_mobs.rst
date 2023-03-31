@@ -143,7 +143,7 @@ Your path should look like this.
 |image18|
 
 To sample random positions on it, we need a :ref:`PathFollow3D <class_PathFollow3D>` node. Add a
-:ref:`PathFollow3D <class_PathFollow3D>` as a child of the ``Path3d``. Rename the two nodes to ``SpawnPath`` and
+:ref:`PathFollow3D <class_PathFollow3D>` as a child of the ``Path3D``. Rename the two nodes to ``SpawnPath`` and
 ``SpawnLocation``, respectively. It's more descriptive of what we'll use them for.
 
 |image19|
@@ -158,20 +158,12 @@ Right-click on the ``Main`` node and attach a new script to it.
 We first export a variable to the *Inspector* so that we can assign ``Mob.tscn``
 or any other monster to it.
 
-Then, as we're going to spawn the monsters procedurally, we want to randomize
-numbers every time we play the game. If we don't do that, the monsters will
-always spawn following the same sequence.
-
 .. tabs::
  .. code-tab:: gdscript GDScript
 
    extends Node
 
    @export var mob_scene: PackedScene
-
-
-   func _ready():
-       randomize()
 
  .. code-tab:: csharp
 
@@ -181,16 +173,8 @@ always spawn following the same sequence.
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
-    #pragma warning disable 649
-        // We assign this in the editor, so we don't need the warning about not being assigned.
         [Export]
-        public PackedScene MobScene;
-    #pragma warning restore 649
-
-        public override void _Ready()
-        {
-            GD.Randomize();
-        }
+        public PackedScene MobScene { get; set; }
     }
 
 We want to spawn mobs at regular time intervals. To do this, we need to go back
@@ -259,22 +243,22 @@ Let's code the mob spawning logic. We're going to:
  .. code-tab:: csharp
 
     // We also specified this function name in PascalCase in the editor's connection window
-    public void OnMobTimerTimeout()
+    private void OnMobTimerTimeout()
     {
         // Create a new instance of the Mob scene.
-        Mob mob = (Mob)MobScene.Instantiate();
+        Mob mob = MobScene.Instantiate<Mob>();
 
         // Choose a random location on the SpawnPath.
         // We store the reference to the SpawnLocation node.
-        var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
+        var mobSpawnLocation = GetNode<PathFollow3D>("SpawnPath/SpawnLocation");
         // And give it a random offset.
-        mobSpawnLocation.UnitOffset = GD.Randf();
+        mobSpawnLocation.ProgressRatio = GD.Randf();
 
-        Vector3 playerPosition = GetNode<Player>("Player").position;
-        mob.Initialize(mobSpawnLocation.Translation, playerPosition);
+        Vector3 playerPosition = GetNode<Player>("Player").Position;
+        mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
+        // Spawn the mob by adding it to the Main scene.
         AddChild(mob);
-
     }
 
 Above, ``randf()`` produces a random value between ``0`` and ``1``, which is
@@ -291,9 +275,6 @@ Here is the complete ``Main.gd`` script so far, for reference.
     extends Node
 
     @export var mob_scene: PackedScene
-
-    func _ready():
-        randomize()
 
 
     func _on_mob_timer_timeout():
@@ -318,26 +299,24 @@ Here is the complete ``Main.gd`` script so far, for reference.
 
     public partial class Main : Node
     {
-    #pragma warning disable 649
         [Export]
-        public PackedScene MobScene;
-    #pragma warning restore 649
+        public PackedScene MobScene { get; set; }
 
-        public override void _Ready()
+        private void OnMobTimerTimeout()
         {
-            GD.Randomize();
-        }
+            // Create a new instance of the Mob scene.
+            Mob mob = MobScene.Instantiate<Mob>();
 
-        public void OnMobTimerTimeout()
-        {
-            Mob mob = (Mob)MobScene.Instantiate();
+            // Choose a random location on the SpawnPath.
+            // We store the reference to the SpawnLocation node.
+            var mobSpawnLocation = GetNode<PathFollow3D>("SpawnPath/SpawnLocation");
+            // And give it a random offset.
+            mobSpawnLocation.ProgressRatio = GD.Randf();
 
-            var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
-            mobSpawnLocation.UnitOffset = GD.Randf();
+            Vector3 playerPosition = GetNode<Player>("Player").Position;
+            mob.Initialize(mobSpawnLocation.Position, playerPosition);
 
-            Vector3 playerPosition = GetNode<Player>("Player").position;
-            mob.Initialize(mobSpawnLocation.Translation, playerPosition);
-
+            // Spawn the mob by adding it to the Main scene.
             AddChild(mob);
         }
     }

@@ -15,7 +15,9 @@ Visual Studio requires a solution file to work on a project. While Godot does no
 with the solution file, it can be generated using SCons.
 
 - Navigate to the Godot root folder and open a Command Prompt or PowerShell window.
-- Run ``scons platform=windows vsproj=yes`` to generate the solution.
+- | Run ``scons platform=windows vsproj=yes dev_build=yes`` to generate the solution with debug symbols.
+  | The ``vsproj`` parameter signals that you want Visual Studio solution generated.
+  | The ``dev_build`` parameter makes sure the debug symbols are included, allowing to e.g. step through code using breakpoints.
 - You can now open the project by double-clicking on the ``godot.sln`` in the project root
   or by using the **Open a project or solution** option inside of the Visual Studio.
 - Use the **Build** top menu to build the project.
@@ -34,9 +36,9 @@ source code, stop at specific points in the code, inspect the current execution 
 and make live changes to the codebase.
 
 You can launch the project with the debugger attached using the **Debug > Start Debugging**
-option from the top menu. However, unless you want to debug the project manager specifically,
+option from the top menu. However, unless you want to debug the Project Manager specifically,
 you'd need to configure debugging options first. This is due to the fact that when the Godot
-project manager opens a project, the initial process is terminated and the debugger gets detached.
+Project Manager opens a project, the initial process is terminated and the debugger gets detached.
 
 - To configure the launch options to use with the debugger use **Project > Properties**
   from the top menu:
@@ -45,11 +47,11 @@ project manager opens a project, the initial process is terminated and the debug
    :align: center
 
 - Open the **Debugging** section and under **Command Arguments** add two new arguments:
-  the ``-e`` flag opens the editor instead of the project manager, and the ``--path`` argument
+  the ``-e`` flag opens the editor instead of the Project Manager, and the ``--path`` argument
   tells the executable to open the specified project (must be provided as an *absolute* path
-  to the project root, not the ``project.godot`` file).
+  to the project root, not the ``project.godot`` file; if the path contains spaces be sure to pass it inside double quotation marks).
 
-.. figure:: img/vs_3_debug_command_line.png
+.. figure:: img/vs_3_debug_command_line.webp
    :align: center
 
 To learn more about command line arguments, refer to the

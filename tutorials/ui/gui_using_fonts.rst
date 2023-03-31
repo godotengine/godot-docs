@@ -11,6 +11,10 @@ font for and select the font tab. The second is in the inspector
 for control nodes under **Theme Overrides > Fonts**. Lastly, in
 the inspector settings for themes under **Default Font**.
 
+If no font override is specified anywhere,
+`Open Sans <https://fonts.google.com/specimen/Open+Sans>`__ SemiBold
+is used as the default project font.
+
 .. note::
 
     Since Godot 4.0, font sizes are no longer defined in the font itself but are
@@ -36,6 +40,11 @@ as *ligatures* (several characters transforming into a single different design).
 
     Fonts are covered by copyright. Double-check the license of a font before
     using it, as not all fonts allow commercial use without purchasing a license.
+
+.. seealso::
+
+    You can see how fonts work in action using the
+    `BiDI and Font Features demo project <https://github.com/godotengine/godot-demo-projects/tree/master/gui/bidi_and_font_features>`__.
 
 Dynamic fonts
 -------------
@@ -477,6 +486,71 @@ places:
    :align: center
 
    Saving FontVariation to an external resource file
+
+Faux bold and italic
+^^^^^^^^^^^^^^^^^^^^
+
+When writing text in bold or italic, using font variants specifically designed
+for this looks better. Spacing between glyphs will be more consistent when using
+a bold font, and certain glyphs' shapes may change entirely in italic variants
+(compare "a" and *"a"*).
+
+However, real bold and italic fonts require shipping more font files, which
+increases distribution size. A single :ref:`variable font <doc_using_fonts_variable_fonts>`
+file can also be used, but this file will be larger than a single non-variable font.
+While file size is usually not an issue for desktop projects, it can be a concern
+for mobile/web projects that strive to keep distribution size as low as possible.
+
+To allow bold and italic fonts to be displayed without having to ship additional
+fonts (or use a variable font that is larger in size), Godot supports *faux*
+bold and italic.
+
+.. figure:: img/using_fonts_faux_bold_italic_vs_real_bold_italic.webp
+   :align: center
+   :alt: Faux bold/italic (top), real bold/italic (bottom). Normal font used: Open Sans SemiBold
+
+   Faux bold/italic (top), real bold/italic (bottom). Normal font used: Open Sans SemiBold
+
+Faux bold and italic is automatically used in :ref:`class_RichTextLabel`'s bold
+and italic tags if no custom fonts are provided for bold and/or italic.
+
+To use faux bold, create a FontVariation resource in a property where a Font
+resource is expected. Set **Variation > Embolden** to a positive value to make a
+font bolder, or to a negative value to make it less bold. Recommended values are
+between ``0.5`` and ``1.2`` depending on the font.
+
+Faux italic is created by skewing the text, which is done by modifying the
+per-character transform. This is also provided in FontVariation using the
+**Variation > Transform** property. Setting the ``yx`` component of the
+character transform to a positive value will italicize the text. Recommended
+values are between ``0.2`` and ``0.4`` depending on the font.
+
+Adjusting font spacing
+^^^^^^^^^^^^^^^^^^^^^^
+
+For stylistic purposes or for better readability, you may want to adjust how a
+font is presented in Godot.
+
+Create a FontVariation resource in a property where a Font resource is expected.
+There are 4 properties available in the **Variation > Extra Spacing** section,
+which accept positive and negative values:
+
+- **Glyph:** Additional spacing between every glyph.
+- **Space:** Additional spacing between words.
+- **Top:** Additional spacing above glyphs. This is used for multiline text,
+  but also to calculate the minimum size of controls such as :ref:`class_Label`
+  and :ref:`class_Button`.
+- **Top:** Additional spacing below glyphs. This is used for multiline text,
+  but also to calculate the minimum size of controls such as :ref:`class_Label`
+  and :ref:`class_Button`.
+
+The **Variation > Transform** property can also be adjusted to stretch
+characters horizontally or vertically. This is specifically done by adjusting
+the ``xx`` (horizontal scale) and ``yy`` (vertical scale) components. Remember
+to adjust glyph spacing to account for any changes, as glyph transform doesn't
+affect how much space each glyph takes in the text. Non-uniform scaling of this
+kind should be used sparingly, as fonts are generally not designed to be
+displayed with stretching.
 
 .. _doc_using_fonts_opentype_font_features:
 

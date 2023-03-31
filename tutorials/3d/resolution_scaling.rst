@@ -20,6 +20,11 @@ scaling is not intended to be a replacement for decreasing graphics settings on
 lower-end hardware. Consider exposing both resolution scale and graphics
 settings in your in-game menus.
 
+.. seealso::
+
+    You can compare resolution scaling modes and factors in action using the
+    `3D Antialiasing demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/antialiasing>`__.
+
 .. note::
 
     Resolution scaling is currently not available for 2D rendering, but it can be

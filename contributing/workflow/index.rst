@@ -15,4 +15,5 @@ approach the project.
    bisecting_regressions
    bug_triage_guidelines
    pr_workflow
+   pr_review_guidelines
    testing_pull_requests

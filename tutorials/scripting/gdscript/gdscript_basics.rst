@@ -487,9 +487,19 @@ Strings can contain the following escape sequences:
 +---------------------+---------------------------------+
 | ``\\``              | Backslash                       |
 +---------------------+---------------------------------+
-| ``\uXXXX``          | Unicode codepoint ``XXXX``      |
+| ``\uXXXX``          | UTF-16 Unicode codepoint        |
+|                     | ``XXXX``                        |
 |                     | (hexadecimal, case-insensitive) |
 +---------------------+---------------------------------+
+| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
+|                     | ``XXXXXX``                      |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+
+There are two ways to represent an escaped Unicode character above 0xFFFF:
+
+- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
+- as a single UTF-32 codepoint ``\UXXXXXX``.
 
 Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line, without
 inserting a newline character in the string itself.
@@ -759,6 +769,16 @@ Valid types are:
 - Other classes in the same script, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope).
 - Script classes declared with the ``class_name`` keyword.
 - Autoloads registered as singletons.
+
+.. note::
+
+    While ``Variant`` is a valid type specification, it's not an actual type. It
+    only means there's no set type and is equivalent to not having a static type
+    at all. Therefore, inference is not allowed by default for ``Variant``,
+    since it's likely a mistake.
+
+    You can turn off this check, or make it only a warning, by changing it in
+    the project settings. See :ref:`doc_gdscript_warning_system` for details.
 
 Casting
 ^^^^^^^
@@ -1126,6 +1146,9 @@ in the loop variable.
 
     for i in range(2, 8, 2):
         statement # Similar to [2, 4, 6] but does not allocate an array.
+
+    for i in range(8, 2, -2):
+        statement # Similar to [8, 6, 4] but does not allocate an array.
 
     for c in "Hello":
         print(c) # Iterate through all characters in a String, print every letter on new line.
@@ -1539,7 +1562,7 @@ Properties (setters and getters)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Sometimes, you want a class' member variable to do more than just hold data and actually perform
-some validation or computation whenever its value change. It may also be desired to
+some validation or computation whenever its value changes. It may also be desired to
 encapsulate its access in some way.
 
 For this, GDScript provides a special syntax to define properties using the ``set`` and ``get``

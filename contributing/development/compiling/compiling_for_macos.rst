@@ -66,8 +66,8 @@ To support both architectures in a single "Universal 2" binary, run the above tw
 
 If all goes well, the resulting binary executable will be placed in the
 ``bin/`` subdirectory. This executable file contains the whole engine and
-runs without any dependencies. Executing it will bring up the project
-manager.
+runs without any dependencies. Executing it will bring up the Project
+Manager.
 
 .. note:: If you want to use separate editor settings for your own Godot builds
           and official releases, you can enable
@@ -180,7 +180,7 @@ JIT-enabled implementation of the Python language (which SCons is written in).
 Its "full" version is currently only compatible with Linux, but Pyston-lite is
 also compatible with macOS (both x86 and ARM). Pyston can speed up incremental
 builds significantly, often by a factor between 1.5× and 2×. Pyston can be
-combined with alternative likers such as LLD or Mold to get even faster builds.
+combined with alternative linkers such as LLD or Mold to get even faster builds.
 
 To install Pyston-lite, run ``python -m pip install pyston_lite_autoload`` then
 run SCons as usual. This will automatically load a subset of Pyston's

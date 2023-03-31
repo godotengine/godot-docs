@@ -102,8 +102,8 @@ event scroll by in the output window. Here's an example of the output:
 
     A
     InputEventMouseMotion : button_mask=0, position=(108, 108), relative=(26, 1), speed=(164.152496, 159.119843), pressure=(0), tilt=(0, 0)
-    InputEventMouseButton : button_index=BUTTON_LEFT, pressed=true, position=(108, 107), button_mask=1, doubleclick=false
-    InputEventMouseButton : button_index=BUTTON_LEFT, pressed=false, position=(108, 107), button_mask=0, doubleclick=false
+    InputEventMouseButton : button_index=MOUSE_BUTTON_LEFT, pressed=true, position=(108, 107), button_mask=1, doubleclick=false
+    InputEventMouseButton : button_index=MOUSE_BUTTON_LEFT, pressed=false, position=(108, 107), button_mask=0, doubleclick=false
     S
     F
     Alt
@@ -275,19 +275,19 @@ Mouse buttons
 ~~~~~~~~~~~~~
 
 Capturing mouse buttons is very similar to handling key events. :ref:`@GlobalScope_MouseButton <enum_@GlobalScope_MouseButton>`
-contains a list of ``BUTTON_*`` constants for each possible button, which will
+contains a list of ``MOUSE_BUTTON_*`` constants for each possible button, which will
 be reported in the event's ``button_index`` property. Note that the scrollwheel
 also counts as a button - two buttons, to be precise, with both
-``BUTTON_WHEEL_UP`` and ``BUTTON_WHEEL_DOWN`` being separate events.
+``MOUSE_BUTTON_WHEEL_UP`` and ``MOUSE_BUTTON_WHEEL_DOWN`` being separate events.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _input(event):
         if event is InputEventMouseButton:
-            if event.button_index == BUTTON_LEFT and event.pressed:
+            if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
                 print("Left button was clicked at ", event.position)
-            if event.button_index == BUTTON_WHEEL_UP and event.pressed:
+            if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
                 print("Wheel up")
 
  .. code-tab:: csharp
@@ -329,7 +329,7 @@ node:
 
 
     func _input(event):
-        if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+        if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
             if (event.position - $Sprite2D.position).length() < click_radius:
                 # Start dragging if the click is on the sprite.
                 if not dragging and event.pressed:

@@ -366,4 +366,4 @@ create a RESET track when using the keyframe icon next to a property in the insp
 This does not apply on tracks created with Godot versions prior to 3.4,
 as the animation reset track feature was added in 3.4.
 
-.. note:: RESET tracks is also used as a reference value for blending. See also `For better blending <../tutorials/animation/animation_tree.html#for-better-blending>`__.
+.. note:: RESET tracks is also used as a reference value for blending. See also `For better blending <../animation/animation_tree.html#for-better-blending>`__.

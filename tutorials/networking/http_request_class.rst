@@ -74,7 +74,7 @@ Below is all the code we need to make it work. The URL points to an online API m
             }
         }
 
-With this, you should see ``(hello:world)`` printed on the console; hello being a key, and world being a value, both of them strings.
+With this, you should see ``(hello:world)`` printed on the console; ``hello`` being a key, ``world`` being a value, and both of them are of type :ref:`String <class_string>`.
 
 For more information on parsing JSON, see the class references for :ref:`JSON <class_JSON>`.
 

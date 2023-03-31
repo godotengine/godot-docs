@@ -33,6 +33,11 @@ and thin lines on top of the box have almost disappeared:
 To combat this, various antialiasing techniques can be used in Godot. These are
 detailed below.
 
+.. seealso::
+
+    You can compare antialiasing algorithms in action using the
+    `3D Antialiasing demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/antialiasing>`__.
+
 Multisample antialiasing (MSAA)
 -------------------------------
 

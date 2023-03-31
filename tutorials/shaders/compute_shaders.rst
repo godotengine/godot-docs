@@ -17,16 +17,17 @@ A compute shader is a special type of shader program that is orientated towards
 general purpose programming. In other words, they are more flexible than vertex
 shaders and fragment shaders as they don't have a fixed purpose (i.e.
 transforming vertices or writing colors to an image). Unlike fragment shaders
-and vertex shaders, compute shaders have very little going on behind the scenes. The code you write is what the GPU runs and very little else. This can make them
+and vertex shaders, compute shaders have very little going on behind the scenes.
+The code you write is what the GPU runs and very little else. This can make them
 a very useful tool to offload heavy calculations to the GPU.
 
 Now let's get started by creating a short compute shader.
 
 First, in the **external** text editor of your choice, create a new file called
-``compute_example.glsl`` in your project folder. When you write compute shaders in Godot, you write them
-in GLSL directly. The Godot shader language is based on GLSL. If you are
-familiar with normal shaders in Godot, the syntax below will look somewhat
-familiar.
+``compute_example.glsl`` in your project folder. When you write compute shaders
+in Godot, you write them in GLSL directly. The Godot shader language is based on
+GLSL. If you are familiar with normal shaders in Godot, the syntax below will
+look somewhat familiar.
 
 .. note::
 
@@ -34,6 +35,9 @@ familiar.
    Forward+ or Mobile renderer). To follow along with this tutorial, ensure that
    you are using the Forward+ or Mobile renderer. The setting for which is
    located in the top right-hand corner of the editor.
+
+   Note that compute shader support is generally poor on mobile devices (due to
+   driver bugs), even if they are technically supported.
 
 Let's take a look at this compute shader code:
 
@@ -80,7 +84,7 @@ You should never have to change these two lines for your custom compute shaders.
 Next, we communicate the number of invocations to be used in each workgroup.
 Invocations are instances of the shader that are running within the same
 workgroup. When we launch a compute shader from the CPU, we tell it how many
-workgroups to run. Workgroups run in parellel to each other. While running one
+workgroups to run. Workgroups run in parallel to each other. While running one
 workgroup, you cannot access information in another workgroup. However,
 invocations in the same workgroup can have some limited access to other invocations.
 
@@ -91,7 +95,7 @@ Think about workgroups and invocations as a giant nested ``for`` loop.
     for (int x = 0; x < workgroup_size_x; x++) {
       for (int y = 0; y < workgroup_size_y; y++) {
          for (int z = 0; z < workgroup_size_z; z++) {
-            // Each workgroup runs independently and in parellel.
+            // Each workgroup runs independently and in parallel.
             for (int local_x = 0; local_x < invocation_size_x; local_x++) {
                for (int local_y = 0; local_y < invocation_size_y; local_y++) {
                   for (int local_z = 0; local_z < invocation_size_z; local_z++) {
@@ -102,7 +106,7 @@ Think about workgroups and invocations as a giant nested ``for`` loop.
          }
       }
     }
-            
+
 
 Workgroups and invocations are an advanced topic. For now, remember that we will
 be running two invocations per workgroup.
@@ -118,7 +122,7 @@ be running two invocations per workgroup.
 Here we provide information about the memory that the compute shader will have
 access to. The ``layout`` property allows us to tell the shader where to look
 for the buffer, we will need to match these ``set`` and ``binding`` positions
-from the CPU side later. 
+from the CPU side later.
 
 The ``restrict`` keyword tells the shader that this buffer is only going to be
 accessed from one place in this shader. In other words, we won't bind this
@@ -315,7 +319,7 @@ Ideally, you would not call ``sync()`` to synchronize the RenderingDevice right
 away as it will cause the CPU to wait for the GPU to finish working. In our
 example, we synchronize right away because we want our data available for reading
 right away. In general, you will want to wait *at least* 2 or 3 frames before
-synchronizing so that the GPU is able to run in parellel with the CPU.
+synchronizing so that the GPU is able to run in parallel with the CPU.
 
 Retrieving results
 ------------------
@@ -345,3 +349,12 @@ the data and print the results to our console.
 
 With that, you have everything you need to get started working with compute
 shaders.
+
+.. seealso::
+
+   The demo projects repository contains a
+   `Compute Shader Heightmap demo <https://github.com/godotengine/godot-demo-projects/tree/master/misc/compute_shader_heightmap>`__
+   This project performs heightmap image generation on the CPU and
+   GPU separately, which lets you compare how a similar algorithm can be
+   implemented in two different ways (with the GPU implementation being faster
+   in most cases).

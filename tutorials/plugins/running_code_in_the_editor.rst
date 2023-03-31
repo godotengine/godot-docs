@@ -233,7 +233,7 @@ Add and export a variable speed to the script. The function set_speed after
     Code from other nodes doesn't run in the editor. Your access to other nodes
     is limited. You can access the tree and nodes, and their default properties,
     but you can't access user variables. If you want to do so, other nodes have
-    to run in the editor too. AutoLoad nodes cannot be accessed in the editor at
+    to run in the editor too. Autoload nodes cannot be accessed in the editor at
     all.
 
 Reporting node configuration warnings
@@ -254,17 +254,17 @@ By default, the warning only updates when closing and reopening the scene.
  .. code-tab:: gdscript GDScript
 
     # Use setters to update the configuration warning automatically.
-    export var title = "":
+    @export var title = "":
         set(p_title):
             if p_title != title:
                 title = p_title
-                update_configuration_warning()
+                update_configuration_warnings()
 
-    export var description = "":
+    @export var description = "":
         set(p_description):
             if p_description != description:
                 description = p_description
-                update_configuration_warning()
+                update_configuration_warnings()
 
 
     func _get_configuration_warning():

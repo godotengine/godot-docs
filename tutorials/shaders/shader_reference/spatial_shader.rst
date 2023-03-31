@@ -170,8 +170,9 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in vec3 **CAMERA_DIRECTION_WORLD**     | Camera world space direction.                          |
 +----------------------------------------+--------------------------------------------------------+
-| in bool **OUTPUT_IS_SRGB**             | ``true`` when calculations happen in sRGB color space  |
-|                                        | (``true`` in GLES2, ``false`` in GLES3).               |
+| in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space            |
+|                                        | (this is ``true`` in the Compatibility renderer,       |
+|                                        | ``false`` in Forward+ and Forward Mobile).             |
 +----------------------------------------+--------------------------------------------------------+
 | in int **INSTANCE_ID**                 | Instance ID for instancing.                            |
 +----------------------------------------+--------------------------------------------------------+
@@ -259,7 +260,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**                | Point Coordinate for drawing points with POINT_SIZE.                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in bool **OUTPUT_IS_SRGB**             | ``true`` when calculations happen in sRGB color space (``true`` in GLES2, ``false`` in GLES3).   |
+| in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space (this is ``true`` in the Compatibility renderer,     |
+|                                        | ``false`` in Forward+ and Forward Mobile).                                                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **MODEL_MATRIX**               | Model space to world space transform.                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -442,8 +444,9 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+----------------------------------------------------+
 | in float **ROUGHNESS**            | Roughness.                                         |
 +-----------------------------------+----------------------------------------------------+
-| in bool **OUTPUT_IS_SRGB**        | ``true`` when calculations happen in sRGB color    |
-|                                   | space (``true`` in GLES2, ``false`` in GLES3).     |
+| in bool **OUTPUT_IS_SRGB**        | ``true`` when output is in sRGB color space        |
+|                                   | (this is ``true`` in the Compatibility renderer,   |
+|                                   | ``false`` in Forward+ and Forward Mobile).         |
 +-----------------------------------+----------------------------------------------------+
 | out vec3 **DIFFUSE_LIGHT**        | Diffuse light result.                              |
 +-----------------------------------+----------------------------------------------------+
@@ -463,3 +466,5 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
     Transparent materials also cannot cast shadows or appear in
     ``SCREEN_TEXTURE`` and ``DEPTH_TEXTURE``. This in turn prevents those
     materials from appearing in screen-space reflections or refraction.
+    :ref:`SDFGI <doc_using_sdfgi>` sharp reflections are not visible on transparent
+    materials (only rough reflections are visible on transparent materials).

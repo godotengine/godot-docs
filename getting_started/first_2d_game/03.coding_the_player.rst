@@ -89,11 +89,18 @@ node and you'll see the property now appears in the "Script Variables" section
 of the Inspector. Remember, if you change the value here, it will override the
 value written in the script.
 
-.. warning:: If you're using C#, you need to (re)build the project assemblies
-             whenever you want to see new export variables or signals. This
-             build can be manually triggered by clicking the word "Mono" at the
-             bottom of the editor window to reveal the Mono Panel, then clicking
-             the "Build Project" button.
+.. warning::
+
+    If you're using C#, you need to (re)build the project assemblies
+    whenever you want to see new export variables or signals. This
+    build can be manually triggered by clicking the "Build" button at
+    the top right of the editor.
+
+    .. image:: img/build_dotnet.webp
+
+    A manual build can also be triggered from the MSBuild Panel. Click
+    the word "MSBuild" at the bottom of the editor window to reveal the
+    MSBuild Panel, then click the "Build" button.
 
 .. image:: img/export_variable.webp
 
@@ -206,22 +213,22 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
 
         if (Input.IsActionPressed("move_right"))
         {
-            velocity.x += 1;
+            velocity.X += 1;
         }
 
         if (Input.IsActionPressed("move_left"))
         {
-            velocity.x -= 1;
+            velocity.X -= 1;
         }
 
         if (Input.IsActionPressed("move_down"))
         {
-            velocity.y += 1;
+            velocity.Y += 1;
         }
 
         if (Input.IsActionPressed("move_up"))
         {
-            velocity.y -= 1;
+            velocity.Y -= 1;
         }
 
         var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
@@ -297,8 +304,8 @@ the ``_process`` function (make sure it's not indented under the `else`):
 
         Position += velocity * (float)delta;
         Position = new Vector2(
-            x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
-            y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
+            x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
+            y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
         );
 
  .. code-tab:: cpp
@@ -350,17 +357,17 @@ movement. Let's place this code at the end of the ``_process()`` function:
 
  .. code-tab:: csharp
 
-        if (velocity.x != 0)
+        if (velocity.X != 0)
         {
             animatedSprite2D.Animation = "walk";
             animatedSprite2D.FlipV = false;
             // See the note below about boolean assignment.
-            animatedSprite2D.FlipH = velocity.x < 0;
+            animatedSprite2D.FlipH = velocity.X < 0;
         }
-        else if (velocity.y != 0)
+        else if (velocity.Y != 0)
         {
             animatedSprite2D.Animation = "up";
-            animatedSprite2D.FlipV = velocity.y > 0;
+            animatedSprite2D.FlipV = velocity.Y > 0;
         }
 
  .. code-tab:: cpp
@@ -390,7 +397,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
 
            .. code-tab:: csharp
 
-             if (velocity.x < 0)
+             if (velocity.X < 0)
              {
                  animatedSprite2D.FlipH = true;
              }
@@ -490,12 +497,12 @@ this code to the function:
 
  .. code-tab:: csharp
 
-    public void OnBodyEntered(PhysicsBody2D body)
+    private void OnBodyEntered(PhysicsBody2D body)
     {
         Hide(); // Player disappears after being hit.
         EmitSignal(SignalName.Hit);
         // Must be deferred as we can't change physics properties on a physics callback.
-        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
+        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
     }
 
  .. code-tab:: cpp
@@ -530,9 +537,9 @@ starting a new game.
 
  .. code-tab:: csharp
 
-    public void Start(Vector2 pos)
+    public void Start(Vector2 position)
     {
-        Position = pos;
+        Position = position;
         Show();
         GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
     }

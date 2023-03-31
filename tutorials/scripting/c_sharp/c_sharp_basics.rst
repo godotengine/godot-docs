@@ -108,20 +108,24 @@ In Godot's **Editor → Editor Settings** menu:
 In Visual Studio Code:
 
 - Install the `C# <https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp>`__ extension.
-- Install the `Mono Debug <https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug>`__ extension.
-- Install the `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ extension.
 
 .. note::
 
     If you are using Linux you need to install the `Mono SDK <https://www.mono-project.com/download/stable/#download-lin>`__
     for the C# tools plugin to work.
 
-To configure a project for debugging open the Godot project folder in VS Code.
-Go to the Run tab and click on **Add Configuration...**. Select **C# Godot**
-from the dropdown menu. Open the ``tasks.json`` and ``launch.json`` files that
-were created. Change the executable setting in ``launch.json`` and  command
-settings in ``tasks.json`` to your Godot executable path. Now, when you start
-the debugger in VS Code, your Godot project will run.
+To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in 
+the ``.vscode`` folder with the necessary configuration. An example configuration can be 
+found `here <https://github.com/godotengine/godot-csharp-vscode/issues/43#issuecomment-1258321229>`__ . 
+In the ``tasks.json`` file, make sure the ``program`` parameter points to your Godot executable, either by 
+changing it to the path of the executable or by defining a ``GODOT4`` environment variable that points to the
+executable. Now, when you start the debugger in Visual Studio Code, your Godot project will run.
+
+.. note::
+
+    There is also a `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ 
+    Visual Studio Code extension, that is meant to make this setup easier and to provide further useful tools.
+    But it is not yet updated to work with Godot 4.
 
 Visual Studio (Windows only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -393,8 +397,10 @@ packages the next time it builds the project.
 Profiling your C# code
 ----------------------
 
-- `Mono log profiler <https://www.mono-project.com/docs/debug+profile/profile/profiler/>`_
-  is available for Linux and macOS. Due to a Mono change, it does not work on
-  Windows currently.
-- External Mono profiler like `JetBrains dotTrace <https://www.jetbrains.com/profiler/>`_
-  can be used as described `here <https://github.com/godotengine/godot/pull/34382>`_.
+The following tools may be used for performance and memory profiling of your managed code:
+
+- JetBrains Rider with dotTrace/dotMemory plugin.
+- Standalone JetBrains dotTrace/dotMemory.
+- Visual Studio.
+
+Profiling managed and unmanaged code at once is possible with both JetBrains tools and Visual Studio, but limited to Windows.

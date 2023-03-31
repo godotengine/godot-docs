@@ -11,18 +11,28 @@ Exporting for the Web
 
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for `WebAssembly
-<https://webassembly.org/>`__ and `WebGL <https://www.khronos.org/webgl/>`__
+<https://webassembly.org/>`__, `WebGL <https://www.khronos.org/webgl/>`__ and
+`SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`_
 in the user's browser.
 
 .. important:: Use the browser-integrated developer console, usually opened
                with :kbd:`F12`, to view **debug information** like JavaScript,
                engine, and WebGL errors.
 
-.. attention:: `There are significant bugs when running HTML5 projects on iOS
-               <https://github.com/godotengine/godot/issues?q=is:issue+is:open+label:platform:html5+ios>`__
-               (regardless of the browser). We recommend using
-               :ref:`iOS' native export functionality <doc_exporting_for_ios>`
-               instead, as it will also result in better performance.
+.. attention::
+
+    Godot 4's HTML5 exports currently cannot run on macOS and iOS due to upstream bugs
+    with SharedArrayBuffer and WebGL 2.0. We recommend using
+    :ref:`macOS <doc_exporting_for_macos>` and :ref:`iOS <doc_exporting_for_ios>`
+    native export functionality instead, as it will also result in better performance.
+
+    Godot 3's HTML5 exports are more compatible with various browsers in
+    general, especially when using the GLES2 rendering backend (which only
+    requires WebGL 1.0).
+
+.. warning:: SharedArrayBuffer requires a :ref:`secure context <doc_javascript_secure_contexts>`.
+             Browsers also require that the web page is served with specific
+             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
 .. note::
 
@@ -34,20 +44,13 @@ in the user's browser.
 WebGL version
 -------------
 
-Depending on your choice of renderer, Godot can target WebGL 1.0 (*GLES2*) or
-WebGL 2.0 (*GLES3*).
+Godot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
+method). There is no stable way to run Vulkan applications on the web yet.
 
-WebGL 1.0 is the recommended option if you want your project to be supported
-on all browsers with the best performance.
-
-Godot's GLES3 renderer targets high end devices, and the performance using
-WebGL 2.0 can be subpar. Some features are also not supported in WebGL 2.0
-specifically.
-
-Additionally, while most browsers support WebGL 2.0, this is not yet the case
-for **Safari**. WebGL 2.0 support is coming in Safari 15 for macOS, and is not
-available yet for any **iOS** browser (all WebKit-based like Safari).
-See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for details.
+See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for a list of browser
+versions supporting WebGL 2.0. Note that Safari has several issues with WebGL
+2.0 support that other browsers don't have, so we recommend using a
+Chromium-based browser or Firefox if possible.
 
 .. _doc_javascript_export_options:
 
@@ -57,15 +60,6 @@ Export options
 If a runnable web export template is available, a button appears between the
 *Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
 game in the default browser for testing.
-
-You can choose the **Export Type** to select which features will be available:
-
-- *Regular*: is the most compatible across browsers, will not support threads,
-  nor GDExtension.
-- *Threads*: will require the browser to support `SharedArrayBuffer
-  <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
-  See `Can I use SharedArrayBuffer <https://caniuse.com/sharedarraybuffer>`__
-  for details.
 
 If you plan to use :ref:`VRAM compression <doc_importing_images>` make sure that
 **Vram Texture Compression** is enabled for the targeted platforms (enabling
@@ -86,9 +80,6 @@ JavaScript APIs, include CSS, or run JavaScript code.
                To customize the generated file, use the **Custom HTML shell**
                option.
 
-.. warning:: **Export types** other than *Regular* are not yet supported by the
-             C# version.
-
 Limitations
 -----------
 
@@ -105,7 +96,7 @@ of limitations you should be aware of when porting a Godot game to the web.
                usually exempt from such requirement).
 
 .. tip:: Check the `list of open HTML5 issues on GitHub
-         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
+         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:web>`__
          to see if the functionality you're interested in has an issue yet. If
          not, open one to communicate your interest.
 
@@ -133,17 +124,6 @@ disconnect if the user switches tabs for a long duration.
 This limitation does not apply to unfocused browser *windows*. Therefore, on the
 user's side, this can be worked around by running the project in a separate
 *window* instead of a separate tab.
-
-Threads
-~~~~~~~
-
-As mentioned :ref:`above <doc_javascript_export_options>` multi-threading is
-only available if the appropriate **Export Type** is set and support for it
-across browsers is still limited.
-
-.. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
-             Browsers also require that the web page is served with specific
-             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
 Full screen and mouse capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -217,12 +197,6 @@ Boot splash is not displayed
 The default HTML page does not display the boot splash while loading. However,
 the image is exported as a PNG file, so :ref:`custom HTML pages <doc_customizing_html5_shell>`
 can display it.
-
-Shader language limitations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
-doesn't support dynamic loops, so shaders using those won't work there.
 
 Serving the files
 -----------------
