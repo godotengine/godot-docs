@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_size_and_anchors:
 
 Size and anchors
@@ -17,37 +15,53 @@ and mobile phones have different resolutions and aspect ratios.
 There are several ways to handle this, but for now, let's just imagine
 that the screen resolution has changed and the controls need to be
 re-positioned. Some will need to follow the bottom of the screen, others
-the top of the screen, or maybe the right or left margins.
+the top of the screen, or maybe the right or left borders.
 
-.. image:: img/anchors.png
+.. image:: img/ui_anchor_and_margins.png
 
-This is done by editing the *margin* properties of controls. Each
-control has four margins: left, right, bottom, and top, which correspond
-to the respective edges of the control. By default, all of
-them represent a distance in pixels relative to the top-left corner of
-the parent control or (in case there is no parent control) the viewport.
+This is done using the *margin* and *anchor* properties. Margins represent a
+distance in pixels relative to the top-left corner of the parent control or
+(in case there is no parent control) the viewport. Anchors adjust where the
+margin distances are relative *to*. We can think of them as a percentage of the
+parent's size, represented by a value between 0 and 1.0.
 
-.. image:: img/margin.png
+:ref:`Containers <doc_gui_containers>` are used to compose the layout of control
+scenes, offering powerful layout and sizing functionality. The MarginContainer
+is where we typically set margins for its child controls. When using containers,
+controls will inherit the layout properties of their parent, removing the need
+to modify the anchors of a control.
 
-So to make the control wider you can make the right margin larger and/or
-make the left margin smaller. This lets you set the exact placement
-and shape of the control.
+Layout Presets
+--------------
 
-The *anchor* properties adjust where the margin distances are relative *to*.
-Each margin has an individual anchor that can be adjusted from the
-beginning to the end of the parent. So the vertical (top, bottom) anchors
-adjust from 0 (top of parent) to 1.0 (bottom of parent) with 0.5 being
-the center, and the control margins will be placed relative to that
-point. The horizontal (left, right) anchors similarly adjust from left to
-right of the parent.
+Each control has an individual anchor that can be adjusted from the beginning
+to the end of the parent. So the vertical (top, bottom) anchors adjust from 0
+(top of parent) to 1.0 (bottom of parent) with 0.5 being the center. The
+horizontal (left, right) anchors similarly adjust from left to right of the
+parent.
 
-Note that when you wish the edge of a control to be above or left of the
-anchor point, you must change the margin value to be negative.
+Instead of manually setting the *anchor* properties of a control, you can use
+the toolbar's Layout menu, above the viewport. Besides centering, it gives you
+many options to align and resize control nodes. These will automatically set
+the *anchor* properties. 
 
-For example: when horizontal anchors are changed to 1, the margin values
-become relative to the top-right corner of the parent control or viewport.
+Note that changing the layout preset will overwrite the position and size of
+the control. Set to Current Ratio will automatically adjust the control's anchor
+points and offsets to match the current size and position of the control.
 
-.. image:: img/marginend.png
+.. image:: img/anchors_dropdown_menu.png
+
+Custom Anchors
+--------------
+
+The *anchor* properties can be set manually using the custom anchors preset
+option. Here we can change the exact placement and shape of the control
+with the anchor points and offsets. Each control has four anchor points and
+offets: left, right, bottom, and top, which correspond to the respective edges
+of the control. Anchor offsets represent the relative distance from the anchor
+point to the corresponding edge of the control.
+
+.. image:: img/custom_anchors_preset.png
 
 Adjusting the two horizontal or the two vertical anchors to different
 values will make the control change size when the parent control does.
@@ -102,12 +116,3 @@ a TextureRect can be centered in its parent:
 Setting each anchor to 0.5 moves the reference point for the margins to
 the center of its parent. From there, we set negative margins so that
 the control gets its natural size.
-
-Layout Presets
---------------
-
-Instead of manually adjusting the margin and anchor values, you can use the
-toolbar's Layout menu, above the viewport. Besides centering, it gives you many
-options to align and resize control nodes.
-
-.. image:: img/layout_dropdown_menu.png
