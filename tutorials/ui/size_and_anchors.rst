@@ -57,7 +57,7 @@ Custom Anchors
 The *anchor* properties can be set manually using the custom anchors preset
 option. Here we can change the exact placement and shape of the control
 with the anchor points and offsets. Each control has four anchor points and
-offets: left, right, bottom, and top, which correspond to the respective edges
+offsets: left, right, bottom, and top, which correspond to the respective edges
 of the control. Anchor offsets represent the relative distance from the anchor
 point to the corresponding edge of the control.
 
