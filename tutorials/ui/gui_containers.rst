@@ -1,12 +1,10 @@
-:article_outdated: True
-
 .. _doc_gui_containers:
 
 Using Containers
 ================
 
 :ref:`Anchors <doc_size_and_anchors>` are an efficient way to handle
-different aspect ratios for basic multiple resolution handling in GUIs,
+different aspect ratios for basic multiple resolution handling in GUIs.
 
 For more complex user interfaces, they can become difficult to use.
 
@@ -21,7 +19,7 @@ Container layout
 
 Containers provide a huge amount of layout power (as an example, the Godot editor user interface is entirely done using them):
 
-   .. image:: img/godot_containers.png
+   .. image:: img/godot_containers.webp
 
 When a :ref:`Container <class_Container>`-derived node is used, all children :ref:`Control <class_Control>` nodes give up their
 own positioning ability. This means the *Container* will control their positioning and any attempt to manually alter these
@@ -76,7 +74,7 @@ Arranges child controls vertically or horizontally (via :ref:`HBoxContainer <cla
 :ref:`VBoxContainer <class_VBoxContainer>`). In the opposite of the designated direction
 (as in, vertical for an horizontal container), it just expands the children.
 
-   .. image:: img/containers_box.png
+   .. image:: img/containers_box.webp
 
 These containers make use of the *Ratio* property for children with the *Expand* flag set.
 
@@ -86,7 +84,7 @@ Grid Container
 Arranges child controls in a grid layout (via :ref:`GridContainer <class_GridContainer>`, amount
 of columns must be specified). Uses both the vertical and horizontal expand flags.
 
-   .. image:: img/containers_grid.png
+   .. image:: img/containers_grid.webp
 
 Margin Container
 ^^^^^^^^^^^^^^^^
@@ -95,12 +93,27 @@ Child controls are expanded towards the bounds of this control (via
 :ref:`MarginContainer <class_MarginContainer>`). Padding will be added on the margins
 depending on the theme configuration.
 
-   .. image:: img/containers_margin.png
+   .. image:: img/containers_margin.webp
 
 Again, keep in mind that the margins are a *Theme* value, so they need to be edited from the
 constants overrides section of each control:
 
-   .. image:: img/containers_margin_constants.png
+   .. image:: img/containers_margin_constants.webp
+
+To make the control wider you can make the right margin larger and/or
+make the left margin smaller. This lets you set the exact placement
+and shape of the control.
+
+Panel Container
+^^^^^^^^^^^^^^^
+
+A container that draws a *StyleBox*, then expands children to cover its whole area
+(via :ref:`PanelContainer <class_PanelContainer>`, respecting the *StyleBox* margins).
+It respects both the horizontal and vertical sizing options.
+
+   .. image:: img/containers_panel.webp
+
+This container is useful as top-level, or just to add custom backgrounds to sections of a layout.
 
 Tab Container
 ^^^^^^^^^^^^^
@@ -108,11 +121,9 @@ Tab Container
 Allows you to place several child controls stacked on top of each other (via
 :ref:`TabContainer <class_TabContainer>`), with only the *current* one visible.
 
-   .. image:: img/containers_tab.png
+   .. image:: img/containers_tab.gif
 
-Changing the *current* one is done via tabs located at the top of the container, via clicking:
-
-   .. image:: img/containers_tab_click.gif
+Changing the *current* one is done via clicking tabs located at the top of the container or modifying the *current_tab* property.
 
 The titles are generated from the node names by default (although they can be overridden via *TabContainer* API).
 
@@ -125,33 +136,21 @@ Accepts only one or two children controls, then places them side to side with a 
 (via :ref:`HSplitContainer <class_HSplitContainer>` and :ref:`VSplitContainer <class_VSplitContainer>`).
 Respects both horizontal and vertical flags, as well as *Ratio*.
 
-   .. image:: img/containers_split.png
+   .. image:: img/containers_split.webp
 
 The divisor can be dragged around to change the size relation between both children:
 
    .. image:: img/containers_split_drag.gif
 
-
-PanelContainer
-^^^^^^^^^^^^^^
-
-A container that draws a *StyleBox*, then expands children to cover its whole area
-(via :ref:`PanelContainer <class_PanelContainer>`, respecting the *StyleBox* margins).
-It respects both the horizontal and vertical sizing options.
-
-   .. image:: img/containers_panel.png
-
-This container is useful as top-level, or just to add custom backgrounds to sections of a layout.
-
-ScrollContainer
-^^^^^^^^^^^^^^^
+Scroll Container
+^^^^^^^^^^^^^^^^
 
 Accepts a single child node. If this node is bigger than the container, scrollbars will be added
 to allow panning the node around (via :ref:`ScrollContainer <class_ScrollContainer>`). Both
 vertical and horizontal size options are respected, and the behavior can be turned on or off
 per axis in the properties.
 
-   .. image:: img/containers_scroll.png
+   .. image:: img/containers_scroll.webp
 
 Mouse wheel and touch drag (when touch is available) are also valid ways to pan the child control around.
 
