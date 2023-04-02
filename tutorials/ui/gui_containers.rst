@@ -8,95 +8,119 @@ different aspect ratios for basic multiple resolution handling in GUIs.
 
 For more complex user interfaces, they can become difficult to use.
 
-This is often the case of games, such as RPGs, online chats, tycoons or simulations. Another
-common case where more advanced layout features may be required is in-game tools (or simply just tools).
+This is often the case of games, such as RPGs, online chats, tycoons or
+simulations. Another common case where more advanced layout features may be
+required is in-game tools (or simply just tools).
 
-All these situations require a more capable OS-like user interface, with advanced layout and formatting.
-For that, :ref:`Containers <class_container>` are more useful.
+All these situations require a more capable OS-like user interface, with
+advanced layout and formatting. For that, :ref:`Containers <class_container>`
+are more useful.
 
 Container layout
 ----------------
 
-Containers provide a huge amount of layout power (as an example, the Godot editor user interface is entirely done using them):
+Containers provide a huge amount of layout power (as an example, the Godot
+editor user interface is entirely done using them):
 
    .. image:: img/godot_containers.webp
 
-When a :ref:`class_Container`-derived node is used, all children :ref:`class_Control` nodes give up their
-own positioning ability. This means the *Container* will control their positioning and any attempt to manually alter these
-nodes will be either ignored or invalidated the next time their parent is resized.
+When a :ref:`class_Container`-derived node is used, all children
+:ref:`class_Control` nodes give up their own positioning ability. This means the
+*Container* will control their positioning and any attempt to manually alter
+these nodes will be either ignored or invalidated the next time their parent is
+resized.
 
-Likewise, when a *Container* derived node is resized, all its children will be re-positioned according to it,
-with a behavior based on the type of container used:
+Likewise, when a *Container* derived node is resized, all its children will be
+re-positioned according to it, with a behavior based on the type of container
+used:
 
    .. image:: img/container_example.gif
 
 Example of *HBoxContainer* resizing children buttons.
 
-The real strength of containers is that they can be nested (as nodes), allowing the creation of very complex layouts that resize effortlessly.
+The real strength of containers is that they can be nested (as nodes), allowing 
+the creation of very complex layouts that resize effortlessly.
 
 Sizing options
 --------------
 
-When adding a node to a container, the way the container treats each child depends mainly on their *container sizing options*. These options
-can be found by inspecting the layout of any *Control* that is a child of a *Container*.
+When adding a node to a container, the way the container treats each child
+depends mainly on their *container sizing options*. These options can be
+found by inspecting the layout of any *Control* that is a child of a
+*Container*.
 
    .. image:: img/container_sizing_options.webp
 
-Sizing options are independent for vertical and horizontal sizing and not all containers make use of them (but most do):
+Sizing options are independent for vertical and horizontal sizing and not all
+containers make use of them (but most do):
 
-* **Fill**: Ensures the control *fills* the designated area within the container. No matter if
-  a control *expands* or not (see below), it will only *fill* the designated area when this is toggled on (it is by default).
-* **Expand**: Attempts to use as much space as possible in the parent container (in each axis).
-  Controls that don't expand will be pushed away by those that do. Between expanding controls, the
-  amount of space they take from each other is determined by the *Stretch Ratio* (see below).
-  This option is only available when the parent Container is of the right type, for example the *HBoxContainer* has this option
-  for horizontal sizing.
-* **Shrink Begin** When expanding, try to remain at the left or top of the expanded
+* **Fill**: Ensures the control *fills* the designated area within the
+  container. No matter if a control *expands* or not (see below), it will only
+  *fill* the designated area when this is toggled on (it is by default).
+* **Expand**: Attempts to use as much space as possible in the parent container
+  (in each axis). Controls that don't expand will be pushed away by those that
+  do. Between expanding controls, the amount of space they take from each other
+  is determined by the *Stretch Ratio* (see below). This option is only available
+  when the parent Container is of the right type, for example the *HBoxContainer*
+  has this option for horizontal sizing.
+* **Shrink Begin**: When expanding, try to remain at the left or top of the
+  expanded area.
+* **Shrink Center**: When expanding, try to remain at the center of the expanded
   area.
-* **Shrink Center** When expanding, try to remain at the center of the expanded
-  area.
-* **Shrink End** When expanding, try to remain at the right or bottom of the expanded
-  area.
-* **Stretch Ratio**: The ratio of how much expanded controls take up the available space in relation to each
-  other. A control with "2", will take up twice as much available space as one with "1".
+* **Shrink End**: When expanding, try to remain at the right or bottom of the
+  expanded area.
+* **Stretch Ratio**: The ratio of how much expanded controls take up the
+  available space in relation to each other. A control with "2", will take up
+  twice as much available space as one with "1".
 
-Experimenting with these flags and different containers is recommended to get a better grasp on how they work.
+Experimenting with these flags and different containers is recommended to get
+a better grasp on how they work.
 
 Container types
 ---------------
 
-Godot provides several container types out of the box as they serve different purposes:
+Godot provides several container types out of the box as they serve different
+purposes:
 
 Aspect Ratio Container
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Child controls are expanded to the bounds of this control, maintaining their aspect ratio (via :ref:`class_AspectRatioContainer`). The *stretch_mode* property can be configured such that the control fits inside the container, or covers it.
+Child controls are expanded to the bounds of this control, maintaining their
+aspect ratio (via :ref:`class_AspectRatioContainer`). The *stretch_mode*
+property can be configured such that the control fits inside the container,
+or covers it.
 
    .. image:: img/containers_aspect.webp
 
 Box Containers
 ^^^^^^^^^^^^^^
 
-Arranges child controls vertically or horizontally (via :ref:`class_HBoxContainer` and
-:ref:`class_VBoxContainer`). In the opposite of the designated direction
-(as in, vertical for an horizontal container), it just expands the children.
+Arranges child controls vertically or horizontally (via 
+:ref:`class_HBoxContainer` and :ref:`class_VBoxContainer`). In the opposite of
+the designated direction (as in, vertical for an horizontal container), it just
+expands the children.
 
    .. image:: img/containers_box.webp
 
-These containers make use of the *Ratio* property for children with the *Expand* flag set.
+These containers make use of the *Ratio* property for children with the *Expand*
+flag set.
 
 Center Container
 ^^^^^^^^^^^^^^^^
 
-Arranges child controls to the center of the container (via :ref:`class_CenterContainer`).
-The position can be made relative to the container's top left corner with the *use_top_left* property.
+Arranges child controls to the center of the container (via 
+:ref:`class_CenterContainer`). The position can be made relative to the
+container's top left corner with the *use_top_left* property.
 
    .. image:: img/containers_center.webp
 
 Flow Containers
 ^^^^^^^^^^^^^^^
 
-Arranges child controls vertically or horizontally from left to right or top to bottom, wrapping lines if no more fit on the same line (via :ref:`class_HFlowContainer` and :ref:`class_VFlowContainer`). Controls with the **Expand** size flag will fill any available space on the line.
+Arranges child controls vertically or horizontally from left to right or top to
+bottom, wrapping lines if no more fit on the same line (via
+:ref:`class_HFlowContainer` and :ref:`class_VFlowContainer`). Controls with the
+*Expand* flag set will fill any available space on the line.
 
    .. image:: img/containers_flow.webp
 
@@ -104,7 +128,8 @@ Grid Container
 ^^^^^^^^^^^^^^
 
 Arranges child controls in a grid layout (via :ref:`class_GridContainer`, amount
-of columns must be specified). Uses both the vertical and horizontal expand flags.
+of columns must be specified). Uses both the vertical and horizontal expand
+flags.
 
    .. image:: img/containers_grid.webp
 
@@ -117,25 +142,22 @@ depending on the theme configuration.
 
    .. image:: img/containers_margin.webp
 
-Again, keep in mind that the margins are a *Theme* value, so they need to be edited from the
-constants overrides section of each control:
+Again, keep in mind that the margins are a *Theme* value, so they need to be
+edited from the constants overrides section of each control:
 
    .. image:: img/containers_margin_constants.webp
-
-To make the control wider you can make the right margin larger and/or
-make the left margin smaller. This lets you set the exact placement
-and shape of the control.
 
 Panel Container
 ^^^^^^^^^^^^^^^
 
-A container that draws a *StyleBox*, then expands children to cover its whole area
-(via :ref:`class_PanelContainer`, respecting the *StyleBox* margins).
-It respects both the horizontal and vertical sizing options.
+A container that draws a *StyleBox*, then expands children to cover its whole
+area (via :ref:`class_PanelContainer`, respecting the *StyleBox* margins). It
+respects both the horizontal and vertical sizing options.
 
    .. image:: img/containers_panel.webp
 
-This container is useful as top-level, or just to add custom backgrounds to sections of a layout.
+This container is useful as top-level, or just to add custom backgrounds to
+sections of a layout.
 
 Tab Container
 ^^^^^^^^^^^^^
@@ -145,53 +167,60 @@ Allows you to place several child controls stacked on top of each other (via
 
    .. image:: img/containers_tab.gif
 
-Changing the *current* one is done via clicking tabs located at the top of the container or modifying the *current_tab* property.
+Changing the current tab is done via clicking tabs located at the top of the
+container or modifying the *current_tab* property.
 
-The titles are generated from the node names by default (although they can be overridden via *TabContainer* API).
+The titles are generated from the node names by default (although they can be
+overridden via *TabContainer* API).
 
-Settings such as tab placement and *StyleBox* can be modified in the *TabContainer* theme overrides.
+Settings such as tab placement and *StyleBox* can be modified in the
+*TabContainer* theme overrides.
 
 Split Container
 ^^^^^^^^^^^^^^^
 
-Accepts only one or two children controls, then places them side to side with a divisor
-(via :ref:`class_HSplitContainer` and :ref:`class_VSplitContainer`).
+Accepts only one or two children controls, then places them side to side with a
+divisor (via :ref:`class_HSplitContainer` and :ref:`class_VSplitContainer`).
 Respects both horizontal and vertical flags, as well as *Ratio*.
 
    .. image:: img/containers_split.webp
 
-The divisor can be dragged around to change the size relation between both children:
+The divisor can be dragged around to change the size relation between both
+children:
 
    .. image:: img/containers_split_drag.gif
 
 Scroll Container
 ^^^^^^^^^^^^^^^^
 
-Accepts a single child node. If this node is bigger than the container, scrollbars will be added
-to allow panning the node around (via :ref:`class_ScrollContainer`). Both
-vertical and horizontal size options are respected, and the behavior can be turned on or off
-per axis in the properties.
+Accepts a single child node. If this node is bigger than the container,
+scrollbars will be added to allow panning the node around (via
+:ref:`class_ScrollContainer`). Both vertical and horizontal size options are
+respected, and the behavior can be turned on or off per axis in the properties.
 
    .. image:: img/containers_scroll.webp
 
-Mouse wheel and touch drag (when touch is available) are also valid ways to pan the child control around.
+Mouse wheel and touch drag (when touch is available) are also valid ways to pan
+the child control around.
 
    .. image:: img/containers_center_pan.gif
 
-As in the example above, one of the most common ways to use this container is together with a *VBoxContainer* as child.
+As in the example above, one of the most common ways to use this container is
+together with a *VBoxContainer* as child.
 
 
 Sub Viewport Container
 ^^^^^^^^^^^^^^^^^^^^^^
 
-This is a special control that will only accept a single *Viewport* node as child, and it will display
-it as if it was an image (via :ref:`class_SubViewportContainer`).
+This is a special control that will only accept a single *Viewport* node as
+child, and it will display it as if it was an image (via
+:ref:`class_SubViewportContainer`).
 
 Creating custom Containers
 --------------------------
 
-It is possible to create a custom container using a script.
-Here is an example of a container that fits children to its rect size:
+It is possible to create a custom container using a script. Here is an example
+of a container that fits children to its rect size:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
