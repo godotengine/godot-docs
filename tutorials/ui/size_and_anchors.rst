@@ -17,7 +17,7 @@ that the screen resolution has changed and the controls need to be
 re-positioned. Some will need to follow the bottom of the screen, others
 the top of the screen, or maybe the right or left borders.
 
-.. image:: img/ui_anchor_and_margins.png
+.. image:: img/ui_anchor_and_margins.webp
 
 This is done using the *margin* and *anchor* properties. Margins represent a
 distance in pixels relative to the top-left corner of the parent control or
@@ -49,7 +49,7 @@ Note that changing the layout preset will overwrite the position and size of
 the control. Set to Current Ratio will automatically adjust the control's anchor
 points and offsets to match the current size and position of the control.
 
-.. image:: img/anchors_dropdown_menu.png
+.. image:: img/anchors_dropdown_menu.webp
 
 Custom Anchors
 --------------
@@ -61,7 +61,7 @@ offsets: left, right, bottom, and top, which correspond to the respective edges
 of the control. Anchor offsets represent the relative distance from the anchor
 point to the corresponding edge of the control.
 
-.. image:: img/custom_anchors_preset.png
+.. image:: img/custom_anchors_preset.webp
 
 Adjusting the two horizontal or the two vertical anchors to different
 values will make the control change size when the parent control does.
@@ -70,7 +70,7 @@ parent's bottom-right, while the top-left control margins are still
 anchored to the top-left of the parent, so when re-sizing the parent,
 the control will always cover it, leaving a 20 pixel margin:
 
-.. image:: img/marginaround.png
+.. image:: img/marginaround.webp
 
 Centering a control
 -------------------
