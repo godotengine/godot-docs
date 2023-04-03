@@ -9,6 +9,7 @@ engine code trying to find an underlying issue or an optimization possibility.
    :name: toc-devel-cpp-debug-profiling
 
    using_cpp_profilers
+   using_sanitizers
    macos_debug
    vulkan/index
 
