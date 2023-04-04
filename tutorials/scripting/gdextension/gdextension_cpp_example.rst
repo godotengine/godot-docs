@@ -37,7 +37,7 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
     To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
     you need to use the ``4.0`` branch of godot-cpp,
     which is only compatible with Godot 4.0 and being used here as an example.
-    The ``master`` branch is the development branch and is being updated 
+    The ``master`` branch is the development branch and is being updated
     regularly to work with godot's ``master`` branch.
 
 If you are versioning your project using Git, it is recommended to add it as
@@ -160,7 +160,7 @@ GDExtension node we'll be creating. We will name it ``gdexample.h``:
         GDCLASS(GDExample, Sprite2D)
 
     private:
-        float time_passed;
+        double time_passed;
 
     protected:
         static void _bind_methods();
@@ -169,7 +169,7 @@ GDExtension node we'll be creating. We will name it ``gdexample.h``:
         GDExample();
         ~GDExample();
 
-        void _process(float delta);
+        void _process(double delta);
     };
 
     }
@@ -194,8 +194,8 @@ and destructor defined, but there are two other functions that will likely look
 familiar to some, and one new method.
 
 The first is ``_bind_methods``, which is a static function that Godot will
-call to find out which methods can be called and which properties it exposes. 
-The second is our ``_process`` function, which will work exactly the same 
+call to find out which methods can be called and which properties it exposes.
+The second is our ``_process`` function, which will work exactly the same
 as the ``_process`` function you're used to in GDScript.
 
 Let's implement our functions by creating our ``gdexample.cpp`` file:
@@ -211,15 +211,15 @@ Let's implement our functions by creating our ``gdexample.cpp`` file:
     }
 
     GDExample::GDExample() {
-        // initialize any variables here
+        // Initialize any variables here.
         time_passed = 0.0;
     }
 
     GDExample::~GDExample() {
-        // add your cleanup here
+        // Add your cleanup here.
     }
 
-    void GDExample::_process(float delta) {
+    void GDExample::_process(double delta) {
         time_passed += delta;
 
         Vector2 new_position = Vector2(10.0 + (10.0 * sin(time_passed * 2.0)), 10.0 + (10.0 * cos(time_passed * 1.5)));
@@ -286,9 +286,9 @@ initialize them, but you might have to set up more things depending on your
 needs. We call the function ``register_class`` for each of our classes in our library.
 
 The important function is the third function called ``example_library_init``.
-We first call a function in our bindings library that creates an initilization object. 
-This object registrates the initialization and termination functions of the GDExtension. 
-Furthermore, it sets the level of initilization (core, servers, scene, editor, level). 
+We first call a function in our bindings library that creates an initilization object.
+This object registrates the initialization and termination functions of the GDExtension.
+Furthermore, it sets the level of initilization (core, servers, scene, editor, level).
 
 At last, we need the header file for the ``register_types.cpp`` named
 ``register_types.h``.
@@ -319,7 +319,7 @@ build files in a subsequent tutorial.
     master, you may need to make small changes using it with older versions or
     refer to the ``SConstruct`` file in the Godot 4.0 documentation.
 
-Once you've downloaded the ``SConstruct`` file, place it in your GDExtension folder 
+Once you've downloaded the ``SConstruct`` file, place it in your GDExtension folder
 structure alongside ``godot-cpp``, ``src`` and ``demo``, then run:
 
 .. code-block:: bash
@@ -423,12 +423,12 @@ functions:
 
     ...
     private:
-        float time_passed;
-        float amplitude;
+        double time_passed;
+        double amplitude;
 
     public:
-        void set_amplitude(const float amplitude);
-        float get_amplitude() const;
+        void set_amplitude(const double amplitude);
+        double get_amplitude() const;
     ...
 
 In our ``gdexample.cpp`` file we need to make a number of changes, we will only
@@ -443,12 +443,12 @@ show the methods we end up changing, don't remove the lines we're omitting:
     }
 
     void GDExample::GDExample() {
-        // initialize any variables here
+        // Initialize any variables here.
         time_passed = 0.0;
         amplitude = 10.0;
     }
 
-    void GDExample::_process(float delta) {
+    void GDExample::_process(double delta) {
         time_passed += delta;
 
         Vector2 new_position = Vector2(
@@ -459,11 +459,11 @@ show the methods we end up changing, don't remove the lines we're omitting:
         set_position(new_position);
     }
 
-    void GDExample::set_amplitude(const float p_amplitude) {
+    void GDExample::set_amplitude(const double p_amplitude) {
         amplitude = p_amplitude;
     }
 
-    float GDExample::get_amplitude() const {
+    double GDExample::get_amplitude() const {
         return amplitude;
     }
 
@@ -479,12 +479,12 @@ code:
 .. code-block:: C++
 
     ...
-        float amplitude;
-        float speed;
+        double amplitude;
+        double speed;
     ...
-        void _process(float delta) override;
-        void set_speed(float p_speed);
-        float get_speed();
+        void _process(double delta) override;
+        void set_speed(double p_speed);
+        double get_speed();
     ...
 
 This requires a few more changes to our ``gdexample.cpp`` file, again we're only
@@ -505,7 +505,7 @@ showing the methods that have changed so don't remove anything we're omitting:
         speed = 1.0;
     }
 
-    void GDExample::_process(float delta) {
+    void GDExample::_process(double delta) {
         time_passed += speed * delta;
 
         Vector2 new_position = Vector2(
@@ -518,11 +518,11 @@ showing the methods that have changed so don't remove anything we're omitting:
 
     ...
 
-    void GDExample::set_speed(float p_speed) {
+    void GDExample::set_speed(double p_speed) {
         speed = p_speed;
     }
 
-    float GDExample::get_speed() const {
+    double GDExample::get_speed() const {
         return speed;
     }
 
@@ -533,7 +533,7 @@ The first two arguments are the minimum and maximum value and the third is the s
 
 .. note::
 
-    For simplicity, we've only used the hint_range of the property method. 
+    For simplicity, we've only used the hint_range of the property method.
     There are a lot more options to choose from. These can be used to
     further configure how properties are displayed and set on the Godot side.
 
@@ -563,9 +563,9 @@ In our ``gdexample.h`` header file, we need to define a new member ``time_emit``
 .. code-block:: C++
 
     ...
-        float time_passed;
-        float time_emit;
-        float amplitude;
+        double time_passed;
+        double time_emit;
+        double amplitude;
     ...
 
 This time, the changes in ``gdexample.cpp`` are more elaborate. First,
@@ -592,7 +592,7 @@ Next, we'll need to change our ``_process`` method:
 
 .. code-block:: C++
 
-    void GDExample::_process(float delta) {
+    void GDExample::_process(double delta) {
         time_passed += speed * delta;
 
         Vector2 new_position = Vector2(
