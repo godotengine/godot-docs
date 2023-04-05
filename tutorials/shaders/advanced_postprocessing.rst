@@ -83,7 +83,7 @@ by using ``hint_depth_texture``.
 
   uniform sampler2D depth_texture : source_color, hint_depth_texture;
 
-Once defined, the depth texture can be read with the ``texture`` function.
+Once defined, the depth texture can be read with the ``texture()`` function.
 
 .. code-block:: glsl
 
