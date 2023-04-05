@@ -397,7 +397,8 @@ A few user-controlled parameters are available to better tweak the technique:
 
 Keep in mind that screen-space-reflections only work for reflecting opaque
 geometry. Transparent materials won't be reflected, as they don't write to the depth buffer.
-This also applies to shaders that use ``SCREEN_TEXTURE`` or ``DEPTH_TEXTURE``.
+This also applies to shaders that use ``hint_screen_texture`` or ``hint_depth_texture``
+uniforms.
 
 Screen-Space Ambient Occlusion (SSAO)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

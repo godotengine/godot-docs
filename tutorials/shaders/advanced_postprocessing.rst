@@ -76,19 +76,25 @@ You can also use both options.
 Depth texture
 -------------
 
-To read from the depth texture, perform a texture lookup using ``texture()`` and
-the uniform variable ``DEPTH_TEXTURE``.
+To read from the depth texture, we first need to create a texture uniform set to the depth buffer
+by using ``hint_depth_texture``.
 
 .. code-block:: glsl
 
-  float depth = texture(DEPTH_TEXTURE, SCREEN_UV).x;
+  uniform sampler2D depth_texture : source_color, hint_depth_texture;
+
+Once defined, the depth texture can be read with the ``texture`` function.
+
+.. code-block:: glsl
+
+  float depth = texture(depth_texture, SCREEN_UV).x;
 
 .. note:: Similar to accessing the screen texture, accessing the depth texture is only
           possible when reading from the current viewport. The depth texture cannot be
           accessed from another viewport to which you have rendered.
 
-The values returned by ``DEPTH_TEXTURE`` are between ``0.0`` and ``1.0`` and are nonlinear.
-When displaying depth directly from the ``DEPTH_TEXTURE``, everything will look almost
+The values returned by ``depth_texture`` are between ``0.0`` and ``1.0`` and are nonlinear.
+When displaying depth directly from the ``depth_texture``, everything will look almost
 white unless it is very close. This is because the depth buffer stores objects closer
 to the camera using more bits than those further, so most of the detail in depth
 buffer is found close to the camera. In order to make the depth value align with world or
@@ -111,7 +117,7 @@ the depth value for ``z``.
 .. code-block:: glsl
 
   void fragment() {
-    float depth = texture(DEPTH_TEXTURE, SCREEN_UV).x;
+    float depth = texture(depth_texture, SCREEN_UV).x;
     vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
   }
 
