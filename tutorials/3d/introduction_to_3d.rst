@@ -45,7 +45,7 @@ exchange file format to be imported in Godot. This is required since 3D formats
 are not as standardized as images.
 
 Manually authored models (using 3D modeling software)
-----------------------------------------------------
+-----------------------------------------------------
 
 .. FIXME: Needs update to properly description Godot 3.x workflow
    (used to reference a non existing doc_importing_3d_meshes importer).
