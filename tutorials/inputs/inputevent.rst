@@ -117,7 +117,7 @@ received input, in order:
    not. This can be configured through :ref:`Area3D <class_Area3D>` properties).
    In the case of a 2D scene, conceptually the same happens with :ref:`CollisionObject2D._input_event() <class_CollisionObject2D_method__input_event>`.
 
-When sending events to its child and descencand nodes, the viewport will do so, as depicted in
+When sending events to its child and descendant nodes, the viewport will do so, as depicted in
 the following graphic, in a reverse depth-first order, starting with the node at the bottom of
 the scene tree, and ending at the root node. Excluded from this process are embedded Windows
 and SubViewports.
