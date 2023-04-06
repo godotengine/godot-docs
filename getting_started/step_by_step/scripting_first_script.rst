@@ -101,7 +101,7 @@ the following line of code:
 
     using Godot;
 
-    public partial class Sprite : Sprite2D
+    public partial class Sprite2D : Godot.Sprite2D
     {
     }
 
@@ -327,7 +327,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     using Godot;
 
-    public partial class Sprite : Sprite2D
+    public partial class Sprite2D : Godot.Sprite2D
     {
         private int Speed = 400;
         private float AngularSpeed = Mathf.Pi;
