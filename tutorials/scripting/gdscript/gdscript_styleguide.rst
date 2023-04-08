@@ -629,6 +629,13 @@ This is consistent with how C++ files are named in Godot's source code. This
 also avoids case sensitivity issues that can crop up when exporting a project
 from Windows to other platforms.
 
+.. note:: Godot does not require class names and file names to match exactly like many other languages.
+          ⚠ Do not make them match exactly! Follow the above advice please.
+          This can cause errors like:
+          `SCRIPT ERROR: Invalid call. Nonexistent function 'init' in base 'Area2D'.`
+          `SCRIPT ERROR: Parse Error: Could not find type "SomeClass" in the current scope.`
+          `SCRIPT ERROR: Parse Error: Identifier "SomeOtherClass" not declared in the current scope.`
+
 Classes and nodes
 ~~~~~~~~~~~~~~~~~
 
