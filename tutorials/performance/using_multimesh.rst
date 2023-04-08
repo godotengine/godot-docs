@@ -63,8 +63,6 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
         multimesh = MultiMesh.new()
         # Set the format first.
         multimesh.transform_format = MultiMesh.TRANSFORM_3D
-        multimesh.color_format = MultiMesh.COLOR_NONE
-        multimesh.custom_data_format = MultiMesh.CUSTOM_DATA_NONE
         # Then resize (otherwise, changing the format is not allowed).
         multimesh.instance_count = 10000
         # Maybe not all of them should be visible at first.
@@ -86,8 +84,6 @@ efficient for millions of objects, but for a few thousands, GDScript should be f
             Multimesh = new MultiMesh();
             // Set the format first.
             Multimesh.TransformFormat = MultiMesh.TransformFormatEnum.Transform3D;
-            Multimesh.ColorFormat = MultiMesh.ColorFormatEnum.None;
-            Multimesh.CustomDataFormat = MultiMesh.CustomDataFormatEnum.None;
             // Then resize (otherwise, changing the format is not allowed)
             Multimesh.InstanceCount = 1000;
             // Maybe not all of them should be visible at first.
