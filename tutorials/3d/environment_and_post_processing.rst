@@ -349,11 +349,13 @@ The tone mapping options are:
 Mid- and post-processing effects
 --------------------------------
 
-The Environment resource supports many widely-used mid- and post-processing effects.
+The Environment resource supports many popular mid- and post-processing effects.
 
 .. note::
 
-    Screen-space effects such as SSR, SSAO, SSIL and glow do not operate on
+    Screen-space effects such as :abbr:`SSR (Screen-Space Reflections)`,
+    :abbr:`SSAO (Screen-Space Ambient Occlusion)`,
+    :abbr:`SSIL (Screen-Space Indirect Lighting)` and glow do not operate on
     geometry that is located outside the camera view or is occluded by other
     opaque geometry. Consider this when tweaking their settings to avoid
     distracting changes during gameplay.
@@ -424,21 +426,21 @@ a narrower path for the light to enter:
 .. image:: img/environment_ssao.webp
 
 It is a common mistake to enable this effect, turn on a light, and not be able to
-appreciate it. This is because :abbr:`Screen-Space Ambient Occlusion (SSAO)`
+appreciate it. This is because :abbr:`SSAO (Screen-Space Ambient Occlusion)`
 only acts on *ambient* light. It does not affect direct light.
 
 This is why, in the image above, the effect is less noticeable under the direct
 light (on the left). If you want to force
-:abbr:`Screen-Space Ambient Occlusion (SSAO)` to work with direct light too,
+:abbr:`SSAO (Screen-Space Ambient Occlusion)` to work with direct light too,
 use the **Light Affect** parameter. Even though this is not physically correct,
 some artists like how it looks.
 
-:abbr:`Screen-Space Ambient Occlusion (SSAO)` looks best when combined with a
+:abbr:`SSAO (Screen-Space Ambient Occlusion)` looks best when combined with a
 real source of indirect light, like VoxelGI:
 
 .. image:: img/environment_ssao2.webp
 
-Tweaking :abbr:`Screen-Space Ambient Occlusion (SSAO)` is possible with several
+Tweaking :abbr:`SSAO (Screen-Space Ambient Occlusion)` is possible with several
 parameters:
 
 .. image:: img/environment_ssao_parameters.webp
@@ -449,9 +451,9 @@ parameters:
 - **Intensity:** The primary screen-space ambient occlusion intensity. Acts as a
   multiplier for the screen-space ambient occlusion effect. A higher value
   results in darker occlusion.
-  Since :abbr:`Screen-Space Ambient Occlusion (SSAO)` is a screen-space effect,
+  Since :abbr:`SSAO (Screen-Space Ambient Occlusion)` is a screen-space effect,
   it's recommended to remain conservative with this value.
-  :abbr:`Screen-Space Ambient Occlusion (SSAO)` that is too strong can be
+  :abbr:`SSAO (Screen-Space Ambient Occlusion)` that is too strong can be
   distracting during gameplay.
 - **Power:** The distribution of occlusion. A higher value results in darker
   occlusion, similar to **Intensity**, but with a sharper falloff.
@@ -468,8 +470,9 @@ parameters:
 - **Light Affect:** The screen-space ambient occlusion intensity in direct
   light. In real life, ambient occlusion only applies to indirect light, which
   means its effects can't be seen in direct light. Values higher than 0 will
-  make the SSAO effect visible in direct light. Values above ``0.0`` are not
-  physically accurate, but some artists prefer this effect.
+  make the :abbr:`SSAO (Screen-Space Ambient Occlusion)` effect visible in
+  direct light. Values above ``0.0`` are not physically accurate, but some
+  artists prefer this effect.
 
 Screen-Space Indirect Lighting (SSIL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -477,25 +480,25 @@ Screen-Space Indirect Lighting (SSIL)
 *This feature is only available when using the Forward+ backend, not
 Mobile or Compatibility.*
 
-:abbr:`Screen-Space Indirect Lighting (SSIL)` provides indirect lighting for
+:abbr:`SSIL (Screen-Space Indirect Lighting)` provides indirect lighting for
 small details or dynamic geometry that other global illumination techniques
 cannot cover. This applies to bounced diffuse lighting, but also emissive
-materials. When :abbr:`Screen-Space Indirect Lighting (SSIL)` is enabled on its
+materials. When :abbr:`SSIL (Screen-Space Indirect Lighting)` is enabled on its
 own, the effect may not be that noticeable, which is intended.
 
-Instead, :abbr:`Screen-Space Indirect Lighting (SSIL)` is meant to be used as a
+Instead, :abbr:`SSIL (Screen-Space Indirect Lighting)` is meant to be used as a
 *complement* to other global illumination techniques such as VoxelGI, SDFGI and
-LightmapGI. :abbr:`Screen-Space Indirect Lighting (SSIL)` also provides
+LightmapGI. :abbr:`SSIL (Screen-Space Indirect Lighting)` also provides
 a subtle ambient occlusion effect, similar to SSAO but with less detail.
 
 This feature only provides indirect lighting. It is not a full global illumination
 solution. This makes it different from screen-space global illumination (SSGI)
-offered by other 3D engines. :abbr:`Screen-Space Indirect Lighting (SSIL)`
-can be combined with :abbr:`Screen-Space Reflections (SSR)` and/or
-:abbr:`Screen-Space Ambient Occlusion (SSAO)` for greater visual quality
+offered by other 3D engines. :abbr:`SSIL (Screen-Space Indirect Lighting)`
+can be combined with :abbr:`SSR (Screen-Space Reflections)` and/or
+:abbr:`SSAO (Screen-Space Ambient Occlusion)` for greater visual quality
 (at the cost of performance).
 
-Tweaking SSIL is possible with several parameters:
+Tweaking :abbr:`SSIL (Screen-Space Indirect Lighting)` is possible with several parameters:
 
 - **Radius:** The distance that bounced lighting can travel when using the
   screen space indirect lighting effect. A larger value will result in light
@@ -525,7 +528,7 @@ Mobile or Compatibility.*
 
 Signed distance field global illumination (SDFGI) is a form of real-time global
 illumination. It is not a screen-space effect, which means it can provide global
-illumination for off-screen elements (unlike :abbr:`Screen-Space Indirect Lighting (SSIL)`).
+illumination for off-screen elements (unlike :abbr:`SSIL (Screen-Space Indirect Lighting)`).
 
 .. seealso::
 
