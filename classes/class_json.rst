@@ -34,6 +34,7 @@ The **JSON** enables all data types to be converted to and from a JSON string. T
     # Save data
     # ...
     # Retrieve data
+    var json = JSON.new()
     var error = json.parse(json_string)
     if error == OK:
         var data_received = json.data
