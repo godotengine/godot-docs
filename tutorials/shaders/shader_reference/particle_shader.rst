@@ -14,7 +14,7 @@ CanvasItem of Spatial shader. They contain two processor functions: ``start()``
 and ``process()``.
 
 Unlike other shader types, particle shaders keep the data that was output the
-previous frame. Therefore, particle shaders ca be used for complex effects that
+previous frame. Therefore, particle shaders can be used for complex effects that
 take place over multiple frames.
 
 .. note::
@@ -85,7 +85,7 @@ Start and Process built-ins
 +---------------------------------+--------------------------------------------------------------------------------+
 | in uint **RANDOM_SEED**         | Random seed used as base for random.                                           |
 +---------------------------------+--------------------------------------------------------------------------------+
-| inout bool **ACTIVE**           | ``true`` when Particle is active, can be set ``false``.                        |
+| inout bool **ACTIVE**           | ``true`` when the particle is active, can be set ``false``.                    |
 +---------------------------------+--------------------------------------------------------------------------------+
 | inout vec4 **COLOR**            | Particle color, can be written to and accessed in mesh's vertex function.      |
 +---------------------------------+--------------------------------------------------------------------------------+
