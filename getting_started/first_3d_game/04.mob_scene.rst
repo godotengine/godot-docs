@@ -237,7 +237,7 @@ method. This function destroy the instance it's called on.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   func _on_VisibilityNotifier_screen_exited():
+   func _on_visible_on_screen_notifier_3d_screen_exited():
        queue_free()
 
  .. code-tab:: csharp
