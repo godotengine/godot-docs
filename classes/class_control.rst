@@ -1327,7 +1327,7 @@ Tells Godot which node it should give focus to if the user presses the left arro
 - void **set_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side, :ref:`NodePath<class_NodePath>` neighbor **)**
 - :ref:`NodePath<class_NodePath>` **get_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |const|
 
-Tells Godot which node it should give focus to if the user presses the right arrow on the keyboard or right on a gamepad by default. You can change the key by editing the :ref:`ProjectSettings.input/ui_right<class_ProjectSettings_property_input/ui_right>` input action. The node must be a **Control**. If this property is not set, Godot will give focus to the closest **Control** to the bottom of this one.
+Tells Godot which node it should give focus to if the user presses the right arrow on the keyboard or right on a gamepad by default. You can change the key by editing the :ref:`ProjectSettings.input/ui_right<class_ProjectSettings_property_input/ui_right>` input action. The node must be a **Control**. If this property is not set, Godot will give focus to the closest **Control** to the right of this one.
 
 .. rst-class:: classref-item-separator
 
@@ -1344,7 +1344,7 @@ Tells Godot which node it should give focus to if the user presses the right arr
 - void **set_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side, :ref:`NodePath<class_NodePath>` neighbor **)**
 - :ref:`NodePath<class_NodePath>` **get_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |const|
 
-Tells Godot which node it should give focus to if the user presses the top arrow on the keyboard or top on a gamepad by default. You can change the key by editing the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` input action. The node must be a **Control**. If this property is not set, Godot will give focus to the closest **Control** to the bottom of this one.
+Tells Godot which node it should give focus to if the user presses the top arrow on the keyboard or top on a gamepad by default. You can change the key by editing the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` input action. The node must be a **Control**. If this property is not set, Godot will give focus to the closest **Control** to the top of this one.
 
 .. rst-class:: classref-item-separator
 
