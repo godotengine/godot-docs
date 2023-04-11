@@ -135,6 +135,7 @@ From your script::
         var singleton = Engine.get_singleton("MyPlugin")
         print(singleton.myPluginFunction("World"))
 
+
 Bundling GDExtension resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
