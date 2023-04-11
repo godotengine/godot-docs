@@ -53,7 +53,7 @@ Tags
     ## @tutorial(Tutorial2): http://the/tutorial2/url.com
 
 .. warning:: If there is any space in between the tag name and colon, for example
-             ``@tutorial  :``, it won't treated as a valid tag and will be ignored.
+             ``@tutorial  :``, it won't be treated as a valid tag and will be ignored.
 
 .. note:: When the description spans multiple lines, the preceding and trailing white
           spaces will be stripped and joined with a single space. To preserve the line
