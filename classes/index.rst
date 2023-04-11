@@ -1,5 +1,7 @@
 :github_url: hide
 
+.. _doc_class_reference:
+
 Godot API
 =========
 
