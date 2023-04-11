@@ -2,6 +2,7 @@
 #
 # Godot Engine documentation build configuration file
 
+import sphinx
 import sphinx_rtd_theme
 import sys
 import os
@@ -76,7 +77,7 @@ master_doc = "index"
 # General information about the project
 project = "Godot Engine"
 copyright = (
-    "2014-present Juan Linietsky, Ariel Manzur and the Godot community (CC-BY 3.0)"
+    "2014-present Juan Linietsky, Ariel Manzur and the Godot community (CC BY 3.0)"
 )
 author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
@@ -96,20 +97,20 @@ if env_tags is not None:
 # Language / i18n
 
 supported_languages = {
-    "en": "Godot Engine (%s) documentation in English",
-    "de": "Godot Engine (%s) Dokumentation auf Deutsch",
-    "es": "Documentación de Godot Engine (%s) en español",
-    "fr": "Documentation de Godot Engine (%s) en français",
-    "fi": "Godot Engine (%s) dokumentaatio suomeksi",
-    "it": "Godot Engine (%s) documentazione in italiano",
-    "ja": "Godot Engine (%s)の日本語のドキュメント",
-    "ko": "Godot Engine (%s) 문서 (한국어)",
-    "pl": "Dokumentacja Godot Engine (%s) w języku polskim",
-    "pt_BR": "Documentação da Godot Engine (%s) em Português Brasileiro",
-    "ru": "Документация Godot Engine (%s) на русском языке",
-    "uk": "Документація до Godot Engine (%s) українською мовою",
-    "zh_CN": "Godot Engine (%s) 简体中文文档",
-    "zh_TW": "Godot Engine (%s) 正體中文 (台灣) 文件",
+    "en": "Godot Engine %s documentation in English",
+    "de": "Godot Engine %s Dokumentation auf Deutsch",
+    "es": "Documentación de Godot Engine %s en español",
+    "fr": "Documentation de Godot Engine %s en français",
+    "fi": "Godot Engine %s dokumentaatio suomeksi",
+    "it": "Godot Engine %s documentazione in italiano",
+    "ja": "Godot Engine %sの日本語のドキュメント",
+    "ko": "Godot Engine %s 문서 (한국어)",
+    "pl": "Dokumentacja Godot Engine %s w języku polskim",
+    "pt_BR": "Documentação da Godot Engine %s em Português Brasileiro",
+    "ru": "Документация Godot Engine %s на русском языке",
+    "uk": "Документація до Godot Engine %s українською мовою",
+    "zh_CN": "Godot Engine %s 简体中文文档",
+    "zh_TW": "Godot Engine %s 正體中文 (台灣) 文件",
 }
 
 language = os.getenv("READTHEDOCS_LANGUAGE", "en")
@@ -154,9 +155,11 @@ html_theme_options = {
     "logo_only": True,
     # Collapse navigation (False makes it tree-like)
     "collapse_navigation": False,
+    # Hide the documentation version name/number under the logo
+    "display_version": False,
 }
 
-html_title = supported_languages[language] % version
+html_title = supported_languages[language] % ( "(" + version + ")" )
 
 # VCS options: https://docs.readthedocs.io/en/latest/vcs.html#github
 html_context = {
@@ -167,6 +170,7 @@ html_context = {
     "conf_py_path": "/",  # Path in the checkout to the docs root
     "godot_inject_language_links": True,
     "godot_docs_supported_languages": list(supported_languages.keys()),
+    "godot_docs_title": supported_languages[language],
     "godot_docs_basepath": "https://docs.godotengine.org/",
     "godot_docs_suffix": ".html",
     "godot_default_lang": "en",
@@ -174,9 +178,15 @@ html_context = {
     # Distinguish local development website from production website.
     # This prevents people from looking for changes on the production website after making local changes :)
     "godot_title_prefix": "" if on_rtd else "(DEV) ",
+    # Set this to `True` when in the `latest` branch to clearly indicate to the reader
+    # that they are not reading the `stable` documentation.
+    "godot_is_latest": False,
+    "godot_version": "3.5",
+    # Enables a banner that displays the up-to-date status of each article.
+    "godot_show_article_status": False,
 }
 
-html_logo = "img/docs_logo.png"
+html_logo = "img/docs_logo.svg"
 
 # These folders are copied to the documentation's HTML output
 html_static_path = ["_static"]
@@ -186,11 +196,14 @@ html_extra_path = ["robots.txt"]
 # These paths are either relative to html_static_path
 # or fully qualified paths (e.g. https://...)
 html_css_files = [
-    "css/custom.css",
+    "css/custom.css?1", # Increment the number at the end when the file changes to bust the cache.
 ]
 
+if not on_rtd:
+    html_css_files.append("css/dev.css")
+
 html_js_files = [
-    "js/custom.js",
+    "js/custom.js?1", # Increment the number at the end when the file changes to bust the cache.
 ]
 
 # Output file base name for HTML help builder
@@ -242,10 +255,10 @@ gettext_compact = False
 # https://github.com/sphinx-doc/sphinx/issues/7768 to see what would be relevant for us.
 figure_language_filename = "{root}.{language}{ext}"
 
-import sphinx
 cwd = os.getcwd()
 
 sphinx_original_get_image_filename_for_language = sphinx.util.i18n.get_image_filename_for_language
+
 
 def godot_get_image_filename_for_language(filename, env):
     """

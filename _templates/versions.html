@@ -1,0 +1,60 @@
+{# Add rst-badge after rst-versions for small badge style. #}
+{% set display_version = version -%}
+{% set listed_languages = ({"en":"#", "de":"#", "es":"#", "fr":"#"}).items() -%}
+{% set listed_versions = ({"stable":"#", "latest":"#"}).items() -%}
+
+{% if READTHEDOCS and current_version %}
+  {% set display_version = current_version -%}
+{% endif %}
+{% if READTHEDOCS and versions %}
+  {% set listed_versions = versions -%}
+{% endif %}
+
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Read the Docs</span>
+    v: {{ display_version }}{% if display_version != godot_version %} ({{ godot_version }}){% endif %}
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    {#
+      The contents of this element will be replaced in production.
+      But we can still have some mock data for testing.
+    #}
+
+    <dl>
+      <dt>{{ _('Languages') }}</dt>
+      {% for slug, url in listed_languages %}
+        <dd><a href="{{ url }}">{{ slug }}</a></dd>
+      {% endfor %}
+    </dl>
+    <dl>
+      <dt>{{ _('Versions') }}</dt>
+      {% for slug, url in listed_versions %}
+        <dd><a href="{{ url }}">{{ slug }}</a></dd>
+      {% endfor %}
+    </dl>
+    <dl>
+      {# Translators: The phrase "Read the Docs" is not translated #}
+      <dt>{{ _('On Read the Docs') }}</dt>
+        <dd>
+          <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}">{{ _('Project Home') }}</a>
+        </dd>
+        <dd>
+          <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/builds/">{{ _('Builds') }}</a>
+        </dd>
+        <dd>
+          <a href="//{{ PRODUCTION_DOMAIN }}/projects/{{ slug }}/downloads/">{{ _('Downloads') }}</a>
+        </dd>
+    </dl>
+
+    <hr>
+    <small>
+      <span>Hosted by <a href="https://readthedocs.org">Read the Docs</a></span>
+      <span> · </span>
+      <a href="https://docs.readthedocs.io/page/privacy-policy.html">Privacy Policy</a>
+    </small>
+
+    {##}
+  </div>
+</div>

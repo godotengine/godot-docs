@@ -1,3 +1,7 @@
+*.csv
+!redirects.csv
+.env
+
 _build/
 env/
 __pycache__
@@ -40,3 +44,6 @@ logo.h
 # Output of list-unused-images.sh tool
 tmp-unused-images
 tmp-unused-images-history
+
+# User created Python virtual environement as described in the docs
+godot-docs-venv/
