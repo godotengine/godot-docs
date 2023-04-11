@@ -125,15 +125,15 @@ Move the plugin configuration file (e.g: ``MyPlugin.gdap``) and, if any, its loc
 
 The Godot editor will automatically parse all ``.gdap`` files in the ``res://android/plugins`` directory and show a list of detected and toggleable plugins in the Android export presets window under the **Plugins** section.
 
-.. image:: img/android_export_preset_plugins_section.png
+In order to allow GDScript to communicate with your Java Singleton, you must annotate your function with @UsedByGodot``. The name called from GDScript must match the function name exactly. There is **no** coercing ``snake_case`` to ``camelCase``.
 
+.. image:: img/android_export_preset_plugins_section.png
 
 From your script::
 
     if Engine.has_singleton("MyPlugin"):
         var singleton = Engine.get_singleton("MyPlugin")
         print(singleton.myPluginFunction("World"))
-
 
 Bundling GDExtension resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
