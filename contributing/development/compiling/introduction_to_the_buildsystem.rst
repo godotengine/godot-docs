@@ -164,6 +164,12 @@ does not define ``NDEBUG`` (so ``assert()`` works in thirdparty libraries).
 This flag appends the ``.dev`` suffix (for development) to the generated
 binary name.
 
+.. seealso::
+
+    There are additional SCons options to enable *sanitizers*, which are tools
+    you can enable at compile-time to better debug certain engine issues.
+    See :ref:`doc_using_sanitizers` for more information.
+
 Debugging symbols
 -----------------
 
