@@ -12,131 +12,201 @@ GLTFLight
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Represents a GLTF light.
 
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFLight`` within a script will cause an error in an exported project.
+Represents a light as defined by the ``KHR_lights_punctual`` GLTF extension.
+
+\ **Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFLight** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `KHR_lights_punctual GLTF extension spec <https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_lights_punctual>`__
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`   | :ref:`color<class_GLTFLight_property_color>`                       | ``Color( 1, 1, 1, 1 )`` |
-+-----------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`   | :ref:`inner_cone_angle<class_GLTFLight_property_inner_cone_angle>` | ``0.0``                 |
-+-----------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`   | :ref:`intensity<class_GLTFLight_property_intensity>`               | ``1.0``                 |
-+-----------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`   | :ref:`outer_cone_angle<class_GLTFLight_property_outer_cone_angle>` | ``0.785398``            |
-+-----------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`   | :ref:`range<class_GLTFLight_property_range>`                       | ``inf``                 |
-+-----------------------------+--------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>` | :ref:`type<class_GLTFLight_property_type>`                         | ``""``                  |
-+-----------------------------+--------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`   | :ref:`color<class_GLTFLight_property_color>`                       | ``Color( 1, 1, 1, 1 )`` |
+   +-----------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`   | :ref:`inner_cone_angle<class_GLTFLight_property_inner_cone_angle>` | ``0.0``                 |
+   +-----------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`   | :ref:`intensity<class_GLTFLight_property_intensity>`               | ``1.0``                 |
+   +-----------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`   | :ref:`outer_cone_angle<class_GLTFLight_property_outer_cone_angle>` | ``0.785398``            |
+   +-----------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`   | :ref:`range<class_GLTFLight_property_range>`                       | ``inf``                 |
+   +-----------------------------+--------------------------------------------------------------------+-------------------------+
+   | :ref:`String<class_String>` | :ref:`type<class_GLTFLight_property_type>`                         | ``""``                  |
+   +-----------------------------+--------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+--------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`to_dictionary<class_GLTFLight_method_to_dictionary>` **(** **)** |const| |
+   +-------------------------------------+--------------------------------------------------------------------------------+
+   | :ref:`Light<class_Light>`           | :ref:`to_node<class_GLTFLight_method_to_node>` **(** **)** |const|             |
+   +-------------------------------------+--------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFLight_property_color:
 
-- :ref:`Color<class_Color>` **color**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_color(value)        |
-+-----------+-------------------------+
-| *Getter*  | get_color()             |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **color** = ``Color( 1, 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_color** **(** **)**
 
 The :ref:`Color<class_Color>` of the light. Defaults to white. A black color causes the light to have no effect.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFLight_property_inner_cone_angle:
 
-- :ref:`float<class_float>` **inner_cone_angle**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0.0``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_inner_cone_angle(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_inner_cone_angle()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **inner_cone_angle** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_inner_cone_angle** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_inner_cone_angle** **(** **)**
 
 The inner angle of the cone in a spotlight. Must be less than or equal to the outer cone angle.
 
 Within this angle, the light is at full brightness. Between the inner and outer cone angles, there is a transition from full brightness to zero brightness. When creating a Godot :ref:`SpotLight<class_SpotLight>`, the ratio between the inner and outer cone angles is used to calculate the attenuation of the light.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GLTFLight_property_intensity:
 
-- :ref:`float<class_float>` **intensity**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1.0``              |
-+-----------+----------------------+
-| *Setter*  | set_intensity(value) |
-+-----------+----------------------+
-| *Getter*  | get_intensity()      |
-+-----------+----------------------+
+:ref:`float<class_float>` **intensity** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_intensity** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_intensity** **(** **)**
 
 The intensity of the light. This is expressed in candelas (lumens per steradian) for point and spot lights, and lux (lumens per m²) for directional lights. When creating a Godot light, this value is converted to a unitless multiplier.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFLight_property_outer_cone_angle:
 
-- :ref:`float<class_float>` **outer_cone_angle**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0.785398``                |
-+-----------+-----------------------------+
-| *Setter*  | set_outer_cone_angle(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_outer_cone_angle()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **outer_cone_angle** = ``0.785398``
+
+.. rst-class:: classref-property-setget
+
+- void **set_outer_cone_angle** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_outer_cone_angle** **(** **)**
 
 The outer angle of the cone in a spotlight. Must be greater than or equal to the inner angle.
 
 At this angle, the light drops off to zero brightness. Between the inner and outer cone angles, there is a transition from full brightness to zero brightness. If this angle is a half turn, then the spotlight emits in all directions. When creating a Godot :ref:`SpotLight<class_SpotLight>`, the outer cone angle is used as the angle of the spotlight.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GLTFLight_property_range:
 
-- :ref:`float<class_float>` **range**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``inf``          |
-+-----------+------------------+
-| *Setter*  | set_range(value) |
-+-----------+------------------+
-| *Getter*  | get_range()      |
-+-----------+------------------+
+:ref:`float<class_float>` **range** = ``inf``
+
+.. rst-class:: classref-property-setget
+
+- void **set_range** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_range** **(** **)**
 
 The range of the light, beyond which the light has no effect. GLTF lights with no range defined behave like physical lights (which have infinite range). When creating a Godot light, the range is clamped to 4096.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFLight_property_type:
 
-- :ref:`String<class_String>` **type**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_type(value) |
-+-----------+-----------------+
-| *Getter*  | get_type()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **type** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_type** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_type** **(** **)**
 
 The type of the light. The values accepted by Godot are "point", "spot", and "directional", which correspond to Godot's :ref:`OmniLight<class_OmniLight>`, :ref:`SpotLight<class_SpotLight>`, and :ref:`DirectionalLight<class_DirectionalLight>` respectively.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_GLTFLight_method_to_dictionary:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **to_dictionary** **(** **)** |const|
+
+Serializes this GLTFLight instance into a :ref:`Dictionary<class_Dictionary>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFLight_method_to_node:
+
+.. rst-class:: classref-method
+
+:ref:`Light<class_Light>` **to_node** **(** **)** |const|
+
+Converts this GLTFLight instance into a Godot :ref:`Light<class_Light>` node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

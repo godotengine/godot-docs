@@ -12,95 +12,134 @@ GLTFSpecGloss
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFSpecGloss`` within a script will cause an error in an exported project.
+**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFSpecGloss** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>` | :ref:`diffuse_factor<class_GLTFSpecGloss_property_diffuse_factor>`   | ``Color( 1, 1, 1, 1 )`` |
-+---------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`Image<class_Image>` | :ref:`diffuse_img<class_GLTFSpecGloss_property_diffuse_img>`         |                         |
-+---------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>` | :ref:`gloss_factor<class_GLTFSpecGloss_property_gloss_factor>`       | ``1.0``                 |
-+---------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`Image<class_Image>` | :ref:`spec_gloss_img<class_GLTFSpecGloss_property_spec_gloss_img>`   |                         |
-+---------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>` | :ref:`specular_factor<class_GLTFSpecGloss_property_specular_factor>` | ``Color( 1, 1, 1, 1 )`` |
-+---------------------------+----------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>` | :ref:`diffuse_factor<class_GLTFSpecGloss_property_diffuse_factor>`   | ``Color( 1, 1, 1, 1 )`` |
+   +---------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`Image<class_Image>` | :ref:`diffuse_img<class_GLTFSpecGloss_property_diffuse_img>`         |                         |
+   +---------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>` | :ref:`gloss_factor<class_GLTFSpecGloss_property_gloss_factor>`       | ``1.0``                 |
+   +---------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`Image<class_Image>` | :ref:`spec_gloss_img<class_GLTFSpecGloss_property_spec_gloss_img>`   |                         |
+   +---------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>` | :ref:`specular_factor<class_GLTFSpecGloss_property_specular_factor>` | ``Color( 1, 1, 1, 1 )`` |
+   +---------------------------+----------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFSpecGloss_property_diffuse_factor:
 
-- :ref:`Color<class_Color>` **diffuse_factor**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )``   |
-+-----------+---------------------------+
-| *Setter*  | set_diffuse_factor(value) |
-+-----------+---------------------------+
-| *Getter*  | get_diffuse_factor()      |
-+-----------+---------------------------+
+:ref:`Color<class_Color>` **diffuse_factor** = ``Color( 1, 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_diffuse_factor** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_diffuse_factor** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSpecGloss_property_diffuse_img:
 
-- :ref:`Image<class_Image>` **diffuse_img**
+.. rst-class:: classref-property
 
-+----------+------------------------+
-| *Setter* | set_diffuse_img(value) |
-+----------+------------------------+
-| *Getter* | get_diffuse_img()      |
-+----------+------------------------+
+:ref:`Image<class_Image>` **diffuse_img**
+
+.. rst-class:: classref-property-setget
+
+- void **set_diffuse_img** **(** :ref:`Image<class_Image>` value **)**
+- :ref:`Image<class_Image>` **get_diffuse_img** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSpecGloss_property_gloss_factor:
 
-- :ref:`float<class_float>` **gloss_factor**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``1.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_gloss_factor(value) |
-+-----------+-------------------------+
-| *Getter*  | get_gloss_factor()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **gloss_factor** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gloss_factor** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_gloss_factor** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSpecGloss_property_spec_gloss_img:
 
-- :ref:`Image<class_Image>` **spec_gloss_img**
+.. rst-class:: classref-property
 
-+----------+---------------------------+
-| *Setter* | set_spec_gloss_img(value) |
-+----------+---------------------------+
-| *Getter* | get_spec_gloss_img()      |
-+----------+---------------------------+
+:ref:`Image<class_Image>` **spec_gloss_img**
+
+.. rst-class:: classref-property-setget
+
+- void **set_spec_gloss_img** **(** :ref:`Image<class_Image>` value **)**
+- :ref:`Image<class_Image>` **get_spec_gloss_img** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFSpecGloss_property_specular_factor:
 
-- :ref:`Color<class_Color>` **specular_factor**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )``    |
-+-----------+----------------------------+
-| *Setter*  | set_specular_factor(value) |
-+-----------+----------------------------+
-| *Getter*  | get_specular_factor()      |
-+-----------+----------------------------+
+:ref:`Color<class_Color>` **specular_factor** = ``Color( 1, 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_specular_factor** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_specular_factor** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

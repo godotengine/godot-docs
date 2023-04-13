@@ -14,6 +14,8 @@ ResourceSaver
 
 Singleton for saving Godot-specific resource types.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,64 +23,117 @@ Singleton for saving Godot-specific resource types to the filesystem.
 
 It uses the many :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` classes registered in the engine (either built-in or from a plugin) to save engine-specific resource data to text-based (e.g. ``.tres`` or ``.tscn``) or binary files (e.g. ``.res`` or ``.scn``).
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                       |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)** |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                       |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)** |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_ResourceSaver_SaverFlags:
 
-.. _class_ResourceSaver_constant_FLAG_RELATIVE_PATHS:
-
-.. _class_ResourceSaver_constant_FLAG_BUNDLE_RESOURCES:
-
-.. _class_ResourceSaver_constant_FLAG_CHANGE_PATH:
-
-.. _class_ResourceSaver_constant_FLAG_OMIT_EDITOR_PROPERTIES:
-
-.. _class_ResourceSaver_constant_FLAG_SAVE_BIG_ENDIAN:
-
-.. _class_ResourceSaver_constant_FLAG_COMPRESS:
-
-.. _class_ResourceSaver_constant_FLAG_REPLACE_SUBRESOURCE_PATHS:
+.. rst-class:: classref-enumeration
 
 enum **SaverFlags**:
 
-- **FLAG_RELATIVE_PATHS** = **1** --- Save the resource with a path relative to the scene which uses it.
+.. _class_ResourceSaver_constant_FLAG_RELATIVE_PATHS:
 
-- **FLAG_BUNDLE_RESOURCES** = **2** --- Bundles external resources.
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_CHANGE_PATH** = **4** --- Changes the :ref:`Resource.resource_path<class_Resource_property_resource_path>` of the saved resource to match its new location.
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_RELATIVE_PATHS** = ``1``
 
-- **FLAG_OMIT_EDITOR_PROPERTIES** = **8** --- Do not save editor-specific metadata (identified by their ``__editor`` prefix).
+Save the resource with a path relative to the scene which uses it.
 
-- **FLAG_SAVE_BIG_ENDIAN** = **16** --- Save as big endian (see :ref:`File.endian_swap<class_File_property_endian_swap>`).
+.. _class_ResourceSaver_constant_FLAG_BUNDLE_RESOURCES:
 
-- **FLAG_COMPRESS** = **32** --- Compress the resource on save using :ref:`File.COMPRESSION_ZSTD<class_File_constant_COMPRESSION_ZSTD>`. Only available for binary resource types.
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_REPLACE_SUBRESOURCE_PATHS** = **64** --- Take over the paths of the saved subresources (see :ref:`Resource.take_over_path<class_Resource_method_take_over_path>`).
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_BUNDLE_RESOURCES** = ``2``
+
+Bundles external resources.
+
+.. _class_ResourceSaver_constant_FLAG_CHANGE_PATH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_CHANGE_PATH** = ``4``
+
+Changes the :ref:`Resource.resource_path<class_Resource_property_resource_path>` of the saved resource to match its new location.
+
+.. _class_ResourceSaver_constant_FLAG_OMIT_EDITOR_PROPERTIES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_OMIT_EDITOR_PROPERTIES** = ``8``
+
+Do not save editor-specific metadata (identified by their ``__editor`` prefix).
+
+.. _class_ResourceSaver_constant_FLAG_SAVE_BIG_ENDIAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_SAVE_BIG_ENDIAN** = ``16``
+
+Save as big endian (see :ref:`File.endian_swap<class_File_property_endian_swap>`).
+
+.. _class_ResourceSaver_constant_FLAG_COMPRESS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_COMPRESS** = ``32``
+
+Compress the resource on save using :ref:`File.COMPRESSION_ZSTD<class_File_constant_COMPRESSION_ZSTD>`. Only available for binary resource types.
+
+.. _class_ResourceSaver_constant_FLAG_REPLACE_SUBRESOURCE_PATHS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` **FLAG_REPLACE_SUBRESOURCE_PATHS** = ``64``
+
+Take over the paths of the saved subresources (see :ref:`Resource.take_over_path<class_Resource_method_take_over_path>`).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ResourceSaver_method_get_recognized_extensions:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
+.. rst-class:: classref-method
+
+:ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
 
 Returns the list of extensions available for saving a resource of a given type.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ResourceSaver_method_save:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**
 
 Saves a resource to disk to the given path, using a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` that recognizes the resource object.
 
@@ -89,3 +144,4 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

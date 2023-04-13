@@ -12,12 +12,14 @@ PoolIntArray
 
 A pooled array of integers (:ref:`int<class_int>`).
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 An array specifically designed to hold integer values (:ref:`int<class_int>`). Optimized for memory usage, does not fragment the memory.
 
-\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type ``PoolIntArray`` or mutating a ``PoolIntArray`` within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
+\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type **PoolIntArray** or mutating a **PoolIntArray** within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
 
 ::
 
@@ -25,7 +27,7 @@ An array specifically designed to hold integer values (:ref:`int<class_int>`). O
     array[0].push_back(1234)
     print(array)  # [[]] (empty PoolIntArray within an Array)
 
-Instead, the entire ``PoolIntArray`` property must be *reassigned* with ``=`` for it to be changed:
+Instead, the entire **PoolIntArray** property must be *reassigned* with ``=`` for it to be changed:
 
 ::
 
@@ -37,196 +39,278 @@ Instead, the entire ``PoolIntArray`` property must be *reassigned* with ``=`` fo
 
 \ **Note:** This type is limited to signed 32-bit integers, which means it can only take values in the interval ``[-2^31, 2^31 - 1]``, i.e. ``[-2147483648, 2147483647]``. Exceeding those bounds will wrap around. In comparison, :ref:`int<class_int>` uses signed 64-bit integers which can hold much larger values.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`PoolIntArray<class_PoolIntArray_method_PoolIntArray>` **(** :ref:`Array<class_Array>` from **)**                |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`append<class_PoolIntArray_method_append>` **(** :ref:`int<class_int>` integer **)**                             |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`append_array<class_PoolIntArray_method_append_array>` **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)** |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`clear<class_PoolIntArray_method_clear>` **(** **)**                                                             |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`count<class_PoolIntArray_method_count>` **(** :ref:`int<class_int>` value **)**                                 |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`empty<class_PoolIntArray_method_empty>` **(** **)**                                                             |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`fill<class_PoolIntArray_method_fill>` **(** :ref:`int<class_int>` integer **)**                                 |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`find<class_PoolIntArray_method_find>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**     |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`has<class_PoolIntArray_method_has>` **(** :ref:`int<class_int>` value **)**                                     |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`insert<class_PoolIntArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**  |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`invert<class_PoolIntArray_method_invert>` **(** **)**                                                           |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`push_back<class_PoolIntArray_method_push_back>` **(** :ref:`int<class_int>` integer **)**                       |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`remove<class_PoolIntArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                 |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`resize<class_PoolIntArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                 |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`rfind<class_PoolIntArray_method_rfind>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**  |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`set<class_PoolIntArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**        |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`size<class_PoolIntArray_method_size>` **(** **)**                                                               |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`sort<class_PoolIntArray_method_sort>` **(** **)**                                                               |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`PoolIntArray<class_PoolIntArray_method_PoolIntArray>` **(** :ref:`Array<class_Array>` from **)**                |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`append<class_PoolIntArray_method_append>` **(** :ref:`int<class_int>` integer **)**                             |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`append_array<class_PoolIntArray_method_append_array>` **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)** |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`clear<class_PoolIntArray_method_clear>` **(** **)**                                                             |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`count<class_PoolIntArray_method_count>` **(** :ref:`int<class_int>` value **)**                                 |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`empty<class_PoolIntArray_method_empty>` **(** **)**                                                             |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`fill<class_PoolIntArray_method_fill>` **(** :ref:`int<class_int>` integer **)**                                 |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`find<class_PoolIntArray_method_find>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**     |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`has<class_PoolIntArray_method_has>` **(** :ref:`int<class_int>` value **)**                                     |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`insert<class_PoolIntArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**  |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`invert<class_PoolIntArray_method_invert>` **(** **)**                                                           |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`push_back<class_PoolIntArray_method_push_back>` **(** :ref:`int<class_int>` integer **)**                       |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`remove<class_PoolIntArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                 |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`resize<class_PoolIntArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                 |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`rfind<class_PoolIntArray_method_rfind>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**  |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`set<class_PoolIntArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**        |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`size<class_PoolIntArray_method_size>` **(** **)**                                                               |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`sort<class_PoolIntArray_method_sort>` **(** **)**                                                               |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PoolIntArray_method_PoolIntArray:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **PoolIntArray** **(** :ref:`Array<class_Array>` from **)**
+.. rst-class:: classref-method
 
-Constructs a new ``PoolIntArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+:ref:`PoolIntArray<class_PoolIntArray>` **PoolIntArray** **(** :ref:`Array<class_Array>` from **)**
+
+Constructs a new **PoolIntArray**. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_append:
 
-- void **append** **(** :ref:`int<class_int>` integer **)**
+.. rst-class:: classref-method
+
+void **append** **(** :ref:`int<class_int>` integer **)**
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PoolIntArray_method_push_back>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_append_array:
 
-- void **append_array** **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)**
+.. rst-class:: classref-method
 
-Appends a ``PoolIntArray`` at the end of this array.
+void **append_array** **(** :ref:`PoolIntArray<class_PoolIntArray>` array **)**
+
+Appends a **PoolIntArray** at the end of this array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_clear:
 
-- void **clear** **(** **)**
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
 
 Clears the array. This is equivalent to using :ref:`resize<class_PoolIntArray_method_resize>` with a size of ``0``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_count:
 
-- :ref:`int<class_int>` **count** **(** :ref:`int<class_int>` value **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **count** **(** :ref:`int<class_int>` value **)**
 
 Returns the number of times an element is in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_empty:
 
-- :ref:`bool<class_bool>` **empty** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the array is empty.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_fill:
 
-- void **fill** **(** :ref:`int<class_int>` integer **)**
+.. rst-class:: classref-method
+
+void **fill** **(** :ref:`int<class_int>` integer **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolIntArray_method_resize>` to create an array with a given size and initialized elements.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_find:
 
-- :ref:`int<class_int>` **find** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **find** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed. Returns ``-1`` if ``from`` is out of bounds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_has:
 
-- :ref:`bool<class_bool>` **has** **(** :ref:`int<class_int>` value **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has** **(** :ref:`int<class_int>` value **)**
 
 Returns ``true`` if the array contains the given value.
 
 \ **Note:** This is equivalent to using the ``in`` operator.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PoolIntArray_method_insert:
 
-- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
 
 Inserts a new int at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_invert:
 
-- void **invert** **(** **)**
+.. rst-class:: classref-method
+
+void **invert** **(** **)**
 
 Reverses the order of the elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_push_back:
 
-- void **push_back** **(** :ref:`int<class_int>` integer **)**
+.. rst-class:: classref-method
+
+void **push_back** **(** :ref:`int<class_int>` integer **)**
 
 Appends a value to the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_remove:
 
-- void **remove** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Removes an element from the array by index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_resize:
 
-- void **resize** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
 \ **Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PoolIntArray_method_rfind:
 
-- :ref:`int<class_int>` **rfind** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **rfind** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array. If the adjusted start index is out of bounds, this method searches from the end of the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_set:
 
-- void **set** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
+.. rst-class:: classref-method
+
+void **set** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` integer **)**
 
 Changes the int at the given index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **size** **(** **)**
 
 Returns the number of elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolIntArray_method_sort:
 
-- void **sort** **(** **)**
+.. rst-class:: classref-method
+
+void **sort** **(** **)**
 
 Sorts the elements of the array in ascending order.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

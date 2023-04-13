@@ -16,10 +16,14 @@ Material
 
 Abstract base :ref:`Resource<class_Resource>` for coloring and shading geometry.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Material is a base :ref:`Resource<class_Resource>` used for coloring and shading geometry. All materials inherit from it and almost all :ref:`VisualInstance<class_VisualInstance>` derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,56 +32,83 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |       |
-+---------------------------------+-----------------------------------------------------------------+-------+
-| :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` | ``0`` |
-+---------------------------------+-----------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-----------------------------------------------------------------+-------+
+   | :ref:`Material<class_Material>` | :ref:`next_pass<class_Material_property_next_pass>`             |       |
+   +---------------------------------+-----------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`           | :ref:`render_priority<class_Material_property_render_priority>` | ``0`` |
+   +---------------------------------+-----------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Material_constant_RENDER_PRIORITY_MAX:
 
+.. rst-class:: classref-constant
+
+**RENDER_PRIORITY_MAX** = ``127``
+
+Maximum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
+
 .. _class_Material_constant_RENDER_PRIORITY_MIN:
 
-- **RENDER_PRIORITY_MAX** = **127** --- Maximum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
+.. rst-class:: classref-constant
 
-- **RENDER_PRIORITY_MIN** = **-128** --- Minimum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
+**RENDER_PRIORITY_MIN** = ``-128``
+
+Minimum value for the :ref:`render_priority<class_Material_property_render_priority>` parameter.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Material_property_next_pass:
 
-- :ref:`Material<class_Material>` **next_pass**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_next_pass(value) |
-+----------+----------------------+
-| *Getter* | get_next_pass()      |
-+----------+----------------------+
+:ref:`Material<class_Material>` **next_pass**
 
-Sets the ``Material`` to be used for the next pass. This renders the object again using a different material.
+.. rst-class:: classref-property-setget
+
+- void **set_next_pass** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_next_pass** **(** **)**
+
+Sets the **Material** to be used for the next pass. This renders the object again using a different material.
 
 \ **Note:** This only applies to :ref:`SpatialMaterial<class_SpatialMaterial>`\ s and :ref:`ShaderMaterial<class_ShaderMaterial>`\ s with type "Spatial".
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Material_property_render_priority:
 
-- :ref:`int<class_int>` **render_priority**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_render_priority(value) |
-+-----------+----------------------------+
-| *Getter*  | get_render_priority()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **render_priority** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_render_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_render_priority** **(** **)**
 
 Sets the render priority for transparent objects in 3D scenes. Higher priority objects will be sorted in front of lower priority objects.
 
@@ -86,3 +117,4 @@ Sets the render priority for transparent objects in 3D scenes. Higher priority o
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

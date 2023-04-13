@@ -14,625 +14,872 @@ Tabs
 
 Tabs control.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Simple tabs control, similar to :ref:`TabContainer<class_TabContainer>` but is only in charge of drawing tabs, not interacting with children.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                                               | :ref:`current_tab<class_Tabs_property_current_tab>`                             | ``0``     |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                             | :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>` | ``false`` |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                             | :ref:`scrolling_enabled<class_Tabs_property_scrolling_enabled>`                 | ``true``  |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`TabAlign<enum_Tabs_TabAlign>`                                 | :ref:`tab_align<class_Tabs_property_tab_align>`                                 | ``1``     |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
-| :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`   | ``0``     |
-+---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                               | :ref:`current_tab<class_Tabs_property_current_tab>`                             | ``0``     |
+   +---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                             | :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>` | ``false`` |
+   +---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                             | :ref:`scrolling_enabled<class_Tabs_property_scrolling_enabled>`                 | ``true``  |
+   +---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+   | :ref:`TabAlign<enum_Tabs_TabAlign>`                                 | :ref:`tab_align<class_Tabs_property_tab_align>`                                 | ``1``     |
+   +---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+   | :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` | :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`   | ``0``     |
+   +---------------------------------------------------------------------+---------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`add_tab<class_Tabs_method_add_tab>` **(** :ref:`String<class_String>` title="", :ref:`Texture<class_Texture>` icon=null **)**             |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`ensure_tab_visible<class_Tabs_method_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                           |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_offset_buttons_visible<class_Tabs_method_get_offset_buttons_visible>` **(** **)** |const|                                             |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_previous_tab<class_Tabs_method_get_previous_tab>` **(** **)** |const|                                                                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_select_with_rmb<class_Tabs_method_get_select_with_rmb>` **(** **)** |const|                                                           |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_tab_button_icon<class_Tabs_method_get_tab_button_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                             |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_tab_count<class_Tabs_method_get_tab_count>` **(** **)** |const|                                                                       |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`get_tab_disabled<class_Tabs_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                   |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`get_tab_icon<class_Tabs_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                           |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_tab_offset<class_Tabs_method_get_tab_offset>` **(** **)** |const|                                                                     |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>`     | :ref:`get_tab_rect<class_Tabs_method_get_tab_rect>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                           |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`get_tab_title<class_Tabs_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                         |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`get_tabs_rearrange_group<class_Tabs_method_get_tabs_rearrange_group>` **(** **)** |const|                                                 |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`move_tab<class_Tabs_method_move_tab>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                                    |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`remove_tab<class_Tabs_method_remove_tab>` **(** :ref:`int<class_int>` tab_idx **)**                                                       |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_select_with_rmb<class_Tabs_method_set_select_with_rmb>` **(** :ref:`bool<class_bool>` enabled **)**                                   |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_tab_button_icon<class_Tabs_method_set_tab_button_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)** |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_tab_disabled<class_Tabs_method_set_tab_disabled>` **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**         |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_tab_icon<class_Tabs_method_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**               |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_tab_title<class_Tabs_method_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**              |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`set_tabs_rearrange_group<class_Tabs_method_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                          |
-+-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`add_tab<class_Tabs_method_add_tab>` **(** :ref:`String<class_String>` title="", :ref:`Texture<class_Texture>` icon=null **)**             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`ensure_tab_visible<class_Tabs_method_ensure_tab_visible>` **(** :ref:`int<class_int>` idx **)**                                           |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`get_offset_buttons_visible<class_Tabs_method_get_offset_buttons_visible>` **(** **)** |const|                                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_previous_tab<class_Tabs_method_get_previous_tab>` **(** **)** |const|                                                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`get_select_with_rmb<class_Tabs_method_get_select_with_rmb>` **(** **)** |const|                                                           |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`get_tab_button_icon<class_Tabs_method_get_tab_button_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_tab_count<class_Tabs_method_get_tab_count>` **(** **)** |const|                                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`get_tab_disabled<class_Tabs_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`get_tab_icon<class_Tabs_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                           |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_tab_offset<class_Tabs_method_get_tab_offset>` **(** **)** |const|                                                                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`     | :ref:`get_tab_rect<class_Tabs_method_get_tab_rect>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                           |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`get_tab_title<class_Tabs_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_tabs_rearrange_group<class_Tabs_method_get_tabs_rearrange_group>` **(** **)** |const|                                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`move_tab<class_Tabs_method_move_tab>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                                    |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`remove_tab<class_Tabs_method_remove_tab>` **(** :ref:`int<class_int>` tab_idx **)**                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_select_with_rmb<class_Tabs_method_set_select_with_rmb>` **(** :ref:`bool<class_bool>` enabled **)**                                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_tab_button_icon<class_Tabs_method_set_tab_button_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)** |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_tab_disabled<class_Tabs_method_set_tab_disabled>` **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_tab_icon<class_Tabs_method_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**               |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_tab_title<class_Tabs_method_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**              |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_tabs_rearrange_group<class_Tabs_method_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                          |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_bg<class_Tabs_theme_color_font_color_bg>`             | ``Color( 0.69, 0.69, 0.69, 1 )`` |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_Tabs_theme_color_font_color_disabled>` | ``Color( 0.9, 0.9, 0.9, 0.2 )``  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_fg<class_Tabs_theme_color_font_color_fg>`             | ``Color( 0.94, 0.94, 0.94, 1 )`` |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`hseparation<class_Tabs_theme_constant_hseparation>`              | ``4``                            |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`label_valign_bg<class_Tabs_theme_constant_label_valign_bg>`      | ``2``                            |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`label_valign_fg<class_Tabs_theme_constant_label_valign_fg>`      | ``0``                            |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`int<class_int>`           | :ref:`top_margin<class_Tabs_theme_constant_top_margin>`                | ``24``                           |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_Tabs_theme_font_font>`                                |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`close<class_Tabs_theme_icon_close>`                              |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`decrement<class_Tabs_theme_icon_decrement>`                      |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`decrement_highlight<class_Tabs_theme_icon_decrement_highlight>`  |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`increment<class_Tabs_theme_icon_increment>`                      |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`increment_highlight<class_Tabs_theme_icon_increment_highlight>`  |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`button<class_Tabs_theme_style_button>`                           |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`button_pressed<class_Tabs_theme_style_button_pressed>`           |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`tab_bg<class_Tabs_theme_style_tab_bg>`                           |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`tab_disabled<class_Tabs_theme_style_tab_disabled>`               |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`tab_fg<class_Tabs_theme_style_tab_fg>`                           |                                  |
-+---------------------------------+------------------------------------------------------------------------+----------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color_bg<class_Tabs_theme_color_font_color_bg>`             | ``Color( 0.69, 0.69, 0.69, 1 )`` |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color_disabled<class_Tabs_theme_color_font_color_disabled>` | ``Color( 0.9, 0.9, 0.9, 0.2 )``  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color_fg<class_Tabs_theme_color_font_color_fg>`             | ``Color( 0.94, 0.94, 0.94, 1 )`` |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`hseparation<class_Tabs_theme_constant_hseparation>`              | ``4``                            |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`label_valign_bg<class_Tabs_theme_constant_label_valign_bg>`      | ``2``                            |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`label_valign_fg<class_Tabs_theme_constant_label_valign_fg>`      | ``0``                            |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`int<class_int>`           | :ref:`top_margin<class_Tabs_theme_constant_top_margin>`                | ``24``                           |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Font<class_Font>`         | :ref:`font<class_Tabs_theme_font_font>`                                |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`close<class_Tabs_theme_icon_close>`                              |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`decrement<class_Tabs_theme_icon_decrement>`                      |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`decrement_highlight<class_Tabs_theme_icon_decrement_highlight>`  |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`increment<class_Tabs_theme_icon_increment>`                      |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`increment_highlight<class_Tabs_theme_icon_increment_highlight>`  |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`button<class_Tabs_theme_style_button>`                           |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`button_pressed<class_Tabs_theme_style_button_pressed>`           |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`tab_bg<class_Tabs_theme_style_tab_bg>`                           |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`tab_disabled<class_Tabs_theme_style_tab_disabled>`               |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`tab_fg<class_Tabs_theme_style_tab_fg>`                           |                                  |
+   +---------------------------------+------------------------------------------------------------------------+----------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Tabs_signal_reposition_active_tab_request:
 
-- **reposition_active_tab_request** **(** :ref:`int<class_int>` idx_to **)**
+.. rst-class:: classref-signal
+
+**reposition_active_tab_request** **(** :ref:`int<class_int>` idx_to **)**
 
 Emitted when the active tab is rearranged via mouse drag. See :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_signal_right_button_pressed:
 
-- **right_button_pressed** **(** :ref:`int<class_int>` tab **)**
+.. rst-class:: classref-signal
+
+**right_button_pressed** **(** :ref:`int<class_int>` tab **)**
 
 Emitted when a tab's right button is pressed. See :ref:`set_tab_button_icon<class_Tabs_method_set_tab_button_icon>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_signal_tab_changed:
 
-- **tab_changed** **(** :ref:`int<class_int>` tab **)**
+.. rst-class:: classref-signal
+
+**tab_changed** **(** :ref:`int<class_int>` tab **)**
 
 Emitted when switching to another tab.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_signal_tab_clicked:
 
-- **tab_clicked** **(** :ref:`int<class_int>` tab **)**
+.. rst-class:: classref-signal
+
+**tab_clicked** **(** :ref:`int<class_int>` tab **)**
 
 Emitted when a tab is clicked, even if it is the current tab.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_signal_tab_close:
 
-- **tab_close** **(** :ref:`int<class_int>` tab **)**
+.. rst-class:: classref-signal
+
+**tab_close** **(** :ref:`int<class_int>` tab **)**
 
 Emitted when a tab is closed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_signal_tab_hover:
 
-- **tab_hover** **(** :ref:`int<class_int>` tab **)**
+.. rst-class:: classref-signal
+
+**tab_hover** **(** :ref:`int<class_int>` tab **)**
 
 Emitted when a tab is hovered by the mouse.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Tabs_TabAlign:
 
-.. _class_Tabs_constant_ALIGN_LEFT:
-
-.. _class_Tabs_constant_ALIGN_CENTER:
-
-.. _class_Tabs_constant_ALIGN_RIGHT:
-
-.. _class_Tabs_constant_ALIGN_MAX:
+.. rst-class:: classref-enumeration
 
 enum **TabAlign**:
 
-- **ALIGN_LEFT** = **0** --- Align the tabs to the left.
+.. _class_Tabs_constant_ALIGN_LEFT:
 
-- **ALIGN_CENTER** = **1** --- Align the tabs to the center.
+.. rst-class:: classref-enumeration-constant
 
-- **ALIGN_RIGHT** = **2** --- Align the tabs to the right.
+:ref:`TabAlign<enum_Tabs_TabAlign>` **ALIGN_LEFT** = ``0``
 
-- **ALIGN_MAX** = **3** --- Represents the size of the :ref:`TabAlign<enum_Tabs_TabAlign>` enum.
+Align the tabs to the left.
+
+.. _class_Tabs_constant_ALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TabAlign<enum_Tabs_TabAlign>` **ALIGN_CENTER** = ``1``
+
+Align the tabs to the center.
+
+.. _class_Tabs_constant_ALIGN_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TabAlign<enum_Tabs_TabAlign>` **ALIGN_RIGHT** = ``2``
+
+Align the tabs to the right.
+
+.. _class_Tabs_constant_ALIGN_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TabAlign<enum_Tabs_TabAlign>` **ALIGN_MAX** = ``3``
+
+Represents the size of the :ref:`TabAlign<enum_Tabs_TabAlign>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Tabs_CloseButtonDisplayPolicy:
 
-.. _class_Tabs_constant_CLOSE_BUTTON_SHOW_NEVER:
-
-.. _class_Tabs_constant_CLOSE_BUTTON_SHOW_ACTIVE_ONLY:
-
-.. _class_Tabs_constant_CLOSE_BUTTON_SHOW_ALWAYS:
-
-.. _class_Tabs_constant_CLOSE_BUTTON_MAX:
+.. rst-class:: classref-enumeration
 
 enum **CloseButtonDisplayPolicy**:
 
-- **CLOSE_BUTTON_SHOW_NEVER** = **0** --- Never show the close buttons.
+.. _class_Tabs_constant_CLOSE_BUTTON_SHOW_NEVER:
 
-- **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = **1** --- Only show the close button on the currently active tab.
+.. rst-class:: classref-enumeration-constant
 
-- **CLOSE_BUTTON_SHOW_ALWAYS** = **2** --- Show the close button on all tabs.
+:ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **CLOSE_BUTTON_SHOW_NEVER** = ``0``
 
-- **CLOSE_BUTTON_MAX** = **3** --- Represents the size of the :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` enum.
+Never show the close buttons.
+
+.. _class_Tabs_constant_CLOSE_BUTTON_SHOW_ACTIVE_ONLY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **CLOSE_BUTTON_SHOW_ACTIVE_ONLY** = ``1``
+
+Only show the close button on the currently active tab.
+
+.. _class_Tabs_constant_CLOSE_BUTTON_SHOW_ALWAYS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **CLOSE_BUTTON_SHOW_ALWAYS** = ``2``
+
+Show the close button on all tabs.
+
+.. _class_Tabs_constant_CLOSE_BUTTON_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **CLOSE_BUTTON_MAX** = ``3``
+
+Represents the size of the :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Tabs_property_current_tab:
 
-- :ref:`int<class_int>` **current_tab**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0``                  |
-+-----------+------------------------+
-| *Setter*  | set_current_tab(value) |
-+-----------+------------------------+
-| *Getter*  | get_current_tab()      |
-+-----------+------------------------+
+:ref:`int<class_int>` **current_tab** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_current_tab** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_current_tab** **(** **)**
 
 Select tab at index ``tab_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_property_drag_to_rearrange_enabled:
 
-- :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------+
-| *Default* | ``false``                            |
-+-----------+--------------------------------------+
-| *Setter*  | set_drag_to_rearrange_enabled(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_drag_to_rearrange_enabled()      |
-+-----------+--------------------------------------+
+:ref:`bool<class_bool>` **drag_to_rearrange_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_drag_to_rearrange_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_drag_to_rearrange_enabled** **(** **)**
 
 If ``true``, tabs can be rearranged with mouse drag.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_property_scrolling_enabled:
 
-- :ref:`bool<class_bool>` **scrolling_enabled**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``true``                     |
-+-----------+------------------------------+
-| *Setter*  | set_scrolling_enabled(value) |
-+-----------+------------------------------+
-| *Getter*  | get_scrolling_enabled()      |
-+-----------+------------------------------+
+:ref:`bool<class_bool>` **scrolling_enabled** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_scrolling_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_scrolling_enabled** **(** **)**
 
 if ``true``, the mouse's scroll wheel can be used to navigate the scroll view.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_property_tab_align:
 
-- :ref:`TabAlign<enum_Tabs_TabAlign>` **tab_align**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1``                |
-+-----------+----------------------+
-| *Setter*  | set_tab_align(value) |
-+-----------+----------------------+
-| *Getter*  | get_tab_align()      |
-+-----------+----------------------+
+:ref:`TabAlign<enum_Tabs_TabAlign>` **tab_align** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tab_align** **(** :ref:`TabAlign<enum_Tabs_TabAlign>` value **)**
+- :ref:`TabAlign<enum_Tabs_TabAlign>` **get_tab_align** **(** **)**
 
 The alignment of all tabs. See :ref:`TabAlign<enum_Tabs_TabAlign>` for details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_property_tab_close_display_policy:
 
-- :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **tab_close_display_policy**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``0``                               |
-+-----------+-------------------------------------+
-| *Setter*  | set_tab_close_display_policy(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_tab_close_display_policy()      |
-+-----------+-------------------------------------+
+:ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **tab_close_display_policy** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tab_close_display_policy** **(** :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` value **)**
+- :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` **get_tab_close_display_policy** **(** **)**
 
 Sets when the close button will appear on the tabs. See :ref:`CloseButtonDisplayPolicy<enum_Tabs_CloseButtonDisplayPolicy>` for details.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Tabs_method_add_tab:
 
-- void **add_tab** **(** :ref:`String<class_String>` title="", :ref:`Texture<class_Texture>` icon=null **)**
+.. rst-class:: classref-method
+
+void **add_tab** **(** :ref:`String<class_String>` title="", :ref:`Texture<class_Texture>` icon=null **)**
 
 Adds a new tab.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_ensure_tab_visible:
 
-- void **ensure_tab_visible** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **ensure_tab_visible** **(** :ref:`int<class_int>` idx **)**
 
 Moves the scroll view to make the tab visible.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_offset_buttons_visible:
 
-- :ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_offset_buttons_visible** **(** **)** |const|
 
 Returns ``true`` if the offset buttons (the ones that appear when there's not enough space for all tabs) are visible.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_previous_tab:
 
-- :ref:`int<class_int>` **get_previous_tab** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_previous_tab** **(** **)** |const|
 
 Returns the previously active tab index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_select_with_rmb:
 
-- :ref:`bool<class_bool>` **get_select_with_rmb** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_select_with_rmb** **(** **)** |const|
 
 Returns ``true`` if select with right mouse button is enabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_tab_button_icon:
 
-- :ref:`Texture<class_Texture>` **get_tab_button_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Texture<class_Texture>` **get_tab_button_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the button icon from the tab at index ``tab_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_tab_count:
 
-- :ref:`int<class_int>` **get_tab_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_tab_count** **(** **)** |const|
 
 Returns the number of tabs.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_tab_disabled:
 
-- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns ``true`` if the tab at index ``tab_idx`` is disabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_tab_icon:
 
-- :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or ``null`` if the tab has no :ref:`Texture<class_Texture>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_tab_offset:
 
-- :ref:`int<class_int>` **get_tab_offset** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_tab_offset** **(** **)** |const|
 
 Returns the number of hidden tabs offsetted to the left.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_tab_rect:
 
-- :ref:`Rect2<class_Rect2>` **get_tab_rect** **(** :ref:`int<class_int>` tab_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **get_tab_rect** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns tab :ref:`Rect2<class_Rect2>` with local position and size.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_tab_title:
 
-- :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
 Returns the title of the tab at index ``tab_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_get_tabs_rearrange_group:
 
-- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the ``Tabs``' rearrange group ID.
+:ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** |const|
+
+Returns the **Tabs**' rearrange group ID.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_move_tab:
 
-- void **move_tab** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
+.. rst-class:: classref-method
+
+void **move_tab** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
 
 Moves a tab from ``from`` to ``to``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_remove_tab:
 
-- void **remove_tab** **(** :ref:`int<class_int>` tab_idx **)**
+.. rst-class:: classref-method
+
+void **remove_tab** **(** :ref:`int<class_int>` tab_idx **)**
 
 Removes the tab at index ``tab_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_set_select_with_rmb:
 
-- void **set_select_with_rmb** **(** :ref:`bool<class_bool>` enabled **)**
+.. rst-class:: classref-method
+
+void **set_select_with_rmb** **(** :ref:`bool<class_bool>` enabled **)**
 
 If ``true``, enables selecting a tab with the right mouse button.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_set_tab_button_icon:
 
-- void **set_tab_button_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**
+.. rst-class:: classref-method
+
+void **set_tab_button_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**
 
 Sets the button icon from the tab at index ``tab_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_set_tab_disabled:
 
-- void **set_tab_disabled** **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**
+.. rst-class:: classref-method
+
+void **set_tab_disabled** **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**
 
 If ``disabled`` is ``true``, disables the tab at index ``tab_idx``, making it non-interactable.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_set_tab_icon:
 
-- void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**
+.. rst-class:: classref-method
+
+void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**
 
 Sets an ``icon`` for the tab at index ``tab_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_set_tab_title:
 
-- void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
+.. rst-class:: classref-method
+
+void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
 
 Sets a ``title`` for the tab at index ``tab_idx``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_method_set_tabs_rearrange_group:
 
-- void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
+.. rst-class:: classref-method
 
-Defines the rearrange group ID. Choose for each ``Tabs`` the same value to dragging tabs between ``Tabs``. Enable drag with :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>`.
+void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
+
+Defines the rearrange group ID. Choose for each **Tabs** the same value to dragging tabs between **Tabs**. Enable drag with :ref:`drag_to_rearrange_enabled<class_Tabs_property_drag_to_rearrange_enabled>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_Tabs_theme_color_font_color_bg:
 
-- :ref:`Color<class_Color>` **font_color_bg**
+.. rst-class:: classref-themeproperty
 
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.69, 0.69, 0.69, 1 )`` |
-+-----------+----------------------------------+
+:ref:`Color<class_Color>` **font_color_bg** = ``Color( 0.69, 0.69, 0.69, 1 )``
 
 Font color of inactive tabs.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_color_font_color_disabled:
 
-- :ref:`Color<class_Color>` **font_color_disabled**
+.. rst-class:: classref-themeproperty
 
-+-----------+---------------------------------+
-| *Default* | ``Color( 0.9, 0.9, 0.9, 0.2 )`` |
-+-----------+---------------------------------+
+:ref:`Color<class_Color>` **font_color_disabled** = ``Color( 0.9, 0.9, 0.9, 0.2 )``
 
 Font color of disabled tabs.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_color_font_color_fg:
 
-- :ref:`Color<class_Color>` **font_color_fg**
+.. rst-class:: classref-themeproperty
 
-+-----------+----------------------------------+
-| *Default* | ``Color( 0.94, 0.94, 0.94, 1 )`` |
-+-----------+----------------------------------+
+:ref:`Color<class_Color>` **font_color_fg** = ``Color( 0.94, 0.94, 0.94, 1 )``
 
 Font color of the currently selected tab.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_constant_hseparation:
 
-- :ref:`int<class_int>` **hseparation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **hseparation** = ``4``
 
 The horizontal separation between the tabs.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_constant_label_valign_bg:
 
-- :ref:`int<class_int>` **label_valign_bg**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``2`` |
-+-----------+-------+
+:ref:`int<class_int>` **label_valign_bg** = ``2``
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_constant_label_valign_fg:
 
-- :ref:`int<class_int>` **label_valign_fg**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **label_valign_fg** = ``0``
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_constant_top_margin:
 
-- :ref:`int<class_int>` **top_margin**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------+
-| *Default* | ``24`` |
-+-----------+--------+
+:ref:`int<class_int>` **top_margin** = ``24``
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_font_font:
 
-- :ref:`Font<class_Font>` **font**
+.. rst-class:: classref-themeproperty
+
+:ref:`Font<class_Font>` **font**
 
 The font used to draw tab names.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_icon_close:
 
-- :ref:`Texture<class_Texture>` **close**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **close**
 
 The icon for the close button (see :ref:`tab_close_display_policy<class_Tabs_property_tab_close_display_policy>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_icon_decrement:
 
-- :ref:`Texture<class_Texture>` **decrement**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **decrement**
 
 Icon for the left arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the first tab is visible), it appears semi-transparent.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_icon_decrement_highlight:
 
-- :ref:`Texture<class_Texture>` **decrement_highlight**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **decrement_highlight**
 
 Icon for the left arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_icon_increment:
 
-- :ref:`Texture<class_Texture>` **increment**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **increment**
 
 Icon for the right arrow button that appears when there are too many tabs to fit in the container width. When the button is disabled (i.e. the last tab is visible) it appears semi-transparent.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_icon_increment_highlight:
 
-- :ref:`Texture<class_Texture>` **increment_highlight**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **increment_highlight**
 
 Icon for the right arrow button that appears when there are too many tabs to fit in the container width. Used when the button is being hovered with the cursor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_style_button:
 
-- :ref:`StyleBox<class_StyleBox>` **button**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **button**
 
 Background of the close button when it's being hovered with the cursor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_style_button_pressed:
 
-- :ref:`StyleBox<class_StyleBox>` **button_pressed**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **button_pressed**
 
 Background of the close button when it's being pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_style_tab_bg:
 
-- :ref:`StyleBox<class_StyleBox>` **tab_bg**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **tab_bg**
 
 The style of an inactive tab.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_style_tab_disabled:
 
-- :ref:`StyleBox<class_StyleBox>` **tab_disabled**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **tab_disabled**
 
 The style of a disabled tab
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Tabs_theme_style_tab_fg:
 
-- :ref:`StyleBox<class_StyleBox>` **tab_fg**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **tab_fg**
 
 The style of the currently selected tab.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -12,106 +12,134 @@ StaticBody2D
 
 **Inherits:** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Static body for 2D physics.
+Physics body for 2D physics which is static or moves only by script. Useful for floor and walls.
+
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Static body for 2D physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
+Static body for 2D physics.
 
-Additionally, a constant linear or angular velocity can be set for the static body, which will affect colliding bodies as if it were moving (for example, a conveyor belt).
+A static body is a simple body that doesn't move under physics simulation, i.e. it can't be moved by external forces or contacts but its transformation can still be updated manually by the user. It is ideal for implementing objects in the environment, such as walls or platforms. In contrast to :ref:`RigidBody2D<class_RigidBody2D>`, it doesn't consume any CPU resources as long as they don't move.
+
+They have extra functionalities to move and affect other bodies:
+
+\ **Static transform change:** Static bodies can be moved by animation or script. In this case, they are just teleported and don't affect other bodies on their path.
+
+\ **Constant velocity:** When :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>` or :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` is set, static bodies don't move themselves but affect touching bodies as if they were moving. This is useful for simulating conveyor belts or conveyor wheels.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                     | :ref:`bounce<class_StaticBody2D_property_bounce>`                                       |                     |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                     | :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` | ``0.0``             |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>`                 | :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>`   | ``Vector2( 0, 0 )`` |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody2D_property_friction>`                                   |                     |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
-| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>` |                     |
-+-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+   | :ref:`float<class_float>`                     | :ref:`bounce<class_StaticBody2D_property_bounce>`                                       |                     |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+   | :ref:`float<class_float>`                     | :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` | ``0.0``             |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>`                 | :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>`   | ``Vector2( 0, 0 )`` |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+   | :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody2D_property_friction>`                                   |                     |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+   | :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>` |                     |
+   +-----------------------------------------------+-----------------------------------------------------------------------------------------+---------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_StaticBody2D_property_bounce:
 
-- :ref:`float<class_float>` **bounce**
+.. rst-class:: classref-property
 
-+----------+-------------------+
-| *Setter* | set_bounce(value) |
-+----------+-------------------+
-| *Getter* | get_bounce()      |
-+----------+-------------------+
+:ref:`float<class_float>` **bounce**
+
+.. rst-class:: classref-property-setget
+
+- void **set_bounce** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_bounce** **(** **)**
 
 The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
 
 Deprecated, use :ref:`PhysicsMaterial.bounce<class_PhysicsMaterial_property_bounce>` instead via :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_StaticBody2D_property_constant_angular_velocity:
 
-- :ref:`float<class_float>` **constant_angular_velocity**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------------+
-| *Default* | ``0.0``                              |
-+-----------+--------------------------------------+
-| *Setter*  | set_constant_angular_velocity(value) |
-+-----------+--------------------------------------+
-| *Getter*  | get_constant_angular_velocity()      |
-+-----------+--------------------------------------+
+:ref:`float<class_float>` **constant_angular_velocity** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant_angular_velocity** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_constant_angular_velocity** **(** **)**
 
 The body's constant angular velocity. This does not rotate the body, but affects colliding bodies, as if it were rotating.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StaticBody2D_property_constant_linear_velocity:
 
-- :ref:`Vector2<class_Vector2>` **constant_linear_velocity**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``Vector2( 0, 0 )``                 |
-+-----------+-------------------------------------+
-| *Setter*  | set_constant_linear_velocity(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_constant_linear_velocity()      |
-+-----------+-------------------------------------+
+:ref:`Vector2<class_Vector2>` **constant_linear_velocity** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_constant_linear_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_constant_linear_velocity** **(** **)**
 
 The body's constant linear velocity. This does not move the body, but affects colliding bodies, as if it were moving.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StaticBody2D_property_friction:
 
-- :ref:`float<class_float>` **friction**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_friction(value) |
-+----------+---------------------+
-| *Getter* | get_friction()      |
-+----------+---------------------+
+:ref:`float<class_float>` **friction**
+
+.. rst-class:: classref-property-setget
+
+- void **set_friction** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_friction** **(** **)**
 
 The body's friction. Values range from ``0`` (no friction) to ``1`` (full friction).
 
 Deprecated, use :ref:`PhysicsMaterial.friction<class_PhysicsMaterial_property_friction>` instead via :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_StaticBody2D_property_physics_material_override:
 
-- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
+.. rst-class:: classref-property
 
-+----------+--------------------------------------+
-| *Setter* | set_physics_material_override(value) |
-+----------+--------------------------------------+
-| *Getter* | get_physics_material_override()      |
-+----------+--------------------------------------+
+:ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
+
+.. rst-class:: classref-property-setget
+
+- void **set_physics_material_override** **(** :ref:`PhysicsMaterial<class_PhysicsMaterial>` value **)**
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **get_physics_material_override** **(** **)**
 
 The physics material override for the body.
 
@@ -120,3 +148,4 @@ If a material is assigned to this property, it will be used instead of any other
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

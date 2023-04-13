@@ -12,43 +12,71 @@ VisualScriptEditor
 
 **Inherits:** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`add_custom_node<class_VisualScriptEditor_method_add_custom_node>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category, :ref:`Script<class_Script>` script **)** |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`remove_custom_node<class_VisualScriptEditor_method_remove_custom_node>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category **)**                               |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`add_custom_node<class_VisualScriptEditor_method_add_custom_node>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category, :ref:`Script<class_Script>` script **)** |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`remove_custom_node<class_VisualScriptEditor_method_remove_custom_node>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category **)**                               |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_VisualScriptEditor_signal_custom_nodes_updated:
 
-- **custom_nodes_updated** **(** **)**
+.. rst-class:: classref-signal
+
+**custom_nodes_updated** **(** **)**
 
 Emitted when a custom Visual Script node is added or removed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisualScriptEditor_method_add_custom_node:
 
-- void **add_custom_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category, :ref:`Script<class_Script>` script **)**
+.. rst-class:: classref-method
+
+void **add_custom_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category, :ref:`Script<class_Script>` script **)**
 
 Add a custom Visual Script node to the editor. It'll be placed under "Custom Nodes" with the ``category`` as the parameter.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptEditor_method_remove_custom_node:
 
-- void **remove_custom_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category **)**
+.. rst-class:: classref-method
+
+void **remove_custom_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` category **)**
 
 Remove a custom Visual Script node from the editor. Custom nodes already placed on scripts won't be removed.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

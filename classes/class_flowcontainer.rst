@@ -16,6 +16,8 @@ FlowContainer
 
 Base class for flow containers.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,22 +25,109 @@ Arranges child :ref:`Control<class_Control>` nodes vertically or horizontally in
 
 A line is filled with :ref:`Control<class_Control>` nodes until no more fit on the same line, similar to text in an autowrapped label.
 
+.. rst-class:: classref-reftable-group
+
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------+----------------------------------------------------------+-------+
+   | :ref:`AlignMode<enum_FlowContainer_AlignMode>` | :ref:`alignment<class_FlowContainer_property_alignment>` | ``0`` |
+   +------------------------------------------------+----------------------------------------------------------+-------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------+--------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_count<class_FlowContainer_method_get_line_count>` **(** **)** |const| |
-+-----------------------+--------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_line_count<class_FlowContainer_method_get_line_count>` **(** **)** |const| |
+   +-----------------------+--------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Enumerations
+------------
+
+.. _enum_FlowContainer_AlignMode:
+
+.. rst-class:: classref-enumeration
+
+enum **AlignMode**:
+
+.. _class_FlowContainer_constant_ALIGN_BEGIN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlignMode<enum_FlowContainer_AlignMode>` **ALIGN_BEGIN** = ``0``
+
+Aligns children with the beginning of the container.
+
+.. _class_FlowContainer_constant_ALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlignMode<enum_FlowContainer_AlignMode>` **ALIGN_CENTER** = ``1``
+
+Aligns children with the center of the container.
+
+.. _class_FlowContainer_constant_ALIGN_END:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlignMode<enum_FlowContainer_AlignMode>` **ALIGN_END** = ``2``
+
+Aligns children with the end of the container.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_FlowContainer_property_alignment:
+
+.. rst-class:: classref-property
+
+:ref:`AlignMode<enum_FlowContainer_AlignMode>` **alignment** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alignment** **(** :ref:`AlignMode<enum_FlowContainer_AlignMode>` value **)**
+- :ref:`AlignMode<enum_FlowContainer_AlignMode>` **get_alignment** **(** **)**
+
+The alignment of the container's children (must be one of :ref:`ALIGN_BEGIN<class_FlowContainer_constant_ALIGN_BEGIN>`, :ref:`ALIGN_CENTER<class_FlowContainer_constant_ALIGN_CENTER>` or :ref:`ALIGN_END<class_FlowContainer_constant_ALIGN_END>`).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_FlowContainer_method_get_line_count:
 
-- :ref:`int<class_int>` **get_line_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
 Returns the current line count.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

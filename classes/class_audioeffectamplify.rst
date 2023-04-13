@@ -16,35 +16,48 @@ Adds an amplifying audio effect to an audio bus.
 
 Increases or decreases the volume of the selected audio bus.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Increases or decreases the volume being routed through the audio bus.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`volume_db<class_AudioEffectAmplify_property_volume_db>` | ``0.0`` |
-+---------------------------+---------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`volume_db<class_AudioEffectAmplify_property_volume_db>` | ``0.0`` |
+   +---------------------------+---------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioEffectAmplify_property_volume_db:
 
-- :ref:`float<class_float>` **volume_db**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0.0``              |
-+-----------+----------------------+
-| *Setter*  | set_volume_db(value) |
-+-----------+----------------------+
-| *Getter*  | get_volume_db()      |
-+-----------+----------------------+
+:ref:`float<class_float>` **volume_db** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_volume_db** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_volume_db** **(** **)**
 
 Amount of amplification in decibels. Positive values make the sound louder, negative values make it quieter. Value can range from -80 to 24.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

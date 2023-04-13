@@ -14,51 +14,67 @@ AudioStreamRandomPitch
 
 Plays audio with random pitch shifting.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Randomly varies pitch on each start.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------+-------------------------------------------------------------------------+---------+
-| :ref:`AudioStream<class_AudioStream>` | :ref:`audio_stream<class_AudioStreamRandomPitch_property_audio_stream>` |         |
-+---------------------------------------+-------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`             | :ref:`random_pitch<class_AudioStreamRandomPitch_property_random_pitch>` | ``1.1`` |
-+---------------------------------------+-------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+-------------------------------------------------------------------------+---------+
+   | :ref:`AudioStream<class_AudioStream>` | :ref:`audio_stream<class_AudioStreamRandomPitch_property_audio_stream>` |         |
+   +---------------------------------------+-------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>`             | :ref:`random_pitch<class_AudioStreamRandomPitch_property_random_pitch>` | ``1.1`` |
+   +---------------------------------------+-------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioStreamRandomPitch_property_audio_stream:
 
-- :ref:`AudioStream<class_AudioStream>` **audio_stream**
+.. rst-class:: classref-property
 
-+----------+-------------------------+
-| *Setter* | set_audio_stream(value) |
-+----------+-------------------------+
-| *Getter* | get_audio_stream()      |
-+----------+-------------------------+
+:ref:`AudioStream<class_AudioStream>` **audio_stream**
+
+.. rst-class:: classref-property-setget
+
+- void **set_audio_stream** **(** :ref:`AudioStream<class_AudioStream>` value **)**
+- :ref:`AudioStream<class_AudioStream>` **get_audio_stream** **(** **)**
 
 The current :ref:`AudioStream<class_AudioStream>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AudioStreamRandomPitch_property_random_pitch:
 
-- :ref:`float<class_float>` **random_pitch**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``1.1``                 |
-+-----------+-------------------------+
-| *Setter*  | set_random_pitch(value) |
-+-----------+-------------------------+
-| *Getter*  | get_random_pitch()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **random_pitch** = ``1.1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_random_pitch** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_random_pitch** **(** **)**
 
 The intensity of random pitch variation.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

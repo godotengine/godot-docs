@@ -12,6 +12,8 @@ int
 
 Integer built-in type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -19,7 +21,7 @@ Signed 64-bit integer type.
 
 It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854775808, 9223372036854775807]``. Exceeding those bounds will wrap around.
 
-\ ``int`` is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
+\ **int** is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
 
 ::
 
@@ -34,38 +36,60 @@ It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854
     max_int += 1
     print(max_int) # -9223372036854775808, we overflowed and wrapped around.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`bool<class_bool>` from **)**     |
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`float<class_float>` from **)**   |
-+-----------------------+-------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`String<class_String>` from **)** |
-+-----------------------+-------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`bool<class_bool>` from **)**     |
+   +-----------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`float<class_float>` from **)**   |
+   +-----------------------+-------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`int<class_int_method_int>` **(** :ref:`String<class_String>` from **)** |
+   +-----------------------+-------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_int_method_int:
 
-- :ref:`int<class_int>` **int** **(** :ref:`bool<class_bool>` from **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **int** **(** :ref:`bool<class_bool>` from **)**
 
 Cast a :ref:`bool<class_bool>` value to an integer value, ``int(true)`` will be equals to 1 and ``int(false)`` will be equals to 0.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)**
 
 Cast a float value to an integer value, this method simply removes the number fractions (i.e. rounds ``from`` towards zero), so for example ``int(2.7)`` will be equals to 2, ``int(0.1)`` will be equals to 0 and ``int(-2.7)`` will be equals to -2. This operation is also called truncation.
 
+.. rst-class:: classref-item-separator
+
 ----
 
-- :ref:`int<class_int>` **int** **(** :ref:`String<class_String>` from **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **int** **(** :ref:`String<class_String>` from **)**
 
 Cast a :ref:`String<class_String>` value to an integer value, this method is an integer parser from a string, so calling this method with an invalid integer string will return 0, a valid string will be something like ``'1.7'``. This method will ignore all non-number characters, so calling ``int('1e3')`` will return 13.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

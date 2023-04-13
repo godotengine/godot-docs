@@ -14,10 +14,12 @@ ScriptCreateDialog
 
 The Editor's popup dialog for creating new :ref:`Script<class_Script>` files.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-The ``ScriptCreateDialog`` creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Popup.popup<class_Popup_method_popup>` methods.
+The **ScriptCreateDialog** creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the :ref:`Popup.popup<class_Popup_method_popup>` methods.
 
 ::
 
@@ -26,46 +28,73 @@ The ``ScriptCreateDialog`` creates script files according to a given template fo
         dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # For script types
         dialog.popup_centered()
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | dialog_hide_on_ok | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`)           |
-+-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | margin_bottom     | ``258.0`` (overrides :ref:`Control<class_Control_property_margin_bottom>`)                         |
-+-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | margin_right      | ``366.0`` (overrides :ref:`Control<class_Control_property_margin_right>`)                          |
-+-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | rect_size         | ``Vector2( 366, 258 )`` (overrides :ref:`Control<class_Control_property_rect_size>`)               |
-+-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | window_title      | ``"Attach Node Script"`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
-+-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | dialog_hide_on_ok | ``false`` (overrides :ref:`AcceptDialog<class_AcceptDialog_property_dialog_hide_on_ok>`)           |
+   +-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | margin_bottom     | ``258.0`` (overrides :ref:`Control<class_Control_property_margin_bottom>`)                         |
+   +-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | margin_right      | ``366.0`` (overrides :ref:`Control<class_Control_property_margin_right>`)                          |
+   +-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | rect_size         | ``Vector2( 366, 258 )`` (overrides :ref:`Control<class_Control_property_rect_size>`)               |
+   +-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | window_title      | ``"Attach Node Script"`` (overrides :ref:`WindowDialog<class_WindowDialog_property_window_title>`) |
+   +-------------------------------+-------------------+----------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`config<class_ScriptCreateDialog_method_config>` **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true, :ref:`bool<class_bool>` load_enabled=true **)** |
-+------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`config<class_ScriptCreateDialog_method_config>` **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true, :ref:`bool<class_bool>` load_enabled=true **)** |
+   +------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_ScriptCreateDialog_signal_script_created:
 
-- **script_created** **(** :ref:`Script<class_Script>` script **)**
+.. rst-class:: classref-signal
+
+**script_created** **(** :ref:`Script<class_Script>` script **)**
 
 Emitted when the user clicks the OK button.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ScriptCreateDialog_method_config:
 
-- void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true, :ref:`bool<class_bool>` load_enabled=true **)**
+.. rst-class:: classref-method
+
+void **config** **(** :ref:`String<class_String>` inherits, :ref:`String<class_String>` path, :ref:`bool<class_bool>` built_in_enabled=true, :ref:`bool<class_bool>` load_enabled=true **)**
 
 Prefills required fields to configure the ScriptCreateDialog for use.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

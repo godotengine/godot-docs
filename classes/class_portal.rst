@@ -14,10 +14,12 @@ Portal
 
 Portal nodes are used to enable visibility between :ref:`Room<class_Room>`\ s.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``Portal``\ s are a special type of :ref:`MeshInstance<class_MeshInstance>` that allow the portal culling system to 'see' from one room to the next. They often correspond to doors and windows in level geometry. By only allowing :ref:`Camera<class_Camera>`\ s to see through portals, this allows the system to cull out all the objects in rooms that cannot be seen through portals. This is a form of **occlusion culling**, and can greatly increase performance.
+**Portal**\ s are a special type of :ref:`MeshInstance<class_MeshInstance>` that allow the portal culling system to 'see' from one room to the next. They often correspond to doors and windows in level geometry. By only allowing :ref:`Camera<class_Camera>`\ s to see through portals, this allows the system to cull out all the objects in rooms that cannot be seen through portals. This is a form of **occlusion culling**, and can greatly increase performance.
 
 There are some limitations to the form of portals:
 
@@ -25,142 +27,173 @@ They must be single sided convex polygons, and usually you would orientate their
 
 There is no need to place an opposite portal in an adjacent room, links are made two-way automatically.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
-| :ref:`NodePath<class_NodePath>`                 | :ref:`linked_room<class_Portal_property_linked_room>`               | ``NodePath("")``                                   |
-+-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_Portal_property_points>`                         | ``PoolVector2Array( 1, -1, 1, 1, -1, 1, -1, -1 )`` |
-+-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`portal_active<class_Portal_property_portal_active>`           | ``true``                                           |
-+-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
-| :ref:`float<class_float>`                       | :ref:`portal_margin<class_Portal_property_portal_margin>`           | ``1.0``                                            |
-+-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`two_way<class_Portal_property_two_way>`                       | ``true``                                           |
-+-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`use_default_margin<class_Portal_property_use_default_margin>` | ``true``                                           |
-+-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
+   | :ref:`NodePath<class_NodePath>`                 | :ref:`linked_room<class_Portal_property_linked_room>`               | ``NodePath("")``                                   |
+   +-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
+   | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_Portal_property_points>`                         | ``PoolVector2Array( 1, -1, 1, 1, -1, 1, -1, -1 )`` |
+   +-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`portal_active<class_Portal_property_portal_active>`           | ``true``                                           |
+   +-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
+   | :ref:`float<class_float>`                       | :ref:`portal_margin<class_Portal_property_portal_margin>`           | ``1.0``                                            |
+   +-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`two_way<class_Portal_property_two_way>`                       | ``true``                                           |
+   +-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`use_default_margin<class_Portal_property_use_default_margin>` | ``true``                                           |
+   +-------------------------------------------------+---------------------------------------------------------------------+----------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_point<class_Portal_method_set_point>` **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)** |
-+------+---------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+---------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_point<class_Portal_method_set_point>` **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)** |
+   +------+---------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Portal_property_linked_room:
 
-- :ref:`NodePath<class_NodePath>` **linked_room**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``NodePath("")``       |
-+-----------+------------------------+
-| *Setter*  | set_linked_room(value) |
-+-----------+------------------------+
-| *Getter*  | get_linked_room()      |
-+-----------+------------------------+
+:ref:`NodePath<class_NodePath>` **linked_room** = ``NodePath("")``
 
-This is a shortcut for setting the linked :ref:`Room<class_Room>` in the name of the ``Portal`` (the name is used during conversion).
+.. rst-class:: classref-property-setget
+
+- void **set_linked_room** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_linked_room** **(** **)**
+
+This is a shortcut for setting the linked :ref:`Room<class_Room>` in the name of the **Portal** (the name is used during conversion).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Portal_property_points:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------------------------+
-| *Default* | ``PoolVector2Array( 1, -1, 1, 1, -1, 1, -1, -1 )`` |
-+-----------+----------------------------------------------------+
-| *Setter*  | set_points(value)                                  |
-+-----------+----------------------------------------------------+
-| *Getter*  | get_points()                                       |
-+-----------+----------------------------------------------------+
+:ref:`PoolVector2Array<class_PoolVector2Array>` **points** = ``PoolVector2Array( 1, -1, 1, 1, -1, 1, -1, -1 )``
 
-The points defining the shape of the ``Portal`` polygon (which should be convex).
+.. rst-class:: classref-property-setget
 
-These are defined in 2D, with ``0,0`` being the origin of the ``Portal`` node's :ref:`Spatial.global_transform<class_Spatial_property_global_transform>`.
+- void **set_points** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` value **)**
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_points** **(** **)**
+
+The points defining the shape of the **Portal** polygon (which should be convex).
+
+These are defined in 2D, with ``0,0`` being the origin of the **Portal** node's :ref:`Spatial.global_transform<class_Spatial_property_global_transform>`.
 
 \ **Note:** These raw points are sanitized for winding order internally.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Portal_property_portal_active:
 
-- :ref:`bool<class_bool>` **portal_active**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``true``                 |
-+-----------+--------------------------+
-| *Setter*  | set_portal_active(value) |
-+-----------+--------------------------+
-| *Getter*  | get_portal_active()      |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **portal_active** = ``true``
 
-Visibility through ``Portal``\ s can be turned on and off at runtime - this is useful for having closable doors.
+.. rst-class:: classref-property-setget
+
+- void **set_portal_active** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_portal_active** **(** **)**
+
+Visibility through **Portal**\ s can be turned on and off at runtime - this is useful for having closable doors.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Portal_property_portal_margin:
 
-- :ref:`float<class_float>` **portal_margin**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``1.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_portal_margin(value) |
-+-----------+--------------------------+
-| *Getter*  | get_portal_margin()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **portal_margin** = ``1.0``
 
-Some objects are so big that they may be present in more than one :ref:`Room<class_Room>` ('sprawling'). As we often don't want objects that \*just\* breach the edges to be assigned to neighbouring rooms, you can assign an extra margin through the ``Portal`` to allow objects to breach without sprawling.
+.. rst-class:: classref-property-setget
+
+- void **set_portal_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_portal_margin** **(** **)**
+
+Some objects are so big that they may be present in more than one :ref:`Room<class_Room>` ('sprawling'). As we often don't want objects that \*just\* breach the edges to be assigned to neighbouring rooms, you can assign an extra margin through the **Portal** to allow objects to breach without sprawling.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Portal_property_two_way:
 
-- :ref:`bool<class_bool>` **two_way**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``true``           |
-+-----------+--------------------+
-| *Setter*  | set_two_way(value) |
-+-----------+--------------------+
-| *Getter*  | is_two_way()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **two_way** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_two_way** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_two_way** **(** **)**
 
 Portals default to being two way - see through in both directions, however you can make them one way, visible from the source room only.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Portal_property_use_default_margin:
 
-- :ref:`bool<class_bool>` **use_default_margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``true``                      |
-+-----------+-------------------------------+
-| *Setter*  | set_use_default_margin(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_use_default_margin()      |
-+-----------+-------------------------------+
+:ref:`bool<class_bool>` **use_default_margin** = ``true``
 
-In most cases you will want to use the default ``Portal`` margin in your portals (this is set in the :ref:`RoomManager<class_RoomManager>`).
+.. rst-class:: classref-property-setget
+
+- void **set_use_default_margin** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_use_default_margin** **(** **)**
+
+In most cases you will want to use the default **Portal** margin in your portals (this is set in the :ref:`RoomManager<class_RoomManager>`).
 
 If you want to override this default, set this value to ``false``, and the local :ref:`portal_margin<class_Portal_property_portal_margin>` will take effect.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Portal_method_set_point:
 
-- void **set_point** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**
+.. rst-class:: classref-method
+
+void **set_point** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**
 
 Sets individual points. Primarily for use by the editor.
+
+\ **Note:** This function will not resize the point array. Set :ref:`points<class_Portal_property_points>` to set the number of points.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

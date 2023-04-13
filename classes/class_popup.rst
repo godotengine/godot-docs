@@ -16,133 +16,205 @@ Popup
 
 Base container control for popups and dialogs.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior. All popup methods ensure correct placement within the viewport.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`popup_exclusive<class_Popup_property_popup_exclusive>` | ``false``                                                                  |
-+-------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | visible                                                      | ``false`` (overrides :ref:`CanvasItem<class_CanvasItem_property_visible>`) |
-+-------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`popup_exclusive<class_Popup_property_popup_exclusive>` | ``false``                                                                  |
+   +-------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | visible                                                      | ``false`` (overrides :ref:`CanvasItem<class_CanvasItem_property_visible>`) |
+   +-------------------------+--------------------------------------------------------------+----------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`popup<class_Popup_method_popup>` **(** :ref:`Rect2<class_Rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**                                                                                |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`popup_centered<class_Popup_method_popup_centered>` **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**                                                                |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`popup_centered_clamped<class_Popup_method_popup_centered_clamped>` **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ), :ref:`float<class_float>` fallback_ratio=0.75 **)** |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`popup_centered_minsize<class_Popup_method_popup_centered_minsize>` **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)**                                             |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`popup_centered_ratio<class_Popup_method_popup_centered_ratio>` **(** :ref:`float<class_float>` ratio=0.75 **)**                                                                  |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_as_minsize<class_Popup_method_set_as_minsize>` **(** **)**                                                                                                                   |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`popup<class_Popup_method_popup>` **(** :ref:`Rect2<class_Rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**                                                                                |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`popup_centered<class_Popup_method_popup_centered>` **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**                                                                |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`popup_centered_clamped<class_Popup_method_popup_centered_clamped>` **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ), :ref:`float<class_float>` fallback_ratio=0.75 **)** |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`popup_centered_minsize<class_Popup_method_popup_centered_minsize>` **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)**                                             |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`popup_centered_ratio<class_Popup_method_popup_centered_ratio>` **(** :ref:`float<class_float>` ratio=0.75 **)**                                                                  |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_as_minsize<class_Popup_method_set_as_minsize>` **(** **)**                                                                                                                   |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Popup_signal_about_to_show:
 
-- **about_to_show** **(** **)**
+.. rst-class:: classref-signal
+
+**about_to_show** **(** **)**
 
 Emitted when a popup is about to be shown. This is often used in :ref:`PopupMenu<class_PopupMenu>` to clear the list of options then create a new one according to the current context.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Popup_signal_popup_hide:
 
-- **popup_hide** **(** **)**
+.. rst-class:: classref-signal
+
+**popup_hide** **(** **)**
 
 Emitted when a popup is hidden.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_Popup_constant_NOTIFICATION_POST_POPUP:
 
+.. rst-class:: classref-constant
+
+**NOTIFICATION_POST_POPUP** = ``80``
+
+Notification sent right after the popup is shown.
+
 .. _class_Popup_constant_NOTIFICATION_POPUP_HIDE:
 
-- **NOTIFICATION_POST_POPUP** = **80** --- Notification sent right after the popup is shown.
+.. rst-class:: classref-constant
 
-- **NOTIFICATION_POPUP_HIDE** = **81** --- Notification sent right after the popup is hidden.
+**NOTIFICATION_POPUP_HIDE** = ``81``
+
+Notification sent right after the popup is hidden.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Popup_property_popup_exclusive:
 
-- :ref:`bool<class_bool>` **popup_exclusive**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_exclusive(value) |
-+-----------+----------------------+
-| *Getter*  | is_exclusive()       |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **popup_exclusive** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_exclusive** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_exclusive** **(** **)**
 
 If ``true``, the popup will not be hidden when a click event occurs outside of it, or when it receives the ``ui_cancel`` action event.
 
 \ **Note:** Enabling this property doesn't affect the Close or Cancel buttons' behavior in dialogs that inherit from this class. As a workaround, you can use :ref:`WindowDialog.get_close_button<class_WindowDialog_method_get_close_button>` or :ref:`ConfirmationDialog.get_cancel<class_ConfirmationDialog_method_get_cancel>` and hide the buttons in question by setting their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property to ``false``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Popup_method_popup:
 
-- void **popup** **(** :ref:`Rect2<class_Rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**
+.. rst-class:: classref-method
+
+void **popup** **(** :ref:`Rect2<class_Rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**
 
 Popup (show the control in modal form).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Popup_method_popup_centered:
 
-- void **popup_centered** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**
+.. rst-class:: classref-method
+
+void **popup_centered** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**
 
 Popup (show the control in modal form) in the center of the screen relative to its current canvas transform, at the current size, or at a size determined by ``size``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Popup_method_popup_centered_clamped:
 
-- void **popup_centered_clamped** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ), :ref:`float<class_float>` fallback_ratio=0.75 **)**
+.. rst-class:: classref-method
+
+void **popup_centered_clamped** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ), :ref:`float<class_float>` fallback_ratio=0.75 **)**
 
 Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, clamping the size to ``size``, then ensuring the popup is no larger than the viewport size multiplied by ``fallback_ratio``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Popup_method_popup_centered_minsize:
 
-- void **popup_centered_minsize** **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)**
+.. rst-class:: classref-method
+
+void **popup_centered_minsize** **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)**
 
 Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, ensuring the size is never smaller than ``minsize``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Popup_method_popup_centered_ratio:
 
-- void **popup_centered_ratio** **(** :ref:`float<class_float>` ratio=0.75 **)**
+.. rst-class:: classref-method
+
+void **popup_centered_ratio** **(** :ref:`float<class_float>` ratio=0.75 **)**
 
 Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, scaled at a ratio of size of the screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Popup_method_set_as_minsize:
 
-- void **set_as_minsize** **(** **)**
+.. rst-class:: classref-method
+
+void **set_as_minsize** **(** **)**
 
 Shrink popup to keep to the minimum size of content.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

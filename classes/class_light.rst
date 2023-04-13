@@ -16,10 +16,14 @@ Light
 
 Provides a base class for different kinds of light nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Light is the *abstract* base class for light nodes. As it can't be instanced, it shouldn't be used directly. Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,389 +32,524 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`              | :ref:`editor_only<class_Light_property_editor_only>`                           | ``false``               |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`BakeMode<enum_Light_BakeMode>` | :ref:`light_bake_mode<class_Light_property_light_bake_mode>`                   | ``1``                   |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`            | :ref:`light_color<class_Light_property_light_color>`                           | ``Color( 1, 1, 1, 1 )`` |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                | :ref:`light_cull_mask<class_Light_property_light_cull_mask>`                   | ``4294967295``          |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`            | :ref:`light_energy<class_Light_property_light_energy>`                         | ``1.0``                 |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`            | :ref:`light_indirect_energy<class_Light_property_light_indirect_energy>`       | ``1.0``                 |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`              | :ref:`light_negative<class_Light_property_light_negative>`                     | ``false``               |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`            | :ref:`light_size<class_Light_property_light_size>`                             | ``0.0``                 |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`            | :ref:`light_specular<class_Light_property_light_specular>`                     | ``0.5``                 |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`            | :ref:`shadow_bias<class_Light_property_shadow_bias>`                           | ``0.15``                |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`            | :ref:`shadow_color<class_Light_property_shadow_color>`                         | ``Color( 0, 0, 0, 1 )`` |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`            | :ref:`shadow_contact<class_Light_property_shadow_contact>`                     | ``0.0``                 |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`              | :ref:`shadow_enabled<class_Light_property_shadow_enabled>`                     | ``false``               |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`              | :ref:`shadow_reverse_cull_face<class_Light_property_shadow_reverse_cull_face>` | ``false``               |
-+--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`              | :ref:`editor_only<class_Light_property_editor_only>`                           | ``false``               |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`BakeMode<enum_Light_BakeMode>` | :ref:`light_bake_mode<class_Light_property_light_bake_mode>`                   | ``1``                   |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`            | :ref:`light_color<class_Light_property_light_color>`                           | ``Color( 1, 1, 1, 1 )`` |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                | :ref:`light_cull_mask<class_Light_property_light_cull_mask>`                   | ``4294967295``          |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`            | :ref:`light_energy<class_Light_property_light_energy>`                         | ``1.0``                 |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`            | :ref:`light_indirect_energy<class_Light_property_light_indirect_energy>`       | ``1.0``                 |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`              | :ref:`light_negative<class_Light_property_light_negative>`                     | ``false``               |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`            | :ref:`light_size<class_Light_property_light_size>`                             | ``0.0``                 |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`            | :ref:`light_specular<class_Light_property_light_specular>`                     | ``0.5``                 |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`            | :ref:`shadow_bias<class_Light_property_shadow_bias>`                           | ``0.15``                |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`            | :ref:`shadow_color<class_Light_property_shadow_color>`                         | ``Color( 0, 0, 0, 1 )`` |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`            | :ref:`shadow_contact<class_Light_property_shadow_contact>`                     | ``0.0``                 |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`              | :ref:`shadow_enabled<class_Light_property_shadow_enabled>`                     | ``false``               |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`              | :ref:`shadow_reverse_cull_face<class_Light_property_shadow_reverse_cull_face>` | ``false``               |
+   +--------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_param<class_Light_method_get_param>` **(** :ref:`Param<enum_Light_Param>` param **)** |const|                          |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_param<class_Light_method_set_param>` **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)** |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_param<class_Light_method_get_param>` **(** :ref:`Param<enum_Light_Param>` param **)** |const|                          |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_param<class_Light_method_set_param>` **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)** |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Light_Param:
 
-.. _class_Light_constant_PARAM_ENERGY:
-
-.. _class_Light_constant_PARAM_INDIRECT_ENERGY:
-
-.. _class_Light_constant_PARAM_SIZE:
-
-.. _class_Light_constant_PARAM_SPECULAR:
-
-.. _class_Light_constant_PARAM_RANGE:
-
-.. _class_Light_constant_PARAM_ATTENUATION:
-
-.. _class_Light_constant_PARAM_SPOT_ANGLE:
-
-.. _class_Light_constant_PARAM_SPOT_ATTENUATION:
-
-.. _class_Light_constant_PARAM_CONTACT_SHADOW_SIZE:
-
-.. _class_Light_constant_PARAM_SHADOW_MAX_DISTANCE:
-
-.. _class_Light_constant_PARAM_SHADOW_SPLIT_1_OFFSET:
-
-.. _class_Light_constant_PARAM_SHADOW_SPLIT_2_OFFSET:
-
-.. _class_Light_constant_PARAM_SHADOW_SPLIT_3_OFFSET:
-
-.. _class_Light_constant_PARAM_SHADOW_NORMAL_BIAS:
-
-.. _class_Light_constant_PARAM_SHADOW_BIAS:
-
-.. _class_Light_constant_PARAM_SHADOW_BIAS_SPLIT_SCALE:
-
-.. _class_Light_constant_PARAM_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Param**:
 
-- **PARAM_ENERGY** = **0** --- Constant for accessing :ref:`light_energy<class_Light_property_light_energy>`.
+.. _class_Light_constant_PARAM_ENERGY:
 
-- **PARAM_INDIRECT_ENERGY** = **1** --- Constant for accessing :ref:`light_indirect_energy<class_Light_property_light_indirect_energy>`.
+.. rst-class:: classref-enumeration-constant
 
-- **PARAM_SIZE** = **2** --- Constant for accessing :ref:`light_size<class_Light_property_light_size>`.
+:ref:`Param<enum_Light_Param>` **PARAM_ENERGY** = ``0``
 
-- **PARAM_SPECULAR** = **3** --- Constant for accessing :ref:`light_specular<class_Light_property_light_specular>`.
+Constant for accessing :ref:`light_energy<class_Light_property_light_energy>`.
 
-- **PARAM_RANGE** = **4** --- Constant for accessing :ref:`OmniLight.omni_range<class_OmniLight_property_omni_range>` or :ref:`SpotLight.spot_range<class_SpotLight_property_spot_range>`.
+.. _class_Light_constant_PARAM_INDIRECT_ENERGY:
 
-- **PARAM_ATTENUATION** = **5** --- Constant for accessing :ref:`OmniLight.omni_attenuation<class_OmniLight_property_omni_attenuation>` or :ref:`SpotLight.spot_attenuation<class_SpotLight_property_spot_attenuation>`.
+.. rst-class:: classref-enumeration-constant
 
-- **PARAM_SPOT_ANGLE** = **6** --- Constant for accessing :ref:`SpotLight.spot_angle<class_SpotLight_property_spot_angle>`.
+:ref:`Param<enum_Light_Param>` **PARAM_INDIRECT_ENERGY** = ``1``
 
-- **PARAM_SPOT_ATTENUATION** = **7** --- Constant for accessing :ref:`SpotLight.spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>`.
+Constant for accessing :ref:`light_indirect_energy<class_Light_property_light_indirect_energy>`.
 
-- **PARAM_CONTACT_SHADOW_SIZE** = **8** --- Constant for accessing :ref:`shadow_contact<class_Light_property_shadow_contact>`.
+.. _class_Light_constant_PARAM_SIZE:
 
-- **PARAM_SHADOW_MAX_DISTANCE** = **9** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`.
+.. rst-class:: classref-enumeration-constant
 
-- **PARAM_SHADOW_SPLIT_1_OFFSET** = **10** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_1<class_DirectionalLight_property_directional_shadow_split_1>`.
+:ref:`Param<enum_Light_Param>` **PARAM_SIZE** = ``2``
 
-- **PARAM_SHADOW_SPLIT_2_OFFSET** = **11** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_2<class_DirectionalLight_property_directional_shadow_split_2>`.
+Constant for accessing :ref:`light_size<class_Light_property_light_size>`.
 
-- **PARAM_SHADOW_SPLIT_3_OFFSET** = **12** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_split_3<class_DirectionalLight_property_directional_shadow_split_3>`.
+.. _class_Light_constant_PARAM_SPECULAR:
 
-- **PARAM_SHADOW_NORMAL_BIAS** = **13** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_normal_bias<class_DirectionalLight_property_directional_shadow_normal_bias>`.
+.. rst-class:: classref-enumeration-constant
 
-- **PARAM_SHADOW_BIAS** = **14** --- Constant for accessing :ref:`shadow_bias<class_Light_property_shadow_bias>`.
+:ref:`Param<enum_Light_Param>` **PARAM_SPECULAR** = ``3``
 
-- **PARAM_SHADOW_BIAS_SPLIT_SCALE** = **15** --- Constant for accessing :ref:`DirectionalLight.directional_shadow_bias_split_scale<class_DirectionalLight_property_directional_shadow_bias_split_scale>`.
+Constant for accessing :ref:`light_specular<class_Light_property_light_specular>`.
 
-- **PARAM_MAX** = **16** --- Represents the size of the :ref:`Param<enum_Light_Param>` enum.
+.. _class_Light_constant_PARAM_RANGE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_RANGE** = ``4``
+
+Constant for accessing :ref:`OmniLight.omni_range<class_OmniLight_property_omni_range>` or :ref:`SpotLight.spot_range<class_SpotLight_property_spot_range>`.
+
+.. _class_Light_constant_PARAM_ATTENUATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_ATTENUATION** = ``5``
+
+Constant for accessing :ref:`OmniLight.omni_attenuation<class_OmniLight_property_omni_attenuation>` or :ref:`SpotLight.spot_attenuation<class_SpotLight_property_spot_attenuation>`.
+
+.. _class_Light_constant_PARAM_SPOT_ANGLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_SPOT_ANGLE** = ``6``
+
+Constant for accessing :ref:`SpotLight.spot_angle<class_SpotLight_property_spot_angle>`.
+
+.. _class_Light_constant_PARAM_SPOT_ATTENUATION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_SPOT_ATTENUATION** = ``7``
+
+Constant for accessing :ref:`SpotLight.spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>`.
+
+.. _class_Light_constant_PARAM_CONTACT_SHADOW_SIZE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_CONTACT_SHADOW_SIZE** = ``8``
+
+Constant for accessing :ref:`shadow_contact<class_Light_property_shadow_contact>`.
+
+.. _class_Light_constant_PARAM_SHADOW_MAX_DISTANCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_SHADOW_MAX_DISTANCE** = ``9``
+
+Constant for accessing :ref:`DirectionalLight.directional_shadow_max_distance<class_DirectionalLight_property_directional_shadow_max_distance>`.
+
+.. _class_Light_constant_PARAM_SHADOW_SPLIT_1_OFFSET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_SHADOW_SPLIT_1_OFFSET** = ``10``
+
+Constant for accessing :ref:`DirectionalLight.directional_shadow_split_1<class_DirectionalLight_property_directional_shadow_split_1>`.
+
+.. _class_Light_constant_PARAM_SHADOW_SPLIT_2_OFFSET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_SHADOW_SPLIT_2_OFFSET** = ``11``
+
+Constant for accessing :ref:`DirectionalLight.directional_shadow_split_2<class_DirectionalLight_property_directional_shadow_split_2>`.
+
+.. _class_Light_constant_PARAM_SHADOW_SPLIT_3_OFFSET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_SHADOW_SPLIT_3_OFFSET** = ``12``
+
+Constant for accessing :ref:`DirectionalLight.directional_shadow_split_3<class_DirectionalLight_property_directional_shadow_split_3>`.
+
+.. _class_Light_constant_PARAM_SHADOW_NORMAL_BIAS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_SHADOW_NORMAL_BIAS** = ``13``
+
+Constant for accessing :ref:`DirectionalLight.directional_shadow_normal_bias<class_DirectionalLight_property_directional_shadow_normal_bias>`.
+
+.. _class_Light_constant_PARAM_SHADOW_BIAS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_SHADOW_BIAS** = ``14``
+
+Constant for accessing :ref:`shadow_bias<class_Light_property_shadow_bias>`.
+
+.. _class_Light_constant_PARAM_SHADOW_BIAS_SPLIT_SCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_SHADOW_BIAS_SPLIT_SCALE** = ``15``
+
+Constant for accessing :ref:`DirectionalLight.directional_shadow_bias_split_scale<class_DirectionalLight_property_directional_shadow_bias_split_scale>`.
+
+.. _class_Light_constant_PARAM_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Param<enum_Light_Param>` **PARAM_MAX** = ``16``
+
+Represents the size of the :ref:`Param<enum_Light_Param>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Light_BakeMode:
 
-.. _class_Light_constant_BAKE_DISABLED:
-
-.. _class_Light_constant_BAKE_INDIRECT:
-
-.. _class_Light_constant_BAKE_ALL:
+.. rst-class:: classref-enumeration
 
 enum **BakeMode**:
 
-- **BAKE_DISABLED** = **0** --- Light is ignored when baking.
+.. _class_Light_constant_BAKE_DISABLED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeMode<enum_Light_BakeMode>` **BAKE_DISABLED** = ``0``
+
+Light is ignored when baking.
 
 \ **Note:** Hiding a light does *not* affect baking.
 
-- **BAKE_INDIRECT** = **1** --- Only indirect lighting will be baked (default).
+.. _class_Light_constant_BAKE_INDIRECT:
 
-- **BAKE_ALL** = **2** --- Both direct and indirect light will be baked.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeMode<enum_Light_BakeMode>` **BAKE_INDIRECT** = ``1``
+
+Only indirect lighting will be baked (default).
+
+.. _class_Light_constant_BAKE_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BakeMode<enum_Light_BakeMode>` **BAKE_ALL** = ``2``
+
+Both direct and indirect light will be baked.
 
 \ **Note:** You should hide the light if you don't want it to appear twice (dynamic and baked).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Light_property_editor_only:
 
-- :ref:`bool<class_bool>` **editor_only**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_editor_only(value) |
-+-----------+------------------------+
-| *Getter*  | is_editor_only()       |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **editor_only** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_editor_only** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_editor_only** **(** **)**
 
 If ``true``, the light only appears in the editor and will not be visible at runtime.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_light_bake_mode:
 
-- :ref:`BakeMode<enum_Light_BakeMode>` **light_bake_mode**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1``                |
-+-----------+----------------------+
-| *Setter*  | set_bake_mode(value) |
-+-----------+----------------------+
-| *Getter*  | get_bake_mode()      |
-+-----------+----------------------+
+:ref:`BakeMode<enum_Light_BakeMode>` **light_bake_mode** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bake_mode** **(** :ref:`BakeMode<enum_Light_BakeMode>` value **)**
+- :ref:`BakeMode<enum_Light_BakeMode>` **get_bake_mode** **(** **)**
 
 The light's bake mode. See :ref:`BakeMode<enum_Light_BakeMode>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_light_color:
 
-- :ref:`Color<class_Color>` **light_color**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_color(value)        |
-+-----------+-------------------------+
-| *Getter*  | get_color()             |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **light_color** = ``Color( 1, 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_color** **(** **)**
 
 The light's color. An *overbright* color can be used to achieve a result equivalent to increasing the light's :ref:`light_energy<class_Light_property_light_energy>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_light_cull_mask:
 
-- :ref:`int<class_int>` **light_cull_mask**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``4294967295``       |
-+-----------+----------------------+
-| *Setter*  | set_cull_mask(value) |
-+-----------+----------------------+
-| *Getter*  | get_cull_mask()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **light_cull_mask** = ``4294967295``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cull_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_cull_mask** **(** **)**
 
 The light will affect objects in the selected layers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_light_energy:
 
-- :ref:`float<class_float>` **light_energy**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1.0``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **light_energy** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** |const|
 
 The light's strength multiplier (this is not a physical unit). For :ref:`OmniLight<class_OmniLight>` and :ref:`SpotLight<class_SpotLight>`, changing this value will only change the light color's intensity, not the light's radius.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_light_indirect_energy:
 
-- :ref:`float<class_float>` **light_indirect_energy**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1.0``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **light_indirect_energy** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** |const|
 
 Secondary multiplier used with indirect light (light bounces). This works on both :ref:`BakedLightmap<class_BakedLightmap>` and :ref:`GIProbe<class_GIProbe>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_light_negative:
 
-- :ref:`bool<class_bool>` **light_negative**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_negative(value) |
-+-----------+---------------------+
-| *Getter*  | is_negative()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **light_negative** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_negative** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_negative** **(** **)**
 
 If ``true``, the light's effect is reversed, darkening areas and casting bright shadows.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_light_size:
 
-- :ref:`float<class_float>` **light_size**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0.0``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **light_size** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** |const|
 
 The size of the light in Godot units. Only considered in baked lightmaps and only if :ref:`light_bake_mode<class_Light_property_light_bake_mode>` is set to :ref:`BAKE_ALL<class_Light_constant_BAKE_ALL>`. Increasing this value will make the shadows appear blurrier. This can be used to simulate area lights to an extent.
+
+\ **Note:** :ref:`light_size<class_Light_property_light_size>` is not affected by :ref:`Spatial.scale<class_Spatial_property_scale>` (the light's scale or its parent's scale).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_light_specular:
 
-- :ref:`float<class_float>` **light_specular**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0.5``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **light_specular** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** |const|
 
 The intensity of the specular blob in objects affected by the light. At ``0``, the light becomes a pure diffuse light. When not baking emission, this can be used to avoid unrealistic reflections when placing lights above an emissive surface.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_shadow_bias:
 
-- :ref:`float<class_float>` **shadow_bias**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0.15``         |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **shadow_bias** = ``0.15``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** |const|
 
 Used to adjust shadow appearance. Too small a value results in self-shadowing ("shadow acne"), while too large a value causes shadows to separate from casters ("peter-panning"). Adjust as needed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_shadow_color:
 
-- :ref:`Color<class_Color>` **shadow_color**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_shadow_color(value) |
-+-----------+-------------------------+
-| *Getter*  | get_shadow_color()      |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **shadow_color** = ``Color( 0, 0, 0, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_shadow_color** **(** **)**
 
 The color of shadows cast by this light.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_shadow_contact:
 
-- :ref:`float<class_float>` **shadow_contact**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0.0``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **shadow_contact** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** |const|
 
 Attempts to reduce :ref:`shadow_bias<class_Light_property_shadow_bias>` gap by rendering screen-space contact shadows. This has a performance impact, especially at higher values.
 
 \ **Note:** Contact shadows can look broken, so leaving this property to ``0.0`` is recommended.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Light_property_shadow_enabled:
 
-- :ref:`bool<class_bool>` **shadow_enabled**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``false``         |
-+-----------+-------------------+
-| *Setter*  | set_shadow(value) |
-+-----------+-------------------+
-| *Getter*  | has_shadow()      |
-+-----------+-------------------+
+:ref:`bool<class_bool>` **shadow_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **has_shadow** **(** **)**
 
 If ``true``, the light will cast shadows.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_property_shadow_reverse_cull_face:
 
-- :ref:`bool<class_bool>` **shadow_reverse_cull_face**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``false``                           |
-+-----------+-------------------------------------+
-| *Setter*  | set_shadow_reverse_cull_face(value) |
-+-----------+-------------------------------------+
-| *Getter*  | get_shadow_reverse_cull_face()      |
-+-----------+-------------------------------------+
+:ref:`bool<class_bool>` **shadow_reverse_cull_face** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_reverse_cull_face** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_shadow_reverse_cull_face** **(** **)**
 
 If ``true``, reverses the backface culling of the mesh. This can be useful when you have a flat mesh that has a light behind it. If you need to cast a shadow on both sides of the mesh, set the mesh to use double-sided shadows with :ref:`GeometryInstance.SHADOW_CASTING_SETTING_DOUBLE_SIDED<class_GeometryInstance_constant_SHADOW_CASTING_SETTING_DOUBLE_SIDED>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Light_method_get_param:
 
-- :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_Light_Param>` param **)** |const|
 
 Returns the value of the specified :ref:`Param<enum_Light_Param>` parameter.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Light_method_set_param:
 
-- void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
+.. rst-class:: classref-method
+
+void **set_param** **(** :ref:`Param<enum_Light_Param>` param, :ref:`float<class_float>` value **)**
 
 Sets the value of the specified :ref:`Param<enum_Light_Param>` parameter.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

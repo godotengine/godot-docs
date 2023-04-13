@@ -14,27 +14,43 @@ PopupDialog
 
 Base class for popup dialogs.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 PopupDialog is a base class for popup dialogs, along with :ref:`WindowDialog<class_WindowDialog>`.
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PopupDialog_theme_style_panel>` |
-+---------------------------------+---------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_PopupDialog_theme_style_panel>` |
+   +---------------------------------+---------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_PopupDialog_theme_style_panel:
 
-- :ref:`StyleBox<class_StyleBox>` **panel**
+.. rst-class:: classref-themeproperty
 
-Sets a custom :ref:`StyleBox<class_StyleBox>` for the panel of the ``PopupDialog``.
+:ref:`StyleBox<class_StyleBox>` **panel**
+
+Sets a custom :ref:`StyleBox<class_StyleBox>` for the panel of the **PopupDialog**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

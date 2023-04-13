@@ -16,10 +16,14 @@ Mesh
 
 A :ref:`Resource<class_Resource>` that contains vertex array-based geometry.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Mesh is a type of :ref:`Resource<class_Resource>` that contains vertex array-based geometry, divided in *surfaces*. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is preferred to a single surface, because objects created in 3D editing software commonly contain multiple materials.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -32,256 +36,471 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+-------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` | ``Vector2( 0, 0 )`` |
-+-------------------------------+-------------------------------------------------------------------+---------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`lightmap_size_hint<class_Mesh_property_lightmap_size_hint>` | ``Vector2( 0, 0 )`` |
+   +-------------------------------+-------------------------------------------------------------------+---------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_Shape>`                       | :ref:`create_convex_shape<class_Mesh_method_create_convex_shape>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)** |const| |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                         | :ref:`create_outline<class_Mesh_method_create_outline>` **(** :ref:`float<class_float>` margin **)** |const|                                                     |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_Shape>`                       | :ref:`create_trimesh_shape<class_Mesh_method_create_trimesh_shape>` **(** **)** |const|                                                                          |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TriangleMesh<class_TriangleMesh>`         | :ref:`generate_triangle_mesh<class_Mesh_method_generate_triangle_mesh>` **(** **)** |const|                                                                      |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>`                         | :ref:`get_aabb<class_Mesh_method_get_aabb>` **(** **)** |const|                                                                                                  |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_Mesh_method_get_faces>` **(** **)** |const|                                                                                                |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_surface_count<class_Mesh_method_get_surface_count>` **(** **)** |const|                                                                                |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`surface_get_arrays<class_Mesh_method_surface_get_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                               |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`                       | :ref:`surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                       |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_Material>`                 | :ref:`surface_get_material<class_Mesh_method_surface_get_material>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                           |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`surface_set_material<class_Mesh_method_surface_set_material>` **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**         |
-+-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Shape<class_Shape>`                       | :ref:`create_convex_shape<class_Mesh_method_create_convex_shape>` **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)** |const| |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Mesh<class_Mesh>`                         | :ref:`create_outline<class_Mesh_method_create_outline>` **(** :ref:`float<class_float>` margin **)** |const|                                                     |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Shape<class_Shape>`                       | :ref:`create_trimesh_shape<class_Mesh_method_create_trimesh_shape>` **(** **)** |const|                                                                          |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TriangleMesh<class_TriangleMesh>`         | :ref:`generate_triangle_mesh<class_Mesh_method_generate_triangle_mesh>` **(** **)** |const|                                                                      |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>`                         | :ref:`get_aabb<class_Mesh_method_get_aabb>` **(** **)** |const|                                                                                                  |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`get_faces<class_Mesh_method_get_faces>` **(** **)** |const|                                                                                                |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`get_surface_count<class_Mesh_method_get_surface_count>` **(** **)** |const|                                                                                |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                       | :ref:`surface_get_arrays<class_Mesh_method_surface_get_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                               |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`                       | :ref:`surface_get_blend_shape_arrays<class_Mesh_method_surface_get_blend_shape_arrays>` **(** :ref:`int<class_int>` surf_idx **)** |const|                       |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Material<class_Material>`                 | :ref:`surface_get_material<class_Mesh_method_surface_get_material>` **(** :ref:`int<class_int>` surf_idx **)** |const|                                           |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`surface_set_material<class_Mesh_method_surface_set_material>` **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**         |
+   +-------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Mesh_PrimitiveType:
 
-.. _class_Mesh_constant_PRIMITIVE_POINTS:
-
-.. _class_Mesh_constant_PRIMITIVE_LINES:
-
-.. _class_Mesh_constant_PRIMITIVE_LINE_STRIP:
-
-.. _class_Mesh_constant_PRIMITIVE_LINE_LOOP:
-
-.. _class_Mesh_constant_PRIMITIVE_TRIANGLES:
-
-.. _class_Mesh_constant_PRIMITIVE_TRIANGLE_STRIP:
-
-.. _class_Mesh_constant_PRIMITIVE_TRIANGLE_FAN:
+.. rst-class:: classref-enumeration
 
 enum **PrimitiveType**:
 
-- **PRIMITIVE_POINTS** = **0** --- Render array as points (one vertex equals one point).
+.. _class_Mesh_constant_PRIMITIVE_POINTS:
 
-- **PRIMITIVE_LINES** = **1** --- Render array as lines (every two vertices a line is created).
+.. rst-class:: classref-enumeration-constant
 
-- **PRIMITIVE_LINE_STRIP** = **2** --- Render array as line strip.
+:ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **PRIMITIVE_POINTS** = ``0``
 
-- **PRIMITIVE_LINE_LOOP** = **3** --- Render array as line loop (like line strip, but closed).
+Render array as points (one vertex equals one point).
 
-- **PRIMITIVE_TRIANGLES** = **4** --- Render array as triangles (every three vertices a triangle is created).
+.. _class_Mesh_constant_PRIMITIVE_LINES:
 
-- **PRIMITIVE_TRIANGLE_STRIP** = **5** --- Render array as triangle strips.
+.. rst-class:: classref-enumeration-constant
 
-- **PRIMITIVE_TRIANGLE_FAN** = **6** --- Render array as triangle fans.
+:ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **PRIMITIVE_LINES** = ``1``
+
+Render array as lines (every two vertices a line is created).
+
+.. _class_Mesh_constant_PRIMITIVE_LINE_STRIP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **PRIMITIVE_LINE_STRIP** = ``2``
+
+Render array as line strip.
+
+.. _class_Mesh_constant_PRIMITIVE_LINE_LOOP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **PRIMITIVE_LINE_LOOP** = ``3``
+
+Render array as line loop (like line strip, but closed).
+
+.. _class_Mesh_constant_PRIMITIVE_TRIANGLES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **PRIMITIVE_TRIANGLES** = ``4``
+
+Render array as triangles (every three vertices a triangle is created).
+
+.. _class_Mesh_constant_PRIMITIVE_TRIANGLE_STRIP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **PRIMITIVE_TRIANGLE_STRIP** = ``5``
+
+Render array as triangle strips.
+
+.. _class_Mesh_constant_PRIMITIVE_TRIANGLE_FAN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PrimitiveType<enum_Mesh_PrimitiveType>` **PRIMITIVE_TRIANGLE_FAN** = ``6``
+
+Render array as triangle fans.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Mesh_BlendShapeMode:
 
-.. _class_Mesh_constant_BLEND_SHAPE_MODE_NORMALIZED:
-
-.. _class_Mesh_constant_BLEND_SHAPE_MODE_RELATIVE:
+.. rst-class:: classref-enumeration
 
 enum **BlendShapeMode**:
 
-- **BLEND_SHAPE_MODE_NORMALIZED** = **0** --- Blend shapes are normalized.
+.. _class_Mesh_constant_BLEND_SHAPE_MODE_NORMALIZED:
 
-- **BLEND_SHAPE_MODE_RELATIVE** = **1** --- Blend shapes are relative to base weight.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>` **BLEND_SHAPE_MODE_NORMALIZED** = ``0``
+
+Blend shapes are normalized.
+
+.. _class_Mesh_constant_BLEND_SHAPE_MODE_RELATIVE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`BlendShapeMode<enum_Mesh_BlendShapeMode>` **BLEND_SHAPE_MODE_RELATIVE** = ``1``
+
+Blend shapes are relative to base weight.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Mesh_ArrayFormat:
 
-.. _class_Mesh_constant_ARRAY_FORMAT_VERTEX:
-
-.. _class_Mesh_constant_ARRAY_FORMAT_NORMAL:
-
-.. _class_Mesh_constant_ARRAY_FORMAT_TANGENT:
-
-.. _class_Mesh_constant_ARRAY_FORMAT_COLOR:
-
-.. _class_Mesh_constant_ARRAY_FORMAT_TEX_UV:
-
-.. _class_Mesh_constant_ARRAY_FORMAT_TEX_UV2:
-
-.. _class_Mesh_constant_ARRAY_FORMAT_BONES:
-
-.. _class_Mesh_constant_ARRAY_FORMAT_WEIGHTS:
-
-.. _class_Mesh_constant_ARRAY_FORMAT_INDEX:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_BASE:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_VERTEX:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_NORMAL:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_TANGENT:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_COLOR:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_TEX_UV:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_TEX_UV2:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_BONES:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_WEIGHTS:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_INDEX:
-
-.. _class_Mesh_constant_ARRAY_FLAG_USE_2D_VERTICES:
-
-.. _class_Mesh_constant_ARRAY_FLAG_USE_16_BIT_BONES:
-
-.. _class_Mesh_constant_ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION:
-
-.. _class_Mesh_constant_ARRAY_COMPRESS_DEFAULT:
+.. rst-class:: classref-enumeration
 
 enum **ArrayFormat**:
 
-- **ARRAY_FORMAT_VERTEX** = **1** --- Mesh array contains vertices. All meshes require a vertex array so this should always be present.
+.. _class_Mesh_constant_ARRAY_FORMAT_VERTEX:
 
-- **ARRAY_FORMAT_NORMAL** = **2** --- Mesh array contains normals.
+.. rst-class:: classref-enumeration-constant
 
-- **ARRAY_FORMAT_TANGENT** = **4** --- Mesh array contains tangents.
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FORMAT_VERTEX** = ``1``
 
-- **ARRAY_FORMAT_COLOR** = **8** --- Mesh array contains colors.
+Mesh array contains vertices. All meshes require a vertex array so this should always be present.
 
-- **ARRAY_FORMAT_TEX_UV** = **16** --- Mesh array contains UVs.
+.. _class_Mesh_constant_ARRAY_FORMAT_NORMAL:
 
-- **ARRAY_FORMAT_TEX_UV2** = **32** --- Mesh array contains second UV.
+.. rst-class:: classref-enumeration-constant
 
-- **ARRAY_FORMAT_BONES** = **64** --- Mesh array contains bones.
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FORMAT_NORMAL** = ``2``
 
-- **ARRAY_FORMAT_WEIGHTS** = **128** --- Mesh array contains bone weights.
+Mesh array contains normals.
 
-- **ARRAY_FORMAT_INDEX** = **256** --- Mesh array uses indices.
+.. _class_Mesh_constant_ARRAY_FORMAT_TANGENT:
 
-- **ARRAY_COMPRESS_BASE** = **9** --- Used internally to calculate other ``ARRAY_COMPRESS_*`` enum values. Do not use.
+.. rst-class:: classref-enumeration-constant
 
-- **ARRAY_COMPRESS_VERTEX** = **512** --- Flag used to mark a compressed (half float) vertex array.
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FORMAT_TANGENT** = ``4``
 
-- **ARRAY_COMPRESS_NORMAL** = **1024** --- Flag used to mark a compressed (half float) normal array.
+Mesh array contains tangents.
 
-- **ARRAY_COMPRESS_TANGENT** = **2048** --- Flag used to mark a compressed (half float) tangent array.
+.. _class_Mesh_constant_ARRAY_FORMAT_COLOR:
 
-- **ARRAY_COMPRESS_COLOR** = **4096** --- Flag used to mark a compressed (half float) color array.
+.. rst-class:: classref-enumeration-constant
 
-- **ARRAY_COMPRESS_TEX_UV** = **8192** --- Flag used to mark a compressed (half float) UV coordinates array.
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FORMAT_COLOR** = ``8``
 
-- **ARRAY_COMPRESS_TEX_UV2** = **16384** --- Flag used to mark a compressed (half float) UV coordinates array for the second UV coordinates.
+Mesh array contains colors.
 
-- **ARRAY_COMPRESS_BONES** = **32768** --- Flag used to mark a compressed bone array.
+.. _class_Mesh_constant_ARRAY_FORMAT_TEX_UV:
 
-- **ARRAY_COMPRESS_WEIGHTS** = **65536** --- Flag used to mark a compressed (half float) weight array.
+.. rst-class:: classref-enumeration-constant
 
-- **ARRAY_COMPRESS_INDEX** = **131072** --- Flag used to mark a compressed index array.
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FORMAT_TEX_UV** = ``16``
 
-- **ARRAY_FLAG_USE_2D_VERTICES** = **262144** --- Flag used to mark that the array contains 2D vertices.
+Mesh array contains UVs.
 
-- **ARRAY_FLAG_USE_16_BIT_BONES** = **524288** --- Flag used to mark that the array uses 16-bit bones instead of 8-bit.
+.. _class_Mesh_constant_ARRAY_FORMAT_TEX_UV2:
 
-- **ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION** = **2097152** --- Flag used to mark that the array uses an octahedral representation of normal and tangent vectors rather than cartesian.
+.. rst-class:: classref-enumeration-constant
 
-- **ARRAY_COMPRESS_DEFAULT** = **2194432** --- Used to set flags :ref:`ARRAY_COMPRESS_VERTEX<class_Mesh_constant_ARRAY_COMPRESS_VERTEX>`, :ref:`ARRAY_COMPRESS_NORMAL<class_Mesh_constant_ARRAY_COMPRESS_NORMAL>`, :ref:`ARRAY_COMPRESS_TANGENT<class_Mesh_constant_ARRAY_COMPRESS_TANGENT>`, :ref:`ARRAY_COMPRESS_COLOR<class_Mesh_constant_ARRAY_COMPRESS_COLOR>`, :ref:`ARRAY_COMPRESS_TEX_UV<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV>`, :ref:`ARRAY_COMPRESS_TEX_UV2<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV2>`, :ref:`ARRAY_COMPRESS_WEIGHTS<class_Mesh_constant_ARRAY_COMPRESS_WEIGHTS>`, and :ref:`ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION<class_Mesh_constant_ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION>` quickly.
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FORMAT_TEX_UV2** = ``32``
+
+Mesh array contains second UV.
+
+.. _class_Mesh_constant_ARRAY_FORMAT_BONES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FORMAT_BONES** = ``64``
+
+Mesh array contains bones.
+
+.. _class_Mesh_constant_ARRAY_FORMAT_WEIGHTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FORMAT_WEIGHTS** = ``128``
+
+Mesh array contains bone weights.
+
+.. _class_Mesh_constant_ARRAY_FORMAT_INDEX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FORMAT_INDEX** = ``256``
+
+Mesh array uses indices.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_BASE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_BASE** = ``9``
+
+Used internally to calculate other ``ARRAY_COMPRESS_*`` enum values. Do not use.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_VERTEX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_VERTEX** = ``512``
+
+Flag used to mark a compressed (half float) vertex array.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_NORMAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_NORMAL** = ``1024``
+
+Flag used to mark a compressed (half float) normal array.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_TANGENT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_TANGENT** = ``2048``
+
+Flag used to mark a compressed (half float) tangent array.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_COLOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_COLOR** = ``4096``
+
+Flag used to mark a compressed (half float) color array.
+
+\ **Note:** If this flag is enabled, vertex colors will be stored as 8-bit unsigned integers. This will clamp overbright colors to ``Color(1, 1, 1, 1)`` and reduce colors' precision.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_TEX_UV:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_TEX_UV** = ``8192``
+
+Flag used to mark a compressed (half float) UV coordinates array.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_TEX_UV2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_TEX_UV2** = ``16384``
+
+Flag used to mark a compressed (half float) UV coordinates array for the second UV coordinates.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_BONES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_BONES** = ``32768``
+
+Flag used to mark a compressed bone array.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_WEIGHTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_WEIGHTS** = ``65536``
+
+Flag used to mark a compressed (half float) weight array.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_INDEX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_INDEX** = ``131072``
+
+Flag used to mark a compressed index array.
+
+.. _class_Mesh_constant_ARRAY_FLAG_USE_2D_VERTICES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FLAG_USE_2D_VERTICES** = ``262144``
+
+Flag used to mark that the array contains 2D vertices.
+
+.. _class_Mesh_constant_ARRAY_FLAG_USE_16_BIT_BONES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FLAG_USE_16_BIT_BONES** = ``524288``
+
+Flag used to mark that the array uses 16-bit bones instead of 8-bit.
+
+.. _class_Mesh_constant_ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION** = ``2097152``
+
+Flag used to mark that the array uses an octahedral representation of normal and tangent vectors rather than cartesian.
+
+.. _class_Mesh_constant_ARRAY_COMPRESS_DEFAULT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayFormat<enum_Mesh_ArrayFormat>` **ARRAY_COMPRESS_DEFAULT** = ``2194432``
+
+Used to set flags :ref:`ARRAY_COMPRESS_VERTEX<class_Mesh_constant_ARRAY_COMPRESS_VERTEX>`, :ref:`ARRAY_COMPRESS_NORMAL<class_Mesh_constant_ARRAY_COMPRESS_NORMAL>`, :ref:`ARRAY_COMPRESS_TANGENT<class_Mesh_constant_ARRAY_COMPRESS_TANGENT>`, :ref:`ARRAY_COMPRESS_COLOR<class_Mesh_constant_ARRAY_COMPRESS_COLOR>`, :ref:`ARRAY_COMPRESS_TEX_UV<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV>`, :ref:`ARRAY_COMPRESS_TEX_UV2<class_Mesh_constant_ARRAY_COMPRESS_TEX_UV2>`, :ref:`ARRAY_COMPRESS_WEIGHTS<class_Mesh_constant_ARRAY_COMPRESS_WEIGHTS>`, and :ref:`ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION<class_Mesh_constant_ARRAY_FLAG_USE_OCTAHEDRAL_COMPRESSION>` quickly.
+
+\ **Note:** Since this flag enables :ref:`ARRAY_COMPRESS_COLOR<class_Mesh_constant_ARRAY_COMPRESS_COLOR>`, vertex colors will be stored as 8-bit unsigned integers. This will clamp overbright colors to ``Color(1, 1, 1, 1)`` and reduce colors' precision.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Mesh_ArrayType:
 
-.. _class_Mesh_constant_ARRAY_VERTEX:
-
-.. _class_Mesh_constant_ARRAY_NORMAL:
-
-.. _class_Mesh_constant_ARRAY_TANGENT:
-
-.. _class_Mesh_constant_ARRAY_COLOR:
-
-.. _class_Mesh_constant_ARRAY_TEX_UV:
-
-.. _class_Mesh_constant_ARRAY_TEX_UV2:
-
-.. _class_Mesh_constant_ARRAY_BONES:
-
-.. _class_Mesh_constant_ARRAY_WEIGHTS:
-
-.. _class_Mesh_constant_ARRAY_INDEX:
-
-.. _class_Mesh_constant_ARRAY_MAX:
+.. rst-class:: classref-enumeration
 
 enum **ArrayType**:
 
-- **ARRAY_VERTEX** = **0** --- Array of vertices.
+.. _class_Mesh_constant_ARRAY_VERTEX:
 
-- **ARRAY_NORMAL** = **1** --- Array of normals.
+.. rst-class:: classref-enumeration-constant
 
-- **ARRAY_TANGENT** = **2** --- Array of tangents as an array of floats, 4 floats per tangent.
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_VERTEX** = ``0``
 
-- **ARRAY_COLOR** = **3** --- Array of colors.
+Array of vertices.
 
-- **ARRAY_TEX_UV** = **4** --- Array of UV coordinates.
+.. _class_Mesh_constant_ARRAY_NORMAL:
 
-- **ARRAY_TEX_UV2** = **5** --- Array of second set of UV coordinates.
+.. rst-class:: classref-enumeration-constant
 
-- **ARRAY_BONES** = **6** --- Array of bone data.
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_NORMAL** = ``1``
 
-- **ARRAY_WEIGHTS** = **7** --- Array of weights.
+Array of normals.
 
-- **ARRAY_INDEX** = **8** --- Array of indices.
+.. _class_Mesh_constant_ARRAY_TANGENT:
 
-- **ARRAY_MAX** = **9** --- Represents the size of the :ref:`ArrayType<enum_Mesh_ArrayType>` enum.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_TANGENT** = ``2``
+
+Array of tangents as an array of floats, 4 floats per tangent.
+
+.. _class_Mesh_constant_ARRAY_COLOR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_COLOR** = ``3``
+
+Array of colors.
+
+.. _class_Mesh_constant_ARRAY_TEX_UV:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_TEX_UV** = ``4``
+
+Array of UV coordinates.
+
+.. _class_Mesh_constant_ARRAY_TEX_UV2:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_TEX_UV2** = ``5``
+
+Array of second set of UV coordinates.
+
+.. _class_Mesh_constant_ARRAY_BONES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_BONES** = ``6``
+
+Array of bone data.
+
+.. _class_Mesh_constant_ARRAY_WEIGHTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_WEIGHTS** = ``7``
+
+Array of weights.
+
+.. _class_Mesh_constant_ARRAY_INDEX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_INDEX** = ``8``
+
+Array of indices.
+
+.. _class_Mesh_constant_ARRAY_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ArrayType<enum_Mesh_ArrayType>` **ARRAY_MAX** = ``9``
+
+Represents the size of the :ref:`ArrayType<enum_Mesh_ArrayType>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Mesh_property_lightmap_size_hint:
 
-- :ref:`Vector2<class_Vector2>` **lightmap_size_hint**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``Vector2( 0, 0 )``           |
-+-----------+-------------------------------+
-| *Setter*  | set_lightmap_size_hint(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_lightmap_size_hint()      |
-+-----------+-------------------------------+
+:ref:`Vector2<class_Vector2>` **lightmap_size_hint** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lightmap_size_hint** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_lightmap_size_hint** **(** **)**
 
 Sets a hint to be used for lightmap resolution in :ref:`BakedLightmap<class_BakedLightmap>`. Overrides :ref:`BakedLightmap.default_texels_per_unit<class_BakedLightmap_property_default_texels_per_unit>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Mesh_method_create_convex_shape:
 
-- :ref:`Shape<class_Shape>` **create_convex_shape** **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Shape<class_Shape>` **create_convex_shape** **(** :ref:`bool<class_bool>` clean=true, :ref:`bool<class_bool>` simplify=false **)** |const|
 
 Calculate a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` from the mesh.
 
@@ -289,90 +508,131 @@ If ``clean`` is ``true`` (default), duplicate and interior vertices are removed 
 
 If ``simplify`` is ``true``, the geometry can be further simplified to reduce the amount of vertices. Disabled by default.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Mesh_method_create_outline:
 
-- :ref:`Mesh<class_Mesh>` **create_outline** **(** :ref:`float<class_float>` margin **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Mesh<class_Mesh>` **create_outline** **(** :ref:`float<class_float>` margin **)** |const|
 
 Calculate an outline mesh at a defined offset (margin) from the original mesh.
 
 \ **Note:** This method typically returns the vertices in reverse order (e.g. clockwise to counterclockwise).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Mesh_method_create_trimesh_shape:
 
-- :ref:`Shape<class_Shape>` **create_trimesh_shape** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Shape<class_Shape>` **create_trimesh_shape** **(** **)** |const|
 
 Calculate a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` from the mesh.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Mesh_method_generate_triangle_mesh:
 
-- :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
 
 Generate a :ref:`TriangleMesh<class_TriangleMesh>` from the mesh. Considers only surfaces using one of these primitive types: :ref:`PRIMITIVE_TRIANGLES<class_Mesh_constant_PRIMITIVE_TRIANGLES>`, :ref:`PRIMITIVE_TRIANGLE_STRIP<class_Mesh_constant_PRIMITIVE_TRIANGLE_STRIP>`, or :ref:`PRIMITIVE_TRIANGLE_FAN<class_Mesh_constant_PRIMITIVE_TRIANGLE_FAN>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Mesh_method_get_aabb:
 
-- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
 
 Returns the smallest :ref:`AABB<class_AABB>` enclosing this mesh in local space. Not affected by ``custom_aabb``. See also :ref:`VisualInstance.get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>`.
 
 \ **Note:** This is only implemented for :ref:`ArrayMesh<class_ArrayMesh>` and :ref:`PrimitiveMesh<class_PrimitiveMesh>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Mesh_method_get_faces:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolVector3Array<class_PoolVector3Array>` **get_faces** **(** **)** |const|
 
 Returns all the vertices that make up the faces of the mesh. Each three vertices represent one triangle.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Mesh_method_get_surface_count:
 
-- :ref:`int<class_int>` **get_surface_count** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the amount of surfaces that the ``Mesh`` holds.
+:ref:`int<class_int>` **get_surface_count** **(** **)** |const|
+
+Returns the amount of surfaces that the **Mesh** holds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Mesh_method_surface_get_arrays:
 
-- :ref:`Array<class_Array>` **surface_get_arrays** **(** :ref:`int<class_int>` surf_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **surface_get_arrays** **(** :ref:`int<class_int>` surf_idx **)** |const|
 
 Returns the arrays for the vertices, normals, uvs, etc. that make up the requested surface (see :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Mesh_method_surface_get_blend_shape_arrays:
 
-- :ref:`Array<class_Array>` **surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` surf_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **surface_get_blend_shape_arrays** **(** :ref:`int<class_int>` surf_idx **)** |const|
 
 Returns the blend shape arrays for the requested surface.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Mesh_method_surface_get_material:
 
-- :ref:`Material<class_Material>` **surface_get_material** **(** :ref:`int<class_int>` surf_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Material<class_Material>` **surface_get_material** **(** :ref:`int<class_int>` surf_idx **)** |const|
 
 Returns a :ref:`Material<class_Material>` in a given surface. Surface is rendered using this material.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Mesh_method_surface_set_material:
 
-- void **surface_set_material** **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**
+.. rst-class:: classref-method
+
+void **surface_set_material** **(** :ref:`int<class_int>` surf_idx, :ref:`Material<class_Material>` material **)**
 
 Sets a :ref:`Material<class_Material>` for a given surface. Surface will be rendered using this material.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

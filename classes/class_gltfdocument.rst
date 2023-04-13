@@ -12,13 +12,73 @@ GLTFDocument
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFDocument`` within a script will cause an error in an exported project.
+**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFDocument** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`register_gltf_document_extension<class_GLTFDocument_method_register_gltf_document_extension>` **(** :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` extension, :ref:`bool<class_bool>` first_priority=false **)** |
+   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`unregister_all_gltf_document_extensions<class_GLTFDocument_method_unregister_all_gltf_document_extensions>` **(** **)**                                                                                                     |
+   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`unregister_gltf_document_extension<class_GLTFDocument_method_unregister_gltf_document_extension>` **(** :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` extension **)**                                           |
+   +------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_GLTFDocument_method_register_gltf_document_extension:
+
+.. rst-class:: classref-method
+
+void **register_gltf_document_extension** **(** :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` extension, :ref:`bool<class_bool>` first_priority=false **)**
+
+Registers the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` instance with GLTFDocument. If ``first_priority`` is true, this extension will be run first. Otherwise, it will be run last.
+
+\ **Note:** Like GLTFDocument itself, all GLTFDocumentExtension classes must be stateless in order to function properly. If you need to store data, use the ``set_additional_data`` and ``get_additional_data`` methods in :ref:`GLTFState<class_GLTFState>` or :ref:`GLTFNode<class_GLTFNode>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocument_method_unregister_all_gltf_document_extensions:
+
+.. rst-class:: classref-method
+
+void **unregister_all_gltf_document_extensions** **(** **)**
+
+Unregisters all :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` instances.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFDocument_method_unregister_gltf_document_extension:
+
+.. rst-class:: classref-method
+
+void **unregister_gltf_document_extension** **(** :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` extension **)**
+
+Unregisters the given :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` instance.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

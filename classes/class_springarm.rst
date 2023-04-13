@@ -14,6 +14,8 @@ SpringArm
 
 A helper node, mostly used in 3rd person cameras.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,62 +27,78 @@ The SpringArm will either cast a ray, or if a shape is given, it will cast the s
 
 If you use the SpringArm as a camera controller for your player, you might need to exclude the player's collider from the SpringArm's collision check.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`collision_mask<class_SpringArm_property_collision_mask>` | ``1``    |
-+---------------------------+----------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`margin<class_SpringArm_property_margin>`                 | ``0.01`` |
-+---------------------------+----------------------------------------------------------------+----------+
-| :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   |          |
-+---------------------------+----------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_property_spring_length>`   | ``1.0``  |
-+---------------------------+----------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`collision_mask<class_SpringArm_property_collision_mask>` | ``1``    |
+   +---------------------------+----------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`margin<class_SpringArm_property_margin>`                 | ``0.01`` |
+   +---------------------------+----------------------------------------------------------------+----------+
+   | :ref:`Shape<class_Shape>` | :ref:`shape<class_SpringArm_property_shape>`                   |          |
+   +---------------------------+----------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`spring_length<class_SpringArm_property_spring_length>`   | ``1.0``  |
+   +---------------------------+----------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`add_excluded_object<class_SpringArm_method_add_excluded_object>` **(** :ref:`RID<class_RID>` RID **)**       |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`clear_excluded_objects<class_SpringArm_method_clear_excluded_objects>` **(** **)**                           |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_hit_length<class_SpringArm_method_get_hit_length>` **(** **)**                                           |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`remove_excluded_object<class_SpringArm_method_remove_excluded_object>` **(** :ref:`RID<class_RID>` RID **)** |
-+---------------------------+--------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`add_excluded_object<class_SpringArm_method_add_excluded_object>` **(** :ref:`RID<class_RID>` RID **)**       |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`clear_excluded_objects<class_SpringArm_method_clear_excluded_objects>` **(** **)**                           |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_hit_length<class_SpringArm_method_get_hit_length>` **(** **)**                                           |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`remove_excluded_object<class_SpringArm_method_remove_excluded_object>` **(** :ref:`RID<class_RID>` RID **)** |
+   +---------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SpringArm_property_collision_mask:
 
-- :ref:`int<class_int>` **collision_mask**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``1``                     |
-+-----------+---------------------------+
-| *Setter*  | set_collision_mask(value) |
-+-----------+---------------------------+
-| *Getter*  | get_collision_mask()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **collision_mask** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_collision_mask** **(** **)**
 
 The layers against which the collision check shall be done. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpringArm_property_margin:
 
-- :ref:`float<class_float>` **margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.01``          |
-+-----------+-------------------+
-| *Setter*  | set_margin(value) |
-+-----------+-------------------+
-| *Getter*  | get_margin()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **margin** = ``0.01``
+
+.. rst-class:: classref-property-setget
+
+- void **set_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_margin** **(** **)**
 
 When the collision check is made, a candidate length for the SpringArm is given.
 
@@ -88,73 +106,98 @@ The margin is then subtracted to this length and the translation is applied to t
 
 This margin is useful for when the SpringArm has a :ref:`Camera<class_Camera>` as a child node: without the margin, the :ref:`Camera<class_Camera>` would be placed on the exact point of collision, while with the margin the :ref:`Camera<class_Camera>` would be placed close to the point of collision.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SpringArm_property_shape:
 
-- :ref:`Shape<class_Shape>` **shape**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_shape(value) |
-+----------+------------------+
-| *Getter* | get_shape()      |
-+----------+------------------+
+:ref:`Shape<class_Shape>` **shape**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shape** **(** :ref:`Shape<class_Shape>` value **)**
+- :ref:`Shape<class_Shape>` **get_shape** **(** **)**
 
 The :ref:`Shape<class_Shape>` to use for the SpringArm.
 
 When the shape is set, the SpringArm will cast the :ref:`Shape<class_Shape>` on its z axis instead of performing a ray cast.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_SpringArm_property_spring_length:
 
-- :ref:`float<class_float>` **spring_length**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_length(value) |
-+-----------+-------------------+
-| *Getter*  | get_length()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **spring_length** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_length** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_length** **(** **)**
 
 The maximum extent of the SpringArm. This is used as a length for both the ray and the shape cast used internally to calculate the desired position of the SpringArm's child nodes.
 
 To know more about how to perform a shape cast or a ray cast, please consult the :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` documentation.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SpringArm_method_add_excluded_object:
 
-- void **add_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
+.. rst-class:: classref-method
+
+void **add_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
 
 Adds the :ref:`PhysicsBody<class_PhysicsBody>` object with the given :ref:`RID<class_RID>` to the list of :ref:`PhysicsBody<class_PhysicsBody>` objects excluded from the collision check.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpringArm_method_clear_excluded_objects:
 
-- void **clear_excluded_objects** **(** **)**
+.. rst-class:: classref-method
+
+void **clear_excluded_objects** **(** **)**
 
 Clears the list of :ref:`PhysicsBody<class_PhysicsBody>` objects excluded from the collision check.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpringArm_method_get_hit_length:
 
-- :ref:`float<class_float>` **get_hit_length** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_hit_length** **(** **)**
 
 Returns the spring arm's current length.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpringArm_method_remove_excluded_object:
 
-- :ref:`bool<class_bool>` **remove_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **remove_excluded_object** **(** :ref:`RID<class_RID>` RID **)**
 
 Removes the given :ref:`RID<class_RID>` from the list of :ref:`PhysicsBody<class_PhysicsBody>` objects excluded from the collision check.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

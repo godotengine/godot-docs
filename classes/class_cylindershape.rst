@@ -14,10 +14,16 @@ CylinderShape
 
 Cylinder shape for collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Cylinder shape for collisions.
+
+\ **Note:** When using GodotPhysics instead of the default Bullet physics engine, there are several known bugs with cylinder collision shapes. Using :ref:`CapsuleShape<class_CapsuleShape>` or :ref:`BoxShape<class_BoxShape>` instead is recommended.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -28,48 +34,60 @@ Tutorials
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`height<class_CylinderShape_property_height>` | ``2.0`` |
-+---------------------------+----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`radius<class_CylinderShape_property_radius>` | ``1.0`` |
-+---------------------------+----------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`height<class_CylinderShape_property_height>` | ``2.0`` |
+   +---------------------------+----------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`radius<class_CylinderShape_property_radius>` | ``1.0`` |
+   +---------------------------+----------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CylinderShape_property_height:
 
-- :ref:`float<class_float>` **height**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``2.0``           |
-+-----------+-------------------+
-| *Setter*  | set_height(value) |
-+-----------+-------------------+
-| *Getter*  | get_height()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **height** = ``2.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_height** **(** **)**
 
 The cylinder's height.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CylinderShape_property_radius:
 
-- :ref:`float<class_float>` **radius**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_radius(value) |
-+-----------+-------------------+
-| *Getter*  | get_radius()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **radius** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_radius** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_radius** **(** **)**
 
 The cylinder's radius.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

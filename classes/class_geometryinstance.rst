@@ -16,332 +16,444 @@ GeometryInstance
 
 Base node for geometry-based visual instances.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` | :ref:`cast_shadow<class_GeometryInstance_property_cast_shadow>`               | ``1``     |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                               | :ref:`extra_cull_margin<class_GeometryInstance_property_extra_cull_margin>`   | ``0.0``   |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                                 | :ref:`generate_lightmap<class_GeometryInstance_property_generate_lightmap>`   | ``true``  |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`LightmapScale<enum_GeometryInstance_LightmapScale>`               | :ref:`lightmap_scale<class_GeometryInstance_property_lightmap_scale>`         | ``0``     |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                               | :ref:`lod_max_distance<class_GeometryInstance_property_lod_max_distance>`     | ``0.0``   |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                               | :ref:`lod_max_hysteresis<class_GeometryInstance_property_lod_max_hysteresis>` | ``0.0``   |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                               | :ref:`lod_min_distance<class_GeometryInstance_property_lod_min_distance>`     | ``0.0``   |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                                               | :ref:`lod_min_hysteresis<class_GeometryInstance_property_lod_min_hysteresis>` | ``0.0``   |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`Material<class_Material>`                                         | :ref:`material_overlay<class_GeometryInstance_property_material_overlay>`     |           |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`Material<class_Material>`                                         | :ref:`material_override<class_GeometryInstance_property_material_override>`   |           |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                                 | :ref:`use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` | ``false`` |
-+-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` | :ref:`cast_shadow<class_GeometryInstance_property_cast_shadow>`               | ``1``     |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                               | :ref:`extra_cull_margin<class_GeometryInstance_property_extra_cull_margin>`   | ``0.0``   |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`generate_lightmap<class_GeometryInstance_property_generate_lightmap>`   | ``true``  |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`LightmapScale<enum_GeometryInstance_LightmapScale>`               | :ref:`lightmap_scale<class_GeometryInstance_property_lightmap_scale>`         | ``0``     |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                               | :ref:`lod_max_distance<class_GeometryInstance_property_lod_max_distance>`     | ``0.0``   |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                               | :ref:`lod_max_hysteresis<class_GeometryInstance_property_lod_max_hysteresis>` | ``0.0``   |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                               | :ref:`lod_min_distance<class_GeometryInstance_property_lod_min_distance>`     | ``0.0``   |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                               | :ref:`lod_min_hysteresis<class_GeometryInstance_property_lod_min_hysteresis>` | ``0.0``   |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`Material<class_Material>`                                         | :ref:`material_overlay<class_GeometryInstance_property_material_overlay>`     |           |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`Material<class_Material>`                                         | :ref:`material_override<class_GeometryInstance_property_material_override>`   |           |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`use_in_baked_light<class_GeometryInstance_property_use_in_baked_light>` | ``false`` |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_flag<class_GeometryInstance_method_get_flag>` **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** |const|                        |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_custom_aabb<class_GeometryInstance_method_set_custom_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)**                                    |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_flag<class_GeometryInstance_method_set_flag>` **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag, :ref:`bool<class_bool>` value **)** |
-+-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_flag<class_GeometryInstance_method_get_flag>` **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** |const|                        |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_custom_aabb<class_GeometryInstance_method_set_custom_aabb>` **(** :ref:`AABB<class_AABB>` aabb **)**                                    |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_flag<class_GeometryInstance_method_set_flag>` **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag, :ref:`bool<class_bool>` value **)** |
+   +-------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_GeometryInstance_LightmapScale:
 
-.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_1X:
-
-.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_2X:
-
-.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_4X:
-
-.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_8X:
-
-.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **LightmapScale**:
 
-- **LIGHTMAP_SCALE_1X** = **0** --- The generated lightmap texture will have the original size.
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_1X:
 
-- **LIGHTMAP_SCALE_2X** = **1** --- The generated lightmap texture will be twice as large, on each axis.
+.. rst-class:: classref-enumeration-constant
 
-- **LIGHTMAP_SCALE_4X** = **2** --- The generated lightmap texture will be 4 times as large, on each axis.
+:ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` **LIGHTMAP_SCALE_1X** = ``0``
 
-- **LIGHTMAP_SCALE_8X** = **3** --- The generated lightmap texture will be 8 times as large, on each axis.
+The generated lightmap texture will have the original size.
 
-- **LIGHTMAP_SCALE_MAX** = **4**
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_2X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` **LIGHTMAP_SCALE_2X** = ``1``
+
+The generated lightmap texture will be twice as large, on each axis.
+
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_4X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` **LIGHTMAP_SCALE_4X** = ``2``
+
+The generated lightmap texture will be 4 times as large, on each axis.
+
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_8X:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` **LIGHTMAP_SCALE_8X** = ``3``
+
+The generated lightmap texture will be 8 times as large, on each axis.
+
+.. _class_GeometryInstance_constant_LIGHTMAP_SCALE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` **LIGHTMAP_SCALE_MAX** = ``4``
+
+
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_GeometryInstance_ShadowCastingSetting:
 
-.. _class_GeometryInstance_constant_SHADOW_CASTING_SETTING_OFF:
-
-.. _class_GeometryInstance_constant_SHADOW_CASTING_SETTING_ON:
-
-.. _class_GeometryInstance_constant_SHADOW_CASTING_SETTING_DOUBLE_SIDED:
-
-.. _class_GeometryInstance_constant_SHADOW_CASTING_SETTING_SHADOWS_ONLY:
+.. rst-class:: classref-enumeration
 
 enum **ShadowCastingSetting**:
 
-- **SHADOW_CASTING_SETTING_OFF** = **0** --- Will not cast any shadows.
+.. _class_GeometryInstance_constant_SHADOW_CASTING_SETTING_OFF:
 
-- **SHADOW_CASTING_SETTING_ON** = **1** --- Will cast shadows from all visible faces in the GeometryInstance.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` **SHADOW_CASTING_SETTING_OFF** = ``0``
+
+Will not cast any shadows.
+
+.. _class_GeometryInstance_constant_SHADOW_CASTING_SETTING_ON:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` **SHADOW_CASTING_SETTING_ON** = ``1``
+
+Will cast shadows from all visible faces in the GeometryInstance.
 
 Will take culling into account, so faces not being rendered will not be taken into account when shadow casting.
 
-- **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = **2** --- Will cast shadows from all visible faces in the GeometryInstance.
+.. _class_GeometryInstance_constant_SHADOW_CASTING_SETTING_DOUBLE_SIDED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` **SHADOW_CASTING_SETTING_DOUBLE_SIDED** = ``2``
+
+Will cast shadows from all visible faces in the GeometryInstance.
 
 Will not take culling into account, so all faces will be taken into account when shadow casting.
 
-- **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = **3** --- Will only show the shadows casted from this object.
+.. _class_GeometryInstance_constant_SHADOW_CASTING_SETTING_SHADOWS_ONLY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` **SHADOW_CASTING_SETTING_SHADOWS_ONLY** = ``3``
+
+Will only show the shadows casted from this object.
 
 In other words, the actual mesh will not be visible, only the shadows casted from the mesh will be.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_GeometryInstance_Flags:
 
-.. _class_GeometryInstance_constant_FLAG_USE_BAKED_LIGHT:
-
-.. _class_GeometryInstance_constant_FLAG_DRAW_NEXT_FRAME_IF_VISIBLE:
-
-.. _class_GeometryInstance_constant_FLAG_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Flags**:
 
-- **FLAG_USE_BAKED_LIGHT** = **0** --- Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` or :ref:`BakedLightmap<class_BakedLightmap>`.
+.. _class_GeometryInstance_constant_FLAG_USE_BAKED_LIGHT:
 
-- **FLAG_DRAW_NEXT_FRAME_IF_VISIBLE** = **1** --- Unused in this class, exposed for consistency with :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>`.
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_MAX** = **2** --- Represents the size of the :ref:`Flags<enum_GeometryInstance_Flags>` enum.
+:ref:`Flags<enum_GeometryInstance_Flags>` **FLAG_USE_BAKED_LIGHT** = ``0``
+
+Will allow the GeometryInstance to be used when baking lights using a :ref:`GIProbe<class_GIProbe>` or :ref:`BakedLightmap<class_BakedLightmap>`.
+
+.. _class_GeometryInstance_constant_FLAG_DRAW_NEXT_FRAME_IF_VISIBLE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_GeometryInstance_Flags>` **FLAG_DRAW_NEXT_FRAME_IF_VISIBLE** = ``1``
+
+Unused in this class, exposed for consistency with :ref:`InstanceFlags<enum_VisualServer_InstanceFlags>`.
+
+.. _class_GeometryInstance_constant_FLAG_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Flags<enum_GeometryInstance_Flags>` **FLAG_MAX** = ``2``
+
+Represents the size of the :ref:`Flags<enum_GeometryInstance_Flags>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GeometryInstance_property_cast_shadow:
 
-- :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` **cast_shadow**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``1``                           |
-+-----------+---------------------------------+
-| *Setter*  | set_cast_shadows_setting(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_cast_shadows_setting()      |
-+-----------+---------------------------------+
+:ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` **cast_shadow** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cast_shadows_setting** **(** :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` value **)**
+- :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` **get_cast_shadows_setting** **(** **)**
 
 The selected shadow casting flag. See :ref:`ShadowCastingSetting<enum_GeometryInstance_ShadowCastingSetting>` for possible values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance_property_extra_cull_margin:
 
-- :ref:`float<class_float>` **extra_cull_margin**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``0.0``                      |
-+-----------+------------------------------+
-| *Setter*  | set_extra_cull_margin(value) |
-+-----------+------------------------------+
-| *Getter*  | get_extra_cull_margin()      |
-+-----------+------------------------------+
+:ref:`float<class_float>` **extra_cull_margin** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extra_cull_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_extra_cull_margin** **(** **)**
 
 The extra distance added to the GeometryInstance's bounding box (:ref:`AABB<class_AABB>`) to increase its cull box.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance_property_generate_lightmap:
 
-- :ref:`bool<class_bool>` **generate_lightmap**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``true``                     |
-+-----------+------------------------------+
-| *Setter*  | set_generate_lightmap(value) |
-+-----------+------------------------------+
-| *Getter*  | get_generate_lightmap()      |
-+-----------+------------------------------+
+:ref:`bool<class_bool>` **generate_lightmap** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_generate_lightmap** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_generate_lightmap** **(** **)**
 
 When disabled, the mesh will be taken into account when computing indirect lighting, but the resulting lightmap will not be saved. Useful for emissive only materials or shadow casters.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance_property_lightmap_scale:
 
-- :ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` **lightmap_scale**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_lightmap_scale(value) |
-+-----------+---------------------------+
-| *Getter*  | get_lightmap_scale()      |
-+-----------+---------------------------+
+:ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` **lightmap_scale** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lightmap_scale** **(** :ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` value **)**
+- :ref:`LightmapScale<enum_GeometryInstance_LightmapScale>` **get_lightmap_scale** **(** **)**
 
 Scale factor for the generated baked lightmap. Useful for adding detail to certain mesh instances.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance_property_lod_max_distance:
 
-- :ref:`float<class_float>` **lod_max_distance**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0.0``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_lod_max_distance(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_lod_max_distance()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **lod_max_distance** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lod_max_distance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_lod_max_distance** **(** **)**
 
 The GeometryInstance's max LOD distance.
 
 \ **Note:** This property currently has no effect.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance_property_lod_max_hysteresis:
 
-- :ref:`float<class_float>` **lod_max_hysteresis**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``0.0``                       |
-+-----------+-------------------------------+
-| *Setter*  | set_lod_max_hysteresis(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_lod_max_hysteresis()      |
-+-----------+-------------------------------+
+:ref:`float<class_float>` **lod_max_hysteresis** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lod_max_hysteresis** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_lod_max_hysteresis** **(** **)**
 
 The GeometryInstance's max LOD margin.
 
 \ **Note:** This property currently has no effect.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance_property_lod_min_distance:
 
-- :ref:`float<class_float>` **lod_min_distance**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0.0``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_lod_min_distance(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_lod_min_distance()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **lod_min_distance** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lod_min_distance** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_lod_min_distance** **(** **)**
 
 The GeometryInstance's min LOD distance.
 
 \ **Note:** This property currently has no effect.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance_property_lod_min_hysteresis:
 
-- :ref:`float<class_float>` **lod_min_hysteresis**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``0.0``                       |
-+-----------+-------------------------------+
-| *Setter*  | set_lod_min_hysteresis(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_lod_min_hysteresis()      |
-+-----------+-------------------------------+
+:ref:`float<class_float>` **lod_min_hysteresis** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lod_min_hysteresis** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_lod_min_hysteresis** **(** **)**
 
 The GeometryInstance's min LOD margin.
 
 \ **Note:** This property currently has no effect.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance_property_material_overlay:
 
-- :ref:`Material<class_Material>` **material_overlay**
+.. rst-class:: classref-property
 
-+----------+-----------------------------+
-| *Setter* | set_material_overlay(value) |
-+----------+-----------------------------+
-| *Getter* | get_material_overlay()      |
-+----------+-----------------------------+
+:ref:`Material<class_Material>` **material_overlay**
+
+.. rst-class:: classref-property-setget
+
+- void **set_material_overlay** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_material_overlay** **(** **)**
 
 The material overlay for the whole geometry.
 
 If a material is assigned to this property, it will be rendered on top of any other active material for all the surfaces.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance_property_material_override:
 
-- :ref:`Material<class_Material>` **material_override**
+.. rst-class:: classref-property
 
-+----------+------------------------------+
-| *Setter* | set_material_override(value) |
-+----------+------------------------------+
-| *Getter* | get_material_override()      |
-+----------+------------------------------+
+:ref:`Material<class_Material>` **material_override**
+
+.. rst-class:: classref-property-setget
+
+- void **set_material_override** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_material_override** **(** **)**
 
 The material override for the whole geometry.
 
 If a material is assigned to this property, it will be used instead of any material set in any material slot of the mesh.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_GeometryInstance_property_use_in_baked_light:
 
-- :ref:`bool<class_bool>` **use_in_baked_light**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``false``       |
-+-----------+-----------------+
-| *Setter*  | set_flag(value) |
-+-----------+-----------------+
-| *Getter*  | get_flag()      |
-+-----------+-----------------+
+:ref:`bool<class_bool>` **use_in_baked_light** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag, :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** |const|
 
 If ``true``, this GeometryInstance will be used when baking lights using a :ref:`GIProbe<class_GIProbe>` or :ref:`BakedLightmap<class_BakedLightmap>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_GeometryInstance_method_get_flag:
 
-- :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag **)** |const|
 
 Returns the :ref:`Flags<enum_GeometryInstance_Flags>` that have been set for this object.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance_method_set_custom_aabb:
 
-- void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` aabb **)**
+.. rst-class:: classref-method
+
+void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` aabb **)**
 
 Overrides the bounding box of this node with a custom one. To remove it, set an :ref:`AABB<class_AABB>` with all fields set to zero.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GeometryInstance_method_set_flag:
 
-- void **set_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag, :ref:`bool<class_bool>` value **)**
+.. rst-class:: classref-method
+
+void **set_flag** **(** :ref:`Flags<enum_GeometryInstance_Flags>` flag, :ref:`bool<class_bool>` value **)**
 
 Sets the :ref:`Flags<enum_GeometryInstance_Flags>` specified. See :ref:`Flags<enum_GeometryInstance_Flags>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

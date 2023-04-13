@@ -14,6 +14,8 @@ AnimationNodeStateMachine
 
 State machine for control of animations.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -26,247 +28,351 @@ Contains multiple nodes representing animation states, connected in a graph. Nod
     var state_machine = $AnimationTree.get("parameters/playback")
     state_machine.travel("some_state")
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/animation/animation_tree`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`add_node<class_AnimationNodeStateMachine_method_add_node>` **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)**                                       |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`add_transition<class_AnimationNodeStateMachine_method_add_transition>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` transition **)** |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                           | :ref:`get_end_node<class_AnimationNodeStateMachine_method_get_end_node>` **(** **)** |const|                                                                                                                                                                |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                                                         | :ref:`get_graph_offset<class_AnimationNodeStateMachine_method_get_graph_offset>` **(** **)** |const|                                                                                                                                                        |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AnimationNode<class_AnimationNode>`                                             | :ref:`get_node<class_AnimationNodeStateMachine_method_get_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                       |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                           | :ref:`get_node_name<class_AnimationNodeStateMachine_method_get_node_name>` **(** :ref:`AnimationNode<class_AnimationNode>` node **)** |const|                                                                                                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                                                         | :ref:`get_node_position<class_AnimationNodeStateMachine_method_get_node_position>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                     |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                           | :ref:`get_start_node<class_AnimationNodeStateMachine_method_get_start_node>` **(** **)** |const|                                                                                                                                                            |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` | :ref:`get_transition<class_AnimationNodeStateMachine_method_get_transition>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                  |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                                                 | :ref:`get_transition_count<class_AnimationNodeStateMachine_method_get_transition_count>` **(** **)** |const|                                                                                                                                                |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                           | :ref:`get_transition_from<class_AnimationNodeStateMachine_method_get_transition_from>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                        |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                                           | :ref:`get_transition_to<class_AnimationNodeStateMachine_method_get_transition_to>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                            |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                               | :ref:`has_node<class_AnimationNodeStateMachine_method_has_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                       |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                                               | :ref:`has_transition<class_AnimationNodeStateMachine_method_has_transition>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)** |const|                                                                                           |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`remove_node<class_AnimationNodeStateMachine_method_remove_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                         |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`remove_transition<class_AnimationNodeStateMachine_method_remove_transition>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                                                                             |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`remove_transition_by_index<class_AnimationNodeStateMachine_method_remove_transition_by_index>` **(** :ref:`int<class_int>` idx **)**                                                                                                                  |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`rename_node<class_AnimationNodeStateMachine_method_rename_node>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**                                                                                                   |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`replace_node<class_AnimationNodeStateMachine_method_replace_node>` **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node **)**                                                                                       |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`set_end_node<class_AnimationNodeStateMachine_method_set_end_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                       |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`set_graph_offset<class_AnimationNodeStateMachine_method_set_graph_offset>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                                                                                                           |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`set_node_position<class_AnimationNodeStateMachine_method_set_node_position>` **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**                                                                                     |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                                                  | :ref:`set_start_node<class_AnimationNodeStateMachine_method_set_start_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                   |
-+---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`add_node<class_AnimationNodeStateMachine_method_add_node>` **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)**                                       |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`add_transition<class_AnimationNodeStateMachine_method_add_transition>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` transition **)** |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                           | :ref:`get_end_node<class_AnimationNodeStateMachine_method_get_end_node>` **(** **)** |const|                                                                                                                                                                |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                                         | :ref:`get_graph_offset<class_AnimationNodeStateMachine_method_get_graph_offset>` **(** **)** |const|                                                                                                                                                        |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AnimationNode<class_AnimationNode>`                                             | :ref:`get_node<class_AnimationNodeStateMachine_method_get_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                       |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                           | :ref:`get_node_name<class_AnimationNodeStateMachine_method_get_node_name>` **(** :ref:`AnimationNode<class_AnimationNode>` node **)** |const|                                                                                                               |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                                                         | :ref:`get_node_position<class_AnimationNodeStateMachine_method_get_node_position>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                     |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                           | :ref:`get_start_node<class_AnimationNodeStateMachine_method_get_start_node>` **(** **)** |const|                                                                                                                                                            |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` | :ref:`get_transition<class_AnimationNodeStateMachine_method_get_transition>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                                  |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                                 | :ref:`get_transition_count<class_AnimationNodeStateMachine_method_get_transition_count>` **(** **)** |const|                                                                                                                                                |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                           | :ref:`get_transition_from<class_AnimationNodeStateMachine_method_get_transition_from>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                        |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                                           | :ref:`get_transition_to<class_AnimationNodeStateMachine_method_get_transition_to>` **(** :ref:`int<class_int>` idx **)** |const|                                                                                                                            |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                               | :ref:`has_node<class_AnimationNodeStateMachine_method_has_node>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                                                       |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                               | :ref:`has_transition<class_AnimationNodeStateMachine_method_has_transition>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)** |const|                                                                                           |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`remove_node<class_AnimationNodeStateMachine_method_remove_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                         |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`remove_transition<class_AnimationNodeStateMachine_method_remove_transition>` **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**                                                                                             |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`remove_transition_by_index<class_AnimationNodeStateMachine_method_remove_transition_by_index>` **(** :ref:`int<class_int>` idx **)**                                                                                                                  |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`rename_node<class_AnimationNodeStateMachine_method_rename_node>` **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**                                                                                                   |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`replace_node<class_AnimationNodeStateMachine_method_replace_node>` **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node **)**                                                                                       |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`set_end_node<class_AnimationNodeStateMachine_method_set_end_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                       |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`set_graph_offset<class_AnimationNodeStateMachine_method_set_graph_offset>` **(** :ref:`Vector2<class_Vector2>` offset **)**                                                                                                                           |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`set_node_position<class_AnimationNodeStateMachine_method_set_node_position>` **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**                                                                                     |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                                  | :ref:`set_start_node<class_AnimationNodeStateMachine_method_set_start_node>` **(** :ref:`String<class_String>` name **)**                                                                                                                                   |
+   +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_AnimationNodeStateMachine_method_add_node:
 
-- void **add_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)**
+.. rst-class:: classref-method
+
+void **add_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2( 0, 0 ) **)**
 
 Adds a new node to the graph. The ``position`` is used for display in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_add_transition:
 
-- void **add_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` transition **)**
+.. rst-class:: classref-method
+
+void **add_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` transition **)**
 
 Adds a transition between the given nodes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_end_node:
 
-- :ref:`String<class_String>` **get_end_node** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_end_node** **(** **)** |const|
 
 Returns the graph's end node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_graph_offset:
 
-- :ref:`Vector2<class_Vector2>` **get_graph_offset** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_graph_offset** **(** **)** |const|
 
 Returns the draw offset of the graph. Used for display in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_node:
 
-- :ref:`AnimationNode<class_AnimationNode>` **get_node** **(** :ref:`String<class_String>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`AnimationNode<class_AnimationNode>` **get_node** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the animation node with the given name.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_node_name:
 
-- :ref:`String<class_String>` **get_node_name** **(** :ref:`AnimationNode<class_AnimationNode>` node **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_node_name** **(** :ref:`AnimationNode<class_AnimationNode>` node **)** |const|
 
 Returns the given animation node's name.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_node_position:
 
-- :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the given node's coordinates. Used for display in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_start_node:
 
-- :ref:`String<class_String>` **get_start_node** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_start_node** **(** **)** |const|
 
 Returns the graph's end node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_transition:
 
-- :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` **get_transition** **(** :ref:`int<class_int>` idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` **get_transition** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the given transition.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_transition_count:
 
-- :ref:`int<class_int>` **get_transition_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_transition_count** **(** **)** |const|
 
 Returns the number of connections in the graph.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_transition_from:
 
-- :ref:`String<class_String>` **get_transition_from** **(** :ref:`int<class_int>` idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_transition_from** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the given transition's start node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_get_transition_to:
 
-- :ref:`String<class_String>` **get_transition_to** **(** :ref:`int<class_int>` idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_transition_to** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the given transition's end node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_has_node:
 
-- :ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_node** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if the graph contains the given node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_has_transition:
 
-- :ref:`bool<class_bool>` **has_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)** |const|
 
 Returns ``true`` if there is a transition between the given nodes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_remove_node:
 
-- void **remove_node** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+void **remove_node** **(** :ref:`String<class_String>` name **)**
 
 Deletes the given node from the graph.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_remove_transition:
 
-- void **remove_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
+.. rst-class:: classref-method
+
+void **remove_transition** **(** :ref:`String<class_String>` from, :ref:`String<class_String>` to **)**
 
 Deletes the transition between the two specified nodes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_remove_transition_by_index:
 
-- void **remove_transition_by_index** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **remove_transition_by_index** **(** :ref:`int<class_int>` idx **)**
 
 Deletes the given transition by index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_rename_node:
 
-- void **rename_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
+.. rst-class:: classref-method
+
+void **rename_node** **(** :ref:`String<class_String>` name, :ref:`String<class_String>` new_name **)**
 
 Renames the given node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_replace_node:
 
-- void **replace_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node **)**
+.. rst-class:: classref-method
+
+void **replace_node** **(** :ref:`String<class_String>` name, :ref:`AnimationNode<class_AnimationNode>` node **)**
 
 Replaces the node and keeps its transitions unchanged.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_set_end_node:
 
-- void **set_end_node** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+void **set_end_node** **(** :ref:`String<class_String>` name **)**
 
 Sets the given node as the graph end point.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_set_graph_offset:
 
-- void **set_graph_offset** **(** :ref:`Vector2<class_Vector2>` offset **)**
+.. rst-class:: classref-method
+
+void **set_graph_offset** **(** :ref:`Vector2<class_Vector2>` offset **)**
 
 Sets the draw offset of the graph. Used for display in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_set_node_position:
 
-- void **set_node_position** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**
+.. rst-class:: classref-method
+
+void **set_node_position** **(** :ref:`String<class_String>` name, :ref:`Vector2<class_Vector2>` position **)**
 
 Sets the node's coordinates. Used for display in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_AnimationNodeStateMachine_method_set_start_node:
 
-- void **set_start_node** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+void **set_start_node** **(** :ref:`String<class_String>` name **)**
 
 Sets the given node as the graph start point.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

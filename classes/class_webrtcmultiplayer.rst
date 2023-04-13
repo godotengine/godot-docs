@@ -14,6 +14,8 @@ WebRTCMultiplayer
 
 A simple interface to create a peer-to-peer mesh network composed of :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` that is compatible with the :ref:`MultiplayerAPI<class_MultiplayerAPI>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,73 +25,106 @@ You can add each :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` via :re
 
 \ :ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>` and :ref:`NetworkedMultiplayerPeer.server_disconnected<class_NetworkedMultiplayerPeer_signal_server_disconnected>` will not be emitted unless ``server_compatibility`` is ``true`` in :ref:`initialize<class_WebRTCMultiplayer_method_initialize>`. Beside that data transfer works like in a :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_peer<class_WebRTCMultiplayer_method_add_peer>` **(** :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` peer, :ref:`int<class_int>` peer_id, :ref:`int<class_int>` unreliable_lifetime=1 **)** |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`close<class_WebRTCMultiplayer_method_close>` **(** **)**                                                                                                                                                |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`   | :ref:`get_peer<class_WebRTCMultiplayer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>`   | :ref:`get_peers<class_WebRTCMultiplayer_method_get_peers>` **(** **)**                                                                                                                                        |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_peer<class_WebRTCMultiplayer_method_has_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                            |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`initialize<class_WebRTCMultiplayer_method_initialize>` **(** :ref:`int<class_int>` peer_id, :ref:`bool<class_bool>` server_compatibility=false **)**                                                    |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`remove_peer<class_WebRTCMultiplayer_method_remove_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                      |
-+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_peer<class_WebRTCMultiplayer_method_add_peer>` **(** :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` peer, :ref:`int<class_int>` peer_id, :ref:`int<class_int>` unreliable_lifetime=1 **)** |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`close<class_WebRTCMultiplayer_method_close>` **(** **)**                                                                                                                                                |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`   | :ref:`get_peer<class_WebRTCMultiplayer_method_get_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                            |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`   | :ref:`get_peers<class_WebRTCMultiplayer_method_get_peers>` **(** **)**                                                                                                                                        |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`has_peer<class_WebRTCMultiplayer_method_has_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                            |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`initialize<class_WebRTCMultiplayer_method_initialize>` **(** :ref:`int<class_int>` peer_id, :ref:`bool<class_bool>` server_compatibility=false **)**                                                    |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`remove_peer<class_WebRTCMultiplayer_method_remove_peer>` **(** :ref:`int<class_int>` peer_id **)**                                                                                                      |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WebRTCMultiplayer_method_add_peer:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **add_peer** **(** :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` peer, :ref:`int<class_int>` peer_id, :ref:`int<class_int>` unreliable_lifetime=1 **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **add_peer** **(** :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` peer, :ref:`int<class_int>` peer_id, :ref:`int<class_int>` unreliable_lifetime=1 **)**
 
 Add a new peer to the mesh with the given ``peer_id``. The :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` must be in state :ref:`WebRTCPeerConnection.STATE_NEW<class_WebRTCPeerConnection_constant_STATE_NEW>`.
 
 Three channels will be created for reliable, unreliable, and ordered transport. The value of ``unreliable_lifetime`` will be passed to the ``maxPacketLifetime`` option when creating unreliable and ordered channels (see :ref:`WebRTCPeerConnection.create_data_channel<class_WebRTCPeerConnection_method_create_data_channel>`).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebRTCMultiplayer_method_close:
 
-- void **close** **(** **)**
+.. rst-class:: classref-method
+
+void **close** **(** **)**
 
 Close all the add peer connections and channels, freeing all resources.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebRTCMultiplayer_method_get_peer:
 
-- :ref:`Dictionary<class_Dictionary>` **get_peer** **(** :ref:`int<class_int>` peer_id **)**
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_peer** **(** :ref:`int<class_int>` peer_id **)**
 
 Return a dictionary representation of the peer with given ``peer_id`` with three keys. ``connection`` containing the :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>` to this peer, ``channels`` an array of three :ref:`WebRTCDataChannel<class_WebRTCDataChannel>`, and ``connected`` a boolean representing if the peer connection is currently connected (all three channels are open).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebRTCMultiplayer_method_get_peers:
 
-- :ref:`Dictionary<class_Dictionary>` **get_peers** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_peers** **(** **)**
 
 Returns a dictionary which keys are the peer ids and values the peer representation as in :ref:`get_peer<class_WebRTCMultiplayer_method_get_peer>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebRTCMultiplayer_method_has_peer:
 
-- :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` peer_id **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` peer_id **)**
 
 Returns ``true`` if the given ``peer_id`` is in the peers map (it might not be connected though).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebRTCMultiplayer_method_initialize:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **initialize** **(** :ref:`int<class_int>` peer_id, :ref:`bool<class_bool>` server_compatibility=false **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **initialize** **(** :ref:`int<class_int>` peer_id, :ref:`bool<class_bool>` server_compatibility=false **)**
 
 Initialize the multiplayer peer with the given ``peer_id`` (must be between 1 and 2147483647).
 
@@ -97,14 +132,19 @@ If ``server_compatibilty`` is ``false`` (default), the multiplayer peer will be 
 
 If ``server_compatibilty`` is ``true`` the peer will suppress all :ref:`NetworkedMultiplayerPeer.peer_connected<class_NetworkedMultiplayerPeer_signal_peer_connected>` signals until a peer with id :ref:`NetworkedMultiplayerPeer.TARGET_PEER_SERVER<class_NetworkedMultiplayerPeer_constant_TARGET_PEER_SERVER>` connects and then emit :ref:`NetworkedMultiplayerPeer.connection_succeeded<class_NetworkedMultiplayerPeer_signal_connection_succeeded>`. After that the signal :ref:`NetworkedMultiplayerPeer.peer_connected<class_NetworkedMultiplayerPeer_signal_peer_connected>` will be emitted for every already connected peer, and any new peer that might connect. If the server peer disconnects after that, signal :ref:`NetworkedMultiplayerPeer.server_disconnected<class_NetworkedMultiplayerPeer_signal_server_disconnected>` will be emitted and state will become :ref:`NetworkedMultiplayerPeer.CONNECTION_CONNECTED<class_NetworkedMultiplayerPeer_constant_CONNECTION_CONNECTED>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebRTCMultiplayer_method_remove_peer:
 
-- void **remove_peer** **(** :ref:`int<class_int>` peer_id **)**
+.. rst-class:: classref-method
+
+void **remove_peer** **(** :ref:`int<class_int>` peer_id **)**
 
 Remove the peer with given ``peer_id`` from the mesh. If the peer was connected, and :ref:`NetworkedMultiplayerPeer.peer_connected<class_NetworkedMultiplayerPeer_signal_peer_connected>` was emitted for it, then :ref:`NetworkedMultiplayerPeer.peer_disconnected<class_NetworkedMultiplayerPeer_signal_peer_disconnected>` will be emitted.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ HSlider
 
 Horizontal slider.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,80 +23,122 @@ Horizontal slider. See :ref:`Slider<class_Slider>`. This one goes from left (min
 
 \ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`grabber<class_HSlider_theme_icon_grabber>`                                |
-+---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`grabber_disabled<class_HSlider_theme_icon_grabber_disabled>`              |
-+---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`grabber_highlight<class_HSlider_theme_icon_grabber_highlight>`            |
-+---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`tick<class_HSlider_theme_icon_tick>`                                      |
-+---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area<class_HSlider_theme_style_grabber_area>`                     |
-+---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area_highlight<class_HSlider_theme_style_grabber_area_highlight>` |
-+---------------------------------+---------------------------------------------------------------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`slider<class_HSlider_theme_style_slider>`                                 |
-+---------------------------------+---------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`grabber<class_HSlider_theme_icon_grabber>`                                |
+   +---------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`grabber_disabled<class_HSlider_theme_icon_grabber_disabled>`              |
+   +---------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`grabber_highlight<class_HSlider_theme_icon_grabber_highlight>`            |
+   +---------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`tick<class_HSlider_theme_icon_tick>`                                      |
+   +---------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area<class_HSlider_theme_style_grabber_area>`                     |
+   +---------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`grabber_area_highlight<class_HSlider_theme_style_grabber_area_highlight>` |
+   +---------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`slider<class_HSlider_theme_style_slider>`                                 |
+   +---------------------------------+---------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_HSlider_theme_icon_grabber:
 
-- :ref:`Texture<class_Texture>` **grabber**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **grabber**
 
 The texture for the grabber (the draggable element).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSlider_theme_icon_grabber_disabled:
 
-- :ref:`Texture<class_Texture>` **grabber_disabled**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **grabber_disabled**
 
 The texture for the grabber when it's disabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSlider_theme_icon_grabber_highlight:
 
-- :ref:`Texture<class_Texture>` **grabber_highlight**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **grabber_highlight**
 
 The texture for the grabber when it's focused.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSlider_theme_icon_tick:
 
-- :ref:`Texture<class_Texture>` **tick**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **tick**
 
 The texture for the ticks, visible when :ref:`Slider.tick_count<class_Slider_property_tick_count>` is greater than 0.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSlider_theme_style_grabber_area:
 
-- :ref:`StyleBox<class_StyleBox>` **grabber_area**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **grabber_area**
 
 The background of the area to the left of the grabber.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSlider_theme_style_grabber_area_highlight:
 
-- :ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **grabber_area_highlight**
+
+.. container:: contribute
+
+	There is currently no description for this theme property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HSlider_theme_style_slider:
 
-- :ref:`StyleBox<class_StyleBox>` **slider**
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **slider**
 
 The background for the whole slider. Determines the height of the ``grabber_area``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ VideoStreamGDNative
 
 :ref:`VideoStream<class_VideoStream>` resource for video formats implemented via GDNative.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,32 +23,50 @@ Description
 
 It can be used via `godot-videodecoder <https://github.com/KidRigger/godot-videodecoder>`__ which uses the `FFmpeg <https://ffmpeg.org>`__ library.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_file<class_VideoStreamGDNative_method_get_file>` **(** **)**                                  |
-+-----------------------------+---------------------------------------------------------------------------------------------------------+
-| void                        | :ref:`set_file<class_VideoStreamGDNative_method_set_file>` **(** :ref:`String<class_String>` file **)** |
-+-----------------------------+---------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+---------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_file<class_VideoStreamGDNative_method_get_file>` **(** **)**                                  |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------+
+   | void                        | :ref:`set_file<class_VideoStreamGDNative_method_set_file>` **(** :ref:`String<class_String>` file **)** |
+   +-----------------------------+---------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VideoStreamGDNative_method_get_file:
 
-- :ref:`String<class_String>` **get_file** **(** **)**
+.. rst-class:: classref-method
 
-Returns the video file handled by this ``VideoStreamGDNative``.
+:ref:`String<class_String>` **get_file** **(** **)**
+
+Returns the video file handled by this **VideoStreamGDNative**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VideoStreamGDNative_method_set_file:
 
-- void **set_file** **(** :ref:`String<class_String>` file **)**
+.. rst-class:: classref-method
 
-Sets the video file that this ``VideoStreamGDNative`` resource handles. The supported extensions depend on the GDNative plugins used to expose video formats.
+void **set_file** **(** :ref:`String<class_String>` file **)**
+
+Sets the video file that this **VideoStreamGDNative** resource handles. The supported extensions depend on the GDNative plugins used to expose video formats.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

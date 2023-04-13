@@ -12,83 +12,180 @@ GLTFCamera
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+Represents a GLTF camera.
 
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFCamera`` within a script will cause an error in an exported project.
+Represents a camera as defined by the base GLTF spec.
+
+\ **Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFCamera** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `GLTF camera detailed specification <https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#reference-camera>`__
+
+- `GLTF camera spec and example file <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_015_SimpleCameras.md>`__
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------+------------+
-| :ref:`float<class_float>` | :ref:`fov_size<class_GLTFCamera_property_fov_size>`       | ``75.0``   |
-+---------------------------+-----------------------------------------------------------+------------+
-| :ref:`bool<class_bool>`   | :ref:`perspective<class_GLTFCamera_property_perspective>` | ``true``   |
-+---------------------------+-----------------------------------------------------------+------------+
-| :ref:`float<class_float>` | :ref:`zfar<class_GLTFCamera_property_zfar>`               | ``4000.0`` |
-+---------------------------+-----------------------------------------------------------+------------+
-| :ref:`float<class_float>` | :ref:`znear<class_GLTFCamera_property_znear>`             | ``0.05``   |
-+---------------------------+-----------------------------------------------------------+------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------+------------+
+   | :ref:`float<class_float>` | :ref:`fov_size<class_GLTFCamera_property_fov_size>`       | ``1.309``  |
+   +---------------------------+-----------------------------------------------------------+------------+
+   | :ref:`bool<class_bool>`   | :ref:`perspective<class_GLTFCamera_property_perspective>` | ``true``   |
+   +---------------------------+-----------------------------------------------------------+------------+
+   | :ref:`float<class_float>` | :ref:`size_mag<class_GLTFCamera_property_size_mag>`       | ``0.5``    |
+   +---------------------------+-----------------------------------------------------------+------------+
+   | :ref:`float<class_float>` | :ref:`zfar<class_GLTFCamera_property_zfar>`               | ``4000.0`` |
+   +---------------------------+-----------------------------------------------------------+------------+
+   | :ref:`float<class_float>` | :ref:`znear<class_GLTFCamera_property_znear>`             | ``0.05``   |
+   +---------------------------+-----------------------------------------------------------+------------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`to_dictionary<class_GLTFCamera_method_to_dictionary>` **(** **)** |const| |
+   +-------------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`Camera<class_Camera>`         | :ref:`to_node<class_GLTFCamera_method_to_node>` **(** **)** |const|             |
+   +-------------------------------------+---------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFCamera_property_fov_size:
 
-- :ref:`float<class_float>` **fov_size**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``75.0``            |
-+-----------+---------------------+
-| *Setter*  | set_fov_size(value) |
-+-----------+---------------------+
-| *Getter*  | get_fov_size()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **fov_size** = ``1.309``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fov_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_fov_size** **(** **)**
+
+The FOV of the camera. This class and GLTF define the camera FOV in radians, while Godot uses degrees. This maps to GLTF's ``yfov`` property. This value is only used for perspective cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is true.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFCamera_property_perspective:
 
-- :ref:`bool<class_bool>` **perspective**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``true``               |
-+-----------+------------------------+
-| *Setter*  | set_perspective(value) |
-+-----------+------------------------+
-| *Getter*  | get_perspective()      |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **perspective** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_perspective** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_perspective** **(** **)**
+
+Whether or not the camera is in perspective mode. If false, the camera is in orthographic/orthogonal mode. This maps to GLTF's camera ``type`` property. See :ref:`Camera.projection<class_Camera_property_projection>` and the GLTF spec for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFCamera_property_size_mag:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **size_mag** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_size_mag** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_size_mag** **(** **)**
+
+The size of the camera. This class and GLTF define the camera size magnitude as a radius in meters, while Godot defines it as a diameter in meters. This maps to GLTF's ``ymag`` property. This value is only used for orthographic/orthogonal cameras, when :ref:`perspective<class_GLTFCamera_property_perspective>` is false.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFCamera_property_zfar:
 
-- :ref:`float<class_float>` **zfar**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``4000.0``      |
-+-----------+-----------------+
-| *Setter*  | set_zfar(value) |
-+-----------+-----------------+
-| *Getter*  | get_zfar()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **zfar** = ``4000.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_zfar** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_zfar** **(** **)**
+
+The distance to the far culling boundary for this camera relative to its local Z axis, in meters. This maps to GLTF's ``zfar`` property.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFCamera_property_znear:
 
-- :ref:`float<class_float>` **znear**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0.05``         |
-+-----------+------------------+
-| *Setter*  | set_znear(value) |
-+-----------+------------------+
-| *Getter*  | get_znear()      |
-+-----------+------------------+
+:ref:`float<class_float>` **znear** = ``0.05``
+
+.. rst-class:: classref-property-setget
+
+- void **set_znear** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_znear** **(** **)**
+
+The distance to the near culling boundary for this camera relative to its local Z axis, in meters. This maps to GLTF's ``znear`` property.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_GLTFCamera_method_to_dictionary:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **to_dictionary** **(** **)** |const|
+
+Serializes this GLTFCamera instance into a :ref:`Dictionary<class_Dictionary>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFCamera_method_to_node:
+
+.. rst-class:: classref-method
+
+:ref:`Camera<class_Camera>` **to_node** **(** **)** |const|
+
+Converts this GLTFCamera instance into a Godot :ref:`Camera<class_Camera>` node.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

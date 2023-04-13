@@ -16,75 +16,91 @@ InputEventMouse
 
 Base input event type for mouse events.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Stores general mouse events information.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/inputevent`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | ``0``               |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`global_position<class_InputEventMouse_property_global_position>` | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventMouse_property_position>`               | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------+---------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------------------------+---------------------+
+   | :ref:`int<class_int>`         | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | ``0``               |
+   +-------------------------------+------------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`global_position<class_InputEventMouse_property_global_position>` | ``Vector2( 0, 0 )`` |
+   +-------------------------------+------------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventMouse_property_position>`               | ``Vector2( 0, 0 )`` |
+   +-------------------------------+------------------------------------------------------------------------+---------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventMouse_property_button_mask:
 
-- :ref:`int<class_int>` **button_mask**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0``                  |
-+-----------+------------------------+
-| *Setter*  | set_button_mask(value) |
-+-----------+------------------------+
-| *Getter*  | get_button_mask()      |
-+-----------+------------------------+
+:ref:`int<class_int>` **button_mask** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_button_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_button_mask** **(** **)**
 
 The mouse button mask identifier, one of or a bitwise combination of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button masks.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMouse_property_global_position:
 
-- :ref:`Vector2<class_Vector2>` **global_position**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``Vector2( 0, 0 )``        |
-+-----------+----------------------------+
-| *Setter*  | set_global_position(value) |
-+-----------+----------------------------+
-| *Getter*  | get_global_position()      |
-+-----------+----------------------------+
+:ref:`Vector2<class_Vector2>` **global_position** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_global_position** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_global_position** **(** **)**
 
 When received in :ref:`Node._input<class_Node_method__input>` or :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`, returns the mouse's position in the root :ref:`Viewport<class_Viewport>` using the coordinate system of the root :ref:`Viewport<class_Viewport>`.
 
 When received in :ref:`Control._gui_input<class_Control_method__gui_input>`, returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that the :ref:`Control<class_Control>` is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_InputEventMouse_property_position:
 
-- :ref:`Vector2<class_Vector2>` **position**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Setter*  | set_position(value) |
-+-----------+---------------------+
-| *Getter*  | get_position()      |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **position** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_position** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_position** **(** **)**
 
 When received in :ref:`Node._input<class_Node_method__input>` or :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`, returns the mouse's position in the :ref:`Viewport<class_Viewport>` this :ref:`Node<class_Node>` is in using the coordinate system of this :ref:`Viewport<class_Viewport>`.
 
@@ -93,3 +109,4 @@ When received in :ref:`Control._gui_input<class_Control_method__gui_input>`, ret
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

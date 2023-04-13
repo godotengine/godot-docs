@@ -12,24 +12,40 @@ PluginScript
 
 **Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------+--------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`new<class_PluginScript_method_new>` **(** ... **)** |vararg| |
-+-------------------------------+--------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+--------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`new<class_PluginScript_method_new>` **(** ... **)** |vararg| |
+   +-------------------------------+--------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PluginScript_method_new:
 
-- :ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **new** **(** ... **)** |vararg|
 
 Returns a new instance of the script.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,53 +14,67 @@ VisualShaderNodeBooleanUniform
 
 A boolean uniform to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Translated to ``uniform bool`` in the shader language.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`default_value<class_VisualShaderNodeBooleanUniform_property_default_value>`                 | ``false`` |
-+-------------------------+---------------------------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`default_value_enabled<class_VisualShaderNodeBooleanUniform_property_default_value_enabled>` | ``false`` |
-+-------------------------+---------------------------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`default_value<class_VisualShaderNodeBooleanUniform_property_default_value>`                 | ``false`` |
+   +-------------------------+---------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`default_value_enabled<class_VisualShaderNodeBooleanUniform_property_default_value_enabled>` | ``false`` |
+   +-------------------------+---------------------------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeBooleanUniform_property_default_value:
 
-- :ref:`bool<class_bool>` **default_value**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``false``                |
-+-----------+--------------------------+
-| *Setter*  | set_default_value(value) |
-+-----------+--------------------------+
-| *Getter*  | get_default_value()      |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **default_value** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_default_value** **(** **)**
 
 A default value to be assigned within the shader.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualShaderNodeBooleanUniform_property_default_value_enabled:
 
-- :ref:`bool<class_bool>` **default_value_enabled**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``false``                        |
-+-----------+----------------------------------+
-| *Setter*  | set_default_value_enabled(value) |
-+-----------+----------------------------------+
-| *Getter*  | is_default_value_enabled()       |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **default_value_enabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_value_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_default_value_enabled** **(** **)**
 
 Enables usage of the :ref:`default_value<class_VisualShaderNodeBooleanUniform_property_default_value>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

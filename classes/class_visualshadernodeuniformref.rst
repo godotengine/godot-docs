@@ -14,35 +14,48 @@ VisualShaderNodeUniformRef
 
 A reference to an existing :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Creating a reference to a :ref:`VisualShaderNodeUniform<class_VisualShaderNodeUniform>` allows you to reuse this uniform in different shaders or shader stages easily.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+-----------------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>` | :ref:`uniform_name<class_VisualShaderNodeUniformRef_property_uniform_name>` | ``"[None]"`` |
-+-----------------------------+-----------------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+-----------------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>` | :ref:`uniform_name<class_VisualShaderNodeUniformRef_property_uniform_name>` | ``"[None]"`` |
+   +-----------------------------+-----------------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeUniformRef_property_uniform_name:
 
-- :ref:`String<class_String>` **uniform_name**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``"[None]"``            |
-+-----------+-------------------------+
-| *Setter*  | set_uniform_name(value) |
-+-----------+-------------------------+
-| *Getter*  | get_uniform_name()      |
-+-----------+-------------------------+
+:ref:`String<class_String>` **uniform_name** = ``"[None]"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_uniform_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_uniform_name** **(** **)**
 
 The name of the uniform which this reference points to.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

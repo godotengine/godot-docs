@@ -12,157 +12,209 @@ VisualInstance
 
 **Inherits:** :ref:`CullInstance<class_CullInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`BakedLightmap<class_BakedLightmap>`, :ref:`GIProbe<class_GIProbe>`, :ref:`GeometryInstance<class_GeometryInstance>`, :ref:`Light<class_Light>`, :ref:`ReflectionProbe<class_ReflectionProbe>`, :ref:`RootMotionView<class_RootMotionView>`
+**Inherited By:** :ref:`BakedLightmap<class_BakedLightmap>`, :ref:`GeometryInstance<class_GeometryInstance>`, :ref:`GIProbe<class_GIProbe>`, :ref:`Light<class_Light>`, :ref:`ReflectionProbe<class_ReflectionProbe>`, :ref:`RootMotionView<class_RootMotionView>`
 
 Parent of all visual 3D nodes.
+
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The ``VisualInstance`` is used to connect a resource to a visual representation. All visual 3D nodes inherit from the ``VisualInstance``. In general, you should not access the ``VisualInstance`` properties directly as they are accessed and managed by the nodes that inherit from ``VisualInstance``. ``VisualInstance`` is the node representation of the :ref:`VisualServer<class_VisualServer>` instance.
+The **VisualInstance** is used to connect a resource to a visual representation. All visual 3D nodes inherit from the **VisualInstance**. In general, you should not access the **VisualInstance** properties directly as they are accessed and managed by the nodes that inherit from **VisualInstance**. **VisualInstance** is the node representation of the :ref:`VisualServer<class_VisualServer>` instance.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------------------------------+----------+
-| :ref:`int<class_int>`     | :ref:`layers<class_VisualInstance_property_layers>`                                   | ``1``    |
-+---------------------------+---------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>` | :ref:`sorting_offset<class_VisualInstance_property_sorting_offset>`                   | ``0.0``  |
-+---------------------------+---------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`   | :ref:`sorting_use_aabb_center<class_VisualInstance_property_sorting_use_aabb_center>` | ``true`` |
-+---------------------------+---------------------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`layers<class_VisualInstance_property_layers>`                                   | ``1``    |
+   +---------------------------+---------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>` | :ref:`sorting_offset<class_VisualInstance_property_sorting_offset>`                   | ``0.0``  |
+   +---------------------------+---------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`sorting_use_aabb_center<class_VisualInstance_property_sorting_use_aabb_center>` | ``true`` |
+   +---------------------------+---------------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`get_aabb<class_VisualInstance_method_get_aabb>` **(** **)** |const|                                                                          |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`   | :ref:`get_base<class_VisualInstance_method_get_base>` **(** **)** |const|                                                                          |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`   | :ref:`get_instance<class_VisualInstance_method_get_instance>` **(** **)** |const|                                                                  |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`get_layer_mask_bit<class_VisualInstance_method_get_layer_mask_bit>` **(** :ref:`int<class_int>` layer **)** |const|                          |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`AABB<class_AABB>` | :ref:`get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>` **(** **)** |const|                                                  |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_base<class_VisualInstance_method_set_base>` **(** :ref:`RID<class_RID>` base **)**                                                       |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_layer_mask_bit<class_VisualInstance_method_set_layer_mask_bit>` **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enabled **)** |
-+-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`get_aabb<class_VisualInstance_method_get_aabb>` **(** **)** |const|                                                                          |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_base<class_VisualInstance_method_get_base>` **(** **)** |const|                                                                          |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_instance<class_VisualInstance_method_get_instance>` **(** **)** |const|                                                                  |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_layer_mask_bit<class_VisualInstance_method_get_layer_mask_bit>` **(** :ref:`int<class_int>` layer **)** |const|                          |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AABB<class_AABB>` | :ref:`get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>` **(** **)** |const|                                                  |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_base<class_VisualInstance_method_set_base>` **(** :ref:`RID<class_RID>` base **)**                                                       |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_layer_mask_bit<class_VisualInstance_method_set_layer_mask_bit>` **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enabled **)** |
+   +-------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualInstance_property_layers:
 
-- :ref:`int<class_int>` **layers**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``1``                 |
-+-----------+-----------------------+
-| *Setter*  | set_layer_mask(value) |
-+-----------+-----------------------+
-| *Getter*  | get_layer_mask()      |
-+-----------+-----------------------+
+:ref:`int<class_int>` **layers** = ``1``
 
-The render layer(s) this ``VisualInstance`` is drawn on.
+.. rst-class:: classref-property-setget
 
-This object will only be visible for :ref:`Camera<class_Camera>`\ s whose cull mask includes the render object this ``VisualInstance`` is set to.
+- void **set_layer_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_layer_mask** **(** **)**
+
+The render layer(s) this **VisualInstance** is drawn on.
+
+This object will only be visible for :ref:`Camera<class_Camera>`\ s whose cull mask includes the render object this **VisualInstance** is set to.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance_property_sorting_offset:
 
-- :ref:`float<class_float>` **sorting_offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0.0``                   |
-+-----------+---------------------------+
-| *Setter*  | set_sorting_offset(value) |
-+-----------+---------------------------+
-| *Getter*  | get_sorting_offset()      |
-+-----------+---------------------------+
+:ref:`float<class_float>` **sorting_offset** = ``0.0``
 
-The sorting offset used by this ``VisualInstance``. Adjusting it to a higher value will make the ``VisualInstance`` reliably draw on top of other ``VisualInstance``\ s that are otherwise positioned at the same spot.
+.. rst-class:: classref-property-setget
+
+- void **set_sorting_offset** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_sorting_offset** **(** **)**
+
+The sorting offset used by this **VisualInstance**. Adjusting it to a higher value will make the **VisualInstance** reliably draw on top of other **VisualInstance**\ s that are otherwise positioned at the same spot.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance_property_sorting_use_aabb_center:
 
-- :ref:`bool<class_bool>` **sorting_use_aabb_center**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------+
-| *Default* | ``true``                           |
-+-----------+------------------------------------+
-| *Setter*  | set_sorting_use_aabb_center(value) |
-+-----------+------------------------------------+
-| *Getter*  | is_sorting_use_aabb_center()       |
-+-----------+------------------------------------+
+:ref:`bool<class_bool>` **sorting_use_aabb_center** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sorting_use_aabb_center** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_sorting_use_aabb_center** **(** **)**
 
 If ``true``, the object is sorted based on the :ref:`AABB<class_AABB>` center. Sorted based on the global position otherwise.
 
 The :ref:`AABB<class_AABB>` center based sorting is generally more accurate for 3D models. The position based sorting instead allows to better control the drawing order when working with :ref:`Particles<class_Particles>` and :ref:`CPUParticles<class_CPUParticles>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisualInstance_method_get_aabb:
 
-- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance``. See also :ref:`get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>`.
+:ref:`AABB<class_AABB>` **get_aabb** **(** **)** |const|
+
+Returns the :ref:`AABB<class_AABB>` (also known as the bounding box) for this **VisualInstance**. See also :ref:`get_transformed_aabb<class_VisualInstance_method_get_transformed_aabb>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance_method_get_base:
 
-- :ref:`RID<class_RID>` **get_base** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the RID of the resource associated with this ``VisualInstance``. For example, if the Node is a :ref:`MeshInstance<class_MeshInstance>`, this will return the RID of the associated :ref:`Mesh<class_Mesh>`.
+:ref:`RID<class_RID>` **get_base** **(** **)** |const|
+
+Returns the RID of the resource associated with this **VisualInstance**. For example, if the Node is a :ref:`MeshInstance<class_MeshInstance>`, this will return the RID of the associated :ref:`Mesh<class_Mesh>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance_method_get_instance:
 
-- :ref:`RID<class_RID>` **get_instance** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the RID of this instance. This RID is the same as the RID returned by :ref:`VisualServer.instance_create<class_VisualServer_method_instance_create>`. This RID is needed if you want to call :ref:`VisualServer<class_VisualServer>` functions directly on this ``VisualInstance``.
+:ref:`RID<class_RID>` **get_instance** **(** **)** |const|
+
+Returns the RID of this instance. This RID is the same as the RID returned by :ref:`VisualServer.instance_create<class_VisualServer_method_instance_create>`. This RID is needed if you want to call :ref:`VisualServer<class_VisualServer>` functions directly on this **VisualInstance**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance_method_get_layer_mask_bit:
 
-- :ref:`bool<class_bool>` **get_layer_mask_bit** **(** :ref:`int<class_int>` layer **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_layer_mask_bit** **(** :ref:`int<class_int>` layer **)** |const|
 
 Returns ``true`` when the specified layer is enabled in :ref:`layers<class_VisualInstance_property_layers>` and ``false`` otherwise.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance_method_get_transformed_aabb:
 
-- :ref:`AABB<class_AABB>` **get_transformed_aabb** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box) for this ``VisualInstance``.
+:ref:`AABB<class_AABB>` **get_transformed_aabb** **(** **)** |const|
+
+Returns the transformed :ref:`AABB<class_AABB>` (also known as the bounding box) for this **VisualInstance**.
 
 Transformed in this case means the :ref:`AABB<class_AABB>` plus the position, rotation, and scale of the :ref:`Spatial<class_Spatial>`'s :ref:`Transform<class_Transform>`. See also :ref:`get_aabb<class_VisualInstance_method_get_aabb>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance_method_set_base:
 
-- void **set_base** **(** :ref:`RID<class_RID>` base **)**
+.. rst-class:: classref-method
 
-Sets the resource that is instantiated by this ``VisualInstance``, which changes how the engine handles the ``VisualInstance`` under the hood. Equivalent to :ref:`VisualServer.instance_set_base<class_VisualServer_method_instance_set_base>`.
+void **set_base** **(** :ref:`RID<class_RID>` base **)**
+
+Sets the resource that is instantiated by this **VisualInstance**, which changes how the engine handles the **VisualInstance** under the hood. Equivalent to :ref:`VisualServer.instance_set_base<class_VisualServer_method_instance_set_base>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualInstance_method_set_layer_mask_bit:
 
-- void **set_layer_mask_bit** **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enabled **)**
+.. rst-class:: classref-method
+
+void **set_layer_mask_bit** **(** :ref:`int<class_int>` layer, :ref:`bool<class_bool>` enabled **)**
 
 Enables a particular layer in :ref:`layers<class_VisualInstance_property_layers>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

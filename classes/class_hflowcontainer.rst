@@ -14,45 +14,57 @@ HFlowContainer
 
 Horizontal flow container.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Horizontal version of :ref:`FlowContainer<class_FlowContainer>`.
 
+.. rst-class:: classref-reftable-group
+
 Theme Properties
 ----------------
 
-+-----------------------+---------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`hseparation<class_HFlowContainer_theme_constant_hseparation>` | ``4`` |
-+-----------------------+---------------------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`vseparation<class_HFlowContainer_theme_constant_vseparation>` | ``4`` |
-+-----------------------+---------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+---------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`hseparation<class_HFlowContainer_theme_constant_hseparation>` | ``4`` |
+   +-----------------------+---------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>` | :ref:`vseparation<class_HFlowContainer_theme_constant_vseparation>` | ``4`` |
+   +-----------------------+---------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_HFlowContainer_theme_constant_hseparation:
 
-- :ref:`int<class_int>` **hseparation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **hseparation** = ``4``
 
 The horizontal separation of children nodes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_HFlowContainer_theme_constant_vseparation:
 
-- :ref:`int<class_int>` **vseparation**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **vseparation** = ``4``
 
 The vertical separation of children nodes.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,126 +14,168 @@ Navigation2D
 
 2D navigation and pathfinding node.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-*Deprecated.* ``Navigation2D`` node and :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`Navigation2DServer.map_get_path<class_Navigation2DServer_method_map_get_path>` instead.
+*Deprecated.* **Navigation2D** node and :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`Navigation2DServer.map_get_path<class_Navigation2DServer_method_map_get_path>` instead.
 
 Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of :ref:`NavigationPolygon<class_NavigationPolygon>` resources. By default, these are automatically collected from child :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>` nodes.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `2D Navigation Demo <https://godotengine.org/asset-library/asset/117>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`cell_size<class_Navigation2D_property_cell_size>`                           | ``1.0`` |
-+---------------------------+-----------------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`edge_connection_margin<class_Navigation2D_property_edge_connection_margin>` | ``1.0`` |
-+---------------------------+-----------------------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`navigation_layers<class_Navigation2D_property_navigation_layers>`           | ``1``   |
-+---------------------------+-----------------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`cell_size<class_Navigation2D_property_cell_size>`                           | ``1.0`` |
+   +---------------------------+-----------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`edge_connection_margin<class_Navigation2D_property_edge_connection_margin>` | ``1.0`` |
+   +---------------------------+-----------------------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`navigation_layers<class_Navigation2D_property_navigation_layers>`           | ``1``   |
+   +---------------------------+-----------------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point<class_Navigation2D_method_get_closest_point>` **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|                                                                    |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                           | :ref:`get_closest_point_owner<class_Navigation2D_method_get_closest_point_owner>` **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|                                                        |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_RID>`                           | :ref:`get_rid<class_Navigation2D_method_get_rid>` **(** **)** |const|                                                                                                                               |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` **(** :ref:`Vector2<class_Vector2>` start, :ref:`Vector2<class_Vector2>` end, :ref:`bool<class_bool>` optimize=true **)** |const| |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>`                   | :ref:`get_closest_point<class_Navigation2D_method_get_closest_point>` **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|                                                                    |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                           | :ref:`get_closest_point_owner<class_Navigation2D_method_get_closest_point_owner>` **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|                                                        |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                           | :ref:`get_rid<class_Navigation2D_method_get_rid>` **(** **)** |const|                                                                                                                               |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` **(** :ref:`Vector2<class_Vector2>` start, :ref:`Vector2<class_Vector2>` end, :ref:`bool<class_bool>` optimize=true **)** |const| |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Navigation2D_property_cell_size:
 
-- :ref:`float<class_float>` **cell_size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1.0``              |
-+-----------+----------------------+
-| *Setter*  | set_cell_size(value) |
-+-----------+----------------------+
-| *Getter*  | get_cell_size()      |
-+-----------+----------------------+
+:ref:`float<class_float>` **cell_size** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cell_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_cell_size** **(** **)**
 
 The XY plane cell size to use for fields.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation2D_property_edge_connection_margin:
 
-- :ref:`float<class_float>` **edge_connection_margin**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``1.0``                           |
-+-----------+-----------------------------------+
-| *Setter*  | set_edge_connection_margin(value) |
-+-----------+-----------------------------------+
-| *Getter*  | get_edge_connection_margin()      |
-+-----------+-----------------------------------+
+:ref:`float<class_float>` **edge_connection_margin** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_edge_connection_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_edge_connection_margin** **(** **)**
 
 This value is used to detect the near edges to connect compatible regions.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation2D_property_navigation_layers:
 
-- :ref:`int<class_int>` **navigation_layers**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``1``                        |
-+-----------+------------------------------+
-| *Setter*  | set_navigation_layers(value) |
-+-----------+------------------------------+
-| *Getter*  | get_navigation_layers()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **navigation_layers** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_navigation_layers** **(** **)**
 
 A bitfield determining all navigation map layers the navigation can use on a :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` path query.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Navigation2D_method_get_closest_point:
 
-- :ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Vector2<class_Vector2>` **get_closest_point** **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|
 
 Returns the navigation point closest to the point given. Points are in local coordinate space.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation2D_method_get_closest_point_owner:
 
-- :ref:`RID<class_RID>` **get_closest_point_owner** **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_closest_point_owner** **(** :ref:`Vector2<class_Vector2>` to_point **)** |const|
 
 Returns the owner of the :ref:`NavigationPolygon<class_NavigationPolygon>` which contains the navigation point closest to the point given. This is usually a :ref:`NavigationPolygonInstance<class_NavigationPolygonInstance>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation2D_method_get_rid:
 
-- :ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
 Returns the object's :ref:`RID<class_RID>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Navigation2D_method_get_simple_path:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_simple_path** **(** :ref:`Vector2<class_Vector2>` start, :ref:`Vector2<class_Vector2>` end, :ref:`bool<class_bool>` optimize=true **)** |const|
+.. rst-class:: classref-method
 
-*Deprecated.* ``Navigation2D`` node and :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`Navigation2DServer.map_get_path<class_Navigation2DServer_method_map_get_path>` instead.
+:ref:`PoolVector2Array<class_PoolVector2Array>` **get_simple_path** **(** :ref:`Vector2<class_Vector2>` start, :ref:`Vector2<class_Vector2>` end, :ref:`bool<class_bool>` optimize=true **)** |const|
+
+*Deprecated.* **Navigation2D** node and :ref:`get_simple_path<class_Navigation2D_method_get_simple_path>` are deprecated and will be removed in a future version. Use :ref:`Navigation2DServer.map_get_path<class_Navigation2DServer_method_map_get_path>` instead.
 
 Returns the path between two given points. Points are in local coordinate space. If ``optimize`` is ``true`` (the default), the path is smoothed by merging path segments where possible.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

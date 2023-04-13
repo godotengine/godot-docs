@@ -16,94 +16,112 @@ Joint
 
 Base class for all 3D joints.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Joints are used to bind together two physics bodies. They have a solver priority and can define if the bodies of the two attached nodes should be able to collide with each other.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `3D Truck Town Demo <https://godotengine.org/asset-library/asset/524>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+------------------------------------------------------------------------------+------------------+
-| :ref:`bool<class_bool>`         | :ref:`collision/exclude_nodes<class_Joint_property_collision/exclude_nodes>` | ``true``         |
-+---------------------------------+------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_a<class_Joint_property_nodes/node_a>`                       | ``NodePath("")`` |
-+---------------------------------+------------------------------------------------------------------------------+------------------+
-| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_b<class_Joint_property_nodes/node_b>`                       | ``NodePath("")`` |
-+---------------------------------+------------------------------------------------------------------------------+------------------+
-| :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint_property_solver/priority>`                 | ``1``            |
-+---------------------------------+------------------------------------------------------------------------------+------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+------------------------------------------------------------------------------+------------------+
+   | :ref:`bool<class_bool>`         | :ref:`collision/exclude_nodes<class_Joint_property_collision/exclude_nodes>` | ``true``         |
+   +---------------------------------+------------------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_a<class_Joint_property_nodes/node_a>`                       | ``NodePath("")`` |
+   +---------------------------------+------------------------------------------------------------------------------+------------------+
+   | :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_b<class_Joint_property_nodes/node_b>`                       | ``NodePath("")`` |
+   +---------------------------------+------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint_property_solver/priority>`                 | ``1``            |
+   +---------------------------------+------------------------------------------------------------------------------+------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Joint_property_collision/exclude_nodes:
 
-- :ref:`bool<class_bool>` **collision/exclude_nodes**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------+
-| *Default* | ``true``                                |
-+-----------+-----------------------------------------+
-| *Setter*  | set_exclude_nodes_from_collision(value) |
-+-----------+-----------------------------------------+
-| *Getter*  | get_exclude_nodes_from_collision()      |
-+-----------+-----------------------------------------+
+:ref:`bool<class_bool>` **collision/exclude_nodes** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_exclude_nodes_from_collision** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_exclude_nodes_from_collision** **(** **)**
 
 If ``true``, the two bodies of the nodes are not able to collide with each other.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Joint_property_nodes/node_a:
 
-- :ref:`NodePath<class_NodePath>` **nodes/node_a**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``NodePath("")``  |
-+-----------+-------------------+
-| *Setter*  | set_node_a(value) |
-+-----------+-------------------+
-| *Getter*  | get_node_a()      |
-+-----------+-------------------+
+:ref:`NodePath<class_NodePath>` **nodes/node_a** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_node_a** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_node_a** **(** **)**
 
 The node attached to the first side (A) of the joint.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Joint_property_nodes/node_b:
 
-- :ref:`NodePath<class_NodePath>` **nodes/node_b**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``NodePath("")``  |
-+-----------+-------------------+
-| *Setter*  | set_node_b(value) |
-+-----------+-------------------+
-| *Getter*  | get_node_b()      |
-+-----------+-------------------+
+:ref:`NodePath<class_NodePath>` **nodes/node_b** = ``NodePath("")``
+
+.. rst-class:: classref-property-setget
+
+- void **set_node_b** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_node_b** **(** **)**
 
 The node attached to the second side (B) of the joint.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Joint_property_solver/priority:
 
-- :ref:`int<class_int>` **solver/priority**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``1``                      |
-+-----------+----------------------------+
-| *Setter*  | set_solver_priority(value) |
-+-----------+----------------------------+
-| *Getter*  | get_solver_priority()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **solver/priority** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_solver_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_solver_priority** **(** **)**
 
 The priority used to define which solver is executed first for multiple joints. The lower the value, the higher the priority.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

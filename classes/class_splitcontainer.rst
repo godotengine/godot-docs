@@ -16,120 +16,178 @@ SplitContainer
 
 Container for splitting and adjusting.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Container for splitting two :ref:`Control<class_Control>`\ s vertically or horizontally, with a grabber that allows adjusting the split offset or ratio.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`GUI containers <../tutorials/ui/gui_containers>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   | ``false`` |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` | ``0``     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             | ``0``     |
-+-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   | ``false`` |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` | ``0``     |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             | ``0``     |
+   +-----------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------+
-| void | :ref:`clamp_split_offset<class_SplitContainer_method_clamp_split_offset>` **(** **)** |
-+------+---------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+---------------------------------------------------------------------------------------+
+   | void | :ref:`clamp_split_offset<class_SplitContainer_method_clamp_split_offset>` **(** **)** |
+   +------+---------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_SplitContainer_signal_dragged:
 
-- **dragged** **(** :ref:`int<class_int>` offset **)**
+.. rst-class:: classref-signal
+
+**dragged** **(** :ref:`int<class_int>` offset **)**
 
 Emitted when the dragger is dragged by user.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_SplitContainer_DraggerVisibility:
 
-.. _class_SplitContainer_constant_DRAGGER_VISIBLE:
-
-.. _class_SplitContainer_constant_DRAGGER_HIDDEN:
-
-.. _class_SplitContainer_constant_DRAGGER_HIDDEN_COLLAPSED:
+.. rst-class:: classref-enumeration
 
 enum **DraggerVisibility**:
 
-- **DRAGGER_VISIBLE** = **0** --- The split dragger is visible when the cursor hovers it.
+.. _class_SplitContainer_constant_DRAGGER_VISIBLE:
 
-- **DRAGGER_HIDDEN** = **1** --- The split dragger is never visible.
+.. rst-class:: classref-enumeration-constant
 
-- **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is never visible and its space collapsed.
+:ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **DRAGGER_VISIBLE** = ``0``
+
+The split dragger is visible when the cursor hovers it.
+
+.. _class_SplitContainer_constant_DRAGGER_HIDDEN:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **DRAGGER_HIDDEN** = ``1``
+
+The split dragger is never visible.
+
+.. _class_SplitContainer_constant_DRAGGER_HIDDEN_COLLAPSED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **DRAGGER_HIDDEN_COLLAPSED** = ``2``
+
+The split dragger is never visible and its space collapsed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SplitContainer_property_collapsed:
 
-- :ref:`bool<class_bool>` **collapsed**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_collapsed(value) |
-+-----------+----------------------+
-| *Getter*  | is_collapsed()       |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **collapsed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collapsed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_collapsed** **(** **)**
 
 If ``true``, the area of the first :ref:`Control<class_Control>` will be collapsed and the dragger will be disabled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SplitContainer_property_dragger_visibility:
 
-- :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``0``                         |
-+-----------+-------------------------------+
-| *Setter*  | set_dragger_visibility(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_dragger_visibility()      |
-+-----------+-------------------------------+
+:ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_dragger_visibility** **(** :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` value **)**
+- :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **get_dragger_visibility** **(** **)**
 
 Determines the dragger's visibility. See :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` for details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SplitContainer_property_split_offset:
 
-- :ref:`int<class_int>` **split_offset**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_split_offset(value) |
-+-----------+-------------------------+
-| *Getter*  | get_split_offset()      |
-+-----------+-------------------------+
+:ref:`int<class_int>` **split_offset** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_split_offset** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_split_offset** **(** **)**
 
 The initial offset of the splitting between the two :ref:`Control<class_Control>`\ s, with ``0`` being at the end of the first :ref:`Control<class_Control>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SplitContainer_method_clamp_split_offset:
 
-- void **clamp_split_offset** **(** **)**
+.. rst-class:: classref-method
+
+void **clamp_split_offset** **(** **)**
 
 Clamps the :ref:`split_offset<class_SplitContainer_property_split_offset>` value to not go outside the currently possible minimal and maximum values.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

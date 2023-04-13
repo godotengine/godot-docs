@@ -14,6 +14,8 @@ VisualScriptPreload
 
 Creates a new :ref:`Resource<class_Resource>` or loads one from the filesystem.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,28 +29,41 @@ none
 
 - Data (object): ``res``
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------+
-| :ref:`Resource<class_Resource>` | :ref:`resource<class_VisualScriptPreload_property_resource>` |
-+---------------------------------+--------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>` | :ref:`resource<class_VisualScriptPreload_property_resource>` |
+   +---------------------------------+--------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptPreload_property_resource:
 
-- :ref:`Resource<class_Resource>` **resource**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_preload(value) |
-+----------+--------------------+
-| *Getter* | get_preload()      |
-+----------+--------------------+
+:ref:`Resource<class_Resource>` **resource**
+
+.. rst-class:: classref-property-setget
+
+- void **set_preload** **(** :ref:`Resource<class_Resource>` value **)**
+- :ref:`Resource<class_Resource>` **get_preload** **(** **)**
 
 The :ref:`Resource<class_Resource>` to load.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

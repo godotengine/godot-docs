@@ -14,6 +14,8 @@ SpinBox
 
 Numerical input text field.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -29,136 +31,199 @@ SpinBox is a numerical input text field. It allows entering integers and floats.
     line_edit.context_menu_enabled = false
     spin_box.align = LineEdit.ALIGN_RIGHT
 
-The above code will create a ``SpinBox``, disable context menu on it and set the text alignment to right.
+The above code will create a **SpinBox**, disable context menu on it and set the text alignment to right.
 
-See :ref:`Range<class_Range>` class for more options over the ``SpinBox``.
+See :ref:`Range<class_Range>` class for more options over the **SpinBox**.
 
-\ **Note:** ``SpinBox`` relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a ``SpinBox``'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
+\ **Note:** **SpinBox** relies on an underlying :ref:`LineEdit<class_LineEdit>` node. To theme a **SpinBox**'s background, add theme items for :ref:`LineEdit<class_LineEdit>` and customize them.
 
 \ **Note:** If you want to implement drag and drop for the underlying :ref:`LineEdit<class_LineEdit>`, you can use :ref:`Control.set_drag_forwarding<class_Control_method_set_drag_forwarding>` on the node returned by :ref:`get_line_edit<class_SpinBox_method_get_line_edit>`.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------+--------------------------------------------------+----------+
-| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`       | ``0``    |
-+-----------------------------------+--------------------------------------------------+----------+
-| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>` | ``true`` |
-+-----------------------------------+--------------------------------------------------+----------+
-| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`     | ``""``   |
-+-----------------------------------+--------------------------------------------------+----------+
-| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`     | ``""``   |
-+-----------------------------------+--------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`                         | ``0``    |
+   +-----------------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`         | :ref:`custom_arrow_step<class_SpinBox_property_custom_arrow_step>` | ``0.0``  |
+   +-----------------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>`                   | ``true`` |
+   +-----------------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`                       | ``""``   |
+   +-----------------------------------+--------------------------------------------------------------------+----------+
+   | :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`                       | ``""``   |
+   +-----------------------------------+--------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------+----------------------------------------------------------------------+
-| void                            | :ref:`apply<class_SpinBox_method_apply>` **(** **)**                 |
-+---------------------------------+----------------------------------------------------------------------+
-| :ref:`LineEdit<class_LineEdit>` | :ref:`get_line_edit<class_SpinBox_method_get_line_edit>` **(** **)** |
-+---------------------------------+----------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+----------------------------------------------------------------------+
+   | void                            | :ref:`apply<class_SpinBox_method_apply>` **(** **)**                 |
+   +---------------------------------+----------------------------------------------------------------------+
+   | :ref:`LineEdit<class_LineEdit>` | :ref:`get_line_edit<class_SpinBox_method_get_line_edit>` **(** **)** |
+   +---------------------------------+----------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+-------------------------------+------------------------------------------------+
-| :ref:`Texture<class_Texture>` | :ref:`updown<class_SpinBox_theme_icon_updown>` |
-+-------------------------------+------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------+
+   | :ref:`Texture<class_Texture>` | :ref:`updown<class_SpinBox_theme_icon_updown>` |
+   +-------------------------------+------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_SpinBox_property_align:
 
-- :ref:`Align<enum_LineEdit_Align>` **align**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_align(value) |
-+-----------+------------------+
-| *Getter*  | get_align()      |
-+-----------+------------------+
+:ref:`Align<enum_LineEdit_Align>` **align** = ``0``
 
-Sets the text alignment of the ``SpinBox``.
+.. rst-class:: classref-property-setget
+
+- void **set_align** **(** :ref:`Align<enum_LineEdit_Align>` value **)**
+- :ref:`Align<enum_LineEdit_Align>` **get_align** **(** **)**
+
+Sets the text alignment of the **SpinBox**.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SpinBox_property_custom_arrow_step:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **custom_arrow_step** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_custom_arrow_step** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_custom_arrow_step** **(** **)**
+
+If not ``0``, ``value`` will always be rounded to a multiple of ``custom_arrow_step`` when interacting with the arrow buttons of the **SpinBox**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpinBox_property_editable:
 
-- :ref:`bool<class_bool>` **editable**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``true``            |
-+-----------+---------------------+
-| *Setter*  | set_editable(value) |
-+-----------+---------------------+
-| *Getter*  | is_editable()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **editable** = ``true``
 
-If ``true``, the ``SpinBox`` will be editable. Otherwise, it will be read only.
+.. rst-class:: classref-property-setget
+
+- void **set_editable** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_editable** **(** **)**
+
+If ``true``, the **SpinBox** will be editable. Otherwise, it will be read only.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpinBox_property_prefix:
 
-- :ref:`String<class_String>` **prefix**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``""``            |
-+-----------+-------------------+
-| *Setter*  | set_prefix(value) |
-+-----------+-------------------+
-| *Getter*  | get_prefix()      |
-+-----------+-------------------+
+:ref:`String<class_String>` **prefix** = ``""``
 
-Adds the specified ``prefix`` string before the numerical value of the ``SpinBox``.
+.. rst-class:: classref-property-setget
+
+- void **set_prefix** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_prefix** **(** **)**
+
+Adds the specified ``prefix`` string before the numerical value of the **SpinBox**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpinBox_property_suffix:
 
-- :ref:`String<class_String>` **suffix**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``""``            |
-+-----------+-------------------+
-| *Setter*  | set_suffix(value) |
-+-----------+-------------------+
-| *Getter*  | get_suffix()      |
-+-----------+-------------------+
+:ref:`String<class_String>` **suffix** = ``""``
 
-Adds the specified ``suffix`` string after the numerical value of the ``SpinBox``.
+.. rst-class:: classref-property-setget
+
+- void **set_suffix** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_suffix** **(** **)**
+
+Adds the specified ``suffix`` string after the numerical value of the **SpinBox**.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_SpinBox_method_apply:
 
-- void **apply** **(** **)**
+.. rst-class:: classref-method
 
-Applies the current value of this ``SpinBox``.
+void **apply** **(** **)**
+
+Applies the current value of this **SpinBox**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_SpinBox_method_get_line_edit:
 
-- :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
+.. rst-class:: classref-method
 
-Returns the :ref:`LineEdit<class_LineEdit>` instance from this ``SpinBox``. You can use it to access properties and methods of :ref:`LineEdit<class_LineEdit>`.
+:ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
+
+Returns the :ref:`LineEdit<class_LineEdit>` instance from this **SpinBox**. You can use it to access properties and methods of :ref:`LineEdit<class_LineEdit>`.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_SpinBox_theme_icon_updown:
 
-- :ref:`Texture<class_Texture>` **updown**
+.. rst-class:: classref-themeproperty
 
-Sets a custom :ref:`Texture<class_Texture>` for up and down arrows of the ``SpinBox``.
+:ref:`Texture<class_Texture>` **updown**
+
+Sets a custom :ref:`Texture<class_Texture>` for up and down arrows of the **SpinBox**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

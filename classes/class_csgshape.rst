@@ -16,6 +16,8 @@ CSGShape
 
 The CSG base class.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,94 +25,132 @@ This is the CSG base class that provides CSG operation support to the various CS
 
 \ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                   | :ref:`calculate_tangents<class_CSGShape_property_calculate_tangents>` | ``true``  |
-+-------------------------------------------+-----------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                     | :ref:`collision_layer<class_CSGShape_property_collision_layer>`       | ``1``     |
-+-------------------------------------------+-----------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                     | :ref:`collision_mask<class_CSGShape_property_collision_mask>`         | ``1``     |
-+-------------------------------------------+-----------------------------------------------------------------------+-----------+
-| :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_property_operation>`                   | ``0``     |
-+-------------------------------------------+-----------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_property_snap>`                             | ``0.001`` |
-+-------------------------------------------+-----------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_property_use_collision>`           | ``false`` |
-+-------------------------------------------+-----------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                   | :ref:`calculate_tangents<class_CSGShape_property_calculate_tangents>` | ``true``  |
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                     | :ref:`collision_layer<class_CSGShape_property_collision_layer>`       | ``1``     |
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                     | :ref:`collision_mask<class_CSGShape_property_collision_mask>`         | ``1``     |
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------+
+   | :ref:`Operation<enum_CSGShape_Operation>` | :ref:`operation<class_CSGShape_property_operation>`                   | ``0``     |
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                 | :ref:`snap<class_CSGShape_property_snap>`                             | ``0.001`` |
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                   | :ref:`use_collision<class_CSGShape_property_use_collision>`           | ``false`` |
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_CSGShape_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                        |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_CSGShape_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                          |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_meshes<class_CSGShape_method_get_meshes>` **(** **)** |const|                                                                            |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`is_root_shape<class_CSGShape_method_is_root_shape>` **(** **)** |const|                                                                      |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_collision_layer_bit<class_CSGShape_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                      | :ref:`set_collision_mask_bit<class_CSGShape_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
-+---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_CSGShape_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** |const|                        |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_CSGShape_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** |const|                          |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_meshes<class_CSGShape_method_get_meshes>` **(** **)** |const|                                                                            |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`is_root_shape<class_CSGShape_method_is_root_shape>` **(** **)** |const|                                                                      |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_collision_layer_bit<class_CSGShape_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                      | :ref:`set_collision_mask_bit<class_CSGShape_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
+   +---------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_CSGShape_Operation:
 
-.. _class_CSGShape_constant_OPERATION_UNION:
-
-.. _class_CSGShape_constant_OPERATION_INTERSECTION:
-
-.. _class_CSGShape_constant_OPERATION_SUBTRACTION:
+.. rst-class:: classref-enumeration
 
 enum **Operation**:
 
-- **OPERATION_UNION** = **0** --- Geometry of both primitives is merged, intersecting geometry is removed.
+.. _class_CSGShape_constant_OPERATION_UNION:
 
-- **OPERATION_INTERSECTION** = **1** --- Only intersecting geometry remains, the rest is removed.
+.. rst-class:: classref-enumeration-constant
 
-- **OPERATION_SUBTRACTION** = **2** --- The second shape is subtracted from the first, leaving a dent with its shape.
+:ref:`Operation<enum_CSGShape_Operation>` **OPERATION_UNION** = ``0``
+
+Geometry of both primitives is merged, intersecting geometry is removed.
+
+.. _class_CSGShape_constant_OPERATION_INTERSECTION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operation<enum_CSGShape_Operation>` **OPERATION_INTERSECTION** = ``1``
+
+Only intersecting geometry remains, the rest is removed.
+
+.. _class_CSGShape_constant_OPERATION_SUBTRACTION:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operation<enum_CSGShape_Operation>` **OPERATION_SUBTRACTION** = ``2``
+
+The second shape is subtracted from the first, leaving a dent with its shape.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CSGShape_property_calculate_tangents:
 
-- :ref:`bool<class_bool>` **calculate_tangents**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``true``                      |
-+-----------+-------------------------------+
-| *Setter*  | set_calculate_tangents(value) |
-+-----------+-------------------------------+
-| *Getter*  | is_calculating_tangents()     |
-+-----------+-------------------------------+
+:ref:`bool<class_bool>` **calculate_tangents** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_calculate_tangents** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_calculating_tangents** **(** **)**
 
 Calculate tangents for the CSG shape which allows the use of normal maps. This is only applied on the root shape, this setting is ignored on any child.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGShape_property_collision_layer:
 
-- :ref:`int<class_int>` **collision_layer**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``1``                      |
-+-----------+----------------------------+
-| *Setter*  | set_collision_layer(value) |
-+-----------+----------------------------+
-| *Getter*  | get_collision_layer()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **collision_layer** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collision_layer** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_collision_layer** **(** **)**
 
 The physics layers this area is in.
 
@@ -118,119 +158,152 @@ Collidable objects can exist in any of 32 different layers. These layers work li
 
 A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CSGShape_property_collision_mask:
 
-- :ref:`int<class_int>` **collision_mask**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``1``                     |
-+-----------+---------------------------+
-| *Setter*  | set_collision_mask(value) |
-+-----------+---------------------------+
-| *Getter*  | get_collision_mask()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **collision_mask** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_collision_mask** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_collision_mask** **(** **)**
 
 The physics layers this CSG shape scans for collisions. See `Collision layers and masks <../tutorials/physics/physics_introduction.html#collision-layers-and-masks>`__ in the documentation for more information.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGShape_property_operation:
 
-- :ref:`Operation<enum_CSGShape_Operation>` **operation**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_operation(value) |
-+-----------+----------------------+
-| *Getter*  | get_operation()      |
-+-----------+----------------------+
+:ref:`Operation<enum_CSGShape_Operation>` **operation** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_operation** **(** :ref:`Operation<enum_CSGShape_Operation>` value **)**
+- :ref:`Operation<enum_CSGShape_Operation>` **get_operation** **(** **)**
 
 The operation that is performed on this shape. This is ignored for the first CSG child node as the operation is between this node and the previous child of this nodes parent.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGShape_property_snap:
 
-- :ref:`float<class_float>` **snap**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0.001``       |
-+-----------+-----------------+
-| *Setter*  | set_snap(value) |
-+-----------+-----------------+
-| *Getter*  | get_snap()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **snap** = ``0.001``
+
+.. rst-class:: classref-property-setget
+
+- void **set_snap** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_snap** **(** **)**
 
 Snap makes the mesh snap to a given distance so that the faces of two meshes can be perfectly aligned. A lower value results in greater precision but may be harder to adjust.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGShape_property_use_collision:
 
-- :ref:`bool<class_bool>` **use_collision**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``false``                |
-+-----------+--------------------------+
-| *Setter*  | set_use_collision(value) |
-+-----------+--------------------------+
-| *Getter*  | is_using_collision()     |
-+-----------+--------------------------+
+:ref:`bool<class_bool>` **use_collision** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_collision** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_collision** **(** **)**
 
 Adds a collision shape to the physics engine for our CSG shape. This will always act like a static body. Note that the collision shape is still active even if the CSG shape itself is hidden.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_CSGShape_method_get_collision_layer_bit:
 
-- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the collision mask.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGShape_method_get_collision_mask_bit:
 
-- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** |const|
 
 Returns an individual bit on the collision mask.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGShape_method_get_meshes:
 
-- :ref:`Array<class_Array>` **get_meshes** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_meshes** **(** **)** |const|
 
 Returns an :ref:`Array<class_Array>` with two elements, the first is the :ref:`Transform<class_Transform>` of this node and the second is the root :ref:`Mesh<class_Mesh>` of this node. Only works when this node is the root shape.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGShape_method_is_root_shape:
 
-- :ref:`bool<class_bool>` **is_root_shape** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_root_shape** **(** **)** |const|
 
 Returns ``true`` if this is a root shape and is thus the object that is rendered.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGShape_method_set_collision_layer_bit:
 
-- void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+.. rst-class:: classref-method
+
+void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets individual bits on the layer mask. Use this if you only need to change one layer's value.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CSGShape_method_set_collision_mask_bit:
 
-- void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
+.. rst-class:: classref-method
+
+void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Sets individual bits on the collision mask. Use this if you only need to change one layer's value.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

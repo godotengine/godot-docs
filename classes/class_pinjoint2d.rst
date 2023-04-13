@@ -14,35 +14,48 @@ PinJoint2D
 
 Pin Joint for 2D shapes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Pin Joint for 2D rigid bodies. It pins two bodies (rigid or static) together.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-----------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` | ``0.0`` |
-+---------------------------+-----------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-----------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`softness<class_PinJoint2D_property_softness>` | ``0.0`` |
+   +---------------------------+-----------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PinJoint2D_property_softness:
 
-- :ref:`float<class_float>` **softness**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_softness(value) |
-+-----------+---------------------+
-| *Getter*  | get_softness()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **softness** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_softness** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_softness** **(** **)**
 
 The higher this value, the more the bond to the pinned partner can flex.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ OmniLight
 
 Omnidirectional light, such as a light bulb or a candle.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,120 +23,166 @@ An Omnidirectional light is a type of :ref:`Light<class_Light>` that emits light
 
 \ **Note:** By default, only 32 OmniLights may affect a single mesh *resource* at once. Consider splitting your level into several meshes to decrease the likelihood that more than 32 lights will affect the same mesh resource. Splitting the level mesh will also improve frustum culling effectiveness, leading to greater performance. If you need to use more lights per mesh, you can increase :ref:`ProjectSettings.rendering/limits/rendering/max_lights_per_object<class_ProjectSettings_property_rendering/limits/rendering/max_lights_per_object>` at the cost of shader compilation times.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/3d/lights_and_shadows`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                        | :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>`     | ``1.0`` |
-+--------------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                        | :ref:`omni_range<class_OmniLight_property_omni_range>`                 | ``5.0`` |
-+--------------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` | :ref:`omni_shadow_detail<class_OmniLight_property_omni_shadow_detail>` | ``1``   |
-+--------------------------------------------------+------------------------------------------------------------------------+---------+
-| :ref:`ShadowMode<enum_OmniLight_ShadowMode>`     | :ref:`omni_shadow_mode<class_OmniLight_property_omni_shadow_mode>`     | ``1``   |
-+--------------------------------------------------+------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>`                        | :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>`     | ``1.0`` |
+   +--------------------------------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>`                        | :ref:`omni_range<class_OmniLight_property_omni_range>`                 | ``5.0`` |
+   +--------------------------------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` | :ref:`omni_shadow_detail<class_OmniLight_property_omni_shadow_detail>` | ``1``   |
+   +--------------------------------------------------+------------------------------------------------------------------------+---------+
+   | :ref:`ShadowMode<enum_OmniLight_ShadowMode>`     | :ref:`omni_shadow_mode<class_OmniLight_property_omni_shadow_mode>`     | ``1``   |
+   +--------------------------------------------------+------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_OmniLight_ShadowMode:
 
-.. _class_OmniLight_constant_SHADOW_DUAL_PARABOLOID:
-
-.. _class_OmniLight_constant_SHADOW_CUBE:
+.. rst-class:: classref-enumeration
 
 enum **ShadowMode**:
 
-- **SHADOW_DUAL_PARABOLOID** = **0** --- Shadows are rendered to a dual-paraboloid texture. Faster than :ref:`SHADOW_CUBE<class_OmniLight_constant_SHADOW_CUBE>`, but lower-quality.
+.. _class_OmniLight_constant_SHADOW_DUAL_PARABOLOID:
 
-- **SHADOW_CUBE** = **1** --- Shadows are rendered to a cubemap. Slower than :ref:`SHADOW_DUAL_PARABOLOID<class_OmniLight_constant_SHADOW_DUAL_PARABOLOID>`, but higher-quality. Only supported on GPUs that feature support for depth cubemaps.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowMode<enum_OmniLight_ShadowMode>` **SHADOW_DUAL_PARABOLOID** = ``0``
+
+Shadows are rendered to a dual-paraboloid texture. Faster than :ref:`SHADOW_CUBE<class_OmniLight_constant_SHADOW_CUBE>`, but lower-quality.
+
+.. _class_OmniLight_constant_SHADOW_CUBE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowMode<enum_OmniLight_ShadowMode>` **SHADOW_CUBE** = ``1``
+
+Shadows are rendered to a cubemap. Slower than :ref:`SHADOW_DUAL_PARABOLOID<class_OmniLight_constant_SHADOW_DUAL_PARABOLOID>`, but higher-quality. Only supported on GPUs that feature support for depth cubemaps.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_OmniLight_ShadowDetail:
 
-.. _class_OmniLight_constant_SHADOW_DETAIL_VERTICAL:
-
-.. _class_OmniLight_constant_SHADOW_DETAIL_HORIZONTAL:
+.. rst-class:: classref-enumeration
 
 enum **ShadowDetail**:
 
-- **SHADOW_DETAIL_VERTICAL** = **0** --- Use more detail vertically when computing the shadow.
+.. _class_OmniLight_constant_SHADOW_DETAIL_VERTICAL:
 
-- **SHADOW_DETAIL_HORIZONTAL** = **1** --- Use more detail horizontally when computing the shadow.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **SHADOW_DETAIL_VERTICAL** = ``0``
+
+Use more detail vertically when computing the shadow.
+
+.. _class_OmniLight_constant_SHADOW_DETAIL_HORIZONTAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **SHADOW_DETAIL_HORIZONTAL** = ``1``
+
+Use more detail horizontally when computing the shadow.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_OmniLight_property_omni_attenuation:
 
-- :ref:`float<class_float>` **omni_attenuation**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1.0``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **omni_attenuation** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** **)**
 
 The light's attenuation (drop-off) curve. A number of presets are available in the **Inspector** by right-clicking the curve.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OmniLight_property_omni_range:
 
-- :ref:`float<class_float>` **omni_range**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``5.0``          |
-+-----------+------------------+
-| *Setter*  | set_param(value) |
-+-----------+------------------+
-| *Getter*  | get_param()      |
-+-----------+------------------+
+:ref:`float<class_float>` **omni_range** = ``5.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_param** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_param** **(** **)**
 
 The light's radius. Note that the effectively lit area may appear to be smaller depending on the :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>` in use. No matter the :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>` in use, the light will never reach anything outside this radius.
+
+\ **Note:** :ref:`omni_range<class_OmniLight_property_omni_range>` is not affected by :ref:`Spatial.scale<class_Spatial_property_scale>` (the light's scale or its parent's scale).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OmniLight_property_omni_shadow_detail:
 
-- :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **omni_shadow_detail**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``1``                    |
-+-----------+--------------------------+
-| *Setter*  | set_shadow_detail(value) |
-+-----------+--------------------------+
-| *Getter*  | get_shadow_detail()      |
-+-----------+--------------------------+
+:ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **omni_shadow_detail** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_detail** **(** :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` value **)**
+- :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **get_shadow_detail** **(** **)**
 
 See :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OmniLight_property_omni_shadow_mode:
 
-- :ref:`ShadowMode<enum_OmniLight_ShadowMode>` **omni_shadow_mode**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1``                  |
-+-----------+------------------------+
-| *Setter*  | set_shadow_mode(value) |
-+-----------+------------------------+
-| *Getter*  | get_shadow_mode()      |
-+-----------+------------------------+
+:ref:`ShadowMode<enum_OmniLight_ShadowMode>` **omni_shadow_mode** = ``1``
 
-The shadow rendering mode to use for this ``OmniLight``. See :ref:`ShadowMode<enum_OmniLight_ShadowMode>`.
+.. rst-class:: classref-property-setget
+
+- void **set_shadow_mode** **(** :ref:`ShadowMode<enum_OmniLight_ShadowMode>` value **)**
+- :ref:`ShadowMode<enum_OmniLight_ShadowMode>` **get_shadow_mode** **(** **)**
+
+The shadow rendering mode to use for this **OmniLight**. See :ref:`ShadowMode<enum_OmniLight_ShadowMode>`.
 
 \ **Note:** In GLES2, :ref:`SHADOW_CUBE<class_OmniLight_constant_SHADOW_CUBE>` is only supported on GPUs that feature support for depth cubemaps. Old GPUs such as the Radeon HD 4000 series don't support cubemap shadows and will fall back to dual paraboloid shadows as a result.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

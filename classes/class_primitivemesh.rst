@@ -16,84 +16,113 @@ PrimitiveMesh
 
 Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh. Examples include :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, and :ref:`SphereMesh<class_SphereMesh>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------+--------------------------------------------------------------+------------------------------+
-| :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
-+---------------------------------+--------------------------------------------------------------+------------------------------+
-| :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   | ``false``                    |
-+---------------------------------+--------------------------------------------------------------+------------------------------+
-| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |                              |
-+---------------------------------+--------------------------------------------------------------+------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+--------------------------------------------------------------+------------------------------+
+   | :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
+   +---------------------------------+--------------------------------------------------------------+------------------------------+
+   | :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   | ``false``                    |
+   +---------------------------------+--------------------------------------------------------------+------------------------------+
+   | :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |                              |
+   +---------------------------------+--------------------------------------------------------------+------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const| |
-+---------------------------+----------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+----------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** |const| |
+   +---------------------------+----------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_PrimitiveMesh_property_custom_aabb:
 
-- :ref:`AABB<class_AABB>` **custom_aabb**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``AABB( 0, 0, 0, 0, 0, 0 )`` |
-+-----------+------------------------------+
-| *Setter*  | set_custom_aabb(value)       |
-+-----------+------------------------------+
-| *Getter*  | get_custom_aabb()            |
-+-----------+------------------------------+
+:ref:`AABB<class_AABB>` **custom_aabb** = ``AABB( 0, 0, 0, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` value **)**
+- :ref:`AABB<class_AABB>` **get_custom_aabb** **(** **)**
 
 Overrides the :ref:`AABB<class_AABB>` with one defined by user for use with frustum culling. Especially useful to avoid unexpected culling when using a shader to offset vertices.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PrimitiveMesh_property_flip_faces:
 
-- :ref:`bool<class_bool>` **flip_faces**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``false``             |
-+-----------+-----------------------+
-| *Setter*  | set_flip_faces(value) |
-+-----------+-----------------------+
-| *Getter*  | get_flip_faces()      |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **flip_faces** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_flip_faces** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_flip_faces** **(** **)**
 
 If set, the order of the vertices in each triangle are reversed resulting in the backside of the mesh being drawn.
 
 This gives the same result as using :ref:`SpatialMaterial.CULL_BACK<class_SpatialMaterial_constant_CULL_BACK>` in :ref:`SpatialMaterial.params_cull_mode<class_SpatialMaterial_property_params_cull_mode>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PrimitiveMesh_property_material:
 
-- :ref:`Material<class_Material>` **material**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_material(value) |
-+----------+---------------------+
-| *Getter* | get_material()      |
-+----------+---------------------+
+:ref:`Material<class_Material>` **material**
+
+.. rst-class:: classref-property-setget
+
+- void **set_material** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_material** **(** **)**
 
 The current :ref:`Material<class_Material>` of the primitive mesh.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PrimitiveMesh_method_get_mesh_arrays:
 
-- :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** |const|
 
 Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The result can be passed to :ref:`ArrayMesh.add_surface_from_arrays<class_ArrayMesh_method_add_surface_from_arrays>` to create a new surface. For example:
 
@@ -106,3 +135,4 @@ Returns mesh arrays used to constitute surface of :ref:`Mesh<class_Mesh>`. The r
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

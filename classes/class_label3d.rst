@@ -14,384 +14,500 @@ Label3D
 
 Displays plain text in a 3D world.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Label3D displays plain text in a 3D world. It gives you control over the horizontal and vertical alignment.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>`           | :ref:`alpha_cut<class_Label3D_property_alpha_cut>`                             | ``0``                   |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                                | :ref:`alpha_scissor_threshold<class_Label3D_property_alpha_scissor_threshold>` | ``0.5``                 |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`autowrap<class_Label3D_property_autowrap>`                               | ``false``               |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` | :ref:`billboard<class_Label3D_property_billboard>`                             | ``0``                   |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`double_sided<class_Label3D_property_double_sided>`                       | ``true``                |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`fixed_size<class_Label3D_property_fixed_size>`                           | ``false``               |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Font<class_Font>`                                  | :ref:`font<class_Label3D_property_font>`                                       |                         |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Align<enum_Label3D_Align>`                         | :ref:`horizontal_alignment<class_Label3D_property_horizontal_alignment>`       | ``1``                   |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                                | :ref:`line_spacing<class_Label3D_property_line_spacing>`                       | ``0.0``                 |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`                                | :ref:`modulate<class_Label3D_property_modulate>`                               | ``Color( 1, 1, 1, 1 )`` |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`no_depth_test<class_Label3D_property_no_depth_test>`                     | ``false``               |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Vector2<class_Vector2>`                            | :ref:`offset<class_Label3D_property_offset>`                                   | ``Vector2( 0, 0 )``     |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`                                | :ref:`outline_modulate<class_Label3D_property_outline_modulate>`               | ``Color( 0, 0, 0, 1 )`` |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                                    | :ref:`outline_render_priority<class_Label3D_property_outline_render_priority>` | ``-1``                  |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                                | :ref:`pixel_size<class_Label3D_property_pixel_size>`                           | ``0.01``                |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`                                    | :ref:`render_priority<class_Label3D_property_render_priority>`                 | ``0``                   |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`shaded<class_Label3D_property_shaded>`                                   | ``false``               |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`                              | :ref:`text<class_Label3D_property_text>`                                       | ``""``                  |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                                  | :ref:`uppercase<class_Label3D_property_uppercase>`                             | ``false``               |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`VAlign<enum_Label3D_VAlign>`                       | :ref:`vertical_alignment<class_Label3D_property_vertical_alignment>`           | ``1``                   |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                                | :ref:`width<class_Label3D_property_width>`                                     | ``500.0``               |
-+----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>`           | :ref:`alpha_cut<class_Label3D_property_alpha_cut>`                             | ``0``                   |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                                | :ref:`alpha_scissor_threshold<class_Label3D_property_alpha_scissor_threshold>` | ``0.5``                 |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`autowrap<class_Label3D_property_autowrap>`                               | ``false``               |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` | :ref:`billboard<class_Label3D_property_billboard>`                             | ``0``                   |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`double_sided<class_Label3D_property_double_sided>`                       | ``true``                |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`fixed_size<class_Label3D_property_fixed_size>`                           | ``false``               |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Font<class_Font>`                                  | :ref:`font<class_Label3D_property_font>`                                       |                         |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Align<enum_Label3D_Align>`                         | :ref:`horizontal_alignment<class_Label3D_property_horizontal_alignment>`       | ``1``                   |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                                | :ref:`line_spacing<class_Label3D_property_line_spacing>`                       | ``0.0``                 |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`                                | :ref:`modulate<class_Label3D_property_modulate>`                               | ``Color( 1, 1, 1, 1 )`` |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`no_depth_test<class_Label3D_property_no_depth_test>`                     | ``false``               |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector2<class_Vector2>`                            | :ref:`offset<class_Label3D_property_offset>`                                   | ``Vector2( 0, 0 )``     |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`                                | :ref:`outline_modulate<class_Label3D_property_outline_modulate>`               | ``Color( 0, 0, 0, 1 )`` |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`outline_render_priority<class_Label3D_property_outline_render_priority>` | ``-1``                  |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                                | :ref:`pixel_size<class_Label3D_property_pixel_size>`                           | ``0.01``                |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`                                    | :ref:`render_priority<class_Label3D_property_render_priority>`                 | ``0``                   |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`shaded<class_Label3D_property_shaded>`                                   | ``false``               |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`String<class_String>`                              | :ref:`text<class_Label3D_property_text>`                                       | ``""``                  |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                                  | :ref:`uppercase<class_Label3D_property_uppercase>`                             | ``false``               |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`VAlign<enum_Label3D_VAlign>`                       | :ref:`vertical_alignment<class_Label3D_property_vertical_alignment>`           | ``1``                   |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                                | :ref:`width<class_Label3D_property_width>`                                     | ``500.0``               |
+   +----------------------------------------------------------+--------------------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TriangleMesh<class_TriangleMesh>` | :ref:`generate_triangle_mesh<class_Label3D_method_generate_triangle_mesh>` **(** **)** |const|                                                      |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`get_draw_flag<class_Label3D_method_get_draw_flag>` **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag **)** |const|                          |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`set_draw_flag<class_Label3D_method_set_draw_flag>` **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)** |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TriangleMesh<class_TriangleMesh>` | :ref:`generate_triangle_mesh<class_Label3D_method_generate_triangle_mesh>` **(** **)** |const|                                                      |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`get_draw_flag<class_Label3D_method_get_draw_flag>` **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag **)** |const|                          |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`set_draw_flag<class_Label3D_method_set_draw_flag>` **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)** |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Label3D_DrawFlags:
 
-.. _class_Label3D_constant_FLAG_SHADED:
-
-.. _class_Label3D_constant_FLAG_DOUBLE_SIDED:
-
-.. _class_Label3D_constant_FLAG_DISABLE_DEPTH_TEST:
-
-.. _class_Label3D_constant_FLAG_FIXED_SIZE:
-
-.. _class_Label3D_constant_FLAG_MAX:
+.. rst-class:: classref-enumeration
 
 enum **DrawFlags**:
 
-- **FLAG_SHADED** = **0** --- If set, lights in the environment affect the label.
+.. _class_Label3D_constant_FLAG_SHADED:
 
-- **FLAG_DOUBLE_SIDED** = **1** --- If set, text can be seen from the back as well. If not, the text is invisible when looking at it from behind.
+.. rst-class:: classref-enumeration-constant
 
-- **FLAG_DISABLE_DEPTH_TEST** = **2** --- Disables the depth test, so this object is drawn on top of all others. However, objects drawn after it in the draw order may cover it.
+:ref:`DrawFlags<enum_Label3D_DrawFlags>` **FLAG_SHADED** = ``0``
 
-- **FLAG_FIXED_SIZE** = **3** --- Label is scaled by depth so that it always appears the same size on screen.
+If set, lights in the environment affect the label.
 
-- **FLAG_MAX** = **4** --- Represents the size of the :ref:`DrawFlags<enum_Label3D_DrawFlags>` enum.
+.. _class_Label3D_constant_FLAG_DOUBLE_SIDED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_Label3D_DrawFlags>` **FLAG_DOUBLE_SIDED** = ``1``
+
+If set, text can be seen from the back as well. If not, the text is invisible when looking at it from behind.
+
+.. _class_Label3D_constant_FLAG_DISABLE_DEPTH_TEST:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_Label3D_DrawFlags>` **FLAG_DISABLE_DEPTH_TEST** = ``2``
+
+Disables the depth test, so this object is drawn on top of all others. However, objects drawn after it in the draw order may cover it.
+
+.. _class_Label3D_constant_FLAG_FIXED_SIZE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_Label3D_DrawFlags>` **FLAG_FIXED_SIZE** = ``3``
+
+Label is scaled by depth so that it always appears the same size on screen.
+
+.. _class_Label3D_constant_FLAG_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawFlags<enum_Label3D_DrawFlags>` **FLAG_MAX** = ``4``
+
+Represents the size of the :ref:`DrawFlags<enum_Label3D_DrawFlags>` enum.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Label3D_AlphaCutMode:
 
-.. _class_Label3D_constant_ALPHA_CUT_DISABLED:
-
-.. _class_Label3D_constant_ALPHA_CUT_DISCARD:
-
-.. _class_Label3D_constant_ALPHA_CUT_OPAQUE_PREPASS:
+.. rst-class:: classref-enumeration
 
 enum **AlphaCutMode**:
 
-- **ALPHA_CUT_DISABLED** = **0** --- This mode performs standard alpha blending. It can display translucent areas, but transparency sorting issues may be visible when multiple transparent materials are overlapping.
+.. _class_Label3D_constant_ALPHA_CUT_DISABLED:
 
-- **ALPHA_CUT_DISCARD** = **1** --- This mode only allows fully transparent or fully opaque pixels. This mode is also known as *alpha testing* or *1-bit transparency*.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **ALPHA_CUT_DISABLED** = ``0``
+
+This mode performs standard alpha blending. It can display translucent areas, but transparency sorting issues may be visible when multiple transparent materials are overlapping.
+
+.. _class_Label3D_constant_ALPHA_CUT_DISCARD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **ALPHA_CUT_DISCARD** = ``1``
+
+This mode only allows fully transparent or fully opaque pixels. This mode is also known as *alpha testing* or *1-bit transparency*.
 
 \ **Note:** This mode might have issues with anti-aliased fonts and outlines, try adjusting :ref:`alpha_scissor_threshold<class_Label3D_property_alpha_scissor_threshold>` or using SDF font.
 
 \ **Note:** When using text with overlapping glyphs (e.g., cursive scripts), this mode might have transparency sorting issues between the main text and the outline.
 
-- **ALPHA_CUT_OPAQUE_PREPASS** = **2** --- This mode draws fully opaque pixels in the depth prepass. This is slower than :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` or :ref:`ALPHA_CUT_DISCARD<class_Label3D_constant_ALPHA_CUT_DISCARD>`, but it allows displaying translucent areas and smooth edges while using proper sorting.
+.. _class_Label3D_constant_ALPHA_CUT_OPAQUE_PREPASS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **ALPHA_CUT_OPAQUE_PREPASS** = ``2``
+
+This mode draws fully opaque pixels in the depth prepass. This is slower than :ref:`ALPHA_CUT_DISABLED<class_Label3D_constant_ALPHA_CUT_DISABLED>` or :ref:`ALPHA_CUT_DISCARD<class_Label3D_constant_ALPHA_CUT_DISCARD>`, but it allows displaying translucent areas and smooth edges while using proper sorting.
 
 \ **Note:** When using text with overlapping glyphs (e.g., cursive scripts), this mode might have transparency sorting issues between the main text and the outline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Label3D_Align:
 
-.. _class_Label3D_constant_ALIGN_LEFT:
-
-.. _class_Label3D_constant_ALIGN_CENTER:
-
-.. _class_Label3D_constant_ALIGN_RIGHT:
-
-.. _class_Label3D_constant_ALIGN_FILL:
+.. rst-class:: classref-enumeration
 
 enum **Align**:
 
-- **ALIGN_LEFT** = **0** --- Align rows to the left (default).
+.. _class_Label3D_constant_ALIGN_LEFT:
 
-- **ALIGN_CENTER** = **1** --- Align rows centered.
+.. rst-class:: classref-enumeration-constant
 
-- **ALIGN_RIGHT** = **2** --- Align rows to the right.
+:ref:`Align<enum_Label3D_Align>` **ALIGN_LEFT** = ``0``
 
-- **ALIGN_FILL** = **3** --- Expand row whitespaces to fit the width.
+Align rows to the left (default).
+
+.. _class_Label3D_constant_ALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Align<enum_Label3D_Align>` **ALIGN_CENTER** = ``1``
+
+Align rows centered.
+
+.. _class_Label3D_constant_ALIGN_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Align<enum_Label3D_Align>` **ALIGN_RIGHT** = ``2``
+
+Align rows to the right.
+
+.. _class_Label3D_constant_ALIGN_FILL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Align<enum_Label3D_Align>` **ALIGN_FILL** = ``3``
+
+Expand row whitespaces to fit the width.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Label3D_VAlign:
 
-.. _class_Label3D_constant_VALIGN_TOP:
-
-.. _class_Label3D_constant_VALIGN_CENTER:
-
-.. _class_Label3D_constant_VALIGN_BOTTOM:
-
-.. _class_Label3D_constant_VALIGN_FILL:
+.. rst-class:: classref-enumeration
 
 enum **VAlign**:
 
-- **VALIGN_TOP** = **0** --- Align the whole text to the top.
+.. _class_Label3D_constant_VALIGN_TOP:
 
-- **VALIGN_CENTER** = **1** --- Align the whole text to the center.
+.. rst-class:: classref-enumeration-constant
 
-- **VALIGN_BOTTOM** = **2** --- Align the whole text to the bottom.
+:ref:`VAlign<enum_Label3D_VAlign>` **VALIGN_TOP** = ``0``
 
-- **VALIGN_FILL** = **3** --- Align the whole text by spreading the rows.
+Align the whole text to the top.
+
+.. _class_Label3D_constant_VALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VAlign<enum_Label3D_VAlign>` **VALIGN_CENTER** = ``1``
+
+Align the whole text to the center.
+
+.. _class_Label3D_constant_VALIGN_BOTTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VAlign<enum_Label3D_VAlign>` **VALIGN_BOTTOM** = ``2``
+
+Align the whole text to the bottom.
+
+.. _class_Label3D_constant_VALIGN_FILL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VAlign<enum_Label3D_VAlign>` **VALIGN_FILL** = ``3``
+
+Align the whole text by spreading the rows.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Label3D_property_alpha_cut:
 
-- :ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **alpha_cut**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_alpha_cut_mode(value) |
-+-----------+---------------------------+
-| *Getter*  | get_alpha_cut_mode()      |
-+-----------+---------------------------+
+:ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **alpha_cut** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alpha_cut_mode** **(** :ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` value **)**
+- :ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` **get_alpha_cut_mode** **(** **)**
 
 The alpha cutting mode to use for the sprite. See :ref:`AlphaCutMode<enum_Label3D_AlphaCutMode>` for possible values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_alpha_scissor_threshold:
 
-- :ref:`float<class_float>` **alpha_scissor_threshold**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------+
-| *Default* | ``0.5``                            |
-+-----------+------------------------------------+
-| *Setter*  | set_alpha_scissor_threshold(value) |
-+-----------+------------------------------------+
-| *Getter*  | get_alpha_scissor_threshold()      |
-+-----------+------------------------------------+
+:ref:`float<class_float>` **alpha_scissor_threshold** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_alpha_scissor_threshold** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_alpha_scissor_threshold** **(** **)**
 
 Threshold at which the alpha scissor will discard values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_autowrap:
 
-- :ref:`bool<class_bool>` **autowrap**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_autowrap(value) |
-+-----------+---------------------+
-| *Getter*  | get_autowrap()      |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **autowrap** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_autowrap** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_autowrap** **(** **)**
 
 If ``true``, wraps the text to the :ref:`width<class_Label3D_property_width>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_billboard:
 
-- :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` **billboard**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_billboard_mode(value) |
-+-----------+---------------------------+
-| *Getter*  | get_billboard_mode()      |
-+-----------+---------------------------+
+:ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` **billboard** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_billboard_mode** **(** :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` value **)**
+- :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` **get_billboard_mode** **(** **)**
 
 The billboard mode to use for the label. See :ref:`BillboardMode<enum_SpatialMaterial_BillboardMode>` for possible values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_double_sided:
 
-- :ref:`bool<class_bool>` **double_sided**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``true``             |
-+-----------+----------------------+
-| *Setter*  | set_draw_flag(value) |
-+-----------+----------------------+
-| *Getter*  | get_draw_flag()      |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **double_sided** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
+- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag **)** |const|
 
 If ``true``, text can be seen from the back as well, if ``false``, it is invisible when looking at it from behind.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_fixed_size:
 
-- :ref:`bool<class_bool>` **fixed_size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_draw_flag(value) |
-+-----------+----------------------+
-| *Getter*  | get_draw_flag()      |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **fixed_size** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
+- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag **)** |const|
 
 If ``true``, the label is rendered at the same size regardless of distance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_font:
 
-- :ref:`Font<class_Font>` **font**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_font(value) |
-+----------+-----------------+
-| *Getter* | get_font()      |
-+----------+-----------------+
+:ref:`Font<class_Font>` **font**
 
-:ref:`Font<class_Font>` used for the ``Label3D``'s text.
+.. rst-class:: classref-property-setget
+
+- void **set_font** **(** :ref:`Font<class_Font>` value **)**
+- :ref:`Font<class_Font>` **get_font** **(** **)**
+
+:ref:`Font<class_Font>` used for the **Label3D**'s text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_horizontal_alignment:
 
-- :ref:`Align<enum_Label3D_Align>` **horizontal_alignment**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``1``                           |
-+-----------+---------------------------------+
-| *Setter*  | set_horizontal_alignment(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_horizontal_alignment()      |
-+-----------+---------------------------------+
+:ref:`Align<enum_Label3D_Align>` **horizontal_alignment** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_horizontal_alignment** **(** :ref:`Align<enum_Label3D_Align>` value **)**
+- :ref:`Align<enum_Label3D_Align>` **get_horizontal_alignment** **(** **)**
 
 Controls the text's horizontal alignment. Supports left, center, right. Set it to one of the :ref:`Align<enum_Label3D_Align>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_line_spacing:
 
-- :ref:`float<class_float>` **line_spacing**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_line_spacing(value) |
-+-----------+-------------------------+
-| *Getter*  | get_line_spacing()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **line_spacing** = ``0.0``
 
-Vertical space between lines in multiline ``Label3D``.
+.. rst-class:: classref-property-setget
+
+- void **set_line_spacing** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_line_spacing** **(** **)**
+
+Vertical space between lines in multiline **Label3D**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_modulate:
 
-- :ref:`Color<class_Color>` **modulate**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_modulate(value)     |
-+-----------+-------------------------+
-| *Getter*  | get_modulate()          |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **modulate** = ``Color( 1, 1, 1, 1 )``
 
-Text :ref:`Color<class_Color>` of the ``Label3D``.
+.. rst-class:: classref-property-setget
+
+- void **set_modulate** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_modulate** **(** **)**
+
+Text :ref:`Color<class_Color>` of the **Label3D**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_no_depth_test:
 
-- :ref:`bool<class_bool>` **no_depth_test**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_draw_flag(value) |
-+-----------+----------------------+
-| *Getter*  | get_draw_flag()      |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **no_depth_test** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
+- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag **)** |const|
 
 If ``true``, depth testing is disabled and the object will be drawn in render order.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_offset:
 
-- :ref:`Vector2<class_Vector2>` **offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Setter*  | set_offset(value)   |
-+-----------+---------------------+
-| *Getter*  | get_offset()        |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)**
 
 The text drawing offset (in pixels).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_outline_modulate:
 
-- :ref:`Color<class_Color>` **outline_modulate**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )``     |
-+-----------+-----------------------------+
-| *Setter*  | set_outline_modulate(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_outline_modulate()      |
-+-----------+-----------------------------+
+:ref:`Color<class_Color>` **outline_modulate** = ``Color( 0, 0, 0, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_outline_modulate** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_outline_modulate** **(** **)**
 
 The tint of :ref:`Font<class_Font>`'s outline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_outline_render_priority:
 
-- :ref:`int<class_int>` **outline_render_priority**
+.. rst-class:: classref-property
 
-+-----------+------------------------------------+
-| *Default* | ``-1``                             |
-+-----------+------------------------------------+
-| *Setter*  | set_outline_render_priority(value) |
-+-----------+------------------------------------+
-| *Getter*  | get_outline_render_priority()      |
-+-----------+------------------------------------+
+:ref:`int<class_int>` **outline_render_priority** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_outline_render_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_outline_render_priority** **(** **)**
 
 Sets the render priority for the text outline. Higher priority objects will be sorted in front of lower priority objects.
 
@@ -399,35 +515,37 @@ Sets the render priority for the text outline. Higher priority objects will be s
 
 \ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Label3D_property_pixel_size:
 
-- :ref:`float<class_float>` **pixel_size**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.01``              |
-+-----------+-----------------------+
-| *Setter*  | set_pixel_size(value) |
-+-----------+-----------------------+
-| *Getter*  | get_pixel_size()      |
-+-----------+-----------------------+
+:ref:`float<class_float>` **pixel_size** = ``0.01``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pixel_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pixel_size** **(** **)**
 
 The size of one pixel's width on the label to scale it in 3D.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_render_priority:
 
-- :ref:`int<class_int>` **render_priority**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``0``                      |
-+-----------+----------------------------+
-| *Setter*  | set_render_priority(value) |
-+-----------+----------------------------+
-| *Getter*  | get_render_priority()      |
-+-----------+----------------------------+
+:ref:`int<class_int>` **render_priority** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_render_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_render_priority** **(** **)**
 
 Sets the render priority for the text. Higher priority objects will be sorted in front of lower priority objects.
 
@@ -435,111 +553,133 @@ Sets the render priority for the text. Higher priority objects will be sorted in
 
 \ **Note:** This only applies to sorting of transparent objects. This will not impact how transparent objects are sorted relative to opaque objects. This is because opaque objects are not sorted, while transparent objects are sorted from back to front (subject to priority).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Label3D_property_shaded:
 
-- :ref:`bool<class_bool>` **shaded**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_draw_flag(value) |
-+-----------+----------------------+
-| *Getter*  | get_draw_flag()      |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **shaded** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
+- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag **)** |const|
 
 If ``true``, the :ref:`Light<class_Light>` in the :ref:`Environment<class_Environment>` has effects on the label.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_text:
 
-- :ref:`String<class_String>` **text**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_text(value) |
-+-----------+-----------------+
-| *Getter*  | get_text()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **text** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_text** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_text** **(** **)**
 
 The text to display on screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_uppercase:
 
-- :ref:`bool<class_bool>` **uppercase**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_uppercase(value) |
-+-----------+----------------------+
-| *Getter*  | is_uppercase()       |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **uppercase** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_uppercase** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_uppercase** **(** **)**
 
 If ``true``, all the text displays as UPPERCASE.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_vertical_alignment:
 
-- :ref:`VAlign<enum_Label3D_VAlign>` **vertical_alignment**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``1``                         |
-+-----------+-------------------------------+
-| *Setter*  | set_vertical_alignment(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_vertical_alignment()      |
-+-----------+-------------------------------+
+:ref:`VAlign<enum_Label3D_VAlign>` **vertical_alignment** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_vertical_alignment** **(** :ref:`VAlign<enum_Label3D_VAlign>` value **)**
+- :ref:`VAlign<enum_Label3D_VAlign>` **get_vertical_alignment** **(** **)**
 
 Controls the text's vertical alignment. Supports top, center, bottom. Set it to one of the :ref:`VAlign<enum_Label3D_VAlign>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_property_width:
 
-- :ref:`float<class_float>` **width**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``500.0``        |
-+-----------+------------------+
-| *Setter*  | set_width(value) |
-+-----------+------------------+
-| *Getter*  | get_width()      |
-+-----------+------------------+
+:ref:`float<class_float>` **width** = ``500.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_width** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_width** **(** **)**
 
 Text width (in pixels), used for autowrap and fill alignment.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Label3D_method_generate_triangle_mesh:
 
-- :ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`TriangleMesh<class_TriangleMesh>` **generate_triangle_mesh** **(** **)** |const|
 
 Returns a :ref:`TriangleMesh<class_TriangleMesh>` with the label's vertices following its current configuration (such as its :ref:`pixel_size<class_Label3D_property_pixel_size>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_method_get_draw_flag:
 
-- :ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag **)** |const|
 
 Returns the value of the specified flag.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label3D_method_set_draw_flag:
 
-- void **set_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
+.. rst-class:: classref-method
+
+void **set_draw_flag** **(** :ref:`DrawFlags<enum_Label3D_DrawFlags>` flag, :ref:`bool<class_bool>` enabled **)**
 
 If ``true``, the specified flag will be enabled. See :ref:`DrawFlags<enum_Label3D_DrawFlags>` for a list of flags.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

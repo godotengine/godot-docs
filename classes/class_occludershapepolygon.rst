@@ -14,6 +14,8 @@ OccluderShapePolygon
 
 Polygon occlusion primitive for use with the :ref:`Occluder<class_Occluder>` node.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,92 +27,126 @@ Additionally each polygon occluder can optionally support a single hole. If you 
 
 In general, the lower the number of edges in polygons and holes, the faster the system will operate at runtime, so in most cases you will want to use 4 points for each.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`hole_points<class_OccluderShapePolygon_property_hole_points>`       | ``PoolVector2Array(  )``                           |
-+-------------------------------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon_points<class_OccluderShapePolygon_property_polygon_points>` | ``PoolVector2Array( 1, -1, 1, 1, -1, 1, -1, -1 )`` |
-+-------------------------------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`two_way<class_OccluderShapePolygon_property_two_way>`               | ``true``                                           |
-+-------------------------------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
+   | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`hole_points<class_OccluderShapePolygon_property_hole_points>`       | ``PoolVector2Array(  )``                           |
+   +-------------------------------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
+   | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon_points<class_OccluderShapePolygon_property_polygon_points>` | ``PoolVector2Array( 1, -1, 1, 1, -1, 1, -1, -1 )`` |
+   +-------------------------------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`two_way<class_OccluderShapePolygon_property_two_way>`               | ``true``                                           |
+   +-------------------------------------------------+---------------------------------------------------------------------------+----------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_hole_point<class_OccluderShapePolygon_method_set_hole_point>` **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**       |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_polygon_point<class_OccluderShapePolygon_method_set_polygon_point>` **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)** |
-+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_hole_point<class_OccluderShapePolygon_method_set_hole_point>` **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**       |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_polygon_point<class_OccluderShapePolygon_method_set_polygon_point>` **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)** |
+   +------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_OccluderShapePolygon_property_hole_points:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **hole_points**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PoolVector2Array(  )`` |
-+-----------+--------------------------+
-| *Setter*  | set_hole_points(value)   |
-+-----------+--------------------------+
-| *Getter*  | get_hole_points()        |
-+-----------+--------------------------+
+:ref:`PoolVector2Array<class_PoolVector2Array>` **hole_points** = ``PoolVector2Array(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hole_points** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` value **)**
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_hole_points** **(** **)**
 
 Allows changing the hole geometry from code.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OccluderShapePolygon_property_polygon_points:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon_points**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------------------------+
-| *Default* | ``PoolVector2Array( 1, -1, 1, 1, -1, 1, -1, -1 )`` |
-+-----------+----------------------------------------------------+
-| *Setter*  | set_polygon_points(value)                          |
-+-----------+----------------------------------------------------+
-| *Getter*  | get_polygon_points()                               |
-+-----------+----------------------------------------------------+
+:ref:`PoolVector2Array<class_PoolVector2Array>` **polygon_points** = ``PoolVector2Array( 1, -1, 1, 1, -1, 1, -1, -1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_polygon_points** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` value **)**
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_polygon_points** **(** **)**
 
 Allows changing the polygon geometry from code.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OccluderShapePolygon_property_two_way:
 
-- :ref:`bool<class_bool>` **two_way**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``true``           |
-+-----------+--------------------+
-| *Setter*  | set_two_way(value) |
-+-----------+--------------------+
-| *Getter*  | is_two_way()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **two_way** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_two_way** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_two_way** **(** **)**
 
 Specifies whether the occluder should operate from both sides. If ``false``, the occluder will operate one way only.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_OccluderShapePolygon_method_set_hole_point:
 
-- void **set_hole_point** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**
+.. rst-class:: classref-method
 
-Sets an individual hole point position.
+void **set_hole_point** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**
+
+Sets an individual hole point position. Primarily for use by the editor.
+
+\ **Note:** This function will not resize the hole point array. Set :ref:`hole_points<class_OccluderShapePolygon_property_hole_points>` to set the number of points.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_OccluderShapePolygon_method_set_polygon_point:
 
-- void **set_polygon_point** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**
+.. rst-class:: classref-method
 
-Sets an individual polygon point position.
+void **set_polygon_point** **(** :ref:`int<class_int>` index, :ref:`Vector2<class_Vector2>` position **)**
+
+Sets an individual polygon point position. Primarily for use by the editor.
+
+\ **Note:** This function will not resize the polygon point array. Set :ref:`polygon_points<class_OccluderShapePolygon_property_polygon_points>` to set the number of points.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -16,187 +16,239 @@ WindowDialog
 
 Base class for window dialogs.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Windowdialog is the base class for all window-based dialogs. It's a by-default toplevel :ref:`Control<class_Control>` that draws a window decoration and allows motion and resizing.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+---------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`     | :ref:`resizable<class_WindowDialog_property_resizable>`       | ``false`` |
-+-----------------------------+---------------------------------------------------------------+-----------+
-| :ref:`String<class_String>` | :ref:`window_title<class_WindowDialog_property_window_title>` | ``""``    |
-+-----------------------------+---------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+---------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`     | :ref:`resizable<class_WindowDialog_property_resizable>`       | ``false`` |
+   +-----------------------------+---------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>` | :ref:`window_title<class_WindowDialog_property_window_title>` | ``""``    |
+   +-----------------------------+---------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------+---------------------------------------------------------------------------------+
-| :ref:`TextureButton<class_TextureButton>` | :ref:`get_close_button<class_WindowDialog_method_get_close_button>` **(** **)** |
-+-------------------------------------------+---------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+---------------------------------------------------------------------------------+
+   | :ref:`TextureButton<class_TextureButton>` | :ref:`get_close_button<class_WindowDialog_method_get_close_button>` **(** **)** |
+   +-------------------------------------------+---------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | :ref:`title_color<class_WindowDialog_theme_color_title_color>`              | ``Color( 0, 0, 0, 1 )`` |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`close_h_ofs<class_WindowDialog_theme_constant_close_h_ofs>`           | ``18``                  |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`close_v_ofs<class_WindowDialog_theme_constant_close_v_ofs>`           | ``18``                  |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`scaleborder_size<class_WindowDialog_theme_constant_scaleborder_size>` | ``4``                   |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`title_height<class_WindowDialog_theme_constant_title_height>`         | ``20``                  |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Font<class_Font>`         | :ref:`title_font<class_WindowDialog_theme_font_title_font>`                 |                         |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`close<class_WindowDialog_theme_icon_close>`                           |                         |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Texture<class_Texture>`   | :ref:`close_highlight<class_WindowDialog_theme_icon_close_highlight>`       |                         |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_WindowDialog_theme_style_panel>`                          |                         |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`title_color<class_WindowDialog_theme_color_title_color>`              | ``Color( 0, 0, 0, 1 )`` |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`           | :ref:`close_h_ofs<class_WindowDialog_theme_constant_close_h_ofs>`           | ``18``                  |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`           | :ref:`close_v_ofs<class_WindowDialog_theme_constant_close_v_ofs>`           | ``18``                  |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`           | :ref:`scaleborder_size<class_WindowDialog_theme_constant_scaleborder_size>` | ``4``                   |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`           | :ref:`title_height<class_WindowDialog_theme_constant_title_height>`         | ``20``                  |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`Font<class_Font>`         | :ref:`title_font<class_WindowDialog_theme_font_title_font>`                 |                         |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`close<class_WindowDialog_theme_icon_close>`                           |                         |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`Texture<class_Texture>`   | :ref:`close_highlight<class_WindowDialog_theme_icon_close_highlight>`       |                         |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_WindowDialog_theme_style_panel>`                          |                         |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_WindowDialog_property_resizable:
 
-- :ref:`bool<class_bool>` **resizable**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_resizable(value) |
-+-----------+----------------------+
-| *Getter*  | get_resizable()      |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **resizable** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_resizable** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_resizable** **(** **)**
 
 If ``true``, the user can resize the window.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WindowDialog_property_window_title:
 
-- :ref:`String<class_String>` **window_title**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``""``           |
-+-----------+------------------+
-| *Setter*  | set_title(value) |
-+-----------+------------------+
-| *Getter*  | get_title()      |
-+-----------+------------------+
+:ref:`String<class_String>` **window_title** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_title** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_title** **(** **)**
 
 The text displayed in the window's title bar.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WindowDialog_method_get_close_button:
 
-- :ref:`TextureButton<class_TextureButton>` **get_close_button** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`TextureButton<class_TextureButton>` **get_close_button** **(** **)**
 
 Returns the close :ref:`TextureButton<class_TextureButton>`.
 
 \ **Warning:** This is a required internal node, removing and freeing it may cause a crash. If you wish to hide it or any of its children, use their :ref:`CanvasItem.visible<class_CanvasItem_property_visible>` property.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_WindowDialog_theme_color_title_color:
 
-- :ref:`Color<class_Color>` **title_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )`` |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **title_color** = ``Color( 0, 0, 0, 1 )``
 
 The color of the title text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WindowDialog_theme_constant_close_h_ofs:
 
-- :ref:`int<class_int>` **close_h_ofs**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------+
-| *Default* | ``18`` |
-+-----------+--------+
+:ref:`int<class_int>` **close_h_ofs** = ``18``
 
 The horizontal offset of the close button.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WindowDialog_theme_constant_close_v_ofs:
 
-- :ref:`int<class_int>` **close_v_ofs**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------+
-| *Default* | ``18`` |
-+-----------+--------+
+:ref:`int<class_int>` **close_v_ofs** = ``18``
 
 The vertical offset of the close button.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WindowDialog_theme_constant_scaleborder_size:
 
-- :ref:`int<class_int>` **scaleborder_size**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``4`` |
-+-----------+-------+
+:ref:`int<class_int>` **scaleborder_size** = ``4``
 
 The thickness of the border that can be dragged when scaling the window (if :ref:`resizable<class_WindowDialog_property_resizable>` is enabled).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WindowDialog_theme_constant_title_height:
 
-- :ref:`int<class_int>` **title_height**
+.. rst-class:: classref-themeproperty
 
-+-----------+--------+
-| *Default* | ``20`` |
-+-----------+--------+
+:ref:`int<class_int>` **title_height** = ``20``
 
 The vertical offset of the title text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WindowDialog_theme_font_title_font:
 
-- :ref:`Font<class_Font>` **title_font**
+.. rst-class:: classref-themeproperty
+
+:ref:`Font<class_Font>` **title_font**
 
 The font used to draw the title.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WindowDialog_theme_icon_close:
 
-- :ref:`Texture<class_Texture>` **close**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **close**
 
 The icon for the close button.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WindowDialog_theme_icon_close_highlight:
 
-- :ref:`Texture<class_Texture>` **close_highlight**
+.. rst-class:: classref-themeproperty
+
+:ref:`Texture<class_Texture>` **close_highlight**
 
 The icon used for the close button when it's hovered with the mouse cursor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WindowDialog_theme_style_panel:
 
-- :ref:`StyleBox<class_StyleBox>` **panel**
+.. rst-class:: classref-themeproperty
 
-The style for both the content background of the ``WindowDialog`` and the title bar. The title bar is created with a top border and an expand margin using the ``panel`` stylebox.
+:ref:`StyleBox<class_StyleBox>` **panel**
+
+The style for both the content background of the **WindowDialog** and the title bar. The title bar is created with a top border and an expand margin using the ``panel`` stylebox.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

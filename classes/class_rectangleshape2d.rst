@@ -14,10 +14,14 @@ RectangleShape2D
 
 Rectangle shape for 2D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Rectangle shape for 2D collisions. This shape is useful for modeling box-like 2D objects.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -26,30 +30,41 @@ Tutorials
 
 - `2D Kinematic Character Demo <https://godotengine.org/asset-library/asset/113>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------+-----------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`extents<class_RectangleShape2D_property_extents>` | ``Vector2( 10, 10 )`` |
-+-------------------------------+---------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------+-----------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`extents<class_RectangleShape2D_property_extents>` | ``Vector2( 10, 10 )`` |
+   +-------------------------------+---------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_RectangleShape2D_property_extents:
 
-- :ref:`Vector2<class_Vector2>` **extents**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``Vector2( 10, 10 )`` |
-+-----------+-----------------------+
-| *Setter*  | set_extents(value)    |
-+-----------+-----------------------+
-| *Getter*  | get_extents()         |
-+-----------+-----------------------+
+:ref:`Vector2<class_Vector2>` **extents** = ``Vector2( 10, 10 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_extents** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_extents** **(** **)**
 
 The rectangle's half extents. The width and height of this shape is twice the half extents.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

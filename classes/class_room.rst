@@ -14,12 +14,14 @@ Room
 
 Room node, used to group objects together locally for :ref:`Portal<class_Portal>` culling.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-The :ref:`Portal<class_Portal>` culling system requires levels to be built using objects grouped together by location in areas called ``Room``\ s. In many cases these will correspond to actual rooms in buildings, but not necessarily (a canyon area may be treated as a room).
+The :ref:`Portal<class_Portal>` culling system requires levels to be built using objects grouped together by location in areas called **Room**\ s. In many cases these will correspond to actual rooms in buildings, but not necessarily (a canyon area may be treated as a room).
 
-Any :ref:`VisualInstance<class_VisualInstance>` that is a child or grandchild of a ``Room`` will be assigned to that room, if the ``portal_mode`` of that :ref:`VisualInstance<class_VisualInstance>` is set to ``STATIC`` (does not move) or ``DYNAMIC`` (moves only within the room).
+Any :ref:`VisualInstance<class_VisualInstance>` that is a child or grandchild of a **Room** will be assigned to that room, if the ``portal_mode`` of that :ref:`VisualInstance<class_VisualInstance>` is set to ``STATIC`` (does not move) or ``DYNAMIC`` (moves only within the room).
 
 Internally the room boundary must form a **convex hull**, and by default this is determined automatically by the geometry of the objects you place within the room.
 
@@ -27,84 +29,112 @@ You can alternatively precisely specify a **manual bound**. If you place a :ref:
 
 In order to see from one room into an adjacent room, :ref:`Portal<class_Portal>`\ s must be placed over non-occluded openings between rooms. These will often be placed over doors and windows.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_Room_property_points>`                             | ``PoolVector3Array(  )`` |
-+-------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-| :ref:`float<class_float>`                       | :ref:`room_simplify<class_Room_property_room_simplify>`               | ``0.5``                  |
-+-------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`use_default_simplify<class_Room_property_use_default_simplify>` | ``true``                 |
-+-------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_Room_property_points>`                             | ``PoolVector3Array(  )`` |
+   +-------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                       | :ref:`room_simplify<class_Room_property_room_simplify>`               | ``0.5``                  |
+   +-------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`use_default_simplify<class_Room_property_use_default_simplify>` | ``true``                 |
+   +-------------------------------------------------+-----------------------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+-------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_point<class_Room_method_set_point>` **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` position **)** |
-+------+-------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+-------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_point<class_Room_method_set_point>` **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` position **)** |
+   +------+-------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Room_property_points:
 
-- :ref:`PoolVector3Array<class_PoolVector3Array>` **points**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PoolVector3Array(  )`` |
-+-----------+--------------------------+
-| *Setter*  | set_points(value)        |
-+-----------+--------------------------+
-| *Getter*  | get_points()             |
-+-----------+--------------------------+
+:ref:`PoolVector3Array<class_PoolVector3Array>` **points** = ``PoolVector3Array(  )``
 
-If ``points`` are set, the ``Room`` bounding convex hull will be built from these points. If no points are set, the room bound will either be derived from a manual bound (:ref:`MeshInstance<class_MeshInstance>` with name prefix ``Bound_``), or from the geometry within the room.
+.. rst-class:: classref-property-setget
+
+- void **set_points** **(** :ref:`PoolVector3Array<class_PoolVector3Array>` value **)**
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **get_points** **(** **)**
+
+If ``points`` are set, the **Room** bounding convex hull will be built from these points. If no points are set, the room bound will either be derived from a manual bound (:ref:`MeshInstance<class_MeshInstance>` with name prefix ``Bound_``), or from the geometry within the room.
 
 Note that you can use the ``Generate Points`` editor button to get started. This will use either the geometry or manual bound to generate the room hull, and save the resulting points, allowing you to edit them to further refine the bound.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Room_property_room_simplify:
 
-- :ref:`float<class_float>` **room_simplify**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.5``                  |
-+-----------+--------------------------+
-| *Setter*  | set_room_simplify(value) |
-+-----------+--------------------------+
-| *Getter*  | get_room_simplify()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **room_simplify** = ``0.5``
+
+.. rst-class:: classref-property-setget
+
+- void **set_room_simplify** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_room_simplify** **(** **)**
 
 The ``simplify`` value determines to what degree room hulls (bounds) are simplified, by removing similar planes. A value of 0 gives no simplification, 1 gives maximum simplification.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Room_property_use_default_simplify:
 
-- :ref:`bool<class_bool>` **use_default_simplify**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``true``                        |
-+-----------+---------------------------------+
-| *Setter*  | set_use_default_simplify(value) |
-+-----------+---------------------------------+
-| *Getter*  | get_use_default_simplify()      |
-+-----------+---------------------------------+
+:ref:`bool<class_bool>` **use_default_simplify** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_default_simplify** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_use_default_simplify** **(** **)**
 
 The room hull simplification can either use the default value set in the :ref:`RoomManager<class_RoomManager>`, or override this and use the per room setting.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Room_method_set_point:
 
-- void **set_point** **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` position **)**
+.. rst-class:: classref-method
+
+void **set_point** **(** :ref:`int<class_int>` index, :ref:`Vector3<class_Vector3>` position **)**
 
 Sets individual points. Primarily for use by the editor.
+
+\ **Note:** This function will not resize the point array. Set :ref:`points<class_Room_property_points>` to set the number of points.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

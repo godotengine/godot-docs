@@ -16,6 +16,8 @@ CSGPrimitive
 
 Base class for CSG primitives.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,35 +25,48 @@ Parent class for various CSG primitives. It contains code and functionality that
 
 \ **Note:** CSG nodes are intended to be used for level prototyping. Creating CSG nodes has a significant CPU cost compared to creating a :ref:`MeshInstance<class_MeshInstance>` with a :ref:`PrimitiveMesh<class_PrimitiveMesh>`. Moving a CSG node within another CSG node also has a significant CPU cost, so it should be avoided during gameplay.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`Prototyping levels with CSG <../tutorials/3d/csg_tools>`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+---------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`invert_faces<class_CSGPrimitive_property_invert_faces>` | ``false`` |
-+-------------------------+---------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+---------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`invert_faces<class_CSGPrimitive_property_invert_faces>` | ``false`` |
+   +-------------------------+---------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CSGPrimitive_property_invert_faces:
 
-- :ref:`bool<class_bool>` **invert_faces**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_invert_faces(value) |
-+-----------+-------------------------+
-| *Getter*  | is_inverting_faces()    |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **invert_faces** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_invert_faces** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_inverting_faces** **(** **)**
 
 Invert the faces of the mesh.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

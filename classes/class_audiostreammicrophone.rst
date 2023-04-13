@@ -14,12 +14,16 @@ AudioStreamMicrophone
 
 Plays real-time audio input data.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-When used directly in an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` node, ``AudioStreamMicrophone`` plays back microphone input in real-time. This can be used in conjunction with :ref:`AudioEffectCapture<class_AudioEffectCapture>` to process the data or save it.
+When used directly in an :ref:`AudioStreamPlayer<class_AudioStreamPlayer>` node, **AudioStreamMicrophone** plays back microphone input in real-time. This can be used in conjunction with :ref:`AudioEffectCapture<class_AudioEffectCapture>` to process the data or save it.
 
 \ **Note:** :ref:`ProjectSettings.audio/enable_audio_input<class_ProjectSettings_property_audio/enable_audio_input>` must be ``true`` for audio input to work. See also that setting's description for caveats related to permissions and operating system privacy settings.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -29,3 +33,4 @@ Tutorials
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

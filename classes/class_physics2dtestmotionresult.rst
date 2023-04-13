@@ -12,178 +12,266 @@ Physics2DTestMotionResult
 
 **Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Object<class_Object>`   | :ref:`collider<class_Physics2DTestMotionResult_property_collider>`                                   |                     |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`collider_id<class_Physics2DTestMotionResult_property_collider_id>`                             | ``0``               |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`RID<class_RID>`         | :ref:`collider_rid<class_Physics2DTestMotionResult_property_collider_rid>`                           |                     |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`int<class_int>`         | :ref:`collider_shape<class_Physics2DTestMotionResult_property_collider_shape>`                       | ``0``               |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`collider_velocity<class_Physics2DTestMotionResult_property_collider_velocity>`                 | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`     | :ref:`collision_depth<class_Physics2DTestMotionResult_property_collision_depth>`                     | ``0.0``             |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`collision_normal<class_Physics2DTestMotionResult_property_collision_normal>`                   | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`collision_point<class_Physics2DTestMotionResult_property_collision_point>`                     | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`     | :ref:`collision_safe_fraction<class_Physics2DTestMotionResult_property_collision_safe_fraction>`     | ``0.0``             |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`float<class_float>`     | :ref:`collision_unsafe_fraction<class_Physics2DTestMotionResult_property_collision_unsafe_fraction>` | ``0.0``             |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`motion<class_Physics2DTestMotionResult_property_motion>`                                       | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`motion_remainder<class_Physics2DTestMotionResult_property_motion_remainder>`                   | ``Vector2( 0, 0 )`` |
-+-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`Object<class_Object>`   | :ref:`collider<class_Physics2DTestMotionResult_property_collider>`                                   |                     |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`int<class_int>`         | :ref:`collider_id<class_Physics2DTestMotionResult_property_collider_id>`                             | ``0``               |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`RID<class_RID>`         | :ref:`collider_rid<class_Physics2DTestMotionResult_property_collider_rid>`                           |                     |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`int<class_int>`         | :ref:`collider_shape<class_Physics2DTestMotionResult_property_collider_shape>`                       | ``0``               |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`collider_velocity<class_Physics2DTestMotionResult_property_collider_velocity>`                 | ``Vector2( 0, 0 )`` |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`float<class_float>`     | :ref:`collision_depth<class_Physics2DTestMotionResult_property_collision_depth>`                     | ``0.0``             |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`collision_normal<class_Physics2DTestMotionResult_property_collision_normal>`                   | ``Vector2( 0, 0 )`` |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`collision_point<class_Physics2DTestMotionResult_property_collision_point>`                     | ``Vector2( 0, 0 )`` |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`float<class_float>`     | :ref:`collision_safe_fraction<class_Physics2DTestMotionResult_property_collision_safe_fraction>`     | ``0.0``             |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`float<class_float>`     | :ref:`collision_unsafe_fraction<class_Physics2DTestMotionResult_property_collision_unsafe_fraction>` | ``0.0``             |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`motion<class_Physics2DTestMotionResult_property_motion>`                                       | ``Vector2( 0, 0 )`` |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`motion_remainder<class_Physics2DTestMotionResult_property_motion_remainder>`                   | ``Vector2( 0, 0 )`` |
+   +-------------------------------+------------------------------------------------------------------------------------------------------+---------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Physics2DTestMotionResult_property_collider:
 
-- :ref:`Object<class_Object>` **collider**
+.. rst-class:: classref-property
 
-+----------+----------------+
-| *Getter* | get_collider() |
-+----------+----------------+
+:ref:`Object<class_Object>` **collider**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Object<class_Object>` **get_collider** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_collider_id:
 
-- :ref:`int<class_int>` **collider_id**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0``             |
-+-----------+-------------------+
-| *Getter*  | get_collider_id() |
-+-----------+-------------------+
+:ref:`int<class_int>` **collider_id** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`int<class_int>` **get_collider_id** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_collider_rid:
 
-- :ref:`RID<class_RID>` **collider_rid**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Getter* | get_collider_rid() |
-+----------+--------------------+
+:ref:`RID<class_RID>` **collider_rid**
+
+.. rst-class:: classref-property-setget
+
+- :ref:`RID<class_RID>` **get_collider_rid** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_collider_shape:
 
-- :ref:`int<class_int>` **collider_shape**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Getter*  | get_collider_shape() |
-+-----------+----------------------+
+:ref:`int<class_int>` **collider_shape** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`int<class_int>` **get_collider_shape** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_collider_velocity:
 
-- :ref:`Vector2<class_Vector2>` **collider_velocity**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Vector2( 0, 0 )``     |
-+-----------+-------------------------+
-| *Getter*  | get_collider_velocity() |
-+-----------+-------------------------+
+:ref:`Vector2<class_Vector2>` **collider_velocity** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector2<class_Vector2>` **get_collider_velocity** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_collision_depth:
 
-- :ref:`float<class_float>` **collision_depth**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0.0``               |
-+-----------+-----------------------+
-| *Getter*  | get_collision_depth() |
-+-----------+-----------------------+
+:ref:`float<class_float>` **collision_depth** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`float<class_float>` **get_collision_depth** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_collision_normal:
 
-- :ref:`Vector2<class_Vector2>` **collision_normal**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector2( 0, 0 )``    |
-+-----------+------------------------+
-| *Getter*  | get_collision_normal() |
-+-----------+------------------------+
+:ref:`Vector2<class_Vector2>` **collision_normal** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector2<class_Vector2>` **get_collision_normal** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_collision_point:
 
-- :ref:`Vector2<class_Vector2>` **collision_point**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``Vector2( 0, 0 )``   |
-+-----------+-----------------------+
-| *Getter*  | get_collision_point() |
-+-----------+-----------------------+
+:ref:`Vector2<class_Vector2>` **collision_point** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector2<class_Vector2>` **get_collision_point** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_collision_safe_fraction:
 
-- :ref:`float<class_float>` **collision_safe_fraction**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``0.0``                       |
-+-----------+-------------------------------+
-| *Getter*  | get_collision_safe_fraction() |
-+-----------+-------------------------------+
+:ref:`float<class_float>` **collision_safe_fraction** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`float<class_float>` **get_collision_safe_fraction** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_collision_unsafe_fraction:
 
-- :ref:`float<class_float>` **collision_unsafe_fraction**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``0.0``                         |
-+-----------+---------------------------------+
-| *Getter*  | get_collision_unsafe_fraction() |
-+-----------+---------------------------------+
+:ref:`float<class_float>` **collision_unsafe_fraction** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`float<class_float>` **get_collision_unsafe_fraction** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_motion:
 
-- :ref:`Vector2<class_Vector2>` **motion**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Getter*  | get_motion()        |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **motion** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector2<class_Vector2>` **get_motion** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Physics2DTestMotionResult_property_motion_remainder:
 
-- :ref:`Vector2<class_Vector2>` **motion_remainder**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector2( 0, 0 )``    |
-+-----------+------------------------+
-| *Getter*  | get_motion_remainder() |
-+-----------+------------------------+
+:ref:`Vector2<class_Vector2>` **motion_remainder** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Vector2<class_Vector2>` **get_motion_remainder** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

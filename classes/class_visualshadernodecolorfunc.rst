@@ -14,30 +14,47 @@ VisualShaderNodeColorFunc
 
 A :ref:`Color<class_Color>` function to be used within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Accept a :ref:`Color<class_Color>` to the input port and transform it according to :ref:`function<class_VisualShaderNodeColorFunc_property_function>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+----------------------------------------------------------+--------------------------------------------------------------------+-------+
-| :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` | :ref:`function<class_VisualShaderNodeColorFunc_property_function>` | ``0`` |
-+----------------------------------------------------------+--------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------------------+--------------------------------------------------------------------+-------+
+   | :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` | :ref:`function<class_VisualShaderNodeColorFunc_property_function>` | ``0`` |
+   +----------------------------------------------------------+--------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeColorFunc_Function:
 
-.. _class_VisualShaderNodeColorFunc_constant_FUNC_GRAYSCALE:
-
-.. _class_VisualShaderNodeColorFunc_constant_FUNC_SEPIA:
+.. rst-class:: classref-enumeration
 
 enum **Function**:
 
-- **FUNC_GRAYSCALE** = **0** --- Converts the color to grayscale using the following formula:
+.. _class_VisualShaderNodeColorFunc_constant_FUNC_GRAYSCALE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **FUNC_GRAYSCALE** = ``0``
+
+Converts the color to grayscale using the following formula:
 
 ::
 
@@ -47,7 +64,13 @@ enum **Function**:
     float max3 = max(max1, max2);
     return vec3(max3, max3, max3);
 
-- **FUNC_SEPIA** = **1** --- Applies sepia tone effect using the following formula:
+.. _class_VisualShaderNodeColorFunc_constant_FUNC_SEPIA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **FUNC_SEPIA** = ``1``
+
+Applies sepia tone effect using the following formula:
 
 ::
 
@@ -57,23 +80,29 @@ enum **Function**:
     float b = (c.r * 0.272) + (c.g * 0.534) + (c.b * 0.131);
     return vec3(r, g, b);
 
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeColorFunc_property_function:
 
-- :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **function**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_function(value) |
-+-----------+---------------------+
-| *Getter*  | get_function()      |
-+-----------+---------------------+
+:ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **function** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_function** **(** :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` value **)**
+- :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` **get_function** **(** **)**
 
 A function to be applied to the input color. See :ref:`Function<enum_VisualShaderNodeColorFunc_Function>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,6 +14,8 @@ ARVRInterfaceGDNative
 
 GDNative wrapper for an ARVR interface.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -22,3 +24,4 @@ This is a wrapper class for GDNative implementations of the ARVR interface. To u
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

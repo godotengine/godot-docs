@@ -14,6 +14,8 @@ JavaScript
 
 Singleton that connects the engine with the browser's JavaScript context in HTML5 export.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -21,61 +23,94 @@ The JavaScript singleton is implemented only in the HTML5 export. It's used to a
 
 \ **Note:** This singleton can be disabled at build-time to improve security. By default, the JavaScript singleton is enabled. Official export templates also have the JavaScript singleton enabled. See :doc:`Compiling for the Web <../development/compiling/compiling_for_web>` in the documentation for more information.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `#calling-javascript-from-script <../tutorials/export/exporting_for_web.html#calling-javascript-from-script>`__ in :doc:`../tutorials/export/exporting_for_web`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`create_callback<class_JavaScript_method_create_callback>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)**                                                                          |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                   | :ref:`create_object<class_JavaScript_method_create_object>` **(** :ref:`String<class_String>` object, ... **)** |vararg|                                                                                                    |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                            | :ref:`download_buffer<class_JavaScript_method_download_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`String<class_String>` name, :ref:`String<class_String>` mime="application/octet-stream" **)** |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                   | :ref:`eval<class_JavaScript_method_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**                                                                          |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`get_interface<class_JavaScript_method_get_interface>` **(** :ref:`String<class_String>` interface **)**                                                                                                               |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`pwa_needs_update<class_JavaScript_method_pwa_needs_update>` **(** **)** |const|                                                                                                                                       |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`pwa_update<class_JavaScript_method_pwa_update>` **(** **)**                                                                                                                                                           |
-+-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`create_callback<class_JavaScript_method_create_callback>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)**                                                                          |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                   | :ref:`create_object<class_JavaScript_method_create_object>` **(** :ref:`String<class_String>` object, ... **)** |vararg|                                                                                                    |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`download_buffer<class_JavaScript_method_download_buffer>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`String<class_String>` name, :ref:`String<class_String>` mime="application/octet-stream" **)** |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                   | :ref:`eval<class_JavaScript_method_eval>` **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**                                                                          |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`force_fs_sync<class_JavaScript_method_force_fs_sync>` **(** **)**                                                                                                                                                     |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`JavaScriptObject<class_JavaScriptObject>` | :ref:`get_interface<class_JavaScript_method_get_interface>` **(** :ref:`String<class_String>` interface **)**                                                                                                               |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`pwa_needs_update<class_JavaScript_method_pwa_needs_update>` **(** **)** |const|                                                                                                                                       |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`           | :ref:`pwa_update<class_JavaScript_method_pwa_update>` **(** **)**                                                                                                                                                           |
+   +-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_JavaScript_signal_pwa_update_available:
 
-- **pwa_update_available** **(** **)**
+.. rst-class:: classref-signal
+
+**pwa_update_available** **(** **)**
 
 Emitted when an update for this progressive web app has been detected but is waiting to be activated because a previous version is active. See :ref:`pwa_update<class_JavaScript_method_pwa_update>` to force the update to take place immediately.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_JavaScript_method_create_callback:
 
-- :ref:`JavaScriptObject<class_JavaScriptObject>` **create_callback** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)**
+.. rst-class:: classref-method
+
+:ref:`JavaScriptObject<class_JavaScriptObject>` **create_callback** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` method **)**
 
 Creates a reference to a script function that can be used as a callback by JavaScript. The reference must be kept until the callback happens, or it won't be called at all. See :ref:`JavaScriptObject<class_JavaScriptObject>` for usage.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_JavaScript_method_create_object:
 
-- :ref:`Variant<class_Variant>` **create_object** **(** :ref:`String<class_String>` object, ... **)** |vararg|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **create_object** **(** :ref:`String<class_String>` object, ... **)** |vararg|
 
 Creates a new JavaScript object using the ``new`` constructor. The ``object`` must a valid property of the JavaScript ``window``. See :ref:`JavaScriptObject<class_JavaScriptObject>` for usage.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_JavaScript_method_download_buffer:
 
-- void **download_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`String<class_String>` name, :ref:`String<class_String>` mime="application/octet-stream" **)**
+.. rst-class:: classref-method
+
+void **download_buffer** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer, :ref:`String<class_String>` name, :ref:`String<class_String>` mime="application/octet-stream" **)**
 
 Prompts the user to download a file containing the specified ``buffer``. The file will have the given ``name`` and ``mime`` type.
 
@@ -85,39 +120,69 @@ Prompts the user to download a file containing the specified ``buffer``. The fil
 
 \ **Note:** Browsers might ask the user for permission or block the download if multiple download requests are made in a quick succession.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_JavaScript_method_eval:
 
-- :ref:`Variant<class_Variant>` **eval** **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **eval** **(** :ref:`String<class_String>` code, :ref:`bool<class_bool>` use_global_execution_context=false **)**
 
 Execute the string ``code`` as JavaScript code within the browser window. This is a call to the actual global JavaScript function ``eval()``.
 
 If ``use_global_execution_context`` is ``true``, the code will be evaluated in the global execution context. Otherwise, it is evaluated in the execution context of a function within the engine's runtime environment.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_JavaScript_method_force_fs_sync:
+
+.. rst-class:: classref-method
+
+void **force_fs_sync** **(** **)**
+
+Force synchronization of the persistent file system (when enabled).
+
+\ **Note:** This is only useful for modules or extensions that can't use :ref:`File<class_File>` to write files.
+
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_JavaScript_method_get_interface:
 
-- :ref:`JavaScriptObject<class_JavaScriptObject>` **get_interface** **(** :ref:`String<class_String>` interface **)**
+.. rst-class:: classref-method
+
+:ref:`JavaScriptObject<class_JavaScriptObject>` **get_interface** **(** :ref:`String<class_String>` interface **)**
 
 Returns an interface to a JavaScript object that can be used by scripts. The ``interface`` must be a valid property of the JavaScript ``window``. The callback must accept a single :ref:`Array<class_Array>` argument, which will contain the JavaScript ``arguments``. See :ref:`JavaScriptObject<class_JavaScriptObject>` for usage.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_JavaScript_method_pwa_needs_update:
 
-- :ref:`bool<class_bool>` **pwa_needs_update** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **pwa_needs_update** **(** **)** |const|
 
 Returns ``true`` if a new version of the progressive web app is waiting to be activated.
 
 \ **Note:** Only relevant when exported as a Progressive Web App.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_JavaScript_method_pwa_update:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **pwa_update** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **pwa_update** **(** **)**
 
 Performs the live update of the progressive web app. Forcing the new version to be installed and the page to be reloaded.
 
@@ -128,3 +193,4 @@ Performs the live update of the progressive web app. Forcing the new version to 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

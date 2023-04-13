@@ -12,65 +12,92 @@ GLTFMesh
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFMesh`` within a script will cause an error in an exported project.
+**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFMesh** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------------------+-----------------------------------------------------------------------+-----------------------+
-| :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`blend_weights<class_GLTFMesh_property_blend_weights>`           | ``PoolRealArray(  )`` |
-+-------------------------------------------+-----------------------------------------------------------------------+-----------------------+
-| :ref:`Array<class_Array>`                 | :ref:`instance_materials<class_GLTFMesh_property_instance_materials>` | ``[  ]``              |
-+-------------------------------------------+-----------------------------------------------------------------------+-----------------------+
-| :ref:`ArrayMesh<class_ArrayMesh>`         | :ref:`mesh<class_GLTFMesh_property_mesh>`                             |                       |
-+-------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`PoolRealArray<class_PoolRealArray>` | :ref:`blend_weights<class_GLTFMesh_property_blend_weights>`           | ``PoolRealArray(  )`` |
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`Array<class_Array>`                 | :ref:`instance_materials<class_GLTFMesh_property_instance_materials>` | ``[  ]``              |
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+   | :ref:`ArrayMesh<class_ArrayMesh>`         | :ref:`mesh<class_GLTFMesh_property_mesh>`                             |                       |
+   +-------------------------------------------+-----------------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFMesh_property_blend_weights:
 
-- :ref:`PoolRealArray<class_PoolRealArray>` **blend_weights**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PoolRealArray(  )``    |
-+-----------+--------------------------+
-| *Setter*  | set_blend_weights(value) |
-+-----------+--------------------------+
-| *Getter*  | get_blend_weights()      |
-+-----------+--------------------------+
+:ref:`PoolRealArray<class_PoolRealArray>` **blend_weights** = ``PoolRealArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_blend_weights** **(** :ref:`PoolRealArray<class_PoolRealArray>` value **)**
+- :ref:`PoolRealArray<class_PoolRealArray>` **get_blend_weights** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFMesh_property_instance_materials:
 
-- :ref:`Array<class_Array>` **instance_materials**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``[  ]``                      |
-+-----------+-------------------------------+
-| *Setter*  | set_instance_materials(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_instance_materials()      |
-+-----------+-------------------------------+
+:ref:`Array<class_Array>` **instance_materials** = ``[  ]``
+
+.. rst-class:: classref-property-setget
+
+- void **set_instance_materials** **(** :ref:`Array<class_Array>` value **)**
+- :ref:`Array<class_Array>` **get_instance_materials** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFMesh_property_mesh:
 
-- :ref:`ArrayMesh<class_ArrayMesh>` **mesh**
+.. rst-class:: classref-property
 
-+----------+-----------------+
-| *Setter* | set_mesh(value) |
-+----------+-----------------+
-| *Getter* | get_mesh()      |
-+----------+-----------------+
+:ref:`ArrayMesh<class_ArrayMesh>` **mesh**
+
+.. rst-class:: classref-property-setget
+
+- void **set_mesh** **(** :ref:`ArrayMesh<class_ArrayMesh>` value **)**
+- :ref:`ArrayMesh<class_ArrayMesh>` **get_mesh** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

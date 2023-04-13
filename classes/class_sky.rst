@@ -16,77 +16,129 @@ Sky
 
 The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------------+--------------------------------------------------------+-------+
-| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` | ``2`` |
-+--------------------------------------------+--------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------+--------------------------------------------------------+-------+
+   | :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` | ``2`` |
+   +--------------------------------------------+--------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Sky_RadianceSize:
 
-.. _class_Sky_constant_RADIANCE_SIZE_32:
-
-.. _class_Sky_constant_RADIANCE_SIZE_64:
-
-.. _class_Sky_constant_RADIANCE_SIZE_128:
-
-.. _class_Sky_constant_RADIANCE_SIZE_256:
-
-.. _class_Sky_constant_RADIANCE_SIZE_512:
-
-.. _class_Sky_constant_RADIANCE_SIZE_1024:
-
-.. _class_Sky_constant_RADIANCE_SIZE_2048:
-
-.. _class_Sky_constant_RADIANCE_SIZE_MAX:
+.. rst-class:: classref-enumeration
 
 enum **RadianceSize**:
 
-- **RADIANCE_SIZE_32** = **0** --- Radiance texture size is 32×32 pixels.
+.. _class_Sky_constant_RADIANCE_SIZE_32:
 
-- **RADIANCE_SIZE_64** = **1** --- Radiance texture size is 64×64 pixels.
+.. rst-class:: classref-enumeration-constant
 
-- **RADIANCE_SIZE_128** = **2** --- Radiance texture size is 128×128 pixels.
+:ref:`RadianceSize<enum_Sky_RadianceSize>` **RADIANCE_SIZE_32** = ``0``
 
-- **RADIANCE_SIZE_256** = **3** --- Radiance texture size is 256×256 pixels.
+Radiance texture size is 32×32 pixels.
 
-- **RADIANCE_SIZE_512** = **4** --- Radiance texture size is 512×512 pixels.
+.. _class_Sky_constant_RADIANCE_SIZE_64:
 
-- **RADIANCE_SIZE_1024** = **5** --- Radiance texture size is 1024×1024 pixels.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RadianceSize<enum_Sky_RadianceSize>` **RADIANCE_SIZE_64** = ``1``
+
+Radiance texture size is 64×64 pixels.
+
+.. _class_Sky_constant_RADIANCE_SIZE_128:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RadianceSize<enum_Sky_RadianceSize>` **RADIANCE_SIZE_128** = ``2``
+
+Radiance texture size is 128×128 pixels.
+
+.. _class_Sky_constant_RADIANCE_SIZE_256:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RadianceSize<enum_Sky_RadianceSize>` **RADIANCE_SIZE_256** = ``3``
+
+Radiance texture size is 256×256 pixels.
+
+.. _class_Sky_constant_RADIANCE_SIZE_512:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RadianceSize<enum_Sky_RadianceSize>` **RADIANCE_SIZE_512** = ``4``
+
+Radiance texture size is 512×512 pixels.
+
+.. _class_Sky_constant_RADIANCE_SIZE_1024:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RadianceSize<enum_Sky_RadianceSize>` **RADIANCE_SIZE_1024** = ``5``
+
+Radiance texture size is 1024×1024 pixels.
 
 \ **Note:** :ref:`RADIANCE_SIZE_1024<class_Sky_constant_RADIANCE_SIZE_1024>` is not exposed in the inspector as it is known to cause GPU hangs on certain systems.
 
-- **RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048×2048 pixels.
+.. _class_Sky_constant_RADIANCE_SIZE_2048:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RadianceSize<enum_Sky_RadianceSize>` **RADIANCE_SIZE_2048** = ``6``
+
+Radiance texture size is 2048×2048 pixels.
 
 \ **Note:** :ref:`RADIANCE_SIZE_2048<class_Sky_constant_RADIANCE_SIZE_2048>` is not exposed in the inspector as it is known to cause GPU hangs on certain systems.
 
-- **RADIANCE_SIZE_MAX** = **7** --- Represents the size of the :ref:`RadianceSize<enum_Sky_RadianceSize>` enum.
+.. _class_Sky_constant_RADIANCE_SIZE_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`RadianceSize<enum_Sky_RadianceSize>` **RADIANCE_SIZE_MAX** = ``7``
+
+Represents the size of the :ref:`RadianceSize<enum_Sky_RadianceSize>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Sky_property_radiance_size:
 
-- :ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``2``                    |
-+-----------+--------------------------+
-| *Setter*  | set_radiance_size(value) |
-+-----------+--------------------------+
-| *Getter*  | get_radiance_size()      |
-+-----------+--------------------------+
+:ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size** = ``2``
 
-The ``Sky``'s radiance map size. The higher the radiance map size, the more detailed the lighting from the ``Sky`` will be.
+.. rst-class:: classref-property-setget
+
+- void **set_radiance_size** **(** :ref:`RadianceSize<enum_Sky_RadianceSize>` value **)**
+- :ref:`RadianceSize<enum_Sky_RadianceSize>` **get_radiance_size** **(** **)**
+
+The **Sky**'s radiance map size. The higher the radiance map size, the more detailed the lighting from the **Sky** will be.
 
 See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 
@@ -95,3 +147,4 @@ See :ref:`RadianceSize<enum_Sky_RadianceSize>` constants for values.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

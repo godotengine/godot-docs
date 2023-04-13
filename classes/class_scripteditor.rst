@@ -14,108 +14,176 @@ ScriptEditor
 
 Godot editor's script editor.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_script_editor<class_EditorInterface_method_get_script_editor>`.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`can_drop_data_fw<class_ScriptEditor_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const| |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`drop_data_fw<class_ScriptEditor_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**                 |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Script<class_Script>`   | :ref:`get_current_script<class_ScriptEditor_method_get_current_script>` **(** **)**                                                                                                                 |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>` | :ref:`get_drag_data_fw<class_ScriptEditor_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**                                             |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`     | :ref:`get_open_scripts<class_ScriptEditor_method_get_open_scripts>` **(** **)** |const|                                                                                                             |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`goto_line<class_ScriptEditor_method_goto_line>` **(** :ref:`int<class_int>` line_number **)**                                                                                                 |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`open_script_create_dialog<class_ScriptEditor_method_open_script_create_dialog>` **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**                      |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                          | :ref:`reload_scripts<class_ScriptEditor_method_reload_scripts>` **(** **)**                                                                                                                         |
-+-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`can_drop_data_fw<class_ScriptEditor_method_can_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const| |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`drop_data_fw<class_ScriptEditor_method_drop_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**                 |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Script<class_Script>`   | :ref:`get_current_script<class_ScriptEditor_method_get_current_script>` **(** **)**                                                                                                                 |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_drag_data_fw<class_ScriptEditor_method_get_drag_data_fw>` **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**                                             |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`     | :ref:`get_open_scripts<class_ScriptEditor_method_get_open_scripts>` **(** **)** |const|                                                                                                             |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`goto_line<class_ScriptEditor_method_goto_line>` **(** :ref:`int<class_int>` line_number **)**                                                                                                 |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`open_script_create_dialog<class_ScriptEditor_method_open_script_create_dialog>` **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**                      |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`reload_scripts<class_ScriptEditor_method_reload_scripts>` **(** **)**                                                                                                                         |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_ScriptEditor_signal_editor_script_changed:
 
-- **editor_script_changed** **(** :ref:`Script<class_Script>` script **)**
+.. rst-class:: classref-signal
+
+**editor_script_changed** **(** :ref:`Script<class_Script>` script **)**
 
 Emitted when user changed active script. Argument is a freshly activated :ref:`Script<class_Script>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ScriptEditor_signal_script_close:
 
-- **script_close** **(** :ref:`Script<class_Script>` script **)**
+.. rst-class:: classref-signal
+
+**script_close** **(** :ref:`Script<class_Script>` script **)**
 
 Emitted when editor is about to close the active script. Argument is a :ref:`Script<class_Script>` that is going to be closed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ScriptEditor_method_can_drop_data_fw:
 
-- :ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **can_drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ScriptEditor_method_drop_data_fw:
 
-- void **drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**
+.. rst-class:: classref-method
+
+void **drop_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Variant<class_Variant>` data, :ref:`Control<class_Control>` from **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ScriptEditor_method_get_current_script:
 
-- :ref:`Script<class_Script>` **get_current_script** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Script<class_Script>` **get_current_script** **(** **)**
 
 Returns a :ref:`Script<class_Script>` that is currently active in editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ScriptEditor_method_get_drag_data_fw:
 
-- :ref:`Variant<class_Variant>` **get_drag_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_drag_data_fw** **(** :ref:`Vector2<class_Vector2>` point, :ref:`Control<class_Control>` from **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ScriptEditor_method_get_open_scripts:
 
-- :ref:`Array<class_Array>` **get_open_scripts** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_open_scripts** **(** **)** |const|
 
 Returns an array with all :ref:`Script<class_Script>` objects which are currently open in editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ScriptEditor_method_goto_line:
 
-- void **goto_line** **(** :ref:`int<class_int>` line_number **)**
+.. rst-class:: classref-method
+
+void **goto_line** **(** :ref:`int<class_int>` line_number **)**
 
 Goes to the specified line in the current script.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ScriptEditor_method_open_script_create_dialog:
 
-- void **open_script_create_dialog** **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**
+.. rst-class:: classref-method
+
+void **open_script_create_dialog** **(** :ref:`String<class_String>` base_name, :ref:`String<class_String>` base_path **)**
 
 Opens the script create dialog. The script will extend ``base_name``. The file extension can be omitted from ``base_path``. It will be added based on the selected scripting language.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ScriptEditor_method_reload_scripts:
 
-- void **reload_scripts** **(** **)**
+.. rst-class:: classref-method
+
+void **reload_scripts** **(** **)**
 
 Reload all currently opened scripts from disk in case the file contents are newer.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

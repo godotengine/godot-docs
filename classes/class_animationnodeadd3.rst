@@ -14,6 +14,8 @@ AnimationNodeAdd3
 
 Blends two of three animations additively inside of an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -27,6 +29,8 @@ This node has three inputs:
 
 - A +add animation to blend with when the blend amount is in the ``[0.0, 1.0]`` range
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -34,30 +38,41 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------+-----------+
-| :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeAdd3_property_sync>` | ``false`` |
-+-------------------------+----------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`sync<class_AnimationNodeAdd3_property_sync>` | ``false`` |
+   +-------------------------+----------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AnimationNodeAdd3_property_sync:
 
-- :ref:`bool<class_bool>` **sync**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_use_sync(value) |
-+-----------+---------------------+
-| *Getter*  | is_using_sync()     |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **sync** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_sync** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_sync** **(** **)**
 
 If ``true``, sets the ``optimization`` to ``false`` when calling :ref:`AnimationNode.blend_input<class_AnimationNode_method_blend_input>`, forcing the blended animations to update every frame.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

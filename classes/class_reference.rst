@@ -12,9 +12,11 @@ Reference
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AESContext<class_AESContext>`, :ref:`ARVRInterface<class_ARVRInterface>`, :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`, :ref:`AStar<class_AStar>`, :ref:`AStar2D<class_AStar2D>`, :ref:`AnimationTrackEditPlugin<class_AnimationTrackEditPlugin>`, :ref:`AudioEffectInstance<class_AudioEffectInstance>`, :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`, :ref:`CameraFeed<class_CameraFeed>`, :ref:`CharFXTransform<class_CharFXTransform>`, :ref:`ConfigFile<class_ConfigFile>`, :ref:`Crypto<class_Crypto>`, :ref:`DTLSServer<class_DTLSServer>`, :ref:`Directory<class_Directory>`, :ref:`EditorExportPlugin<class_EditorExportPlugin>`, :ref:`EditorFeatureProfile<class_EditorFeatureProfile>`, :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`, :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>`, :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>`, :ref:`EditorSceneImporter<class_EditorSceneImporter>`, :ref:`EditorScenePostImport<class_EditorScenePostImport>`, :ref:`EditorScript<class_EditorScript>`, :ref:`EncodedObjectAsID<class_EncodedObjectAsID>`, :ref:`Expression<class_Expression>`, :ref:`File<class_File>`, :ref:`FuncRef<class_FuncRef>`, :ref:`GDNative<class_GDNative>`, :ref:`GDScriptFunctionState<class_GDScriptFunctionState>`, :ref:`HMACContext<class_HMACContext>`, :ref:`HTTPClient<class_HTTPClient>`, :ref:`HashingContext<class_HashingContext>`, :ref:`JSONParseResult<class_JSONParseResult>`, :ref:`JavaClass<class_JavaClass>`, :ref:`JavaScriptObject<class_JavaScriptObject>`, :ref:`KinematicCollision<class_KinematicCollision>`, :ref:`KinematicCollision2D<class_KinematicCollision2D>`, :ref:`MeshDataTool<class_MeshDataTool>`, :ref:`MultiplayerAPI<class_MultiplayerAPI>`, :ref:`Mutex<class_Mutex>`, :ref:`PCKPacker<class_PCKPacker>`, :ref:`PackedDataContainerRef<class_PackedDataContainerRef>`, :ref:`PacketPeer<class_PacketPeer>`, :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>`, :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>`, :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>`, :ref:`PhysicsTestMotionResult<class_PhysicsTestMotionResult>`, :ref:`RandomNumberGenerator<class_RandomNumberGenerator>`, :ref:`RegEx<class_RegEx>`, :ref:`RegExMatch<class_RegExMatch>`, :ref:`Resource<class_Resource>`, :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`, :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`, :ref:`ResourceImporter<class_ResourceImporter>`, :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>`, :ref:`SceneState<class_SceneState>`, :ref:`SceneTreeTimer<class_SceneTreeTimer>`, :ref:`SceneTreeTween<class_SceneTreeTween>`, :ref:`Semaphore<class_Semaphore>`, :ref:`SkinReference<class_SkinReference>`, :ref:`SpatialGizmo<class_SpatialGizmo>`, :ref:`SpatialVelocityTracker<class_SpatialVelocityTracker>`, :ref:`StreamPeer<class_StreamPeer>`, :ref:`SurfaceTool<class_SurfaceTool>`, :ref:`TCP_Server<class_TCP_Server>`, :ref:`Thread<class_Thread>`, :ref:`TriangleMesh<class_TriangleMesh>`, :ref:`Tweener<class_Tweener>`, :ref:`UDPServer<class_UDPServer>`, :ref:`UPNP<class_UPNP>`, :ref:`UPNPDevice<class_UPNPDevice>`, :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`, :ref:`WeakRef<class_WeakRef>`, :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>`, :ref:`XMLParser<class_XMLParser>`
+**Inherited By:** :ref:`AESContext<class_AESContext>`, :ref:`AnimationTrackEditPlugin<class_AnimationTrackEditPlugin>`, :ref:`ARVRInterface<class_ARVRInterface>`, :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`, :ref:`AStar<class_AStar>`, :ref:`AStar2D<class_AStar2D>`, :ref:`AudioEffectInstance<class_AudioEffectInstance>`, :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`, :ref:`CameraFeed<class_CameraFeed>`, :ref:`CharFXTransform<class_CharFXTransform>`, :ref:`ConfigFile<class_ConfigFile>`, :ref:`Crypto<class_Crypto>`, :ref:`Directory<class_Directory>`, :ref:`DTLSServer<class_DTLSServer>`, :ref:`EditorExportPlugin<class_EditorExportPlugin>`, :ref:`EditorFeatureProfile<class_EditorFeatureProfile>`, :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`, :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>`, :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>`, :ref:`EditorSceneImporter<class_EditorSceneImporter>`, :ref:`EditorScenePostImport<class_EditorScenePostImport>`, :ref:`EditorScript<class_EditorScript>`, :ref:`EncodedObjectAsID<class_EncodedObjectAsID>`, :ref:`Expression<class_Expression>`, :ref:`File<class_File>`, :ref:`FuncRef<class_FuncRef>`, :ref:`GDNative<class_GDNative>`, :ref:`GDScriptFunctionState<class_GDScriptFunctionState>`, :ref:`HashingContext<class_HashingContext>`, :ref:`HMACContext<class_HMACContext>`, :ref:`HTTPClient<class_HTTPClient>`, :ref:`JavaClass<class_JavaClass>`, :ref:`JavaScriptObject<class_JavaScriptObject>`, :ref:`JSONParseResult<class_JSONParseResult>`, :ref:`KinematicCollision<class_KinematicCollision>`, :ref:`KinematicCollision2D<class_KinematicCollision2D>`, :ref:`MeshDataTool<class_MeshDataTool>`, :ref:`MultiplayerAPI<class_MultiplayerAPI>`, :ref:`Mutex<class_Mutex>`, :ref:`PackedDataContainerRef<class_PackedDataContainerRef>`, :ref:`PacketPeer<class_PacketPeer>`, :ref:`PCKPacker<class_PCKPacker>`, :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>`, :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>`, :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>`, :ref:`PhysicsTestMotionResult<class_PhysicsTestMotionResult>`, :ref:`RandomNumberGenerator<class_RandomNumberGenerator>`, :ref:`RegEx<class_RegEx>`, :ref:`RegExMatch<class_RegExMatch>`, :ref:`Resource<class_Resource>`, :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`, :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`, :ref:`ResourceImporter<class_ResourceImporter>`, :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>`, :ref:`SceneState<class_SceneState>`, :ref:`SceneTreeTimer<class_SceneTreeTimer>`, :ref:`SceneTreeTween<class_SceneTreeTween>`, :ref:`Semaphore<class_Semaphore>`, :ref:`SkinReference<class_SkinReference>`, :ref:`SpatialGizmo<class_SpatialGizmo>`, :ref:`SpatialVelocityTracker<class_SpatialVelocityTracker>`, :ref:`StreamPeer<class_StreamPeer>`, :ref:`SurfaceTool<class_SurfaceTool>`, :ref:`TCP_Server<class_TCP_Server>`, :ref:`Thread<class_Thread>`, :ref:`TriangleMesh<class_TriangleMesh>`, :ref:`Tweener<class_Tweener>`, :ref:`UDPServer<class_UDPServer>`, :ref:`UPNP<class_UPNP>`, :ref:`UPNPDevice<class_UPNPDevice>`, :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`, :ref:`WeakRef<class_WeakRef>`, :ref:`WebRTCPeerConnection<class_WebRTCPeerConnection>`, :ref:`XMLParser<class_XMLParser>`
 
 Base class for reference-counted objects.
+
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
@@ -23,52 +25,75 @@ Base class for any object that keeps a reference count. :ref:`Resource<class_Res
 
 Unlike other :ref:`Object<class_Object>` types, References keep an internal reference counter so that they are automatically released when no longer in use, and only then. References therefore do not need to be freed manually with :ref:`Object.free<class_Object_method_free>`.
 
-In the vast majority of use cases, instantiating and using ``Reference``-derived types is all you need to do. The methods provided in this class are only for advanced users, and can cause issues if misused.
+In the vast majority of use cases, instantiating and using **Reference**-derived types is all you need to do. The methods provided in this class are only for advanced users, and can cause issues if misused.
 
 \ **Note:** In C#, references will not be freed instantly after they are no longer in use. Instead, garbage collection will run periodically and will free references that are no longer in use. This means that unused references will linger on for a while before being removed.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`When and how to avoid using nodes for everything <../tutorials/best_practices/node_alternatives>`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`init_ref<class_Reference_method_init_ref>` **(** **)**       |
-+-------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`reference<class_Reference_method_reference>` **(** **)**     |
-+-------------------------+--------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`unreference<class_Reference_method_unreference>` **(** **)** |
-+-------------------------+--------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`init_ref<class_Reference_method_init_ref>` **(** **)**       |
+   +-------------------------+--------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`reference<class_Reference_method_reference>` **(** **)**     |
+   +-------------------------+--------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`unreference<class_Reference_method_unreference>` **(** **)** |
+   +-------------------------+--------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Reference_method_init_ref:
 
-- :ref:`bool<class_bool>` **init_ref** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **init_ref** **(** **)**
 
 Initializes the internal reference counter. Use this only if you really know what you are doing.
 
 Returns whether the initialization was successful.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Reference_method_reference:
 
-- :ref:`bool<class_bool>` **reference** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **reference** **(** **)**
 
 Increments the internal reference counter. Use this only if you really know what you are doing.
 
 Returns ``true`` if the increment was successful, ``false`` otherwise.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Reference_method_unreference:
 
-- :ref:`bool<class_bool>` **unreference** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **unreference** **(** **)**
 
 Decrements the internal reference counter. Use this only if you really know what you are doing.
 
@@ -77,3 +102,4 @@ Returns ``true`` if the decrement was successful, ``false`` otherwise.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

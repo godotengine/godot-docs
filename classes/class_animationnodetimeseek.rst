@@ -14,6 +14,8 @@ AnimationNodeTimeSeek
 
 A time-seeking animation node to be used with :ref:`AnimationTree<class_AnimationTree>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -31,6 +33,8 @@ This node can be used to cause a seek command to happen to any sub-children of t
     # Alternative syntax (same result as above).
     animation_tree["parameters/Seek/seek_position"] = 12.0
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -39,3 +43,4 @@ Tutorials
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

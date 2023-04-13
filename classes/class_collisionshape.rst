@@ -14,10 +14,16 @@ CollisionShape
 
 Node that represents collision shape data in 3D space.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Editor facility for creating and editing collision shapes in 3D space. You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area<class_Area>` to give it a detection shape, or add it to a :ref:`PhysicsBody<class_PhysicsBody>` to create a solid object. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`CollisionObject.shape_owner_get_shape<class_CollisionObject_method_shape_owner_get_shape>` to get the actual shape.
+Editor facility for creating and editing collision shapes in 3D space. Set the :ref:`shape<class_CollisionShape_property_shape>` property to configure the shape. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`CollisionObject.shape_owner_get_shape<class_CollisionObject_method_shape_owner_get_shape>` to get the actual shape.
+
+You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area<class_Area>` to give it a detection shape, or add it to a :ref:`PhysicsBody<class_PhysicsBody>` to create a solid object.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -30,72 +36,103 @@ Tutorials
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`disabled<class_CollisionShape_property_disabled>` | ``false`` |
-+---------------------------+---------------------------------------------------------+-----------+
-| :ref:`Shape<class_Shape>` | :ref:`shape<class_CollisionShape_property_shape>`       |           |
-+---------------------------+---------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`disabled<class_CollisionShape_property_disabled>` | ``false`` |
+   +---------------------------+---------------------------------------------------------+-----------+
+   | :ref:`Shape<class_Shape>` | :ref:`shape<class_CollisionShape_property_shape>`       |           |
+   +---------------------------+---------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`make_convex_from_brothers<class_CollisionShape_method_make_convex_from_brothers>` **(** **)**                        |
-+------+----------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`resource_changed<class_CollisionShape_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)** |
-+------+----------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+----------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`make_convex_from_brothers<class_CollisionShape_method_make_convex_from_brothers>` **(** **)**                        |
+   +------+----------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`resource_changed<class_CollisionShape_method_resource_changed>` **(** :ref:`Resource<class_Resource>` resource **)** |
+   +------+----------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CollisionShape_property_disabled:
 
-- :ref:`bool<class_bool>` **disabled**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_disabled(value) |
-+-----------+---------------------+
-| *Getter*  | is_disabled()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **disabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_disabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_disabled** **(** **)**
 
 A disabled collision shape has no effect in the world.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionShape_property_shape:
 
-- :ref:`Shape<class_Shape>` **shape**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_shape(value) |
-+----------+------------------+
-| *Getter* | get_shape()      |
-+----------+------------------+
+:ref:`Shape<class_Shape>` **shape**
+
+.. rst-class:: classref-property-setget
+
+- void **set_shape** **(** :ref:`Shape<class_Shape>` value **)**
+- :ref:`Shape<class_Shape>` **get_shape** **(** **)**
 
 The actual shape owned by this collision shape.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_CollisionShape_method_make_convex_from_brothers:
 
-- void **make_convex_from_brothers** **(** **)**
+.. rst-class:: classref-method
+
+void **make_convex_from_brothers** **(** **)**
 
 Sets the collision shape's shape to the addition of all its convexed :ref:`MeshInstance<class_MeshInstance>` siblings geometry.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionShape_method_resource_changed:
 
-- void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
+.. rst-class:: classref-method
+
+void **resource_changed** **(** :ref:`Resource<class_Resource>` resource **)**
 
 If this method exists within a script it will be called whenever the shape resource has been modified.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

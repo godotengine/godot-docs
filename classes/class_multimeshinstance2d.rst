@@ -14,78 +14,107 @@ MultiMeshInstance2D
 
 Node that instances a :ref:`MultiMesh<class_MultiMesh>` in 2D.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``MultiMeshInstance2D`` is a specialized node to instance a :ref:`MultiMesh<class_MultiMesh>` resource in 2D.
+**MultiMeshInstance2D** is a specialized node to instance a :ref:`MultiMesh<class_MultiMesh>` resource in 2D.
 
 Usage is the same as :ref:`MultiMeshInstance<class_MultiMeshInstance>`.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------+------------------------------------------------------------------+
-| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance2D_property_multimesh>`   |
-+-----------------------------------+------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`     | :ref:`normal_map<class_MultiMeshInstance2D_property_normal_map>` |
-+-----------------------------------+------------------------------------------------------------------+
-| :ref:`Texture<class_Texture>`     | :ref:`texture<class_MultiMeshInstance2D_property_texture>`       |
-+-----------------------------------+------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------+------------------------------------------------------------------+
+   | :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance2D_property_multimesh>`   |
+   +-----------------------------------+------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>`     | :ref:`normal_map<class_MultiMeshInstance2D_property_normal_map>` |
+   +-----------------------------------+------------------------------------------------------------------+
+   | :ref:`Texture<class_Texture>`     | :ref:`texture<class_MultiMeshInstance2D_property_texture>`       |
+   +-----------------------------------+------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_MultiMeshInstance2D_signal_texture_changed:
 
-- **texture_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**texture_changed** **(** **)**
 
 Emitted when the :ref:`texture<class_MultiMeshInstance2D_property_texture>` is changed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_MultiMeshInstance2D_property_multimesh:
 
-- :ref:`MultiMesh<class_MultiMesh>` **multimesh**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_multimesh(value) |
-+----------+----------------------+
-| *Getter* | get_multimesh()      |
-+----------+----------------------+
+:ref:`MultiMesh<class_MultiMesh>` **multimesh**
 
-The :ref:`MultiMesh<class_MultiMesh>` that will be drawn by the ``MultiMeshInstance2D``.
+.. rst-class:: classref-property-setget
+
+- void **set_multimesh** **(** :ref:`MultiMesh<class_MultiMesh>` value **)**
+- :ref:`MultiMesh<class_MultiMesh>` **get_multimesh** **(** **)**
+
+The :ref:`MultiMesh<class_MultiMesh>` that will be drawn by the **MultiMeshInstance2D**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_MultiMeshInstance2D_property_normal_map:
 
-- :ref:`Texture<class_Texture>` **normal_map**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_normal_map(value) |
-+----------+-----------------------+
-| *Getter* | get_normal_map()      |
-+----------+-----------------------+
+:ref:`Texture<class_Texture>` **normal_map**
+
+.. rst-class:: classref-property-setget
+
+- void **set_normal_map** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_normal_map** **(** **)**
 
 The normal map that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`.
 
 \ **Note:** Godot expects the normal map to use X+, Y+, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_MultiMeshInstance2D_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture<class_Texture>` **texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_texture** **(** **)**
 
 The :ref:`Texture<class_Texture>` that will be used if using the default :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`. Can be accessed as ``TEXTURE`` in CanvasItem shader.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

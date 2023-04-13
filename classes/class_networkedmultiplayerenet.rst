@@ -14,6 +14,8 @@ NetworkedMultiplayerENet
 
 PacketPeer implementation using the `ENet <http://enet.bespin.org/index.html>`__ library.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,6 +25,8 @@ ENet's purpose is to provide a relatively thin, simple and robust network commun
 
 \ **Note:** ENet only uses UDP, not TCP. When forwarding the server port to make your server accessible on the public Internet, you only need to forward the server port in UDP. You can use the :ref:`UPNP<class_UPNP>` class to try to forward the server port automatically when starting the server.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -30,129 +34,174 @@ Tutorials
 
 - `http://enet.bespin.org/usergroup0.html <http://enet.bespin.org/usergroup0.html>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     | ``false`` |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       | ``3``     |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-| :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | ``1``     |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-| :ref:`String<class_String>`                                           | :ref:`dtls_hostname<class_NetworkedMultiplayerENet_property_dtls_hostname>`       | ``""``    |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                               | :ref:`dtls_verify<class_NetworkedMultiplayerENet_property_dtls_verify>`           | ``true``  |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | ``true``  |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | ``-1``    |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`                                               | :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>`                 | ``false`` |
-+-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                               | :ref:`always_ordered<class_NetworkedMultiplayerENet_property_always_ordered>`     | ``false`` |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                 | :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>`       | ``3``     |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` | :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` | ``1``     |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                           | :ref:`dtls_hostname<class_NetworkedMultiplayerENet_property_dtls_hostname>`       | ``""``    |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                               | :ref:`dtls_verify<class_NetworkedMultiplayerENet_property_dtls_verify>`           | ``true``  |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                               | :ref:`server_relay<class_NetworkedMultiplayerENet_property_server_relay>`         | ``true``  |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                 | :ref:`transfer_channel<class_NetworkedMultiplayerENet_property_transfer_channel>` | ``-1``    |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                               | :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>`                 | ``false`` |
+   +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` **(** :ref:`int<class_int>` wait_usec=100 **)**                                                                                                                                         |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>` **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` client_port=0 **)** |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_server<class_NetworkedMultiplayerENet_method_create_server>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**                                     |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`disconnect_peer<class_NetworkedMultiplayerENet_method_disconnect_peer>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` now=false **)**                                                                                                                   |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_last_packet_channel<class_NetworkedMultiplayerENet_method_get_last_packet_channel>` **(** **)** |const|                                                                                                                                                       |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_packet_channel<class_NetworkedMultiplayerENet_method_get_packet_channel>` **(** **)** |const|                                                                                                                                                                 |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_peer_address<class_NetworkedMultiplayerENet_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                            |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_peer_port<class_NetworkedMultiplayerENet_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                  |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>` **(** :ref:`String<class_String>` ip **)**                                                                                                                                                        |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>` **(** :ref:`X509Certificate<class_X509Certificate>` certificate **)**                                                                                                           |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>` **(** :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                                                                                               |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_peer_timeout<class_NetworkedMultiplayerENet_method_set_peer_timeout>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` timeout_limit, :ref:`int<class_int>` timeout_min, :ref:`int<class_int>` timeout_max **)**                                         |
-+---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` **(** :ref:`int<class_int>` wait_usec=100 **)**                                                                                                                                         |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>` **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` client_port=0 **)** |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`create_server<class_NetworkedMultiplayerENet_method_create_server>` **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**                                     |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`disconnect_peer<class_NetworkedMultiplayerENet_method_disconnect_peer>` **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` now=false **)**                                                                                                                   |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_last_packet_channel<class_NetworkedMultiplayerENet_method_get_last_packet_channel>` **(** **)** |const|                                                                                                                                                       |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_packet_channel<class_NetworkedMultiplayerENet_method_get_packet_channel>` **(** **)** |const|                                                                                                                                                                 |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_peer_address<class_NetworkedMultiplayerENet_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                            |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_peer_port<class_NetworkedMultiplayerENet_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                                                                  |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>` **(** :ref:`String<class_String>` ip **)**                                                                                                                                                        |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>` **(** :ref:`X509Certificate<class_X509Certificate>` certificate **)**                                                                                                           |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>` **(** :ref:`CryptoKey<class_CryptoKey>` key **)**                                                                                                                                               |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_peer_timeout<class_NetworkedMultiplayerENet_method_set_peer_timeout>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` timeout_limit, :ref:`int<class_int>` timeout_min, :ref:`int<class_int>` timeout_max **)**                                         |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_NetworkedMultiplayerENet_CompressionMode:
 
-.. _class_NetworkedMultiplayerENet_constant_COMPRESS_NONE:
-
-.. _class_NetworkedMultiplayerENet_constant_COMPRESS_RANGE_CODER:
-
-.. _class_NetworkedMultiplayerENet_constant_COMPRESS_FASTLZ:
-
-.. _class_NetworkedMultiplayerENet_constant_COMPRESS_ZLIB:
-
-.. _class_NetworkedMultiplayerENet_constant_COMPRESS_ZSTD:
+.. rst-class:: classref-enumeration
 
 enum **CompressionMode**:
 
-- **COMPRESS_NONE** = **0** --- No compression. This uses the most bandwidth, but has the upside of requiring the fewest CPU resources. This option may also be used to make network debugging using tools like Wireshark easier.
+.. _class_NetworkedMultiplayerENet_constant_COMPRESS_NONE:
 
-- **COMPRESS_RANGE_CODER** = **1** --- ENet's built-in range encoding. Works well on small packets, but is not the most efficient algorithm on packets larger than 4 KB.
+.. rst-class:: classref-enumeration-constant
 
-- **COMPRESS_FASTLZ** = **2** --- `FastLZ <http://fastlz.org/>`__ compression. This option uses less CPU resources compared to :ref:`COMPRESS_ZLIB<class_NetworkedMultiplayerENet_constant_COMPRESS_ZLIB>`, at the expense of using more bandwidth.
+:ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **COMPRESS_NONE** = ``0``
 
-- **COMPRESS_ZLIB** = **3** --- `Zlib <https://www.zlib.net/>`__ compression. This option uses less bandwidth compared to :ref:`COMPRESS_FASTLZ<class_NetworkedMultiplayerENet_constant_COMPRESS_FASTLZ>`, at the expense of using more CPU resources. Note that this algorithm is not very efficient on packets smaller than 4 KB. Therefore, it's recommended to use other compression algorithms in most cases.
+No compression. This uses the most bandwidth, but has the upside of requiring the fewest CPU resources. This option may also be used to make network debugging using tools like Wireshark easier.
 
-- **COMPRESS_ZSTD** = **4** --- `Zstandard <https://facebook.github.io/zstd/>`__ compression.
+.. _class_NetworkedMultiplayerENet_constant_COMPRESS_RANGE_CODER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **COMPRESS_RANGE_CODER** = ``1``
+
+ENet's built-in range encoding. Works well on small packets, but is not the most efficient algorithm on packets larger than 4 KB.
+
+.. _class_NetworkedMultiplayerENet_constant_COMPRESS_FASTLZ:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **COMPRESS_FASTLZ** = ``2``
+
+`FastLZ <http://fastlz.org/>`__ compression. This option uses less CPU resources compared to :ref:`COMPRESS_ZLIB<class_NetworkedMultiplayerENet_constant_COMPRESS_ZLIB>`, at the expense of using more bandwidth.
+
+.. _class_NetworkedMultiplayerENet_constant_COMPRESS_ZLIB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **COMPRESS_ZLIB** = ``3``
+
+`Zlib <https://www.zlib.net/>`__ compression. This option uses less bandwidth compared to :ref:`COMPRESS_FASTLZ<class_NetworkedMultiplayerENet_constant_COMPRESS_FASTLZ>`, at the expense of using more CPU resources. Note that this algorithm is not very efficient on packets smaller than 4 KB. Therefore, it's recommended to use other compression algorithms in most cases.
+
+.. _class_NetworkedMultiplayerENet_constant_COMPRESS_ZSTD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **COMPRESS_ZSTD** = ``4``
+
+`Zstandard <https://facebook.github.io/zstd/>`__ compression.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_NetworkedMultiplayerENet_property_always_ordered:
 
-- :ref:`bool<class_bool>` **always_ordered**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``false``                 |
-+-----------+---------------------------+
-| *Setter*  | set_always_ordered(value) |
-+-----------+---------------------------+
-| *Getter*  | is_always_ordered()       |
-+-----------+---------------------------+
+:ref:`bool<class_bool>` **always_ordered** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_always_ordered** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_always_ordered** **(** **)**
 
 Enforce ordered packets when using :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE>` (thus behaving similarly to :ref:`NetworkedMultiplayerPeer.TRANSFER_MODE_UNRELIABLE_ORDERED<class_NetworkedMultiplayerPeer_constant_TRANSFER_MODE_UNRELIABLE_ORDERED>`). This is the only way to use ordering with the RPC system.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_property_channel_count:
 
-- :ref:`int<class_int>` **channel_count**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``3``                    |
-+-----------+--------------------------+
-| *Setter*  | set_channel_count(value) |
-+-----------+--------------------------+
-| *Getter*  | get_channel_count()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **channel_count** = ``3``
+
+.. rst-class:: classref-property-setget
+
+- void **set_channel_count** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_channel_count** **(** **)**
 
 The number of channels to be used by ENet. Channels are used to separate different kinds of data. In reliable or ordered mode, for example, the packet delivery order is ensured on a per-channel basis. This is done to combat latency and reduces ordering restrictions on packets. The delivery status of a packet in one channel won't stall the delivery of other packets in another channel.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_property_compression_mode:
 
-- :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **compression_mode**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``1``                       |
-+-----------+-----------------------------+
-| *Setter*  | set_compression_mode(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_compression_mode()      |
-+-----------+-----------------------------+
+:ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **compression_mode** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_compression_mode** **(** :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` value **)**
+- :ref:`CompressionMode<enum_NetworkedMultiplayerENet_CompressionMode>` **get_compression_mode** **(** **)**
 
 The compression method used for network packets. These have different tradeoffs of compression speed versus bandwidth, you may need to test which one works best for your use case if you use compression at all.
 
@@ -160,184 +209,241 @@ The compression method used for network packets. These have different tradeoffs 
 
 \ **Note:** :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` must be set to the same value on both the server and all its clients. Clients will fail to connect if the :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` set on the client differs from the one set on the server. Prior to Godot 3.4, the default :ref:`compression_mode<class_NetworkedMultiplayerENet_property_compression_mode>` was :ref:`COMPRESS_NONE<class_NetworkedMultiplayerENet_constant_COMPRESS_NONE>`. Nonetheless, mixing engine versions between clients and server is not recommended and not officially supported.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NetworkedMultiplayerENet_property_dtls_hostname:
 
-- :ref:`String<class_String>` **dtls_hostname**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``""``                   |
-+-----------+--------------------------+
-| *Setter*  | set_dtls_hostname(value) |
-+-----------+--------------------------+
-| *Getter*  | get_dtls_hostname()      |
-+-----------+--------------------------+
+:ref:`String<class_String>` **dtls_hostname** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_dtls_hostname** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_dtls_hostname** **(** **)**
 
 The hostname used for DTLS verification, to be compared against the "CN" value in the certificate provided by the server.
 
 When set to an empty string, the ``address`` parameter passed to :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>` is used instead.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_NetworkedMultiplayerENet_property_dtls_verify:
 
-- :ref:`bool<class_bool>` **dtls_verify**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``true``                       |
-+-----------+--------------------------------+
-| *Setter*  | set_dtls_verify_enabled(value) |
-+-----------+--------------------------------+
-| *Getter*  | is_dtls_verify_enabled()       |
-+-----------+--------------------------------+
+:ref:`bool<class_bool>` **dtls_verify** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_dtls_verify_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_dtls_verify_enabled** **(** **)**
 
 Enable or disable certificate verification when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_property_server_relay:
 
-- :ref:`bool<class_bool>` **server_relay**
+.. rst-class:: classref-property
 
-+-----------+---------------------------------+
-| *Default* | ``true``                        |
-+-----------+---------------------------------+
-| *Setter*  | set_server_relay_enabled(value) |
-+-----------+---------------------------------+
-| *Getter*  | is_server_relay_enabled()       |
-+-----------+---------------------------------+
+:ref:`bool<class_bool>` **server_relay** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_server_relay_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_server_relay_enabled** **(** **)**
 
 Enable or disable the server feature that notifies clients of other peers' connection/disconnection, and relays messages between them. When this option is ``false``, clients won't be automatically notified of other peers and won't be able to send them packets through the server.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_property_transfer_channel:
 
-- :ref:`int<class_int>` **transfer_channel**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``-1``                      |
-+-----------+-----------------------------+
-| *Setter*  | set_transfer_channel(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_transfer_channel()      |
-+-----------+-----------------------------+
+:ref:`int<class_int>` **transfer_channel** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_transfer_channel** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_transfer_channel** **(** **)**
 
 Set the default channel to be used to transfer data. By default, this value is ``-1`` which means that ENet will only use 2 channels: one for reliable packets, and one for unreliable packets. The channel ``0`` is reserved and cannot be used. Setting this member to any value between ``0`` and :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>` (excluded) will force ENet to use that channel for sending data. See :ref:`channel_count<class_NetworkedMultiplayerENet_property_channel_count>` for more information about ENet channels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_property_use_dtls:
 
-- :ref:`bool<class_bool>` **use_dtls**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``false``               |
-+-----------+-------------------------+
-| *Setter*  | set_dtls_enabled(value) |
-+-----------+-------------------------+
-| *Getter*  | is_dtls_enabled()       |
-+-----------+-------------------------+
+:ref:`bool<class_bool>` **use_dtls** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_dtls_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_dtls_enabled** **(** **)**
 
 When enabled, the client or server created by this peer, will use :ref:`PacketPeerDTLS<class_PacketPeerDTLS>` instead of raw UDP sockets for communicating with the remote peer. This will make the communication encrypted with DTLS at the cost of higher resource usage and potentially larger packet size.
 
 \ **Note:** When creating a DTLS server, make sure you setup the key/certificate pair via :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>` and :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>`. For DTLS clients, have a look at the :ref:`dtls_verify<class_NetworkedMultiplayerENet_property_dtls_verify>` option, and configure the certificate accordingly via :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_NetworkedMultiplayerENet_method_close_connection:
 
-- void **close_connection** **(** :ref:`int<class_int>` wait_usec=100 **)**
+.. rst-class:: classref-method
+
+void **close_connection** **(** :ref:`int<class_int>` wait_usec=100 **)**
 
 Closes the connection. Ignored if no connection is currently established. If this is a server it tries to notify all clients before forcibly disconnecting them. If this is a client it simply closes the connection to the server.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_create_client:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` client_port=0 **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **create_client** **(** :ref:`String<class_String>` address, :ref:`int<class_int>` port, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0, :ref:`int<class_int>` client_port=0 **)**
 
 Create client that connects to a server at ``address`` using specified ``port``. The given address needs to be either a fully qualified domain name (e.g. ``"www.example.com"``) or an IP address in IPv4 or IPv6 format (e.g. ``"192.168.1.1"``). The ``port`` is the port the server is listening on. The ``in_bandwidth`` and ``out_bandwidth`` parameters can be used to limit the incoming and outgoing bandwidth to the given number of bytes per second. The default of 0 means unlimited bandwidth. Note that ENet will strategically drop packets on specific sides of a connection between peers to ensure the peer's bandwidth is not overwhelmed. The bandwidth parameters also determine the window size of a connection which limits the amount of reliable packets that may be in transit at any given time. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a client was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the client could not be created. If ``client_port`` is specified, the client will also listen to the given port; this is useful for some NAT traversal techniques.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_create_server:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` max_clients=32, :ref:`int<class_int>` in_bandwidth=0, :ref:`int<class_int>` out_bandwidth=0 **)**
 
 Create server that listens to connections via ``port``. The port needs to be an available, unused port between 0 and 65535. Note that ports below 1024 are privileged and may require elevated permissions depending on the platform. To change the interface the server listens on, use :ref:`set_bind_ip<class_NetworkedMultiplayerENet_method_set_bind_ip>`. The default IP is the wildcard ``"*"``, which listens on all available interfaces. ``max_clients`` is the maximum number of clients that are allowed at once, any number up to 4095 may be used, although the achievable number of simultaneous clients may be far lower and depends on the application. For additional details on the bandwidth parameters, see :ref:`create_client<class_NetworkedMultiplayerENet_method_create_client>`. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if a server was created, :ref:`@GlobalScope.ERR_ALREADY_IN_USE<class_@GlobalScope_constant_ERR_ALREADY_IN_USE>` if this NetworkedMultiplayerENet instance already has an open connection (in which case you need to call :ref:`close_connection<class_NetworkedMultiplayerENet_method_close_connection>` first) or :ref:`@GlobalScope.ERR_CANT_CREATE<class_@GlobalScope_constant_ERR_CANT_CREATE>` if the server could not be created.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_disconnect_peer:
 
-- void **disconnect_peer** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` now=false **)**
+.. rst-class:: classref-method
+
+void **disconnect_peer** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` now=false **)**
 
 Disconnect the given peer. If "now" is set to ``true``, the connection will be closed immediately without flushing queued messages.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_get_last_packet_channel:
 
-- :ref:`int<class_int>` **get_last_packet_channel** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_last_packet_channel** **(** **)** |const|
 
 Returns the channel of the last packet fetched via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_get_packet_channel:
 
-- :ref:`int<class_int>` **get_packet_channel** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_packet_channel** **(** **)** |const|
 
 Returns the channel of the next packet that will be retrieved via :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_get_peer_address:
 
-- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the IP address of the given peer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_get_peer_port:
 
-- :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the remote port of the given peer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_set_bind_ip:
 
-- void **set_bind_ip** **(** :ref:`String<class_String>` ip **)**
+.. rst-class:: classref-method
+
+void **set_bind_ip** **(** :ref:`String<class_String>` ip **)**
 
 The IP used when creating a server. This is set to the wildcard ``"*"`` by default, which binds to all available interfaces. The given IP needs to be in IPv4 or IPv6 address format, for example: ``"192.168.1.1"``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_set_dtls_certificate:
 
-- void **set_dtls_certificate** **(** :ref:`X509Certificate<class_X509Certificate>` certificate **)**
+.. rst-class:: classref-method
+
+void **set_dtls_certificate** **(** :ref:`X509Certificate<class_X509Certificate>` certificate **)**
 
 Configure the :ref:`X509Certificate<class_X509Certificate>` to use when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` is ``true``. For servers, you must also setup the :ref:`CryptoKey<class_CryptoKey>` via :ref:`set_dtls_key<class_NetworkedMultiplayerENet_method_set_dtls_key>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_set_dtls_key:
 
-- void **set_dtls_key** **(** :ref:`CryptoKey<class_CryptoKey>` key **)**
+.. rst-class:: classref-method
+
+void **set_dtls_key** **(** :ref:`CryptoKey<class_CryptoKey>` key **)**
 
 Configure the :ref:`CryptoKey<class_CryptoKey>` to use when :ref:`use_dtls<class_NetworkedMultiplayerENet_property_use_dtls>` is ``true``. Remember to also call :ref:`set_dtls_certificate<class_NetworkedMultiplayerENet_method_set_dtls_certificate>` to setup your :ref:`X509Certificate<class_X509Certificate>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_NetworkedMultiplayerENet_method_set_peer_timeout:
 
-- void **set_peer_timeout** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` timeout_limit, :ref:`int<class_int>` timeout_min, :ref:`int<class_int>` timeout_max **)**
+.. rst-class:: classref-method
+
+void **set_peer_timeout** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` timeout_limit, :ref:`int<class_int>` timeout_min, :ref:`int<class_int>` timeout_max **)**
 
 Sets the timeout parameters for a peer.	The timeout parameters control how and when a peer will timeout from a failure to acknowledge reliable traffic. Timeout values are expressed in milliseconds.
 
@@ -346,3 +452,4 @@ The ``timeout_limit`` is a factor that, multiplied by a value based on the avera
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

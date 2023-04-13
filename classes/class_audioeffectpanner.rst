@@ -14,35 +14,48 @@ AudioEffectPanner
 
 Adds a panner audio effect to an Audio bus. Pans sound left or right.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Determines how much of an audio signal is sent to the left and right buses.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+--------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`pan<class_AudioEffectPanner_property_pan>` | ``0.0`` |
-+---------------------------+--------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`pan<class_AudioEffectPanner_property_pan>` | ``0.0`` |
+   +---------------------------+--------------------------------------------------+---------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_AudioEffectPanner_property_pan:
 
-- :ref:`float<class_float>` **pan**
+.. rst-class:: classref-property
 
-+-----------+----------------+
-| *Default* | ``0.0``        |
-+-----------+----------------+
-| *Setter*  | set_pan(value) |
-+-----------+----------------+
-| *Getter*  | get_pan()      |
-+-----------+----------------+
+:ref:`float<class_float>` **pan** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pan** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pan** **(** **)**
 
 Pan position. Value can range from -1 (fully left) to 1 (fully right).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

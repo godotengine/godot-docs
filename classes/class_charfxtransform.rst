@@ -14,10 +14,14 @@ CharFXTransform
 
 Controls how an individual character will be displayed in a :ref:`RichTextEffect<class_RichTextEffect>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 By setting various properties on this object, you can control how individual characters will be displayed in a :ref:`RichTextEffect<class_RichTextEffect>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -26,57 +30,68 @@ Tutorials
 
 - `https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project <https://github.com/Eoin-ONeill-Yokai/Godot-Rich-Text-Effect-Test-Project>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`               | :ref:`absolute_index<class_CharFXTransform_property_absolute_index>` | ``0``                   |
-+-------------------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`               | :ref:`character<class_CharFXTransform_property_character>`           | ``0``                   |
-+-------------------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`           | :ref:`color<class_CharFXTransform_property_color>`                   | ``Color( 0, 0, 0, 1 )`` |
-+-------------------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`           | :ref:`elapsed_time<class_CharFXTransform_property_elapsed_time>`     | ``0.0``                 |
-+-------------------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`env<class_CharFXTransform_property_env>`                       | ``{}``                  |
-+-------------------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`Vector2<class_Vector2>`       | :ref:`offset<class_CharFXTransform_property_offset>`                 | ``Vector2( 0, 0 )``     |
-+-------------------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`               | :ref:`relative_index<class_CharFXTransform_property_relative_index>` | ``0``                   |
-+-------------------------------------+----------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`             | :ref:`visible<class_CharFXTransform_property_visible>`               | ``true``                |
-+-------------------------------------+----------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`               | :ref:`absolute_index<class_CharFXTransform_property_absolute_index>` | ``0``                   |
+   +-------------------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`               | :ref:`character<class_CharFXTransform_property_character>`           | ``0``                   |
+   +-------------------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`           | :ref:`color<class_CharFXTransform_property_color>`                   | ``Color( 0, 0, 0, 1 )`` |
+   +-------------------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`           | :ref:`elapsed_time<class_CharFXTransform_property_elapsed_time>`     | ``0.0``                 |
+   +-------------------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`env<class_CharFXTransform_property_env>`                       | ``{}``                  |
+   +-------------------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector2<class_Vector2>`       | :ref:`offset<class_CharFXTransform_property_offset>`                 | ``Vector2( 0, 0 )``     |
+   +-------------------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`               | :ref:`relative_index<class_CharFXTransform_property_relative_index>` | ``0``                   |
+   +-------------------------------------+----------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`visible<class_CharFXTransform_property_visible>`               | ``true``                |
+   +-------------------------------------+----------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CharFXTransform_property_absolute_index:
 
-- :ref:`int<class_int>` **absolute_index**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_absolute_index(value) |
-+-----------+---------------------------+
-| *Getter*  | get_absolute_index()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **absolute_index** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_absolute_index** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_absolute_index** **(** **)**
 
 The index of the current character (starting from 0) for the :ref:`RichTextLabel<class_RichTextLabel>`'s BBCode text. Setting this property won't affect drawing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CharFXTransform_property_character:
 
-- :ref:`int<class_int>` **character**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_character(value) |
-+-----------+----------------------+
-| *Getter*  | get_character()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **character** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_character** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_character** **(** **)**
 
 The Unicode codepoint the character will use. This only affects non-whitespace characters. :ref:`@GDScript.ord<class_@GDScript_method_ord>` can be useful here. For example, the following will replace all characters with asterisks:
 
@@ -86,53 +101,56 @@ The Unicode codepoint the character will use. This only affects non-whitespace c
     # See the RichTextEffect documentation for details.
     char_fx.character = ord("*")
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CharFXTransform_property_color:
 
-- :ref:`Color<class_Color>` **color**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color( 0, 0, 0, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_color(value)        |
-+-----------+-------------------------+
-| *Getter*  | get_color()             |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **color** = ``Color( 0, 0, 0, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_color** **(** **)**
 
 The color the character will be drawn with.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CharFXTransform_property_elapsed_time:
 
-- :ref:`float<class_float>` **elapsed_time**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.0``                 |
-+-----------+-------------------------+
-| *Setter*  | set_elapsed_time(value) |
-+-----------+-------------------------+
-| *Getter*  | get_elapsed_time()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **elapsed_time** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_elapsed_time** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_elapsed_time** **(** **)**
 
 The time elapsed since the :ref:`RichTextLabel<class_RichTextLabel>` was added to the scene tree (in seconds). Time stops when the :ref:`RichTextLabel<class_RichTextLabel>` is paused (see :ref:`Node.pause_mode<class_Node_property_pause_mode>`). Resets when the text in the :ref:`RichTextLabel<class_RichTextLabel>` is changed.
 
 \ **Note:** Time still passes while the :ref:`RichTextLabel<class_RichTextLabel>` is hidden.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CharFXTransform_property_env:
 
-- :ref:`Dictionary<class_Dictionary>` **env**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``{}``                 |
-+-----------+------------------------+
-| *Setter*  | set_environment(value) |
-+-----------+------------------------+
-| *Getter*  | get_environment()      |
-+-----------+------------------------+
+:ref:`Dictionary<class_Dictionary>` **env** = ``{}``
+
+.. rst-class:: classref-property-setget
+
+- void **set_environment** **(** :ref:`Dictionary<class_Dictionary>` value **)**
+- :ref:`Dictionary<class_Dictionary>` **get_environment** **(** **)**
 
 Contains the arguments passed in the opening BBCode tag. By default, arguments are strings; if their contents match a type such as :ref:`bool<class_bool>`, :ref:`int<class_int>` or :ref:`float<class_float>`, they will be converted automatically. Color codes in the form ``#rrggbb`` or ``#rgb`` will be converted to an opaque :ref:`Color<class_Color>`. String arguments may not contain spaces, even if they're quoted. If present, quotes will also be present in the final string.
 
@@ -142,54 +160,58 @@ For example, the opening BBCode tag ``[example foo=hello bar=true baz=42 color=#
 
     {"foo": "hello", "bar": true, "baz": 42, "color": Color(1, 1, 1, 1)}
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_CharFXTransform_property_offset:
 
-- :ref:`Vector2<class_Vector2>` **offset**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``Vector2( 0, 0 )`` |
-+-----------+---------------------+
-| *Setter*  | set_offset(value)   |
-+-----------+---------------------+
-| *Getter*  | get_offset()        |
-+-----------+---------------------+
+:ref:`Vector2<class_Vector2>` **offset** = ``Vector2( 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_offset** **(** :ref:`Vector2<class_Vector2>` value **)**
+- :ref:`Vector2<class_Vector2>` **get_offset** **(** **)**
 
 The position offset the character will be drawn with (in pixels).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CharFXTransform_property_relative_index:
 
-- :ref:`int<class_int>` **relative_index**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``0``                     |
-+-----------+---------------------------+
-| *Setter*  | set_relative_index(value) |
-+-----------+---------------------------+
-| *Getter*  | get_relative_index()      |
-+-----------+---------------------------+
+:ref:`int<class_int>` **relative_index** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_relative_index** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_relative_index** **(** **)**
 
 The index of the current character (starting from 0) for this :ref:`RichTextEffect<class_RichTextEffect>` custom block. Setting this property won't affect drawing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CharFXTransform_property_visible:
 
-- :ref:`bool<class_bool>` **visible**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``true``              |
-+-----------+-----------------------+
-| *Setter*  | set_visibility(value) |
-+-----------+-----------------------+
-| *Getter*  | is_visible()          |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **visible** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visibility** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_visible** **(** **)**
 
 If ``true``, the character will be drawn. If ``false``, the character will be hidden. Characters around hidden characters will reflow to take the space of hidden characters. If this is not desired, set their :ref:`color<class_CharFXTransform_property_color>` to ``Color(1, 1, 1, 0)`` instead.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

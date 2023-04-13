@@ -14,6 +14,8 @@ ARVRController
 
 A spatial node representing a spatially-tracked controller.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,78 +25,111 @@ Controllers are linked by their ID. You can create controller nodes before the c
 
 The position of the controller node is automatically updated by the :ref:`ARVRServer<class_ARVRServer>`. This makes this node ideal to add child nodes to visualize the controller.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/vr/index`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+-------------------------------------------------------------------+---------+
-| :ref:`int<class_int>`     | :ref:`controller_id<class_ARVRController_property_controller_id>` | ``1``   |
-+---------------------------+-------------------------------------------------------------------+---------+
-| :ref:`float<class_float>` | :ref:`rumble<class_ARVRController_property_rumble>`               | ``0.0`` |
-+---------------------------+-------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------------+---------+
+   | :ref:`int<class_int>`     | :ref:`controller_id<class_ARVRController_property_controller_id>` | ``1``   |
+   +---------------------------+-------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`rumble<class_ARVRController_property_rumble>`               | ``0.0`` |
+   +---------------------------+-------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                                | :ref:`get_controller_name<class_ARVRController_method_get_controller_name>` **(** **)** |const|                          |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` | :ref:`get_hand<class_ARVRController_method_get_hand>` **(** **)** |const|                                                |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                    | :ref:`get_is_active<class_ARVRController_method_get_is_active>` **(** **)** |const|                                      |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                                  | :ref:`get_joystick_axis<class_ARVRController_method_get_joystick_axis>` **(** :ref:`int<class_int>` axis **)** |const|   |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`get_joystick_id<class_ARVRController_method_get_joystick_id>` **(** **)** |const|                                  |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_Mesh>`                                    | :ref:`get_mesh<class_ARVRController_method_get_mesh>` **(** **)** |const|                                                |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                                      | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** |const| |
-+------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                                | :ref:`get_controller_name<class_ARVRController_method_get_controller_name>` **(** **)** |const|                          |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` | :ref:`get_hand<class_ARVRController_method_get_hand>` **(** **)** |const|                                                |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`get_is_active<class_ARVRController_method_get_is_active>` **(** **)** |const|                                      |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                                  | :ref:`get_joystick_axis<class_ARVRController_method_get_joystick_axis>` **(** :ref:`int<class_int>` axis **)** |const|   |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                      | :ref:`get_joystick_id<class_ARVRController_method_get_joystick_id>` **(** **)** |const|                                  |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Mesh<class_Mesh>`                                    | :ref:`get_mesh<class_ARVRController_method_get_mesh>` **(** **)** |const|                                                |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                      | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** |const| |
+   +------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_ARVRController_signal_button_pressed:
 
-- **button_pressed** **(** :ref:`int<class_int>` button **)**
+.. rst-class:: classref-signal
+
+**button_pressed** **(** :ref:`int<class_int>` button **)**
 
 Emitted when a button on this controller is pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRController_signal_button_release:
 
-- **button_release** **(** :ref:`int<class_int>` button **)**
+.. rst-class:: classref-signal
+
+**button_release** **(** :ref:`int<class_int>` button **)**
 
 Emitted when a button on this controller is released.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRController_signal_mesh_updated:
 
-- **mesh_updated** **(** :ref:`Mesh<class_Mesh>` mesh **)**
+.. rst-class:: classref-signal
+
+**mesh_updated** **(** :ref:`Mesh<class_Mesh>` mesh **)**
 
 Emitted when the mesh associated with the controller changes or when one becomes available. Generally speaking this will be a static mesh after becoming available.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ARVRController_property_controller_id:
 
-- :ref:`int<class_int>` **controller_id**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``1``                    |
-+-----------+--------------------------+
-| *Setter*  | set_controller_id(value) |
-+-----------+--------------------------+
-| *Getter*  | get_controller_id()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **controller_id** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_controller_id** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_controller_id** **(** **)**
 
 The controller's ID.
 
@@ -104,81 +139,115 @@ For any other controller that the :ref:`ARVRServer<class_ARVRServer>` detects, w
 
 When a controller is turned off, its slot is freed. This ensures controllers will keep the same ID even when controllers with lower IDs are turned off.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ARVRController_property_rumble:
 
-- :ref:`float<class_float>` **rumble**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.0``           |
-+-----------+-------------------+
-| *Setter*  | set_rumble(value) |
-+-----------+-------------------+
-| *Getter*  | get_rumble()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **rumble** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rumble** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_rumble** **(** **)**
 
 The degree to which the controller vibrates. Ranges from ``0.0`` to ``1.0``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_property_rumble>` accordingly.
 
 This is a useful property to animate if you want the controller to vibrate for a limited duration.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ARVRController_method_get_controller_name:
 
-- :ref:`String<class_String>` **get_controller_name** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_controller_name** **(** **)** |const|
 
 If active, returns the name of the associated controller if provided by the AR/VR SDK used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRController_method_get_hand:
 
-- :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** |const|
 
 Returns the hand holding this controller, if known. See :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRController_method_get_is_active:
 
-- :ref:`bool<class_bool>` **get_is_active** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_is_active** **(** **)** |const|
 
 Returns ``true`` if the bound controller is active. ARVR systems attempt to track active controllers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRController_method_get_joystick_axis:
 
-- :ref:`float<class_float>` **get_joystick_axis** **(** :ref:`int<class_int>` axis **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_joystick_axis** **(** :ref:`int<class_int>` axis **)** |const|
 
 Returns the value of the given axis for things like triggers, touchpads, etc. that are embedded into the controller.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRController_method_get_joystick_id:
 
-- :ref:`int<class_int>` **get_joystick_id** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_joystick_id** **(** **)** |const|
 
 Returns the ID of the joystick object bound to this. Every controller tracked by the :ref:`ARVRServer<class_ARVRServer>` that has buttons and axis will also be registered as a joystick within Godot. This means that all the normal joystick tracking and input mapping will work for buttons and axis found on the AR/VR controllers. This ID is purely offered as information so you can link up the controller with its joystick entry.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRController_method_get_mesh:
 
-- :ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Mesh<class_Mesh>` **get_mesh** **(** **)** |const|
 
 If provided by the :ref:`ARVRInterface<class_ARVRInterface>`, this returns a mesh associated with the controller. This can be used to visualize the controller.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ARVRController_method_is_button_pressed:
 
-- :ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** |const|
 
 Returns ``true`` if the button at index ``button`` is pressed. See :ref:`JoystickList<enum_@GlobalScope_JoystickList>`, in particular the ``JOY_VR_*`` constants.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

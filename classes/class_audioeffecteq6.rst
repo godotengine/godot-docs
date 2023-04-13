@@ -16,6 +16,8 @@ Adds a 6-band equalizer audio effect to an Audio bus. Gives you control over fre
 
 Each frequency can be modulated between -60/+24 dB.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -38,3 +40,4 @@ See also :ref:`AudioEffectEQ<class_AudioEffectEQ>`, :ref:`AudioEffectEQ10<class_
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

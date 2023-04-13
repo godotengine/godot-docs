@@ -14,6 +14,8 @@ RegEx
 
 Class for searching text for patterns using regular expressions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -73,102 +75,154 @@ If you need to process multiple results, :ref:`search_all<class_RegEx_method_sea
 
 \ **Tip:** You can use `Regexr <https://regexr.com/>`__ to test regular expressions online.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`clear<class_RegEx_method_clear>` **(** **)**                                                                                                                                                                                   |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`compile<class_RegEx_method_compile>` **(** :ref:`String<class_String>` pattern **)**                                                                                                                                           |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_group_count<class_RegEx_method_get_group_count>` **(** **)** |const|                                                                                                                                                       |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`get_names<class_RegEx_method_get_names>` **(** **)** |const|                                                                                                                                                                   |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_pattern<class_RegEx_method_get_pattern>` **(** **)** |const|                                                                                                                                                               |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_valid<class_RegEx_method_is_valid>` **(** **)** |const|                                                                                                                                                                     |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RegExMatch<class_RegExMatch>`   | :ref:`search<class_RegEx_method_search>` **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|                                                                       |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`             | :ref:`search_all<class_RegEx_method_search_all>` **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|                                                               |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`sub<class_RegEx_method_sub>` **(** :ref:`String<class_String>` subject, :ref:`String<class_String>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const| |
-+---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`clear<class_RegEx_method_clear>` **(** **)**                                                                                                                                                                                   |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`compile<class_RegEx_method_compile>` **(** :ref:`String<class_String>` pattern **)**                                                                                                                                           |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_group_count<class_RegEx_method_get_group_count>` **(** **)** |const|                                                                                                                                                       |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`             | :ref:`get_names<class_RegEx_method_get_names>` **(** **)** |const|                                                                                                                                                                   |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_pattern<class_RegEx_method_get_pattern>` **(** **)** |const|                                                                                                                                                               |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_valid<class_RegEx_method_is_valid>` **(** **)** |const|                                                                                                                                                                     |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RegExMatch<class_RegExMatch>`   | :ref:`search<class_RegEx_method_search>` **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|                                                                       |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`             | :ref:`search_all<class_RegEx_method_search_all>` **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|                                                               |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`sub<class_RegEx_method_sub>` **(** :ref:`String<class_String>` subject, :ref:`String<class_String>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const| |
+   +---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_RegEx_method_clear:
 
-- void **clear** **(** **)**
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
 
 This method resets the state of the object, as if it was freshly created. Namely, it unassigns the regular expression of this object.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RegEx_method_compile:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **compile** **(** :ref:`String<class_String>` pattern **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **compile** **(** :ref:`String<class_String>` pattern **)**
 
 Compiles and assign the search pattern to use. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the compilation is successful. If an error is encountered, details are printed to standard output and an error is returned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RegEx_method_get_group_count:
 
-- :ref:`int<class_int>` **get_group_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_group_count** **(** **)** |const|
 
 Returns the number of capturing groups in compiled pattern.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RegEx_method_get_names:
 
-- :ref:`Array<class_Array>` **get_names** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_names** **(** **)** |const|
 
 Returns an array of names of named capturing groups in the compiled pattern. They are ordered by appearance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RegEx_method_get_pattern:
 
-- :ref:`String<class_String>` **get_pattern** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_pattern** **(** **)** |const|
 
 Returns the original search pattern that was compiled.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RegEx_method_is_valid:
 
-- :ref:`bool<class_bool>` **is_valid** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_valid** **(** **)** |const|
 
 Returns whether this object has a valid search pattern assigned.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RegEx_method_search:
 
-- :ref:`RegExMatch<class_RegExMatch>` **search** **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|
+.. rst-class:: classref-method
 
-Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_RegExMatch>` container of the first matching result if found, otherwise ``null``. The region to search within can be specified without modifying where the start and end anchor would be.
+:ref:`RegExMatch<class_RegExMatch>` **search** **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|
+
+Searches the text for the compiled pattern. Returns a :ref:`RegExMatch<class_RegExMatch>` container of the first matching result if found, otherwise ``null``.
+
+The region to search within can be specified with ``offset`` and ``end``. This is useful when searching for another match in the same ``subject`` by calling this method again after a previous success. Setting these parameters differs from passing over a shortened string. For example, the start anchor ``^`` is not affected by ``offset``, and the character before ``offset`` will be checked for the word boundary ``\b``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RegEx_method_search_all:
 
-- :ref:`Array<class_Array>` **search_all** **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|
+.. rst-class:: classref-method
 
-Searches the text for the compiled pattern. Returns an array of :ref:`RegExMatch<class_RegExMatch>` containers for each non-overlapping result. If no results were found, an empty array is returned instead. The region to search within can be specified without modifying where the start and end anchor would be.
+:ref:`Array<class_Array>` **search_all** **(** :ref:`String<class_String>` subject, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|
+
+Searches the text for the compiled pattern. Returns an array of :ref:`RegExMatch<class_RegExMatch>` containers for each non-overlapping result. If no results were found, an empty array is returned instead.
+
+The region to search within can be specified with ``offset`` and ``end``. This is useful when searching for another match in the same ``subject`` by calling this method again after a previous success. Setting these parameters differs from passing over a shortened string. For example, the start anchor ``^`` is not affected by ``offset``, and the character before ``offset`` will be checked for the word boundary ``\b``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RegEx_method_sub:
 
-- :ref:`String<class_String>` **sub** **(** :ref:`String<class_String>` subject, :ref:`String<class_String>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|
+.. rst-class:: classref-method
 
-Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``$1`` and ``$name`` are expanded and resolved. By default, only the first instance is replaced, but it can be changed for all instances (global replacement). The region to search within can be specified without modifying where the start and end anchor would be.
+:ref:`String<class_String>` **sub** **(** :ref:`String<class_String>` subject, :ref:`String<class_String>` replacement, :ref:`bool<class_bool>` all=false, :ref:`int<class_int>` offset=0, :ref:`int<class_int>` end=-1 **)** |const|
+
+Searches the text for the compiled pattern and replaces it with the specified string. Escapes and backreferences such as ``$1`` and ``$name`` are expanded and resolved. By default, only the first instance is replaced, but it can be changed for all instances (global replacement).
+
+The region to search within can be specified with ``offset`` and ``end``. This is useful when searching for another match in the same ``subject`` by calling this method again after a previous success. Setting these parameters differs from passing over a shortened string. For example, the start anchor ``^`` is not affected by ``offset``, and the character before ``offset`` will be checked for the word boundary ``\b``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

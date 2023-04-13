@@ -16,97 +16,141 @@ VisualScriptLists
 
 A Visual Script virtual class for in-graph editable nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A Visual Script virtual class that defines the shape and the default behavior of the nodes that have to be in-graph editable nodes.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`add_input_data_port<class_VisualScriptLists_method_add_input_data_port>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**   |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`add_output_data_port<class_VisualScriptLists_method_add_output_data_port>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)** |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`remove_input_data_port<class_VisualScriptLists_method_remove_input_data_port>` **(** :ref:`int<class_int>` index **)**                                                                                         |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`remove_output_data_port<class_VisualScriptLists_method_remove_output_data_port>` **(** :ref:`int<class_int>` index **)**                                                                                       |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_input_data_port_name<class_VisualScriptLists_method_set_input_data_port_name>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**                                                   |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_input_data_port_type<class_VisualScriptLists_method_set_input_data_port_type>` **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**                           |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_output_data_port_name<class_VisualScriptLists_method_set_output_data_port_name>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**                                                 |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`set_output_data_port_type<class_VisualScriptLists_method_set_output_data_port_type>` **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**                         |
-+------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`add_input_data_port<class_VisualScriptLists_method_add_input_data_port>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**   |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`add_output_data_port<class_VisualScriptLists_method_add_output_data_port>` **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)** |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`remove_input_data_port<class_VisualScriptLists_method_remove_input_data_port>` **(** :ref:`int<class_int>` index **)**                                                                                         |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`remove_output_data_port<class_VisualScriptLists_method_remove_output_data_port>` **(** :ref:`int<class_int>` index **)**                                                                                       |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_input_data_port_name<class_VisualScriptLists_method_set_input_data_port_name>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**                                                   |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_input_data_port_type<class_VisualScriptLists_method_set_input_data_port_type>` **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**                           |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_output_data_port_name<class_VisualScriptLists_method_set_output_data_port_name>` **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**                                                 |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`set_output_data_port_type<class_VisualScriptLists_method_set_output_data_port_type>` **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**                         |
+   +------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisualScriptLists_method_add_input_data_port:
 
-- void **add_input_data_port** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**
+.. rst-class:: classref-method
+
+void **add_input_data_port** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**
 
 Adds an input port to the Visual Script node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptLists_method_add_output_data_port:
 
-- void **add_output_data_port** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**
+.. rst-class:: classref-method
+
+void **add_output_data_port** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type, :ref:`String<class_String>` name, :ref:`int<class_int>` index **)**
 
 Adds an output port to the Visual Script node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptLists_method_remove_input_data_port:
 
-- void **remove_input_data_port** **(** :ref:`int<class_int>` index **)**
+.. rst-class:: classref-method
+
+void **remove_input_data_port** **(** :ref:`int<class_int>` index **)**
 
 Removes an input port from the Visual Script node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptLists_method_remove_output_data_port:
 
-- void **remove_output_data_port** **(** :ref:`int<class_int>` index **)**
+.. rst-class:: classref-method
+
+void **remove_output_data_port** **(** :ref:`int<class_int>` index **)**
 
 Removes an output port from the Visual Script node.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptLists_method_set_input_data_port_name:
 
-- void **set_input_data_port_name** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+void **set_input_data_port_name** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
 
 Sets the name of an input port.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptLists_method_set_input_data_port_type:
 
-- void **set_input_data_port_type** **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
+.. rst-class:: classref-method
+
+void **set_input_data_port_type** **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
 
 Sets the type of an input port.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptLists_method_set_output_data_port_name:
 
-- void **set_output_data_port_name** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+void **set_output_data_port_name** **(** :ref:`int<class_int>` index, :ref:`String<class_String>` name **)**
 
 Sets the name of an output port.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptLists_method_set_output_data_port_type:
 
-- void **set_output_data_port_type** **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
+.. rst-class:: classref-method
+
+void **set_output_data_port_type** **(** :ref:`int<class_int>` index, :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` type **)**
 
 Sets the type of an output port.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

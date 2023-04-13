@@ -12,195 +12,264 @@ GIProbeData
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+.. container:: contribute
 
+	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`               | :ref:`bias<class_GIProbeData_property_bias>`                   | ``0.4``                                             |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`AABB<class_AABB>`                 | :ref:`bounds<class_GIProbeData_property_bounds>`               | ``AABB( 0, 0, 0, 1, 1, 1 )``                        |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`               | :ref:`cell_size<class_GIProbeData_property_cell_size>`         | ``1.0``                                             |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`compress<class_GIProbeData_property_compress>`           | ``false``                                           |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`dynamic_data<class_GIProbeData_property_dynamic_data>`   | ``PoolIntArray(  )``                                |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`dynamic_range<class_GIProbeData_property_dynamic_range>` | ``1``                                               |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`               | :ref:`energy<class_GIProbeData_property_energy>`               | ``1.0``                                             |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`interior<class_GIProbeData_property_interior>`           | ``false``                                           |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`               | :ref:`normal_bias<class_GIProbeData_property_normal_bias>`     | ``0.4``                                             |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`float<class_float>`               | :ref:`propagation<class_GIProbeData_property_propagation>`     | ``1.0``                                             |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform<class_Transform>`       | :ref:`to_cell_xform<class_GIProbeData_property_to_cell_xform>` | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`               | :ref:`bias<class_GIProbeData_property_bias>`                   | ``0.4``                                             |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`AABB<class_AABB>`                 | :ref:`bounds<class_GIProbeData_property_bounds>`               | ``AABB( 0, 0, 0, 1, 1, 1 )``                        |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`               | :ref:`cell_size<class_GIProbeData_property_cell_size>`         | ``1.0``                                             |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`compress<class_GIProbeData_property_compress>`           | ``false``                                           |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`dynamic_data<class_GIProbeData_property_dynamic_data>`   | ``PoolIntArray(  )``                                |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`dynamic_range<class_GIProbeData_property_dynamic_range>` | ``1``                                               |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`               | :ref:`energy<class_GIProbeData_property_energy>`               | ``1.0``                                             |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`interior<class_GIProbeData_property_interior>`           | ``false``                                           |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`               | :ref:`normal_bias<class_GIProbeData_property_normal_bias>`     | ``0.4``                                             |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`float<class_float>`               | :ref:`propagation<class_GIProbeData_property_propagation>`     | ``1.0``                                             |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform<class_Transform>`       | :ref:`to_cell_xform<class_GIProbeData_property_to_cell_xform>` | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
+   +-----------------------------------------+----------------------------------------------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GIProbeData_property_bias:
 
-- :ref:`float<class_float>` **bias**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``0.4``         |
-+-----------+-----------------+
-| *Setter*  | set_bias(value) |
-+-----------+-----------------+
-| *Getter*  | get_bias()      |
-+-----------+-----------------+
+:ref:`float<class_float>` **bias** = ``0.4``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bias** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_bias** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_bounds:
 
-- :ref:`AABB<class_AABB>` **bounds**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``AABB( 0, 0, 0, 1, 1, 1 )`` |
-+-----------+------------------------------+
-| *Setter*  | set_bounds(value)            |
-+-----------+------------------------------+
-| *Getter*  | get_bounds()                 |
-+-----------+------------------------------+
+:ref:`AABB<class_AABB>` **bounds** = ``AABB( 0, 0, 0, 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bounds** **(** :ref:`AABB<class_AABB>` value **)**
+- :ref:`AABB<class_AABB>` **get_bounds** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_cell_size:
 
-- :ref:`float<class_float>` **cell_size**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``1.0``              |
-+-----------+----------------------+
-| *Setter*  | set_cell_size(value) |
-+-----------+----------------------+
-| *Getter*  | get_cell_size()      |
-+-----------+----------------------+
+:ref:`float<class_float>` **cell_size** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cell_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_cell_size** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_compress:
 
-- :ref:`bool<class_bool>` **compress**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_compress(value) |
-+-----------+---------------------+
-| *Getter*  | is_compressed()     |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **compress** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_compress** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_compressed** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_dynamic_data:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **dynamic_data**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``PoolIntArray(  )``    |
-+-----------+-------------------------+
-| *Setter*  | set_dynamic_data(value) |
-+-----------+-------------------------+
-| *Getter*  | get_dynamic_data()      |
-+-----------+-------------------------+
+:ref:`PoolIntArray<class_PoolIntArray>` **dynamic_data** = ``PoolIntArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_dynamic_data** **(** :ref:`PoolIntArray<class_PoolIntArray>` value **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_dynamic_data** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_dynamic_range:
 
-- :ref:`int<class_int>` **dynamic_range**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``1``                    |
-+-----------+--------------------------+
-| *Setter*  | set_dynamic_range(value) |
-+-----------+--------------------------+
-| *Getter*  | get_dynamic_range()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **dynamic_range** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_dynamic_range** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_dynamic_range** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_energy:
 
-- :ref:`float<class_float>` **energy**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_energy(value) |
-+-----------+-------------------+
-| *Getter*  | get_energy()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **energy** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_energy** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_energy** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_interior:
 
-- :ref:`bool<class_bool>` **interior**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_interior(value) |
-+-----------+---------------------+
-| *Getter*  | is_interior()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **interior** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_interior** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_interior** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_normal_bias:
 
-- :ref:`float<class_float>` **normal_bias**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.4``                |
-+-----------+------------------------+
-| *Setter*  | set_normal_bias(value) |
-+-----------+------------------------+
-| *Getter*  | get_normal_bias()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **normal_bias** = ``0.4``
+
+.. rst-class:: classref-property-setget
+
+- void **set_normal_bias** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_normal_bias** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_propagation:
 
-- :ref:`float<class_float>` **propagation**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_propagation(value) |
-+-----------+------------------------+
-| *Getter*  | get_propagation()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **propagation** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_propagation** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_propagation** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GIProbeData_property_to_cell_xform:
 
-- :ref:`Transform<class_Transform>` **to_cell_xform**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------------+
-| *Default* | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------+-----------------------------------------------------+
-| *Setter*  | set_to_cell_xform(value)                            |
-+-----------+-----------------------------------------------------+
-| *Getter*  | get_to_cell_xform()                                 |
-+-----------+-----------------------------------------------------+
+:ref:`Transform<class_Transform>` **to_cell_xform** = ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_to_cell_xform** **(** :ref:`Transform<class_Transform>` value **)**
+- :ref:`Transform<class_Transform>` **get_to_cell_xform** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

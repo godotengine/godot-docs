@@ -14,35 +14,48 @@ CanvasModulate
 
 Tint the entire canvas.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``CanvasModulate`` tints the canvas elements using its assigned :ref:`color<class_CanvasModulate_property_color>`.
+**CanvasModulate** tints the canvas elements using its assigned :ref:`color<class_CanvasModulate_property_color>`.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_property_color>` | ``Color( 1, 1, 1, 1 )`` |
-+---------------------------+---------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_property_color>` | ``Color( 1, 1, 1, 1 )`` |
+   +---------------------------+---------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CanvasModulate_property_color:
 
-- :ref:`Color<class_Color>` **color**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
-| *Setter*  | set_color(value)        |
-+-----------+-------------------------+
-| *Getter*  | get_color()             |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **color** = ``Color( 1, 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_color** **(** :ref:`Color<class_Color>` value **)**
+- :ref:`Color<class_Color>` **get_color** **(** **)**
 
 The tint color to apply.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

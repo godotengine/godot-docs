@@ -14,35 +14,48 @@ VisualScriptDeconstruct
 
 A Visual Script node which deconstructs a base type instance into its parts.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A Visual Script node which deconstructs a base type instance into its parts.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------------+----------------------------------------------------------+-------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptDeconstruct_property_type>` | ``0`` |
-+-----------------------------------------------------+----------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------------+----------------------------------------------------------+-------+
+   | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptDeconstruct_property_type>` | ``0`` |
+   +-----------------------------------------------------+----------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptDeconstruct_property_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0``                       |
-+-----------+-----------------------------+
-| *Setter*  | set_deconstruct_type(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_deconstruct_type()      |
-+-----------+-----------------------------+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_deconstruct_type** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` value **)**
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_deconstruct_type** **(** **)**
 
 The type to deconstruct.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

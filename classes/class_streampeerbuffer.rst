@@ -14,103 +14,149 @@ StreamPeerBuffer
 
 Data buffer stream peer.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Data buffer stream peer that uses a byte array as the stream. This object can be used to handle binary data from network sessions. To handle binary data stored in files, :ref:`File<class_File>` can be used directly.
 
-A ``StreamPeerBuffer`` object keeps an internal cursor which is the offset in bytes to the start of the buffer. Get and put operations are performed at the cursor position and will move the cursor accordingly.
+A **StreamPeerBuffer** object keeps an internal cursor which is the offset in bytes to the start of the buffer. Get and put operations are performed at the cursor position and will move the cursor accordingly.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------------------+---------------------------------------------------------------+-----------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data_array<class_StreamPeerBuffer_property_data_array>` | ``PoolByteArray(  )`` |
-+-------------------------------------------+---------------------------------------------------------------+-----------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+---------------------------------------------------------------+-----------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data_array<class_StreamPeerBuffer_property_data_array>` | ``PoolByteArray(  )`` |
+   +-------------------------------------------+---------------------------------------------------------------+-----------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------------------------------+--------------------------------------------------------------------------------------------+
-| void                                            | :ref:`clear<class_StreamPeerBuffer_method_clear>` **(** **)**                              |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` | :ref:`duplicate<class_StreamPeerBuffer_method_duplicate>` **(** **)** |const|              |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_position<class_StreamPeerBuffer_method_get_position>` **(** **)** |const|        |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                           | :ref:`get_size<class_StreamPeerBuffer_method_get_size>` **(** **)** |const|                |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------+
-| void                                            | :ref:`resize<class_StreamPeerBuffer_method_resize>` **(** :ref:`int<class_int>` size **)** |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------+
-| void                                            | :ref:`seek<class_StreamPeerBuffer_method_seek>` **(** :ref:`int<class_int>` position **)** |
-+-------------------------------------------------+--------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`clear<class_StreamPeerBuffer_method_clear>` **(** **)**                              |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` | :ref:`duplicate<class_StreamPeerBuffer_method_duplicate>` **(** **)** |const|              |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`get_position<class_StreamPeerBuffer_method_get_position>` **(** **)** |const|        |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                           | :ref:`get_size<class_StreamPeerBuffer_method_get_size>` **(** **)** |const|                |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`resize<class_StreamPeerBuffer_method_resize>` **(** :ref:`int<class_int>` size **)** |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | void                                            | :ref:`seek<class_StreamPeerBuffer_method_seek>` **(** :ref:`int<class_int>` position **)** |
+   +-------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_StreamPeerBuffer_property_data_array:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **data_array**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``PoolByteArray(  )`` |
-+-----------+-----------------------+
-| *Setter*  | set_data_array(value) |
-+-----------+-----------------------+
-| *Getter*  | get_data_array()      |
-+-----------+-----------------------+
+:ref:`PoolByteArray<class_PoolByteArray>` **data_array** = ``PoolByteArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_data_array** **(** :ref:`PoolByteArray<class_PoolByteArray>` value **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_data_array** **(** **)**
 
 The underlying data buffer. Setting this value resets the cursor.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_StreamPeerBuffer_method_clear:
 
-- void **clear** **(** **)**
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
 
 Clears the :ref:`data_array<class_StreamPeerBuffer_property_data_array>` and resets the cursor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerBuffer_method_duplicate:
 
-- :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns a new ``StreamPeerBuffer`` with the same :ref:`data_array<class_StreamPeerBuffer_property_data_array>` content.
+:ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate** **(** **)** |const|
+
+Returns a new **StreamPeerBuffer** with the same :ref:`data_array<class_StreamPeerBuffer_property_data_array>` content.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerBuffer_method_get_position:
 
-- :ref:`int<class_int>` **get_position** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_position** **(** **)** |const|
 
 Returns the current cursor position.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerBuffer_method_get_size:
 
-- :ref:`int<class_int>` **get_size** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_size** **(** **)** |const|
 
 Returns the size of :ref:`data_array<class_StreamPeerBuffer_property_data_array>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerBuffer_method_resize:
 
-- void **resize** **(** :ref:`int<class_int>` size **)**
+.. rst-class:: classref-method
+
+void **resize** **(** :ref:`int<class_int>` size **)**
 
 Resizes the :ref:`data_array<class_StreamPeerBuffer_property_data_array>`. This *doesn't* update the cursor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_StreamPeerBuffer_method_seek:
 
-- void **seek** **(** :ref:`int<class_int>` position **)**
+.. rst-class:: classref-method
+
+void **seek** **(** :ref:`int<class_int>` position **)**
 
 Moves the cursor to the specified position. ``position`` must be a valid index of :ref:`data_array<class_StreamPeerBuffer_property_data_array>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

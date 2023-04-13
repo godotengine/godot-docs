@@ -14,78 +14,117 @@ ResourceInteractiveLoader
 
 Interactive :ref:`Resource<class_Resource>` loader.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Interactive :ref:`Resource<class_Resource>` loader. This object is returned by :ref:`ResourceLoader<class_ResourceLoader>` when performing an interactive load. It allows loading resources with high granularity, which makes it mainly useful for displaying loading bars or percentages.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`no_subresource_cache<class_ResourceInteractiveLoader_property_no_subresource_cache>` |
-+-------------------------+--------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`no_subresource_cache<class_ResourceInteractiveLoader_property_no_subresource_cache>` |
+   +-------------------------+--------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_Resource>`       | :ref:`get_resource<class_ResourceInteractiveLoader_method_get_resource>` **(** **)**               |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_stage<class_ResourceInteractiveLoader_method_get_stage>` **(** **)** |const|             |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>` **(** **)** |const| |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`poll<class_ResourceInteractiveLoader_method_poll>` **(** **)**                               |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_ResourceInteractiveLoader_method_wait>` **(** **)**                               |
-+---------------------------------------+----------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`Resource<class_Resource>`       | :ref:`get_resource<class_ResourceInteractiveLoader_method_get_resource>` **(** **)**               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_stage<class_ResourceInteractiveLoader_method_get_stage>` **(** **)** |const|             |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>` **(** **)** |const| |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`poll<class_ResourceInteractiveLoader_method_poll>` **(** **)**                               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_ResourceInteractiveLoader_method_wait>` **(** **)**                               |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_ResourceInteractiveLoader_property_no_subresource_cache:
 
-- :ref:`bool<class_bool>` **no_subresource_cache**
+.. rst-class:: classref-property
 
-+----------+---------------------------------+
-| *Setter* | set_no_subresource_cache(value) |
-+----------+---------------------------------+
-| *Getter* | get_no_subresource_cache()      |
-+----------+---------------------------------+
+:ref:`bool<class_bool>` **no_subresource_cache**
+
+.. rst-class:: classref-property-setget
+
+- void **set_no_subresource_cache** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_no_subresource_cache** **(** **)**
 
 Configures whether nested resources, if included, should not be cached.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_ResourceInteractiveLoader_method_get_resource:
 
-- :ref:`Resource<class_Resource>` **get_resource** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Resource<class_Resource>` **get_resource** **(** **)**
 
 Returns the loaded resource if the load operation completed successfully, ``null`` otherwise.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ResourceInteractiveLoader_method_get_stage:
 
-- :ref:`int<class_int>` **get_stage** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_stage** **(** **)** |const|
 
 Returns the load stage. The total amount of stages can be queried with :ref:`get_stage_count<class_ResourceInteractiveLoader_method_get_stage_count>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ResourceInteractiveLoader_method_get_stage_count:
 
-- :ref:`int<class_int>` **get_stage_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_stage_count** **(** **)** |const|
 
 Returns the total amount of stages (calls to :ref:`poll<class_ResourceInteractiveLoader_method_poll>`) needed to completely load this resource.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_ResourceInteractiveLoader_method_poll:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **poll** **(** **)**
 
 Polls the loading operation, i.e. loads a data chunk up to the next stage.
 
@@ -95,11 +134,15 @@ Returns :ref:`@GlobalScope.ERR_FILE_EOF<class_@GlobalScope_constant_ERR_FILE_EOF
 
 Returns another :ref:`Error<enum_@GlobalScope_Error>` code if the poll has failed.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_ResourceInteractiveLoader_method_wait:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
 
 Polls the loading operation successively until the resource is completely loaded or a :ref:`poll<class_ResourceInteractiveLoader_method_poll>` fails.
 
@@ -110,3 +153,4 @@ Returns another :ref:`Error<enum_@GlobalScope_Error>` code if a poll has failed,
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,10 +14,18 @@ Area
 
 3D area for detection and physics and audio influence.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-3D area that detects :ref:`CollisionObject<class_CollisionObject>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.
+3D area that detects :ref:`CollisionObject<class_CollisionObject>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to a custom audio bus.
+
+To give the area its shape, add a :ref:`CollisionShape<class_CollisionShape>` or a :ref:`CollisionPolygon<class_CollisionPolygon>` node as a *direct* child (or add multiple such nodes as direct children) of the area.
+
+\ **Warning:** See :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` (also called "trimesh") for a warning about possibly unexpected behavior when using that shape for an area.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
@@ -26,82 +34,108 @@ Tutorials
 
 - `GUI in 3D Demo <https://godotengine.org/asset-library/asset/127>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                     | :ref:`angular_damp<class_Area_property_angular_damp>`                     | ``0.1``                 |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`                   | :ref:`audio_bus_name<class_Area_property_audio_bus_name>`                 | ``"Master"``            |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`audio_bus_override<class_Area_property_audio_bus_override>`         | ``false``               |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                     | :ref:`gravity<class_Area_property_gravity>`                               | ``9.8``                 |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                     | :ref:`gravity_distance_scale<class_Area_property_gravity_distance_scale>` | ``0.0``                 |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`gravity_point<class_Area_property_gravity_point>`                   | ``false``               |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`Vector3<class_Vector3>`                 | :ref:`gravity_vec<class_Area_property_gravity_vec>`                       | ``Vector3( 0, -1, 0 )`` |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                     | :ref:`linear_damp<class_Area_property_linear_damp>`                       | ``0.1``                 |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`monitorable<class_Area_property_monitorable>`                       | ``true``                |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`monitoring<class_Area_property_monitoring>`                         | ``true``                |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                     | :ref:`priority<class_Area_property_priority>`                             | ``0.0``                 |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                     | :ref:`reverb_bus_amount<class_Area_property_reverb_bus_amount>`           | ``0.0``                 |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`reverb_bus_enable<class_Area_property_reverb_bus_enable>`           | ``false``               |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`String<class_String>`                   | :ref:`reverb_bus_name<class_Area_property_reverb_bus_name>`               | ``"Master"``            |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`float<class_float>`                     | :ref:`reverb_bus_uniformity<class_Area_property_reverb_bus_uniformity>`   | ``0.0``                 |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
-| :ref:`SpaceOverride<enum_Area_SpaceOverride>` | :ref:`space_override<class_Area_property_space_override>`                 | ``0``                   |
-+-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                     | :ref:`angular_damp<class_Area_property_angular_damp>`                     | ``0.1``                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`String<class_String>`                   | :ref:`audio_bus_name<class_Area_property_audio_bus_name>`                 | ``"Master"``            |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`audio_bus_override<class_Area_property_audio_bus_override>`         | ``false``               |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                     | :ref:`gravity<class_Area_property_gravity>`                               | ``9.8``                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                     | :ref:`gravity_distance_scale<class_Area_property_gravity_distance_scale>` | ``0.0``                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`gravity_point<class_Area_property_gravity_point>`                   | ``false``               |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`Vector3<class_Vector3>`                 | :ref:`gravity_vec<class_Area_property_gravity_vec>`                       | ``Vector3( 0, -1, 0 )`` |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                     | :ref:`linear_damp<class_Area_property_linear_damp>`                       | ``0.1``                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`monitorable<class_Area_property_monitorable>`                       | ``true``                |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`monitoring<class_Area_property_monitoring>`                         | ``true``                |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                     | :ref:`priority<class_Area_property_priority>`                             | ``0.0``                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                     | :ref:`reverb_bus_amount<class_Area_property_reverb_bus_amount>`           | ``0.0``                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`reverb_bus_enable<class_Area_property_reverb_bus_enable>`           | ``false``               |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`String<class_String>`                   | :ref:`reverb_bus_name<class_Area_property_reverb_bus_name>`               | ``"Master"``            |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`float<class_float>`                     | :ref:`reverb_bus_uniformity<class_Area_property_reverb_bus_uniformity>`   | ``0.0``                 |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+   | :ref:`SpaceOverride<enum_Area_SpaceOverride>` | :ref:`space_override<class_Area_property_space_override>`                 | ``0``                   |
+   +-----------------------------------------------+---------------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_overlapping_areas<class_Area_method_get_overlapping_areas>` **(** **)** |const|              |
-+---------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>` | :ref:`get_overlapping_bodies<class_Area_method_get_overlapping_bodies>` **(** **)** |const|            |
-+---------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`overlaps_area<class_Area_method_overlaps_area>` **(** :ref:`Node<class_Node>` area **)** |const| |
-+---------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`   | :ref:`overlaps_body<class_Area_method_overlaps_body>` **(** :ref:`Node<class_Node>` body **)** |const| |
-+---------------------------+--------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_overlapping_areas<class_Area_method_get_overlapping_areas>` **(** **)** |const|              |
+   +---------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>` | :ref:`get_overlapping_bodies<class_Area_method_get_overlapping_bodies>` **(** **)** |const|            |
+   +---------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`overlaps_area<class_Area_method_overlaps_area>` **(** :ref:`Node<class_Node>` area **)** |const| |
+   +---------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`   | :ref:`overlaps_body<class_Area_method_overlaps_body>` **(** :ref:`Node<class_Node>` body **)** |const| |
+   +---------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Area_signal_area_entered:
 
-- **area_entered** **(** :ref:`Area<class_Area>` area **)**
+.. rst-class:: classref-signal
+
+**area_entered** **(** :ref:`Area<class_Area>` area **)**
 
 Emitted when another Area enters this Area. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
 
 \ ``area`` the other Area.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Area_signal_area_exited:
 
-- **area_exited** **(** :ref:`Area<class_Area>` area **)**
+.. rst-class:: classref-signal
+
+**area_exited** **(** :ref:`Area<class_Area>` area **)**
 
 Emitted when another Area exits this Area. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
 
 \ ``area`` the other Area.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Area_signal_area_shape_entered:
 
-- **area_shape_entered** **(** :ref:`RID<class_RID>` area_rid, :ref:`Area<class_Area>` area, :ref:`int<class_int>` area_shape_index, :ref:`int<class_int>` local_shape_index **)**
+.. rst-class:: classref-signal
+
+**area_shape_entered** **(** :ref:`RID<class_RID>` area_rid, :ref:`Area<class_Area>` area, :ref:`int<class_int>` area_shape_index, :ref:`int<class_int>` local_shape_index **)**
 
 Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
 
@@ -112,12 +146,16 @@ Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of th
 \ ``area_shape_index`` the index of the :ref:`Shape<class_Shape>` of the other Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``area.shape_owner_get_owner(area_shape_index)``.
 
 \ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_signal_area_shape_exited:
 
-- **area_shape_exited** **(** :ref:`RID<class_RID>` area_rid, :ref:`Area<class_Area>` area, :ref:`int<class_int>` area_shape_index, :ref:`int<class_int>` local_shape_index **)**
+.. rst-class:: classref-signal
+
+**area_shape_exited** **(** :ref:`RID<class_RID>` area_rid, :ref:`Area<class_Area>` area, :ref:`int<class_int>` area_shape_index, :ref:`int<class_int>` local_shape_index **)**
 
 Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``.
 
@@ -129,31 +167,43 @@ Emitted when one of another Area's :ref:`Shape<class_Shape>`\ s enters one of th
 
 \ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Area_signal_body_entered:
 
-- **body_entered** **(** :ref:`Node<class_Node>` body **)**
+.. rst-class:: classref-signal
+
+**body_entered** **(** :ref:`Node<class_Node>` body **)**
 
 Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` enters this Area. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
 \ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Area_signal_body_exited:
 
-- **body_exited** **(** :ref:`Node<class_Node>` body **)**
+.. rst-class:: classref-signal
+
+**body_exited** **(** :ref:`Node<class_Node>` body **)**
 
 Emitted when a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` exits this Area. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
 \ ``body`` the :ref:`Node<class_Node>`, if it exists in the tree, of the other :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Area_signal_body_shape_entered:
 
-- **body_shape_entered** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape_index, :ref:`int<class_int>` local_shape_index **)**
+.. rst-class:: classref-signal
+
+**body_shape_entered** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape_index, :ref:`int<class_int>` local_shape_index **)**
 
 Emitted when one of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape<class_Shape>`\ s enters one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
@@ -164,12 +214,16 @@ Emitted when one of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<cla
 \ ``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
 
 \ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_signal_body_shape_exited:
 
-- **body_shape_exited** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape_index, :ref:`int<class_int>` local_shape_index **)**
+.. rst-class:: classref-signal
+
+**body_shape_exited** **(** :ref:`RID<class_RID>` body_rid, :ref:`Node<class_Node>` body, :ref:`int<class_int>` body_shape_index, :ref:`int<class_int>` local_shape_index **)**
 
 Emitted when one of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>`'s :ref:`Shape<class_Shape>`\ s enters one of this Area's :ref:`Shape<class_Shape>`\ s. Requires :ref:`monitoring<class_Area_property_monitoring>` to be set to ``true``. :ref:`GridMap<class_GridMap>`\ s are detected if the :ref:`MeshLibrary<class_MeshLibrary>` has Collision :ref:`Shape<class_Shape>`\ s.
 
@@ -180,331 +234,399 @@ Emitted when one of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<cla
 \ ``body_shape_index`` the index of the :ref:`Shape<class_Shape>` of the :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`GridMap<class_GridMap>` used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``body.shape_owner_get_owner(body_shape_index)``.
 
 \ ``local_shape_index`` the index of the :ref:`Shape<class_Shape>` of this Area used by the :ref:`PhysicsServer<class_PhysicsServer>`. Get the :ref:`CollisionShape<class_CollisionShape>` node with ``self.shape_owner_get_owner(local_shape_index)``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Area_SpaceOverride:
 
-.. _class_Area_constant_SPACE_OVERRIDE_DISABLED:
-
-.. _class_Area_constant_SPACE_OVERRIDE_COMBINE:
-
-.. _class_Area_constant_SPACE_OVERRIDE_COMBINE_REPLACE:
-
-.. _class_Area_constant_SPACE_OVERRIDE_REPLACE:
-
-.. _class_Area_constant_SPACE_OVERRIDE_REPLACE_COMBINE:
+.. rst-class:: classref-enumeration
 
 enum **SpaceOverride**:
 
-- **SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damping.
+.. _class_Area_constant_SPACE_OVERRIDE_DISABLED:
 
-- **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damping values to whatever has been calculated so far (in :ref:`priority<class_Area_property_priority>` order).
+.. rst-class:: classref-enumeration-constant
 
-- **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damping values to whatever has been calculated so far (in :ref:`priority<class_Area_property_priority>` order), ignoring any lower priority areas.
+:ref:`SpaceOverride<enum_Area_SpaceOverride>` **SPACE_OVERRIDE_DISABLED** = ``0``
 
-- **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
+This area does not affect gravity/damping.
 
-- **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in :ref:`priority<class_Area_property_priority>` order), but keeps calculating the rest of the areas.
+.. _class_Area_constant_SPACE_OVERRIDE_COMBINE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SpaceOverride<enum_Area_SpaceOverride>` **SPACE_OVERRIDE_COMBINE** = ``1``
+
+This area adds its gravity/damping values to whatever has been calculated so far (in :ref:`priority<class_Area_property_priority>` order).
+
+.. _class_Area_constant_SPACE_OVERRIDE_COMBINE_REPLACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SpaceOverride<enum_Area_SpaceOverride>` **SPACE_OVERRIDE_COMBINE_REPLACE** = ``2``
+
+This area adds its gravity/damping values to whatever has been calculated so far (in :ref:`priority<class_Area_property_priority>` order), ignoring any lower priority areas.
+
+.. _class_Area_constant_SPACE_OVERRIDE_REPLACE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SpaceOverride<enum_Area_SpaceOverride>` **SPACE_OVERRIDE_REPLACE** = ``3``
+
+This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
+
+.. _class_Area_constant_SPACE_OVERRIDE_REPLACE_COMBINE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`SpaceOverride<enum_Area_SpaceOverride>` **SPACE_OVERRIDE_REPLACE_COMBINE** = ``4``
+
+This area replaces any gravity/damping calculated so far (in :ref:`priority<class_Area_property_priority>` order), but keeps calculating the rest of the areas.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Area_property_angular_damp:
 
-- :ref:`float<class_float>` **angular_damp**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0.1``                 |
-+-----------+-------------------------+
-| *Setter*  | set_angular_damp(value) |
-+-----------+-------------------------+
-| *Getter*  | get_angular_damp()      |
-+-----------+-------------------------+
+:ref:`float<class_float>` **angular_damp** = ``0.1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_angular_damp** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_angular_damp** **(** **)**
 
 The rate at which objects stop spinning in this area. Represents the angular velocity lost per second.
 
 See :ref:`ProjectSettings.physics/3d/default_angular_damp<class_ProjectSettings_property_physics/3d/default_angular_damp>` for more details about damping.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Area_property_audio_bus_name:
 
-- :ref:`String<class_String>` **audio_bus_name**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``"Master"``         |
-+-----------+----------------------+
-| *Setter*  | set_audio_bus(value) |
-+-----------+----------------------+
-| *Getter*  | get_audio_bus()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **audio_bus_name** = ``"Master"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_audio_bus** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_audio_bus** **(** **)**
 
 The name of the area's audio bus.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_audio_bus_override:
 
-- :ref:`bool<class_bool>` **audio_bus_override**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``false``                     |
-+-----------+-------------------------------+
-| *Setter*  | set_audio_bus_override(value) |
-+-----------+-------------------------------+
-| *Getter*  | is_overriding_audio_bus()     |
-+-----------+-------------------------------+
+:ref:`bool<class_bool>` **audio_bus_override** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_audio_bus_override** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_overriding_audio_bus** **(** **)**
 
 If ``true``, the area's audio bus overrides the default audio bus.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_gravity:
 
-- :ref:`float<class_float>` **gravity**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``9.8``            |
-+-----------+--------------------+
-| *Setter*  | set_gravity(value) |
-+-----------+--------------------+
-| *Getter*  | get_gravity()      |
-+-----------+--------------------+
+:ref:`float<class_float>` **gravity** = ``9.8``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gravity** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_gravity** **(** **)**
 
 The area's gravity intensity (in meters per second squared). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_gravity_distance_scale:
 
-- :ref:`float<class_float>` **gravity_distance_scale**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``0.0``                           |
-+-----------+-----------------------------------+
-| *Setter*  | set_gravity_distance_scale(value) |
-+-----------+-----------------------------------+
-| *Getter*  | get_gravity_distance_scale()      |
-+-----------+-----------------------------------+
+:ref:`float<class_float>` **gravity_distance_scale** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gravity_distance_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_gravity_distance_scale** **(** **)**
 
 The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_gravity_point:
 
-- :ref:`bool<class_bool>` **gravity_point**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``false``                   |
-+-----------+-----------------------------+
-| *Setter*  | set_gravity_is_point(value) |
-+-----------+-----------------------------+
-| *Getter*  | is_gravity_a_point()        |
-+-----------+-----------------------------+
+:ref:`bool<class_bool>` **gravity_point** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gravity_is_point** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_gravity_a_point** **(** **)**
 
 If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area_property_gravity_vec>`). See also :ref:`space_override<class_Area_property_space_override>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_gravity_vec:
 
-- :ref:`Vector3<class_Vector3>` **gravity_vec**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``Vector3( 0, -1, 0 )``   |
-+-----------+---------------------------+
-| *Setter*  | set_gravity_vector(value) |
-+-----------+---------------------------+
-| *Getter*  | get_gravity_vector()      |
-+-----------+---------------------------+
+:ref:`Vector3<class_Vector3>` **gravity_vec** = ``Vector3( 0, -1, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_gravity_vector** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_gravity_vector** **(** **)**
 
 The area's gravity vector (not normalized). If gravity is a point (see :ref:`gravity_point<class_Area_property_gravity_point>`), this will be the point of attraction.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_linear_damp:
 
-- :ref:`float<class_float>` **linear_damp**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``0.1``                |
-+-----------+------------------------+
-| *Setter*  | set_linear_damp(value) |
-+-----------+------------------------+
-| *Getter*  | get_linear_damp()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **linear_damp** = ``0.1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_linear_damp** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_linear_damp** **(** **)**
 
 The rate at which objects stop moving in this area. Represents the linear velocity lost per second.
 
 See :ref:`ProjectSettings.physics/3d/default_linear_damp<class_ProjectSettings_property_physics/3d/default_linear_damp>` for more details about damping.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Area_property_monitorable:
 
-- :ref:`bool<class_bool>` **monitorable**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``true``               |
-+-----------+------------------------+
-| *Setter*  | set_monitorable(value) |
-+-----------+------------------------+
-| *Getter*  | is_monitorable()       |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **monitorable** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_monitorable** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_monitorable** **(** **)**
 
 If ``true``, other monitoring areas can detect this area.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_monitoring:
 
-- :ref:`bool<class_bool>` **monitoring**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``true``              |
-+-----------+-----------------------+
-| *Setter*  | set_monitoring(value) |
-+-----------+-----------------------+
-| *Getter*  | is_monitoring()       |
-+-----------+-----------------------+
+:ref:`bool<class_bool>` **monitoring** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_monitoring** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_monitoring** **(** **)**
 
 If ``true``, the area detects bodies or areas entering and exiting it.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_priority:
 
-- :ref:`float<class_float>` **priority**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0.0``             |
-+-----------+---------------------+
-| *Setter*  | set_priority(value) |
-+-----------+---------------------+
-| *Getter*  | get_priority()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **priority** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_priority** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_priority** **(** **)**
 
 The area's priority. Higher priority areas are processed first.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_reverb_bus_amount:
 
-- :ref:`float<class_float>` **reverb_bus_amount**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0.0``                  |
-+-----------+--------------------------+
-| *Setter*  | set_reverb_amount(value) |
-+-----------+--------------------------+
-| *Getter*  | get_reverb_amount()      |
-+-----------+--------------------------+
+:ref:`float<class_float>` **reverb_bus_amount** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_reverb_amount** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_reverb_amount** **(** **)**
 
 The degree to which this area applies reverb to its associated audio. Ranges from ``0`` to ``1`` with ``0.1`` precision.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_reverb_bus_enable:
 
-- :ref:`bool<class_bool>` **reverb_bus_enable**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``false``                 |
-+-----------+---------------------------+
-| *Setter*  | set_use_reverb_bus(value) |
-+-----------+---------------------------+
-| *Getter*  | is_using_reverb_bus()     |
-+-----------+---------------------------+
+:ref:`bool<class_bool>` **reverb_bus_enable** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_reverb_bus** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_reverb_bus** **(** **)**
 
 If ``true``, the area applies reverb to its associated audio.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_reverb_bus_name:
 
-- :ref:`String<class_String>` **reverb_bus_name**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``"Master"``          |
-+-----------+-----------------------+
-| *Setter*  | set_reverb_bus(value) |
-+-----------+-----------------------+
-| *Getter*  | get_reverb_bus()      |
-+-----------+-----------------------+
+:ref:`String<class_String>` **reverb_bus_name** = ``"Master"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_reverb_bus** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_reverb_bus** **(** **)**
 
 The reverb bus name to use for this area's associated audio.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_reverb_bus_uniformity:
 
-- :ref:`float<class_float>` **reverb_bus_uniformity**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``0.0``                      |
-+-----------+------------------------------+
-| *Setter*  | set_reverb_uniformity(value) |
-+-----------+------------------------------+
-| *Getter*  | get_reverb_uniformity()      |
-+-----------+------------------------------+
+:ref:`float<class_float>` **reverb_bus_uniformity** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_reverb_uniformity** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_reverb_uniformity** **(** **)**
 
 The degree to which this area's reverb is a uniform effect. Ranges from ``0`` to ``1`` with ``0.1`` precision.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_property_space_override:
 
-- :ref:`SpaceOverride<enum_Area_SpaceOverride>` **space_override**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``0``                          |
-+-----------+--------------------------------+
-| *Setter*  | set_space_override_mode(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_space_override_mode()      |
-+-----------+--------------------------------+
+:ref:`SpaceOverride<enum_Area_SpaceOverride>` **space_override** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_space_override_mode** **(** :ref:`SpaceOverride<enum_Area_SpaceOverride>` value **)**
+- :ref:`SpaceOverride<enum_Area_SpaceOverride>` **get_space_override_mode** **(** **)**
 
 Override mode for gravity and damping calculations within this area. See :ref:`SpaceOverride<enum_Area_SpaceOverride>` for possible values.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Area_method_get_overlapping_areas:
 
-- :ref:`Array<class_Array>` **get_overlapping_areas** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns a list of intersecting ``Area``\ s. The overlapping area's :ref:`CollisionObject.collision_layer<class_CollisionObject_property_collision_layer>` must be part of this area's :ref:`CollisionObject.collision_mask<class_CollisionObject_property_collision_mask>` in order to be detected.
+:ref:`Array<class_Array>` **get_overlapping_areas** **(** **)** |const|
+
+Returns a list of intersecting **Area**\ s. The overlapping area's :ref:`CollisionObject.collision_layer<class_CollisionObject_property_collision_layer>` must be part of this area's :ref:`CollisionObject.collision_mask<class_CollisionObject_property_collision_mask>` in order to be detected.
 
 For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Area_method_get_overlapping_bodies:
 
-- :ref:`Array<class_Array>` **get_overlapping_bodies** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Array<class_Array>` **get_overlapping_bodies** **(** **)** |const|
 
 Returns a list of intersecting :ref:`PhysicsBody<class_PhysicsBody>`\ s. The overlapping body's :ref:`CollisionObject.collision_layer<class_CollisionObject_property_collision_layer>` must be part of this area's :ref:`CollisionObject.collision_mask<class_CollisionObject_property_collision_mask>` in order to be detected.
 
 For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Area_method_overlaps_area:
 
-- :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** |const|
 
 If ``true``, the given area overlaps the Area.
 
 \ **Note:** The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Area_method_overlaps_body:
 
-- :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** |const|
 
 If ``true``, the given physics body overlaps the Area.
 
@@ -515,3 +637,4 @@ The ``body`` argument can either be a :ref:`PhysicsBody<class_PhysicsBody>` or a
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

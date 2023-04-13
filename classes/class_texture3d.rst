@@ -14,38 +14,59 @@ Texture3D
 
 Texture with 3 dimensions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Texture3D is a 3-dimensional :ref:`Texture<class_Texture>` that has a width, height, and depth. See also :ref:`TextureArray<class_TextureArray>`.
 
-\ **Note:** ``Texture3D``\ s can only be sampled in shaders in the GLES3 backend. In GLES2, their data can be accessed via scripting, but there is no way to render them in a hardware-accelerated manner.
+\ **Note:** **Texture3D**\ s can only be sampled in shaders in the GLES3 backend. In GLES2, their data can be accessed via scripting, but there is no way to render them in a hardware-accelerated manner.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | data  | ``{"depth": 0,"flags": 4,"format": 37,"height": 0,"layers": [  ],"width": 0}`` (overrides :ref:`TextureLayered<class_TextureLayered_property_data>`) |
-+-------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | flags | ``4`` (overrides :ref:`TextureLayered<class_TextureLayered_property_flags>`)                                                                         |
-+-------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | data  | ``{"depth": 0,"flags": 4,"format": 37,"height": 0,"layers": [  ],"width": 0}`` (overrides :ref:`TextureLayered<class_TextureLayered_property_data>`) |
+   +-------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | flags | ``4`` (overrides :ref:`TextureLayered<class_TextureLayered_property_flags>`)                                                                         |
+   +-------------------------------------+-------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void | :ref:`create<class_Texture3D_method_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)** |
-+------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`create<class_Texture3D_method_create>` **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)** |
+   +------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Texture3D_method_create:
 
-- void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)**
+.. rst-class:: classref-method
+
+void **create** **(** :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` flags=4 **)**
 
 Creates the Texture3D with specified ``width``, ``height``, and ``depth``. See :ref:`Format<enum_Image_Format>` for ``format`` options. See :ref:`Flags<enum_TextureLayered_Flags>` enumerator for ``flags`` options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -16,20 +16,31 @@ Tweener
 
 Abstract class for all Tweeners used by :ref:`SceneTreeTween<class_SceneTreeTween>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-Tweeners are objects that perform a specific animating task, e.g. interpolating a property or calling a method at a given time. A ``Tweener`` can't be created manually, you need to use a dedicated method from :ref:`SceneTreeTween<class_SceneTreeTween>`.
+Tweeners are objects that perform a specific animating task, e.g. interpolating a property or calling a method at a given time. A **Tweener** can't be created manually, you need to use a dedicated method from :ref:`SceneTreeTween<class_SceneTreeTween>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_Tweener_signal_finished:
 
-- **finished** **(** **)**
+.. rst-class:: classref-signal
 
-Emitted when the ``Tweener`` has just finished its job.
+**finished** **(** **)**
+
+Emitted when the **Tweener** has just finished its job.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

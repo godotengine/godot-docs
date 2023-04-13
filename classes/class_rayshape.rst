@@ -14,53 +14,67 @@ RayShape
 
 Ray shape for 3D collisions.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Ray shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`. A ray is not really a collision body; instead, it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+---------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`length<class_RayShape_property_length>`                 | ``1.0``   |
-+---------------------------+---------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape_property_slips_on_slope>` | ``false`` |
-+---------------------------+---------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+---------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`length<class_RayShape_property_length>`                 | ``1.0``   |
+   +---------------------------+---------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape_property_slips_on_slope>` | ``false`` |
+   +---------------------------+---------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_RayShape_property_length:
 
-- :ref:`float<class_float>` **length**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_length(value) |
-+-----------+-------------------+
-| *Getter*  | get_length()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **length** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_length** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_length** **(** **)**
 
 The ray's length.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_RayShape_property_slips_on_slope:
 
-- :ref:`bool<class_bool>` **slips_on_slope**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``false``                 |
-+-----------+---------------------------+
-| *Setter*  | set_slips_on_slope(value) |
-+-----------+---------------------------+
-| *Getter*  | get_slips_on_slope()      |
-+-----------+---------------------------+
+:ref:`bool<class_bool>` **slips_on_slope** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_slips_on_slope** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_slips_on_slope** **(** **)**
 
 If ``true``, allow the shape to return the correct normal.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

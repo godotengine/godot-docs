@@ -14,6 +14,8 @@ Performance
 
 Exposes performance-related data.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,154 +25,303 @@ This class provides access to a number of different monitors related to performa
 
 \ **Note:** Many of these monitors are not updated in real-time, so there may be a short delay between changes.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>` | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const| |
-+---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>` | :ref:`get_monitor<class_Performance_method_get_monitor>` **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const| |
+   +---------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Performance_Monitor:
 
-.. _class_Performance_constant_TIME_FPS:
-
-.. _class_Performance_constant_TIME_PROCESS:
-
-.. _class_Performance_constant_TIME_PHYSICS_PROCESS:
-
-.. _class_Performance_constant_MEMORY_STATIC:
-
-.. _class_Performance_constant_MEMORY_DYNAMIC:
-
-.. _class_Performance_constant_MEMORY_STATIC_MAX:
-
-.. _class_Performance_constant_MEMORY_DYNAMIC_MAX:
-
-.. _class_Performance_constant_MEMORY_MESSAGE_BUFFER_MAX:
-
-.. _class_Performance_constant_OBJECT_COUNT:
-
-.. _class_Performance_constant_OBJECT_RESOURCE_COUNT:
-
-.. _class_Performance_constant_OBJECT_NODE_COUNT:
-
-.. _class_Performance_constant_OBJECT_ORPHAN_NODE_COUNT:
-
-.. _class_Performance_constant_RENDER_OBJECTS_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_VERTICES_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_MATERIAL_CHANGES_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_SHADER_CHANGES_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_SURFACE_CHANGES_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_DRAW_CALLS_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_2D_ITEMS_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_2D_DRAW_CALLS_IN_FRAME:
-
-.. _class_Performance_constant_RENDER_VIDEO_MEM_USED:
-
-.. _class_Performance_constant_RENDER_TEXTURE_MEM_USED:
-
-.. _class_Performance_constant_RENDER_VERTEX_MEM_USED:
-
-.. _class_Performance_constant_RENDER_USAGE_VIDEO_MEM_TOTAL:
-
-.. _class_Performance_constant_PHYSICS_2D_ACTIVE_OBJECTS:
-
-.. _class_Performance_constant_PHYSICS_2D_COLLISION_PAIRS:
-
-.. _class_Performance_constant_PHYSICS_2D_ISLAND_COUNT:
-
-.. _class_Performance_constant_PHYSICS_3D_ACTIVE_OBJECTS:
-
-.. _class_Performance_constant_PHYSICS_3D_COLLISION_PAIRS:
-
-.. _class_Performance_constant_PHYSICS_3D_ISLAND_COUNT:
-
-.. _class_Performance_constant_AUDIO_OUTPUT_LATENCY:
-
-.. _class_Performance_constant_MONITOR_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Monitor**:
 
-- **TIME_FPS** = **0** --- Number of frames per second.
+.. _class_Performance_constant_TIME_FPS:
 
-- **TIME_PROCESS** = **1** --- Time it took to complete one frame, in seconds.
+.. rst-class:: classref-enumeration-constant
 
-- **TIME_PHYSICS_PROCESS** = **2** --- Time it took to complete one physics frame, in seconds.
+:ref:`Monitor<enum_Performance_Monitor>` **TIME_FPS** = ``0``
 
-- **MEMORY_STATIC** = **3** --- Static memory currently used, in bytes. Not available in release builds.
+Number of frames per second.
 
-- **MEMORY_DYNAMIC** = **4** --- Dynamic memory currently used, in bytes. Not available in release builds.
+.. _class_Performance_constant_TIME_PROCESS:
 
-- **MEMORY_STATIC_MAX** = **5** --- Available static memory. Not available in release builds.
+.. rst-class:: classref-enumeration-constant
 
-- **MEMORY_DYNAMIC_MAX** = **6** --- Available dynamic memory. Not available in release builds.
+:ref:`Monitor<enum_Performance_Monitor>` **TIME_PROCESS** = ``1``
 
-- **MEMORY_MESSAGE_BUFFER_MAX** = **7** --- Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications.
+Time it took to complete one frame, in seconds.
 
-- **OBJECT_COUNT** = **8** --- Number of objects currently instanced (including nodes).
+.. _class_Performance_constant_TIME_PHYSICS_PROCESS:
 
-- **OBJECT_RESOURCE_COUNT** = **9** --- Number of resources currently used.
+.. rst-class:: classref-enumeration-constant
 
-- **OBJECT_NODE_COUNT** = **10** --- Number of nodes currently instanced in the scene tree. This also includes the root node.
+:ref:`Monitor<enum_Performance_Monitor>` **TIME_PHYSICS_PROCESS** = ``2``
 
-- **OBJECT_ORPHAN_NODE_COUNT** = **11** --- Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree.
+Time it took to complete one physics frame, in seconds.
 
-- **RENDER_OBJECTS_IN_FRAME** = **12** --- 3D objects drawn per frame.
+.. _class_Performance_constant_MEMORY_STATIC:
 
-- **RENDER_VERTICES_IN_FRAME** = **13** --- Vertices drawn per frame. 3D only.
+.. rst-class:: classref-enumeration-constant
 
-- **RENDER_MATERIAL_CHANGES_IN_FRAME** = **14** --- Material changes per frame. 3D only.
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_STATIC** = ``3``
 
-- **RENDER_SHADER_CHANGES_IN_FRAME** = **15** --- Shader changes per frame. 3D only.
+Static memory currently used, in bytes. Not available in release builds.
 
-- **RENDER_SURFACE_CHANGES_IN_FRAME** = **16** --- Render surface changes per frame. 3D only.
+.. _class_Performance_constant_MEMORY_DYNAMIC:
 
-- **RENDER_DRAW_CALLS_IN_FRAME** = **17** --- Draw calls per frame. 3D only.
+.. rst-class:: classref-enumeration-constant
 
-- **RENDER_2D_ITEMS_IN_FRAME** = **18** --- Items or joined items drawn per frame.
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_DYNAMIC** = ``4``
 
-- **RENDER_2D_DRAW_CALLS_IN_FRAME** = **19** --- Draw calls per frame.
+Dynamic memory currently used, in bytes. Not available in release builds.
 
-- **RENDER_VIDEO_MEM_USED** = **20** --- The amount of video memory used, i.e. texture and vertex memory combined.
+.. _class_Performance_constant_MEMORY_STATIC_MAX:
 
-- **RENDER_TEXTURE_MEM_USED** = **21** --- The amount of texture memory used.
+.. rst-class:: classref-enumeration-constant
 
-- **RENDER_VERTEX_MEM_USED** = **22** --- The amount of vertex memory used.
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_STATIC_MAX** = ``5``
 
-- **RENDER_USAGE_VIDEO_MEM_TOTAL** = **23** --- Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
+Available static memory. Not available in release builds.
 
-- **PHYSICS_2D_ACTIVE_OBJECTS** = **24** --- Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
+.. _class_Performance_constant_MEMORY_DYNAMIC_MAX:
 
-- **PHYSICS_2D_COLLISION_PAIRS** = **25** --- Number of collision pairs in the 2D physics engine.
+.. rst-class:: classref-enumeration-constant
 
-- **PHYSICS_2D_ISLAND_COUNT** = **26** --- Number of islands in the 2D physics engine.
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_DYNAMIC_MAX** = ``6``
 
-- **PHYSICS_3D_ACTIVE_OBJECTS** = **27** --- Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
+Available dynamic memory. Not available in release builds.
 
-- **PHYSICS_3D_COLLISION_PAIRS** = **28** --- Number of collision pairs in the 3D physics engine.
+.. _class_Performance_constant_MEMORY_MESSAGE_BUFFER_MAX:
 
-- **PHYSICS_3D_ISLAND_COUNT** = **29** --- Number of islands in the 3D physics engine.
+.. rst-class:: classref-enumeration-constant
 
-- **AUDIO_OUTPUT_LATENCY** = **30** --- Output latency of the :ref:`AudioServer<class_AudioServer>`.
+:ref:`Monitor<enum_Performance_Monitor>` **MEMORY_MESSAGE_BUFFER_MAX** = ``7``
 
-- **MONITOR_MAX** = **31** --- Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
+Largest amount of memory the message queue buffer has used, in bytes. The message queue is used for deferred functions calls and notifications.
+
+.. _class_Performance_constant_OBJECT_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_COUNT** = ``8``
+
+Number of objects currently instanced (including nodes).
+
+.. _class_Performance_constant_OBJECT_RESOURCE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_RESOURCE_COUNT** = ``9``
+
+Number of resources currently used.
+
+.. _class_Performance_constant_OBJECT_NODE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_NODE_COUNT** = ``10``
+
+Number of nodes currently instanced in the scene tree. This also includes the root node.
+
+.. _class_Performance_constant_OBJECT_ORPHAN_NODE_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **OBJECT_ORPHAN_NODE_COUNT** = ``11``
+
+Number of orphan nodes, i.e. nodes which are not parented to a node of the scene tree.
+
+.. _class_Performance_constant_RENDER_OBJECTS_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_OBJECTS_IN_FRAME** = ``12``
+
+3D objects drawn per frame.
+
+.. _class_Performance_constant_RENDER_VERTICES_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_VERTICES_IN_FRAME** = ``13``
+
+Vertices drawn per frame. 3D only.
+
+.. _class_Performance_constant_RENDER_MATERIAL_CHANGES_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_MATERIAL_CHANGES_IN_FRAME** = ``14``
+
+Material changes per frame. 3D only.
+
+.. _class_Performance_constant_RENDER_SHADER_CHANGES_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_SHADER_CHANGES_IN_FRAME** = ``15``
+
+Shader changes per frame. 3D only.
+
+.. _class_Performance_constant_RENDER_SURFACE_CHANGES_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_SURFACE_CHANGES_IN_FRAME** = ``16``
+
+Render surface changes per frame. 3D only.
+
+.. _class_Performance_constant_RENDER_DRAW_CALLS_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_DRAW_CALLS_IN_FRAME** = ``17``
+
+Draw calls per frame. 3D only.
+
+.. _class_Performance_constant_RENDER_2D_ITEMS_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_2D_ITEMS_IN_FRAME** = ``18``
+
+Items or joined items drawn per frame.
+
+.. _class_Performance_constant_RENDER_2D_DRAW_CALLS_IN_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_2D_DRAW_CALLS_IN_FRAME** = ``19``
+
+Draw calls per frame.
+
+.. _class_Performance_constant_RENDER_VIDEO_MEM_USED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_VIDEO_MEM_USED** = ``20``
+
+The amount of video memory used, i.e. texture and vertex memory combined.
+
+.. _class_Performance_constant_RENDER_TEXTURE_MEM_USED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_TEXTURE_MEM_USED** = ``21``
+
+The amount of texture memory used.
+
+.. _class_Performance_constant_RENDER_VERTEX_MEM_USED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_VERTEX_MEM_USED** = ``22``
+
+The amount of vertex memory used.
+
+.. _class_Performance_constant_RENDER_USAGE_VIDEO_MEM_TOTAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **RENDER_USAGE_VIDEO_MEM_TOTAL** = ``23``
+
+Unimplemented in the GLES2 and GLES3 rendering backends, always returns 0.
+
+.. _class_Performance_constant_PHYSICS_2D_ACTIVE_OBJECTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_ACTIVE_OBJECTS** = ``24``
+
+Number of active :ref:`RigidBody2D<class_RigidBody2D>` nodes in the game.
+
+.. _class_Performance_constant_PHYSICS_2D_COLLISION_PAIRS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_COLLISION_PAIRS** = ``25``
+
+Number of collision pairs in the 2D physics engine.
+
+.. _class_Performance_constant_PHYSICS_2D_ISLAND_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_2D_ISLAND_COUNT** = ``26``
+
+Number of islands in the 2D physics engine.
+
+.. _class_Performance_constant_PHYSICS_3D_ACTIVE_OBJECTS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_ACTIVE_OBJECTS** = ``27``
+
+Number of active :ref:`RigidBody<class_RigidBody>` and :ref:`VehicleBody<class_VehicleBody>` nodes in the game.
+
+.. _class_Performance_constant_PHYSICS_3D_COLLISION_PAIRS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_COLLISION_PAIRS** = ``28``
+
+Number of collision pairs in the 3D physics engine.
+
+.. _class_Performance_constant_PHYSICS_3D_ISLAND_COUNT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **PHYSICS_3D_ISLAND_COUNT** = ``29``
+
+Number of islands in the 3D physics engine.
+
+.. _class_Performance_constant_AUDIO_OUTPUT_LATENCY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **AUDIO_OUTPUT_LATENCY** = ``30``
+
+Output latency of the :ref:`AudioServer<class_AudioServer>`.
+
+.. _class_Performance_constant_MONITOR_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Monitor<enum_Performance_Monitor>` **MONITOR_MAX** = ``31``
+
+Represents the size of the :ref:`Monitor<enum_Performance_Monitor>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Performance_method_get_monitor:
 
-- :ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|
+.. rst-class:: classref-method
+
+:ref:`float<class_float>` **get_monitor** **(** :ref:`Monitor<enum_Performance_Monitor>` monitor **)** |const|
 
 Returns the value of one of the available monitors. You should provide one of the :ref:`Monitor<enum_Performance_Monitor>` constants as the argument, like this:
 
@@ -181,3 +332,4 @@ Returns the value of one of the available monitors. You should provide one of th
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,363 +14,434 @@ Particles2D
 
 GPU-based 2D particle emitter.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-2D particle node used to create a variety of particle systems and effects. ``Particles2D`` features an emitter that generates some number of particles at a given rate.
+2D particle node used to create a variety of particle systems and effects. **Particles2D** features an emitter that generates some number of particles at a given rate.
 
 Use the ``process_material`` property to add a :ref:`ParticlesMaterial<class_ParticlesMaterial>` to configure particle appearance and behavior. Alternatively, you can add a :ref:`ShaderMaterial<class_ShaderMaterial>` which will be applied to all particles.
 
-\ **Note:** ``Particles2D`` only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles2D<class_CPUParticles2D>` instead. You can convert ``Particles2D`` to :ref:`CPUParticles2D<class_CPUParticles2D>` by selecting the node, clicking the **Particles** menu at the top of the 2D editor viewport then choosing **Convert to CPUParticles2D**.
+\ **Note:** **Particles2D** only work when using the GLES3 renderer. If using the GLES2 renderer, use :ref:`CPUParticles2D<class_CPUParticles2D>` instead. You can convert **Particles2D** to :ref:`CPUParticles2D<class_CPUParticles2D>` by selecting the node, clicking the **Particles** menu at the top of the 2D editor viewport then choosing **Convert to CPUParticles2D**.
 
-\ **Note:** On macOS, ``Particles2D`` rendering is much slower than :ref:`CPUParticles2D<class_CPUParticles2D>` due to transform feedback being implemented on the CPU instead of the GPU. Consider using :ref:`CPUParticles2D<class_CPUParticles2D>` instead when targeting macOS.
+\ **Note:** On macOS, **Particles2D** rendering is much slower than :ref:`CPUParticles2D<class_CPUParticles2D>` due to transform feedback being implemented on the CPU instead of the GPU. Consider using :ref:`CPUParticles2D<class_CPUParticles2D>` instead when targeting macOS.
 
 \ **Note:** After working on a Particles node, remember to update its :ref:`visibility_rect<class_Particles2D_property_visibility_rect>` by selecting it, clicking the **Particles** menu at the top of the 2D editor viewport then choose **Generate Visibility Rect**. Otherwise, particles may suddenly disappear depending on the camera position and angle.
 
-\ **Note:** Unlike :ref:`CPUParticles2D<class_CPUParticles2D>`, ``Particles2D`` currently ignore the texture region defined in :ref:`AtlasTexture<class_AtlasTexture>`\ s.
+\ **Note:** Unlike :ref:`CPUParticles2D<class_CPUParticles2D>`, **Particles2D** currently ignore the texture region defined in :ref:`AtlasTexture<class_AtlasTexture>`\ s.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`Particle systems (2D) <../tutorials/2d/particle_systems_2d>`
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+- `2D Particles Demo <https://godotengine.org/asset-library/asset/118>`__
+
+- `2D Dodge The Creeps Demo (uses GPUParticles2D for the trail behind the player) <https://godotengine.org/asset-library/asset/515>`__
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`                        | :ref:`amount<class_Particles2D_property_amount>`                     | ``8``                             |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`DrawOrder<enum_Particles2D_DrawOrder>` | :ref:`draw_order<class_Particles2D_property_draw_order>`             | ``0``                             |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`emitting<class_Particles2D_property_emitting>`                 | ``true``                          |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                    | :ref:`explosiveness<class_Particles2D_property_explosiveness>`       | ``0.0``                           |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`int<class_int>`                        | :ref:`fixed_fps<class_Particles2D_property_fixed_fps>`               | ``0``                             |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`fract_delta<class_Particles2D_property_fract_delta>`           | ``true``                          |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                    | :ref:`lifetime<class_Particles2D_property_lifetime>`                 | ``1.0``                           |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`local_coords<class_Particles2D_property_local_coords>`         | ``true``                          |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`normal_map<class_Particles2D_property_normal_map>`             |                                   |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`one_shot<class_Particles2D_property_one_shot>`                 | ``false``                         |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                    | :ref:`preprocess<class_Particles2D_property_preprocess>`             | ``0.0``                           |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`Material<class_Material>`              | :ref:`process_material<class_Particles2D_property_process_material>` |                                   |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                    | :ref:`randomness<class_Particles2D_property_randomness>`             | ``0.0``                           |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`float<class_float>`                    | :ref:`speed_scale<class_Particles2D_property_speed_scale>`           | ``1.0``                           |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`Texture<class_Texture>`                | :ref:`texture<class_Particles2D_property_texture>`                   |                                   |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
-| :ref:`Rect2<class_Rect2>`                    | :ref:`visibility_rect<class_Particles2D_property_visibility_rect>`   | ``Rect2( -100, -100, 200, 200 )`` |
-+----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                        | :ref:`amount<class_Particles2D_property_amount>`                     | ``8``                             |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`DrawOrder<enum_Particles2D_DrawOrder>` | :ref:`draw_order<class_Particles2D_property_draw_order>`             | ``0``                             |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`bool<class_bool>`                      | :ref:`emitting<class_Particles2D_property_emitting>`                 | ``true``                          |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`                    | :ref:`explosiveness<class_Particles2D_property_explosiveness>`       | ``0.0``                           |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`                        | :ref:`fixed_fps<class_Particles2D_property_fixed_fps>`               | ``0``                             |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`bool<class_bool>`                      | :ref:`fract_delta<class_Particles2D_property_fract_delta>`           | ``true``                          |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`                    | :ref:`lifetime<class_Particles2D_property_lifetime>`                 | ``1.0``                           |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`bool<class_bool>`                      | :ref:`local_coords<class_Particles2D_property_local_coords>`         | ``true``                          |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture<class_Texture>`                | :ref:`normal_map<class_Particles2D_property_normal_map>`             |                                   |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`bool<class_bool>`                      | :ref:`one_shot<class_Particles2D_property_one_shot>`                 | ``false``                         |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`                    | :ref:`preprocess<class_Particles2D_property_preprocess>`             | ``0.0``                           |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Material<class_Material>`              | :ref:`process_material<class_Particles2D_property_process_material>` |                                   |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`                    | :ref:`randomness<class_Particles2D_property_randomness>`             | ``0.0``                           |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`float<class_float>`                    | :ref:`speed_scale<class_Particles2D_property_speed_scale>`           | ``1.0``                           |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Texture<class_Texture>`                | :ref:`texture<class_Particles2D_property_texture>`                   |                                   |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+   | :ref:`Rect2<class_Rect2>`                    | :ref:`visibility_rect<class_Particles2D_property_visibility_rect>`   | ``Rect2( -100, -100, 200, 200 )`` |
+   +----------------------------------------------+----------------------------------------------------------------------+-----------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------+--------------------------------------------------------------------------------+
-| :ref:`Rect2<class_Rect2>` | :ref:`capture_rect<class_Particles2D_method_capture_rect>` **(** **)** |const| |
-+---------------------------+--------------------------------------------------------------------------------+
-| void                      | :ref:`restart<class_Particles2D_method_restart>` **(** **)**                   |
-+---------------------------+--------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>` | :ref:`capture_rect<class_Particles2D_method_capture_rect>` **(** **)** |const| |
+   +---------------------------+--------------------------------------------------------------------------------+
+   | void                      | :ref:`restart<class_Particles2D_method_restart>` **(** **)**                   |
+   +---------------------------+--------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Particles2D_DrawOrder:
 
-.. _class_Particles2D_constant_DRAW_ORDER_INDEX:
-
-.. _class_Particles2D_constant_DRAW_ORDER_LIFETIME:
+.. rst-class:: classref-enumeration
 
 enum **DrawOrder**:
 
-- **DRAW_ORDER_INDEX** = **0** --- Particles are drawn in the order emitted.
+.. _class_Particles2D_constant_DRAW_ORDER_INDEX:
 
-- **DRAW_ORDER_LIFETIME** = **1** --- Particles are drawn in order of remaining lifetime.
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawOrder<enum_Particles2D_DrawOrder>` **DRAW_ORDER_INDEX** = ``0``
+
+Particles are drawn in the order emitted.
+
+.. _class_Particles2D_constant_DRAW_ORDER_LIFETIME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`DrawOrder<enum_Particles2D_DrawOrder>` **DRAW_ORDER_LIFETIME** = ``1``
+
+Particles are drawn in order of remaining lifetime.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Particles2D_property_amount:
 
-- :ref:`int<class_int>` **amount**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``8``             |
-+-----------+-------------------+
-| *Setter*  | set_amount(value) |
-+-----------+-------------------+
-| *Getter*  | get_amount()      |
-+-----------+-------------------+
+:ref:`int<class_int>` **amount** = ``8``
+
+.. rst-class:: classref-property-setget
+
+- void **set_amount** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_amount** **(** **)**
 
 The number of particles emitted in one emission cycle (corresponding to the :ref:`lifetime<class_Particles2D_property_lifetime>`).
 
 \ **Note:** Changing :ref:`amount<class_Particles2D_property_amount>` will reset the particle emission, therefore removing all particles that were already emitted before changing :ref:`amount<class_Particles2D_property_amount>`.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Particles2D_property_draw_order:
 
-- :ref:`DrawOrder<enum_Particles2D_DrawOrder>` **draw_order**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``0``                 |
-+-----------+-----------------------+
-| *Setter*  | set_draw_order(value) |
-+-----------+-----------------------+
-| *Getter*  | get_draw_order()      |
-+-----------+-----------------------+
+:ref:`DrawOrder<enum_Particles2D_DrawOrder>` **draw_order** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_draw_order** **(** :ref:`DrawOrder<enum_Particles2D_DrawOrder>` value **)**
+- :ref:`DrawOrder<enum_Particles2D_DrawOrder>` **get_draw_order** **(** **)**
 
 Particle draw order. Uses :ref:`DrawOrder<enum_Particles2D_DrawOrder>` values.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_emitting:
 
-- :ref:`bool<class_bool>` **emitting**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``true``            |
-+-----------+---------------------+
-| *Setter*  | set_emitting(value) |
-+-----------+---------------------+
-| *Getter*  | is_emitting()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **emitting** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_emitting** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_emitting** **(** **)**
 
 If ``true``, particles are being emitted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_explosiveness:
 
-- :ref:`float<class_float>` **explosiveness**
+.. rst-class:: classref-property
 
-+-----------+--------------------------------+
-| *Default* | ``0.0``                        |
-+-----------+--------------------------------+
-| *Setter*  | set_explosiveness_ratio(value) |
-+-----------+--------------------------------+
-| *Getter*  | get_explosiveness_ratio()      |
-+-----------+--------------------------------+
+:ref:`float<class_float>` **explosiveness** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_explosiveness_ratio** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_explosiveness_ratio** **(** **)**
 
 How rapidly particles in an emission cycle are emitted. If greater than ``0``, there will be a gap in emissions before the next cycle begins.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_fixed_fps:
 
-- :ref:`int<class_int>` **fixed_fps**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_fixed_fps(value) |
-+-----------+----------------------+
-| *Getter*  | get_fixed_fps()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **fixed_fps** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fixed_fps** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_fixed_fps** **(** **)**
 
 The particle system's frame rate is fixed to a value. For instance, changing the value to 2 will make the particles render at 2 frames per second. Note this does not slow down the simulation of the particle system itself.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_fract_delta:
 
-- :ref:`bool<class_bool>` **fract_delta**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``true``                    |
-+-----------+-----------------------------+
-| *Setter*  | set_fractional_delta(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_fractional_delta()      |
-+-----------+-----------------------------+
+:ref:`bool<class_bool>` **fract_delta** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_fractional_delta** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_fractional_delta** **(** **)**
 
 If ``true``, results in fractional delta calculation which has a smoother particles display effect.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_lifetime:
 
-- :ref:`float<class_float>` **lifetime**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``1.0``             |
-+-----------+---------------------+
-| *Setter*  | set_lifetime(value) |
-+-----------+---------------------+
-| *Getter*  | get_lifetime()      |
-+-----------+---------------------+
+:ref:`float<class_float>` **lifetime** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lifetime** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_lifetime** **(** **)**
 
 The amount of time each particle will exist (in seconds).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_local_coords:
 
-- :ref:`bool<class_bool>` **local_coords**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``true``                         |
-+-----------+----------------------------------+
-| *Setter*  | set_use_local_coordinates(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_use_local_coordinates()      |
-+-----------+----------------------------------+
+:ref:`bool<class_bool>` **local_coords** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_local_coordinates** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_use_local_coordinates** **(** **)**
 
 If ``true``, particles use the parent node's coordinate space. If ``false``, they use global coordinates.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_normal_map:
 
-- :ref:`Texture<class_Texture>` **normal_map**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_normal_map(value) |
-+----------+-----------------------+
-| *Getter* | get_normal_map()      |
-+----------+-----------------------+
+:ref:`Texture<class_Texture>` **normal_map**
+
+.. rst-class:: classref-property-setget
+
+- void **set_normal_map** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_normal_map** **(** **)**
 
 Normal map to be used for the :ref:`texture<class_Particles2D_property_texture>` property.
 
 \ **Note:** Godot expects the normal map to use X+, Y-, and Z+ coordinates. See `this page <http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates>`__ for a comparison of normal map coordinates expected by popular engines.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Particles2D_property_one_shot:
 
-- :ref:`bool<class_bool>` **one_shot**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_one_shot(value) |
-+-----------+---------------------+
-| *Getter*  | get_one_shot()      |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **one_shot** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_one_shot** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_one_shot** **(** **)**
 
 If ``true``, only one emission cycle occurs. If set ``true`` during a cycle, emission will stop at the cycle's end.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_preprocess:
 
-- :ref:`float<class_float>` **preprocess**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0.0``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_pre_process_time(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_pre_process_time()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **preprocess** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pre_process_time** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_pre_process_time** **(** **)**
 
 Particle system starts as if it had already run for this many seconds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_process_material:
 
-- :ref:`Material<class_Material>` **process_material**
+.. rst-class:: classref-property
 
-+----------+-----------------------------+
-| *Setter* | set_process_material(value) |
-+----------+-----------------------------+
-| *Getter* | get_process_material()      |
-+----------+-----------------------------+
+:ref:`Material<class_Material>` **process_material**
+
+.. rst-class:: classref-property-setget
+
+- void **set_process_material** **(** :ref:`Material<class_Material>` value **)**
+- :ref:`Material<class_Material>` **get_process_material** **(** **)**
 
 :ref:`Material<class_Material>` for processing particles. Can be a :ref:`ParticlesMaterial<class_ParticlesMaterial>` or a :ref:`ShaderMaterial<class_ShaderMaterial>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_randomness:
 
-- :ref:`float<class_float>` **randomness**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------+
-| *Default* | ``0.0``                     |
-+-----------+-----------------------------+
-| *Setter*  | set_randomness_ratio(value) |
-+-----------+-----------------------------+
-| *Getter*  | get_randomness_ratio()      |
-+-----------+-----------------------------+
+:ref:`float<class_float>` **randomness** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_randomness_ratio** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_randomness_ratio** **(** **)**
 
 Emission lifetime randomness ratio.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_speed_scale:
 
-- :ref:`float<class_float>` **speed_scale**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``1.0``                |
-+-----------+------------------------+
-| *Setter*  | set_speed_scale(value) |
-+-----------+------------------------+
-| *Getter*  | get_speed_scale()      |
-+-----------+------------------------+
+:ref:`float<class_float>` **speed_scale** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_speed_scale** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_speed_scale** **(** **)**
 
 Particle system's running speed scaling ratio. A value of ``0`` can be used to pause the particles.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_texture:
 
-- :ref:`Texture<class_Texture>` **texture**
+.. rst-class:: classref-property
 
-+----------+--------------------+
-| *Setter* | set_texture(value) |
-+----------+--------------------+
-| *Getter* | get_texture()      |
-+----------+--------------------+
+:ref:`Texture<class_Texture>` **texture**
+
+.. rst-class:: classref-property-setget
+
+- void **set_texture** **(** :ref:`Texture<class_Texture>` value **)**
+- :ref:`Texture<class_Texture>` **get_texture** **(** **)**
 
 Particle texture. If ``null``, particles will be squares.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_property_visibility_rect:
 
-- :ref:`Rect2<class_Rect2>` **visibility_rect**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------+
-| *Default* | ``Rect2( -100, -100, 200, 200 )`` |
-+-----------+-----------------------------------+
-| *Setter*  | set_visibility_rect(value)        |
-+-----------+-----------------------------------+
-| *Getter*  | get_visibility_rect()             |
-+-----------+-----------------------------------+
+:ref:`Rect2<class_Rect2>` **visibility_rect** = ``Rect2( -100, -100, 200, 200 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visibility_rect** **(** :ref:`Rect2<class_Rect2>` value **)**
+- :ref:`Rect2<class_Rect2>` **get_visibility_rect** **(** **)**
 
 The :ref:`Rect2<class_Rect2>` that determines the node's region which needs to be visible on screen for the particle system to be active.
 
 Grow the rect if particles suddenly appear/disappear when the node enters/exits the screen. The :ref:`Rect2<class_Rect2>` can be grown via code or with the **Particles → Generate Visibility Rect** editor tool.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Particles2D_method_capture_rect:
 
-- :ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **capture_rect** **(** **)** |const|
 
 Returns a rectangle containing the positions of all existing particles.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Particles2D_method_restart:
 
-- void **restart** **(** **)**
+.. rst-class:: classref-method
+
+void **restart** **(** **)**
 
 Restarts all the existing particles.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

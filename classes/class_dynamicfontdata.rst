@@ -14,113 +14,151 @@ DynamicFontData
 
 Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a font file.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a vector font file for dynamic rendering at runtime.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - `3D Voxel Demo <https://godotengine.org/asset-library/asset/676>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+----------------------------------------------+------------------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>`                     | ``true`` |
-+----------------------------------------------+------------------------------------------------------------------------------------+----------+
-| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`                         | ``""``   |
-+----------------------------------------------+------------------------------------------------------------------------------------+----------+
-| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`                             | ``2``    |
-+----------------------------------------------+------------------------------------------------------------------------------------+----------+
-| :ref:`float<class_float>`                    | :ref:`override_oversampling<class_DynamicFontData_property_override_oversampling>` | ``0.0``  |
-+----------------------------------------------+------------------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------+------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>`                     | ``true`` |
+   +----------------------------------------------+------------------------------------------------------------------------------------+----------+
+   | :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`                         | ``""``   |
+   +----------------------------------------------+------------------------------------------------------------------------------------+----------+
+   | :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`                             | ``2``    |
+   +----------------------------------------------+------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                    | :ref:`override_oversampling<class_DynamicFontData_property_override_oversampling>` | ``0.0``  |
+   +----------------------------------------------+------------------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_DynamicFontData_Hinting:
 
-.. _class_DynamicFontData_constant_HINTING_NONE:
-
-.. _class_DynamicFontData_constant_HINTING_LIGHT:
-
-.. _class_DynamicFontData_constant_HINTING_NORMAL:
+.. rst-class:: classref-enumeration
 
 enum **Hinting**:
 
-- **HINTING_NONE** = **0** --- Disables font hinting (smoother but less crisp).
+.. _class_DynamicFontData_constant_HINTING_NONE:
 
-- **HINTING_LIGHT** = **1** --- Use the light font hinting mode.
+.. rst-class:: classref-enumeration-constant
 
-- **HINTING_NORMAL** = **2** --- Use the default font hinting mode (crisper but less smooth).
+:ref:`Hinting<enum_DynamicFontData_Hinting>` **HINTING_NONE** = ``0``
+
+Disables font hinting (smoother but less crisp).
+
+.. _class_DynamicFontData_constant_HINTING_LIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Hinting<enum_DynamicFontData_Hinting>` **HINTING_LIGHT** = ``1``
+
+Use the light font hinting mode.
+
+.. _class_DynamicFontData_constant_HINTING_NORMAL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Hinting<enum_DynamicFontData_Hinting>` **HINTING_NORMAL** = ``2``
+
+Use the default font hinting mode (crisper but less smooth).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_DynamicFontData_property_antialiased:
 
-- :ref:`bool<class_bool>` **antialiased**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``true``               |
-+-----------+------------------------+
-| *Setter*  | set_antialiased(value) |
-+-----------+------------------------+
-| *Getter*  | is_antialiased()       |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **antialiased** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_antialiased** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_antialiased** **(** **)**
 
 If ``true``, the font is rendered with anti-aliasing. This property applies both to the main font and its outline (if it has one).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_DynamicFontData_property_font_path:
 
-- :ref:`String<class_String>` **font_path**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``""``               |
-+-----------+----------------------+
-| *Setter*  | set_font_path(value) |
-+-----------+----------------------+
-| *Getter*  | get_font_path()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **font_path** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_font_path** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_font_path** **(** **)**
 
 The path to the vector font file.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_DynamicFontData_property_hinting:
 
-- :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``2``              |
-+-----------+--------------------+
-| *Setter*  | set_hinting(value) |
-+-----------+--------------------+
-| *Getter*  | get_hinting()      |
-+-----------+--------------------+
+:ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting** = ``2``
+
+.. rst-class:: classref-property-setget
+
+- void **set_hinting** **(** :ref:`Hinting<enum_DynamicFontData_Hinting>` value **)**
+- :ref:`Hinting<enum_DynamicFontData_Hinting>` **get_hinting** **(** **)**
 
 The font hinting mode used by FreeType. See :ref:`Hinting<enum_DynamicFontData_Hinting>` for options.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_DynamicFontData_property_override_oversampling:
 
-- :ref:`float<class_float>` **override_oversampling**
+.. rst-class:: classref-property
 
-+-----------+----------------------------------+
-| *Default* | ``0.0``                          |
-+-----------+----------------------------------+
-| *Setter*  | set_override_oversampling(value) |
-+-----------+----------------------------------+
-| *Getter*  | get_override_oversampling()      |
-+-----------+----------------------------------+
+:ref:`float<class_float>` **override_oversampling** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_override_oversampling** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_override_oversampling** **(** **)**
 
 If set to a value greater than ``0.0``, it will override default font oversampling, ignoring :ref:`SceneTree.use_font_oversampling<class_SceneTree_property_use_font_oversampling>` value and viewport stretch mode.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

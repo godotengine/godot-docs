@@ -14,70 +14,106 @@ VisualScriptYield
 
 A Visual Script node used to pause a function execution.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``VisualScriptYield`` will pause the function call and return :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`, which can be used to resume the function.
+**VisualScriptYield** will pause the function call and return :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`, which can be used to resume the function.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+----------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` | :ref:`mode<class_VisualScriptYield_property_mode>`           | ``1`` |
-+----------------------------------------------------+--------------------------------------------------------------+-------+
-| :ref:`float<class_float>`                          | :ref:`wait_time<class_VisualScriptYield_property_wait_time>` |       |
-+----------------------------------------------------+--------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------------+--------------------------------------------------------------+-------+
+   | :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` | :ref:`mode<class_VisualScriptYield_property_mode>`           | ``1`` |
+   +----------------------------------------------------+--------------------------------------------------------------+-------+
+   | :ref:`float<class_float>`                          | :ref:`wait_time<class_VisualScriptYield_property_wait_time>` |       |
+   +----------------------------------------------------+--------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptYield_YieldMode:
 
-.. _class_VisualScriptYield_constant_YIELD_FRAME:
-
-.. _class_VisualScriptYield_constant_YIELD_PHYSICS_FRAME:
-
-.. _class_VisualScriptYield_constant_YIELD_WAIT:
+.. rst-class:: classref-enumeration
 
 enum **YieldMode**:
 
-- **YIELD_FRAME** = **1** --- Yields during an idle frame.
+.. _class_VisualScriptYield_constant_YIELD_FRAME:
 
-- **YIELD_PHYSICS_FRAME** = **2** --- Yields during a physics frame.
+.. rst-class:: classref-enumeration-constant
 
-- **YIELD_WAIT** = **3** --- Yields a function and waits the given time.
+:ref:`YieldMode<enum_VisualScriptYield_YieldMode>` **YIELD_FRAME** = ``1``
+
+Yields during an idle frame.
+
+.. _class_VisualScriptYield_constant_YIELD_PHYSICS_FRAME:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`YieldMode<enum_VisualScriptYield_YieldMode>` **YIELD_PHYSICS_FRAME** = ``2``
+
+Yields during a physics frame.
+
+.. _class_VisualScriptYield_constant_YIELD_WAIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`YieldMode<enum_VisualScriptYield_YieldMode>` **YIELD_WAIT** = ``3``
+
+Yields a function and waits the given time.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptYield_property_mode:
 
-- :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` **mode**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``1``                 |
-+-----------+-----------------------+
-| *Setter*  | set_yield_mode(value) |
-+-----------+-----------------------+
-| *Getter*  | get_yield_mode()      |
-+-----------+-----------------------+
+:ref:`YieldMode<enum_VisualScriptYield_YieldMode>` **mode** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_yield_mode** **(** :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` value **)**
+- :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` **get_yield_mode** **(** **)**
 
 The mode to use for yielding. See :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` for available options.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptYield_property_wait_time:
 
-- :ref:`float<class_float>` **wait_time**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_wait_time(value) |
-+----------+----------------------+
-| *Getter* | get_wait_time()      |
-+----------+----------------------+
+:ref:`float<class_float>` **wait_time**
+
+.. rst-class:: classref-property-setget
+
+- void **set_wait_time** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_wait_time** **(** **)**
 
 The time to wait when :ref:`mode<class_VisualScriptYield_property_mode>` is set to :ref:`YIELD_WAIT<class_VisualScriptYield_constant_YIELD_WAIT>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

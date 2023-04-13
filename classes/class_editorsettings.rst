@@ -14,6 +14,8 @@ EditorSettings
 
 Object that holds the project-independent editor settings.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -35,1767 +37,3213 @@ Accessing the settings can be done using the following methods, such as:
 
 \ **Note:** This class shouldn't be instantiated directly. Instead, access the singleton using :ref:`EditorInterface.get_editor_settings<class_EditorInterface_method_get_editor_settings>`.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`docks/filesystem/always_show_folders<class_EditorSettings_property_docks/filesystem/always_show_folders>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`docks/filesystem/thumbnail_size<class_EditorSettings_property_docks/filesystem/thumbnail_size>`                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`docks/property_editor/auto_refresh_interval<class_EditorSettings_property_docks/property_editor/auto_refresh_interval>`                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`docks/property_editor/subresource_hue_tint<class_EditorSettings_property_docks/property_editor/subresource_hue_tint>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`docks/scene_tree/start_create_dialog_fully_expanded<class_EditorSettings_property_docks/scene_tree/start_create_dialog_fully_expanded>`                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_color1<class_EditorSettings_property_editors/2d/bone_color1>`                                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_color2<class_EditorSettings_property_editors/2d/bone_color2>`                                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_ik_color<class_EditorSettings_property_editors/2d/bone_ik_color>`                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_outline_color<class_EditorSettings_property_editors/2d/bone_outline_color>`                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_selected_color<class_EditorSettings_property_editors/2d/bone_selected_color>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`                                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/2d/constrain_editor_view<class_EditorSettings_property_editors/2d/constrain_editor_view>`                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/2d/grid_color<class_EditorSettings_property_editors/2d/grid_color>`                                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/2d/guides_color<class_EditorSettings_property_editors/2d/guides_color>`                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/2d/pan_speed<class_EditorSettings_property_editors/2d/pan_speed>`                                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/2d/scroll_to_pan<class_EditorSettings_property_editors/2d/scroll_to_pan>`                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/2d/simple_panning<class_EditorSettings_property_editors/2d/simple_panning>`                                                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/2d/smart_snapping_line_color<class_EditorSettings_property_editors/2d/smart_snapping_line_color>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/2d/viewport_border_color<class_EditorSettings_property_editors/2d/viewport_border_color>`                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/2d/warped_mouse_panning<class_EditorSettings_property_editors/2d/warped_mouse_panning>`                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/default_fov<class_EditorSettings_property_editors/3d/default_fov>`                                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/default_z_far<class_EditorSettings_property_editors/3d/default_z_far>`                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/default_z_near<class_EditorSettings_property_editors/3d/default_z_near>`                                                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/freelook/freelook_activation_modifier<class_EditorSettings_property_editors/3d/freelook/freelook_activation_modifier>`                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/freelook/freelook_base_speed<class_EditorSettings_property_editors/3d/freelook/freelook_base_speed>`                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/freelook/freelook_inertia<class_EditorSettings_property_editors/3d/freelook/freelook_inertia>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/freelook/freelook_sensitivity<class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/3d/freelook/freelook_speed_zoom_link<class_EditorSettings_property_editors/3d/freelook/freelook_speed_zoom_link>`                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/grid_division_level_bias<class_EditorSettings_property_editors/3d/grid_division_level_bias>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/grid_division_level_max<class_EditorSettings_property_editors/3d/grid_division_level_max>`                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/grid_division_level_min<class_EditorSettings_property_editors/3d/grid_division_level_min>`                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/grid_size<class_EditorSettings_property_editors/3d/grid_size>`                                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/3d/grid_xy_plane<class_EditorSettings_property_editors/3d/grid_xy_plane>`                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/3d/grid_xz_plane<class_EditorSettings_property_editors/3d/grid_xz_plane>`                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/3d/grid_yz_plane<class_EditorSettings_property_editors/3d/grid_yz_plane>`                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/lightmap_baking_number_of_cpu_threads<class_EditorSettings_property_editors/3d/lightmap_baking_number_of_cpu_threads>`                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/emulate_3_button_mouse<class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse>`                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/emulate_numpad<class_EditorSettings_property_editors/3d/navigation/emulate_numpad>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/invert_x_axis<class_EditorSettings_property_editors/3d/navigation/invert_x_axis>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/invert_y_axis<class_EditorSettings_property_editors/3d/navigation/invert_y_axis>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/navigation_scheme<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/orbit_modifier<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/pan_modifier<class_EditorSettings_property_editors/3d/navigation/pan_modifier>`                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/warped_mouse_panning<class_EditorSettings_property_editors/3d/navigation/warped_mouse_panning>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/zoom_modifier<class_EditorSettings_property_editors/3d/navigation/zoom_modifier>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/navigation/zoom_style<class_EditorSettings_property_editors/3d/navigation/zoom_style>`                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/orbit_inertia<class_EditorSettings_property_editors/3d/navigation_feel/orbit_inertia>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/orbit_sensitivity<class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity>`                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/translation_inertia<class_EditorSettings_property_editors/3d/navigation_feel/translation_inertia>`                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/zoom_inertia<class_EditorSettings_property_editors/3d/navigation_feel/zoom_inertia>`                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>`                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/3d/secondary_grid_color<class_EditorSettings_property_editors/3d/secondary_grid_color>`                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/3d/selection_box_color<class_EditorSettings_property_editors/3d/selection_box_color>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/instanced<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/instanced>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/joint<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/joint>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/shape<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/shape>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/animation/confirm_insert_track<class_EditorSettings_property_editors/animation/confirm_insert_track>`                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/animation/default_create_bezier_tracks<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/animation/default_create_reset_tracks<class_EditorSettings_property_editors/animation/default_create_reset_tracks>`                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/animation/onion_layers_future_color<class_EditorSettings_property_editors/animation/onion_layers_future_color>`                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`editors/animation/onion_layers_past_color<class_EditorSettings_property_editors/animation/onion_layers_past_color>`                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/grid_map/pick_distance<class_EditorSettings_property_editors/grid_map/pick_distance>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/grid_map/preview_size<class_EditorSettings_property_editors/grid_map/preview_size>`                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`editors/poly_editor/point_grab_radius<class_EditorSettings_property_editors/poly_editor/point_grab_radius>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`editors/poly_editor/show_previous_outline<class_EditorSettings_property_editors/poly_editor/show_previous_outline>`                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`editors/visual_editors/minimap_opacity<class_EditorSettings_property_editors/visual_editors/minimap_opacity>`                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`filesystem/directories/autoscan_project_path<class_EditorSettings_property_filesystem/directories/autoscan_project_path>`                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>`                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/display_mode<class_EditorSettings_property_filesystem/file_dialog/display_mode>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`filesystem/file_dialog/show_hidden_files<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/compress_binary_resources<class_EditorSettings_property_filesystem/on_save/compress_binary_resources>`                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/safe_save_on_backup_then_rename<class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename>`                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/editor/automatically_open_screenshots<class_EditorSettings_property_interface/editor/automatically_open_screenshots>`                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`interface/editor/code_font<class_EditorSettings_property_interface/editor/code_font>`                                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/editor/dim_editor_on_dialog_popup<class_EditorSettings_property_interface/editor/dim_editor_on_dialog_popup>`                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`interface/editor/editor_language<class_EditorSettings_property_interface/editor/editor_language>`                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/editor/font_antialiased<class_EditorSettings_property_interface/editor/font_antialiased>`                                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`interface/editor/font_hinting<class_EditorSettings_property_interface/editor/font_hinting>`                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`interface/editor/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`interface/editor/main_font<class_EditorSettings_property_interface/editor/main_font>`                                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`interface/editor/main_font_bold<class_EditorSettings_property_interface/editor/main_font_bold>`                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`interface/editor/main_font_size<class_EditorSettings_property_interface/editor/main_font_size>`                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/editor/quit_confirmation<class_EditorSettings_property_interface/editor/quit_confirmation>`                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/editor/save_each_scene_on_quit<class_EditorSettings_property_interface/editor/save_each_scene_on_quit>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/editor/separate_distraction_mode<class_EditorSettings_property_interface/editor/separate_distraction_mode>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`interface/inspector/max_array_dictionary_items_per_page<class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page>`               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`interface/scene_tabs/minimum_width<class_EditorSettings_property_interface/scene_tabs/minimum_width>`                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/scene_tabs/resize_if_many_tabs<class_EditorSettings_property_interface/scene_tabs/resize_if_many_tabs>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/scene_tabs/show_script_button<class_EditorSettings_property_interface/scene_tabs/show_script_button>`                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/scene_tabs/show_thumbnail_on_hover<class_EditorSettings_property_interface/scene_tabs/show_thumbnail_on_hover>`                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`interface/theme/accent_color<class_EditorSettings_property_interface/theme/accent_color>`                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`interface/theme/additional_spacing<class_EditorSettings_property_interface/theme/additional_spacing>`                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`                                                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`interface/theme/border_size<class_EditorSettings_property_interface/theme/border_size>`                                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`interface/theme/contrast<class_EditorSettings_property_interface/theme/contrast>`                                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`interface/theme/custom_theme<class_EditorSettings_property_interface/theme/custom_theme>`                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/theme/highlight_tabs<class_EditorSettings_property_interface/theme/highlight_tabs>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`interface/theme/icon_and_font_color<class_EditorSettings_property_interface/theme/icon_and_font_color>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`interface/theme/preset<class_EditorSettings_property_interface/theme/preset>`                                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`interface/theme/relationship_line_opacity<class_EditorSettings_property_interface/theme/relationship_line_opacity>`                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`interface/theme/use_graph_node_headers<class_EditorSettings_property_interface/theme/use_graph_node_headers>`                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`network/debug/remote_host<class_EditorSettings_property_network/debug/remote_host>`                                                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`network/debug/remote_port<class_EditorSettings_property_network/debug/remote_port>`                                                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`network/ssl/editor_ssl_certificates<class_EditorSettings_property_network/ssl/editor_ssl_certificates>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`project_manager/sorting_order<class_EditorSettings_property_project_manager/sorting_order>`                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`run/auto_save/save_before_running<class_EditorSettings_property_run/auto_save/save_before_running>`                                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`run/output/always_clear_output_on_play<class_EditorSettings_property_run/output/always_clear_output_on_play>`                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`run/output/always_close_output_on_stop<class_EditorSettings_property_run/output/always_close_output_on_stop>`                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`run/output/always_open_output_on_play<class_EditorSettings_property_run/output/always_open_output_on_play>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`                                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>`                                                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`run/window_placement/rect_custom_position<class_EditorSettings_property_run/window_placement/rect_custom_position>`                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`run/window_placement/screen<class_EditorSettings_property_run/window_placement/screen>`                                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/code_folding<class_EditorSettings_property_text_editor/appearance/code_folding>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/appearance/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_hard_column>`             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/appearance/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_soft_column>`             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/line_numbers_zero_padded<class_EditorSettings_property_text_editor/appearance/line_numbers_zero_padded>`                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_bookmark_gutter<class_EditorSettings_property_text_editor/appearance/show_bookmark_gutter>`                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_breakpoint_gutter<class_EditorSettings_property_text_editor/appearance/show_breakpoint_gutter>`                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_info_gutter<class_EditorSettings_property_text_editor/appearance/show_info_gutter>`                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_line_length_guidelines<class_EditorSettings_property_text_editor/appearance/show_line_length_guidelines>`                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_line_numbers<class_EditorSettings_property_text_editor/appearance/show_line_numbers>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/word_wrap<class_EditorSettings_property_text_editor/appearance/word_wrap>`                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/add_type_hints<class_EditorSettings_property_text_editor/completion/add_type_hints>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/auto_brace_complete<class_EditorSettings_property_text_editor/completion/auto_brace_complete>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_Vector2>` | :ref:`text_editor/completion/callhint_tooltip_offset<class_EditorSettings_property_text_editor/completion/callhint_tooltip_offset>`                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/complete_file_paths<class_EditorSettings_property_text_editor/completion/complete_file_paths>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`text_editor/completion/idle_parse_delay<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/put_callhint_tooltip_below_current_line<class_EditorSettings_property_text_editor/completion/put_callhint_tooltip_below_current_line>` |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/completion/use_single_quotes<class_EditorSettings_property_text_editor/completion/use_single_quotes>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/block_caret<class_EditorSettings_property_text_editor/cursor/block_caret>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/caret_blink<class_EditorSettings_property_text_editor/cursor/caret_blink>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`     | :ref:`text_editor/cursor/caret_blink_speed<class_EditorSettings_property_text_editor/cursor/caret_blink_speed>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/right_click_moves_caret<class_EditorSettings_property_text_editor/cursor/right_click_moves_caret>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/scroll_past_end_of_file<class_EditorSettings_property_text_editor/cursor/scroll_past_end_of_file>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/files/auto_reload_and_parse_scripts_on_save<class_EditorSettings_property_text_editor/files/auto_reload_and_parse_scripts_on_save>`               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/files/auto_reload_scripts_on_external_change<class_EditorSettings_property_text_editor/files/auto_reload_scripts_on_external_change>`             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/files/autosave_interval_secs<class_EditorSettings_property_text_editor/files/autosave_interval_secs>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/files/restore_scripts_on_load<class_EditorSettings_property_text_editor/files/restore_scripts_on_load>`                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/files/trim_trailing_whitespace_on_save<class_EditorSettings_property_text_editor/files/trim_trailing_whitespace_on_save>`                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/help/help_font_size<class_EditorSettings_property_text_editor/help/help_font_size>`                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/help/help_source_font_size<class_EditorSettings_property_text_editor/help/help_source_font_size>`                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/help/help_title_font_size<class_EditorSettings_property_text_editor/help/help_title_font_size>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/help/show_help_index<class_EditorSettings_property_text_editor/help/show_help_index>`                                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/background_color<class_EditorSettings_property_text_editor/highlighting/background_color>`                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/base_type_color<class_EditorSettings_property_text_editor/highlighting/base_type_color>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/bookmark_color<class_EditorSettings_property_text_editor/highlighting/bookmark_color>`                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/brace_mismatch_color<class_EditorSettings_property_text_editor/highlighting/brace_mismatch_color>`                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/breakpoint_color<class_EditorSettings_property_text_editor/highlighting/breakpoint_color>`                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/caret_background_color<class_EditorSettings_property_text_editor/highlighting/caret_background_color>`                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/caret_color<class_EditorSettings_property_text_editor/highlighting/caret_color>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/code_folding_color<class_EditorSettings_property_text_editor/highlighting/code_folding_color>`                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/comment_color<class_EditorSettings_property_text_editor/highlighting/comment_color>`                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_background_color<class_EditorSettings_property_text_editor/highlighting/completion_background_color>`                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_existing_color<class_EditorSettings_property_text_editor/highlighting/completion_existing_color>`                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_font_color<class_EditorSettings_property_text_editor/highlighting/completion_font_color>`                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_scroll_color<class_EditorSettings_property_text_editor/highlighting/completion_scroll_color>`                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_selected_color<class_EditorSettings_property_text_editor/highlighting/completion_selected_color>`                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/control_flow_keyword_color<class_EditorSettings_property_text_editor/highlighting/control_flow_keyword_color>`                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/current_line_color<class_EditorSettings_property_text_editor/highlighting/current_line_color>`                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/engine_type_color<class_EditorSettings_property_text_editor/highlighting/engine_type_color>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/executing_line_color<class_EditorSettings_property_text_editor/highlighting/executing_line_color>`                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/function_color<class_EditorSettings_property_text_editor/highlighting/function_color>`                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/highlight_all_occurrences<class_EditorSettings_property_text_editor/highlighting/highlight_all_occurrences>`                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/highlight_current_line<class_EditorSettings_property_text_editor/highlighting/highlight_current_line>`                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/highlight_type_safe_lines<class_EditorSettings_property_text_editor/highlighting/highlight_type_safe_lines>`                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/keyword_color<class_EditorSettings_property_text_editor/highlighting/keyword_color>`                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/line_length_guideline_color<class_EditorSettings_property_text_editor/highlighting/line_length_guideline_color>`                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/line_number_color<class_EditorSettings_property_text_editor/highlighting/line_number_color>`                                         |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/mark_color<class_EditorSettings_property_text_editor/highlighting/mark_color>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/member_variable_color<class_EditorSettings_property_text_editor/highlighting/member_variable_color>`                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/number_color<class_EditorSettings_property_text_editor/highlighting/number_color>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/highlighting/safe_line_number_color>`                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/search_result_border_color<class_EditorSettings_property_text_editor/highlighting/search_result_border_color>`                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/search_result_color<class_EditorSettings_property_text_editor/highlighting/search_result_color>`                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/selection_color<class_EditorSettings_property_text_editor/highlighting/selection_color>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/string_color<class_EditorSettings_property_text_editor/highlighting/string_color>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/symbol_color<class_EditorSettings_property_text_editor/highlighting/symbol_color>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/syntax_highlighting<class_EditorSettings_property_text_editor/highlighting/syntax_highlighting>`                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/text_color<class_EditorSettings_property_text_editor/highlighting/text_color>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/text_selected_color<class_EditorSettings_property_text_editor/highlighting/text_selected_color>`                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/user_type_color<class_EditorSettings_property_text_editor/highlighting/user_type_color>`                                             |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/word_highlighted_color<class_EditorSettings_property_text_editor/highlighting/word_highlighted_color>`                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/indent/auto_indent<class_EditorSettings_property_text_editor/indent/auto_indent>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/indent/convert_indent_on_save<class_EditorSettings_property_text_editor/indent/convert_indent_on_save>`                                           |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/indent/draw_spaces<class_EditorSettings_property_text_editor/indent/draw_spaces>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/indent/draw_tabs<class_EditorSettings_property_text_editor/indent/draw_tabs>`                                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/indent/size<class_EditorSettings_property_text_editor/indent/size>`                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/indent/type<class_EditorSettings_property_text_editor/indent/type>`                                                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/drag_and_drop_selection<class_EditorSettings_property_text_editor/navigation/drag_and_drop_selection>`                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/navigation/minimap_width<class_EditorSettings_property_text_editor/navigation/minimap_width>`                                                     |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/mouse_extra_buttons_navigate_history<class_EditorSettings_property_text_editor/navigation/mouse_extra_buttons_navigate_history>`       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/show_minimap<class_EditorSettings_property_text_editor/navigation/show_minimap>`                                                       |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/navigation/smooth_scrolling>`                                               |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/stay_in_script_editor_on_node_selected<class_EditorSettings_property_text_editor/navigation/stay_in_script_editor_on_node_selected>`   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/navigation/v_scroll_speed<class_EditorSettings_property_text_editor/navigation/v_scroll_speed>`                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/script_list/show_members_overview<class_EditorSettings_property_text_editor/script_list/show_members_overview>`                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`   | :ref:`text_editor/theme/color_theme<class_EditorSettings_property_text_editor/theme/color_theme>`                                                                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`         | :ref:`text_editor/theme/line_spacing<class_EditorSettings_property_text_editor/theme/line_spacing>`                                                                 |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`       | :ref:`text_editor/tools/sort_members_outline_alphabetically<class_EditorSettings_property_text_editor/tools/sort_members_outline_alphabetically>`                   |
-+-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`docks/filesystem/always_show_folders<class_EditorSettings_property_docks/filesystem/always_show_folders>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`docks/filesystem/thumbnail_size<class_EditorSettings_property_docks/filesystem/thumbnail_size>`                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`docks/property_editor/auto_refresh_interval<class_EditorSettings_property_docks/property_editor/auto_refresh_interval>`                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`docks/property_editor/subresource_hue_tint<class_EditorSettings_property_docks/property_editor/subresource_hue_tint>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`docks/scene_tree/start_create_dialog_fully_expanded<class_EditorSettings_property_docks/scene_tree/start_create_dialog_fully_expanded>`                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_color1<class_EditorSettings_property_editors/2d/bone_color1>`                                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_color2<class_EditorSettings_property_editors/2d/bone_color2>`                                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_ik_color<class_EditorSettings_property_editors/2d/bone_ik_color>`                                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_outline_color<class_EditorSettings_property_editors/2d/bone_outline_color>`                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`                                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/2d/bone_selected_color<class_EditorSettings_property_editors/2d/bone_selected_color>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`                                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/2d/constrain_editor_view<class_EditorSettings_property_editors/2d/constrain_editor_view>`                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/2d/grid_color<class_EditorSettings_property_editors/2d/grid_color>`                                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/2d/guides_color<class_EditorSettings_property_editors/2d/guides_color>`                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/2d/pan_speed<class_EditorSettings_property_editors/2d/pan_speed>`                                                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/2d/scroll_to_pan<class_EditorSettings_property_editors/2d/scroll_to_pan>`                                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/2d/simple_panning<class_EditorSettings_property_editors/2d/simple_panning>`                                                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/2d/smart_snapping_line_color<class_EditorSettings_property_editors/2d/smart_snapping_line_color>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/2d/viewport_border_color<class_EditorSettings_property_editors/2d/viewport_border_color>`                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/2d/warped_mouse_panning<class_EditorSettings_property_editors/2d/warped_mouse_panning>`                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/default_fov<class_EditorSettings_property_editors/3d/default_fov>`                                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/default_z_far<class_EditorSettings_property_editors/3d/default_z_far>`                                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/default_z_near<class_EditorSettings_property_editors/3d/default_z_near>`                                                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/freelook/freelook_activation_modifier<class_EditorSettings_property_editors/3d/freelook/freelook_activation_modifier>`                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/freelook/freelook_base_speed<class_EditorSettings_property_editors/3d/freelook/freelook_base_speed>`                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/freelook/freelook_inertia<class_EditorSettings_property_editors/3d/freelook/freelook_inertia>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/freelook/freelook_sensitivity<class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/3d/freelook/freelook_speed_zoom_link<class_EditorSettings_property_editors/3d/freelook/freelook_speed_zoom_link>`                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/grid_division_level_bias<class_EditorSettings_property_editors/3d/grid_division_level_bias>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/grid_division_level_max<class_EditorSettings_property_editors/3d/grid_division_level_max>`                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/grid_division_level_min<class_EditorSettings_property_editors/3d/grid_division_level_min>`                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/grid_size<class_EditorSettings_property_editors/3d/grid_size>`                                                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/3d/grid_xy_plane<class_EditorSettings_property_editors/3d/grid_xy_plane>`                                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/3d/grid_xz_plane<class_EditorSettings_property_editors/3d/grid_xz_plane>`                                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/3d/grid_yz_plane<class_EditorSettings_property_editors/3d/grid_yz_plane>`                                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/lightmap_baking_number_of_cpu_threads<class_EditorSettings_property_editors/3d/lightmap_baking_number_of_cpu_threads>`                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/emulate_3_button_mouse<class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse>`                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/emulate_numpad<class_EditorSettings_property_editors/3d/navigation/emulate_numpad>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/invert_x_axis<class_EditorSettings_property_editors/3d/navigation/invert_x_axis>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/invert_y_axis<class_EditorSettings_property_editors/3d/navigation/invert_y_axis>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/navigation/navigation_scheme<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/navigation/orbit_modifier<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/navigation/pan_modifier<class_EditorSettings_property_editors/3d/navigation/pan_modifier>`                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/3d/navigation/warped_mouse_panning<class_EditorSettings_property_editors/3d/navigation/warped_mouse_panning>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/navigation/zoom_modifier<class_EditorSettings_property_editors/3d/navigation/zoom_modifier>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/navigation/zoom_style<class_EditorSettings_property_editors/3d/navigation/zoom_style>`                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/orbit_inertia<class_EditorSettings_property_editors/3d/navigation_feel/orbit_inertia>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/orbit_sensitivity<class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity>`                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/translation_inertia<class_EditorSettings_property_editors/3d/navigation_feel/translation_inertia>`                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/3d/navigation_feel/zoom_inertia<class_EditorSettings_property_editors/3d/navigation_feel/zoom_inertia>`                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>`                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/3d/primary_grid_steps<class_EditorSettings_property_editors/3d/primary_grid_steps>`                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/3d/secondary_grid_color<class_EditorSettings_property_editors/3d/secondary_grid_color>`                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/3d/selection_box_color<class_EditorSettings_property_editors/3d/selection_box_color>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/instanced<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/instanced>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/joint<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/joint>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/3d_gizmos/gizmo_colors/shape<class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/shape>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/animation/autorename_animation_tracks<class_EditorSettings_property_editors/animation/autorename_animation_tracks>`                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/animation/confirm_insert_track<class_EditorSettings_property_editors/animation/confirm_insert_track>`                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/animation/default_create_bezier_tracks<class_EditorSettings_property_editors/animation/default_create_bezier_tracks>`                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/animation/default_create_reset_tracks<class_EditorSettings_property_editors/animation/default_create_reset_tracks>`                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/animation/onion_layers_future_color<class_EditorSettings_property_editors/animation/onion_layers_future_color>`                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`editors/animation/onion_layers_past_color<class_EditorSettings_property_editors/animation/onion_layers_past_color>`                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/grid_map/pick_distance<class_EditorSettings_property_editors/grid_map/pick_distance>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/grid_map/preview_size<class_EditorSettings_property_editors/grid_map/preview_size>`                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`editors/poly_editor/point_grab_radius<class_EditorSettings_property_editors/poly_editor/point_grab_radius>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/poly_editor/show_previous_outline<class_EditorSettings_property_editors/poly_editor/show_previous_outline>`                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`editors/visual_editors/minimap_opacity<class_EditorSettings_property_editors/visual_editors/minimap_opacity>`                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/directories/autoscan_project_path<class_EditorSettings_property_filesystem/directories/autoscan_project_path>`                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>`                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/display_mode<class_EditorSettings_property_filesystem/file_dialog/display_mode>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`filesystem/file_dialog/show_hidden_files<class_EditorSettings_property_filesystem/file_dialog/show_hidden_files>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/compress_binary_resources<class_EditorSettings_property_filesystem/on_save/compress_binary_resources>`                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`filesystem/on_save/safe_save_on_backup_then_rename<class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename>`                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/accept_dialog_cancel_ok_buttons<class_EditorSettings_property_interface/editor/accept_dialog_cancel_ok_buttons>`                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/editor/automatically_open_screenshots<class_EditorSettings_property_interface/editor/automatically_open_screenshots>`                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`interface/editor/code_font<class_EditorSettings_property_interface/editor/code_font>`                                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/editor/dim_editor_on_dialog_popup<class_EditorSettings_property_interface/editor/dim_editor_on_dialog_popup>`                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`interface/editor/editor_language<class_EditorSettings_property_interface/editor/editor_language>`                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/editor/font_antialiased<class_EditorSettings_property_interface/editor/font_antialiased>`                                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/font_hinting<class_EditorSettings_property_interface/editor/font_hinting>`                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/editor/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`interface/editor/main_font<class_EditorSettings_property_interface/editor/main_font>`                                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`interface/editor/main_font_bold<class_EditorSettings_property_interface/editor/main_font_bold>`                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/main_font_size<class_EditorSettings_property_interface/editor/main_font_size>`                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/editor/quit_confirmation<class_EditorSettings_property_interface/editor/quit_confirmation>`                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/editor/save_each_scene_on_quit<class_EditorSettings_property_interface/editor/save_each_scene_on_quit>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/editor/separate_distraction_mode<class_EditorSettings_property_interface/editor/separate_distraction_mode>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/inspector/max_array_dictionary_items_per_page<class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page>`               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/scene_tabs/minimum_width<class_EditorSettings_property_interface/scene_tabs/minimum_width>`                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/scene_tabs/resize_if_many_tabs<class_EditorSettings_property_interface/scene_tabs/resize_if_many_tabs>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/scene_tabs/show_script_button<class_EditorSettings_property_interface/scene_tabs/show_script_button>`                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/scene_tabs/show_thumbnail_on_hover<class_EditorSettings_property_interface/scene_tabs/show_thumbnail_on_hover>`                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`interface/theme/accent_color<class_EditorSettings_property_interface/theme/accent_color>`                                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/theme/additional_spacing<class_EditorSettings_property_interface/theme/additional_spacing>`                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`                                                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/theme/border_size<class_EditorSettings_property_interface/theme/border_size>`                                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/theme/contrast<class_EditorSettings_property_interface/theme/contrast>`                                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`interface/theme/custom_theme<class_EditorSettings_property_interface/theme/custom_theme>`                                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/theme/enable_touchscreen_touch_area<class_EditorSettings_property_interface/theme/enable_touchscreen_touch_area>`                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/theme/highlight_tabs<class_EditorSettings_property_interface/theme/highlight_tabs>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/theme/icon_and_font_color<class_EditorSettings_property_interface/theme/icon_and_font_color>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`interface/theme/preset<class_EditorSettings_property_interface/theme/preset>`                                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/theme/relationship_line_opacity<class_EditorSettings_property_interface/theme/relationship_line_opacity>`                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/theme/use_graph_node_headers<class_EditorSettings_property_interface/theme/use_graph_node_headers>`                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`network/debug/remote_host<class_EditorSettings_property_network/debug/remote_host>`                                                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`network/debug/remote_port<class_EditorSettings_property_network/debug/remote_port>`                                                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`network/ssl/editor_ssl_certificates<class_EditorSettings_property_network/ssl/editor_ssl_certificates>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`project_manager/sorting_order<class_EditorSettings_property_project_manager/sorting_order>`                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`run/auto_save/save_before_running<class_EditorSettings_property_run/auto_save/save_before_running>`                                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`run/output/always_clear_output_on_play<class_EditorSettings_property_run/output/always_clear_output_on_play>`                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`run/output/always_close_output_on_stop<class_EditorSettings_property_run/output/always_close_output_on_stop>`                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`run/output/always_open_output_on_play<class_EditorSettings_property_run/output/always_open_output_on_play>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`                                                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>`                                                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`run/window_placement/rect_custom_position<class_EditorSettings_property_run/window_placement/rect_custom_position>`                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`run/window_placement/screen<class_EditorSettings_property_run/window_placement/screen>`                                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/code_folding<class_EditorSettings_property_text_editor/appearance/code_folding>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/appearance/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_hard_column>`             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/appearance/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_soft_column>`             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/line_numbers_zero_padded<class_EditorSettings_property_text_editor/appearance/line_numbers_zero_padded>`                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_bookmark_gutter<class_EditorSettings_property_text_editor/appearance/show_bookmark_gutter>`                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_breakpoint_gutter<class_EditorSettings_property_text_editor/appearance/show_breakpoint_gutter>`                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_info_gutter<class_EditorSettings_property_text_editor/appearance/show_info_gutter>`                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_line_length_guidelines<class_EditorSettings_property_text_editor/appearance/show_line_length_guidelines>`                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/show_line_numbers<class_EditorSettings_property_text_editor/appearance/show_line_numbers>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/word_wrap<class_EditorSettings_property_text_editor/appearance/word_wrap>`                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/add_type_hints<class_EditorSettings_property_text_editor/completion/add_type_hints>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/auto_brace_complete<class_EditorSettings_property_text_editor/completion/auto_brace_complete>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector2<class_Vector2>` | :ref:`text_editor/completion/callhint_tooltip_offset<class_EditorSettings_property_text_editor/completion/callhint_tooltip_offset>`                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`text_editor/completion/code_complete_delay<class_EditorSettings_property_text_editor/completion/code_complete_delay>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/complete_file_paths<class_EditorSettings_property_text_editor/completion/complete_file_paths>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`text_editor/completion/idle_parse_delay<class_EditorSettings_property_text_editor/completion/idle_parse_delay>`                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/put_callhint_tooltip_below_current_line<class_EditorSettings_property_text_editor/completion/put_callhint_tooltip_below_current_line>` |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/completion/use_single_quotes<class_EditorSettings_property_text_editor/completion/use_single_quotes>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/block_caret<class_EditorSettings_property_text_editor/cursor/block_caret>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/caret_blink<class_EditorSettings_property_text_editor/cursor/caret_blink>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`text_editor/cursor/caret_blink_speed<class_EditorSettings_property_text_editor/cursor/caret_blink_speed>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/right_click_moves_caret<class_EditorSettings_property_text_editor/cursor/right_click_moves_caret>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/cursor/scroll_past_end_of_file<class_EditorSettings_property_text_editor/cursor/scroll_past_end_of_file>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/files/auto_reload_and_parse_scripts_on_save<class_EditorSettings_property_text_editor/files/auto_reload_and_parse_scripts_on_save>`               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/files/auto_reload_scripts_on_external_change<class_EditorSettings_property_text_editor/files/auto_reload_scripts_on_external_change>`             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/files/autosave_interval_secs<class_EditorSettings_property_text_editor/files/autosave_interval_secs>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/files/restore_scripts_on_load<class_EditorSettings_property_text_editor/files/restore_scripts_on_load>`                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/files/trim_trailing_whitespace_on_save<class_EditorSettings_property_text_editor/files/trim_trailing_whitespace_on_save>`                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/help/help_font_size<class_EditorSettings_property_text_editor/help/help_font_size>`                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/help/help_source_font_size<class_EditorSettings_property_text_editor/help/help_source_font_size>`                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/help/help_title_font_size<class_EditorSettings_property_text_editor/help/help_title_font_size>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/help/show_help_index<class_EditorSettings_property_text_editor/help/show_help_index>`                                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/background_color<class_EditorSettings_property_text_editor/highlighting/background_color>`                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/base_type_color<class_EditorSettings_property_text_editor/highlighting/base_type_color>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/bookmark_color<class_EditorSettings_property_text_editor/highlighting/bookmark_color>`                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/brace_mismatch_color<class_EditorSettings_property_text_editor/highlighting/brace_mismatch_color>`                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/breakpoint_color<class_EditorSettings_property_text_editor/highlighting/breakpoint_color>`                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/caret_background_color<class_EditorSettings_property_text_editor/highlighting/caret_background_color>`                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/caret_color<class_EditorSettings_property_text_editor/highlighting/caret_color>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/code_folding_color<class_EditorSettings_property_text_editor/highlighting/code_folding_color>`                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/comment_color<class_EditorSettings_property_text_editor/highlighting/comment_color>`                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_background_color<class_EditorSettings_property_text_editor/highlighting/completion_background_color>`                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_existing_color<class_EditorSettings_property_text_editor/highlighting/completion_existing_color>`                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_font_color<class_EditorSettings_property_text_editor/highlighting/completion_font_color>`                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_scroll_color<class_EditorSettings_property_text_editor/highlighting/completion_scroll_color>`                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/completion_selected_color<class_EditorSettings_property_text_editor/highlighting/completion_selected_color>`                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/control_flow_keyword_color<class_EditorSettings_property_text_editor/highlighting/control_flow_keyword_color>`                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/current_line_color<class_EditorSettings_property_text_editor/highlighting/current_line_color>`                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/engine_type_color<class_EditorSettings_property_text_editor/highlighting/engine_type_color>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/executing_line_color<class_EditorSettings_property_text_editor/highlighting/executing_line_color>`                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/function_color<class_EditorSettings_property_text_editor/highlighting/function_color>`                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/highlight_all_occurrences<class_EditorSettings_property_text_editor/highlighting/highlight_all_occurrences>`                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/highlight_current_line<class_EditorSettings_property_text_editor/highlighting/highlight_current_line>`                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/highlight_type_safe_lines<class_EditorSettings_property_text_editor/highlighting/highlight_type_safe_lines>`                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/keyword_color<class_EditorSettings_property_text_editor/highlighting/keyword_color>`                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/line_length_guideline_color<class_EditorSettings_property_text_editor/highlighting/line_length_guideline_color>`                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/line_number_color<class_EditorSettings_property_text_editor/highlighting/line_number_color>`                                         |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/mark_color<class_EditorSettings_property_text_editor/highlighting/mark_color>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/member_variable_color<class_EditorSettings_property_text_editor/highlighting/member_variable_color>`                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/number_color<class_EditorSettings_property_text_editor/highlighting/number_color>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/highlighting/safe_line_number_color>`                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/search_result_border_color<class_EditorSettings_property_text_editor/highlighting/search_result_border_color>`                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/search_result_color<class_EditorSettings_property_text_editor/highlighting/search_result_color>`                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/selection_color<class_EditorSettings_property_text_editor/highlighting/selection_color>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/string_color<class_EditorSettings_property_text_editor/highlighting/string_color>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/symbol_color<class_EditorSettings_property_text_editor/highlighting/symbol_color>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/highlighting/syntax_highlighting<class_EditorSettings_property_text_editor/highlighting/syntax_highlighting>`                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/text_color<class_EditorSettings_property_text_editor/highlighting/text_color>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/text_selected_color<class_EditorSettings_property_text_editor/highlighting/text_selected_color>`                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/user_type_color<class_EditorSettings_property_text_editor/highlighting/user_type_color>`                                             |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Color<class_Color>`     | :ref:`text_editor/highlighting/word_highlighted_color<class_EditorSettings_property_text_editor/highlighting/word_highlighted_color>`                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/indent/auto_indent<class_EditorSettings_property_text_editor/indent/auto_indent>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/indent/convert_indent_on_save<class_EditorSettings_property_text_editor/indent/convert_indent_on_save>`                                           |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/indent/draw_spaces<class_EditorSettings_property_text_editor/indent/draw_spaces>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/indent/draw_tabs<class_EditorSettings_property_text_editor/indent/draw_tabs>`                                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/indent/size<class_EditorSettings_property_text_editor/indent/size>`                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/indent/type<class_EditorSettings_property_text_editor/indent/type>`                                                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/drag_and_drop_selection<class_EditorSettings_property_text_editor/navigation/drag_and_drop_selection>`                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/navigation/minimap_width<class_EditorSettings_property_text_editor/navigation/minimap_width>`                                                     |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/mouse_extra_buttons_navigate_history<class_EditorSettings_property_text_editor/navigation/mouse_extra_buttons_navigate_history>`       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/show_minimap<class_EditorSettings_property_text_editor/navigation/show_minimap>`                                                       |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/navigation/smooth_scrolling>`                                               |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/navigation/stay_in_script_editor_on_node_selected<class_EditorSettings_property_text_editor/navigation/stay_in_script_editor_on_node_selected>`   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/navigation/v_scroll_speed<class_EditorSettings_property_text_editor/navigation/v_scroll_speed>`                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/script_list/show_members_overview<class_EditorSettings_property_text_editor/script_list/show_members_overview>`                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`   | :ref:`text_editor/theme/color_theme<class_EditorSettings_property_text_editor/theme/color_theme>`                                                                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/theme/line_spacing<class_EditorSettings_property_text_editor/theme/line_spacing>`                                                                 |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`text_editor/tools/sort_members_outline_alphabetically<class_EditorSettings_property_text_editor/tools/sort_members_outline_alphabetically>`                   |
+   +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`add_property_info<class_EditorSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` info **)**                                                                                       |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`erase<class_EditorSettings_method_erase>` **(** :ref:`String<class_String>` property **)**                                                                                                                   |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_favorites<class_EditorSettings_method_get_favorites>` **(** **)** |const|                                                                                                                                |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** |const| |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_project_settings_dir<class_EditorSettings_method_get_project_settings_dir>` **(** **)** |const|                                                                                                          |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recent_dirs<class_EditorSettings_method_get_recent_dirs>` **(** **)** |const|                                                                                                                            |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`get_setting<class_EditorSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                   |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                   | :ref:`get_settings_dir<class_EditorSettings_method_get_settings_dir>` **(** **)** |const|                                                                                                                          |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`has_setting<class_EditorSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                   |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                       | :ref:`property_can_revert<class_EditorSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                                                                           |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`                 | :ref:`property_get_revert<class_EditorSettings_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                                                                           |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_favorites<class_EditorSettings_method_set_favorites>` **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**                                                                                     |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_initial_value<class_EditorSettings_method_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` update_current **)**                  |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` data **)**                 |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_recent_dirs<class_EditorSettings_method_set_recent_dirs>` **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**                                                                                 |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                          | :ref:`set_setting<class_EditorSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                                      |
-+-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`add_property_info<class_EditorSettings_method_add_property_info>` **(** :ref:`Dictionary<class_Dictionary>` info **)**                                                                                       |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`erase<class_EditorSettings_method_erase>` **(** :ref:`String<class_String>` property **)**                                                                                                                   |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_favorites<class_EditorSettings_method_get_favorites>` **(** **)** |const|                                                                                                                                |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                 | :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** |const| |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`get_project_settings_dir<class_EditorSettings_method_get_project_settings_dir>` **(** **)** |const|                                                                                                          |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recent_dirs<class_EditorSettings_method_get_recent_dirs>` **(** **)** |const|                                                                                                                            |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                 | :ref:`get_setting<class_EditorSettings_method_get_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                   |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                   | :ref:`get_settings_dir<class_EditorSettings_method_get_settings_dir>` **(** **)** |const|                                                                                                                          |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`has_setting<class_EditorSettings_method_has_setting>` **(** :ref:`String<class_String>` name **)** |const|                                                                                                   |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`property_can_revert<class_EditorSettings_method_property_can_revert>` **(** :ref:`String<class_String>` name **)**                                                                                           |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                 | :ref:`property_get_revert<class_EditorSettings_method_property_get_revert>` **(** :ref:`String<class_String>` name **)**                                                                                           |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_favorites<class_EditorSettings_method_set_favorites>` **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**                                                                                     |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_initial_value<class_EditorSettings_method_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` update_current **)**                  |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>` **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` data **)**                 |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_recent_dirs<class_EditorSettings_method_set_recent_dirs>` **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**                                                                                 |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`set_setting<class_EditorSettings_method_set_setting>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                                                      |
+   +-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_EditorSettings_signal_settings_changed:
 
-- **settings_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**settings_changed** **(** **)**
 
 Emitted after any editor setting has changed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Constants
 ---------
 
 .. _class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED:
 
-- **NOTIFICATION_EDITOR_SETTINGS_CHANGED** = **10000** --- Emitted after any editor setting has changed. It's used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
+.. rst-class:: classref-constant
+
+**NOTIFICATION_EDITOR_SETTINGS_CHANGED** = ``10000``
+
+Emitted after any editor setting has changed. It's used by various editor plugins to update their visuals on theme changes or logic on configuration changes.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_EditorSettings_property_docks/filesystem/always_show_folders:
 
-- :ref:`bool<class_bool>` **docks/filesystem/always_show_folders**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **docks/filesystem/always_show_folders**
+
+If ``true``, displays folders in the FileSystem dock's bottom pane when split mode is enabled. If ``false``, only files will be displayed in the bottom pane. Split mode can be toggled by pressing the icon next to the ``res://`` folder path.
+
+\ **Note:** This setting has no effect when split mode is disabled (which is the default).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_docks/filesystem/thumbnail_size:
 
-- :ref:`int<class_int>` **docks/filesystem/thumbnail_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **docks/filesystem/thumbnail_size**
+
+The thumbnail size to use in the FileSystem dock (in pixels). See also :ref:`filesystem/file_dialog/thumbnail_size<class_EditorSettings_property_filesystem/file_dialog/thumbnail_size>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_docks/property_editor/auto_refresh_interval:
 
-- :ref:`float<class_float>` **docks/property_editor/auto_refresh_interval**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **docks/property_editor/auto_refresh_interval**
+
+The refresh interval to use for the inspector dock's properties. The effect of this setting is mainly noticeable when adjusting gizmos in the 2D/3D editor and looking at the inspector at the same time. Lower values make the inspector more often, but take up more CPU time.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_docks/property_editor/subresource_hue_tint:
 
-- :ref:`float<class_float>` **docks/property_editor/subresource_hue_tint**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **docks/property_editor/subresource_hue_tint**
+
+The tint intensity to use for the subresources background in the inspector dock. The tint is used to distinguish between different subresources in the inspector. Higher values result in a more noticeable background color difference.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_docks/scene_tree/start_create_dialog_fully_expanded:
 
-- :ref:`bool<class_bool>` **docks/scene_tree/start_create_dialog_fully_expanded**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **docks/scene_tree/start_create_dialog_fully_expanded**
+
+If ``true``, the Create dialog (Create New Node/Create New Resource) will start with all its sections expanded. Otherwise, sections will be collapsed until the user starts searching (which will automatically expand sections as needed).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/bone_color1:
 
-- :ref:`Color<class_Color>` **editors/2d/bone_color1**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/bone_color1**
+
+The "start" stop of the color gradient to use for bones in the 2D skeleton editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/bone_color2:
 
-- :ref:`Color<class_Color>` **editors/2d/bone_color2**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/bone_color2**
+
+The "end" stop of the color gradient to use for bones in the 2D skeleton editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/bone_ik_color:
 
-- :ref:`Color<class_Color>` **editors/2d/bone_ik_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/bone_ik_color**
+
+The color to use for inverse kinematics-enabled bones in the 2D skeleton editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/bone_outline_color:
 
-- :ref:`Color<class_Color>` **editors/2d/bone_outline_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/bone_outline_color**
+
+The outline color to use for non-selected bones in the 2D skeleton editor. See also :ref:`editors/2d/bone_selected_color<class_EditorSettings_property_editors/2d/bone_selected_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/bone_outline_size:
 
-- :ref:`int<class_int>` **editors/2d/bone_outline_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/2d/bone_outline_size**
+
+The outline size in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_width<class_EditorSettings_property_editors/2d/bone_width>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/bone_selected_color:
 
-- :ref:`Color<class_Color>` **editors/2d/bone_selected_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/bone_selected_color**
+
+The color to use for selected bones in the 2D skeleton editor. See also :ref:`editors/2d/bone_outline_color<class_EditorSettings_property_editors/2d/bone_outline_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/bone_width:
 
-- :ref:`int<class_int>` **editors/2d/bone_width**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/2d/bone_width**
+
+The bone width in the 2D skeleton editor (in pixels). See also :ref:`editors/2d/bone_outline_size<class_EditorSettings_property_editors/2d/bone_outline_size>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/constrain_editor_view:
 
-- :ref:`bool<class_bool>` **editors/2d/constrain_editor_view**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/2d/constrain_editor_view**
+
+If ``true``, prevents the 2D editor viewport from leaving the scene. Limits are calculated dynamically based on nodes present in the current scene. If ``false``, the 2D editor viewport will be able to move freely, but you risk getting lost when zooming out too far. You can refocus on the scene by selecting a node then pressing :kbd:`F`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/grid_color:
 
-- :ref:`Color<class_Color>` **editors/2d/grid_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/grid_color**
+
+The grid color to use in the 2D editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/guides_color:
 
-- :ref:`Color<class_Color>` **editors/2d/guides_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/guides_color**
+
+The guides color to use in the 2D editor. Guides can be created by dragging the mouse cursor from the rulers.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/pan_speed:
 
-- :ref:`int<class_int>` **editors/2d/pan_speed**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/2d/pan_speed**
+
+The pan speed factor when scrolling the mouse wheel on the 2D editor viewport. Only effective if :ref:`editors/2d/scroll_to_pan<class_EditorSettings_property_editors/2d/scroll_to_pan>` is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/scroll_to_pan:
 
-- :ref:`bool<class_bool>` **editors/2d/scroll_to_pan**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/2d/scroll_to_pan**
+
+If ``true``, scrolling the mouse wheel will pan vertically instead of zoom in the 2D editor. Holding :kbd:`Shift` at the same time will pan horizontally instead of vertically. See :ref:`editors/2d/pan_speed<class_EditorSettings_property_editors/2d/pan_speed>` to adjust the scrolling speed.
+
+\ **Note:** If ``true``, holding :kbd:`Ctrl` will temporarily override this behavior and will zoom instead of pan.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/simple_panning:
 
-- :ref:`bool<class_bool>` **editors/2d/simple_panning**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/2d/simple_panning**
+
+If ``true``, allows panning in the 2D editor viewport by holding :kbd:`Space`, without having to hold any mouse buttons at the same time. This can be useful to improve navigation usability when using a trackpad.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/smart_snapping_line_color:
 
-- :ref:`Color<class_Color>` **editors/2d/smart_snapping_line_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/smart_snapping_line_color**
+
+The color to use when drawing smart snapping lines in the 2D editor. The smart snapping lines will automatically display when moving 2D nodes if smart snapping is enabled in the Snapping Options menu at the top of the 2D editor viewport.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/viewport_border_color:
 
-- :ref:`Color<class_Color>` **editors/2d/viewport_border_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/2d/viewport_border_color**
+
+The color of the viewport border in the 2D editor. This border represents the viewport's size at the base resolution defined in the Project Settings. Objects placed outside this border will not be visible unless a :ref:`Camera2D<class_Camera2D>` node is used, or unless the window is resized and the stretch mode is set to ``disabled``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/2d/warped_mouse_panning:
 
-- :ref:`bool<class_bool>` **editors/2d/warped_mouse_panning**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/2d/warped_mouse_panning**
+
+If ``true``, wraps around the mouse cursor when it reaches one of the 2D editor viewport's edges. This makes panning over large areas easier, as you don't have to stop and reposition the mouse every time it's about to hit the screen's borders.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/default_fov:
 
-- :ref:`float<class_float>` **editors/3d/default_fov**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/default_fov**
+
+The default camera field of view to use in the 3D editor (in degrees). The camera field of view can be adjusted on a per-scene basis using the **View** menu at the top of the 3D editor. If a scene had its camera field of view adjusted using the **View** menu, this setting is ignored in the scene in question. This setting is also ignored while a Camera3D node is being previewed in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/default_z_far:
 
-- :ref:`float<class_float>` **editors/3d/default_z_far**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/default_z_far**
+
+The default camera far clip distance to use in the 3D editor (in degrees). Higher values make it possible to view objects placed further away from the camera, at the cost of lower precision in the depth buffer (which can result in visible Z-fighting in the distance). The camera far clip distance can be adjusted on a per-scene basis using the **View** menu at the top of the 3D editor. If a scene had its camera far clip distance adjusted using the **View** menu, this setting is ignored in the scene in question. This setting is also ignored while a Camera3D node is being previewed in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/default_z_near:
 
-- :ref:`float<class_float>` **editors/3d/default_z_near**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/default_z_near**
+
+The default camera near clip distance to use in the 3D editor (in degrees). Lower values make it possible to view objects placed closer to the camera, at the cost of lower precision in the depth buffer (which can result in visible Z-fighting in the distance). The camera near clip distance can be adjusted on a per-scene basis using the **View** menu at the top of the 3D editor. If a scene had its camera near clip distance adjusted using the **View** menu, this setting is ignored in the scene in question. This setting is also ignored while a Camera3D node is being previewed in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/freelook/freelook_activation_modifier:
 
-- :ref:`int<class_int>` **editors/3d/freelook/freelook_activation_modifier**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/freelook/freelook_activation_modifier**
+
+The modifier key to use to enable freelook in the 3D editor (on top of pressing the right mouse button).
+
+\ **Note:** Regardless of this setting, the freelook toggle keyboard shortcut (:kbd:`Shift + F` by default) is always available.
+
+\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/freelook/freelook_base_speed:
 
-- :ref:`float<class_float>` **editors/3d/freelook/freelook_base_speed**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/freelook/freelook_base_speed**
+
+The base 3D freelook speed in units per second. This can be adjusted by using the mouse wheel while in freelook mode, or by holding down the "fast" or "slow" modifier keys (:kbd:`Shift` and :kbd:`Alt` by default, respectively).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/freelook/freelook_inertia:
 
-- :ref:`float<class_float>` **editors/3d/freelook/freelook_inertia**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/freelook/freelook_inertia**
+
+The inertia of the 3D freelook camera. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme:
 
-- :ref:`int<class_int>` **editors/3d/freelook/freelook_navigation_scheme**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/freelook/freelook_navigation_scheme**
+
+The navigation scheme to use when freelook is enabled in the 3D editor. Some of the navigation schemes below may be more convenient when designing specific levels in the 3D editor.
+
+- **Default:** The "Freelook Forward", "Freelook Backward", "Freelook Up" and "Freelook Down" keys will move relative to the camera, taking its pitch angle into account for the movement.
+
+- **Partially Axis-Locked:** The "Freelook Forward" and "Freelook Backward" keys will move relative to the camera, taking its pitch angle into account for the movement. The "Freelook Up" and "Freelook Down" keys will move in an "absolute" manner, *not* taking the camera's pitch angle into account for the movement.
+
+- **Fully Axis-Locked:** The "Freelook Forward", "Freelook Backward", "Freelook Up" and "Freelook Down" keys will move in an "absolute" manner, *not* taking the camera's pitch angle into account for the movement.
+
+See also :ref:`editors/3d/navigation/navigation_scheme<class_EditorSettings_property_editors/3d/navigation/navigation_scheme>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity:
 
-- :ref:`float<class_float>` **editors/3d/freelook/freelook_sensitivity**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/freelook/freelook_sensitivity**
+
+The mouse sensitivity to use while freelook mode is active in the 3D editor. See also :ref:`editors/3d/navigation_feel/orbit_sensitivity<class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/freelook/freelook_speed_zoom_link:
 
-- :ref:`bool<class_bool>` **editors/3d/freelook/freelook_speed_zoom_link**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/freelook/freelook_speed_zoom_link**
+
+If ``true``, freelook speed is linked to the zoom value used in the camera orbit mode in the 3D editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/grid_division_level_bias:
 
-- :ref:`float<class_float>` **editors/3d/grid_division_level_bias**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/grid_division_level_bias**
+
+The grid division bias to use in the 3D editor. Negative values will cause small grid divisions to appear earlier, whereas positive values will cause small grid divisions to appear later.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/grid_division_level_max:
 
-- :ref:`int<class_int>` **editors/3d/grid_division_level_max**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/grid_division_level_max**
+
+The smallest grid division to use in the 3D editor, specified as a power of 2. The grid will not be able to get larger than ``1 ^ grid_division_level_max`` units. By default, this means grid divisions cannot get smaller than 100 units each, no matter how far away the camera is from the grid.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/grid_division_level_min:
 
-- :ref:`int<class_int>` **editors/3d/grid_division_level_min**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/grid_division_level_min**
+
+The smallest grid division to use in the 3D editor, specified as a power of 2. The grid will not be able to get smaller than ``1 ^ grid_division_level_min`` units. By default, this means grid divisions cannot get smaller than 1 unit each, no matter how close the camera is from the grid.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/grid_size:
 
-- :ref:`int<class_int>` **editors/3d/grid_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/grid_size**
+
+The grid size in units. Higher values prevent the grid from appearing "cut off" at certain angles, but make the grid more demanding to render. Depending on the camera's position, the grid may not be fully visible since a shader is used to fade it progressively.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/grid_xy_plane:
 
-- :ref:`bool<class_bool>` **editors/3d/grid_xy_plane**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/grid_xy_plane**
+
+If ``true``, render the grid on an XY plane. This can be useful for 3D side-scrolling games.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/grid_xz_plane:
 
-- :ref:`bool<class_bool>` **editors/3d/grid_xz_plane**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/grid_xz_plane**
+
+If ``true``, render the grid on an XZ plane.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/grid_yz_plane:
 
-- :ref:`bool<class_bool>` **editors/3d/grid_yz_plane**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/grid_yz_plane**
+
+If ``true``, render the grid on an YZ plane. This can be useful for 3D side-scrolling games.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/lightmap_baking_number_of_cpu_threads:
 
-- :ref:`int<class_int>` **editors/3d/lightmap_baking_number_of_cpu_threads**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/lightmap_baking_number_of_cpu_threads**
+
+The number of CPU threads to use for baking lightmaps with :ref:`BakedLightmap<class_BakedLightmap>`. A value of ``0`` will use all CPU logical cores, while positive values will set the maximum number of CPU threads that can be used when baking lightmaps. Negative values will use all CPU cores *minus* the amount specified in the negative number.
+
+Using less CPU cores than the total amount of cores available will slow down lightmap baking, but will allow other tasks on the PC to be more reactive while lightmaps are baking.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse:
 
-- :ref:`bool<class_bool>` **editors/3d/navigation/emulate_3_button_mouse**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/navigation/emulate_3_button_mouse**
+
+If ``true``, enables 3-button mouse emulation mode. This is useful on laptops when using a trackpad.
+
+When 3-button mouse emulation mode is enabled, the pan, zoom and orbit modifiers can always be used in the 3D editor viewport, even when not holding down any mouse button.
+
+\ **Note:** No matter the orbit modifier configured in :ref:`editors/3d/navigation/orbit_modifier<class_EditorSettings_property_editors/3d/navigation/orbit_modifier>`, :kbd:`Alt` will always remain usable for orbiting in this mode to improve usability with graphics tablets.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/emulate_numpad:
 
-- :ref:`bool<class_bool>` **editors/3d/navigation/emulate_numpad**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/navigation/emulate_numpad**
+
+If ``true``, allows using the top row :kbd:`0`-:kbd:`9` keys to function as their equivalent numpad keys for 3D editor navigation. This should be enabled on keyboards that have no numeric keypad available.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/invert_x_axis:
 
-- :ref:`bool<class_bool>` **editors/3d/navigation/invert_x_axis**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/navigation/invert_x_axis**
+
+If ``true``, invert the horizontal mouse axis when panning or orbiting in the 3D editor. This setting does *not* apply to freelook mode.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/invert_y_axis:
 
-- :ref:`bool<class_bool>` **editors/3d/navigation/invert_y_axis**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/navigation/invert_y_axis**
+
+If ``true``, invert the vertical mouse axis when panning, orbiting, or using freelook mode in the 3D editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/navigation_scheme:
 
-- :ref:`int<class_int>` **editors/3d/navigation/navigation_scheme**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/navigation/navigation_scheme**
+
+The navigation scheme to use in the 3D editor. Changing this setting will affect the mouse buttons that must be held down to perform certain operations in the 3D editor viewport.
+
+- **Godot** Middle mouse button to orbit, :kbd:`Shift + Middle mouse button` to pan. :kbd:`Mouse wheel` to zoom.
+
+- **Maya:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Middle mouse button` to pan, :kbd:`Shift + Middle mouse button` to pan 10 times faster. :kbd:`Mouse wheel` to zoom.
+
+- **Modo:** :kbd:`Alt + Left mouse button` to orbit. :kbd:`Alt + Shift + Left mouse button` to pan. :kbd:`Ctrl + Alt + Left mouse button` to zoom.
+
+See also :ref:`editors/3d/freelook/freelook_navigation_scheme<class_EditorSettings_property_editors/3d/freelook/freelook_navigation_scheme>`.
+
+\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/orbit_modifier:
 
-- :ref:`int<class_int>` **editors/3d/navigation/orbit_modifier**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/navigation/orbit_modifier**
+
+The modifier key that must be held to orbit in the 3D editor.
+
+\ **Note:** If :ref:`editors/3d/navigation/emulate_3_button_mouse<class_EditorSettings_property_editors/3d/navigation/emulate_3_button_mouse>` is ``true``, :kbd:`Alt` will always remain usable for orbiting to improve usability with graphics tablets.
+
+\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/pan_modifier:
 
-- :ref:`int<class_int>` **editors/3d/navigation/pan_modifier**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/navigation/pan_modifier**
+
+The modifier key that must be held to pan in the 3D editor.
+
+\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/warped_mouse_panning:
 
-- :ref:`bool<class_bool>` **editors/3d/navigation/warped_mouse_panning**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/3d/navigation/warped_mouse_panning**
+
+If ``true``, warps the mouse around the 3D viewport while panning in the 3D editor. This makes it possible to pan over a large area without having to exit panning then mouse the mouse back constantly.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/zoom_modifier:
 
-- :ref:`int<class_int>` **editors/3d/navigation/zoom_modifier**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/navigation/zoom_modifier**
+
+The modifier key that must be held to zoom in the 3D editor.
+
+\ **Note:** On certain window managers on Linux, the :kbd:`Alt` key will be intercepted by the window manager when clicking a mouse button at the same time. This means Godot will not see the modifier key as being pressed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation/zoom_style:
 
-- :ref:`int<class_int>` **editors/3d/navigation/zoom_style**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/navigation/zoom_style**
+
+The mouse cursor movement direction to use when zooming by moving the mouse. This does not affect zooming with the mouse wheel.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation_feel/orbit_inertia:
 
-- :ref:`float<class_float>` **editors/3d/navigation_feel/orbit_inertia**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/navigation_feel/orbit_inertia**
+
+The inertia to use when orbiting in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation_feel/orbit_sensitivity:
 
-- :ref:`float<class_float>` **editors/3d/navigation_feel/orbit_sensitivity**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/navigation_feel/orbit_sensitivity**
+
+The mouse sensitivity to use when orbiting in the 3D editor. See also :ref:`editors/3d/freelook/freelook_sensitivity<class_EditorSettings_property_editors/3d/freelook/freelook_sensitivity>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation_feel/translation_inertia:
 
-- :ref:`float<class_float>` **editors/3d/navigation_feel/translation_inertia**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/navigation_feel/translation_inertia**
+
+The inertia to use when panning in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/navigation_feel/zoom_inertia:
 
-- :ref:`float<class_float>` **editors/3d/navigation_feel/zoom_inertia**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/3d/navigation_feel/zoom_inertia**
+
+The inertia to use when zooming in the 3D editor. Higher values make the camera start and stop slower, which looks smoother but adds latency.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/primary_grid_color:
 
-- :ref:`Color<class_Color>` **editors/3d/primary_grid_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/3d/primary_grid_color**
+
+The color to use for the primary 3D grid. The color's alpha channel affects the grid's opacity.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/primary_grid_steps:
 
-- :ref:`int<class_int>` **editors/3d/primary_grid_steps**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/3d/primary_grid_steps**
+
+If set above 0, where a primary grid line should be drawn. By default, primary lines are configured to be more visible than secondary lines. This helps with measurements in the 3D editor. See also :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>` and :ref:`editors/3d/secondary_grid_color<class_EditorSettings_property_editors/3d/secondary_grid_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/secondary_grid_color:
 
-- :ref:`Color<class_Color>` **editors/3d/secondary_grid_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/3d/secondary_grid_color**
+
+The color to use for the secondary 3D grid. This is generally a less visible color than :ref:`editors/3d/primary_grid_color<class_EditorSettings_property_editors/3d/primary_grid_color>`. The color's alpha channel affects the grid's opacity.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d/selection_box_color:
 
-- :ref:`Color<class_Color>` **editors/3d/selection_box_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/3d/selection_box_color**
+
+The color to use for the selection box that surrounds selected nodes in the 3D editor viewport. The color's alpha channel influences the selection box's opacity.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/instanced:
 
-- :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/instanced**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/instanced**
+
+The color override to use for 3D editor gizmos if the :ref:`Spatial<class_Spatial>` in question is part of an instanced scene file (from the perspective of the current scene).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/joint:
 
-- :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/joint**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/joint**
+
+The 3D editor gizmo color for :ref:`Joint<class_Joint>`\ s and :ref:`PhysicalBone<class_PhysicalBone>`\ s.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/3d_gizmos/gizmo_colors/shape:
 
-- :ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/shape**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/3d_gizmos/gizmo_colors/shape**
+
+The 3D editor gizmo color for :ref:`CollisionShape<class_CollisionShape>`\ s, :ref:`VehicleWheel<class_VehicleWheel>`\ s, :ref:`RayCast<class_RayCast>`\ s and :ref:`SpringArm<class_SpringArm>`\ s.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/animation/autorename_animation_tracks:
 
-- :ref:`bool<class_bool>` **editors/animation/autorename_animation_tracks**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/animation/autorename_animation_tracks**
+
+If ``true``, automatically updates animation tracks' target paths when renaming or reparenting nodes in the Scene tree dock.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/animation/confirm_insert_track:
 
-- :ref:`bool<class_bool>` **editors/animation/confirm_insert_track**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/animation/confirm_insert_track**
+
+If ``true``, display a confirmation dialog when adding a new track to an animation by pressing the "key" icon next to a property.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/animation/default_create_bezier_tracks:
 
-- :ref:`bool<class_bool>` **editors/animation/default_create_bezier_tracks**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/animation/default_create_bezier_tracks**
+
+If ``true``, create a Bezier track instead of a standard track when pressing the "key" icon next to a property. Bezier tracks provide more control over animation curves, but are more difficult to adjust quickly.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/animation/default_create_reset_tracks:
 
-- :ref:`bool<class_bool>` **editors/animation/default_create_reset_tracks**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/animation/default_create_reset_tracks**
+
+If ``true``, create a ``RESET`` track when creating a new animation track. This track can be used to restore the animation to a "default" state.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/animation/onion_layers_future_color:
 
-- :ref:`Color<class_Color>` **editors/animation/onion_layers_future_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/animation/onion_layers_future_color**
+
+The modulate color to use for "future" frames displayed in the animation editor's onion skinning feature.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/animation/onion_layers_past_color:
 
-- :ref:`Color<class_Color>` **editors/animation/onion_layers_past_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **editors/animation/onion_layers_past_color**
+
+The modulate color to use for "past" frames displayed in the animation editor's onion skinning feature.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/grid_map/pick_distance:
 
-- :ref:`float<class_float>` **editors/grid_map/pick_distance**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/grid_map/pick_distance**
+
+The maximum distance at which tiles can be placed on a GridMap, relative to the camera position (in 3D units).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/grid_map/preview_size:
 
-- :ref:`int<class_int>` **editors/grid_map/preview_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/grid_map/preview_size**
+
+The size of tiles in the GridMap editor sidebar (in pixels).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/poly_editor/point_grab_radius:
 
-- :ref:`int<class_int>` **editors/poly_editor/point_grab_radius**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **editors/poly_editor/point_grab_radius**
+
+The radius of each point's clickable area in 2D and 3D polygon editors (in pixels). Increase this value if you are having trouble selecting points in polygon editors. However, increasing this value may make it more difficult to select points located close to each other.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/poly_editor/show_previous_outline:
 
-- :ref:`bool<class_bool>` **editors/poly_editor/show_previous_outline**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/poly_editor/show_previous_outline**
+
+If ``true``, displays a gray outline matching the polygon's previous shape while dragging one of the points.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_editors/visual_editors/minimap_opacity:
 
-- :ref:`float<class_float>` **editors/visual_editors/minimap_opacity**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **editors/visual_editors/minimap_opacity**
+
+The opacity of the minimap displayed in the bottom-right corner of the visual script and visual shader editors.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_filesystem/directories/autoscan_project_path:
 
-- :ref:`String<class_String>` **filesystem/directories/autoscan_project_path**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/directories/autoscan_project_path**
+
+The folder where projects should be scanned for (recursively), in a way similar to the project manager's **Scan**\ button. This can be set to the same value as :ref:`filesystem/directories/default_project_path<class_EditorSettings_property_filesystem/directories/default_project_path>` for convenience.
+
+\ **Note:** Setting this path to a folder with very large amounts of files/folders can slow down the project manager startup significantly. To keep the project manager quick to start up, it is recommended to set this value to a folder as "specific" as possible.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_filesystem/directories/default_project_path:
 
-- :ref:`String<class_String>` **filesystem/directories/default_project_path**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **filesystem/directories/default_project_path**
+
+The folder where new projects should be created by default when clicking the project manager's **New Project** button. This can be set to the same value as :ref:`filesystem/directories/autoscan_project_path<class_EditorSettings_property_filesystem/directories/autoscan_project_path>` for convenience.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_filesystem/file_dialog/display_mode:
 
-- :ref:`int<class_int>` **filesystem/file_dialog/display_mode**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **filesystem/file_dialog/display_mode**
+
+The display mode to use in the editor's file dialogs.
+
+- **Thumbnails** takes more space, but displays dynamic resource thumbnails, making resources easier to preview without having to open them.
+
+- **List** is more compact but doesn't display dynamic resource thumbnails. Instead, it displays static icons based on the file extension.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_filesystem/file_dialog/show_hidden_files:
 
-- :ref:`bool<class_bool>` **filesystem/file_dialog/show_hidden_files**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **filesystem/file_dialog/show_hidden_files**
+
+If ``true``, display hidden files in the editor's file dialogs. Files that have names starting with ``.`` are considered hidden (e.g. ``.hidden_file``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_filesystem/file_dialog/thumbnail_size:
 
-- :ref:`int<class_int>` **filesystem/file_dialog/thumbnail_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **filesystem/file_dialog/thumbnail_size**
+
+The thumbnail size to use in the editor's file dialogs (in pixels). See also :ref:`docks/filesystem/thumbnail_size<class_EditorSettings_property_docks/filesystem/thumbnail_size>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_filesystem/on_save/compress_binary_resources:
 
-- :ref:`bool<class_bool>` **filesystem/on_save/compress_binary_resources**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **filesystem/on_save/compress_binary_resources**
+
+If ``true``, uses lossless compression for binary resources.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_filesystem/on_save/safe_save_on_backup_then_rename:
 
-- :ref:`bool<class_bool>` **filesystem/on_save/safe_save_on_backup_then_rename**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **filesystem/on_save/safe_save_on_backup_then_rename**
+
+If ``true``, when saving a file, the editor will rename the old file to a different name, save a new file, then only remove the old file once the new file has been saved. This makes loss of data less likely to happen if the editor or operating system exits unexpectedly while saving (e.g. due to a crash or power outage).
+
+\ **Note:** On Windows, this feature can interact negatively with certain antivirus programs. In this case, you may have to set this to ``false`` to prevent file locking issues.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/editor/accept_dialog_cancel_ok_buttons:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/accept_dialog_cancel_ok_buttons**
+
+How to position the Cancel and OK buttons in the editor's :ref:`AcceptDialog<class_AcceptDialog>`\ s. Different platforms have different standard behaviors for this, which can be overridden using this setting. This is useful if you use Godot both on Windows and macOS/Linux and your Godot muscle memory is stronger than your OS specific one.
+
+- **Auto** follows the platform convention: Cancel first on macOS and Linux, OK first on Windows.
+
+- **Cancel First** forces the ordering Cancel/OK.
+
+- **OK First** forces the ordering OK/Cancel.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/automatically_open_screenshots:
 
-- :ref:`bool<class_bool>` **interface/editor/automatically_open_screenshots**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/automatically_open_screenshots**
+
+If ``true``, automatically opens screenshots with the default program associated to ``.png`` files after a screenshot is taken using the **Editor > Take Screenshot** action.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/code_font:
 
-- :ref:`String<class_String>` **interface/editor/code_font**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **interface/editor/code_font**
+
+The font to use for the script editor. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/code_font_size:
 
-- :ref:`int<class_int>` **interface/editor/code_font_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/code_font_size**
+
+The size of the font in the script editor. This setting does not impact the font size of the Output panel (see :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/custom_display_scale:
 
-- :ref:`float<class_float>` **interface/editor/custom_display_scale**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/editor/custom_display_scale**
+
+The custom editor scale factor to use. This can be used for displays with very high DPI where a scale factor of 200% is not sufficient.
+
+\ **Note:** Only effective if :ref:`interface/editor/display_scale<class_EditorSettings_property_interface/editor/display_scale>` is set to **Custom**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/dim_editor_on_dialog_popup:
 
-- :ref:`bool<class_bool>` **interface/editor/dim_editor_on_dialog_popup**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/dim_editor_on_dialog_popup**
+
+If ``true``, darkens the rest of the editor when a modal dialog is open. If you need to pick colors on the rest of the editor while in modal dialog, disable this option.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/display_scale:
 
-- :ref:`int<class_int>` **interface/editor/display_scale**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/display_scale**
+
+The display scale factor to use for the editor interface. Higher values are more suited to hiDPI/Retina displays.
+
+If set to **Auto**, the editor scale is automatically determined based on the screen resolution and reported display DPI. This heuristic is not always ideal, which means you can get better results by setting the editor scale manually.
+
+If set to **Custom**, the scaling value in :ref:`interface/editor/custom_display_scale<class_EditorSettings_property_interface/editor/custom_display_scale>` will be used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/editor_language:
 
-- :ref:`String<class_String>` **interface/editor/editor_language**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **interface/editor/editor_language**
+
+The language to use for the editor interface.
+
+Translations are provided by the community. If you spot a mistake, `contribute to editor translations on Weblate! <https://docs.godotengine.org/en/latest/community/contributing/editor_and_docs_localization.html>`__
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/font_antialiased:
 
-- :ref:`bool<class_bool>` **interface/editor/font_antialiased**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/font_antialiased**
+
+If ``true``, enables FreeType's font antialiasing on the editor fonts. Most fonts are not designed to look good with antialiasing disabled, so it's recommended to leave this enabled unless you're using a pixel art font.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/font_hinting:
 
-- :ref:`int<class_int>` **interface/editor/font_hinting**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/font_hinting**
+
+The font hinting mode to use for the editor fonts. FreeType supports the following font hinting modes:
+
+- **None:** Don't use font hinting when rasterizing the font. This results in a smooth font, but it can look blurry.
+
+- **Light:** Use hinting on the X axis only. This is a compromise between font sharpness and smoothness.
+
+- **Normal:** Use hinting on both X and Y axes. This results in a sharp font, but it doesn't look very smooth.
+
+If set to **Auto**, the font hinting mode will be set to match the current operating system in use. This means the **Light** hinting mode will be used on Windows and Linux, and the **None** hinting mode will be used on macOS.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec:
 
-- :ref:`float<class_float>` **interface/editor/low_processor_mode_sleep_usec**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/editor/low_processor_mode_sleep_usec**
+
+The amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops. However, higher values will result in a less responsive editor. The default value is set to allow for maximum smoothness on monitors up to 144 Hz. See also :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/main_font:
 
-- :ref:`String<class_String>` **interface/editor/main_font**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **interface/editor/main_font**
+
+The font to use for the editor interface. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/main_font_bold:
 
-- :ref:`String<class_String>` **interface/editor/main_font_bold**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **interface/editor/main_font_bold**
+
+The font to use for bold text in the editor interface. Must be a resource of a :ref:`Font<class_Font>` type such as a ``.ttf`` or ``.otf`` font file.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/main_font_size:
 
-- :ref:`int<class_int>` **interface/editor/main_font_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/main_font_size**
+
+The size of the font in the editor interface.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/quit_confirmation:
 
-- :ref:`bool<class_bool>` **interface/editor/quit_confirmation**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/quit_confirmation**
+
+If ``true``, displays a confirmation dialog when exiting the editor when there are no unsaved changes.
+
+\ **Note:** Regardless of this setting, the editor will *always* display a quit confirmation dialog when there are unsaved changes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/save_each_scene_on_quit:
 
-- :ref:`bool<class_bool>` **interface/editor/save_each_scene_on_quit**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/save_each_scene_on_quit**
+
+If ``true``, the editor will save all scenes when confirming the **Save** action when quitting the editor or quitting to the project list. If ``false``, the editor will ask to save each scene individually.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/separate_distraction_mode:
 
-- :ref:`bool<class_bool>` **interface/editor/separate_distraction_mode**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/editor/separate_distraction_mode**
+
+If ``true``, the editor's Script tab will have a separate distraction mode setting from the 2D/3D/AssetLib tabs. If ``false``, the distraction-free mode toggle is shared between all tabs.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec:
 
-- :ref:`float<class_float>` **interface/editor/unfocused_low_processor_mode_sleep_usec**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/editor/unfocused_low_processor_mode_sleep_usec**
+
+When the editor window is unfocused, the amount of sleeping between frames when the low-processor usage mode is enabled (in microseconds). Higher values will result in lower CPU/GPU usage, which can improve battery life on laptops (in addition to improving the running project's performance if the editor has to redraw continuously). However, higher values will result in a less responsive editor. The default value is set to limit the editor to 20 FPS when the editor window is unfocused. See also :ref:`interface/editor/low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/low_processor_mode_sleep_usec>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page:
 
-- :ref:`int<class_int>` **interface/inspector/max_array_dictionary_items_per_page**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/inspector/max_array_dictionary_items_per_page**
+
+The number of :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>` items to display on each "page" in the inspector. Higher values allow viewing more values per page, but take more time to load. This increased load time is noticeable when selecting nodes that have array or dictionary properties in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/scene_tabs/minimum_width:
 
-- :ref:`int<class_int>` **interface/scene_tabs/minimum_width**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/scene_tabs/minimum_width**
+
+The minimum width to use for each scene tab (in pixels). Only effective if :ref:`interface/scene_tabs/resize_if_many_tabs<class_EditorSettings_property_interface/scene_tabs/resize_if_many_tabs>` is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/scene_tabs/resize_if_many_tabs:
 
-- :ref:`bool<class_bool>` **interface/scene_tabs/resize_if_many_tabs**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/scene_tabs/resize_if_many_tabs**
+
+If ``true``, sets the scene tabs' minimum width to :ref:`interface/scene_tabs/minimum_width<class_EditorSettings_property_interface/scene_tabs/minimum_width>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/scene_tabs/show_script_button:
 
-- :ref:`bool<class_bool>` **interface/scene_tabs/show_script_button**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/scene_tabs/show_script_button**
+
+If ``true``, show a button next to each scene tab that opens the scene's "dominant" script when clicked. The "dominant" script is the one that is at the highest level in the scene's hierarchy.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/scene_tabs/show_thumbnail_on_hover:
 
-- :ref:`bool<class_bool>` **interface/scene_tabs/show_thumbnail_on_hover**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/scene_tabs/show_thumbnail_on_hover**
+
+If ``true``, display an automatically-generated thumbnail when hovering scene tabs with the mouse. Scene thumbnails are generated when saving the scene.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/accent_color:
 
-- :ref:`Color<class_Color>` **interface/theme/accent_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **interface/theme/accent_color**
+
+The color to use for "highlighted" user interface elements in the editor (pressed and hovered items).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/additional_spacing:
 
-- :ref:`float<class_float>` **interface/theme/additional_spacing**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/theme/additional_spacing**
+
+The spacing to add for buttons and list items in the editor (in pixels). Increasing this value is useful to improve usability on touch screens, at the cost of reducing the amount of usable screen real estate.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/base_color:
 
-- :ref:`Color<class_Color>` **interface/theme/base_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **interface/theme/base_color**
+
+The base color to use for user interface elements in the editor. Secondary colors (such as darker/lighter variants) are derived from this color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/border_size:
 
-- :ref:`int<class_int>` **interface/theme/border_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/theme/border_size**
+
+The border size to use for interface elements (in pixels).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/contrast:
 
-- :ref:`float<class_float>` **interface/theme/contrast**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/theme/contrast**
+
+The contrast factor to use when deriving the editor theme's base color (see :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`). When using a positive values, the derived colors will be *darker* than the base color. This contrast factor can be set to a negative value, which will make the derived colors *brighter* than the base color. Negative contrast rates often look better for light themes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/custom_theme:
 
-- :ref:`String<class_String>` **interface/theme/custom_theme**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **interface/theme/custom_theme**
+
+The custom theme resource to use for the editor. Must be a Godot theme resource in ``.tres`` or ``.res`` format.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/theme/enable_touchscreen_touch_area:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/theme/enable_touchscreen_touch_area**
+
+If ``true``, increases the touch area for the UI elements to improve usability on touchscreen devices.
+
+\ **Note:** Defaults to ``true`` on touchscreen devices.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/highlight_tabs:
 
-- :ref:`bool<class_bool>` **interface/theme/highlight_tabs**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/theme/highlight_tabs**
+
+If ``true``, makes the background of selected tabs more contrasted in the editor theme (brighter on dark themes, darker on light themes).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/icon_and_font_color:
 
-- :ref:`int<class_int>` **interface/theme/icon_and_font_color**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/theme/icon_and_font_color**
+
+The icon and font color scheme to use in the editor.
+
+- **Auto** determines the color scheme to use automatically based on :ref:`interface/theme/base_color<class_EditorSettings_property_interface/theme/base_color>`.
+
+- **Dark** makes fonts and icons light (suitable for dark themes).
+
+- **Light** makes fonts and icons dark (suitable for light themes). Icon colors are automatically converted by the editor following `this set of rules <https://github.com/godotengine/godot/blob/master/editor/editor_themes.cpp#L135>`__.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/preset:
 
-- :ref:`String<class_String>` **interface/theme/preset**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **interface/theme/preset**
+
+The editor theme preset to use.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/relationship_line_opacity:
 
-- :ref:`float<class_float>` **interface/theme/relationship_line_opacity**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/theme/relationship_line_opacity**
+
+The opacity to use when drawing relationship lines in the editor's :ref:`Tree<class_Tree>`-based GUIs (such as the Scene tree dock).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_interface/theme/use_graph_node_headers:
 
-- :ref:`bool<class_bool>` **interface/theme/use_graph_node_headers**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/theme/use_graph_node_headers**
+
+If ``true``, use colored header backgrounds for individual :ref:`GraphNode<class_GraphNode>`\ s in the visual script and visual shader editors. This can improve usability when frequently using these editors at low zoom levels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_network/debug/remote_host:
 
-- :ref:`String<class_String>` **network/debug/remote_host**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **network/debug/remote_host**
+
+The address to listen to when starting the remote debugger. This can be set to ``0.0.0.0`` to allow external clients to connect to the remote debugger (instead of restricting the remote debugger to connections from ``localhost``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_network/debug/remote_port:
 
-- :ref:`int<class_int>` **network/debug/remote_port**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **network/debug/remote_port**
+
+The port to listen to when starting the remote debugger. Godot will try to use port numbers above the configured number if the configured number is already taken by another application.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_network/http_proxy/host:
 
-- :ref:`String<class_String>` **network/http_proxy/host**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **network/http_proxy/host**
+
+The host to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/port<class_EditorSettings_property_network/http_proxy/port>`.
+
+\ **Note:** Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_network/http_proxy/port:
 
-- :ref:`int<class_int>` **network/http_proxy/port**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **network/http_proxy/port**
+
+The port number to use to contact the HTTP and HTTPS proxy in the editor (for the asset library and export template downloads). See also :ref:`network/http_proxy/host<class_EditorSettings_property_network/http_proxy/host>`.
+
+\ **Note:** Godot currently doesn't automatically use system proxy settings, so you have to enter them manually here if needed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_network/ssl/editor_ssl_certificates:
 
-- :ref:`String<class_String>` **network/ssl/editor_ssl_certificates**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **network/ssl/editor_ssl_certificates**
+
+The SSL certificate bundle to use for HTTP requests made within the editor (e.g. from the AssetLib tab). If left empty, the `included Mozilla certificate bundle <https://github.com/godotengine/godot/blob/master/thirdparty/certs/ca-certificates.crt>`__ will be used.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_project_manager/sorting_order:
 
-- :ref:`int<class_int>` **project_manager/sorting_order**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **project_manager/sorting_order**
+
+The sorting order to use in the project manager. When changing the sorting order in the project manager, this setting is set permanently in the editor settings.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_run/auto_save/save_before_running:
 
-- :ref:`bool<class_bool>` **run/auto_save/save_before_running**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **run/auto_save/save_before_running**
+
+If ``true``, saves all scenes and scripts automatically before running the project. Setting this to ``false`` prevents the editor from saving if there are no changes which can speed up the project startup slightly, but it makes it possible to run a project that has unsaved changes. (Unsaved changes will not be visible in the running project.)
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_run/output/always_clear_output_on_play:
 
-- :ref:`bool<class_bool>` **run/output/always_clear_output_on_play**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **run/output/always_clear_output_on_play**
+
+If ``true``, the editor will clear the Output panel when running the project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_run/output/always_close_output_on_stop:
 
-- :ref:`bool<class_bool>` **run/output/always_close_output_on_stop**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **run/output/always_close_output_on_stop**
+
+If ``true``, the editor will collapse the Output panel when stopping the project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_run/output/always_open_output_on_play:
 
-- :ref:`bool<class_bool>` **run/output/always_open_output_on_play**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **run/output/always_open_output_on_play**
+
+If ``true``, the editor will expand the Output panel when running the project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_run/output/font_size:
 
-- :ref:`int<class_int>` **run/output/font_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/output/font_size**
+
+The size of the font in the **Output** panel at the bottom of the editor. This setting does not impact the font size of the script editor (see :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_run/window_placement/rect:
 
-- :ref:`int<class_int>` **run/window_placement/rect**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/window_placement/rect**
+
+The window mode to use to display the project when starting the project from the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_run/window_placement/rect_custom_position:
 
-- :ref:`Vector2<class_Vector2>` **run/window_placement/rect_custom_position**
+.. rst-class:: classref-property
+
+:ref:`Vector2<class_Vector2>` **run/window_placement/rect_custom_position**
+
+The custom position to use when starting the project from the editor (in pixels from the top-left corner). Only effective if :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>` is set to **Custom Position**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_run/window_placement/screen:
 
-- :ref:`int<class_int>` **run/window_placement/screen**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/window_placement/screen**
+
+The monitor to display the project on when starting the project from the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/code_folding:
 
-- :ref:`bool<class_bool>` **text_editor/appearance/code_folding**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/code_folding**
+
+If ``true``, displays the folding arrows next to indented code sections and allows code folding. If ``false``, hides the folding arrows next to indented code sections and disallows code folding.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/line_length_guideline_hard_column:
 
-- :ref:`int<class_int>` **text_editor/appearance/line_length_guideline_hard_column**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/appearance/line_length_guideline_hard_column**
+
+The column at which to display a subtle line as a line length guideline for scripts. This should generally be greater than :ref:`text_editor/appearance/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_soft_column>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/line_length_guideline_soft_column:
 
-- :ref:`int<class_int>` **text_editor/appearance/line_length_guideline_soft_column**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/appearance/line_length_guideline_soft_column**
+
+The column at which to display a *very* subtle line as a line length guideline for scripts. This should generally be lower than :ref:`text_editor/appearance/line_length_guideline_hard_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_hard_column>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/line_numbers_zero_padded:
 
-- :ref:`bool<class_bool>` **text_editor/appearance/line_numbers_zero_padded**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/line_numbers_zero_padded**
+
+If ``true``, displays line numbers with zero padding (e.g. ``007`` instead of ``7``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/show_bookmark_gutter:
 
-- :ref:`bool<class_bool>` **text_editor/appearance/show_bookmark_gutter**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/show_bookmark_gutter**
+
+If ``true``, displays a gutter at the left containing icons for bookmarks.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/show_breakpoint_gutter:
 
-- :ref:`bool<class_bool>` **text_editor/appearance/show_breakpoint_gutter**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/show_breakpoint_gutter**
+
+If ``true``, shows breakpoint gutter and its icons. If ``false``, breakpoints will still be active but it won't be possible to add or remove breakpoints.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/show_info_gutter:
 
-- :ref:`bool<class_bool>` **text_editor/appearance/show_info_gutter**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/show_info_gutter**
+
+If ``true``, displays a gutter at the left containing icons for methods with signal connections.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/show_line_length_guidelines:
 
-- :ref:`bool<class_bool>` **text_editor/appearance/show_line_length_guidelines**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/show_line_length_guidelines**
+
+If ``true``, displays line length guidelines to help you keep line lengths in check. See also :ref:`text_editor/appearance/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_soft_column>` and :ref:`text_editor/appearance/line_length_guideline_soft_column<class_EditorSettings_property_text_editor/appearance/line_length_guideline_soft_column>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/show_line_numbers:
 
-- :ref:`bool<class_bool>` **text_editor/appearance/show_line_numbers**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/show_line_numbers**
+
+If ``true``, displays line numbers in the gutter at the left.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/appearance/word_wrap:
 
-- :ref:`bool<class_bool>` **text_editor/appearance/word_wrap**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/appearance/word_wrap**
+
+If ``true``, wraps long lines over multiple lines to avoid horizontal scrolling. This is a display-only feature; it does not actually insert line breaks in your scripts.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/completion/add_type_hints:
 
-- :ref:`bool<class_bool>` **text_editor/completion/add_type_hints**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/add_type_hints**
+
+If ``true``, adds static typing hints such as ``-> void`` and ``: int`` when performing method definition autocompletion.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/completion/auto_brace_complete:
 
-- :ref:`bool<class_bool>` **text_editor/completion/auto_brace_complete**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/auto_brace_complete**
+
+If ``true``, automatically completes braces when making use of code completion.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/completion/callhint_tooltip_offset:
 
-- :ref:`Vector2<class_Vector2>` **text_editor/completion/callhint_tooltip_offset**
+.. rst-class:: classref-property
+
+:ref:`Vector2<class_Vector2>` **text_editor/completion/callhint_tooltip_offset**
+
+The offset to use when displaying *callhints* (non-interactive tooltips that appear during function autocompletion) in the script editor (in pixels). Not to be confused with the code completion dialog, which is interactive.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/completion/code_complete_delay:
 
-- :ref:`float<class_float>` **text_editor/completion/code_complete_delay**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **text_editor/completion/code_complete_delay**
+
+The delay in seconds after which autocompletion suggestions should be displayed when the user stops typing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/completion/complete_file_paths:
 
-- :ref:`bool<class_bool>` **text_editor/completion/complete_file_paths**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/complete_file_paths**
+
+If ``true``, provides autocompletion suggestions for file paths in methods such as ``load()`` and ``preload()``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/completion/idle_parse_delay:
 
-- :ref:`float<class_float>` **text_editor/completion/idle_parse_delay**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **text_editor/completion/idle_parse_delay**
+
+The delay in seconds after which the script editor should check for errors when the user stops typing.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/completion/put_callhint_tooltip_below_current_line:
 
-- :ref:`bool<class_bool>` **text_editor/completion/put_callhint_tooltip_below_current_line**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/put_callhint_tooltip_below_current_line**
+
+If ``true``, the code completion tooltip will appear below the current line unless there is no space on screen below the current line. If ``false``, the code completion tooltip will appear above the current line.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/completion/use_single_quotes:
 
-- :ref:`bool<class_bool>` **text_editor/completion/use_single_quotes**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/completion/use_single_quotes**
+
+If ``true``, performs string autocompletion with single quotes. If ``false``, performs string autocompletion with double quotes (which matches the `GDScript style guide <https://docs.godotengine.org/en/latest/tutorials/scripting/gdscript/gdscript_styleguide.html>`__).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/cursor/block_caret:
 
-- :ref:`bool<class_bool>` **text_editor/cursor/block_caret**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/cursor/block_caret**
+
+If ``true``, use a block-shaped caret instead of a line-shaped caret in the script editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/cursor/caret_blink:
 
-- :ref:`bool<class_bool>` **text_editor/cursor/caret_blink**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/cursor/caret_blink**
+
+If ``true``, makes the caret blink according to :ref:`text_editor/cursor/caret_blink_speed<class_EditorSettings_property_text_editor/cursor/caret_blink_speed>`. Disabling this setting can improve battery life on laptops if you spend long amounts of time in the script editor, since it will reduce the frequency at which the editor needs to be redrawn.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/cursor/caret_blink_speed:
 
-- :ref:`float<class_float>` **text_editor/cursor/caret_blink_speed**
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **text_editor/cursor/caret_blink_speed**
+
+The interval at which to blink the caret (in seconds). See also :ref:`text_editor/cursor/caret_blink<class_EditorSettings_property_text_editor/cursor/caret_blink>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/cursor/right_click_moves_caret:
 
-- :ref:`bool<class_bool>` **text_editor/cursor/right_click_moves_caret**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/cursor/right_click_moves_caret**
+
+If ``true``, the caret will be moved when right-clicking somewhere in the script editor (like when left-clicking or middle-clicking). If ``false``, the caret will only be moved when left-clicking or middle-clicking somewhere.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/cursor/scroll_past_end_of_file:
 
-- :ref:`bool<class_bool>` **text_editor/cursor/scroll_past_end_of_file**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/cursor/scroll_past_end_of_file**
+
+If ``true``, allows scrolling past the end of the file in the script editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/files/auto_reload_and_parse_scripts_on_save:
 
-- :ref:`bool<class_bool>` **text_editor/files/auto_reload_and_parse_scripts_on_save**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/files/auto_reload_and_parse_scripts_on_save**
+
+If ``true``, automatically reloads and parses scripts in the editor when they are saved. This is mainly relevant for ``tool`` scripts which run in the editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/files/auto_reload_scripts_on_external_change:
 
-- :ref:`bool<class_bool>` **text_editor/files/auto_reload_scripts_on_external_change**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/files/auto_reload_scripts_on_external_change**
+
+If ``true``, automatically reloads scripts in the editor when they have been modified and saved by external editors.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/files/autosave_interval_secs:
 
-- :ref:`int<class_int>` **text_editor/files/autosave_interval_secs**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/files/autosave_interval_secs**
+
+If set to a value greater than ``0``, automatically saves the current script following the specified interval (in seconds). This can be used to prevent data loss if the editor crashes.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/files/restore_scripts_on_load:
 
-- :ref:`bool<class_bool>` **text_editor/files/restore_scripts_on_load**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/files/restore_scripts_on_load**
+
+If ``true``, reopens scripts that were opened in the last session when the editor is reopened on a given project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/files/trim_trailing_whitespace_on_save:
 
-- :ref:`bool<class_bool>` **text_editor/files/trim_trailing_whitespace_on_save**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/files/trim_trailing_whitespace_on_save**
+
+If ``true``, trims trailing whitespace when saving a script. Trailing whitespace refers to tab and space characters placed at the end of lines. Since these serve no practical purpose, they can and should be removed to make version control diffs less noisy.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/help/help_font_size:
 
-- :ref:`int<class_int>` **text_editor/help/help_font_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/help/help_font_size**
+
+The font size to use for the editor help (built-in class reference).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/help/help_source_font_size:
 
-- :ref:`int<class_int>` **text_editor/help/help_source_font_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/help/help_source_font_size**
+
+The font size to use for code samples in the editor help (built-in class reference).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/help/help_title_font_size:
 
-- :ref:`int<class_int>` **text_editor/help/help_title_font_size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/help/help_title_font_size**
+
+The font size to use for headings in the editor help (built-in class reference).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/help/show_help_index:
 
-- :ref:`bool<class_bool>` **text_editor/help/show_help_index**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/help/show_help_index**
+
+If ``true``, displays a table of contents at the left of the editor help (at the location where the members overview would appear when editing a script).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/background_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/background_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/background_color**
+
+The script editor's background color. If set to a translucent color, the editor theme's base color will be visible behind.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/base_type_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/base_type_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/base_type_color**
+
+The script editor's base type color (used for types like :ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, ...).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/bookmark_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/bookmark_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/bookmark_color**
+
+The script editor's bookmark icon color (displayed in the gutter).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/brace_mismatch_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/brace_mismatch_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/brace_mismatch_color**
+
+The script editor's brace mismatch color. Used when the caret is currently on a mismatched brace, parenthesis or bracket character.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/breakpoint_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/breakpoint_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/breakpoint_color**
+
+The script editor's breakpoint icon color (displayed in the gutter).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/caret_background_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/caret_background_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/caret_background_color**
+
+The script editor's caret background color.
+
+\ **Note:** This setting has no effect as it's currently unused.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/caret_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/caret_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/caret_color**
+
+The script editor's caret color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/code_folding_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/code_folding_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/code_folding_color**
+
+The script editor's color for the code folding icon (displayed in the gutter).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/comment_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/comment_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/comment_color**
+
+The script editor's comment color.
+
+\ **Note:** In GDScript, unlike Python, multiline strings are not considered to be comments, and will use the string highlighting color instead.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/completion_background_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/completion_background_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/completion_background_color**
+
+The script editor's autocompletion box background color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/completion_existing_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/completion_existing_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/completion_existing_color**
+
+The script editor's autocompletion box background color to highlight existing characters in the completion results. This should be a translucent color so that :ref:`text_editor/highlighting/completion_selected_color<class_EditorSettings_property_text_editor/highlighting/completion_selected_color>` can be seen behind.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/completion_font_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/completion_font_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/completion_font_color**
+
+The script editor's autocompletion box text color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/completion_scroll_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/completion_scroll_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/completion_scroll_color**
+
+The script editor's autocompletion box scroll bar color.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/completion_selected_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/completion_selected_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/completion_selected_color**
+
+The script editor's autocompletion box background color for the currently selected line.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/control_flow_keyword_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/control_flow_keyword_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/control_flow_keyword_color**
+
+The script editor's control flow keyword color (used for keywords like ``if``, ``for``, ``return``, ...).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/current_line_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/current_line_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/current_line_color**
+
+The script editor's background color for the line the caret is currently on. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/highlighting/mark_color<class_EditorSettings_property_text_editor/highlighting/mark_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/engine_type_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/engine_type_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/engine_type_color**
+
+The script editor's engine type color (:ref:`Vector2<class_Vector2>`, :ref:`Vector3<class_Vector3>`, :ref:`Color<class_Color>`, ...).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/executing_line_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/executing_line_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/executing_line_color**
+
+The script editor's color for the debugger's executing line icon (displayed in the gutter).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/function_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/function_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/function_color**
+
+The script editor's function call color.
+
+\ **Note:** When using the GDScript syntax highlighter, this is replaced by the function definition color configured in the syntax theme for function definitions (e.g. ``func _ready():``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/highlight_all_occurrences:
 
-- :ref:`bool<class_bool>` **text_editor/highlighting/highlight_all_occurrences**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/highlighting/highlight_all_occurrences**
+
+If ``true``, highlights all occurrences of the currently selected text in the script editor. See also :ref:`text_editor/highlighting/word_highlighted_color<class_EditorSettings_property_text_editor/highlighting/word_highlighted_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/highlight_current_line:
 
-- :ref:`bool<class_bool>` **text_editor/highlighting/highlight_current_line**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/highlighting/highlight_current_line**
+
+If ``true``, colors the background of the line the caret is currently on with :ref:`text_editor/highlighting/current_line_color<class_EditorSettings_property_text_editor/highlighting/current_line_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/highlight_type_safe_lines:
 
-- :ref:`bool<class_bool>` **text_editor/highlighting/highlight_type_safe_lines**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/highlighting/highlight_type_safe_lines**
+
+If ``true``, highlights type-safe lines by displaying their line number color with :ref:`text_editor/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/highlighting/safe_line_number_color>` instead of :ref:`text_editor/highlighting/line_number_color<class_EditorSettings_property_text_editor/highlighting/line_number_color>`. Type-safe lines are lines of code where the type of all variables is known at compile-time. These type-safe lines will run faster in Godot 4.0 and later thanks to typed instructions.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/keyword_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/keyword_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/keyword_color**
+
+The script editor's non-control flow keyword color (used for keywords like ``var``, ``func``, some built-in methods, ...).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/line_length_guideline_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/line_length_guideline_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/line_length_guideline_color**
+
+The script editor's color for the line length guideline. The "hard" line length guideline will be drawn with this color, whereas the "soft" line length guideline will be drawn with an opacity twice as low.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/line_number_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/line_number_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/line_number_color**
+
+The script editor's color for line numbers. See also :ref:`text_editor/highlighting/safe_line_number_color<class_EditorSettings_property_text_editor/highlighting/safe_line_number_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/mark_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/mark_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/mark_color**
+
+The script editor's background color for lines with errors. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/highlighting/current_line_color<class_EditorSettings_property_text_editor/highlighting/current_line_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/member_variable_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/member_variable_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/member_variable_color**
+
+The script editor's color for member variables on objects (e.g. ``self.some_property``).
+
+\ **Note:** This color is not used for local variable declaration and access.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/number_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/number_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/number_color**
+
+The script editor's color for numbers (integer and floating-point).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/safe_line_number_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/safe_line_number_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/safe_line_number_color**
+
+The script editor's color for type-safe line numbers. See also :ref:`text_editor/highlighting/line_number_color<class_EditorSettings_property_text_editor/highlighting/line_number_color>`.
+
+\ **Note:** Only displayed if :ref:`text_editor/highlighting/highlight_type_safe_lines<class_EditorSettings_property_text_editor/highlighting/highlight_type_safe_lines>` is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/search_result_border_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/search_result_border_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/search_result_border_color**
+
+The script editor's color for the border of search results. This border helps bring further attention to the search result. Set this color's opacity to 0 to disable the border.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/search_result_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/search_result_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/search_result_color**
+
+The script editor's background color for search results.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/selection_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/selection_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/selection_color**
+
+The script editor's background color for the currently selected text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/string_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/string_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/string_color**
+
+The script editor's color for strings (single-line and multi-line).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/symbol_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/symbol_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/symbol_color**
+
+The script editor's color for operators (``( ) [ ] { } + - * /``, ...).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/syntax_highlighting:
 
-- :ref:`bool<class_bool>` **text_editor/highlighting/syntax_highlighting**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/highlighting/syntax_highlighting**
+
+If ``true``, enables syntax highlighting in the script editor. Keywords and symbols are colored depending on their purpose in the code.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/text_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/text_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/text_color**
+
+The script editor's color for text not highlighted by any syntax highlighting rule.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/text_selected_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/text_selected_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/text_selected_color**
+
+The script editor's background color for text. This should be set to a translucent color so that it can display on top of other line color modifiers such as :ref:`text_editor/highlighting/current_line_color<class_EditorSettings_property_text_editor/highlighting/current_line_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/user_type_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/user_type_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/user_type_color**
+
+The script editor's color for user-defined types (using ``class_name``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/highlighting/word_highlighted_color:
 
-- :ref:`Color<class_Color>` **text_editor/highlighting/word_highlighted_color**
+.. rst-class:: classref-property
+
+:ref:`Color<class_Color>` **text_editor/highlighting/word_highlighted_color**
+
+The script editor's color for words highlighted by selecting them. Only visible if :ref:`text_editor/highlighting/highlight_all_occurrences<class_EditorSettings_property_text_editor/highlighting/highlight_all_occurrences>` is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/indent/auto_indent:
 
-- :ref:`bool<class_bool>` **text_editor/indent/auto_indent**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/indent/auto_indent**
+
+If ``true``, automatically indents code when pressing the :kbd:`Enter` key based on blocks above the new line.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/indent/convert_indent_on_save:
 
-- :ref:`bool<class_bool>` **text_editor/indent/convert_indent_on_save**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/indent/convert_indent_on_save**
+
+If ``true``, converts indentation to match the script editor's indentation settings when saving a script. See also :ref:`text_editor/indent/type<class_EditorSettings_property_text_editor/indent/type>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/indent/draw_spaces:
 
-- :ref:`bool<class_bool>` **text_editor/indent/draw_spaces**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/indent/draw_spaces**
+
+If ``true``, draws space characters as centered points.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/indent/draw_tabs:
 
-- :ref:`bool<class_bool>` **text_editor/indent/draw_tabs**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/indent/draw_tabs**
+
+If ``true``, draws tab characters as chevrons.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/indent/size:
 
-- :ref:`int<class_int>` **text_editor/indent/size**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/indent/size**
+
+When using tab indentation, determines the length of each tab. When using space indentation, determines how many spaces are inserted when pressing :kbd:`Tab` and when automatic indentation is performed.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/indent/type:
 
-- :ref:`int<class_int>` **text_editor/indent/type**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/indent/type**
+
+The indentation style to use (tabs or spaces).
+
+\ **Note:** The :doc:`GDScript style guide <../tutorials/scripting/gdscript/gdscript_styleguide>` recommends using tabs for indentation. It is advised to change this setting only if you need to work on a project that currently uses spaces for indentation.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/navigation/drag_and_drop_selection:
 
-- :ref:`bool<class_bool>` **text_editor/navigation/drag_and_drop_selection**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/navigation/drag_and_drop_selection**
+
+If ``true``, allows drag-and-dropping text in the script editor to move text. Disable this if you find yourself accidentally drag-and-dropping text in the script editor.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/navigation/minimap_width:
 
-- :ref:`int<class_int>` **text_editor/navigation/minimap_width**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/navigation/minimap_width**
+
+The width of the minimap in the script editor (in pixels).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/navigation/mouse_extra_buttons_navigate_history:
 
-- :ref:`bool<class_bool>` **text_editor/navigation/mouse_extra_buttons_navigate_history**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/navigation/mouse_extra_buttons_navigate_history**
+
+If ``true``, the mouse's additional side buttons will be usable to navigate in the script editor's file history. Set this to ``false`` if you're using the side buttons for other purposes (such as a push-to-talk button in a VoIP program).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/navigation/show_minimap:
 
-- :ref:`bool<class_bool>` **text_editor/navigation/show_minimap**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/navigation/show_minimap**
+
+If ``true``, draws an overview of the script near the scroll bar. The minimap can be left-clicked to scroll directly to a location in an "absolute" manner.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/navigation/smooth_scrolling:
 
-- :ref:`bool<class_bool>` **text_editor/navigation/smooth_scrolling**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/navigation/smooth_scrolling**
+
+If ``true``, allows scrolling in sub-line intervals and enables a smooth scrolling animation when using the mouse wheel to scroll.
+
+\ **Note:** :ref:`text_editor/navigation/smooth_scrolling<class_EditorSettings_property_text_editor/navigation/smooth_scrolling>` currently behaves poorly in projects where :ref:`ProjectSettings.physics/common/physics_fps<class_ProjectSettings_property_physics/common/physics_fps>` has been increased significantly from its default value (``60``). In this case, it is recommended to disable this setting.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/navigation/stay_in_script_editor_on_node_selected:
 
-- :ref:`bool<class_bool>` **text_editor/navigation/stay_in_script_editor_on_node_selected**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/navigation/stay_in_script_editor_on_node_selected**
+
+If ``true``, prevents automatically switching between the Script and 2D/3D screens when selecting a node in the Scene tree dock.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/navigation/v_scroll_speed:
 
-- :ref:`int<class_int>` **text_editor/navigation/v_scroll_speed**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/navigation/v_scroll_speed**
+
+The number of pixels to scroll with every mouse wheel increment. Higher values make the script scroll by faster when using the mouse wheel.
+
+\ **Note:** You can hold down :kbd:`Alt` while using the mouse wheel to temporarily scroll 5 times faster.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/script_list/show_members_overview:
 
-- :ref:`bool<class_bool>` **text_editor/script_list/show_members_overview**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/script_list/show_members_overview**
+
+If ``true``, displays an overview of the current script's member variables and functions at the left of the script editor. See also :ref:`text_editor/tools/sort_members_outline_alphabetically<class_EditorSettings_property_text_editor/tools/sort_members_outline_alphabetically>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/theme/color_theme:
 
-- :ref:`String<class_String>` **text_editor/theme/color_theme**
+.. rst-class:: classref-property
+
+:ref:`String<class_String>` **text_editor/theme/color_theme**
+
+The syntax theme to use in the script editor.
+
+You can save your own syntax theme from your current settings by using **File > Theme > Save As...** at the top of the script editor. The syntax theme will then be available locally in the list of color themes.
+
+You can find additional syntax themes to install in the `godot-syntax-themes <https://github.com/godotengine/godot-syntax-themes>`__ repository.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/theme/line_spacing:
 
-- :ref:`int<class_int>` **text_editor/theme/line_spacing**
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/theme/line_spacing**
+
+The space to add between lines (in pixels). Greater line spacing can help improve readability at the cost of displaying fewer lines on screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_property_text_editor/tools/sort_members_outline_alphabetically:
 
-- :ref:`bool<class_bool>` **text_editor/tools/sort_members_outline_alphabetically**
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **text_editor/tools/sort_members_outline_alphabetically**
+
+If ``true``, sorts the members outline (located at the left of the script editor) using alphabetical order. If ``false``, sorts the members outline depending on the order in which members are found in the script.
+
+\ **Note:** Only effective if :ref:`text_editor/script_list/show_members_overview<class_EditorSettings_property_text_editor/script_list/show_members_overview>` is ``true``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorSettings_method_add_property_info:
 
-- void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` info **)**
+.. rst-class:: classref-method
+
+void **add_property_info** **(** :ref:`Dictionary<class_Dictionary>` info **)**
 
 Adds a custom property info to a property. The dictionary must contain:
 
@@ -1820,59 +3268,87 @@ Adds a custom property info to a property. The dictionary must contain:
     
     editor_settings.add_property_info(property_info)
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorSettings_method_erase:
 
-- void **erase** **(** :ref:`String<class_String>` property **)**
+.. rst-class:: classref-method
+
+void **erase** **(** :ref:`String<class_String>` property **)**
 
 Erases the setting whose name is specified by ``property``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_get_favorites:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_favorites** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolStringArray<class_PoolStringArray>` **get_favorites** **(** **)** |const|
 
 Returns the list of favorite files and directories for this project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_get_project_metadata:
 
-- :ref:`Variant<class_Variant>` **get_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` default=null **)** |const|
 
 Returns project-specific metadata for the ``section`` and ``key`` specified. If the metadata doesn't exist, ``default`` will be returned instead. See also :ref:`set_project_metadata<class_EditorSettings_method_set_project_metadata>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_get_project_settings_dir:
 
-- :ref:`String<class_String>` **get_project_settings_dir** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_project_settings_dir** **(** **)** |const|
 
 Returns the project-specific settings path. Projects all have a unique subdirectory inside the settings path where project-specific settings are saved.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_get_recent_dirs:
 
-- :ref:`PoolStringArray<class_PoolStringArray>` **get_recent_dirs** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`PoolStringArray<class_PoolStringArray>` **get_recent_dirs** **(** **)** |const|
 
 Returns the list of recently visited folders in the file dialog for this project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_get_setting:
 
-- :ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_setting** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns the value of the setting specified by ``name``. This is equivalent to using :ref:`Object.get<class_Object_method_get>` on the EditorSettings instance.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_get_settings_dir:
 
-- :ref:`String<class_String>` **get_settings_dir** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_settings_dir** **(** **)** |const|
 
 Gets the global settings path for the engine. Inside this path, you can find some standard paths such as:
 
@@ -1880,70 +3356,103 @@ Gets the global settings path for the engine. Inside this path, you can find som
 
 \ ``settings/templates`` - Where export templates are located
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_EditorSettings_method_has_setting:
 
-- :ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_setting** **(** :ref:`String<class_String>` name **)** |const|
 
 Returns ``true`` if the setting specified by ``name`` exists, ``false`` otherwise.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_property_can_revert:
 
-- :ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **property_can_revert** **(** :ref:`String<class_String>` name **)**
 
 Returns ``true`` if the setting specified by ``name`` can have its value reverted to the default value, ``false`` otherwise. When this method returns ``true``, a Revert button will display next to the setting in the Editor Settings.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_property_get_revert:
 
-- :ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **property_get_revert** **(** :ref:`String<class_String>` name **)**
 
 Returns the default value of the setting specified by ``name``. This is the value that would be applied when clicking the Revert button in the Editor Settings.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_set_favorites:
 
-- void **set_favorites** **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**
+.. rst-class:: classref-method
+
+void **set_favorites** **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**
 
 Sets the list of favorite files and directories for this project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_set_initial_value:
 
-- void **set_initial_value** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` update_current **)**
+.. rst-class:: classref-method
+
+void **set_initial_value** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value, :ref:`bool<class_bool>` update_current **)**
 
 Sets the initial value of the setting specified by ``name`` to ``value``. This is used to provide a value for the Revert button in the Editor Settings. If ``update_current`` is true, the current value of the setting will be set to ``value`` as well.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_set_project_metadata:
 
-- void **set_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` data **)**
+.. rst-class:: classref-method
+
+void **set_project_metadata** **(** :ref:`String<class_String>` section, :ref:`String<class_String>` key, :ref:`Variant<class_Variant>` data **)**
 
 Sets project-specific metadata with the ``section``, ``key`` and ``data`` specified. This metadata is stored outside the project folder and therefore won't be checked into version control. See also :ref:`get_project_metadata<class_EditorSettings_method_get_project_metadata>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_set_recent_dirs:
 
-- void **set_recent_dirs** **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**
+.. rst-class:: classref-method
+
+void **set_recent_dirs** **(** :ref:`PoolStringArray<class_PoolStringArray>` dirs **)**
 
 Sets the list of recently visited folders in the file dialog for this project.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorSettings_method_set_setting:
 
-- void **set_setting** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+void **set_setting** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
 
 Sets the ``value`` of the setting specified by ``name``. This is equivalent to using :ref:`Object.set<class_Object_method_set>` on the EditorSettings instance.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

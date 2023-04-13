@@ -14,6 +14,8 @@ Bone2D
 
 Joint used with :ref:`Skeleton2D<class_Skeleton2D>` to control and animate other nodes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,84 +27,117 @@ Each bone has a :ref:`rest<class_Bone2D_property_rest>` transform that you can r
 
 If in the editor, you can set the rest pose of an entire skeleton using a menu option, from the code, you need to iterate over the bones to set their individual rest poses.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------------------+-------------------------------------------------------------+-------------------------------------+
-| :ref:`float<class_float>`             | :ref:`default_length<class_Bone2D_property_default_length>` | ``16.0``                            |
-+---------------------------------------+-------------------------------------------------------------+-------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`rest<class_Bone2D_property_rest>`                     | ``Transform2D( 0, 0, 0, 0, 0, 0 )`` |
-+---------------------------------------+-------------------------------------------------------------+-------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+-------------------------------------------------------------+-------------------------------------+
+   | :ref:`float<class_float>`             | :ref:`default_length<class_Bone2D_property_default_length>` | ``16.0``                            |
+   +---------------------------------------+-------------------------------------------------------------+-------------------------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`rest<class_Bone2D_property_rest>`                     | ``Transform2D( 0, 0, 0, 0, 0, 0 )`` |
+   +---------------------------------------+-------------------------------------------------------------+-------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+---------------------------------------------------------------------------------------------+
-| void                                  | :ref:`apply_rest<class_Bone2D_method_apply_rest>` **(** **)**                               |
-+---------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_index_in_skeleton<class_Bone2D_method_get_index_in_skeleton>` **(** **)** |const| |
-+---------------------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`Transform2D<class_Transform2D>` | :ref:`get_skeleton_rest<class_Bone2D_method_get_skeleton_rest>` **(** **)** |const|         |
-+---------------------------------------+---------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+---------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`apply_rest<class_Bone2D_method_apply_rest>` **(** **)**                               |
+   +---------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_index_in_skeleton<class_Bone2D_method_get_index_in_skeleton>` **(** **)** |const| |
+   +---------------------------------------+---------------------------------------------------------------------------------------------+
+   | :ref:`Transform2D<class_Transform2D>` | :ref:`get_skeleton_rest<class_Bone2D_method_get_skeleton_rest>` **(** **)** |const|         |
+   +---------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Bone2D_property_default_length:
 
-- :ref:`float<class_float>` **default_length**
+.. rst-class:: classref-property
 
-+-----------+---------------------------+
-| *Default* | ``16.0``                  |
-+-----------+---------------------------+
-| *Setter*  | set_default_length(value) |
-+-----------+---------------------------+
-| *Getter*  | get_default_length()      |
-+-----------+---------------------------+
+:ref:`float<class_float>` **default_length** = ``16.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_default_length** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_default_length** **(** **)**
 
 Length of the bone's representation drawn in the editor's viewport in pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Bone2D_property_rest:
 
-- :ref:`Transform2D<class_Transform2D>` **rest**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------------+
-| *Default* | ``Transform2D( 0, 0, 0, 0, 0, 0 )`` |
-+-----------+-------------------------------------+
-| *Setter*  | set_rest(value)                     |
-+-----------+-------------------------------------+
-| *Getter*  | get_rest()                          |
-+-----------+-------------------------------------+
+:ref:`Transform2D<class_Transform2D>` **rest** = ``Transform2D( 0, 0, 0, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rest** **(** :ref:`Transform2D<class_Transform2D>` value **)**
+- :ref:`Transform2D<class_Transform2D>` **get_rest** **(** **)**
 
 Rest transform of the bone. You can reset the node's transforms to this value using :ref:`apply_rest<class_Bone2D_method_apply_rest>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Bone2D_method_apply_rest:
 
-- void **apply_rest** **(** **)**
+.. rst-class:: classref-method
+
+void **apply_rest** **(** **)**
 
 Stores the node's current transforms in :ref:`rest<class_Bone2D_property_rest>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Bone2D_method_get_index_in_skeleton:
 
-- :ref:`int<class_int>` **get_index_in_skeleton** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_index_in_skeleton** **(** **)** |const|
 
 Returns the node's index as part of the entire skeleton. See :ref:`Skeleton2D<class_Skeleton2D>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Bone2D_method_get_skeleton_rest:
 
-- :ref:`Transform2D<class_Transform2D>` **get_skeleton_rest** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Transform2D<class_Transform2D>` **get_skeleton_rest** **(** **)** |const|
 
 Returns the node's :ref:`rest<class_Bone2D_property_rest>` ``Transform2D`` if it doesn't have a parent, or its rest pose relative to its parent.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

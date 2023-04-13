@@ -14,86 +14,101 @@ CollisionPolygon
 
 Editor-only class for defining a collision polygon in 3D space.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Allows editing a collision polygon's vertices on a selected plane. Can also set a depth perpendicular to that plane. This class is only available in the editor. It will not appear in the scene tree at run-time. Creates a :ref:`Shape<class_Shape>` for gameplay. Properties modified during gameplay will have no effect.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------------------------------+-----------------------------------------------------------+--------------------------+
-| :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_property_depth>`       | ``1.0``                  |
-+-------------------------------------------------+-----------------------------------------------------------+--------------------------+
-| :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_property_disabled>` | ``false``                |
-+-------------------------------------------------+-----------------------------------------------------------+--------------------------+
-| :ref:`float<class_float>`                       | :ref:`margin<class_CollisionPolygon_property_margin>`     | ``0.04``                 |
-+-------------------------------------------------+-----------------------------------------------------------+--------------------------+
-| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   | ``PoolVector2Array(  )`` |
-+-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                       | :ref:`depth<class_CollisionPolygon_property_depth>`       | ``1.0``                  |
+   +-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                         | :ref:`disabled<class_CollisionPolygon_property_disabled>` | ``false``                |
+   +-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                       | :ref:`margin<class_CollisionPolygon_property_margin>`     | ``0.04``                 |
+   +-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+   | :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`polygon<class_CollisionPolygon_property_polygon>`   | ``PoolVector2Array(  )`` |
+   +-------------------------------------------------+-----------------------------------------------------------+--------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_CollisionPolygon_property_depth:
 
-- :ref:`float<class_float>` **depth**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``1.0``          |
-+-----------+------------------+
-| *Setter*  | set_depth(value) |
-+-----------+------------------+
-| *Getter*  | get_depth()      |
-+-----------+------------------+
+:ref:`float<class_float>` **depth** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_depth** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_depth** **(** **)**
 
 Length that the resulting collision extends in either direction perpendicular to its polygon.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon_property_disabled:
 
-- :ref:`bool<class_bool>` **disabled**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_disabled(value) |
-+-----------+---------------------+
-| *Getter*  | is_disabled()       |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **disabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_disabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_disabled** **(** **)**
 
 If ``true``, no collision will be produced.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon_property_margin:
 
-- :ref:`float<class_float>` **margin**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0.04``          |
-+-----------+-------------------+
-| *Setter*  | set_margin(value) |
-+-----------+-------------------+
-| *Getter*  | get_margin()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **margin** = ``0.04``
+
+.. rst-class:: classref-property-setget
+
+- void **set_margin** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_margin** **(** **)**
 
 The collision margin for the generated :ref:`Shape<class_Shape>`. See :ref:`Shape.margin<class_Shape_property_margin>` for more details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_CollisionPolygon_property_polygon:
 
-- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``PoolVector2Array(  )`` |
-+-----------+--------------------------+
-| *Setter*  | set_polygon(value)       |
-+-----------+--------------------------+
-| *Getter*  | get_polygon()            |
-+-----------+--------------------------+
+:ref:`PoolVector2Array<class_PoolVector2Array>` **polygon** = ``PoolVector2Array(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_polygon** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` value **)**
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_polygon** **(** **)**
 
 Array of vertices which define the polygon.
 
@@ -102,3 +117,4 @@ Array of vertices which define the polygon.
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

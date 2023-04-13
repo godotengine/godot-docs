@@ -14,6 +14,8 @@ EditorScenePostImport
 
 Post-processes scenes after import.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -40,47 +42,71 @@ The :ref:`post_import<class_EditorScenePostImport_method_post_import>` callback 
             for child in node.get_children():
                 iterate(child)
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `#custom-script <../tutorials/assets_pipeline/importing_scenes.html#custom-script>`__ in :doc:`../tutorials/assets_pipeline/importing_scenes`
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>` **(** **)** |const|                             |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_source_folder<class_EditorScenePostImport_method_get_source_folder>` **(** **)** |const|                         |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_Object>` | :ref:`post_import<class_EditorScenePostImport_method_post_import>` **(** :ref:`Object<class_Object>` scene **)** |virtual| |
-+-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_source_file<class_EditorScenePostImport_method_get_source_file>` **(** **)** |const|                             |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_source_folder<class_EditorScenePostImport_method_get_source_folder>` **(** **)** |const|                         |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Object<class_Object>` | :ref:`post_import<class_EditorScenePostImport_method_post_import>` **(** :ref:`Object<class_Object>` scene **)** |virtual| |
+   +-----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_EditorScenePostImport_method_get_source_file:
 
-- :ref:`String<class_String>` **get_source_file** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_source_file** **(** **)** |const|
 
 Returns the source file path which got imported (e.g. ``res://scene.dae``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImport_method_get_source_folder:
 
-- :ref:`String<class_String>` **get_source_folder** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_source_folder** **(** **)** |const|
 
 Returns the resource folder the imported scene file is located in.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_EditorScenePostImport_method_post_import:
 
-- :ref:`Object<class_Object>` **post_import** **(** :ref:`Object<class_Object>` scene **)** |virtual|
+.. rst-class:: classref-method
+
+:ref:`Object<class_Object>` **post_import** **(** :ref:`Object<class_Object>` scene **)** |virtual|
 
 Called after the scene was imported. This method must return the modified version of the scene.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

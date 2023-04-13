@@ -12,6 +12,8 @@ Dictionary
 
 Dictionary type.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -113,6 +115,8 @@ You need to first calculate the dictionary's hash with :ref:`hash<class_Dictiona
 
 \ **Note:** When declaring a dictionary with ``const``, the dictionary itself can still be mutated by defining the values of individual keys. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
@@ -122,95 +126,132 @@ Tutorials
 
 - `OS Test Demo <https://godotengine.org/asset-library/asset/677>`__
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`clear<class_Dictionary_method_clear>` **(** **)**                                                                                         |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>` **(** :ref:`bool<class_bool>` deep=false **)**                                              |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`empty<class_Dictionary_method_empty>` **(** **)**                                                                                         |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>` **(** :ref:`Variant<class_Variant>` key **)**                                                       |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`       | :ref:`find_key<class_Dictionary_method_find_key>` **(** :ref:`Variant<class_Variant>` value **)**                                               |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)**               |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>` **(** :ref:`Variant<class_Variant>` key **)**                                                           |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`             | :ref:`has_all<class_Dictionary_method_has_all>` **(** :ref:`Array<class_Array>` keys **)**                                                      |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`hash<class_Dictionary_method_hash>` **(** **)**                                                                                           |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`keys<class_Dictionary_method_keys>` **(** **)**                                                                                           |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                | :ref:`merge<class_Dictionary_method_merge>` **(** :ref:`Dictionary<class_Dictionary>` dictionary, :ref:`bool<class_bool>` overwrite=false **)** |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`               | :ref:`size<class_Dictionary_method_size>` **(** **)**                                                                                           |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>` **(** **)**                                                                                       |
-+-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`clear<class_Dictionary_method_clear>` **(** **)**                                                                                         |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>` | :ref:`duplicate<class_Dictionary_method_duplicate>` **(** :ref:`bool<class_bool>` deep=false **)**                                              |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`empty<class_Dictionary_method_empty>` **(** **)**                                                                                         |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`erase<class_Dictionary_method_erase>` **(** :ref:`Variant<class_Variant>` key **)**                                                       |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`find_key<class_Dictionary_method_find_key>` **(** :ref:`Variant<class_Variant>` value **)**                                               |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`       | :ref:`get<class_Dictionary_method_get>` **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)**               |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`has<class_Dictionary_method_has>` **(** :ref:`Variant<class_Variant>` key **)**                                                           |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`has_all<class_Dictionary_method_has_all>` **(** :ref:`Array<class_Array>` keys **)**                                                      |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`hash<class_Dictionary_method_hash>` **(** **)**                                                                                           |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`           | :ref:`keys<class_Dictionary_method_keys>` **(** **)**                                                                                           |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                | :ref:`merge<class_Dictionary_method_merge>` **(** :ref:`Dictionary<class_Dictionary>` dictionary, :ref:`bool<class_bool>` overwrite=false **)** |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`               | :ref:`size<class_Dictionary_method_size>` **(** **)**                                                                                           |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Array<class_Array>`           | :ref:`values<class_Dictionary_method_values>` **(** **)**                                                                                       |
+   +-------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Dictionary_method_clear:
 
-- void **clear** **(** **)**
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
 
 Clear the dictionary, removing all key/value pairs.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Dictionary_method_duplicate:
 
-- :ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=false **)**
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **duplicate** **(** :ref:`bool<class_bool>` deep=false **)**
 
 Creates a copy of the dictionary, and returns it. The ``deep`` parameter causes inner dictionaries and arrays to be copied recursively, but does not apply to objects.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Dictionary_method_empty:
 
-- :ref:`bool<class_bool>` **empty** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the dictionary is empty.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Dictionary_method_erase:
 
-- :ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **erase** **(** :ref:`Variant<class_Variant>` key **)**
 
 Erase a dictionary key/value pair by key. Returns ``true`` if the given key was present in the dictionary, ``false`` otherwise.
 
 \ **Note:** Don't erase elements while iterating over the dictionary. You can iterate over the :ref:`keys<class_Dictionary_method_keys>` array instead.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Dictionary_method_find_key:
 
-- :ref:`Variant<class_Variant>` **find_key** **(** :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **find_key** **(** :ref:`Variant<class_Variant>` value **)**
 
 Returns the first key whose associated value is equal to ``value``, or ``null`` if no such value is found.
 
-\ **Note:** ``null`` is also a valid key. If you have it in your ``Dictionary``, the :ref:`find_key<class_Dictionary_method_find_key>` method can give misleading results.
+\ **Note:** ``null`` is also a valid key. If you have it in your **Dictionary**, the :ref:`find_key<class_Dictionary_method_find_key>` method can give misleading results.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Dictionary_method_get:
 
-- :ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)**
+.. rst-class:: classref-method
 
-Returns the current value for the specified key in the ``Dictionary``. If the key does not exist, the method returns the value of the optional default argument, or ``null`` if it is omitted.
+:ref:`Variant<class_Variant>` **get** **(** :ref:`Variant<class_Variant>` key, :ref:`Variant<class_Variant>` default=null **)**
+
+Returns the current value for the specified key in the **Dictionary**. If the key does not exist, the method returns the value of the optional default argument, or ``null`` if it is omitted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Dictionary_method_has:
 
-- :ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` key **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has** **(** :ref:`Variant<class_Variant>` key **)**
 
 Returns ``true`` if the dictionary has a given key.
 
@@ -224,19 +265,27 @@ Returns ``true`` if the dictionary has a given key.
 
 This method (like the ``in`` operator) will evaluate to ``true`` as long as the key exists, even if the associated value is ``null``.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Dictionary_method_has_all:
 
-- :ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_Array>` keys **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_all** **(** :ref:`Array<class_Array>` keys **)**
 
 Returns ``true`` if the dictionary has all the keys in the given array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Dictionary_method_hash:
 
-- :ref:`int<class_int>` **hash** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **hash** **(** **)**
 
 Returns a hashed 32-bit integer value representing the dictionary contents. This can be used to compare dictionaries by value:
 
@@ -251,38 +300,55 @@ Returns a hashed 32-bit integer value representing the dictionary contents. This
 
 \ **Note:** Dictionaries with equal content will always produce identical hash values. However, the reverse is not true. Returning identical hash values does *not* imply the dictionaries are equal, because different dictionaries can have identical hash values due to hash collisions.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_Dictionary_method_keys:
 
-- :ref:`Array<class_Array>` **keys** **(** **)**
+.. rst-class:: classref-method
 
-Returns the list of keys in the ``Dictionary``.
+:ref:`Array<class_Array>` **keys** **(** **)**
+
+Returns the list of keys in the **Dictionary**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Dictionary_method_merge:
 
-- void **merge** **(** :ref:`Dictionary<class_Dictionary>` dictionary, :ref:`bool<class_bool>` overwrite=false **)**
+.. rst-class:: classref-method
 
-Adds elements from ``dictionary`` to this ``Dictionary``. By default, duplicate keys will not be copied over, unless ``overwrite`` is ``true``.
+void **merge** **(** :ref:`Dictionary<class_Dictionary>` dictionary, :ref:`bool<class_bool>` overwrite=false **)**
+
+Adds elements from ``dictionary`` to this **Dictionary**. By default, duplicate keys will not be copied over, unless ``overwrite`` is ``true``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Dictionary_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **size** **(** **)**
 
 Returns the number of keys in the dictionary.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Dictionary_method_values:
 
-- :ref:`Array<class_Array>` **values** **(** **)**
+.. rst-class:: classref-method
 
-Returns the list of values in the ``Dictionary``.
+:ref:`Array<class_Array>` **values** **(** **)**
+
+Returns the list of values in the **Dictionary**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

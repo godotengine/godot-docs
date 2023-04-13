@@ -14,6 +14,8 @@ VisibilityEnabler
 
 Enables certain nodes only when approximately visible.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -25,93 +27,142 @@ If you just want to receive notifications, use :ref:`VisibilityNotifier<class_Vi
 
 \ **Note:** VisibilityEnabler will not affect nodes added after scene initialization.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-------------------------+----------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_property_freeze_bodies>`       | ``true`` |
-+-------------------------+----------------------------------------------------------------------------+----------+
-| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_property_pause_animations>` | ``true`` |
-+-------------------------+----------------------------------------------------------------------------+----------+
+.. table::
+   :widths: auto
+
+   +-------------------------+----------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_property_freeze_bodies>`       | ``true`` |
+   +-------------------------+----------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_property_pause_animations>` | ``true`` |
+   +-------------------------+----------------------------------------------------------------------------+----------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>` | :ref:`is_enabler_enabled<class_VisibilityEnabler_method_is_enabler_enabled>` **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** |const|            |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                    | :ref:`set_enabler<class_VisibilityEnabler_method_set_enabler>` **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)** |
-+-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_enabler_enabled<class_VisibilityEnabler_method_is_enabler_enabled>` **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** |const|            |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_enabler<class_VisibilityEnabler_method_set_enabler>` **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)** |
+   +-------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisibilityEnabler_Enabler:
 
-.. _class_VisibilityEnabler_constant_ENABLER_PAUSE_ANIMATIONS:
-
-.. _class_VisibilityEnabler_constant_ENABLER_FREEZE_BODIES:
-
-.. _class_VisibilityEnabler_constant_ENABLER_MAX:
+.. rst-class:: classref-enumeration
 
 enum **Enabler**:
 
-- **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+.. _class_VisibilityEnabler_constant_ENABLER_PAUSE_ANIMATIONS:
 
-- **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_RigidBody>` nodes.
+.. rst-class:: classref-enumeration-constant
 
-- **ENABLER_MAX** = **2** --- Represents the size of the :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enum.
+:ref:`Enabler<enum_VisibilityEnabler_Enabler>` **ENABLER_PAUSE_ANIMATIONS** = ``0``
+
+This enabler will pause :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+
+.. _class_VisibilityEnabler_constant_ENABLER_FREEZE_BODIES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Enabler<enum_VisibilityEnabler_Enabler>` **ENABLER_FREEZE_BODIES** = ``1``
+
+This enabler will freeze :ref:`RigidBody<class_RigidBody>` nodes.
+
+.. _class_VisibilityEnabler_constant_ENABLER_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Enabler<enum_VisibilityEnabler_Enabler>` **ENABLER_MAX** = ``2``
+
+Represents the size of the :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enum.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisibilityEnabler_property_freeze_bodies:
 
-- :ref:`bool<class_bool>` **freeze_bodies**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``true``             |
-+-----------+----------------------+
-| *Setter*  | set_enabler(value)   |
-+-----------+----------------------+
-| *Getter*  | is_enabler_enabled() |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **freeze_bodies** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enabler** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)**
+- :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** |const|
 
 If ``true``, :ref:`RigidBody<class_RigidBody>` nodes will be paused.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibilityEnabler_property_pause_animations:
 
-- :ref:`bool<class_bool>` **pause_animations**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``true``             |
-+-----------+----------------------+
-| *Setter*  | set_enabler(value)   |
-+-----------+----------------------+
-| *Getter*  | is_enabler_enabled() |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **pause_animations** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_enabler** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)**
+- :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** |const|
 
 If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisibilityEnabler_method_is_enabler_enabled:
 
-- :ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_enabler_enabled** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler **)** |const|
 
 Returns whether the enabler identified by given :ref:`Enabler<enum_VisibilityEnabler_Enabler>` constant is active.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisibilityEnabler_method_set_enabler:
 
-- void **set_enabler** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)**
+.. rst-class:: classref-method
+
+void **set_enabler** **(** :ref:`Enabler<enum_VisibilityEnabler_Enabler>` enabler, :ref:`bool<class_bool>` enabled **)**
 
 Sets active state of the enabler identified by given :ref:`Enabler<enum_VisibilityEnabler_Enabler>` constant.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

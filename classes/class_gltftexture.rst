@@ -12,35 +12,69 @@ GLTFTexture
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFTexture`` within a script will cause an error in an exported project.
+**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFTexture** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------+--------------------------------------------------------+-------+
-| :ref:`int<class_int>` | :ref:`src_image<class_GLTFTexture_property_src_image>` | ``0`` |
-+-----------------------+--------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +-----------------------+--------------------------------------------------------+--------+
+   | :ref:`int<class_int>` | :ref:`sampler<class_GLTFTexture_property_sampler>`     | ``-1`` |
+   +-----------------------+--------------------------------------------------------+--------+
+   | :ref:`int<class_int>` | :ref:`src_image<class_GLTFTexture_property_src_image>` | ``0``  |
+   +-----------------------+--------------------------------------------------------+--------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
+.. _class_GLTFTexture_property_sampler:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **sampler** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_sampler** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_sampler** **(** **)**
+
+ID of the texture sampler to use when sampling the image. If -1, then the default texture sampler is used (linear filtering, and repeat wrapping in both axes).
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_GLTFTexture_property_src_image:
 
-- :ref:`int<class_int>` **src_image**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_src_image(value) |
-+-----------+----------------------+
-| *Getter*  | get_src_image()      |
-+-----------+----------------------+
+:ref:`int<class_int>` **src_image** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_src_image** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_src_image** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

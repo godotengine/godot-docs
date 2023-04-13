@@ -12,12 +12,14 @@ PoolByteArray
 
 A pooled array of bytes.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 An array specifically designed to hold bytes. Optimized for memory usage, does not fragment the memory.
 
-\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type ``PoolByteArray`` or mutating a ``PoolByteArray`` within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
+\ **Note:** This type is passed by value and not by reference. This means that when *mutating* a class property of type **PoolByteArray** or mutating a **PoolByteArray** within an :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>`, changes will be lost:
 
 ::
 
@@ -25,7 +27,7 @@ An array specifically designed to hold bytes. Optimized for memory usage, does n
     array[0].push_back(123)
     print(array)  # [[]] (empty PoolByteArray within an Array)
 
-Instead, the entire ``PoolByteArray`` property must be *reassigned* with ``=`` for it to be changed:
+Instead, the entire **PoolByteArray** property must be *reassigned* with ``=`` for it to be changed:
 
 ::
 
@@ -35,125 +37,166 @@ Instead, the entire ``PoolByteArray`` property must be *reassigned* with ``=`` f
     array[0] = pool_array
     print(array)  # [[123]] (PoolByteArray with 1 element inside an Array)
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`PoolByteArray<class_PoolByteArray_method_PoolByteArray>` **(** :ref:`Array<class_Array>` from **)**                                                            |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`append<class_PoolByteArray_method_append>` **(** :ref:`int<class_int>` byte **)**                                                                              |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`append_array<class_PoolByteArray_method_append_array>` **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**                                             |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`clear<class_PoolByteArray_method_clear>` **(** **)**                                                                                                           |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`compress<class_PoolByteArray_method_compress>` **(** :ref:`int<class_int>` compression_mode=0 **)**                                                            |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`count<class_PoolByteArray_method_count>` **(** :ref:`int<class_int>` value **)**                                                                               |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress<class_PoolByteArray_method_decompress>` **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**                     |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress_dynamic<class_PoolByteArray_method_decompress_dynamic>` **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)** |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolByteArray_method_empty>` **(** **)**                                                                                                           |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`fill<class_PoolByteArray_method_fill>` **(** :ref:`int<class_int>` byte **)**                                                                                  |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`find<class_PoolByteArray_method_find>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**                                                   |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` **(** **)**                                                                           |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`get_string_from_utf8<class_PoolByteArray_method_get_string_from_utf8>` **(** **)**                                                                             |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                   | :ref:`has<class_PoolByteArray_method_has>` **(** :ref:`int<class_int>` value **)**                                                                                   |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`               | :ref:`hex_encode<class_PoolByteArray_method_hex_encode>` **(** **)**                                                                                                 |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`insert<class_PoolByteArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                                   |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`invert<class_PoolByteArray_method_invert>` **(** **)**                                                                                                         |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`push_back<class_PoolByteArray_method_push_back>` **(** :ref:`int<class_int>` byte **)**                                                                        |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`remove<class_PoolByteArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                                                               |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`resize<class_PoolByteArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                                                               |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`rfind<class_PoolByteArray_method_rfind>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**                                                |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`set<class_PoolByteArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                                         |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                     | :ref:`size<class_PoolByteArray_method_size>` **(** **)**                                                                                                             |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                      | :ref:`sort<class_PoolByteArray_method_sort>` **(** **)**                                                                                                             |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`subarray<class_PoolByteArray_method_subarray>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                                                |
-+-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`PoolByteArray<class_PoolByteArray_method_PoolByteArray>` **(** :ref:`Array<class_Array>` from **)**                                                            |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`append<class_PoolByteArray_method_append>` **(** :ref:`int<class_int>` byte **)**                                                                              |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`append_array<class_PoolByteArray_method_append_array>` **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**                                             |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`clear<class_PoolByteArray_method_clear>` **(** **)**                                                                                                           |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`compress<class_PoolByteArray_method_compress>` **(** :ref:`int<class_int>` compression_mode=0 **)**                                                            |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`count<class_PoolByteArray_method_count>` **(** :ref:`int<class_int>` value **)**                                                                               |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress<class_PoolByteArray_method_decompress>` **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**                     |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`decompress_dynamic<class_PoolByteArray_method_decompress_dynamic>` **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)** |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`empty<class_PoolByteArray_method_empty>` **(** **)**                                                                                                           |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`fill<class_PoolByteArray_method_fill>` **(** :ref:`int<class_int>` byte **)**                                                                                  |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`find<class_PoolByteArray_method_find>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**                                                   |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`               | :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` **(** **)**                                                                           |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`               | :ref:`get_string_from_utf8<class_PoolByteArray_method_get_string_from_utf8>` **(** **)**                                                                             |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                   | :ref:`has<class_PoolByteArray_method_has>` **(** :ref:`int<class_int>` value **)**                                                                                   |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`               | :ref:`hex_encode<class_PoolByteArray_method_hex_encode>` **(** **)**                                                                                                 |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`insert<class_PoolByteArray_method_insert>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                                   |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`invert<class_PoolByteArray_method_invert>` **(** **)**                                                                                                         |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`push_back<class_PoolByteArray_method_push_back>` **(** :ref:`int<class_int>` byte **)**                                                                        |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`remove<class_PoolByteArray_method_remove>` **(** :ref:`int<class_int>` idx **)**                                                                               |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`resize<class_PoolByteArray_method_resize>` **(** :ref:`int<class_int>` idx **)**                                                                               |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`rfind<class_PoolByteArray_method_rfind>` **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**                                                |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`set<class_PoolByteArray_method_set>` **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**                                                         |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                     | :ref:`size<class_PoolByteArray_method_size>` **(** **)**                                                                                                             |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`sort<class_PoolByteArray_method_sort>` **(** **)**                                                                                                             |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`subarray<class_PoolByteArray_method_subarray>` **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**                                                |
+   +-------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_PoolByteArray_method_PoolByteArray:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **PoolByteArray** **(** :ref:`Array<class_Array>` from **)**
+.. rst-class:: classref-method
 
-Constructs a new ``PoolByteArray``. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+:ref:`PoolByteArray<class_PoolByteArray>` **PoolByteArray** **(** :ref:`Array<class_Array>` from **)**
+
+Constructs a new **PoolByteArray**. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_append:
 
-- void **append** **(** :ref:`int<class_int>` byte **)**
+.. rst-class:: classref-method
+
+void **append** **(** :ref:`int<class_int>` byte **)**
 
 Appends an element at the end of the array (alias of :ref:`push_back<class_PoolByteArray_method_push_back>`).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_append_array:
 
-- void **append_array** **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**
+.. rst-class:: classref-method
 
-Appends a ``PoolByteArray`` at the end of this array.
+void **append_array** **(** :ref:`PoolByteArray<class_PoolByteArray>` array **)**
+
+Appends a **PoolByteArray** at the end of this array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_clear:
 
-- void **clear** **(** **)**
+.. rst-class:: classref-method
+
+void **clear** **(** **)**
 
 Clears the array. This is equivalent to using :ref:`resize<class_PoolByteArray_method_resize>` with a size of ``0``.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_compress:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **compress** **(** :ref:`int<class_int>` compression_mode=0 **)**
+.. rst-class:: classref-method
 
-Returns a new ``PoolByteArray`` with the data compressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
+:ref:`PoolByteArray<class_PoolByteArray>` **compress** **(** :ref:`int<class_int>` compression_mode=0 **)**
+
+Returns a new **PoolByteArray** with the data compressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_count:
 
-- :ref:`int<class_int>` **count** **(** :ref:`int<class_int>` value **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **count** **(** :ref:`int<class_int>` value **)**
 
 Returns the number of times an element is in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_decompress:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **decompress** **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**
+.. rst-class:: classref-method
 
-Returns a new ``PoolByteArray`` with the data decompressed. Set ``buffer_size`` to the size of the uncompressed data. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
+:ref:`PoolByteArray<class_PoolByteArray>` **decompress** **(** :ref:`int<class_int>` buffer_size, :ref:`int<class_int>` compression_mode=0 **)**
+
+Returns a new **PoolByteArray** with the data decompressed. Set ``buffer_size`` to the size of the uncompressed data. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_decompress_dynamic:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **decompress_dynamic** **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)**
+.. rst-class:: classref-method
 
-Returns a new ``PoolByteArray`` with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**\ 
+:ref:`PoolByteArray<class_PoolByteArray>` **decompress_dynamic** **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)**
+
+Returns a new **PoolByteArray** with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_File_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**\ 
 
 This method is potentially slower than ``decompress``, as it may have to re-allocate its output buffer multiple times while decompressing, where as ``decompress`` knows its output buffer size from the beginning.
 
@@ -161,61 +204,89 @@ This method is potentially slower than ``decompress``, as it may have to re-allo
 
 GZIP has a maximal compression ratio of 1032:1, meaning it's very possible for a small compressed payload to decompress to a potentially very large output. To guard against this, you may provide a maximum size this function is allowed to allocate in bytes via ``max_output_size``. Passing -1 will allow for unbounded output. If any positive value is passed, and the decompression exceeds that amount in bytes, then an error will be returned.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PoolByteArray_method_empty:
 
-- :ref:`bool<class_bool>` **empty** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **empty** **(** **)**
 
 Returns ``true`` if the array is empty.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_fill:
 
-- void **fill** **(** :ref:`int<class_int>` byte **)**
+.. rst-class:: classref-method
+
+void **fill** **(** :ref:`int<class_int>` byte **)**
 
 Assigns the given value to all elements in the array. This can typically be used together with :ref:`resize<class_PoolByteArray_method_resize>` to create an array with a given size and initialized elements.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_find:
 
-- :ref:`int<class_int>` **find** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **find** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=0 **)**
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed. Returns ``-1`` if ``from`` is out of bounds.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_get_string_from_ascii:
 
-- :ref:`String<class_String>` **get_string_from_ascii** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_string_from_ascii** **(** **)**
 
 Returns a copy of the array's contents as :ref:`String<class_String>`. Fast alternative to :ref:`get_string_from_utf8<class_PoolByteArray_method_get_string_from_utf8>` if the content is ASCII-only. Unlike the UTF-8 function this function maps every byte to a character in the array. Multibyte sequences will not be interpreted correctly. For parsing user input always use :ref:`get_string_from_utf8<class_PoolByteArray_method_get_string_from_utf8>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_get_string_from_utf8:
 
-- :ref:`String<class_String>` **get_string_from_utf8** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_string_from_utf8** **(** **)**
 
 Returns a copy of the array's contents as :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PoolByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_has:
 
-- :ref:`bool<class_bool>` **has** **(** :ref:`int<class_int>` value **)**
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has** **(** :ref:`int<class_int>` value **)**
 
 Returns ``true`` if the array contains the given value.
 
 \ **Note:** This is equivalent to using the ``in`` operator.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PoolByteArray_method_hex_encode:
 
-- :ref:`String<class_String>` **hex_encode** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **hex_encode** **(** **)**
 
 Returns a hexadecimal representation of this array as a :ref:`String<class_String>`.
 
@@ -224,88 +295,129 @@ Returns a hexadecimal representation of this array as a :ref:`String<class_Strin
     var array = PoolByteArray([11, 46, 255])
     print(array.hex_encode()) # Prints: 0b2eff
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PoolByteArray_method_insert:
 
-- :ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **insert** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**
 
 Inserts a new element at a given position in the array. The position must be valid, or at the end of the array (``idx == size()``).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_invert:
 
-- void **invert** **(** **)**
+.. rst-class:: classref-method
+
+void **invert** **(** **)**
 
 Reverses the order of the elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_push_back:
 
-- void **push_back** **(** :ref:`int<class_int>` byte **)**
+.. rst-class:: classref-method
+
+void **push_back** **(** :ref:`int<class_int>` byte **)**
 
 Appends an element at the end of the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_remove:
 
-- void **remove** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **remove** **(** :ref:`int<class_int>` idx **)**
 
 Removes an element from the array by index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_resize:
 
-- void **resize** **(** :ref:`int<class_int>` idx **)**
+.. rst-class:: classref-method
+
+void **resize** **(** :ref:`int<class_int>` idx **)**
 
 Sets the size of the array. If the array is grown, reserves elements at the end of the array. If the array is shrunk, truncates the array to the new size.
 
 \ **Note:** Added elements are not automatically initialized to 0 and will contain garbage, i.e. indeterminate values.
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_PoolByteArray_method_rfind:
 
-- :ref:`int<class_int>` **rfind** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **rfind** **(** :ref:`int<class_int>` value, :ref:`int<class_int>` from=-1 **)**
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array. If the adjusted start index is out of bounds, this method searches from the end of the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_set:
 
-- void **set** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**
+.. rst-class:: classref-method
+
+void **set** **(** :ref:`int<class_int>` idx, :ref:`int<class_int>` byte **)**
 
 Changes the byte at the given index.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_size:
 
-- :ref:`int<class_int>` **size** **(** **)**
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **size** **(** **)**
 
 Returns the number of elements in the array.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_sort:
 
-- void **sort** **(** **)**
+.. rst-class:: classref-method
+
+void **sort** **(** **)**
 
 Sorts the elements of the array in ascending order.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_PoolByteArray_method_subarray:
 
-- :ref:`PoolByteArray<class_PoolByteArray>` **subarray** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
+.. rst-class:: classref-method
 
-Returns the slice of the ``PoolByteArray`` between indices (inclusive) as a new ``PoolByteArray``. Any negative index is considered to be from the end of the array.
+:ref:`PoolByteArray<class_PoolByteArray>` **subarray** **(** :ref:`int<class_int>` from, :ref:`int<class_int>` to **)**
+
+Returns the slice of the **PoolByteArray** between indices (inclusive) as a new **PoolByteArray**. Any negative index is considered to be from the end of the array.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

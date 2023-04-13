@@ -14,6 +14,8 @@ WebSocketServer
 
 A WebSocket server implementation.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,198 +25,271 @@ After starting the server (:ref:`listen<class_WebSocketServer_method_listen>`), 
 
 \ **Note:** Not available in HTML5 exports.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------------------------+----------------------------------------------------------------------------+---------+
-| :ref:`String<class_String>`                   | :ref:`bind_ip<class_WebSocketServer_property_bind_ip>`                     | ``"*"`` |
-+-----------------------------------------------+----------------------------------------------------------------------------+---------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`                   |         |
-+-----------------------------------------------+----------------------------------------------------------------------------+---------+
-| :ref:`float<class_float>`                     | :ref:`handshake_timeout<class_WebSocketServer_property_handshake_timeout>` | ``3.0`` |
-+-----------------------------------------------+----------------------------------------------------------------------------+---------+
-| :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`             |         |
-+-----------------------------------------------+----------------------------------------------------------------------------+---------+
-| :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`     |         |
-+-----------------------------------------------+----------------------------------------------------------------------------+---------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------------+----------------------------------------------------------------------------+---------+
+   | :ref:`String<class_String>`                   | :ref:`bind_ip<class_WebSocketServer_property_bind_ip>`                     | ``"*"`` |
+   +-----------------------------------------------+----------------------------------------------------------------------------+---------+
+   | :ref:`X509Certificate<class_X509Certificate>` | :ref:`ca_chain<class_WebSocketServer_property_ca_chain>`                   |         |
+   +-----------------------------------------------+----------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>`                     | :ref:`handshake_timeout<class_WebSocketServer_property_handshake_timeout>` | ``3.0`` |
+   +-----------------------------------------------+----------------------------------------------------------------------------+---------+
+   | :ref:`CryptoKey<class_CryptoKey>`             | :ref:`private_key<class_WebSocketServer_property_private_key>`             |         |
+   +-----------------------------------------------+----------------------------------------------------------------------------+---------+
+   | :ref:`X509Certificate<class_X509Certificate>` | :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`     |         |
+   +-----------------------------------------------+----------------------------------------------------------------------------+---------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`disconnect_peer<class_WebSocketServer_method_disconnect_peer>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                               |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>`           | :ref:`get_peer_address<class_WebSocketServer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                             |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                 | :ref:`get_peer_port<class_WebSocketServer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                   |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`has_peer<class_WebSocketServer_method_has_peer>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                             |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`               | :ref:`is_listening<class_WebSocketServer_method_is_listening>` **(** **)** |const|                                                                                                                              |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_WebSocketServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`set_extra_headers<class_WebSocketServer_method_set_extra_headers>` **(** :ref:`PoolStringArray<class_PoolStringArray>` headers=PoolStringArray(  ) **)**                                                  |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                  | :ref:`stop<class_WebSocketServer_method_stop>` **(** **)**                                                                                                                                                      |
-+---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`disconnect_peer<class_WebSocketServer_method_disconnect_peer>` **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**                               |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_peer_address<class_WebSocketServer_method_get_peer_address>` **(** :ref:`int<class_int>` id **)** |const|                                                                                             |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_peer_port<class_WebSocketServer_method_get_peer_port>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                   |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`has_peer<class_WebSocketServer_method_has_peer>` **(** :ref:`int<class_int>` id **)** |const|                                                                                                             |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_listening<class_WebSocketServer_method_is_listening>` **(** **)** |const|                                                                                                                              |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_WebSocketServer_method_listen>` **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)** |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_extra_headers<class_WebSocketServer_method_set_extra_headers>` **(** :ref:`PoolStringArray<class_PoolStringArray>` headers=PoolStringArray(  ) **)**                                                  |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`stop<class_WebSocketServer_method_stop>` **(** **)**                                                                                                                                                      |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_WebSocketServer_signal_client_close_request:
 
-- **client_close_request** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code, :ref:`String<class_String>` reason **)**
+.. rst-class:: classref-signal
+
+**client_close_request** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code, :ref:`String<class_String>` reason **)**
 
 Emitted when a client requests a clean close. You should keep polling until you get a :ref:`client_disconnected<class_WebSocketServer_signal_client_disconnected>` signal with the same ``id`` to achieve the clean close. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_signal_client_connected:
 
-- **client_connected** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` protocol **)**
+.. rst-class:: classref-signal
+
+**client_connected** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` protocol **)**
 
 Emitted when a new client connects. "protocol" will be the sub-protocol agreed with the client.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_signal_client_disconnected:
 
-- **client_disconnected** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` was_clean_close **)**
+.. rst-class:: classref-signal
+
+**client_disconnected** **(** :ref:`int<class_int>` id, :ref:`bool<class_bool>` was_clean_close **)**
 
 Emitted when a client disconnects. ``was_clean_close`` will be ``true`` if the connection was shutdown cleanly.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_signal_data_received:
 
-- **data_received** **(** :ref:`int<class_int>` id **)**
+.. rst-class:: classref-signal
+
+**data_received** **(** :ref:`int<class_int>` id **)**
 
 Emitted when a new message is received.
 
 \ **Note:** This signal is *not* emitted when used as high-level multiplayer peer.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_WebSocketServer_property_bind_ip:
 
-- :ref:`String<class_String>` **bind_ip**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``"*"``            |
-+-----------+--------------------+
-| *Setter*  | set_bind_ip(value) |
-+-----------+--------------------+
-| *Getter*  | get_bind_ip()      |
-+-----------+--------------------+
+:ref:`String<class_String>` **bind_ip** = ``"*"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_bind_ip** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_bind_ip** **(** **)**
 
 When not set to ``*`` will restrict incoming connections to the specified IP address. Setting ``bind_ip`` to ``127.0.0.1`` will cause the server to listen only to the local host.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_property_ca_chain:
 
-- :ref:`X509Certificate<class_X509Certificate>` **ca_chain**
+.. rst-class:: classref-property
 
-+----------+---------------------+
-| *Setter* | set_ca_chain(value) |
-+----------+---------------------+
-| *Getter* | get_ca_chain()      |
-+----------+---------------------+
+:ref:`X509Certificate<class_X509Certificate>` **ca_chain**
+
+.. rst-class:: classref-property-setget
+
+- void **set_ca_chain** **(** :ref:`X509Certificate<class_X509Certificate>` value **)**
+- :ref:`X509Certificate<class_X509Certificate>` **get_ca_chain** **(** **)**
 
 When using SSL (see :ref:`private_key<class_WebSocketServer_property_private_key>` and :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`), you can set this to a valid :ref:`X509Certificate<class_X509Certificate>` to be provided as additional CA chain information during the SSL handshake.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_property_handshake_timeout:
 
-- :ref:`float<class_float>` **handshake_timeout**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``3.0``                      |
-+-----------+------------------------------+
-| *Setter*  | set_handshake_timeout(value) |
-+-----------+------------------------------+
-| *Getter*  | get_handshake_timeout()      |
-+-----------+------------------------------+
+:ref:`float<class_float>` **handshake_timeout** = ``3.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_handshake_timeout** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_handshake_timeout** **(** **)**
 
 The time in seconds before a pending client (i.e. a client that has not yet finished the HTTP handshake) is considered stale and forcefully disconnected.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_property_private_key:
 
-- :ref:`CryptoKey<class_CryptoKey>` **private_key**
+.. rst-class:: classref-property
 
-+----------+------------------------+
-| *Setter* | set_private_key(value) |
-+----------+------------------------+
-| *Getter* | get_private_key()      |
-+----------+------------------------+
+:ref:`CryptoKey<class_CryptoKey>` **private_key**
+
+.. rst-class:: classref-property-setget
+
+- void **set_private_key** **(** :ref:`CryptoKey<class_CryptoKey>` value **)**
+- :ref:`CryptoKey<class_CryptoKey>` **get_private_key** **(** **)**
 
 When set to a valid :ref:`CryptoKey<class_CryptoKey>` (along with :ref:`ssl_certificate<class_WebSocketServer_property_ssl_certificate>`) will cause the server to require SSL instead of regular TCP (i.e. the ``wss://`` protocol).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_property_ssl_certificate:
 
-- :ref:`X509Certificate<class_X509Certificate>` **ssl_certificate**
+.. rst-class:: classref-property
 
-+----------+----------------------------+
-| *Setter* | set_ssl_certificate(value) |
-+----------+----------------------------+
-| *Getter* | get_ssl_certificate()      |
-+----------+----------------------------+
+:ref:`X509Certificate<class_X509Certificate>` **ssl_certificate**
+
+.. rst-class:: classref-property-setget
+
+- void **set_ssl_certificate** **(** :ref:`X509Certificate<class_X509Certificate>` value **)**
+- :ref:`X509Certificate<class_X509Certificate>` **get_ssl_certificate** **(** **)**
 
 When set to a valid :ref:`X509Certificate<class_X509Certificate>` (along with :ref:`private_key<class_WebSocketServer_property_private_key>`) will cause the server to require SSL instead of regular TCP (i.e. the ``wss://`` protocol).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_WebSocketServer_method_disconnect_peer:
 
-- void **disconnect_peer** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
+.. rst-class:: classref-method
+
+void **disconnect_peer** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` code=1000, :ref:`String<class_String>` reason="" **)**
 
 Disconnects the peer identified by ``id`` from the server. See :ref:`WebSocketPeer.close<class_WebSocketPeer_method_close>` for more information.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_method_get_peer_address:
 
-- :ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_peer_address** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the IP address of the given peer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_method_get_peer_port:
 
-- :ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_peer_port** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns the remote port of the given peer.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_method_has_peer:
 
-- :ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` id **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_peer** **(** :ref:`int<class_int>` id **)** |const|
 
 Returns ``true`` if a peer with the given ID is connected.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_method_is_listening:
 
-- :ref:`bool<class_bool>` **is_listening** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_listening** **(** **)** |const|
 
 Returns ``true`` if the server is actively listening on a port.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_method_listen:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`PoolStringArray<class_PoolStringArray>` protocols=PoolStringArray(  ), :ref:`bool<class_bool>` gd_mp_api=false **)**
 
 Starts listening on the given port.
 
@@ -224,22 +299,31 @@ If ``true`` is passed as ``gd_mp_api``, the server will behave like a network pe
 
 If ``false`` is passed instead (default), you must call :ref:`PacketPeer<class_PacketPeer>` functions (``put_packet``, ``get_packet``, etc.), on the :ref:`WebSocketPeer<class_WebSocketPeer>` returned via ``get_peer(id)`` to communicate with the peer with given ``id`` (e.g. ``get_peer(id).get_available_packet_count``).
 
+.. rst-class:: classref-item-separator
+
 ----
 
 .. _class_WebSocketServer_method_set_extra_headers:
 
-- void **set_extra_headers** **(** :ref:`PoolStringArray<class_PoolStringArray>` headers=PoolStringArray(  ) **)**
+.. rst-class:: classref-method
+
+void **set_extra_headers** **(** :ref:`PoolStringArray<class_PoolStringArray>` headers=PoolStringArray(  ) **)**
 
 Sets additional headers to be sent to clients during the HTTP handshake.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_WebSocketServer_method_stop:
 
-- void **stop** **(** **)**
+.. rst-class:: classref-method
+
+void **stop** **(** **)**
 
 Stops the server and clear its state.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

@@ -14,94 +14,112 @@ InputEventMouseButton
 
 Input event type for mouse button events.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 Contains mouse click information. See :ref:`Node._input<class_Node_method__input>`.
+
+.. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
 - :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+---------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventMouseButton_property_button_index>` | ``0``     |
-+---------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`doubleclick<class_InputEventMouseButton_property_doubleclick>`   | ``false`` |
-+---------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`float<class_float>` | :ref:`factor<class_InputEventMouseButton_property_factor>`             | ``1.0``   |
-+---------------------------+------------------------------------------------------------------------+-----------+
-| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventMouseButton_property_pressed>`           | ``false`` |
-+---------------------------+------------------------------------------------------------------------+-----------+
+.. table::
+   :widths: auto
+
+   +---------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`     | :ref:`button_index<class_InputEventMouseButton_property_button_index>` | ``0``     |
+   +---------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`doubleclick<class_InputEventMouseButton_property_doubleclick>`   | ``false`` |
+   +---------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>` | :ref:`factor<class_InputEventMouseButton_property_factor>`             | ``1.0``   |
+   +---------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventMouseButton_property_pressed>`           | ``false`` |
+   +---------------------------+------------------------------------------------------------------------+-----------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_InputEventMouseButton_property_button_index:
 
-- :ref:`int<class_int>` **button_index**
+.. rst-class:: classref-property
 
-+-----------+-------------------------+
-| *Default* | ``0``                   |
-+-----------+-------------------------+
-| *Setter*  | set_button_index(value) |
-+-----------+-------------------------+
-| *Getter*  | get_button_index()      |
-+-----------+-------------------------+
+:ref:`int<class_int>` **button_index** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_button_index** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_button_index** **(** **)**
 
 The mouse button identifier, one of the :ref:`ButtonList<enum_@GlobalScope_ButtonList>` button or button wheel constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMouseButton_property_doubleclick:
 
-- :ref:`bool<class_bool>` **doubleclick**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``false``              |
-+-----------+------------------------+
-| *Setter*  | set_doubleclick(value) |
-+-----------+------------------------+
-| *Getter*  | is_doubleclick()       |
-+-----------+------------------------+
+:ref:`bool<class_bool>` **doubleclick** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_doubleclick** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_doubleclick** **(** **)**
 
 If ``true``, the mouse button's state is a double-click.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMouseButton_property_factor:
 
-- :ref:`float<class_float>` **factor**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``1.0``           |
-+-----------+-------------------+
-| *Setter*  | set_factor(value) |
-+-----------+-------------------+
-| *Getter*  | get_factor()      |
-+-----------+-------------------+
+:ref:`float<class_float>` **factor** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_factor** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_factor** **(** **)**
 
 The amount (or delta) of the event. When used for high-precision scroll events, this indicates the scroll amount (vertical or horizontal). This is only supported on some platforms; the reported sensitivity varies depending on the platform. May be ``0`` if not supported.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_InputEventMouseButton_property_pressed:
 
-- :ref:`bool<class_bool>` **pressed**
+.. rst-class:: classref-property
 
-+-----------+--------------------+
-| *Default* | ``false``          |
-+-----------+--------------------+
-| *Setter*  | set_pressed(value) |
-+-----------+--------------------+
-| *Getter*  | is_pressed()       |
-+-----------+--------------------+
+:ref:`bool<class_bool>` **pressed** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pressed** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_pressed** **(** **)**
 
 If ``true``, the mouse button's state is pressed. If ``false``, the mouse button's state is released.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

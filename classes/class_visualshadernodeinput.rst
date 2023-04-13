@@ -12,63 +12,105 @@ VisualShaderNodeInput
 
 **Inherits:** :ref:`VisualShaderNode<class_VisualShaderNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
 Gives access to input variables (built-ins) available for the shader. See the shading reference for the list of available built-ins for each shader type (check ``Tutorials`` section for link).
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - :doc:`../tutorials/shaders/shader_reference/index`
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+--------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>` | :ref:`input_name<class_VisualShaderNodeInput_property_input_name>` | ``"[None]"`` |
-+-----------------------------+--------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+--------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>` | :ref:`input_name<class_VisualShaderNodeInput_property_input_name>` | ``"[None]"`` |
+   +-----------------------------+--------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`get_input_real_name<class_VisualShaderNodeInput_method_get_input_real_name>` **(** **)** |const| |
-+-----------------------------+--------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`get_input_real_name<class_VisualShaderNodeInput_method_get_input_real_name>` **(** **)** |const| |
+   +-----------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_VisualShaderNodeInput_signal_input_type_changed:
 
-- **input_type_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**input_type_changed** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeInput_property_input_name:
 
-- :ref:`String<class_String>` **input_name**
+.. rst-class:: classref-property
 
-+-----------+-----------------------+
-| *Default* | ``"[None]"``          |
-+-----------+-----------------------+
-| *Setter*  | set_input_name(value) |
-+-----------+-----------------------+
-| *Getter*  | get_input_name()      |
-+-----------+-----------------------+
+:ref:`String<class_String>` **input_name** = ``"[None]"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_input_name** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_input_name** **(** **)**
 
 One of the several input constants in lower-case style like: "vertex"(``VERTEX``) or "point_size"(``POINT_SIZE``).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisualShaderNodeInput_method_get_input_real_name:
 
-- :ref:`String<class_String>` **get_input_real_name** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_input_real_name** **(** **)** |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

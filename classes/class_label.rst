@@ -14,6 +14,8 @@ Label
 
 Displays plain text in a line or wrapped inside a rectangle. For formatted text, use :ref:`RichTextLabel<class_RichTextLabel>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
@@ -23,416 +25,524 @@ Label displays plain text on the screen. It gives you control over the horizonta
 
 \ **Note:** Unicode characters after ``0xffff`` (such as most emoji) are *not* supported on Windows. They will display as unknown characters instead. This will be resolved in Godot 4.0.
 
+.. rst-class:: classref-introduction-group
+
 Tutorials
 ---------
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`Align<enum_Label_Align>`               | :ref:`align<class_Label_property_align>`                           | ``0``                                                                        |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`autowrap<class_Label_property_autowrap>`                     | ``false``                                                                    |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`clip_text<class_Label_property_clip_text>`                   | ``false``                                                                    |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`lines_skipped<class_Label_property_lines_skipped>`           | ``0``                                                                        |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`   | ``-1``                                                                       |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                       | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                    | :ref:`percent_visible<class_Label_property_percent_visible>`       | ``1.0``                                                                      |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | size_flags_vertical                                                | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`String<class_String>`                  | :ref:`text<class_Label_property_text>`                             | ``""``                                                                       |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`uppercase<class_Label_property_uppercase>`                   | ``false``                                                                    |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`VAlign<enum_Label_VAlign>`             | :ref:`valign<class_Label_property_valign>`                         | ``0``                                                                        |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`visible_characters<class_Label_property_visible_characters>` | ``-1``                                                                       |
-+----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`Align<enum_Label_Align>`               | :ref:`align<class_Label_property_align>`                           | ``0``                                                                        |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                      | :ref:`autowrap<class_Label_property_autowrap>`                     | ``false``                                                                    |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                      | :ref:`clip_text<class_Label_property_clip_text>`                   | ``false``                                                                    |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                        | :ref:`lines_skipped<class_Label_property_lines_skipped>`           | ``0``                                                                        |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                        | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`   | ``-1``                                                                       |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>` | mouse_filter                                                       | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                    | :ref:`percent_visible<class_Label_property_percent_visible>`       | ``1.0``                                                                      |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                        | size_flags_vertical                                                | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                  | :ref:`text<class_Label_property_text>`                             | ``""``                                                                       |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                      | :ref:`uppercase<class_Label_property_uppercase>`                   | ``false``                                                                    |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`VAlign<enum_Label_VAlign>`             | :ref:`valign<class_Label_property_valign>`                         | ``0``                                                                        |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                        | :ref:`visible_characters<class_Label_property_visible_characters>` | ``-1``                                                                       |
+   +----------------------------------------------+--------------------------------------------------------------------+------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+-----------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** |const|                       |
-+-----------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** **)** |const|                     |
-+-----------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** |const| |
-+-----------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** |const|       |
-+-----------------------+----------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** |const|                       |
+   +-----------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** **)** |const|                     |
+   +-----------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** |const| |
+   +-----------------------+----------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** |const|       |
+   +-----------------------+----------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Theme Properties
 ----------------
 
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color<class_Label_theme_color_font_color>`                       | ``Color( 1, 1, 1, 1 )`` |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_color_shadow<class_Label_theme_color_font_color_shadow>`         | ``Color( 0, 0, 0, 0 )`` |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Color<class_Color>`       | :ref:`font_outline_modulate<class_Label_theme_color_font_outline_modulate>` | ``Color( 1, 1, 1, 1 )`` |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`line_spacing<class_Label_theme_constant_line_spacing>`                | ``3``                   |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`shadow_as_outline<class_Label_theme_constant_shadow_as_outline>`      | ``0``                   |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`shadow_offset_x<class_Label_theme_constant_shadow_offset_x>`          | ``1``                   |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`int<class_int>`           | :ref:`shadow_offset_y<class_Label_theme_constant_shadow_offset_y>`          | ``1``                   |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`Font<class_Font>`         | :ref:`font<class_Label_theme_font_font>`                                    |                         |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
-| :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Label_theme_style_normal>`                               |                         |
-+---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color<class_Label_theme_color_font_color>`                       | ``Color( 1, 1, 1, 1 )`` |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_color_shadow<class_Label_theme_color_font_color_shadow>`         | ``Color( 0, 0, 0, 0 )`` |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_outline_modulate<class_Label_theme_color_font_outline_modulate>` | ``Color( 1, 1, 1, 1 )`` |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`           | :ref:`line_spacing<class_Label_theme_constant_line_spacing>`                | ``3``                   |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`           | :ref:`shadow_as_outline<class_Label_theme_constant_shadow_as_outline>`      | ``0``                   |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`           | :ref:`shadow_offset_x<class_Label_theme_constant_shadow_offset_x>`          | ``1``                   |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`int<class_int>`           | :ref:`shadow_offset_y<class_Label_theme_constant_shadow_offset_y>`          | ``1``                   |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`Font<class_Font>`         | :ref:`font<class_Label_theme_font_font>`                                    |                         |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`normal<class_Label_theme_style_normal>`                               |                         |
+   +---------------------------------+-----------------------------------------------------------------------------+-------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_Label_Align:
 
-.. _class_Label_constant_ALIGN_LEFT:
-
-.. _class_Label_constant_ALIGN_CENTER:
-
-.. _class_Label_constant_ALIGN_RIGHT:
-
-.. _class_Label_constant_ALIGN_FILL:
+.. rst-class:: classref-enumeration
 
 enum **Align**:
 
-- **ALIGN_LEFT** = **0** --- Align rows to the left (default).
+.. _class_Label_constant_ALIGN_LEFT:
 
-- **ALIGN_CENTER** = **1** --- Align rows centered.
+.. rst-class:: classref-enumeration-constant
 
-- **ALIGN_RIGHT** = **2** --- Align rows to the right.
+:ref:`Align<enum_Label_Align>` **ALIGN_LEFT** = ``0``
 
-- **ALIGN_FILL** = **3** --- Expand row whitespaces to fit the width.
+Align rows to the left (default).
+
+.. _class_Label_constant_ALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Align<enum_Label_Align>` **ALIGN_CENTER** = ``1``
+
+Align rows centered.
+
+.. _class_Label_constant_ALIGN_RIGHT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Align<enum_Label_Align>` **ALIGN_RIGHT** = ``2``
+
+Align rows to the right.
+
+.. _class_Label_constant_ALIGN_FILL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Align<enum_Label_Align>` **ALIGN_FILL** = ``3``
+
+Expand row whitespaces to fit the width.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _enum_Label_VAlign:
 
-.. _class_Label_constant_VALIGN_TOP:
-
-.. _class_Label_constant_VALIGN_CENTER:
-
-.. _class_Label_constant_VALIGN_BOTTOM:
-
-.. _class_Label_constant_VALIGN_FILL:
+.. rst-class:: classref-enumeration
 
 enum **VAlign**:
 
-- **VALIGN_TOP** = **0** --- Align the whole text to the top.
+.. _class_Label_constant_VALIGN_TOP:
 
-- **VALIGN_CENTER** = **1** --- Align the whole text to the center.
+.. rst-class:: classref-enumeration-constant
 
-- **VALIGN_BOTTOM** = **2** --- Align the whole text to the bottom.
+:ref:`VAlign<enum_Label_VAlign>` **VALIGN_TOP** = ``0``
 
-- **VALIGN_FILL** = **3** --- Align the whole text by spreading the rows.
+Align the whole text to the top.
+
+.. _class_Label_constant_VALIGN_CENTER:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VAlign<enum_Label_VAlign>` **VALIGN_CENTER** = ``1``
+
+Align the whole text to the center.
+
+.. _class_Label_constant_VALIGN_BOTTOM:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VAlign<enum_Label_VAlign>` **VALIGN_BOTTOM** = ``2``
+
+Align the whole text to the bottom.
+
+.. _class_Label_constant_VALIGN_FILL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`VAlign<enum_Label_VAlign>` **VALIGN_FILL** = ``3``
+
+Align the whole text by spreading the rows.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_Label_property_align:
 
-- :ref:`Align<enum_Label_Align>` **align**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``0``            |
-+-----------+------------------+
-| *Setter*  | set_align(value) |
-+-----------+------------------+
-| *Getter*  | get_align()      |
-+-----------+------------------+
+:ref:`Align<enum_Label_Align>` **align** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_align** **(** :ref:`Align<enum_Label_Align>` value **)**
+- :ref:`Align<enum_Label_Align>` **get_align** **(** **)**
 
 Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the :ref:`Align<enum_Label_Align>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_autowrap:
 
-- :ref:`bool<class_bool>` **autowrap**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``false``           |
-+-----------+---------------------+
-| *Setter*  | set_autowrap(value) |
-+-----------+---------------------+
-| *Getter*  | has_autowrap()      |
-+-----------+---------------------+
+:ref:`bool<class_bool>` **autowrap** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_autowrap** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **has_autowrap** **(** **)**
 
 If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_clip_text:
 
-- :ref:`bool<class_bool>` **clip_text**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_clip_text(value) |
-+-----------+----------------------+
-| *Getter*  | is_clipping_text()   |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **clip_text** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_clip_text** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_clipping_text** **(** **)**
 
 If ``true``, the Label only shows the text that fits inside its bounding rectangle and will clip text horizontally.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_lines_skipped:
 
-- :ref:`int<class_int>` **lines_skipped**
+.. rst-class:: classref-property
 
-+-----------+--------------------------+
-| *Default* | ``0``                    |
-+-----------+--------------------------+
-| *Setter*  | set_lines_skipped(value) |
-+-----------+--------------------------+
-| *Getter*  | get_lines_skipped()      |
-+-----------+--------------------------+
+:ref:`int<class_int>` **lines_skipped** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_lines_skipped** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_lines_skipped** **(** **)**
 
 The node ignores the first ``lines_skipped`` lines before it starts to display text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_max_lines_visible:
 
-- :ref:`int<class_int>` **max_lines_visible**
+.. rst-class:: classref-property
 
-+-----------+------------------------------+
-| *Default* | ``-1``                       |
-+-----------+------------------------------+
-| *Setter*  | set_max_lines_visible(value) |
-+-----------+------------------------------+
-| *Getter*  | get_max_lines_visible()      |
-+-----------+------------------------------+
+:ref:`int<class_int>` **max_lines_visible** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_lines_visible** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max_lines_visible** **(** **)**
 
 Limits the lines of text the node shows on screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_percent_visible:
 
-- :ref:`float<class_float>` **percent_visible**
+.. rst-class:: classref-property
 
-+-----------+----------------------------+
-| *Default* | ``1.0``                    |
-+-----------+----------------------------+
-| *Setter*  | set_percent_visible(value) |
-+-----------+----------------------------+
-| *Getter*  | get_percent_visible()      |
-+-----------+----------------------------+
+:ref:`float<class_float>` **percent_visible** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_percent_visible** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_percent_visible** **(** **)**
 
 Limits the amount of visible characters. If you set ``percent_visible`` to 0.5, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_text:
 
-- :ref:`String<class_String>` **text**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | set_text(value) |
-+-----------+-----------------+
-| *Getter*  | get_text()      |
-+-----------+-----------------+
+:ref:`String<class_String>` **text** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_text** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_text** **(** **)**
 
 The text to display on screen.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_uppercase:
 
-- :ref:`bool<class_bool>` **uppercase**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``false``            |
-+-----------+----------------------+
-| *Setter*  | set_uppercase(value) |
-+-----------+----------------------+
-| *Getter*  | is_uppercase()       |
-+-----------+----------------------+
+:ref:`bool<class_bool>` **uppercase** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_uppercase** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_uppercase** **(** **)**
 
 If ``true``, all the text displays as UPPERCASE.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_valign:
 
-- :ref:`VAlign<enum_Label_VAlign>` **valign**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``0``             |
-+-----------+-------------------+
-| *Setter*  | set_valign(value) |
-+-----------+-------------------+
-| *Getter*  | get_valign()      |
-+-----------+-------------------+
+:ref:`VAlign<enum_Label_VAlign>` **valign** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_valign** **(** :ref:`VAlign<enum_Label_VAlign>` value **)**
+- :ref:`VAlign<enum_Label_VAlign>` **get_valign** **(** **)**
 
 Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the :ref:`VAlign<enum_Label_VAlign>` constants.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_property_visible_characters:
 
-- :ref:`int<class_int>` **visible_characters**
+.. rst-class:: classref-property
 
-+-----------+-------------------------------+
-| *Default* | ``-1``                        |
-+-----------+-------------------------------+
-| *Setter*  | set_visible_characters(value) |
-+-----------+-------------------------------+
-| *Getter*  | get_visible_characters()      |
-+-----------+-------------------------------+
+:ref:`int<class_int>` **visible_characters** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_visible_characters** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_visible_characters** **(** **)**
 
 Restricts the number of characters to display. Set to -1 to disable.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_Label_method_get_line_count:
 
-- :ref:`int<class_int>` **get_line_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_line_count** **(** **)** |const|
 
 Returns the amount of lines of text the Label has.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_method_get_line_height:
 
-- :ref:`int<class_int>` **get_line_height** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_line_height** **(** **)** |const|
 
 Returns the font size in pixels.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_method_get_total_character_count:
 
-- :ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_total_character_count** **(** **)** |const|
 
 Returns the total number of printable characters in the text (excluding spaces and newlines).
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_method_get_visible_line_count:
 
-- :ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
+.. rst-class:: classref-method
 
-Returns the number of lines shown. Useful if the ``Label``'s height cannot currently display all lines.
+:ref:`int<class_int>` **get_visible_line_count** **(** **)** |const|
+
+Returns the number of lines shown. Useful if the **Label**'s height cannot currently display all lines.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Theme Property Descriptions
 ---------------------------
 
 .. _class_Label_theme_color_font_color:
 
-- :ref:`Color<class_Color>` **font_color**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **font_color** = ``Color( 1, 1, 1, 1 )``
 
-Default text :ref:`Color<class_Color>` of the ``Label``.
+Default text :ref:`Color<class_Color>` of the **Label**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_color_font_color_shadow:
 
-- :ref:`Color<class_Color>` **font_color_shadow**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------------------------+
-| *Default* | ``Color( 0, 0, 0, 0 )`` |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **font_color_shadow** = ``Color( 0, 0, 0, 0 )``
 
 :ref:`Color<class_Color>` of the text's shadow effect.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_color_font_outline_modulate:
 
-- :ref:`Color<class_Color>` **font_outline_modulate**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------------------------+
-| *Default* | ``Color( 1, 1, 1, 1 )`` |
-+-----------+-------------------------+
+:ref:`Color<class_Color>` **font_outline_modulate** = ``Color( 1, 1, 1, 1 )``
 
 The tint of :ref:`Font<class_Font>`'s outline. See :ref:`DynamicFont.outline_color<class_DynamicFont_property_outline_color>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_constant_line_spacing:
 
-- :ref:`int<class_int>` **line_spacing**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``3`` |
-+-----------+-------+
+:ref:`int<class_int>` **line_spacing** = ``3``
 
-Vertical space between lines in multiline ``Label``.
+Vertical space between lines in multiline **Label**.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_constant_shadow_as_outline:
 
-- :ref:`int<class_int>` **shadow_as_outline**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``0`` |
-+-----------+-------+
+:ref:`int<class_int>` **shadow_as_outline** = ``0``
 
 Boolean value. If set to 1 (``true``), the shadow will be displayed around the whole text as an outline.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_constant_shadow_offset_x:
 
-- :ref:`int<class_int>` **shadow_offset_x**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
+:ref:`int<class_int>` **shadow_offset_x** = ``1``
 
 The horizontal offset of the text's shadow.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_constant_shadow_offset_y:
 
-- :ref:`int<class_int>` **shadow_offset_y**
+.. rst-class:: classref-themeproperty
 
-+-----------+-------+
-| *Default* | ``1`` |
-+-----------+-------+
+:ref:`int<class_int>` **shadow_offset_y** = ``1``
 
 The vertical offset of the text's shadow.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_font_font:
 
-- :ref:`Font<class_Font>` **font**
+.. rst-class:: classref-themeproperty
 
-:ref:`Font<class_Font>` used for the ``Label``'s text.
+:ref:`Font<class_Font>` **font**
+
+:ref:`Font<class_Font>` used for the **Label**'s text.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_Label_theme_style_normal:
 
-- :ref:`StyleBox<class_StyleBox>` **normal**
+.. rst-class:: classref-themeproperty
 
-Background :ref:`StyleBox<class_StyleBox>` for the ``Label``.
+:ref:`StyleBox<class_StyleBox>` **normal**
+
+Background :ref:`StyleBox<class_StyleBox>` for the **Label**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

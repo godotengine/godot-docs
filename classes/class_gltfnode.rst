@@ -12,227 +12,360 @@ GLTFNode
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
+GLTF node class.
 
+.. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to ``GLTFNode`` within a script will cause an error in an exported project.
+Represents a GLTF node. GLTF nodes may have names, transforms, children (other GLTF nodes), and more specialized properties (represented by their own classes).
+
+\ **Note:** This class is only compiled in editor builds. Run-time glTF loading and saving is *not* available in exported projects. References to **GLTFNode** within a script will cause an error in an exported project.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `GLTF scene and node spec <https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_004_ScenesNodes.md">`__
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`camera<class_GLTFNode_property_camera>`           | ``-1``                                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`children<class_GLTFNode_property_children>`       | ``PoolIntArray(  )``                                |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`height<class_GLTFNode_property_height>`           | ``-1``                                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`bool<class_bool>`                 | :ref:`joint<class_GLTFNode_property_joint>`             | ``false``                                           |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`light<class_GLTFNode_property_light>`             | ``-1``                                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`mesh<class_GLTFNode_property_mesh>`               | ``-1``                                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`parent<class_GLTFNode_property_parent>`           | ``-1``                                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Quat<class_Quat>`                 | :ref:`rotation<class_GLTFNode_property_rotation>`       | ``Quat( 0, 0, 0, 1 )``                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`scale<class_GLTFNode_property_scale>`             | ``Vector3( 1, 1, 1 )``                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`skeleton<class_GLTFNode_property_skeleton>`       | ``-1``                                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`int<class_int>`                   | :ref:`skin<class_GLTFNode_property_skin>`               | ``-1``                                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Vector3<class_Vector3>`           | :ref:`translation<class_GLTFNode_property_translation>` | ``Vector3( 0, 0, 0 )``                              |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
-| :ref:`Transform<class_Transform>`       | :ref:`xform<class_GLTFNode_property_xform>`             | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`camera<class_GLTFNode_property_camera>`           | ``-1``                                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`PoolIntArray<class_PoolIntArray>` | :ref:`children<class_GLTFNode_property_children>`       | ``PoolIntArray(  )``                                |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`height<class_GLTFNode_property_height>`           | ``-1``                                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`bool<class_bool>`                 | :ref:`joint<class_GLTFNode_property_joint>`             | ``false``                                           |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`light<class_GLTFNode_property_light>`             | ``-1``                                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`mesh<class_GLTFNode_property_mesh>`               | ``-1``                                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`parent<class_GLTFNode_property_parent>`           | ``-1``                                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Quat<class_Quat>`                 | :ref:`rotation<class_GLTFNode_property_rotation>`       | ``Quat( 0, 0, 0, 1 )``                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`           | :ref:`scale<class_GLTFNode_property_scale>`             | ``Vector3( 1, 1, 1 )``                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`skeleton<class_GLTFNode_property_skeleton>`       | ``-1``                                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`int<class_int>`                   | :ref:`skin<class_GLTFNode_property_skin>`               | ``-1``                                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`           | :ref:`translation<class_GLTFNode_property_translation>` | ``Vector3( 0, 0, 0 )``                              |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+   | :ref:`Transform<class_Transform>`       | :ref:`xform<class_GLTFNode_property_xform>`             | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
+   +-----------------------------------------+---------------------------------------------------------+-----------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>` | :ref:`get_additional_data<class_GLTFNode_method_get_additional_data>` **(** :ref:`String<class_String>` extension_name **)**                                                |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`set_additional_data<class_GLTFNode_method_set_additional_data>` **(** :ref:`String<class_String>` extension_name, :ref:`Variant<class_Variant>` additional_data **)** |
+   +-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_GLTFNode_property_camera:
 
-- :ref:`int<class_int>` **camera**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``-1``            |
-+-----------+-------------------+
-| *Setter*  | set_camera(value) |
-+-----------+-------------------+
-| *Getter*  | get_camera()      |
-+-----------+-------------------+
+:ref:`int<class_int>` **camera** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_camera** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_camera** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_children:
 
-- :ref:`PoolIntArray<class_PoolIntArray>` **children**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``PoolIntArray(  )`` |
-+-----------+----------------------+
-| *Setter*  | set_children(value)  |
-+-----------+----------------------+
-| *Getter*  | get_children()       |
-+-----------+----------------------+
+:ref:`PoolIntArray<class_PoolIntArray>` **children** = ``PoolIntArray(  )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_children** **(** :ref:`PoolIntArray<class_PoolIntArray>` value **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_children** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_height:
 
-- :ref:`int<class_int>` **height**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``-1``            |
-+-----------+-------------------+
-| *Setter*  | set_height(value) |
-+-----------+-------------------+
-| *Getter*  | get_height()      |
-+-----------+-------------------+
+:ref:`int<class_int>` **height** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_height** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_joint:
 
-- :ref:`bool<class_bool>` **joint**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``false``        |
-+-----------+------------------+
-| *Setter*  | set_joint(value) |
-+-----------+------------------+
-| *Getter*  | get_joint()      |
-+-----------+------------------+
+:ref:`bool<class_bool>` **joint** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_joint** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_joint** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_light:
 
-- :ref:`int<class_int>` **light**
+.. rst-class:: classref-property
 
-+-----------+------------------+
-| *Default* | ``-1``           |
-+-----------+------------------+
-| *Setter*  | set_light(value) |
-+-----------+------------------+
-| *Getter*  | get_light()      |
-+-----------+------------------+
+:ref:`int<class_int>` **light** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_light** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_light** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_mesh:
 
-- :ref:`int<class_int>` **mesh**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``-1``          |
-+-----------+-----------------+
-| *Setter*  | set_mesh(value) |
-+-----------+-----------------+
-| *Getter*  | get_mesh()      |
-+-----------+-----------------+
+:ref:`int<class_int>` **mesh** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_mesh** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_mesh** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_parent:
 
-- :ref:`int<class_int>` **parent**
+.. rst-class:: classref-property
 
-+-----------+-------------------+
-| *Default* | ``-1``            |
-+-----------+-------------------+
-| *Setter*  | set_parent(value) |
-+-----------+-------------------+
-| *Getter*  | get_parent()      |
-+-----------+-------------------+
+:ref:`int<class_int>` **parent** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_parent** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_parent** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_rotation:
 
-- :ref:`Quat<class_Quat>` **rotation**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Quat( 0, 0, 0, 1 )`` |
-+-----------+------------------------+
-| *Setter*  | set_rotation(value)    |
-+-----------+------------------------+
-| *Getter*  | get_rotation()         |
-+-----------+------------------------+
+:ref:`Quat<class_Quat>` **rotation** = ``Quat( 0, 0, 0, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_rotation** **(** :ref:`Quat<class_Quat>` value **)**
+- :ref:`Quat<class_Quat>` **get_rotation** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_scale:
 
-- :ref:`Vector3<class_Vector3>` **scale**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 1, 1, 1 )`` |
-+-----------+------------------------+
-| *Setter*  | set_scale(value)       |
-+-----------+------------------------+
-| *Getter*  | get_scale()            |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **scale** = ``Vector3( 1, 1, 1 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_scale** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_scale** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_skeleton:
 
-- :ref:`int<class_int>` **skeleton**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``-1``              |
-+-----------+---------------------+
-| *Setter*  | set_skeleton(value) |
-+-----------+---------------------+
-| *Getter*  | get_skeleton()      |
-+-----------+---------------------+
+:ref:`int<class_int>` **skeleton** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_skeleton** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_skeleton** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_skin:
 
-- :ref:`int<class_int>` **skin**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``-1``          |
-+-----------+-----------------+
-| *Setter*  | set_skin(value) |
-+-----------+-----------------+
-| *Getter*  | get_skin()      |
-+-----------+-----------------+
+:ref:`int<class_int>` **skin** = ``-1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_skin** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_skin** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_translation:
 
-- :ref:`Vector3<class_Vector3>` **translation**
+.. rst-class:: classref-property
 
-+-----------+------------------------+
-| *Default* | ``Vector3( 0, 0, 0 )`` |
-+-----------+------------------------+
-| *Setter*  | set_translation(value) |
-+-----------+------------------------+
-| *Getter*  | get_translation()      |
-+-----------+------------------------+
+:ref:`Vector3<class_Vector3>` **translation** = ``Vector3( 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_translation** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_translation** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_GLTFNode_property_xform:
 
-- :ref:`Transform<class_Transform>` **xform**
+.. rst-class:: classref-property
 
-+-----------+-----------------------------------------------------+
-| *Default* | ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )`` |
-+-----------+-----------------------------------------------------+
-| *Setter*  | set_xform(value)                                    |
-+-----------+-----------------------------------------------------+
-| *Getter*  | get_xform()                                         |
-+-----------+-----------------------------------------------------+
+:ref:`Transform<class_Transform>` **xform** = ``Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )``
+
+.. rst-class:: classref-property-setget
+
+- void **set_xform** **(** :ref:`Transform<class_Transform>` value **)**
+- :ref:`Transform<class_Transform>` **get_xform** **(** **)**
+
+.. container:: contribute
+
+	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_GLTFNode_method_get_additional_data:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_additional_data** **(** :ref:`String<class_String>` extension_name **)**
+
+Gets additional arbitrary data in this **GLTFNode** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
+
+The argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the GLTF file), and the return value can be anything you set. If nothing was set, the return value is null.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_GLTFNode_method_set_additional_data:
+
+.. rst-class:: classref-method
+
+void **set_additional_data** **(** :ref:`String<class_String>` extension_name, :ref:`Variant<class_Variant>` additional_data **)**
+
+Sets additional arbitrary data in this **GLTFNode** instance. This can be used to keep per-node state data in :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` classes, which is important because they are stateless.
+
+The first argument should be the :ref:`GLTFDocumentExtension<class_GLTFDocumentExtension>` name (does not have to match the extension name in the GLTF file), and the second argument can be anything you want.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

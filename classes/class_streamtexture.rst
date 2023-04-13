@@ -14,53 +14,79 @@ StreamTexture
 
 A ``.stex`` texture.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A texture that is loaded from a ``.stex`` file.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+-----------------------------+----------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`int<class_int>`       | flags                                                    | ``0`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
-+-----------------------------+----------------------------------------------------------+----------------------------------------------------------------+
-| :ref:`String<class_String>` | :ref:`load_path<class_StreamTexture_property_load_path>` | ``""``                                                         |
-+-----------------------------+----------------------------------------------------------+----------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------+----------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`int<class_int>`       | flags                                                    | ``0`` (overrides :ref:`Texture<class_Texture_property_flags>`) |
+   +-----------------------------+----------------------------------------------------------+----------------------------------------------------------------+
+   | :ref:`String<class_String>` | :ref:`load_path<class_StreamTexture_property_load_path>` | ``""``                                                         |
+   +-----------------------------+----------------------------------------------------------+----------------------------------------------------------------+
+
+.. rst-class:: classref-reftable-group
 
 Methods
 -------
 
-+---------------------------------------+-------------------------------------------------------------------------------------------+
-| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_StreamTexture_method_load>` **(** :ref:`String<class_String>` path **)** |
-+---------------------------------------+-------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +---------------------------------------+-------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_StreamTexture_method_load>` **(** :ref:`String<class_String>` path **)** |
+   +---------------------------------------+-------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_StreamTexture_property_load_path:
 
-- :ref:`String<class_String>` **load_path**
+.. rst-class:: classref-property
 
-+-----------+-----------------+
-| *Default* | ``""``          |
-+-----------+-----------------+
-| *Setter*  | load(value)     |
-+-----------+-----------------+
-| *Getter*  | get_load_path() |
-+-----------+-----------------+
+:ref:`String<class_String>` **load_path** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
+- :ref:`String<class_String>` **get_load_path** **(** **)**
 
 The StreamTexture's file path to a ``.stex`` file.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_StreamTexture_method_load:
 
-- :ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **load** **(** :ref:`String<class_String>` path **)**
 
 Loads the texture from the given path.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

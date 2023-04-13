@@ -16,66 +16,102 @@ VisualScriptNode
 
 A node which is part of a :ref:`VisualScript<class_VisualScript>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A node which is part of a :ref:`VisualScript<class_VisualScript>`. Not to be confused with :ref:`Node<class_Node>`, which is a part of a :ref:`SceneTree<class_SceneTree>`.
 
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_Variant>`           | :ref:`get_default_input_value<class_VisualScriptNode_method_get_default_input_value>` **(** :ref:`int<class_int>` port_idx **)** |const|                              |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`VisualScript<class_VisualScript>` | :ref:`get_visual_script<class_VisualScriptNode_method_get_visual_script>` **(** **)** |const|                                                                         |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`ports_changed_notify<class_VisualScriptNode_method_ports_changed_notify>` **(** **)**                                                                           |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                    | :ref:`set_default_input_value<class_VisualScriptNode_method_set_default_input_value>` **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)** |
-+-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. table::
+   :widths: auto
+
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`           | :ref:`get_default_input_value<class_VisualScriptNode_method_get_default_input_value>` **(** :ref:`int<class_int>` port_idx **)** |const|                              |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`VisualScript<class_VisualScript>` | :ref:`get_visual_script<class_VisualScriptNode_method_get_visual_script>` **(** **)** |const|                                                                         |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`ports_changed_notify<class_VisualScriptNode_method_ports_changed_notify>` **(** **)**                                                                           |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                    | :ref:`set_default_input_value<class_VisualScriptNode_method_set_default_input_value>` **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)** |
+   +-----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Signals
 -------
 
 .. _class_VisualScriptNode_signal_ports_changed:
 
-- **ports_changed** **(** **)**
+.. rst-class:: classref-signal
+
+**ports_changed** **(** **)**
 
 Emitted when the available input/output ports are changed.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Method Descriptions
 -------------------
 
 .. _class_VisualScriptNode_method_get_default_input_value:
 
-- :ref:`Variant<class_Variant>` **get_default_input_value** **(** :ref:`int<class_int>` port_idx **)** |const|
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_default_input_value** **(** :ref:`int<class_int>` port_idx **)** |const|
 
 Returns the default value of a given port. The default value is used when nothing is connected to the port.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptNode_method_get_visual_script:
 
-- :ref:`VisualScript<class_VisualScript>` **get_visual_script** **(** **)** |const|
+.. rst-class:: classref-method
+
+:ref:`VisualScript<class_VisualScript>` **get_visual_script** **(** **)** |const|
 
 Returns the :ref:`VisualScript<class_VisualScript>` instance the node is bound to.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptNode_method_ports_changed_notify:
 
-- void **ports_changed_notify** **(** **)**
+.. rst-class:: classref-method
+
+void **ports_changed_notify** **(** **)**
 
 Notify that the node's ports have changed. Usually used in conjunction with :ref:`VisualScriptCustomNode<class_VisualScriptCustomNode>` .
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptNode_method_set_default_input_value:
 
-- void **set_default_input_value** **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)**
+.. rst-class:: classref-method
+
+void **set_default_input_value** **(** :ref:`int<class_int>` port_idx, :ref:`Variant<class_Variant>` value **)**
 
 Change the default value of a given port.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

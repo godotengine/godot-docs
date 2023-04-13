@@ -14,58 +14,95 @@ VisualShaderNodeTransformMult
 
 Multiplies :ref:`Transform<class_Transform>` by :ref:`Transform<class_Transform>` within the visual shader graph.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
 A multiplication operation on two transforms (4x4 matrices), with support for different multiplication operators.
 
+.. rst-class:: classref-reftable-group
+
 Properties
 ----------
 
-+--------------------------------------------------------------+------------------------------------------------------------------------+-------+
-| :ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` | :ref:`operator<class_VisualShaderNodeTransformMult_property_operator>` | ``0`` |
-+--------------------------------------------------------------+------------------------------------------------------------------------+-------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------------------+------------------------------------------------------------------------+-------+
+   | :ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` | :ref:`operator<class_VisualShaderNodeTransformMult_property_operator>` | ``0`` |
+   +--------------------------------------------------------------+------------------------------------------------------------------------+-------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualShaderNodeTransformMult_Operator:
 
-.. _class_VisualShaderNodeTransformMult_constant_OP_AxB:
-
-.. _class_VisualShaderNodeTransformMult_constant_OP_BxA:
-
-.. _class_VisualShaderNodeTransformMult_constant_OP_AxB_COMP:
-
-.. _class_VisualShaderNodeTransformMult_constant_OP_BxA_COMP:
+.. rst-class:: classref-enumeration
 
 enum **Operator**:
 
-- **OP_AxB** = **0** --- Multiplies transform ``a`` by the transform ``b``.
+.. _class_VisualShaderNodeTransformMult_constant_OP_AxB:
 
-- **OP_BxA** = **1** --- Multiplies transform ``b`` by the transform ``a``.
+.. rst-class:: classref-enumeration-constant
 
-- **OP_AxB_COMP** = **2** --- Performs a component-wise multiplication of transform ``a`` by the transform ``b``.
+:ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` **OP_AxB** = ``0``
 
-- **OP_BxA_COMP** = **3** --- Performs a component-wise multiplication of transform ``b`` by the transform ``a``.
+Multiplies transform ``a`` by the transform ``b``.
+
+.. _class_VisualShaderNodeTransformMult_constant_OP_BxA:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` **OP_BxA** = ``1``
+
+Multiplies transform ``b`` by the transform ``a``.
+
+.. _class_VisualShaderNodeTransformMult_constant_OP_AxB_COMP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` **OP_AxB_COMP** = ``2``
+
+Performs a component-wise multiplication of transform ``a`` by the transform ``b``.
+
+.. _class_VisualShaderNodeTransformMult_constant_OP_BxA_COMP:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` **OP_BxA_COMP** = ``3``
+
+Performs a component-wise multiplication of transform ``b`` by the transform ``a``.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualShaderNodeTransformMult_property_operator:
 
-- :ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` **operator**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``0``               |
-+-----------+---------------------+
-| *Setter*  | set_operator(value) |
-+-----------+---------------------+
-| *Getter*  | get_operator()      |
-+-----------+---------------------+
+:ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` **operator** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_operator** **(** :ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` value **)**
+- :ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` **get_operator** **(** **)**
 
 The multiplication type to be performed on the transforms. See :ref:`Operator<enum_VisualShaderNodeTransformMult_Operator>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`

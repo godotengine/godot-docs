@@ -14,158 +14,209 @@ VisualScriptPropertyGet
 
 A Visual Script node returning a value of a property from an :ref:`Object<class_Object>`.
 
+.. rst-class:: classref-introduction-group
+
 Description
 -----------
 
-``VisualScriptPropertyGet`` can return a value of any property from the current object or other objects.
+**VisualScriptPropertyGet** can return a value of any property from the current object or other objects.
+
+.. rst-class:: classref-reftable-group
 
 Properties
 ----------
 
-+--------------------------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                            | :ref:`base_script<class_VisualScriptPropertyGet_property_base_script>` |              |
-+--------------------------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptPropertyGet_property_base_type>`     | ``"Object"`` |
-+--------------------------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`    | :ref:`basic_type<class_VisualScriptPropertyGet_property_basic_type>`   |              |
-+--------------------------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                            | :ref:`index<class_VisualScriptPropertyGet_property_index>`             |              |
-+--------------------------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptPropertyGet_property_node_path>`     |              |
-+--------------------------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`String<class_String>`                            | :ref:`property<class_VisualScriptPropertyGet_property_property>`       | ``""``       |
-+--------------------------------------------------------+------------------------------------------------------------------------+--------------+
-| :ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` | :ref:`set_mode<class_VisualScriptPropertyGet_property_set_mode>`       | ``0``        |
-+--------------------------------------------------------+------------------------------------------------------------------------+--------------+
+.. table::
+   :widths: auto
+
+   +--------------------------------------------------------+------------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>`                            | :ref:`base_script<class_VisualScriptPropertyGet_property_base_script>` |              |
+   +--------------------------------------------------------+------------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptPropertyGet_property_base_type>`     | ``"Object"`` |
+   +--------------------------------------------------------+------------------------------------------------------------------------+--------------+
+   | :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`    | :ref:`basic_type<class_VisualScriptPropertyGet_property_basic_type>`   |              |
+   +--------------------------------------------------------+------------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>`                            | :ref:`index<class_VisualScriptPropertyGet_property_index>`             |              |
+   +--------------------------------------------------------+------------------------------------------------------------------------+--------------+
+   | :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptPropertyGet_property_node_path>`     |              |
+   +--------------------------------------------------------+------------------------------------------------------------------------+--------------+
+   | :ref:`String<class_String>`                            | :ref:`property<class_VisualScriptPropertyGet_property_property>`       | ``""``       |
+   +--------------------------------------------------------+------------------------------------------------------------------------+--------------+
+   | :ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` | :ref:`set_mode<class_VisualScriptPropertyGet_property_set_mode>`       | ``0``        |
+   +--------------------------------------------------------+------------------------------------------------------------------------+--------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Enumerations
 ------------
 
 .. _enum_VisualScriptPropertyGet_CallMode:
 
-.. _class_VisualScriptPropertyGet_constant_CALL_MODE_SELF:
-
-.. _class_VisualScriptPropertyGet_constant_CALL_MODE_NODE_PATH:
-
-.. _class_VisualScriptPropertyGet_constant_CALL_MODE_INSTANCE:
-
-.. _class_VisualScriptPropertyGet_constant_CALL_MODE_BASIC_TYPE:
+.. rst-class:: classref-enumeration
 
 enum **CallMode**:
 
-- **CALL_MODE_SELF** = **0** --- The property will be retrieved from this :ref:`Object<class_Object>`.
+.. _class_VisualScriptPropertyGet_constant_CALL_MODE_SELF:
 
-- **CALL_MODE_NODE_PATH** = **1** --- The property will be retrieved from the given :ref:`Node<class_Node>` in the scene tree.
+.. rst-class:: classref-enumeration-constant
 
-- **CALL_MODE_INSTANCE** = **2** --- The property will be retrieved from an instanced node with the given type and script.
+:ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` **CALL_MODE_SELF** = ``0``
 
-- **CALL_MODE_BASIC_TYPE** = **3** --- The property will be retrieved from a GDScript basic type (e.g. :ref:`Vector2<class_Vector2>`).
+The property will be retrieved from this :ref:`Object<class_Object>`.
+
+.. _class_VisualScriptPropertyGet_constant_CALL_MODE_NODE_PATH:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` **CALL_MODE_NODE_PATH** = ``1``
+
+The property will be retrieved from the given :ref:`Node<class_Node>` in the scene tree.
+
+.. _class_VisualScriptPropertyGet_constant_CALL_MODE_INSTANCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` **CALL_MODE_INSTANCE** = ``2``
+
+The property will be retrieved from an instanced node with the given type and script.
+
+.. _class_VisualScriptPropertyGet_constant_CALL_MODE_BASIC_TYPE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` **CALL_MODE_BASIC_TYPE** = ``3``
+
+The property will be retrieved from a GDScript basic type (e.g. :ref:`Vector2<class_Vector2>`).
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
 
 Property Descriptions
 ---------------------
 
 .. _class_VisualScriptPropertyGet_property_base_script:
 
-- :ref:`String<class_String>` **base_script**
+.. rst-class:: classref-property
 
-+----------+------------------------+
-| *Setter* | set_base_script(value) |
-+----------+------------------------+
-| *Getter* | get_base_script()      |
-+----------+------------------------+
+:ref:`String<class_String>` **base_script**
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_script** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_base_script** **(** **)**
 
 The script to be used when :ref:`set_mode<class_VisualScriptPropertyGet_property_set_mode>` is set to :ref:`CALL_MODE_INSTANCE<class_VisualScriptPropertyGet_constant_CALL_MODE_INSTANCE>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptPropertyGet_property_base_type:
 
-- :ref:`String<class_String>` **base_type**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``"Object"``         |
-+-----------+----------------------+
-| *Setter*  | set_base_type(value) |
-+-----------+----------------------+
-| *Getter*  | get_base_type()      |
-+-----------+----------------------+
+:ref:`String<class_String>` **base_type** = ``"Object"``
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_type** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_base_type** **(** **)**
 
 The base type to be used when :ref:`set_mode<class_VisualScriptPropertyGet_property_set_mode>` is set to :ref:`CALL_MODE_INSTANCE<class_VisualScriptPropertyGet_constant_CALL_MODE_INSTANCE>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptPropertyGet_property_basic_type:
 
-- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
+.. rst-class:: classref-property
 
-+----------+-----------------------+
-| *Setter* | set_basic_type(value) |
-+----------+-----------------------+
-| *Getter* | get_basic_type()      |
-+----------+-----------------------+
+:ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
+
+.. rst-class:: classref-property-setget
+
+- void **set_basic_type** **(** :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` value **)**
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **get_basic_type** **(** **)**
 
 The type to be used when :ref:`set_mode<class_VisualScriptPropertyGet_property_set_mode>` is set to :ref:`CALL_MODE_BASIC_TYPE<class_VisualScriptPropertyGet_constant_CALL_MODE_BASIC_TYPE>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptPropertyGet_property_index:
 
-- :ref:`String<class_String>` **index**
+.. rst-class:: classref-property
 
-+----------+------------------+
-| *Setter* | set_index(value) |
-+----------+------------------+
-| *Getter* | get_index()      |
-+----------+------------------+
+:ref:`String<class_String>` **index**
+
+.. rst-class:: classref-property-setget
+
+- void **set_index** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_index** **(** **)**
 
 The indexed name of the property to retrieve. See :ref:`Object.get_indexed<class_Object_method_get_indexed>` for details.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptPropertyGet_property_node_path:
 
-- :ref:`NodePath<class_NodePath>` **node_path**
+.. rst-class:: classref-property
 
-+----------+----------------------+
-| *Setter* | set_base_path(value) |
-+----------+----------------------+
-| *Getter* | get_base_path()      |
-+----------+----------------------+
+:ref:`NodePath<class_NodePath>` **node_path**
+
+.. rst-class:: classref-property-setget
+
+- void **set_base_path** **(** :ref:`NodePath<class_NodePath>` value **)**
+- :ref:`NodePath<class_NodePath>` **get_base_path** **(** **)**
 
 The node path to use when :ref:`set_mode<class_VisualScriptPropertyGet_property_set_mode>` is set to :ref:`CALL_MODE_NODE_PATH<class_VisualScriptPropertyGet_constant_CALL_MODE_NODE_PATH>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptPropertyGet_property_property:
 
-- :ref:`String<class_String>` **property**
+.. rst-class:: classref-property
 
-+-----------+---------------------+
-| *Default* | ``""``              |
-+-----------+---------------------+
-| *Setter*  | set_property(value) |
-+-----------+---------------------+
-| *Getter*  | get_property()      |
-+-----------+---------------------+
+:ref:`String<class_String>` **property** = ``""``
+
+.. rst-class:: classref-property-setget
+
+- void **set_property** **(** :ref:`String<class_String>` value **)**
+- :ref:`String<class_String>` **get_property** **(** **)**
 
 The name of the property to retrieve. Changing this will clear :ref:`index<class_VisualScriptPropertyGet_property_index>`.
+
+.. rst-class:: classref-item-separator
 
 ----
 
 .. _class_VisualScriptPropertyGet_property_set_mode:
 
-- :ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` **set_mode**
+.. rst-class:: classref-property
 
-+-----------+----------------------+
-| *Default* | ``0``                |
-+-----------+----------------------+
-| *Setter*  | set_call_mode(value) |
-+-----------+----------------------+
-| *Getter*  | get_call_mode()      |
-+-----------+----------------------+
+:ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` **set_mode** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_call_mode** **(** :ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` value **)**
+- :ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` **get_call_mode** **(** **)**
 
 ``set_mode`` determines the target object from which the property will be retrieved. See :ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` for options.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
+.. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
