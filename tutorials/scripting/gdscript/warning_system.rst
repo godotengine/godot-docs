@@ -25,7 +25,7 @@ script editor's status bar. The example below has 3 warnings:
    Warning system example
 
 To ignore specific warnings in one file, insert a special comment of the
-form ``# warning-ignore:warning-id``, or click on the ignore link to the
+form ``@ warning_ignore:warning-id``, or click on the ignore link to the
 right of the warning's description. Godot will add a comment above the
 corresponding line and the code won't trigger the corresponding warning
 anymore:
@@ -36,7 +36,7 @@ anymore:
    Warning system ignore example
 
 You can also choose to ignore not just one but all warnings of a certain
-type in this file with ``# warning-ignore-all:warning-id``. To ignore all
+type in this file with ``@ warning_ignore-all:warning-id``. To ignore all
 warnings of all types in a file add the comment ``# warnings-disable`` to it.
 
 Warnings won't prevent the game from running, but you can turn them into
