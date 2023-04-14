@@ -178,11 +178,16 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**            | Instance custom data (for particles, mostly).          |
 +----------------------------------------+--------------------------------------------------------+
-| in int **VIEW_INDEX**                  |                                                        |
+| in int **VIEW_INDEX**                  | The view that we are rendering.                        |
+|                                        | ``VIEW_MONO_LEFT`` (``0``) for Mono (not multiview) or |
+|                                        | left eye, ``VIEW_RIGHT`` (``1``) for right eye.        |
 +----------------------------------------+--------------------------------------------------------+
-| in int **VIEW_MONO_LEFT**              |                                                        |
+| in int **VIEW_MONO_LEFT**              | Constant for Mono or left eye, always ``0``.           |
 +----------------------------------------+--------------------------------------------------------+
-| in int **VIEW_RIGHT**                  |                                                        |
+| in int **VIEW_RIGHT**                  | Constant for right eye, always ``1``.                  |
++----------------------------------------+--------------------------------------------------------+
+| in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered.            |
+|                                        | Only applicable for multiview rendering.               |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec3 **VERTEX**                  | Vertex in local coordinates.                           |
 +----------------------------------------+--------------------------------------------------------+
@@ -285,11 +290,15 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VERTEX**                     | Vertex that comes from vertex function (default, in view space).                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in int **VIEW_INDEX**                  |                                                                                                  |
+| in int **VIEW_INDEX**                  | The view that we are rendering.                                                                  |
+|                                        | ``VIEW_MONO_LEFT`` (``0``) for Mono (not multiview) or                                           |
+|                                        | left eye, ``VIEW_RIGHT`` (``1``) for right eye.                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in int **VIEW_MONO_LEFT**              |                                                                                                  |
+| in int **VIEW_MONO_LEFT**              | Constant for Mono or left eye, always ``0``.                                                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in int **VIEW_RIGHT**                  |                                                                                                  |
+| in int **VIEW_RIGHT**                  | Constant for right eye, always ``1``.                                                            |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered. Only applicable for multiview rendering.             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | sampler2D **SCREEN_TEXTURE**           | Removed in Godot 4. Use a ``sampler2D`` with ``hint_screen_texture`` instead.                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
