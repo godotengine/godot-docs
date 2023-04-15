@@ -157,7 +157,7 @@ The application should open in a new window and display the text "Hello World".
 
 .. image:: img/nodes_and_scenes_11_final_result.webp
 
-Close the window or press :kbd:`F8` to quit the running scene.
+Close the window or press :kbd:`F8` (:kbd:`Cmd + .` on macOS) to quit the running scene.
 
 .. note::
 
