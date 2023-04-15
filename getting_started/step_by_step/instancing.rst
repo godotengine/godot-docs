@@ -45,7 +45,7 @@ you to download the ball's sample project we prepared for you:
 :download:`instancing.zip <files/instancing.zip>`.
 
 Extract the archive on your computer. To import it, you need the Project Manager.
-The Project Manager is accessed by opening Godot, or if you already have Godot opened, click on *Project -> Quit to Project List* (:kbd:`Ctrl + Shift + Q`)
+The Project Manager is accessed by opening Godot, or if you already have Godot opened, click on *Project -> Quit to Project List* (:kbd:`Ctrl + Shift + Q`, :kbd:`Ctrl + Option + Cmd + B` on macOS)
 
 In the Project Manager, click the *Import* button to import the project.
 
@@ -88,7 +88,7 @@ Click on it and drag it towards the center of the view.
 
 .. image:: img/instancing_ball_moved.png
 
-Play the game by pressing F5. You should see it fall.
+Play the game by pressing :kbd:`F5` (:kbd:`Cmd + B` on macOS). You should see it fall.
 
 Now, we want to create more instances of the Ball node. With the ball still
 selected, press :kbd:`Ctrl-D` (:kbd:`Cmd-D` on macOS) to call the duplicate
