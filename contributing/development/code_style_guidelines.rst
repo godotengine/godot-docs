@@ -321,7 +321,7 @@ Godot's codebase.
   always end them with a period.
 - Reference variable/function names and values using backticks.
 - Wrap comments to ~100 characters.
-- You can use ``TODO:``, ``FIXME:``, ``NOTE:``, or ``HACK:`` as adominitions
+- You can use ``TODO:``, ``FIXME:``, ``NOTE:``, or ``HACK:`` as admonitions
   when needed.
 
 **Example:**
