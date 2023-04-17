@@ -1,13 +1,11 @@
-:article_outdated: True
-
 .. _doc_release_policy:
 
 Godot release policy
 ====================
 
-Godot's release policy is in constant evolution. What is described below is
-intended to give a general idea of what to expect, but what will actually
-happen depends on the choices of core contributors, and the needs of the
+Godot's release policy is in constant evolution. The description below
+provides a general idea of what to expect, but what will actually
+happen depends on the choices of core contributors and the needs of the
 community at a given time.
 
 Godot versioning
@@ -30,15 +28,14 @@ term adapted to the complexity of a game engine:
   areas *may* happen in minor versions, but the vast majority of projects
   should not be affected or require significant porting work.
 
-  The reason for this is that as a game engine, Godot covers many areas such
-  as rendering, physics, scripting, etc., and fixing bugs or implementing new
-  features in a given area may sometimes require changing the behavior of a
-  feature, or modifying the interface of a given class, even if the rest of
-  the engine API remains backwards compatible.
+  This is because Godot, as a game engine, covers many areas like rendering,
+  physics, and scripting. Fixing bugs or implementing new features in one area
+  might sometimes require changing a feature's behavior or modifying a class's
+  interface, even if the rest of the engine API remains backwards compatible.
 
 .. tip::
 
-    Upgrading to a new minor version is therefore recommended for all users,
+    Upgrading to a new minor version is recommended for all users,
     but some testing is necessary to ensure that your project still behaves as
     expected.
 
@@ -64,7 +61,7 @@ further developed for maintenance releases in a Git branch of the same name
 Release support timeline
 ------------------------
 
-Stable branches are supported *at minimum* until the next stable branch is
+Stable branches are supported *at least* until the next stable branch is
 released and has received its first patch update. In practice, we support
 stable branches on a *best effort* basis for as long as they have active users
 who need maintenance updates.
