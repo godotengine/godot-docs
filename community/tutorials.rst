@@ -48,7 +48,7 @@ Video tutorials
 Text tutorials
 --------------
 
-- `FinepointCGI website by Mitch <http://finepointcgi.io/>`__
+- `FinepointCGI website by Mitch <https://finepointcgi.io/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__

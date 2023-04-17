@@ -49,8 +49,8 @@ Tags
     ##
     ## A more detailed description of the script.
     ##
-    ## @tutorial:            http://the/tutorial1/url.com
-    ## @tutorial(Tutorial2): http://the/tutorial2/url.com
+    ## @tutorial:            https://the/tutorial1/url.com
+    ## @tutorial(Tutorial2): https://the/tutorial2/url.com
 
 .. warning:: If there is any space in between the tag name and colon, for example
              ``@tutorial  :``, it won't be treated as a valid tag and will be ignored.
@@ -94,8 +94,8 @@ Examples
     ## The description of the script, what it can do,
     ## and any further detail.
     ##
-    ## @tutorial:            http://the/tutorial1/url.com
-    ## @tutorial(Tutorial2): http://the/tutorial2/url.com
+    ## @tutorial:            https://the/tutorial1/url.com
+    ## @tutorial(Tutorial2): https://the/tutorial2/url.com
 
     ## The description of the variable v1.
     var v1
@@ -140,7 +140,7 @@ Examples
     ## The same rules apply apply here. The documentation must
     ## immediately precede the class definition.
     ##
-    ## @tutorial: http://the/tutorial/url.com
+    ## @tutorial: https://the/tutorial/url.com
     class Inner:
 
         ## Inner class variable v4.

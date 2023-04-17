@@ -46,8 +46,8 @@ if you need a quick write-up about Godot Engine.
     license. No strings attached, no royalties, nothing. Users' games are
     theirs, down to the last line of engine code. Godot's development is fully
     independent and community-driven, empowering users to help shape their
-    engine to match their expectations. It is supported by the `Software
-    Freedom Conservancy <https://sfconservancy.org>`_ not-for-profit.
+    engine to match their expectations. It is supported by the `Godot
+    Foundation <https://godot.foundation/>`_ not-for-profit.
 
 For a more in-depth view of the engine, you are encouraged to read this
 documentation further, especially the :ref:`Getting Started <sec-learn>` series.
@@ -57,9 +57,9 @@ About the documentation
 
 This documentation is continuously written, corrected, edited, and revamped by
 members of the Godot Engine community. It is edited via text files in the
-`reStructuredText <http://www.sphinx-doc.org/en/stable/rest.html>`_ markup
+`reStructuredText <https://www.sphinx-doc.org/en/stable/rest.html>`_ markup
 language and then compiled into a static website/offline document using the
-open source `Sphinx <http://www.sphinx-doc.org>`_ and `ReadTheDocs
+open source `Sphinx <https://www.sphinx-doc.org>`_ and `ReadTheDocs
 <https://readthedocs.org/>`_ tools.
 
 .. note:: You can contribute to Godot's documentation by opening issue tickets
