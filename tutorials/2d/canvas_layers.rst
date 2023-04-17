@@ -13,7 +13,7 @@ You can arrange canvas items in trees. Each item will inherit its parent's
 transform: when the parent moves, its children move too.
 
 CanvasItem nodes, and nodes inheriting from them, are direct or indirect children of a
-:ref:`Viewport <class_Viewport>`, that display them.
+:ref:`Viewport <class_Viewport>`, that displays them.
 
 The Viewport's property
 :ref:`Viewport.canvas_transform <class_Viewport_property_canvas_transform>`,
