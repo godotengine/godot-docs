@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_troubleshooting:
 
 Troubleshooting
@@ -97,15 +95,6 @@ default values in the NVIDIA Control Panel.
 
 To disable this overlay on Linux, open ``nvidia-settings``, go to **X Screen 0 >
 OpenGL Settings** then uncheck **Enable Graphics API Visual Indicator**.
-
-The project window doesn't appear centered when I run the project
------------------------------------------------------------------
-
-This is a `known bug <https://github.com/godotengine/godot/issues/13017>`__. To
-resolve this, open **Project > Project Settings**, make sure **Advanced
-Settings** is active, and enable **Display > Window
-> DPI > Allow hiDPI**. On top of that, make sure your project is configured to
-support :ref:`multiple resolutions <doc_multiple_resolutions>`.
 
 The project works when run from the editor, but fails to load some files when running from an exported copy
 -----------------------------------------------------------------------------------------------------------
