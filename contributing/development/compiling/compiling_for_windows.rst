@@ -19,7 +19,7 @@ For compiling under Windows, the following is required:
   version 2017 or later. VS 2019 is recommended.
   **Make sure to read "Installing Visual Studio caveats" below or you
   will have to run/download the installer again.**
-- `MinGW-w64 <http://mingw-w64.org/>`_ with GCC can be used as an alternative to
+- `MinGW-w64 <https://mingw-w64.org/>`_ with GCC can be used as an alternative to
   Visual Studio. Be sure to install/configure it to use the ``posix`` thread model.
   **Important:** When using MinGW to compile the ``master`` branch, you need GCC 9 or later.
 - `Python 3.6+ <https://www.python.org/downloads/windows/>`_.

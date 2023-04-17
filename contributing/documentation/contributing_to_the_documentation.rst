@@ -146,7 +146,7 @@ Sphinx and reStructuredText syntax
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Check Sphinx’s `reST Primer <https://www.sphinx-doc.org/en/stable/rest.html>`__
-and the `official reference <http://docutils.sourceforge.net/rst.html>`__ for
+and the `official reference <https://docutils.sourceforge.net/rst.html>`__ for
 details on the syntax.
 
 Sphinx uses specific reST comments to do specific operations, like defining the

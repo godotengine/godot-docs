@@ -64,7 +64,7 @@ There are two main ways to alleviate banding:
 
 .. seealso::
 
-    See `Banding in Games: A Noisy Rant <http://loopit.dk/banding_in_games.pdf>`__
+    See `Banding in Games: A Noisy Rant (PDF) <https://loopit.dk/banding_in_games.pdf>`__
     for more details about banding and ways to combat it.
 
 Depth buffer precision

@@ -97,7 +97,7 @@ The instructions below assumes that you're using Android Studio.
 
         local=["local_dep1.aar", "local_dep2.aar"]
         remote=["example.plugin.android:remote-dep1:0.0.1", "example.plugin.android:remote-dep2:0.0.1"]
-        custom_maven_repos=["http://repo.mycompany.com/maven2"]
+        custom_maven_repos=["https://repo.mycompany.com/maven2"]
 
     The ``config`` section and fields are required and defined as follow:
 
