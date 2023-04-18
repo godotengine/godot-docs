@@ -69,7 +69,7 @@ to generate a universal download link.
 - Open the `nightly.link <https://nightly.link>`__ website and paste the URL you just copied
   into the text field located below the heading **Paste a GitHub link, get a nightly.link!**.
   After pasting the URL, click **Get links** on the right.
-  If the the format of the URL you pasted is correct, you should be presented
+  If the format of the URL you pasted is correct, you should be presented
   with a page like this:
 
 .. image:: img/testing_pull_requests_nightly_link.png
