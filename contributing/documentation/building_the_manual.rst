@@ -1,18 +1,17 @@
 .. _doc_building_the_manual:
 
 Building the manual with Sphinx
-###############################
+===============================
 
 This page explains how to build a local copy of the Godot manual using the
 Sphinx docs engine. This allows you to have local HTML files and build the
 documentation as a PDF, EPUB, or LaTeX file, for example.
 
-.. important::
-    Before you get started, make sure that you have
-    `Git <https://git-scm.com/>`_,
-    `Python 3 <https://www.python.org/>`_,
-    and, unless you are using Windows,
-    `make <https://www.gnu.org/software/make/>`_.
+Before you get started, make sure that you have:
+
+- `Git <https://git-scm.com/>`_
+- `make <https://www.gnu.org/software/make/>`_ (unless you’re using Windows)
+- `Python <https://www.python.org/>`_ 3
 
 .. note:: Python 3 should come with the ``pip3`` command. You may need to write
     ``python3 -m pip`` (Unix) or  ``py -m pip`` (Windows) instead of ``pip3``.
