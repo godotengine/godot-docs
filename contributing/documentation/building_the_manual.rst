@@ -110,7 +110,7 @@ You can then browse the documentation by opening ``_build/html/index.html`` in
 your web browser.
 
 Dealing with errors
-===================
+-------------------
 
 If you run into errors, you may try the following command:
 
@@ -131,10 +131,10 @@ rest intact.
 .. _doc_building_the_manual:performance:
 
 Hints for performance
-=====================
+---------------------
 
 RAM usage
----------
+^^^^^^^^^
 
 Building the documentation requires at least 8 GB of RAM to run without disk swapping,
 which slows it down.
@@ -155,7 +155,7 @@ If you have at least 16 GB of RAM, you can speed up compilation by running:
             make html SPHINXOPTS=-j2
 
 Specifying a list of files
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can specify a list of files to build, which can greatly speed up compilation:
 
