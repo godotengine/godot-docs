@@ -2,7 +2,7 @@ name: Sync Class Reference
 
 on:
   workflow_dispatch:
-  # Scheduled updates are only enabled for in-dev branches.
+  # Scheduled updates only run on the default/master branch.
   schedule:
     # Run it at night (European time) every Saturday.
     # The offset is there to try and avoid the high load times.
