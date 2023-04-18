@@ -64,6 +64,12 @@ the JDK can be used for this purpose::
 
 This will create a ``debug.keystore`` file in your current directory. You should move it to a memorable location such as ``%USERPROFILE%\.android\``, because you will need its location in a later step. For more information on ``keytool`` usage, see `this Q&A article <https://godotengine.org/qa/21349/jdk-android-file-missing>`__.
 
+.. note::
+
+   It is important that the password is the same for the keystore and the key. This is a `known Android
+   studio issue <https://developer.android.com/studio/known-issues#ki-key-keystore-warning>`__ that also
+   affects Godot projects.
+
 Setting it up in Godot
 ----------------------
 
