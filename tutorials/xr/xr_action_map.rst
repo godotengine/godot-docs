@@ -330,11 +330,11 @@ Let's finish our configuration:
 
 .. image:: img/xr_touch_completed.webp
 
-Each action is bound the the given input or output for both controllers to indicate that we support the action on either controller.
+Each action is bound the given input or output for both controllers to indicate that we support the action on either controller.
 The exception is the movement action which is bound only to the right hand controller.
 It is likely that we would want to use the left hand thumbstick for a different purpose, say a teleport function.
 
-In developing your game/application you have to account for the possibility that the user changes the binding and binds the movement to the left hand thumbstick. 
+In developing your game/application you have to account for the possibility that the user changes the binding and binds the movement to the left hand thumbstick.
 
 Also note that our shoot and grab boolean actions are linked to inputs of type ``Float``.
 As mentioned before OpenXR will do conversions between the two, but do read the warning given on that subject earlier in this document.
