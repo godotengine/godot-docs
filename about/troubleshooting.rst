@@ -96,6 +96,53 @@ default values in the NVIDIA Control Panel.
 To disable this overlay on Linux, open ``nvidia-settings``, go to **X Screen 0 >
 OpenGL Settings** then uncheck **Enable Graphics API Visual Indicator**.
 
+The editor or project appears overly sharp or blurry
+----------------------------------------------------
+
+.. figure:: img/troubleshooting_graphics_driver_sharpening.webp
+   :align: center
+   :alt: Correct appearance (left), oversharpened appearance due to graphics driver sharpening (right)
+
+   Correct appearance (left), oversharpened appearance due to graphics driver sharpening (right)
+
+If the editor or project appears overly sharp, this is likely due to image
+sharpening being forced on all Vulkan or OpenGL applications by your graphics
+driver. You can disable this behavior in the graphics driver's control panel:
+
+- **NVIDIA (Windows):** Open the start menu and choose **NVIDIA Control Panel**.
+  Open the **Manage 3D settings** tab on the left. In the list in the middle,
+  scroll to **Image Sharpening** and set it to **Sharpening Off**.
+- **AMD (Windows):** Open the start menu and choose **AMD Software**. Click the
+  settings "cog" icon in the top-right corner. Go to the **Graphics** tab then
+  disable **Radeon Image Sharpening**.
+
+If the editor or project appears overly blurry, this is likely due to
+:abbr:`FXAA (Fast Approximate AntiAliasing)` being forced on all Vulkan or
+OpenGL applications by your graphics driver.
+
+- **NVIDIA (Windows):** Open the start menu and choose **NVIDIA Control Panel**.
+  Open the **Manage 3D settings** tab on the left. In the list in the middle,
+  scroll to **Fast Approximate Antialiasing** and set it to **Application
+  Controlled**.
+- **NVIDIA (Linux):** Open the applications menu and choose **NVIDIA X Server
+  Settings**. Select to **Antialiasing Settings** on the left, then uncheck
+  **Enable FXAA**.
+- **AMD (Windows):** Open the start menu and choose **AMD Software**. Click the
+  settings "cog" icon in the top-right corner. Go to the **Graphics** tab,
+  scroll to the bottom and click **Advanced** to unfold its settings. Disable
+  **Morphological Anti-Aliasing**.
+
+Third-party vendor-independent utilities such as vkBasalt may also force
+sharpening or FXAA on all Vulkan applications. You may want to check their
+configuration as well.
+
+After changing options in the graphics driver or third-party utilities, restart
+Godot to make the changes effective.
+
+If you still wish to force sharpening or FXAA on other applications, it's
+recommended to do so on a per-application basis using the application profiles
+system provided by graphics drivers' control panels.
+
 The project works when run from the editor, but fails to load some files when running from an exported copy
 -----------------------------------------------------------------------------------------------------------
 
