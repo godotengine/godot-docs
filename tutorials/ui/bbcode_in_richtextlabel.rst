@@ -277,7 +277,7 @@ Reference
     - ``[right]{text}[/right]``
 
   * - | **fill**
-      | Makes ``{text}`` fill the the full width of ``RichTextLabel``.
+      | Makes ``{text}`` fill the full width of ``RichTextLabel``.
       | Same as ``[p align=fill]``.
 
     - ``[fill]{text}[/fill]``

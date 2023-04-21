@@ -77,7 +77,7 @@ from ``servers/`` and ``core/``, it cannot depend on includes from ``editor/``.
 
 Currently, there are some dependencies to ``editor/`` includes in ``scene/``
 files, but
-`they are in the process of being removed <https://github.com/godotengine/godot/issues/29730>`__.
+`they are in the process of being removed <https://github.com/godotengine/godot/issues/53295>`__.
 
 Development tips
 ----------------

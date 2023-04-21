@@ -34,6 +34,8 @@ Godot provides the following objects and classes for 3D navigation:
         - NavRegion RID
             Reference to a specific navigation region that can hold navigation mesh data.
             The region can be enabled / disabled or the use restricted with a navigationlayer bitmask.
+        - NavLink RID
+            Reference to a specific navigation link that connects two navigation mesh positions over arbitrary distances.
         - NavAgent RID
             Reference to a specific avoidance agent with a radius value use solely in avoidance.
 
@@ -41,9 +43,19 @@ The following SceneTree Nodes are available as helpers to work with the Navigati
 
 - :ref:`NavigationRegion3D<class_NavigationRegion3D>` Node
     A Node that holds a Navigation Mesh resource that defines a navigation mesh for the NavigationServer3D.
-    The region can be enabled / disabled.
-    The use in pathfinding can be further restricted through the navigationlayers bitmask.
-    Regions can join their navigation meshes by proximity for a combined navigation mesh.
+
+    - The region can be enabled / disabled.
+    - The use in pathfinding can be further restricted through the navigationlayers bitmask.
+    - Regions can join their navigation meshes by proximity for a combined navigation mesh.
+
+- :ref:`NavigationLink3D<class_NavigationLink3D>` Node
+    A Node that connects two positions on navigation mesh over arbitrary distances for pathfinding.
+
+    - The link can be enabled / disabled.
+    - The link can be made one-way or bidirectional.
+    - The use in pathfinding can be further restricted through the navigationlayers bitmask.
+
+    Links tell the pathfinding that a connection exists and at what cost. The actual agent handling and movement needs to happen in custom scripts.
 
 -  :ref:`NavigationAgent3D<class_NavigationAgent3D>` Node
     An optional helper Node to facilitate common NavigationServer3D API calls for pathfinding and avoidance for
@@ -138,14 +150,14 @@ a NavigationAgent3D for path movement.
         if navigation_agent.is_navigation_finished():
             return
 
-        var current_agent_position: Vector3 = global_transform.origin
+        var current_agent_position: Vector3 = global_position
         var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 
         var new_velocity: Vector3 = next_path_position - current_agent_position
         new_velocity = new_velocity.normalized()
         new_velocity = new_velocity * movement_speed
 
-        set_velocity(new_velocity)
+        velocity = safe_velocity
         move_and_slide()
 
  .. code-tab:: csharp C#

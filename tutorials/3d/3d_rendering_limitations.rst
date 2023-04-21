@@ -56,9 +56,15 @@ There are two main ways to alleviate banding:
   rendered with low color precision, which means it will work when using the
   Mobile and Compatibility rendering methods.
 
+.. figure:: img/3d_rendering_limitations_banding.webp
+   :align: center
+   :alt: Color banding comparison (contrast increased for more visibility)
+
+   Color banding comparison (contrast increased for more visibility)
+
 .. seealso::
 
-    See `Banding in Games: A Noisy Rant <http://loopit.dk/banding_in_games.pdf>`__
+    See `Banding in Games: A Noisy Rant (PDF) <https://loopit.dk/banding_in_games.pdf>`__
     for more details about banding and ways to combat it.
 
 Depth buffer precision
@@ -87,6 +93,12 @@ airplane.
 Depending on the scene and viewing conditions, you may also be able to move the
 Z-fighting objects further apart without the difference being visible to the
 player.
+
+.. figure:: img/3d_rendering_limitations_z_fighting.webp
+   :align: center
+   :alt: Z-fighting comparison (before and after tweaking the scene by offsetting the Label3D away from the floor)
+
+   Z-fighting comparison (before and after tweaking the scene by offsetting the Label3D away from the floor)
 
 .. _doc_3d_rendering_limitations_transparency_sorting:
 
@@ -132,6 +144,12 @@ this feature. There are still several ways to avoid this problem:
 - If you want a material to fade with distance, use the StandardMaterial3D
   distance fade mode **Pixel Dither** or **Object Dither** instead of
   **PixelAlpha**. This will make the material opaque, which also speeds up rendering.
+
+.. figure:: img/3d_rendering_limitations_transparency_sorting.webp
+   :align: center
+   :alt: Transparency sorting comparison (alpha-blended materials on the left, alpha scissor materials on the right)
+
+   Transparency sorting comparison (alpha-blended materials on the left, alpha scissor materials on the right)
 
 Multi-sample antialiasing
 -------------------------

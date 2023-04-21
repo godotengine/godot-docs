@@ -129,7 +129,7 @@ use ``Input.is_action_pressed()``:
     frame, use ``Input.is_action_just_pressed()`` instead of
     ``Input.is_action_pressed()``. Unlike ``Input.is_action_pressed()`` which
     returns ``true`` as long as the input is
-    held,``Input.is_action_just_pressed()`` will only return ``true`` for one
+    held, ``Input.is_action_just_pressed()`` will only return ``true`` for one
     frame after the button has been pressed.
 
 In Godot versions before 3.4, such as 3.3, ``Input.get_vector()`` and

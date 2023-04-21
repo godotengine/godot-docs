@@ -44,11 +44,12 @@ Video tutorials
 - `Garbaj <https://www.youtube.com/c/Garbaj/>`_ (3D, GDScript).
 - `Kasper Frandsen <https://www.youtube.com/c/KasperFrandsen/>`_ (3D, Shaders).
 - `bitbrain <https://www.youtube.com/watch?v=lFIBn8kJ-IM&list=PL4AhUX6lGjJWfiDORSmEu8x_myelbe1p2>`_ (2D, GDScript).
+- `Gwizz <https://www.youtube.com/@Gwizz1027>`_ (2D, GDScript).
 
 Text tutorials
 --------------
 
-- `FinepointCGI website by Mitch <http://finepointcgi.io/>`__
+- `FinepointCGI website by Mitch <https://finepointcgi.io/>`__
 - `GDScript website by Andrew Wilkes <https://gdscript.com>`__
 - `Godot Recipes by KidsCanCode <https://kidscancode.org/godot_recipes/4.x/>`__
 - `Steincodes <https://steincodes.tumblr.com>`__

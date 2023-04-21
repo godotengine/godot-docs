@@ -50,6 +50,11 @@ handle scaling for different sizes and aspect ratios.
 
 Godot provides several useful tools to do this easily.
 
+.. seealso::
+
+    You can see how Godot's support for multiple resolutions works in action using the
+    `Multiple Resolutions and Aspect Ratios demo project <https://github.com/godotengine/godot-demo-projects/tree/master/gui/multiple_resolutions>`__.
+
 Base size
 ---------
 
@@ -68,6 +73,14 @@ There is often a need to support devices with screen and window sizes
 that are different from this base size. Godot offers many ways to
 control how the viewport will be resized and stretched to different
 screen sizes.
+
+To configure the stretch base size at runtime from a script, use the
+``get_tree().root.content_scale_size`` property (see
+:ref:`Window.content_scale_size <class_Window_property_content_scale_size>`).
+Changing this value can indirectly change the size of 2D elements. However, to
+provide an user-accessible scaling option, using
+:ref:`doc_multiple_resolutions_stretch_scale` is recommended as it's easier to
+adjust.
 
 .. note::
 
@@ -153,6 +166,11 @@ demonstrate the effect of different stretch modes. A single sprite, also
 
    .. image:: img/stretch_viewport_expand.gif
 
+To configure the stretch mode at runtime from a script, use the
+``get_tree().root.content_scale_mode`` property (see
+:ref:`Window.content_scale_mode <class_Window_property_content_scale_mode>`
+and the :ref:`ContentScaleMode <enum_Window_ContentScaleMode>` enum).
+
 Stretch Aspect
 ^^^^^^^^^^^^^^
 
@@ -230,30 +248,36 @@ to the region outside the blue frame you see in the 2D editor.
     To allow the user to choose their preferred screen orientation at run-time,
     remember to set **Display > Window > Handheld > Orientation** to ``sensor``.
 
-Stretch Shrink
-^^^^^^^^^^^^^^
+To configure the stretch aspect at runtime from a script, use the
+``get_tree().root.content_scale_aspect`` property (see
+:ref:`Window.content_scale_aspect <class_Window_property_content_scale_aspect>`
+and the :ref:`ContentScaleAspect <enum_Window_ContentScaleAspect>` enum).
 
-The **Shrink** setting allows you to add an extra scaling factor on top of
-what the **Stretch** options above already provide. The default value of 1
-means that no scaling occurs.
+.. _doc_multiple_resolutions_stretch_scale:
 
-If, for example, you set **Shrink** to 4 and leave **Stretch Mode** on
-**Disabled**, each unit in your scene will correspond to 4×4 pixels on the
-screen.
+Stretch Scale
+^^^^^^^^^^^^^
 
-If **Stretch Mode** is set to something other than **Disabled**, the size of
-the root viewport is scaled down by the **Shrink** factor, and pixels
-in the output are scaled up by the same amount. This is rarely useful for
-2D games, but can be used to increase performance in 3D games
-by rendering them at a lower resolution.
+The **Scale** setting allows you to add an extra scaling factor on top of
+what the **Stretch** options above already provide. The default value of ``1.0``
+means that no additional scaling occurs.
 
-From scripts
-^^^^^^^^^^^^
+For example, if you set **Scale** to ``2.0`` and leave **Stretch Mode** on
+**Disabled**, each unit in your scene will correspond to 2×2 pixels on the
+screen. This is a good way to provide scaling options for non-game applications.
 
-To configure stretching at runtime from a script, use the
-``get_tree().root.content_scale_mode`` (see
-:ref:`Window.content_scale_mode <class_Window_property_content_scale_mode>`
-and the :ref:`ContentScaleMode <enum_Window_ContentScaleMode>` enum).
+If **Stretch Mode** is set to **canvas_items**, 2D elements will be scaled
+relative to the base window size, then multiplied by the **Scale** setting. This
+can be exposed to players to allow them to adjust the automatically determined
+scale to their liking, for better accessibility.
+
+If **Stretch Mode** is set to **viewport**, the viewport's resolution is divided
+by **Scale**. This makes pixels look larger and reduces rendering resolution
+(with a given window size), which can improve performance.
+
+To configure the stretch scale at runtime from a script, use the
+``get_tree().root.content_scale_factor`` property (see
+:ref:`Window.content_scale_factor <class_Window_property_content_scale_factor>`).
 
 Common use case scenarios
 -------------------------

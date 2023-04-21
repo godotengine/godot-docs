@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. Intention: give the user a first taste of signals. We should write more
    documentation in the scripting/ section.
 .. Note: GDScript snippets use one line return instead of two because they're
@@ -114,7 +112,7 @@ Double-click the "pressed" signal to open the node connection window.
 There, you can connect the signal to the Sprite2D node. The node needs a
 receiver method, a function that Godot will call when the Button emits the
 signal. The editor generates one for you. By convention, we name these callback
-methods "_on_NodeName_signal_name". Here, it'll be "_on_Button_pressed".
+methods "_on_node_name_signal_name". Here, it'll be "_on_button_pressed".
 
 .. note::
 
@@ -133,12 +131,12 @@ Click the Connect button to complete the signal connection and jump to the
 Script workspace. You should see the new method with a connection icon in the
 left margin.
 
-.. image:: img/signals_13_signals_connection_icon.png
+.. image:: img/signals_13_signals_connection_icon.webp
 
 If you click the icon, a window pops up and displays information about the
 connection. This feature is only available when connecting nodes in the editor.
 
-.. image:: img/signals_14_signals_connection_info.png
+.. image:: img/signals_14_signals_connection_info.webp
 
 Let's replace the line with the ``pass`` keyword with code that'll toggle the
 node's motion.
@@ -152,7 +150,7 @@ the ``not`` keyword to invert the value.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Button_pressed():
+    func _on_button_pressed():
         set_process(not is_processing())
 
  .. code-tab:: csharp C#
@@ -203,7 +201,7 @@ Your complete ``Sprite2D.gd`` code should look like the following.
         position += velocity * delta
 
 
-    func _on_Button_pressed():
+    func _on_button_pressed():
         set_process(not is_processing())
 
  .. code-tab:: csharp C#
@@ -300,7 +298,7 @@ We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
 
     func _ready():
         var timer = get_node("Timer")
-        timer.timeout.connect(_on_Timer_timeout)
+        timer.timeout.connect(_on_timer_timeout)
 
  .. code-tab:: csharp C#
 
@@ -312,13 +310,17 @@ We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
 
 The line reads like so: we connect the Timer's "timeout" signal to the node to
 which the script is attached. When the Timer emits ``timeout``, we want to call
-the function ``_on_Timer_timeout()``, that we need to define. Let's add it at the
+the function ``_on_timer_timeout()``, that we need to define. Let's add it at the
 bottom of our script and use it to toggle our sprite's visibility.
+
+.. note:: By convention, we name these callback methods in GDScript as 
+          "_on_node_name_signal_name" and in C# as "OnNodeNameSignalName".
+          Here, it'll be "_on_timer_timeout" for GDScript and OnTimerTimeout() for C#.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Timer_timeout():
+    func _on_timer_timeout():
         visible = not visible
 
  .. code-tab:: csharp C#
@@ -361,7 +363,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
         position += velocity * delta
 
 
-    func _on_Button_pressed():
+    func _on_button_pressed():
         set_process(not is_processing())
 
 
