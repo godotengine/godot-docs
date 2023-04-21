@@ -163,7 +163,7 @@ Close the window or press :kbd:`F8` (:kbd:`Cmd + .` on macOS) to quit the runnin
 
     If this doesn't immediately work and you have a hiDPI display on at least
     one of your monitors, go to Project -> Project Settings -> Display ->
-    Window then enable Allow Hidpi under Dpi.
+    Window then, making sure Advancesd Settings is on, enable Allow hiDPI, under DPI.
 
 Setting the main scene
 ----------------------
