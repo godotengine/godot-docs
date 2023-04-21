@@ -15,10 +15,8 @@ Disclaimer
 While it is possible to compile for iOS on a Linux environment, Apple is
 very restrictive about the tools to be used (especially hardware-wise),
 allowing pretty much only their products to be used for development. So
-this is **not official**. However, a `statement from Apple in 2010
-<http://www.apple.com/pr/library/2010/09/09Statement-by-Apple-on-App-Store-Review-Guidelines.html>`__
-says they relaxed some of the `App Store review guidelines
-<https://developer.apple.com/app-store/review/guidelines/>`__
+this is **not official**. However, in 2010 Apple said they relaxed some of the
+`App Store review guidelines <https://developer.apple.com/app-store/review/guidelines/>`__
 to allow any tool to be used, as long as the resulting binary does not
 download any code, which means it should be OK to use the procedure
 described here and cross-compiling the binary.
@@ -28,7 +26,7 @@ Requirements
 
 - `XCode with the iOS SDK <https://developer.apple.com/xcode/download>`__
   (a dmg image, for newer versions a **xip** file is going to be downloaded.)
-- `Clang >= 3.5 <http://clang.llvm.org>`__ for your development
+- `Clang >= 3.5 <https://clang.llvm.org>`__ for your development
   machine installed and in the ``PATH``. It has to be version >= 3.5
   to target ``arm64`` architecture.
 - `Fuse <https://github.com/libfuse/libfuse>`__ for mounting and unmounting

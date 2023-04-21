@@ -1,3 +1,5 @@
+.. _doc_large_world_coordinates:
+
 Large world coordinates
 =======================
 

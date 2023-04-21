@@ -158,12 +158,10 @@ navigationmesh from outline data the shapes cannot overlap.
 
             if node is CollisionPolygon2D:
 
-                var new_collision_outline: PackedVector2Array = PackedVector2Array()
                 var collisionpolygon_transform: Transform2D = node.get_global_transform()
-                var collisionpolygon: CollisionPolygon2D = node.get_polygon()
+                var collisionpolygon: PackedVector2Array = node.polygon
 
-                for vertex in collisionpolygon:
-                    new_collision_outline.append(collisionpolygon_transform.xform(vertex))
+                var new_collision_outline: PackedVector2Array = collisionpolygon_transform * collisionpolygon
 
                 new_navigation_polygon.add_outline(new_collision_outline)
 
@@ -188,7 +186,7 @@ The following script creates a new 2D navigation region and fills it with proced
         Vector2(50.0, 0.0),
         Vector2(50.0, 50.0),
         Vector2(0.0, 50.0),
-        ])
+    ])
     new_navigation_polygon.add_outline(new_outline)
     new_navigation_polygon.make_polygons_from_outlines()
 

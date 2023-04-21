@@ -28,14 +28,14 @@
 {%- block document %}
 <div itemprop="articleBody">
   {% if godot_is_latest or godot_show_article_status %}
-  <div class="admonition-grid {% if godot_is_latest and godot_show_article_status %}admonition-grid-2x{% endif %}">
+  <div class="admonition-grid">
     {% if godot_is_latest %}
     <div class="admonition attention latest-notice">
-      <p class="first admonition-title">Attention</p>
+      <p class="first admonition-title">Attention: Here be dragons</p>
       <p>
-        You are reading the <code class="docutils literal notranslate"><span class="pre">latest</span></code>
-        (unstable) version of this documentation, which may document features not available
-        or compatible with Godot 3.x.
+        This is the <code class="docutils literal notranslate"><span class="pre">latest</span></code>
+        (unstable) version of this documentation, which may document features
+        not available in or compatible with released stable versions of Godot.
       </p>
       <p class="last latest-notice-link">
         Checking the stable version of the documentation...
@@ -43,23 +43,23 @@
     </div>
     {% endif %}
 
-    {% if godot_show_article_status %}
+    {% if godot_show_article_status and not godot_is_latest %}
     <div class="admonition tip article-status">
+      {% if meta and meta.get('article_outdated') == 'True' %}
       <p class="first admonition-title">Work in progress</p>
       <p>
-        Godot documentation is being updated to reflect the latest changes in version
-        <code class="docutils literal notranslate">{{ godot_version }}</code>. Some documentation pages may
-        still state outdated information. This banner will tell you if you're reading one of such pages.
+        The content of this page was not yet updated for Godot
+        <code class="docutils literal notranslate">{{ godot_version }}</code>
+        and may be <strong>outdated</strong>. If you know how to improve this page or you can confirm
+        that it's up to date, feel free to <a href="https://github.com/godotengine/godot-docs">open a pull request</a>.
       </p>
+      {% else %}
+      <p class="first admonition-title">Up to date</p>
       <p>
-        {% if meta and meta.get('article_outdated') == 'True' %}
-          The contents of this page can be <strong>outdated</strong>. If you know how to improve this page or you can confirm
-          that it's up to date, feel free to <a href="https://github.com/godotengine/godot-docs">open a pull request</a>.
-        {% else %}
-          The contents of this page are <strong>up to date</strong>. If you can still find outdated information, please
-          <a href="https://github.com/godotengine/godot-docs">open an issue</a>.
-        {% endif %}
+        This page is <strong>up to date</strong> for Godot <code class="docutils literal notranslate">{{ godot_version }}</code>.
+        If you still find outdated information, please <a href="https://github.com/godotengine/godot-docs">open an issue</a>.
       </p>
+      {% endif %}
     </div>
     {% endif %}
   </div>

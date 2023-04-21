@@ -36,7 +36,7 @@ There are several nodes involved in a complete 2D lighting setup:
 
 - :ref:`CanvasModulate <class_CanvasModulate>` (to darken the rest of the scene)
 - :ref:`PointLight2D <class_PointLight2D>` (for omnidirectional or spot lights)
-- :ref:`DirectionalLight2D <class_PointLight2D>` (for sunlight or moonlight)
+- :ref:`DirectionalLight2D <class_DirectionalLight2D>` (for sunlight or moonlight)
 - :ref:`LightOccluder2D <class_LightOccluder2D>` (for light shadow casters)
 - Other 2D nodes that receive lighting, such as Sprite2D or TileMap.
 

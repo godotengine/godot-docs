@@ -8,7 +8,7 @@ Modules
 
 The Summator example in :ref:`doc_custom_modules_in_cpp` is great for small,
 custom modules, but what if you want to use a larger, external library?
-Let's look at an example using `Festival <http://www.cstr.ed.ac.uk/projects/festival/>`_,
+Let's look at an example using `Festival <https://www.cstr.ed.ac.uk/projects/festival/>`_,
 a speech synthesis (text-to-speech) library written in C++.
 
 To bind to an external library, set up a module directory similar to the Summator example:

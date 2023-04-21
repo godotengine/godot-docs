@@ -208,7 +208,7 @@ Starting with ``Main.gd``.
 
             // Choose a random location on the SpawnPath.
             // We store the reference to the SpawnLocation node.
-            var mobSpawnLocation = GetNode<PathFollow>("SpawnPath/SpawnLocation");
+            var mobSpawnLocation = GetNode<PathFollow3D>("SpawnPath/SpawnLocation");
             // And give it a random offset.
             mobSpawnLocation.ProgressRatio = GD.Randf();
 
@@ -480,7 +480,7 @@ Finally, the longest script, ``Player.gd``:
             }
 
             // Iterate through all collisions that occurred this frame.
-            for (int index = 0; index < GetSlideCount(); index++)
+            for (int index = 0; index < GetSlideCollisionCount(); index++)
             {
                 // We get one of the collisions with the player.
                 KinematicCollision3D collision = GetSlideCollision(index);

@@ -9,8 +9,8 @@ Most mobile headsets run on Android and OpenXR support is making its way to thes
 For general requirements around exporting to Android, please first read :ref:`doc_exporting_for_android`.
 
 .. note::
-	Official support for the Android platform wasn't added to the OpenXR specification initially resulting in various vendors creating custom loaders to make OpenXR available on their headsets.
-	While the long term expectation is that all vendors will adopt the official OpenXR loader, for now these loaders need to be added to your project.
+    Official support for the Android platform wasn't added to the OpenXR specification initially resulting in various vendors creating custom loaders to make OpenXR available on their headsets.
+    While the long term expectation is that all vendors will adopt the official OpenXR loader, for now these loaders need to be added to your project.
 
 Custom Android build
 --------------------
@@ -26,14 +26,14 @@ You can read more about custom builds here: :ref:`doc_android_custom_build`.
 
 Installing the loader plugins
 -----------------------------
-Inside the **android** folder you will find a subfolder called **plugins**, we will need to install our loader plugins into this folder.
+The loaders can be downloaded from the asset library, search for OpenXR Loaders and install the plugin:
 
-.. note::
-	Once an official release becomes available you will be able to install this plugin through the asset library. For now this is a manual install.
+.. image:: img/openxr_loader_asset_lib.webp
 
-You can find the loader plugin `here <https://github.com/GodotVR/godot_openxr_loaders/releases>`__.
+You will find the installed files inside the **android** folder.
+There is a subfolder called **plugins** containing the new files.
 
-Download the **godotopenxrloaders.zip** file for the release marked as **Latest**. From this zip file copy the files found in **asset/android/plugins** into the **android/plugins** folder of your project.
+You can find the main repository of the loader plugin `here <https://github.com/GodotVR/godot_openxr_loaders>`__.
 
 Creating the export templates
 -----------------------------
@@ -42,7 +42,7 @@ You will need to setup a separate export template for each device as each device
 Open **Project** and select **Export..**.
 Click on **Add..** and select **Android**.
 Next change the name of the export profile for the device you're setting this up for, say **Meta Quest**.
-And enable **Use Custom Build**.
+And enable **Use Gradle Build**.
 
 If the loader plugins were installed correctly you should find entries for the different headsets, select the entry for meta:
 
@@ -59,10 +59,14 @@ The hand tracking and passthrough settings here currently only work for the Meta
 Now you can repeat the same process for the other devices. Note that if you wish to test your game with Godots one-click deploy, you have to mark the export profile for your device as **Runnable** so Godot knows which loader to deploy.
 
 .. note::
-	Currently only Meta Quest and PICO are supported. Other loaders will be added as soon as possible.
+    There are separate loaders for the Meta Quest, Pico and Lynx R1 headsets.
+
+    The fourth option is the official Khronos (KHR) loader, in due time all headsets should work with this loader.
+    At the moment this loader has been tested with the Magic Leap 2 and standalone HTC headsets.
 
 .. warning::
-	While the Mobile Vulkan renderer has many optimizations targeted at mobile devices, we're still working out the kinks. It is highly advisable to use the OpenGL renderer for the time being when targeting Android based XR devices.
+    While the Mobile Vulkan renderer has many optimizations targeted at mobile devices, we're still working out the kinks.
+    It is highly advisable to use the OpenGL renderer for the time being when targeting Android based XR devices.
 
-	Note that we are awaiting a driver update on the PICO before Vulkan support will work on PICO devices.
+    Note that we are awaiting driver updates on various devices before Vulkan support will work on these.
 
