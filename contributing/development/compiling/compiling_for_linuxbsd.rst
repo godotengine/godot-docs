@@ -247,7 +247,7 @@ Start a terminal, go to the root dir of the engine source code and type:
 
     Prior to Godot 4.0, the Linux/\*BSD target was called ``x11`` instead of
     ``linuxbsd``. If you are looking to compile Godot 3.x, make sure to use the
-    `stable branch of this documentation <https://docs.godotengine.org/en/stable/development/compiling/compiling_for_x11.html>`__.
+    `3.x branch of this documentation <https://docs.godotengine.org/en/3.6/development/compiling/compiling_for_x11.html>`__.
 
 If all goes well, the resulting binary executable will be placed in the
 "bin" subdirectory. This executable file contains the whole engine and
