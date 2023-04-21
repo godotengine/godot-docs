@@ -10,8 +10,8 @@ and the animation editor.
 
    introduction
    animation_track_types
-   cutout_animation
    2d_skeletons
+   2d_skeletal_deform
    animation_tree
    playing_videos
    creating_movies
