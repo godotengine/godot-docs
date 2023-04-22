@@ -44,7 +44,9 @@ except you're free to design it by using the editor, using only the
 code, or mixing and matching the two.
 
 It's different from prefabs you find in several 3D engines, as you can
-then inherit from and extend those scenes. You may create a Magician
+then inherit from and extend those scenes. Normally, prefabs in other 3d engines 
+does not allow you to extend them with new features but require you to create new prefabs
+with the desired features and functions.  In Godot you may create a Magician
 that extends your Character. Modify the Character in the editor and the Magician
 will update as well. It helps you build your projects so that their
 structure matches the game's design.
