@@ -654,7 +654,7 @@ Returns the given column's icon :ref:`Texture2D<class_Texture2D>`. Error if no i
 
 :ref:`int<class_int>` **get_icon_max_width** **(** :ref:`int<class_int>` column **)** |const|
 
-Returns the column's icon's maximum width.
+Returns the maximum allowed width of the icon in the given ``column``.
 
 .. rst-class:: classref-item-separator
 
@@ -1262,7 +1262,7 @@ Sets the given column's icon :ref:`Texture2D<class_Texture2D>`.
 
 void **set_icon_max_width** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` width **)**
 
-Sets the given column's icon's maximum width.
+Sets the maximum allowed width of the icon in the given ``column``. This limit is applied on top of the default size of the icon and on top of :ref:`Tree.icon_max_width<class_Tree_theme_constant_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 

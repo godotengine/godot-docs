@@ -23,6 +23,8 @@ A checkbox allows the user to make a binary choice (choosing only one of two pos
 
 See also :ref:`BaseButton<class_BaseButton>` which contains common properties and methods associated with this node.
 
+\ **Note:** CheckBox changes its appearance when it's configured as a radio button. See various ``radio_*`` theme properties. To configure CheckBox to act as a radio button, use :ref:`BaseButton.button_group<class_BaseButton_property_button_group>` and :ref:`ButtonGroup<class_ButtonGroup>`.
+
 .. rst-class:: classref-reftable-group
 
 Properties

@@ -671,6 +671,22 @@ Use ETC2 compression.
 
 Use BPTC compression.
 
+.. _class_Image_constant_COMPRESS_ASTC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressMode<enum_Image_CompressMode>` **COMPRESS_ASTC** = ``4``
+
+Use ASTC compression.
+
+.. _class_Image_constant_COMPRESS_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressMode<enum_Image_CompressMode>` **COMPRESS_MAX** = ``5``
+
+Represents the size of the :ref:`CompressMode<enum_Image_CompressMode>` enum.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -934,7 +950,7 @@ Removes the image's mipmaps.
 
 Compresses the image to use less memory. Can not directly access pixel data while the image is compressed. Returns error if the chosen compression mode is not available.
 
-The ``mode`` parameter helps to pick the best compression method for DXT and ETC2 formats. It is ignored for ASTC compression.
+The ``source`` parameter helps to pick the best compression method for DXT and ETC2 formats. It is ignored for ASTC compression.
 
 For ASTC compression, the ``astc_format`` parameter must be supplied.
 

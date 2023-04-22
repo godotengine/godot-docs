@@ -12,9 +12,14 @@ InputEventShortcut
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+:ref:`InputEvent<class_InputEvent>` that signifies a triggered keyboard :ref:`Shortcut<class_Shortcut>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+InputEventShortcut is a special event that can be received in :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`. It's typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_unhandled_input<class_Viewport_method_push_unhandled_input>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -48,9 +53,7 @@ Property Descriptions
 - void **set_shortcut** **(** :ref:`Shortcut<class_Shortcut>` value **)**
 - :ref:`Shortcut<class_Shortcut>` **get_shortcut** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The :ref:`Shortcut<class_Shortcut>` represented by this event. Its :ref:`Shortcut.matches_event<class_Shortcut_method_matches_event>` method will always return ``true`` for this event.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

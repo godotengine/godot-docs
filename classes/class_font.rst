@@ -462,6 +462,20 @@ Returns list of supported `variation coordinates <https://docs.microsoft.com/en-
 
 Font variations allow for continuous change of glyph characteristics along some given design axis, such as weight, width or slant.
 
+To print available variation axes of a variable font:
+
+::
+
+    var fv = FontVariation.new()
+    fv.set_base_font = load("res://RobotoFlex.ttf")
+    var variation_list = fv.get_supported_variation_list()
+    for tag in variation_list:
+        var name = TextServerManager.get_primary_interface().tag_to_name(tag)
+        var values = variation_list[tag]
+        print("variation axis: %s (%d)\n\tmin, max, default: %s" % [name, tag, values])
+
+\ **Note:** To set and get variation coordinates of a :ref:`FontVariation<class_FontVariation>`, use :ref:`FontVariation.variation_opentype<class_FontVariation_property_variation_opentype>`.
+
 .. rst-class:: classref-item-separator
 
 ----

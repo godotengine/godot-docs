@@ -351,7 +351,7 @@ The view format in which the **EditorFileDialog** displays resources to the user
 - void **set_file_mode** **(** :ref:`FileMode<enum_EditorFileDialog_FileMode>` value **)**
 - :ref:`FileMode<enum_EditorFileDialog_FileMode>` **get_file_mode** **(** **)**
 
-The dialog's open or save mode, which affects the selection behavior. See :ref:`FileMode<enum_EditorFileDialog_FileMode>`
+The dialog's open or save mode, which affects the selection behavior. See :ref:`FileMode<enum_EditorFileDialog_FileMode>`.
 
 .. rst-class:: classref-item-separator
 

@@ -10,51 +10,52 @@
 int
 ===
 
-Integer built-in type.
+Built-in integer Variant type.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Signed 64-bit integer type.
+Signed 64-bit integer type. This means that it can take values from ``-2^63`` to ``2^63 - 1``, i.e. from ``-9223372036854775808`` to ``9223372036854775807``. When it exceeds these bounds, it will wrap around.
 
-It can take values in the interval ``[-2^63, 2^63 - 1]``, i.e. ``[-9223372036854775808, 9223372036854775807]``. Exceeding those bounds will wrap around.
+\ **int**\ s can be automatically converted to :ref:`float<class_float>`\ s when necessary, for example when passing them as arguments in functions. The :ref:`float<class_float>` will be as close to the original integer as possible.
 
-\ **int** is a :ref:`Variant<class_Variant>` type, and will thus be used when assigning an integer value to a :ref:`Variant<class_Variant>`. It can also be enforced with the ``: int`` type hint.
+Likewise, :ref:`float<class_float>`\ s can be automatically converted into **int**\ s. This will truncate the :ref:`float<class_float>`, discarding anything after the floating point.
+
+\ **Note:** In a boolean context, an **int** will evaluate to ``false`` if it equals ``0``, and to ``true`` otherwise.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    var my_variant = 0 # int, value 0.
-    my_variant += 4.2 # float, value 4.2.
-    var my_int: int = 1 # int, value 1.
-    my_int = 4.2 # int, value 4, the right value is implicitly cast to int.
-    my_int = int("6.7") # int, value 6, the String is explicitly cast with int.
-    var max_int = 9223372036854775807
-    print(max_int) # 9223372036854775807, OK.
-    max_int += 1
-    print(max_int) # -9223372036854775808, we overflowed and wrapped around.
+    var x: int = 1 # x is 1
+    x = 4.2 # x is 4, because 4.2 gets truncated
+    var max_int = 9223372036854775807 # Biggest value an int can store
+    max_int += 1 # max_int is -9223372036854775808, because it wrapped around
 
  .. code-tab:: csharp
 
-    int myInt = (int)"6.7".ToFloat(); // int, value 6, the String is explicitly cast with int.
-    // We have to use `long` here, because GDSript's `int`
-    // is 64 bits long while C#'s `int` is only 32 bits.
-    long maxInt = 9223372036854775807;
-    GD.Print(maxInt); // 9223372036854775807, OK.
-    maxInt++;
-    GD.Print(maxInt); // -9223372036854775808, we overflowed and wrapped around.
+    int x = 1; // x is 1
+    x = 4.2; // x is 4, because 4.2 gets truncated
+    // We use long below, because GDScript's int is 64-bit while C#'s int is 32-bit.
+    long maxLong = 9223372036854775807; // Biggest value a long can store
+    maxLong++; // maxLong is now -9223372036854775808, because it wrapped around.
     
-    // Alternatively, if we used C#'s 32-bit `int` type, the maximum value is much smaller:
-    int halfInt = 2147483647;
-    GD.Print(halfInt); // 2147483647, OK.
-    halfInt++;
-    GD.Print(halfInt); // -2147483648, we overflowed and wrapped around.
+    // Alternatively with C#'s 32-bit int type, which has a smaller maximum value.
+    int maxInt = 2147483647; // Biggest value an int can store
+    maxInt++; // maxInt is now -2147483648, because it wrapped around
 
 
+
+In GDScript, you can use the ``0b`` literal for binary representation, the ``0x`` literal for hexadecimal representation, and the ``_`` symbol to separate long numbers and improve readability.
+
+::
+
+    var x = 0b1001 # x is 9
+    var y = 0xF5 # y is 245
+    var z = 10_000_000 # z is 10000000
 
 .. rst-class:: classref-reftable-group
 
@@ -179,7 +180,7 @@ Constructor Descriptions
 
 :ref:`int<class_int>` **int** **(** **)**
 
-Constructs a default-initialized **int** set to ``0``.
+Constructs an **int** set to ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -199,7 +200,7 @@ Constructs an **int** as a copy of the given **int**.
 
 :ref:`int<class_int>` **int** **(** :ref:`String<class_String>` from **)**
 
-Converts a :ref:`String<class_String>` to an **int**, following the same rules as :ref:`String.to_int<class_String_method_to_int>`.
+Constructs a new **int** from a :ref:`String<class_String>`, following the same rules as :ref:`String.to_int<class_String_method_to_int>`.
 
 .. rst-class:: classref-item-separator
 
@@ -209,7 +210,7 @@ Converts a :ref:`String<class_String>` to an **int**, following the same rules a
 
 :ref:`int<class_int>` **int** **(** :ref:`bool<class_bool>` from **)**
 
-Cast a :ref:`bool<class_bool>` value to an integer value, ``int(true)`` will be equals to 1 and ``int(false)`` will be equals to 0.
+Constructs a new **int** from a :ref:`bool<class_bool>`. ``true`` is converted to ``1`` and ``false`` is converted to ``0``.
 
 .. rst-class:: classref-item-separator
 
@@ -219,7 +220,7 @@ Cast a :ref:`bool<class_bool>` value to an integer value, ``int(true)`` will be 
 
 :ref:`int<class_int>` **int** **(** :ref:`float<class_float>` from **)**
 
-Cast a float value to an integer value, this method simply removes the number fractions (i.e. rounds ``from`` towards zero), so for example ``int(2.7)`` will be equals to 2, ``int(0.1)`` will be equals to 0 and ``int(-2.7)`` will be equals to -2. This operation is also called truncation.
+Constructs a new **int** from a :ref:`float<class_float>`. This will truncate the :ref:`float<class_float>`, discarding anything after the floating point.
 
 .. rst-class:: classref-section-separator
 
@@ -236,7 +237,7 @@ Operator Descriptions
 
 :ref:`bool<class_bool>` **operator !=** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` if this **int** is not equivalent to the given :ref:`float<class_float>`.
+Returns ``true`` if the **int** is not equivalent to the :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -248,7 +249,7 @@ Returns ``true`` if this **int** is not equivalent to the given :ref:`float<clas
 
 :ref:`bool<class_bool>` **operator !=** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` if the integers are not equal.
+Returns ``true`` if the **int**\ s are not equal.
 
 .. rst-class:: classref-item-separator
 
@@ -260,13 +261,13 @@ Returns ``true`` if the integers are not equal.
 
 :ref:`int<class_int>` **operator %** **(** :ref:`int<class_int>` right **)**
 
-Returns the remainder after dividing two integers. This operation uses truncated division, which is often not desired as it does not work well with negative numbers. Consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>` instead if you want to handle negative numbers.
+Returns the remainder after dividing two **int**\ s. Uses truncated division, which returns a negative number if the dividend is negative. If this is not desired, consider using :ref:`@GlobalScope.posmod<class_@GlobalScope_method_posmod>`.
 
 ::
 
-    print(5 % 2) # 1
-    print(12 % 4) # 0
-    print(-5 % 3) # -2
+    print(6 % 2) # Prints 0
+    print(11 % 4) # Prints 3
+    print(-5 % 3) # Prints -2
 
 .. rst-class:: classref-item-separator
 
@@ -278,21 +279,20 @@ Returns the remainder after dividing two integers. This operation uses truncated
 
 :ref:`int<class_int>` **operator &** **(** :ref:`int<class_int>` right **)**
 
-Returns the result of bitwise ``AND`` operation for two integers.
+Performs the bitwise ``AND`` operation.
 
 ::
 
-    print(3 & 1) # 1
-    print(11 & 3) # 3
+    print(0b1100 & 0b1010) # Prints 8 (binary 1000)
 
-It's useful to retrieve binary flags from a variable.
+This is useful for retrieving binary flags from a variable.
 
 ::
 
-    var flags = 5
-    # Do something if the first bit is enabled.
-    if flags & 1:
-        do_stuff()
+    var flags = 0b101
+    # Check if the first or second bit are enabled.
+    if flags & 0b011:
+        do_stuff() # This line will run.
 
 .. rst-class:: classref-item-separator
 
@@ -304,7 +304,7 @@ It's useful to retrieve binary flags from a variable.
 
 :ref:`Color<class_Color>` **operator *** **(** :ref:`Color<class_Color>` right **)**
 
-Multiplies each component of the :ref:`Color<class_Color>` by the given **int**.
+Multiplies each component of the :ref:`Color<class_Color>` by the **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -316,7 +316,7 @@ Multiplies each component of the :ref:`Color<class_Color>` by the given **int**.
 
 :ref:`Quaternion<class_Quaternion>` **operator *** **(** :ref:`Quaternion<class_Quaternion>` right **)**
 
-Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the given **int**. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
+Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the **int**. This operation is not meaningful on its own, but it can be used as a part of a larger expression.
 
 .. rst-class:: classref-item-separator
 
@@ -328,11 +328,11 @@ Multiplies each component of the :ref:`Quaternion<class_Quaternion>` by the give
 
 :ref:`Vector2<class_Vector2>` **operator *** **(** :ref:`Vector2<class_Vector2>` right **)**
 
-Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given **int**.
+Multiplies each component of the :ref:`Vector2<class_Vector2>` by the **int**.
 
 ::
 
-    print(2 * Vector2(1, 1)) # Vector2(2, 2)
+    print(2 * Vector2(1, 4)) # Prints (2, 8)
 
 .. rst-class:: classref-item-separator
 
@@ -344,7 +344,7 @@ Multiplies each component of the :ref:`Vector2<class_Vector2>` by the given **in
 
 :ref:`Vector2i<class_Vector2i>` **operator *** **(** :ref:`Vector2i<class_Vector2i>` right **)**
 
-Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given **int**.
+Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -356,7 +356,7 @@ Multiplies each component of the :ref:`Vector2i<class_Vector2i>` by the given **
 
 :ref:`Vector3<class_Vector3>` **operator *** **(** :ref:`Vector3<class_Vector3>` right **)**
 
-Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given **int**.
+Multiplies each component of the :ref:`Vector3<class_Vector3>` by the **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -368,7 +368,7 @@ Multiplies each component of the :ref:`Vector3<class_Vector3>` by the given **in
 
 :ref:`Vector3i<class_Vector3i>` **operator *** **(** :ref:`Vector3i<class_Vector3i>` right **)**
 
-Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given **int**.
+Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -380,7 +380,7 @@ Multiplies each component of the :ref:`Vector3i<class_Vector3i>` by the given **
 
 :ref:`Vector4<class_Vector4>` **operator *** **(** :ref:`Vector4<class_Vector4>` right **)**
 
-Multiplies each component of the :ref:`Vector4<class_Vector4>` by the given **int**.
+Multiplies each component of the :ref:`Vector4<class_Vector4>` by the **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -392,7 +392,7 @@ Multiplies each component of the :ref:`Vector4<class_Vector4>` by the given **in
 
 :ref:`Vector4i<class_Vector4i>` **operator *** **(** :ref:`Vector4i<class_Vector4i>` right **)**
 
-Multiplies each component of the :ref:`Vector4i<class_Vector4i>` by the given **int**.
+Multiplies each component of the :ref:`Vector4i<class_Vector4i>` by the **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -404,7 +404,7 @@ Multiplies each component of the :ref:`Vector4i<class_Vector4i>` by the given **
 
 :ref:`float<class_float>` **operator *** **(** :ref:`float<class_float>` right **)**
 
-Multiplies an **int** and a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+Multiplies the :ref:`float<class_float>` by the **int**. The result is a :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -416,7 +416,7 @@ Multiplies an **int** and a :ref:`float<class_float>`. The result is a :ref:`flo
 
 :ref:`int<class_int>` **operator *** **(** :ref:`int<class_int>` right **)**
 
-Multiplies two **int**\ s.
+Multiplies the two **int**\ s.
 
 .. rst-class:: classref-item-separator
 
@@ -432,7 +432,7 @@ Raises an **int** to a power of a :ref:`float<class_float>`. The result is a :re
 
 ::
 
-    print(8**0.25) # 1.68179283050743
+    print(2 ** 0.5) # Prints 1.4142135623731
 
 .. rst-class:: classref-item-separator
 
@@ -444,11 +444,11 @@ Raises an **int** to a power of a :ref:`float<class_float>`. The result is a :re
 
 :ref:`int<class_int>` **operator **** **(** :ref:`int<class_int>` right **)**
 
-Raises an **int** to a power of a **int**.
+Raises the left **int** to a power of the right **int**.
 
 ::
 
-    print(5**5) # 3125
+    print(3 ** 4) # Prints 81
 
 .. rst-class:: classref-item-separator
 
@@ -460,7 +460,7 @@ Raises an **int** to a power of a **int**.
 
 :ref:`float<class_float>` **operator +** **(** :ref:`float<class_float>` right **)**
 
-Adds an **int** and a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+Adds the **int** and the :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -472,7 +472,7 @@ Adds an **int** and a :ref:`float<class_float>`. The result is a :ref:`float<cla
 
 :ref:`int<class_int>` **operator +** **(** :ref:`int<class_int>` right **)**
 
-Adds two integers.
+Adds the two **int**\ s.
 
 .. rst-class:: classref-item-separator
 
@@ -484,7 +484,7 @@ Adds two integers.
 
 :ref:`float<class_float>` **operator -** **(** :ref:`float<class_float>` right **)**
 
-Subtracts a :ref:`float<class_float>` from an **int**. The result is a :ref:`float<class_float>`.
+Subtracts the :ref:`float<class_float>` from the **int**. The result is a :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -496,7 +496,7 @@ Subtracts a :ref:`float<class_float>` from an **int**. The result is a :ref:`flo
 
 :ref:`int<class_int>` **operator -** **(** :ref:`int<class_int>` right **)**
 
-Subtracts two integers.
+Subtracts the two **int**\ s.
 
 .. rst-class:: classref-item-separator
 
@@ -508,11 +508,11 @@ Subtracts two integers.
 
 :ref:`float<class_float>` **operator /** **(** :ref:`float<class_float>` right **)**
 
-Divides an **int** by a :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
+Divides the **int** by the :ref:`float<class_float>`. The result is a :ref:`float<class_float>`.
 
 ::
 
-    print(10 / 3.0) # 3.333...
+    print(10 / 3.0) # Prints 3.33333333333333
 
 .. rst-class:: classref-item-separator
 
@@ -524,12 +524,12 @@ Divides an **int** by a :ref:`float<class_float>`. The result is a :ref:`float<c
 
 :ref:`int<class_int>` **operator /** **(** :ref:`int<class_int>` right **)**
 
-Divides two integers. The decimal part of the result is discarded (truncated).
+Divides the two **int**\ s. The result is an **int**. This will truncate the :ref:`float<class_float>`, discarding anything after the floating point.
 
 ::
 
-    print(10 / 2) # 5
-    print(10 / 3) # 3
+    print(6 / 2) # Prints 3
+    print(5 / 3) # Prints 1
 
 .. rst-class:: classref-item-separator
 
@@ -541,7 +541,7 @@ Divides two integers. The decimal part of the result is discarded (truncated).
 
 :ref:`bool<class_bool>` **operator <** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` if this **int** is less than the given :ref:`float<class_float>`.
+Returns ``true`` if the **int** is less than the :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -553,7 +553,7 @@ Returns ``true`` if this **int** is less than the given :ref:`float<class_float>
 
 :ref:`bool<class_bool>` **operator <** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` if the left integer is less than the right one.
+Returns ``true`` if the left **int** is less than the right **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -565,12 +565,12 @@ Returns ``true`` if the left integer is less than the right one.
 
 :ref:`int<class_int>` **operator <<** **(** :ref:`int<class_int>` right **)**
 
-Performs bitwise shift left operation on the integer. Effectively the same as multiplying by a power of 2.
+Performs the bitwise shift left operation. Effectively the same as multiplying by a power of 2.
 
 ::
 
-    print(10 << 1) # 20
-    print(10 << 4) # 160
+    print(0b1010 << 1) # Prints 20 (binary 10100)
+    print(0b1010 << 3) # Prints 80 (binary 1010000)
 
 .. rst-class:: classref-item-separator
 
@@ -582,7 +582,7 @@ Performs bitwise shift left operation on the integer. Effectively the same as mu
 
 :ref:`bool<class_bool>` **operator <=** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` if this **int** is less than or equal to the given :ref:`float<class_float>`.
+Returns ``true`` if the **int** is less than or equal to the :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -594,7 +594,7 @@ Returns ``true`` if this **int** is less than or equal to the given :ref:`float<
 
 :ref:`bool<class_bool>` **operator <=** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` if the left integer is less than or equal to the right one.
+Returns ``true`` if the left **int** is less than or equal to the right **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -606,7 +606,7 @@ Returns ``true`` if the left integer is less than or equal to the right one.
 
 :ref:`bool<class_bool>` **operator ==** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` if the integer is equal to the given :ref:`float<class_float>`.
+Returns ``true`` if the **int** is equal to the :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -618,7 +618,7 @@ Returns ``true`` if the integer is equal to the given :ref:`float<class_float>`.
 
 :ref:`bool<class_bool>` **operator ==** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` if both integers are equal.
+Returns ``true`` if the two **int**\ s are equal.
 
 .. rst-class:: classref-item-separator
 
@@ -630,7 +630,7 @@ Returns ``true`` if both integers are equal.
 
 :ref:`bool<class_bool>` **operator >** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` if this **int** is greater than the given :ref:`float<class_float>`.
+Returns ``true`` if the **int** is greater than the :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -642,7 +642,7 @@ Returns ``true`` if this **int** is greater than the given :ref:`float<class_flo
 
 :ref:`bool<class_bool>` **operator >** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` if the left integer is greater than the right one.
+Returns ``true`` if the left **int** is greater than the right **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -654,7 +654,7 @@ Returns ``true`` if the left integer is greater than the right one.
 
 :ref:`bool<class_bool>` **operator >=** **(** :ref:`float<class_float>` right **)**
 
-Returns ``true`` if this **int** is greater than or equal to the given :ref:`float<class_float>`.
+Returns ``true`` if the **int** is greater than or equal to the :ref:`float<class_float>`.
 
 .. rst-class:: classref-item-separator
 
@@ -666,7 +666,7 @@ Returns ``true`` if this **int** is greater than or equal to the given :ref:`flo
 
 :ref:`bool<class_bool>` **operator >=** **(** :ref:`int<class_int>` right **)**
 
-Returns ``true`` if the left integer is greater than or equal to the right one.
+Returns ``true`` if the left **int** is greater than or equal to the right **int**.
 
 .. rst-class:: classref-item-separator
 
@@ -678,12 +678,12 @@ Returns ``true`` if the left integer is greater than or equal to the right one.
 
 :ref:`int<class_int>` **operator >>** **(** :ref:`int<class_int>` right **)**
 
-Performs bitwise shift right operation on the integer. Effectively the same as dividing by a power of 2.
+Performs the bitwise shift right operation. Effectively the same as dividing by a power of 2.
 
 ::
 
-    print(10 >> 1) # 5
-    print(10 >> 2) # 2
+    print(0b1010 >> 1) # Prints 5 (binary 101)
+    print(0b1010 >> 2) # Prints 2 (binary 10)
 
 .. rst-class:: classref-item-separator
 
@@ -695,12 +695,11 @@ Performs bitwise shift right operation on the integer. Effectively the same as d
 
 :ref:`int<class_int>` **operator ^** **(** :ref:`int<class_int>` right **)**
 
-Returns the result of bitwise ``XOR`` operation for two integers.
+Performs the bitwise ``XOR`` operation.
 
 ::
 
-    print(5 ^ 1) # 4
-    print(4 ^ 7) # 3
+    print(0b1100 ^ 0b1010) # Prints 6 (binary 110)
 
 .. rst-class:: classref-item-separator
 
@@ -736,21 +735,18 @@ Returns the negated value of the **int**. If positive, turns the number negative
 
 :ref:`int<class_int>` **operator |** **(** :ref:`int<class_int>` right **)**
 
-Returns the result of bitwise ``OR`` operation for two integers.
+Performs the bitwise ``OR`` operation.
 
 ::
 
-    print(2 | 4) # 6
-    print(1 | 3) # 3
+    print(0b1100 | 0b1010) # Prints 14 (binary 1110)
 
-It's useful to store binary flags in a variable.
+This is useful for storing binary flags in a variable.
 
 ::
 
     var flags = 0
-    # Turn first and third bit on.
-    flags |= 1
-    flags |= 4
+    flags |= 0b101 # Turn the first and third bits on.
 
 .. rst-class:: classref-item-separator
 
@@ -762,12 +758,12 @@ It's useful to store binary flags in a variable.
 
 :ref:`int<class_int>` **operator ~** **(** **)**
 
-Returns the result of bitwise ``NOT`` operation for the integer. It's effectively equal to ``-int + 1``.
+Performs the bitwise ``NOT`` operation on the **int**. Due to `2's complement <https://en.wikipedia.org/wiki/Two%27s_complement/>`__, it's effectively equal to ``-(int + 1)``.
 
 ::
 
-    print(~4) # -3
-    print(~7) # -6
+    print(~4) # Prints -5
+    print(~(-7)) # Prints 6
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

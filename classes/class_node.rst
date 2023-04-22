@@ -12,7 +12,7 @@ Node
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`MissingNode<class_MissingNode>`, :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`NavigationObstacle2D<class_NavigationObstacle2D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
+**Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`MissingNode<class_MissingNode>`, :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`NavigationObstacle2D<class_NavigationObstacle2D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
 
 Base class for all *scene* objects.
 
@@ -291,6 +291,18 @@ When this signal is received, the child ``node`` is still in the tree and valid.
 
 ----
 
+.. _class_Node_signal_child_order_changed:
+
+.. rst-class:: classref-signal
+
+**child_order_changed** **(** **)**
+
+Emitted when the list of children is changed. This happens when child nodes are added, moved or removed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_signal_ready:
 
 .. rst-class:: classref-signal
@@ -519,7 +531,7 @@ This notification is emitted *after* the related :ref:`tree_exiting<class_Node_s
 
 **NOTIFICATION_MOVED_IN_PARENT** = ``12``
 
-Notification received when the node is moved in the parent.
+This notification is deprecated and is no longer emitted. Use :ref:`NOTIFICATION_CHILD_ORDER_CHANGED<class_Node_constant_NOTIFICATION_CHILD_ORDER_CHANGED>` instead.
 
 .. _class_Node_constant_NOTIFICATION_READY:
 
@@ -616,6 +628,14 @@ Use :ref:`Viewport.gui_is_drag_successful<class_Viewport_method_gui_is_drag_succ
 **NOTIFICATION_PATH_RENAMED** = ``23``
 
 Notification received when the node's name or one of its parents' name is changed. This notification is *not* received when the node is removed from the scene tree to be added to another parent later on.
+
+.. _class_Node_constant_NOTIFICATION_CHILD_ORDER_CHANGED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_CHILD_ORDER_CHANGED** = ``24``
+
+Notification received when the list of children is changed. This happens when child nodes are added, moved or removed.
 
 .. _class_Node_constant_NOTIFICATION_INTERNAL_PROCESS:
 
@@ -743,7 +763,7 @@ Specific to the Android platform.
 
 **NOTIFICATION_WM_SIZE_CHANGED** = ``1008``
 
-
+Notification received from the OS when the window is resized.
 
 .. _class_Node_constant_NOTIFICATION_WM_DPI_CHANGE:
 
@@ -751,7 +771,7 @@ Specific to the Android platform.
 
 **NOTIFICATION_WM_DPI_CHANGE** = ``1009``
 
-
+Notification received from the OS when the screen's DPI has been changed. Only implemented on macOS.
 
 .. _class_Node_constant_NOTIFICATION_VP_MOUSE_ENTER:
 
@@ -1060,6 +1080,19 @@ Returning an empty array produces no warnings.
 
 Call :ref:`update_configuration_warnings<class_Node_method_update_configuration_warnings>` when the warnings need to be updated for this node.
 
+::
+
+    @export var energy = 0:
+        set(value):
+            energy = value
+            update_configuration_warnings()
+    
+    func _get_configuration_warnings():
+        if energy < 0:
+            return ["Energy must be 0 or greater."]
+        else:
+            return []
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1212,7 +1245,7 @@ Adds a child ``node``. Nodes can have any number of children, but every child mu
 
 If ``force_readable_name`` is ``true``, improves the readability of the added ``node``. If not named, the ``node`` is renamed to its type, and if it shares :ref:`name<class_Node_property_name>` with a sibling, a number is suffixed more appropriately. This operation is very slow. As such, it is recommended leaving this to ``false``, which assigns a dummy name featuring ``@`` in both situations.
 
-If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. Such nodes are ignored by methods like :ref:`get_children<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``.The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`. See :ref:`InternalMode<enum_Node_InternalMode>` for available modes.
+If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. Such nodes are ignored by methods like :ref:`get_children<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``. The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`. See :ref:`InternalMode<enum_Node_InternalMode>` for available modes.
 
 \ **Note:** If the child node already has a parent, the function will fail. Use :ref:`remove_child<class_Node_method_remove_child>` first to remove the node from its current parent. For example:
 
@@ -1312,6 +1345,8 @@ Creates a new :ref:`Tween<class_Tween>` and binds it to this node. This is equiv
 
 
 
+The Tween will start automatically on the next process frame or physics frame (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1338,7 +1373,7 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 :ref:`Node<class_Node>` **find_child** **(** :ref:`String<class_String>` pattern, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
 
-Finds the first descendant of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`.
+Finds the first descendant of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`. Internal children are also searched over (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
 
 \ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
 
@@ -1362,7 +1397,7 @@ Returns ``null`` if no matching **Node** is found.
 
 :ref:`Node[]<class_Node>` **find_children** **(** :ref:`String<class_String>` pattern, :ref:`String<class_String>` type="", :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
 
-Finds descendants of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`, and/or type matches ``type`` as in :ref:`Object.is_class<class_Object_method_is_class>`.
+Finds descendants of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`, and/or type matches ``type`` as in :ref:`Object.is_class<class_Object_method_is_class>`. Internal children are also searched over (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
 
 \ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
 

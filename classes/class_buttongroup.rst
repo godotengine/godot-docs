@@ -19,7 +19,7 @@ Group of Buttons.
 Description
 -----------
 
-Group of :ref:`BaseButton<class_BaseButton>`. The members of this group are treated like radio buttons in the sense that only one button can be pressed at the same time.
+Group of :ref:`BaseButton<class_BaseButton>`. The members of this group are treated like radio buttons in the sense that only one button can be pressed at the same time. Some types of buttons (such as :ref:`CheckBox<class_CheckBox>`) may have a special appearance for this state.
 
 Every member of the ButtonGroup should have :ref:`BaseButton.toggle_mode<class_BaseButton_property_toggle_mode>` set to ``true``.
 

@@ -447,11 +447,11 @@ Puts a zero-terminated ASCII string into the stream prepended by a 32-bit unsign
 
  .. code-tab:: gdscript
 
-    put_data("Hello world".to_ascii())
+    put_data("Hello world".to_ascii_buffer())
 
  .. code-tab:: csharp
 
-    PutData("Hello World".ToAscii());
+    PutData("Hello World".ToAsciiBuffer());
 
 
 
@@ -522,11 +522,11 @@ Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsig
 
  .. code-tab:: gdscript
 
-    put_data("Hello world".to_utf8())
+    put_data("Hello world".to_utf8_buffer())
 
  .. code-tab:: csharp
 
-    PutData("Hello World".ToUtf8());
+    PutData("Hello World".ToUtf8Buffer());
 
 
 

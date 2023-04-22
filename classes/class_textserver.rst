@@ -54,6 +54,8 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                       | :ref:`font_get_ascent<class_TextServer_method_font_get_ascent>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |const|                                                                                                                                                                                                                         |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                           | :ref:`font_get_char_from_glyph_index<class_TextServer_method_font_get_char_from_glyph_index>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` glyph_index **)** |const|                                                                                                                                                        |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                       | :ref:`font_get_descent<class_TextServer_method_font_get_descent>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |const|                                                                                                                                                                                                                       |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                       | :ref:`font_get_embolden<class_TextServer_method_font_get_embolden>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                                 |
@@ -1006,6 +1008,14 @@ Grapheme is connected to the previous grapheme. Breaking line before this graphe
 
 It is safe to insert a U+0640 before this grapheme for elongation.
 
+.. _class_TextServer_constant_GRAPHEME_IS_EMBEDDED_OBJECT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` **GRAPHEME_IS_EMBEDDED_OBJECT** = ``4096``
+
+Grapheme is an object replacement character for the embedded object.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1579,6 +1589,18 @@ Returns the font ascent (number of pixels above the baseline).
 
 ----
 
+.. _class_TextServer_method_font_get_char_from_glyph_index:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **font_get_char_from_glyph_index** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` glyph_index **)** |const|
+
+Returns character code associated with ``glyph_index``, or ``0`` if ``glyph_index`` is invalid. See :ref:`font_get_glyph_index<class_TextServer_method_font_get_glyph_index>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TextServer_method_font_get_descent:
 
 .. rst-class:: classref-method
@@ -1701,7 +1723,7 @@ Returns outline contours of the glyph as a ``Dictionary`` with the following con
 
 :ref:`int<class_int>` **font_get_glyph_index** **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size, :ref:`int<class_int>` char, :ref:`int<class_int>` variation_selector **)** |const|
 
-Returns the glyph index of a ``char``, optionally modified by the ``variation_selector``.
+Returns the glyph index of a ``char``, optionally modified by the ``variation_selector``.  See :ref:`font_get_char_from_glyph_index<class_TextServer_method_font_get_char_from_glyph_index>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2929,7 +2951,7 @@ Returns ``true`` if locale is right-to-left.
 
 :ref:`bool<class_bool>` **is_valid_identifier** **(** :ref:`String<class_String>` string **)** |const|
 
-Returns ``true`` is ``string`` is a valid identifier.
+Returns ``true`` if ``string`` is a valid identifier.
 
 If the text server supports the :ref:`FEATURE_UNICODE_IDENTIFIERS<class_TextServer_constant_FEATURE_UNICODE_IDENTIFIERS>` feature, a valid identifier must:
 
@@ -3129,7 +3151,7 @@ Draw the outline of the shaped text into a canvas item at a given position, with
 
 :ref:`float<class_float>` **shaped_text_fit_to_width** **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` width, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3 **)**
 
-Adjusts text with to fit to specified width, returns new text width.
+Adjusts text width to fit to specified width, returns new text width.
 
 .. rst-class:: classref-item-separator
 

@@ -3134,7 +3134,7 @@ Repeat flags for the texture. See :ref:`TextureFilter<enum_BaseMaterial3D_Textur
 - void **set_transparency** **(** :ref:`Transparency<enum_BaseMaterial3D_Transparency>` value **)**
 - :ref:`Transparency<enum_BaseMaterial3D_Transparency>` **get_transparency** **(** **)**
 
-If ``true``, transparency is enabled on the body. Some transparency modes will disable shadow casting. Any transparency mode other than Disabled has a greater performance impact compared to opaque rendering. See also :ref:`blend_mode<class_BaseMaterial3D_property_blend_mode>`.
+The material's transparency mode. Some transparency modes will disable shadow casting. Any transparency mode other than :ref:`TRANSPARENCY_DISABLED<class_BaseMaterial3D_constant_TRANSPARENCY_DISABLED>` has a greater performance impact compared to opaque rendering. See also :ref:`blend_mode<class_BaseMaterial3D_property_blend_mode>`.
 
 .. rst-class:: classref-item-separator
 

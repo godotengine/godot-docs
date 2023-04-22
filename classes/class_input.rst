@@ -901,7 +901,7 @@ void **set_custom_mouse_cursor** **(** :ref:`Resource<class_Resource>` image, :r
 
 Sets a custom mouse cursor image, which is only visible inside the game window. The hotspot can also be specified. Passing ``null`` to the image parameter resets to the system cursor. See :ref:`CursorShape<enum_Input_CursorShape>` for the list of shapes.
 
-\ ``image``'s size must be lower than 256×256.
+\ ``image``'s size must be lower than or equal to 256×256. To avoid rendering issues, sizes lower than or equal to 128×128 are recommended.
 
 \ ``hotspot`` must be within ``image``'s size.
 

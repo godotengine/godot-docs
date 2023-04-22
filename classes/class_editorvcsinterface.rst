@@ -397,7 +397,7 @@ Pulls changes from the remote. This can give rise to merge conflicts.
 
 void **_push** **(** :ref:`String<class_String>` remote, :ref:`bool<class_bool>` force **)** |virtual|
 
-Pushes changes to the ``remote``. Optionally, if ``force`` is set to true, a force push will override the change history already present on the remote.
+Pushes changes to the ``remote``. If ``force`` is ``true``, a force push will override the change history already present on the remote.
 
 .. rst-class:: classref-item-separator
 

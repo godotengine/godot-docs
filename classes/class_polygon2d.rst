@@ -121,9 +121,7 @@ If ``true``, polygon edges will be anti-aliased.
 
 :ref:`Array<class_Array>` **bones** = ``[]``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Internal list of :ref:`Bone2D<class_Bone2D>` nodes used by the assigned :ref:`skeleton<class_Polygon2D_property_skeleton>`. Edited using the Polygon2D editor ("UV" button on the top toolbar).
 
 .. rst-class:: classref-item-separator
 
@@ -157,9 +155,7 @@ The polygon's fill color. If ``texture`` is defined, it will be multiplied by th
 - void **set_internal_vertex_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_internal_vertex_count** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Number of internal vertices, used for UV mapping.
 
 .. rst-class:: classref-item-separator
 
@@ -263,9 +259,7 @@ The list of polygons, in case more than one is being represented. Every individu
 - void **set_skeleton** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_skeleton** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Path to a :ref:`Skeleton2D<class_Skeleton2D>` node used for skeleton-based deformations of this polygon. If empty or invalid, skeletal deformations will not be used.
 
 .. rst-class:: classref-item-separator
 

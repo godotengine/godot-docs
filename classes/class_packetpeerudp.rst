@@ -246,7 +246,7 @@ Waits for a packet to arrive on the bound address. See :ref:`bind<class_PacketPe
     socket = PacketPeerUDP.new()
     # Server
     socket.set_dest_address("127.0.0.1", 789)
-    socket.put_packet("Time to stop".to_ascii())
+    socket.put_packet("Time to stop".to_ascii_buffer())
     
     # Client
     while socket.wait() == OK:
@@ -259,7 +259,7 @@ Waits for a packet to arrive on the bound address. See :ref:`bind<class_PacketPe
     var socket = new PacketPeerUDP();
     // Server
     socket.SetDestAddress("127.0.0.1", 789);
-    socket.PutPacket("Time to stop".ToAscii());
+    socket.PutPacket("Time to stop".ToAsciiBuffer());
     
     // Client
     while (socket.Wait() == OK)

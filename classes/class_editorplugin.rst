@@ -1279,7 +1279,7 @@ The callback should have 4 arguments: :ref:`Object<class_Object>` ``undo_redo``,
 
 :ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
 
-Returns the :ref:`EditorInterface<class_EditorInterface>` object that gives you control over Godot editor's window and its functionalities.
+Returns the :ref:`EditorInterface<class_EditorInterface>` singleton. It provides access to some parts of the editor GUI as well as various inner states and tools.
 
 .. rst-class:: classref-item-separator
 

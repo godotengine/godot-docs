@@ -135,6 +135,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`get_cache_underline_thickness<class_FontFile_method_get_cache_underline_thickness>` **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|                                                                            |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`get_char_from_glyph_index<class_FontFile_method_get_char_from_glyph_index>` **(** :ref:`int<class_int>` size, :ref:`int<class_int>` glyph_index **)** |const|                                                                                    |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`get_embolden<class_FontFile_method_get_embolden>` **(** :ref:`int<class_int>` cache_index **)** |const|                                                                                                                                          |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_face_index<class_FontFile_method_get_face_index>` **(** :ref:`int<class_int>` cache_index **)** |const|                                                                                                                                      |
@@ -710,6 +712,18 @@ Returns pixel offset of the underline below the baseline.
 :ref:`float<class_float>` **get_cache_underline_thickness** **(** :ref:`int<class_int>` cache_index, :ref:`int<class_int>` size **)** |const|
 
 Returns thickness of the underline in pixels.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FontFile_method_get_char_from_glyph_index:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_char_from_glyph_index** **(** :ref:`int<class_int>` size, :ref:`int<class_int>` glyph_index **)** |const|
+
+Returns character code associated with ``glyph_index``, or ``0`` if ``glyph_index`` is invalid. See :ref:`get_glyph_index<class_FontFile_method_get_glyph_index>`.
 
 .. rst-class:: classref-item-separator
 

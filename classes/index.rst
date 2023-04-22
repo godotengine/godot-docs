@@ -92,7 +92,6 @@ Nodes
     class_editorfiledialog
     class_editorfilesystem
     class_editorinspector
-    class_editorinterface
     class_editorplugin
     class_editorproperty
     class_editorresourcepicker
@@ -681,12 +680,14 @@ Other objects
     class_editordebuggerplugin
     class_editordebuggersession
     class_editorexportplatform
+    class_editorexportplatformpc
     class_editorexportplugin
     class_editorfeatureprofile
     class_editorfilesystemdirectory
     class_editorfilesystemimportformatsupportquery
     class_editorimportplugin
     class_editorinspectorplugin
+    class_editorinterface
     class_editornode3dgizmo
     class_editorpaths
     class_editorresourceconversionplugin
@@ -736,6 +737,7 @@ Other objects
     class_lightmapperrd
     class_mainloop
     class_marshalls
+    class_meshconvexdecompositionsettings
     class_meshdatatool
     class_methodtweener
     class_mobilevrinterface

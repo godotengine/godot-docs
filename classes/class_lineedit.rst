@@ -158,6 +158,8 @@ Methods
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`         | :ref:`get_scroll_offset<class_LineEdit_method_get_scroll_offset>` **(** **)** |const|                                                |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`get_selected_text<class_LineEdit_method_get_selected_text>` **(** **)**                                                        |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_selection_from_column<class_LineEdit_method_get_selection_from_column>` **(** **)** |const|                                |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_selection_to_column<class_LineEdit_method_get_selection_to_column>` **(** **)** |const|                                    |
@@ -640,7 +642,7 @@ Text alignment as defined in the :ref:`HorizontalAlignment<enum_@GlobalScope_Hor
 - void **set_caret_blink_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_caret_blink_enabled** **(** **)**
 
-If ``true``, the caret (text cursor) blinks.
+If ``true``, makes the caret blink.
 
 .. rst-class:: classref-item-separator
 
@@ -657,7 +659,7 @@ If ``true``, the caret (text cursor) blinks.
 - void **set_caret_blink_interval** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_caret_blink_interval** **(** **)**
 
-Duration (in seconds) of a caret's blinking cycle.
+The interval at which the caret blinks (in seconds).
 
 .. rst-class:: classref-item-separator
 
@@ -1259,6 +1261,18 @@ You can add custom menu items or remove standard ones. Make sure your IDs don't 
 :ref:`float<class_float>` **get_scroll_offset** **(** **)** |const|
 
 Returns the scroll offset due to :ref:`caret_column<class_LineEdit_property_caret_column>`, as a number of characters.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_LineEdit_method_get_selected_text:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_selected_text** **(** **)**
+
+Returns the text inside the selection.
 
 .. rst-class:: classref-item-separator
 

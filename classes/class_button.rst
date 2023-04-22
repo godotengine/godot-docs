@@ -138,6 +138,8 @@ Theme Properties
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`           | :ref:`h_separation<class_Button_theme_constant_h_separation>`                      | ``2``                               |
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`icon_max_width<class_Button_theme_constant_icon_max_width>`                  | ``0``                               |
+   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`           | :ref:`outline_size<class_Button_theme_constant_outline_size>`                      | ``0``                               |
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`Font<class_Font>`         | :ref:`font<class_Button_theme_font_font>`                                          |                                     |
@@ -209,7 +211,7 @@ When this property is enabled, text that is too large to fit the button is clipp
 - void **set_expand_icon** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_expand_icon** **(** **)**
 
-When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect.
+When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect. See also :ref:`icon_max_width<class_Button_theme_constant_icon_max_width>`.
 
 .. rst-class:: classref-item-separator
 
@@ -504,6 +506,18 @@ Icon modulate :ref:`Color<class_Color>` used when the **Button** is being presse
 :ref:`int<class_int>` **h_separation** = ``2``
 
 The horizontal space between **Button**'s icon and text. Negative values will be treated as ``0`` when used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Button_theme_constant_icon_max_width:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **icon_max_width** = ``0``
+
+The maximum allowed width of the **Button**'s icon. This limit is applied on top of the default size of the icon, or its expanded size if :ref:`expand_icon<class_Button_property_expand_icon>` is ``true``. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 

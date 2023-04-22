@@ -288,7 +288,7 @@ Property Descriptions
 - void **set_auto_accept_quit** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_auto_accept_quit** **(** **)**
 
-If ``true``, the application automatically accepts quitting.
+If ``true``, the application automatically accepts quitting requests.
 
 For mobile platforms, see :ref:`quit_on_go_back<class_SceneTree_property_quit_on_go_back>`.
 
@@ -438,7 +438,7 @@ If ``true``, the **SceneTree** is paused. Doing so will have the following behav
 - void **set_quit_on_go_back** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_quit_on_go_back** **(** **)**
 
-If ``true``, the application quits automatically on going back (e.g. on Android).
+If ``true``, the application quits automatically when navigating back (e.g. using the system "Back" button on Android).
 
 To handle 'Go Back' button when this option is disabled, use :ref:`DisplayServer.WINDOW_EVENT_GO_BACK_REQUEST<class_DisplayServer_constant_WINDOW_EVENT_GO_BACK_REQUEST>`.
 
@@ -581,7 +581,7 @@ The timer will be automatically freed after its time elapses.
 
 :ref:`Tween<class_Tween>` **create_tween** **(** **)**
 
-Creates and returns a new :ref:`Tween<class_Tween>`.
+Creates and returns a new :ref:`Tween<class_Tween>`. The Tween will start automatically on the next process frame or physics frame (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
 
 .. rst-class:: classref-item-separator
 

@@ -12,25 +12,25 @@ UndoRedo
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Helper to manage undo/redo operations in the editor or custom tools.
+General-purpose helper to manage undo/redo operations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Helper to manage undo/redo operations in the editor or custom tools. It works by registering methods and property changes inside "actions".
+UndoRedo works by registering methods and property changes inside "actions".
 
 Common behavior is to create an action, then add do/undo calls to functions or property changes, then committing the action.
 
-Here's an example on how to add an action to the Godot editor's own **UndoRedo**, from a plugin:
+Here's an example on how to add an UndoRedo action:
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    var undo_redo = get_undo_redo() # Method of EditorPlugin.
+    var undo_redo = UndoRedo.new()
     
     func do_something():
         pass # Put your code here.
@@ -41,8 +41,8 @@ Here's an example on how to add an action to the Godot editor's own **UndoRedo**
     func _on_my_button_pressed():
         var node = get_node("MyNode2D")
         undo_redo.create_action("Move the node")
-        undo_redo.add_do_method(self, "do_something")
-        undo_redo.add_undo_method(self, "undo_something")
+        undo_redo.add_do_method(do_something)
+        undo_redo.add_undo_method(undo_something)
         undo_redo.add_do_property(node, "position", Vector2(100,100))
         undo_redo.add_undo_property(node, "position", node.position)
         undo_redo.commit_action()
@@ -53,7 +53,7 @@ Here's an example on how to add an action to the Godot editor's own **UndoRedo**
     
     public override void _Ready()
     {
-        _undoRedo = GetUndoRedo(); // Method of EditorPlugin.
+        _undoRedo = new UndoRedo();
     }
     
     public void DoSomething()
@@ -82,6 +82,8 @@ Here's an example on how to add an action to the Godot editor's own **UndoRedo**
 \ :ref:`create_action<class_UndoRedo_method_create_action>`, :ref:`add_do_method<class_UndoRedo_method_add_do_method>`, :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>`, :ref:`add_do_property<class_UndoRedo_method_add_do_property>`, :ref:`add_undo_property<class_UndoRedo_method_add_undo_property>`, and :ref:`commit_action<class_UndoRedo_method_commit_action>` should be called one after the other, like in the example. Not doing so could lead to crashes.
 
 If you don't need to register a method, you can leave :ref:`add_do_method<class_UndoRedo_method_add_do_method>` and :ref:`add_undo_method<class_UndoRedo_method_add_undo_method>` out; the same goes for properties. You can also register more than one method/property.
+
+If you are making an :ref:`EditorPlugin<class_EditorPlugin>` and want to integrate into the editor's undo history, use :ref:`EditorUndoRedoManager<class_EditorUndoRedoManager>` instead.
 
 .. rst-class:: classref-reftable-group
 
@@ -232,6 +234,15 @@ void **add_do_reference** **(** :ref:`Object<class_Object>` object **)**
 
 Register a reference for "do" that will be erased if the "do" history is lost. This is useful mostly for new nodes created for the "do" call. Do not use for resources.
 
+::
+
+    var node = Node2D.new()
+    undo_redo.create_action("Add node")
+    undo_redo.add_do_method(add_child.bind(node))
+    undo_redo.add_do_reference(node)
+    undo_redo.add_undo_method(remove_child.bind(node))
+    undo_redo.commit_action()
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -267,6 +278,15 @@ Register a ``property`` that would change its value to ``value`` when the action
 void **add_undo_reference** **(** :ref:`Object<class_Object>` object **)**
 
 Register a reference for "undo" that will be erased if the "undo" history is lost. This is useful mostly for nodes removed with the "do" call (not the "undo" call!).
+
+::
+
+    var node = $Node2D
+    undo_redo.create_action("Remove node")
+    undo_redo.add_do_method(remove_child.bind(node))
+    undo_redo.add_undo_method(add_child.bind(node))
+    undo_redo.add_undo_reference(node)
+    undo_redo.commit_action()
 
 .. rst-class:: classref-item-separator
 

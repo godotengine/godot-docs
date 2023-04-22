@@ -76,6 +76,8 @@ Methods
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Texture2D<class_Texture2D>`                | :ref:`get_tab_icon<class_TabBar_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                         |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                            | :ref:`get_tab_icon_max_width<class_TabBar_method_get_tab_icon_max_width>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                     |
+   +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                            | :ref:`get_tab_idx_at_point<class_TabBar_method_get_tab_idx_at_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |const|                                                   |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                      | :ref:`get_tab_language<class_TabBar_method_get_tab_language>` **(** :ref:`int<class_int>` tab_idx **)** |const|                                                                 |
@@ -104,6 +106,8 @@ Methods
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`set_tab_icon<class_TabBar_method_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture2D<class_Texture2D>` icon **)**                                         |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                             | :ref:`set_tab_icon_max_width<class_TabBar_method_set_tab_icon_max_width>` **(** :ref:`int<class_int>` tab_idx, :ref:`int<class_int>` width **)**                                |
+   +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`set_tab_language<class_TabBar_method_set_tab_language>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` language **)**                                   |
    +--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`set_tab_text_direction<class_TabBar_method_set_tab_text_direction>` **(** :ref:`int<class_int>` tab_idx, :ref:`TextDirection<enum_Control_TextDirection>` direction **)** |
@@ -131,6 +135,8 @@ Theme Properties
    | :ref:`Color<class_Color>`         | :ref:`font_unselected_color<class_TabBar_theme_color_font_unselected_color>` | ``Color(0.7, 0.7, 0.7, 1)``         |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`h_separation<class_TabBar_theme_constant_h_separation>`                | ``4``                               |
+   +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`             | :ref:`icon_max_width<class_TabBar_theme_constant_icon_max_width>`            | ``0``                               |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`             | :ref:`outline_size<class_TabBar_theme_constant_outline_size>`                | ``0``                               |
    +-----------------------------------+------------------------------------------------------------------------------+-------------------------------------+
@@ -454,7 +460,7 @@ Sets the maximum width which all tabs should be limited to. Unlimited if set to 
 - void **set_scroll_to_selected** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_scroll_to_selected** **(** **)**
 
-If ``true``, the tab offset will be changed to keep the the currently selected tab visible.
+If ``true``, the tab offset will be changed to keep the currently selected tab visible.
 
 .. rst-class:: classref-item-separator
 
@@ -635,7 +641,7 @@ Returns the previously active tab index.
 
 :ref:`Texture2D<class_Texture2D>` **get_tab_button_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
-Returns the :ref:`Texture2D<class_Texture2D>` for the right button of the tab at index ``tab_idx`` or ``null`` if the button has no :ref:`Texture2D<class_Texture2D>`.
+Returns the icon for the right button of the tab at index ``tab_idx`` or ``null`` if the right button has no icon.
 
 .. rst-class:: classref-item-separator
 
@@ -647,7 +653,19 @@ Returns the :ref:`Texture2D<class_Texture2D>` for the right button of the tab at
 
 :ref:`Texture2D<class_Texture2D>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** |const|
 
-Returns the :ref:`Texture2D<class_Texture2D>` for the tab at index ``tab_idx`` or ``null`` if the tab has no :ref:`Texture2D<class_Texture2D>`.
+Returns the icon for the tab at index ``tab_idx`` or ``null`` if the tab has no icon.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_method_get_tab_icon_max_width:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_tab_icon_max_width** **(** :ref:`int<class_int>` tab_idx **)** |const|
+
+Returns the maximum allowed width of the icon for the tab at index ``tab_idx``.
 
 .. rst-class:: classref-item-separator
 
@@ -821,6 +839,18 @@ Sets an ``icon`` for the tab at index ``tab_idx``.
 
 ----
 
+.. _class_TabBar_method_set_tab_icon_max_width:
+
+.. rst-class:: classref-method
+
+void **set_tab_icon_max_width** **(** :ref:`int<class_int>` tab_idx, :ref:`int<class_int>` width **)**
+
+Sets the maximum allowed width of the icon for the tab at index ``tab_idx``. This limit is applied on top of the default size of the icon and on top of :ref:`icon_max_width<class_TabBar_theme_constant_icon_max_width>`. The height is adjusted according to the icon's ratio.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TabBar_method_set_tab_language:
 
 .. rst-class:: classref-method
@@ -929,6 +959,18 @@ Font color of the other, unselected tabs.
 :ref:`int<class_int>` **h_separation** = ``4``
 
 The horizontal separation between the elements inside tabs.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TabBar_theme_constant_icon_max_width:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **icon_max_width** = ``0``
+
+The maximum allowed width of the tab's icon. This limit is applied on top of the default size of the icon, but before the value set with :ref:`set_tab_icon_max_width<class_TabBar_method_set_tab_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 

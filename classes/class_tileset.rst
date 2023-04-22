@@ -712,7 +712,7 @@ Physics layers allow assigning collision polygons to atlas tiles.
 
 Adds a :ref:`TileSetSource<class_TileSetSource>` to the TileSet. If ``atlas_source_id_override`` is not -1, also set its source ID. Otherwise, a unique identifier is automatically generated.
 
-The function returns the added source source ID or -1 if the source could not be added.
+The function returns the added source ID or -1 if the source could not be added.
 
 .. rst-class:: classref-item-separator
 
@@ -860,7 +860,7 @@ Returns whether or not the specified navigation layer of the TileSet navigation 
 
 :ref:`int<class_int>` **get_navigation_layer_layers** **(** :ref:`int<class_int>` layer_index **)** |const|
 
-Returns the navigation layers (as in the Navigation server) of the gives TileSet navigation layer.
+Returns the navigation layers (as in the Navigation server) of the given TileSet navigation layer.
 
 .. rst-class:: classref-item-separator
 
@@ -1450,7 +1450,7 @@ Based on ``value``, enables or disables the specified navigation layer of the Ti
 
 void **set_navigation_layer_layers** **(** :ref:`int<class_int>` layer_index, :ref:`int<class_int>` layers **)**
 
-Sets the navigation layers (as in the navigation server) for navigation regions is the given TileSet navigation layer.
+Sets the navigation layers (as in the navigation server) for navigation regions in the given TileSet navigation layer.
 
 .. rst-class:: classref-item-separator
 
@@ -1474,7 +1474,7 @@ Sets the occlusion layer (as in the rendering server) for occluders in the given
 
 void **set_occlusion_layer_sdf_collision** **(** :ref:`int<class_int>` layer_index, :ref:`bool<class_bool>` sdf_collision **)**
 
-Enables or disables sdf collision for occluders in the given TileSet occlusion layer.
+Enables or disables SDF collision for occluders in the given TileSet occlusion layer.
 
 .. rst-class:: classref-item-separator
 
@@ -1534,7 +1534,7 @@ Changes a source's ID.
 
 void **set_source_level_tile_proxy** **(** :ref:`int<class_int>` source_from, :ref:`int<class_int>` source_to **)**
 
-Creates a source-level proxy for the given source ID. A proxy will map set of tile identifiers to another set of identifiers. Both the atlac coordinates ID and the alternative tile ID are kept the same when using source-level proxies.
+Creates a source-level proxy for the given source ID. A proxy will map set of tile identifiers to another set of identifiers. Both the atlas coordinates ID and the alternative tile ID are kept the same when using source-level proxies.
 
 This can be used to replace a source in all TileMaps using this TileSet, as TileMap nodes will find and use the proxy's target source when one is available.
 

@@ -146,7 +146,7 @@ Theme Properties
    +-----------------------------------+----------------------------------------------------------------------+-----------------------------------+
    | :ref:`Color<class_Color>`         | :ref:`title_color<class_GraphNode_theme_color_title_color>`          | ``Color(0.875, 0.875, 0.875, 1)`` |
    +-----------------------------------+----------------------------------------------------------------------+-----------------------------------+
-   | :ref:`int<class_int>`             | :ref:`close_h_offset<class_GraphNode_theme_constant_close_h_offset>` | ``22``                            |
+   | :ref:`int<class_int>`             | :ref:`close_h_offset<class_GraphNode_theme_constant_close_h_offset>` | ``12``                            |
    +-----------------------------------+----------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`close_offset<class_GraphNode_theme_constant_close_offset>`     | ``22``                            |
    +-----------------------------------+----------------------------------------------------------------------+-----------------------------------+
@@ -933,7 +933,7 @@ Color of the title text.
 
 .. rst-class:: classref-themeproperty
 
-:ref:`int<class_int>` **close_h_offset** = ``22``
+:ref:`int<class_int>` **close_h_offset** = ``12``
 
 .. container:: contribute
 

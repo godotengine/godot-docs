@@ -53,7 +53,7 @@ Properties
    +---------------------------+---------------------------------------------------------------------------------+------------+
    | :ref:`float<class_float>` | :ref:`suspension_stiffness<class_VehicleWheel3D_property_suspension_stiffness>` | ``5.88``   |
    +---------------------------+---------------------------------------------------------------------------------+------------+
-   | :ref:`float<class_float>` | :ref:`suspension_travel<class_VehicleWheel3D_property_suspension_travel>`       | ``5.0``    |
+   | :ref:`float<class_float>` | :ref:`suspension_travel<class_VehicleWheel3D_property_suspension_travel>`       | ``0.2``    |
    +---------------------------+---------------------------------------------------------------------------------+------------+
    | :ref:`bool<class_bool>`   | :ref:`use_as_steering<class_VehicleWheel3D_property_use_as_steering>`           | ``false``  |
    +---------------------------+---------------------------------------------------------------------------------+------------+
@@ -222,7 +222,7 @@ This value defines the stiffness of the suspension. Use a value lower than 50 fo
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **suspension_travel** = ``5.0``
+:ref:`float<class_float>` **suspension_travel** = ``0.2``
 
 .. rst-class:: classref-property-setget
 
