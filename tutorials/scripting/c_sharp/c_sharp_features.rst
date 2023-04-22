@@ -67,7 +67,8 @@ Generic methods are also provided to make this type conversion transparent.
 
 To check if the node can be cast to Sprite2D, you can use the ``is`` operator.
 The ``is`` operator returns false if the node cannot be cast to Sprite2D,
-otherwise it returns true.
+otherwise it returns true. Note that when the ``is`` operator is used against ``null``
+the result is always going to be ``false``.
 
 .. code-block:: csharp
 
@@ -76,99 +77,24 @@ otherwise it returns true.
         // Yup, it's a Sprite2D!
     }
 
+    if (null is Sprite2D)
+    {
+        // This block can never happen.
+    }
+
+You can also declare a new variable to conditionally store the result of the cast
+if the ``is`` operator returns ``true``.
+
+.. code-block:: csharp
+
+    if (GetNode("MySprite") is Sprite2D mySprite)
+    {
+        // The mySprite variable only exists inside this block, and it's never null.
+        mySprite.SetFrame(0);
+    }
+
 For more advanced type checking, you can look into `Pattern Matching <https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching>`_.
 
-.. _doc_c_sharp_signals:
-
-C# signals
-----------
-
-For a complete C# example, see the **Handling a signal** section in the step by step :ref:`doc_scripting` tutorial.
-
-Declaring a signal in C# is done with the ``[Signal]`` attribute on a delegate.
-
-.. code-block:: csharp
-
-    [Signal]
-    delegate void MySignal();
-
-    [Signal]
-    delegate void MySignalWithArguments(string foo, int bar);
-
-These signals can then be connected either in the editor or from code with ``Connect``.
-If you want to connect a signal in the editor, you need to (re)build the project assemblies to see the new signal. This build can be manually triggered by clicking the "Build" button at the top right corner of the editor window.
-
-.. code-block:: csharp
-
-    public void MyCallback()
-    {
-        GD.Print("My callback!");
-    }
-
-    public void MyCallbackWithArguments(string foo, int bar)
-    {
-        GD.Print("My callback with: ", foo, " and ", bar, "!");
-    }
-
-    public void SomeFunction()
-    {
-        instance.Connect("MySignal", this, "MyCallback");
-        instance.Connect(nameof(MySignalWithArguments), this, "MyCallbackWithArguments");
-    }
-
-Emitting signals is done with the ``EmitSignal`` method.
-
-.. code-block:: csharp
-
-    public void SomeFunction()
-    {
-        EmitSignal(nameof(MySignal));
-        EmitSignal("MySignalWithArguments", "hello there", 28);
-    }
-
-Notice that you can always reference a signal name with the ``nameof`` keyword (applied on the delegate itself).
-
-It is possible to bind values when establishing a connection by passing a Godot array.
-
-.. code-block:: csharp
-
-    public int Value { get; private set; } = 0;
-
-    private void ModifyValue(int modifier)
-    {
-        Value += modifier;
-    }
-
-    public void SomeFunction()
-    {
-        var plusButton = (Button)GetNode("PlusButton");
-        var minusButton = (Button)GetNode("MinusButton");
-
-        plusButton.Connect("pressed", this, "ModifyValue", new Godot.Collections.Array { 1 });
-        minusButton.Connect("pressed", this, "ModifyValue", new Godot.Collections.Array { -1 });
-    }
-
-Signals support parameters and bound values of all the `built-in types <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/built-in-types-table>`_ and Classes derived from :ref:`Godot.Object <class_Object>`.
-Consequently, any ``Node`` or ``Reference`` will be compatible automatically, but custom data objects will need to extend from `Godot.Object` or one of its subclasses.
-
-.. code-block:: csharp
-
-    public class DataObject : Godot.Object
-    {
-        public string Field1 { get; set; }
-        public string Field2 { get; set; }
-    }
-
-
-Finally, signals can be created by calling ``AddUserSignal``, but be aware that it should be executed before any use of said signals (with ``Connect`` or ``EmitSignal``).
-
-.. code-block:: csharp
-
-    public void SomeFunction()
-    {
-        AddUserSignal("MyOtherSignal");
-        EmitSignal("MyOtherSignal");
-    }
 
 Preprocessor defines
 --------------------
@@ -211,7 +137,7 @@ Or you can detect which engine your code is in, useful for making cross-engine l
     #elif UNITY_5_3_OR_NEWER
             print("This is Unity.");
     #else
-            throw new InvalidWorkflowException("Only Godot and Unity are supported.");
+            throw new NotSupportedException("Only Godot and Unity are supported.");
     #endif
         }
 
@@ -220,6 +146,10 @@ Full list of defines
 
 * ``GODOT`` is always defined for Godot projects.
 
+* ``TOOLS`` is defined when building with the Debug configuration (editor and editor player).
+
+* ``GODOT_REAL_T_IS_DOUBLE`` is defined when the ``GodotFloat64`` property is set to ``true``.
+
 * One of ``GODOT_64`` or ``GODOT_32`` is defined depending on if the architecture is 64-bit or 32-bit.
 
 * One of ``GODOT_LINUXBSD``, ``GODOT_WINDOWS``, ``GODOT_OSX``,
@@ -227,7 +157,7 @@ Full list of defines
   depending on the OS. These names may change in the future.
   These are created from the ``get_name()`` method of the
   :ref:`OS <class_OS>` singleton, but not every possible OS
-  the method returns is an OS that Godot with Mono runs on.
+  the method returns is an OS that Godot with .NET runs on.
 
 When **exporting**, the following may also be defined depending on the export features:
 
@@ -238,8 +168,6 @@ When **exporting**, the following may also be defined depending on the export fe
 * One of ``GODOT_ARM64`` or ``GODOT_ARMV7`` on iOS only depending on the architecture.
 
 * Any of ``GODOT_S3TC``, ``GODOT_ETC``, and ``GODOT_ETC2`` depending on the texture compression type.
-
-* Any custom features added in the export menu will be capitalized and prefixed: ``foo`` -> ``GODOT_FOO``.
 
 To see an example project, see the OS testing demo:
 https://github.com/godotengine/godot-demo-projects/tree/master/misc/os_test

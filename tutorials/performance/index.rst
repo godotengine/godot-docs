@@ -1,3 +1,7 @@
+:article_outdated: True
+
+.. _doc_performance:
+
 Performance
 ===========
 

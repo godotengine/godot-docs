@@ -6,7 +6,7 @@ Your first 3D shader
 You have decided to start writing your own custom Spatial shader. Maybe you saw
 a cool trick online that was done with shaders, or you have found that the
 :ref:`StandardMaterial3D <class_StandardMaterial3D>` isn't quite meeting your
-needs. Either way, you have decided to write your own and now you need figure
+needs. Either way, you have decided to write your own and now you need to figure
 out where to start.
 
 This tutorial will explain how to write a Spatial shader and will cover more
@@ -42,26 +42,26 @@ program (e.g. Blender). But Godot also has a few :ref:`PrimitiveMeshes
 importing Meshes.
 
 There are multiple node types that you can use to draw a mesh. The main one is
-:ref:`MeshInstance <class_meshinstance>`, but you can also use :ref:`Particles
-<class_particles>`, :ref:`MultiMeshes <class_MultiMesh>` (with a
-:ref:`MultiMeshInstance <class_multimeshinstance>`), or others.
+:ref:`MeshInstance3D <class_MeshInstance3D>`, but you can also use :ref:`GPUParticles3D
+<class_GPUParticles3D>`, :ref:`MultiMeshes <class_MultiMesh>` (with a
+:ref:`MultiMeshInstance3D <class_MultiMeshInstance3D>`), or others.
 
 Typically, a material is associated with a given surface in a mesh, but some
-nodes, like MeshInstance, allow you to override the material for a specific
+nodes, like MeshInstance3D, allow you to override the material for a specific
 surface, or for all surfaces.
 
-If you set a material on the surface or mesh itself, then all MeshInstances that
+If you set a material on the surface or mesh itself, then all MeshInstance3Ds that
 share that mesh will share that material. However, if you want to reuse the same
 mesh across multiple mesh instances, but have different materials for each
-instance then you should set the material on the Meshinstance.
+instance then you should set the material on the MeshInstance3D.
 
 For this tutorial we will set our material on the mesh itself rather than taking
-advantage of the MeshInstance's ability to override materials.
+advantage of the MeshInstance3D's ability to override materials.
 
 Setting up
 ----------
 
-Add a new :ref:`MeshInstance <class_meshinstance>` node to your scene.
+Add a new :ref:`MeshInstance3D <class_MeshInstance3D>` node to your scene.
 
 In the inspector tab beside "Mesh" click "[empty]" and select "New PlaneMesh".
 Then click on the image of a plane that appears.
@@ -81,7 +81,7 @@ Now set ``Subdivide Width`` and ``Subdivide Depth`` to ``32``.
 .. image:: img/plane-sub-set.png
 
 You can see that there are now many more triangles in the
-:ref:`Mesh<class_MeshInstance>`. This will give us more vertices to work with
+:ref:`MeshInstance3D<class_MeshInstance3D>`. This will give us more vertices to work with
 and thus allow us to add more detail.
 
 .. image:: img/plane-sub.png
@@ -111,7 +111,7 @@ because this is a spatial shader.
   shader_type spatial;
 
 Next we will define the ``vertex()`` function. The ``vertex()`` function
-determines where the vertices of your :ref:`Mesh<class_MeshInstance>` appear in
+determines where the vertices of your :ref:`MeshInstance3D<class_MeshInstance3D>` appear in
 the final scene. We will be using it to offset the height of each vertex and
 make our flat plane appear like a little terrain.
 
@@ -163,7 +163,7 @@ Noise is a very popular tool for faking the look of terrain. Think of it as
 similar to the cosine function where you have repeating hills except, with
 noise, each hill has a different height.
 
-Godot provides the :ref:`NoiseTexture <class_noisetexture>` resource for
+Godot provides the :ref:`NoiseTexture2D <class_noisetexture2D>` resource for
 generating a noise texture that can be accessed from a shader.
 
 To access a texture in a shader add the following code near the top of your
@@ -179,9 +179,9 @@ If you open it up, you'll see a section called "noise".
 
 Click beside it where it says "[empty]" and select "New NoiseTexture". Then in
 your NoiseTexture click beside where it says "Noise" and select "New
-OpenSimplexNoise".
+NoiseTexture".
 
-.. note:: :ref:`OpenSimplexNoise <class_opensimplexnoise>` is used by the NoiseTexture to
+.. note:: :ref:`FastNoiseLite <class_fastnoiselite>` is used by the NoiseTexture to
           generate a heightmap.
 
 Once you set it up and should look like this.
@@ -240,14 +240,14 @@ the shader.
 
 ::
 
-  # called from the MeshInstance
+  # called from the MeshInstance3D
   mesh.material.set_shader_param("height_scale", 0.5)
 
 .. note:: Changing uniforms in Spatial-based nodes is different from
           CanvasItem-based nodes. Here, we set the material inside the PlaneMesh
           resource. In other mesh resources you may need to first access the
           material by calling ``surface_get_material()``. While in the
-          MeshInstance you would access the material using
+          MeshInstance3D you would access the material using
           ``get_surface_material()`` or ``material_override``.
 
 Remember that the string passed into ``set_shader_param()`` must match the name
@@ -278,7 +278,7 @@ again, where it says "Perspective", and select "Display Normal".
 Note how the mesh color goes flat. This is because the lighting on it is flat.
 Let's add a light!
 
-First, we will add an :ref:`OmniLight<class_OmniLight>` to the scene.
+First, we will add an :ref:`OmniLight3D<class_OmniLight3D>` to the scene.
 
 .. image:: img/light.png
 
@@ -305,7 +305,7 @@ do that by passing in a second noise texture.
   uniform sampler2D normalmap;
 
 Set this second uniform texture to another NoiseTexture with another
-OpenSimplexNoise. But this time, check **As Normalmap**.
+FastNoiseLite. But this time, check **As Normalmap**.
 
 .. image:: img/normal-set.png
 

@@ -95,7 +95,7 @@ viewport, it becomes part of the *scene tree*.
 This means that as explained in previous tutorials, it will get the
 ``_enter_tree()`` and ``_ready()`` callbacks (as well as ``_exit_tree()``).
 
-.. image:: img/activescene.png
+.. image:: img/activescene.webp
 
 When nodes enter the *Scene Tree*, they become active. They get access
 to everything they need to process, get input, display 2D and 3D visuals,
@@ -113,7 +113,7 @@ on. However, children of a node will get called before their parent, also
 in top to bottom order. So the top child node of the top node will get its
 ``_ready()`` function called first.
 
-.. image:: img/toptobottom.png
+.. image:: img/toptobottom.webp
 
 This can also be overridden using the ``process_priority`` node property.
 Nodes with a lower number are called first. For example, nodes with the
@@ -141,26 +141,26 @@ Changing current scene
 
 After a scene is loaded, you may want to change this scene for
 another one. One way to do this is to use the
-:ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>`
+:ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>`
 function:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _my_level_was_completed():
-        get_tree().change_scene("res://levels/level2.tscn")
+        get_tree().change_scene_to_file("res://levels/level2.tscn")
 
  .. code-tab:: csharp
 
     public void _MyLevelWasCompleted()
     {
-        GetTree().ChangeScene("res://levels/level2.tscn");
+        GetTree().ChangeSceneToFile("res://levels/level2.tscn");
     }
 
 Rather than using file paths, one can also use ready-made
 :ref:`PackedScene <class_PackedScene>` resources using the equivalent
 function
-:ref:`SceneTree.change_scene_to(PackedScene scene) <class_SceneTree_method_change_scene_to>`:
+:ref:`SceneTree.change_scene_to_packed(PackedScene scene) <class_SceneTree_method_change_scene_to_packed>`:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -168,19 +168,19 @@ function
     var next_scene = preload("res://levels/level2.tscn")
 
     func _my_level_was_completed():
-    	get_tree().change_scene_to(next_scene)
+    	get_tree().change_scene_to_packed(next_scene)
 
  .. code-tab:: csharp
 
     public void _MyLevelWasCompleted()
     {
         var nextScene = (PackedScene)ResourceLoader.Load("res://levels/level2.tscn");
-        GetTree().ChangeSceneTo(nextScene);
+        GetTree().ChangeSceneToPacked(nextScene);
     }
 
 These are quick and useful ways to switch scenes but have the drawback
 that the game will stall until the new scene is loaded and running. At
 some point in the development of your game, it may be preferable to create proper loading
-screens with progress bar, animated indicators or thread (background)
-loading. This must be done manually using autoloads (see next chapter)
+screens with progress bar, animated indicators or threaded (background)
+loading. This must be done manually using :ref:`doc_singletons_autoload`
 and :ref:`doc_background_loading`.

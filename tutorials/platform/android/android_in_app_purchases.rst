@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_android_in_app_purchases:
 
 Android in-app purchases
@@ -19,8 +21,14 @@ Getting started
 ***************
 
 Make sure you have enabled and successfully set up :ref:`Android Custom Builds <doc_android_custom_build>`.
-Grab the ``GodotGooglePlayBilling`` plugin binary and config from the `releases page <https://github.com/godotengine/godot-google-play-billing/releases>`__
-and put both into `res://android/plugins`.
+Follow the compiling instructions on the ``GodotGooglePlayBilling`` `github page <https://github.com/godotengine/godot-google-play-billing>`__.
+
+.. note::
+
+    If you use a custom build you possibly have to put your own `godot-lib.***.release.aar` file in the `./godot-google-play-billing/libs/` folder.
+
+Then put the files `./godot-google-play-billing/build/outputs/aar/GodotGooglePlayBilling.***.release.aar` and `./GodotGooglePlayBilling.gdap` into your project in the `res://android/plugins` folder.
+
 The plugin should now show up in the Android export settings, where you can enable it.
 
 
@@ -45,20 +53,20 @@ Initialization example:
 
             # These are all signals supported by the API
             # You can drop some of these based on your needs
-            payment.connect("billing_resume", self, "_on_billing_resume") # No params
-            payment.connect("connected", self, "_on_connected") # No params
-            payment.connect("disconnected", self, "_on_disconnected") # No params
-            payment.connect("connect_error", self, "_on_connect_error") # Response ID (int), Debug message (string)
-            payment.connect("price_change_acknowledged", self, "_on_price_acknowledged") # Response ID (int)
-            payment.connect("purchases_updated", self, "_on_purchases_updated") # Purchases (Dictionary[])
-            payment.connect("purchase_error", self, "_on_purchase_error") # Response ID (int), Debug message (string)
-            payment.connect("sku_details_query_completed", self, "_on_sku_details_query_completed") # SKUs (Dictionary[])
-            payment.connect("sku_details_query_error", self, "_on_sku_details_query_error") # Response ID (int), Debug message (string), Queried SKUs (string[])
-            payment.connect("purchase_acknowledged", self, "_on_purchase_acknowledged") # Purchase token (string)
-            payment.connect("purchase_acknowledgement_error", self, "_on_purchase_acknowledgement_error") # Response ID (int), Debug message (string), Purchase token (string)
-            payment.connect("purchase_consumed", self, "_on_purchase_consumed") # Purchase token (string)
-            payment.connect("purchase_consumption_error", self, "_on_purchase_consumption_error") # Response ID (int), Debug message (string), Purchase token (string)
-            payment.connect("query_purchases_response", self, "_on_query_purchases_response") # Purchases (Dictionary[])
+            payment.billing_resume.connect(_on_billing_resume) # No params
+            payment.connected.connect(_on_connected) # No params
+            payment.disconnected.connect(_on_disconnected) # No params
+            payment.connect_error.connect(_on_connect_error) # Response ID (int), Debug message (string)
+            payment.price_change_acknowledged.connect(_on_price_acknowledged) # Response ID (int)
+            payment.purchases_updated.connect(_on_purchases_updated) # Purchases (Dictionary[])
+            payment.purchase_error.connect(_on_purchase_error) # Response ID (int), Debug message (string)
+            payment.sku_details_query_completed.connect(_on_sku_details_query_completed) # SKUs (Dictionary[])
+            payment.sku_details_query_error.connect(_on_sku_details_query_error) # Response ID (int), Debug message (string), Queried SKUs (string[])
+            payment.purchase_acknowledged.connect(_on_purchase_acknowledged) # Purchase token (string)
+            payment.purchase_acknowledgement_error.connect(_on_purchase_acknowledgement_error) # Response ID (int), Debug message (string), Purchase token (string)
+            payment.purchase_consumed.connect(_on_purchase_consumed) # Purchase token (string)
+            payment.purchase_consumption_error.connect(_on_purchase_consumption_error) # Response ID (int), Debug message (string), Purchase token (string)
+            payment.query_purchases_response.connect(_on_query_purchases_response) # Purchases (Dictionary[])
 
             payment.startConnection()
         else:
@@ -138,7 +146,7 @@ Example use of ``queryPurchases()``:
                     " debug message: ", query_result.debug_message)
 
 
-You should query purchases during startup after succesfully retrieving SKU details.
+You should query purchases during startup after successfully retrieving SKU details.
 Since the user may make a purchase or resolve a pending transaction from
 outside your app, you should recheck for purchases when resuming from the
 background. To accomplish this, you can use the ``billing_resume`` signal.

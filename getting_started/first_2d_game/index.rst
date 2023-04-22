@@ -17,7 +17,7 @@ a 2D game.
           programming entirely, you should start here: :ref:`doc_scripting`.
 
 The game is called "Dodge the Creeps!". Your character must move and avoid the
-enemies for as long as possible. Here is a preview of the final result:
+enemies for as long as possible. 
 
 You will learn to:
 
@@ -34,8 +34,9 @@ recommend you to start with this one, though.
 
 **Why start with 2D?**
 
-3D games are much more complex than 2D ones. It would be best if you stuck to 2D
-until you understood the game development process and how to use Godot well.
+If you are new to game development or unfamiliar with Godot, we recommend
+starting with 2D games. This will allow you to become comfortable with both
+before tackling 3D games, which tend to be more complicated.
 
 You can find a completed version of this project at this location:
 

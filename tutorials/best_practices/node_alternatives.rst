@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_node_alternatives:
 
 When and how to avoid using nodes for everything
@@ -38,7 +40,7 @@ your project's features.
    further references to themselves exist. These are useful in the majority of
    cases where one needs data in a custom class.
 
-   - **Example:** See the :ref:`File <class_File>` object. It functions
+   - **Example:** See the :ref:`FileAccess <class_FileAccess>` object. It functions
      just like a regular Object except that one need not delete it themselves.
 
    - **Advantages:** same as the Object.

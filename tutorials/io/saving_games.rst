@@ -17,6 +17,11 @@ scale as the game grows more complex.
     If you're looking to save user configuration, you can use the
     :ref:`class_ConfigFile` class for this purpose.
 
+.. seealso::
+
+    You can see how saving and loading works in action using the
+    `Saving and Loading (Serialization) demo project <https://github.com/godotengine/godot-demo-projects/blob/master/loading/serialization>`__.
+
 Identify persistent objects
 ---------------------------
 
@@ -56,18 +61,16 @@ Serializing
 The next step is to serialize the data. This makes it much easier to
 read from and store to disk. In this case, we're assuming each member of
 group Persist is an instanced node and thus has a path. GDScript
-has helper functions for this, such as :ref:`to_json()
-<class_@GDScript_method_to_json>` and :ref:`parse_json()
-<class_@GDScript_method_parse_json>`, so we will use a dictionary. Our node needs to
-contain a save function that returns this data. The save function will look
-like this:
+has helper class :ref:`JSON<class_json>` to convert between dictionary and string,
+Our node needs to contain a save function that returns this data.
+The save function will look like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func save():
         var save_dict = {
-            "filename" : get_filename(),
+            "filename" : get_scene_file_path(),
             "parent" : get_parent().get_path(),
             "pos_x" : position.x, # Vector2 is not supported by JSON
             "pos_y" : position.y,
@@ -90,14 +93,14 @@ like this:
 
  .. code-tab:: csharp
 
-    public Godot.Collections.Dictionary<string, object> Save()
+    public Godot.Collections.Dictionary<string, Variant> Save()
     {
-        return new Godot.Collections.Dictionary<string, object>()
+        return new Godot.Collections.Dictionary<string, Variant>()
         {
-            { "Filename", GetFilename() },
+            { "Filename", SceneFilePath },
             { "Parent", GetParent().GetPath() },
-            { "PosX", Position.x }, // Vector2 is not supported by JSON
-            { "PosY", Position.y },
+            { "PosX", Position.X }, // Vector2 is not supported by JSON
+            { "PosY", Position.Y },
             { "Attack", Attack },
             { "Defense", Defense },
             { "CurrentHealth", CurrentHealth },
@@ -125,8 +128,7 @@ Saving and reading data
 
 As covered in the :ref:`doc_filesystem` tutorial, we'll need to open a file
 so we can write to it or read from it. Now that we have a way to
-call our groups and get their relevant data, let's use :ref:`to_json()
-<class_@GDScript_method_to_json>` to
+call our groups and get their relevant data, let's use the class :ref:`JSON<class_json>` to
 convert it into an easily stored string and store them in a file. Doing
 it this way ensures that each line is its own object, so we have an easy
 way to pull the data out of the file as well.
@@ -139,12 +141,11 @@ way to pull the data out of the file as well.
     # Go through everything in the persist category and ask them to return a
     # dict of relevant variables.
     func save_game():
-        var save_game = File.new()
-        save_game.open("user://savegame.save", File.WRITE)
+        var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
         var save_nodes = get_tree().get_nodes_in_group("Persist")
         for node in save_nodes:
             # Check the node is an instanced scene so it can be instanced again during load.
-            if node.filename.empty():
+            if node.scene_file_path.is_empty():
                 print("persistent node '%s' is not an instanced scene, skipped" % node.name)
                 continue
 
@@ -156,9 +157,11 @@ way to pull the data out of the file as well.
             # Call the node's save function.
             var node_data = node.call("save")
 
+            # JSON provides a static method to serialized JSON string.
+            var json_string = JSON.stringify(node_data)
+
             # Store the save dictionary as a new line in the save file.
-            save_game.store_line(to_json(node_data))
-        save_game.close()
+            save_game.store_line(json_string)
 
  .. code-tab:: csharp
 
@@ -168,39 +171,40 @@ way to pull the data out of the file as well.
     // dict of relevant variables.
     public void SaveGame()
     {
-        var saveGame = new File();
-        saveGame.Open("user://savegame.save", (int)File.ModeFlags.Write);
+        using var saveGame = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Write);
 
         var saveNodes = GetTree().GetNodesInGroup("Persist");
         foreach (Node saveNode in saveNodes)
         {
             // Check the node is an instanced scene so it can be instanced again during load.
-            if (saveNode.Filename.Empty())
+            if (string.IsNullOrEmpty(saveNode.SceneFilePath))
             {
-                GD.Print(String.Format("persistent node '{0}' is not an instanced scene, skipped", saveNode.Name));
+                GD.Print($"persistent node '{saveNode.Name}' is not an instanced scene, skipped");
                 continue;
             }
 
             // Check the node has a save function.
             if (!saveNode.HasMethod("Save"))
             {
-                GD.Print(String.Format("persistent node '{0}' is missing a Save() function, skipped", saveNode.Name));
+                GD.Print($"persistent node '{saveNode.Name}' is missing a Save() function, skipped");
                 continue;
             }
 
             // Call the node's save function.
             var nodeData = saveNode.Call("Save");
 
-            // Store the save dictionary as a new line in the save file.
-            saveGame.StoreLine(JSON.Print(nodeData));
-        }
+            // Json provides a static method to serialized JSON string.
+            var jsonString = Json.Stringify(nodeData);
 
-        saveGame.Close();
+            // Store the save dictionary as a new line in the save file.
+            saveGame.StoreLine(jsonString);
+        }
     }
 
 
 Game saved! Now, to load, we'll read each
-line, use ``parse_json()`` to read it back to a dict, and then iterate over
+line. Use the :ref:`parse<class_JSON_method_parse>` method to read the
+JSON string back to a dictionary, and then iterate over
 the dict to read our values. But we'll need to first create the object
 and we can use the filename and parent values to achieve that. Here is our
 load function:
@@ -211,8 +215,7 @@ load function:
     # Note: This can be called from anywhere inside the tree. This function
     # is path independent.
     func load_game():
-        var save_game = File.new()
-        if not save_game.file_exists("user://savegame.save"):
+        if not FileAccess.file_exists("user://savegame.save"):
             return # Error! We don't have a save to load.
 
         # We need to revert the game state so we're not cloning objects
@@ -225,13 +228,24 @@ load function:
 
         # Load the file line by line and process that dictionary to restore
         # the object it represents.
-        save_game.open("user://savegame.save", File.READ)
-        while save_game.get_position() < save_game.get_len():
-            # Get the saved dictionary from the next line in the save file
-            var node_data = parse_json(save_game.get_line())
+        var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
+        while save_game.get_position() < save_game.get_length():
+            var json_string = save_game.get_line()
+
+            # Creates the helper class to interact with JSON
+            var json = JSON.new()
+
+            # Check if there is any error while parsing the JSON string, skip in case of failure
+            var parse_result = json.parse(json_string)
+            if not parse_result == OK:
+                print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+                continue
+
+            # Get the data from the JSON object
+            var node_data = json.get_data()
 
             # Firstly, we need to create the object and add it to the tree and set its position.
-            var new_object = load(node_data["filename"]).instance()
+            var new_object = load(node_data["filename"]).instantiate()
             get_node(node_data["parent"]).add_child(new_object)
             new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
 
@@ -241,17 +255,16 @@ load function:
                     continue
                 new_object.set(i, node_data[i])
 
-        save_game.close()
-
  .. code-tab:: csharp
 
     // Note: This can be called from anywhere inside the tree. This function is
     // path independent.
     public void LoadGame()
     {
-        var saveGame = new File();
-        if (!saveGame.FileExists("user://savegame.save"))
+        if (!FileAccess.FileExists("user://savegame.save"))
+        {
             return; // Error! We don't have a save to load.
+        }
 
         // We need to revert the game state so we're not cloning objects during loading.
         // This will vary wildly depending on the needs of a project, so take care with
@@ -259,34 +272,46 @@ load function:
         // For our example, we will accomplish this by deleting saveable objects.
         var saveNodes = GetTree().GetNodesInGroup("Persist");
         foreach (Node saveNode in saveNodes)
+        {
             saveNode.QueueFree();
+        }
 
         // Load the file line by line and process that dictionary to restore the object
         // it represents.
-        saveGame.Open("user://savegame.save", (int)File.ModeFlags.Read);
+        using var saveGame = FileAccess.Open("user://savegame.save", FileAccess.ModeFlags.Read);
 
-        while (saveGame.GetPosition() < saveGame.GetLen())
+        while (saveGame.GetPosition() < saveGame.GetLength())
         {
-            // Get the saved dictionary from the next line in the save file
-            var nodeData = new Godot.Collections.Dictionary<string, object>((Godot.Collections.Dictionary)JSON.Parse(saveGame.GetLine()).Result);
+            var jsonString = saveGame.GetLine();
+
+            // Creates the helper class to interact with JSON
+            var json = new Json();
+            var parseResult = json.Parse(jsonString);
+            if (parseResult != Error.Ok)
+            {
+                GD.Print($"JSON Parse Error: {json.GetErrorMessage()} in {jsonString} at line {json.GetErrorLine()}");
+                continue;
+            }
+
+            // Get the data from the JSON object
+            var nodeData = new Godot.Collections.Dictionary<string, Variant>((Godot.Collections.Dictionary)json.Data);
 
             // Firstly, we need to create the object and add it to the tree and set its position.
-            var newObjectScene = (PackedScene)ResourceLoader.Load(nodeData["Filename"].ToString());
-            var newObject = (Node)newObjectScene.Instance();
+            var newObjectScene = GD.Load<PackedScene>(nodeData["Filename"].ToString());
+            var newObject = newObjectScene.Instantiate<Node>();
             GetNode(nodeData["Parent"].ToString()).AddChild(newObject);
-            newObject.Set("Position", new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
+            newObject.Set(Node2D.PropertyName.Position, new Vector2((float)nodeData["PosX"], (float)nodeData["PosY"]));
 
             // Now we set the remaining variables.
-            foreach (KeyValuePair<string, object> entry in nodeData)
+            foreach (var (key, value) in nodeData)
             {
-                string key = entry.Key.ToString();
                 if (key == "Filename" || key == "Parent" || key == "PosX" || key == "PosY")
+                {
                     continue;
-                newObject.Set(key, entry.Value);
+                }
+                newObject.Set(key, value);
             }
         }
-
-        saveGame.Close();
     }
 
 
@@ -331,7 +356,7 @@ Here are some important gotchas to know about when using JSON.
   JSON only offers a limited set of data types. If you have data types
   that JSON doesn't have, you will need to translate your data to and
   from types that JSON can handle. For example, some important types that JSON
-  can't parse are: ``Vector2``, ``Vector3``, ``Color``, ``Rect2``, and ``Quat``.
+  can't parse are: ``Vector2``, ``Vector3``, ``Color``, ``Rect2``, and ``Quaternion``.
 * **Custom logic needed for encoding/decoding:**
   If you have any custom classes that you want to store with JSON, you will
   need to write your own logic for encoding and decoding those classes.
@@ -341,7 +366,7 @@ Binary serialization
 
 :ref:`Binary serialization<doc_binary_serialization_api>` is an alternative
 approach for storing game state, and you can use it with the functions
-``get_var`` and ``store_var`` of :ref:`class_File`.
+``get_var`` and ``store_var`` of :ref:`class_FileAccess`.
 
 * Binary serialization should produce smaller files than JSON.
 * Binary serialization can handle most common data types.

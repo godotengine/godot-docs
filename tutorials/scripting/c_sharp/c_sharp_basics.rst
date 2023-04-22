@@ -6,70 +6,58 @@ C# basics
 Introduction
 ------------
 
-.. warning:: C# support is a new feature available since Godot 3.0.
-             As such, you may still run into some issues, or find spots
-             where the documentation could be improved.
-             Please report issues with C# in Godot on the
-             `engine GitHub page <https://github.com/godotengine/godot/issues>`_,
-             and any documentation issues on the
-             `documentation GitHub page <https://github.com/godotengine/godot-docs/issues>`_.
+.. warning::
+
+    .NET support has been heavily modified between Godot 3 and 4. As such, you
+    may still run into some issues, or find spots where the documentation could
+    be improved.
+
+    Please report issues with C# in Godot on the
+    `engine GitHub page <https://github.com/godotengine/godot/issues>`_,
+    and any documentation issues on the
+    `documentation GitHub page <https://github.com/godotengine/godot-docs/issues>`_.
 
 This page provides a brief introduction to C#, both what it is and
 how to use it in Godot. Afterwards, you may want to look at
 :ref:`how to use specific features <doc_c_sharp_features>`, read about the
-:ref:`differences between the C# and the GDScript API <doc_c_sharp_differences>`
+:ref:`differences between the C# and the GDScript API <doc_c_sharp_differences>`,
 and (re)visit the :ref:`Scripting section <doc_scripting>` of the
 step-by-step tutorial.
 
 C# is a high-level programming language developed by Microsoft. In Godot,
-it is implemented with the Mono 6.x .NET framework, including full support
-for C# 8.0. Mono is an open source implementation of Microsoft's .NET Framework
-based on the ECMA standards for C# and the Common Language Runtime.
-A good starting point for checking its capabilities is the
-`Compatibility <http://www.mono-project.com/docs/about-mono/compatibility/>`_
-page in the Mono documentation.
+it is implemented with .NET 6.0.
 
-.. note:: This is **not** a full-scale tutorial on the C# language as a whole.
-        If you aren't already familiar with its syntax or features,
-        see the
-        `Microsoft C# guide <https://docs.microsoft.com/en-us/dotnet/csharp/index>`_
-        or look for a suitable introduction elsewhere.
+.. note::
+
+    This is **not** a full-scale tutorial on the C# language as a whole.
+    If you aren't already familiar with its syntax or features, see the
+    `Microsoft C# guide <https://docs.microsoft.com/en-us/dotnet/csharp/index>`_
+    or look for a suitable introduction elsewhere.
 
 .. _doc_c_sharp_setup:
 
-Setting up C# for Godot
------------------------
-
 Prerequisites
-~~~~~~~~~~~~~
+-------------
 
-Install the latest stable version of
-`.NET Core SDK <https://dotnet.microsoft.com/download/dotnet-core>`__
-(3.1 as of writing).
+Godot bundles the parts of .NET needed to run already compiled games.
+However, Godot does not bundle the tools required to build and compile
+games, such as MSBuild and the C# compiler. These are
+included in the .NET SDK, and need to be installed separately.
 
-As of Godot 3.2.3, installing Mono SDK is not a requirement anymore,
-except it is required if you are building the engine from source.
+In summary, you must have installed the .NET SDK **and** the .NET-enabled
+version of Godot.
 
-Godot bundles the parts of Mono needed to run already compiled games,
-however Godot does not include the tools required to build and compile
-games, such as MSBuild. These tools need to be installed separately.
-The required tools are included in the .NET Core SDK. MSBuild is also
-included in the Mono SDK, but it can't build C# projects with the new
-``csproj`` format, therefore .NET Core SDK is required for Godot 3.2.3+.
+Download and install the latest stable version of the SDK from the
+`.NET download page <https://dotnet.microsoft.com/download>`__.
 
-In summary, you must have installed .NET Core SDK
-**and** the Mono-enabled version of Godot.
+.. important::
 
-Additional notes
-~~~~~~~~~~~~~~~~
+    Be sure to install the 64-bit version of the SDK(s)
+    if you are using the 64-bit version of Godot.
 
-Be sure to install the 64-bit version of the SDK(s)
-if you are using the 64-bit version of Godot.
-
-If you are building Godot from source, install the latest stable version of
-`Mono <https://www.mono-project.com/download/stable/>`__, and make sure to
-follow the steps to enable Mono support in your build as outlined in the
-:ref:`doc_compiling_with_mono` page.
+If you are building Godot from source, make sure to follow the steps to enable
+.NET support in your build as outlined in the :ref:`doc_compiling_with_dotnet`
+page.
 
 Configuring an external editor
 ------------------------------
@@ -79,11 +67,12 @@ external IDE or editor, such as  `Visual Studio Code <https://code.visualstudio.
 or MonoDevelop. These provide autocompletion, debugging, and other
 useful features for C#. To select an external editor in Godot,
 click on **Editor → Editor Settings** and scroll down to
-**Mono**. Under **Mono**, click on **Editor**, and select your
+**Dotnet**. Under **Dotnet**, click on **Editor**, and select your
 external editor of choice. Godot currently supports the following
 external editors:
 
 - Visual Studio 2019
+- Visual Studio 2022
 - Visual Studio Code
 - MonoDevelop
 - Visual Studio for Mac
@@ -99,8 +88,7 @@ After reading the "Prerequisites" section, you can download and install
 
 In Godot's **Editor → Editor Settings** menu:
 
-- Set **Mono** -> **Editor** -> **External Editor** to **JetBrains Rider**.
-- Set **Mono** -> **Builds** -> **Build Tool** to **dotnet CLI**.
+- Set **Dotnet** -> **Editor** -> **External Editor** to **JetBrains Rider**.
 
 In Rider:
 
@@ -115,24 +103,29 @@ After reading the "Prerequisites" section, you can download and install
 
 In Godot's **Editor → Editor Settings** menu:
 
-- Set **Mono** -> **Editor** -> **External Editor** to **Visual Studio Code**.
+- Set **Dotnet** -> **Editor** -> **External Editor** to **Visual Studio Code**.
 
 In Visual Studio Code:
 
 - Install the `C# <https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp>`__ extension.
-- Install the `Mono Debug <https://marketplace.visualstudio.com/items?itemName=ms-vscode.mono-debug>`__ extension.
-- Install the `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ extension.
 
-.. note:: If you are using Linux you need to install the
-          `Mono SDK <https://www.mono-project.com/download/stable/#download-lin>`__
-          for the C# tools plugin to work.
+.. note::
 
-To configure a project for debugging open the Godot project folder in VS Code.
-Go to the Run tab and click on **Add Configuration...**. Select **C# Godot**
-from the dropdown menu. Open the ``tasks.json`` and ``launch.json`` files that
-were created. Change the executable setting in ``launch.json`` and  command
-settings in ``tasks.json`` to your Godot executable path. Now, when you start
-the debugger in VS Code, your Godot project will run.
+    If you are using Linux you need to install the `Mono SDK <https://www.mono-project.com/download/stable/#download-lin>`__
+    for the C# tools plugin to work.
+
+To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in 
+the ``.vscode`` folder with the necessary configuration. An example configuration can be 
+found `here <https://github.com/godotengine/godot-csharp-vscode/issues/43#issuecomment-1258321229>`__ . 
+In the ``tasks.json`` file, make sure the ``program`` parameter points to your Godot executable, either by 
+changing it to the path of the executable or by defining a ``GODOT4`` environment variable that points to the
+executable. Now, when you start the debugger in Visual Studio Code, your Godot project will run.
+
+.. note::
+
+    There is also a `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ 
+    Visual Studio Code extension, that is meant to make this setup easier and to provide further useful tools.
+    But it is not yet updated to work with Godot 4.
 
 Visual Studio (Windows only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,12 +143,25 @@ While installing Visual Studio, select these workloads:
 
 In Godot's **Editor → Editor Settings** menu:
 
-- Set **Mono** -> **Editor** -> **External Editor** to **Visual Studio**.
+- Set **Dotnet** -> **Editor** -> **External Editor** to **Visual Studio**.
 
-Next, you need to download the Godot Visual Studio extension from github
+Next, you can download the Godot Visual Studio extension from github
 `here <https://github.com/godotengine/godot-csharp-visualstudio/releases>`__.
 Double click on the downloaded file and follow the installation process.
 
+.. note:: The option to debug your game in Visual Studio may not appear after
+          installing the extension. To enable debugging, there is a
+          `workaround for Visual Studio 2019 <https://github.com/godotengine/godot-csharp-visualstudio/issues/10#issuecomment-720153256>`__.
+          There is
+          `a separate issue about this problem in Visual Studio 2022 <https://github.com/godotengine/godot-csharp-visualstudio/issues/28>`__.
+
+.. note:: If you see an error like "Unable to find package Godot.NET.Sdk",
+          your NuGet configuration may be incorrect and need to be fixed.
+
+          A simple way to fix the NuGet configuration file is to regenerate it.
+          In a file explorer window, go to ``%AppData%\NuGet``. Rename or delete
+          the ``NuGet.Config`` file. When you build your Godot project again,
+          the file will be automatically created with default values.
 
 Creating a C# script
 --------------------
@@ -163,13 +169,13 @@ Creating a C# script
 After you successfully set up C# for Godot, you should see the following option
 when selecting **Attach Script** in the context menu of a node in your scene:
 
-.. image:: img/attachcsharpscript.png
+.. image:: img/attachcsharpscript.webp
 
 Note that while some specifics change, most concepts work the same
 when using C# for scripting. If you're new to Godot, you may want to follow
 the tutorials on :ref:`doc_scripting` at this point.
-While some places in the documentation still lack C# examples, most concepts
-can be transferred easily from GDScript.
+While some documentation pages still lack C# examples, most notions
+can be transferred from GDScript.
 
 Project setup and workflow
 --------------------------
@@ -177,10 +183,11 @@ Project setup and workflow
 When you create the first C# script, Godot initializes the C# project files
 for your Godot project. This includes generating a C# solution (``.sln``)
 and a project file (``.csproj``), as well as some utility files and folders
-(``.mono`` and ``Properties/AssemblyInfo.cs``).
-All of these but ``.mono`` are important and should be committed to your
-version control system. ``.mono`` can be safely added to the ignore list of your VCS.
-When troubleshooting, it can sometimes help to delete the ``.mono`` folder
+(``.godot/mono``).
+All of these but ``.godot/mono`` are important and should be committed to your
+version control system. Everything under ``.godot`` can be safely added to the
+ignore list of your VCS.
+When troubleshooting, it can sometimes help to delete the ``.godot/mono`` folder
 and let it regenerate.
 
 Example
@@ -191,13 +198,12 @@ Here's a blank C# script with some comments to demonstrate how it works.
 .. code-block:: csharp
 
     using Godot;
-    using System;
 
-    public class YourCustomClass : Node
+    public partial class YourCustomClass : Node
     {
         // Member variables here, example:
-        private int a = 2;
-        private string b = "textvar";
+        private int _a = 2;
+        private string _b = "textvar";
 
         public override void _Ready()
         {
@@ -206,7 +212,7 @@ Here's a blank C# script with some comments to demonstrate how it works.
             GD.Print("Hello from C# to Godot :)");
         }
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
             // Called every frame. Delta is time since the last frame.
             // Update game logic here.
@@ -214,15 +220,16 @@ Here's a blank C# script with some comments to demonstrate how it works.
     }
 
 As you can see, functions normally in global scope in GDScript like Godot's
-``print`` function are available in the ``GD`` class which is part of
-the ``Godot`` namespace. For a list of methods in the ``GD`` class, see the
+``print`` function are available in the ``GD`` static class which is part of
+the ``Godot`` namespace. For a full list of methods in the ``GD`` class, see the
 class reference pages for
 :ref:`@GDScript <class_@gdscript>` and :ref:`@GlobalScope <class_@globalscope>`.
 
 .. note::
+
     Keep in mind that the class you wish to attach to your node should have the same
-    name as the ``.cs`` file. Otherwise, you will get the following error
-    and won't be able to run the scene:
+    name as the ``.cs`` file. Otherwise, you will get the following error:
+
     *"Cannot find class XXX for script res://XXX.cs"*
 
 General differences between C# and GDScript
@@ -239,8 +246,9 @@ For more information, see the :ref:`doc_c_sharp_differences` page.
     You need to (re)build the project assemblies whenever you want to see new
     exported variables or signals in the editor. This build can be manually
     triggered by clicking the word **Build** in the top right corner of the
-    editor. You can also click **Mono** at the bottom of the editor window
-    to reveal the Mono panel, then click the **Build Project** button.
+    editor. You can also click **MSBuild** at the bottom of the editor window
+    to reveal the MSBuild panel, then click the **Build** button to reveal a
+    dropdown, then click the **Build Solution** option.
 
     You will also need to rebuild the project assemblies to apply changes in
     "tool" scripts.
@@ -252,7 +260,7 @@ As C# support is quite new in Godot, there are some growing pains and things
 that need to be ironed out. Below is a list of the most important issues
 you should be aware of when diving into C# in Godot, but if in doubt, also
 take a look over the official
-`issue tracker for Mono issues <https://github.com/godotengine/godot/labels/topic%3Amono>`_.
+`issue tracker for .NET issues <https://github.com/godotengine/godot/labels/topic%3Adotnet>`_.
 
 - Writing editor plugins is possible, but it is currently quite convoluted.
 - State is currently not saved and restored when hot-reloading,
@@ -265,11 +273,55 @@ take a look over the official
   So when using e.g. ``CallDeferred("AddChild")``, ``AddChild`` will not work because
   the API is expecting the original ``snake_case`` version ``add_child``. However, you
   can use any custom properties or methods without this limitation.
+  Prefer using the exposed ``StringName`` in the ``PropertyName``, ``MethodName`` and
+  ``SignalName`` to avoid extra ``StringName`` allocations and worrying about snake_case naming.
 
 
-As of Godot 3.2.2, exporting Mono projects is supported for desktop platforms
-(Linux, Windows and macOS), Android, HTML5, and iOS. The only platform not
-supported yet is UWP.
+As of Godot 4.0, exporting .NET projects is supported for desktop platforms
+(Linux, Windows and macOS). Other platforms will gain support in future 4.x
+releases.
+
+Common pitfalls
+---------------
+
+You might encounter the following error when trying to modify some values in Godot
+objects, e.g. when trying to change the X coordinate of a ``Node2D``:
+
+.. code-block:: csharp
+    :emphasize-lines: 5
+
+    public partial class MyNode2D : Node2D
+    {
+        public override _Ready()
+        {
+            Position.X = 100.0f;
+            // CS1612: Cannot modify the return value of 'Node2D.Position' because
+            // it is not a variable.
+        }
+    }
+
+This is perfectly normal. Structs (in this example, a ``Vector2``) in C# are
+copied on assignment, meaning that when you retrieve such an object from a
+property or an indexer, you get a copy of it, not the object itself. Modifying
+said copy without reassigning it afterwards won't achieve anything.
+
+The workaround is simple: retrieve the entire struct, modify the value you want
+to modify, and reassign the property.
+
+.. code-block:: csharp
+
+    var newPosition = Position;
+    newPosition.X = 100.0f;
+    Position = newPosition;
+
+Since C# 10, it is also possible to use `with expressions <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/with-expression>`_
+on structs, allowing you to do the same thing in a single line.
+
+.. code-block:: csharp
+
+    Position = Position with { X = 100.0f };
+
+You can read more about this error on the `C# language reference <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/cs1612>`_.
 
 Performance of C# in Godot
 --------------------------
@@ -279,7 +331,48 @@ the performance of C# in Godot — while generally in the same order of magnitud
 — is roughly **~4×** that of GDScript in some naive cases. C++ is still
 a little faster; the specifics are going to vary according to your use case.
 GDScript is likely fast enough for most general scripting workloads.
-C# is faster, but requires some expensive marshalling when talking to Godot.
+
+Most properties of Godot C# objects that are based on ``GodotObject``
+(e.g. any ``Node`` like ``Control`` or ``Node3D`` like ``Camera3D``) require native (interop) calls as they talk to
+Godot's C++ core.
+Consider assigning values of such properties into a local variable if you need to modify or read them multiple times at
+a single code location:
+
+.. code-block:: csharp
+
+    using Godot;
+
+    public partial class YourCustomClass : Node3D
+    {
+        private void ExpensiveReposition()
+        {
+            for (var i = 0; i < 10; i++)
+            {
+                // Position is read and set 10 times which incurs native interop.
+                // Furthermore the object is repositioned 10 times in 3D space which
+                // takes additional time.
+                Position += new Vector3(i, i);
+            }
+        }
+
+        private void Reposition()
+        {
+            // A variable is used to avoid native interop for Position on every loop.
+            var newPosition = Position;
+            for (var i = 0; i < 10; i++)
+            {
+                newPosition += new Vector3(i, i);
+            }
+            // Setting Position only once avoids native interop and repositioning in 3D space.
+            Position = newPosition;
+        }
+    }
+
+Passing raw arrays (such as ``byte[]``) or ``string`` to Godot's C# API requires marshalling which is
+comparatively pricey.
+
+The implicit conversion from ``string`` to ``NodePath`` or ``StringName`` incur both the native interop and marshalling
+costs as the ``string`` has to be marshalled and passed to the respective native constructor.
 
 Using NuGet packages in Godot
 -----------------------------
@@ -304,5 +397,10 @@ packages the next time it builds the project.
 Profiling your C# code
 ----------------------
 
-- `Mono log profiler <https://www.mono-project.com/docs/debug+profile/profile/profiler/>`_ is available for Linux and macOS. Due to a Mono change, it does not work on Windows currently.
-- External Mono profiler like `JetBrains dotTrace <https://www.jetbrains.com/profiler/>`_ can be used as described `here <https://github.com/godotengine/godot/pull/34382>`_.
+The following tools may be used for performance and memory profiling of your managed code:
+
+- JetBrains Rider with dotTrace/dotMemory plugin.
+- Standalone JetBrains dotTrace/dotMemory.
+- Visual Studio.
+
+Profiling managed and unmanaged code at once is possible with both JetBrains tools and Visual Studio, but limited to Windows.

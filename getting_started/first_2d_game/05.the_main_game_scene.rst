@@ -12,7 +12,7 @@ be a container for handling game logic. It does not require 2D functionality its
 Click the **Instance** button (represented by a chain link icon) and select your saved
 ``Player.tscn``.
 
-.. image:: img/instance_scene.png
+.. image:: img/instance_scene.webp
 
 Now, add the following nodes as children of ``Main``, and name them as shown
 (values are in seconds):
@@ -23,7 +23,7 @@ Now, add the following nodes as children of ``Main``, and name them as shown
   every second
 - :ref:`Timer <class_Timer>` (named ``StartTimer``) - to give a delay before
   starting
-- :ref:`Position2D <class_Position2D>` (named ``StartPosition``) - to indicate
+- :ref:`Marker2D <class_Marker2D>` (named ``StartPosition``) - to indicate
   the player's start position
 
 Set the ``Wait Time`` property of each of the ``Timer`` nodes as follows:
@@ -43,7 +43,7 @@ location on the edge of the screen. Add a :ref:`Path2D <class_Path2D>` node
 named ``MobPath`` as a child of ``Main``. When you select ``Path2D``, you will
 see some new buttons at the top of the editor:
 
-.. image:: img/path2d_buttons.png
+.. image:: img/path2d_buttons.webp
 
 Select the middle one ("Add Point") and draw the path by clicking to add the
 points at the corners shown. To have the points snap to the grid, make sure "Use
@@ -51,7 +51,7 @@ Grid Snap" and "Use Smart Snap" are both selected. These options can be found to
 left of the "Lock" button, appearing as a magnet next to some dots and
 intersecting lines, respectively.
 
-.. image:: img/grid_snap_button.png
+.. image:: img/grid_snap_button.webp
 
 .. important:: Draw the path in *clockwise* order, or your mobs will spawn
                pointing *outwards* instead of *inwards*!
@@ -68,35 +68,35 @@ a random position and direction along the path.
 
 Your scene should look like this:
 
-.. image:: img/main_scene_nodes.png
+.. image:: img/main_scene_nodes.webp
 
 Main script
 ~~~~~~~~~~~
 
-Add a script to ``Main``. At the top of the script, we use ``export
-(PackedScene)`` to allow us to choose the Mob scene we want to instance.
+Add a script to ``Main``. At the top of the script, we use
+``@export var mob_scene: PackedScene`` to allow us to choose the Mob scene we want
+to instance.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends Node
 
-    export(PackedScene) var mob_scene
+    @export var mob_scene: PackedScene
     var score
 
  .. code-tab:: csharp
 
-    public class Main : Node
+    using Godot;
+
+    public partial class Main : Node
     {
         // Don't forget to rebuild the project so the editor knows about the new export variable.
 
-    #pragma warning disable 649
-        // We assign this in the editor, so we don't need the warning about not being assigned.
         [Export]
-        public PackedScene MobScene;
-    #pragma warning restore 649
+        public PackedScene MobScene { get; set; }
 
-        public int Score;
+        private int _score;
     }
 
  .. code-tab:: cpp
@@ -152,24 +152,6 @@ Add a script to ``Main``. At the top of the script, we use ``export
 
     #endif // MAIN_H
 
-We also add a call to ``randomize()`` here so that the random number
-generator generates different random numbers each time the game is run:
-
-.. tabs::
- .. code-tab:: gdscript GDScript
-
-    func _ready():
-        randomize()
-
- .. code-tab:: csharp
-
-    public override void _Ready()
-    {
-        GD.Randomize();
-    }
-
- .. code-tab:: cpp
-
     // This code goes in `main.cpp`.
     #include "main.hpp"
 
@@ -189,7 +171,6 @@ generator generates different random numbers each time the game is run:
         //_music = get_node<godot::AudioStreamPlayer>("Music");
         //_death_sound = get_node<godot::AudioStreamPlayer>("DeathSound");
         _random = (godot::Ref<godot::RandomNumberGenerator>)godot::RandomNumberGenerator::_new();
-        _random->randomize();
     }
 
 Click the ``Main`` node and you will see the ``Mob Scene`` property in the Inspector
@@ -197,8 +178,8 @@ under "Script Variables".
 
 You can assign this property's value in two ways:
 
-- Drag ``Mob.tscn`` from the "FileSystem" panel and drop it in the ``Mob``
-  property .
+- Drag ``Mob.tscn`` from the "FileSystem" dock and drop it in the **Mob Scene**
+  property.
 - Click the down arrow next to "[empty]" and choose "Load". Select ``Mob.tscn``.
 
 Next, select the ``Player`` node in the Scene dock, and access the Node dock on
@@ -235,10 +216,10 @@ new game:
 
     public void NewGame()
     {
-        Score = 0;
+        _score = 0;
 
         var player = GetNode<Player>("Player");
-        var startPosition = GetNode<Position2D>("StartPosition");
+        var startPosition = GetNode<Marker2D>("StartPosition");
         player.Start(startPosition.Position);
 
         GetNode<Timer>("StartTimer").Start();
@@ -259,27 +240,27 @@ new game:
     }
 
 Now connect the ``timeout()`` signal of each of the Timer nodes (``StartTimer``,
-``ScoreTimer`` , and ``MobTimer``) to the main script. ``StartTimer`` will start
+``ScoreTimer``, and ``MobTimer``) to the main script. ``StartTimer`` will start
 the other two timers. ``ScoreTimer`` will increment the score by 1.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_ScoreTimer_timeout():
+    func _on_score_timer_timeout():
         score += 1
 
-    func _on_StartTimer_timeout():
+    func _on_start_timer_timeout():
         $MobTimer.start()
         $ScoreTimer.start()
 
  .. code-tab:: csharp
 
-    public void OnScoreTimerTimeout()
+    private void OnScoreTimerTimeout()
     {
-        Score++;
+        _score++;
     }
 
-    public void OnStartTimerTimeout()
+    private void OnStartTimerTimeout()
     {
         GetNode<Timer>("MobTimer").Start();
         GetNode<Timer>("ScoreTimer").Start();
@@ -321,13 +302,13 @@ Note that a new instance must be added to the scene using ``add_child()``.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_MobTimer_timeout():
+    func _on_mob_timer_timeout():
         # Create a new instance of the Mob scene.
-        var mob = mob_scene.instance()
+        var mob = mob_scene.instantiate()
 
         # Choose a random location on Path2D.
         var mob_spawn_location = get_node("MobPath/MobSpawnLocation")
-        mob_spawn_location.offset = randi()
+        mob_spawn_location.progress_ratio = randf()
 
         # Set the mob's direction perpendicular to the path direction.
         var direction = mob_spawn_location.rotation + PI / 2
@@ -336,11 +317,11 @@ Note that a new instance must be added to the scene using ``add_child()``.
         mob.position = mob_spawn_location.position
 
         # Add some randomness to the direction.
-        direction += rand_range(-PI / 4, PI / 4)
+        direction += randf_range(-PI / 4, PI / 4)
         mob.rotation = direction
 
         # Choose the velocity for the mob.
-        var velocity = Vector2(rand_range(150.0, 250.0), 0.0)
+        var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
         mob.linear_velocity = velocity.rotated(direction)
 
         # Spawn the mob by adding it to the Main scene.
@@ -348,18 +329,18 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
  .. code-tab:: csharp
 
-    public void OnMobTimerTimeout()
+    private void OnMobTimerTimeout()
     {
         // Note: Normally it is best to use explicit types rather than the `var`
         // keyword. However, var is acceptable to use here because the types are
         // obviously Mob and PathFollow2D, since they appear later on the line.
 
         // Create a new instance of the Mob scene.
-        var mob = (Mob)MobScene.Instance();
+        Mob mob = MobScene.Instantiate<Mob>();
 
         // Choose a random location on Path2D.
         var mobSpawnLocation = GetNode<PathFollow2D>("MobPath/MobSpawnLocation");
-        mobSpawnLocation.Offset = GD.Randi();
+        mobSpawnLocation.ProgressRatio = GD.Randf();
 
         // Set the mob's direction perpendicular to the path direction.
         float direction = mobSpawnLocation.Rotation + Mathf.Pi / 2;
@@ -387,7 +368,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
         godot::Node *mob = mob_scene->instance();
 
         // Choose a random location on Path2D.
-        _mob_spawn_location->set_offset((real_t)_random->randi());
+        _mob_spawn_location->set_progress_ratio((real_t)_random->randf());
 
         // Set the mob's direction perpendicular to the path direction.
         real_t direction = _mob_spawn_location->get_rotation() + (real_t)Math_PI / 2;
@@ -424,7 +405,6 @@ call to ``_ready()``:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        randomize()
         new_game()
 
  .. code-tab:: csharp
@@ -444,6 +424,9 @@ call to ``_ready()``:
 Let's also assign ``Main`` as our "Main Scene" - the one that runs automatically
 when the game launches. Press the "Play" button and select ``Main.tscn`` when
 prompted.
+
+.. tip:: If you had already set another scene as the "Main Scene", you can right
+         click ``Main.tscn`` in the FileSystem dock and select "Set As Main Scene".
 
 You should be able to move the player around, see mobs spawning, and see the
 player disappear when hit by a mob.

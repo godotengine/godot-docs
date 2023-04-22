@@ -77,9 +77,9 @@ all you need to initialize your plugin.
     func _get_input_port_type(port):
         match port:
             0:
-                return VisualShaderNode.PORT_TYPE_VECTOR
+                return VisualShaderNode.PORT_TYPE_VECTOR_3D
             1:
-                return VisualShaderNode.PORT_TYPE_VECTOR
+                return VisualShaderNode.PORT_TYPE_VECTOR_3D
             2:
                 return VisualShaderNode.PORT_TYPE_SCALAR
             3:

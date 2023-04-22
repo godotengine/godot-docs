@@ -3,20 +3,36 @@
 Exporting for the Web
 =====================
 
+.. seealso::
+
+    This page describes how to export a Godot project to HTML5.
+    If you're looking to compile editor or export template binaries from source instead,
+    read :ref:`doc_compiling_for_web`.
+
 HTML5 export allows publishing games made in Godot Engine to the browser.
 This requires support for `WebAssembly
-<https://webassembly.org/>`__ and `WebGL <https://www.khronos.org/webgl/>`__
+<https://webassembly.org/>`__, `WebGL <https://www.khronos.org/webgl/>`__ and
+`SharedArrayBuffer <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`_
 in the user's browser.
 
 .. important:: Use the browser-integrated developer console, usually opened
                with :kbd:`F12`, to view **debug information** like JavaScript,
                engine, and WebGL errors.
 
-.. attention:: `There are significant bugs when running HTML5 projects on iOS
-               <https://github.com/godotengine/godot/issues?q=is:issue+is:open+label:platform:html5+ios>`__
-               (regardless of the browser). We recommend using
-               :ref:`iOS' native export functionality <doc_exporting_for_ios>`
-               instead, as it will also result in better performance.
+.. attention::
+
+    Godot 4's HTML5 exports currently cannot run on macOS and iOS due to upstream bugs
+    with SharedArrayBuffer and WebGL 2.0. We recommend using
+    :ref:`macOS <doc_exporting_for_macos>` and :ref:`iOS <doc_exporting_for_ios>`
+    native export functionality instead, as it will also result in better performance.
+
+    Godot 3's HTML5 exports are more compatible with various browsers in
+    general, especially when using the GLES2 rendering backend (which only
+    requires WebGL 1.0).
+
+.. warning:: SharedArrayBuffer requires a :ref:`secure context <doc_javascript_secure_contexts>`.
+             Browsers also require that the web page is served with specific
+             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
 
 .. note::
 
@@ -28,20 +44,13 @@ in the user's browser.
 WebGL version
 -------------
 
-Depending on your choice of renderer, Godot can target WebGL 1.0 (*GLES2*) or
-WebGL 2.0 (*GLES3*).
+Godot 4.0 and later can only target WebGL 2.0 (using the Compatibility rendering
+method). There is no stable way to run Vulkan applications on the web yet.
 
-WebGL 1.0 is the recommended option if you want your project to be supported
-on all browsers with the best performance.
-
-Godot's GLES3 renderer targets high end devices, and the performance using
-WebGL 2.0 can be subpar. Some features are also not supported in WebGL 2.0
-specifically.
-
-Additionally, while most browsers support WebGL 2.0, this is not yet the case
-for **Safari**. WebGL 2.0 support is coming in Safari 15 for macOS, and is not
-available yet for any **iOS** browser (all WebKit-based like Safari).
-See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for details.
+See `Can I use WebGL 2.0 <https://caniuse.com/webgl2>`__ for a list of browser
+versions supporting WebGL 2.0. Note that Safari has several issues with WebGL
+2.0 support that other browsers don't have, so we recommend using a
+Chromium-based browser or Firefox if possible.
 
 .. _doc_javascript_export_options:
 
@@ -52,18 +61,7 @@ If a runnable web export template is available, a button appears between the
 *Stop scene* and *Play edited Scene* buttons in the editor to quickly open the
 game in the default browser for testing.
 
-You can choose the **Export Type** to select which features will be available:
-
-- *Regular*: is the most compatible across browsers, will not support threads,
-  nor GDNative.
-- *Threads*: will require the browser to support `SharedArrayBuffer
-  <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>`__.
-  See `Can I use SharedArrayBuffer <https://caniuse.com/sharedarraybuffer>`__
-  for details.
-- *GDNative*: enables GDNative support but makes the binary bigger and slower
-  to load.
-
-If you plan to use :ref:`VRAM compression <doc_import_images>` make sure that
+If you plan to use :ref:`VRAM compression <doc_importing_images>` make sure that
 **Vram Texture Compression** is enabled for the targeted platforms (enabling
 both **For Desktop** and **For Mobile** will result in a bigger, but more
 compatible export).
@@ -82,9 +80,6 @@ JavaScript APIs, include CSS, or run JavaScript code.
                To customize the generated file, use the **Custom HTML shell**
                option.
 
-.. warning:: **Export types** other then *Regular* are not yet supported by the
-             C# version.
-
 Limitations
 -----------
 
@@ -101,7 +96,7 @@ of limitations you should be aware of when porting a Godot game to the web.
                usually exempt from such requirement).
 
 .. tip:: Check the `list of open HTML5 issues on GitHub
-         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:html5>`__
+         <https://github.com/godotengine/godot/issues?q=is:open+is:issue+label:platform:web>`__
          to see if the functionality you're interested in has an issue yet. If
          not, open one to communicate your interest.
 
@@ -129,26 +124,6 @@ disconnect if the user switches tabs for a long duration.
 This limitation does not apply to unfocused browser *windows*. Therefore, on the
 user's side, this can be worked around by running the project in a separate
 *window* instead of a separate tab.
-
-Threads
-~~~~~~~
-
-As mentioned :ref:`above <doc_javascript_export_options>` multi-threading is
-only available if the appropriate **Export Type** is set and support for it
-across browsers is still limited.
-
-.. warning:: Requires a :ref:`secure context <doc_javascript_secure_contexts>`.
-             Browsers also require that the web page is served with specific
-             `cross-origin isolation headers <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy>`__.
-
-GDNative
-~~~~~~~~
-
-As mentioned :ref:`above <doc_javascript_export_options>` GDNative is only
-available if the appropriate **Export Type** is set.
-
-The export will also copy the required GDNative ``.wasm`` files to the output
-folder (and must be uploaded to your server along with your game).
 
 Full screen and mouse capture
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -223,12 +198,6 @@ The default HTML page does not display the boot splash while loading. However,
 the image is exported as a PNG file, so :ref:`custom HTML pages <doc_customizing_html5_shell>`
 can display it.
 
-Shader language limitations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When exporting a GLES2 project to HTML5, WebGL 1.0 will be used. WebGL 1.0
-doesn't support dynamic loops, so shaders using those won't work there.
-
 Serving the files
 -----------------
 
@@ -270,61 +239,132 @@ of its original size with gzip compression.
 **Hosts that don't provide on-the-fly compression:** itch.io, GitLab Pages
 (`supports manual gzip precompression <https://webd97.de/post/gitlab-pages-compression/>`__)
 
+.. tip::
+
+    The Godot repository includes a
+    `Python script to host a local web server <https://raw.githubusercontent.com/godotengine/godot/master/platform/web/serve.py>`__.
+    This script is intended for testing the web editor, but it can also be used to test exported projects.
+
+    Save the linked script to a file called ``serve.py``, move this file to the
+    folder containing the exported project's ``index.html``, then run the
+    following command in a command prompt within the same folder:
+
+    ::
+
+        # You may need to replace `python` with `python3` on some platforms.
+        python serve.py --root .
+
+    On Windows, you can open a command prompt in the current folder by holding
+    :kbd:`Shift` and right-clicking on empty space in Windows Explorer, then
+    choosing **Open PowerShell window here**.
+
+    This will serve the contents of the current folder and open the default web
+    browser automatically.
+
+    Note that for production use cases, this Python-based web server should not
+    be used. Instead, you should use an established web server such as Apache or
+    nginx.
+
 .. _doc_javascript_eval:
 
 Calling JavaScript from script
 ------------------------------
 
-In web builds, the ``JavaScript`` singleton is implemented. It offers a single
+In web builds, the ``JavaScriptBridge`` singleton is implemented. It offers a single
 method called ``eval`` that works similarly to the JavaScript function of the
 same name. It takes a string as an argument and executes it as JavaScript code.
 This allows interacting with the browser in ways not possible with script
 languages integrated into Godot.
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     func my_func():
-        JavaScript.eval("alert('Calling JavaScript per GDScript!');")
+        JavaScriptBridge.eval("alert('Calling JavaScript per GDScript!');")
+
+ .. code-tab:: csharp
+
+    private void MyFunc()
+    {
+        JavaScriptBridge.Eval("alert('Calling JavaScript per C#!');")
+    }
 
 The value of the last JavaScript statement is converted to a GDScript value and
 returned by ``eval()`` under certain circumstances:
 
- * JavaScript ``number`` is returned as GDScript :ref:`class_float`
- * JavaScript ``boolean`` is returned as GDScript :ref:`class_bool`
- * JavaScript ``string`` is returned as GDScript :ref:`class_String`
- * JavaScript ``ArrayBuffer``, ``TypedArray`` and ``DataView`` are returned as
-   GDScript :ref:`PackedByteArray<class_PackedByteArray>`
+ * JavaScript ``number`` is returned as :ref:`class_float`
+ * JavaScript ``boolean`` is returned as :ref:`class_bool`
+ * JavaScript ``string`` is returned as :ref:`class_String`
+ * JavaScript ``ArrayBuffer``, ``TypedArray`` and ``DataView`` are returned as :ref:`PackedByteArray<class_PackedByteArray>`
 
-::
+.. tabs::
+ .. code-tab:: gdscript
 
     func my_func2():
-        var js_return = JavaScript.eval("var myNumber = 1; myNumber + 2;")
+        var js_return = JavaScriptBridge.eval("var myNumber = 1; myNumber + 2;")
         print(js_return) # prints '3.0'
+
+ .. code-tab:: csharp
+
+    private void MyFunc2()
+    {
+        var jsReturn = JavaScriptBridge.Eval("var myNumber = 1; myNumber + 2;");
+        GD.Print(jsReturn); // prints '3.0'
+    }
 
 Any other JavaScript value is returned as ``null``.
 
 HTML5 export templates may be :ref:`built <doc_compiling_for_web>` without
 support for the singleton to improve security. With such templates, and on
-platforms other than HTML5, calling ``JavaScript.eval`` will also return
+platforms other than HTML5, calling ``JavaScriptBridge.eval`` will also return
 ``null``. The availability of the singleton can be checked with the
-``JavaScript`` :ref:`feature tag <doc_feature_tags>`::
+``web`` :ref:`feature tag <doc_feature_tags>`:
+
+.. tabs::
+ .. code-tab:: gdscript
 
     func my_func3():
-        if OS.has_feature('JavaScript'):
-            JavaScript.eval("""
-                console.log('The JavaScript singleton is available')
+        if OS.has_feature('web'):
+            JavaScriptBridge.eval("""
+                console.log('The JavaScriptBridge singleton is available')
             """)
         else:
-            print("The JavaScript singleton is NOT available")
+            print("The JavaScriptBridge singleton is NOT available")
+
+ .. code-tab:: csharp
+
+    private void MyFunc3()
+    {
+        if (OS.HasFeature("web"))
+        {
+            JavaScriptBridge.Eval("console.log('The JavaScriptBridge singleton is available')");
+        }
+        else
+        {
+            GD.Print("The JavaScriptBridge singleton is NOT available");
+        }
+    }
 
 .. tip:: GDScript's multi-line strings, surrounded by 3 quotes ``"""`` as in
          ``my_func3()`` above, are useful to keep JavaScript code readable.
 
 The ``eval`` method also accepts a second, optional Boolean argument, which
 specifies whether to execute the code in the global execution context,
-defaulting to ``false`` to prevent polluting the global namespace::
+defaulting to ``false`` to prevent polluting the global namespace:
+
+.. tabs::
+ .. code-tab:: gdscript
 
     func my_func4():
         # execute in global execution context,
         # thus adding a new JavaScript global variable `SomeGlobal`
-        JavaScript.eval("var SomeGlobal = {};", true)
+        JavaScriptBridge.eval("var SomeGlobal = {};", true)
+
+ .. code-tab:: csharp
+
+    private void MyFunc4()
+    {
+        // execute in global execution context,
+        // thus adding a new JavaScript global variable `SomeGlobal`
+        JavaScriptBridge.Eval("var SomeGlobal = {};", true);
+    }

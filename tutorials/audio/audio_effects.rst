@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_audio_effects:
 
 Audio effects
@@ -175,7 +177,7 @@ Reverb
 
 Reverb simulates rooms of different sizes. It has adjustable parameters that can
 be tweaked to obtain the sound of a specific room. Reverb is commonly outputted
-from :ref:`Areas <class_Area>`
+from :ref:`Area3Ds <class_Area3D>`
 (see :ref:`Reverb buses <doc_audio_streams_reverb_buses>`), or to apply
 a "chamber" feel to all sounds.
 

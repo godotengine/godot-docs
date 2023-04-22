@@ -38,8 +38,9 @@ property. This includes all :ref:`GUI elements <class_Control>`, :ref:`Sprite2Ds
 material. This can be useful if you have a large number of nodes that you want
 to use the same material.
 
-To begin, create a Sprite2D node. You can use any CanvasItem, but for this
-tutorial we will use a Sprite2D.
+To begin, create a Sprite2D node. :ref:`You can use any CanvasItem <doc_custom_drawing_in_2d>`,
+so long as it is drawing to the canvas, so for this tutorial we will use a Sprite2D,
+as it is the easiest CanvasItem to start drawing with.
 
 In the Inspector, click beside "Texture" where it says "[empty]" and select
 "Load", then select "Icon.png". For new projects, this is the Godot icon. You
@@ -192,14 +193,14 @@ value you provided in the shader.
 Interacting with shaders from code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can change uniforms from code using the function ``set_shader_param()``
+You can change uniforms from code using the function ``set_shader_parameter()``
 which is called on the node's material resource. With a Sprite2D node, the
 following code can be used to set the ``blue`` uniform.
 
 ::
 
   var blue_value = 1.0
-  material.set_shader_param("blue", blue_value)
+  material.set_shader_parameter("blue", blue_value)
 
 Note that the name of the uniform is a string. The string must match exactly
 with how it is written in the shader, including spelling and case.

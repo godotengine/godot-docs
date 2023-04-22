@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. Keep this page short and sweet! We want users to read it to the end, so they
    know where to find information, how to get help, and how to maximize chances
    of getting answers.
@@ -28,12 +30,12 @@ available functions and properties when programming. While the manual covers
 general features, concepts, and how to use the editor, the reference is all
 about using Godot's scripting API (Application Programming Interface). You can
 access it both online and offline. We recommend browsing the reference offline,
-from within the Godot editor. To do so, go to Help -> Search or press
+from within the Godot editor. To do so, go to Help -> Search Help or press
 :kbd:`F1`.
 
 .. image:: img/manual_class_reference_search.png
 
-To browse it online, head to the manual's :ref:`Class Reference <toc-class-ref>`
+To browse it online, head to the manual's :ref:`Class Reference <doc_class_reference>`
 section.
 
 A class reference's page tells you:
@@ -42,7 +44,7 @@ A class reference's page tells you:
    links to jump to parent classes and see the properties and methods a type
    inherits.
 
-   .. image:: img/manual_class_reference_inheritance.png
+   .. image:: img/manual_class_reference_inheritance.webp
 
 2. A summary of the class's role and use cases.
 
@@ -84,10 +86,10 @@ help to better understand how to achieve something, you can ask other users for
 help on one of the many `active
 communities <https://godotengine.org/community>`_.
 
-The best place to ask for questions and find already answered ones is the
+The best place to ask questions and find already answered ones is the
 official `Questions & Answers <https://godotengine.org/qa/>`_ site. These
 responses show up in search engine results and get saved, allowing other users
-to benefit from discussions on the platform. Once you asked a question there,
+to benefit from discussions on the platform. Once you have asked a question there,
 you can share its link on other social platforms. Before asking a question, be
 sure to look for existing answers that might solve your problem on this website
 or using your preferred search engine.
@@ -116,7 +118,7 @@ information:
    the code you write affects nodes in your scenes. As a result, you should
    think of those scenes as part of your source code.
 
-   .. image:: img/key_concepts_scene_tree.png
+   .. image:: img/key_concepts_scene_tree.webp
 
    Also, please don't take a picture with your phone, the low quality and screen
    reflections can make it hard to understand the image. Your operating system
@@ -139,7 +141,7 @@ information:
    interface evolve rapidly.
 
 Following these guidelines will maximize your chances of getting the answer
-you're looking for. They will save time both to you and the persons helping you.
+you're looking for. They will save time both for you and the persons helping you.
 
 Community tutorials
 -------------------

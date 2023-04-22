@@ -10,8 +10,10 @@ Controllers are supported on Windows, macOS, Linux, Android, iOS, and HTML5.
 
 Note that more specialized devices such as steering wheels, rudder pedals and
 `HOTAS <https://en.wikipedia.org/wiki/HOTAS>`__ are less tested and may not
-always work as expected. If you have access to one of those devices, don't hesitate to
-`report bugs on GitHub <https://github.com/godotengine/godot/blob/master/CONTRIBUTING.md#reporting-bugs>`__.
+always work as expected. Overriding force feedback for those devices is also not
+implemented yet. If you have access to one of those devices, don't hesitate to
+`report bugs on GitHub
+<https://github.com/godotengine/godot/blob/master/CONTRIBUTING.md#reporting-bugs>`__.
 
 In this guide, you will learn:
 
@@ -127,12 +129,36 @@ use ``Input.is_action_pressed()``:
     frame, use ``Input.is_action_just_pressed()`` instead of
     ``Input.is_action_pressed()``. Unlike ``Input.is_action_pressed()`` which
     returns ``true`` as long as the input is
-    held,``Input.is_action_just_pressed()`` will only return ``true`` for one
+    held, ``Input.is_action_just_pressed()`` will only return ``true`` for one
     frame after the button has been pressed.
 
 In Godot versions before 3.4, such as 3.3, ``Input.get_vector()`` and
 ``Input.get_axis()`` aren't available. Only ``Input.get_action_strength()``
 and ``Input.is_action_pressed()`` are available in Godot 3.3.
+
+Vibration
+---------
+
+Vibration (also called *haptic feedback*) can be used to enhance the feel of a
+game. For instance, in a racing game, you can convey the surface the car is
+currently driving on through vibration, or create a sudden vibration on a crash.
+
+Use the Input singleton's
+:ref:`start_joy_vibration<class_Input_method_start_joy_vibration>` method to
+start vibrating a gamepad. Use
+:ref:`stop_joy_vibration<class_Input_method_stop_joy_vibration>` to stop
+vibration early (useful if no duration was specified when starting).
+
+On mobile devices, you can also use
+:ref:`vibrate_handheld<class_Input_method_vibrate_handheld>` to vibrate the
+device itself (independently from the gamepad). On Android, this requires the
+``VIBRATE`` permission to be enabled in the Android export preset before
+exporting the project.
+
+.. note::
+
+   Vibration can be uncomfortable for certain players. Make sure to provide an
+   in-game slider to disable vibration or reduce its intensity.
 
 Differences between keyboard/mouse and controller input
 -------------------------------------------------------
@@ -162,11 +188,11 @@ all input whose strength is lower than ``0.2``. An ideal dead zone value is high
 enough to ignore the input caused by joystick drifting, but is low enough to not
 ignore actual input from the player.
 
-Godot features a built-in dead zone system to tackle this problem. The default
-value is ``0.2``, but you can increase it or decrease it on a per-action basis
-in the Project Settings' Input Map tab.
-For ``Input.get_vector()``, the deadzone can be specified, or otherwise it
-will calculate the average deadzone value from all of the actions in the vector.
+Godot features a built-in deadzone system to tackle this problem. The default
+value is ``0.5``, but you can adjust it on a per-action basis in the Project
+Settings' Input Map tab. For ``Input.get_vector()``, the deadzone can be
+specified as an optional 5th parameter. If not specified, it will calculate the
+average deadzone value from all of the actions in the vector.
 
 "Echo" events
 ^^^^^^^^^^^^^
@@ -244,16 +270,10 @@ as early as possible in a script's ``_ready()`` function.
 My controller works on a given platform, but not on another platform.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-macOS
-~~~~~
-
-Controllers are currently only supported on x86-based Macs. This means
-controllers won't work on Macs featuring ARM processors such as the Apple M1.
-
 Linux
 ~~~~~
 
-Prior to Godot 3.2.4, official Godot binaries were compiled with udev support
+Prior to Godot 3.3, official Godot binaries were compiled with udev support
 but self-compiled binaries were compiled *without* udev support unless
 ``udev=yes`` was passed on the SCons command line. This made controller
 hotplugging support unavailable in self-compiled binaries.
@@ -268,4 +288,4 @@ can't get their controller to work.
 
 Also, note that
 `controller support was significantly improved <https://github.com/godotengine/godot/pull/45078>`__
-in Godot 3.2.4 and later.
+in Godot 3.3 and later.

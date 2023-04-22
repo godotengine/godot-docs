@@ -12,9 +12,9 @@ This guide explains:
 Godot provides many kinds of collision shapes, with different performance and
 accuracy tradeoffs.
 
-You can define the shape of a :ref:`class_PhysicsBody` by adding one or more
-:ref:`CollisionShapes <class_CollisionShape>` as child nodes. Note that you must
-add a :ref:`class_Shape` *resource* to collision shape nodes in the Inspector
+You can define the shape of a :ref:`class_PhysicsBody3D` by adding one or more
+:ref:`CollisionShape3Ds <class_CollisionShape3D>` as child nodes. Note that you must
+add a :ref:`class_Shape3D` *resource* to collision shape nodes in the Inspector
 dock.
 
 .. note::
@@ -27,10 +27,10 @@ Primitive collision shapes
 
 Godot provides the following primitive collision shape types:
 
-- :ref:`class_BoxShape`
-- :ref:`class_SphereShape`
-- :ref:`class_CapsuleShape`
-- :ref:`class_CylinderShape`
+- :ref:`class_BoxShape3D`
+- :ref:`class_SphereShape3D`
+- :ref:`class_CapsuleShape3D`
+- :ref:`class_CylinderShape3D`
 
 You can represent the collision of most smaller objects using one or more
 primitive shapes. However, for more complex objects, such as a large ship or a
@@ -43,7 +43,7 @@ better performance as well.
 Convex collision shapes
 -----------------------
 
-:ref:`Convex collision shapes <class_ConvexPolygonShape>` are a compromise
+:ref:`Convex collision shapes <class_ConvexPolygonShape3D>` are a compromise
 between primitive collision shapes and concave collision shapes. They can
 represent shapes of any complexity, but with an important caveat. As their name
 implies, an individual shape can only represent a *convex* shape. For instance,
@@ -58,7 +58,7 @@ of convex shapes. For large and complex objects such as a whole level, we
 recommend using concave shapes instead.
 
 You can generate one or several convex collision shapes from the editor by
-selecting a MeshInstance and using the **Mesh** menu at the top of the 3D
+selecting a MeshInstance3D and using the **Mesh** menu at the top of the 3D
 viewport. The editor exposes two generation modes:
 
 - **Create Single Convex Collision Sibling** uses the Quickhull algorithm. It
@@ -75,7 +75,7 @@ viewport. The editor exposes two generation modes:
 Concave or trimesh collision shapes
 -----------------------------------
 
-:ref:`Concave collision shapes <class_ConcavePolygonShape>`, also called trimesh
+:ref:`Concave collision shapes <class_ConcavePolygonShape3D>`, also called trimesh
 collision shapes, can take any form, from a few triangles to thousands of
 triangles. Concave shapes are the slowest option but are also the most accurate
 in Godot. **You can only use concave shapes within StaticBodies.** They will not
@@ -97,7 +97,7 @@ have an actual "volume". You can place objects both *outside* of the shape as
 well as *inside*.
 
 You can generate a concave collision shape from the editor by selecting a
-MeshInstance and using the **Mesh** menu at the top of the 3D viewport. The
+MeshInstance3D and using the **Mesh** menu at the top of the 3D viewport. The
 editor exposes two options:
 
 - **Create Trimesh Static Body** is a convenient option. It creates a StaticBody

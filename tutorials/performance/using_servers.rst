@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_using_servers:
 
 Optimization using Servers
@@ -23,6 +25,11 @@ back to a more handcrafted, low level implementation of game code.
 
 Still, Godot is designed to work around this problem.
 
+.. seealso::
+
+    You can see how using low-level servers works in action using the
+    `Bullet Shower demo project <https://github.com/godotengine/godot-demo-projects/tree/master/2d/bullet_shower>`__
+
 Servers
 -------
 
@@ -34,8 +41,8 @@ rendering, physics, sound, etc. The scene system is built on top of them and use
 The most common servers are:
 
 * :ref:`RenderingServer <class_RenderingServer>`: handles everything related to graphics.
-* :ref:`PhysicsServer <class_PhysicsServer>`: handles everything related to 3D physics.
-* :ref:`Physics2DServer <class_Physics2DServer>`: handles everything related to 2D physics.
+* :ref:`PhysicsServer3D <class_PhysicsServer3D>`: handles everything related to 3D physics.
+* :ref:`PhysicsServer2D <class_PhysicsServer2D>`: handles everything related to 2D physics.
 * :ref:`AudioServer <class_AudioServer>`: handles everything related to audio.
 
 Explore their APIs and you will realize that all the functions provided are low-level
@@ -52,7 +59,7 @@ Most Godot nodes and resources contain these RIDs from the servers internally, a
 be obtained with different functions. In fact, anything that inherits :ref:`Resource <class_Resource>`
 can be directly casted to an RID. Not all resources contain an RID, though: in such cases, the RID will be empty. The resource can then be passed to server APIs as an RID.
 
-.. Warning::  Resources are reference-counted (see :ref:`Reference <class_Reference>`), and
+.. Warning::  Resources are reference-counted (see :ref:`RefCounted <class_RefCounted>`), and
               references to a resource's RID are *not* counted when determining whether
               the resource is still in use. Make sure to keep a reference to the resource
               outside the server, or else both it and its RID will be erased.
@@ -65,17 +72,17 @@ For nodes, there are many functions available:
   method will return the canvas RID in the server.
 * For Viewport, the :ref:`Viewport.get_viewport_rid() <class_Viewport_method_get_viewport_rid>`
   method will return the viewport RID in the server.
-* For 3D, the :ref:`World <class_World>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
-  and :ref:`Spatial <class_Spatial>` nodes)
+* For 3D, the :ref:`World3D <class_World3D>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
+  and :ref:`Node3D <class_Node3D>` nodes)
   contains functions to get the *RenderingServer Scenario*, and the *PhysicsServer Space*. This
   allows creating 3D objects directly with the server API and using them.
 * For 2D, the :ref:`World2D <class_World2D>` resource (obtainable in the :ref:`Viewport <class_Viewport>`
   and :ref:`CanvasItem <class_CanvasItem>` nodes)
   contains functions to get the *RenderingServer Canvas*, and the *Physics2DServer Space*. This
   allows creating 2D objects directly with the server API and using them.
-* The :ref:`VisualInstance<class_VisualInstance>` class, allows getting the scenario *instance* and
-  *instance base* via the :ref:`VisualInstance.get_instance() <class_VisualInstance_method_get_instance>`
-  and :ref:`VisualInstance.get_base() <class_VisualInstance_method_get_base>` respectively.
+* The :ref:`VisualInstance3D<class_VisualInstance3D>` class, allows getting the scenario *instance* and
+  *instance base* via the :ref:`VisualInstance3D.get_instance() <class_VisualInstance3D_method_get_instance>`
+  and :ref:`VisualInstance3D.get_base() <class_VisualInstance3D_method_get_base>` respectively.
 
 Try exploring the nodes and resources you are familiar with and find the functions to obtain the server *RIDs*.
 
@@ -132,7 +139,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Spatial
+    extends Node3D
 
 
     # RenderingServer expects references to be kept around.
@@ -144,7 +151,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
         var instance = RenderingServer.instance_create()
         # Set the scenario from the world, this ensures it
         # appears with the same objects as the scene.
-        var scenario = get_world().scenario
+        var scenario = get_world_3d().scenario
         RenderingServer.instance_set_scenario(instance, scenario)
         # Add a mesh to it.
         # Remember, keep the reference.
@@ -157,7 +164,7 @@ The 3D APIs are different from the 2D ones, so the instantiation API must be use
 Creating a 2D RigidBody and moving a sprite with it
 ---------------------------------------------------
 
-This creates a :ref:`RigidBody2D <class_RigidBody2D>` using the :ref:`Physics2DServer <class_Physics2DServer>` API,
+This creates a :ref:`RigidBody2D <class_RigidBody2D>` using the :ref:`PhysicsServer2D <class_PhysicsServer2D>` API,
 and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
 
 .. tabs::
@@ -193,12 +200,12 @@ and moves a :ref:`CanvasItem <class_CanvasItem>` when the body moves.
         Physics2DServer.body_set_force_integration_callback(body, self, "_body_moved", 0)
 
 The 3D version should be very similar, as 2D and 3D physics servers are identical (using
-:ref:`RigidBody <class_RigidBody>` and :ref:`PhysicsServer <class_PhysicsServer>` respectively).
+:ref:`RigidBody3D <class_RigidBody3D>` and :ref:`PhysicsServer3D <class_PhysicsServer3D>` respectively).
 
 Getting data from the servers
 -----------------------------
 
-Try to **never** request any information from ``RenderingServer``, ``PhysicsServer`` or ``Physics2DServer``
+Try to **never** request any information from ``RenderingServer``, ``PhysicsServer2D`` or ``PhysicsServer3D``
 by calling functions unless you know what you are doing. These servers will often run asynchronously
 for performance and calling any function that returns a value will stall them and force them to process
 anything pending until the function is actually called. This will severely decrease performance if you

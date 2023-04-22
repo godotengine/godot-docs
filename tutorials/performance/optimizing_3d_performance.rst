@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. meta::
     :keywords: optimization
 
@@ -50,7 +52,7 @@ rendering.
     In some cases, you may have to adapt your level design to add more occlusion
     opportunities. For example, you may have to add more walls to prevent the player
     from seeing too far away, which would decrease performance due to the lost
-    opportunies for occlusion culling.
+    opportunities for occlusion culling.
 
 Other occlusion techniques
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,7 +128,7 @@ but has the downside that it will not be dynamic. Sometimes, this is a trade-off
 worth making.
 
 In general, if several lights need to affect a scene, it's best to use
-:ref:`doc_baked_lightmaps`. Baking can also improve the scene quality by adding
+:ref:`doc_using_lightmap_gi`. Baking can also improve the scene quality by adding
 indirect light bounces.
 
 Animation and skinning

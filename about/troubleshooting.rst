@@ -7,22 +7,11 @@ This page lists common issues encountered when using Godot and possible solution
 
 .. seealso::
 
-    See :ref:`doc_using_the_web_editor` for caveats specific to the HTML5 version
+    See :ref:`doc_using_the_web_editor` for caveats specific to the Web version
     of the Godot editor.
 
-Everything I do in the editor or project manager appears delayed by one frame.
-------------------------------------------------------------------------------
-
-This is a `known bug <https://github.com/godotengine/godot/issues/23069>`__ on
-Intel graphics drivers on Windows. Updating to the latest graphics driver
-version *provided by Intel* should fix the issue.
-
-You should use the graphics driver provided by Intel rather than the one
-provided by your desktop or laptop's manufacturer because their version is often
-outdated.
-
-The editor runs slowly and uses all my CPU and GPU resources, making my computer noisy.
----------------------------------------------------------------------------------------
+The editor runs slowly and uses all my CPU and GPU resources, making my computer noisy
+--------------------------------------------------------------------------------------
 
 This is a known issue, especially on macOS since most Macs have Retina displays.
 Due to Retina displays' higher pixel density, everything has to be rendered at a
@@ -34,7 +23,7 @@ There are several ways to improve performance and battery life:
 - In 3D, click the **Perspective** button in the top left corner and enable
   **Half Resolution**. The 3D viewport will now be rendered at half resolution,
   which can be up to 4 times faster.
-- Open the Editor Settings and increase the value of **Low Processor Mode Sleep Usec**
+- Open the Editor Settings and increase the value of **Low Processor Mode Sleep (µsec)**
   to ``33000`` (30 FPS). This value determines the amount of *microseconds*
   between frames to render. Higher values will make the editor feel less reactive
   but will help decrease CPU and GPU usage significantly.
@@ -43,52 +32,50 @@ There are several ways to improve performance and battery life:
   This way, it will be hidden in the editor but will still be visible in the
   running project.
 
-The editor stutters and flickers on my variable refresh rate monitor (G-Sync/FreeSync).
----------------------------------------------------------------------------------------
+The editor stutters and flickers on my variable refresh rate monitor (G-Sync/FreeSync)
+--------------------------------------------------------------------------------------
 
 This is a `known issue <https://github.com/godotengine/godot/issues/38219>`__.
-There are two workarounds for this:
+Variable refresh rate monitors need to adjust their gamma curves continuously to
+emit a consistent amount of light over time. This can cause flicker to appear in
+dark areas of the image when the refresh rate varies a lot, which occurs as
+the Godot editor only redraws when necessary.
+
+There are several workarounds for this:
 
 - Enable **Interface > Editor > Update Continuously** in the Editor Settings. Keep in mind
   this will increase power usage and heat/noise emissions since the editor will
   now be rendering constantly, even if nothing has changed on screen. To
-  alleviate this, you can increase **Low Processor Mode Sleep Usec** to
+  alleviate this, you can increase **Low Processor Mode Sleep (µsec)** to
   ``33000`` (30 FPS) in the Editor Settings. This value determines the amount of
   *microseconds* between frames to render. Higher values will make the editor
   feel less reactive but will help decrease CPU and GPU usage significantly.
 - Alternatively, disable variable refresh rate on your monitor or in the graphics driver.
+- VRR flicker can be reduced on some displays using the **VRR Control** or
+  **Fine Tune Dark Areas** options in your monitor's OSD. These options may
+  increase input lag or result in crushed blacks.
+- If using an OLED display, use the **Black (OLED)** editor theme preset in the
+  Editor Settings. This hides VRR flicker thanks to OLED's perfect black levels.
 
-The grid disappears and meshes turn black when I rotate the 3D camera in the editor.
-------------------------------------------------------------------------------------
+The editor or project takes a very long time to start
+-----------------------------------------------------
 
-This is a `known bug <https://github.com/godotengine/godot/issues/30330>`__ on
-Intel graphics drivers on Windows.
+When using one of the Vulkan-based renderers (Forward+ or Forward Mobile),
+the first startup is expected to be relatively long. This is because shaders
+need to be compiled before they can be cached. Shaders also need to be cached
+again after updating Godot, after updating graphics drivers or after switching
+graphics cards.
 
-The only workaround, for now, is to switch to the GLES2 renderer. You can switch
-the renderer in the top-right corner of the editor or the Project Settings.
-
-If you use a computer allowing you to switch your graphics card, like NVIDIA
-Optimus, you can use the dedicated graphics card to run Godot.
-
-The editor or project takes a very long time to start.
-------------------------------------------------------
-
-This is a `known bug <https://github.com/godotengine/godot/issues/20566>`__ on
+If the issue persists after the first startup, this is a
+`known bug <https://github.com/godotengine/godot/issues/20566>`__ on
 Windows when you have specific USB peripherals connected. In particular,
-Corsair's iCUE software seems to cause the bug. Try updating your USB
+Corsair's iCUE software seems to cause this bug. Try updating your USB
 peripherals' drivers to their latest version. If the bug persists, you need to
-disconnect the faulty peripherals before opening the editor. You can then
+disconnect the specific peripheral before opening the editor. You can then
 connect the peripheral again.
 
-Editor tooltips in the Inspector and Node docks blink when they're displayed.
------------------------------------------------------------------------------
-
-This is a `known issue <https://github.com/godotengine/godot/issues/32990>`__
-caused by the third-party Stardock Fences application on Windows.
-The only known workaround is to disable Stardock Fences while using Godot.
-
-The Godot editor appears frozen after clicking the system console.
-------------------------------------------------------------------
+The Godot editor appears frozen after clicking the system console
+-----------------------------------------------------------------
 
 When running Godot on Windows with the system console enabled, you can
 accidentally enable *selection mode* by clicking inside the command window. This
@@ -98,8 +85,8 @@ the system console. Godot cannot override this system-specific behavior.
 To solve this, select the system console window and press Enter to leave
 selection mode.
 
-Some text such as "NO DC" appears in the top-left corner of the project manager and editor window.
---------------------------------------------------------------------------------------------------
+Some text such as "NO DC" appears in the top-left corner of the Project Manager and editor window
+-------------------------------------------------------------------------------------------------
 
 This is caused by the NVIDIA graphics driver injecting an overlay to display information.
 
@@ -109,27 +96,55 @@ default values in the NVIDIA Control Panel.
 To disable this overlay on Linux, open ``nvidia-settings``, go to **X Screen 0 >
 OpenGL Settings** then uncheck **Enable Graphics API Visual Indicator**.
 
-The project window appears blurry, unlike the editor.
------------------------------------------------------
+The editor or project appears overly sharp or blurry
+----------------------------------------------------
 
-Unlike the editor, the project isn't marked as DPI-aware by default. This is
-done to improve performance, especially on integrated graphics, where rendering
-3D scenes in hiDPI is slow.
+.. figure:: img/troubleshooting_graphics_driver_sharpening.webp
+   :align: center
+   :alt: Correct appearance (left), oversharpened appearance due to graphics driver sharpening (right)
 
-To resolve this, open **Project > Project Settings** and enable **Display >
-Window > Dpi > Allow Hidpi**. On top of that, make sure your project is
-configured to support :ref:`multiple resolutions <doc_multiple_resolutions>`.
+   Correct appearance (left), oversharpened appearance due to graphics driver sharpening (right)
 
-The project window doesn't appear centered when I run the project.
-------------------------------------------------------------------
+If the editor or project appears overly sharp, this is likely due to image
+sharpening being forced on all Vulkan or OpenGL applications by your graphics
+driver. You can disable this behavior in the graphics driver's control panel:
 
-This is a `known bug <https://github.com/godotengine/godot/issues/13017>`__. To
-resolve this, open **Project > Project Settings** and enable **Display > Window
-> Dpi > Allow Hidpi**. On top of that, make sure your project is configured to
-support :ref:`multiple resolutions <doc_multiple_resolutions>`.
+- **NVIDIA (Windows):** Open the start menu and choose **NVIDIA Control Panel**.
+  Open the **Manage 3D settings** tab on the left. In the list in the middle,
+  scroll to **Image Sharpening** and set it to **Sharpening Off**.
+- **AMD (Windows):** Open the start menu and choose **AMD Software**. Click the
+  settings "cog" icon in the top-right corner. Go to the **Graphics** tab then
+  disable **Radeon Image Sharpening**.
 
-The project works when run from the editor, but fails to load some files when running from an exported copy.
-------------------------------------------------------------------------------------------------------------
+If the editor or project appears overly blurry, this is likely due to
+:abbr:`FXAA (Fast Approximate AntiAliasing)` being forced on all Vulkan or
+OpenGL applications by your graphics driver.
+
+- **NVIDIA (Windows):** Open the start menu and choose **NVIDIA Control Panel**.
+  Open the **Manage 3D settings** tab on the left. In the list in the middle,
+  scroll to **Fast Approximate Antialiasing** and set it to **Application
+  Controlled**.
+- **NVIDIA (Linux):** Open the applications menu and choose **NVIDIA X Server
+  Settings**. Select to **Antialiasing Settings** on the left, then uncheck
+  **Enable FXAA**.
+- **AMD (Windows):** Open the start menu and choose **AMD Software**. Click the
+  settings "cog" icon in the top-right corner. Go to the **Graphics** tab,
+  scroll to the bottom and click **Advanced** to unfold its settings. Disable
+  **Morphological Anti-Aliasing**.
+
+Third-party vendor-independent utilities such as vkBasalt may also force
+sharpening or FXAA on all Vulkan applications. You may want to check their
+configuration as well.
+
+After changing options in the graphics driver or third-party utilities, restart
+Godot to make the changes effective.
+
+If you still wish to force sharpening or FXAA on other applications, it's
+recommended to do so on a per-application basis using the application profiles
+system provided by graphics drivers' control panels.
+
+The project works when run from the editor, but fails to load some files when running from an exported copy
+-----------------------------------------------------------------------------------------------------------
 
 This is usually caused by forgetting to specify a filter for non-resource files
 in the Export dialog. By default, Godot will only include actual *resources*

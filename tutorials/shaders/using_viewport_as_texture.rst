@@ -15,8 +15,8 @@ of making a procedural planet like the one below:
 .. note:: This tutorial does not cover how to code a dynamic atmosphere like the one this planet has.
 
 This tutorial assumes you are familiar with how to set up a basic scene including:
-a :ref:`Camera <class_Camera>`, a :ref:`light source <class_OmniLight>`, a
-:ref:`Mesh Instance <class_MeshInstance>` with a :ref:`Primitive Mesh <class_PrimitiveMesh>`,
+a :ref:`Camera3D <class_Camera3D>`, a :ref:`light source <class_OmniLight3D>`, a
+:ref:`MeshInstance3D <class_MeshInstance3D>` with a :ref:`Primitive Mesh <class_PrimitiveMesh>`,
 and applying a :ref:`StandardMaterial3D <class_StandardMaterial3D>` to the mesh. The focus will be on using
 the :ref:`Viewport <class_Viewport>` to dynamically create textures that can be applied to the mesh.
 
@@ -75,13 +75,13 @@ apply to the sphere.
 Applying the texture
 --------------------
 
-MeshInstance > GeometryInstance > Geometry > Material Override > ``New StandardMaterial3D``:
+MeshInstance3D > GeometryInstance > Geometry > Material Override > ``New StandardMaterial3D``:
 
-Now we go into the :ref:`Mesh Instance <class_MeshInstance>` and add a :ref:`StandardMaterial3D <class_StandardMaterial3D>`
+Now we go into the :ref:`MeshInstance3D <class_MeshInstance3D>` and add a :ref:`StandardMaterial3D <class_StandardMaterial3D>`
 to it. No need for a special :ref:`Shader Material <class_ShaderMaterial>` (although that would be a good idea
 for more advanced effects, like the atmosphere in the example above).
 
-MeshInstance > GeometryInstance > Geometry > Material Override > ``click`` / ``Edit``:
+MeshInstance3D > GeometryInstance > Geometry > Material Override > ``click`` / ``Edit``:
 
 Open the newly created :ref:`StandardMaterial3D <class_StandardMaterial3D>` and scroll down to the "Albedo" section
 and click beside the "Texture" property to add an Albedo Texture. Here we will apply the texture we made.
@@ -297,7 +297,7 @@ when blending one transparent color on top of another, even if the background ha
 does in this case), you end up with weird color bleed issues. Setting ``blend_premul_alpha`` fixes that.
 
 Now the planet should look like it is reflecting light on the ocean but not the land. If you haven't done
-so already, add an :ref:`OmniLight <class_OmniLight>` to the scene so you can move it around and see the
+so already, add an :ref:`OmniLight3D <class_OmniLight3D>` to the scene so you can move it around and see the
 effect of the reflections on the ocean.
 
 .. image:: img/planet_ocean_reflect.png

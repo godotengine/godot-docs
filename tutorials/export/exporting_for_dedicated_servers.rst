@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_exporting_for_dedicated_servers:
 
 Exporting for dedicated servers
@@ -96,7 +98,10 @@ Starting the dedicated server
 If both your client and server are part of the same Godot project, you will have
 to add a way to start the server directly using a command-line argument. This
 can be done by adding the following code snippet in your main scene (or a
-singleton)'s ``_ready()`` method::
+singleton)'s ``_ready()`` method:
+
+.. tabs::
+ .. code-tab:: gdscript
 
     if "--server" in OS.get_cmdline_args():
         # Run your server startup code here...
@@ -104,15 +109,39 @@ singleton)'s ``_ready()`` method::
         # a Godot binary (headless or not) with the `--server` command-line argument.
         pass
 
-Alternatively, you can make the dedicated server always start up if a headless
-or server binary is detected::
+ .. code-tab:: csharp
 
-    # Note: Feature tags are case-sensitive! It's "Server", not "server".
-    if OS.has_feature("Server"):
+    using System.Linq;
+
+    if (OS.GetCmdlineArgs().Contains("--server"))
+    {
+        // Run your server startup code here...
+        // Using this check, you can start a dedicated server by running
+        // a Godot binary (headless or not) with the `--server` command-line argument.
+    }
+
+Alternatively, you can make the dedicated server always start up if a headless
+or server binary is detected:
+
+.. tabs::
+ .. code-tab:: gdscript
+
+    # Note: Feature tags are case-sensitive! It's "server", not "Server".
+    if OS.has_feature("server"):
         # Run your server startup code here...
         # Note that using this check may break unit testing scripts when
         # running them with headless or server binaries.
         pass
+
+ .. code-tab:: csharp
+
+    // Note: Feature tags are case-sensitive! It's "server", not "Server".
+    if (OS.HasFeature("server"))
+    {
+        // Run your server startup code here...
+        // Note that using this check may break unit testing scripts when
+        // running them with headless or server binaries.
+    }
 
 If your client and server are separate Godot projects, your server should most
 likely be configured in a way where running the main scene starts a server

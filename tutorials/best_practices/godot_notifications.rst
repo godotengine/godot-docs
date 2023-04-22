@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_godot_notifications:
 
 Godot notifications
@@ -26,7 +28,7 @@ much so that Godot exposes many of them with dedicated functions:
 - ``_draw()`` : NOTIFICATION_DRAW
 
 What users might *not* realize is that notifications exist for types other
-than Node alone:
+than Node alone, for example:
 
 - :ref:`Object::NOTIFICATION_POSTINITIALIZE <class_Object_constant_NOTIFICATION_POSTINITIALIZE>`:
   a callback that triggers during object initialization. Not accessible to scripts.
@@ -34,10 +36,6 @@ than Node alone:
 - :ref:`Object::NOTIFICATION_PREDELETE <class_Object_constant_NOTIFICATION_PREDELETE>`:
   a callback that triggers before the engine deletes an Object, i.e. a
   'destructor'.
-
-- :ref:`MainLoop::NOTIFICATION_WM_MOUSE_ENTER <class_MainLoop_constant_NOTIFICATION_WM_MOUSE_ENTER>`:
-  a callback that triggers when the mouse enters the window in the operating
-  system that displays the game content.
 
 And many of the callbacks that *do* exist in Nodes don't have any dedicated
 methods, but are still quite useful.
@@ -48,11 +46,6 @@ methods, but are still quite useful.
 - :ref:`Node::NOTIFICATION_UNPARENTED <class_Node_constant_NOTIFICATION_UNPARENTED>`:
   a callback that triggers anytime one removes a child node from another
   node.
-
-- :ref:`Popup::NOTIFICATION_POST_POPUP <class_Popup_constant_NOTIFICATION_POST_POPUP>`:
-  a callback that triggers after a Popup node completes any ``popup*`` method.
-  Note the difference from its ``about_to_show`` signal which triggers
-  *before* its appearance.
 
 One can access all these custom notifications from the universal
 ``_notification`` method.
@@ -122,11 +115,13 @@ deltatime methods as needed.
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
 
         // Called every frame, even when the engine detects no input.
-        public void _Process(float delta)
+        public void _Process(double delta)
         {
             if (Input.IsActionJustPressed("ui_select"))
                 GD.Print(delta);
@@ -137,11 +132,9 @@ deltatime methods as needed.
         {
             switch (event)
             {
-                case InputEventKey keyEvent:
+                case InputEventKey:
                     if (Input.IsActionJustPressed("ui_accept"))
                         GD.Print(GetProcessDeltaTime());
-                    break;
-                default:
                     break;
             }
         }
@@ -180,7 +173,9 @@ instantiation:
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
         private string _test = "one";
 
@@ -192,7 +187,7 @@ instantiation:
             set
             {
                 _test = value;
-                GD.Print("Setting: " + _test);
+                GD.Print($"Setting: {_test}");
             }
         }
 
@@ -254,17 +249,19 @@ nodes that one might create at runtime.
             NOTIFICATION_PARENTED:
                 parent_cache = get_parent()
                 if connection_check():
-                    parent_cache.connect("interacted_with", self, "_on_parent_interacted_with")
+                    parent_cache.interacted_with.connect(_on_parent_interacted_with)
             NOTIFICATION_UNPARENTED:
                 if connection_check():
-                    parent_cache.disconnect("interacted_with", self, "_on_parent_interacted_with")
+                    parent_cache.interacted_with.disconnect(_on_parent_interacted_with)
 
     func _on_parent_interacted_with():
         print("I'm reacting to my parent's interaction!")
 
   .. code-tab:: csharp
 
-    public class MyNode : Node
+    using Godot;
+
+    public partial class MyNode : Node
     {
         public Node ParentCache = null;
 
@@ -280,11 +277,15 @@ nodes that one might create at runtime.
                 case NOTIFICATION_PARENTED:
                     ParentCache = GetParent();
                     if (ConnectionCheck())
-                        ParentCache.Connect("InteractedWith", this, "OnParentInteractedWith");
+                    {
+                        ParentCache.Connect("InteractedWith", OnParentInteractedWith);
+                    }
                     break;
                 case NOTIFICATION_UNPARENTED:
                     if (ConnectionCheck())
-                        ParentCache.Disconnect("InteractedWith", this, "OnParentInteractedWith");
+                    {
+                        ParentCache.Disconnect("InteractedWith", OnParentInteractedWith);
+                    }
                     break;
             }
         }

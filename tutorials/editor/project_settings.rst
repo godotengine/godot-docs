@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_project_settings:
 
 Project Settings

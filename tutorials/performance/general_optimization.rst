@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_general_optimization:
 
 General optimization tips

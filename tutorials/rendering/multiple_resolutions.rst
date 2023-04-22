@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_multiple_resolutions:
 
 Multiple resolutions
@@ -48,6 +50,11 @@ handle scaling for different sizes and aspect ratios.
 
 Godot provides several useful tools to do this easily.
 
+.. seealso::
+
+    You can see how Godot's support for multiple resolutions works in action using the
+    `Multiple Resolutions and Aspect Ratios demo project <https://github.com/godotengine/godot-demo-projects/tree/master/gui/multiple_resolutions>`__.
+
 Base size
 ---------
 
@@ -66,6 +73,14 @@ There is often a need to support devices with screen and window sizes
 that are different from this base size. Godot offers many ways to
 control how the viewport will be resized and stretched to different
 screen sizes.
+
+To configure the stretch base size at runtime from a script, use the
+``get_tree().root.content_scale_size`` property (see
+:ref:`Window.content_scale_size <class_Window_property_content_scale_size>`).
+Changing this value can indirectly change the size of 2D elements. However, to
+provide an user-accessible scaling option, using
+:ref:`doc_multiple_resolutions_stretch_scale` is recommended as it's easier to
+adjust.
 
 .. note::
 
@@ -130,23 +145,15 @@ demonstrate the effect of different stretch modes. A single sprite, also
    unit in the scene corresponds to one pixel on the screen. In this
    mode, the **Stretch Aspect** setting has no effect.
 
-   This is a good option if you want full control over every screen
-   pixel, and is probably the best option for 3D games.
-
    .. image:: img/stretch_disabled_expand.gif
 
 -  **Stretch Mode = 2D**: In this mode, the base size specified in
    width and height in the project settings is
    stretched to cover the whole screen (taking the **Stretch Aspect**
    setting into account). This means that everything is rendered
-   directly at the target resolution. 3D is largely unaffected,
+   directly at the target resolution. 3D is unaffected,
    while in 2D, there is no longer a 1:1 correspondence between sprite
    pixels and screen pixels, which may result in scaling artifacts.
-
-   This is a good option if your 2D artwork has a sufficiently high
-   resolution and does not require pixel-perfect rendering. Consider
-   enabling texture filtering and mipmapping on your 2D textures and
-   fonts.
 
    .. image:: img/stretch_2d_expand.gif
 
@@ -157,10 +164,12 @@ demonstrate the effect of different stretch modes. A single sprite, also
    is scaled to fit the screen (taking the **Stretch Aspect** setting into
    account).
 
-   This mode is useful when working with pixel-precise games, or for the
-   sake of rendering to a lower resolution to improve performance.
-
    .. image:: img/stretch_viewport_expand.gif
+
+To configure the stretch mode at runtime from a script, use the
+``get_tree().root.content_scale_mode`` property (see
+:ref:`Window.content_scale_mode <class_Window_property_content_scale_mode>`
+and the :ref:`ContentScaleMode <enum_Window_ContentScaleMode>` enum).
 
 Stretch Aspect
 ^^^^^^^^^^^^^^
@@ -239,29 +248,36 @@ to the region outside the blue frame you see in the 2D editor.
     To allow the user to choose their preferred screen orientation at run-time,
     remember to set **Display > Window > Handheld > Orientation** to ``sensor``.
 
-Stretch Shrink
-^^^^^^^^^^^^^^
+To configure the stretch aspect at runtime from a script, use the
+``get_tree().root.content_scale_aspect`` property (see
+:ref:`Window.content_scale_aspect <class_Window_property_content_scale_aspect>`
+and the :ref:`ContentScaleAspect <enum_Window_ContentScaleAspect>` enum).
 
-The **Shrink** setting allows you to add an extra scaling factor on top of
-what the **Stretch** options above already provide. The default value of 1
-means that no scaling occurs.
+.. _doc_multiple_resolutions_stretch_scale:
 
-If, for example, you set **Shrink** to 4 and leave **Stretch Mode** on
-**Disabled**, each unit in your scene will correspond to 4×4 pixels on the
-screen.
+Stretch Scale
+^^^^^^^^^^^^^
 
-If **Stretch Mode** is set to something other than **Disabled**, the size of
-the root viewport is scaled down by the **Shrink** factor, and pixels
-in the output are scaled up by the same amount. This is rarely useful for
-2D games, but can be used to increase performance in 3D games
-by rendering them at a lower resolution.
+The **Scale** setting allows you to add an extra scaling factor on top of
+what the **Stretch** options above already provide. The default value of ``1.0``
+means that no additional scaling occurs.
 
-From scripts
-^^^^^^^^^^^^
+For example, if you set **Scale** to ``2.0`` and leave **Stretch Mode** on
+**Disabled**, each unit in your scene will correspond to 2×2 pixels on the
+screen. This is a good way to provide scaling options for non-game applications.
 
-To configure stretching at runtime from a script, use the
-``get_tree().set_screen_stretch()`` method (see
-:ref:`SceneTree.set_screen_stretch() <class_SceneTree_method_set_screen_stretch>`).
+If **Stretch Mode** is set to **canvas_items**, 2D elements will be scaled
+relative to the base window size, then multiplied by the **Scale** setting. This
+can be exposed to players to allow them to adjust the automatically determined
+scale to their liking, for better accessibility.
+
+If **Stretch Mode** is set to **viewport**, the viewport's resolution is divided
+by **Scale**. This makes pixels look larger and reduces rendering resolution
+(with a given window size), which can improve performance.
+
+To configure the stretch scale at runtime from a script, use the
+``get_tree().root.content_scale_factor`` property (see
+:ref:`Window.content_scale_factor <class_Window_property_content_scale_factor>`).
 
 Common use case scenarios
 -------------------------
@@ -284,7 +300,7 @@ Desktop game
   Note that this will make non-mipmapped textures grainy on low resolution devices,
   so make sure to follow the instructions described in
   :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
-- Set the stretch mode to ``2d``.
+- Set the stretch mode to ``canvas_items``.
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
 - Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
@@ -307,11 +323,11 @@ Desktop game
     The ``viewport`` stretch mode provides low-resolution rendering that is then
     stretched to the final window size. If you are OK with sprites being able to
     move or rotate in "sub-pixel" positions or wish to have a high resolution 3D
-    viewport, you should use the ``2d`` stretch mode instead of the ``viewport``
+    viewport, you should use the ``canvas_items`` stretch mode instead of the ``viewport``
     stretch mode.
 
     Godot currently doesn't have a way to enforce integer scaling when using the
-    ``2d`` or ``viewport`` stretch mode, which means pixel art may look bad if the
+    ``canvas_items`` or ``viewport`` stretch mode, which means pixel art may look bad if the
     final window size is not a multiple of the base window size.
     To fix this, use an add-on such as the `Integer Resolution Handler <https://github.com/Yukitty/godot-addon-integer_resolution_handler>`__.
 
@@ -331,10 +347,18 @@ to change the display orientation project setting.
   Note that this will make non-mipmapped textures grainy on low resolution devices,
   so make sure to follow the instructions described in
   :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
-- Set the stretch mode to ``2d``.
+- Set the stretch mode to ``canvas_items``.
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
 - Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
+
+.. tip::
+
+    To better support tablets and foldable phones (which frequently feature
+    displays with aspect ratios close to 4:3), consider using a base resolution
+    that has a 4:3 aspect ratio while following the rest of the instructions
+    here. For instance, you can set the base window width to ``1280`` and the
+    base window height to ``960``.
 
 Mobile game in portrait mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -350,10 +374,18 @@ Mobile game in portrait mode
   so make sure to follow the instructions described in
   :ref:`doc_multiple_resolutions_reducing_aliasing_on_downsampling`.
 - Set **Display > Window > Handheld > Orientation** to ``portrait``.
-- Set the stretch mode to ``2d``.
+- Set the stretch mode to ``canvas_items``.
 - Set the stretch aspect to ``expand``. This allows for supporting multiple aspect ratios
   and makes better use of tall smartphone displays (such as 18:9 or 19:9 aspect ratios).
 - Configure Control nodes' anchors to snap to the correct corners using the **Layout** menu.
+
+.. tip::
+
+    To better support tablets and foldable phones (which frequently feature
+    displays with aspect ratios close to 4:3), consider using a base resolution
+    that has a 3:4 aspect ratio while following the rest of the instructions
+    here. For instance, you can set the base window width to ``960`` and the
+    base window height to ``1280``.
 
 Non-game application
 ^^^^^^^^^^^^^^^^^^^^
@@ -438,8 +470,8 @@ performance significantly while keeping the HUD and other 2D elements crisp.
 
 This is done by using the root Viewport node only for 2D elements, then creating
 a Viewport node to display the 3D world and displaying it using a
-ViewportContainer or TextureRect node. There will effectively be two viewports
-in the final project. One upside of using TextureRect over ViewportContainer is
+SubViewportContainer or TextureRect node. There will effectively be two viewports
+in the final project. One upside of using TextureRect over SubViewportContainer is
 that it allows enable linear filtering. This makes scaled 3D viewports look
 better in many cases.
 

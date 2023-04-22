@@ -1,7 +1,15 @@
+:article_outdated: True
+
 .. _doc_exporting_for_uwp:
 
 Exporting for Universal Windows Platform
 ========================================
+
+.. seealso::
+
+    This page describes how to export a Godot project to UWP.
+    If you're looking to compile export template binaries from source instead,
+    read :ref:`doc_compiling_for_uwp`.
 
 There's no extra requirement to export an ``.appx`` package that can be
 installed as a Windows App or submitted to the Windows Store. Exporting UWP

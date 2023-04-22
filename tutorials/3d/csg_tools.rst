@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_csg_tools:
 
 Prototyping levels with CSG
@@ -13,7 +15,7 @@ Interior environments can be created by using inverted primitives.
 
 .. note:: The CSG nodes in Godot are mainly intended for prototyping. There is
           no built-in support for UV mapping or editing 3D polygons (though
-          extruded 2D polygons can be used with the CSGPolygon node).
+          extruded 2D polygons can be used with the CSGPolygon3D node).
 
           If you're looking for an easy to use level design tool for a project,
           you may want to use `Qodot <https://github.com/Shfty/qodot-plugin>`__
@@ -23,19 +25,24 @@ Interior environments can be created by using inverted primitives.
 
 .. image:: img/csg.gif
 
+.. seealso::
+
+    You can check how to use CSG nodes to build various shapes (such as stairs or roads) using the
+    `Constructive Solid Geometry demo project <https://github.com/godotengine/godot-demo-projects/tree/master/3d/csg>`__.
+
 Introduction to CSG nodes
 -------------------------
 
 Like other features of Godot, CSG is supported in the form of nodes. These are
 the CSG nodes:
 
-- :ref:`CSGBox <class_CSGBox>`
-- :ref:`CSGCylinder <class_CSGCylinder>` (also supports cone)
-- :ref:`CSGSphere <class_CSGSphere>`
-- :ref:`CSGTorus <class_CSGTorus>`
-- :ref:`CSGPolygon <class_CSGPolygon>`
-- :ref:`CSGMesh <class_CSGMesh>`
-- :ref:`CSGCombiner <class_CSGcombiner>`
+- :ref:`CSGBox3D <class_CSGBox3D>`
+- :ref:`CSGCylinder3D <class_CSGCylinder3D>` (also supports cone)
+- :ref:`CSGSphere3D <class_CSGSphere3D>`
+- :ref:`CSGTorus3D <class_CSGTorus3D>`
+- :ref:`CSGPolygon3D <class_CSGPolygon3D>`
+- :ref:`CSGMesh3D <class_CSGMesh3D>`
+- :ref:`CSGCombiner3D <class_CSGCombiner3D>`
 
 .. image:: img/csg_nodes.png
 
@@ -59,7 +66,7 @@ Every CSG node supports 3 kinds of boolean operations:
 CSGPolygon
 ~~~~~~~~~~
 
-The :ref:`CSGPolygon <class_CSGPolygon>` node extrude along a Polygon drawn in
+The :ref:`CSGPolygon3D <class_CSGPolygon3D>` node extrude along a Polygon drawn in
 2D (in X, Y coordinates) in the following ways:
 
 - **Depth:** Extruded back a given amount.
@@ -71,15 +78,15 @@ The :ref:`CSGPolygon <class_CSGPolygon>` node extrude along a Polygon drawn in
 
 .. image:: img/csg_poly.png
 
-.. note:: The **Path** mode must be provided with a :ref:`Path <class_Path>`
+.. note:: The **Path** mode must be provided with a :ref:`Path3D <class_Path3D>`
           node to work. In the Path node, draw the path and the polygon in
-          CSGPolygon will extrude along the given path.
+          CSGPolygon3D will extrude along the given path.
 
 
 Custom meshes
 ~~~~~~~~~~~~~
 
-Any mesh can be used for :ref:`CSGMesh <class_CSGMesh>`; the mesh can be
+Any mesh can be used for :ref:`CSGMesh3D <class_CSGMesh3D>`; the mesh can be
 modelled in other software and imported into Godot. Multiple materials are
 supported. There are some restrictions for geometry:
 
@@ -90,10 +97,10 @@ supported. There are some restrictions for geometry:
 
 .. image:: img/csg_custom_mesh.png
 
-CSGCombiner
-~~~~~~~~~~~
+CSGCombiner3D
+~~~~~~~~~~~~~
 
-The :ref:`CSGCombiner <class_CSGCombiner>` node is an empty shape used for
+The :ref:`CSGCombiner3D <class_CSGCombiner3D>` node is an empty shape used for
 organization. It will only combine children nodes.
 
 Processing order
@@ -126,7 +133,7 @@ Our level will contain these objects:
 - a desk,
 - a bookshelf.
 
-Create a scene with a Spatial node as root node.
+Create a scene with a Node3D node as root node.
 
 .. tip:: The default lighting of the environment doesn't provide clear shading
          at some angles. Change the display mode using **Display Overdraw** in
@@ -135,44 +142,44 @@ Create a scene with a Spatial node as root node.
 
 .. image:: img/csg_overdraw.png
 
-Create a CSGBox and name it ``room``, enable **Invert Faces** and change the
+Create a CSGBox3D and name it ``room``, enable **Invert Faces** and change the
 dimensions of your room.
 
 .. image:: img/csg_room.png
 
 .. image:: img/csg_room_invert.png
 
-Next, create a CSGCombiner and name it ``desk``.
+Next, create a CSGCombiner3D and name it ``desk``.
 
 A desk has one surface and 4 legs:
 
-- Create 1 CSGBox children node in **Union** mode for the surface
+- Create 1 CSGBox3D children node in **Union** mode for the surface
   and adjust the dimensions.
-- Create 4 CSGBox children nodes in **Union** mode for the legs
+- Create 4 CSGBox3D children nodes in **Union** mode for the legs
   and adjust the dimensions.
 
 Adjust their placement to resemble a desk.
 
 .. image:: img/csg_desk.png
 
-.. note:: CSG nodes inside a CSGCombiner will only process their operation
-          within the combiner. Therefore, CSGCombiners are used to organize
+.. note:: CSG nodes inside a CSGCombiner3D will only process their operation
+          within the combiner. Therefore, CSGCombiner3Ds are used to organize
           CSG nodes.
 
-Create a CSGCombiner and name it ``bed``.
+Create a CSGCombiner3D and name it ``bed``.
 
-Our bed consists of 3 parts: the bed, the mattress and a pillow. Create a CSGBox
-and adjust its dimension for the bed. Create another CSGBox and adjust its
+Our bed consists of 3 parts: the bed, the mattress and a pillow. Create a CSGBox3D
+and adjust its dimension for the bed. Create another CSGBox3D and adjust its
 dimension for the mattress.
 
 .. image:: img/csg_bed_mat.png
 
-We will create another CSGCombiner named ``pillow`` as the child of  ``bed``.
+We will create another CSGCombiner3D named ``pillow`` as the child of  ``bed``.
 The scene tree should look like this:
 
 .. image:: img/csg_bed_tree.png
 
-We will combine 3 CSGSphere nodes in **Union** mode to form a pillow. Scale the
+We will combine 3 CSGSphere3D nodes in **Union** mode to form a pillow. Scale the
 Y axis of the spheres and enable **Smooth Faces**.
 
 .. image:: img/csg_pillow_smooth.png
@@ -182,12 +189,12 @@ spheres will cut a hole into the mattress.
 
 .. image:: img/csg_pillow_hole.png
 
-Try to re-parent the ``pillow`` node to the root ``Spatial`` node; the hole will
+Try to re-parent the ``pillow`` node to the root ``Node3D`` node; the hole will
 disappear.
 
 .. note:: This is to illustrate the effect of CSG processing order.
-          Since the root node is not a CSG node, the CSGCombiner nodes are
-          the end of the operations; this shows the use of CSGCombiner to
+          Since the root node is not a CSG node, the CSGCombiner3D nodes are
+          the end of the operations; this shows the use of CSGCombiner3D to
           organize the CSG scene.
 
 Undo the re-parent after observing the effect. The bed you've built should look
@@ -195,16 +202,16 @@ like this:
 
 .. image:: img/csg_bed.png
 
-Create a CSGCombiner and name it ``lamp``.
+Create a CSGCombiner3D and name it ``lamp``.
 
 A lamp consists of 3 parts: the stand, the pole and the lampshade.
-Create a CSGCylinder, enable the **Cone** option and make it the stand. Create
-another CSGCylinder and adjust the dimensions to use it as a pole.
+Create a CSGCylinder3D, enable the **Cone** option and make it the stand. Create
+another CSGCylinder3D and adjust the dimensions to use it as a pole.
 
 .. image:: img/csg_lamp_pole_stand.png
 
-We will use a CSGPolygon for the lampshade. Use the **Spin** mode for the
-CSGPolygon and draw a `trapezoid <https://en.wikipedia.org/wiki/Trapezoid>`_
+We will use a CSGPolygon3D for the lampshade. Use the **Spin** mode for the
+CSGPolygon3D and draw a `trapezoid <https://en.wikipedia.org/wiki/Trapezoid>`_
 while in **Front View** (numeric keypad 1); this shape will extrude around the
 origin and form the lampshade.
 
@@ -218,21 +225,21 @@ Adjust the placement of the 3 parts to make it look like a lamp.
 
 .. image:: img/csg_lamp.png
 
-Create a CSGCombiner and name it ``bookshelf``.
+Create a CSGCombiner3D and name it ``bookshelf``.
 
-We will use 3 CSGBox nodes for the bookshelf. Create a CSGBox and adjust its
+We will use 3 CSGBox3D nodes for the bookshelf. Create a CSGBox3D and adjust its
 dimensions; this will be the size of the bookshelf.
 
 .. image:: img/csg_shelf_big.png
 
-Duplicate the CSGBox and shorten the dimensions of each axis and change the mode
+Duplicate the CSGBox3D and shorten the dimensions of each axis and change the mode
 to **Subtraction**.
 
 .. image:: img/csg_shelf_subtract.png
 
 .. image:: img/csg_shelf_subtract_menu.png
 
-You've almost built a shelf. Create one more CSGBox for dividing the shelf into
+You've almost built a shelf. Create one more CSGBox3D for dividing the shelf into
 two levels.
 
 .. image:: img/csg_shelf.png
@@ -261,7 +268,7 @@ to quickly apply textures to CSG-based levels.
 
 There are two ways to apply a material to a CSG node:
 
-- Applying it to a CSGCombiner node as a material override
+- Applying it to a CSGCombiner3D node as a material override
   (**Geometry > Material Override** in the Inspector). This will affect its
   children automatically, but will make it impossible to change the material in
   individual children.
@@ -271,14 +278,14 @@ There are two ways to apply a material to a CSG node:
 
 To apply triplanar mapping to a CSG node, select it, go to the Inspector, click
 the **[empty]** text next to **Material Override** (or **Material** for
-individual CSG nodes). Choose **New SpatialMaterial**. Click the newly created
+individual CSG nodes). Choose **New StandardMaterial3D**. Click the newly created
 material's icon to edit it. Unfold the **Albedo** section and load a texture
 into the **Texture** property. Now, unfold the **Uv1** section and check
 **Triplanar**. You can change the texture offset and scale on each axis by
 playing with the **Scale** and **Offset** properties just above. Higher values
 in the **Scale** property will cause the texture to repeat more often.
 
-.. tip:: You can copy a SpatialMaterial to reuse it across CSG nodes. To do so,
+.. tip:: You can copy a StandardMaterial3D to reuse it across CSG nodes. To do so,
          click the dropdown arrow next to a material property in the Inspector
          and choose **Copy**. To paste it, select the node you'd like to apply
          the material onto, click the dropdown arrow next to its material

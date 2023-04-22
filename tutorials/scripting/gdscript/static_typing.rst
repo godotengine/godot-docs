@@ -59,14 +59,14 @@ options for a class called ``PlayerController``.
 You've probably stored a node in a variable before, and typed a dot to
 be left with no autocomplete suggestions:
 
-.. figure:: img/typed_gdscript_code_completion_dynamic.png
+.. figure:: img/typed_gdscript_code_completion_dynamic.webp
    :alt: code completion options for dynamic
 
 This is due to dynamic code. Godot cannot know what node or value type
 you're passing to the function. If you write the type explicitly
 however, you will get all public methods and variables from the node:
 
-.. figure:: img/typed_gdscript_code_completion_typed.png
+.. figure:: img/typed_gdscript_code_completion_typed.webp
    :alt: code completion options for typed
 
 In the future, typed GDScript will also increase code performance:
@@ -131,8 +131,8 @@ For the example above, your Rifle.gd would look like this:
 
 ::
 
-    extends Node2D
     class_name Rifle
+    extends Node2D
 
 If you use ``class_name``, Godot registers the Rifle type globally in
 the editor, and you can use it anywhere, without having to preload it
@@ -149,7 +149,7 @@ Type casting is a key concept in typed languages.
 Casting is the conversion of a value from one type to another.
 
 Imagine an Enemy in your game, that ``extends Area2D``. You want it to
-collide with the Player, a ``KinematicBody2D`` with a script called
+collide with the Player, a ``CharacterBody2D`` with a script called
 ``PlayerController`` attached to it. You use the ``on_body_entered``
 signal to detect the collision. With typed code, the body you detect is
 going to be a generic ``PhysicsBody2D``, and not your
@@ -198,11 +198,11 @@ don't care about the node's type as long as it has the methods you need
 to call.
 
 You can use casting to tell Godot the type you expect when you get a
-node: ``($Timer as Timer)``, ``($Player as KinematicBody2D)``, etc.
+node: ``($Timer as Timer)``, ``($Player as CharacterBody2D)``, etc.
 Godot will ensure the type works and if so, the line number will turn
 green at the left of the script editor.
 
-.. figure:: img/typed_gdscript_safe_unsafe_line.png
+.. figure:: img/typed_gdscript_safe_unsafe_line.webp
    :alt: Unsafe vs Safe Line
 
    Unsafe line (line 7) vs Safe Lines (line 6 and 8)
@@ -245,6 +245,31 @@ You can also use your own nodes as return types:
 
         item.amount += amount
         return item
+
+Define the element type of an Array
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To define the type of an Array, enclose the type name in ``[]``.
+
+An array's type applies to ``for`` loop variables, as well as some operators like ``[]``, ``[]=``, and ``+``.
+Array methods (such as ``push_back``) and other operators (such as ``==``) are still untyped.
+Primitive types, builtin classes, and custom classes may be used as types.
+Nested array types are not supported.
+
+::
+
+    var scores: Array[int] = [10, 20, 30]
+    var vehicles: Array[Node] = [$Car, $Plane]
+    var items: Array[Item] = [Item.new()]
+    # var arrays: Array[Array] -- disallowed
+
+    for score in scores:
+        # score has type `int`
+
+    # The following would be errors:
+    scores += vehicles
+    var s: String = scores[0]
+    scores[0] = "lots"
 
 Typed or dynamic: stick to one style
 ------------------------------------
@@ -331,13 +356,6 @@ Cases where you can't specify types
 To wrap up this introduction, let's cover a few cases where you can't
 use type hints. All the examples below **will trigger errors**.
 
-You can't use Enums as types:
-
-::
-
-    enum MoveDirection {UP, DOWN, LEFT, RIGHT}
-    var current_direction: MoveDirection
-
 You can't specify the type of individual members in an array. This will
 give you an error:
 
@@ -354,28 +372,6 @@ element the ``for`` keyword loops over already has a different type. So you
     var names = ["John", "Marta", "Samantha", "Jimmy"]
     for name: String in names:
         pass
-
-Two scripts can't depend on each other in a cyclic fashion:
-
-::
-
-    # Player.gd
-
-    extends Area2D
-    class_name Player
-
-
-    var rifle: Rifle
-
-::
-
-    # Rifle.gd
-
-    extends Area2D
-    class_name Rifle
-
-
-    var player: Player
 
 Summary
 -------

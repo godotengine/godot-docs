@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_binary_serialization_api:
 
 Binary serialization API
@@ -8,7 +10,7 @@ Introduction
 
 Godot has a serialization API based on Variant. It's used for
 converting data types to an array of bytes efficiently. This API is used
-in the functions ``get_var`` and ``store_var`` of :ref:`class_File`
+in the functions ``get_var`` and ``store_var`` of :ref:`class_FileAccess`
 as well as the packet APIs for :ref:`class_PacketPeer`. This format
 is *not* used for binary scenes and resources.
 
@@ -58,13 +60,13 @@ two bytes contain flags::
 +--------+--------------------------+
 | 9      | plane                    |
 +--------+--------------------------+
-| 10     | quat                     |
+| 10     | quaternion               |
 +--------+--------------------------+
 | 11     | aabb                     |
 +--------+--------------------------+
 | 12     | basis                    |
 +--------+--------------------------+
-| 13     | transform                |
+| 13     | transform3d              |
 +--------+--------------------------+
 | 14     | color                    |
 +--------+--------------------------+
@@ -244,8 +246,8 @@ This field is padded to 4 bytes.
 | 16       | 4     | Float   | Distance      |
 +----------+-------+---------+---------------+
 
-10: :ref:`Quat<class_quat>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+10: :ref:`Quaternion<class_quaternion>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+---------------+
 | Offset   | Len   | Type    | Description   |
@@ -303,8 +305,8 @@ This field is padded to 4 bytes.
 | 36       | 4     | Float   | The Z component of the Z column vector, accessed via [2][2]   |
 +----------+-------+---------+---------------------------------------------------------------+
 
-13: :ref:`Transform<class_transform>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13: :ref:`Transform3D<class_transform3d>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +----------+-------+---------+---------------------------------------------------------------+
 | Offset   | Len   | Type    | Description                                                   |

@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_data_preferences:
 
 Data preferences
@@ -236,8 +238,8 @@ tree structures.
     extends Object
     class_name TreeNode
 
-    var _parent : TreeNode = null
-    var _children : = [] setget
+    var _parent: TreeNode = null
+    var _children: = [] setget
 
     func _notification(p_what):
         match p_what:
@@ -248,26 +250,25 @@ tree structures.
 
   .. code-tab:: csharp
 
+    using Godot;
+    using System.Collections.Generic;
+
     // Can decide whether to expose getters/setters for properties later
-    public class TreeNode : Object
+    public partial class TreeNode : GodotObject
     {
         private TreeNode _parent = null;
 
-        private object[] _children = new object[0];
+        private List<TreeNode> _children = new();
 
-        public override void Notification(int what)
+        public override void _Notification(int what)
         {
             switch (what)
             {
                 case NotificationPredelete:
-                    foreach (object child in _children)
+                    foreach (TreeNode child in _children)
                     {
-                        TreeNode node = child as TreeNode;
-                        if (node != null)
-                            node.Free();
+                        node.Free();
                     }
-                    break;
-                default:
                     break;
             }
         }

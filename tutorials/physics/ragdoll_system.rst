@@ -18,7 +18,7 @@ Setting up the ragdoll
 Creating physical bones
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Like many other features in the engine, there is a node to set up a ragdoll: the :ref:`PhysicalBone <class_PhysicalBone>` node. To simplify the setup, you can generate ``PhysicalBone`` nodes with the "Create physical skeleton" feature in the skeleton node.
+Like many other features in the engine, there is a node to set up a ragdoll: the :ref:`PhysicalBone3D <class_PhysicalBone3D>` node. To simplify the setup, you can generate ``PhysicalBone`` nodes with the "Create physical skeleton" feature in the skeleton node.
 
 Open the platformer demo in Godot, and then the Robi scene. Select the ``Skeleton`` node. A skeleton button appears on the top bar menu:
 
@@ -79,7 +79,7 @@ You can also limit the simulation to only a few bones. To do so, pass the bone n
 Collision layer and mask
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Make sure to set up your collision layers and masks properly so the ``KinematicBody``'s capsule doesn't get in the way of the physics simulation:
+Make sure to set up your collision layers and masks properly so the ``CharacterBody3D``'s capsule doesn't get in the way of the physics simulation:
 
 .. image:: img/ragdoll_layer.png
 

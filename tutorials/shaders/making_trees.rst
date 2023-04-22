@@ -45,8 +45,8 @@ This is a spatial shader. There is no front/back culling (so leaves can be seen 
 
 .. code-block:: glsl
 
-    uniform sampler2D texture_albedo : hint_albedo;
-    uniform vec4 transmission : hint_color;
+    uniform sampler2D texture_albedo : source_color;
+    uniform vec4 transmission : source_color;
 
 Here, the texture is read, as well as a transmission color, which is used to add some back-lighting to the leaves, simulating subsurface scattering.
 

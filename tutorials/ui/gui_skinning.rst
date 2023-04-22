@@ -147,6 +147,9 @@ control node in the single ``Theme`` resource.
    input manually the name of a variation that is defined outside of those
    two places, but it is recommended to keep all variations to the project theme.
 
+You can learn more about creating and using theme type variations in a
+:ref:`dedicated article <doc_gui_theme_type_variations>`.
+
 Customizing a control
 ---------------------
 

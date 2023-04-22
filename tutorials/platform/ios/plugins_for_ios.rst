@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_plugins_for_ios:
 
 Plugins for iOS

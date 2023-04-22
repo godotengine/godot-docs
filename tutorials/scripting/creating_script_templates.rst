@@ -6,10 +6,17 @@ Creating script templates
 Godot provides a way to use script templates as seen in the
 ``Script Create Dialog`` while creating a new script:
 
-.. image:: img/script_create_dialog_templates.png
+.. image:: img/script_create_dialog_templates.webp
 
-A set of script templates is provided by default, but it's also possible
-to modify existing and create new ones, both per project and editor-wide.
+A set of built-in script templates are provided with the editor, but it is
+also possible to create new ones and set them by default, both per project
+and at editor scope.
+
+Templates are linked to a specific node type, so when you create a script
+you will only see the templates corresponding to that particular node, or
+one of its parent types.
+For example, if you are creating a script for a CharacterBody3D, you will
+only see templates defined for CharacterBody3Ds, Node3Ds or Nodes.
 
 Locating the templates
 ----------------------
@@ -41,13 +48,66 @@ the ``editor/script_templates_search_path`` setting in the
 If no ``script_templates`` directory is found within a project, it is simply
 ignored.
 
-Language support and overriding behavior
-----------------------------------------
+Template organization and naming
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Depending on whether a particular language implements a way to generate scripts
-out of templates, it's possible to create a template which can be recognized by
-that language according to template's file extension. For GDScript and C#, the
-extensions must be ``gd`` and ``cs`` respectively.
+Both editor and project defined templates are organized in the following way:
+
+::
+
+  template_path/node_type/file.extension
+
+where:
+
+* ``template_path`` is one of the 2 locations discussed in the previous two sections
+
+* ``node_type`` is the node it will apply to (for example, :ref:`Node <class_Node>`, or :ref:`CharacterBody3D <class_CharacterBody3D>`)
+
+* ``file`` is the custom name you can chose for the template (for example: ``platformer_movement`` or ``smooth_camera``)
+
+* ``extension``: will indicate which language the template will apply to (it should be ``gd`` for GDScript or ``cs`` for C#)
+
+
+Default behaviour and overriding it
+-----------------------------------
+
+By default:
+
+* the template's name is the same as the file name (minus the extension, prettyfied)
+
+* the description is empty
+
+* the space indent is set to 4
+
+* the template will not be set as the default for the given node
+
+
+It is possible to customize this behaviour by adding meta headers at the start
+of your file, like this:
+
+.. tabs::
+
+ .. code-tab:: gdscript GDScript
+
+  # meta-name: Platformer movement
+  # meta-description: Predefined movement for classical platformers
+  # meta-default: true
+  # meta-space-indent: 4
+
+ .. code-tab:: csharp
+
+  // meta-name: Platformer movement
+  // meta-description: Predefined movement for classical platformers
+  // meta-default: true
+  // meta-space-indent: 4
+
+
+In this case, the name will be set to "Platformer movement", with the given custom description, and
+it will be set as the default template for the node in which directory it has been saved.
+
+This is an example of utilizing custom templates at editor and project level:
+
+.. image:: img/script_create_dialog_custom_templates.webp
 
 .. note:: The script templates have the same extension as the regular script
           files. This may lead to an issue of a script parser treating those templates as
@@ -56,61 +116,65 @@ extensions must be ``gd`` and ``cs`` respectively.
           visible throughout the project's filesystem anymore, yet the templates can be
           modified by an external text editor anytime.
 
-The built-in editor templates are automatically shadowed by the project-specific
-templates given both scripts have the same filename.
+It is possible to create editor-level templates that have the same level as a project-specific
+templates, and also that have the same name as a built-in one, all will be shown on the new script
+dialog.
 
 Default template
 ----------------
 
-The ``Default`` template is always generated dynamically per language and cannot
-be configured nor overridden, but you can use these as the base for creating
-other templates.
+To override the default template, create a custom template at editor or project level inside a
+``Node`` directory (or a more specific type, if only a subtype wants to be overridden) and start
+the file with the ``meta-default: true`` header.
+
+Only one template can be set as default at the same time for the same node type.
+
+The ``Default`` templates for basic Nodes, for both GDScript and C#, are shown here so you can
+use these as the base for creating other templates:
 
 .. tabs::
 
  .. code-tab:: gdscript GDScript
 
-    extends %BASE%
+   # meta-description: Base template for Node with default Godot cycle methods
+
+   extends _BASE_
 
 
-    # Declare member variables here. Examples:
-    # var a%INT_TYPE% = 2
-    # var b%STRING_TYPE% = "text"
+   # Called when the node enters the scene tree for the first time.
+   func _ready() -> void:
+   	pass # Replace with function body.
 
 
-    # Called when the node enters the scene tree for the first time.
-    func _ready()%VOID_RETURN%:
-        pass # Replace with function body.
-
-
-    # Called every frame. 'delta' is the elapsed time since the previous frame.
-    #func _process(delta%FLOAT_TYPE%)%VOID_RETURN%:
-    #	pass
+   # Called every frame. 'delta' is the elapsed time since the previous frame.
+   func _process(delta: float) -> void:
+   	pass
 
 
  .. code-tab:: csharp
 
-    using Godot;
-    using System;
+   // meta-description: Base template for Node with default Godot cycle methods
 
-    public class %CLASS% : %BASE%
-    {
-        // Declare member variables here. Examples:
-        // private int a = 2;
-        // private string b = "text";
+   using _BINDINGS_NAMESPACE_;
+   using System;
 
-        // Called when the node enters the scene tree for the first time.
-        public override void _Ready()
-        {
+   public partial class _CLASS_ : _BASE_
+   {
+       // Called when the node enters the scene tree for the first time.
+       public override void _Ready()
+       {
+       }
 
-        }
+       // Called every frame. 'delta' is the elapsed time since the previous frame.
+       public override void _Process(double delta)
+       {
+       }
+   }
 
-    //  // Called every frame. 'delta' is the elapsed time since the previous frame.
-    //  public override void _Process(float delta)
-    //  {
-    //
-    //  }
-    }
+The Godot editor provides a set of useful built-in node-specific templates, such as
+``basic_movement`` for both :ref:`CharacterBody2D <class_CharacterBody2D>` and
+:ref:`CharacterBody3D <class_CharacterBody3D>` and ``plugin`` for
+:ref:`EditorPlugin <class_EditorPlugin>`.
 
 List of template placeholders
 -----------------------------
@@ -121,36 +185,37 @@ which are currently implemented.
 Base placeholders
 ~~~~~~~~~~~~~~~~~
 
-+-------------+----------------------------------------------------------------+
-| Placeholder | Description                                                    |
-+=============+================================================================+
-| ``%CLASS%`` | The name of the new class (used in C# only).                   |
-+-------------+----------------------------------------------------------------+
-| ``%BASE%``  | The base type a new script inherits from.                      |
-+-------------+----------------------------------------------------------------+
-| ``%TS%``    | Indentation placeholder. The exact type and number of          |
-|             | whitespace characters used for indentation is determined by    |
-|             | the ``text_editor/indent/type`` and ``text_editor/indent/size``|
-|             | settings in the :ref:`EditorSettings <class_EditorSettings>`   |
-|             | respectively.                                                  |
-+-------------+----------------------------------------------------------------+
++-------------+-----------------------------------------------------------------+
+| Placeholder | Description                                                     |
++=============+=================================================================+
+| ``_CLASS_`` | The name of the new class (used in C# only).                    |
++-------------+-----------------------------------------------------------------+
+| ``_BASE_``  | The base type a new script inherits from.                       |
++-------------+-----------------------------------------------------------------+
+| ``_TS_``    | Indentation placeholder. The exact type and number of           |
+|             | whitespace characters used for indentation is determined by     |
+|             | the ``text_editor/indent/type`` and ``text_editor/indent/size`` |
+|             | settings in the :ref:`EditorSettings <class_EditorSettings>`    |
+|             | respectively. Can be overridden by the ``meta-space-indent``    |
+|             | header on the template.                                         |
++-------------+-----------------------------------------------------------------+
 
 Type placeholders
 ~~~~~~~~~~~~~~~~~
 
-These are only relevant for GDScript with static typing. Whether these
-placeholders are actually replaced is determined by the
-``text_editor/completion/add_type_hints`` setting in the
-:ref:`EditorSettings <class_EditorSettings>`.
+There used to be, in Godot 3.x, placeholders for GDScript type hints that
+would get replaced whenever a template was used to create a new script, such as:
+``%INT_TYPE%``, ``%STRING_TYPE%``, ``%FLOAT_TYPE%`` or ``%VOID_RETURN%``.
 
-+-------------------+--------------+
-| Placeholder       | Value        |
-+===================+==============+
-| ``%INT_TYPE%``    | ``: int``    |
-+-------------------+--------------+
-| ``%STRING_TYPE%`` | ``: String`` |
-+-------------------+--------------+
-| ``%FLOAT_TYPE%``  | ``: float``  |
-+-------------------+--------------+
-| ``%VOID_RETURN%`` | ``-> void``  |
-+-------------------+--------------+
+The placeholders no longer work for Godot 4.x, but if the setting
+``text_editor/completion/add_type_hints`` from
+:ref:`EditorSettings <class_EditorSettings>` is disabled, type hints
+for parameters and return types will be automatically removed for a few
+base types:
+
+* ``int``
+* ``String``
+* ``Array[String]``
+* ``float``
+* ``void``
+* ``:=`` will be transformed into ``=``

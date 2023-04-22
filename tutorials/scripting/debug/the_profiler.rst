@@ -30,6 +30,11 @@ To begin profiling, click on the **Start** button in the top-left. Run your game
 and data will start appearing. You can also start profiling at any time before
 or during gameplay, depending on if you want.
 
+.. note::
+
+    The profiler does not currently support C# scripts. C# scripts can be profiled
+    using JetBrains Rider and JetBrains dotTrace with the Godot support plugin.
+
 You can clear the data by clicking the **Clear** button anytime. Use the
 **Measure** drop-down menu to change the type of data you measure. The
 measurements panel and the graph will update accordingly.

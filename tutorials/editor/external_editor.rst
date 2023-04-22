@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_external_editor:
 
 Using an external text editor
@@ -35,9 +37,9 @@ Some example Exec Flags for various editors include:
 +=====================+=====================================================+
 | Geany/Kate          | ``{file} --line {line} --column {col}``             |
 +---------------------+-----------------------------------------------------+
-| Atom/Sublime Text   | ``{file}:{line}``                                   |
+| Atom                | ``{file}:{line}``                                   |
 +---------------------+-----------------------------------------------------+
-| JetBrains Rider     | ``--line {line} {file}``                            |
+| JetBrains Rider     | ``{project} --line {line} {file}``                  |
 +---------------------+-----------------------------------------------------+
 | Visual Studio Code  | ``{project} --goto {file}:{line}:{col}``            |
 +---------------------+-----------------------------------------------------+
@@ -45,10 +47,19 @@ Some example Exec Flags for various editors include:
 +---------------------+-----------------------------------------------------+
 | Emacs               | ``emacs +{line}:{col} {file}``                      |
 +---------------------+-----------------------------------------------------+
+| Sublime Text        | ``{project} {file}:{line}:{column}``                |
++---------------------+-----------------------------------------------------+
 
-.. note:: For Visual Studio Code, you will have to point to the ``code.cmd``
+.. note:: For Visual Studio Code on Windows, you will have to point to the ``code.cmd``
           file. For Emacs, you can call ``emacsclient`` instead of ``emacs`` if
           you use the server mode.
+
+
+Using External Editor in Debugger
+---------------------------------
+
+Using external editor in debugger is determined by a separate option in settings.
+For details see :ref:`Script editor debug tools and options <doc_debugger_tools_and_options>`.
 
 Official editor plugins
 -----------------------

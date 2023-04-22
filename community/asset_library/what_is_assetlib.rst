@@ -15,7 +15,7 @@ as paid, commercial ones. In addition, often times such assets are distributed
 under non-free, proprietary licenses, limiting what you can do with them.
 
 The Asset Library is different - all assets are distributed free of charge, and under
-a host of open-source licenses (such as the MIT license, the GPL, and the Boost Software License).
+a host of open source licenses (such as the MIT license, the GPL, and the Boost Software License).
 This makes the AssetLib more similar to the software repositories of a Linux distribution.
 
 This set of pages will cover how to use the AssetLib (both from inside Godot, and on the
@@ -31,7 +31,7 @@ Types of assets
 Be aware that there are, broadly, two different types of assets you can post.
 
 * Assets labeled as "Templates", "Projects", or "Demos" appear under
-  the "Templates" tab in the Godot project manager. These assets are
+  the "Asset Library Projects" tab in the Godot Project Manager. These assets are
   standalone Godot projects that can run by themselves.
 
 * Other assets show up inside of the Godot editor under the "AssetLib"

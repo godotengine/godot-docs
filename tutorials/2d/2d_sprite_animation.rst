@@ -33,7 +33,7 @@ You can download the images here:
 Unzip the images and place them in your project folder. Set up your scene tree
 with the following nodes:
 
-.. image:: img/2d_animation_tree1.png
+.. image:: img/2d_animation_tree1.webp
 
 .. note:: The root node could also be :ref:`Area2D <class_Area2D>` or
           :ref:`RigidBody2D <class_RigidBody2D>`. The animation will still be
@@ -50,13 +50,13 @@ Now select the ``AnimatedSprite2D`` and in its *SpriteFrames* property, select
 Click on the new SpriteFrames resource and you'll see a new panel appear at the
 bottom of the editor window:
 
-.. image:: img/2d_animation_spriteframes.png
+.. image:: img/2d_animation_spriteframes.webp
 
 From the FileSystem dock on the left side, drag the 8 individual images into
 the center part of the SpriteFrames panel. On the left side, change the name
 of the animation from "default" to "run".
 
-.. image:: img/2d_animation_spriteframes_done.png
+.. image:: img/2d_animation_spriteframes_done.webp
 
 Back in the Inspector, check the box for the *Playing* property. You should
 now see the animation playing in the viewport. However, it is a bit slow. To
@@ -76,11 +76,11 @@ released.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
-    onready var _animated_sprite = $AnimatedSprite2D
+    @onready var _animated_sprite = $AnimatedSprite2D
 
-    func _process(delta):
+    func _process(_delta):
         if Input.is_action_pressed("ui_right"):
             _animated_sprite.play("run")
         else:
@@ -88,7 +88,9 @@ released.
 
  .. code-tab:: csharp
 
-    public class Character : KinematicBody2D
+    using Godot;
+
+    public partial class Character : CharacterBody2D
     {
         private AnimatedSprite2D _animatedSprite;
 
@@ -97,7 +99,7 @@ released.
             _animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
         }
 
-        public override _Process(float delta)
+        public override _Process(float _delta)
         {
             if (Input.IsActionPressed("ui_right"))
             {
@@ -125,25 +127,25 @@ Set up your scene tree the same way you did previously when using individual ima
 
 Click on the new SpriteFrames resource. This time, when the bottom panel appears, select "Add frames from a Sprite Sheet".
 
-.. image:: img/2d_animation_add_from_spritesheet.png
+.. image:: img/2d_animation_add_from_spritesheet.webp
 
 You will be prompted to open a file. Select your sprite sheet.
 
 A new window will open, showing your sprite sheet. The first thing you will need to do is to change the number of vertical and horizontal images in your sprite sheet. In this sprite sheet, we have four images horizontally and two images vertically.
 
-.. image:: img/2d_animation_spritesheet_select_rows.png
+.. image:: img/2d_animation_spritesheet_select_rows.webp
 
 Next, select the frames from the sprite sheet that you want to include in your animation. We will select the top four, then click "Add 4 frames" to create the animation.
 
-.. image:: img/2d_animation_spritesheet_selectframes.png
+.. image:: img/2d_animation_spritesheet_selectframes.webp
 
 You will now see your animation under the list of animations in the bottom panel. Double click on default to change the name of the animation to jump.
 
-.. image:: img/2d_animation_spritesheet_animation.png
+.. image:: img/2d_animation_spritesheet_animation.webp
 
-Finally, check Playing on the AnimatedSprite2D in the inspector to see your frog jump!
+Finally, check the play button on the SpriteFrames editor to see your frog jump!
 
-.. image:: img/2d_animation_play_spritesheet_animation.png
+.. image:: img/2d_animation_play_spritesheet_animation.webp
 
 
 Sprite sheet with AnimationPlayer
@@ -163,7 +165,7 @@ image into your project folder.
 Our goal is to display these images one after another in a loop. Start by
 setting up your scene tree:
 
-.. image:: img/2d_animation_tree2.png
+.. image:: img/2d_animation_tree2.webp
 
 .. note:: The root node could also be :ref:`Area2D <class_Area2D>` or
           :ref:`RigidBody2D <class_RigidBody2D>`. The animation will still be
@@ -215,11 +217,11 @@ released.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
-    onready var _animation_player = $AnimationPlayer
+    @onready var _animation_player = $AnimationPlayer
 
-    func _process(delta):
+    func _process(_delta):
         if Input.is_action_pressed("ui_right"):
             _animation_player.play("walk")
         else:
@@ -227,7 +229,9 @@ released.
 
  .. code-tab:: csharp
 
-    public class Character : KinematicBody2D
+    using Godot;
+
+    public partial class Character : CharacterBody2D
     {
         private AnimationPlayer _animationPlayer;
 
@@ -236,7 +240,7 @@ released.
             _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         }
 
-        public override void _Process(float delta)
+        public override void _Process(float _delta)
         {
             if (Input.IsActionPressed("ui_right"))
             {

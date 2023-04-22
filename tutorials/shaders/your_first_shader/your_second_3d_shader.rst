@@ -18,7 +18,7 @@ For a full list of these parameters see the :ref:`spatial shader
 A difference between the vertex function and a fragment function is that the
 vertex function runs per vertex and sets properties such as ``VERTEX``
 (position) and ``NORMAL``, while the fragment shader runs per pixel and, most
-importantly, sets the ``ALBEDO`` color of the :ref:`Mesh<class_MeshInstance>`.
+importantly, sets the ``ALBEDO`` color of the :ref:`MeshInstance3D<class_MeshInstance3D>`.
 
 Your first spatial fragment function
 ------------------------------------

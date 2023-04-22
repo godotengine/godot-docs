@@ -1,29 +1,31 @@
+:article_outdated: True
+
 .. _doc_using_multi_mesh_instance:
 
-Using MultiMeshInstance
------------------------
+Using MultiMeshInstance3D
+-------------------------
 
 Introduction
 ~~~~~~~~~~~~
 
-In a normal scenario, you would use a :ref:`MeshInstance <class_MeshInstance>`
+In a normal scenario, you would use a :ref:`MeshInstance3D <class_MeshInstance3D>`
 node to display a 3D mesh like a human model for the main character, but in some
 cases, you would like to create multiple instances of the same mesh in a scene.
 You *could* duplicate the same node multiple times and adjust the transforms
 manually. This may be a tedious process and the result may look mechanical.
 Also, this method is not conducive to rapid iterations.
-:ref:`MultiMeshInstance <class_MultiMeshInstance>` is one of the possible
+:ref:`MultiMeshInstance3D <class_MultiMeshInstance3D>` is one of the possible
 solutions to this problem.
 
-MultiMeshInstance, as the name suggests, creates multiple copies of a
+MultiMeshInstance3D, as the name suggests, creates multiple copies of a
 MeshInstance over a surface of a specific mesh. An example would be having a
 tree mesh populate a landscape mesh with trees of random scales and orientations.
 
 Setting up the nodes
 ~~~~~~~~~~~~~~~~~~~~
 
-The basic setup requires three nodes: the MultiMeshInstance node
-and two MeshInstance nodes.
+The basic setup requires three nodes: the MultiMeshInstance3D node
+and two MeshInstance3D nodes.
 
 One node is used as the target, the surface mesh that you want to place multiple meshes
 on. In the tree example, this would be the landscape.
@@ -31,14 +33,14 @@ on. In the tree example, this would be the landscape.
 The other node is used as the source, the mesh that you want to have duplicated.
 In the tree case, this would be the tree itself.
 
-In our example, we would use a :ref:`Spatial <class_Spatial>` node as the root node of
+In our example, we would use a :ref:`Node3D <class_Node3D>` node as the root node of
 the scene. Your scene tree would look like this:
 
 .. image:: img/multimesh_scene_tree.png
 
 .. note:: For simplicity's sake, this tutorial uses built-in primitives.
 
-Now you have everything ready. Select the MultiMeshInstance node and look at the
+Now you have everything ready. Select the MultiMeshInstance3D node and look at the
 toolbar, you should see an extra button called ``MultiMesh`` next to ``View``.
 Click it and select *Populate surface* in the dropdown menu. A new window titled
 *Populate MultiMesh* will pop up.

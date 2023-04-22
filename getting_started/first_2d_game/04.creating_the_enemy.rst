@@ -13,33 +13,33 @@ of independent mobs in the game.
 Node setup
 ~~~~~~~~~~
 
-Click Scene -> New Scene and add the following nodes:
+Click Scene -> New Scene from the top menu and add the following nodes:
 
 - :ref:`RigidBody2D <class_RigidBody2D>` (named ``Mob``)
 
    - :ref:`AnimatedSprite2D <class_AnimatedSprite2D>`
    - :ref:`CollisionShape2D <class_CollisionShape2D>`
-   - :ref:`VisibilityNotifier2D <class_VisibilityNotifier2D>`
+   - :ref:`VisibleOnScreenNotifier2D <class_VisibleOnScreenNotifier2D>`
 
 Don't forget to set the children so they can't be selected, like you did with
 the Player scene.
 
 In the :ref:`RigidBody2D <class_RigidBody2D>` properties, set ``Gravity Scale``
 to ``0``, so the mob will not fall downward. In addition, under the
-:ref:`CollisionObject2D <class_CollisionObject2D>` section, click the ``Mask`` property and uncheck the first
-box. This will ensure the mobs do not collide with each other.
+:ref:`CollisionObject2D <class_CollisionObject2D>` section, uncheck the ``1`` inside the ``Mask`` property.
+This will ensure the mobs do not collide with each other.
 
-.. image:: img/set_collision_mask.png
+.. image:: img/set_collision_mask.webp
 
 Set up the :ref:`AnimatedSprite2D <class_AnimatedSprite2D>` like you did for the
 player. This time, we have 3 animations: ``fly``, ``swim``, and ``walk``. There
 are two images for each animation in the art folder.
 
-Adjust the "Speed (FPS)" to ``3`` for all animations.
+The ``Animation Speed`` property has to be set for each individual animation. Adjust it to ``3`` for all 3 animations.
 
-.. image:: img/mob_animations.gif
+.. image:: img/mob_animations.webp
 
-Set the ``Playing`` property in the Inspector to "On".
+You can use the "Play Animation" buttons on the right of the ``Animation Speed`` input field to preview your animations.
 
 We'll select one of these animations randomly so that the mobs will have some
 variety.
@@ -65,7 +65,9 @@ Add a script to the ``Mob`` like this:
 
  .. code-tab:: csharp
 
-    public class Mob : RigidBody2D
+    using Godot;
+
+    public partial class Mob : RigidBody2D
     {
         // Don't forget to rebuild the project.
     }
@@ -92,7 +94,7 @@ Add a script to the ``Mob`` like this:
     public:
         void _init() {}
         void _ready();
-        void _on_VisibilityNotifier2D_screen_exited();
+        void _on_VisibleOnScreenNotifier2D_screen_exited();
 
         static void _register_methods();
     };
@@ -106,18 +108,16 @@ and randomly choose one of the three animation types:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        $AnimatedSprite2D.playing = true
-        var mob_types = $AnimatedSprite2D.frames.get_animation_names()
-        $AnimatedSprite2D.animation = mob_types[randi() % mob_types.size()]
+        var mob_types = $AnimatedSprite2D.sprite_frames.get_animation_names()
+        $AnimatedSprite2D.play(mob_types[randi() % mob_types.size()])
 
  .. code-tab:: csharp
 
     public override void _Ready()
     {
-        var animSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        animSprite2D.Playing = true;
-        string[] mobTypes = animSprite2D.Frames.GetAnimationNames();
-        animSprite2D.Animation = mobTypes[GD.Randi() % mobTypes.Length];
+        var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        string[] mobTypes = animatedSprite2D.SpriteFrames.GetAnimationNames();
+        animatedSprite2D.Play(mobTypes[GD.Randi() % mobTypes.Length]);
     }
 
  .. code-tab:: cpp
@@ -130,9 +130,8 @@ and randomly choose one of the three animation types:
 
     void Mob::_ready() {
         godot::Ref<godot::RandomNumberGenerator> random = godot::RandomNumberGenerator::_new();
-        random->randomize();
         _animated_sprite = get_node<godot::AnimatedSprite2D>("AnimatedSprite2D");
-        _animated_sprite->_set_playing(true);
+        _animated_sprite->set_playing(true);
         godot::PoolStringArray mob_types = _animated_sprite->get_sprite_frames()->get_animation_names();
         _animated_sprite->set_animation(mob_types[random->randi() % mob_types.size()]);
     }
@@ -145,23 +144,19 @@ We then need to pick a random number between ``0`` and ``2`` to select one of
 these names from the list (array indices start at ``0``). ``randi() % n``
 selects a random integer between ``0`` and ``n-1``.
 
-.. note:: You must use ``randomize()`` if you want your sequence of "random"
-            numbers to be different every time you run the scene. We're going to
-            use ``randomize()`` in our ``Main`` scene, so we won't need it here.
-
 The last piece is to make the mobs delete themselves when they leave the screen.
-Connect the ``screen_exited()`` signal of the ``VisibilityNotifier2D`` node and
+Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node and
 add this code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_VisibilityNotifier2D_screen_exited():
+    func _on_visible_on_screen_notifier_2d_screen_exited():
         queue_free()
 
  .. code-tab:: csharp
 
-    public void OnVisibilityNotifier2DScreenExited()
+    private void OnVisibleOnScreenNotifier2DScreenExited()
     {
         QueueFree();
     }
@@ -169,7 +164,7 @@ add this code:
  .. code-tab:: cpp
 
     // This code goes in `mob.cpp`.
-    void Mob::_on_VisibilityNotifier2D_screen_exited() {
+    void Mob::_on_VisibleOnScreenNotifier2D_screen_exited() {
         queue_free();
     }
 

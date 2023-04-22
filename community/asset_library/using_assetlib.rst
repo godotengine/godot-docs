@@ -109,10 +109,10 @@ In the editor
 .. note::
 
     The editor will display different categories of assets depending on whether
-    you're browsing the project manager's **Templates** tab or the editor's
+    you're browsing the Project Manager's **Asset Library Projects** tab or the editor's
     **AssetLib** tab.
 
-    The project manager's **Templates** tab will only display assets that are
+    The Project Manager's **Asset Library Projects** tab will only display assets that are
     standalone projects by themselves. This is denoted on the asset library with
     the *Templates*, *Demos* and *Projects* categories.
 
@@ -198,4 +198,4 @@ assets downloaded directly via Godot that we just covered.
 .. |image11| image:: img/assetlib_editor_installer.png
 .. |image12| image:: img/assetlib_editor_installer_error.png
 .. |image13| image:: img/assetlib_editor_installer_success.png
-.. |image14| image:: img/assetlib_editor_projects.png
+.. |image14| image:: img/assetlib_editor_projects.webp

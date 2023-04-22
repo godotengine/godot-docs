@@ -10,7 +10,7 @@ To do so, we need to add some functionality that we can't get from a built-in
 node, so we'll add a script. Click the ``Player`` node and click the "Attach
 Script" button:
 
-.. image:: img/add_script_button.png
+.. image:: img/add_script_button.webp
 
 In the script settings window, you can leave the default settings alone. Just
 click "Create":
@@ -18,7 +18,7 @@ click "Create":
 .. note:: If you're creating a C# script or other languages, select the language
           from the `language` drop down menu before hitting create.
 
-.. image:: img/attach_node_window.png
+.. image:: img/attach_node_window.webp
 
 .. note:: If this is your first time encountering GDScript, please read
           :ref:`doc_scripting` before continuing.
@@ -30,15 +30,14 @@ Start by declaring the member variables this object will need:
 
     extends Area2D
 
-    export var speed = 400 # How fast the player will move (pixels/sec).
+    @export var speed = 400 # How fast the player will move (pixels/sec).
     var screen_size # Size of the game window.
 
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Player : Area2D
+    public partial class Player : Area2D
     {
         [Export]
         public int Speed = 400; // How fast the player will move (pixels/sec).
@@ -76,7 +75,7 @@ Start by declaring the member variables this object will need:
         void _ready();
         void _process(const double p_delta);
         void start(const godot::Vector2 p_position);
-        void _on_Player_body_entered(godot::Node2D *_body);
+        void _on_body_entered(godot::Node2D *_body);
 
         static void _register_methods();
     };
@@ -90,13 +89,20 @@ node and you'll see the property now appears in the "Script Variables" section
 of the Inspector. Remember, if you change the value here, it will override the
 value written in the script.
 
-.. warning:: If you're using C#, you need to (re)build the project assemblies
-             whenever you want to see new export variables or signals. This
-             build can be manually triggered by clicking the word "Mono" at the
-             bottom of the editor window to reveal the Mono Panel, then clicking
-             the "Build Project" button.
+.. warning::
 
-.. image:: img/export_variable.png
+    If you're using C#, you need to (re)build the project assemblies
+    whenever you want to see new export variables or signals. This
+    build can be manually triggered by clicking the "Build" button at
+    the top right of the editor.
+
+    .. image:: img/build_dotnet.webp
+
+    A manual build can also be triggered from the MSBuild Panel. Click
+    the word "MSBuild" at the bottom of the editor window to reveal the
+    MSBuild Panel, then click the "Build" button.
+
+.. image:: img/export_variable.webp
 
 The ``_ready()`` function is called when a node enters the scene tree, which is
 a good time to find the size of the game window:
@@ -145,13 +151,19 @@ Click on *Project -> Project Settings* to open the project settings window and
 click on the *Input Map* tab at the top. Type "move_right" in the top bar and
 click the "Add" button to add the ``move_right`` action.
 
-.. image:: img/input-mapping-add-action.png
+.. image:: img/input-mapping-add-action.webp
 
-We need to assign a key to this action. Click the "+" icon on the right, then
-click the "Key" option in the drop-down menu. A dialog asks you to type in the
-desired key. Press the right arrow on your keyboard and click "Ok".
+We need to assign a key to this action. Click the "+" icon on the right, to
+open the event manager window.
 
-.. image:: img/input-mapping-add-key.png
+.. image:: img/input-mapping-add-key.webp
+
+The "Listening for Input..." field should automatically be selected.
+Press the "right" key on your keyboard, and the menu should look like this now.
+
+.. image:: img/input-mapping-event-configuration.webp
+
+Select the "ok" button. The "right" key is now associated with the ``move_right`` action.
 
 Repeat these steps to add three more mappings:
 
@@ -161,7 +173,7 @@ Repeat these steps to add three more mappings:
 
 Your input map tab should look like this:
 
-.. image:: img/input-mapping-completed.png
+.. image:: img/input-mapping-completed.webp
 
 Click the "Close" button to close the project settings.
 
@@ -195,40 +207,40 @@ which returns ``true`` if it's pressed or ``false`` if it isn't.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         var velocity = Vector2.Zero; // The player's movement vector.
 
         if (Input.IsActionPressed("move_right"))
         {
-            velocity.x += 1;
+            velocity.X += 1;
         }
 
         if (Input.IsActionPressed("move_left"))
         {
-            velocity.x -= 1;
+            velocity.X -= 1;
         }
 
         if (Input.IsActionPressed("move_down"))
         {
-            velocity.y += 1;
+            velocity.Y += 1;
         }
 
         if (Input.IsActionPressed("move_up"))
         {
-            velocity.y -= 1;
+            velocity.Y -= 1;
         }
 
-        var animatedSprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        var animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
         if (velocity.Length() > 0)
         {
             velocity = velocity.Normalized() * Speed;
-            animatedSprite.Play();
+            animatedSprite2D.Play();
         }
         else
         {
-            animatedSprite.Stop();
+            animatedSprite2D.Stop();
         }
     }
 
@@ -270,7 +282,7 @@ We also check whether the player is moving so we can call ``play()`` or
 .. tip:: ``$`` is shorthand for ``get_node()``. So in the code above,
          ``$AnimatedSprite2D.play()`` is the same as
          ``get_node("AnimatedSprite2D").play()``.
-         
+
          In GDScript, ``$`` returns the node at the relative path from the
          current node, or returns ``null`` if the node is not found. Since
          AnimatedSprite2D is a child of the current node, we can use
@@ -290,10 +302,10 @@ the ``_process`` function (make sure it's not indented under the `else`):
 
  .. code-tab:: csharp
 
-        Position += velocity * delta;
+        Position += velocity * (float)delta;
         Position = new Vector2(
-            x: Mathf.Clamp(Position.x, 0, ScreenSize.x),
-            y: Mathf.Clamp(Position.y, 0, ScreenSize.y)
+            x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
+            y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
         );
 
  .. code-tab:: cpp
@@ -345,23 +357,23 @@ movement. Let's place this code at the end of the ``_process()`` function:
 
  .. code-tab:: csharp
 
-        if (velocity.x != 0)
+        if (velocity.X != 0)
         {
             animatedSprite2D.Animation = "walk";
             animatedSprite2D.FlipV = false;
             // See the note below about boolean assignment.
-            animatedSprite2D.FlipH = velocity.x < 0;
+            animatedSprite2D.FlipH = velocity.X < 0;
         }
-        else if (velocity.y != 0)
+        else if (velocity.Y != 0)
         {
             animatedSprite2D.Animation = "up";
-            animatedSprite2D.FlipV = velocity.y > 0;
+            animatedSprite2D.FlipV = velocity.Y > 0;
         }
 
  .. code-tab:: cpp
 
         if (velocity.x != 0) {
-            _animated_sprite->set_animation("right");
+            _animated_sprite->set_animation("walk");
             _animated_sprite->set_flip_v(false);
             // See the note below about boolean assignment.
             _animated_sprite->set_flip_h(velocity.x < 0);
@@ -385,7 +397,7 @@ movement. Let's place this code at the end of the ``_process()`` function:
 
            .. code-tab:: csharp
 
-             if (velocity.x < 0)
+             if (velocity.X < 0)
              {
                  animatedSprite2D.FlipH = true;
              }
@@ -426,7 +438,7 @@ enemies yet! That's OK, because we're going to use Godot's *signal*
 functionality to make it work.
 
 Add the following at the top of the script. If you're using GDScript, add it after
-``extends Area2D``. If you're using C#, add it after ``public class Player : Area2D {``:
+``extends Area2D``. If you're using C#, add it after ``public partial class Player : Area2D``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -438,7 +450,7 @@ Add the following at the top of the script. If you're using GDScript, add it aft
     // Don't forget to rebuild the project so the editor knows about the new signal.
 
     [Signal]
-    public delegate void Hit();
+    public delegate void HitEventHandler();
 
  .. code-tab:: cpp
 
@@ -449,7 +461,7 @@ Add the following at the top of the script. If you're using GDScript, add it aft
         godot::register_method("_ready", &Player::_ready);
         godot::register_method("_process", &Player::_process);
         godot::register_method("start", &Player::start);
-        godot::register_method("_on_Player_body_entered", &Player::_on_Player_body_entered);
+        godot::register_method("_on_body_entered", &Player::_on_body_entered);
         godot::register_property("speed", &Player::speed, (real_t)400.0);
         // This below line is the signal.
         godot::register_signal<Player>("hit", godot::Dictionary());
@@ -460,16 +472,16 @@ This defines a custom signal called "hit" that we will have our player emit
 collision. Select the ``Player`` node and click the "Node" tab next to the
 Inspector tab to see the list of signals the player can emit:
 
-.. image:: img/player_signals.png
+.. image:: img/player_signals.webp
 
 Notice our custom "hit" signal is there as well! Since our enemies are going to
-be ``RigidBody2D`` nodes, we want the ``body_entered(body: Node)`` signal. This
+be ``RigidBody2D`` nodes, we want the ``body_entered(body: Node2D)`` signal. This
 signal will be emitted when a body contacts the player. Click "Connect.." and
 the "Connect a Signal" window appears. We don't need to change any of these
 settings so click "Connect" again. Godot will automatically create a function in
 your player's script.
 
-.. image:: img/player_signal_connection.png
+.. image:: img/player_signal_connection.webp
 
 Note the green icon indicating that a signal is connected to this function. Add
 this code to the function:
@@ -477,26 +489,26 @@ this code to the function:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Player_body_entered(body):
+    func _on_body_entered(body):
         hide() # Player disappears after being hit.
-        emit_signal("hit")
+        hit.emit()
         # Must be deferred as we can't change physics properties on a physics callback.
         $CollisionShape2D.set_deferred("disabled", true)
 
  .. code-tab:: csharp
 
-    public void OnPlayerBodyEntered(PhysicsBody2D body)
+    private void OnBodyEntered(PhysicsBody2D body)
     {
         Hide(); // Player disappears after being hit.
-        EmitSignal(nameof(Hit));
+        EmitSignal(SignalName.Hit);
         // Must be deferred as we can't change physics properties on a physics callback.
-        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred("disabled", true);
+        GetNode<CollisionShape2D>("CollisionShape2D").SetDeferred(CollisionShape2D.PropertyName.Disabled, true);
     }
 
  .. code-tab:: cpp
 
     // This code goes in `player.cpp`.
-    void Player::_on_Player_body_entered(godot::Node2D *_body) {
+    void Player::_on_body_entered(godot::Node2D *_body) {
         hide(); // Player disappears after being hit.
         emit_signal("hit");
         // Must be deferred as we can't change physics properties on a physics callback.
@@ -525,9 +537,9 @@ starting a new game.
 
  .. code-tab:: csharp
 
-    public void Start(Vector2 pos)
+    public void Start(Vector2 position)
     {
-        Position = pos;
+        Position = position;
         Show();
         GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
     }

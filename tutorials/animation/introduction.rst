@@ -27,7 +27,7 @@ The AnimationPlayer node type is the data container for your animations.
 One AnimationPlayer node can hold multiple animations, which can
 automatically transition to one another.
 
-.. figure:: img/animation_create_animationplayer.png
+.. figure:: img/animation_create_animationplayer.webp
    :alt: The AnimationPlayer node
 
    The AnimationPlayer node
@@ -35,14 +35,14 @@ automatically transition to one another.
 After you create an AnimationPlayer node, click on it to
 open the Animation Panel at the bottom of the viewport.
 
-.. figure:: img/animation_animation_panel.png
+.. figure:: img/animation_animation_panel.webp
    :alt: The animation panel position
 
    The animation panel position
 
 The animation panel consists of four parts:
 
-.. figure:: img/animation_animation_panel_overview.png
+.. figure:: img/animation_animation_panel_overview.webp
    :alt: The animation panel
 
    The animation panel
@@ -128,14 +128,34 @@ The sprite holds an image texture. For this tutorial, select the Sprite2D node,
 click Texture in the Inspector, and then click Load. Select the default Godot
 icon for the sprite's texture.
 
+Adding an animation
+~~~~~~~~~~~~~~~~~~~
+
 Select the AnimationPlayer node and click the "Animation" button in the
 animation editor. From the list, select "New" (|Add Animation|) to add a new
 animation. Enter a name for the animation in the dialog box.
 
-.. figure:: img/animation_create_new_animation.png
+.. figure:: img/animation_create_new_animation.webp
    :alt: Add a new animation
 
    Add a new animation
+
+Manage an animation libraries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For reusability, the animation is registered in a list in the animation library resource. If you add an animation to AnimationPlayer without specifying any particular settings, the animation will be registered in the [Global] animation library that AnimationPlayer has by default.
+
+.. figure:: img/animation_library.webp
+   :alt: Manage animations
+
+   Manage animations
+
+If there are multiple animation libraries and you try to add an animation, a dialog box will appear with options.
+
+.. figure:: img/animation_library_dialog.webp
+   :alt: Add a new animation with library option
+
+   Add a new animation with library option
 
 Adding a track
 ~~~~~~~~~~~~~~
@@ -160,7 +180,7 @@ create it for us. Click **Create**.
 Godot will create a new track and insert our first keyframe at the beginning of
 the timeline:
 
-.. figure:: img/animation_track.png
+.. figure:: img/animation_track.webp
    :alt: The sprite track
 
    The sprite track
@@ -223,7 +243,7 @@ Track settings
 Each track has a settings panel at the end, where you can set its update
 mode, track interpolation, and loop mode.
 
-.. figure:: img/animation_track_settings.png
+.. figure:: img/animation_track_settings.webp
    :alt: Track settings
 
    Track settings
@@ -233,17 +253,13 @@ values. This can be:
 
 -  **Continuous:** Update the property on each frame
 -  **Discrete:** Only update the property on keyframes
--  **Trigger:** Only update the property on keyframes or triggers.
-   Triggers are a type of keyframe used by the
-   ``current_animation`` property of a :ref:`class_AnimationPlayer`,
-   and Animation Playback tracks.
 -  **Capture:** if the first keyframe's time is greater than ``0.0``, the
    current value of the property will be remembered and
    will be blended with the first animation key. For example, you
    could use the Capture mode to move a node that's located anywhere
    to a specific location.
 
-.. figure:: img/animation_track_rate.png
+.. figure:: img/animation_track_rate.webp
    :alt: Track mode
 
    Track mode
@@ -259,8 +275,10 @@ keyframes. These interpolation modes are supported:
    the two keyframes
 -  Cubic: Set the value based on a cubic function calculation between
    the two keyframes
+-  Linear Angle (Only appears in rotation property): Linear mode with shortest path rotation
+-  Cubic Angle (Only appears in rotation property): Cubic mode with shortest path rotation
 
-.. figure:: img/animation_track_interpolation.png
+.. figure:: img/animation_track_interpolation.webp
    :alt: Track interpolation
 
    Track interpolation
@@ -273,7 +291,7 @@ pace, resulting in a more robotic effect.
 Godot supports two loop modes, which affect the animation when it's set to
 loop:
 
-.. figure:: img/animation_track_loop_modes.png
+.. figure:: img/animation_track_loop_modes.webp
    :alt: Loop modes
 
    Loop modes
@@ -296,7 +314,7 @@ display a small keyframe button in the *Inspector* for each of the sprite's
 properties. Click on one of these buttons to add a track and keyframe to
 the current animation.
 
-.. figure:: img/animation_properties_keyframe.png
+.. figure:: img/animation_properties_keyframe.webp
    :alt: Keyframes for other properties
 
    Keyframes for other properties
@@ -307,7 +325,7 @@ Edit keyframes
 You can click on a keyframe in the animation timeline to display and
 edit its value in the *Inspector*.
 
-.. figure:: img/animation_keyframe_editor_key.png
+.. figure:: img/animation_keyframe_editor_key.webp
    :alt: Keyframe editor editing a key
 
    Keyframe editor editing a key
@@ -341,9 +359,11 @@ where they were.
 
 If you want to reset the tracks in the editor, select the AnimationPlayer node,
 open the **Animation** bottom panel then choose **Apply Reset** in the
-animation editor's **Animation** dropdown menu.
+animation editor's **Edit** dropdown menu.
 
 When adding tracks on new animations, the editor will ask you to automatically
 create a RESET track when using the keyframe icon next to a property in the inspector.
 This does not apply on tracks created with Godot versions prior to 3.4,
 as the animation reset track feature was added in 3.4.
+
+.. note:: RESET tracks is also used as a reference value for blending. See also `For better blending <../animation/animation_tree.html#for-better-blending>`__.

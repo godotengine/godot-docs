@@ -28,7 +28,7 @@ your game in the editor, which can help you in debugging your game.
 
 You can find these options in the **Debug** editor menu.
 
-.. image:: img/overview_debug.png
+.. image:: img/overview_debug.webp
 
 Here are the descriptions of the options:
 
@@ -72,6 +72,8 @@ Sync Script Changes
 Any script that is saved will be reloaded on the running game. When used
 remotely on a device, this is more efficient with the network filesystem.
 
+.. _doc_debugger_tools_and_options:
+
 Script editor debug tools and options
 -------------------------------------
 
@@ -79,7 +81,7 @@ The script editor has its own set of debug tools for use with breakpoints and
 two options. The breakpoint tools can also be found in the **Debugger** tab
 of the debugger.
 
-.. image:: img/overview_script_editor.png
+.. image:: img/overview_script_editor.webp
 
 The **Break** button causes a break in the script like a breakpoint would.
 **Continue** makes the game continue after pausing at a breakpoint.
@@ -87,8 +89,9 @@ The **Break** button causes a break in the script like a breakpoint would.
 a function if possible. Otherwise, it does the same thing as **Step Over**.
 
 The **Keep Debugger Open** option keeps the debugger open after a scene
-has been closed. And the **Debug with External Editor** option lets you
-debug your game with an external editor.
+has been closed.
+The **Debug with External Editor** option lets you debug your game with an external editor.
+This option is also accessible in **Editor Settings > Debugger**.
 
 .. warning::
 
@@ -128,7 +131,7 @@ When running a game in the editor two options appear at the top of the **Scene**
 dock, **Remote** and **Local**. While using **Remote** you can inspect or change
 the nodes' parameters in the running project.
 
-.. image:: img/overview_remote.png
+.. image:: img/overview_remote.webp
 
 .. note:: Some editor settings related to debugging can be found inside
           the **Editor Settings**, under the **Network > Debug** and **Debugger** sections.

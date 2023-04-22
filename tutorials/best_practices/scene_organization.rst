@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_scene_organization:
 
 Scene organization
@@ -57,10 +59,10 @@ initialize it:
      .. code-tab:: gdscript GDScript
 
        # Parent
-       $Child.connect("signal_name", object_with_method, "method_on_the_object")
+       $Child.signal_name.connect(method_on_the_object)
 
        # Child
-       emit_signal("signal_name") # Triggers parent-defined behavior.
+       signal_name.emit() # Triggers parent-defined behavior.
 
      .. code-tab:: csharp
 
@@ -89,7 +91,7 @@ initialize it:
        // Child
        Call(MethodName); // Call parent-defined method (which child must own).
 
-3. Initialize a :ref:`FuncRef <class_FuncRef>` property. Safer than a method
+3. Initialize a :ref:`Callable <class_Callable>` property. Safer than a method
    as ownership of the method is unnecessary. Used to start behavior.
 
    .. tabs::
@@ -179,7 +181,7 @@ in another context without any extra changes to its API.
       // Parent
       GetNode<Left>("Left").Target = GetNode("Right/Receiver");
 
-      public class Left : Node
+      public partial class Left : Node
       {
           public Node Target = null;
 
@@ -189,7 +191,7 @@ in another context without any extra changes to its API.
           }
       }
 
-      public class Right : Node
+      public partial class Right : Node
       {
           public Node Receiver = null;
 
@@ -217,7 +219,7 @@ in another context without any extra changes to its API.
 
   To avoid creating and maintaining such documentation, one converts the
   dependent node ("child" above) into a tool script that implements
-  :ref:`_get_configuration_warning() <class_Node_method__get_configuration_warning>`.
+  ``_get_configuration_warning()``.
   Returning a non-empty string from it will make the Scene dock generate a
   warning icon with the string as a tooltip by the node. This is the same icon
   that appears for nodes such as the
@@ -274,7 +276,7 @@ of Main. In addition, one will need a primary GUI for their game that manages
 the various menus and widgets the project needs.
 
     - Node "Main" (main.gd)
-        - Node2D/Spatial "World" (game_world.gd)
+        - Node2D/Node3D "World" (game_world.gd)
         - Control "GUI" (gui.gd)
 
 When changing levels, one can then swap out the children of the "World" node.
@@ -294,7 +296,7 @@ If one has a system that...
 
   For smaller games, a simpler alternative with less control would be to have
   a "Game" singleton that simply calls the
-  :ref:`SceneTree.change_scene() <class_SceneTree_method_change_scene>` method
+  :ref:`SceneTree.change_scene_to_file() <class_SceneTree_method_change_scene_to_file>` method
   to swap out the main scene's content. This structure more or less keeps
   the "World" as the main game node.
 
@@ -319,7 +321,7 @@ own place in the hierarchy as a sibling or some other relation.
 
   In some cases, one needs these separated nodes to *also* position themselves
   relative to each other. One can use the
-  :ref:`RemoteTransform <class_RemoteTransform>` /
+  :ref:`RemoteTransform <class_RemoteTransform3D>` /
   :ref:`RemoteTransform2D <class_RemoteTransform2D>` nodes for this purpose.
   They will allow a target node to conditionally inherit selected transform
   elements from the Remote\* node. To assign the ``target``
@@ -370,9 +372,9 @@ own place in the hierarchy as a sibling or some other relation.
   1. The **declarative** solution: place a :ref:`Node <class_Node>` in between
      them. As nodes with no transform, Nodes will not pass along such
      information to their children.
-  2. The **imperative** solution: Use the ``set_as_toplevel`` setter for the
-     :ref:`CanvasItem <class_CanvasItem_method_set_as_toplevel>` or
-     :ref:`Spatial <class_Spatial_method_set_as_toplevel>` node. This will make
+  2. The **imperative** solution: Use the ``top_level`` property for the
+     :ref:`CanvasItem <class_CanvasItem_property_top_level>` or
+     :ref:`Node3D <class_Node3D_property_top_level>` node. This will make
      the node ignore its inherited transform.
 
 .. note::

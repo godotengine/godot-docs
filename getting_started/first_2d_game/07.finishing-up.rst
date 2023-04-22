@@ -15,7 +15,7 @@ The default gray background is not very appealing, so let's change its color.
 One way to do this is to use a :ref:`ColorRect <class_ColorRect>` node. Make it
 the first node under ``Main`` so that it will be drawn behind the other nodes.
 ``ColorRect`` only has one property: ``Color``. Choose a color you like and
-select "Layout" -> "Full Rect" so that it covers the screen.
+select "Layout" -> "Anchors Preset" -> "Full Rect" either in the toolbar at the top of the viewport or in the inspector so that it covers the screen.
 
 You could also add a background image, if you have one, by using a
 ``TextureRect`` node instead.
@@ -53,13 +53,15 @@ tab. In the same way you created the movement input actions, create a new
 input action called ``start_game`` and add a key mapping for the :kbd:`Enter`
 key.
 
-In the ``HUD`` scene, select the ``StartButton`` and find its *Shortcut*
-property in the Inspector. Select "New Shortcut" and click on the "Shortcut"
-item. A second *Shortcut* property will appear. Select "New InputEventAction"
-and click the new "InputEventAction". Finally, in the *Action* property, type
-the name ``start_game``.
+In the ``HUD`` scene, select the ``StartButton`` and find its **Shortcut**
+property in the Inspector. Create a new :ref:`Shortcut <class_Shortcut>` resource,
+open the **Events** array and add a new array element to it.
 
-.. image:: img/start_button_shortcut.png
+.. image:: img/start_button_shortcut.webp
+
+Create a new :ref:`InputEventAction <class_InputEventAction>` and name it ``start_game``.
+
+.. image:: img/start_button_shortcut2.webp
 
 Now when the start button appears, you can either click it or press :kbd:`Enter`
 to start the game.

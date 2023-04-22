@@ -61,7 +61,7 @@ Here's the node setup for the coin:
 
 To detect the overlap, we'll connect the appropriate signal on the Area2d. Which
 signal to use depends on the player's node type. If the player is another area,
-use ``area_entered``. However, let's assume our player is a ``KinematicBody2D``
+use ``area_entered``. However, let's assume our player is a ``CharacterBody2D``
 (and therefore a ``CollisionObject2D`` type), so we'll connect the
 ``body_entered`` signal.
 
@@ -78,7 +78,9 @@ use ``area_entered``. However, let's assume our player is a ``KinematicBody2D``
 
  .. code-tab:: csharp
 
-    public class Coin : Area2D
+    using Godot;
+
+    public partial class Coin : Area2D
     {
 
         public void OnCoinBodyEntered(PhysicsBody2D body)

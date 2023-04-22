@@ -97,8 +97,8 @@ The individual components of the vector can be accessed directly by name.
     var a = new Vector2(2, 5);
     // create a vector and assign x and y manually
     var b = new Vector2();
-    b.x = 3;
-    b.y = 1;
+    b.X = 3;
+    b.Y = 1;
 
 Adding vectors
 --------------
@@ -222,8 +222,8 @@ The surface normal has a value of ``(0, -1)`` because this is a horizontal
 surface. When the ball collides, we take its remaining motion (the amount left
 over when it hits the surface) and reflect it using the normal. In Godot, the
 :ref:`Vector2 <class_Vector2>` class has a ``bounce()`` method to handle this.
-Here is a GDScript example of the diagram above using a :ref:`KinematicBody2D
-<class_KinematicBody2D>`:
+Here is a GDScript example of the diagram above using a :ref:`CharacterBody2D
+<class_CharacterBody2D>`:
 
 
 .. tabs::
@@ -345,9 +345,9 @@ The cross product is calculated like this:
  .. code-tab:: csharp
 
     var c = new Vector3();
-    c.x = (a.y * b.z) - (a.z * b.y);
-    c.y = (a.z * b.x) - (a.x * b.z);
-    c.z = (a.x * b.y) - (a.y * b.x);
+    c.X = (a.Y * b.Z) - (a.Z * b.Y);
+    c.Y = (a.Z * b.X) - (a.X * b.Z);
+    c.Z = (a.X * b.Y) - (a.Y * b.X);
 
 
 

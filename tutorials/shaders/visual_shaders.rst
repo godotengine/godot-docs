@@ -3,9 +3,7 @@
 Using VisualShaders
 ===================
 
-Just as VisualScript is an alternative for users that prefer a graphical
-approach to coding, VisualShaders are the visual alternative for creating
-shaders.
+VisualShaders are the visual alternative for creating shaders.
 
 As shaders are inherently linked to visuals, the graph-based approach with
 previews of textures, materials, etc. offers a lot of additional convenience
@@ -154,8 +152,3 @@ The ``Switch`` node returns a vector if the boolean condition is ``true`` or
 boolean, all components of the vector should be above zero.
 
 .. image:: img/vs_switch.png
-
-.. note::
-
-    The ``Switch`` node is only available on the GLES3 backed. If you are
-    targeting GLES2 devices, you cannot use ``switch`` statements.

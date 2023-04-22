@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_scenes_versus_scripts:
 
 When to use scenes versus scripts
@@ -23,38 +25,37 @@ But, choosing which one to use can be a dilemma. Creating script instances
 is identical to creating in-engine classes whereas handling scenes requires
 a change in API:
 
-    .. tabs::
-      .. code-tab:: gdscript GDScript
+.. tabs::
+  .. code-tab:: gdscript GDScript
 
-        const MyNode = preload("my_node.gd")
-        const MyScene = preload("my_scene.tscn")
-        var node = Node.new()
-        var my_node = MyNode.new() # Same method call
-        var my_scene = MyScene.instance() # Different method call
-        var my_inherited_scene = MyScene.instance(PackedScene.GEN_EDIT_STATE_MAIN) # Create scene inheriting from MyScene
+    const MyNode = preload("my_node.gd")
+    const MyScene = preload("my_scene.tscn")
+    var node = Node.new()
+    var my_node = MyNode.new() # Same method call
+    var my_scene = MyScene.instantiate() # Different method call
+    var my_inherited_scene = MyScene.instantiate(PackedScene.GEN_EDIT_STATE_MAIN) # Create scene inheriting from MyScene
 
-      .. code-tab:: csharp
+  .. code-tab:: csharp
 
-        using System;
-        using Godot;
+    using Godot;
 
-        public class Game : Node
+    public partial class Game : Node
+    {
+        public static CSharpScript MyNode { get; } = GD.Load<CSharpScript>("MyNode.cs");
+        public static PackedScene MyScene { get; } = GD.Load<PackedScene>("MyScene.tscn");
+        private Node _node;
+        private Node _myNode;
+        private Node _myScene;
+        private Node _myInheritedScene;
+
+        public Game()
         {
-            public readonly Script MyNodeScr = (Script)ResourceLoader.Load("MyNode.cs");
-            public readonly PackedScene MySceneScn = (PackedScene)ResourceLoader.Load("MyScene.tscn");
-            public Node ANode;
-            public Node MyNode;
-            public Node MyScene;
-            public Node MyInheritedScene;
-
-            public Game()
-            {
-                ANode = new Node();
-                MyNode = new MyNode(); // Same syntax
-                MyScene = MySceneScn.Instance(); // Different. Instantiated from a PackedScene
-                MyInheritedScene = MySceneScn.Instance(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
-            }
+            _node = new Node();
+            _myNode = MyNode.New().As<Node>();
+            _myScene = MyScene.Instantiate(); // Different. Instantiated from a PackedScene
+            _myInheritedScene = MyScene.Instantiate(PackedScene.GenEditState.Main); // Create scene inheriting from MyScene
         }
+    }
 
 Also, scripts will operate a little slower than scenes due to the
 speed differences between engine and script code. The larger and more complex
@@ -161,10 +162,9 @@ with it, and finally adds it as a child of the ``Main`` node:
 
   .. code-tab:: csharp
 
-    using System;
     using Godot;
 
-    public class Main : Resource
+    public partial class Main : Resource
     {
         public Node Child { get; set; }
 
@@ -172,7 +172,7 @@ with it, and finally adds it as a child of the ``Main`` node:
         {
             Child = new Node();
             Child.Name = "Child";
-            Child.Script = ResourceLoader.Load<Script>("child.gd");
+            Child.SetScript(GD.Load<Script>("child.gd"));
             Child.Owner = this;
             AddChild(Child);
         }
@@ -209,12 +209,29 @@ In the end, the best approach is to consider the following:
     .. code-tab:: gdscript GDScript
 
       # game.gd
-      class_name Game # extends Reference, so it won't show up in the node creation dialog
-      extends Reference
+      class_name Game # extends RefCounted, so it won't show up in the node creation dialog
+      extends RefCounted
 
       const MyScene = preload("my_scene.tscn")
 
       # main.gd
       extends Node
       func _ready():
-          add_child(Game.MyScene.instance())
+          add_child(Game.MyScene.instantiate())
+
+    .. code-tab:: csharp
+
+      // Game.cs
+      public partial class Game : RefCounted
+      {
+          public static PackedScene MyScene { get; } = GD.Load<PackedScene>("MyScene.tscn");
+      }
+      
+      // Main.cs
+      public partial class Main : Node
+      {
+          public override void _Ready()
+          {
+              AddChild(Game.MyScene.Instantiate());
+          }
+      }

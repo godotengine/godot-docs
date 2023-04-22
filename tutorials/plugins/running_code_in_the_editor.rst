@@ -36,21 +36,21 @@ use cases:
 How to use it
 -------------
 
-To turn a script into a tool, add the keyword ``@tool`` at the top of your code.
+To turn a script into a tool, add the ``@tool`` annotation at the top of your code.
 
-To check if you are currently in the editor, use: ``Engine.editor_hint``.
+To check if you are currently in the editor, use: ``Engine.is_editor_hint()``.
 
 For example, if you want to execute some code only in the editor, use:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    if Engine.editor_hint:
+    if Engine.is_editor_hint():
         # Code to execute when in editor.
 
  .. code-tab:: csharp
 
-    if (Engine.EditorHint)
+    if (Engine.IsEditorHint())
     {
         // Code to execute when in editor.
     }
@@ -61,12 +61,12 @@ same statement:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    if not Engine.editor_hint:
+    if not Engine.is_editor_hint():
         # Code to execute when in game.
 
  .. code-tab:: csharp
 
-    if (!Engine.EditorHint)
+    if (!Engine.IsEditorHint())
     {
         // Code to execute when in game.
     }
@@ -80,24 +80,24 @@ Here is how a ``_process()`` function might look for you:
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        if Engine.editor_hint:
+        if Engine.is_editor_hint():
             # Code to execute in editor.
 
-        if not Engine.editor_hint:
+        if not Engine.is_editor_hint():
             # Code to execute in game.
 
         # Code to execute both in editor and in game.
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        if (Engine.EditorHint)
+        if (Engine.IsEditorHint())
         {
             // Code to execute in editor.
         }
 
-        if (!Engine.EditorHint)
+        if (!Engine.IsEditorHint())
         {
             // Code to execute in game.
         }
@@ -124,19 +124,18 @@ and open a script, and change it to this:
     extends Sprite2D
 
     func _process(delta):
-        rotation_degrees += 180 * delta
+        rotation += PI * delta
 
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     [Tool]
-    public class MySprite : Sprite2D
+    public partial class MySprite : Sprite2D
     {
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
-            RotationDegrees += 180 * delta;
+            Rotation += Mathf.Pi * (float)delta;
         }
     }
 
@@ -156,22 +155,22 @@ look like this:
  .. code-tab:: gdscript GDScript
 
     func _process(delta):
-        if Engine.editor_hint:
-            rotation_degrees += 180 * delta
+        if Engine.is_editor_hint():
+            rotation += PI * delta
         else:
-            rotation_degrees -= 180 * delta
+            rotation -= PI * delta
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        if (Engine.EditorHint)
+        if (Engine.IsEditorHint())
         {
-            RotationDegrees += 180 * delta;
+            Rotation += Mathf.Pi * (float)delta;
         }
         else
         {
-            RotationDegrees -= 180 * delta;
+            Rotation -= Mathf.Pi * (float)delta;
         }
     }
 
@@ -192,44 +191,40 @@ Add and export a variable speed to the script. The function set_speed after
     extends Sprite2D
 
 
-    export var speed = 1 setget set_speed
-
-
-    # Update speed and reset the rotation.
-    func set_speed(new_speed):
-    	speed = new_speed
-    	rotation_degrees = 0
+    @export var speed = 1:
+        # Update speed and reset the rotation.
+        set(new_speed):
+            speed = new_speed
+            rotation = 0
 
 
     func _process(delta):
-    	rotation_degrees += 180 * delta * speed
+    	rotation += PI * delta * speed
 
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
     [Tool]
-    public class MySprite : Sprite2D
+    public partial class MySprite : Sprite2D
     {
-        private float speed = 1;
+        private float _speed = 1;
 
         [Export]
-        public float Speed {
-            get => speed;
-            set => SetSpeed(value);
+        public float Speed
+        {
+            get => _speed;
+            set
+            {
+                // Update speed and reset the rotation.
+                _speed = value;
+                Rotation = 0;
+            }
         }
 
-        // Update speed and reset the rotation.
-        private void SetSpeed(float newSpeed)
+        public override void _Process(double delta)
         {
-            speed = newSpeed;
-            RotationDegrees = 0;
-        }
-
-        public override void _Process(float delta)
-        {
-            RotationDegrees += 180 * delta * speed;
+            Rotation += Mathf.Pi * (float)delta * speed;
         }
     }
 
@@ -238,7 +233,7 @@ Add and export a variable speed to the script. The function set_speed after
     Code from other nodes doesn't run in the editor. Your access to other nodes
     is limited. You can access the tree and nodes, and their default properties,
     but you can't access user variables. If you want to do so, other nodes have
-    to run in the editor too. AutoLoad nodes cannot be accessed in the editor at
+    to run in the editor too. Autoload nodes cannot be accessed in the editor at
     all.
 
 Reporting node configuration warnings
@@ -252,38 +247,32 @@ help you and your team avoid mistakes when setting up scenes.
 
 When using node configuration warnings, when any value that should affect or
 remove the warning changes, you need to call
-:ref:`update_configuration_warning<class_Node_method_update_configuration_warning>` .
+:ref:`update_configuration_warnings<class_Node_method_update_configuration_warnings>` .
 By default, the warning only updates when closing and reopening the scene.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     # Use setters to update the configuration warning automatically.
-    export var title = "" setget set_title
-    export var description = "" setget set_description
+    @export var title = "":
+        set(p_title):
+            if p_title != title:
+                title = p_title
+                update_configuration_warnings()
+
+    @export var description = "":
+        set(p_description):
+            if p_description != description:
+                description = p_description
+                update_configuration_warnings()
 
 
-    func set_title(p_title):
-        if p_title != title:
-            title = p_title
-            update_configuration_warning()
-
-
-    func set_description(p_description):
-        if p_description != description:
-            description = p_description
-            update_configuration_warning()
-
-
-    func _get_configuration_warning():
-        var warning = ""
+    func _get_configuration_warnings():
+        var warning = []
         if title == "":
-            warning += "Please set `title` to a non-empty value."
-        if description.size() >= 100:
-            # Add a blank line between each warning to distinguish them individually.
-            if warning != "":
-                warning += "\n"
-            warning += "`description` should be less than 100 characters long."
+            warning.append("Please set `title` to a non-empty value.")
+        if description.length() >= 100:
+            warning.append("`description` should be less than 100 characters long.")
 
         # Returning an empty string means "no warning".
         return warning
@@ -305,7 +294,7 @@ If you are using ``@tool``:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        var node = Spatial.new()
+        var node = Node3D.new()
         add_child(node) # Parent could be any node in the scene
 
         # The line below is required to make the node visible in the Scene tree dock
@@ -316,7 +305,7 @@ If you are using ``@tool``:
 
     public override void _Ready()
     {
-        var node = new Spatial();
+        var node = new Node3D();
         AddChild(node); // Parent could be any node in the scene
 
         // The line below is required to make the node visible in the Scene tree dock
@@ -332,7 +321,7 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
     func _run():
         # `parent` could be any node in the scene.
         var parent = get_scene().find_node("Parent")
-        var node = Spatial.new()
+        var node = Node3D.new()
         parent.add_child(node)
 
         # The line below is required to make the node visible in the Scene tree dock
@@ -345,7 +334,7 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
     {
         // `parent` could be any node in the scene.
         var parent = GetScene().FindNode("Parent");
-        var node = new Spatial();
+        var node = new Node3D();
         parent.AddChild(node);
 
         // The line below is required to make the node visible in the Scene tree dock
@@ -356,6 +345,6 @@ If you are using :ref:`EditorScript<class_EditorScript>`:
 .. warning::
 
     Using ``@tool`` improperly can yield many errors. It is advised to first
-    write the code how you want it, and only then add the ``@tool`` keyword to
+    write the code how you want it, and only then add the ``@tool`` annotation to
     the top. Also, make sure to separate code that runs in-editor from code that
     runs in-game. This way, you can find bugs more easily.

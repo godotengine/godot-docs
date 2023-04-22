@@ -1,3 +1,5 @@
+:article_outdated: True
+
 Animating thousands of objects
 ==============================
 

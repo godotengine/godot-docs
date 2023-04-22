@@ -7,7 +7,7 @@ Introduction
 ------------
 
 With :ref:`AnimationPlayer <class_AnimationPlayer>`, Godot has one of the most flexible animation systems that you can find in any game engine.
-The ability to animate pretty much any property in any node or resource, as well as having dedicated transform, bezier,
+The ability to animate almost any property in any node or resource, as well as having dedicated transform, bezier,
 function calling, audio and sub-animation tracks, is pretty much unique.
 
 However, the support for blending those animations via ``AnimationPlayer`` is relatively limited, as only a fixed cross-fade transition time can be set.
@@ -33,7 +33,7 @@ This is how it's done in the `Third Person Shooter demo <https://github.com/godo
 
 .. image:: img/animtree1.png
 
-A new scene was created for the player with a ``KinematicBody`` as root. Inside this scene, the original ``.dae`` (Collada) file was instantiated
+A new scene was created for the player with a ``CharacterBody3D`` as root. Inside this scene, the original ``.dae`` (Collada) file was instantiated
 and an ``AnimationTree`` node was created.
 
 Creating a tree
@@ -41,7 +41,7 @@ Creating a tree
 
 There are three main types of nodes that can be used in ``AnimationTree``:
 
-1. Animation nodes, which reference an animation from the linked ``AnimationTree``.
+1. Animation nodes, which reference an animation from the linked ``AnimationPlayer``.
 2. Animation Root nodes, which are used to blend sub-nodes.
 3. Animation Blend nodes, which are used within ``AnimationNodeBlendTree`` as single-graph blending via multiple input ports.
 
@@ -60,7 +60,7 @@ Blend tree
 
 An ``AnimationNodeBlendTree`` can contain both root and regular nodes used for blending. Nodes are added to the graph from a menu:
 
-.. image:: img/animtree3.png
+.. image:: img/animtree3.webp
 
 All blend trees contain an ``Output`` node by default, and something has to be connected to it in order for animations to play.
 
@@ -93,33 +93,64 @@ This node will execute a sub-animation and return once it finishes. Blend times 
 
 .. image:: img/animtree6b.gif
 
-Seek
-^^^^
+After setting the request and changing the animation playback, the one-shot node automatically clears the request on the next process frame by setting its [code]request[/code] value to [constant ONE_SHOT_REQUEST_NONE].
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Play child animation connected to "shot" port.
+    animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
+
+    # Abort child animation connected to "shot" port.
+    animation_tree.set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT)
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT
+
+    # Get current state (read-only).
+    animation_tree.get("parameters/OneShot/active"))
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/OneShot/active"]
+
+ .. code-tab:: csharp
+
+    // Play child animation connected to "shot" port.
+    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE);
+
+    // Abort child animation connected to "shot" port.
+    animationTree.Set("parameters/OneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_ABORT);
+
+    // Get current state (read-only).
+    animationTree.Get("parameters/OneShot/active");
+
+TimeSeek
+^^^^^^^^
 
 This node can be used to cause a seek command to happen to any sub-children of the animation graph. Use this node type to play an ``Animation`` from the start or a certain playback position inside the ``AnimationNodeBlendTree``.
 
-After setting the time and changing the animation playback, the seek node automatically goes into sleep mode on the next process frame by setting its ``seek_position`` value to ``-1.0``.
+After setting the time and changing the animation playback, the seek node automatically goes into sleep mode on the next process frame by setting its ``seek_request`` value to ``-1.0``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     # Play child animation from the start.
-    anim_tree.set("parameters/Seek/seek_position", 0.0)
+    animation_tree.set("parameters/TimeSeek/seek_request", 0.0)
     # Alternative syntax (same result as above).
-    anim_tree["parameters/Seek/seek_position"] = 0.0
+    animation_tree["parameters/TimeSeek/seek_request"] = 0.0
 
     # Play child animation from 12 second timestamp.
-    anim_tree.set("parameters/Seek/seek_position", 12.0)
+    animation_tree.set("parameters/TimeSeek/seek_request", 12.0)
     # Alternative syntax (same result as above).
-    anim_tree["parameters/Seek/seek_position"] = 12.0
+    animation_tree["parameters/TimeSeek/seek_request"] = 12.0
 
  .. code-tab:: csharp
 
     // Play child animation from the start.
-    animTree.Set("parameters/Seek/seek_position", 0.0);
+    animationTree.Set("parameters/TimeSeek/seek_request", 0.0);
 
     // Play child animation from 12 second timestamp.
-    animTree.Set("parameters/Seek/seek_position", 12.0);
+    animationTree.Set("parameters/TimeSeek/seek_request", 12.0);
 
 TimeScale
 ^^^^^^^^^
@@ -130,6 +161,36 @@ Transition
 ^^^^^^^^^^
 
 Very simple state machine (when you don't want to cope with a ``StateMachine`` node). Animations can be connected to the outputs and transition times can be specified.
+After setting the request and changing the animation playback, the transition node automatically clears the request on the next process frame by setting its [code]transition_request[/code] value to empty.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    # Play child animation connected to "state_2" port.
+    animation_tree.set("parameters/Transition/transition_request", "state_2")
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Transition/transition_request"] = "state_2"
+
+    # Get current state name (read-only).
+    animation_tree.get("parameters/Transition/current_state")
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Transition/current_state"]
+
+    # Get current state index (read-only).
+    animation_tree.get("parameters/Transition/current_index"))
+    # Alternative syntax (same result as above).
+    animation_tree["parameters/Transition/current_index"]
+
+ .. code-tab:: csharp
+
+    // Play child animation connected to "state_2" port.
+    animationTree.Set("parameters/Transition/transition_request", "state_2");
+
+    // Get current state name (read-only).
+    animationTree.Get("parameters/Transition/current_state");
+
+    // Get current state index (read-only).
+    animationTree.Get("parameters/Transition/current_index");
 
 BlendSpace2D
 ^^^^^^^^^^^^
@@ -163,12 +224,12 @@ This is similar to 2D blend spaces, but in one dimension (so triangles are not n
 StateMachine
 ^^^^^^^^^^^^
 
-This node is a relatively simple state machine. Root nodes can be created and connected via lines. States are connected via *Transitions*,
-which are connections with special properties. Transitions are uni-directional, but two can be used to connect in both ways.
+This node acts as a state machine with root nodes as states. Root nodes can be created and connected via lines. States are connected via *Transitions*,
+which are connections with special properties. Transitions are uni-directional, but two can be used to connect in both directions.
 
 .. image:: img/animtree11.gif
 
-There are many types of transitions:
+There are many types of transition:
 
 .. image:: img/animtree12.png
 
@@ -185,9 +246,51 @@ Transitions also have a few properties. Click any transition and it will be disp
 * *Advance Condition* will turn on auto advance when this condition is set. This is a custom text field that can be filled with a variable name.
   The variable can be modified from code (more on this later).
 * *Xfade Time* is the time to cross-fade between this state and the next.
-* *Priority* is used together with the ``travel()`` function from code (more on this later). When travelling from a state to another, give more priority to this node.
-* *Disabled* allows to disable this transition (it will not be used during travel or auto advance).
+* *Priority* is used together with the ``travel()`` function from code (more on this later). Lower priority transitions are preferred when travelling through the tree.
+* *Disabled* toggles disabling this transition (when disabled, it will not be used during travel or auto advance).
 
+For better blending
+-------------------
+
+In Godot 4.0+, in order for the blending results to be deterministic (reproducible and always consistent),
+the blended property values must have a specific initial value.
+For example, in the case of two animations to be blended, if one animation has a property track and the other does not,
+the blended animation is calculated as if the latter animation had a property track with the initial value.
+
+When using Position/Rotation/Scale 3D tracks for Skeleton3D bones, the initial value is Bone Rest.
+For other properties, the initial value is ``0`` and if the track is present in the ``RESET`` animation,
+the value of its first keyframe is used instead.
+
+For example, the following AnimationPlayer has two animations, but one of them lacks a Property track for Position.
+
+.. image:: img/blending1.webp
+
+This means that the animation lacking that will treat those Positions as ``Vector2(0, 0)``.
+
+.. image:: img/blending2.webp
+
+This problem can be solved by adding a Property track for Position as an initial value to the ``RESET`` animation.
+
+.. image:: img/blending3.webp
+
+.. image:: img/blending4.webp
+
+.. note:: Be aware that the ``RESET`` animation exists to define the default pose when loading an object originally.
+          It is assumed to have only one frame and is not expected to be played back using the timeline.
+
+Also keep in mind that the Rotation 3D tracks and the Property tracks for 2D rotation
+with Interpolation Type set to Linear Angle or Cubic Angle will prevent rotation of more than 180 degrees
+from the initial value as blended animation.
+
+This can be useful for Skeleton3Ds to prevent the bones penetrating the body when blending animations.
+Therefore, Skeleton3D's Bone Rest values should be as close to the midpoint of the movable range as possible.
+**This means that for humanoid models, it is preferable to import them in a T-pose**.
+
+.. image:: img/blending5.webp
+
+You can see that the shortest rotation path from Bone Rests is prioritized rather than the shortest rotation path between animations.
+
+If you need to rotate Skeleton3D itself more than 180 degrees by blend animations for movement, you can use Root Motion.
 
 Root motion
 -----------
@@ -205,29 +308,44 @@ Afterwards, the actual motion can be retrieved via the :ref:`AnimationTree <clas
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    anim_tree.get_root_motion_transform()
+    # Get the motion delta.
+    animation_tree.get_root_motion_position()
+    animation_tree.get_root_motion_rotation()
+    animation_tree.get_root_motion_scale()
+
+    # Get the actual blended value of the animation.
+    animation_tree.get_root_motion_position_accumulator()
+    animation_tree.get_root_motion_rotation_accumulator()
+    animation_tree.get_root_motion_scale_accumulator()
 
  .. code-tab:: csharp
 
-    animTree.GetRootMotionTransform();
+    // Get the motion delta.
+    animationTree.GetRootMotionPosition();
+    animationTree.GetRootMotionRotation();
+    animationTree.GetRootMotionScale();
 
-This can be fed to functions such as :ref:`KinematicBody.move_and_slide <class_KinematicBody_method_move_and_slide>` to control the character movement.
+    // Get the actual blended value of the animation.
+    animationTree.GetRootMotionPositionAccumulator();
+    animationTree.GetRootMotionRotationAccumulator();
+    animationTree.GetRootMotionScaleAccumulator();
+
+This can be fed to functions such as :ref:`CharacterBody3D.move_and_slide <class_CharacterBody3D_method_move_and_slide>` to control the character movement.
 
 There is also a tool node, ``RootMotionView``, that can be placed in a scene and will act as a custom floor for your
-character and animations (this node is normally disabled during the game).
+character and animations (this node is disabled by default during the game).
 
 .. image:: img/animtree15.gif
-
 
 Controlling from code
 ---------------------
 
 After building the tree and previewing it, the only question remaining is "How is all this controlled from code?".
 
-Keep in mind that the animation nodes are just resources and, as such, they are shared between all the instances.
+Keep in mind that the animation nodes are just resources and, as such, they are shared between all instances using them.
 Setting values in the nodes directly will affect all instances of the scene that uses this ``AnimationTree``.
-This has some cool use cases, though, e.g. you can copy and paste parts of your animation tree, or reuse nodes with a complex layout
-(such as a state machine or blend space) in different animation trees.
+This is generally undesirable, but does have some cool use cases, e.g. you can copy and paste parts of your animation tree,
+or reuse nodes with a complex layout (such as a state machine or blend space) in different animation trees.
 
 The actual animation data is contained in the ``AnimationTree`` node and is accessed via properties.
 Check the "Parameters" section of the ``AnimationTree`` node to see all the parameters that can be modified in real-time:
@@ -246,34 +364,32 @@ Which allows setting them or reading them:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    anim_tree.set("parameters/eye_blend/blend_amount", 1.0)
+    animation_tree.set("parameters/eye_blend/blend_amount", 1.0)
     # Simpler alternative form:
-    anim_tree["parameters/eye_blend/blend_amount"] = 1.0
+    animation_tree["parameters/eye_blend/blend_amount"] = 1.0
 
  .. code-tab:: csharp
 
-    animTree.Set("parameters/eye_blend/blend_amount", 1.0);
-
+    animationTree.Set("parameters/eye_blend/blend_amount", 1.0);
 
 State machine travel
 --------------------
 
 One of the nice features in Godot's ``StateMachine`` implementation is the ability to travel. The graph can be instructed to go from the
 current state to another one, while visiting all the intermediate ones. This is done via the A\* algorithm.
-In the absence of any transition between the current state and the destination state, the graph teleports to the destination state.
+If there is no path of transitions starting at the current state and finishing at the destination state, the graph teleports to the destination state.
 
 To use the travel ability, you should first retrieve the :ref:`AnimationNodeStateMachinePlayback <class_AnimationNodeStateMachinePlayback>`
 object from the ``AnimationTree`` node (it is exported as a property).
 
-
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var state_machine = anim_tree["parameters/playback"]
+    var state_machine = animation_tree["parameters/playback"]
 
  .. code-tab:: csharp
 
-    AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animTree.Get("parameters/playback");
+    AnimationNodeStateMachinePlayback stateMachine = (AnimationNodeStateMachinePlayback)animationTree.Get("parameters/playback");
 
 Once retrieved, it can be used by calling one of the many functions it offers:
 

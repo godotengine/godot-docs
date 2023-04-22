@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_import_plugins:
 
 Import plugins
@@ -94,21 +96,21 @@ Let's begin to code our plugin, one method at time:
     extends EditorImportPlugin
 
 
-    func get_importer_name():
+    func _get_importer_name():
         return "demos.sillymaterial"
 
 The first method is the
-:ref:`get_importer_name()<class_EditorImportPlugin_method_get_importer_name>`. This is a
+:ref:`_get_importer_name()<class_EditorImportPlugin_method__get_importer_name>`. This is a
 unique name for your plugin that is used by Godot to know which import was used
 in a certain file. When the files needs to be reimported, the editor will know
 which plugin to call.
 
 ::
 
-    func get_visible_name():
+    func _get_visible_name():
         return "Silly Material"
 
-The :ref:`get_visible_name()<class_EditorImportPlugin_method_get_visible_name>` method is
+The :ref:`_get_visible_name()<class_EditorImportPlugin_method__get_visible_name>` method is
 responsible for returning the name of the type it imports and it will be shown to the
 user in the Import dock.
 
@@ -118,11 +120,11 @@ descriptive name for your plugin.
 
 ::
 
-    func get_recognized_extensions():
+    func _get_recognized_extensions():
         return ["mtxt"]
 
 Godot's import system detects file types by their extension. In the
-:ref:`get_recognized_extensions()<class_EditorImportPlugin_method_get_recognized_extensions>`
+:ref:`_get_recognized_extensions()<class_EditorImportPlugin_method__get_recognized_extensions>`
 method you return an array of strings to represent each extension that this
 plugin can understand. If an extension is recognized by more than one plugin,
 the user can select which one to use when importing the files.
@@ -134,7 +136,7 @@ the user can select which one to use when importing the files.
 
 ::
 
-    func get_save_extension():
+    func _get_save_extension():
         return "material"
 
 The imported files are saved in the ``.import`` folder at the project's root.
@@ -150,7 +152,7 @@ way by the engine.
 
 ::
 
-    func get_resource_type():
+    func _get_resource_type():
         return "StandardMaterial3D"
 
 The imported resource has a specific type, so the editor can know which property
@@ -196,14 +198,14 @@ plugin:
     func get_preset_count():
         return Presets.size()
 
-The :ref:`get_preset_count() <class_EditorImportPlugin_method_get_preset_count>` method
+The :ref:`_get_preset_count() <class_EditorImportPlugin_method__get_preset_count>` method
 returns the amount of presets that this plugins defines. We only have one preset
 now, but we can make this method future-proof by returning the size of our
 ``Presets`` enumeration.
 
 ::
 
-    func get_preset_name(preset):
+    func _get_preset_name(preset):
         match preset:
             Presets.DEFAULT:
                 return "Default"
@@ -212,7 +214,7 @@ now, but we can make this method future-proof by returning the size of our
 
 
 Here we have the
-:ref:`get_preset_name() <class_EditorImportPlugin_method_get_preset_name>` method, which
+:ref:`_get_preset_name() <class_EditorImportPlugin_method__get_preset_name>` method, which
 gives names to the presets as they will be presented to the user, so be sure to
 use short and clear names.
 
@@ -226,7 +228,7 @@ you do this you have to be careful when you add more presets.
 
 ::
 
-    func get_import_options(preset):
+    func _get_import_options(preset):
         match preset:
             Presets.DEFAULT:
                 return [{
@@ -237,7 +239,7 @@ you do this you have to be careful when you add more presets.
                 return []
 
 This is the method which defines the available options.
-:ref:`get_import_options() <class_EditorImportPlugin_method_get_import_options>` returns
+:ref:`_get_import_options() <class_EditorImportPlugin_method__get_import_options>` returns
 an array of dictionaries, and each dictionary contains a few keys that are
 checked to customize the option as its shown to the user. The following table
 shows the possible keys:
@@ -271,11 +273,11 @@ of options first and then change it based on the preset.
 
 ::
 
-    func get_option_visibility(option, options):
+    func _get_option_visibility(option, options):
         return true
 
 For the
-:ref:`get_option_visibility() <class_EditorImportPlugin_method_get_option_visibility>`
+:ref:`_get_option_visibility() <class_EditorImportPlugin_method__get_option_visibility>`
 method, we simply return ``true`` because all of our options (i.e. the single
 one we defined) are visible all the time.
 
@@ -286,23 +288,22 @@ The ``import`` method
 ---------------------
 
 The heavy part of the process, responsible for converting the files into
-resources, is covered by the :ref:`import() <class_EditorImportPlugin_method_import>`
+resources, is covered by the :ref:`_import() <class_EditorImportPlugin_method__import>`
 method. Our sample code is a bit long, so let's split in a few parts:
 
 ::
 
-    func import(source_file, save_path, options, r_platform_variants, r_gen_files):
-        var file = File.new()
-        var err = file.open(source_file, File.READ)
-        if err != OK:
-            return err
+    func _import(source_file, save_path, options, r_platform_variants, r_gen_files):
+        var file = FileAccess.open(source_file, FileAccess.READ)
+        if file == null:
+            return FileAccess.get_open_error()
 
         var line = file.get_line()
 
         file.close()
 
 The first part of our import method opens and reads the source file. We use the
-:ref:`File <class_File>` class to do that, passing the ``source_file``
+:ref:`FileAccess <class_FileAccess>` class to do that, passing the ``source_file``
 parameter which is provided by the editor.
 
 If there's an error when opening the file, we return it to let the editor know
@@ -339,7 +340,7 @@ as the value we got before.
 
 ::
 
-    return ResourceSaver.save("%s.%s" % [save_path, get_save_extension()], material)
+    return ResourceSaver.save(material, "%s.%s" % [save_path, get_save_extension()])
 
 This is the last part and quite an important one, because here we save the made
 resource to the disk. The path of the saved file is generated and informed by
@@ -375,7 +376,7 @@ would need to do something like the following:
 ::
 
     r_platform_variants.push_back("mobile")
-    return ResourceSaver.save("%s.%s.%s" % [save_path, "mobile", get_save_extension()], mobile_material)
+    return ResourceSaver.save(mobile_material, "%s.%s.%s" % [save_path, "mobile", get_save_extension()])
 
 The ``r_gen_files`` argument is meant for extra files that are generated during
 your import process and need to be kept. The editor will look at it to
@@ -392,7 +393,7 @@ in a different file:
     next_pass.albedo_color = color.inverted()
     var next_pass_path = "%s.next_pass.%s" % [save_path, get_save_extension()]
 
-    err = ResourceSaver.save(next_pass_path, next_pass)
+    err = ResourceSaver.save(next_pass, next_pass_path)
     if err != OK:
         return err
     r_gen_files.push_back(next_pass_path)
@@ -410,7 +411,7 @@ system is scanned, making the custom resource appear on the FileSystem dock. If
 you select it and focus the Import dock, you can see the only option to select
 there.
 
-Create a MeshInstance node in the scene, and for its Mesh property set up a new
+Create a MeshInstance3D node in the scene, and for its Mesh property set up a new
 SphereMesh. Unfold the Material section in the Inspector and then drag the file
 from the FileSystem dock to the material property. The object will update in the
 viewport with the blue color of the imported material.

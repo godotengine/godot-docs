@@ -14,18 +14,18 @@ to go back otherwise).
 Handling the notification
 -------------------------
 
-On desktop platforms, the :ref:`MainLoop <class_MainLoop>`
-has a special ``MainLoop.NOTIFICATION_WM_QUIT_REQUEST`` notification that is
-sent to all nodes when quitting is requested.
+On desktop and web platforms, :ref:`Node <class_Node>` receives a special
+``NOTIFICATION_WM_CLOSE_REQUEST`` notification when quitting is requested from
+the window manager.
 
-On Android, ``MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST`` is sent instead.
+On Android, ``NOTIFICATION_WM_GO_BACK_REQUEST`` is sent instead.
 Pressing the Back button will exit the application if
 **Application > Config > Quit On Go Back** is checked in the Project Settings
 (which is the default).
 
 .. note::
 
-    ``MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST`` isn't supported on iOS, as
+    ``NOTIFICATION_WM_GO_BACK_REQUEST`` isn't supported on iOS, as
     iOS devices don't have a physical Back button.
 
 Handling the notification is done as follows (on any node):
@@ -34,14 +34,14 @@ Handling the notification is done as follows (on any node):
  .. code-tab:: gdscript GDScript
 
     func _notification(what):
-        if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
+        if what == NOTIFICATION_WM_CLOSE_REQUEST:
             get_tree().quit() # default behavior
 
  .. code-tab:: csharp
 
     public override void _Notification(int what)
     {
-        if (what == MainLoop.NotificationWmQuitRequest)
+        if (what == NotificationWMCloseRequest)
             GetTree().Quit(); // default behavior
     }
 
@@ -49,7 +49,9 @@ When developing mobile apps, quitting is not desired unless the user is
 on the main screen, so the behavior can be changed.
 
 It is important to note that by default, Godot apps have the built-in
-behavior to quit when quit is requested, this can be changed:
+behavior to quit when quit is requested from the window manager. This
+can be changed, so that the user can take care of the complete quitting
+procedure:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -63,20 +65,26 @@ behavior to quit when quit is requested, this can be changed:
 Sending your own quit notification
 ----------------------------------
 
-While forcing the application to close can be done by calling :ref:`SceneTree.quit <class_SceneTree_method_quit>`,
-doing so will not send the quit *notification*. This means the function
-described above won't be called. Quitting by calling
-:ref:`SceneTree.quit <class_SceneTree_method_quit>` will not allow custom actions
-to complete (such as saving, confirming the quit, or debugging), even if you try
-to delay the line that forces the quit.
+While forcing the application to close can be done by calling
+:ref:`SceneTree.quit <class_SceneTree_method_quit>`, doing so will not send
+the ``NOTIFICATION_WM_CLOSE_REQUEST`` to the nodes in the scene tree.
+Quitting by calling :ref:`SceneTree.quit <class_SceneTree_method_quit>` will
+not allow custom actions to complete (such as saving, confirming the quit,
+or debugging), even if you try to delay the line that forces the quit.
 
-Instead, you should send a quit request:
+Instead, if you want to notify the nodes in the scene tree about the upcoming
+program termination, you should send the notification yourself:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
+    get_tree().get_root().propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 
  .. code-tab:: csharp
 
-    GetTree().Notification(MainLoop.NotificationWmQuitRequest)
+    GetTree().Root.PropagateNotification((int)NotificationWMCloseRequest);
+
+Sending this notification will inform all nodes about the program termination,
+but will not terminate the program itself *unlike in 3.X*. In order to achieve
+the previous behavior, :ref:`SceneTree.quit <class_SceneTree_method_quit>` should
+be called after the notification.

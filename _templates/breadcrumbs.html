@@ -1,7 +1,40 @@
 {%- extends "sphinx_rtd_theme/breadcrumbs.html" %}
 
+{% block breadcrumbs %}
+<li>
+	<div style="font-size: 105%;font-weight: 600;">
+		{{ godot_docs_title | replace("%s", godot_version) }}
+	</div>
+	<ul class="wy-breadcrumbs">
+		{{ super() }}
+	</ul>
+</li>
+{% endblock %}
+
 {% block breadcrumbs_aside %}
 {% if not meta or meta.get('github_url') != 'hide' %}
-{{ super() }}
+<li style="float: right; text-align: right;">
+	<ul>
+		{{ super() }}
+	</ul>
+
+	<style>
+		.godot-edit-guidelines {
+			font-size: 14px;
+			float: right;
+			clear: both;
+			padding-top: 4px;
+		}
+
+		@media screen and (max-width: 480px) {
+			.godot-edit-guidelines {
+				display: none;
+			}
+		}
+	</style>
+	<a class="godot-edit-guidelines" href="https://docs.godotengine.org/en/latest/contributing/documentation/index.html#writing-documentation">
+		Learn how to contribute!
+	</a>
+</li>
 {% endif %}
 {% endblock %}

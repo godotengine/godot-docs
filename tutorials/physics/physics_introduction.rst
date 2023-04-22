@@ -26,15 +26,14 @@ In this guide, you will learn:
 Collision objects
 -----------------
 
-Godot offers four kinds of physics bodies, extending :ref:`CollisionObject2D <class_CollisionObject2D>`:
+Godot offers four kinds of collision objects which all extend :ref:`CollisionObject2D <class_CollisionObject2D>`.
+The last three listed below are physics bodies and additionally extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`.
 
 - :ref:`Area2D <class_Area2D>`
     ``Area2D`` nodes provide **detection** and **influence**. They can detect when
     objects overlap and can emit signals when bodies enter or exit. An ``Area2D``
     can also be used to override physics properties, such as gravity or damping,
     in a defined area.
-
-The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
 
 - :ref:`StaticBody2D <class_StaticBody2D>`
     A static body is one that is not moved by the physics engine. It participates
@@ -45,9 +44,10 @@ The other three bodies extend :ref:`PhysicsBody2D <class_PhysicsBody2D>`:
 - :ref:`RigidBody2D <class_RigidBody2D>`
     This is the node that implements simulated 2D physics. You do not control a
     ``RigidBody2D`` directly, but instead you apply forces to it (gravity, impulses,
-    etc.) and the physics engine calculates the resulting movement. :ref:`Read more about using rigid bodies. <doc_rigid_body>`
+    etc.) and the physics engine calculates the resulting movement.
+    :ref:`Read more about using rigid bodies. <doc_rigid_body>`
 
-- :ref:`KinematicBody2D <class_KinematicBody2D>`
+- :ref:`CharacterBody2D <class_CharacterBody2D>`
     A body that provides collision detection, but no physics. All movement and
     collision response must be implemented in code.
 
@@ -83,15 +83,19 @@ These nodes allow you to draw the shape directly in the editor workspace.
 Physics process callback
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-The physics engine may spawn multiple threads to improve performance, so
-it can use up to a full frame to process physics. Because of this, the value
-of a body's state variables such as ``position`` or ``linear velocity``
-may not be accurate for the current frame.
+The physics engine runs at a fixed rate (a default of 60 iterations per second). This rate 
+is typically different from the frame rate which fluctuates based on what is rendered and
+available resources.
 
-In order to avoid this inaccuracy, any code that needs to access a body's properties should
-be run in the :ref:`Node._physics_process() <class_Node_method__physics_process>`
-callback, which is called before each physics step at a constant frame rate
-(60 times per second by default). This method will be passed a ``delta``
+It is important that all physics related code runs at this fixed rate. Therefore Godot 
+differentiates :ref:`between physics and idle processing <doc_idle_and_physics_processing>`.
+Code that runs each frame is called idle processing and code that runs on each physics 
+tick is called physics processing. Godot provides two different callbacks, one for each 
+of those processing rates.
+
+The physics callback, :ref:`Node._physics_process() <class_Node_method__physics_process>`, 
+is called before each physics step. Any code that needs to access a body's properties should
+be run in here. This method will be passed a ``delta``
 parameter, which is a floating-point number equal to the time passed in
 *seconds* since the last step. When using the default 60 Hz physics update rate,
 it will typically be equal to ``0.01666...`` (but not always, see below).
@@ -154,7 +158,7 @@ Code example
 ^^^^^^^^^^^^
 
 In function calls, layers are specified as a bitmask. Where a function enables
-all layers by default, the layer mask will be given as ``0x7fffffff``. Your code
+all layers by default, the layer mask will be given as ``0xffffffff``. Your code
 can use binary, hexadecimal, or decimal notation for layer masks, depending
 on your preference.
 
@@ -233,16 +237,6 @@ A sleeping body acts like a static body, and its forces are not calculated by
 the physics engine. The body will wake up when forces are applied, either by
 a collision or via code.
 
-Rigid body modes
-~~~~~~~~~~~~~~~~
-
-A rigid body can be set to one of four modes:
-
--   **Rigid** - The body behaves as a physical object. It collides with other bodies and responds to forces applied to it. This is the default mode.
--   **Static** - The body behaves like a :ref:`StaticBody2D <class_StaticBody2D>` and does not move.
--   **Character** - Similar to "Rigid" mode, but the body cannot rotate.
--   **Kinematic** - The body behaves like a :ref:`KinematicBody2D <class_KinematicBody2D>` and must be moved by code.
-
 Using RigidBody2D
 ~~~~~~~~~~~~~~~~~
 
@@ -257,7 +251,7 @@ care - altering the ``position``, ``linear_velocity``, or other physics properti
 of a rigid body can result in unexpected behavior. If you need to alter any
 of the physics-related properties, you should use the :ref:`_integrate_forces() <class_RigidBody2D_method__integrate_forces>`
 callback instead of ``_physics_process()``. In this callback, you have access
-to the body's :ref:`Physics2DDirectBodyState <class_Physics2DDirectBodyState>`,
+to the body's :ref:`PhysicsDirectBodyState2D <class_PhysicsDirectBodyState2D>`,
 which allows for safely changing properties and synchronizing them with
 the physics engine.
 
@@ -273,19 +267,21 @@ For example, here is the code for an "Asteroids" style spaceship:
 
     func _integrate_forces(state):
         if Input.is_action_pressed("ui_up"):
-            applied_force = thrust.rotated(rotation)
+            state.apply_force(thrust.rotated(rotation))
         else:
-            applied_force = Vector2()
-        var rotation_dir = 0
+            state.apply_force(Vector2())
+        var rotation_direction = 0
         if Input.is_action_pressed("ui_right"):
-            rotation_dir += 1
+            rotation_direction += 1
         if Input.is_action_pressed("ui_left"):
-            rotation_dir -= 1
-        applied_torque = rotation_dir * torque
+            rotation_direction -= 1
+        state.apply_torque(rotation_direction * torque)
 
  .. code-tab:: csharp
 
-    class Spaceship : RigidBody2D
+    using Godot;
+
+    public partial class Spaceship : RigidBody2D
     {
         private Vector2 _thrust = new Vector2(0, -250);
         private float _torque = 20000;
@@ -293,16 +289,16 @@ For example, here is the code for an "Asteroids" style spaceship:
         public override void _IntegrateForces(Physics2DDirectBodyState state)
         {
             if (Input.IsActionPressed("ui_up"))
-                SetAppliedForce(_thrust.Rotated(Rotation));
+                AppliedForce = _thrust.Rotated(Rotation);
             else
-                SetAppliedForce(new Vector2());
+                AppliedForce = new Vector2();
 
             var rotationDir = 0;
             if (Input.IsActionPressed("ui_right"))
                 rotationDir += 1;
             if (Input.IsActionPressed("ui_left"))
                 rotationDir -= 1;
-            SetAppliedTorque(rotationDir * _torque);
+            AppliedTorque = rotationDir * _torque;
         }
     }
 
@@ -321,37 +317,37 @@ Contact reporting
 
 By default, rigid bodies do not keep track of contacts, because this can
 require a huge amount of memory if many bodies are in the scene. To enable
-contact reporting, set the :ref:`contacts_reported <class_RigidBody2D_property_contacts_reported>`
+contact reporting, set the :ref:`max_contacts_reported <class_RigidBody2D_property_max_contacts_reported>`
 property to a non-zero value. The contacts can then be obtained via
-:ref:`Physics2DDirectBodyState.get_contact_count() <class_Physics2DDirectBodyState_method_get_contact_count>`
+:ref:`PhysicsDirectBodyState2D.get_contact_count() <class_PhysicsDirectBodyState2D_method_get_contact_count>`
 and related functions.
 
 Contact monitoring via signals can be enabled via the :ref:`contact_monitor <class_RigidBody2D_property_contact_monitor>`
 property. See :ref:`RigidBody2D <class_RigidBody2D>` for the list of available
 signals.
 
-KinematicBody2D
+CharacterBody2D
 ---------------
 
-:ref:`KinematicBody2D <class_KinematicBody2D>` bodies detect collisions with
+:ref:`CharacterBody2D <class_CharacterBody2D>` bodies detect collisions with
 other bodies, but are not affected by physics properties like gravity or friction.
 Instead, they must be controlled by the user via code. The physics engine will
-not move a kinematic body.
+not move a character body.
 
-When moving a kinematic body, you should not set its ``position`` directly.
+When moving a character body, you should not set its ``position`` directly.
 Instead, you use the ``move_and_collide()`` or ``move_and_slide()`` methods.
 These methods move the body along a given vector, and it will instantly stop
 if a collision is detected with another body. After the body has collided,
 any collision response must be coded manually.
 
-Kinematic collision response
+Character collision response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After a collision, you may want the body to bounce, to slide along a wall,
 or to alter the properties of the object it hit. The way you handle collision
-response depends on which method you used to move the KinematicBody2D.
+response depends on which method you used to move the CharacterBody2D.
 
-:ref:`move_and_collide <class_KinematicBody2D_method_move_and_collide>`
+:ref:`move_and_collide <class_PhysicsBody2D_method_move_and_collide>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When using ``move_and_collide()``, the function returns a
@@ -365,7 +361,7 @@ occurred:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends PhysicsBody2D
 
     var velocity = Vector2(250, 250)
 
@@ -376,7 +372,9 @@ occurred:
 
  .. code-tab:: csharp
 
-    class Body : KinematicBody2D
+    using Godot;
+
+    public partial class Body : PhysicsBody2D
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
@@ -395,7 +393,7 @@ Or to bounce off of the colliding object:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends PhysicsBody2D
 
     var velocity = Vector2(250, 250)
 
@@ -406,7 +404,9 @@ Or to bounce off of the colliding object:
 
  .. code-tab:: csharp
 
-    class Body : KinematicBody2D
+    using Godot;
+
+    public partial class Body : PhysicsBody2D
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
@@ -418,7 +418,7 @@ Or to bounce off of the colliding object:
         }
     }
 
-:ref:`move_and_slide <class_KinematicBody2D_method_move_and_slide>`
+:ref:`move_and_slide <class_CharacterBody2D_method_move_and_slide>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Sliding is a common collision response; imagine a player moving along walls
@@ -437,13 +437,11 @@ the ground (including slopes) and jump when standing on the ground:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends KinematicBody2D
+    extends CharacterBody2D
 
     var run_speed = 350
     var jump_speed = -1000
     var gravity = 2500
-
-    var velocity = Vector2()
 
     func get_input():
         velocity.x = 0
@@ -461,17 +459,17 @@ the ground (including slopes) and jump when standing on the ground:
     func _physics_process(delta):
         velocity.y += gravity * delta
         get_input()
-        velocity = move_and_slide(velocity, Vector2(0, -1))
+        move_and_slide()
 
  .. code-tab:: csharp
 
-    class Body : KinematicBody2D
+    using Godot;
+
+    public partial class Body : CharacterBody2D
     {
         private float _runSpeed = 350;
         private float _jumpSpeed = -1000;
         private float _gravity = 2500;
-
-        private Vector2 _velocity = new Vector2();
 
         private void GetInput()
         {
@@ -493,7 +491,7 @@ the ground (including slopes) and jump when standing on the ground:
         {
             _velocity.y += _gravity * delta;
             GetInput();
-            _velocity = MoveAndSlide(velocity, new Vector2(0,-1));
+            MoveAndSlide();
         }
     }
 

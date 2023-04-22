@@ -1,0 +1,414 @@
+.. _doc_introduction_to_the_buildsystem:
+
+Introduction to the buildsystem
+===============================
+
+.. highlight:: shell
+
+
+Setup
+-----
+
+:ref:`Godot uses the SCons build system. <doc_faq_why_scons>`
+Please refer to the documentation for:
+
+- :ref:`doc_compiling_for_android`
+- :ref:`doc_compiling_for_ios`
+- :ref:`doc_compiling_for_linuxbsd`
+- :ref:`doc_compiling_for_macos`
+- :ref:`doc_compiling_for_uwp`
+- :ref:`doc_compiling_for_web`
+- :ref:`doc_compiling_for_windows`
+
+Platform selection
+------------------
+
+Godot's build system will begin by detecting the platforms it can build
+for. If not detected, the platform will simply not appear on the list of
+available platforms. The build requirements for each platform are
+described in the rest of this tutorial section.
+
+SCons is invoked by just calling ``scons``. If no platform is specified,
+SCons will detect the target platform automatically based on the host platform.
+It will then start building for the target platform right away.
+
+To list the available target platforms, use ``scons platform=list``::
+
+    scons platform=list
+    scons: Reading SConscript files ...
+    The following platforms are available:
+
+        android
+        javascript
+        linuxbsd
+        server
+        windows
+
+    Please run SCons again and select a valid platform: platform=<string>
+
+To build for a platform (for example, ``linuxbsd``), run with the ``platform=``
+(or ``p=`` to make it short) argument:
+
+::
+
+    scons platform=linuxbsd
+
+This will start the build process, which will take a while. By default, Godot's
+SCons setup is configured to use all CPU threads but one (to keep the system
+responsive during compilation). If you want to adjust how many CPU threads SCons
+will use, use the ``-j <threads>`` parameter to specify how many threads will be
+used for the build.
+
+Example for using 4 threads:
+
+::
+
+    scons platform=linuxbsd -j4
+
+.. _doc_introduction_to_the_buildsystem_resulting_binary:
+
+Resulting binary
+----------------
+
+The resulting binaries will be placed in the ``bin/`` subdirectory,
+generally with this naming convention::
+
+    godot.<platform>.<target>[.dev][.double].<arch>[.<extra_suffix>][.<ext>]
+
+For the previous build attempt, the result would look like this::
+
+    ls bin
+    bin/godot.linuxbsd.editor.x86_64
+
+This means that the binary is for Linux *or* \*BSD (*not* both), is not optimized, has the
+whole editor compiled in, and is meant for 64 bits.
+
+A Windows binary with the same configuration will look like this:
+
+.. code-block:: console
+
+    C:\godot> dir bin/
+    godot.windows.editor.64.exe
+
+Copy that binary to any location you like, as it contains the Project Manager,
+editor and all means to execute the game. However, it lacks the data to export
+it to the different platforms. For that the export templates are needed (which
+can be either downloaded from `godotengine.org <https://godotengine.org/>`__, or
+you can build them yourself).
+
+Aside from that, there are a few standard options that can be set in all
+build targets, and which will be explained below.
+
+.. _doc_introduction_to_the_buildsystem_target:
+
+Target
+------
+
+Target controls if the editor is contained and debug flags are used.
+All builds are optimized. Each mode means:
+
+-  **editor**: Build with editor, optimized, with debugging code (defines: ``TOOLS_ENABLED``, ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  **template_debug**: Build with C++ debugging symbols (defines: ``DEBUG_ENABLED``, ``-O2``/``/O2``)
+-  **template_release**: Build without symbols (defines: ``-O3``/``/O2``)
+
+The editor is enabled by default in all PC targets (Linux, Windows, macOS),
+disabled for everything else. Disabling the editor produces a binary that can
+run projects but does not include the editor or the Project Manager.
+
+::
+
+    scons platform=<platform> target=editor/template_debug/template_release
+
+Development and production aliases
+----------------------------------
+
+When creating builds for development (running debugging/:ref:`profiling <doc_using_cpp_profilers>`
+tools), you often have different goals compared to production builds
+(making binaries as fast and small as possible).
+
+Godot provides two aliases for this purpose:
+
+- ``dev_mode=yes`` is an alias for ``verbose=yes warnings=extra werror=yes
+  tests=yes``. This enables warnings-as-errors behavior (similar to Godot's
+  continuous integration setup) and also builds :ref:`unit tests
+  <doc_unit_testing>` so you can run them locally.
+- ``production=yes`` is an alias for ``use_static_cpp=yes debug_symbols=no
+  lto=auto``. Statically linking libstdc++ allows for better binary portability
+  when compiling for Linux. This alias also enables link-time optimization when
+  compiling for Linux, Web and Windows with MinGW, but keeps LTO disabled when
+  compiling for macOS, iOS or Windows with MSVC. This is because LTO on those
+  platforms is very slow to link or has issues with the generated code.
+
+You can manually override options from those aliases by specifying them on the
+same command line with different values. For example, you can use ``scons
+production=yes debug_symbols=yes`` to create production-optimized binaries with
+debugging symbols included.
+
+Dev build
+---------
+
+.. note::
+
+    ``dev_build`` should **not** be confused with ``dev_mode``, which is an
+    alias for several development-related options (see above).
+
+When doing engine development the ``dev_build`` option can be used together
+with ``target`` to enable dev-specific code. ``dev_build`` defines ``DEV_ENABLED``,
+disables optimization (``-O0``/``/0d``), enables generating debug symbols, and
+does not define ``NDEBUG`` (so ``assert()`` works in thirdparty libraries).
+
+::
+
+    scons platform=<platform> dev_build=yes
+
+This flag appends the ``.dev`` suffix (for development) to the generated
+binary name.
+
+.. seealso::
+
+    There are additional SCons options to enable *sanitizers*, which are tools
+    you can enable at compile-time to better debug certain engine issues.
+    See :ref:`doc_using_sanitizers` for more information.
+
+Debugging symbols
+-----------------
+
+By default, ``debug_symbols=no`` is used, which means **no** debugging symbols
+are included in compiled binaries. Use ``debug_symbols=yes`` to include debug
+symbols within compiled binaries, which allows debuggers and profilers to work
+correctly. Debugging symbols are also required for Godot's crash stacktraces to
+display with references to source code files and lines.
+
+The downside is that debugging symbols are large files (significantly larger
+than the binaries themselves). As a result, official binaries currently do not
+include debugging symbols. This means you need to compile Godot yourself to have
+access to debugging symbols.
+
+When using ``debug_symbols=yes``, you can also use
+``separate_debug_symbols=yes`` to put debug information in a separate file with
+a ``.debug`` suffix. This allows distributing both files independently. Note
+that on Windows, when compiling with MSVC, debugging information is *always*
+written to a separate ``.pdb`` file regardless of ``separate_debug_symbols``.
+
+.. tip::
+
+    Use the ``strip <path/to/binary>`` command to remove debugging symbols from
+    a binary you've already compiled.
+
+Optimization level
+------------------
+
+Several compiler optimization levels can be chosen from:
+
+- ``optimize=speed_trace`` *(default when targeting non-Web platforms)*: Favors
+  execution speed at the cost of larger binary size. Optimizations may sometimes
+  negatively impact debugger usage (stack traces may be less accurate. If this
+  occurs to you, use ``optimize=debug`` instead.
+- ``optimize=speed``: Favors even more execution speed, at the cost of even
+  larger binary size compared to ``optimize=speed_trace``. Even less friendly to
+  debugging compared to ``optimize=debug``, as this uses the most aggressive
+  optimizations available.
+- ``optimize=size`` *(default when targeting the Web platform)*: Favors small
+  binaries at the cost of slower execution speed.
+- ``optimize=debug``: Only enables optimizations that do not impact debugging in
+  any way. This results in faster binaries than ``optimize=none``, but slower
+  binaries than ``optimize=speed_trace``.
+- ``optimize=none``: Do not perform any optimization. This provides the fastest
+  build times, but the slowest execution times.
+- ``optimize=custom`` *(advanced users only)*: Do not pass optimization
+  arguments to the C/C++ compilers. You will have to pass arguments manually
+  using the ``CFLAGS``, ``CCFLAGS`` and ``CXXFLAGS`` SCons options.
+
+Architecture
+------------
+
+The ``arch`` option is meant to control the CPU or OS version intended to run the
+binaries. It is focused mostly on desktop platforms and ignored everywhere
+else.
+
+Supported values for the ``arch`` option are **auto**, **x86_32**, **x86_64**,
+**arm32**, **arm64**, **rv64**, **ppc32**, **ppc64** and **wasm32**.
+
+::
+
+    scons platform=<platform> arch={auto|x86_32|x86_64|arm32|arm64|rv64|ppc32|ppc64|wasm32}
+
+This flag appends the value of ``arch`` to resulting binaries when
+relevant.  The default value ``arch=auto`` detects the architecture
+that matches the host platform.
+
+.. _doc_buildsystem_custom_modules:
+
+Custom modules
+--------------
+
+It's possible to compile modules residing outside of Godot's directory
+tree, along with the built-in modules.
+
+A ``custom_modules`` build option can be passed to the command line before
+compiling. The option represents a comma-separated list of directory paths
+containing a collection of independent C++ modules that can be seen as C++
+packages, just like the built-in ``modules/`` directory.
+
+For instance, it's possible to provide both relative, absolute, and user
+directory paths containing such modules:
+
+::
+
+    scons custom_modules="../modules,/abs/path/to/modules,~/src/godot_modules"
+
+.. note::
+
+    If there's any custom module with the exact directory name as a built-in
+    module, the engine will only compile the custom one. This logic can be used
+    to override built-in module implementations.
+
+.. seealso::
+
+    :ref:`doc_custom_modules_in_cpp`
+
+Cleaning generated files
+------------------------
+
+Sometimes, you may encounter an error due to generated files being present. You
+can remove them by using ``scons --clean <options>``, where ``<options>`` is the
+list of build options you've used to build Godot previously.
+
+Alternatively, you can use ``git clean -fixd`` which will clean build artifacts
+for all platforms and configurations. Beware, as this will remove all untracked
+and ignored files in the repository. Don't run this command if you have
+uncommitted work!
+
+Other build options
+-------------------
+
+There are several other build options that you can use to configure the
+way Godot should be built (compiler, debug options, etc.) as well as the
+features to include/disable.
+
+Check the output of ``scons --help`` for details about each option for
+the version you are willing to compile.
+
+.. _doc_overriding_build_options:
+
+Overriding the build options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using a file
+^^^^^^^^^^^^
+
+The default ``custom.py`` file can be created at the root of the Godot Engine
+source to initialize any SCons build options passed via the command line:
+
+.. code-block:: python
+
+    # custom.py
+
+    optimize = "size"
+    module_mono_enabled = "yes"
+    use_llvm = "yes"
+    extra_suffix = "game_title"
+
+You can also disable some of the builtin modules before compiling, saving some
+time it takes to build the engine. See :ref:`doc_optimizing_for_size` page for more details.
+
+.. seealso::
+
+    You can use the online
+    `Godot build options generator <https://godot-build-options-generator.github.io/>`__
+    to generate a ``custom.py`` file containing SCons options.
+    You can then save this file and place it at the root of your Godot source directory.
+
+Another custom file can be specified explicitly with the ``profile`` command
+line option, both overriding the default build configuration:
+
+.. code-block:: shell
+
+    scons profile=path/to/custom.py
+
+.. note:: Build options set from the file can be overridden by the command line
+          options.
+
+It's also possible to override the options conditionally:
+
+.. code-block:: python
+
+    # custom.py
+
+    import version
+
+    # Override options specific for Godot 3.x and 4.x versions.
+    if version.major == 3:
+        pass
+    elif version.major == 4:
+        pass
+
+Using the SCONSFLAGS
+^^^^^^^^^^^^^^^^^^^^
+
+``SCONSFLAGS`` is an environment variable which is used by the SCons to set the
+options automatically without having to supply them via the command line.
+
+For instance, you may want to force a number of CPU threads with the
+aforementioned ``-j`` option for all future builds:
+
+.. tabs::
+ .. code-tab:: bash Linux/macOS
+
+     export SCONSFLAGS="-j4"
+
+ .. code-tab:: bat Windows (cmd)
+
+     set SCONSFLAGS=-j4
+
+ .. code-tab:: powershell Windows (PowerShell)
+
+     $env:SCONSFLAGS="-j4"
+
+Export templates
+----------------
+
+Official export templates are downloaded from the Godot Engine site:
+`godotengine.org <https://godotengine.org/>`__. However, you might want
+to build them yourself (in case you want newer ones, you are using custom
+modules, or simply don't trust your own shadow).
+
+If you download the official export templates package and unzip it, you
+will notice that most files are optimized binaries or packages for each
+platform:
+
+.. code-block:: none
+
+    android_debug.apk
+    android_release.apk
+    web_debug.zip
+    web_release.zip
+    linux_server_32
+    linux_server_64
+    linux_x11_32_debug
+    linux_x11_32_release
+    linux_x11_64_debug
+    linux_x11_64_release
+    macos.zip
+    version.txt
+    windows_32_debug.exe
+    windows_32_release.exe
+    windows_64_debug.exe
+    windows_64_release.exe
+
+To create those yourself, follow the instructions detailed for each
+platform in this same tutorial section. Each platform explains how to
+create its own template.
+
+The ``version.txt`` file should contain the corresponding Godot version
+identifier. This file is used to install export templates in a version-specific
+directory to avoid conflicts. For instance, if you are building export templates
+for Godot 3.1.1, ``version.txt`` should contain ``3.1.1.stable`` on the first
+line (and nothing else). This version identifier is based on the ``major``,
+``minor``, ``patch`` (if present) and ``status`` lines of the
+`version.py file in the Godot Git repository <https://github.com/godotengine/godot/blob/master/version.py>`__.
+
+If you are developing for multiple platforms, macOS is definitely the most
+convenient host platform for cross-compilation, since you can cross-compile for
+almost every target (except for UWP). Linux and Windows come in second place,
+but Linux has the advantage of being the easier platform to set this up.

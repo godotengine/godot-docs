@@ -25,5 +25,4 @@ jobs:
 
       # Use dummy builder to improve performance as we don't need the generated HTML in this workflow.
       - name: Sphinx build
-        run: |
-          sphinx-build --color -b dummy -d _build/doctrees . _build/html
+        run: make SPHINXOPTS='--color -W' dummy

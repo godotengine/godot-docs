@@ -58,3 +58,25 @@ Using one-click deploy
 - Click the button to export to the desired platform in one click.
 
 .. image:: img/oneclick.png
+
+Troubleshooting
+---------------
+
+Android
+^^^^^^^
+
+If you can't see the device in the list of devices when running the
+``adb devices`` command in a terminal, it will not be visible by Godot either.
+To resolve this:
+
+- Check if USB debugging is enabled *and authorized on the device*.
+  Try unlocking your device and accepting the authorization prompt if you see any.
+  If you can't see this prompt, running ``adb devices`` on your PC should make
+  the authorization prompt appear on the device.
+- Try `revoking the debugging authorization <https://stackoverflow.com/questions/23081263/adb-android-device-unauthorized>`__
+  in the device's developer settings, then follow the steps again.
+- Try using USB debugging instead of wireless debugging or vice versa.
+  Sometimes, one of those can work better than the other.
+- On Linux, you may be missing the required
+  `udev rules <https://github.com/M0Rf30/android-udev-rules>`__
+  for your device to be recognized.

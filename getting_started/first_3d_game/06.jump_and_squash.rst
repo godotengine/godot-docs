@@ -3,7 +3,7 @@
 Jumping and squashing monsters
 ==============================
 
-In this part, we'll add the ability to jump, to squash the monsters. In the next
+In this part, we'll add the ability to jump and squash the monsters. In the next
 lesson, we'll make the player die when a monster hits them on the ground.
 
 First, we have to change a few settings related to physics interactions. Enter
@@ -26,7 +26,7 @@ The important point is that you can use layers and masks to filter physics
 interactions, control performance, and remove the need for extra conditions in
 your code.
 
-By default, all physics bodies and areas are set to both layer and mask ``0``.
+By default, all physics bodies and areas are set to both layer and mask ``1``.
 This means they all collide with each other.
 
 Physics layers are represented by numbers, but we can give them names to keep
@@ -51,21 +51,20 @@ Now, we can assign them to our physics nodes.
 Assigning layers and masks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the *Main* scene, select the *Ground* node. In the *Inspector*, expand the
+In the *Main* scene, select the ``Ground`` node. In the *Inspector*, expand the
 *Collision* section. There, you can see the node's layers and masks as a grid of
 buttons.
 
 |image2|
 
 The ground is part of the world, so we want it to be part of the third layer.
-Click the lit button to toggle off the first *Layer* and toggle on the third
-one. Then, toggle off the *Mask* by clicking on it.
+Click the lit button to toggle **off** the first *Layer* and toggle **on** the third
+one. Then, toggle **off** the *Mask* by clicking on it.
 
 |image3|
 
-As I mentioned above, the *Mask* property allows a node to listen to interaction
-with other physics objects, but we don't need it to have collisions. The
-*Ground* doesn't need to listen to anything; it's just there to prevent
+As mentioned before, the *Mask* property allows a node to listen to interaction
+with other physics objects, but we don't need it to have collisions. ``Ground`` doesn't need to listen to anything; it's just there to prevent
 creatures from falling.
 
 Note that you can click the "..." button on the right side of the properties to
@@ -73,17 +72,17 @@ see a list of named checkboxes.
 
 |image4|
 
-Next up are the *Player* and the *Mob*. Open ``Player.tscn`` by double-clicking
+Next up are the ``Player`` and the ``Mob``. Open ``Player.tscn`` by double-clicking
 the file in the *FileSystem* dock.
 
 Select the *Player* node and set its *Collision -> Mask* to both "enemies" and
-"world". You can leave the default *Layer* property as the first layer is the
-"player" one.
+"world". You can leave the default *Layer* property as it is, because the first layer is the
+"player" layer.
 
 |image5|
 
 Then, open the *Mob* scene by double-clicking on ``Mob.tscn`` and select the
-*Mob* node.
+``Mob`` node.
 
 Set its *Collision -> Layer* to "enemies" and unset its *Collision -> Mask*,
 leaving the mask empty.
@@ -91,7 +90,7 @@ leaving the mask empty.
 |image6|
 
 These settings mean the monsters will move through one another. If you want the
-monsters to collide with and slide against each other, turn on the "enemies"
+monsters to collide with and slide against each other, turn **on** the "enemies"
 mask.
 
 .. note::
@@ -114,7 +113,7 @@ the ``jump_impulse``.
 
    #...
    # Vertical impulse applied to the character upon jumping in meters per second.
-   export var jump_impulse = 20
+   @export var jump_impulse = 20
 
  .. code-tab:: csharp
 
@@ -123,10 +122,9 @@ the ``jump_impulse``.
     // ...
     // Vertical impulse applied to the character upon jumping in meters per second.
     [Export]
-    public int JumpImpulse = 20;
+    public int JumpImpulse { get; set; } = 20;
 
-Inside ``_physics_process()``, add the following code before the line where we
-called ``move_and_slide()``.
+Inside ``_physics_process()``, add the following code before the ``move_and_slide()`` codeblock.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -136,20 +134,20 @@ called ``move_and_slide()``.
 
        # Jumping.
        if is_on_floor() and Input.is_action_just_pressed("jump"):
-           velocity.y += jump_impulse
+           target_velocity.y = jump_impulse
 
        #...
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // ...
 
         // Jumping.
         if (IsOnFloor() && Input.IsActionJustPressed("jump"))
         {
-            _velocity.y += JumpImpulse;
+            _targetVelocity.Y = JumpImpulse;
         }
 
         // ...
@@ -157,18 +155,18 @@ called ``move_and_slide()``.
 
 That's all you need to jump!
 
-The ``is_on_floor()`` method is a tool from the ``KinematicBody`` class. It
+The ``is_on_floor()`` method is a tool from the ``CharacterBody3D`` class. It
 returns ``true`` if the body collided with the floor in this frame. That's why
 we apply gravity to the *Player*: so we collide with the floor instead of
 floating over it like the monsters.
 
 If the character is on the floor and the player presses "jump", we instantly
 give them a lot of vertical speed. In games, you really want controls to be
-responsive and giving instant speed boosts like these, while unrealistic, feel
+responsive and giving instant speed boosts like these, while unrealistic, feels
 great.
 
 Notice that the Y axis is positive upwards. That's unlike 2D, where the Y axis
-is positive downward.
+is positive downwards.
 
 Squashing monsters
 ------------------
@@ -212,7 +210,7 @@ when jumping.
 
    # Vertical impulse applied to the character upon bouncing over a mob in
    # meters per second.
-   export var bounce_impulse = 16
+   @export var bounce_impulse = 16
 
  .. code-tab:: csharp
 
@@ -220,9 +218,9 @@ when jumping.
 
     // Vertical impulse applied to the character upon bouncing over a mob in meters per second.
     [Export]
-    public int BounceImpulse = 16;
+    public int BounceImpulse { get; set; } = 16;
 
-Then, at the bottom of ``_physics_process()``, add the following loop. With
+Then, after the **Jumping** codeblock we added above in ``_physics_process()``, add the following loop. With
 ``move_and_slide()``, Godot makes the body move sometimes multiple times in a
 row to smooth out the character's motion. So we have to loop over all collisions
 that may have happened.
@@ -236,38 +234,47 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
  .. code-tab:: gdscript GDScript
 
    func _physics_process(delta):
-       #...
-       for index in range(get_slide_count()):
-           # We check every collision that occurred this frame.
-           var collision = get_slide_collision(index)
-           # If we collide with a monster...
-           if collision.collider.is_in_group("mob"):
-               var mob = collision.collider
-               # ...we check that we are hitting it from above.
-               if Vector3.UP.dot(collision.normal) > 0.1:
-                   # If so, we squash it and bounce.
-                   mob.squash()
-                   velocity.y = bounce_impulse
+        #...
+
+        # Iterate through all collisions that occurred this frame
+        for index in range(get_slide_collision_count()):
+            # We get one of the collisions with the player
+            var collision = get_slide_collision(index)
+
+            # If the collision is with ground
+            if (collision.get_collider() == null):
+                continue
+
+            # If the collider is with a mob
+            if collision.get_collider().is_in_group("mob"):
+                var mob = collision.get_collider()
+                # we check that we are hitting it from above.
+                if Vector3.UP.dot(collision.get_normal()) > 0.1:
+                    # If so, we squash it and bounce.
+                    mob.squash()
+                    target_velocity.y = bounce_impulse
 
  .. code-tab:: csharp
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         // ...
 
-        for (int index = 0; index < GetSlideCount(); index++)
+        // Iterate through all collisions that occurred this frame.
+        for (int index = 0; index < GetSlideCollisionCount(); index++)
         {
-            // We check every collision that occurred this frame.
-            KinematicCollision collision = GetSlideCollision(index);
-            // If we collide with a monster...
-            if (collision.Collider is Mob mob && mob.IsInGroup("mob"))
+            // We get one of the collisions with the player.
+            KinematicCollision3D collision = GetSlideCollision(index);
+
+            // If the collision is with a mob.
+            if (collision.GetCollider() is Mob mob)
             {
-                // ...we check that we are hitting it from above.
-                if (Vector3.Up.Dot(collision.Normal) > 0.1f)
+                // We check that we are hitting it from above.
+                if (Vector3.Up.Dot(collision.GetNormal()) > 0.1f)
                 {
                     // If so, we squash it and bounce.
                     mob.Squash();
-                    _velocity.y = BounceImpulse;
+                    _targetVelocity.Y = BounceImpulse;
                 }
             }
         }
@@ -275,22 +282,22 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
 
  That's a lot of new functions. Here's some more information about them.
 
-The functions ``get_slide_count()`` and ``get_slide_collision()`` both come from
-the :ref:`KinematicBody<class_KinematicBody>` class and are related to
+The functions ``get_slide_collision_count()`` and ``get_slide_collision()`` both come from
+the :ref:`CharacterBody3D <class_CharacterBody3D>` class and are related to
 ``move_and_slide()``.
 
 ``get_slide_collision()`` returns a
-:ref:`KinematicCollision<class_KinematicCollision>` object that holds
+:ref:`KinematicCollision3D<class_KinematicCollision3D>` object that holds
 information about where and how the collision occurred. For example, we use its
-``collider`` property to check if we collided with a "mob" by calling
-``is_in_group()`` on it: ``collision.collider.is_in_group("mob")``.
+``get_collider`` property to check if we collided with a "mob" by calling
+``is_in_group()`` on it: ``collision.get_collider().is_in_group("mob")``.
 
 .. note::
 
     The method ``is_in_group()`` is available on every :ref:`Node<class_Node>`.
 
 To check that we are landing on the monster, we use the vector dot product:
-``Vector3.UP.dot(collision.normal) > 0.1``. The collision normal is a 3D vector
+``Vector3.UP.dot(collision.get_normal()) > 0.1``. The collision normal is a 3D vector
 that is perpendicular to the plane where the collision occurred. The dot product
 allows us to compare it to the up direction.
 
@@ -298,7 +305,7 @@ With dot products, when the result is greater than ``0``, the two vectors are at
 an angle of fewer than 90 degrees. A value higher than ``0.1`` tells us that we
 are roughly above the monster.
 
-We are calling one undefined function, ``mob.squash()``. We have to add it to
+We are calling one undefined function, ``mob.squash()``, so we have to add it to
 the Mob class.
 
 Open the script ``Mob.gd`` by double-clicking on it in the *FileSystem* dock. At
@@ -316,22 +323,22 @@ destroy the mob.
 
 
    func squash():
-       emit_signal("squashed")
+       squashed.emit()
        queue_free()
 
  .. code-tab:: csharp
 
     // Don't forget to rebuild the project so the editor knows about the new signal.
 
-    // Emitted when the played jumped on the mob.
+    // Emitted when the player jumped on the mob.
     [Signal]
-    public delegate void Squashed();
+    public delegate void SquashedEventHandler();
 
     // ...
 
     public void Squash()
     {
-        EmitSignal(nameof(Squashed));
+        EmitSignal(SignalName.Squashed);
         QueueFree();
     }
 
@@ -343,11 +350,11 @@ With that, you should be able to kill monsters by jumping on them. You can press
 However, the player won't die yet. We'll work on that in the next part.
 
 .. |image0| image:: img/06.jump_and_squash/02.project_settings.png
-.. |image1| image:: img/06.jump_and_squash/03.physics_layers.png
-.. |image2| image:: img/06.jump_and_squash/04.default_physics_properties.png
-.. |image3| image:: img/06.jump_and_squash/05.toggle_layer_and_mask.png
+.. |image1| image:: img/06.jump_and_squash/03.physics_layers.webp
+.. |image2| image:: img/06.jump_and_squash/04.default_physics_properties.webp
+.. |image3| image:: img/06.jump_and_squash/05.toggle_layer_and_mask.webp
 .. |image4| image:: img/06.jump_and_squash/06.named_checkboxes.png
-.. |image5| image:: img/06.jump_and_squash/07.player_physics_mask.png
-.. |image6| image:: img/06.jump_and_squash/08.mob_physics_mask.png
+.. |image5| image:: img/06.jump_and_squash/07.player_physics_mask.webp
+.. |image6| image:: img/06.jump_and_squash/08.mob_physics_mask.webp
 .. |image7| image:: img/06.jump_and_squash/09.groups_tab.png
 .. |image8| image:: img/06.jump_and_squash/10.group_scene_icon.png

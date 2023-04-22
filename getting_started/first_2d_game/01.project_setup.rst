@@ -7,7 +7,7 @@ In this short first part, we'll set up and organize the project.
 
 Launch Godot and create a new project.
 
-.. image:: img/new-project-button.png
+.. image:: img/new-project-button.webp
 
 .. tabs::
  .. tab:: GDScript
@@ -25,24 +25,12 @@ Launch Godot and create a new project.
     and ``fonts/`` directories to your project's directory.
 
     Ensure that you have the required dependencies to use C# in Godot.
-    You need the .NET Core 3.1 SDK, and an editor such as VS Code.
+    You need the latest stable .NET SDK, and an editor such as VS Code.
     See :ref:`doc_c_sharp_setup`.
 
- .. tab:: GDNative C++
+ .. tab:: C++
 
-    Download :download:`dodge_assets_with_gdnative.zip
-    <files/dodge_assets_with_gdnative.zip>`.
-    The archive contains the images and sounds you'll be using
-    to make the game. It also contains a starter GDNative project
-    including a ``SConstruct`` file, a ``dodge_the_creeps.gdnlib``
-    file, a ``player.gdns`` file, and an ``entry.cpp`` file.
-
-    Ensure that you have the required dependencies to use GDNative C++.
-    You need a C++ compiler such as GCC or Clang or MSVC that supports C++14.
-    On Windows you can download Visual Studio 2019 and select the C++ workload.
-    You also need SCons to use the build system (the SConstruct file).
-    Then you need to `download the Godot C++ bindings <https://github.com/godotengine/godot-cpp>`_
-    and place them in your project.
+    The C++ part of this tutorial wasn't rewritten for the new GDExtension system yet.
 
 Your project folder should look like this.
 
@@ -51,15 +39,14 @@ Your project folder should look like this.
 This game is designed for portrait mode, so we need to adjust the size of the
 game window. Click on *Project -> Project Settings* to open the project settings
 window and in the left column, open the *Display -> Window* tab. There, set
-"Width" to ``480`` and "Height" to ``720``.
+"Viewport Width" to ``480`` and "Viewport Height" to ``720``.
 
-.. image:: img/setting-project-width-and-height.png
+.. image:: img/setting-project-width-and-height.webp
 
-Also, scroll down to the bottom of the section and, under the "Stretch" options,
-set ``Mode`` to "2d" and ``Aspect`` to "keep". This ensures that the game scales
-consistently on different sized screens.
+Also, under the **Stretch** options, set **Mode** to ``canvas_items`` and **Aspect** to ``keep``.
+This ensures that the game scales consistently on different sized screens.
 
-.. image:: img/setting-stretch-mode.png
+.. image:: img/setting-stretch-mode.webp
 
 Organizing the project
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -72,6 +59,6 @@ scenes and their scripts, but for this relatively small game, you can save your
 scenes and scripts in the project's root folder, identified by ``res://``. You
 can see your project folders in the FileSystem dock in the lower left corner:
 
-.. image:: img/filesystem_dock.png
+.. image:: img/filesystem_dock.webp
 
 With the project in place, we're ready to design the player scene in the next lesson.

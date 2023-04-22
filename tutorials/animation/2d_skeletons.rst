@@ -3,11 +3,6 @@
 2D skeletons
 ============
 
-.. warning::
-
-    There are known issues with 2D skeletons on mobile and web platforms with the GLES2 renderer. We
-    recommend using the GLES3 renderer if your project relies on Skeleton2D for now.
-
 Introduction
 ------------
 
@@ -56,7 +51,7 @@ Creating the polygons
 ---------------------
 
 Create a new scene for your model (if it's going to be an animated character,
-you may want to use a ``KinematicBody2D``). For ease of use, an empty 2D node is
+you may want to use a ``CharacterBody2D``). For ease of use, an empty 2D node is
 created as a root for the polygons.
 
 Begin with a ``Polygon2D`` node. There is no need to place it anywhere in the

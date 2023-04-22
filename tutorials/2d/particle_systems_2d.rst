@@ -1,7 +1,9 @@
+:article_outdated: True
+
 .. _doc_particle_systems_2d:
 
-Particle systems (2D)
-=====================
+2D particle systems
+===================
 
 Intro
 -----
@@ -19,34 +21,38 @@ parameters and then adding randomness to them.
 Particle nodes
 ~~~~~~~~~~~~~~
 
-Godot provides two different nodes for 2D particles, :ref:`class_Particles2D` and
-:ref:`class_CPUParticles2D`.
-Particles2D is more advanced and uses the GPU to process particle effects, but that limits
-it to higher end graphics API, and in our case to the GLES3 renderer. For projects using
-the GLES2 backend, CPUParticles2D is a CPU-driven option with near feature parity with
-Particles2D, but lesser performance. While Particles2D is configured via a
-:ref:`class_ParticlesMaterial` (and optionally with a custom shader), the matching options
-are provided via node properties in CPUParticles2D (with the exception of the trail settings).
-You can convert a Particles2D node into a CPUParticles2D node by clicking on the node in the
-inspector, and selecting "Convert to CPUParticles2D" in the "Particles" menu of the toolbar.
+Godot provides two different nodes for 2D particles, :ref:`class_GPUParticles2D`
+and :ref:`class_CPUParticles2D`. GPUParticles2D is more advanced and uses the
+GPU to process particle effects. CPUParticles2D is a CPU-driven option with
+near-feature parity with GPUParticles2D, but lower performance when using large
+amounts of particles. On the other hand, CPUParticles2D may perform better on
+low-end systems or in GPU-bottlenecked situations.
+
+While GPUParticles2D is configured via a :ref:`class_ParticleProcessMaterial`
+(and optionally with a custom shader), the matching options are provided via
+node properties in CPUParticles2D (with the exception of the trail settings).
+
+You can convert a GPUParticles2D node into a CPUParticles2D node by clicking on
+the node in the inspector, and selecting **Particles > Convert to
+CPUParticles2D** in the toolbar at the top of the 3D editor viewport.
 
 .. image:: img/particles_convert.png
 
-The rest of this tutorial is going to use the Particles2D node. First, add a Particles2D
+The rest of this tutorial is going to use the GPUParticles2D node. First, add a GPUParticles2D
 node to your scene. After creating that node you will notice that only a white dot was created,
-and that there is a warning icon next to your Particles2D node in the scene dock. This
-is because the node needs a ParticlesMaterial to function.
+and that there is a warning icon next to your GPUParticles2D node in the scene dock. This
+is because the node needs a ParticleProcessMaterial to function.
 
-ParticlesMaterial
-~~~~~~~~~~~~~~~~~
+ParticleProcessMaterial
+~~~~~~~~~~~~~~~~~~~~~~~
 
 To add a process material to your particles node, go to ``Process Material`` in
 your inspector panel. Click on the box next to ``Material``, and from the dropdown
-menu select ``New ParticlesMaterial``.
+menu select ``New ParticleProcessMaterial``.
 
 .. image:: img/particles_material.png
 
-Your Particles2D node should now be emitting
+Your GPUParticles2D node should now be emitting
 white points downward.
 
 .. image:: img/particles1.png
@@ -80,7 +86,7 @@ Lifetime: 4.0
 One Shot
 ~~~~~~~~
 
-When enabled, a Particles2D node will emit all of its particles once
+When enabled, a GPUParticles2D node will emit all of its particles once
 and then never again.
 
 Preprocess
@@ -149,7 +155,7 @@ The rectangle's ``W`` and ``H`` properties respectively control its Width and it
 The ``X`` and ``Y`` properties control the position of the upper-left
 corner of the rectangle, relative to the particle emitter.
 
-You can have Godot generate a Visibility Rect automatically using the toolbar above the 2d view. To do so, select the Particles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
+You can have Godot generate a Visibility Rect automatically using the toolbar above the 2d view. To do so, select the GPUParticles2D node and Click ``Particles > Generate Visibility Rect``. Godot will simulate the Particles2D node emitting particles for a few seconds and set the rectangle to fit the surface the particles take.
 
 You can control the emit duration with the ``Generation Time (sec)`` option. The maximum value is 25 seconds. If you need more time for your particles to move around, you can temporarily change the ``preprocess`` duration on the Particles2D node.
 
@@ -174,8 +180,8 @@ This controls the order in which individual particles are drawn. ``Index``
 means particles are drawn according to their emission order (default).
 ``Lifetime`` means they are drawn in order of remaining lifetime.
 
-ParticlesMaterial settings
---------------------------
+ParticleProcessMaterial settings
+--------------------------------
 
 Direction
 ~~~~~~~~~
@@ -303,11 +309,11 @@ randomness ratio.
 Emission Shapes
 ---------------
 
-ParticlesMaterials allow you to set an Emission Mask, which dictates
+ParticleProcessMaterials allow you to set an Emission Mask, which dictates
 the area and direction in which particles are emitted.
 These can be generated from textures in your project.
 
-Ensure that a ParticlesMaterial is set, and the Particles2D node is selected.
+Ensure that a ParticleProcessMaterial is set, and the GPUParticles2D node is selected.
 A "Particles" menu should appear in the Toolbar:
 
 .. image:: img/emission_shapes1.png
@@ -348,7 +354,7 @@ Emission Colors
 
 ``Capture from Pixel`` will cause the particles to inherit the color of the mask at their spawn points.
 
-Once you click "OK", the mask will be generated and set to the ParticlesMaterial, under the ``Emission Shape`` section:
+Once you click "OK", the mask will be generated and set to the ParticleProcessMaterial, under the ``Emission Shape`` section:
 
 .. image:: img/emission_shapes4.png
 

@@ -34,8 +34,8 @@ This text reads as follows:
 
     This game uses Godot Engine, available under the following license:
 
-    Copyright (c) 2007-2022 Juan Linietsky, Ariel Manzur.
-    Copyright (c) 2014-2022 Godot Engine contributors.
+    Copyright (c) 2014-present Godot Engine contributors.
+    Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -56,6 +56,28 @@ The license does not specify how it has to be included, so anything is valid as
 long as it can be displayed under some condition. These are the most common
 approaches (only need to implement one of them, not all).
 
+.. tip::
+
+    Godot provides several methods to get license information in the Engine
+    singleton. This allows you to source the license information directly from
+    the engine binary, which prevents the information from becoming outdated if
+    you update engine versions.
+
+    For the engine itself:
+
+    - :ref:`Engine.get_license_text<class_Engine_method_get_license_text>`
+
+    For third-party components used by the engine:
+
+    - :ref:`Engine.get_license_info<class_Engine_method_get_license_info>`
+    - :ref:`Engine.get_copyright_info<class_Engine_method_get_copyright_info>`
+
+    For miscellaneous engine contributor information. You don't have to include
+    these ones in your project, but they're listed here for reference:
+
+    - :ref:`Engine.get_author_info<class_Engine_method_get_author_info>`
+    - :ref:`Engine.get_donor_info<class_Engine_method_get_donor_info>`
+
 Credits screen
 ^^^^^^^^^^^^^^
 
@@ -67,11 +89,13 @@ Licenses screen
 ^^^^^^^^^^^^^^^
 
 Some games have a special menu (often in the settings) to display licenses.
+This menu is typically accessed with a button called **Third-party Licenses**
+or **Open Source Licenses**.
 
 Output log
 ^^^^^^^^^^
 
-Just printing the licensing text using the :ref:`print() <class_@GlobalScope_method_print>`
+Printing the licensing text using the :ref:`print() <class_@GlobalScope_method_print>`
 function may be enough on platforms where a global output log is readable.
 This is the case on desktop platforms, Android and HTML5 (but not iOS and UWP).
 
@@ -116,7 +140,7 @@ Godot license:
 
 .. note::
 
-    <year> should correspond to the value from the FreeType version used 
+    <year> should correspond to the value from the FreeType version used
     in your build. This information can be found in the editor by opening
     the **Help > About** dialog and going to the **Third-party Licenses**
     tab.
@@ -155,10 +179,6 @@ The Apache license needs to be complied to by including the following text:
     WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-Keep in mind that Godot 2.x and 3.0 use `OpenSSL <https://www.openssl.org>`_ 1.x
-instead. This old OpenSSL version used the OpenSSL license, not the Apache 2 license
-as the latest version of OpenSSL currently uses (as of April 2022).
 
 .. note::
 

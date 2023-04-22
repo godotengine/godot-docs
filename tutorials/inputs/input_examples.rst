@@ -43,20 +43,20 @@ Examples:
 
  .. code-tab:: csharp
 
-    public override void _Input(InputEvent inputEvent)
+    public override void _Input(InputEvent @event)
     {
-        if (inputEvent.IsActionPressed("jump"))
+        if (@event.IsActionPressed("jump"))
         {
             Jump();
         }
     }
 
-    public override void _PhysicsProcess(float delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (Input.IsActionPressed("move_right"))
         {
             // Move as long as the key/button is pressed.
-            position.x += speed * delta;
+            position.X += speed * (float)delta;
         }
     }
 
@@ -86,13 +86,12 @@ attach the following script:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Node : Godot.Node
+    public partial class Node : Godot.Node
     {
-        public override void _Input(InputEvent inputEvent)
+        public override void _Input(InputEvent @event)
         {
-            GD.Print(inputEvent.AsText());
+            GD.Print(@event.AsText());
         }
     }
 
@@ -103,8 +102,8 @@ event scroll by in the output window. Here's an example of the output:
 
     A
     InputEventMouseMotion : button_mask=0, position=(108, 108), relative=(26, 1), speed=(164.152496, 159.119843), pressure=(0), tilt=(0, 0)
-    InputEventMouseButton : button_index=BUTTON_LEFT, pressed=true, position=(108, 107), button_mask=1, doubleclick=false
-    InputEventMouseButton : button_index=BUTTON_LEFT, pressed=false, position=(108, 107), button_mask=0, doubleclick=false
+    InputEventMouseButton : button_index=MOUSE_BUTTON_LEFT, pressed=true, position=(108, 107), button_mask=1, doubleclick=false
+    InputEventMouseButton : button_index=MOUSE_BUTTON_LEFT, pressed=false, position=(108, 107), button_mask=0, doubleclick=false
     S
     F
     Alt
@@ -137,9 +136,9 @@ avoid this, make sure to test the event type first:
 
  .. code-tab:: csharp
 
-    public override void _Input(InputEvent inputEvent)
+    public override void _Input(InputEvent @event)
     {
-        if (inputEvent is InputEventMouseButton mouseEvent)
+        if (@event is InputEventMouseButton mouseEvent)
         {
             GD.Print("mouse button event at ", mouseEvent.Position);
         }
@@ -173,9 +172,9 @@ the action you're looking for:
 
  .. code-tab:: csharp
 
-    public override void _Input(InputEvent inputEvent)
+    public override void _Input(InputEvent @event)
     {
-        if (inputEvent.IsActionPressed("my_action"))
+        if (@event.IsActionPressed("my_action"))
         {
             GD.Print("my_action occurred!");
         }
@@ -199,18 +198,18 @@ the :kbd:`T`:
 
  .. code-tab:: csharp
 
-    public override void _Input(InputEvent inputEvent)
+    public override void _Input(InputEvent @event)
     {
-        if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
+        if (@event is InputEventKey keyEvent && keyEvent.Pressed)
         {
-            if ((KeyList)keyEvent.Keycode == KeyList.T)
+            if (keyEvent.Keycode == Key.T)
             {
                 GD.Print("T was pressed");
             }
         }
     }
 
-.. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of keycode
+.. tip:: See :ref:`@GlobalScope_Key <enum_@GlobalScope_Key>` for a list of keycode
         constants.
 
 .. warning::
@@ -248,20 +247,20 @@ different when it's :kbd:`Shift + T`:
 
  .. code-tab:: csharp
 
-    public override void _Input(InputEvent inputEvent)
+    public override void _Input(InputEvent @event)
     {
-        if (inputEvent is InputEventKey keyEvent && keyEvent.Pressed)
+        if (@event is InputEventKey keyEvent && keyEvent.Pressed)
         {
-            switch ((KeyList)keyEvent.Keycode)
+            switch (keyEvent.Keycode)
             {
-                case KeyList.T:
+                case Key.T:
                     GD.Print(keyEvent.Shift ? "Shift+T was pressed" : "T was pressed");
                     break;
             }
         }
     }
 
-.. tip:: See :ref:`@GlobalScope_KeyList <enum_@GlobalScope_KeyList>` for a list of keycode
+.. tip:: See :ref:`@GlobalScope_Key <enum_@GlobalScope_Key>` for a list of keycode
         constants.
 
 Mouse events
@@ -275,34 +274,34 @@ means that all mouse events will contain a ``position`` property.
 Mouse buttons
 ~~~~~~~~~~~~~
 
-Capturing mouse buttons is very similar to handling key events. :ref:`@GlobalScope_ButtonList <enum_@GlobalScope_ButtonList>`
-contains a list of ``BUTTON_*`` constants for each possible button, which will
+Capturing mouse buttons is very similar to handling key events. :ref:`@GlobalScope_MouseButton <enum_@GlobalScope_MouseButton>`
+contains a list of ``MOUSE_BUTTON_*`` constants for each possible button, which will
 be reported in the event's ``button_index`` property. Note that the scrollwheel
 also counts as a button - two buttons, to be precise, with both
-``BUTTON_WHEEL_UP`` and ``BUTTON_WHEEL_DOWN`` being separate events.
+``MOUSE_BUTTON_WHEEL_UP`` and ``MOUSE_BUTTON_WHEEL_DOWN`` being separate events.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _input(event):
         if event is InputEventMouseButton:
-            if event.button_index == BUTTON_LEFT and event.pressed:
+            if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
                 print("Left button was clicked at ", event.position)
-            if event.button_index == BUTTON_WHEEL_UP and event.pressed:
+            if event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
                 print("Wheel up")
 
  .. code-tab:: csharp
 
-    public override void _Input(InputEvent inputEvent)
+    public override void _Input(InputEvent @event)
     {
-        if (inputEvent is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
+        if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
         {
-            switch ((ButtonList)mouseEvent.ButtonIndex)
+            switch (mouseEvent.ButtonIndex)
             {
-                case ButtonList.Left:
-                    GD.Print("Left button was clicked at ", {mouseEvent.Position});
+                case MouseButton.Left:
+                    GD.Print($"Left button was clicked at {mouseEvent.Position}");
                     break;
-                case ButtonList.WheelUp:
+                case MouseButton.WheelUp:
                     GD.Print("Wheel up");
                     break;
             }
@@ -330,7 +329,7 @@ node:
 
 
     func _input(event):
-        if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+        if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
             if (event.position - $Sprite2D.position).length() < click_radius:
                 # Start dragging if the click is on the sprite.
                 if not dragging and event.pressed:
@@ -346,14 +345,13 @@ node:
  .. code-tab:: csharp
 
     using Godot;
-    using System;
 
-    public class Node2D : Godot.Node2D
+    public partial class MyNode2D : Node2D
     {
-        private bool dragging = false;
-        private int clickRadius = 32; // Size of the sprite.
+        private bool _dragging = false;
+        private int _clickRadius = 32; // Size of the sprite.
 
-        public override void _Input(InputEvent inputEvent)
+        public override void _Input(InputEvent @event)
         {
             Sprite2D sprite = GetNodeOrNull<Sprite2D>("Sprite2D");
             if (sprite == null)
@@ -361,25 +359,25 @@ node:
                 return; // No suitable node was found.
             }
 
-            if (inputEvent is InputEventMouseButton mouseEvent && (ButtonList)mouseEvent.ButtonIndex == ButtonList.Left)
+            if (@event is InputEventMouseButton mouseEvent && mouseEvent.ButtonIndex == MouseButton.Left)
             {
-                if ((mouseEvent.Position - sprite.Position).Length() < clickRadius)
+                if ((mouseEvent.Position - sprite.Position).Length() < _clickRadius)
                 {
                     // Start dragging if the click is on the sprite.
-                    if (!dragging && mouseEvent.Pressed)
+                    if (!_dragging && mouseEvent.Pressed)
                     {
-                        dragging = true;
+                        _dragging = true;
                     }
                 }
                 // Stop dragging if the button is released.
-                if (dragging && !mouseEvent.Pressed)
+                if (_dragging && !mouseEvent.Pressed)
                 {
-                    dragging = false;
+                    _dragging = false;
                 }
             }
             else
             {
-                if (inputEvent is InputEventMouseMotion motionEvent && dragging)
+                if (@event is InputEventMouseMotion motionEvent && _dragging)
                 {
                     // While dragging, move the sprite with the mouse.
                     sprite.Position = motionEvent.Position;

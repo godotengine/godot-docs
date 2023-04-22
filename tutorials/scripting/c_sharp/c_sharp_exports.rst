@@ -1,6 +1,6 @@
 .. _doc_c_sharp_exports:
 
-C# Exports
+C# exports
 ==========
 
 Introduction to exports
@@ -13,18 +13,23 @@ Exporting is done by using the ``[Export]`` attribute.
 
 .. code-block:: csharp
 
-    public class ExportExample : Spatial
+    using Godot;
+
+    public partial class ExportExample : Node3D
     {
         [Export]
         private int Number = 5;
     }
 
 In that example the value ``5`` will be saved, and after building the current project
-it will be visible in the property editor. This way, artists and game designers
+it will be visible in the property editor.
+
+One of the fundamental benefits of exporting member variables is to have
+them visible and editable in the editor. This way, artists and game designers
 can modify values that later influence how the program runs. For this, a
 special export syntax is provided.
 
-Exporting can only be done with built-in types or objects derived from the :ref:`Resource class <class_Resource>`.
+Exporting can only be done with :ref:`Variant-compatible <doc_c_sharp_variant>` types.
 
 .. note::
 
@@ -34,66 +39,95 @@ Exporting can only be done with built-in types or objects derived from the :ref:
 Basic use
 ---------
 
-Exporting can work with and without setting a default value. For int and float
-``0`` will then be used as the default.
+Exporting can work with fields and properties.
 
 .. code-block:: csharp
 
     [Export]
-    private int Number;
+    private int _number;
 
-Export works with resource types.
+    [Export]
+    public int Number { get; set; }
+
+Exported members can specify a default value; otherwise, the `default value of the type <https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values>`_ is used instead.
 
 .. code-block:: csharp
 
     [Export]
-    private Texture CharacterFace;
-    [Export]
-    private PackedScene SceneFile;
+    private int _number; // Defaults to '0'
 
-There are many resource types that can be used this way, try e.g.
-the following to list them:
+    [Export]
+    private string _text; // Defaults to 'null' because it's a reference type
+
+    [Export]
+    private string _greeting = "Hello World"; // Exported field specifies a default value
+
+    [Export]
+    public string Greeting { get; set; } = "Hello World"; // Exported property specifies a default value
+
+    // This property uses `_greeting` as its backing field, so the default value
+    // will be the default value of the `_greeting` field.
+    [Export]
+    public string GreetingWithBackingField
+    {
+        get => _greeting;
+        set => _greeting = value;
+    }
+
+Resources and nodes can be exported.
 
 .. code-block:: csharp
 
     [Export]
-    private Resource Resource;
+    public Resource Resource { get; set; }
 
-..
-	Commenting out enum examples becuase I have been told they
-	require extra steps to actually work properly. The examples bellow
-	will show up in the inspector but apparently do not function properly
-..
-	Integers and strings hint enumerated values.
-..
-	code-block:: csharp
-..
-	    // Editor will enumerate as 0, 1 and 2.
-	    [Export(PropertyHint.Enum, "Warrior,Magician,Thief")]
-	    private int CharacterClass;
-..
-	If type is String, editor will enumerate with string names.
-..
-	code-block:: csharp
-..
-	    [Export(PropertyHint.Enum, "Rebecca,Mary,Leah")]
-	    private string CharacterName;
-..
-	Named enum values
-	-----------------
-..
-	Editor will enumerate as THING_1, THING_2, ANOTHER_THING.
-..
-	code-block:: csharp
-..
-	    private enum NamedEnum
-	    {
-	        Thing1,
-	        Thing2,
-	        AnotherThing = -1
-	    }
-	    [Export(PropertyHint.Enum)]
-	    private NamedEnum X;
+    [Export]
+    public Node Node { get; set; }
+
+Grouping exports
+----------------
+
+It is possible to group your exported properties inside the Inspector with the ``[ExportGroup]``
+attribute. Every exported property after this attribute will be added to the group. Start a new
+group or use ``[ExportGroup("")]`` to break out.
+
+.. code-block:: csharp
+
+    [ExportGroup("My Properties")]
+    [Export]
+    public int Number { get; set; } = 3;
+
+The second argument of the attribute can be used to only group properties with the specified prefix.
+
+Groups cannot be nested, use ``[ExportSubgroup]`` to create subgroups within a group.
+
+.. code-block:: csharp
+
+    [ExportSubgroup("Extra Properties")]
+    [Export]
+    public string Text { get; set; } = "";
+    [Export]
+    public bool Flag { get; set; } = false;
+
+You can also change the name of your main category, or create additional categories in the property
+list with the ``[ExportCategory]`` attribute.
+
+.. code-block:: csharp
+
+    [ExportCategory("Main Category")]
+    [Export]
+    public int Number { get; set; } = 3;
+    [Export]
+    public string Text { get; set; } = "";
+
+    [ExportCategory("Extra Category")]
+    [Export]
+    private bool Flag { get; set; } = false;
+
+.. note::
+
+    The list of properties is organized based on the class inheritance, and new categories break
+    that expectation. Use them carefully, especially when creating projects for public use.
 
 Strings as paths
 ----------------
@@ -105,21 +139,21 @@ String as a path to a file.
 .. code-block:: csharp
 
     [Export(PropertyHint.File)]
-    private string GameFile;
+    public string GameFile { get; set; }
 
 String as a path to a directory.
 
 .. code-block:: csharp
 
     [Export(PropertyHint.Dir)]
-    private string GameDirectory;
+    public string GameDirectory { get; set; }
 
 String as a path to a file, custom filter provided as hint.
 
 .. code-block:: csharp
 
     [Export(PropertyHint.File, "*.txt,")]
-    private string GameFile;
+    public string GameFile { get; set; }
 
 Using paths in the global filesystem is also possible,
 but only in scripts in tool mode.
@@ -129,14 +163,14 @@ String as a path to a PNG file in the global filesystem.
 .. code-block:: csharp
 
     [Export(PropertyHint.GlobalFile, "*.png")]
-    private string ToolImage;
+    public string ToolImage { get; set; }
 
 String as a path to a directory in the global filesystem.
 
 .. code-block:: csharp
 
     [Export(PropertyHint.GlobalDir)]
-    private string ToolDir;
+    public string ToolDir { get; set; }
 
 The multiline annotation tells the editor to show a large input
 field for editing over multiple lines.
@@ -144,7 +178,7 @@ field for editing over multiple lines.
 .. code-block:: csharp
 
     [Export(PropertyHint.MultilineText)]
-    private string Text;
+    public string Text { get; set; }
 
 Limiting editor input ranges
 ----------------------------
@@ -157,21 +191,21 @@ Allow integer values from 0 to 20.
 .. code-block:: csharp
 
     [Export(PropertyHint.Range, "0,20,")]
-    private int Number;
+    public int Number { get; set; }
 
 Allow integer values from -10 to 20.
 
 .. code-block:: csharp
 
     [Export(PropertyHint.Range, "-10,20,")]
-    private int Number;
+    public int Number { get; set; }
 
 Allow floats from -10 to 20 and snap the value to multiples of 0.2.
 
 .. code-block:: csharp
 
     [Export(PropertyHint.Range, "-10,20,0.2")]
-    private float Number;
+    public float Number { get; set; }
 
 If you add the hints "or_greater" and/or "or_lesser" you can go above
 or below the limits when adjusting the value by typing it instead of using
@@ -180,7 +214,7 @@ the slider.
 .. code-block:: csharp
 
     [Export(PropertyHint.Range, "0,100,1,or_greater,or_lesser")]
-    private int Number;
+    public int Number { get; set; }
 
 Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
 while snapping to steps of 20. The editor will present a
@@ -189,7 +223,7 @@ slider for easily editing the value. This only works with floats.
 .. code-block:: csharp
 
     [Export(PropertyHint.ExpRange, "100,1000,20")]
-    private float Number;
+    public float Number { get; set; }
 
 Floats with easing hint
 -----------------------
@@ -200,7 +234,7 @@ when editing.
 .. code-block:: csharp
 
     [Export(PropertyHint.ExpEasing)]
-    private float TransitionSpeed;
+    public float TransitionSpeed { get; set; }
 
 Colors
 ------
@@ -210,30 +244,35 @@ Regular color given as red-green-blue-alpha value.
 .. code-block:: csharp
 
     [Export]
-    private Color Col;
+    private Color Color { get; set; }
 
 Color given as red-green-blue value (alpha will always be 1).
 
 .. code-block:: csharp
 
     [Export(PropertyHint.ColorNoAlpha)]
-    private Color Col;
+    private Color Color { get; set; }
 
 Nodes
 -----
 
-Nodes can't be directly exported. Instead you need to export
-a node path, then use that node path with ``GetNode()``.
+Since Godot 4.0, nodes can be directly exported without having to use NodePaths.
 
 .. code-block:: csharp
 
     [Export]
-    private NodePath MyNodePath;
-    private Label MyNode;
+    public Node Node { get; set; }
+
+Exporting NodePaths like in Godot 3.x is still possible, in case you need it:
+
+.. code-block:: csharp
+
+    [Export]
+    private NodePath _nodePath;
 
     public override void _Ready()
     {
-        MyNode = GetNode<Label>(MyNodePath);
+        var node = GetNode(_nodePath);
     }
 
 Resources
@@ -249,7 +288,7 @@ from the FileSystem dock into the variable slot.
 
 Opening the inspector dropdown may result in an
 extremely long list of possible classes to create, however.
-Therefore, if you specify an extension of Resource such as:
+Therefore, if you specify a type derived from Resource such as:
 
 .. code-block:: csharp
 
@@ -266,6 +305,29 @@ in conjunction with a :ref:`script in "tool" mode <doc_gdscript_tool_mode>`.
 Exporting bit flags
 -------------------
 
+Members whose type is an enum with the ``[Flags]`` attribute can be exported and
+their values are limited to the members of the enum type.
+The editor will create a widget in the Inspector, allowing to select none, one,
+or multiple of the enum members. The value will be stored as an integer.
+
+.. code-block:: csharp
+
+    // Use power of 2 values for the values of the enum members.
+    [Flags]
+    public enum MyEnum
+    {
+        Fire = 1 << 1,
+        Water = 1 << 2,
+        Earth = 1 << 3,
+        Wind = 1 << 4,
+
+        // A combination of flags is also possible.
+        FireAndWater = Fire | Water,
+    }
+
+    [Export]
+    public SpellElements MySpellElements { get; set; }
+
 Integers used as bit flags can store multiple ``true``/``false`` (boolean)
 values in one property. By using the ``Flags`` property hint, they
 can be set from the editor.
@@ -274,48 +336,131 @@ can be set from the editor.
 
     // Set any of the given flags from the editor.
     [Export(PropertyHint.Flags, "Fire,Water,Earth,Wind")]
-    private int SpellElements = 0;
+    public int SpellElements { get; set; } = 0;
 
 You must provide a string description for each flag. In this example, ``Fire``
 has value 1, ``Water`` has value 2, ``Earth`` has value 4 and ``Wind``
 corresponds to value 8. Usually, constants should be defined accordingly (e.g.
 ``private const int ElementWind = 8`` and so on).
 
+You can add explicit values using a colon:
+
+.. code-block:: csharp
+
+    [Export(PropertyHint.Flags, "Self:4,Allies:8,Foes:16")]
+    public int SpellTargets { get; set; } = 0;
+
+Only power of 2 values are valid as bit flags options. The lowest allowed value
+is 1, as 0 means that nothing is selected. You can also add options that are a
+combination of other flags:
+
+.. code-block:: csharp
+
+    [Export(PropertyHint.Flags, "Self:4,Allies:8,Self and Allies:12,Foes:16")]
+    public int SpellTargets { get; set; } = 0;
+
 Export annotations are also provided for the physics and render layers defined in the project settings.
 
 .. code-block:: csharp
 
-    [Export(PropertyHint.Layers2dPhysics)]
-    private int Layers2dPhysics;
-    [Export(PropertyHint.Layers2dRender)]
-    private int Layers2dRender;
-    [Export(PropertyHint.Layers3dPhysics)]
-    private int layers3dPhysics;
-    [Export(PropertyHint.Layers3dRender)]
-    private int layers3dRender;
+    [Export(PropertyHint.Layers2DPhysics)]
+    public int Layers2DPhysics { get; set; }
+    [Export(PropertyHint.Layers2DRender)]
+    public int Layers2DRender { get; set; }
+    [Export(PropertyHint.Layers3DPhysics)]
+    public int layers3DPhysics { get; set; }
+    [Export(PropertyHint.Layers3DRender)]
+    public int layers3DRender { get; set; }
 
 Using bit flags requires some understanding of bitwise operations.
 If in doubt, use boolean variables instead.
 
-Exporting arrays
-----------------
+Exporting enums
+---------------
 
-Exported arrays should be initialized empty.
+Members whose type is an enum can be exported and their values are limited to the members
+of the enum type. The editor will create a widget in the Inspector, enumerating the
+following as "Thing 1", "Thing 2", "Another Thing". The value will be stored as an integer.
+
+.. code-block:: csharp
+
+    public enum MyEnum
+    {
+        Thing1,
+        Thing2,
+        AnotherThing = -1,
+    }
+
+    [Export]
+    public MyEnum MyEnum { get; set; }
+
+Integer and string members can also be limited to a specific list of values using the
+``[Export]`` annotation with the ``PropertyHint.Enum`` hint.
+The editor will create a widget in the Inspector, enumerating the following as Warrior,
+Magician, Thief. The value will be stored as an integer, corresponding to the index
+of the selected option (i.e. ``0``, ``1``, or ``2``).
+
+.. code-block:: csharp
+
+    [Export(PropertyHint.Enum, "Warrior,Magician,Thief")]
+    public int CharacterClass { get; set; };
+
+You can add explicit values using a colon:
+
+.. code-block:: csharp
+
+    [Export(PropertyHint.Enum, "Slow:30,Average:60,Very Fast:200")]
+    public int CharacterSpeed { get; set; }
+
+If the type is ``string``, the value will be stored as a string.
+
+.. code-block:: csharp
+
+    [Export(PropertyHint.Enum, "Rebecca,Mary,Leah")]
+    public string CharacterName { get; set; }
+
+If you want to set an initial value, you must specify it explicitly:
+
+.. code-block:: csharp
+
+    [Export(PropertyHint.Enum, "Rebecca,Mary,Leah")]
+    public string CharacterName { get; set; } = "Rebecca";
+
+Exporting collections
+---------------------
+
+As explained in the :ref:`C# Variant <doc_c_sharp_variant>` documentation, only
+certain C# arrays and the collection types defined in the ``Godot.Collections``
+namespace are Variant-compatible, therefore, only those types can be exported.
+
+Exporting Godot arrays
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: csharp
 
     [Export]
-    private Vector3[] Vector3s = new Vector3[0];
-    [Export]
-    private String[] String = new String[0];
+    public Godot.Collections.Array Array { get; set; }
 
-
-You can omit the default value, but then it would be null if not assigned.
+Using the generic ``Godot.Collections.Array<T>`` allows to specify the type of the
+array elements which will be used as a hint for the editor. The Inspector will
+restrict the elements to the specified type.
 
 .. code-block:: csharp
 
     [Export]
-    private int[] Numbers;
+    public Godot.Collections.Array<string> Array { get; set; }
+
+The default value of Godot arrays is null, a different default can be specified:
+
+.. code-block:: csharp
+
+    [Export]
+    public Godot.Collections.Array<string> CharacterNames { get; set; } = new Godot.Collections.Array<string>
+    {
+        "Rebecca",
+        "Mary",
+        "Leah",
+    };
 
 Arrays with specified types which inherit from resource can be set by
 drag-and-dropping multiple files from the FileSystem dock.
@@ -323,17 +468,68 @@ drag-and-dropping multiple files from the FileSystem dock.
 .. code-block:: csharp
 
     [Export]
-    private Texture[] Textures;
-    [Export]
-    private PackedScene[] Scenes;
+    public Godot.Collections.Array<Texture> Textures { get; set; }
 
-Arrays where the default value includes run-time values can't
-be exported.
+    [Export]
+    public Godot.Collections.Array<PackedScene> Scenes { get; set; }
+
+Exporting Godot dictionaries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: csharp
 
-    private int Number = 1;
-    private int[] SeveralNumbers = {Number,2,3};
+    [Export]
+    public Godot.Collections.Dictionary Dictionary { get; set; }
+
+Using the generic ``Godot.Collections.Dictionary<TKey, TValue>`` allows to specify
+the type of the key and value elements of the dictionary.
+
+.. note::
+
+    Typed dictionaries are currently unsupported in the Godot editor, so
+    the Inspector will not restrict the types that can be assigned, potentially
+    resulting in runtime exceptions.
+
+.. code-block:: csharp
+
+    [Export]
+    public Godot.Collections.Dictionary<string, int> Dictionary { get; set; }
+
+The default value of Godot dictionaries is null, a different default can be specified:
+
+.. code-block:: csharp
+
+    [Export]
+    public Godot.Collections.Dictionary<string, int> CharacterLives { get; set; } = new Godot.Collections.Dictionary<string, int>
+    {
+        ["Rebecca"] = 10,
+        ["Mary"] = 42,
+        ["Leah"] = 0,
+    };
+
+Exporting C# arrays
+^^^^^^^^^^^^^^^^^^^
+
+C# arrays can exported as long as the element type is a :ref:`Variant-compatible <doc_c_sharp_variant>` type.
+
+.. code-block:: csharp
+
+    [Export]
+    public Vector3[] Vectors { get; set; }
+
+    [Export]
+    public NodePath[] NodePaths { get; set; }
+
+The default value of C# arrays is null, a different default can be specified:
+
+.. code-block:: csharp
+
+    [Export]
+    public Vector3[] Vectors { get; set; } = new Vector3[]
+    {
+        new Vector3(1, 2, 3),
+        new Vector3(3, 2, 1),
+    }
 
 Setting exported variables from a tool script
 ---------------------------------------------
@@ -341,7 +537,7 @@ Setting exported variables from a tool script
 When changing an exported variable's value from a script in
 :ref:`doc_gdscript_tool_mode`, the value in the inspector won't be updated
 automatically. To update it, call
-:ref:`property_list_changed_notify() <class_Object_method_property_list_changed_notify>`
+:ref:`NotifyPropertyListChanged() <class_Object_method_notify_property_list_changed>`
 after setting the exported variable's value.
 
 Advanced exports
@@ -353,9 +549,9 @@ common exporting features which can be implemented with a low-level API.
 
 Before reading further, you should get familiar with the way properties are
 handled and how they can be customized with
-:ref:`_set() <class_Object_method__get_property_list>`,
-:ref:`_get() <class_Object_method__get_property_list>`, and
-:ref:`_get_property_list() <class_Object_method__get_property_list>` methods as
+:ref:`_Set() <class_Object_method__set>`,
+:ref:`_Get() <class_Object_method__get>`, and
+:ref:`_GetPropertyList() <class_Object_method__get_property_list>` methods as
 described in :ref:`doc_accessing_data_or_logic_from_object`.
 
 .. seealso:: For binding properties using the above methods in C++, see

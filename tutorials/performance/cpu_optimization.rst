@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_cpu_optimization:
 
 CPU optimization
@@ -8,7 +10,7 @@ Measuring performance
 
 We have to know where the "bottlenecks" are to know how to speed up our program.
 Bottlenecks are the slowest parts of the program that limit the rate that
-everything can progress. Focussing on bottlenecks allows us to concentrate our
+everything can progress. Focusing on bottlenecks allows us to concentrate our
 efforts on optimizing the areas which will give us the greatest speed
 improvement, instead of spending a lot of time optimizing functions that will
 lead to small performance improvements.
@@ -154,7 +156,7 @@ will be able to work as fast as possible.
 Godot usually takes care of such low-level details for you. For example, the
 Server APIs make sure data is optimized for caching already for things like
 rendering and physics. Still, you should be especially aware of caching when
-using :ref:`GDNative <toc-tutorials-gdnative>`.
+writing GDExtensions.
 
 Languages
 =========
@@ -198,8 +200,8 @@ C++
 Godot is written in C++. Using C++ will usually result in the fastest code.
 However, on a practical level, it is the most difficult to deploy to end users'
 machines on different platforms. Options for using C++ include
-:ref:`GDNative <toc-tutorials-gdnative>` and
-:ref:`custom modules <doc_custom_modules_in_c++>`.
+GDExtensions and
+:ref:`custom modules <doc_custom_modules_in_cpp>`.
 
 Threads
 =======
@@ -225,10 +227,10 @@ SceneTree
 
 Although Nodes are an incredibly powerful and versatile concept, be aware that
 every node has a cost. Built-in functions such as `_process()` and
-`_physics_process()` propagate through the tree. This housekeeping can reduce 
-performance when you have a very large numbers of nodes (how many exactly 
-depends on the target platform and can range from thousands to tens of 
-thousands so ensure that you profile performance on all target platforms 
+`_physics_process()` propagate through the tree. This housekeeping can reduce
+performance when you have a very large numbers of nodes (how many exactly
+depends on the target platform and can range from thousands to tens of
+thousands so ensure that you profile performance on all target platforms
 during development).
 
 Each node is handled individually in the Godot renderer. Therefore, a smaller

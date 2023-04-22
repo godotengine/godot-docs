@@ -11,79 +11,79 @@ write vertex, fragment, and light processor functions to affect how objects are 
 Render modes
 ^^^^^^^^^^^^
 
-+-------------------------------+------------------------------------------------------------------------+
-| Render mode                   | Description                                                            |
-+===============================+========================================================================+
-| **blend_mix**                 | Mix blend mode (alpha is transparency), default.                       |
-+-------------------------------+------------------------------------------------------------------------+
-| **blend_add**                 | Additive blend mode.                                                   |
-+-------------------------------+------------------------------------------------------------------------+
-| **blend_sub**                 | Subtractive blend mode.                                                |
-+-------------------------------+------------------------------------------------------------------------+
-| **blend_mul**                 | Multiplicative blend mode.                                             |
-+-------------------------------+------------------------------------------------------------------------+
-| **depth_draw_opaque**         | Only draw depth for opaque geometry (not transparent).                 |
-+-------------------------------+------------------------------------------------------------------------+
-| **depth_draw_always**         | Always draw depth (opaque and transparent).                            |
-+-------------------------------+------------------------------------------------------------------------+
-| **depth_draw_never**          | Never draw depth.                                                      |
-+-------------------------------+------------------------------------------------------------------------+
-| **depth_prepass_alpha**       | Do opaque depth pre-pass for transparent geometry.                     |
-+-------------------------------+------------------------------------------------------------------------+
-| **depth_test_disabled**       | Disable depth testing.                                                 |
-+-------------------------------+------------------------------------------------------------------------+
-| **sss_mode_skin**             |                                                                        |
-+-------------------------------+------------------------------------------------------------------------+
-| **cull_back**                 | Cull back-faces (default).                                             |
-+-------------------------------+------------------------------------------------------------------------+
-| **cull_front**                | Cull front-faces.                                                      |
-+-------------------------------+------------------------------------------------------------------------+
-| **cull_disabled**             | Culling disabled (double sided).                                       |
-+-------------------------------+------------------------------------------------------------------------+
-| **unshaded**                  | Result is just albedo. No lighting/shading happens in material.        |
-+-------------------------------+------------------------------------------------------------------------+
-| **wireframe**                 | Geometry draws using lines.                                            |
-+-------------------------------+------------------------------------------------------------------------+
-| **diffuse_lambert**           | Lambert shading for diffuse (default).                                 |
-+-------------------------------+------------------------------------------------------------------------+
-| **diffuse_lambert_wrap**      | Lambert wrapping (roughness dependent) for diffuse.                    |
-+-------------------------------+------------------------------------------------------------------------+
-| **diffuse_burley**            | Burley (Disney PBS) for diffuse.                                       |
-+-------------------------------+------------------------------------------------------------------------+
-| **diffuse_toon**              | Toon shading for diffuse.                                              |
-+-------------------------------+------------------------------------------------------------------------+
-| **specular_schlick_ggx**      | Schlick-GGX for specular (default).                                    |
-+-------------------------------+------------------------------------------------------------------------+
-| **specular_blinn**            | Blinn for specular (compatibility).                                    |
-+-------------------------------+------------------------------------------------------------------------+
-| **specular_phong**            | Phong for specular (compatibility).                                    |
-+-------------------------------+------------------------------------------------------------------------+
-| **specular_toon**             | Toon for specular.                                                     |
-+-------------------------------+------------------------------------------------------------------------+
-| **specular_disabled**         | Disable specular.                                                      |
-+-------------------------------+------------------------------------------------------------------------+
-| **skip_vertex_transform**     | VERTEX/NORMAL/etc. need to be transformed manually in vertex function. |
-+-------------------------------+------------------------------------------------------------------------+
-| **world_vertex_coords**       | VERTEX/NORMAL/etc. are modified in world coordinates instead of local. |
-+-------------------------------+------------------------------------------------------------------------+
-| **ensure_correct_normals**    | Use when non-uniform scale is applied to mesh.                         |
-+-------------------------------+------------------------------------------------------------------------+
-| **shadows_disabled**          | Disable computing shadows in shader.                                   |
-+-------------------------------+------------------------------------------------------------------------+
-| **ambient_light_disabled**    | Disable contribution from ambient light and radiance map.              |
-+-------------------------------+------------------------------------------------------------------------+
-| **shadow_to_opacity**         | Lighting modifies the alpha so shadowed areas are opaque and           |
-|                               | non-shadowed areas are transparent. Useful for overlaying shadows onto |
-|                               | a camera feed in AR.                                                   |
-+-------------------------------+------------------------------------------------------------------------+
-| **vertex_lighting**           | Use vertex-based lighting.                                             |
-+-------------------------------+------------------------------------------------------------------------+
-| **particle_trails**           | Enables the trails when used on particles geometry.                    |
-+-------------------------------+------------------------------------------------------------------------+
-| **alpha_to_coverage**         |                                                                        |
-+-------------------------------+------------------------------------------------------------------------+
-| **alpha_to_coverage_and_one** |                                                                        |
-+-------------------------------+------------------------------------------------------------------------+
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| Render mode                   | Description                                                                                          |
++===============================+======================================================================================================+
+| **blend_mix**                 | Mix blend mode (alpha is transparency), default.                                                     |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **blend_add**                 | Additive blend mode.                                                                                 |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **blend_sub**                 | Subtractive blend mode.                                                                              |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **blend_mul**                 | Multiplicative blend mode.                                                                           |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **depth_draw_opaque**         | Only draw depth for opaque geometry (not transparent).                                               |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **depth_draw_always**         | Always draw depth (opaque and transparent).                                                          |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **depth_draw_never**          | Never draw depth.                                                                                    |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **depth_prepass_alpha**       | Do opaque depth pre-pass for transparent geometry.                                                   |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **depth_test_disabled**       | Disable depth testing.                                                                               |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **sss_mode_skin**             | Subsurface Scattering mode for skin.                                                                 |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **cull_back**                 | Cull back-faces (default).                                                                           |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **cull_front**                | Cull front-faces.                                                                                    |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **cull_disabled**             | Culling disabled (double sided).                                                                     |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **unshaded**                  | Result is just albedo. No lighting/shading happens in material.                                      |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **wireframe**                 | Geometry draws using lines.                                                                          |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **diffuse_lambert**           | Lambert shading for diffuse (default).                                                               |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **diffuse_lambert_wrap**      | Lambert wrapping (roughness dependent) for diffuse.                                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **diffuse_burley**            | Burley (Disney PBS) for diffuse.                                                                     |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **diffuse_toon**              | Toon shading for diffuse.                                                                            |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **specular_schlick_ggx**      | Schlick-GGX for specular (default).                                                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **specular_blinn**            | Blinn for specular (compatibility).                                                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **specular_phong**            | Phong for specular (compatibility).                                                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **specular_toon**             | Toon for specular.                                                                                   |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **specular_disabled**         | Disable specular.                                                                                    |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **skip_vertex_transform**     | VERTEX/NORMAL/etc. need to be transformed manually in vertex function.                               |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **world_vertex_coords**       | VERTEX/NORMAL/etc. are modified in world coordinates instead of local.                               |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **ensure_correct_normals**    | Use when non-uniform scale is applied to mesh.                                                       |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **shadows_disabled**          | Disable computing shadows in shader.                                                                 |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **ambient_light_disabled**    | Disable contribution from ambient light and radiance map.                                            |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **shadow_to_opacity**         | Lighting modifies the alpha so shadowed areas are opaque and                                         |
+|                               | non-shadowed areas are transparent. Useful for overlaying shadows onto                               |
+|                               | a camera feed in AR.                                                                                 |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **vertex_lighting**           | Use vertex-based lighting.                                                                           |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **particle_trails**           | Enables the trails when used on particles geometry.                                                  |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **alpha_to_coverage**         | Alpha antialiasing mode, see `here <https://github.com/godotengine/godot/pull/40364>`_ for more.     |
++-------------------------------+------------------------------------------------------------------------------------------------------+
+| **alpha_to_coverage_and_one** | Alpha antialiasing mode, see `here <https://github.com/godotengine/godot/pull/40364>`_ for more.     |
++-------------------------------+------------------------------------------------------------------------------------------------------+
 
 Built-ins
 ^^^^^^^^^
@@ -162,20 +162,36 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | in mat4 **INV_PROJECTION_MATRIX**      | Clip space to view space transform.                    |
 +----------------------------------------+--------------------------------------------------------+
-| in bool **OUTPUT_IS_SRGB**             | ``true`` when calculations happen in sRGB color space  |
-|                                        | (``true`` in GLES2, ``false`` in GLES3).               |
+| in vec3 **NODE_POSITION_WORLD**        | Node world space position.                             |
++----------------------------------------+--------------------------------------------------------+
+| in vec3 **NODE_POSITION_VIEW**         | Node view space position.                              |
++----------------------------------------+--------------------------------------------------------+
+| in vec3 **CAMERA_POSITION_WORLD**      | Camera world space position.                           |
++----------------------------------------+--------------------------------------------------------+
+| in vec3 **CAMERA_DIRECTION_WORLD**     | Camera world space direction.                          |
++----------------------------------------+--------------------------------------------------------+
+| in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space            |
+|                                        | (this is ``true`` in the Compatibility renderer,       |
+|                                        | ``false`` in Forward+ and Forward Mobile).             |
 +----------------------------------------+--------------------------------------------------------+
 | in int **INSTANCE_ID**                 | Instance ID for instancing.                            |
 +----------------------------------------+--------------------------------------------------------+
 | in vec4 **INSTANCE_CUSTOM**            | Instance custom data (for particles, mostly).          |
 +----------------------------------------+--------------------------------------------------------+
-| in int **VIEW_INDEX**                  |                                                        |
+| in int **VIEW_INDEX**                  | The view that we are rendering.                        |
+|                                        | ``VIEW_MONO_LEFT`` (``0``) for Mono (not multiview) or |
+|                                        | left eye, ``VIEW_RIGHT`` (``1``) for right eye.        |
 +----------------------------------------+--------------------------------------------------------+
-| in int **VIEW_MONO_LEFT**              |                                                        |
+| in int **VIEW_MONO_LEFT**              | Constant for Mono or left eye, always ``0``.           |
 +----------------------------------------+--------------------------------------------------------+
-| in int **VIEW_RIGHT**                  |                                                        |
+| in int **VIEW_RIGHT**                  | Constant for right eye, always ``1``.                  |
++----------------------------------------+--------------------------------------------------------+
+| in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered.            |
+|                                        | Only applicable for multiview rendering.               |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec3 **VERTEX**                  | Vertex in local coordinates.                           |
++----------------------------------------+--------------------------------------------------------+
+| in int **VERTEX_ID**                   | The index of the current vertex in the vertex buffer.  |
 +----------------------------------------+--------------------------------------------------------+
 | inout vec3 **NORMAL**                  | Normal in local coordinates.                           |
 +----------------------------------------+--------------------------------------------------------+
@@ -209,14 +225,18 @@ shader, this value can be used as desired.
 +----------------------------------------+--------------------------------------------------------+
 | inout vec4 **BONE_WEIGHTS**            |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| out vec4 **CUSTOM0**                   |                                                        |
+| in vec4 **CUSTOM0**                    |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| out vec4 **CUSTOM1**                   |                                                        |
+| in vec4 **CUSTOM1**                    |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| out vec4 **CUSTOM2**                   |                                                        |
+| in vec4 **CUSTOM2**                    |                                                        |
 +----------------------------------------+--------------------------------------------------------+
-| out vec4 **CUSTOM3**                   |                                                        |
+| in vec4 **CUSTOM3**                    |                                                        |
 +----------------------------------------+--------------------------------------------------------+
+
+.. note::
+
+    ``MODELVIEW_MATRIX`` combines both the ``MODEL_MATRIX`` and ``VIEW_MATRIX`` and is better suited when floating point issues may arise. For example, if the object is very far away from the world origin, you may run into floating point issues when using the separated ``MODEL_MATRIX`` and ``VIEW_MATRIX``.
 
 Fragment built-ins
 ^^^^^^^^^^^^^^^^^^
@@ -235,7 +255,7 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in bool **FRONT_FACING**               | ``true`` if current face if front face.                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in vec3 **VIEW**                       | Vector from camera to fragment position (in view space).                                         |
+| in vec3 **VIEW**                       | Normalized vector from fragment position to camera (in view space).                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **UV**                         | UV that comes from vertex function.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -245,7 +265,8 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **POINT_COORD**                | Point Coordinate for drawing points with POINT_SIZE.                                             |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in bool **OUTPUT_IS_SRGB**             | ``true`` when calculations happen in sRGB color space (``true`` in GLES2, ``false`` in GLES3).   |
+| in bool **OUTPUT_IS_SRGB**             | ``true`` when output is in sRGB color space (this is ``true`` in the Compatibility renderer,     |
+|                                        | ``false`` in Forward+ and Forward Mobile).                                                       |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **MODEL_MATRIX**               | Model space to world space transform.                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -259,23 +280,35 @@ these properties, and if you don't write to them, Godot will optimize away the c
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in mat4 **INV_PROJECTION_MATRIX**      | Clip space to view space transform.                                                              |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec3 **NODE_POSITION_WORLD**        | Node position, in world space.                                                                   |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec3 **NODE_POSITION_VIEW**         | Node position, in view space.                                                                    |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec3 **CAMERA_POSITION_WORLD**      | Camera position, in world space.                                                                 |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| in vec3 **CAMERA_DIRECTION_WORLD**     | Camera direction, in world space.                                                                |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec3 **VERTEX**                     | Vertex that comes from vertex function (default, in view space).                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in int **VIEW_INDEX**                  |                                                                                                  |
+| in int **VIEW_INDEX**                  | The view that we are rendering.                                                                  |
+|                                        | ``VIEW_MONO_LEFT`` (``0``) for Mono (not multiview) or                                           |
+|                                        | left eye, ``VIEW_RIGHT`` (``1``) for right eye.                                                  |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in int **VIEW_MONO_LEFT**              |                                                                                                  |
+| in int **VIEW_MONO_LEFT**              | Constant for Mono or left eye, always ``0``.                                                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| in int **VIEW_RIGHT**                  |                                                                                                  |
+| in int **VIEW_RIGHT**                  | Constant for right eye, always ``1``.                                                            |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| sampler2D **SCREEN_TEXTURE**           | Built-in Texture for reading from the screen. Mipmaps contain increasingly blurred copies.       |
+| in vec3 **EYE_OFFSET**                 | Position offset for the eye being rendered. Only applicable for multiview rendering.             |
++----------------------------------------+--------------------------------------------------------------------------------------------------+
+| sampler2D **SCREEN_TEXTURE**           | Removed in Godot 4. Use a ``sampler2D`` with ``hint_screen_texture`` instead.                    |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | in vec2 **SCREEN_UV**                  | Screen UV coordinate for current pixel.                                                          |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| sampler2D **NORMAL_ROUGHNESS_TEXTURE** |                                                                                                  |
+| sampler2D **DEPTH_TEXTURE**            | Removed in Godot 4. Use a ``sampler2D`` with ``hint_depth_texture`` instead.                     |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
-| sampler2D **DEPTH_TEXTURE**            | Built-in Texture for reading depth from the screen. Must convert to linear using INV_PROJECTION. |
-+----------------------------------------+--------------------------------------------------------------------------------------------------+
-| out float **DEPTH**                    | Custom depth value (0..1).                                                                       |
+| out float **DEPTH**                    | Custom depth value (0..1). If ``DEPTH`` is being written to in any shader branch, then you are   |
+|                                        | responsible for setting the ``DEPTH`` for **all** other branches. Otherwise, the graphics API    |
+|                                        | will leave them uninitialized.                                                                   |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
 | inout vec3 **NORMAL**                  | Normal that comes from vertex function (default, in view space).                                 |
 +----------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -420,8 +453,9 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+----------------------------------------------------+
 | in float **ROUGHNESS**            | Roughness.                                         |
 +-----------------------------------+----------------------------------------------------+
-| in bool **OUTPUT_IS_SRGB**        | ``true`` when calculations happen in sRGB color    |
-|                                   | space (``true`` in GLES2, ``false`` in GLES3).     |
+| in bool **OUTPUT_IS_SRGB**        | ``true`` when output is in sRGB color space        |
+|                                   | (this is ``true`` in the Compatibility renderer,   |
+|                                   | ``false`` in Forward+ and Forward Mobile).         |
 +-----------------------------------+----------------------------------------------------+
 | out vec3 **DIFFUSE_LIGHT**        | Diffuse light result.                              |
 +-----------------------------------+----------------------------------------------------+
@@ -437,3 +471,9 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
     may exhibit transparency sorting issues. Read the
     :ref:`transparency sorting section in the 3D rendering limitations page <doc_3d_rendering_limitations_transparency_sorting>`
     for more information and ways to avoid issues.
+
+    Transparent materials also cannot cast shadows or appear in
+    ``hint_screen_texture`` and ``hint_depth_texture`` uniforms. This in turn prevents those
+    materials from appearing in screen-space reflections or refraction.
+    :ref:`SDFGI <doc_using_sdfgi>` sharp reflections are not visible on transparent
+    materials (only rough reflections are visible on transparent materials).

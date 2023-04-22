@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_webrtc:
 
 WebRTC
@@ -33,9 +35,9 @@ Peers connect to a signaling server (for example a WebSocket server) and send th
 Using WebRTC in Godot
 ---------------------
 
-WebRTC is implemented in Godot via two main classes :ref:`WebRTCPeerConnection <class_WebRTCPeerConnection>` and :ref:`WebRTCDataChannel <class_WebRTCDataChannel>`, plus the multiplayer API implementation :ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>`. See section on :ref:`high-level multiplayer <doc_high_level_multiplayer>` for more details.
+WebRTC is implemented in Godot via two main classes :ref:`WebRTCPeerConnection <class_WebRTCPeerConnection>` and :ref:`WebRTCDataChannel <class_WebRTCDataChannel>`, plus the multiplayer API implementation :ref:`WebRTCMultiplayerPeer <class_WebRTCMultiplayerPeer>`. See section on :ref:`high-level multiplayer <doc_high_level_multiplayer>` for more details.
 
-.. note:: These classes are available automatically in HTML5, but **require an external GDNative plugin on native (non-HTML5) platforms**. Check out the `webrtc-native plugin repository <https://github.com/godotengine/webrtc-native>`__ for instructions and to get the latest `release <https://github.com/godotengine/webrtc-native/releases>`__.
+.. note:: These classes are available automatically in HTML5, but **require an external GDExtension plugin on native (non-HTML5) platforms**. Check out the `webrtc-native plugin repository <https://github.com/godotengine/webrtc-native>`__ for instructions and to get the latest `release <https://github.com/godotengine/webrtc-native/releases>`__.
 
 .. warning::
 
@@ -119,8 +121,8 @@ This example expands on the previous one, separating the peers in two different 
 
     func _ready():
         # Connect all functions
-        peer.connect("ice_candidate_created", self, "_on_ice_candidate")
-        peer.connect("session_description_created", self, "_on_session")
+        peer.ice_candidate_created.connect(_on_ice_candidate)
+        peer.session_description_created.connect(_on_session)
 
         # Register to the local signaling server (see below for the implementation)
         Signaling.register(get_path())
@@ -212,4 +214,4 @@ This will print something similar to this:
 Remote signaling with WebSocket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A more advanced demo using WebSocket for signaling peers and :ref:`WebRTCMultiplayer <class_WebRTCMultiplayer>` is available in the `godot demo projects <https://github.com/godotengine/godot-demo-projects>`_ under `networking/webrtc_signaling`.
+A more advanced demo using WebSocket for signaling peers and :ref:`WebRTCMultiplayerPeer <class_WebRTCMultiplayerPeer>` is available in the `godot demo projects <https://github.com/godotengine/godot-demo-projects>`_ under `networking/webrtc_signaling`.

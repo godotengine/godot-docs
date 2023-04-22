@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_autoloads_versus_internal_nodes:
 
 Autoloads versus regular nodes
@@ -6,7 +8,7 @@ Autoloads versus regular nodes
 Godot offers a feature to automatically load nodes at the root of your project,
 allowing you to access them globally, that can fulfill the role of a Singleton:
 :ref:`doc_singletons_autoload`. These auto-loaded nodes are not freed when you
-change the scene from code with :ref:`SceneTree.change_scene <class_SceneTree_method_change_scene>`.
+change the scene from code with :ref:`SceneTree.change_scene_to_file <class_SceneTree_method_change_scene_to_file>`.
 
 In this guide, you will learn when to use the Autoload feature, and techniques
 you can use to avoid it.

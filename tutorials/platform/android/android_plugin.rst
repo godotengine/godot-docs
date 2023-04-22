@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_android_plugin:
 
 Creating Android plugins
@@ -95,7 +97,7 @@ The instructions below assumes that you're using Android Studio.
 
         local=["local_dep1.aar", "local_dep2.aar"]
         remote=["example.plugin.android:remote-dep1:0.0.1", "example.plugin.android:remote-dep2:0.0.1"]
-        custom_maven_repos=["http://repo.mycompany.com/maven2"]
+        custom_maven_repos=["https://repo.mycompany.com/maven2"]
 
     The ``config`` section and fields are required and defined as follow:
 
@@ -123,8 +125,9 @@ Move the plugin configuration file (e.g: ``MyPlugin.gdap``) and, if any, its loc
 
 The Godot editor will automatically parse all ``.gdap`` files in the ``res://android/plugins`` directory and show a list of detected and toggleable plugins in the Android export presets window under the **Plugins** section.
 
-.. image:: img/android_export_preset_plugins_section.png
+In order to allow GDScript to communicate with your Java Singleton, you must annotate your function with ``@UsedByGodot``. The name called from GDScript must match the function name exactly. There is **no** coercing ``snake_case`` to ``camelCase``.
 
+.. image:: img/android_export_preset_plugins_section.png
 
 From your script::
 
@@ -133,19 +136,19 @@ From your script::
         print(singleton.myPluginFunction("World"))
 
 
-Bundling GDNative resources
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Bundling GDExtension resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-An Android plugin can define and provide C/C++ GDNative resources, either to provide and/or access functionality from the game logic.
-The GDNative resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
+An Android plugin can define and provide C/C++ GDExtension resources, either to provide and/or access functionality from the game logic.
+The GDExtension resources can be bundled within the plugin ``aar`` file which simplifies the distribution and deployment process:
 
-- The shared libraries (``.so``) for the defined GDNative libraries will be automatically bundled by the ``aar`` build system.
+- The shared libraries (``.so``) for the defined GDExtension libraries will be automatically bundled by the ``aar`` build system.
 - Godot ``*.gdnlib`` and ``*.gdns`` resource files must be manually defined in the plugin ``assets`` directory.
   The recommended path for these resources relative to the ``assets`` directory should be: ``godot/plugin/v1/[PluginName]/``.
 
-For GDNative libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method,
-and return the paths to the bundled GDNative libraries config files (``*.gdnlib``). The paths must be relative to the ``assets`` directory.
-At runtime, the plugin will provide these paths to Godot core which will use them to load and initialize the bundled GDNative libraries.
+For GDExtension libraries, the plugin singleton object must override the ``org.godotengine.godot.plugin.GodotPlugin::getPluginGDNativeLibrariesPaths()`` method,
+and return the paths to the bundled GDExtension libraries config files (``*.gdextension``). The paths must be relative to the ``assets`` directory.
+At runtime, the plugin will provide these paths to Godot core which will use them to load and initialize the bundled GDExtension libraries.
 
 Reference implementations
 ^^^^^^^^^^^^^^^^^^^^^^^^^

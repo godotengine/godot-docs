@@ -58,7 +58,7 @@ The ``_draw()`` function is only called once, and then the draw commands
 are cached and remembered, so further calls are unnecessary.
 
 If re-drawing is required because a state or something else changed,
-call :ref:`CanvasItem.update() <class_CanvasItem_method_update>`
+call :ref:`CanvasItem.queue_redraw() <class_CanvasItem_method_queue_redraw>`
 in that same node and a new ``_draw()`` call will happen.
 
 Here is a little more complex example, a texture variable that will be
@@ -75,14 +75,16 @@ redrawn if modified:
         # If the texture variable is modified externally,
         # this callback is called.
         texture = value  # Texture was changed.
-        update()  # Update the node's visual representation.
+        queue_redraw()  # Trigger a redraw of the node.
 
     func _draw():
         draw_texture(texture, Vector2())
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    using Godot;
+
+    public partial class MyNode2D : Node2D
     {
         private Texture _texture;
         public Texture Texture
@@ -95,7 +97,7 @@ redrawn if modified:
             set
             {
                 _texture = value;
-                Update();
+                QueueRedraw();
             }
         }
 
@@ -106,7 +108,7 @@ redrawn if modified:
     }
 
 In some cases, it may be desired to draw every frame. For this,
-call ``update()`` from the ``_process()`` callback, like this:
+call ``queue_redraw()`` from the ``_process()`` callback, like this:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -118,26 +120,83 @@ call ``update()`` from the ``_process()`` callback, like this:
         pass
 
     func _process(delta):
-        update()
+        queue_redraw()
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    using Godot;
+
+    public partial class CustomNode2D : Node2D
     {
         public override void _Draw()
         {
             // Your draw commands here
         }
 
-        public override void _Process(float delta)
+        public override void _Process(double delta)
         {
-            Update();
+            QueueRedraw();
         }
     }
 
+Coordinates
+-----------
+
+The drawing API uses the CanvasItem's coordinate system, not necessarily pixel
+coordinates. Which means it uses the coordinate space created after applying
+the CanvasItem's transform. Additionally, you can apply a custom transform on
+top of it by using
+:ref:`draw_set_transform<class_CanvasItem_method_draw_set_transform>` or
+:ref:`draw_set_transform_matrix<class_CanvasItem_method_draw_set_transform_matrix>`.
+
+When using ``draw_line``, you should consider the width of the line.
+When using a width that is an odd size, the position should be shifted
+by ``0.5`` to keep the line centered as shown below.
+
+.. image:: img/draw_line.png
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _draw():
+        draw_line(Vector2(1.5, 1.0), Vector2(1.5, 4.0), Color.GREEN, 1.0)
+        draw_line(Vector2(4.0, 1.0), Vector2(4.0, 4.0), Color.GREEN, 2.0)
+        draw_line(Vector2(7.5, 1.0), Vector2(7.5, 4.0), Color.GREEN, 3.0)
+
+ .. code-tab:: csharp
+
+    public override void _Draw()
+    {
+        DrawLine(new Vector2(1.5f, 1.0f), new Vector2(1.5f, 4.0f), Colors.Green, 1.0f);
+        DrawLine(new Vector2(4.0f, 1.0f), new Vector2(4.0f, 4.0f), Colors.Green, 2.0f);
+        DrawLine(new Vector2(7.5f, 1.0f), new Vector2(7.5f, 4.0f), Colors.Green, 3.0f);
+    }
+
+The same applies to the ``draw_rect`` method with ``filled = false``.
+
+.. image:: img/draw_rect.png
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    func _draw():
+        draw_rect(Rect2(1.0, 1.0, 3.0, 3.0), Color.GREEN)
+        draw_rect(Rect2(5.5, 1.5, 2.0, 2.0), Color.GREEN, false, 1.0)
+        draw_rect(Rect2(9.0, 1.0, 5.0, 5.0), Color.GREEN)
+        draw_rect(Rect2(16.0, 2.0, 3.0, 3.0), Color.GREEN, false, 2.0)
+
+ .. code-tab:: csharp
+
+    public override void _Draw()
+    {
+        DrawRect(new Rect2(1.0f, 1.0f, 3.0f, 3.0f), Colors.Green);
+        DrawRect(new Rect2(5.5f, 1.5f, 2.0f, 2.0f), Colors.Green, false, 1.0f);
+        DrawRect(new Rect2(9.0f, 1.0f, 5.0f, 5.0f), Colors.Green);
+        DrawRect(new Rect2(16.0f, 2.0f, 3.0f, 3.0f), Colors.Green, false, 2.0f);
+    }
 
 An example: drawing circular arcs
-----------------------------------
+---------------------------------
 
 We will now use the custom drawing functionality of the Godot Engine to draw
 something that Godot doesn't provide functions for. As an example, Godot provides
@@ -277,7 +336,7 @@ the same as before, except that we draw a polygon instead of lines:
         var colors = PackedColorArray([color])
 
         for i in range(nb_points + 1):
-            var angle_point = deg2rad(angle_from + i * (angle_to - angle_from) / nb_points - 90)
+            var angle_point = deg_to_rad(angle_from + i * (angle_to - angle_from) / nb_points - 90)
             points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
         draw_polygon(points_arc, colors)
 
@@ -286,14 +345,14 @@ the same as before, except that we draw a polygon instead of lines:
     public void DrawCircleArcPoly(Vector2 center, float radius, float angleFrom, float angleTo, Color color)
     {
         int nbPoints = 32;
-        var pointsArc = new Vector2[nbPoints + 1];
+        var pointsArc = new Vector2[nbPoints + 2];
         pointsArc[0] = center;
         var colors = new Color[] { color };
 
         for (int i = 0; i <= nbPoints; i++)
         {
-            float anglePoint = Mathf.Deg2Rad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90);
-            pointsArc[i] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
+            float anglePoint = Mathf.DegToRad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90);
+            pointsArc[i + 1] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
         }
 
         DrawPolygon(pointsArc, colors);
@@ -326,7 +385,9 @@ using ``get_node()``.
 
  .. code-tab:: csharp
 
-    public class CustomNode2D : Node2D
+    using Godot;
+
+    public partial class MyNode2D : Node2D
     {
         private float _rotationAngle = 50;
         private float _angleFrom = 75;
@@ -342,7 +403,7 @@ work correctly, but the angle values will grow bigger and bigger over time until
 they reach the maximum integer value Godot can manage (``2^31 - 1``).
 When this happens, Godot may crash or produce unexpected behavior.
 
-Finally, we must not forget to call the ``update()`` function, which automatically
+Finally, we must not forget to call the ``queue_redraw()`` function, which automatically
 calls ``_draw()``. This way, you can control when you want to refresh the frame.
 
 .. tabs::
@@ -356,18 +417,11 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
         if angle_from > 360 and angle_to > 360:
             angle_from = wrapf(angle_from, 0, 360)
             angle_to = wrapf(angle_to, 0, 360)
-        update()
+        queue_redraw()
 
  .. code-tab:: csharp
 
-    private float Wrap(float value, float minVal, float maxVal)
-    {
-        float f1 = value - minVal;
-        float f2 = maxVal - minVal;
-        return (f1 % f2) + minVal;
-    }
-
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
         _angleFrom += _rotationAngle;
         _angleTo += _rotationAngle;
@@ -375,10 +429,10 @@ calls ``_draw()``. This way, you can control when you want to refresh the frame.
         // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)
         {
-            _angleFrom = Wrap(_angleFrom, 0, 360);
-            _angleTo = Wrap(_angleTo, 0, 360);
+            _angleFrom = Mathf.Wrap(_angleFrom, 0, 360);
+            _angleTo = Mathf.Wrap(_angleTo, 0, 360);
         }
-        Update();
+        QueueRedraw();
     }
 
 
@@ -432,14 +486,14 @@ smaller value, which directly depends on the rendering speed.
         if angle_from > 360 and angle_to > 360:
             angle_from = wrapf(angle_from, 0, 360)
             angle_to = wrapf(angle_to, 0, 360)
-        update()
+        queue_redraw()
 
  .. code-tab:: csharp
 
-    public override void _Process(float delta)
+    public override void _Process(double delta)
     {
-        _angleFrom += _rotationAngle * delta;
-        _angleTo += _rotationAngle * delta;
+        _angleFrom += _rotationAngle * (float)delta;
+        _angleTo += _rotationAngle * (float)delta;
 
         // We only wrap angles when both of them are bigger than 360.
         if (_angleFrom > 360 && _angleTo > 360)
@@ -447,7 +501,7 @@ smaller value, which directly depends on the rendering speed.
             _angleFrom = Wrap(_angleFrom, 0, 360);
             _angleTo = Wrap(_angleTo, 0, 360);
         }
-        Update();
+        QueueRedraw();
     }
 
 
@@ -457,15 +511,13 @@ Antialiased drawing
 ^^^^^^^^^^^^^^^^^^^
 
 Godot offers method parameters in :ref:`draw_line<class_CanvasItem_method_draw_line>`
-to enable antialiasing, but it doesn't work reliably in all situations
-(for instance, on mobile/web platforms, or when HDR is enabled).
-There is also no ``antialiased`` parameter available in
-:ref:`draw_polygon<class_CanvasItem_method_draw_polygon>`.
+to enable antialiasing, but not all custom drawing methods offer this ``antialiased``
+parameter.
 
-As a workaround, install and use the
-`Antialiased Line2D add-on <https://github.com/godot-extended-libraries/godot-antialiased-line2d>`__
-(which also supports antialiased Polygon2D drawing). Note that this add-on relies
-on high-level nodes, rather than low-level ``_draw()`` functions.
+For custom drawing methods that don't provide an ``antialiased`` parameter,
+you can enable 2D MSAA instead, which affects rendering in the entire viewport.
+This provides high-quality antialiasing, but a higher performance cost and only
+on specific elements. See :ref:`doc_2d_antialiasing` for more information.
 
 Tools
 -----

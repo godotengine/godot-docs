@@ -11,7 +11,7 @@ auto-formatting tools.
 Since the Godot shader language is close to C-style languages and GLSL, this
 guide is inspired by Godot's own GLSL formatting. You can view an example of a
 GLSL file in Godot's source code
-`here <https://github.com/godotengine/godot/blob/master/drivers/gles2/shaders/copy.glsl>`__.
+`here <https://github.com/godotengine/godot/blob/master/drivers/gles3/shaders/copy.glsl>`__.
 
 Style guides aren't meant as hard rulebooks. At times, you may not be able to
 apply some of the guidelines below. When that happens, use your best judgment,
@@ -36,8 +36,10 @@ Here is a complete shader example based on these guidelines:
     uniform float contrast = 1.5;
     uniform float saturation = 1.8;
 
+    uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+
     void fragment() {
-        vec3 c = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb;
+        vec3 c = textureLod(screen_texture, SCREEN_UV, 0.0).rgb;
 
         c.rgb = mix(vec3(0.0), c.rgb, brightness);
         c.rgb = mix(vec3(0.5), c.rgb, contrast);
@@ -316,6 +318,46 @@ underscore (\_) to separate words:
 .. code-block:: glsl
 
     const float GOLDEN_RATIO = 1.618;
+
+Preprocessor directives
+~~~~~~~~~~~~~~~~~~~~~~~
+
+:ref:`doc_shader_preprocessor` directives should be written in CONSTANT__CASE.
+Directives should be written without any indentation before them, even if
+nested within a function.
+
+To preserve the natural flow of indentation when shader errors are printed to
+the console, extra indentation should **not** be added within ``#if``,
+``#ifdef`` or ``#ifndef`` blocks:
+
+**Good**:
+
+.. code-block:: glsl
+
+    #define HEIGHTMAP_ENABLED
+
+    void fragment() {
+        vec2 position = vec2(1.0, 2.0);
+
+    #ifdef HEIGHTMAP_ENABLED
+        sample_heightmap(position);
+    #endif
+    }
+
+**Bad**:
+
+.. FIXME: An upstream bug in Pygment related to #ifdef.
+.. code-block:: none
+
+    #define heightmap_enabled
+
+    void fragment() {
+        vec2 position = vec2(1.0, 2.0);
+
+        #ifdef heightmap_enabled
+            sample_heightmap(position);
+        #endif
+    }
 
 Code order
 ----------

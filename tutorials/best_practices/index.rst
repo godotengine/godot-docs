@@ -1,3 +1,5 @@
+:article_outdated: True
+
 Best practices
 ==============
 

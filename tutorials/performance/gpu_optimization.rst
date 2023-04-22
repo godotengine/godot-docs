@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_gpu_optimization:
 
 GPU optimization
@@ -108,11 +110,11 @@ triangles. This meant that every frame:
 1. All vertices had to be transformed by the CPU (including clipping).
 2. All vertices had to be sent to the GPU memory from the main RAM.
 
-Nowadays, all this is handled inside the GPU, greatly increasing performance.
-3D artists usually have the wrong feeling about polycount performance because 3D
-DCCs (such as Blender, Max, etc.) need to keep geometry in CPU memory for it to
-be edited, reducing actual performance. Game engines rely on the GPU more, so
-they can render many triangles much more efficiently.
+Nowadays, all this is handled inside the GPU, greatly increasing performance. 3D
+artists usually have the wrong feeling about polycount performance because 3D
+modeling software (such as Blender, 3ds Max, etc.) need to keep geometry in CPU
+memory for it to be edited, reducing actual performance. Game engines rely on
+the GPU more, so they can render many triangles much more efficiently.
 
 On mobile devices, the story is different. PC and console GPUs are
 brute-force monsters that can pull as much electricity as they need from
@@ -177,6 +179,12 @@ amount of work the GPU has to do. You can do this by simplifying the shader
 <class_StandardMaterial3D>`), or reducing the number and size of textures used.
 Also, when using non-unshaded particles, consider forcing vertex shading in
 their material to decrease the shading cost.
+
+.. seealso::
+
+    On supported hardware, :ref:`doc_variable_rate_shading` can be used to
+    reduce shading processing costs without impacting the sharpness of edges on
+    the final image.
 
 **When targeting mobile devices, consider using the simplest possible shaders
 you can reasonably afford to use.**
@@ -266,8 +274,8 @@ but attempting to port it to mobile at the last minute is a recipe for disaster.
 
 In general, you should design your game for the lowest common denominator, then
 add optional enhancements for more powerful platforms. For example, you may want
-to use the GLES2 backend for both desktop and mobile platforms where you target
-both.
+to use the Compatibility rendering method for both desktop and mobile platforms
+where you target both.
 
 Mobile/tiled renderers
 ======================

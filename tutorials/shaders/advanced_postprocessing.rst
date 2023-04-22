@@ -12,9 +12,9 @@ uses the depth buffer. You should already be familiar with post-processing
 generally and, in particular, with the methods outlined in the :ref:`custom post-processing tutorial <doc_custom_postprocessing>`.
 
 In the previous post-processing tutorial, we rendered the scene to a :ref:`Viewport <class_Viewport>`
-and then rendered the Viewport in a :ref:`ViewportContainer <class_ViewportContainer>`
+and then rendered the Viewport in a :ref:`SubViewportContainer <class_SubViewportContainer>`
 to the main scene. One limitation of this method is that we could not access the
-depth buffer because the depth buffer is only available in spatial shaders and
+depth buffer because the depth buffer is only available in shaders and
 Viewports do not maintain depth information.
 
 Full screen quad
@@ -27,19 +27,20 @@ two main drawbacks of using a Viewport:
 1. The depth buffer cannot be accessed
 2. The effect of the post-processing shader is not visible in the editor
 
-To get around the limitation on using the depth buffer, use a :ref:`MeshInstance <class_MeshInstance>`
-with a :ref:`QuadMesh <class_QuadMesh>` primitive. This allows us to use a spatial
+To get around the limitation on using the depth buffer, use a :ref:`MeshInstance3D <class_MeshInstance3D>`
+with a :ref:`QuadMesh <class_QuadMesh>` primitive. This allows us to use a
 shader and to access the depth texture of the scene. Next, use a vertex shader
 to make the quad cover the screen at all times so that the post-processing
 effect will be applied at all times, including in the editor.
 
-First, create a new MeshInstance and set its mesh to a QuadMesh. This creates a quad
-centered at position ``(0, 0, 0)`` with a width and height of ``1``. Set the width
-and height to ``2``. Right now, the quad occupies a position in world space at the
-origin; however, we want it to move with the camera so that it always covers the
-entire screen. To do this, we will bypass the coordinate transforms that translate
-the vertex positions through the difference coordinate spaces and treat the vertices
-as if they were already in clip space.
+First, create a new MeshInstance3D and set its mesh to a QuadMesh. This creates
+a quad centered at position ``(0, 0, 0)`` with a width and height of ``1``. Set
+the width and height to ``2`` and enable **Flip Faces**. Right now, the quad
+occupies a position in world space at the origin. However, we want it to move
+with the camera so that it always covers the entire screen. To do this, we will
+bypass the coordinate transforms that translate the vertex positions through the
+difference coordinate spaces and treat the vertices as if they were already in
+clip space.
 
 The vertex shader expects coordinates to be output in clip space, which are coordinates
 ranging from ``-1`` at the left and bottom of the screen to ``1`` at the top and right
@@ -75,19 +76,25 @@ You can also use both options.
 Depth texture
 -------------
 
-To read from the depth texture, perform a texture lookup using ``texture()`` and
-the uniform variable ``DEPTH_TEXTURE``.
+To read from the depth texture, we first need to create a texture uniform set to the depth buffer
+by using ``hint_depth_texture``.
 
 .. code-block:: glsl
 
-  float depth = texture(DEPTH_TEXTURE, SCREEN_UV).x;
+  uniform sampler2D depth_texture : source_color, hint_depth_texture;
+
+Once defined, the depth texture can be read with the ``texture()`` function.
+
+.. code-block:: glsl
+
+  float depth = texture(depth_texture, SCREEN_UV).x;
 
 .. note:: Similar to accessing the screen texture, accessing the depth texture is only
           possible when reading from the current viewport. The depth texture cannot be
           accessed from another viewport to which you have rendered.
 
-The values returned by ``DEPTH_TEXTURE`` are between ``0.0`` and ``1.0`` and are nonlinear.
-When displaying depth directly from the ``DEPTH_TEXTURE``, everything will look almost
+The values returned by ``depth_texture`` are between ``0.0`` and ``1.0`` and are nonlinear.
+When displaying depth directly from the ``depth_texture``, everything will look almost
 white unless it is very close. This is because the depth buffer stores objects closer
 to the camera using more bits than those further, so most of the detail in depth
 buffer is found close to the camera. In order to make the depth value align with world or
@@ -110,7 +117,7 @@ the depth value for ``z``.
 .. code-block:: glsl
 
   void fragment() {
-    float depth = texture(DEPTH_TEXTURE, SCREEN_UV).x;
+    float depth = texture(depth_texture, SCREEN_UV).x;
     vec3 ndc = vec3(SCREEN_UV * 2.0 - 1.0, depth);
   }
 
@@ -156,15 +163,15 @@ screen quad. The reason for this is explained `here <https://michaldrobot.com/20
 However, the benefit is quite small and only beneficial when running especially
 complex fragment shaders.
 
-Set the Mesh in the MeshInstance to an :ref:`ArrayMesh <class_ArrayMesh>`. An
+Set the Mesh in the MeshInstance3D to an :ref:`ArrayMesh <class_ArrayMesh>`. An
 ArrayMesh is a tool that allows you to easily construct a Mesh from Arrays for
 vertices, normals, colors, etc.
 
-Now, attach a script to the MeshInstance and use the following code:
+Now, attach a script to the MeshInstance3D and use the following code:
 
 ::
 
-  extends MeshInstance
+  extends MeshInstance3D
 
   func _ready():
     # Create a single triangle out of vertices:
@@ -194,4 +201,4 @@ Assign the same vertex shader from above and everything should look exactly the 
 The one drawback to using an ArrayMesh over using a QuadMesh is that the ArrayMesh
 is not visible in the editor because the triangle is not constructed until the scene
 is run. To get around that, construct a single triangle Mesh in a modelling program
-and use that in the MeshInstance instead.
+and use that in the MeshInstance3D instead.

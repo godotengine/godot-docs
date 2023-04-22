@@ -35,19 +35,25 @@ Here is a complete class example based on these guidelines:
 
     signal state_changed(previous, new)
 
-    export var initial_state = NodePath()
-    var is_active = true setget set_is_active
+    @export var initial_state: Node
+    var is_active = true:
+        set = set_is_active
 
-    @onready var _state = get_node(initial_state) setget set_state
+    @onready var _state = initial_state:
+        get = set_state
     @onready var _state_name = _state.name
 
 
     func _init():
         add_to_group("state_machine")
-
+        
+        
+    func _enter_tree():
+        print("this happens before the ready method!")
+        
 
     func _ready():
-        connect("state_changed", self, "_on_state_changed")
+        state_changed.connect(_on_state_changed)
         _state.enter()
 
 
@@ -69,7 +75,7 @@ Here is a complete class example based on these guidelines:
         _state.exit()
         self._state = target_state
         _state.enter(msg)
-        Events.emit_signal("player_state_changed", _state.name)
+        Events.player_state_changed.emit(_state.name)
 
 
     func set_is_active(value):
@@ -86,7 +92,14 @@ Here is a complete class example based on these guidelines:
 
     func _on_state_changed(previous, new):
         print("state changed")
-        emit_signal("state_changed")
+        state_changed.emit()
+
+
+    class State:
+        var foo = 0
+
+        func _init():
+            print("Hello!")
 
 .. _formatting:
 
@@ -264,13 +277,13 @@ Surround functions and class definitions with two blank lines:
     func heal(amount):
         health += amount
         health = min(health, max_health)
-        emit_signal("health_changed", health)
+        health_changed.emit(health)
 
 
     func take_damage(amount, effect=null):
         health -= amount
         health = max(0, health)
-        emit_signal("health_changed", health)
+        health_changed.emit(health)
 
 Use one blank line inside functions to separate logical sections.
 
@@ -318,7 +331,7 @@ The only exception to that rule is the ternary operator:
 
 ::
 
-   next_state = "fall" if not is_on_floor() else "idle"
+   next_state = "idle" if is_on_floor() else "fall"
 
 Format multiline statements for readability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -396,6 +409,8 @@ they only reduce readability.
     if (is_colliding()):
         queue_free()
 
+.. _boolean_operators:
+
 Boolean operators
 ~~~~~~~~~~~~~~~~~
 
@@ -403,6 +418,7 @@ Prefer the plain English versions of boolean operators, as they are the most acc
 
 - Use ``and`` instead of ``&&``.
 - Use ``or`` instead of ``||``.
+- Use ``not`` instead of ``!``.
 
 You may also use parentheses around boolean operators to clear any ambiguity.
 This can make long expressions easier to read.
@@ -413,7 +429,7 @@ This can make long expressions easier to read.
 
 ::
 
-    if (foo and bar) or baz:
+    if (foo and bar) or not baz:
         print("condition is true")
 
 **Bad**:
@@ -422,7 +438,7 @@ This can make long expressions easier to read.
 
 ::
 
-    if foo && bar || baz:
+    if foo && bar || !baz:
         print("condition is true")
 
 Comment spacing
@@ -620,7 +636,7 @@ Use PascalCase for class and node names:
 
 ::
 
-   extends KinematicBody
+   extends CharacterBody3D
 
 Also use PascalCase when loading a class into a constant or a variable:
 
@@ -689,7 +705,7 @@ We suggest to organize GDScript code this way:
 
 ::
 
-    01. tool
+    01. @tool
     02. class_name
     03. extends
     04. # docstring
@@ -697,16 +713,18 @@ We suggest to organize GDScript code this way:
     05. signals
     06. enums
     07. constants
-    08. exported variables
+    08. @export variables
     09. public variables
     10. private variables
-    11. onready variables
+    11. @onready variables
 
     12. optional built-in virtual _init method
-    13. built-in virtual _ready method
-    14. remaining built-in virtual methods
-    15. public methods
-    16. private methods
+    13. optional built-in virtual _enter_tree() method
+    14. built-in virtual _ready method
+    15. remaining built-in virtual methods
+    16. public methods
+    17. private methods
+    18. subclasses
 
 We optimized the order to make it easy to read the code from top to bottom, to
 help developers reading the code for the first time understand how it works, and
@@ -724,7 +742,7 @@ This code order follows four rules of thumb:
 Class declaration
 ~~~~~~~~~~~~~~~~~
 
-If the code is meant to run in the editor, place the ``tool`` keyword on the
+If the code is meant to run in the editor, place the ``@tool`` annotation on the
 first line of the script.
 
 Follow with the `class_name` if necessary. You can turn a GDScript file into a
@@ -764,11 +782,13 @@ variables, in that order.
 
    const MAX_LIVES = 3
 
-   export(Jobs) var job = Jobs.KNIGHT
-   export var max_health = 50
-   export var attack = 5
+   @export var job: Jobs = Jobs.KNIGHT
+   @export var max_health = 50
+   @export var attack = 5
 
-   var health = max_health setget set_health
+   var health = max_health:
+       set(new_health):
+           health = new_health
 
    var _speed = 300.0
 
@@ -823,7 +843,7 @@ in that order.
 
 
     func _ready():
-        connect("state_changed", self, "_on_state_changed")
+        state_changed.connect(_on_state_changed)
         _state.enter()
 
 
@@ -841,12 +861,12 @@ in that order.
         _state.exit()
         self._state = target_state
         _state.enter(msg)
-        Events.emit_signal("player_state_changed", _state.name)
+        Events.player_state_changed.emit(_state.name)
 
 
     func _on_state_changed(previous, new):
         print("state changed")
-        emit_signal("state_changed")
+        state_changed.emit()
 
 
 Static typing
@@ -872,11 +892,36 @@ To declare the return type of a function, use ``-> <type>``:
 Inferred types
 ~~~~~~~~~~~~~~
 
-In most cases you can let the compiler infer the type, using ``:=``::
+In most cases you can let the compiler infer the type, using ``:=``.
+Prefer ``:=`` when the type is written on the same line as the assignment,
+otherwise prefer writing the type explicitly.
 
-    var health := 0  # The compiler will use the int type.
+**Good**:
 
-However, in a few cases when context is missing, the compiler falls back to
+.. rst-class:: code-example-good
+
+::
+
+   var health: int = 0 # The type can be int or float, and thus should be stated explicitly.
+   var direction := Vector3(1, 2, 3) # The type is clearly inferred as Vector3.
+
+Include the type hint when the type is ambiguous, and
+omit the type hint when it's redundant.
+
+**Bad**:
+
+.. rst-class:: code-example-bad
+
+::
+
+   var health := 0 # Typed as int, but it could be that float was intended.
+   var direction: Vector3 = Vector3(1, 2, 3) # The type hint has redundant information.
+
+   # What type is this? It's not immediately clear to the reader, so it's bad.
+   var value := complex_function()
+
+In some cases, the type must be stated explicitly, otherwise the behavior
+will not be as expected because the compiler will only be able to use
 the function's return type. For example, ``get_node()`` cannot infer a type
 unless the scene or file of the node is loaded in memory. In this case, you
 should set the type explicitly.

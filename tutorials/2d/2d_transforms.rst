@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_viewport_and_canvas_transforms:
 
 Viewport and canvas transforms
@@ -40,8 +42,7 @@ resizing or stretching the screen. This transform is used internally (as
 described in :ref:`doc_multiple_resolutions`), but can also be manually set
 on each viewport.
 
-Input events received in the :ref:`MainLoop._input_event() <class_MainLoop_method__input_event>`
-callback are multiplied by this transform but lack the ones above. To
+Input events are multiplied by this transform but lack the ones above. To
 convert InputEvent coordinates to local CanvasItem coordinates, the
 :ref:`CanvasItem.make_input_local() <class_CanvasItem_method_make_input_local>`
 function was added for convenience.
@@ -98,14 +99,16 @@ way:
 
     var local_pos = Vector2(10, 20) # local to Control/Node2D
     var ie = InputEventMouseButton.new()
-    ie.button_index = BUTTON_LEFT
+    ie.button_index = MOUSE_BUTTON_LEFT
     ie.position = get_viewport_transform() * (get_global_transform() * local_pos)
     get_tree().input_event(ie)
 
  .. code-tab:: csharp
 
     var localPos = new Vector2(10,20); // local to Control/Node2D
-    var ie = new InputEventMouseButton();
-    ie.ButtonIndex = (int)ButtonList.Left;
-    ie.Position = (GetViewportTransform() * GetGlobalTransform()).Xform(localPos);
+    var ie = new InputEventMouseButton()
+    {
+        ButtonIndex = MouseButton.Left,
+        Position = GetViewportTransform() * (GetGlobalTransform() * localPos),
+    };
     GetTree().InputEvent(ie);

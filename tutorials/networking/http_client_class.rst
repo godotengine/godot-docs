@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_http_client_class:
 
 HTTP client class
@@ -124,7 +126,9 @@ It will connect and fetch a website.
 
  .. code-tab:: csharp
 
-    class HTTPTest : SceneTree
+    using Godot;
+
+    public partial class HTTPTest : SceneTree
     {
         // HTTPClient demo.
         // This simple class can make HTTP requests; it will not block, but it needs to be polled.

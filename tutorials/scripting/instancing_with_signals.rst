@@ -37,13 +37,15 @@ given velocity:
 
  .. code-tab:: csharp
 
-    public class Bullet : Area2D
+    using Godot;
+
+    public partial class Bullet : Area2D
     {
         Vector2 Velocity = new Vector2();
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            Position += Velocity * delta;
+            Position += Velocity * (float)delta;
         }
     }
 
@@ -63,12 +65,12 @@ You could do this by adding the bullet to the main scene directly:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var bullet_instance = Bullet.instance()
+    var bullet_instance = Bullet.instantiate()
     get_parent().add_child(bullet_instance)
 
  .. code-tab:: csharp
 
-    Node bulletInstance = Bullet.Instance();
+    Node bulletInstance = Bullet.Instantiate();
     GetParent().AddChild(bulletInstance);
 
 However, this will lead to a different problem. Now if you try to test your
@@ -96,56 +98,58 @@ Here is the code for the player using signals to emit the bullet:
 
     func _input(event):
         if event is InputEventMouseButton:
-            if event.button_index == BUTTON_LEFT and event.pressed:
-                emit_signal("shoot", Bullet, rotation, position)
+            if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+                shoot.emit(Bullet, rotation, position)
 
     func _process(delta):
         look_at(get_global_mouse_position())
 
  .. code-tab:: csharp
 
-    public class Player : Sprite2D
+    using Godot;
+
+    public partial class Player : Sprite2D
     {
         [Signal]
-        delegate void Shoot(PackedScene bullet, Vector2 direction, Vector2 location);
+        delegate void ShootEventHandler(PackedScene bullet, Vector2 direction, Vector2 location);
 
         private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
 
-        public override void _Input(InputEvent event)
+        public override void _Input(InputEvent @event)
         {
-            if (input is InputEventMouseButton mouseButton)
+            if (@event is InputEventMouseButton mouseButton)
             {
-                if (mouseButton.ButtonIndex == (int)ButtonList.Left && mouseButton.Pressed)
+                if (mouseButton.ButtonIndex == MouseButton.Left && mouseButton.Pressed)
                 {
-                    EmitSignal(nameof(Shoot), _bullet, Rotation, Position);
+                    EmitSignal(SignalName.Shoot, _bullet, Rotation, Position);
                 }
             }
         }
 
-        public override _Process(float delta)
+        public override void _Process(double delta)
         {
             LookAt(GetGlobalMousePosition());
         }
     }
 
 In the main scene, we then connect the player's signal (it will appear in the
-"Node" tab).
+"Node" tab of the Inspector)
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     func _on_Player_shoot(Bullet, direction, location):
-        var b = Bullet.instance()
-        add_child(b)
-        b.rotation = direction
-        b.position = location
-        b.velocity = b.velocity.rotated(direction)
+        var spawned_bullet = Bullet.instantiate()
+        add_child(spawned_bullet)
+        spawned_bullet.rotation = direction
+        spawned_bullet.position = location
+        spawned_bullet.velocity = spawned_bullet.velocity.rotated(direction)
 
  .. code-tab:: csharp
 
     public void _on_Player_Shoot(PackedScene bullet, Vector2 direction, Vector2 location)
     {
-        var bulletInstance = (Bullet)bullet.Instance();
+        var bulletInstance = (Bullet)bullet.Instantiate();
         AddChild(bulletInstance);
         bulletInstance.Rotation = direction;
         bulletInstance.Position = location;

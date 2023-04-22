@@ -35,14 +35,14 @@ here's an example of how GDScript looks.
     # Everything after "#" is a comment.
     # A file is a class!
 
+    # (optional) icon to show in the editor dialogs:
+    @icon("res://path/to/optional/icon.svg")
+
     # (optional) class definition:
     class_name MyClass
 
     # Inheritance:
     extends BaseClass
-
-    # (optional) icon to show in the editor dialogs:
-    @icon("res://path/to/optional/icon.svg")
 
 
     # Member variables.
@@ -130,10 +130,16 @@ the linked class descriptions.
 Identifiers
 ~~~~~~~~~~~
 
-Any string that restricts itself to alphabetic characters (``a`` to
-``z`` and ``A`` to ``Z``), digits (``0`` to ``9``) and ``_`` qualifies
-as an identifier. Additionally, identifiers must not begin with a digit.
-Identifiers are case-sensitive (``foo`` is different from ``FOO``).
+Any string that restricts itself to alphabetic characters (``a`` to ``z`` and
+``A`` to ``Z``), digits (``0`` to ``9``) and ``_`` qualifies as an identifier.
+Additionally, identifiers must not begin with a digit. Identifiers are
+case-sensitive (``foo`` is different from ``FOO``).
+
+Identifiers may also contain most Unicode characters part of
+`UAX#31 <https://www.unicode.org/reports/tr31/>`__. This allows you to use
+identifier names written in languages other than English. Unicode characters
+that are considered "confusable" for ASCII characters and emoji are not allowed
+in identifiers.
 
 Keywords
 ~~~~~~~~
@@ -163,7 +169,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | break      | Exits the execution of the current ``for`` or ``while`` loop.                                                                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| continue   | Immediately skips to the next iteration of the ``for`` or ``while`` loop. Stops execution in ``match`` and looks for a match in patterns below it |
+| continue   | Immediately skips to the next iteration of the ``for`` or ``while`` loop.                                                                         |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | pass       | Used where a statement is required syntactically but execution of code is undesired, e.g. in empty functions.                                     |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -176,6 +182,8 @@ in case you want to take a look under the hood.
 | extends    | Defines what class to extend with the current class.                                                                                              |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | is         | Tests whether a variable extends a given class, or is of a given built-in type.                                                                   |
++------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| in         | Tests whether a value is within a string, list, range, dictionary, or node. When used with ``for``, it iterates through them instead of testing.  |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | as         | Cast the value to a given type if possible.                                                                                                       |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -219,84 +227,100 @@ Operators
 
 The following is the list of supported operators and their precedence.
 
-+------------------------------------------------------------------------+-----------------------------------------+
-| **Operator**                                                           | **Description**                         |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``x[index]``                                                           | Subscription (highest priority)         |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``x.attribute``                                                        | Attribute reference                     |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``foo()``                                                              | Function call                           |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``is``                                                                 | Instance type checker                   |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``~``                                                                  | Bitwise NOT                             |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``-x``                                                                 | Negative / Unary negation               |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``*`` ``/`` ``%``                                                      | Multiplication / Division / Remainder   |
-|                                                                        |                                         |
-|                                                                        | These operators have the same behavior  |
-|                                                                        | as C++. Integer division is truncated   |
-|                                                                        | rather than returning a fractional      |
-|                                                                        | number, and the % operator is only      |
-|                                                                        | available for ints ("fmod" for floats), |
-|                                                                        | and is additionally used for Format     |
-|                                                                        | Strings                                 |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``+``                                                                  | Addition / Concatenation of arrays      |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``-``                                                                  | Subtraction                             |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``<<`` ``>>``                                                          | Bit shifting                            |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``&``                                                                  | Bitwise AND                             |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``^``                                                                  | Bitwise XOR                             |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``|``                                                                  | Bitwise OR                              |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                | Comparisons                             |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``in``                                                                 | Content test                            |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``not``                                                                | Boolean NOT                             |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``and``                                                                | Boolean AND                             |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``or``                                                                 | Boolean OR                              |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``if x else``                                                          | Ternary if/else                         |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``as``                                                                 | Type casting                            |
-+------------------------------------------------------------------------+-----------------------------------------+
-| ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``&=`` ``|=`` ``<<=`` ``>>=`` | Assignment (lowest priority)            |
-+------------------------------------------------------------------------+-----------------------------------------+
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| **Operator**                                                                          | **Description**                           |
++=======================================================================================+===========================================+
+| ``x[index]``                                                                          | Subscription (highest priority)           |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``x.attribute``                                                                       | Attribute reference                       |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``foo()``                                                                             | Function call                             |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``is``                                                                                | Instance type checker                     |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``**``                                                                                | Power operator                            |
+|                                                                                       |                                           |
+|                                                                                       | Multiplies value by itself ``x`` times,   |
+|                                                                                       | similar to calling ``pow`` built-in       |
+|                                                                                       | function                                  |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``~``                                                                                 | Bitwise NOT                               |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``-x``                                                                                | Negative / Unary negation                 |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``*`` ``/`` ``%``                                                                     | Multiplication / Division / Remainder     |
+|                                                                                       |                                           |
+|                                                                                       | These operators have the same behavior    |
+|                                                                                       | as C++. Integer division is truncated     |
+|                                                                                       | rather than returning a fractional        |
+|                                                                                       | number, and the % operator is only        |
+|                                                                                       | available for ints (``fmod`` for floats), |
+|                                                                                       | and is additionally used for Format       |
+|                                                                                       | Strings                                   |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``+``                                                                                 | Addition / Concatenation of arrays        |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``-``                                                                                 | Subtraction                               |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``<<`` ``>>``                                                                         | Bit shifting                              |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``&``                                                                                 | Bitwise AND                               |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``^``                                                                                 | Bitwise XOR                               |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``|``                                                                                 | Bitwise OR                                |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                               | Comparisons                               |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``in``                                                                                | Inclusion checker (when used with         |
+|                                                                                       | control flow keywords or in a             |
+|                                                                                       | standalone expression)                    |
+|                                                                                       |                                           |
+|                                                                                       | Content iterator (when used with the      |
+|                                                                                       | for_ keyword)                             |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``not`` ``!``                                                                         | Boolean NOT and its                       |
+|                                                                                       | :ref:`aliases<boolean_operators>`         |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``and`` ``&&``                                                                        | Boolean AND and its                       |
+|                                                                                       | :ref:`aliases<boolean_operators>`         |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``or`` ``||``                                                                         | Boolean OR and its                        |
+|                                                                                       | :ref:`aliases<boolean_operators>`         |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``if x else``                                                                         | Ternary if/else                           |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``as``                                                                                | Type casting                              |
++---------------------------------------------------------------------------------------+-------------------------------------------+
+| ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``**=`` ``&=`` ``^=`` ``|=`` ``<<=`` ``>>=`` | Assignment (lowest priority)              |
++---------------------------------------------------------------------------------------+-------------------------------------------+
 
 Literals
 ~~~~~~~~
 
-+--------------------------+----------------------------------------+
-| **Literal**              | **Type**                               |
-+--------------------------+----------------------------------------+
-| ``45``                   | Base 10 integer                        |
-+--------------------------+----------------------------------------+
-| ``0x8f51``               | Base 16 (hexadecimal) integer          |
-+--------------------------+----------------------------------------+
-| ``0b101010``             | Base 2 (binary) integer                |
-+--------------------------+----------------------------------------+
-| ``3.14``, ``58.1e-10``   | Floating-point number (real)           |
-+--------------------------+----------------------------------------+
-| ``"Hello"``, ``"Hi"``    | Strings                                |
-+--------------------------+----------------------------------------+
-| ``"""Hello"""``          | Multiline string                       |
-+--------------------------+----------------------------------------+
-| ``&"name"``              | :ref:`StringName <class_StringName>`   |
-+--------------------------+----------------------------------------+
-| ``^"Node/Label"``        | :ref:`NodePath <class_NodePath>`       |
-+--------------------------+----------------------------------------+
-| ``$NodePath``            | Shorthand for ``get_node("NodePath")`` |
-+--------------------------+----------------------------------------+
++--------------------------+-------------------------------------------+
+| **Literal**              | **Type**                                  |
++--------------------------+-------------------------------------------+
+| ``45``                   | Base 10 integer                           |
++--------------------------+-------------------------------------------+
+| ``0x8f51``               | Base 16 (hexadecimal) integer             |
++--------------------------+-------------------------------------------+
+| ``0b101010``             | Base 2 (binary) integer                   |
++--------------------------+-------------------------------------------+
+| ``3.14``, ``58.1e-10``   | Floating-point number (real)              |
++--------------------------+-------------------------------------------+
+| ``"Hello"``, ``'Hi'``    | Strings                                   |
++--------------------------+-------------------------------------------+
+| ``"""Hello"""``          | Multiline string                          |
++--------------------------+-------------------------------------------+
+| ``&"name"``              | :ref:`StringName <class_StringName>`      |
++--------------------------+-------------------------------------------+
+| ``^"Node/Label"``        | :ref:`NodePath <class_NodePath>`          |
++--------------------------+-------------------------------------------+
+| ``$NodePath``            | Shorthand for ``get_node("NodePath")``    |
++--------------------------+-------------------------------------------+
+| ``%UniqueNode``          | Shorthand for ``get_node("%UniqueNode")`` |
++--------------------------+-------------------------------------------+
 
 Integers and floats can have their numbers separated with ``_`` to make them more readable.
 The following ways to write numbers are all valid::
@@ -311,15 +335,19 @@ Annotations
 
 There are some special tokens in GDScript that act like keywords but are not,
 they are *annotations* instead. Every annotation start with the ``@`` character
-and is specified by a name.
+and is specified by a name. A detailed description and example for each annotation
+can be found inside the :ref:`GDScript class reference <class_@GDScript>`.
 
-Those affect how the script is treated by external tools and usually don't
+Annotations affect how the script is treated by external tools and usually don't
 change the behavior.
 
 For instance, you can use it to export a value to the editor::
 
     @export_range(1, 100, 1, "or_greater")
     var ranged_var: int = 50
+
+For more information about exporting properties, read the :ref:`GDScript exports <doc_gdscript_exports>`
+article.
 
 Annotations can be specified one per line or all in the same line. They affect
 the next statement that isn't an annotation. Annotations can have arguments sent
@@ -333,55 +361,30 @@ Both of these are the same::
 
     @onready @export_node_path(TextEdit, LineEdit) var input_field
 
+.. _doc_gdscript_onready_annotation:
 
-Here's the list of available annotations:
+`@onready` annotation
+~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| **Annotation**               | **Description**                                                                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@tool``                    | Enable the `Tool mode`_.                                                                          |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@onready``                 | Defer initialization of variable until the node is in the tree. See                               |
-|                              | :ref:`doc_gdscript_onready_annotation`.                                                           |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@icon(path)``              | Set the class icon to show in editor. To be used together with the ``class_name`` keyword.        |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@rpc``                     | RPC modifiers. See :ref:`high-level multiplayer docs <doc_high_level_multiplayer>`.               |
-+------------------------------+---------------------------------------------------------------------------------------------------+
-| ``@export``                  | Export hints for the editor. See :ref:`doc_gdscript_exports`.                                     |
-|                              |                                                                                                   |
-| ``@export_enum``             |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_file``             |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_dir``              |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_global_file``      |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_global_dir``       |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_multiline``        |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_placeholder``      |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_range``            |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_exp_easing``       |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_color_no_alpha``   |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_node_path``        |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags``            |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_2d_render``  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_2d_physics`` |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_3d_render``  |                                                                                                   |
-|                              |                                                                                                   |
-| ``@export_flags_3d_physics`` |                                                                                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------+
+When using nodes, it's common to desire to keep references to parts
+of the scene in a variable. As scenes are only warranted to be
+configured when entering the active scene tree, the sub-nodes can only
+be obtained when a call to ``Node._ready()`` is made.
+
+::
+
+    var my_label
+
+
+    func _ready():
+        my_label = get_node("MyLabel")
+
+This can get a little cumbersome, especially when nodes and external
+references pile up. For this, GDScript has the ``@onready`` annotation, that
+defers initialization of a member variable until ``_ready()`` is called. It
+can replace the above code with a single line::
+
+    @onready var my_label = get_node("MyLabel")
 
 Comments
 ~~~~~~~~
@@ -484,9 +487,19 @@ Strings can contain the following escape sequences:
 +---------------------+---------------------------------+
 | ``\\``              | Backslash                       |
 +---------------------+---------------------------------+
-| ``\uXXXX``          | Unicode codepoint ``XXXX``      |
+| ``\uXXXX``          | UTF-16 Unicode codepoint        |
+|                     | ``XXXX``                        |
 |                     | (hexadecimal, case-insensitive) |
 +---------------------+---------------------------------+
+| ``\UXXXXXX``        | UTF-32 Unicode codepoint        |
+|                     | ``XXXXXX``                      |
+|                     | (hexadecimal, case-insensitive) |
++---------------------+---------------------------------+
+
+There are two ways to represent an escaped Unicode character above 0xFFFF:
+
+- as a `UTF-16 surrogate pair <https://en.wikipedia.org/wiki/UTF-16#Code_points_from_U+010000_to_U+10FFFF>`_ ``\uXXXX\uXXXX``.
+- as a single UTF-32 codepoint ``\UXXXXXX``.
 
 Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line, without
 inserting a newline character in the string itself.
@@ -550,8 +563,8 @@ in a 3D grid.
 3D Plane type in normalized form that contains a ``normal`` vector field
 and a ``d`` scalar distance.
 
-:ref:`Quat <class_Quat>`
-^^^^^^^^^^^^^^^^^^^^^^^^
+:ref:`Quaternion <class_Quaternion>`
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Quaternion is a datatype used for representing a 3D rotation. It's
 useful for interpolating rotations.
@@ -571,7 +584,7 @@ and ``size``. Also contains an ``end`` field which is
 vectors.
 
 :ref:`Transform3D <class_Transform3D>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 3D Transform contains a Basis field ``basis`` and a Vector3 field
 ``origin``.
@@ -704,7 +717,7 @@ Signals are better used by getting them from actual objects, e.g. ``$Button.butt
 Contains an object and a function, which is useful for passing functions as
 values (e.g. when connecting to signals).
 
-Getting a method as a member returns a callable.``var x = $Sprite2D.rotate``
+Getting a method as a member returns a callable. ``var x = $Sprite2D.rotate``
 will set the value of ``x`` to a callable with ``$Sprite2D`` as the object and
 ``rotate`` as the method.
 
@@ -756,6 +769,16 @@ Valid types are:
 - Other classes in the same script, respecting scope (``InnerClass.NestedClass`` if you declared ``class NestedClass`` inside the ``class InnerClass`` in the same scope).
 - Script classes declared with the ``class_name`` keyword.
 - Autoloads registered as singletons.
+
+.. note::
+
+    While ``Variant`` is a valid type specification, it's not an actual type. It
+    only means there's no set type and is equivalent to not having a static type
+    at all. Therefore, inference is not allowed by default for ``Variant``,
+    since it's likely a mistake.
+
+    You can turn off this check, or make it only a warning, by changing it in
+    the project settings. See :ref:`doc_gdscript_warning_system` for details.
 
 Casting
 ^^^^^^^
@@ -881,6 +904,14 @@ argument, unlike Python).
 
 A function can ``return`` at any point. The default return value is ``null``.
 
+If a function contains only one line of code, it can be written on one line::
+
+    func square(a): return a * a
+
+    func hello_world(): print("Hello World")
+
+    func empty_function(): pass
+
 Functions can also have type specification for the arguments and for the return
 value. Types for arguments can be added in a similar way to variables::
 
@@ -917,7 +948,7 @@ return early with the ``return`` keyword, but they can't return any value.
 Referencing functions
 ^^^^^^^^^^^^^^^^^^^^^
 
-Functions are first-class items in terms of the Callable object. Referencing a
+Functions are first-class items in terms of the :ref:`Callable <class_Callable>` object. Referencing a
 function by name without calling it will automatically generate the proper
 callable. This can be used to pass functions as arguments.
 
@@ -941,6 +972,32 @@ callable. This can be used to pass functions as arguments.
           the ``()`` operator directly. This behavior is implemented to avoid
           performance issues on direct function calls.
 
+Lambda functions
+^^^^^^^^^^^^^^^^
+
+Lambda functions allow you to declare functions that do not belong to a class. Instead a :ref:`Callable <class_Callable>` object is created and assigned to a variable directly.
+This can be useful to create Callables to pass around without polluting the class scope.
+
+::
+
+    var lambda = func(x): print(x)
+    lambda.call(42) # Prints "42"
+
+Lambda functions can be named for debugging purposes::
+
+    var lambda = func my_lambda(x):
+        print(x)
+
+Lambda functions capture the local environment. Local variables are passed by value, so they won't be updated in the lambda if changed in the local function::
+
+    var x = 42
+    var my_lambda = func(): print(x)
+    my_lambda.call() # Prints "42"
+    x = "Hello"
+    my_lambda.call() # Prints "42"
+
+.. note:: The values of the outer scope behave like constants. Therefore, if you declare an array or dictionary, it can still be modified afterwards.
+
 Static functions
 ^^^^^^^^^^^^^^^^
 
@@ -950,6 +1007,8 @@ useful to make libraries of helper functions::
 
     static func sum2(a, b):
         return a + b
+
+Lambdas cannot be declared static.
 
 
 Statements and control flow
@@ -981,7 +1040,7 @@ Here are some examples of expressions::
     do_something() # Function call.
     [1, 2, 3] # Array definition.
     {A = 1, B = 2} # Dictionary definition.
-    preload("res://icon.png) # Preload builtin function.
+    preload("res://icon.png") # Preload builtin function.
     self # Reference to current instance.
 
 Identifiers, attributes, and subscripts are valid assignment targets. Other expressions cannot be on the left side of
@@ -1040,11 +1099,22 @@ multiple lines to preserve readability::
             else "orange"
     print(fruit_alt)  # banana
 
+You may also wish to check if a value is contained within something. You can
+use an ``if`` statement combined with the ``in`` operator to accomplish this::
+
+    # Check if a letter is in a string.
+    var text = "abc"
+    if 'b' in text: print("The string contains b")
+
+    # Check if a variable is contained within a node.
+    if "varName" in get_parent(): print("varName is defined in parent!")
+
 while
 ^^^^^
 
 Simple loops are created by using ``while`` syntax. Loops can be broken
-using ``break`` or continued using ``continue``:
+using ``break`` or continued using ``continue`` (which skips to the next
+iteration of the loop without executing any further code in the current iteration):
 
 ::
 
@@ -1077,6 +1147,9 @@ in the loop variable.
     for i in range(2, 8, 2):
         statement # Similar to [2, 4, 6] but does not allocate an array.
 
+    for i in range(8, 2, -2):
+        statement # Similar to [8, 6, 4] but does not allocate an array.
+
     for c in "Hello":
         print(c) # Iterate through all characters in a String, print every letter on new line.
 
@@ -1085,6 +1158,27 @@ in the loop variable.
 
     for i in 2.2:
         statement # Similar to range(ceil(2.2)).
+
+If you want to assign values on an array as it is being iterated through, it
+is best to use ``for i in array.size()``.
+
+::
+
+    for i in array.size():
+	    array[i] = "Hello World"
+
+
+The loop variable is local to the for-loop and assigning to it will not change
+the value on the array. Objects passed by reference (such as nodes) can still
+be manipulated by calling methods on the loop variable.
+
+::
+
+    for string in string_array:
+        string = "Hello World" # This has no effect
+
+    for node in node_array:
+        node.add_to_group("Cool_Group") # This has an effect
 
 match
 ^^^^^
@@ -1114,7 +1208,6 @@ Basic syntax::
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
-You can use ``continue`` to stop execution in the current block and check for an additional match in the patterns below it.
 
 There are 6 pattern types:
 
@@ -1134,7 +1227,7 @@ There are 6 pattern types:
     Matches the contents of a variable/enum::
 
         match typeof(x):
-            TYPE_REAL:
+            TYPE_FLOAT:
                 print("float")
             TYPE_STRING:
                 print("text")
@@ -1256,9 +1349,9 @@ class will then appear with its new icon in the editor::
 
    # Item.gd
 
-   extends Node
-   class_name Item
    @icon("res://interface/icons/item.png")
+   class_name Item
+   extends Node
 
 .. image:: img/class_name_editor_register_example.png
 
@@ -1335,7 +1428,7 @@ the ``is`` keyword can be used::
         entity.apply_damage()
 
 To call a function in a *super class* (i.e. one ``extend``-ed in your current
-class), user the ``super`` keyword::
+class), use the ``super`` keyword::
 
     super(args)
 
@@ -1462,14 +1555,14 @@ Exports
 
     Documentation about exports has been moved to :ref:`doc_gdscript_exports`.
 
-.. _doc_gdscript_tool_mode:
 
+.. _doc_gdscript_basics_setters_getters:
 
-Properties
-~~~~~~~~~~
+Properties (setters and getters)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sometimes you want a class' member variable to do more than just hold data and actually perform
-some validation or computation whenever its value change. It may also be desired to
+Sometimes, you want a class' member variable to do more than just hold data and actually perform
+some validation or computation whenever its value changes. It may also be desired to
 encapsulate its access in some way.
 
 For this, GDScript provides a special syntax to define properties using the ``set`` and ``get``
@@ -1512,6 +1605,8 @@ you can use a different notation to use existing class functions::
         get = get_my_prop, set = set_my_prop
 
 This can also be done in the same line.
+
+.. _doc_gdscript_tool_mode:
 
 Tool mode
 ~~~~~~~~~
@@ -1610,7 +1705,7 @@ to. To create custom signals for a class, use the ``signal`` keyword.
    Game Programming Patterns ebook.
 
 You can connect these signals to methods the same way you connect built-in
-signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody`.
+signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody3D`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
@@ -1662,9 +1757,9 @@ the :ref:`Signal.connect() <class_Signal_method_connect>` method::
     ...
     func _on_Character_health_changed(old_value, new_value):
         if old_value > new_value:
-            progress_bar.modulate = Color.red
+            progress_bar.modulate = Color.RED
         else:
-            progress_bar.modulate = Color.green
+            progress_bar.modulate = Color.GREEN
 
         # Imagine that `animate` is a user-defined function that animates the
         # bar filling up or emptying itself.
@@ -1796,31 +1891,6 @@ This also means that returning a signal from a function that isn't a coroutine w
           This is done to ensure type safety.
           With this type safety in place, a function cannot say that it returns an ``int`` while it actually returns a function state object
           during runtime.
-
-.. _doc_gdscript_onready_annotation:
-
-`@onready` annotation
-~~~~~~~~~~~~~~~~~~~~~
-
-When using nodes, it's common to desire to keep references to parts
-of the scene in a variable. As scenes are only warranted to be
-configured when entering the active scene tree, the sub-nodes can only
-be obtained when a call to ``Node._ready()`` is made.
-
-::
-
-    var my_label
-
-
-    func _ready():
-        my_label = get_node("MyLabel")
-
-This can get a little cumbersome, especially when nodes and external
-references pile up. For this, GDScript has the ``@onready`` annotation, that
-defers initialization of a member variable until ``_ready()`` is called. It
-can replace the above code with a single line::
-
-    @onready var my_label = get_node("MyLabel")
 
 Assert keyword
 ~~~~~~~~~~~~~~

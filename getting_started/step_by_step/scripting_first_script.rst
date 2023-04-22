@@ -1,3 +1,5 @@
+:article_outdated: True
+
 ..
     Intention:
 
@@ -21,11 +23,14 @@ Creating your first script
 In this lesson, you will code your first script to make the Godot icon turn in
 circles using GDScript. As we mentioned :ref:`in the introduction
 <toc-learn-introduction>`, we assume you have programming foundations.
+The equivalent C# code has been included in another tab for convenience.
 
 .. image:: img/scripting_first_script_rotating_godot.gif
 
 .. seealso:: To learn more about GDScript, its keywords, and its syntax, head to
              the :ref:`GDScript reference<doc_gdscript>`.
+
+.. seealso:: To learn more about C#, head to the :ref:`C# basics <doc_c_sharp>` page.
 
 Project setup
 -------------
@@ -41,25 +46,26 @@ click the Other Node button.
 
 .. image:: img/scripting_first_script_click_other_node.png
 
-Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D to
-create the node.
+Type "Sprite2D" in the search bar to filter nodes and double-click on Sprite2D
+to create the node.
 
-.. image:: img/scripting_first_script_add_sprite_node.png
+.. image:: img/scripting_first_script_add_sprite_node.webp
 
 Your Scene tab should now only have a Sprite2D node.
 
-.. image:: img/scripting_first_script_scene_tree.png
+.. image:: img/scripting_first_script_scene_tree.webp
 
-A Sprite2D node needs a texture to display. In the Inspector on the right, you can
-see that the Texture property says "[empty]". To display the Godot icon, click
-and drag the file ``icon.png`` from the FileSystem dock onto the Texture slot.
+A Sprite2D node needs a texture to display. In the Inspector on the right, you
+can see that the Texture property says "[empty]". To display the Godot icon,
+click and drag the file ``icon.svg`` from the FileSystem dock onto the Texture
+slot.
 
-.. image:: img/scripting_first_script_setting_texture.png
+.. image:: img/scripting_first_script_setting_texture.webp
 
 .. note::
 
-    You can create Sprite2D nodes automatically by dragging and dropping images on
-    the viewport.
+    You can create Sprite2D nodes automatically by dragging and dropping images
+    on the viewport.
 
     .. image:: img/scripting_first_script_dragging_sprite.png
 
@@ -73,23 +79,31 @@ Creating a new script
 To create and attach a new script to our node, right-click on Sprite2D in the
 scene dock and select "Attach Script".
 
-.. image:: img/scripting_first_script_attach_script.png
+.. image:: img/scripting_first_script_attach_script.webp
 
-The Attach node Script window appears. It allows you to select the script's
+The Attach Node Script window appears. It allows you to select the script's
 language and file path, among other options.
 
-Change the Template from Default to Empty to start with a clean file. Leave the
+Change the Template field from "Node: Default" to "Object: Empty" to start with a clean file. Leave the
 other options by default and click the Create button to create the script.
 
-.. image:: img/scripting_first_script_attach_node_script.png
+.. image:: img/scripting_first_script_attach_node_script.webp
 
-The Script workspace should appear with your new file open and the following
-line of code:
+The Script workspace should appear with your new ``Sprite2D.gd`` file open and
+the following line of code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     extends Sprite2D
+
+ .. code-tab:: csharp C#
+
+    using Godot;
+
+    public partial class Sprite : Sprite2D
+    {
+    }
 
 Every GDScript file is implicitly a class. The ``extends`` keyword defines the
 class this script inherits or extends. In this case, it's ``Sprite2D``, meaning
@@ -98,7 +112,7 @@ node, including classes it extends, like ``Node2D``, ``CanvasItem``, and
 ``Node``.
 
 .. note:: In GDScript, if you omit the line with the ``extends`` keyword, your
-          class will implicitly extend :ref:`Reference <class_Reference>`, which
+          class will implicitly extend :ref:`RefCounted <class_RefCounted>`, which
           Godot uses to manage your application's memory.
 
 Inherited properties include the ones you can see in the Inspector dock, like
@@ -108,9 +122,9 @@ our node's ``texture``.
 
     By default, the Inspector displays a node's properties in "Title Case", with
     capitalized words separated by a space. In GDScript code, these properties
-    are in "snake_case", lowercase, and words separated by an underscore.
+    are in "snake_case", which is lowercase with words separated by an underscore.
 
-    You can hover any property's name in the Inspector to see a description and
+    You can hover over any property's name in the Inspector to see a description and
     its identifier in code.
 
 Hello, world!
@@ -127,6 +141,14 @@ Add the following code to your script:
     func _init():
         print("Hello, world!")
 
+ .. code-tab:: csharp C#
+
+    public Sprite()
+    {
+        GD.Print("Hello, world!");
+    }
+
+
 Let's break it down. The ``func`` keyword defines a new function named
 ``_init``. This is a special name for our class's constructor. The engine calls
 ``_init()`` on every object or node upon creating it in memory, if you define
@@ -135,10 +157,11 @@ this function.
 .. note:: GDScript is an indent-based language. The tab at the start of the line
           that says ``print()`` is necessary for the code to work. If you omit
           it or don't indent a line correctly, the editor will highlight it in
-          red and display the following error message: "Unexpected indentation."
+          red and display the following error message: "Indented block expected".
 
-Save the scene if you haven't already, then press :kbd:`F6` to run it. Look at
-the Output bottom panel that expands. It should display "Hello, world!"
+Save the scene as ``sprite_2d.tscn`` if you haven't already, then press :kbd:`F6` (:kbd:`Cmd + R` on macOS)
+to run it. Look at the **Output** bottom panel that expands.
+It should display "Hello, world!".
 
 .. image:: img/scripting_first_script_print_hello_world.png
 
@@ -150,21 +173,25 @@ Turning around
 
 It's time to make our node move and rotate. To do so, we're going to add two
 member variables to our script: the movement speed in pixels per second and the
-angular speed in radians per second.
+angular speed in radians per second.  Add the following after the ``extends Sprite2D`` line.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Sprite2D
-
     var speed = 400
     var angular_speed = PI
 
-Member variables sit at the top of the script, before functions. Every node
+ .. code-tab:: csharp C#
+
+    private int Speed = 400;
+    private float AngularSpeed = Mathf.Pi;
+
+Member variables sit near the top of the script, after any "extends" lines,
+but before functions. Every node
 instance with this script attached to it will have its own copy of the ``speed``
 and ``angular_speed`` properties.
 
-.. note:: As in some other engines, angles in Godot work in radians by default,
+.. note:: Angles in Godot work in radians by default,
           but you have built-in functions and properties available if you prefer
           to calculate angles in degrees instead.
 
@@ -195,6 +222,13 @@ At the bottom of the script, define the function:
     func _process(delta):
         rotation += angular_speed * delta
 
+ .. code-tab:: csharp C#
+
+    public override void _Process(double delta)
+    {
+        Rotation += AngularSpeed * (float)delta;
+    }
+
 The ``func`` keyword defines a new function. After it, we have to write the
 function's name and arguments it takes in parentheses. A colon ends the
 definition, and the indented blocks that follow are the function's content or
@@ -207,8 +241,8 @@ instructions.
 
 The line inside the function, ``rotation += angular_speed * delta``, increments
 our sprite's rotation every frame. Here, ``rotation`` is a property inherited
-from the class ``Node2D``, which ``Sprite2D`` extends. It controls the rotation of
-our node and works with radians.
+from the class ``Node2D``, which ``Sprite2D`` extends. It controls the rotation
+of our node and works with radians.
 
 .. tip:: In the code editor, you can ctrl-click on any built-in property or
          function like ``position``, ``rotation``, or ``_process`` to open the
@@ -218,18 +252,29 @@ Run the scene to see the Godot icon turn in-place.
 
 .. image:: img/scripting_first_script_godot_turning_in_place.gif
 
+.. note:: In C#, notice how the ``delta`` argument taken by ``_Process()`` is a
+          ``double``. We therefore need to convert it to ``float`` when we apply
+          it to the rotation.
+
 Moving forward
 ~~~~~~~~~~~~~~
 
-Let's now make the node move. Add the following two lines to the ``_process()``
-function, ensuring the new lines are indented the same way as the one before
+Let's now make the node move. Add the following two lines inside of the ``_process()``
+function, ensuring the new lines are indented the same way as the ``rotation += angular * delta`` line before
 them.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     var velocity = Vector2.UP.rotated(rotation) * speed
+
     position += velocity * delta
+
+ .. code-tab:: csharp C#
+
+    var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+
+    Position += velocity * (float)delta;
 
 As we already saw, the ``var`` keyword defines a new variable. If you put it at
 the top of the script, it defines a property of the class. Inside a function, it
@@ -237,8 +282,8 @@ defines a local variable: it only exists within the function's scope.
 
 We define a local variable named ``velocity``, a 2D vector representing both a
 direction and a speed. To make the node move forward, we start from the Vector2
-class's constant Vector2.UP, a vector pointing up, and rotate it by calling the
-``Vector2.rotated()`` method. This expression, ``Vector2.UP.rotated(rotation)``,
+class's constant ``Vector2.UP``, a vector pointing up, and rotate it by calling the
+``rotated()`` method on any ``Vector2``. This expression, ``Vector2.UP.rotated(rotation)``,
 is a vector pointing forward relative to our icon. Multiplied by our ``speed``
 property, it gives us a velocity we can use to move the node forward.
 
@@ -254,4 +299,44 @@ Run the scene to see the Godot head run in circles.
           walls or the floor. In :ref:`doc_your_first_2d_game`, you will learn
           another approach to moving objects while detecting collisions.
 
-Our node currently moves by itself. In the next part, we'll use player input to control it.
+Our node currently moves by itself. In the next part
+:ref:`doc_scripting_player_input`, we'll use player input to control it.
+
+Complete script
+---------------
+
+Here is the complete ``Sprite2D.gd`` file for reference.
+
+.. tabs::
+ .. code-tab:: gdscript GDScript
+
+    extends Sprite2D
+
+    var speed = 400
+    var angular_speed = PI
+
+
+    func _process(delta):
+        rotation += angular_speed * delta
+
+        var velocity = Vector2.UP.rotated(rotation) * speed
+
+        position += velocity * delta
+
+ .. code-tab:: csharp C#
+
+    using Godot;
+
+    public partial class Sprite : Sprite2D
+    {
+        private int Speed = 400;
+        private float AngularSpeed = Mathf.Pi;
+
+        public override void _Process(double delta)
+        {
+            Rotation += AngularSpeed * (float)delta;
+            var velocity = Vector2.Up.Rotated(Rotation) * Speed;
+
+            Position += velocity * (float)delta;
+        }
+    }

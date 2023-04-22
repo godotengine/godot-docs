@@ -193,7 +193,7 @@ node with its parent. And there's currently no child of the hand node.
 With this knowledge let's try again.
 
 The first step is creating an endpoint node. Any kind of node will do,
-but :ref:`Position2D <class_Position2D>` is preferred because it's
+but :ref:`Marker2D <class_Marker2D>` is preferred because it's
 visible in the editor. The endpoint node will ensure that the last bone
 has orientation.
 
