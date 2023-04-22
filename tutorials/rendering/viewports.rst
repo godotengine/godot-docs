@@ -138,14 +138,13 @@ following code:
 
 ::
 
-   # Retrieve the captured Image using get_data().
-   var img = get_viewport().get_texture().get_data()
+   # Retrieve the captured Image using get_image().
+   var img = get_viewport().get_texture().get_image()
    # Flip on the Y axis.
    # You can also set "V Flip" to true if not on the root Viewport.
    img.flip_y()
    # Convert Image to ImageTexture.
-   var tex = ImageTexture.new()
-   tex.create_from_image(img)
+   var tex = ImageTexture.create_from_image(img)
    # Set sprite texture.
    $sprite.texture = tex
 
