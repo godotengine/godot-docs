@@ -170,8 +170,8 @@ such as "Get Ready", so we add the following code
  .. code-tab:: gdscript GDScript
 
     func show_message(text):
-        $Message.text = text
-        $Message.show()
+        $MessageLabel.text = text
+        $MessageLabel.show()
         $MessageTimer.start()
 
  .. code-tab:: csharp
@@ -220,8 +220,8 @@ We also need to process what happens when the player loses. The code below will 
         # Wait until the MessageTimer has counted down.
         await $MessageTimer.timeout
 
-        $Message.text = "Dodge the\nCreeps!"
-        $Message.show()
+        $MessageLabel.text = "Dodge the\nCreeps!"
+        $MessageLabel.show()
         # Make a one-shot timer and wait for it to finish.
         await get_tree().create_timer(1.0).timeout
         $StartButton.show()
@@ -302,7 +302,7 @@ signal of ``StartButton``, and add the following code to the new functions:
         start_game.emit()
 
     func _on_message_timer_timeout():
-        $Message.hide()
+        $MessageLabel.hide()
 
  .. code-tab:: csharp
 
