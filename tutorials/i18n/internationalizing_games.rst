@@ -153,12 +153,14 @@ singular and plural don't clearly apply.
 ::
 
     var num_apples = 5
-	label.text = tr_n("There is %d apple", "There are %d apples", num_apples) % num_apples
+    label.text = tr_n("There is %d apple", "There are %d apples", num_apples) % num_apples
 
 This can be combined with a context if needed:
 
+::
+
     var num_jobs = 1
-	label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs
+    label.text = tr_n("%d job", "%d jobs", num_jobs, "Task Manager") % num_jobs
 
 .. note::
 
