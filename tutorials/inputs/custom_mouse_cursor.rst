@@ -27,9 +27,10 @@ The second way is more customizable, but involves scripting:
 Using project settings
 ----------------------
 
-Open project settings, go to Display>Mouse Cursor. You will see Custom Image and Custom Image Hotspot.
+Open project settings, go to Display>Mouse Cursor. You will see Custom Image, Custom Image Hotspot
+and Tooltip Position Offset.
 
-.. image:: img/cursor_project_settings.png
+.. image:: img/cursor_project_settings.webp
 
 Custom Image is the desired image that you would like to set as the mouse cursor.
 Custom Hotspot is the point in the image that you would like to use as the cursor's detection point.
