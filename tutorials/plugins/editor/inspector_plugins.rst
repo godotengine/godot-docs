@@ -285,7 +285,7 @@ followed by ``set_bottom_editor()`` to position it below the name.
             EmitChanged(GetEditedProperty(), _currentValue);
         }
 
-        public override void UpdateProperty()
+        public override void _UpdateProperty()
         {
             // Read the current value from the property.
             var newValue = (int)GetEditedObject().Get(GetEditedProperty());
