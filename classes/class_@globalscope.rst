@@ -1944,6 +1944,36 @@ Since :ref:`OK<class_@GlobalScope_constant_OK>` has value 0, and all other failu
 
 .. _class_@GlobalScope_constant_PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS:
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_ID:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_TYPE_STRING:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_VARIANT_TYPE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_BASE_TYPE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_INSTANCE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_METHOD_OF_SCRIPT:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_BASE_TYPE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_INSTANCE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_PROPERTY_OF_SCRIPT:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_OBJECT_TOO_BIG:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_NODE_PATH_VALID_TYPES:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_SAVE_FILE:
+
+.. _class_@GlobalScope_constant_PROPERTY_HINT_MAX:
+
 enum **PropertyHint**:
 
 - **PROPERTY_HINT_NONE** = **0** --- No hint for the edited property.
@@ -1999,6 +2029,45 @@ Unlike :ref:`PROPERTY_HINT_ENUM<class_@GlobalScope_constant_PROPERTY_HINT_ENUM>`
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSY** = **23** --- Hints that an image is compressed using lossy compression.
 
 - **PROPERTY_HINT_IMAGE_COMPRESS_LOSSLESS** = **24** --- Hints that an image is compressed using lossless compression.
+
+- **PROPERTY_HINT_OBJECT_ID** = **25**
+
+- **PROPERTY_HINT_TYPE_STRING** = **26** --- Hint that a property represents a particular type. If a property is :ref:`TYPE_STRING<class_@GlobalScope_constant_TYPE_STRING>`, allows to set a type from the create dialog. If you need to create an :ref:`Array<class_Array>` to contain elements of a specific type, the ``hint_string`` must encode nested types using ``":"`` and ``"/"`` for specifying :ref:`Resource<class_Resource>` types. For instance:
+
+::
+
+    hint_string = "%s:" % [TYPE_INT] # Array of inteters.
+    hint_string = "%s:%s:" % [TYPE_ARRAY, TYPE_REAL] # Two-dimensional array of floats.
+    hint_string = "%s/%s:Resource" % [TYPE_OBJECT, TYPE_OBJECT] # Array of resources.
+    hint_string = "%s:%s/%s:Resource" % [TYPE_ARRAY, TYPE_OBJECT, TYPE_OBJECT] # Two-dimensional array of resources.
+
+\ **Note:** The final colon is required to specify for properly detecting built-in types.
+
+- **PROPERTY_HINT_NODE_PATH_TO_EDITED_NODE** = **27**
+
+- **PROPERTY_HINT_METHOD_OF_VARIANT_TYPE** = **28**
+
+- **PROPERTY_HINT_METHOD_OF_BASE_TYPE** = **29**
+
+- **PROPERTY_HINT_METHOD_OF_INSTANCE** = **30**
+
+- **PROPERTY_HINT_METHOD_OF_SCRIPT** = **31**
+
+- **PROPERTY_HINT_PROPERTY_OF_VARIANT_TYPE** = **32**
+
+- **PROPERTY_HINT_PROPERTY_OF_BASE_TYPE** = **33**
+
+- **PROPERTY_HINT_PROPERTY_OF_INSTANCE** = **34**
+
+- **PROPERTY_HINT_PROPERTY_OF_SCRIPT** = **35**
+
+- **PROPERTY_HINT_OBJECT_TOO_BIG** = **36**
+
+- **PROPERTY_HINT_NODE_PATH_VALID_TYPES** = **37**
+
+- **PROPERTY_HINT_SAVE_FILE** = **38**
+
+- **PROPERTY_HINT_MAX** = **40**
 
 ----
 

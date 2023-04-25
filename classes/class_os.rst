@@ -1106,7 +1106,7 @@ Returns the audio driver name for the given index.
 
 - :ref:`String<class_String>` **get_cache_dir** **(** **)** |const|
 
-Returns the *global* cache data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_config_dir<class_OS_method_get_config_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+Returns the *global* cache data directory according to the operating system's standards. On Linux, this path can be overridden by setting the ``XDG_CACHE_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_config_dir<class_OS_method_get_config_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
@@ -1144,7 +1144,7 @@ Here's a minimal example on how to parse command-line arguments into a dictionar
 
 - :ref:`String<class_String>` **get_config_dir** **(** **)** |const|
 
-Returns the *global* user configuration directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
+Returns the *global* user configuration directory according to the operating system's standards. On Linux, this path can be overridden by setting the ``XDG_CONFIG_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_data_dir<class_OS_method_get_data_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
@@ -1174,7 +1174,7 @@ Returns the currently used video driver, using one of the values from :ref:`Vide
 
 - :ref:`String<class_String>` **get_data_dir** **(** **)** |const|
 
-Returns the *global* user data directory according to the operating system's standards. On desktop platforms, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
+Returns the *global* user data directory according to the operating system's standards. On Linux, this path can be overridden by setting the ``XDG_DATA_HOME`` environment variable before starting the project. See :doc:`File paths in Godot projects <../tutorials/io/data_paths>` in the documentation for more information. See also :ref:`get_cache_dir<class_OS_method_get_cache_dir>` and :ref:`get_config_dir<class_OS_method_get_config_dir>`.
 
 Not to be confused with :ref:`get_user_data_dir<class_OS_method_get_user_data_dir>`, which returns the *project-specific* user data path.
 
@@ -2254,6 +2254,8 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 - ``OS.shell_open("mailto:example@example.com")`` opens the default email client with the "To" field set to ``example@example.com``. See `RFC 2368 - The [code]mailto[/code] URL scheme <https://datatracker.ietf.org/doc/html/rfc2368>`__ for a list of fields that can be added.
 
 Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
+
+\ **Note:** Use :ref:`String.percent_encode<class_String_method_percent_encode>` to encode characters within URLs in a URL-safe, portable way. This is especially required for line breaks. Otherwise, :ref:`shell_open<class_OS_method_shell_open>` may not work correctly in a project exported to the Web platform.
 
 \ **Note:** This method is implemented on Android, iOS, HTML5, Linux, macOS and Windows.
 

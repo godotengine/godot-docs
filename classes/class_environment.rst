@@ -654,7 +654,7 @@ The :ref:`Color<class_Color>` displayed for clear areas of the scene. Only effec
 | *Getter*  | get_bg_energy()      |
 +-----------+----------------------+
 
-The power of the light emitted by the background.
+The power of the light emitted by the background. This affects the sky brightness, the ambient light (if :ref:`ambient_light_sky_contribution<class_Environment_property_ambient_light_sky_contribution>` is greater than ``0.0``) and specular light from the sky.
 
 ----
 

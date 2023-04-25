@@ -19,6 +19,8 @@ Description
 
 Cylinder shape for collisions.
 
+\ **Note:** When using GodotPhysics instead of the default Bullet physics engine, there are several known bugs with cylinder collision shapes. Using :ref:`CapsuleShape<class_CapsuleShape>` or :ref:`BoxShape<class_BoxShape>` instead is recommended.
+
 Tutorials
 ---------
 

@@ -308,6 +308,8 @@ Assigns the given value to all elements in the array. This can typically be used
     array.resize(10)
     array.fill(0) # Initialize the 10 elements to 0.
 
+\ **Note:** If ``value`` is of a reference type (:ref:`Object<class_Object>`-derived, ``Array``, :ref:`Dictionary<class_Dictionary>`, etc.) then the array is filled with the references to the same object, i.e. no duplicates are created.
+
 ----
 
 .. _class_Array_method_find:
@@ -509,6 +511,8 @@ Duplicates the subset described in the function and returns it in an array, deep
 
 Sorts the array.
 
+\ **Note:** The sorting algorithm used is not `stable <https://en.wikipedia.org/wiki/Sorting_algorithm#Stability>`__. This means that values considered equal may have their order changed when using :ref:`sort<class_Array_method_sort>`.
+
 \ **Note:** Strings are sorted in alphabetical order (as opposed to natural order). This may lead to unexpected behavior when sorting an array of strings ending with a sequence of numbers. Consider the following example:
 
 ::
@@ -527,7 +531,9 @@ Sorts the array using a custom method. The arguments are an object that holds th
 
 For two elements ``a`` and ``b``, if the given method returns ``true``, element ``b`` will be after element ``a`` in the array.
 
-\ **Note:** You cannot randomize the return value as the heapsort algorithm expects a deterministic result. Doing so will result in unexpected behavior.
+\ **Note:** The sorting algorithm used is not `stable <https://en.wikipedia.org/wiki/Sorting_algorithm#Stability>`__. This means that values considered equal may have their order changed when using :ref:`sort_custom<class_Array_method_sort_custom>`.
+
+\ **Note:** You cannot randomize the return value as the heapsort algorithm expects a deterministic result. Randomizing the return value will result in unexpected behavior.
 
 ::
 

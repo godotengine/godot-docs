@@ -17,7 +17,7 @@ Control for holding :ref:`Viewport<class_Viewport>`\ s.
 Description
 -----------
 
-A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewport>`, automatically setting its size.
+A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewport>`, automatically setting the viewport's size.
 
 \ **Note:** Changing a ViewportContainer's :ref:`Control.rect_scale<class_Control_property_rect_scale>` will cause its contents to appear distorted. To change its visual size without causing distortion, adjust the node's margins instead (if it's not already in a container).
 

@@ -647,6 +647,8 @@ Sets a custom mouse cursor image, which is only visible inside the game window. 
 
 \ **Note:** Only images imported with the **Lossless**, **Lossy** or **Uncompressed** compression modes are supported. The **Video RAM** compression mode can't be used for custom cursors.
 
+\ **Note:** On the web platform, the maximum allowed cursor image size is 128×128. Cursor images larger than 32×32 will also only be displayed if the mouse cursor image is entirely located within the page for `security reasons <https://chromestatus.com/feature/5825971391299584>`__.
+
 ----
 
 .. _class_Input_method_set_default_cursor_shape:

@@ -34,7 +34,9 @@ Tutorials
 
 - :doc:`Particle systems (2D) <../tutorials/2d/particle_systems_2d>`
 
-- `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
+- `2D Particles Demo <https://godotengine.org/asset-library/asset/118>`__
+
+- `2D Dodge The Creeps Demo (uses GPUParticles2D for the trail behind the player) <https://godotengine.org/asset-library/asset/515>`__
 
 Properties
 ----------

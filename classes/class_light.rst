@@ -296,6 +296,8 @@ If ``true``, the light's effect is reversed, darkening areas and casting bright 
 
 The size of the light in Godot units. Only considered in baked lightmaps and only if :ref:`light_bake_mode<class_Light_property_light_bake_mode>` is set to :ref:`BAKE_ALL<class_Light_constant_BAKE_ALL>`. Increasing this value will make the shadows appear blurrier. This can be used to simulate area lights to an extent.
 
+\ **Note:** :ref:`light_size<class_Light_property_light_size>` is not affected by :ref:`Spatial.scale<class_Spatial_property_scale>` (the light's scale or its parent's scale).
+
 ----
 
 .. _class_Light_property_light_specular:

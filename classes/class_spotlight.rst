@@ -58,6 +58,8 @@ Property Descriptions
 
 The spotlight's angle in degrees.
 
+\ **Note:** :ref:`spot_angle<class_SpotLight_property_spot_angle>` is not affected by :ref:`Spatial.scale<class_Spatial_property_scale>` (the light's scale or its parent's scale).
+
 ----
 
 .. _class_SpotLight_property_spot_angle_attenuation:
@@ -105,6 +107,8 @@ The spotlight's light energy attenuation curve.
 +-----------+------------------+
 
 The maximal range that can be reached by the spotlight. Note that the effectively lit area may appear to be smaller depending on the :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>` in use. No matter the :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>` in use, the light will never reach anything outside this range.
+
+\ **Note:** :ref:`spot_range<class_SpotLight_property_spot_range>` is not affected by :ref:`Spatial.scale<class_Spatial_property_scale>` (the light's scale or its parent's scale).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
