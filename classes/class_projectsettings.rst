@@ -843,6 +843,8 @@ Properties
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                       | :ref:`rendering/batching/options/use_batching_in_editor<class_ProjectSettings_property_rendering/batching/options/use_batching_in_editor>`                           | ``true``                                                                                         |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                       | :ref:`rendering/batching/options/use_multirect<class_ProjectSettings_property_rendering/batching/options/use_multirect>`                                             | ``true``                                                                                         |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                         | :ref:`rendering/batching/parameters/batch_buffer_size<class_ProjectSettings_property_rendering/batching/parameters/batch_buffer_size>`                               | ``16384``                                                                                        |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                     | :ref:`rendering/batching/parameters/colored_vertex_format_threshold<class_ProjectSettings_property_rendering/batching/parameters/colored_vertex_format_threshold>`   | ``0.25``                                                                                         |
@@ -6137,6 +6139,20 @@ Turns 2D batching on and off. Batching increases performance by reducing the amo
 :ref:`bool<class_bool>` **rendering/batching/options/use_batching_in_editor** = ``true``
 
 Switches on 2D batching within the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_rendering/batching/options/use_multirect:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **rendering/batching/options/use_multirect** = ``true``
+
+Allows use of the ``MultiRect`` command in the Rasterizer.
+
+This can provide some acceleration for large groups of rects, especially text and tilemaps.
 
 .. rst-class:: classref-item-separator
 
