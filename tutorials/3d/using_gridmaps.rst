@@ -19,7 +19,7 @@ Example project
 ---------------
 
 To learn how GridMaps work, start by downloading the sample project:
-:download:`gridmap_demo.zip <files/gridmap_demo.zip>`.
+`gridmap_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/gridmap_starter.zip>`_.
 
 Unzip this project and add it to the Project Manager using the "Import"
 button.

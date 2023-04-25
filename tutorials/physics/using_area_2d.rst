@@ -139,4 +139,4 @@ override.
 .. image:: img/area2d_override.gif
 
 You can download this project here:
-:download:`using_area_2d.zip <files/using_area_2d.zip>`
+`area_2d_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/area_2d_starter.zip>`_

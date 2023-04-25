@@ -289,4 +289,4 @@ You may find these code samples useful as starting points for your own projects.
 Feel free to use them and experiment with them to see what you can make.
 
 You can download this sample project here:
-:download:`2D_movement_demo.zip <files/2D_movement_demo.zip>`
+`2d_movement_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/2d_movement_starter.zip>`_
