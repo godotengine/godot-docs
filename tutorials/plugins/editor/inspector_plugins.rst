@@ -149,7 +149,8 @@ specifically add :ref:`class_EditorProperty`-based controls.
             return true;
         }
 
-        public override bool _ParseProperty(GodotObject @object, int type, string name, int hintType, string hintString, int usageFlags, bool wide)
+        public override bool _ParseProperty(GodotObject @object, int type, string name, 
+            int hintType, string hintString, int usageFlags, bool wide)
         {
             // We handle properties of type integer.
             if (type == (int)Variant.Type.Int)
