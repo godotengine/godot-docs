@@ -149,15 +149,16 @@ specifically add :ref:`class_EditorProperty`-based controls.
             return true;
         }
 
-        public override bool _ParseProperty(GodotObject @object, int type, string name, 
-            int hintType, string hintString, int usageFlags, bool wide)
+        public override bool _ParseProperty(GodotObject @object, Variant.Type type, 
+            string name, PropertyHint hintType, string hintString, 
+            PropertyUsageFlags usageFlags, bool wide)
         {
             // We handle properties of type integer.
-            if (type == (int)Variant.Type.Int)
+            if (type == Variant.Type.Int)
             {
                 // Create an instance of the custom property editor and register
                 // it to a specific property path.
-                AddPropertyEditor(path, new RandomIntEditor());
+                AddPropertyEditor(name, new RandomIntEditor());
                 // Inform the editor to remove the default property editor for
                 // this property type.
                 return true;
