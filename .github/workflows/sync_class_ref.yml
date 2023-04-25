@@ -10,7 +10,7 @@ on:
 
 # Make sure jobs cannot overlap.
 concurrency:
-  group: classref-sync-ci
+  group: classref-sync-ci-master
   cancel-in-progress: true
 
 jobs:
