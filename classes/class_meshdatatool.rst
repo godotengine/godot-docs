@@ -60,7 +60,7 @@ Below is an example of how MeshDataTool may be used.
         // Save your change.
         mdt.SetVertex(i, vertex);
     }
-    mesh.SurfaceRemove(0);
+    mesh.ClearSurfaces();
     mdt.CommitToSurface(mesh);
     var mi = new MeshInstance();
     mi.Mesh = mesh;
