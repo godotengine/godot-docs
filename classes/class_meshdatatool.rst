@@ -40,7 +40,7 @@ Below is an example of how MeshDataTool may be used.
         vertex += mdt.get_vertex_normal(i)
         # Save your change.
         mdt.set_vertex(i, vertex)
-    mesh.surface_remove(0)
+    mesh.clear_surfaces(0)
     mdt.commit_to_surface(mesh)
     var mi = MeshInstance.new()
     mi.mesh = mesh
