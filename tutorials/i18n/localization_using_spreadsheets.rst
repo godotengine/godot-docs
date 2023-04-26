@@ -7,6 +7,18 @@ Spreadsheets are one of the most common formats for localizing games.
 In Godot, spreadsheets are supported through the CSV format. This
 guide explains how to work with CSVs.
 
+The CSV files **must** be saved with UTF-8 encoding
+without a `byte order mark <https://en.wikipedia.org/wiki/Byte_order_mark>`__.
+
+.. warning::
+
+    By default, Microsoft Excel will always save CSV files with ANSI encoding
+    rather than UTF-8. There is no built-in way to do this, but there are
+    workarounds as described
+    `here <https://stackoverflow.com/questions/4221176/excel-to-csv-with-utf8-encoding>`__.
+
+    We recommend using `LibreOffice <https://www.libreoffice.org/>`__ or Google Sheets instead.
+
 Formatting
 ----------
 
