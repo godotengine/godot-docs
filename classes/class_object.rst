@@ -1190,6 +1190,8 @@ Returns ``true`` if a metadata entry is found with the given ``name``. See also 
 
 \ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
+\ **Note:** A metadata’s ``name`` must be a valid identifier. A valid identifier cannot start with a number.
+
 .. rst-class:: classref-item-separator
 
 ----
