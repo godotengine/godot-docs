@@ -412,7 +412,7 @@ GDScript allows you to add properties to your script using the ``export``
 keyword. In GDExtension you have to register the properties with a getter and
 setter function or directly implement the ``_get_property_list``, ``_get`` and
 ``_set`` methods of an object (but that goes far beyond the scope of this
-tutorial)
+tutorial).
 
 Lets add a property that allows us to control the amplitude of our wave.
 
