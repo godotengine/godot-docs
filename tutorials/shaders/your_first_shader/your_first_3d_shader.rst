@@ -234,14 +234,14 @@ Let's make a uniform that changes the height of the terrain.
 
 Godot lets you initialize a uniform with a value; here, ``height_scale`` is set
 to ``0.5``. You can set uniforms from GDScript by calling the function
-``set_shader_param()`` on the material corresponding to the shader. The value
+``set_shader_parameter()`` on the material corresponding to the shader. The value
 passed from GDScript takes precedence over the value used to initialize it in
 the shader.
 
 ::
 
   # called from the MeshInstance3D
-  mesh.material.set_shader_param("height_scale", 0.5)
+  mesh.material.set_shader_parameter("height_scale", 0.5)
 
 .. note:: Changing uniforms in Spatial-based nodes is different from
           CanvasItem-based nodes. Here, we set the material inside the PlaneMesh
@@ -250,7 +250,7 @@ the shader.
           MeshInstance3D you would access the material using
           ``get_surface_material()`` or ``material_override``.
 
-Remember that the string passed into ``set_shader_param()`` must match the name
+Remember that the string passed into ``set_shader_parameter()`` must match the name
 of the uniform variable in the :ref:`Shader<class_Shader>`. You can use the
 uniform variable anywhere inside your :ref:`Shader<class_Shader>`. Here, we will
 use it to set the height value instead of arbitrarily multiplying by ``0.5``.
