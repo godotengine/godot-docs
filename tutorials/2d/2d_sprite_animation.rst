@@ -28,7 +28,7 @@ animation:
 .. image:: img/2d_animation_run_preview.gif
 
 You can download the images here:
-:download:`run_animation.zip <files/run_animation.zip>`
+`2d_sprite_animation_assets.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/2d_sprite_animation_assets.zip>`_
 
 Unzip the images and place them in your project folder. Set up your scene tree
 with the following nodes:
