@@ -289,7 +289,7 @@ the other two timers. ``ScoreTimer`` will increment the score by 1.
         godot::register_property("mob_scene", &Main::mob_scene, (godot::Ref<godot::PackedScene>)nullptr);
     }
 
-In ``_on_MobTimer_timeout()``, we will create a mob instance, pick a random
+In ``_on_mob_timer_timeout()``, we will create a mob instance, pick a random
 starting location along the ``Path2D``, and set the mob in motion. The
 ``PathFollow2D`` node will automatically rotate as it follows the path, so we
 will use that to select the mob's direction as well as its position.
