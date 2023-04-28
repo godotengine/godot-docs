@@ -1,3 +1,5 @@
+:article_outdated: True
+
 .. _doc_first_3d_game_spawning_monsters:
 
 Spawning monsters
