@@ -70,6 +70,13 @@ In the following example we use a :ref:`LineEdit<class_LineEdit>` node to write 
 
 
 
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Evaluating Expressions <../tutorials/scripting/evaluating_expressions>`
+
 .. rst-class:: classref-reftable-group
 
 Methods

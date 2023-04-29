@@ -71,6 +71,8 @@ Methods
    +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                              | :ref:`get_supported_environment_blend_modes<class_XRInterface_method_get_supported_environment_blend_modes>` **(** **)**                                                                                                                                                                                                                |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                    | :ref:`get_system_info<class_XRInterface_method_get_system_info>` **(** **)**                                                                                                                                                                                                                                                            |
+   +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TrackingStatus<enum_XRInterface_TrackingStatus>` | :ref:`get_tracking_status<class_XRInterface_method_get_tracking_status>` **(** **)** |const|                                                                                                                                                                                                                                            |
    +--------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Transform3D<class_Transform3D>`                  | :ref:`get_transform_for_view<class_XRInterface_method_get_transform_for_view>` **(** :ref:`int<class_int>` view, :ref:`Transform3D<class_Transform3D>` cam_transform **)**                                                                                                                                                              |
@@ -286,7 +288,7 @@ Player is free to move around, full positional tracking.
 
 :ref:`PlayAreaMode<enum_XRInterface_PlayAreaMode>` **XR_PLAY_AREA_STAGE** = ``4``
 
-Same as roomscale but origin point is fixed to the center of the physical space, XRServer.center_on_hmd disabled.
+Same as :ref:`XR_PLAY_AREA_ROOMSCALE<class_XRInterface_constant_XR_PLAY_AREA_ROOMSCALE>` but origin point is fixed to the center of the physical space, :ref:`XRServer.center_on_hmd<class_XRServer_method_center_on_hmd>` disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -471,6 +473,20 @@ Returns the an array of supported environment blend modes, see :ref:`Environment
 
 ----
 
+.. _class_XRInterface_method_get_system_info:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_system_info** **(** **)**
+
+Returns a :ref:`Dictionary<class_Dictionary>` with extra system info. Interfaces are expected to return ``XRRuntimeName`` and ``XRRuntimeVersion`` providing info about the used XR runtime. Additional entries may be provided specific to an interface.
+
+\ **Note:**\ This information may only be available after :ref:`initialize<class_XRInterface_method_initialize>` was successfully called.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_XRInterface_method_get_tracking_status:
 
 .. rst-class:: classref-method
@@ -493,7 +509,7 @@ Returns the transform for a view/eye.
 
 \ ``view`` is the view/eye index.
 
-\ ``cam_transform`` is the transform that maps device coordinates to scene coordinates, typically the global_transform of the current XROrigin3D.
+\ ``cam_transform`` is the transform that maps device coordinates to scene coordinates, typically the :ref:`Node3D.global_transform<class_Node3D_property_global_transform>` of the current XROrigin3D.
 
 .. rst-class:: classref-item-separator
 
@@ -582,9 +598,9 @@ Sets the active environment blend mode.
 ::
 
                     func _ready():
-                        var xr_interface : XRInterface = XRServer.find_interface("OpenXR")
+                        var xr_interface: XRInterface = XRServer.find_interface("OpenXR")
                         if xr_interface and xr_interface.is_initialized():
-                            var vp : Viewport = get_viewport()
+                            var vp: Viewport = get_viewport()
                             vp.use_xr = true
                             var acceptable_modes = [ XRInterface.XR_ENV_BLEND_MODE_OPAQUE, XRInterface.XR_ENV_BLEND_MODE_ADDITIVE ]
                             var modes = xr_interface.get_supported_environment_blend_modes()

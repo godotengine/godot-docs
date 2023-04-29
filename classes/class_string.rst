@@ -105,6 +105,8 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`hash<class_String_method_hash>` **(** **)** |const|                                                                                                                          |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`hex_decode<class_String_method_hex_decode>` **(** **)** |const|                                                                                                              |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`hex_to_int<class_String_method_hex_to_int>` **(** **)** |const|                                                                                                              |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`humanize_size<class_String_method_humanize_size>` **(** :ref:`int<class_int>` size **)** |static|                                                                            |
@@ -236,6 +238,8 @@ Methods
    | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_utf32_buffer<class_String_method_to_utf32_buffer>` **(** **)** |const|                                                                                                    |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_utf8_buffer<class_String_method_to_utf8_buffer>` **(** **)** |const|                                                                                                      |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_wchar_buffer<class_String_method_to_wchar_buffer>` **(** **)** |const|                                                                                                    |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`trim_prefix<class_String_method_trim_prefix>` **(** :ref:`String<class_String>` prefix **)** |const|                                                                         |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -778,6 +782,35 @@ This is faster than :ref:`split<class_String_method_split>`, if you only need on
 Returns the 32-bit hash value representing the string's contents.
 
 \ **Note:** Strings with equal hash values are *not* guaranteed to be the same, as a result of hash collisions. On the countrary, strings with different hash values are guaranteed to be different.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_String_method_hex_decode:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **hex_decode** **(** **)** |const|
+
+Decodes a hexadecimal string as a :ref:`PackedByteArray<class_PackedByteArray>`.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var text = "hello world"
+    var encoded = text.to_utf8_buffer().hex_encode() # outputs "68656c6c6f20776f726c64"
+    print(buf.hex_decode().get_string_from_utf8())
+
+ .. code-tab:: csharp
+
+    var text = "hello world";
+    var encoded = text.ToUtf8Buffer().HexEncode(); # outputs "68656c6c6f20776f726c64"
+    GD.Print(buf.HexDecode().GetStringFromUtf8());
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -1826,6 +1859,18 @@ Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded
 
 ----
 
+.. _class_String_method_to_wchar_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **to_wchar_buffer** **(** **)** |const|
+
+Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_character>`__ (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_String_method_trim_prefix:
 
 .. rst-class:: classref-method
@@ -1868,7 +1913,7 @@ Returns the character code at position ``at``.
 
 :ref:`String<class_String>` **uri_decode** **(** **)** |const|
 
-Decodes the string from its URL-encoded format. This method is meant to properly decode the parameters in a URL when receiving an HTTP request.
+Decodes the string from its URL-encoded format. This method is meant to properly decode the parameters in a URL when receiving an HTTP request. See also :ref:`uri_encode<class_String_method_uri_encode>`.
 
 
 .. tabs::
@@ -1895,7 +1940,7 @@ Decodes the string from its URL-encoded format. This method is meant to properly
 
 :ref:`String<class_String>` **uri_encode** **(** **)** |const|
 
-Encodes the string to URL-friendly format. This method is meant to properly encode the parameters in a URL when sending an HTTP request.
+Encodes the string to URL-friendly format. This method is meant to properly encode the parameters in a URL when sending an HTTP request. See also :ref:`uri_decode<class_String_method_uri_decode>`.
 
 
 .. tabs::

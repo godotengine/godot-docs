@@ -378,7 +378,7 @@ If the curve has no up vectors, the function sends an error to the console, and 
 
 :ref:`Transform3D<class_Transform3D>` **sample_baked_with_rotation** **(** :ref:`float<class_float>` offset=0.0, :ref:`bool<class_bool>` cubic=false, :ref:`bool<class_bool>` apply_tilt=false **)** |const|
 
-Similar with ``interpolate_baked()``. The the return value is ``Transform3D``, with ``origin`` as point position, ``basis.x`` as sideway vector, ``basis.y`` as up vector, ``basis.z`` as forward vector. When the curve length is 0, there is no reasonable way to calculate the rotation, all vectors aligned with global space axes.
+Similar with ``interpolate_baked()``. The return value is ``Transform3D``, with ``origin`` as point position, ``basis.x`` as sideway vector, ``basis.y`` as up vector, ``basis.z`` as forward vector. When the curve length is 0, there is no reasonable way to calculate the rotation, all vectors aligned with global space axes.
 
 .. rst-class:: classref-item-separator
 

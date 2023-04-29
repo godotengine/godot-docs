@@ -611,6 +611,8 @@ void **set_smooth_group** **(** :ref:`int<class_int>` index **)**
 
 Specifies the smooth group to use for the *next* vertex. If this is never called, all vertices will have the default smooth group of ``0`` and will be smoothed with adjacent vertices of the same group. To produce a mesh with flat normals, set the smooth group to ``-1``.
 
+\ **Note:** This function actually takes an ``uint32_t``, so C# users should use ``uint32.MaxValue`` instead of ``-1`` to produce a mesh with flat normals.
+
 .. rst-class:: classref-item-separator
 
 ----

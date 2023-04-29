@@ -1772,9 +1772,9 @@ Enables and disables Turbulence for the particle system.
 - void **set_param_max** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|
 
-Minimum turbulence influence on each particle.
+Maximum turbulence influence on each particle.
 
- The actual amount of turbulence influence on each particle is calculated as a random value between :ref:`turbulence_influence_min<class_ParticleProcessMaterial_property_turbulence_influence_min>` and :ref:`turbulence_influence_max<class_ParticleProcessMaterial_property_turbulence_influence_max>` and multiplied by the amount of turbulence influence from :ref:`turbulence_influence_over_life<class_ParticleProcessMaterial_property_turbulence_influence_over_life>`.
+The actual amount of turbulence influence on each particle is calculated as a random value between :ref:`turbulence_influence_min<class_ParticleProcessMaterial_property_turbulence_influence_min>` and :ref:`turbulence_influence_max<class_ParticleProcessMaterial_property_turbulence_influence_max>` and multiplied by the amount of turbulence influence from :ref:`turbulence_influence_over_life<class_ParticleProcessMaterial_property_turbulence_influence_over_life>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1791,7 +1791,7 @@ Minimum turbulence influence on each particle.
 - void **set_param_min** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|
 
-Maximum turbulence influence on each particle.
+Minimum turbulence influence on each particle.
 
 The actual amount of turbulence influence on each particle is calculated as a random value between :ref:`turbulence_influence_min<class_ParticleProcessMaterial_property_turbulence_influence_min>` and :ref:`turbulence_influence_max<class_ParticleProcessMaterial_property_turbulence_influence_max>` and multiplied by the amount of turbulence influence from :ref:`turbulence_influence_over_life<class_ParticleProcessMaterial_property_turbulence_influence_over_life>`.
 

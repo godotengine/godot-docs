@@ -38,6 +38,8 @@ Properties
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | alignment                                                                   | ``0`` (overrides :ref:`Button<class_Button_property_alignment>`)              |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`allow_reselect<class_OptionButton_property_allow_reselect>`           | ``false``                                                                     |
+   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`fit_to_longest_item<class_OptionButton_property_fit_to_longest_item>` | ``true``                                                                      |
    +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`item_count<class_OptionButton_property_item_count>`                   | ``0``                                                                         |
@@ -194,6 +196,8 @@ Emitted when the user navigates to an item using the :ref:`ProjectSettings.input
 
 Emitted when the current item has been changed by the user. The index of the item selected is passed as argument.
 
+\ :ref:`allow_reselect<class_OptionButton_property_allow_reselect>` must be enabled to reselect an item.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -202,6 +206,23 @@ Emitted when the current item has been changed by the user. The index of the ite
 
 Property Descriptions
 ---------------------
+
+.. _class_OptionButton_property_allow_reselect:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **allow_reselect** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_allow_reselect** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_allow_reselect** **(** **)**
+
+If ``true``, the currently selected item can be selected again.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OptionButton_property_fit_to_longest_item:
 

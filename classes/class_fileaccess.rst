@@ -293,6 +293,14 @@ Uses the `Zstandard <https://facebook.github.io/zstd/>`__ compression method.
 
 Uses the `gzip <https://www.gzip.org/>`__ compression method.
 
+.. _class_FileAccess_constant_COMPRESSION_BROTLI:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressionMode<enum_FileAccess_CompressionMode>` **COMPRESSION_BROTLI** = ``4``
+
+Uses the `brotli <https://github.com/google/brotli>`__ compression method (only decompression is supported).
+
 .. rst-class:: classref-section-separator
 
 ----

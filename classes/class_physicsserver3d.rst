@@ -1799,9 +1799,19 @@ Removes a shape from an area. It does not delete the shape, so it can be reassig
 
 void **area_set_area_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)**
 
-.. container:: contribute
+Sets the area's area monitor callback. This callback will be called when any other (shape of an) area enters or exits (a shape of) the given area, and must take the following five parameters:
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+1. an integer ``status``: either :ref:`AREA_BODY_ADDED<class_PhysicsServer3D_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer3D_constant_AREA_BODY_REMOVED>` depending on whether the other area's shape entered or exited the area,
+
+2. an :ref:`RID<class_RID>` ``area_rid``: the :ref:`RID<class_RID>` of the other area that entered or exited the area,
+
+3. an integer ``instance_id``: the ``ObjectID`` attached to the other area,
+
+4. an integer ``area_shape_idx``: the index of the shape of the other area that entered or exited the area,
+
+5. an integer ``self_shape_idx``: the index of the shape of the area where the other area entered or exited.
+
+By counting (or keeping track of) the shapes that enter and exit, it can be determined if an area (with all its shapes) is entering for the first time or exiting for the last time.
 
 .. rst-class:: classref-item-separator
 
@@ -1837,17 +1847,19 @@ Sets which physics layers the area will monitor.
 
 void **area_set_monitor_callback** **(** :ref:`RID<class_RID>` area, :ref:`Callable<class_Callable>` callback **)**
 
-Sets the function to call when any body/area enters or exits the area. This callback will be called for any object interacting with the area, and takes five parameters:
+Sets the area's body monitor callback. This callback will be called when any other (shape of a) body enters or exits (a shape of) the given area, and must take the following five parameters:
 
-1: :ref:`AREA_BODY_ADDED<class_PhysicsServer3D_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer3D_constant_AREA_BODY_REMOVED>`, depending on whether the object entered or exited the area.
+1. an integer ``status``: either :ref:`AREA_BODY_ADDED<class_PhysicsServer3D_constant_AREA_BODY_ADDED>` or :ref:`AREA_BODY_REMOVED<class_PhysicsServer3D_constant_AREA_BODY_REMOVED>` depending on whether the other body shape entered or exited the area,
 
-2: :ref:`RID<class_RID>` of the object that entered/exited the area.
+2. an :ref:`RID<class_RID>` ``body_rid``: the :ref:`RID<class_RID>` of the body that entered or exited the area,
 
-3: Instance ID of the object that entered/exited the area.
+3. an integer ``instance_id``: the ``ObjectID`` attached to the body,
 
-4: The shape index of the object that entered/exited the area.
+4. an integer ``body_shape_idx``: the index of the shape of the body that entered or exited the area,
 
-5: The shape index of the area where the object entered/exited.
+5. an integer ``self_shape_idx``: the index of the shape of the area where the body entered or exited.
+
+By counting (or keeping track of) the shapes that enter and exit, it can be determined if a body (with all its shapes) is entering for the first time or exiting for the last time.
 
 .. rst-class:: classref-item-separator
 

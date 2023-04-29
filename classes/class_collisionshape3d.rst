@@ -19,7 +19,7 @@ Node that represents collision shape data in 3D space.
 Description
 -----------
 
-Editor facility for creating and editing collision shapes in 3D space. Set the :ref:`shape<class_CollisionShape3D_property_shape>` property to configure the shape. **IMPORTANT**: this is an Editor-only helper to create shapes, use :ref:`CollisionObject3D.shape_owner_get_shape<class_CollisionObject3D_method_shape_owner_get_shape>` to get the actual shape.
+Editor facility for creating and editing collision shapes in 3D space. Set the :ref:`shape<class_CollisionShape3D_property_shape>` property to configure the shape.
 
 You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area3D<class_Area3D>` to give it a detection shape, or add it to a :ref:`PhysicsBody3D<class_PhysicsBody3D>` to create a solid object.
 

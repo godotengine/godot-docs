@@ -247,9 +247,7 @@ Method Descriptions
 
 :ref:`float<class_float>` **get_param** **(** :ref:`Param<enum_ConeTwistJoint3D_Param>` param **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the value of the specified parameter.
 
 .. rst-class:: classref-item-separator
 
@@ -261,9 +259,7 @@ Method Descriptions
 
 void **set_param** **(** :ref:`Param<enum_ConeTwistJoint3D_Param>` param, :ref:`float<class_float>` value **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the value of the specified parameter.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -30,7 +30,7 @@ Accessing the settings can be done using the following methods, such as:
 
  .. code-tab:: gdscript
 
-    var settings = EditorInterface.get_editor_settings()
+    var settings = get_editor_interface().get_editor_settings()
     # `settings.set("some/property", 10)` also works as this class overrides `_set()` internally.
     settings.set_setting("some/property", 10)
     # `settings.get("some/property")` also works as this class overrides `_get()` internally.
@@ -257,6 +257,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`   | :ref:`interface/editor/editor_language<class_EditorSettings_property_interface/editor/editor_language>`                                                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/editor_screen<class_EditorSettings_property_interface/editor/editor_screen>`                                                                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/expand_to_title<class_EditorSettings_property_interface/editor/expand_to_title>`                                                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`interface/editor/font_antialiasing<class_EditorSettings_property_interface/editor/font_antialiasing>`                                                                         |
@@ -275,6 +277,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/mouse_extra_buttons_navigate_history<class_EditorSettings_property_interface/editor/mouse_extra_buttons_navigate_history>`                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/project_manager_screen<class_EditorSettings_property_interface/editor/project_manager_screen>`                                                               |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/save_each_scene_on_quit<class_EditorSettings_property_interface/editor/save_each_scene_on_quit>`                                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/separate_distraction_mode<class_EditorSettings_property_interface/editor/separate_distraction_mode>`                                                         |
@@ -286,6 +290,8 @@ Properties
    | :ref:`float<class_float>`     | :ref:`interface/editor/unfocused_low_processor_mode_sleep_usec<class_EditorSettings_property_interface/editor/unfocused_low_processor_mode_sleep_usec>`                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/use_embedded_menu<class_EditorSettings_property_interface/editor/use_embedded_menu>`                                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/inspector/float_drag_speed<class_EditorSettings_property_interface/inspector/float_drag_speed>`                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`interface/inspector/max_array_dictionary_items_per_page<class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page>`                               |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1171,7 +1177,7 @@ The modifier key that must be held to pan in the 3D editor.
 
 :ref:`bool<class_bool>` **editors/3d/navigation/warped_mouse_panning**
 
-If ``true``, warps the mouse around the 3D viewport while panning in the 3D editor. This makes it possible to pan over a large area without having to exit panning then mouse the mouse back constantly.
+If ``true``, warps the mouse around the 3D viewport while panning in the 3D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
 
 .. rst-class:: classref-item-separator
 
@@ -1485,7 +1491,7 @@ Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of
 
 :ref:`bool<class_bool>` **editors/panning/warped_mouse_panning**
 
-If ``true``, warps the mouse around the 2D viewport while panning in the 2D editor. This makes it possible to pan over a large area without having to exit panning then mouse the mouse back constantly.
+If ``true``, warps the mouse around the 2D viewport while panning in the 2D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
 
 .. rst-class:: classref-item-separator
 
@@ -1871,6 +1877,18 @@ Translations are provided by the community. If you spot a mistake, :doc:`contrib
 
 ----
 
+.. _class_EditorSettings_property_interface/editor/editor_screen:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/editor_screen**
+
+The preferred monitor to display the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/editor/expand_to_title:
 
 .. rst-class:: classref-property
@@ -1989,13 +2007,25 @@ If ``true``, the mouse's additional side buttons will be usable to navigate in t
 
 ----
 
+.. _class_EditorSettings_property_interface/editor/project_manager_screen:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/project_manager_screen**
+
+The preferred monitor to display the project manager.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/editor/save_each_scene_on_quit:
 
 .. rst-class:: classref-property
 
 :ref:`bool<class_bool>` **interface/editor/save_each_scene_on_quit**
 
-If ``true``, the editor will save all scenes when confirming the **Save** action when quitting the editor or quitting to the project list. If ``false``, the editor will ask to save each scene individually.
+If ``false``, the editor will save all scenes when confirming the **Save** action when quitting the editor or quitting to the project list. If ``true``, the editor will ask to save each scene individually.
 
 .. rst-class:: classref-item-separator
 
@@ -2060,6 +2090,18 @@ When the editor window is unfocused, the amount of sleeping between frames when 
 If ``true``, editor main menu is using embedded :ref:`MenuBar<class_MenuBar>` instead of system global menu.
 
 Specific to the macOS platform.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/inspector/float_drag_speed:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/inspector/float_drag_speed**
+
+Base speed for increasing/decreasing float values by dragging them in the inspector.
 
 .. rst-class:: classref-item-separator
 
@@ -2533,7 +2575,7 @@ If ``true``, makes the caret blink according to :ref:`text_editor/appearance/car
 
 :ref:`float<class_float>` **text_editor/appearance/caret/caret_blink_interval**
 
-The interval at which to blink the caret (in seconds). See also :ref:`text_editor/appearance/caret/caret_blink<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`.
+The interval at which the caret will blink (in seconds). See also :ref:`text_editor/appearance/caret/caret_blink<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3646,7 +3688,7 @@ Erases the setting whose name is specified by ``property``.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_changed_settings** **(** **)** |const|
 
-Gets an array of the settings which have been changed since the last save. Note that internally ``changed_settings`` is cleared after a successful save, so generally the most appropriate place to use this method is when processing :ref:`NOTIFICATION_EDITOR_SETTINGS_CHANGED<class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED>`
+Gets an array of the settings which have been changed since the last save. Note that internally ``changed_settings`` is cleared after a successful save, so generally the most appropriate place to use this method is when processing :ref:`NOTIFICATION_EDITOR_SETTINGS_CHANGED<class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED>`.
 
 .. rst-class:: classref-item-separator
 

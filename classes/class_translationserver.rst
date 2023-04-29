@@ -379,7 +379,7 @@ Returns the current locale's translation for the given message (key) and context
 
 :ref:`StringName<class_StringName>` **translate_plural** **(** :ref:`StringName<class_StringName>` message, :ref:`StringName<class_StringName>` plural_message, :ref:`int<class_int>` n, :ref:`StringName<class_StringName>` context="" **)** |const|
 
-Returns the current locale's translation for the given message (key), plural_message and context.
+Returns the current locale's translation for the given message (key), plural message and context.
 
 The number ``n`` is the number or quantity of the plural object. It will be used to guide the translation system to fetch the correct plural form for the selected language.
 

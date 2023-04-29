@@ -21,7 +21,7 @@ Description
 
 Shape casting allows to detect collision objects by sweeping the :ref:`shape<class_ShapeCast2D_property_shape>` along the cast direction determined by :ref:`target_position<class_ShapeCast2D_property_target_position>` (useful for things like beam weapons).
 
-Immediate collision overlaps can be done with the :ref:`target_position<class_ShapeCast2D_property_target_position>` set to ``Vector2(0, 0)`` and by calling :ref:`force_shapecast_update<class_ShapeCast2D_method_force_shapecast_update>` within the same **physics_frame**. This also helps to overcome some limitations of :ref:`Area2D<class_Area2D>` when used as a continuous detection area, often requiring waiting a couple of frames before collision information is available to :ref:`Area2D<class_Area2D>` nodes, and when using the signals creates unnecessary complexity.
+Immediate collision overlaps can be done with the :ref:`target_position<class_ShapeCast2D_property_target_position>` set to ``Vector2(0, 0)`` and by calling :ref:`force_shapecast_update<class_ShapeCast2D_method_force_shapecast_update>` within the same **physics frame**. This also helps to overcome some limitations of :ref:`Area2D<class_Area2D>` when used as a continuous detection area, often requiring waiting a couple of frames before collision information is available to :ref:`Area2D<class_Area2D>` nodes, and when using the signals creates unnecessary complexity.
 
 The node can detect multiple collision objects, but it's usually used to detect the first collision.
 

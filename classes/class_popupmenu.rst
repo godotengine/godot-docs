@@ -98,6 +98,8 @@ Methods
    +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Texture2D<class_Texture2D>`                | :ref:`get_item_icon<class_PopupMenu_method_get_item_icon>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                            |
    +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                            | :ref:`get_item_icon_max_width<class_PopupMenu_method_get_item_icon_max_width>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                        |
+   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                            | :ref:`get_item_id<class_PopupMenu_method_get_item_id>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                                |
    +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                            | :ref:`get_item_indent<class_PopupMenu_method_get_item_indent>` **(** :ref:`int<class_int>` index **)** |const|                                                                                                                                                        |
@@ -150,6 +152,8 @@ Methods
    +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`set_item_icon<class_PopupMenu_method_set_item_icon>` **(** :ref:`int<class_int>` index, :ref:`Texture2D<class_Texture2D>` icon **)**                                                                                                                            |
    +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                             | :ref:`set_item_icon_max_width<class_PopupMenu_method_set_item_icon_max_width>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` width **)**                                                                                                                   |
+   +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`set_item_id<class_PopupMenu_method_set_item_id>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` id **)**                                                                                                                                              |
    +--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                             | :ref:`set_item_indent<class_PopupMenu_method_set_item_indent>` **(** :ref:`int<class_int>` index, :ref:`int<class_int>` indent **)**                                                                                                                                  |
@@ -201,6 +205,8 @@ Theme Properties
    | :ref:`Color<class_Color>`         | :ref:`font_separator_outline_color<class_PopupMenu_theme_color_font_separator_outline_color>` | ``Color(1, 1, 1, 1)``             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`h_separation<class_PopupMenu_theme_constant_h_separation>`                              | ``4``                             |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
+   | :ref:`int<class_int>`             | :ref:`icon_max_width<class_PopupMenu_theme_constant_icon_max_width>`                          | ``0``                             |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
    | :ref:`int<class_int>`             | :ref:`indent<class_PopupMenu_theme_constant_indent>`                                          | ``10``                            |
    +-----------------------------------+-----------------------------------------------------------------------------------------------+-----------------------------------+
@@ -678,7 +684,7 @@ Returns the index of the currently focused item. Returns ``-1`` if no item is fo
 
 :ref:`Key<enum_@GlobalScope_Key>` **get_item_accelerator** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The return value is an integer which is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`). If no accelerator is defined for the specified ``index``, :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` returns ``0`` (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`).
+Returns the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. The return value is an integer which is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`). If no accelerator is defined for the specified ``index``, :ref:`get_item_accelerator<class_PopupMenu_method_get_item_accelerator>` returns ``0`` (corresponding to :ref:`@GlobalScope.KEY_NONE<class_@GlobalScope_constant_KEY_NONE>`).
 
 .. rst-class:: classref-item-separator
 
@@ -691,6 +697,18 @@ Returns the accelerator of the item at the given ``index``. An accelerator is a 
 :ref:`Texture2D<class_Texture2D>` **get_item_icon** **(** :ref:`int<class_int>` index **)** |const|
 
 Returns the icon of the item at the given ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_method_get_item_icon_max_width:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_item_icon_max_width** **(** :ref:`int<class_int>` index **)** |const|
+
+Returns the maximum allowed width of the icon for the item at the given ``index``.
 
 .. rst-class:: classref-item-separator
 
@@ -940,7 +958,7 @@ Passing ``-1`` as the index makes so that no item is focused.
 
 void **set_item_accelerator** **(** :ref:`int<class_int>` index, :ref:`Key<enum_@GlobalScope_Key>` accel **)**
 
-Sets the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. ``accel`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using boolean OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
+Sets the accelerator of the item at the given ``index``. An accelerator is a keyboard shortcut that can be pressed to trigger the menu button even if it's not currently open. ``accel`` is generally a combination of :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\ s and :ref:`Key<enum_@GlobalScope_Key>`\ s using bitwise OR such as ``KEY_MASK_CTRL | KEY_A`` (:kbd:`Ctrl + A`).
 
 .. rst-class:: classref-item-separator
 
@@ -1015,6 +1033,18 @@ Enables/disables the item at the given ``index``. When it is disabled, it can't 
 void **set_item_icon** **(** :ref:`int<class_int>` index, :ref:`Texture2D<class_Texture2D>` icon **)**
 
 Replaces the :ref:`Texture2D<class_Texture2D>` icon of the item at the given ``index``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_method_set_item_icon_max_width:
+
+.. rst-class:: classref-method
+
+void **set_item_icon_max_width** **(** :ref:`int<class_int>` index, :ref:`int<class_int>` width **)**
+
+Sets the maximum allowed width of the icon for the item at the given ``index``. This limit is applied on top of the default size of the icon and on top of :ref:`icon_max_width<class_PopupMenu_theme_constant_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 
@@ -1274,6 +1304,18 @@ The tint of text outline of the labeled separator.
 :ref:`int<class_int>` **h_separation** = ``4``
 
 The horizontal space between the item's elements.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PopupMenu_theme_constant_icon_max_width:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **icon_max_width** = ``0``
+
+The maximum allowed width of the item's icon. This limit is applied on top of the default size of the icon, but before the value set with :ref:`set_item_icon_max_width<class_PopupMenu_method_set_item_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 

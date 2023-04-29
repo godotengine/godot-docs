@@ -12,6 +12,8 @@ EditorExportPlatform
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+**Inherited By:** :ref:`EditorExportPlatformAndroid<class_EditorExportPlatformAndroid>`, :ref:`EditorExportPlatformIOS<class_EditorExportPlatformIOS>`, :ref:`EditorExportPlatformMacOS<class_EditorExportPlatformMacOS>`, :ref:`EditorExportPlatformPC<class_EditorExportPlatformPC>`, :ref:`EditorExportPlatformWeb<class_EditorExportPlatformWeb>`
+
 Identifies a supported export platform, and internally provides the functionality of exporting to that platform.
 
 .. rst-class:: classref-introduction-group

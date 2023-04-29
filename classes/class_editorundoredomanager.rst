@@ -31,6 +31,10 @@ The usage is mostly the same as :ref:`UndoRedo<class_UndoRedo>`. You create and 
 
 This guessing can sometimes yield false results, so you can provide a custom context object when creating an action.
 
+\ **EditorUndoRedoManager** is intended to be used by Godot editor plugins. You can obtain it using :ref:`EditorPlugin.get_undo_redo<class_EditorPlugin_method_get_undo_redo>`. For non-editor uses or plugins that don't need to integrate with the editor's undo history, use :ref:`UndoRedo<class_UndoRedo>` instead.
+
+The manager's API is mostly the same as in :ref:`UndoRedo<class_UndoRedo>`, so you can refer to its documentation for more examples. The main difference is that **EditorUndoRedoManager** uses object + method name for actions, instead of :ref:`Callable<class_Callable>`.
+
 .. rst-class:: classref-reftable-group
 
 Methods

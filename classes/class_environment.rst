@@ -1858,7 +1858,7 @@ If ``true``, screen-space reflections are enabled. Screen-space reflections are 
 - void **set_ssr_fade_in** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_ssr_fade_in** **(** **)**
 
-The fade-in distance for screen-space reflections. Affects the area from the reflected material to the screen-space reflection). Only positive values are valid (negative values will be clamped to ``0.0``).
+The fade-in distance for screen-space reflections. Affects the area from the reflected material to the screen-space reflection. Only positive values are valid (negative values will be clamped to ``0.0``).
 
 .. rst-class:: classref-item-separator
 

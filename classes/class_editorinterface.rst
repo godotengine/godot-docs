@@ -10,7 +10,7 @@
 EditorInterface
 ===============
 
-**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Object<class_Object>`
 
 Godot editor's interface.
 
@@ -34,6 +34,8 @@ Properties
    +-------------------------+------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`distraction_free_mode<class_EditorInterface_property_distraction_free_mode>` |
    +-------------------------+------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`movie_maker_enabled<class_EditorInterface_property_movie_maker_enabled>`     |
+   +-------------------------+------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -50,7 +52,7 @@ Methods
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`edit_script<class_EditorInterface_method_edit_script>` **(** :ref:`Script<class_Script>` script, :ref:`int<class_int>` line=-1, :ref:`int<class_int>` column=0, :ref:`bool<class_bool>` grab_focus=true **)** |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Control<class_Control>`                             | :ref:`get_base_control<class_EditorInterface_method_get_base_control>` **(** **)**                                                                                                                                  |
+   | :ref:`Control<class_Control>`                             | :ref:`get_base_control<class_EditorInterface_method_get_base_control>` **(** **)** |const|                                                                                                                          |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`EditorCommandPalette<class_EditorCommandPalette>`   | :ref:`get_command_palette<class_EditorInterface_method_get_command_palette>` **(** **)** |const|                                                                                                                    |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,17 +60,17 @@ Methods
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                               | :ref:`get_current_path<class_EditorInterface_method_get_current_path>` **(** **)** |const|                                                                                                                          |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`                                   | :ref:`get_edited_scene_root<class_EditorInterface_method_get_edited_scene_root>` **(** **)**                                                                                                                        |
+   | :ref:`Node<class_Node>`                                   | :ref:`get_edited_scene_root<class_EditorInterface_method_get_edited_scene_root>` **(** **)** |const|                                                                                                                |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`VBoxContainer<class_VBoxContainer>`                 | :ref:`get_editor_main_screen<class_EditorInterface_method_get_editor_main_screen>` **(** **)**                                                                                                                      |
+   | :ref:`VBoxContainer<class_VBoxContainer>`                 | :ref:`get_editor_main_screen<class_EditorInterface_method_get_editor_main_screen>` **(** **)** |const|                                                                                                              |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorPaths<class_EditorPaths>`                     | :ref:`get_editor_paths<class_EditorInterface_method_get_editor_paths>` **(** **)**                                                                                                                                  |
+   | :ref:`EditorPaths<class_EditorPaths>`                     | :ref:`get_editor_paths<class_EditorInterface_method_get_editor_paths>` **(** **)** |const|                                                                                                                          |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                 | :ref:`get_editor_scale<class_EditorInterface_method_get_editor_scale>` **(** **)** |const|                                                                                                                          |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorSettings<class_EditorSettings>`               | :ref:`get_editor_settings<class_EditorInterface_method_get_editor_settings>` **(** **)**                                                                                                                            |
+   | :ref:`EditorSettings<class_EditorSettings>`               | :ref:`get_editor_settings<class_EditorInterface_method_get_editor_settings>` **(** **)** |const|                                                                                                                    |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`FileSystemDock<class_FileSystemDock>`               | :ref:`get_file_system_dock<class_EditorInterface_method_get_file_system_dock>` **(** **)**                                                                                                                          |
+   | :ref:`FileSystemDock<class_FileSystemDock>`               | :ref:`get_file_system_dock<class_EditorInterface_method_get_file_system_dock>` **(** **)** |const|                                                                                                                  |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`EditorInspector<class_EditorInspector>`             | :ref:`get_inspector<class_EditorInterface_method_get_inspector>` **(** **)** |const|                                                                                                                                |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -76,19 +78,17 @@ Methods
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                               | :ref:`get_playing_scene<class_EditorInterface_method_get_playing_scene>` **(** **)** |const|                                                                                                                        |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorFileSystem<class_EditorFileSystem>`           | :ref:`get_resource_filesystem<class_EditorInterface_method_get_resource_filesystem>` **(** **)**                                                                                                                    |
+   | :ref:`EditorFileSystem<class_EditorFileSystem>`           | :ref:`get_resource_filesystem<class_EditorInterface_method_get_resource_filesystem>` **(** **)** |const|                                                                                                            |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorResourcePreview<class_EditorResourcePreview>` | :ref:`get_resource_previewer<class_EditorInterface_method_get_resource_previewer>` **(** **)**                                                                                                                      |
+   | :ref:`EditorResourcePreview<class_EditorResourcePreview>` | :ref:`get_resource_previewer<class_EditorInterface_method_get_resource_previewer>` **(** **)** |const|                                                                                                              |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`ScriptEditor<class_ScriptEditor>`                   | :ref:`get_script_editor<class_EditorInterface_method_get_script_editor>` **(** **)**                                                                                                                                |
+   | :ref:`ScriptEditor<class_ScriptEditor>`                   | :ref:`get_script_editor<class_EditorInterface_method_get_script_editor>` **(** **)** |const|                                                                                                                        |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>`         | :ref:`get_selected_paths<class_EditorInterface_method_get_selected_paths>` **(** **)** |const|                                                                                                                      |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorSelection<class_EditorSelection>`             | :ref:`get_selection<class_EditorInterface_method_get_selection>` **(** **)**                                                                                                                                        |
+   | :ref:`EditorSelection<class_EditorSelection>`             | :ref:`get_selection<class_EditorInterface_method_get_selection>` **(** **)** |const|                                                                                                                                |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`inspect_object<class_EditorInterface_method_inspect_object>` **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="", :ref:`bool<class_bool>` inspector_only=false **)**        |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`is_movie_maker_enabled<class_EditorInterface_method_is_movie_maker_enabled>` **(** **)** |const|                                                                                                              |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                   | :ref:`is_playing_scene<class_EditorInterface_method_is_playing_scene>` **(** **)** |const|                                                                                                                          |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -116,8 +116,6 @@ Methods
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`set_main_screen_editor<class_EditorInterface_method_set_main_screen_editor>` **(** :ref:`String<class_String>` name **)**                                                                                     |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                      | :ref:`set_movie_maker_enabled<class_EditorInterface_method_set_movie_maker_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                    |
-   +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`set_plugin_enabled<class_EditorInterface_method_set_plugin_enabled>` **(** :ref:`String<class_String>` plugin, :ref:`bool<class_bool>` enabled **)**                                                          |
    +-----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`stop_playing_scene<class_EditorInterface_method_stop_playing_scene>` **(** **)**                                                                                                                              |
@@ -144,6 +142,23 @@ Property Descriptions
 - :ref:`bool<class_bool>` **is_distraction_free_mode_enabled** **(** **)**
 
 If ``true``, enables distraction-free mode which hides side docks to increase the space available for the main view.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorInterface_property_movie_maker_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **movie_maker_enabled**
+
+.. rst-class:: classref-property-setget
+
+- void **set_movie_maker_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_movie_maker_enabled** **(** **)**
+
+If ``true``, the Movie Maker mode is enabled in the editor. See :ref:`MovieWriter<class_MovieWriter>` for more information.
 
 .. rst-class:: classref-section-separator
 
@@ -194,7 +209,7 @@ Edits the given :ref:`Script<class_Script>`. The line and column on which to ope
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **get_base_control** **(** **)**
+:ref:`Control<class_Control>` **get_base_control** **(** **)** |const|
 
 Returns the main container of Godot editor's window. For example, you can use it to retrieve the size of the container and place your controls accordingly.
 
@@ -246,7 +261,7 @@ Returns the current path being viewed in the :ref:`FileSystemDock<class_FileSyst
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **get_edited_scene_root** **(** **)**
+:ref:`Node<class_Node>` **get_edited_scene_root** **(** **)** |const|
 
 Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
@@ -258,7 +273,7 @@ Returns the edited (current) scene's root :ref:`Node<class_Node>`.
 
 .. rst-class:: classref-method
 
-:ref:`VBoxContainer<class_VBoxContainer>` **get_editor_main_screen** **(** **)**
+:ref:`VBoxContainer<class_VBoxContainer>` **get_editor_main_screen** **(** **)** |const|
 
 Returns the editor control responsible for main screen plugins and tools. Use it with plugins that implement :ref:`EditorPlugin._has_main_screen<class_EditorPlugin_method__has_main_screen>`.
 
@@ -272,7 +287,7 @@ Returns the editor control responsible for main screen plugins and tools. Use it
 
 .. rst-class:: classref-method
 
-:ref:`EditorPaths<class_EditorPaths>` **get_editor_paths** **(** **)**
+:ref:`EditorPaths<class_EditorPaths>` **get_editor_paths** **(** **)** |const|
 
 Returns the :ref:`EditorPaths<class_EditorPaths>` singleton.
 
@@ -298,7 +313,7 @@ Returns the actual scale of the editor UI (``1.0`` being 100% scale). This can b
 
 .. rst-class:: classref-method
 
-:ref:`EditorSettings<class_EditorSettings>` **get_editor_settings** **(** **)**
+:ref:`EditorSettings<class_EditorSettings>` **get_editor_settings** **(** **)** |const|
 
 Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
 
@@ -310,7 +325,7 @@ Returns the editor's :ref:`EditorSettings<class_EditorSettings>` instance.
 
 .. rst-class:: classref-method
 
-:ref:`FileSystemDock<class_FileSystemDock>` **get_file_system_dock** **(** **)**
+:ref:`FileSystemDock<class_FileSystemDock>` **get_file_system_dock** **(** **)** |const|
 
 Returns the editor's :ref:`FileSystemDock<class_FileSystemDock>` instance.
 
@@ -362,7 +377,7 @@ Returns the name of the scene that is being played. If no scene is currently bei
 
 .. rst-class:: classref-method
 
-:ref:`EditorFileSystem<class_EditorFileSystem>` **get_resource_filesystem** **(** **)**
+:ref:`EditorFileSystem<class_EditorFileSystem>` **get_resource_filesystem** **(** **)** |const|
 
 Returns the editor's :ref:`EditorFileSystem<class_EditorFileSystem>` instance.
 
@@ -374,7 +389,7 @@ Returns the editor's :ref:`EditorFileSystem<class_EditorFileSystem>` instance.
 
 .. rst-class:: classref-method
 
-:ref:`EditorResourcePreview<class_EditorResourcePreview>` **get_resource_previewer** **(** **)**
+:ref:`EditorResourcePreview<class_EditorResourcePreview>` **get_resource_previewer** **(** **)** |const|
 
 Returns the editor's :ref:`EditorResourcePreview<class_EditorResourcePreview>` instance.
 
@@ -386,7 +401,7 @@ Returns the editor's :ref:`EditorResourcePreview<class_EditorResourcePreview>` i
 
 .. rst-class:: classref-method
 
-:ref:`ScriptEditor<class_ScriptEditor>` **get_script_editor** **(** **)**
+:ref:`ScriptEditor<class_ScriptEditor>` **get_script_editor** **(** **)** |const|
 
 Returns the editor's :ref:`ScriptEditor<class_ScriptEditor>` instance.
 
@@ -412,7 +427,7 @@ Returns an array containing the paths of the currently selected files (and direc
 
 .. rst-class:: classref-method
 
-:ref:`EditorSelection<class_EditorSelection>` **get_selection** **(** **)**
+:ref:`EditorSelection<class_EditorSelection>` **get_selection** **(** **)** |const|
 
 Returns the editor's :ref:`EditorSelection<class_EditorSelection>` instance.
 
@@ -427,18 +442,6 @@ Returns the editor's :ref:`EditorSelection<class_EditorSelection>` instance.
 void **inspect_object** **(** :ref:`Object<class_Object>` object, :ref:`String<class_String>` for_property="", :ref:`bool<class_bool>` inspector_only=false **)**
 
 Shows the given property on the given ``object`` in the editor's Inspector dock. If ``inspector_only`` is ``true``, plugins will not attempt to edit ``object``.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorInterface_method_is_movie_maker_enabled:
-
-.. rst-class:: classref-method
-
-:ref:`bool<class_bool>` **is_movie_maker_enabled** **(** **)** |const|
-
-Returns ``true`` if Movie Maker mode is enabled in the editor. See also :ref:`set_movie_maker_enabled<class_EditorInterface_method_set_movie_maker_enabled>`. See :ref:`MovieWriter<class_MovieWriter>` for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -595,18 +598,6 @@ Selects the file, with the path provided by ``file``, in the FileSystem dock.
 void **set_main_screen_editor** **(** :ref:`String<class_String>` name **)**
 
 Sets the editor's current main screen to the one specified in ``name``. ``name`` must match the text of the tab in question exactly (``2D``, ``3D``, ``Script``, ``AssetLib``).
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_EditorInterface_method_set_movie_maker_enabled:
-
-.. rst-class:: classref-method
-
-void **set_movie_maker_enabled** **(** :ref:`bool<class_bool>` enabled **)**
-
-Sets whether Movie Maker mode is enabled in the editor. See also :ref:`is_movie_maker_enabled<class_EditorInterface_method_is_movie_maker_enabled>`. See :ref:`MovieWriter<class_MovieWriter>` for more information.
 
 .. rst-class:: classref-item-separator
 

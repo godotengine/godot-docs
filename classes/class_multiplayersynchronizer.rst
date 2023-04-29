@@ -292,7 +292,7 @@ Sets the visibility of ``peer`` to ``visible``. If ``peer`` is ``0``, the value 
 
 void **update_visibility** **(** :ref:`int<class_int>` for_peer=0 **)**
 
-Updates the visibility of ``peer`` according to visibility filters. If ``peer`` is ``0`` (the default), all peers' visibilties are updated.
+Updates the visibility of ``for_peer`` according to visibility filters. If ``for_peer`` is ``0`` (the default), all peers' visibilties are updated.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -704,7 +704,7 @@ Returns a list of all unique theme type names for :ref:`StyleBox<class_StyleBox>
 
 Returns the theme property of ``data_type`` defined by ``name`` and ``theme_type``, if it exists.
 
-Returns the engine fallback icon value if the property doesn't exist (see :ref:`ThemeDB<class_ThemeDB>`). Use :ref:`has_theme_item<class_Theme_method_has_theme_item>` to check for existence.
+Returns the engine fallback value if the property doesn't exist (see :ref:`ThemeDB<class_ThemeDB>`). Use :ref:`has_theme_item<class_Theme_method_has_theme_item>` to check for existence.
 
 \ **Note:** This method is analogous to calling the corresponding data type specific method, but can be used for more generalized logic.
 

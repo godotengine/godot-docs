@@ -159,6 +159,8 @@ Methods
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                | :ref:`_get_minimum_size<class_Control_method__get_minimum_size>` **(** **)** |virtual| |const|                                                                                                                                                                     |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                  | :ref:`_get_tooltip<class_Control_method__get_tooltip>` **(** :ref:`Vector2<class_Vector2>` at_position **)** |virtual| |const|                                                                                                                                     |
+   +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                         | :ref:`_gui_input<class_Control_method__gui_input>` **(** :ref:`InputEvent<class_InputEvent>` event **)** |virtual|                                                                                                                                                 |
    +----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                      | :ref:`_has_point<class_Control_method__has_point>` **(** :ref:`Vector2<class_Vector2>` point **)** |virtual| |const|                                                                                                                                               |
@@ -1223,7 +1225,7 @@ Anchors the top edge of the node to the origin, the center or the end of its par
 - void **set_auto_translate** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_auto_translating** **(** **)**
 
-Toggles if any text should automatically change to its translated version depending on the current locale. Note that this will not affect any internal nodes (e.g. the popup of a :ref:`MenuButton<class_MenuButton>`).
+Toggles if any text should automatically change to its translated version depending on the current locale.
 
 Also decides if the node's strings should be parsed for POT generation.
 
@@ -1327,7 +1329,7 @@ Tells Godot which node it should give focus to if the user presses the left arro
 - void **set_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side, :ref:`NodePath<class_NodePath>` neighbor **)**
 - :ref:`NodePath<class_NodePath>` **get_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |const|
 
-Tells Godot which node it should give focus to if the user presses the right arrow on the keyboard or right on a gamepad by default. You can change the key by editing the :ref:`ProjectSettings.input/ui_right<class_ProjectSettings_property_input/ui_right>` input action. The node must be a **Control**. If this property is not set, Godot will give focus to the closest **Control** to the bottom of this one.
+Tells Godot which node it should give focus to if the user presses the right arrow on the keyboard or right on a gamepad by default. You can change the key by editing the :ref:`ProjectSettings.input/ui_right<class_ProjectSettings_property_input/ui_right>` input action. The node must be a **Control**. If this property is not set, Godot will give focus to the closest **Control** to the right of this one.
 
 .. rst-class:: classref-item-separator
 
@@ -1344,7 +1346,7 @@ Tells Godot which node it should give focus to if the user presses the right arr
 - void **set_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side, :ref:`NodePath<class_NodePath>` neighbor **)**
 - :ref:`NodePath<class_NodePath>` **get_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side **)** |const|
 
-Tells Godot which node it should give focus to if the user presses the top arrow on the keyboard or top on a gamepad by default. You can change the key by editing the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` input action. The node must be a **Control**. If this property is not set, Godot will give focus to the closest **Control** to the bottom of this one.
+Tells Godot which node it should give focus to if the user presses the top arrow on the keyboard or top on a gamepad by default. You can change the key by editing the :ref:`ProjectSettings.input/ui_up<class_ProjectSettings_property_input/ui_up>` input action. The node must be a **Control**. If this property is not set, Godot will give focus to the closest **Control** to the top of this one.
 
 .. rst-class:: classref-item-separator
 
@@ -1993,6 +1995,20 @@ If not overridden, defaults to :ref:`Vector2.ZERO<class_Vector2_constant_ZERO>`.
 
 ----
 
+.. _class_Control_method__get_tooltip:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **_get_tooltip** **(** :ref:`Vector2<class_Vector2>` at_position **)** |virtual| |const|
+
+Virtual method to be implemented by the user. Returns the tooltip text for the position ``at_position`` in control's local coordinates, which will typically appear when the cursor is resting over this control. See :ref:`get_tooltip<class_Control_method_get_tooltip>`.
+
+\ **Note:** If this method returns an empty :ref:`String<class_String>`, no tooltip is displayed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Control_method__gui_input:
 
 .. rst-class:: classref-method
@@ -2462,7 +2478,7 @@ Returns the minimum size for this control. See :ref:`custom_minimum_size<class_C
 
 :ref:`float<class_float>` **get_offset** **(** :ref:`Side<enum_@GlobalScope_Side>` offset **)** |const|
 
-Returns the anchor for the specified :ref:`Side<enum_@GlobalScope_Side>`. A getter method for :ref:`offset_bottom<class_Control_property_offset_bottom>`, :ref:`offset_left<class_Control_property_offset_left>`, :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offset_top<class_Control_property_offset_top>`.
+Returns the offset for the specified :ref:`Side<enum_@GlobalScope_Side>`. A getter method for :ref:`offset_bottom<class_Control_property_offset_bottom>`, :ref:`offset_left<class_Control_property_offset_left>`, :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offset_top<class_Control_property_offset_top>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2685,9 +2701,11 @@ See :ref:`get_theme_color<class_Control_method_get_theme_color>` for details.
 
 :ref:`String<class_String>` **get_tooltip** **(** :ref:`Vector2<class_Vector2>` at_position=Vector2(0, 0) **)** |const|
 
-Returns the tooltip text ``at_position`` in local coordinates, which will typically appear when the cursor is resting over this control. By default, it returns :ref:`tooltip_text<class_Control_property_tooltip_text>`.
+Returns the tooltip text for the position ``at_position`` in control's local coordinates, which will typically appear when the cursor is resting over this control. By default, it returns :ref:`tooltip_text<class_Control_property_tooltip_text>`.
 
-\ **Note:** This method can be overridden to customize its behavior. If this method returns an empty :ref:`String<class_String>`, no tooltip is displayed.
+This method can be overridden to customize its behavior. See :ref:`_get_tooltip<class_Control_method__get_tooltip>`.
+
+\ **Note:** If this method returns an empty :ref:`String<class_String>`, no tooltip is displayed.
 
 .. rst-class:: classref-item-separator
 
@@ -3182,7 +3200,7 @@ Sets :ref:`offset_right<class_Control_property_offset_right>` and :ref:`offset_b
 
 void **set_focus_neighbor** **(** :ref:`Side<enum_@GlobalScope_Side>` side, :ref:`NodePath<class_NodePath>` neighbor **)**
 
-Sets the anchor for the specified :ref:`Side<enum_@GlobalScope_Side>` to the **Control** at ``neighbor`` node path. A setter method for :ref:`focus_neighbor_bottom<class_Control_property_focus_neighbor_bottom>`, :ref:`focus_neighbor_left<class_Control_property_focus_neighbor_left>`, :ref:`focus_neighbor_right<class_Control_property_focus_neighbor_right>` and :ref:`focus_neighbor_top<class_Control_property_focus_neighbor_top>`.
+Sets the focus neighbor for the specified :ref:`Side<enum_@GlobalScope_Side>` to the **Control** at ``neighbor`` node path. A setter method for :ref:`focus_neighbor_bottom<class_Control_property_focus_neighbor_bottom>`, :ref:`focus_neighbor_left<class_Control_property_focus_neighbor_left>`, :ref:`focus_neighbor_right<class_Control_property_focus_neighbor_right>` and :ref:`focus_neighbor_top<class_Control_property_focus_neighbor_top>`.
 
 .. rst-class:: classref-item-separator
 

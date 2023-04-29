@@ -98,6 +98,8 @@ Methods
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`hash<class_StringName_method_hash>` **(** **)** |const|                                                                                                                          |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`hex_decode<class_StringName_method_hex_decode>` **(** **)** |const|                                                                                                              |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`hex_to_int<class_StringName_method_hex_to_int>` **(** **)** |const|                                                                                                              |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`indent<class_StringName_method_indent>` **(** :ref:`String<class_String>` prefix **)** |const|                                                                                   |
@@ -219,6 +221,8 @@ Methods
    | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_utf32_buffer<class_StringName_method_to_utf32_buffer>` **(** **)** |const|                                                                                                    |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_utf8_buffer<class_StringName_method_to_utf8_buffer>` **(** **)** |const|                                                                                                      |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_wchar_buffer<class_StringName_method_to_wchar_buffer>` **(** **)** |const|                                                                                                    |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`trim_prefix<class_StringName_method_trim_prefix>` **(** :ref:`String<class_String>` prefix **)** |const|                                                                         |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -732,6 +736,35 @@ This is faster than :ref:`split<class_StringName_method_split>`, if you only nee
 Returns the 32-bit hash value representing the string's contents.
 
 \ **Note:** Strings with equal hash values are *not* guaranteed to be the same, as a result of hash collisions. On the countrary, strings with different hash values are guaranteed to be different.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_hex_decode:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **hex_decode** **(** **)** |const|
+
+Decodes a hexadecimal string as a :ref:`PackedByteArray<class_PackedByteArray>`.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var text = "hello world"
+    var encoded = text.to_utf8_buffer().hex_encode() # outputs "68656c6c6f20776f726c64"
+    print(buf.hex_decode().get_string_from_utf8())
+
+ .. code-tab:: csharp
+
+    var text = "hello world";
+    var encoded = text.ToUtf8Buffer().HexEncode(); # outputs "68656c6c6f20776f726c64"
+    GD.Print(buf.HexDecode().GetStringFromUtf8());
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -1664,6 +1697,18 @@ Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encod
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf8_buffer** **(** **)** |const|
 
 Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly slower than :ref:`to_ascii_buffer<class_StringName_method_to_ascii_buffer>`, but supports all UTF-8 characters. For most cases, prefer using this method.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_to_wchar_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **to_wchar_buffer** **(** **)** |const|
+
+Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_character>`__ (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 

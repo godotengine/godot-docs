@@ -557,7 +557,7 @@ The window can't be focused. No-focus window will ignore all input, except mouse
 
 :ref:`Flags<enum_Window_Flags>` **FLAG_POPUP** = ``5``
 
-Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when the window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have ``transient parent`` set (see :ref:`transient<class_Window_property_transient>`).
+Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when the window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have transient parent set (see :ref:`transient<class_Window_property_transient>`).
 
 .. _class_Window_constant_FLAG_EXTEND_TO_TITLE:
 
@@ -667,7 +667,7 @@ The content can be expanded horizontally. Scaling vertically will result in keep
 
 :ref:`ContentScaleAspect<enum_Window_ContentScaleAspect>` **CONTENT_SCALE_ASPECT_EXPAND** = ``4``
 
-The content's aspect will be preserved. If the target size has different aspect from the base one, the content will stay in the to-left corner and add an extra visible area in the stretched space.
+The content's aspect will be preserved. If the target size has different aspect from the base one, the content will stay in the top-left corner and add an extra visible area in the stretched space.
 
 .. rst-class:: classref-item-separator
 
@@ -735,7 +735,7 @@ Initial window position is determined by :ref:`position<class_Window_property_po
 
 :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **WINDOW_INITIAL_POSITION_CENTER_PRIMARY_SCREEN** = ``1``
 
-Initial window position is a center of the primary screen.
+Initial window position is the center of the primary screen.
 
 .. _class_Window_constant_WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN:
 
@@ -743,7 +743,7 @@ Initial window position is a center of the primary screen.
 
 :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN** = ``2``
 
-Initial window position is a center of the main window screen.
+Initial window position is the center of the main window screen.
 
 .. _class_Window_constant_WINDOW_INITIAL_POSITION_CENTER_OTHER_SCREEN:
 
@@ -751,7 +751,23 @@ Initial window position is a center of the main window screen.
 
 :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **WINDOW_INITIAL_POSITION_CENTER_OTHER_SCREEN** = ``3``
 
-Initial window position is a center of :ref:`current_screen<class_Window_property_current_screen>` screen.
+Initial window position is the center of :ref:`current_screen<class_Window_property_current_screen>` screen.
+
+.. _class_Window_constant_WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_MOUSE_FOCUS** = ``4``
+
+Initial window position is the center of the screen containing the mouse pointer.
+
+.. _class_Window_constant_WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_KEYBOARD_FOCUS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **WINDOW_INITIAL_POSITION_CENTER_SCREEN_WITH_KEYBOARD_FOCUS** = ``5``
+
+Initial window position is the center of the screen containing the window with the keyboard focus.
 
 .. rst-class:: classref-section-separator
 
@@ -1054,7 +1070,7 @@ Set's the window's current mode.
 - void **set_flag** **(** :ref:`Flags<enum_Window_Flags>` flag, :ref:`bool<class_bool>` enabled **)**
 - :ref:`bool<class_bool>` **get_flag** **(** :ref:`Flags<enum_Window_Flags>` flag **)** |const|
 
-If ``true``, all mouse event as passed to the underlying window of the same application. See also :ref:`mouse_passthrough_polygon<class_Window_property_mouse_passthrough_polygon>`.
+If ``true``, all mouse events will be passed to the underlying window of the same application. See also :ref:`mouse_passthrough_polygon<class_Window_property_mouse_passthrough_polygon>`.
 
 \ **Note:** This property is implemented on Linux (X11), macOS and Windows.
 
@@ -1229,7 +1245,7 @@ The window's title. If the **Window** is non-embedded, title styles set in :ref:
 - void **set_transient** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_transient** **(** **)**
 
-If ``true``, the **Window** is transient, i.e. it's considered a child of another **Window**. Transient window is will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
+If ``true``, the **Window** is transient, i.e. it's considered a child of another **Window**. The transient window will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
 
 Note that behavior might be different depending on the platform.
 
@@ -1921,9 +1937,7 @@ Moves the **Window** on top of other windows and focuses it.
 
 void **popup** **(** :ref:`Rect2i<class_Rect2i>` rect=Rect2i(0, 0, 0, 0) **)**
 
-Shows the **Window** and makes it transient (see :ref:`transient<class_Window_property_transient>`). If ``rect`` is provided, it will be set as the **Window**'s size.
-
-Fails if called on the main window.
+Shows the **Window** and makes it transient (see :ref:`transient<class_Window_property_transient>`). If ``rect`` is provided, it will be set as the **Window**'s size. Fails if called on the main window.
 
 .. rst-class:: classref-item-separator
 
@@ -1935,9 +1949,7 @@ Fails if called on the main window.
 
 void **popup_centered** **(** :ref:`Vector2i<class_Vector2i>` minsize=Vector2i(0, 0) **)**
 
-Popups the **Window** at the center of the current screen, with optionally given minimum size.
-
-If the **Window** is embedded, it will be centered in the parent :ref:`Viewport<class_Viewport>` instead.
+Popups the **Window** at the center of the current screen, with optionally given minimum size. If the **Window** is embedded, it will be centered in the parent :ref:`Viewport<class_Viewport>` instead.
 
 \ **Note:** Calling it with the default value of ``minsize`` is equivalent to calling it with :ref:`size<class_Window_property_size>`.
 
@@ -1951,9 +1963,7 @@ If the **Window** is embedded, it will be centered in the parent :ref:`Viewport<
 
 void **popup_centered_clamped** **(** :ref:`Vector2i<class_Vector2i>` minsize=Vector2i(0, 0), :ref:`float<class_float>` fallback_ratio=0.75 **)**
 
-Popups the **Window** centered inside its parent **Window**.
-
-\ ``fallback_ratio`` determines the maximum size of the **Window**, in relation to its parent.
+Popups the **Window** centered inside its parent **Window**. ``fallback_ratio`` determines the maximum size of the **Window**, in relation to its parent.
 
 \ **Note:** Calling it with the default value of ``minsize`` is equivalent to calling it with :ref:`size<class_Window_property_size>`.
 
@@ -1979,9 +1989,7 @@ Popups the **Window** centered inside its parent **Window** and sets its size as
 
 void **popup_on_parent** **(** :ref:`Rect2i<class_Rect2i>` parent_rect **)**
 
-Popups the **Window** with a position shifted by parent **Window**'s position.
-
-If the **Window** is embedded, has the same effect as :ref:`popup<class_Window_method_popup>`.
+Popups the **Window** with a position shifted by parent **Window**'s position. If the **Window** is embedded, has the same effect as :ref:`popup<class_Window_method_popup>`.
 
 .. rst-class:: classref-item-separator
 

@@ -250,6 +250,8 @@ Determines when the button is considered clicked, one of the :ref:`ActionMode<en
 
 The :ref:`ButtonGroup<class_ButtonGroup>` associated with the button. Not to be confused with node groups.
 
+\ **Note:** The button will be configured as a radio button if a :ref:`ButtonGroup<class_ButtonGroup>` is assigned to it.
+
 .. rst-class:: classref-item-separator
 
 ----
