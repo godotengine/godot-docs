@@ -8,7 +8,7 @@ Godot provides an :ref:`class_Expression` class you can use to evaluate expressi
 An expression can be:
 
 - A mathematical expression such as ``(2 + 4) * 16/4.0``.
-- A built-in method call like ``deg2rad(90)``.
+- A built-in method call like ``deg_to_rad(90)``.
 - A method call on an user-provided script like ``update_health()``,
   if ``base_instance`` is set to a value other than ``null`` when calling
   :ref:`Expression.execute() <class_Expression_method_execute>`.
