@@ -48,6 +48,11 @@ handle scaling for different sizes and aspect ratios.
 
 Godot provides several useful tools to do this easily.
 
+.. seealso::
+
+    You can see how Godot's support for multiple resolutions works in action using the
+    `Multiple Resolutions and Aspect Ratios demo project <https://github.com/godotengine/godot-demo-projects/tree/3.x/gui/multiple_resolutions>`__.
+
 Base size
 ---------
 
