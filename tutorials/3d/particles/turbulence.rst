@@ -23,6 +23,12 @@ gravity, but you can just as well create a number of attractors if you want the 
 to follow a more complex movement path. Second, you need to :ref:`enable turbulence in the particle process material <doc_process_material_properties_turbulence>`.
 Once enabled, you have access to all the turbulence properties.
 
+.. warning::
+
+	Turbulence makes use of 3D noise, which has a high performance cost on the GPU.
+	Only enable turbulence on a few particle systems on screen at most.
+	Using turbulence is not recommended when targeting mobile/web platforms.
+
 Noise properties
 ~~~~~~~~~~~~~~~~
 
