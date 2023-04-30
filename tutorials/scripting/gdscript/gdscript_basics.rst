@@ -7,9 +7,7 @@ GDScript reference
 <https://en.wikipedia.org/wiki/Object-oriented_programming>`_, `imperative
 <https://en.wikipedia.org/wiki/Imperative_programming>`_, and `gradually typed
 <https://en.wikipedia.org/wiki/Gradual_typing>`_ programming language built for Godot.
-
-*GDScript* is a high-level, dynamically typed programming language used to
-create content. It uses an indentation-based syntax similar to languages like
+It uses an indentation-based syntax similar to languages like
 `Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_.
 Its goal is to be optimized for and tightly integrated with Godot Engine,
 allowing great flexibility for content creation and integration.
