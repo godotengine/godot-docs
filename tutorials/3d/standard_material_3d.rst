@@ -18,7 +18,7 @@ the *Material* property of the mesh. It can be added in the *Material* property 
 the node using the mesh (such as a MeshInstance3D node), the *Material Override* property
 of the node using the mesh, and the *Material Overlay*.
 
-.. image:: img/add_material.png
+.. image:: img/add_material.webp
 
 If you add a material to the mesh itself, every time that mesh is used it will have that
 material. If you add a material to the node using the mesh, the material will only be used
