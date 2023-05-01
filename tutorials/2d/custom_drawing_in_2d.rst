@@ -227,7 +227,7 @@ In our example, we will simply use a fixed number of points, no matter the radiu
         var points_arc = PackedVector2Array()
 
         for i in range(nb_points + 1):
-            var angle_point = deg2rad(angle_from + i * (angle_to-angle_from) / nb_points - 90)
+            var angle_point = deg_to_rad(angle_from + i * (angle_to-angle_from) / nb_points - 90)
             points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
 
         for index_point in range(nb_points):
@@ -242,7 +242,7 @@ In our example, we will simply use a fixed number of points, no matter the radiu
 
         for (int i = 0; i <= nbPoints; i++)
         {
-            float anglePoint = Mathf.Deg2Rad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90f);
+            float anglePoint = Mathf.DegToRad(angleFrom + i * (angleTo - angleFrom) / nbPoints - 90f);
             pointsArc[i] = center + new Vector2(Mathf.Cos(anglePoint), Mathf.Sin(anglePoint)) * radius;
         }
 
