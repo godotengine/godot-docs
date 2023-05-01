@@ -155,7 +155,7 @@ After setting the time and changing the animation playback, the seek node automa
 TimeScale
 ^^^^^^^^^
 
-Allows scaling the speed of the animation (or reverse it) in any children nodes. Setting it to 0 will pause the animation.
+Allows scaling the speed of the animation (or reverse it) connected to the `in` input via the `scale` parameter. Setting the `scale` to 0 will pause the animation.
 
 Transition
 ^^^^^^^^^^
