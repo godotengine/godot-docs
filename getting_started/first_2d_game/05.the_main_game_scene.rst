@@ -392,8 +392,8 @@ Note that a new instance must be added to the scene using ``add_child()``.
                not degrees. Pi represents a half turn in radians, about
                ``3.1415`` (there is also ``TAU`` which is equal to ``2 * PI``).
                If you're more comfortable working with degrees, you'll need to
-               use the ``deg2rad()`` and ``rad2deg()`` functions to convert
-               between the two.
+               use the ``deg_to_rad()`` and ``rad_to_deg()`` functions to
+               convert between the two.
 
 Testing the scene
 ~~~~~~~~~~~~~~~~~
