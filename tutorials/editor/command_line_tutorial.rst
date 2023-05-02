@@ -237,7 +237,7 @@ For example, the full command for exporting your game (as explained below) might
 
 ::
 
-    godot --path path_to_your_project --export my_export_preset_name game.exe
+    godot --path path_to_your_project --export-release my_export_preset_name game.exe
 
 Creating a project
 ------------------
@@ -332,8 +332,8 @@ that is headless (server build, no video) is ideal for this.
     # `godot` must be a Godot editor binary, not an export template.
     # Also, export templates must be installed for the editor
     # (or a valid custom export template must be defined in the export preset).
-    godot --export "Linux/X11" /var/builds/project
-    godot --export Android /var/builds/project.apk
+    godot --export-release "Linux/X11" /var/builds/project
+    godot --export-release Android /var/builds/project.apk
 
 The preset name must match the name of an export preset defined in the
 project's ``export_presets.cfg`` file. If the preset name contains spaces or
@@ -348,7 +348,7 @@ The output path extension determines the package's format, either PCK or ZIP.
 
 .. warning::
 
-    When specifying a relative path as the path for `--export`, `--export-debug`
+    When specifying a relative path as the path for `--export-release`, `--export-debug`
     or `--export-pack`, the path will be relative to the directory containing
     the ``project.godot`` file, **not** relative to the current working directory.
 
