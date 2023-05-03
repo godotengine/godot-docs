@@ -67,6 +67,11 @@ where:
 
 * ``extension``: will indicate which language the template will apply to (it should be ``gd`` for GDScript or ``cs`` for C#)
 
+For example:
+
+-  ``template_scripts/Node/smooth_camera.gd``
+-  ``template_scripts/CharacterBody3D/platformer_movement.gd``
+
 
 Default behaviour and overriding it
 -----------------------------------
