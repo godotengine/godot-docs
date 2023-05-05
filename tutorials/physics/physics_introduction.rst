@@ -54,7 +54,7 @@ The last three listed below are physics bodies and additionally extend :ref:`Phy
 Physics material
 ~~~~~~~~~~~~~~~~
 
-Static bodies and rigid bodies can be configured to use a :ref:`physics material
+Static bodies and rigid bodies can be configured to use a :ref:`PhysicsMaterial
 <class_PhysicsMaterial>`. This allows adjusting the friction and bounce of an object,
 and set if it's absorbent and/or rough.
 
