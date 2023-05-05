@@ -379,6 +379,16 @@ created in the ``bin/`` folder.
 It's still recommended to use GCC for production builds as they can be compiled using
 link-time optimization, making the resulting binaries smaller and faster.
 
+If this error occurs::
+
+    /usr/bin/ld: cannot find -l:libatomic.a: No such file or directory
+
+There are two solutions:
+
+- In your SCons command, add the parameter ``use_static_cpp=no``.
+- Follow `these instructions <https://github.com/ivmai/libatomic_ops#installation-and-usage>`__ to configure, build, and
+  install ``libatomic_ops``. Then, copy ``/usr/lib/libatomic_ops.a`` to ``/usr/lib/libatomic.a``.
+
 Using mold for faster development
 ---------------------------------
 
