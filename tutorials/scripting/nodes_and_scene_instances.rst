@@ -181,7 +181,7 @@ Scenes are templates from which you can create as many reproductions as you'd
 like. This operation is called instancing, and doing it from code happens in two
 steps:
 
-1. Loading the scene from the hard drive.
+1. Loading the scene from the local storage.
 2. Creating an instance of the loaded :ref:`PackedScene <class_PackedScene>`
    resource.
 
