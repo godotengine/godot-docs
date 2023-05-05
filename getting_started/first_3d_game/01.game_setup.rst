@@ -101,7 +101,7 @@ You should see a wide grey slab that covers the grid and blue and red axes in
 the viewport.
 
 We're going to move the ground down so we can see the floor grid. Select the
-``Ground`` node, hold the :kbd:`Ctrl` key down to turn on grid snapping (:kbd:`Cmd` on macOS),
+``Ground`` node, hold the :kbd:`Ctrl` key down to turn on grid snapping,
 and click and drag down on the Y axis. It's the green arrow in the move gizmo.
 
 .. image:: img/01.game_setup/move_gizmo_y_axis.webp
