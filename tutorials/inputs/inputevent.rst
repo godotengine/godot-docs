@@ -133,7 +133,7 @@ methods has to be used:
 1. Use a :ref:`SubViewportContainer <class_SubViewportContainer>`, which automatically
    sends events to its child :ref:`SubViewports <class_SubViewport>` during
    :ref:`Node._input() <class_Node_method__input>` and :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>`.
-2. Implement event propagation based on the indivitual requirements.
+2. Implement event propagation based on the individual requirements.
 
 GUI events also travel up the scene tree but, since these events target
 specific Controls, only direct ancestors of the targeted Control node receive the event.

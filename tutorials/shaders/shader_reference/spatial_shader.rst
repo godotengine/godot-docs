@@ -443,6 +443,12 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+----------------------------------------------------+
 | in vec3 **LIGHT_COLOR**           | Color of light multiplied by energy.               |
 +-----------------------------------+----------------------------------------------------+
+| in float **SPECULAR_AMOUNT**      | 2.0 * ``light_specular`` property for              |
+|                                   | ``OmniLight3D`` and ``SpotLight3D``.               |
+|                                   | 1.0 for ``DirectionalLight3D``.                    |
++-----------------------------------+----------------------------------------------------+
+| in bool **LIGHT_IS_DIRECTIONAL**  | ``true`` if this pass is a ``DirectionalLight3D``. |
++-----------------------------------+----------------------------------------------------+
 | in float **ATTENUATION**          | Attenuation based on distance or shadow.           |
 +-----------------------------------+----------------------------------------------------+
 | in vec3 **ALBEDO**                | Base albedo.                                       |

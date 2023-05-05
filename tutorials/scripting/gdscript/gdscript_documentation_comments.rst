@@ -3,7 +3,7 @@
 GDScript documentation comments
 ===============================
 
-In GDScript, comments can be used to document your code and add description to the
+In GDScript, comments can be used to document your code and add descriptions to the
 members of a script. There are two differences between a normal comment and a documentation
 comment. Firstly, a documentation comment should start with double hash symbols
 ``##``. Secondly, it must immediately precede a script member, or for script descriptions,
@@ -22,8 +22,8 @@ suggested format for script documentation can be divided into three parts.
 - Tutorials.
 
 To separate these from each other, the documentation comments use special tags.
-The tag must be at the beginning of a line (ignoring preceding white space) and has
-the format ``@``, followed by the keyword and finishing with a colon.
+The tag must be at the beginning of a line (ignoring preceding white space) and must
+have the format ``@``, followed by the keyword, and finishing with a colon.
 
 Tags
 ~~~~
@@ -69,10 +69,10 @@ The description can have more than one line but every line must start
 with the double hash symbol ``##`` to be considered as part of the documentation.
 The script documentation will update in the editor help window every time the
 script is updated. If any member variable or function name starts with an
-underscore it will be treated as private. It will not appear in the documentation and
+underscore, it will be treated as private. It will not appear in the documentation and
 will be ignored in the help window.
 
-Members that are applicable for the documentation:
+Members that are applicable for documentation:
 
 - Inner class
 - Constant
@@ -137,7 +137,7 @@ Examples
 
     ## Documenting an inner class.
     ##
-    ## The same rules apply apply here. The documentation must
+    ## The same rules apply here. The documentation must
     ## immediately precede the class definition.
     ##
     ## @tutorial: https://the/tutorial/url.com

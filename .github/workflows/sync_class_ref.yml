@@ -10,7 +10,7 @@ on:
 
 # Make sure jobs cannot overlap.
 concurrency:
-  group: classref-sync-ci
+  group: classref-sync-ci-master
   cancel-in-progress: true
 
 jobs:
@@ -48,7 +48,7 @@ jobs:
 
       - name: Build new documentation
         run: |
-          ./.engine-src/doc/tools/make_rst.py --color -o ./classes -l en ./.engine-src/doc/classes ./.engine-src/modules
+          ./.engine-src/doc/tools/make_rst.py --color -o ./classes -l en ./.engine-src/doc/classes ./.engine-src/modules ./.engine-src/platform
 
       - name: Submit a pull-request
         uses: peter-evans/create-pull-request@v5

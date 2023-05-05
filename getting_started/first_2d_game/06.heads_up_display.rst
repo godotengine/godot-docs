@@ -354,6 +354,9 @@ window and selecting the ``new_game()`` method or type "new_game" below "Receive
 in the window. Verify that the green connection icon now appears next to
 ``func new_game()`` in the script.
 
+Remember to remove the call to ``new_game()`` from
+``_ready()``.
+
 In ``new_game()``, update the score display and show the "Get Ready" message:
 
 .. tabs::
@@ -391,7 +394,7 @@ In ``game_over()`` we need to call the corresponding ``HUD`` function:
 Just a reminder: we don't want to start the new game automatically, so
 remove the call to ``new_game()`` in ``_ready()`` if you haven't yet.
 
-Finally, add this to ``_on_ScoreTimer_timeout()`` to keep the display in sync
+Finally, add this to ``_on_score_timer_timeout()`` to keep the display in sync
 with the changing score:
 
 .. tabs::

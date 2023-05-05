@@ -10,6 +10,16 @@ Running Godot apps on macOS
 
 By default, macOS will run only applications that are signed and notarized.
 
+.. note::
+
+    When running an app from the Downloads folder or when still in quarantine,
+    Gatekeeper will perform *path randomization* as a security measure.
+    This breaks access to relative paths from the app, which the app relies upon to work.
+    To resolve this issue, move the app to the ``/Applications`` folder.
+
+    In general, macOS apps should avoid relying on relative paths from the
+    application folder.
+
 Depending on the way a macOS app is signed and distributed, the following scenarios are possible:
 
 App is signed, notarized and distributed via App Store
@@ -78,7 +88,7 @@ password, and then the **Anywhere** option will be available:
 
 Note that Gatekeeper will re-enable itself when macOS updates.
 
-App is not-signed, executable is linker-signed
+App is not signed, executable is linker-signed
 ----------------------------------------------
 
 .. note::
@@ -91,7 +101,7 @@ When you run the app for the first time, the following dialog is displayed:
 
 To run this app, you should remove the quarantine extended file attribute manually:
 
-* Open ``Terminal.app`` (press ``Cmd + Space``, and enter ``Terminal``).
+* Open ``Terminal.app`` (press :kbd:`Cmd + Space` and enter ``Terminal``).
 
 * Navigate to the folder containing the target application.
 
@@ -99,7 +109,7 @@ To run this app, you should remove the quarantine extended file attribute manual
 
 * Run the command ``xattr -dr com.apple.quarantine "Unsigned Game.app"`` (including quotation marks and ``.app`` extension).
 
-Neither app nor executable is signed (relevant for Apple Silicon macs only)
+Neither app nor executable is signed (relevant for Apple Silicon Macs only)
 ---------------------------------------------------------------------------
 
 .. note::
@@ -114,7 +124,7 @@ To run this app, you can ad-hoc sign it yourself:
 
 * Install ``Xcode`` for the App Store, start it and confirm command line tools installation.
 
-* Open ``Terminal.app`` (press ``Cmd + Space``, and enter ``Terminal``).
+* Open ``Terminal.app`` (press :kbd:`Cmd + Space` and enter ``Terminal``).
 
 * Navigate to the folder containing the target application.
 

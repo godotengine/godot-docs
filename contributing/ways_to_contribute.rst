@@ -144,50 +144,9 @@ Filing an issue on GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Godot uses `GitHub's issue tracker <https://github.com/godotengine/godot/issues>`_
-for bug reports and enhancement suggestions. You will need a GitHub account to
-be able to open a new issue there, and click on the **New issue** button.
-
-When you report a bug, you should keep in mind that the process is similar
-to an appointment with your doctor. You noticed *symptoms* that make you think
-that something might be wrong (the engine crashes, some features don't work as
-expected, etc.). It's the role of the bug triaging team and the developers to
-then help make the diagnosis of the issue you met, so that the actual cause of
-the bug can be identified and addressed.
-
-You should therefore always ask yourself: what is relevant information to
-give so that other Godot contributors can understand the bug, identify it and
-hopefully fix it. Here are some of the most important infos that you should
-always provide:
-
--  **Operating system.** Sometimes bugs are system-specific, i.e. they happen
-   only on Windows, or only on Linux, etc. That's particularly relevant for all
-   bugs related to OS interfaces, such as file management, input, window
-   management, audio, etc.
-
--  **Hardware.** Sometimes bugs are hardware-specific, i.e. they happen
-   only on certain processors, graphic cards, etc. If you are able to,
-   it can be helpful to include information on your hardware.
-
--  **Godot version.** This is a must-have. Some issues might be relevant in the
-   current stable release, but fixed in the development branch, or the other
-   way around. You might also be using an obsolete version of Godot and
-   experiencing a known issue fixed in a later version, so knowing this from
-   the start helps to speed up the diagnosis.
-
--  **How to reproduce the bug.** In the majority of cases, bugs are
-   reproducible, i.e. it is possible to trigger them reliably by following some
-   steps. Please always describe those steps as clearly as possible, so that
-   everyone can try to reproduce the issue and confirm it. Ideally, make a demo
-   project that reproduces this issue out of the box, zip it and attach it to
-   the issue (you can do this by drag and drop).
-   Even if you think that the issue is trivial to reproduce, adding a minimal
-   project that lets everyone reproduce it is a big added value. You have to keep in
-   mind that there are thousands of issues in the tracker, and developers can
-   only dedicate little time to each issue.
-
-When you click the **New issue** button, you should be presented with a text area
-prefilled with our issue template. Please try to follow it so that all issues
-are consistent and provide the required information.
+for bug reports. When you start filing a bug report, you’ll be given a form to
+fill out. Please try to follow it so that all issues are consistent and provide
+the required information.
 
 Contributing to the documentation
 ---------------------------------

@@ -81,6 +81,20 @@ The script editor has its own set of debug tools for use with breakpoints and
 two options. The breakpoint tools can also be found in the **Debugger** tab
 of the debugger.
 
+.. tip::
+
+    You can create a breakpoint by clicking the gutter in the left of the script
+    editor (on the left of the line numbers). When hovering this gutter, you
+    will see a transparent red dot appearing, which turns into an opaque red dot
+    after the breakpoint is placed by clicking. Click the red dot again to
+    remove the breakpoint. Breakpoints created this way persist across editor
+    restarts, even if the script wasn't saved when exiting the editor.
+
+    You can also use the ``breakpoint`` keyword in GDScript to create a
+    breakpoint that is stored in the script iself. Unlike breakpoints created by
+    clicking in the gutter, this keyword-based breakpoint is persistent across
+    different machines when using version control.
+
 .. image:: img/overview_script_editor.webp
 
 The **Break** button causes a break in the script like a breakpoint would.
@@ -92,6 +106,10 @@ The **Keep Debugger Open** option keeps the debugger open after a scene
 has been closed.
 The **Debug with External Editor** option lets you debug your game with an external editor.
 This option is also accessible in **Editor Settings > Debugger**.
+
+When the debugger breaks on a breakpoint, a green triangle arrow is visible in
+the script editor's gutter. This arrow indicates the line of code the debugger
+broke on.
 
 .. warning::
 
