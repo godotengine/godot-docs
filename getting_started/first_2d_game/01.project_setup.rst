@@ -12,14 +12,14 @@ Launch Godot and create a new project.
 .. tabs::
  .. tab:: GDScript
 
-    Download :download:`dodge_assets.zip <files/dodge_assets.zip>`.
+    Download `dodge_the_creeps_2d_assets.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/dodge_the_creeps_2d_assets.zip>`_.
     The archive contains the images and sounds you'll be using
     to make the game. Extract the archive and move the ``art/``
     and ``fonts/`` directories to your project's directory.
 
  .. tab:: C#
 
-    Download :download:`dodge_assets.zip <files/dodge_assets.zip>`.
+    Download `dodge_the_creeps_2d_assets.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/dodge_the_creeps_2d_assets.zip>`_.
     The archive contains the images and sounds you'll be using
     to make the game. Extract the archive and move the ``art/``
     and ``fonts/`` directories to your project's directory.

@@ -380,7 +380,7 @@ This exposes several per-node import options:
   will keep the original mesh visible, while **NavMesh Only** will only import
   the navigation mesh (without a visual representation). **NavMesh Only** is
   meant to be used when you've manually authored a simplified mesh for navigation.
-- **Generate > NavMesh:** If checked, generates an OccluderInstance3D *sibling*
+- **Generate > Occluder:** If checked, generates an OccluderInstance3D *sibling*
   node for :ref:`occlusion culling <doc_occlusion_culling>` using the mesh's
   geometry as a basis for the occluder's shape. **Mesh + Occluder** will keep
   the original mesh visible, while **Occluder Only** will only import the

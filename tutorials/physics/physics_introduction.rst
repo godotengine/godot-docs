@@ -54,7 +54,7 @@ The last three listed below are physics bodies and additionally extend :ref:`Phy
 Physics material
 ~~~~~~~~~~~~~~~~
 
-Static bodies and rigid bodies can be configured to use a :ref:`physics material
+Static bodies and rigid bodies can be configured to use a :ref:`PhysicsMaterial
 <class_PhysicsMaterial>`. This allows adjusting the friction and bounce of an object,
 and set if it's absorbent and/or rough.
 
@@ -114,7 +114,7 @@ Collision layers and masks
 One of the most powerful, but frequently misunderstood, collision features
 is the collision layer system. This system allows you to build up complex
 interactions between a variety of objects. The key concepts are **layers**
-and **masks**. Each ``CollisionObject2D`` has 20 different physics layers
+and **masks**. Each ``CollisionObject2D`` has 32 different physics layers
 it can interact with.
 
 Let's look at each of the properties in turn:
@@ -168,8 +168,8 @@ would be as follows::
     # Example: Setting mask value for enabling layers 1, 3 and 4
 
     # Binary - set the bit corresponding to the layers you want to enable (1, 3, and 4) to 1, set all other bits to 0.
-    # Note: Layer 20 is the first bit, layer 1 is the last. The mask for layers 4,3 and 1 is therefore
-    0b00000000000000001101
+    # Note: Layer 32 is the first bit, layer 1 is the last. The mask for layers 4,3 and 1 is therefore
+    0b10000000_00000000_00000000_00001101
     # (This can be shortened to 0b1101)
 
     # Hexadecimal equivalent (1101 binary converted to hexadecimal)
@@ -368,7 +368,7 @@ occurred:
     func _physics_process(delta):
         var collision_info = move_and_collide(velocity * delta)
         if collision_info:
-            var collision_point = collision_info.position
+            var collision_point = collision_info.get_position()
 
  .. code-tab:: csharp
 
@@ -400,7 +400,7 @@ Or to bounce off of the colliding object:
     func _physics_process(delta):
         var collision_info = move_and_collide(velocity * delta)
         if collision_info:
-            velocity = velocity.bounce(collision_info.normal)
+            velocity = velocity.bounce(collision_info.get_normal())
 
  .. code-tab:: csharp
 

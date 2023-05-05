@@ -218,7 +218,7 @@ Examples
 --------
 
 To see these examples in action, download the sample project:
-:download:`using_kinematic2d.zip <files/using_kinematic2d.zip>`.
+`character_body_2d_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/character_body_2d_starter.zip>`_
 
 Movement and walls
 ~~~~~~~~~~~~~~~~~~

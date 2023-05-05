@@ -7,9 +7,7 @@ GDScript reference
 <https://en.wikipedia.org/wiki/Object-oriented_programming>`_, `imperative
 <https://en.wikipedia.org/wiki/Imperative_programming>`_, and `gradually typed
 <https://en.wikipedia.org/wiki/Gradual_typing>`_ programming language built for Godot.
-
-*GDScript* is a high-level, dynamically typed programming language used to
-create content. It uses an indentation-based syntax similar to languages like
+It uses an indentation-based syntax similar to languages like
 `Python <https://en.wikipedia.org/wiki/Python_%28programming_language%29>`_.
 Its goal is to be optimized for and tightly integrated with Godot Engine,
 allowing great flexibility for content creation and integration.
@@ -201,7 +199,8 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | var        | Defines a variable.                                                                                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| breakpoint | Editor helper for debugger breakpoints.                                                                                                           |
+| breakpoint | Editor helper for debugger breakpoints. Unlike breakpoints created by clicking in the gutter, ``breakpoint`` is stored in the script itself.      |
+|            | This makes it persistent across different machines when using version control.                                                                    |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | preload    | Preloads a class or variable. See `Classes as resources`_.                                                                                        |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -516,7 +515,8 @@ very fast to compare, which makes them good candidates for dictionary keys.
 :ref:`NodePath <class_NodePath>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A pre-parsed path to a node or a node property. They are useful to interact with
+A pre-parsed path to a node or a node property.  It can be
+easily assigned to, and from, a String. They are useful to interact with
 the tree to get a node, or affecting properties like with :ref:`Tweens <class_Tween>`.
 
 Vector built-in types
@@ -597,12 +597,6 @@ Engine built-in types
 
 Color data type contains ``r``, ``g``, ``b``, and ``a`` fields. It can
 also be accessed as ``h``, ``s``, and ``v`` for hue/saturation/value.
-
-:ref:`NodePath <class_NodePath>`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Compiled path to a node used mainly in the scene system. It can be
-easily assigned to, and from, a String.
 
 :ref:`RID <class_RID>`
 ^^^^^^^^^^^^^^^^^^^^^^

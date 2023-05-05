@@ -120,7 +120,8 @@ method (see :ref:`doc_scene_tree` for details). However, if you need more
 complex behavior when changing scenes, this method provides more functionality.
 
 To begin, download the template from here:
-:download:`autoload.zip <files/autoload.zip>` and open it in Godot.
+`singleton_autoload_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/singleton_autoload_starter.zip>`_
+and open it in Godot.
 
 The project contains two scenes: ``Scene1.tscn`` and ``Scene2.tscn``. Each
 scene contains a label displaying the scene name and a button with its

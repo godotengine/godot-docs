@@ -76,9 +76,9 @@ This will allow you to see the triangles making up the plane.
 
 .. image:: img/plane.png
 
-Now set ``Subdivide Width`` and ``Subdivide Depth`` to ``32``.
+Now set ``Subdivide Width`` and ``Subdivide Depth`` of the :ref:`PlaneMesh <class_planemesh>` to ``32``.
 
-.. image:: img/plane-sub-set.png
+.. image:: img/plane-sub-set.webp
 
 You can see that there are now many more triangles in the
 :ref:`MeshInstance3D<class_MeshInstance3D>`. This will give us more vertices to work with
@@ -99,18 +99,21 @@ first Spatial shader!
 Shader magic
 ------------
 
-.. image:: img/shader-error.png
+.. image:: img/shader-editor.webp
 
-Notice how there is already error? This is because the shader editor reloads
-shaders on the fly. The first thing Godot shaders need is a declaration of what
-type of shader they are. We set the variable ``shader_type`` to ``spatial``
+The new shader is already generated with a ``shader_type``
+variable and the ``fragment()`` function.
+The first thing Godot shaders need is a declaration
+of what type of shader they are.
+In this case the ``shader_type`` is set to ``spatial``
 because this is a spatial shader.
 
 .. code-block:: glsl
 
   shader_type spatial;
 
-Next we will define the ``vertex()`` function. The ``vertex()`` function
+For now ignore the ``fragment()`` function
+and define the ``vertex()`` function. The ``vertex()`` function
 determines where the vertices of your :ref:`MeshInstance3D<class_MeshInstance3D>` appear in
 the final scene. We will be using it to offset the height of each vertex and
 make our flat plane appear like a little terrain.
@@ -177,16 +180,16 @@ This will allow you to send a noise texture to the shader. Now look in the
 inspector under your material. You should see a section called "Shader Params".
 If you open it up, you'll see a section called "noise".
 
-Click beside it where it says "[empty]" and select "New NoiseTexture". Then in
-your NoiseTexture click beside where it says "Noise" and select "New
-NoiseTexture".
+Click beside it where it says "[empty]" and select "New NoiseTexture2D". Then in
+your :ref:`NoiseTexture2D <class_noisetexture2D>` click beside where it says "Noise" and select "New
+FastNoiseLite".
 
-.. note:: :ref:`FastNoiseLite <class_fastnoiselite>` is used by the NoiseTexture to
+.. note:: :ref:`FastNoiseLite <class_fastnoiselite>` is used by the NoiseTexture2D to
           generate a heightmap.
 
 Once you set it up and should look like this.
 
-.. image:: img/noise-set.png
+.. image:: img/noise-set.webp
 
 Now, access the noise texture using the ``texture()`` function. ``texture()``
 takes a texture as the first argument and a ``vec2`` for the position on the
@@ -201,8 +204,10 @@ this case we'll use the ``r``, or ``x`` channel.
 
 .. code-block:: glsl
 
-  float height = texture(noise, VERTEX.xz / 2.0 + 0.5).x;
-  VERTEX.y += height;
+  void vertex() {
+    float height = texture(noise, VERTEX.xz / 2.0 + 0.5).x;
+    VERTEX.y += height;
+  }
 
 Note: ``xyzw`` is the same as ``rgba`` in GLSL, so instead of ``texture().x``
 above, we could use ``texture().r``. See the `OpenGL documentation
@@ -234,14 +239,14 @@ Let's make a uniform that changes the height of the terrain.
 
 Godot lets you initialize a uniform with a value; here, ``height_scale`` is set
 to ``0.5``. You can set uniforms from GDScript by calling the function
-``set_shader_param()`` on the material corresponding to the shader. The value
+``set_shader_parameter()`` on the material corresponding to the shader. The value
 passed from GDScript takes precedence over the value used to initialize it in
 the shader.
 
 ::
 
   # called from the MeshInstance3D
-  mesh.material.set_shader_param("height_scale", 0.5)
+  mesh.material.set_shader_parameter("height_scale", 0.5)
 
 .. note:: Changing uniforms in Spatial-based nodes is different from
           CanvasItem-based nodes. Here, we set the material inside the PlaneMesh
@@ -250,7 +255,7 @@ the shader.
           MeshInstance3D you would access the material using
           ``get_surface_material()`` or ``material_override``.
 
-Remember that the string passed into ``set_shader_param()`` must match the name
+Remember that the string passed into ``set_shader_parameter()`` must match the name
 of the uniform variable in the :ref:`Shader<class_Shader>`. You can use the
 uniform variable anywhere inside your :ref:`Shader<class_Shader>`. Here, we will
 use it to set the height value instead of arbitrarily multiplying by ``0.5``.
@@ -304,10 +309,10 @@ do that by passing in a second noise texture.
 
   uniform sampler2D normalmap;
 
-Set this second uniform texture to another NoiseTexture with another
-FastNoiseLite. But this time, check **As Normalmap**.
+Set this second uniform texture to another :ref:`NoiseTexture2D <class_noisetexture2D>` with another
+:ref:`FastNoiseLite <class_fastnoiselite>`. But this time, check **As Normalmap**.
 
-.. image:: img/normal-set.png
+.. image:: img/normal-set.webp
 
 Now, because this is a normalmap and not a per-vertex normal, we are going to
 assign it in the ``fragment()`` function. The ``fragment()`` function will be

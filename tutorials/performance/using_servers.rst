@@ -116,7 +116,7 @@ This is an example of how to create a sprite from code and move it using the low
         # Add it, centered.
         RenderingServer.canvas_item_add_texture_rect(ci_rid, Rect2(texture.get_size() / 2, texture.get_size()), texture)
         # Add the item, rotated 45 degrees and translated.
-        var xform = Transform2D().rotated(deg2rad(45)).translated(Vector2(20, 30))
+        var xform = Transform2D().rotated(deg_to_rad(45)).translated(Vector2(20, 30))
         RenderingServer.canvas_item_set_transform(ci_rid, xform)
 
 The Canvas Item API in the server allows you to add draw primitives to it. Once added, they can't be modified.

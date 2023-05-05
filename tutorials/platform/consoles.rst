@@ -3,6 +3,34 @@
 Console support in Godot
 ========================
 
+Console porting process
+-----------------------
+
+In order to develop for consoles in Godot, you need access to the console SDK and
+export templates for it. These export templates need to be developed either by
+yourself or someone hired to do it, or provided by a third party company.
+
+Currently, the only console Godot officially supports is Steam Deck (through the 
+official Linux export templates). 
+
+The reason other consoles are not officially supported are:
+
+- To develop for consoles, one must be licensed as a company.
+  As an open source project, Godot has no legal structure to provide console ports.
+- Console SDKs are secret and covered by non-disclosure agreements.
+  Even if we could get access to them, we could not publish the platform-specific 
+  code under an open source license.
+  
+As explained, however, it is possible to port your games to consoles thanks to 
+services provided by third-party companies.
+
+.. note::
+
+    In practice, the process is quite similar to Unity and Unreal Engine. In other
+    words, there is no engine that is legally allowed to distribute console export
+    templates without requiring the user to prove that they are a licensed console
+    developer.
+    
 Console publishing process
 --------------------------
 
@@ -20,42 +48,15 @@ to a console platform is as follows:
   developers (*devkit*). The cost of those devkits is confidential.
 - Port the engine to the console platform or pay a company to do it.
 - To be published, your game needs to be rated in the regions you'd like to sell
-  it in. For example, in North America, the `ESRB <https://www.esrb.org/>`__
-  handles game ratings. In Europe, this is done by
-  `PEGI <https://pegi.info/>`__. Indie developers can generally get a rating
-  for cheaper compared to more established developers.
+  it in. For example, game ratings are handled by `ESRB <https://www.esrb.org/>`__ 
+  in North America, and `PEGI <https://pegi.info/>`__ in Europe. Indie developers 
+  can generally get a rating for cheaper compared to more established developers.
 
-Due to the complexity of the process, the budget to publish a game by yourself on a
-single console often exceeds $1,000 (this is a rough figure).
+Due to the complexity of the process, many studios and developers prefer to 
+outsource console porting.
 
 You can read more about the console publishing process in this article:
 `Godot and consoles, all you need to know <https://godotengine.org/article/godot-consoles-all-you-need-know/>`__
-
-Official support
-----------------
-
-Godot supports the Linux-based Steam Deck. The reason other consoles are not
-officially supported are:
-
-- To develop for consoles, one must be licensed as a company.
-  As an open source project, Godot does not have such a legal figure.
-- Console SDKs are secret and covered by non-disclosure agreements.
-  Even if we could get access to them, we could not publish
-  the platform-specific code under an open source license.
-- Consoles require specialized hardware to develop for, so regular individuals
-  can't create games for them anyway.
-
-However, it is still possible to port your games to consoles thanks to services
-provided by third-party companies.
-
-.. note::
-
-    In practice, the process is quite similar to Unity and Unreal Engine, except
-    that you need to contact a third-party developer to handle the porting
-    process. In other words, there is no engine that is legally allowed to
-    distribute console export templates without requiring the user to prove that
-    they are a licensed console developer. Doing so would violate the console
-    manufacturer's NDA.
 
 Third-party support
 -------------------

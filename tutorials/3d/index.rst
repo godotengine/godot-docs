@@ -22,6 +22,7 @@ Rendering
    lights_and_shadows
    using_decals
    physical_light_and_camera_units
+   particles/index
    high_dynamic_range
    global_illumination/index
    environment_and_post_processing

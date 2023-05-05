@@ -165,15 +165,31 @@ a meaningful name and include them in your page with:
 
 .. code:: rst
 
-   .. image:: img/image_name.png
+   .. image:: img/image_name.webp
 
-Similarly, you can include attachments, like assets as support material for a
-tutorial, by placing them into a ``files/`` folder next to the ``.rst`` file, and
-using this inline markup:
+Alternatively, you can use the `figure` directive, which gives the image a contrasting
+border and allows centering it on the page.
 
 .. code:: rst
 
-   :download:`myfilename.zip <files/myfilename.zip>`
+    .. figure:: img/image_name.webp
+        :align: center
+
+You can also include attachments as support material for a tutorial, by placing them
+into a ``files/`` folder next to the ``.rst`` file, and using this inline markup:
+
+.. code:: rst
+
+   :download:`file_name.zip <files/file_name.zip>`
+
+Consider using the `godot-docs-project-starters <https://github.com/godotengine/godot-docs-project-starters>`
+repository for hosting support materials, such as project templates and asset packs.
+You can use a direct link to the generated archive from that repository with the regular
+link markup:
+
+.. code:: rst
+
+   `file_name.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/file_name.zip>`_
 
 
 License
