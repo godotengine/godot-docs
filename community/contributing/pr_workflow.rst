@@ -347,9 +347,16 @@ do:
 
     $ git push origin better-project-manager
 
-Git will ask you for your username and password, and the changes will be sent
-to your remote. If you check the fork's page on GitHub, you should see a new
-branch with your added commits.
+Git will ask you for your username and password. For your password, enter your
+GitHub Personal Access Token (PAT). If you do not have a GitHub Personal Access
+Token, or do not have one with the correct permissions for your newly forked
+repository, you will need to create one. Follow this link to create your Personal
+Access Token: `Creating a personal access token
+<https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token>`_.
+
+After you have successfully verified your account using your PAT, the changes
+will be sent to your remote repository. If you check the fork's page on GitHub,
+you should see a new branch with your added commits.
 
 Issuing a pull request
 ----------------------
