@@ -584,9 +584,15 @@ as follows:
         ADD_SIGNAL(MethodInfo("position_changed", PropertyInfo(Variant::OBJECT, "node"), PropertyInfo(Variant::VECTOR2, "new_pos")));
     }
 
-Here, our ``ADD_SIGNAL`` macro can be a single call first taking the
-signals name, then having pairs of the type specifying the parameter name and
-the value of each parameter we'll send along with this signal.
+Here, our ``ADD_SIGNAL`` macro can be a single call with a ``MethodInfo`` argument.
+``MethodInfo``'s first parameter will be the signal's name, and its remaining parameters
+are ``PropertyInfo`` types which describe the essentials of each of the method's parameters.
+``PropertyInfo`` parameters are defined with the data type of the parameter, and then the name
+that the parameter will have by default.
+
+So here, we add a signal, with a ``MethodInfo`` which names the signal "position_changed". The
+``PropertyInfo`` parameters describe two esential arguments, one of type ``Object``, the other
+of type ``Vector2``, respectively named "node" and "new_pos".
 
 Next, we'll need to change our ``_process`` method:
 
