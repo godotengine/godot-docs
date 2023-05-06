@@ -430,7 +430,7 @@ table to find its new name.
 - MultiPlayerAPI's ``get_network_unique_id()`` is now ``get_unique_id()``.
 - MultiPlayerAPI's ``has_network_peer()`` is now ``has_multiplayer_peer()``.
 - PacketPeerUDP's ``is_listening()`` is now ``is_bound()``.
-- PacketPeerUDP's ``listen()`` is now ``bound()``.
+- PacketPeerUDP's ``listen()`` is now ``bind()``.
 - ParticleProcessMaterial's ``set_flag()`` is now ``set_particle_flag()``.
 - ResourceFormatLoader's ``get_dependencies()`` is now ``_get_dependencies()``
   (note the leading underscore, which denotes a virtual method).
