@@ -252,6 +252,7 @@ assign it to a uniform set which we can pass to our shader later.
 
 Defining a compute pipeline
 ---------------------------
+
 The next step is to create a set of instructions our GPU can execute.
 We need a pipeline and a compute list for that.
 
@@ -320,6 +321,20 @@ away as it will cause the CPU to wait for the GPU to finish working. In our
 example, we synchronize right away because we want our data available for reading
 right away. In general, you will want to wait *at least* 2 or 3 frames before
 synchronizing so that the GPU is able to run in parallel with the CPU.
+
+.. warning::
+
+    Long computations can cause Windows graphics drivers to "crash" due to
+    :abbr:`TDR (Timeout Detection and Recovery)` being triggered by Windows.
+    This is a mechanism that reinitializes the graphics driver after a certain
+    amount of time has passed without any activity from the graphics driver
+    (usually 5 to 10 seconds).
+
+    Depending on the duration your compute shader takes to execute, you may need
+    to split it into multiple dispatches to reduce the time each dispatch takes
+    and reduce the chances of triggering a TDR. Given TDR is time-dependent,
+    slower GPUs may be more prone to TDRs when running a given compute shader
+    compared to a faster GPU.
 
 Retrieving results
 ------------------

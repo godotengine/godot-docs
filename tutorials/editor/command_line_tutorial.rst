@@ -138,7 +138,7 @@ Command line reference
 +------------------------------+---------------------------------------------------------------------------------------------------------+
 | ``--gpu-profile``            | Show a GPU profile of the tasks that took the most time during frame rendering.                         |
 +------------------------------+---------------------------------------------------------------------------------------------------------+
-| ``--gpu-validation``         | Enable graphics API validation layers for debugging.                                                    |
+| ``--gpu-validation``         | Enable graphics API :ref:`validation layers <doc_vulkan_validation_layers>` for debugging.              |
 +------------------------------+---------------------------------------------------------------------------------------------------------+
 | ``--gpu-abort``              | Abort on GPU errors (usually validation layer errors), may help see the problem if your system freezes. |
 +------------------------------+---------------------------------------------------------------------------------------------------------+
