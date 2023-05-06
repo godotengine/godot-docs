@@ -34,7 +34,7 @@ Here is a custom ``look_at()`` method that will work reliably with rigid bodies:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends RigidBody
+    extends RigidBody3D
 
     func look_follow(state, current_transform, target_position):
         var up_dir = Vector3(0, 1, 0)
