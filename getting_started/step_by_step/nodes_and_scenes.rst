@@ -159,12 +159,6 @@ The application should open in a new window and display the text "Hello World".
 
 Close the window or press :kbd:`F8` (:kbd:`Cmd + .` on macOS) to quit the running scene.
 
-.. note::
-
-    If this doesn't immediately work and you have a hiDPI display on at least
-    one of your monitors, go to Project -> Project Settings -> Display ->
-    Window then enable Allow Hidpi under Dpi.
-
 Setting the main scene
 ----------------------
 
