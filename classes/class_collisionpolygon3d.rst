@@ -12,16 +12,16 @@ CollisionPolygon3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Editor-only node for defining a collision polygon in 3D space.
+Node that represents a 3D collision polygon, given by the thickening of a 2D polygon in the local XY plane along the local Z axis.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Allows editing a concave or convex collision polygon's vertices on a selected plane. Can also set a depth perpendicular to that plane. This class is only available in the editor. It will not appear in the scene tree at run-time. Creates several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`\ s at run-time to represent the original polygon using convex decomposition.
+Provides a 3D collision polygon to a :ref:`CollisionObject3D<class_CollisionObject3D>` parent, by thickening a 2D (convex or concave) polygon in the local XY plane along the local Z axis. The 2D polygon in the local XY plane can be drawn in the editor or specified by a list of vertices. That 2D polygon is thickened evenly in the local Z and -Z directions.
 
-\ **Note:** Since this is an editor-only helper, properties modified during gameplay will have no effect.
+This node has the same effect as several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` nodes, created by thickening the 2D convex polygons in the convex decomposition of the given 2D polygon (but without the overhead of multiple nodes).
 
 \ **Warning:** A non-uniformly scaled CollisionPolygon3D node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change its :ref:`polygon<class_CollisionPolygon3D_property_polygon>`'s vertices instead.
 
@@ -63,7 +63,7 @@ Property Descriptions
 - void **set_depth** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_depth** **(** **)**
 
-Length that the resulting collision extends in either direction perpendicular to its polygon.
+Length that the resulting collision extends in either direction perpendicular to its 2D polygon.
 
 .. rst-class:: classref-item-separator
 
@@ -114,7 +114,7 @@ The collision margin for the generated :ref:`Shape3D<class_Shape3D>`. See :ref:`
 - void **set_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_polygon** **(** **)**
 
-Array of vertices which define the polygon.
+Array of vertices which define the 2D polygon in the local XY plane.
 
 \ **Note:** The returned value is a copy of the original. Methods which mutate the size or properties of the return value will not impact the original polygon. To change properties of the polygon, assign it to a temporary variable and make changes before reassigning the ``polygon`` member.
 

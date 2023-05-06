@@ -549,7 +549,7 @@ The rendering layers in which this **CanvasItem** responds to :ref:`Light2D<clas
 - void **set_material** **(** :ref:`Material<class_Material>` value **)**
 - :ref:`Material<class_Material>` **get_material** **(** **)**
 
-The material applied to textures on this **CanvasItem**.
+The material applied to this **CanvasItem**.
 
 .. rst-class:: classref-item-separator
 
@@ -566,7 +566,7 @@ The material applied to textures on this **CanvasItem**.
 - void **set_modulate** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_modulate** **(** **)**
 
-The color applied to textures on this **CanvasItem**.
+The color applied to this **CanvasItem**. This property does affect child **CanvasItem**\ s, unlike :ref:`self_modulate<class_CanvasItem_property_self_modulate>` which only affects the node itself.
 
 .. rst-class:: classref-item-separator
 
@@ -583,7 +583,9 @@ The color applied to textures on this **CanvasItem**.
 - void **set_self_modulate** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_self_modulate** **(** **)**
 
-The color applied to textures on this **CanvasItem**. This is not inherited by children **CanvasItem**\ s.
+The color applied to this **CanvasItem**. This property does **not** affect child **CanvasItem**\ s, unlike :ref:`modulate<class_CanvasItem_property_modulate>` which affects both the node itself and its children.
+
+\ **Note:** Internal children (e.g. sliders in :ref:`ColorPicker<class_ColorPicker>` or tab bar in :ref:`TabContainer<class_TabContainer>`) are also not affected by this property (see ``include_internal`` parameter of :ref:`Node.get_child<class_Node_method_get_child>` and other similar methods).
 
 .. rst-class:: classref-item-separator
 
@@ -1263,6 +1265,8 @@ Returns the transform from the coordinate system of the canvas, this item is in,
 :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** |const|
 
 Returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that this **CanvasItem** is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
+
+\ **Note:** For screen-space coordinates (e.g. when using a non-embedded :ref:`Popup<class_Popup>`), you can use :ref:`DisplayServer.mouse_get_position<class_DisplayServer_method_mouse_get_position>`.
 
 .. rst-class:: classref-item-separator
 

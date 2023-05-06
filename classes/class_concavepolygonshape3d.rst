@@ -19,13 +19,19 @@ Concave polygon shape resource (also called "trimesh") for 3D physics.
 Description
 -----------
 
-3D concave polygon shape resource (also called "trimesh") to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node. This shape is created by feeding a list of triangles. Despite its name, **ConcavePolygonShape3D** can also store convex polygon shapes. However, unlike :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`, **ConcavePolygonShape3D** is *not* limited to storing convex shapes exclusively.
+3D concave polygon shape resource (also called "trimesh") to be added as a *direct* child of a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` using a :ref:`CollisionShape3D<class_CollisionShape3D>` node.
 
-\ **Note:** When used for collision, **ConcavePolygonShape3D** is intended to work with static :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes like :ref:`StaticBody3D<class_StaticBody3D>` and will not work with :ref:`CharacterBody3D<class_CharacterBody3D>` or :ref:`RigidBody3D<class_RigidBody3D>` with a mode other than Static.
+The shape consists of a collection of triangle faces, and as such it does not include any "inside" that the faces might be enclosing. If the faces enclose anything, then the shape is *hollow*, as opposed to a :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` which is solid. See also :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`.
 
-\ **Performance:** Due to its complexity, **ConcavePolygonShape3D** is the slowest collision shape to check collisions against. Its use should generally be limited to level geometry. For convex geometry, using :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` will perform better. For dynamic physics bodies that need concave collision, several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`\ s can be used to represent its collision by using convex decomposition; see :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`'s documentation for instructions. However, consider using primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>` first.
+Being made out of triangle faces, this shape is the most freely configurable single 3D shape. Despite its name, it can be used to form (hollow) polyhedra of any nature, convex or concave.
+
+\ **Note:** When used for collision, **ConcavePolygonShape3D** is intended to work with static :ref:`PhysicsBody3D<class_PhysicsBody3D>` nodes like :ref:`StaticBody3D<class_StaticBody3D>` and will not work with :ref:`CharacterBody3D<class_CharacterBody3D>` or :ref:`RigidBody3D<class_RigidBody3D>` in a mode other than Static.
+
+\ **Warning:** The nature of this shape makes it extra prone to being tunneled through by (small) fast physics bodies. For example, consider a (small) rigid body *Ball* traveling toward a static body *Box* at high speed. If the box uses a **ConcavePolygonShape3D** consisting of twelve triangle faces (two triangle faces for each of the six sides of the box), then the ball might end up inside the box or tunnel all the way through the box, if it goes fast enough. This is (partly) because the ball can only collide against the individual faces of the hollow box. In interactions with rigid bodies tunneling can be avoided by enabling continuous collision detection on the rigid body.
 
 \ **Warning:** Using this shape for an :ref:`Area3D<class_Area3D>` (via a :ref:`CollisionShape3D<class_CollisionShape3D>` node, created e.g. by using the *Create Trimesh Collision Sibling* option in the *Mesh* menu that appears when selecting a :ref:`MeshInstance3D<class_MeshInstance3D>` node) may give unexpected results: the area will only detect collisions with the triangle faces in the **ConcavePolygonShape3D** (and not with any "inside" of the shape, for example); moreover it will only detect all such collisions if :ref:`backface_collision<class_ConcavePolygonShape3D_property_backface_collision>` is ``true``.
+
+\ **Performance:** Due to its complexity, **ConcavePolygonShape3D** is the slowest collision shape to check collisions against. Its use should generally be limited to level geometry. For convex geometry, using :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` will perform better. For dynamic physics bodies that need concave collision, several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`\ s can be used to represent its collision by using convex decomposition; see :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`'s documentation for instructions. However, consider using primitive collision shapes such as :ref:`SphereShape3D<class_SphereShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>` first.
 
 .. rst-class:: classref-introduction-group
 
@@ -97,7 +103,7 @@ Method Descriptions
 
 :ref:`PackedVector3Array<class_PackedVector3Array>` **get_faces** **(** **)** |const|
 
-Returns the faces (an array of triangles).
+Returns the faces of the trimesh shape as an array of vertices. The array (of length divisible by three) is naturally divided into triples; each triple of vertices defines a triangle.
 
 .. rst-class:: classref-item-separator
 
@@ -109,7 +115,7 @@ Returns the faces (an array of triangles).
 
 void **set_faces** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` faces **)**
 
-Sets the faces (an array of triangles).
+Sets the faces of the trimesh shape from an array of vertices. The ``faces`` array should be composed of triples such that each triple of vertices defines a triangle.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

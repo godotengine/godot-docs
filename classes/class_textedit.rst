@@ -40,6 +40,8 @@ Properties
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | :ref:`caret_blink_interval<class_TextEdit_property_caret_blink_interval>`                                   | ``0.65``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`caret_draw_when_editable_disabled<class_TextEdit_property_caret_draw_when_editable_disabled>`         | ``false``                                                                           |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`caret_mid_grapheme<class_TextEdit_property_caret_mid_grapheme>`                                       | ``true``                                                                            |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`caret_move_on_right_click<class_TextEdit_property_caret_move_on_right_click>`                         | ``true``                                                                            |
@@ -959,7 +961,7 @@ Select whole words as if the user double clicked.
 
 :ref:`SelectionMode<enum_TextEdit_SelectionMode>` **SELECTION_MODE_LINE** = ``4``
 
-Select whole lines as if the user tripped clicked.
+Select whole lines as if the user triple clicked.
 
 .. rst-class:: classref-item-separator
 
@@ -1041,7 +1043,7 @@ Property Descriptions
 - void **set_caret_blink_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_caret_blink_enabled** **(** **)**
 
-Sets if the caret should blink.
+If ``true``, makes the caret blink.
 
 .. rst-class:: classref-item-separator
 
@@ -1058,7 +1060,24 @@ Sets if the caret should blink.
 - void **set_caret_blink_interval** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_caret_blink_interval** **(** **)**
 
-Duration (in seconds) of a caret's blinking cycle.
+The interval at which the caret blinks (in seconds).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextEdit_property_caret_draw_when_editable_disabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **caret_draw_when_editable_disabled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_draw_caret_when_editable_disabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_drawing_caret_when_editable_disabled** **(** **)**
+
+If ``true``, caret will be visible when :ref:`editable<class_TextEdit_property_editable>` is disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -2453,7 +2472,7 @@ Returns the scroll position for ``wrap_index`` of ``line``.
 
 :ref:`String<class_String>` **get_selected_text** **(** :ref:`int<class_int>` caret_index=-1 **)**
 
-Returns the text inside the selection.
+Returns the text inside the selection of a caret, or all the carets if ``caret_index`` is its default value ``-1``.
 
 .. rst-class:: classref-item-separator
 

@@ -195,7 +195,7 @@ Property Descriptions
 - void **set_include_hidden** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_include_hidden** **(** **)**
 
-If ``true``, hidden files are included when the navigating directory.
+If ``true``, hidden files are included when navigating the directory.
 
 Affects :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>`, :ref:`get_directories<class_DirAccess_method_get_directories>` and :ref:`get_files<class_DirAccess_method_get_files>`.
 

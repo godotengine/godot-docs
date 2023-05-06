@@ -257,7 +257,7 @@ Property Descriptions
 - void **set_motion_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_motion_scale** **(** **)**
 
-Multiplies the position 3D track animation.
+Multiplies the 3D position track animation.
 
 \ **Note:** Unless this value is ``1.0``, the key value in animation will not match the actual position value.
 

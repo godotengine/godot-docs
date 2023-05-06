@@ -126,6 +126,8 @@ Methods
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>` **(** **)** |const|                                                                                         |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`get_string_from_wchar<class_PackedByteArray_method_get_string_from_wchar>` **(** **)** |const|                                                                                       |
+   +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has<class_PackedByteArray_method_has>` **(** :ref:`int<class_int>` value **)** |const|                                                                                               |
    +-----------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_encoded_var<class_PackedByteArray_method_has_encoded_var>` **(** :ref:`int<class_int>` byte_offset, :ref:`bool<class_bool>` allow_objects=false **)** |const|                    |
@@ -475,7 +477,7 @@ Returns a new **PackedByteArray** with the data decompressed. Set ``buffer_size`
 
 :ref:`PackedByteArray<class_PackedByteArray>` **decompress_dynamic** **(** :ref:`int<class_int>` max_output_size, :ref:`int<class_int>` compression_mode=0 **)** |const|
 
-Returns a new **PackedByteArray** with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants. **This method only accepts gzip and deflate compression modes.**\ 
+Returns a new **PackedByteArray** with the data decompressed. Set the compression mode using one of :ref:`CompressionMode<enum_FileAccess_CompressionMode>`'s constants. **This method only accepts brotli, gzip, and deflate compression modes.**\ 
 
 This method is potentially slower than ``decompress``, as it may have to re-allocate its output buffer multiple times while decompressing, whereas ``decompress`` knows it's output buffer size from the beginning.
 
@@ -708,6 +710,18 @@ Converts UTF-32 encoded array to :ref:`String<class_String>`. System endianness 
 :ref:`String<class_String>` **get_string_from_utf8** **(** **)** |const|
 
 Converts UTF-8 encoded array to :ref:`String<class_String>`. Slower than :ref:`get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>` but supports UTF-8 encoded data. Use this function if you are unsure about the source of the data. For user input this function should always be preferred. Returns empty string if source array is not valid UTF-8 string.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PackedByteArray_method_get_string_from_wchar:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_string_from_wchar** **(** **)** |const|
+
+Converts wide character (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded array to :ref:`String<class_String>`. Returns empty string if source array is not valid wide string.
 
 .. rst-class:: classref-item-separator
 

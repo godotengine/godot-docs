@@ -1662,7 +1662,7 @@ Particle system's running speed scaling ratio. A value of ``0`` can be used to p
 - void **set_split_scale** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_split_scale** **(** **)**
 
-If set to true, three different scale curves can be specified, one per scale axis.
+If set to ``true``, three different scale curves can be specified, one per scale axis.
 
 .. rst-class:: classref-item-separator
 

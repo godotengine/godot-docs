@@ -38,41 +38,45 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                                          | :ref:`avoidance_enabled<class_NavigationAgent2D_property_avoidance_enabled>`                       | ``false``             |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                                          | :ref:`debug_enabled<class_NavigationAgent2D_property_debug_enabled>`                               | ``false``             |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`                                                        | :ref:`debug_path_custom_color<class_NavigationAgent2D_property_debug_path_custom_color>`           | ``Color(1, 1, 1, 1)`` |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`debug_path_custom_line_width<class_NavigationAgent2D_property_debug_path_custom_line_width>` | ``1.0``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`debug_path_custom_point_size<class_NavigationAgent2D_property_debug_path_custom_point_size>` | ``4.0``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                                          | :ref:`debug_use_custom<class_NavigationAgent2D_property_debug_use_custom>`                         | ``false``             |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                                                            | :ref:`max_neighbors<class_NavigationAgent2D_property_max_neighbors>`                               | ``10``                |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`max_speed<class_NavigationAgent2D_property_max_speed>`                                       | ``100.0``             |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                                                            | :ref:`navigation_layers<class_NavigationAgent2D_property_navigation_layers>`                       | ``1``                 |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`neighbor_distance<class_NavigationAgent2D_property_neighbor_distance>`                       | ``500.0``             |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`path_desired_distance<class_NavigationAgent2D_property_path_desired_distance>`               | ``20.0``              |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`path_max_distance<class_NavigationAgent2D_property_path_max_distance>`                       | ``100.0``             |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` | :ref:`path_metadata_flags<class_NavigationAgent2D_property_path_metadata_flags>`                   | ``7``                 |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`radius<class_NavigationAgent2D_property_radius>`                                             | ``10.0``              |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`target_desired_distance<class_NavigationAgent2D_property_target_desired_distance>`           | ``10.0``              |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector2<class_Vector2>`                                                    | :ref:`target_position<class_NavigationAgent2D_property_target_position>`                           | ``Vector2(0, 0)``     |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`time_horizon<class_NavigationAgent2D_property_time_horizon>`                                 | ``1.0``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                                                | :ref:`avoidance_enabled<class_NavigationAgent2D_property_avoidance_enabled>`                       | ``false``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                                                | :ref:`debug_enabled<class_NavigationAgent2D_property_debug_enabled>`                               | ``false``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                                                              | :ref:`debug_path_custom_color<class_NavigationAgent2D_property_debug_path_custom_color>`           | ``Color(1, 1, 1, 1)`` |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`debug_path_custom_line_width<class_NavigationAgent2D_property_debug_path_custom_line_width>` | ``-1.0``              |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`debug_path_custom_point_size<class_NavigationAgent2D_property_debug_path_custom_point_size>` | ``4.0``               |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                                                | :ref:`debug_use_custom<class_NavigationAgent2D_property_debug_use_custom>`                         | ``false``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                                                  | :ref:`max_neighbors<class_NavigationAgent2D_property_max_neighbors>`                               | ``10``                |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`max_speed<class_NavigationAgent2D_property_max_speed>`                                       | ``100.0``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                                                  | :ref:`navigation_layers<class_NavigationAgent2D_property_navigation_layers>`                       | ``1``                 |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`neighbor_distance<class_NavigationAgent2D_property_neighbor_distance>`                       | ``500.0``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`path_desired_distance<class_NavigationAgent2D_property_path_desired_distance>`               | ``20.0``              |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`path_max_distance<class_NavigationAgent2D_property_path_max_distance>`                       | ``100.0``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>`       | :ref:`path_metadata_flags<class_NavigationAgent2D_property_path_metadata_flags>`                   | ``7``                 |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>`     | :ref:`path_postprocessing<class_NavigationAgent2D_property_path_postprocessing>`                   | ``0``                 |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>` | :ref:`pathfinding_algorithm<class_NavigationAgent2D_property_pathfinding_algorithm>`               | ``0``                 |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`radius<class_NavigationAgent2D_property_radius>`                                             | ``10.0``              |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`target_desired_distance<class_NavigationAgent2D_property_target_desired_distance>`           | ``10.0``              |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector2<class_Vector2>`                                                          | :ref:`target_position<class_NavigationAgent2D_property_target_position>`                           | ``Vector2(0, 0)``     |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`time_horizon<class_NavigationAgent2D_property_time_horizon>`                                 | ``1.0``               |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -191,7 +195,7 @@ Notifies when the player-defined :ref:`target_position<class_NavigationAgent2D_p
 
 **velocity_computed** **(** :ref:`Vector2<class_Vector2>` safe_velocity **)**
 
-Notifies when the collision avoidance velocity is calculated. Emitted by :ref:`set_velocity<class_NavigationAgent2D_method_set_velocity>`. Only emitted when :ref:`avoidance_enabled<class_NavigationAgent2D_property_avoidance_enabled>` is true.
+Notifies when the collision avoidance velocity is calculated. Emitted at the end of the physics frame in which :ref:`set_velocity<class_NavigationAgent2D_method_set_velocity>` is called. Only emitted when :ref:`avoidance_enabled<class_NavigationAgent2D_property_avoidance_enabled>` is true.
 
 .. rst-class:: classref-item-separator
 
@@ -279,7 +283,7 @@ If :ref:`debug_use_custom<class_NavigationAgent2D_property_debug_use_custom>` is
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **debug_path_custom_line_width** = ``1.0``
+:ref:`float<class_float>` **debug_path_custom_line_width** = ``-1.0``
 
 .. rst-class:: classref-property-setget
 
@@ -440,6 +444,40 @@ The maximum distance the agent is allowed away from the ideal path to the final 
 - :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters2D_PathMetadataFlags>` **get_path_metadata_flags** **(** **)**
 
 Additional information to return with the navigation path.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationAgent2D_property_path_postprocessing:
+
+.. rst-class:: classref-property
+
+:ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>` **path_postprocessing** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path_postprocessing** **(** :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>` value **)**
+- :ref:`PathPostProcessing<enum_NavigationPathQueryParameters2D_PathPostProcessing>` **get_path_postprocessing** **(** **)**
+
+The path postprocessing applied to the raw path corridor found by the :ref:`pathfinding_algorithm<class_NavigationAgent2D_property_pathfinding_algorithm>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationAgent2D_property_pathfinding_algorithm:
+
+.. rst-class:: classref-property
+
+:ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>` **pathfinding_algorithm** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pathfinding_algorithm** **(** :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>` value **)**
+- :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters2D_PathfindingAlgorithm>` **get_pathfinding_algorithm** **(** **)**
+
+The pathfinding algorithm used in the path query.
 
 .. rst-class:: classref-item-separator
 

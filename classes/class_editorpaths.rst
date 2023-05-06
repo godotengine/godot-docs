@@ -155,7 +155,11 @@ Returns the absolute path to the self-contained file that makes the current Godo
 
 Returns ``true`` if the editor is marked as self-contained, ``false`` otherwise. When self-contained mode is enabled, user configuration, data and cache files are saved in an ``editor_data/`` folder next to the editor binary. This makes portable usage easier and ensures the Godot editor minimizes file writes outside its own folder. Self-contained mode is not available for exported projects.
 
-Self-contained mode can be enabled by creating a file named ``._sc_`` or ``_sc_`` in the same folder as the editor binary while the editor is not running. See also :ref:`get_self_contained_file<class_EditorPaths_method_get_self_contained_file>`.
+Self-contained mode can be enabled by creating a file named ``._sc_`` or ``_sc_`` in the same folder as the editor binary or macOS .app bundle while the editor is not running. See also :ref:`get_self_contained_file<class_EditorPaths_method_get_self_contained_file>`.
+
+\ **Note:** On macOS, quarantine flag should be manually removed before using self-contained mode, see `Running on macOS <https://docs.godotengine.org/en/stable/tutorials/export/running_on_macos.html>`__.
+
+\ **Note:** On macOS, placing ``_sc_`` or any other file inside .app bundle will break digital signature and make it non-portable, consider placing it in the same folder as the .app bundle instead.
 
 \ **Note:** The Steam release of Godot uses self-contained mode by default.
 

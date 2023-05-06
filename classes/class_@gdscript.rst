@@ -133,7 +133,7 @@ Mark the following property as exported (editable in the Inspector dock and save
     @export var string = ""
     @export var int_number = 5
     @export var float_number: float = 5
-    @export var image : Image
+    @export var image: Image
 
 .. rst-class:: classref-item-separator
 
@@ -173,7 +173,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_COLOR_NO_ALPHA<class_@GlobalScope_cons
 
 ::
 
-    @export_color_no_alpha var dye_color : Color
+    @export_color_no_alpha var dye_color: Color
 
 .. rst-class:: classref-item-separator
 
@@ -465,7 +465,7 @@ See also :ref:`@GlobalScope.PROPERTY_HINT_GLOBAL_FILE<class_@GlobalScope_constan
 
 Define a new group for the following exported properties. This helps to organize properties in the Inspector dock. Groups can be added with an optional ``prefix``, which would make group to only consider properties that have this prefix. The grouping will break on the first property that doesn't have a prefix. The prefix is also removed from the property's name in the Inspector dock.
 
-If no ``prefix`` is provided, the every following property is added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for parameters, ``@export_group("", "")``.
+If no ``prefix`` is provided, then every following property will be added to the group. The group ends when then next group or category is defined. You can also force end a group by using this annotation with empty strings for parameters, ``@export_group("", "")``.
 
 Groups cannot be nested, use :ref:`@export_subgroup<class_@GDScript_annotation_@export_subgroup>` to add subgroups within groups.
 
@@ -662,6 +662,18 @@ The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter and all ar
 
 ----
 
+.. _class_@GDScript_annotation_@static_unload:
+
+.. rst-class:: classref-annotation
+
+**@static_unload** **(** **)**
+
+Make a script with static variables to not persist after all references are lost. If the script is loaded again the static variables will revert to their default values.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_@GDScript_annotation_@tool:
 
 .. rst-class:: classref-annotation
@@ -712,13 +724,15 @@ Method Descriptions
 
 :ref:`Color<class_Color>` **Color8** **(** :ref:`int<class_int>` r8, :ref:`int<class_int>` g8, :ref:`int<class_int>` b8, :ref:`int<class_int>` a8=255 **)**
 
-Returns a :ref:`Color<class_Color>` constructed from red (``r8``), green (``g8``), blue (``b8``), and optionally alpha (``a8``) integer channels, each divided by ``255.0`` for their final value.
+Returns a :ref:`Color<class_Color>` constructed from red (``r8``), green (``g8``), blue (``b8``), and optionally alpha (``a8``) integer channels, each divided by ``255.0`` for their final value. Using :ref:`Color8<class_@GDScript_method_Color8>` instead of the standard :ref:`Color<class_Color>` constructor is useful when you need to match exact color values in an :ref:`Image<class_Image>`.
 
 ::
 
     var red = Color8(255, 0, 0)             # Same as Color(1, 0, 0).
     var dark_blue = Color8(0, 0, 51)        # Same as Color(0, 0, 0.2).
     var my_color = Color8(306, 255, 0, 102) # Same as Color(1.2, 1, 0, 0.4).
+
+\ **Note:** Due to the lower precision of :ref:`Color8<class_@GDScript_method_Color8>` compared to the standard :ref:`Color<class_Color>` constructor, a color created with :ref:`Color8<class_@GDScript_method_Color8>` will generally not be equal to the same color created with the standard :ref:`Color<class_Color>` constructor. Use :ref:`Color.is_equal_approx<class_Color_method_is_equal_approx>` for comparisons to avoid issues with floating-point precision error.
 
 .. rst-class:: classref-item-separator
 
@@ -1034,8 +1048,8 @@ To iterate over an :ref:`Array<class_Array>` backwards, use:
 ::
 
     var array = [3, 6, 9]
-    for i in range(array.size(), 0, -1):
-        print(array[i - 1])
+    for i in range(array.size() - 1, -1, -1):
+        print(array[i])
 
 Output:
 

@@ -115,6 +115,8 @@ Methods
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`canvas_item_add_msdf_texture_rect_region<class_RenderingServer_method_canvas_item_add_msdf_texture_rect_region>` **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`int<class_int>` outline_size=0, :ref:`float<class_float>` px_range=1.0, :ref:`float<class_float>` scale=1.0 **)**                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                             | :ref:`canvas_item_add_multiline<class_RenderingServer_method_canvas_item_add_multiline>` **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`float<class_float>` width=-1.0 **)**                                                                                                                                                                                                                                                                                                                                                                                          |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`canvas_item_add_multimesh<class_RenderingServer_method_canvas_item_add_multimesh>` **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` mesh, :ref:`RID<class_RID>` texture **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`canvas_item_add_nine_patch<class_RenderingServer_method_canvas_item_add_nine_patch>` **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` source, :ref:`RID<class_RID>` texture, :ref:`Vector2<class_Vector2>` topleft, :ref:`Vector2<class_Vector2>` bottomright, :ref:`NinePatchAxisMode<enum_RenderingServer_NinePatchAxisMode>` x_axis_mode=0, :ref:`NinePatchAxisMode<enum_RenderingServer_NinePatchAxisMode>` y_axis_mode=0, :ref:`bool<class_bool>` draw_center=true, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1) **)**                                                                                               |
@@ -633,7 +635,7 @@ Methods
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`particles_collision_set_attractor_directionality<class_RenderingServer_method_particles_collision_set_attractor_directionality>` **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` amount **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                             | :ref:`particles_collision_set_attractor_strength<class_RenderingServer_method_particles_collision_set_attractor_strength>` **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` setrngth **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   | void                                                                             | :ref:`particles_collision_set_attractor_strength<class_RenderingServer_method_particles_collision_set_attractor_strength>` **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` strength **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`particles_collision_set_box_extents<class_RenderingServer_method_particles_collision_set_box_extents>` **(** :ref:`RID<class_RID>` particles_collision, :ref:`Vector3<class_Vector3>` extents **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -856,6 +858,8 @@ Methods
    | :ref:`float<class_float>`                                                        | :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>` **(** :ref:`RID<class_RID>` viewport **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`viewport_get_render_info<class_RenderingServer_method_viewport_get_render_info>` **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` type, :ref:`ViewportRenderInfo<enum_RenderingServer_ViewportRenderInfo>` info **)**                                                                                                                                                                                                                                                                                                                                                                                        |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`viewport_get_render_target<class_RenderingServer_method_viewport_get_render_target>` **(** :ref:`RID<class_RID>` viewport **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`viewport_get_texture<class_RenderingServer_method_viewport_get_texture>` **(** :ref:`RID<class_RID>` viewport **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2672,7 +2676,7 @@ enum **ViewportScaling3DMode**:
 
 :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_BILINEAR** = ``0``
 
-Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
+Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
 
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_FSR:
 
@@ -2680,7 +2684,7 @@ Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be 
 
 :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_FSR** = ``1``
 
-Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_MAX:
 
@@ -5312,6 +5316,8 @@ Creates a camera attributes object and adds it to the RenderingServer. It can be
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
 
+This is the internal equivalent of the :ref:`CameraAttributes<class_CameraAttributes>` resource.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -5399,6 +5405,8 @@ The exposure value can be calculated from aperture (in f-stops), shutter speed (
 Creates a camera and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``camera_*`` RenderingServer functions.
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+
+This is the internal equivalent of the :ref:`Camera3D<class_Camera3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -5510,6 +5518,8 @@ Creates a canvas and returns the assigned :ref:`RID<class_RID>`. It can be acces
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
 
+Canvas has no :ref:`Resource<class_Resource>` or :ref:`Node<class_Node>` equivalent.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -5598,6 +5608,18 @@ See also :ref:`CanvasItem.draw_msdf_texture_rect_region<class_CanvasItem_method_
 
 ----
 
+.. _class_RenderingServer_method_canvas_item_add_multiline:
+
+.. rst-class:: classref-method
+
+void **canvas_item_add_multiline** **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`float<class_float>` width=-1.0 **)**
+
+Draws a 2D multiline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`CanvasItem.draw_multiline_colors<class_CanvasItem_method_draw_multiline_colors>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_canvas_item_add_multimesh:
 
 .. rst-class:: classref-method
@@ -5652,7 +5674,7 @@ Draws a 2D polygon on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the 
 
 void **canvas_item_add_polyline** **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`float<class_float>` width=-1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws a 2D polyline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_polyline<class_CanvasItem_method_draw_polyline>`.
+Draws a 2D polyline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`CanvasItem.draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5700,9 +5722,7 @@ Sets a :ref:`Transform2D<class_Transform2D>` that will be used to transform subs
 
 void **canvas_item_add_texture_rect** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`bool<class_bool>` tile=false, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`bool<class_bool>` transpose=false **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Draws a 2D textured rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_texture_rect<class_CanvasItem_method_draw_texture_rect>` and :ref:`Texture2D.draw_rect<class_Texture2D_method_draw_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5714,9 +5734,7 @@ void **canvas_item_add_texture_rect** **(** :ref:`RID<class_RID>` item, :ref:`Re
 
 void **canvas_item_add_texture_rect_region** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`bool<class_bool>` transpose=false, :ref:`bool<class_bool>` clip_uv=true **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Draws the specified region of a 2D textured rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_texture_rect_region<class_CanvasItem_method_draw_texture_rect_region>` and :ref:`Texture2D.draw_rect_region<class_Texture2D_method_draw_rect_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5754,7 +5772,11 @@ Clears the :ref:`CanvasItem<class_CanvasItem>` and removes all commands in it.
 
 :ref:`RID<class_RID>` **canvas_item_create** **(** **)**
 
-Creates a new :ref:`CanvasItem<class_CanvasItem>` instance and returns its :ref:`RID<class_RID>`.
+Creates a canvas item and returns the assigned :ref:`RID<class_RID>`. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_item_*`` RenderingServer functions.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+
+This is the internal equivalent of the :ref:`CanvasItem<class_CanvasItem>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -5914,9 +5936,7 @@ Sets a new material to the :ref:`CanvasItem<class_CanvasItem>`.
 
 void **canvas_item_set_modulate** **(** :ref:`RID<class_RID>` item, :ref:`Color<class_Color>` color **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets a color modulation to the :ref:`CanvasItem<class_CanvasItem>`. This also affects child canvas items.
 
 .. rst-class:: classref-item-separator
 
@@ -5928,9 +5948,7 @@ void **canvas_item_set_modulate** **(** :ref:`RID<class_RID>` item, :ref:`Color<
 
 void **canvas_item_set_parent** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` parent **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets a parent :ref:`CanvasItem<class_CanvasItem>` to the :ref:`CanvasItem<class_CanvasItem>`. The item will inherit transform, modulation and visibility from its parent, like :ref:`CanvasItem<class_CanvasItem>` nodes in the scene tree.
 
 .. rst-class:: classref-item-separator
 
@@ -5942,9 +5960,7 @@ void **canvas_item_set_parent** **(** :ref:`RID<class_RID>` item, :ref:`RID<clas
 
 void **canvas_item_set_self_modulate** **(** :ref:`RID<class_RID>` item, :ref:`Color<class_Color>` color **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets a color self-modulation to the :ref:`CanvasItem<class_CanvasItem>`. It does not affect the child canvas items.
 
 .. rst-class:: classref-item-separator
 
@@ -5956,9 +5972,7 @@ void **canvas_item_set_self_modulate** **(** :ref:`RID<class_RID>` item, :ref:`C
 
 void **canvas_item_set_sort_children_by_y** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Enables or disables Y-sorting of a :ref:`CanvasItem<class_CanvasItem>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5970,9 +5984,7 @@ void **canvas_item_set_sort_children_by_y** **(** :ref:`RID<class_RID>` item, :r
 
 void **canvas_item_set_transform** **(** :ref:`RID<class_RID>` item, :ref:`Transform2D<class_Transform2D>` transform **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the transform of the :ref:`CanvasItem<class_CanvasItem>`. It affects where and how the item will be drawn. Child canvas items' transforms are multiplied by their parent's transform.
 
 .. rst-class:: classref-item-separator
 
@@ -6008,9 +6020,9 @@ Sets the rendering visibility layer associated with this :ref:`CanvasItem<class_
 
 void **canvas_item_set_visibility_notifier** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enable, :ref:`Rect2<class_Rect2>` area, :ref:`Callable<class_Callable>` enter_callable, :ref:`Callable<class_Callable>` exit_callable **)**
 
-.. container:: contribute
+Sets the given :ref:`CanvasItem<class_CanvasItem>` as visibility notifier. ``area`` defines the area of detecting visibility. ``enter_callable`` is called when the :ref:`CanvasItem<class_CanvasItem>` enters the screen, ``exit_callable`` is called when the :ref:`CanvasItem<class_CanvasItem>` exits the screen. If ``enable`` is ``false``, the item will no longer function as notifier.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+This method can be used to manually mimic :ref:`VisibleOnScreenNotifier2D<class_VisibleOnScreenNotifier2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6022,9 +6034,7 @@ void **canvas_item_set_visibility_notifier** **(** :ref:`RID<class_RID>` item, :
 
 void **canvas_item_set_visible** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` visible **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the visibility of the :ref:`CanvasItem<class_CanvasItem>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6098,7 +6108,7 @@ Attaches a light occluder to the canvas. Removes it from its previous canvas.
 
 :ref:`RID<class_RID>` **canvas_light_occluder_create** **(** **)**
 
-Creates a light occluder and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_light_ocluder_*`` RenderingServer functions.
+Creates a light occluder and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_light_occluder_*`` RenderingServer functions.
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
 
@@ -6480,9 +6490,11 @@ void **canvas_set_shadow_texture_size** **(** :ref:`int<class_int>` size **)**
 
 :ref:`RID<class_RID>` **canvas_texture_create** **(** **)**
 
-.. container:: contribute
+Creates a canvas texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_texture_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+
+This is the internal equivalent of the :ref:`CanvasTexture<class_CanvasTexture>` resource.
 
 .. rst-class:: classref-item-separator
 
@@ -6522,9 +6534,7 @@ void **canvas_texture_set_shading_parameters** **(** :ref:`RID<class_RID>` canva
 
 void **canvas_texture_set_texture_filter** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>` filter **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the texture filter used by the :ref:`CanvasTexture<class_CanvasTexture>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6536,9 +6546,7 @@ void **canvas_texture_set_texture_filter** **(** :ref:`RID<class_RID>` canvas_te
 
 void **canvas_texture_set_texture_repeat** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>` repeat **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the texture repeat used by the :ref:`CanvasTexture<class_CanvasTexture>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6564,9 +6572,11 @@ Creates a RenderingDevice that can be used to do draw and compute operations on 
 
 :ref:`RID<class_RID>` **decal_create** **(** **)**
 
-.. container:: contribute
+Creates a decal and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``decal_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+
+This is the internal equivalent of the :ref:`Decal<class_Decal>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -6648,9 +6658,7 @@ void **decal_set_fade** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_flo
 
 void **decal_set_modulate** **(** :ref:`RID<class_RID>` decal, :ref:`Color<class_Color>` color **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the color modulation of the :ref:`Decal<class_Decal>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6676,9 +6684,7 @@ void **decal_set_normal_fade** **(** :ref:`RID<class_RID>` decal, :ref:`float<cl
 
 void **decal_set_size** **(** :ref:`RID<class_RID>` decal, :ref:`Vector3<class_Vector3>` size **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the size of the :ref:`Decal<class_Decal>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6690,9 +6696,7 @@ void **decal_set_size** **(** :ref:`RID<class_RID>` decal, :ref:`Vector3<class_V
 
 void **decal_set_texture** **(** :ref:`RID<class_RID>` decal, :ref:`DecalTexture<enum_RenderingServer_DecalTexture>` type, :ref:`RID<class_RID>` texture **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the texture of the :ref:`Decal<class_Decal>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6723,6 +6727,8 @@ Creates a directional light and adds it to the RenderingServer. It can be access
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
 
 To place in a scene, attach this directional light to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+This is the internal equivalent of the :ref:`DirectionalLight3D<class_DirectionalLight3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -6779,6 +6785,8 @@ void **directional_soft_shadow_filter_set_quality** **(** :ref:`ShadowQuality<en
 Creates an environment and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``environment_*`` RenderingServer functions.
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+
+This is the internal equivalent of the :ref:`Environment<class_Environment>` resource.
 
 .. rst-class:: classref-item-separator
 
@@ -7110,7 +7118,11 @@ Sets the resolution of the volumetric fog's froxel buffer. ``size`` is modified 
 
 :ref:`RID<class_RID>` **fog_volume_create** **(** **)**
 
-Creates a new fog volume and allocates an RID.
+Creates a fog volume and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``fog_volume_*`` RenderingServer functions.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+
+This is the internal equivalent of the :ref:`FogVolume<class_FogVolume>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -7531,6 +7543,8 @@ Creates a visual instance and adds it to the RenderingServer. It can be accessed
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
 
 An instance is a way of placing a 3D object in the scenario. Objects like particles, meshes, and reflection probes need to be associated with an instance to be visible in the scenario using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>`.
+
+This is the internal equivalent of the :ref:`VisualInstance3D<class_VisualInstance3D>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -8092,7 +8106,11 @@ If ``true``, light will cast shadows. Equivalent to :ref:`Light3D.shadow_enabled
 
 :ref:`RID<class_RID>` **lightmap_create** **(** **)**
 
-Creates a new :ref:`LightmapGI<class_LightmapGI>` instance.
+Creates a lightmap GI and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``lightmap_*`` RenderingServer functions.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+
+This is the internal equivalent of the :ref:`LightmapGI<class_LightmapGI>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -8258,6 +8276,8 @@ Creates an empty material and adds it to the RenderingServer. It can be accessed
 
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
 
+This is the internal equivalent of the :ref:`Material<class_Material>` resource.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -8373,6 +8393,8 @@ Creates a new mesh and adds it to the RenderingServer. It can be accessed with t
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
 
 To place in a scene, attach this mesh to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+This is the internal equivalent of the :ref:`Mesh<class_Mesh>` resource.
 
 .. rst-class:: classref-item-separator
 
@@ -8663,6 +8685,8 @@ Creates a new multimesh on the RenderingServer and returns an :ref:`RID<class_RI
 Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
 
 To place in a scene, attach this multimesh to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+This is the internal equivalent of the :ref:`MultiMesh<class_MultiMesh>` resource.
 
 .. rst-class:: classref-item-separator
 
@@ -8968,7 +8992,7 @@ void **particles_collision_set_attractor_directionality** **(** :ref:`RID<class_
 
 .. rst-class:: classref-method
 
-void **particles_collision_set_attractor_strength** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` setrngth **)**
+void **particles_collision_set_attractor_strength** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` strength **)**
 
 .. container:: contribute
 
@@ -10458,6 +10482,18 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 .. container:: contribute
 
 	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_viewport_get_render_target:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **viewport_get_render_target** **(** :ref:`RID<class_RID>` viewport **)** |const|
+
+Returns the render target for the viewport.
 
 .. rst-class:: classref-item-separator
 

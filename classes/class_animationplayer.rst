@@ -308,7 +308,7 @@ Property Descriptions
 - void **set_assigned_animation** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_assigned_animation** **(** **)**
 
-If playing, the the current animation's key, otherwise, the animation last played. When set, this changes the animation, but will not play it unless already playing. See also :ref:`current_animation<class_AnimationPlayer_property_current_animation>`.
+If playing, the current animation's key, otherwise, the animation last played. When set, this changes the animation, but will not play it unless already playing. See also :ref:`current_animation<class_AnimationPlayer_property_current_animation>`.
 
 .. rst-class:: classref-item-separator
 

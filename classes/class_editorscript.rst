@@ -68,9 +68,9 @@ Methods
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
    | void                                          | :ref:`add_root_node<class_EditorScript_method_add_root_node>` **(** :ref:`Node<class_Node>` node **)** |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`EditorInterface<class_EditorInterface>` | :ref:`get_editor_interface<class_EditorScript_method_get_editor_interface>` **(** **)**                |
+   | :ref:`EditorInterface<class_EditorInterface>` | :ref:`get_editor_interface<class_EditorScript_method_get_editor_interface>` **(** **)** |const|        |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
-   | :ref:`Node<class_Node>`                       | :ref:`get_scene<class_EditorScript_method_get_scene>` **(** **)**                                      |
+   | :ref:`Node<class_Node>`                       | :ref:`get_scene<class_EditorScript_method_get_scene>` **(** **)** |const|                              |
    +-----------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -112,7 +112,7 @@ Adds ``node`` as a child of the root node in the editor context.
 
 .. rst-class:: classref-method
 
-:ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)**
+:ref:`EditorInterface<class_EditorInterface>` **get_editor_interface** **(** **)** |const|
 
 Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
@@ -124,7 +124,7 @@ Returns the :ref:`EditorInterface<class_EditorInterface>` singleton instance.
 
 .. rst-class:: classref-method
 
-:ref:`Node<class_Node>` **get_scene** **(** **)**
+:ref:`Node<class_Node>` **get_scene** **(** **)** |const|
 
 Returns the Editor's currently active scene.
 

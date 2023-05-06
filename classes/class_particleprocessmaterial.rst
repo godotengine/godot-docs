@@ -1755,7 +1755,9 @@ Minimum equivalent of :ref:`tangential_accel_max<class_ParticleProcessMaterial_p
 - void **set_turbulence_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_turbulence_enabled** **(** **)**
 
-Enables and disables Turbulence for the particle system.
+If ``true``, enables turbulence for the particle system. Turbulence can be used to vary particle movement according to its position (based on a 3D noise pattern). In 3D, :ref:`GPUParticlesAttractorVectorField3D<class_GPUParticlesAttractorVectorField3D>` with :ref:`NoiseTexture3D<class_NoiseTexture3D>` can be used as an alternative to turbulence that works in world space and with multiple particle systems reacting in the same way.
+
+\ **Note:** Enabling turbulence has a high performance cost on the GPU. Only enable turbulence on a few particle systems at once at most, and consider disabling it when targeting mobile/web platforms.
 
 .. rst-class:: classref-item-separator
 
@@ -1772,9 +1774,9 @@ Enables and disables Turbulence for the particle system.
 - void **set_param_max** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|
 
-Minimum turbulence influence on each particle.
+Maximum turbulence influence on each particle.
 
- The actual amount of turbulence influence on each particle is calculated as a random value between :ref:`turbulence_influence_min<class_ParticleProcessMaterial_property_turbulence_influence_min>` and :ref:`turbulence_influence_max<class_ParticleProcessMaterial_property_turbulence_influence_max>` and multiplied by the amount of turbulence influence from :ref:`turbulence_influence_over_life<class_ParticleProcessMaterial_property_turbulence_influence_over_life>`.
+The actual amount of turbulence influence on each particle is calculated as a random value between :ref:`turbulence_influence_min<class_ParticleProcessMaterial_property_turbulence_influence_min>` and :ref:`turbulence_influence_max<class_ParticleProcessMaterial_property_turbulence_influence_max>` and multiplied by the amount of turbulence influence from :ref:`turbulence_influence_over_life<class_ParticleProcessMaterial_property_turbulence_influence_over_life>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1791,7 +1793,7 @@ Minimum turbulence influence on each particle.
 - void **set_param_min** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|
 
-Maximum turbulence influence on each particle.
+Minimum turbulence influence on each particle.
 
 The actual amount of turbulence influence on each particle is calculated as a random value between :ref:`turbulence_influence_min<class_ParticleProcessMaterial_property_turbulence_influence_min>` and :ref:`turbulence_influence_max<class_ParticleProcessMaterial_property_turbulence_influence_max>` and multiplied by the amount of turbulence influence from :ref:`turbulence_influence_over_life<class_ParticleProcessMaterial_property_turbulence_influence_over_life>`.
 
@@ -1827,7 +1829,7 @@ Each particle's amount of turbulence will be influenced along this :ref:`CurveTe
 - void **set_param_max** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param_max** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|
 
-Maximum displacement of each particles spawn position by the turbulence.
+Maximum displacement of each particle's spawn position by the turbulence.
 
 The actual amount of displacement will be a factor of the underlying turbulence multiplied by a random value between :ref:`turbulence_initial_displacement_min<class_ParticleProcessMaterial_property_turbulence_initial_displacement_min>` and :ref:`turbulence_initial_displacement_max<class_ParticleProcessMaterial_property_turbulence_initial_displacement_max>`.
 
@@ -1846,7 +1848,7 @@ The actual amount of displacement will be a factor of the underlying turbulence 
 - void **set_param_min** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param, :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_param_min** **(** :ref:`Parameter<enum_ParticleProcessMaterial_Parameter>` param **)** |const|
 
-Minimum displacement of each particles spawn position by the turbulence.
+Minimum displacement of each particle's spawn position by the turbulence.
 
 The actual amount of displacement will be a factor of the underlying turbulence multiplied by a random value between :ref:`turbulence_initial_displacement_min<class_ParticleProcessMaterial_property_turbulence_initial_displacement_min>` and :ref:`turbulence_initial_displacement_max<class_ParticleProcessMaterial_property_turbulence_initial_displacement_max>`.
 
@@ -1903,7 +1905,7 @@ A value of ``Vector3(0.0, 0.0, 0.0)`` will freeze the turbulence pattern in plac
 - void **set_turbulence_noise_speed_random** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_turbulence_noise_speed_random** **(** **)**
 
-Use to influence the noise speed in a random pattern. This helps to break up visible movement patterns.
+Use to influence the noise speed in a random pattern. This helps break up visible movement patterns.
 
 .. rst-class:: classref-item-separator
 
@@ -1920,7 +1922,7 @@ Use to influence the noise speed in a random pattern. This helps to break up vis
 - void **set_turbulence_noise_strength** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_turbulence_noise_strength** **(** **)**
 
-The turbulence noise strength. Increasing this will result in a stronger, more contrasting, noise pattern.
+The turbulence noise strength. Increasing this will result in a stronger, more contrasting noise pattern.
 
 .. rst-class:: classref-section-separator
 

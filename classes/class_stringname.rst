@@ -76,6 +76,8 @@ Methods
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`ends_with<class_StringName_method_ends_with>` **(** :ref:`String<class_String>` text **)** |const|                                                                               |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`erase<class_StringName_method_erase>` **(** :ref:`int<class_int>` position, :ref:`int<class_int>` chars=1 **)** |const|                                                          |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`find<class_StringName_method_find>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)** |const|                                                           |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`findn<class_StringName_method_findn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=0 **)** |const|                                                         |
@@ -97,6 +99,8 @@ Methods
    | :ref:`String<class_String>`                         | :ref:`get_slicec<class_StringName_method_get_slicec>` **(** :ref:`int<class_int>` delimiter, :ref:`int<class_int>` slice **)** |const|                                                 |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`hash<class_StringName_method_hash>` **(** **)** |const|                                                                                                                          |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`hex_decode<class_StringName_method_hex_decode>` **(** **)** |const|                                                                                                              |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`hex_to_int<class_StringName_method_hex_to_int>` **(** **)** |const|                                                                                                              |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -219,6 +223,8 @@ Methods
    | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_utf32_buffer<class_StringName_method_to_utf32_buffer>` **(** **)** |const|                                                                                                    |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_utf8_buffer<class_StringName_method_to_utf8_buffer>` **(** **)** |const|                                                                                                      |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedByteArray<class_PackedByteArray>`       | :ref:`to_wchar_buffer<class_StringName_method_to_wchar_buffer>` **(** **)** |const|                                                                                                    |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`trim_prefix<class_StringName_method_trim_prefix>` **(** :ref:`String<class_String>` prefix **)** |const|                                                                         |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -523,6 +529,18 @@ Returns ``true`` if the string ends with the given ``text``. See also :ref:`begi
 
 ----
 
+.. _class_StringName_method_erase:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **erase** **(** :ref:`int<class_int>` position, :ref:`int<class_int>` chars=1 **)** |const|
+
+Returns a string with ``chars`` characters erased starting from ``position``. If ``chars`` goes beyond the string's length given the specified ``position``, fewer characters will be erased from the returned string. Returns an empty string if either ``position`` or ``chars`` is negative. Returns the original string unmodified if ``chars`` is ``0``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_StringName_method_find:
 
 .. rst-class:: classref-method
@@ -732,6 +750,35 @@ This is faster than :ref:`split<class_StringName_method_split>`, if you only nee
 Returns the 32-bit hash value representing the string's contents.
 
 \ **Note:** Strings with equal hash values are *not* guaranteed to be the same, as a result of hash collisions. On the countrary, strings with different hash values are guaranteed to be different.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_hex_decode:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **hex_decode** **(** **)** |const|
+
+Decodes a hexadecimal string as a :ref:`PackedByteArray<class_PackedByteArray>`.
+
+
+.. tabs::
+
+ .. code-tab:: gdscript
+
+    var text = "hello world"
+    var encoded = text.to_utf8_buffer().hex_encode() # outputs "68656c6c6f20776f726c64"
+    print(buf.hex_decode().get_string_from_utf8())
+
+ .. code-tab:: csharp
+
+    var text = "hello world";
+    var encoded = text.ToUtf8Buffer().HexEncode(); # outputs "68656c6c6f20776f726c64"
+    GD.Print(buf.HexDecode().GetStringFromUtf8());
+
+
 
 .. rst-class:: classref-item-separator
 
@@ -1664,6 +1711,18 @@ Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encod
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf8_buffer** **(** **)** |const|
 
 Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly slower than :ref:`to_ascii_buffer<class_StringName_method_to_ascii_buffer>`, but supports all UTF-8 characters. For most cases, prefer using this method.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StringName_method_to_wchar_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`PackedByteArray<class_PackedByteArray>` **to_wchar_buffer** **(** **)** |const|
+
+Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_character>`__ (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded :ref:`PackedByteArray<class_PackedByteArray>`.
 
 .. rst-class:: classref-item-separator
 

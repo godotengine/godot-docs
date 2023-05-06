@@ -276,7 +276,7 @@ Constructs a **Vector4i** as a copy of the given **Vector4i**.
 
 :ref:`Vector4i<class_Vector4i>` **Vector4i** **(** :ref:`Vector4<class_Vector4>` from **)**
 
-Constructs a new **Vector4i** from the given :ref:`Vector4<class_Vector4>`.
+Constructs a new **Vector4i** from the given :ref:`Vector4<class_Vector4>` by truncating components' fractional parts (rounding towards zero). For a different behavior consider passing the result of :ref:`Vector4.ceil<class_Vector4_method_ceil>`, :ref:`Vector4.floor<class_Vector4_method_floor>` or :ref:`Vector4.round<class_Vector4_method_round>` to this constructor instead.
 
 .. rst-class:: classref-item-separator
 
@@ -339,7 +339,9 @@ Returns the length (magnitude) of this vector.
 
 :ref:`int<class_int>` **length_squared** **(** **)** |const|
 
-Returns the squared length (squared magnitude) of this vector. This method runs faster than :ref:`length<class_Vector4i_method_length>`.
+Returns the squared length (squared magnitude) of this vector.
+
+This method runs faster than :ref:`length<class_Vector4i_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 .. rst-class:: classref-item-separator
 

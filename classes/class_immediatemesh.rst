@@ -19,7 +19,35 @@ Mesh optimized for creating geometry manually.
 Description
 -----------
 
-Mesh optimized for creating geometry manually, similar to OpenGL1.x immediate mode.
+A mesh type optimized for creating geometry manually, similar to OpenGL 1.x immediate mode.
+
+Here's a sample on how to generate a triangular face:
+
+
+.. tabs::
+
+var mesh = ImmediateMesh.new()
+
+mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES)
+
+mesh.surface_add_vertex(Vector3.LEFT)
+
+mesh.surface_add_vertex(Vector3.FORWARD)
+
+mesh.surface_add_vertex(Vector3.ZERO)
+
+mesh.surface_end()
+
+
+
+\ **Note:** Generating complex geometries with **ImmediateMesh** is highly inefficient. Instead, it is designed to generate simple geometry that changes often.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using ImmediateMesh <../tutorials/3d/procedural_geometry/immediatemesh>`
 
 .. rst-class:: classref-reftable-group
 

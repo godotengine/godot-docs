@@ -92,7 +92,7 @@ Method Descriptions
 
 void **fetch_physical_bones** **(** **)**
 
-Empties the list of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes and populates it will all :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes that are children of the :ref:`Skeleton2D<class_Skeleton2D>`.
+Empties the list of :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes and populates it with all :ref:`PhysicalBone2D<class_PhysicalBone2D>` nodes that are children of the :ref:`Skeleton2D<class_Skeleton2D>`.
 
 .. rst-class:: classref-item-separator
 

@@ -198,7 +198,7 @@ enum **RotationEditMode**:
 
 :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **ROTATION_EDIT_MODE_EULER** = ``0``
 
-
+The rotation is edited using :ref:`Vector3<class_Vector3>` Euler angles.
 
 .. _class_Node3D_constant_ROTATION_EDIT_MODE_QUATERNION:
 
@@ -206,7 +206,7 @@ enum **RotationEditMode**:
 
 :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **ROTATION_EDIT_MODE_QUATERNION** = ``1``
 
-
+The rotation is edited using a :ref:`Quaternion<class_Quaternion>`.
 
 .. _class_Node3D_constant_ROTATION_EDIT_MODE_BASIS:
 
@@ -214,7 +214,7 @@ enum **RotationEditMode**:
 
 :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **ROTATION_EDIT_MODE_BASIS** = ``2``
 
-
+The rotation is edited using a :ref:`Basis<class_Basis>`. In this mode, :ref:`scale<class_Node3D_property_scale>` can't be edited separately.
 
 .. rst-class:: classref-section-separator
 

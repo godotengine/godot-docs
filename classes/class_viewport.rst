@@ -334,7 +334,7 @@ enum **Scaling3DMode**:
 
 :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_BILINEAR** = ``0``
 
-Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
+Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
 
 .. _class_Viewport_constant_SCALING_3D_MODE_FSR:
 
@@ -342,7 +342,7 @@ Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be 
 
 :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_FSR** = ``1``
 
-Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
 .. _class_Viewport_constant_SCALING_3D_MODE_MAX:
 
@@ -1199,7 +1199,7 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 - void **set_handle_input_locally** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_handling_input_locally** **(** **)**
 
-If ``true``, this viewport will mark incoming input events as handled by itself. If ``false``, this is instead done by the the first parent viewport that is set to handle input locally.
+If ``true``, this viewport will mark incoming input events as handled by itself. If ``false``, this is instead done by the first parent viewport that is set to handle input locally.
 
 A :ref:`SubViewportContainer<class_SubViewportContainer>` will automatically set this property to ``false`` for the **Viewport** contained inside of it.
 
@@ -1860,9 +1860,7 @@ Returns the :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalSh
 
 :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` type, :ref:`RenderInfo<enum_Viewport_RenderInfo>` info **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns rendering statistics of the given type. See :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` and :ref:`RenderInfo<enum_Viewport_RenderInfo>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -2032,9 +2030,7 @@ If an earlier method marks the input as handled via :ref:`set_input_as_handled<c
 
 void **push_text_input** **(** :ref:`String<class_String>` text **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Helper method which calls the ``set_text()`` method on the currently focused :ref:`Control<class_Control>`, provided that it is defined (e.g. if the focused Control is :ref:`Button<class_Button>` or :ref:`LineEdit<class_LineEdit>`).
 
 .. rst-class:: classref-item-separator
 

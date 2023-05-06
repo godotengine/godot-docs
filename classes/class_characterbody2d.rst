@@ -87,6 +87,8 @@ Methods
    :widths: auto
 
    +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                    | :ref:`apply_floor_snap<class_CharacterBody2D_method_apply_floor_snap>` **(** **)**                                                                 |
+   +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                               | :ref:`get_floor_angle<class_CharacterBody2D_method_get_floor_angle>` **(** :ref:`Vector2<class_Vector2>` up_direction=Vector2(0, -1) **)** |const| |
    +---------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>`                           | :ref:`get_floor_normal<class_CharacterBody2D_method_get_floor_normal>` **(** **)** |const|                                                         |
@@ -262,7 +264,7 @@ Maximum angle (in radians) where a slope is still considered a floor (or a ceili
 
 Sets a snapping distance. When set to a value different from ``0.0``, the body is kept attached to slopes when calling :ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>`. The snapping vector is determined by the given distance along the opposite direction of the :ref:`up_direction<class_CharacterBody2D_property_up_direction>`.
 
-As long as the snapping vector is in contact with the ground and the body moves against :ref:`up_direction<class_CharacterBody2D_property_up_direction>`, the body will remain attached to the surface. Snapping is not applied if the body moves along :ref:`up_direction<class_CharacterBody2D_property_up_direction>`, so it will be able to detach from the ground when jumping.
+As long as the snapping vector is in contact with the ground and the body moves against :ref:`up_direction<class_CharacterBody2D_property_up_direction>`, the body will remain attached to the surface. Snapping is not applied if the body moves along :ref:`up_direction<class_CharacterBody2D_property_up_direction>`, meaning it contains vertical rising velocity, so it will be able to detach from the ground when jumping or when the body is pushed up by something. If you want to apply a snap without taking into account the velocity, use :ref:`apply_floor_snap<class_CharacterBody2D_method_apply_floor_snap>`.
 
 .. rst-class:: classref-item-separator
 
@@ -468,6 +470,18 @@ Minimum angle (in radians) where the body is allowed to slide when it encounters
 Method Descriptions
 -------------------
 
+.. _class_CharacterBody2D_method_apply_floor_snap:
+
+.. rst-class:: classref-method
+
+void **apply_floor_snap** **(** **)**
+
+Allows to manually apply a snap to the floor regardless of the body's velocity. This function does nothing when :ref:`is_on_floor<class_CharacterBody2D_method_is_on_floor>` returns ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_CharacterBody2D_method_get_floor_angle:
 
 .. rst-class:: classref-method
@@ -568,8 +582,8 @@ Returns a :ref:`KinematicCollision2D<class_KinematicCollision2D>`, which contain
  .. code-tab:: gdscript
 
     for i in get_slide_collision_count():
-    var collision = get_slide_collision(i)
-    print("Collided with: ", collision.collider.name)
+        var collision = get_slide_collision(i)
+        print("Collided with: ", collision.get_collider().name)
 
  .. code-tab:: csharp
 

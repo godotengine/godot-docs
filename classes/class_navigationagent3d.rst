@@ -38,43 +38,47 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`agent_height_offset<class_NavigationAgent3D_property_agent_height_offset>`                   | ``0.0``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                                          | :ref:`avoidance_enabled<class_NavigationAgent3D_property_avoidance_enabled>`                       | ``false``             |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                                          | :ref:`debug_enabled<class_NavigationAgent3D_property_debug_enabled>`                               | ``false``             |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Color<class_Color>`                                                        | :ref:`debug_path_custom_color<class_NavigationAgent3D_property_debug_path_custom_color>`           | ``Color(1, 1, 1, 1)`` |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`debug_path_custom_point_size<class_NavigationAgent3D_property_debug_path_custom_point_size>` | ``4.0``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                                          | :ref:`debug_use_custom<class_NavigationAgent3D_property_debug_use_custom>`                         | ``false``             |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`bool<class_bool>`                                                          | :ref:`ignore_y<class_NavigationAgent3D_property_ignore_y>`                                         | ``true``              |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                                                            | :ref:`max_neighbors<class_NavigationAgent3D_property_max_neighbors>`                               | ``10``                |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`max_speed<class_NavigationAgent3D_property_max_speed>`                                       | ``10.0``              |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`int<class_int>`                                                            | :ref:`navigation_layers<class_NavigationAgent3D_property_navigation_layers>`                       | ``1``                 |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`neighbor_distance<class_NavigationAgent3D_property_neighbor_distance>`                       | ``50.0``              |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`path_desired_distance<class_NavigationAgent3D_property_path_desired_distance>`               | ``1.0``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`path_max_distance<class_NavigationAgent3D_property_path_max_distance>`                       | ``5.0``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` | :ref:`path_metadata_flags<class_NavigationAgent3D_property_path_metadata_flags>`                   | ``7``                 |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`radius<class_NavigationAgent3D_property_radius>`                                             | ``0.5``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`target_desired_distance<class_NavigationAgent3D_property_target_desired_distance>`           | ``1.0``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`Vector3<class_Vector3>`                                                    | :ref:`target_position<class_NavigationAgent3D_property_target_position>`                           | ``Vector3(0, 0, 0)``  |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                                                        | :ref:`time_horizon<class_NavigationAgent3D_property_time_horizon>`                                 | ``1.0``               |
-   +----------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`agent_height_offset<class_NavigationAgent3D_property_agent_height_offset>`                   | ``0.0``               |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                                                | :ref:`avoidance_enabled<class_NavigationAgent3D_property_avoidance_enabled>`                       | ``false``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                                                | :ref:`debug_enabled<class_NavigationAgent3D_property_debug_enabled>`                               | ``false``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Color<class_Color>`                                                              | :ref:`debug_path_custom_color<class_NavigationAgent3D_property_debug_path_custom_color>`           | ``Color(1, 1, 1, 1)`` |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`debug_path_custom_point_size<class_NavigationAgent3D_property_debug_path_custom_point_size>` | ``4.0``               |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                                                | :ref:`debug_use_custom<class_NavigationAgent3D_property_debug_use_custom>`                         | ``false``             |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`bool<class_bool>`                                                                | :ref:`ignore_y<class_NavigationAgent3D_property_ignore_y>`                                         | ``true``              |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                                                  | :ref:`max_neighbors<class_NavigationAgent3D_property_max_neighbors>`                               | ``10``                |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`max_speed<class_NavigationAgent3D_property_max_speed>`                                       | ``10.0``              |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`int<class_int>`                                                                  | :ref:`navigation_layers<class_NavigationAgent3D_property_navigation_layers>`                       | ``1``                 |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`neighbor_distance<class_NavigationAgent3D_property_neighbor_distance>`                       | ``50.0``              |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`path_desired_distance<class_NavigationAgent3D_property_path_desired_distance>`               | ``1.0``               |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`path_max_distance<class_NavigationAgent3D_property_path_max_distance>`                       | ``5.0``               |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>`       | :ref:`path_metadata_flags<class_NavigationAgent3D_property_path_metadata_flags>`                   | ``7``                 |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>`     | :ref:`path_postprocessing<class_NavigationAgent3D_property_path_postprocessing>`                   | ``0``                 |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` | :ref:`pathfinding_algorithm<class_NavigationAgent3D_property_pathfinding_algorithm>`               | ``0``                 |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`radius<class_NavigationAgent3D_property_radius>`                                             | ``0.5``               |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`target_desired_distance<class_NavigationAgent3D_property_target_desired_distance>`           | ``1.0``               |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`Vector3<class_Vector3>`                                                          | :ref:`target_position<class_NavigationAgent3D_property_target_position>`                           | ``Vector3(0, 0, 0)``  |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
+   | :ref:`float<class_float>`                                                              | :ref:`time_horizon<class_NavigationAgent3D_property_time_horizon>`                                 | ``1.0``               |
+   +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -193,7 +197,7 @@ Notifies when the player-defined :ref:`target_position<class_NavigationAgent3D_p
 
 **velocity_computed** **(** :ref:`Vector3<class_Vector3>` safe_velocity **)**
 
-Notifies when the collision avoidance velocity is calculated. Emitted by :ref:`set_velocity<class_NavigationAgent3D_method_set_velocity>`. Only emitted when :ref:`avoidance_enabled<class_NavigationAgent3D_property_avoidance_enabled>` is true.
+Notifies when the collision avoidance velocity is calculated. Emitted at the end of the physics frame in which :ref:`set_velocity<class_NavigationAgent3D_method_set_velocity>` is called. Only emitted when :ref:`avoidance_enabled<class_NavigationAgent3D_property_avoidance_enabled>` is true.
 
 .. rst-class:: classref-item-separator
 
@@ -390,7 +394,7 @@ The maximum speed that an agent can move.
 - void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_navigation_layers** **(** **)**
 
-A bitfield determining what navigation layers of navigation regions this NavigationAgent will use to calculate path. Changing it runtime will clear current navigation path and generate new one, according to new navigation layers.
+A bitfield determining what navigation layers of navigation regions this agent will use to calculate path. Changing it runtime will clear current navigation path and generate new one, according to new navigation layers.
 
 .. rst-class:: classref-item-separator
 
@@ -459,6 +463,40 @@ The maximum distance the agent is allowed away from the ideal path to the final 
 - :ref:`PathMetadataFlags<enum_NavigationPathQueryParameters3D_PathMetadataFlags>` **get_path_metadata_flags** **(** **)**
 
 Additional information to return with the navigation path.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationAgent3D_property_path_postprocessing:
+
+.. rst-class:: classref-property
+
+:ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **path_postprocessing** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_path_postprocessing** **(** :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` value **)**
+- :ref:`PathPostProcessing<enum_NavigationPathQueryParameters3D_PathPostProcessing>` **get_path_postprocessing** **(** **)**
+
+The path postprocessing applied to the raw path corridor found by the :ref:`pathfinding_algorithm<class_NavigationAgent3D_property_pathfinding_algorithm>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationAgent3D_property_pathfinding_algorithm:
+
+.. rst-class:: classref-property
+
+:ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` **pathfinding_algorithm** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_pathfinding_algorithm** **(** :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` value **)**
+- :ref:`PathfindingAlgorithm<enum_NavigationPathQueryParameters3D_PathfindingAlgorithm>` **get_pathfinding_algorithm** **(** **)**
+
+The pathfinding algorithm used in the path query.
 
 .. rst-class:: classref-item-separator
 

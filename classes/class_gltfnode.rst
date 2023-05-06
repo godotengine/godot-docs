@@ -21,6 +21,8 @@ Description
 
 Represents a GLTF node. GLTF nodes may have names, transforms, children (other GLTF nodes), and more specialized properties (represented by their own classes).
 
+GLTF nodes generally exist inside of :ref:`GLTFState<class_GLTFState>` which represents all data of a GLTF file. Most of GLTFNode's properties are indices of other data in the GLTF file. You can extend a GLTF node with additional properties by using :ref:`get_additional_data<class_GLTFNode_method_get_additional_data>` and :ref:`set_additional_data<class_GLTFNode_method_set_additional_data>`.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -96,9 +98,7 @@ Property Descriptions
 - void **set_camera** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_camera** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If this GLTF node is a camera, the index of the :ref:`GLTFCamera<class_GLTFCamera>` in the :ref:`GLTFState<class_GLTFState>` that describes the camera's properties. If -1, this node is not a camera.
 
 .. rst-class:: classref-item-separator
 
@@ -115,9 +115,7 @@ Property Descriptions
 - void **set_children** **(** :ref:`PackedInt32Array<class_PackedInt32Array>` value **)**
 - :ref:`PackedInt32Array<class_PackedInt32Array>` **get_children** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The indices of the children nodes in the :ref:`GLTFState<class_GLTFState>`. If this GLTF node has no children, this will be an empty array.
 
 .. rst-class:: classref-item-separator
 
@@ -134,9 +132,7 @@ Property Descriptions
 - void **set_height** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_height** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+How deep into the node hierarchy this node is. A root node will have a height of 0, its children will have a height of 1, and so on. If -1, the height has not been calculated.
 
 .. rst-class:: classref-item-separator
 
@@ -153,9 +149,7 @@ Property Descriptions
 - void **set_light** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_light** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If this GLTF node is a light, the index of the :ref:`GLTFLight<class_GLTFLight>` in the :ref:`GLTFState<class_GLTFState>` that describes the light's properties. If -1, this node is not a light.
 
 .. rst-class:: classref-item-separator
 
@@ -172,9 +166,7 @@ Property Descriptions
 - void **set_mesh** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_mesh** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If this GLTF node is a mesh, the index of the :ref:`GLTFMesh<class_GLTFMesh>` in the :ref:`GLTFState<class_GLTFState>` that describes the mesh's properties. If -1, this node is not a mesh.
 
 .. rst-class:: classref-item-separator
 
@@ -191,9 +183,7 @@ Property Descriptions
 - void **set_parent** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_parent** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The index of the parent node in the :ref:`GLTFState<class_GLTFState>`. If -1, this node is a root node.
 
 .. rst-class:: classref-item-separator
 
@@ -210,9 +200,7 @@ Property Descriptions
 - void **set_position** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_position** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The position of the GLTF node relative to its parent.
 
 .. rst-class:: classref-item-separator
 
@@ -229,9 +217,7 @@ Property Descriptions
 - void **set_rotation** **(** :ref:`Quaternion<class_Quaternion>` value **)**
 - :ref:`Quaternion<class_Quaternion>` **get_rotation** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The rotation of the GLTF node relative to its parent.
 
 .. rst-class:: classref-item-separator
 
@@ -248,9 +234,7 @@ Property Descriptions
 - void **set_scale** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_scale** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The scale of the GLTF node relative to its parent.
 
 .. rst-class:: classref-item-separator
 
@@ -267,9 +251,7 @@ Property Descriptions
 - void **set_skeleton** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_skeleton** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If this GLTF node has a skeleton, the index of the :ref:`GLTFSkeleton<class_GLTFSkeleton>` in the :ref:`GLTFState<class_GLTFState>` that describes the skeleton's properties. If -1, this node does not have a skeleton.
 
 .. rst-class:: classref-item-separator
 
@@ -286,9 +268,7 @@ Property Descriptions
 - void **set_skin** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_skin** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If this GLTF node has a skin, the index of the :ref:`GLTFSkin<class_GLTFSkin>` in the :ref:`GLTFState<class_GLTFState>` that describes the skin's properties. If -1, this node does not have a skin.
 
 .. rst-class:: classref-item-separator
 
@@ -305,9 +285,7 @@ Property Descriptions
 - void **set_xform** **(** :ref:`Transform3D<class_Transform3D>` value **)**
 - :ref:`Transform3D<class_Transform3D>` **get_xform** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The transform of the GLTF node relative to its parent. This property is usually unused since the position, rotation, and scale properties are preferred.
 
 .. rst-class:: classref-section-separator
 
