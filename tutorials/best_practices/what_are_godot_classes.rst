@@ -54,8 +54,8 @@ The behavior of scenes has many similarities to classes, so it can make sense to
 a class. Scenes are reusable, instantiable, and inheritable groups of nodes. Creating a scene is
 similar to having a script that creates nodes and adds them as children using ``add_child()``.
 
-We often pair a scene with a scripted root node that makes use of the scene's nodes. As such, the
-scene is often an extension of the script's declarative code.
+We often pair a scene with a scripted root node that makes use of the scene's nodes. As such, 
+the script extends the scene by adding behavior through imperative code.
 
 The content of a scene helps to define:
 
