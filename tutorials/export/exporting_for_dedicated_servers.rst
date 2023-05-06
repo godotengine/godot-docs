@@ -11,7 +11,7 @@ have a GPU or display server available, you'll need to use a server build of God
 Platform support
 ----------------
 
-- **Linux:** `Download an official Linux server binary <https://godotengine.org/download/server>`__.
+- **Linux:** `Download an official Linux server binary <https://godotengine.org/download/3.x/server>`__.
   To compile a server binary from source, follow instructions in
   :ref:`doc_compiling_for_linuxbsd`.
 - **macOS:** :ref:`Compile a server binary from source for macOS <doc_compiling_for_macos>`.
