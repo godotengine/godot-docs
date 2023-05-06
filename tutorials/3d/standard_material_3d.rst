@@ -30,7 +30,7 @@ the mesh.
 The *Material Overlay* property will render a material **over** the current one being used by
 the mesh. As an example, this can be used to put a transparent shield effect on a mesh.
 
-BaseMaterial 3D Settings
+BaseMaterial 3D settings
 ------------------------
 
 StandardMaterial3D has many settings that determine the look of a material. All of these are
@@ -372,12 +372,34 @@ such as plant leaves, grass, human ears, etc.
 Refraction
 ----------
 
-
 When refraction is enabled, it supersedes alpha blending, and Godot attempts to
 fetch information from behind the object being rendered instead. This allows
 distorting the transparency in a way similar to refraction in real life.
 
+Remember to use a transparent albedo texture (or reduce the albedo color's alpha
+channel) to make refraction visible, as refraction relies on transparency to
+have a visible effect.
+
+A normal map can optionally be specified in the **Refraction Texture** property
+to allow distorting the refraction's direction on a per-pixel basis.
+
 .. image:: img/spatial_material23.png
+
+.. note::
+
+    Refraction is implemented as a screen-space effect and forces the material
+    to be transparent. This makes the effect relatively fast, but this results
+    in some limitations:
+
+    - :ref:`Transparency sorting <doc_3d_rendering_limitations_transparency_sorting>`
+      issues may occur.
+    - The refractive material cannot refract onto itself, or onto other
+      refractive materials. A refractive material behind another refractive
+      material will be invisible.
+    - Off-screen objects cannot appear in the refraction. This is most
+      noticeable with high refraction strength values.
+    - Opaque materials in front of the refractive material will appear to have
+      "refracted" edges, even though they shouldn't.
 
 Detail
 ------
