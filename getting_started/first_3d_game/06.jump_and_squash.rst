@@ -233,7 +233,7 @@ With this code, if no collisions occurred on a given frame, the loop won't run.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-   func _physics_process(delta):
+    func _physics_process(delta):
        #...
 
        # Iterate through all collisions that occurred this frame
