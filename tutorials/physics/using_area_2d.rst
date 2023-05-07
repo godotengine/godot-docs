@@ -59,7 +59,7 @@ Here's the node setup for the coin:
 
 .. image:: img/area2d_coin_nodes.png
 
-To detect the overlap, we'll connect the appropriate signal on the Area2d. Which
+To detect the overlap, we'll connect the appropriate signal on the Area2D. Which
 signal to use depends on the player's node type. If the player is another area,
 use ``area_entered``. However, let's assume our player is a ``CharacterBody2D``
 (and therefore a ``CollisionObject2D`` type), so we'll connect the
