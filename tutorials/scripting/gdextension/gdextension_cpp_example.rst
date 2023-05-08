@@ -442,7 +442,7 @@ show the methods we end up changing, don't remove the lines we're omitting:
         ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
     }
 
-    void GDExample::GDExample() {
+    GDExample::GDExample() {
         // Initialize any variables here.
         time_passed = 0.0;
         amplitude = 10.0;
