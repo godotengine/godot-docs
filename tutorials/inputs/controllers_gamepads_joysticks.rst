@@ -57,8 +57,10 @@ There are 3 ways to get input in an analog-aware way:
     # The line below is similar to `get_vector()`, except that it handles
     # the deadzone in a less optimal way. The resulting deadzone will have
     # a square-ish shape when it should ideally have a circular shape.
-    var velocity = Vector2(Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")).clamped(1)
+    var velocity = Vector2(
+         Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
+         Input.get_action_strength("move_back") - Input.get_action_strength("move_forward")
+   ).clamped(1.0)
 
  .. code-tab:: csharp
 
@@ -70,8 +72,10 @@ There are 3 ways to get input in an analog-aware way:
     // The line below is similar to `get_vector()`, except that it handles
     // the deadzone in a less optimal way. The resulting deadzone will have
     // a square-ish shape when it should ideally have a circular shape.
-    Vector2 velocity = new Vector2(Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left"),
-		Input.GetActionStrength("move_back") - Input.GetActionStrength("move_forward")).Clamped(1);
+    Vector2 velocity = new Vector2(
+         Input.GetActionStrength("move_right") - Input.GetActionStrength("move_left"),
+         Input.GetActionStrength("move_back") - Input.GetActionStrength("move_forward")
+   ).Clamped(1.0);
 
 - When you have one axis that can go both ways (such as a throttle on a
   flight stick), or when you want to handle separate axes individually,
@@ -175,6 +179,71 @@ If you want controller buttons to send echo events, you will have to generate
 :ref:`Input.parse_input_event() <class_Input_method_parse_input_event>`
 at regular intervals. This can be accomplished
 with the help of a :ref:`class_Timer` node.
+
+Window focus
+^^^^^^^^^^^^
+
+Unlike keyboard input, controller inputs can be seen by **all** windows on the
+operating system, including unfocused windows.
+
+While this is useful for
+`third-party split screen functionality <https://nucleus-coop.github.io/>`__,
+it can also have adverse effects. Players may accidentally send controller inputs
+to the running project while interacting with another window.
+
+If you wish to ignore events when the project window isn't focused, you will
+need to create an :ref:`autoload <doc_singletons_autoload>` called ``Focus``
+with the following script and use it to check all your inputs:
+
+::
+
+    # Focus.gd
+    extends Node
+
+    var focused := true
+
+    func _notification(what: int) -> void:
+        match what:
+            NOTIFICATION_WM_FOCUS_OUT:
+                focused = false
+            NOTIFICATION_WM_FOCUS_IN:
+                focused = true
+
+
+    func input_is_action_pressed(action: String) -> bool:
+        if focused:
+            return Input.is_action_pressed(action)
+
+        return false
+
+
+    func event_is_action_pressed(event: InputEvent, action: String) -> bool:
+        if focused:
+            return Input.is_action_pressed(action)
+
+        return false
+
+Then, instead of using ``Input.is_action_pressed(action)``, use
+``Focus.input_is_action_pressed(action)`` where ``action`` is the name of
+the input action. Also, instead of using ``event.is_action_pressed(action)``,
+use ``Focus.event_is_action_pressed(event, action)`` where ``event`` is an
+InputEvent reference and ``action`` is the name of the input action.
+
+Power saving prevention
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Unlike keyboard and mouse input, controller inputs do **not** inhibit sleep and
+power saving measures (such as turning off the screen after a certain amount of
+time has passed).
+
+To combat this, Godot enables power saving prevention by default when a project
+is running. If you notice the system is turning off its display when playing
+with a gamepad, check the value of **Display > Window > Energy Saving > Keep Screen On**
+in the Project Settings.
+
+Power saving prevention is **not** supported on Linux in Godot 3.x, but it is
+supported in Godot 4.x. As a workaround, increase the screensaver's timeout
+period to make it less likely to occur during gameplay.
 
 Troubleshooting
 ---------------
