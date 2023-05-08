@@ -394,7 +394,7 @@ to allow distorting the refraction's direction on a per-pixel basis.
     - :ref:`Transparency sorting <doc_3d_rendering_limitations_transparency_sorting>`
       issues may occur.
     - The refractive material cannot refract onto itself, or onto other
-      refractive materials. A refractive material behind another refractive
+      transparent materials. A refractive material behind another transparent
       material will be invisible.
     - Off-screen objects cannot appear in the refraction. This is most
       noticeable with high refraction strength values.
