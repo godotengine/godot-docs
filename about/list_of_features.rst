@@ -181,7 +181,7 @@ Editor
 - Dithering can be determined on a per-pixel or per-object basis.
 - *GLES3:* Parallax/relief mapping with automatic level of detail based on distance.
 - *GLES3:* Sub-surface scattering and transmittance.
-- *GLES3:* Refraction with support for material roughness (resulting in blurry refraction).
+- *GLES3:* Screen-space refraction with support for material roughness (resulting in blurry refraction).
   On GLES2, refraction is still functional but lacks support for material roughness.
 - *GLES3:* Proximity fade (soft particles).
 
