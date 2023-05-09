@@ -70,10 +70,6 @@ The ``move_and_slide()`` method is intended to simplify the collision
 response in the common case where you want one body to slide along the other.
 It is especially useful in platformers or top-down games, for example.
 
-.. tip:: ``move_and_slide()`` automatically calculates frame-based movement
-         using ``delta``. Do *not* multiply your velocity vector by ``delta``
-         before passing it to ``move_and_slide()``.
-
 When calling ``move_and_slide()``, the function uses a number of node properties
 to calculate its slide behavior. These properties can be found in the Inspector,
 or set in code.
