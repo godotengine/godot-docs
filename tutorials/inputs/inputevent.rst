@@ -61,19 +61,19 @@ How does it work?
 
 Every input event is originated from the user/player (though it's
 possible to generate an InputEvent and feed them back to the engine,
-which is useful for gestures). The OS object for each platform will read
-events from the device, then feed them to the :ref:`Window <class_Window>`.
+which is useful for gestures). The DisplayServer for each platform will read
+events from the operating system, then feed them to the root :ref:`Window <class_Window>`.
 
 The window's :ref:`Viewport <class_Viewport>` does quite a lot of stuff with the
 received input, in order:
 
-.. image:: img/input_event_flow.png
+.. image:: img/input_event_flow.webp
 
 1. If the Viewport is embedding Windows, the Viewport tries to interpret the event in its
    capability as a Window-Manager (e.g. for resizing or moving Windows).
 2. Next if an embedded Window is focused, the event is sent to that Window and processed in
-   the Windows Viewport. If no embedded Window is focused, The Event is sent to the nodes of
-   the current viewport in the following order.
+   the Windows Viewport and afterwards treated as handled. If no embedded Window is focused,
+   the event is sent to the nodes of the current viewport in the following order.
 3. First of all, the standard :ref:`Node._input() <class_Node_method__input>` function
    will be called in any node that overrides it (and hasn't disabled input processing with :ref:`Node.set_process_input() <class_Node_method_set_process_input>`).
    If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the event will
@@ -96,17 +96,17 @@ received input, in order:
    :ref:`InputEventShortcut <class_InputEventShortcut>` and :ref:`InputEventJoypadButton <class_InputEventJoypadButton>`.
    If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the
    event will not spread any more. The shortcut input callback is ideal for treating events that are intended as shortcuts.
-6. If so far no one consumed the event, the :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>` callback
-   will be called if overridden (and not disabled with
-   :ref:`Node.set_process_unhandled_input() <class_Node_method_set_process_unhandled_input>`).
-   If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the
-   event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.
-7. If so far no one consumed the event, the :ref:`Node._unhandled_key_input() <class_Node_method__unhandled_key_input>` callback
+6. If so far no one consumed the event, the :ref:`Node._unhandled_key_input() <class_Node_method__unhandled_key_input>` callback
    will be called if overridden (and not disabled with
    :ref:`Node.set_process_unhandled_key_input() <class_Node_method_set_process_unhandled_key_input>`).
    This happens only if the event is a :ref:`InputEventKey <class_InputEventKey>`.
    If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the
    event will not spread any more. The unhandled key input callback is ideal for key events.
+7. If so far no one consumed the event, the :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>` callback
+   will be called if overridden (and not disabled with
+   :ref:`Node.set_process_unhandled_input() <class_Node_method_set_process_unhandled_input>`).
+   If any function consumes the event, it can call :ref:`Viewport.set_input_as_handled() <class_Viewport_method_set_input_as_handled>`, and the
+   event will not spread any more. The unhandled input callback is ideal for full-screen gameplay events, so they are not received when a GUI is active.
 8. If no one wanted the event so far, and :ref:`Object Picking <class_viewport_property_physics_object_picking>`
    is turned on, the event is used for object picking. For the root viewport, this can also be
    enabled in :ref:`Project Settings <class_ProjectSettings_property_physics/common/enable_object_picking>`.
@@ -119,7 +119,7 @@ received input, in order:
 
 When sending events to its child and descendant nodes, the viewport will do so, as depicted in
 the following graphic, in a reverse depth-first order, starting with the node at the bottom of
-the scene tree, and ending at the root node. Excluded from this process are embedded Windows
+the scene tree, and ending at the root node. Excluded from this process are Windows
 and SubViewports.
 
 .. image:: img/input_event_scene_flow.png
@@ -131,8 +131,8 @@ Since Viewports don't send events to other :ref:`SubViewports <class_SubViewport
 methods has to be used:
 
 1. Use a :ref:`SubViewportContainer <class_SubViewportContainer>`, which automatically
-   sends events to its child :ref:`SubViewports <class_SubViewport>` during
-   :ref:`Node._input() <class_Node_method__input>` and :ref:`Node._unhandled_input() <class_Node_method__unhandled_input>`.
+   sends events to its child :ref:`SubViewports <class_SubViewport>` after
+   :ref:`Node._input() <class_Node_method__input>` or :ref:`Control._gui_input() <class_Control_method__gui_input>`.
 2. Implement event propagation based on the individual requirements.
 
 GUI events also travel up the scene tree but, since these events target
@@ -152,37 +152,48 @@ anything and only contains some basic information, such as event ID
 
 There are several specialized types of InputEvent, described in the table below:
 
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| Event                                                             | Type Index         | Description                             |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEvent <class_InputEvent>`                              | NONE               | Empty Input Event.                      |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventKey <class_InputEventKey>`                        | KEY                | Contains a keycode and Unicode value,   |
-|                                                                   |                    | as well as modifiers.                   |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventMouseButton <class_InputEventMouseButton>`        | MOUSE_BUTTON       | Contains click information, such as     |
-|                                                                   |                    | button, modifiers, etc.                 |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventMouseMotion <class_InputEventMouseMotion>`        | MOUSE_MOTION       | Contains motion information, such as    |
-|                                                                   |                    | relative, absolute positions and speed. |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventJoypadMotion <class_InputEventJoypadMotion>`      | JOYSTICK_MOTION    | Contains Joystick/Joypad analog axis    |
-|                                                                   |                    | information.                            |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventJoypadButton <class_InputEventJoypadButton>`      | JOYSTICK_BUTTON    | Contains Joystick/Joypad button         |
-|                                                                   |                    | information.                            |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventScreenTouch <class_InputEventScreenTouch>`        | SCREEN_TOUCH       | Contains multi-touch press/release      |
-|                                                                   |                    | information. (only available on mobile  |
-|                                                                   |                    | devices)                                |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventScreenDrag <class_InputEventScreenDrag>`          | SCREEN_DRAG        | Contains multi-touch drag information.  |
-|                                                                   |                    | (only available on mobile devices)      |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
-| :ref:`InputEventAction <class_InputEventAction>`                  | SCREEN_ACTION      | Contains a generic action. These events |
-|                                                                   |                    | are often generated by the programmer   |
-|                                                                   |                    | as feedback. (more on this below)       |
-+-------------------------------------------------------------------+--------------------+-----------------------------------------+
++-------------------------------------------------------------------+-----------------------------------------+
+| Event                                                             | Description                             |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEvent <class_InputEvent>`                              | Empty Input Event.                      |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventKey <class_InputEventKey>`                        | Contains a keycode and Unicode value,   |
+|                                                                   | as well as modifiers.                   |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventMouseButton <class_InputEventMouseButton>`        | Contains click information, such as     |
+|                                                                   | button, modifiers, etc.                 |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventMouseMotion <class_InputEventMouseMotion>`        | Contains motion information, such as    |
+|                                                                   | relative and absolute positions and     |
+|                                                                   | speed.                                  |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventJoypadMotion <class_InputEventJoypadMotion>`      | Contains Joystick/Joypad analog axis    |
+|                                                                   | information.                            |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventJoypadButton <class_InputEventJoypadButton>`      | Contains Joystick/Joypad button         |
+|                                                                   | information.                            |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventScreenTouch <class_InputEventScreenTouch>`        | Contains multi-touch press/release      |
+|                                                                   | information. (only available on mobile  |
+|                                                                   | devices)                                |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventScreenDrag <class_InputEventScreenDrag>`          | Contains multi-touch drag information.  |
+|                                                                   | (only available on mobile devices)      |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventMagnifyGesture <class_InputEventMagnifyGesture>`  | Contains a position, a factor as well   |
+|                                                                   | as modifiers.                           |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventPanGesture <class_InputEventPanGesture>`          | Contains a position, a delta as well as |
+|                                                                   | modifiers.                              |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventMIDI <class_InputEventMIDI>`                      | Contains MIDI-related information.      |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventShortcut <class_InputEventShortcut>`              | Contains a shortcut.                    |
++-------------------------------------------------------------------+-----------------------------------------+
+| :ref:`InputEventAction <class_InputEventAction>`                  | Contains a generic action. These events |
+|                                                                   | are often generated by the programmer   |
+|                                                                   | as feedback. (more on this below)       |
++-------------------------------------------------------------------+-----------------------------------------+
 
 Actions
 -------
