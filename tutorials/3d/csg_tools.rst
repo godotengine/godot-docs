@@ -298,4 +298,4 @@ It can be useful to block out a level using CSG, then export it as a 3d model, t
 import into 3D modelling software. You can do this by selecting **Scene > Export As... >
 glTF 2.0 Scene**.
 
-.. image:: img/export_as_gltf.png
+.. image:: img/export_as_gltf.webp
