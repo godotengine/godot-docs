@@ -24,6 +24,10 @@ Node3D node
 Following this reasoning, the 3D engine uses the :ref:`Node3D <class_Node3D>`
 node for everything 3D.
 
+.. note:: Be aware that "Spatial" Nodes are now called "Node3D"
+   starting with Godot 4. Any Godot 3.x references to "Spatial"
+   Nodes refer to "Node3D" in Godot 4.
+
 .. image:: img/tuto_3d1.png
 
 Node3Ds have a local transform, which is relative to the parent
