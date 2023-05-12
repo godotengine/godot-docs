@@ -165,6 +165,13 @@ To create a vector field attractor, add a new child node to your scene and selec
 from the list of available nodes. You can animate the attractor's position or attach it to a
 moving node for more dynamic effects.
 
+.. tip::
+
+   If you don't have external tools to create vector field textures, you can use
+   a NoiseTexture3D with a Color Ramp attached as a vector field texture. The
+   Color Ramp can be modified to adjust how much each coordinate is affected by
+   the vector field.
+
 .. figure:: img/particle_attractor_vector.webp
    :alt: Vector field attractor in a field of particles
 
