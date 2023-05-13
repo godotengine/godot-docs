@@ -348,6 +348,13 @@ For instance, you can use it to export a value to the editor::
 For more information about exporting properties, read the :ref:`GDScript exports <doc_gdscript_exports>`
 article.
 
+Any constant expression compatible with the required argument type can be passed as an annotation argument value::
+
+    const MAX_SPEED = 120.0
+
+    @export_range(0.0, 0.5 * MAX_SPEED)
+    var initial_speed: float = 0.25 * MAX_SPEED
+
 Annotations can be specified one per line or all in the same line. They affect
 the next statement that isn't an annotation. Annotations can have arguments sent
 between parentheses and separated by commas.
@@ -355,10 +362,10 @@ between parentheses and separated by commas.
 Both of these are the same::
 
     @onready
-    @export_node_path(TextEdit, LineEdit)
+    @export_node_path("TextEdit", "LineEdit")
     var input_field
 
-    @onready @export_node_path(TextEdit, LineEdit) var input_field
+    @onready @export_node_path("TextEdit", "LineEdit") var input_field
 
 .. _doc_gdscript_onready_annotation:
 
