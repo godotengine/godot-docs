@@ -12,7 +12,7 @@ Node3D
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioListener3D<class_AudioListener3D>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment3D<class_BoneAttachment3D>`, :ref:`Camera3D<class_Camera3D>`, :ref:`CollisionObject3D<class_CollisionObject3D>`, :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`, :ref:`CollisionShape3D<class_CollisionShape3D>`, :ref:`GridMap<class_GridMap>`, :ref:`ImporterMeshInstance3D<class_ImporterMeshInstance3D>`, :ref:`Joint3D<class_Joint3D>`, :ref:`LightmapProbe<class_LightmapProbe>`, :ref:`Marker3D<class_Marker3D>`, :ref:`NavigationLink3D<class_NavigationLink3D>`, :ref:`NavigationRegion3D<class_NavigationRegion3D>`, :ref:`OccluderInstance3D<class_OccluderInstance3D>`, :ref:`OpenXRHand<class_OpenXRHand>`, :ref:`Path3D<class_Path3D>`, :ref:`PathFollow3D<class_PathFollow3D>`, :ref:`RayCast3D<class_RayCast3D>`, :ref:`RemoteTransform3D<class_RemoteTransform3D>`, :ref:`ShapeCast3D<class_ShapeCast3D>`, :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`SpringArm3D<class_SpringArm3D>`, :ref:`VehicleWheel3D<class_VehicleWheel3D>`, :ref:`VisualInstance3D<class_VisualInstance3D>`, :ref:`XRNode3D<class_XRNode3D>`, :ref:`XROrigin3D<class_XROrigin3D>`
+**Inherited By:** :ref:`AudioListener3D<class_AudioListener3D>`, :ref:`AudioStreamPlayer3D<class_AudioStreamPlayer3D>`, :ref:`BoneAttachment3D<class_BoneAttachment3D>`, :ref:`Camera3D<class_Camera3D>`, :ref:`CollisionObject3D<class_CollisionObject3D>`, :ref:`CollisionPolygon3D<class_CollisionPolygon3D>`, :ref:`CollisionShape3D<class_CollisionShape3D>`, :ref:`GridMap<class_GridMap>`, :ref:`ImporterMeshInstance3D<class_ImporterMeshInstance3D>`, :ref:`Joint3D<class_Joint3D>`, :ref:`LightmapProbe<class_LightmapProbe>`, :ref:`Marker3D<class_Marker3D>`, :ref:`NavigationLink3D<class_NavigationLink3D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`NavigationRegion3D<class_NavigationRegion3D>`, :ref:`OccluderInstance3D<class_OccluderInstance3D>`, :ref:`OpenXRHand<class_OpenXRHand>`, :ref:`Path3D<class_Path3D>`, :ref:`PathFollow3D<class_PathFollow3D>`, :ref:`RayCast3D<class_RayCast3D>`, :ref:`RemoteTransform3D<class_RemoteTransform3D>`, :ref:`ShapeCast3D<class_ShapeCast3D>`, :ref:`Skeleton3D<class_Skeleton3D>`, :ref:`SpringArm3D<class_SpringArm3D>`, :ref:`VehicleWheel3D<class_VehicleWheel3D>`, :ref:`VisualInstance3D<class_VisualInstance3D>`, :ref:`XRNode3D<class_XRNode3D>`, :ref:`XROrigin3D<class_XROrigin3D>`
 
 Most basic 3D game object, parent of all 3D-related nodes.
 
@@ -26,6 +26,8 @@ Most basic 3D game object, with a :ref:`Transform3D<class_Transform3D>` and visi
 Affine operations (rotate, scale, translate) happen in parent's local coordinate system, unless the **Node3D** object is set as top-level. Affine operations in this coordinate system correspond to direct affine operations on the **Node3D**'s transform. The word local below refers to this coordinate system. The coordinate system that is attached to the **Node3D** object itself is referred to as object-local coordinate system.
 
 \ **Note:** Unless otherwise specified, all methods that have angle parameters must have angles specified as *radians*. To convert degrees to radians, use :ref:`@GlobalScope.deg_to_rad<class_@GlobalScope_method_deg_to_rad>`.
+
+\ **Note:** Be aware that "Spatial" nodes are now called "Node3D" starting with Godot 4. Any Godot 3.x references to "Spatial" nodes refer to "Node3D" in Godot 4.
 
 .. rst-class:: classref-introduction-group
 
@@ -198,7 +200,7 @@ enum **RotationEditMode**:
 
 :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **ROTATION_EDIT_MODE_EULER** = ``0``
 
-
+The rotation is edited using :ref:`Vector3<class_Vector3>` Euler angles.
 
 .. _class_Node3D_constant_ROTATION_EDIT_MODE_QUATERNION:
 
@@ -206,7 +208,7 @@ enum **RotationEditMode**:
 
 :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **ROTATION_EDIT_MODE_QUATERNION** = ``1``
 
-
+The rotation is edited using a :ref:`Quaternion<class_Quaternion>`.
 
 .. _class_Node3D_constant_ROTATION_EDIT_MODE_BASIS:
 
@@ -214,7 +216,7 @@ enum **RotationEditMode**:
 
 :ref:`RotationEditMode<enum_Node3D_RotationEditMode>` **ROTATION_EDIT_MODE_BASIS** = ``2``
 
-
+The rotation is edited using a :ref:`Basis<class_Basis>`. In this mode, :ref:`scale<class_Node3D_property_scale>` can't be edited separately.
 
 .. rst-class:: classref-section-separator
 
@@ -554,7 +556,7 @@ Defines the visibility range parent for this node and its subtree. The visibilit
 - void **set_visible** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_visible** **(** **)**
 
-If ``true``, this node is drawn. The node is only visible if all of its antecedents are visible as well (in other words, :ref:`is_visible_in_tree<class_Node3D_method_is_visible_in_tree>` must return ``true``).
+If ``true``, this node is drawn. The node is only visible if all of its ancestors are visible as well (in other words, :ref:`is_visible_in_tree<class_Node3D_method_is_visible_in_tree>` must return ``true``).
 
 .. rst-class:: classref-section-separator
 
@@ -739,7 +741,7 @@ Returns whether the node notifies about its global and local transformation chan
 
 :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** |const|
 
-Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_Node3D_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_Node3D_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree.
 
 .. rst-class:: classref-item-separator
 

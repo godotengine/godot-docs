@@ -12,14 +12,14 @@ AnimationNodeBlendTree
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`AnimationTree<class_AnimationTree>` node resource that contains many blend type nodes.
+A sub-tree of blend type :ref:`AnimationNode<class_AnimationNode>`\ s used for complex animations. Used by :ref:`AnimationTree<class_AnimationTree>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This node may contain a sub-tree of any other blend type nodes, such as :ref:`AnimationNodeTransition<class_AnimationNodeTransition>`, :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`, :ref:`AnimationNodeBlend3<class_AnimationNodeBlend3>`, :ref:`AnimationNodeOneShot<class_AnimationNodeOneShot>`, etc. This is one of the most commonly used roots.
+This node may contain a sub-tree of any other blend type nodes, such as :ref:`AnimationNodeTransition<class_AnimationNodeTransition>`, :ref:`AnimationNodeBlend2<class_AnimationNodeBlend2>`, :ref:`AnimationNodeBlend3<class_AnimationNodeBlend3>`, :ref:`AnimationNodeOneShot<class_AnimationNodeOneShot>`, etc. This is one of the most commonly used animation node roots.
 
 An :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` node named ``output`` is created by default.
 
@@ -28,7 +28,7 @@ An :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` node named ``output`` i
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. rst-class:: classref-reftable-group
 

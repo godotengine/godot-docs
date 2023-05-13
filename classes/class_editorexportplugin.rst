@@ -54,7 +54,11 @@ Methods
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`_get_export_features<class_EditorExportPlugin_method__get_export_features>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform, :ref:`bool<class_bool>` debug **)** |virtual| |const|                                          |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>`             | :ref:`_get_export_options<class_EditorExportPlugin_method__get_export_options>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform **)** |virtual| |const|                                                                           |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`_get_name<class_EditorExportPlugin_method__get_name>` **(** **)** |virtual| |const|                                                                                                                                                                |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`_should_update_export_options<class_EditorExportPlugin_method__should_update_export_options>` **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform **)** |virtual| |const|                                                       |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`add_file<class_EditorExportPlugin_method_add_file>` **(** :ref:`String<class_String>` path, :ref:`PackedByteArray<class_PackedByteArray>` file, :ref:`bool<class_bool>` remap **)**                                                                |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -75,6 +79,8 @@ Methods
    | void                                              | :ref:`add_macos_plugin_file<class_EditorExportPlugin_method_add_macos_plugin_file>` **(** :ref:`String<class_String>` path **)**                                                                                                                         |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`add_shared_object<class_EditorExportPlugin_method_add_shared_object>` **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` tags, :ref:`String<class_String>` target **)**                                     |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                     | :ref:`get_option<class_EditorExportPlugin_method_get_option>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`skip<class_EditorExportPlugin_method_skip>` **(** **)**                                                                                                                                                                                            |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -232,6 +238,26 @@ Return a :ref:`PackedStringArray<class_PackedStringArray>` of additional feature
 
 ----
 
+.. _class_EditorExportPlugin_method__get_export_options:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary[]<class_Dictionary>` **_get_export_options** **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform **)** |virtual| |const|
+
+Return a list of export options that can be configured for this export plugin.
+
+Each element in the return value is a :ref:`Dictionary<class_Dictionary>` with the following keys:
+
+- ``option``: A dictionary with the structure documented by :ref:`Object.get_property_list<class_Object_method_get_property_list>`, but all keys are optional.
+
+- ``default_value``: The default value for this option.
+
+- ``update_visibility``: An optional boolean value. If set to ``true``, the preset will emit :ref:`Object.property_list_changed<class_Object_signal_property_list_changed>` when the option is changed.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlugin_method__get_name:
 
 .. rst-class:: classref-method
@@ -241,6 +267,18 @@ Return a :ref:`PackedStringArray<class_PackedStringArray>` of additional feature
 Return the name identifier of this plugin (for future identification by the exporter). The plugins are sorted by name before exporting.
 
 Implementing this method is required.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_method__should_update_export_options:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_should_update_export_options** **(** :ref:`EditorExportPlatform<class_EditorExportPlatform>` platform **)** |virtual| |const|
+
+Return ``true``, if the result of :ref:`_get_export_options<class_EditorExportPlugin_method__get_export_options>` has changed and the export options of preset corresponding to ``platform`` should be updated.
 
 .. rst-class:: classref-item-separator
 
@@ -371,6 +409,18 @@ Adds a shared object or a directory containing only shared objects with the give
 \ **Note:** In case of macOS exports, those shared objects will be added to ``Frameworks`` directory of app bundle.
 
 In case of a directory code-sign will error if you place non code object in directory.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlugin_method_get_option:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **get_option** **(** :ref:`StringName<class_StringName>` name **)** |const|
+
+Returns the current value of an export option supplied by :ref:`_get_export_options<class_EditorExportPlugin_method__get_export_options>`.
 
 .. rst-class:: classref-item-separator
 

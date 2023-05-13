@@ -30,7 +30,7 @@ Accessing the settings can be done using the following methods, such as:
 
  .. code-tab:: gdscript
 
-    var settings = EditorInterface.get_editor_settings()
+    var settings = get_editor_interface().get_editor_settings()
     # `settings.set("some/property", 10)` also works as this class overrides `_set()` internally.
     settings.set_setting("some/property", 10)
     # `settings.get("some/property")` also works as this class overrides `_get()` internally.
@@ -203,6 +203,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`editors/polygon_editor/show_previous_outline<class_EditorSettings_property_editors/polygon_editor/show_previous_outline>`                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`editors/shader_editor/behavior/files/restore_shaders_on_load<class_EditorSettings_property_editors/shader_editor/behavior/files/restore_shaders_on_load>`                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`editors/tiles_editor/display_grid<class_EditorSettings_property_editors/tiles_editor/display_grid>`                                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`     | :ref:`editors/tiles_editor/grid_color<class_EditorSettings_property_editors/tiles_editor/grid_color>`                                                                               |
@@ -257,6 +259,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`   | :ref:`interface/editor/editor_language<class_EditorSettings_property_interface/editor/editor_language>`                                                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/editor_screen<class_EditorSettings_property_interface/editor/editor_screen>`                                                                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/expand_to_title<class_EditorSettings_property_interface/editor/expand_to_title>`                                                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`interface/editor/font_antialiasing<class_EditorSettings_property_interface/editor/font_antialiasing>`                                                                         |
@@ -275,6 +279,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/mouse_extra_buttons_navigate_history<class_EditorSettings_property_interface/editor/mouse_extra_buttons_navigate_history>`                                   |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`interface/editor/project_manager_screen<class_EditorSettings_property_interface/editor/project_manager_screen>`                                                               |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/save_each_scene_on_quit<class_EditorSettings_property_interface/editor/save_each_scene_on_quit>`                                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/separate_distraction_mode<class_EditorSettings_property_interface/editor/separate_distraction_mode>`                                                         |
@@ -287,9 +293,17 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/editor/use_embedded_menu<class_EditorSettings_property_interface/editor/use_embedded_menu>`                                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/inspector/float_drag_speed<class_EditorSettings_property_interface/inspector/float_drag_speed>`                                                                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`interface/inspector/max_array_dictionary_items_per_page<class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page>`                               |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/inspector/show_low_level_opentype_features<class_EditorSettings_property_interface/inspector/show_low_level_opentype_features>`                                     |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/multi_window/enable<class_EditorSettings_property_interface/multi_window/enable>`                                                                                   |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/multi_window/maximize_window<class_EditorSettings_property_interface/multi_window/maximize_window>`                                                                 |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`interface/multi_window/restore_windows_on_load<class_EditorSettings_property_interface/multi_window/restore_windows_on_load>`                                                 |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`interface/scene_tabs/display_close_button<class_EditorSettings_property_interface/scene_tabs/display_close_button>`                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -328,6 +342,8 @@ Properties
    | :ref:`bool<class_bool>`       | :ref:`interface/touchscreen/enable_pan_and_scale_gestures<class_EditorSettings_property_interface/touchscreen/enable_pan_and_scale_gestures>`                                       |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`interface/touchscreen/increase_scrollbar_touch_area<class_EditorSettings_property_interface/touchscreen/increase_scrollbar_touch_area>`                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`     | :ref:`interface/touchscreen/scale_gizmo_handles<class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles>`                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`   | :ref:`network/debug/remote_host<class_EditorSettings_property_network/debug/remote_host>`                                                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1055,7 +1071,7 @@ If ``true``, render the grid on an XZ plane.
 
 :ref:`bool<class_bool>` **editors/3d/grid_yz_plane**
 
-If ``true``, render the grid on an YZ plane. This can be useful for 3D side-scrolling games.
+If ``true``, render the grid on a YZ plane. This can be useful for 3D side-scrolling games.
 
 .. rst-class:: classref-item-separator
 
@@ -1171,7 +1187,7 @@ The modifier key that must be held to pan in the 3D editor.
 
 :ref:`bool<class_bool>` **editors/3d/navigation/warped_mouse_panning**
 
-If ``true``, warps the mouse around the 3D viewport while panning in the 3D editor. This makes it possible to pan over a large area without having to exit panning then mouse the mouse back constantly.
+If ``true``, warps the mouse around the 3D viewport while panning in the 3D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
 
 .. rst-class:: classref-item-separator
 
@@ -1485,7 +1501,7 @@ Controls whether the mouse wheel scroll zooms or pans in subeditors. The list of
 
 :ref:`bool<class_bool>` **editors/panning/warped_mouse_panning**
 
-If ``true``, warps the mouse around the 2D viewport while panning in the 2D editor. This makes it possible to pan over a large area without having to exit panning then mouse the mouse back constantly.
+If ``true``, warps the mouse around the 2D viewport while panning in the 2D editor. This makes it possible to pan over a large area without having to exit panning and adjust the mouse cursor.
 
 .. rst-class:: classref-item-separator
 
@@ -1510,6 +1526,18 @@ The radius in which points can be selected in the :ref:`Polygon2D<class_Polygon2
 :ref:`bool<class_bool>` **editors/polygon_editor/show_previous_outline**
 
 If ``true``, displays the polygon's previous shape in the 2D polygon editors with an opaque gray outline. This outline is displayed while dragging a point until the left mouse button is released.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_editors/shader_editor/behavior/files/restore_shaders_on_load:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **editors/shader_editor/behavior/files/restore_shaders_on_load**
+
+If ``true``, reopens shader files that were open in the shader editor when the project was last closed.
 
 .. rst-class:: classref-item-separator
 
@@ -1871,6 +1899,18 @@ Translations are provided by the community. If you spot a mistake, :doc:`contrib
 
 ----
 
+.. _class_EditorSettings_property_interface/editor/editor_screen:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/editor_screen**
+
+The preferred monitor to display the editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/editor/expand_to_title:
 
 .. rst-class:: classref-property
@@ -1989,13 +2029,25 @@ If ``true``, the mouse's additional side buttons will be usable to navigate in t
 
 ----
 
+.. _class_EditorSettings_property_interface/editor/project_manager_screen:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **interface/editor/project_manager_screen**
+
+The preferred monitor to display the project manager.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/editor/save_each_scene_on_quit:
 
 .. rst-class:: classref-property
 
 :ref:`bool<class_bool>` **interface/editor/save_each_scene_on_quit**
 
-If ``true``, the editor will save all scenes when confirming the **Save** action when quitting the editor or quitting to the project list. If ``false``, the editor will ask to save each scene individually.
+If ``false``, the editor will save all scenes when confirming the **Save** action when quitting the editor or quitting to the project list. If ``true``, the editor will ask to save each scene individually.
 
 .. rst-class:: classref-item-separator
 
@@ -2065,6 +2117,18 @@ Specific to the macOS platform.
 
 ----
 
+.. _class_EditorSettings_property_interface/inspector/float_drag_speed:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/inspector/float_drag_speed**
+
+Base speed for increasing/decreasing float values by dragging them in the inspector.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_interface/inspector/max_array_dictionary_items_per_page:
 
 .. rst-class:: classref-property
@@ -2084,6 +2148,46 @@ The number of :ref:`Array<class_Array>` or :ref:`Dictionary<class_Dictionary>` i
 :ref:`bool<class_bool>` **interface/inspector/show_low_level_opentype_features**
 
 If ``true``, display OpenType features marked as ``hidden`` by the font file in the :ref:`Font<class_Font>` editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/multi_window/enable:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/multi_window/enable**
+
+If ``true``, the multi window support in editor is enabled. The following panels can become dedicated windows (made floating): Docks, Script editor, and Shader editor.
+
+\ **Note:** When :ref:`interface/editor/single_window_mode<class_EditorSettings_property_interface/editor/single_window_mode>` is ``true``, the multi window support is always disabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/multi_window/maximize_window:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/multi_window/maximize_window**
+
+If ``true``, when panels are made floating they will be maximized.
+
+If ``false``, when panels are made floating their position and size will match the ones when they are attached (excluding window border) to the editor window.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_interface/multi_window/restore_windows_on_load:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **interface/multi_window/restore_windows_on_load**
+
+If ``true``, the floating panel position, size, and screen will be saved on editor exit. On next launch the panels that were floating will be made floating in the saved positions, sizes and screens, if possible.
 
 .. rst-class:: classref-item-separator
 
@@ -2331,6 +2435,20 @@ If ``true``, increases the scrollbar touch area to improve usability on touchscr
 
 ----
 
+.. _class_EditorSettings_property_interface/touchscreen/scale_gizmo_handles:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **interface/touchscreen/scale_gizmo_handles**
+
+Specify the multiplier to apply to the scale for the editor gizmo handles to improve usability on touchscreen devices.
+
+\ **Note:** Defaults to ``1`` on non-touchscreen devices.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_network/debug/remote_host:
 
 .. rst-class:: classref-property
@@ -2533,7 +2651,7 @@ If ``true``, makes the caret blink according to :ref:`text_editor/appearance/car
 
 :ref:`float<class_float>` **text_editor/appearance/caret/caret_blink_interval**
 
-The interval at which to blink the caret (in seconds). See also :ref:`text_editor/appearance/caret/caret_blink<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`.
+The interval at which the caret will blink (in seconds). See also :ref:`text_editor/appearance/caret/caret_blink<class_EditorSettings_property_text_editor/appearance/caret/caret_blink>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2569,7 +2687,7 @@ If ``true``, colors the background of the line the caret is currently on with :r
 
 :ref:`int<class_int>` **text_editor/appearance/caret/type**
 
-The shape of the caret to use in the script editor. **Line** displays a vertical line to the left of the current character, whereas **Block** displays a outline over the current character.
+The shape of the caret to use in the script editor. **Line** displays a vertical line to the left of the current character, whereas **Block** displays an outline over the current character.
 
 .. rst-class:: classref-item-separator
 
@@ -3646,7 +3764,7 @@ Erases the setting whose name is specified by ``property``.
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_changed_settings** **(** **)** |const|
 
-Gets an array of the settings which have been changed since the last save. Note that internally ``changed_settings`` is cleared after a successful save, so generally the most appropriate place to use this method is when processing :ref:`NOTIFICATION_EDITOR_SETTINGS_CHANGED<class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED>`
+Gets an array of the settings which have been changed since the last save. Note that internally ``changed_settings`` is cleared after a successful save, so generally the most appropriate place to use this method is when processing :ref:`NOTIFICATION_EDITOR_SETTINGS_CHANGED<class_EditorSettings_constant_NOTIFICATION_EDITOR_SETTINGS_CHANGED>`.
 
 .. rst-class:: classref-item-separator
 

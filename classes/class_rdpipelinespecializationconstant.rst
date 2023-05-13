@@ -12,9 +12,16 @@ RDPipelineSpecializationConstant
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Pipeline specialization constant (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+A *specialization constant* is a way to create additional variants of shaders without actually increasing the number of shader versions that are compiled. This allows improving performance by reducing the number of shader versions and reducing ``if`` branching, while still allowing shaders to be flexible for different use cases.
+
+This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -50,9 +57,7 @@ Property Descriptions
 - void **set_constant_id** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_constant_id** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The identifier of the specialization constant. This is a value starting from ``0`` and that increments for every different specialization constant for a given shader.
 
 .. rst-class:: classref-item-separator
 
@@ -69,9 +74,7 @@ Property Descriptions
 - void **set_value** **(** :ref:`Variant<class_Variant>` value **)**
 - :ref:`Variant<class_Variant>` **get_value** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The specialization constant's value. Only :ref:`bool<class_bool>`, :ref:`int<class_int>` and :ref:`float<class_float>` types are valid for specialization constants.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

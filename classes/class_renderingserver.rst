@@ -19,23 +19,21 @@ Server for anything visible.
 Description
 -----------
 
-The rendering server is the API backend for everything visible. The whole scene system mounts on it to display.
+The rendering server is the API backend for everything visible. The whole scene system mounts on it to display. The rendering server is completely opaque: the internals are entirely implementation-specific and cannot be accessed.
 
-The rendering server is completely opaque, the internals are entirely implementation specific and cannot be accessed.
-
-The rendering server can be used to bypass the scene/:ref:`Node<class_Node>` system entirely.
+The rendering server can be used to bypass the scene/:ref:`Node<class_Node>` system entirely. This can improve performance in cases where the scene system is the bottleneck, but won't improve performance otherwise (for instance, if the GPU is already fully utilized).
 
 Resources are created using the ``*_create`` functions. These functions return :ref:`RID<class_RID>`\ s which are not references to the objects themselves, but opaque *pointers* towards these objects.
 
 All objects are drawn to a viewport. You can use the :ref:`Viewport<class_Viewport>` attached to the :ref:`SceneTree<class_SceneTree>` or you can create one yourself with :ref:`viewport_create<class_RenderingServer_method_viewport_create>`. When using a custom scenario or canvas, the scenario or canvas needs to be attached to the viewport using :ref:`viewport_set_scenario<class_RenderingServer_method_viewport_set_scenario>` or :ref:`viewport_attach_canvas<class_RenderingServer_method_viewport_attach_canvas>`.
 
-In 3D, all visual objects must be associated with a scenario. The scenario is a visual representation of the world. If accessing the rendering server from a running game, the scenario can be accessed from the scene tree from any :ref:`Node3D<class_Node3D>` node with :ref:`Node3D.get_world_3d<class_Node3D_method_get_world_3d>`. Otherwise, a scenario can be created with :ref:`scenario_create<class_RenderingServer_method_scenario_create>`.
+\ **Scenarios:** In 3D, all visual objects must be associated with a scenario. The scenario is a visual representation of the world. If accessing the rendering server from a running game, the scenario can be accessed from the scene tree from any :ref:`Node3D<class_Node3D>` node with :ref:`Node3D.get_world_3d<class_Node3D_method_get_world_3d>`. Otherwise, a scenario can be created with :ref:`scenario_create<class_RenderingServer_method_scenario_create>`.
 
 Similarly, in 2D, a canvas is needed to draw all canvas items.
 
-In 3D, all visible objects are comprised of a resource and an instance. A resource can be a mesh, a particle system, a light, or any other 3D object. In order to be visible resources must be attached to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>`. The instance must also be attached to the scenario using :ref:`instance_set_scenario<class_RenderingServer_method_instance_set_scenario>` in order to be visible.
+\ **3D:** In 3D, all visible objects are comprised of a resource and an instance. A resource can be a mesh, a particle system, a light, or any other 3D object. In order to be visible resources must be attached to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>`. The instance must also be attached to the scenario using :ref:`instance_set_scenario<class_RenderingServer_method_instance_set_scenario>` in order to be visible. RenderingServer methods that don't have a prefix are usually 3D-specific (but not always).
 
-In 2D, all visible objects are some form of canvas item. In order to be visible, a canvas item needs to be the child of a canvas attached to a viewport, or it needs to be the child of another canvas item that is eventually attached to the canvas.
+\ **2D:** In 2D, all visible objects are some form of canvas item. In order to be visible, a canvas item needs to be the child of a canvas attached to a viewport, or it needs to be the child of another canvas item that is eventually attached to the canvas. 2D-specific RenderingServer methods generally start with ``canvas_*``.
 
 \ **Headless mode:** Starting the engine with the ``--headless`` :doc:`command line argument <../tutorials/editor/command_line_tutorial>` disables all rendering and window management functions. Most functions from **RenderingServer** will return dummy values in this case.
 
@@ -114,6 +112,8 @@ Methods
    | void                                                                             | :ref:`canvas_item_add_mesh<class_RenderingServer_method_canvas_item_add_mesh>` **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` mesh, :ref:`Transform2D<class_Transform2D>` transform=Transform2D(1, 0, 0, 1, 0, 0), :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`RID<class_RID>` texture **)**                                                                                                                                                                                                                                                                                                                                                              |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`canvas_item_add_msdf_texture_rect_region<class_RenderingServer_method_canvas_item_add_msdf_texture_rect_region>` **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`int<class_int>` outline_size=0, :ref:`float<class_float>` px_range=1.0, :ref:`float<class_float>` scale=1.0 **)**                                                                                                                                                                                                                                          |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                                             | :ref:`canvas_item_add_multiline<class_RenderingServer_method_canvas_item_add_multiline>` **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`float<class_float>` width=-1.0 **)**                                                                                                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`canvas_item_add_multimesh<class_RenderingServer_method_canvas_item_add_multimesh>` **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` mesh, :ref:`RID<class_RID>` texture **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -391,7 +391,7 @@ Methods
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                                    | :ref:`global_shader_parameter_get<class_RenderingServer_method_global_shader_parameter_get>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>`                                | :ref:`global_shader_parameter_get_list<class_RenderingServer_method_global_shader_parameter_get_list>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+   | :ref:`StringName[]<class_StringName>`                                            | :ref:`global_shader_parameter_get_list<class_RenderingServer_method_global_shader_parameter_get_list>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` | :ref:`global_shader_parameter_get_type<class_RenderingServer_method_global_shader_parameter_get_type>` **(** :ref:`StringName<class_StringName>` name **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -633,7 +633,7 @@ Methods
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`particles_collision_set_attractor_directionality<class_RenderingServer_method_particles_collision_set_attractor_directionality>` **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` amount **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                                             | :ref:`particles_collision_set_attractor_strength<class_RenderingServer_method_particles_collision_set_attractor_strength>` **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` setrngth **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+   | void                                                                             | :ref:`particles_collision_set_attractor_strength<class_RenderingServer_method_particles_collision_set_attractor_strength>` **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` strength **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`particles_collision_set_box_extents<class_RenderingServer_method_particles_collision_set_box_extents>` **(** :ref:`RID<class_RID>` particles_collision, :ref:`Vector3<class_Vector3>` extents **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -827,6 +827,8 @@ Methods
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                             | :ref:`texture_3d_update<class_RenderingServer_method_texture_3d_update>` **(** :ref:`RID<class_RID>` texture, :ref:`Image[]<class_Image>` data **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                                            | :ref:`texture_get_native_handle<class_RenderingServer_method_texture_get_native_handle>` **(** :ref:`RID<class_RID>` texture, :ref:`bool<class_bool>` srgb=false **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                      | :ref:`texture_get_path<class_RenderingServer_method_texture_get_path>` **(** :ref:`RID<class_RID>` texture **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`texture_get_rd_texture<class_RenderingServer_method_texture_get_rd_texture>` **(** :ref:`RID<class_RID>` texture, :ref:`bool<class_bool>` srgb=false **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -856,6 +858,8 @@ Methods
    | :ref:`float<class_float>`                                                        | :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>` **(** :ref:`RID<class_RID>` viewport **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                            | :ref:`viewport_get_render_info<class_RenderingServer_method_viewport_get_render_info>` **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` type, :ref:`ViewportRenderInfo<enum_RenderingServer_ViewportRenderInfo>` info **)**                                                                                                                                                                                                                                                                                                                                                                                        |
+   +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                                                            | :ref:`viewport_get_render_target<class_RenderingServer_method_viewport_get_render_target>` **(** :ref:`RID<class_RID>` viewport **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                                            | :ref:`viewport_get_texture<class_RenderingServer_method_viewport_get_texture>` **(** :ref:`RID<class_RID>` viewport **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
    +----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1030,7 +1034,7 @@ enum **TextureLayeredType**:
 
 :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` **TEXTURE_LAYERED_2D_ARRAY** = ``0``
 
-
+Array of 2-dimensional textures (see :ref:`Texture2DArray<class_Texture2DArray>`).
 
 .. _class_RenderingServer_constant_TEXTURE_LAYERED_CUBEMAP:
 
@@ -1038,7 +1042,7 @@ enum **TextureLayeredType**:
 
 :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` **TEXTURE_LAYERED_CUBEMAP** = ``1``
 
-
+Cubemap texture (see :ref:`Cubemap<class_Cubemap>`).
 
 .. _class_RenderingServer_constant_TEXTURE_LAYERED_CUBEMAP_ARRAY:
 
@@ -1046,7 +1050,7 @@ enum **TextureLayeredType**:
 
 :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` **TEXTURE_LAYERED_CUBEMAP_ARRAY** = ``2``
 
-
+Array of cubemap textures (see :ref:`CubemapArray<class_CubemapArray>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1064,7 +1068,7 @@ enum **CubeMapLayer**:
 
 :ref:`CubeMapLayer<enum_RenderingServer_CubeMapLayer>` **CUBEMAP_LAYER_LEFT** = ``0``
 
-
+Left face of a :ref:`Cubemap<class_Cubemap>`.
 
 .. _class_RenderingServer_constant_CUBEMAP_LAYER_RIGHT:
 
@@ -1072,7 +1076,7 @@ enum **CubeMapLayer**:
 
 :ref:`CubeMapLayer<enum_RenderingServer_CubeMapLayer>` **CUBEMAP_LAYER_RIGHT** = ``1``
 
-
+Right face of a :ref:`Cubemap<class_Cubemap>`.
 
 .. _class_RenderingServer_constant_CUBEMAP_LAYER_BOTTOM:
 
@@ -1080,7 +1084,7 @@ enum **CubeMapLayer**:
 
 :ref:`CubeMapLayer<enum_RenderingServer_CubeMapLayer>` **CUBEMAP_LAYER_BOTTOM** = ``2``
 
-
+Bottom face of a :ref:`Cubemap<class_Cubemap>`.
 
 .. _class_RenderingServer_constant_CUBEMAP_LAYER_TOP:
 
@@ -1088,7 +1092,7 @@ enum **CubeMapLayer**:
 
 :ref:`CubeMapLayer<enum_RenderingServer_CubeMapLayer>` **CUBEMAP_LAYER_TOP** = ``3``
 
-
+Top face of a :ref:`Cubemap<class_Cubemap>`.
 
 .. _class_RenderingServer_constant_CUBEMAP_LAYER_FRONT:
 
@@ -1096,7 +1100,7 @@ enum **CubeMapLayer**:
 
 :ref:`CubeMapLayer<enum_RenderingServer_CubeMapLayer>` **CUBEMAP_LAYER_FRONT** = ``4``
 
-
+Front face of a :ref:`Cubemap<class_Cubemap>`.
 
 .. _class_RenderingServer_constant_CUBEMAP_LAYER_BACK:
 
@@ -1104,7 +1108,7 @@ enum **CubeMapLayer**:
 
 :ref:`CubeMapLayer<enum_RenderingServer_CubeMapLayer>` **CUBEMAP_LAYER_BACK** = ``5``
 
-
+Back face of a :ref:`Cubemap<class_Cubemap>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1138,7 +1142,7 @@ Shader is a 2D shader.
 
 :ref:`ShaderMode<enum_RenderingServer_ShaderMode>` **SHADER_PARTICLES** = ``2``
 
-Shader is a particle shader.
+Shader is a particle shader (can be used in both 2D and 3D).
 
 .. _class_RenderingServer_constant_SHADER_SKY:
 
@@ -1146,7 +1150,7 @@ Shader is a particle shader.
 
 :ref:`ShaderMode<enum_RenderingServer_ShaderMode>` **SHADER_SKY** = ``3``
 
-Shader is a sky shader.
+Shader is a 3D sky shader.
 
 .. _class_RenderingServer_constant_SHADER_FOG:
 
@@ -1154,7 +1158,7 @@ Shader is a sky shader.
 
 :ref:`ShaderMode<enum_RenderingServer_ShaderMode>` **SHADER_FOG** = ``4``
 
-Shader is a fog shader.
+Shader is a 3D fog shader.
 
 .. _class_RenderingServer_constant_SHADER_MAX:
 
@@ -1180,7 +1184,7 @@ enum **ArrayType**:
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_VERTEX** = ``0``
 
-Array is a vertex array.
+Array is a vertex position array.
 
 .. _class_RenderingServer_constant_ARRAY_NORMAL:
 
@@ -1204,7 +1208,7 @@ Array is a tangent array.
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_COLOR** = ``3``
 
-Array is a color array.
+Array is a vertex color array.
 
 .. _class_RenderingServer_constant_ARRAY_TEX_UV:
 
@@ -1220,7 +1224,7 @@ Array is an UV coordinates array.
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_TEX_UV2** = ``5``
 
-Array is an UV coordinates array for the second UV coordinates.
+Array is an UV coordinates array for the second set of UV coordinates.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM0:
 
@@ -1228,7 +1232,7 @@ Array is an UV coordinates array for the second UV coordinates.
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_CUSTOM0** = ``6``
 
-
+Array is a custom data array for the first set of custom data.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM1:
 
@@ -1236,7 +1240,7 @@ Array is an UV coordinates array for the second UV coordinates.
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_CUSTOM1** = ``7``
 
-
+Array is a custom data array for the second set of custom data.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM2:
 
@@ -1244,7 +1248,7 @@ Array is an UV coordinates array for the second UV coordinates.
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_CUSTOM2** = ``8``
 
-
+Array is a custom data array for the third set of custom data.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM3:
 
@@ -1252,7 +1256,7 @@ Array is an UV coordinates array for the second UV coordinates.
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_CUSTOM3** = ``9``
 
-
+Array is a custom data array for the fourth set of custom data.
 
 .. _class_RenderingServer_constant_ARRAY_BONES:
 
@@ -1276,7 +1280,7 @@ Array is weight information.
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_INDEX** = ``12``
 
-Array is index array.
+Array is an index array.
 
 .. _class_RenderingServer_constant_ARRAY_MAX:
 
@@ -1302,7 +1306,7 @@ enum **ArrayCustomFormat**:
 
 :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` **ARRAY_CUSTOM_RGBA8_UNORM** = ``0``
 
-
+Custom data array contains 8-bit-per-channel red/green/blue/alpha color data. Values are normalized, unsigned floating-point in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM_RGBA8_SNORM:
 
@@ -1310,7 +1314,7 @@ enum **ArrayCustomFormat**:
 
 :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` **ARRAY_CUSTOM_RGBA8_SNORM** = ``1``
 
-
+Custom data array contains 8-bit-per-channel red/green/blue/alpha color data. Values are normalized, signed floating-point in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM_RG_HALF:
 
@@ -1318,7 +1322,7 @@ enum **ArrayCustomFormat**:
 
 :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` **ARRAY_CUSTOM_RG_HALF** = ``2``
 
-
+Custom data array contains 16-bit-per-channel red/green color data. Values are floating-point in half precision.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM_RGBA_HALF:
 
@@ -1326,7 +1330,7 @@ enum **ArrayCustomFormat**:
 
 :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` **ARRAY_CUSTOM_RGBA_HALF** = ``3``
 
-
+Custom data array contains 16-bit-per-channel red/green/blue/alpha color data. Values are floating-point in half precision.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM_R_FLOAT:
 
@@ -1334,7 +1338,7 @@ enum **ArrayCustomFormat**:
 
 :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` **ARRAY_CUSTOM_R_FLOAT** = ``4``
 
-
+Custom data array contains 32-bit-per-channel red color data. Values are floating-point in single precision.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM_RG_FLOAT:
 
@@ -1342,7 +1346,7 @@ enum **ArrayCustomFormat**:
 
 :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` **ARRAY_CUSTOM_RG_FLOAT** = ``5``
 
-
+Custom data array contains 32-bit-per-channel red/green color data. Values are floating-point in single precision.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM_RGB_FLOAT:
 
@@ -1350,7 +1354,7 @@ enum **ArrayCustomFormat**:
 
 :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` **ARRAY_CUSTOM_RGB_FLOAT** = ``6``
 
-
+Custom data array contains 32-bit-per-channel red/green/blue color data. Values are floating-point in single precision.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM_RGBA_FLOAT:
 
@@ -1358,7 +1362,7 @@ enum **ArrayCustomFormat**:
 
 :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` **ARRAY_CUSTOM_RGBA_FLOAT** = ``7``
 
-
+Custom data array contains 32-bit-per-channel red/green/blue/alpha color data. Values are floating-point in single precision.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM_MAX:
 
@@ -1366,7 +1370,7 @@ enum **ArrayCustomFormat**:
 
 :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` **ARRAY_CUSTOM_MAX** = ``8``
 
-
+Represents the size of the :ref:`ArrayCustomFormat<enum_RenderingServer_ArrayCustomFormat>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -1384,7 +1388,7 @@ flags **ArrayFormat**:
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_VERTEX** = ``1``
 
-Flag used to mark a vertex array.
+Flag used to mark a vertex position array.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_NORMAL:
 
@@ -1408,7 +1412,7 @@ Flag used to mark a tangent array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_COLOR** = ``8``
 
-Flag used to mark a color array.
+Flag used to mark a vertex color array.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_TEX_UV:
 
@@ -1432,7 +1436,7 @@ Flag used to mark an UV coordinates array for the second UV coordinates.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM0** = ``64``
 
-
+Flag used to mark an array of custom per-vertex data for the first set of custom data.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM1:
 
@@ -1440,7 +1444,7 @@ Flag used to mark an UV coordinates array for the second UV coordinates.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM1** = ``128``
 
-
+Flag used to mark an array of custom per-vertex data for the second set of custom data.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM2:
 
@@ -1448,7 +1452,7 @@ Flag used to mark an UV coordinates array for the second UV coordinates.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM2** = ``256``
 
-
+Flag used to mark an array of custom per-vertex data for the third set of custom data.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM3:
 
@@ -1456,7 +1460,7 @@ Flag used to mark an UV coordinates array for the second UV coordinates.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_CUSTOM3** = ``512``
 
-
+Flag used to mark an array of custom per-vertex data for the fourth set of custom data.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_BONES:
 
@@ -1576,7 +1580,7 @@ Flag used to mark that the array contains 2D vertices.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FLAG_USE_8_BONE_WEIGHTS** = ``134217728``
 
-
+Flag used to mark that the array uses 8 bone weighs instead of 4.
 
 .. _class_RenderingServer_constant_ARRAY_FLAG_USES_EMPTY_VERTEX_ARRAY:
 
@@ -1770,7 +1774,7 @@ enum **LightType**:
 
 :ref:`LightType<enum_RenderingServer_LightType>` **LIGHT_DIRECTIONAL** = ``0``
 
-Is a directional (sun) light.
+Directional (sun/moon) light (see :ref:`DirectionalLight3D<class_DirectionalLight3D>`).
 
 .. _class_RenderingServer_constant_LIGHT_OMNI:
 
@@ -1778,7 +1782,7 @@ Is a directional (sun) light.
 
 :ref:`LightType<enum_RenderingServer_LightType>` **LIGHT_OMNI** = ``1``
 
-Is an omni light.
+Omni light (see :ref:`OmniLight3D<class_OmniLight3D>`).
 
 .. _class_RenderingServer_constant_LIGHT_SPOT:
 
@@ -1786,7 +1790,7 @@ Is an omni light.
 
 :ref:`LightType<enum_RenderingServer_LightType>` **LIGHT_SPOT** = ``2``
 
-Is a spot light.
+Spot light (see :ref:`SpotLight3D<class_SpotLight3D>`).
 
 .. rst-class:: classref-item-separator
 
@@ -1876,7 +1880,7 @@ The spotlight's attenuation.
 
 :ref:`LightParam<enum_RenderingServer_LightParam>` **LIGHT_PARAM_SHADOW_MAX_DISTANCE** = ``9``
 
-Max distance that shadows will be rendered.
+The maximum distance for shadow splits. Increasing this value will make directional shadows visible from further away, at the cost of lower overall shadow detail and performance (since more objects need to be included in the directional shadow rendering).
 
 .. _class_RenderingServer_constant_LIGHT_PARAM_SHADOW_SPLIT_1_OFFSET:
 
@@ -1982,7 +1986,7 @@ enum **LightBakeMode**:
 
 :ref:`LightBakeMode<enum_RenderingServer_LightBakeMode>` **LIGHT_BAKE_DISABLED** = ``0``
 
-
+Light is ignored when baking. This is the fastest mode, but the light will be taken into account when baking global illumination. This mode should generally be used for dynamic lights that change quickly, as the effect of global illumination is less noticeable on those lights.
 
 .. _class_RenderingServer_constant_LIGHT_BAKE_STATIC:
 
@@ -1990,7 +1994,7 @@ enum **LightBakeMode**:
 
 :ref:`LightBakeMode<enum_RenderingServer_LightBakeMode>` **LIGHT_BAKE_STATIC** = ``1``
 
-
+Light is taken into account in static baking (:ref:`VoxelGI<class_VoxelGI>`, :ref:`LightmapGI<class_LightmapGI>`, SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`)). The light can be moved around or modified, but its global illumination will not update in real-time. This is suitable for subtle changes (such as flickering torches), but generally not large changes such as toggling a light on and off.
 
 .. _class_RenderingServer_constant_LIGHT_BAKE_DYNAMIC:
 
@@ -1998,7 +2002,7 @@ enum **LightBakeMode**:
 
 :ref:`LightBakeMode<enum_RenderingServer_LightBakeMode>` **LIGHT_BAKE_DYNAMIC** = ``2``
 
-
+Light is taken into account in dynamic baking (:ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) only). The light can be moved around or modified with global illumination updating in real-time. The light's global illumination appearance will be slightly different compared to :ref:`LIGHT_BAKE_STATIC<class_RenderingServer_constant_LIGHT_BAKE_STATIC>`. This has a greater performance cost compared to :ref:`LIGHT_BAKE_STATIC<class_RenderingServer_constant_LIGHT_BAKE_STATIC>`. When using SDFGI, the update speed of dynamic lights is affected by :ref:`ProjectSettings.rendering/global_illumination/sdfgi/frames_to_update_lights<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_update_lights>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2160,7 +2164,7 @@ Highest low shadow filtering quality (slowest). When using this quality setting,
 
 :ref:`ShadowQuality<enum_RenderingServer_ShadowQuality>` **SHADOW_QUALITY_MAX** = ``6``
 
-
+Represents the size of the :ref:`ShadowQuality<enum_RenderingServer_ShadowQuality>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2204,7 +2208,7 @@ enum **ReflectionProbeAmbientMode**:
 
 :ref:`ReflectionProbeAmbientMode<enum_RenderingServer_ReflectionProbeAmbientMode>` **REFLECTION_PROBE_AMBIENT_DISABLED** = ``0``
 
-
+Do not apply any ambient lighting inside the reflection probe's box defined by its size.
 
 .. _class_RenderingServer_constant_REFLECTION_PROBE_AMBIENT_ENVIRONMENT:
 
@@ -2212,7 +2216,7 @@ enum **ReflectionProbeAmbientMode**:
 
 :ref:`ReflectionProbeAmbientMode<enum_RenderingServer_ReflectionProbeAmbientMode>` **REFLECTION_PROBE_AMBIENT_ENVIRONMENT** = ``1``
 
-
+Apply automatically-sourced environment lighting inside the reflection probe's box defined by its size.
 
 .. _class_RenderingServer_constant_REFLECTION_PROBE_AMBIENT_COLOR:
 
@@ -2220,7 +2224,7 @@ enum **ReflectionProbeAmbientMode**:
 
 :ref:`ReflectionProbeAmbientMode<enum_RenderingServer_ReflectionProbeAmbientMode>` **REFLECTION_PROBE_AMBIENT_COLOR** = ``2``
 
-
+Apply custom ambient lighting inside the reflection probe's box defined by its size. See :ref:`reflection_probe_set_ambient_color<class_RenderingServer_method_reflection_probe_set_ambient_color>` and :ref:`reflection_probe_set_ambient_energy<class_RenderingServer_method_reflection_probe_set_ambient_energy>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2238,7 +2242,7 @@ enum **DecalTexture**:
 
 :ref:`DecalTexture<enum_RenderingServer_DecalTexture>` **DECAL_TEXTURE_ALBEDO** = ``0``
 
-
+Albedo texture slot in a decal (:ref:`Decal.texture_albedo<class_Decal_property_texture_albedo>`).
 
 .. _class_RenderingServer_constant_DECAL_TEXTURE_NORMAL:
 
@@ -2246,7 +2250,7 @@ enum **DecalTexture**:
 
 :ref:`DecalTexture<enum_RenderingServer_DecalTexture>` **DECAL_TEXTURE_NORMAL** = ``1``
 
-
+Normal map texture slot in a decal (:ref:`Decal.texture_normal<class_Decal_property_texture_normal>`).
 
 .. _class_RenderingServer_constant_DECAL_TEXTURE_ORM:
 
@@ -2254,7 +2258,7 @@ enum **DecalTexture**:
 
 :ref:`DecalTexture<enum_RenderingServer_DecalTexture>` **DECAL_TEXTURE_ORM** = ``2``
 
-
+Occlusion/Roughness/Metallic texture slot in a decal (:ref:`Decal.texture_orm<class_Decal_property_texture_orm>`).
 
 .. _class_RenderingServer_constant_DECAL_TEXTURE_EMISSION:
 
@@ -2262,7 +2266,7 @@ enum **DecalTexture**:
 
 :ref:`DecalTexture<enum_RenderingServer_DecalTexture>` **DECAL_TEXTURE_EMISSION** = ``3``
 
-
+Emission texture slot in a decal (:ref:`Decal.texture_emission<class_Decal_property_texture_emission>`).
 
 .. _class_RenderingServer_constant_DECAL_TEXTURE_MAX:
 
@@ -2270,7 +2274,7 @@ enum **DecalTexture**:
 
 :ref:`DecalTexture<enum_RenderingServer_DecalTexture>` **DECAL_TEXTURE_MAX** = ``4``
 
-
+Represents the size of the :ref:`DecalTexture<enum_RenderingServer_DecalTexture>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2346,7 +2350,7 @@ enum **VoxelGIQuality**:
 
 :ref:`VoxelGIQuality<enum_RenderingServer_VoxelGIQuality>` **VOXEL_GI_QUALITY_LOW** = ``0``
 
-
+Low :ref:`VoxelGI<class_VoxelGI>` rendering quality using 4 cones.
 
 .. _class_RenderingServer_constant_VOXEL_GI_QUALITY_HIGH:
 
@@ -2354,7 +2358,7 @@ enum **VoxelGIQuality**:
 
 :ref:`VoxelGIQuality<enum_RenderingServer_VoxelGIQuality>` **VOXEL_GI_QUALITY_HIGH** = ``1``
 
-
+High :ref:`VoxelGI<class_VoxelGI>` rendering quality using 6 cones.
 
 .. rst-class:: classref-item-separator
 
@@ -2372,7 +2376,7 @@ enum **ParticlesMode**:
 
 :ref:`ParticlesMode<enum_RenderingServer_ParticlesMode>` **PARTICLES_MODE_2D** = ``0``
 
-
+2D particles.
 
 .. _class_RenderingServer_constant_PARTICLES_MODE_3D:
 
@@ -2380,7 +2384,7 @@ enum **ParticlesMode**:
 
 :ref:`ParticlesMode<enum_RenderingServer_ParticlesMode>` **PARTICLES_MODE_3D** = ``1``
 
-
+3D particles.
 
 .. rst-class:: classref-item-separator
 
@@ -2596,7 +2600,7 @@ enum **ParticlesCollisionHeightfieldResolution**:
 
 :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` **PARTICLES_COLLISION_HEIGHTFIELD_RESOLUTION_MAX** = ``6``
 
-
+Represents the size of the :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2654,7 +2658,7 @@ enum **FogVolumeShape**:
 
 :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` **FOG_VOLUME_SHAPE_MAX** = ``5``
 
-
+Represents the size of the :ref:`FogVolumeShape<enum_RenderingServer_FogVolumeShape>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2672,7 +2676,7 @@ enum **ViewportScaling3DMode**:
 
 :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_BILINEAR** = ``0``
 
-Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
+Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
 
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_FSR:
 
@@ -2680,7 +2684,7 @@ Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be 
 
 :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_FSR** = ``1``
 
-Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`Viewport.scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
 .. _class_RenderingServer_constant_VIEWPORT_SCALING_3D_MODE_MAX:
 
@@ -2688,7 +2692,7 @@ Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. 
 
 :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` **VIEWPORT_SCALING_3D_MODE_MAX** = ``2``
 
-
+Represents the size of the :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2706,7 +2710,7 @@ enum **ViewportUpdateMode**:
 
 :ref:`ViewportUpdateMode<enum_RenderingServer_ViewportUpdateMode>` **VIEWPORT_UPDATE_DISABLED** = ``0``
 
-Do not update the viewport.
+Do not update the viewport's render target.
 
 .. _class_RenderingServer_constant_VIEWPORT_UPDATE_ONCE:
 
@@ -2714,7 +2718,7 @@ Do not update the viewport.
 
 :ref:`ViewportUpdateMode<enum_RenderingServer_ViewportUpdateMode>` **VIEWPORT_UPDATE_ONCE** = ``1``
 
-Update the viewport once then set to disabled.
+Update the viewport's render target once, then switch to :ref:`VIEWPORT_UPDATE_DISABLED<class_RenderingServer_constant_VIEWPORT_UPDATE_DISABLED>`.
 
 .. _class_RenderingServer_constant_VIEWPORT_UPDATE_WHEN_VISIBLE:
 
@@ -2722,7 +2726,7 @@ Update the viewport once then set to disabled.
 
 :ref:`ViewportUpdateMode<enum_RenderingServer_ViewportUpdateMode>` **VIEWPORT_UPDATE_WHEN_VISIBLE** = ``2``
 
-Update the viewport whenever it is visible.
+Update the viewport's render target only when it is visible. This is the default value.
 
 .. _class_RenderingServer_constant_VIEWPORT_UPDATE_WHEN_PARENT_VISIBLE:
 
@@ -2730,7 +2734,7 @@ Update the viewport whenever it is visible.
 
 :ref:`ViewportUpdateMode<enum_RenderingServer_ViewportUpdateMode>` **VIEWPORT_UPDATE_WHEN_PARENT_VISIBLE** = ``3``
 
-
+Update the viewport's render target only when its parent is visible.
 
 .. _class_RenderingServer_constant_VIEWPORT_UPDATE_ALWAYS:
 
@@ -2738,7 +2742,7 @@ Update the viewport whenever it is visible.
 
 :ref:`ViewportUpdateMode<enum_RenderingServer_ViewportUpdateMode>` **VIEWPORT_UPDATE_ALWAYS** = ``4``
 
-Always update the viewport.
+Always update the viewport's render target.
 
 .. rst-class:: classref-item-separator
 
@@ -2756,7 +2760,7 @@ enum **ViewportClearMode**:
 
 :ref:`ViewportClearMode<enum_RenderingServer_ViewportClearMode>` **VIEWPORT_CLEAR_ALWAYS** = ``0``
 
-The viewport is always cleared before drawing.
+Always clear the viewport's render target before drawing.
 
 .. _class_RenderingServer_constant_VIEWPORT_CLEAR_NEVER:
 
@@ -2764,7 +2768,7 @@ The viewport is always cleared before drawing.
 
 :ref:`ViewportClearMode<enum_RenderingServer_ViewportClearMode>` **VIEWPORT_CLEAR_NEVER** = ``1``
 
-The viewport is never cleared before drawing.
+Never clear the viewport's render target.
 
 .. _class_RenderingServer_constant_VIEWPORT_CLEAR_ONLY_NEXT_FRAME:
 
@@ -2772,7 +2776,7 @@ The viewport is never cleared before drawing.
 
 :ref:`ViewportClearMode<enum_RenderingServer_ViewportClearMode>` **VIEWPORT_CLEAR_ONLY_NEXT_FRAME** = ``2``
 
-The viewport is cleared once, then the clear mode is set to :ref:`VIEWPORT_CLEAR_NEVER<class_RenderingServer_constant_VIEWPORT_CLEAR_NEVER>`.
+Clear the viewport's render target on the next frame, then switch to :ref:`VIEWPORT_CLEAR_NEVER<class_RenderingServer_constant_VIEWPORT_CLEAR_NEVER>`.
 
 .. rst-class:: classref-item-separator
 
@@ -2806,7 +2810,7 @@ Enable rendering of 3D environment over 2D canvas.
 
 :ref:`ViewportEnvironmentMode<enum_RenderingServer_ViewportEnvironmentMode>` **VIEWPORT_ENVIRONMENT_INHERIT** = ``2``
 
-Inherit enable/disable value from parent. If topmost parent is also set to inherit, then this has the same behavior as :ref:`VIEWPORT_ENVIRONMENT_ENABLED<class_RenderingServer_constant_VIEWPORT_ENVIRONMENT_ENABLED>`.
+Inherit enable/disable value from parent. If the topmost parent is also set to :ref:`VIEWPORT_ENVIRONMENT_INHERIT<class_RenderingServer_constant_VIEWPORT_ENVIRONMENT_INHERIT>`, then this has the same behavior as :ref:`VIEWPORT_ENVIRONMENT_ENABLED<class_RenderingServer_constant_VIEWPORT_ENVIRONMENT_ENABLED>`.
 
 .. _class_RenderingServer_constant_VIEWPORT_ENVIRONMENT_MAX:
 
@@ -2814,7 +2818,7 @@ Inherit enable/disable value from parent. If topmost parent is also set to inher
 
 :ref:`ViewportEnvironmentMode<enum_RenderingServer_ViewportEnvironmentMode>` **VIEWPORT_ENVIRONMENT_MAX** = ``3``
 
-Max value of :ref:`ViewportEnvironmentMode<enum_RenderingServer_ViewportEnvironmentMode>` enum.
+Represents the size of the :ref:`ViewportEnvironmentMode<enum_RenderingServer_ViewportEnvironmentMode>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2832,7 +2836,7 @@ enum **ViewportSDFOversize**:
 
 :ref:`ViewportSDFOversize<enum_RenderingServer_ViewportSDFOversize>` **VIEWPORT_SDF_OVERSIZE_100_PERCENT** = ``0``
 
-
+Do not oversize the 2D signed distance field. Occluders may disappear when touching the viewport's edges, and :ref:`GPUParticles3D<class_GPUParticles3D>` collision may stop working earlier than intended. This has the lowest GPU requirements.
 
 .. _class_RenderingServer_constant_VIEWPORT_SDF_OVERSIZE_120_PERCENT:
 
@@ -2840,7 +2844,7 @@ enum **ViewportSDFOversize**:
 
 :ref:`ViewportSDFOversize<enum_RenderingServer_ViewportSDFOversize>` **VIEWPORT_SDF_OVERSIZE_120_PERCENT** = ``1``
 
-
+2D signed distance field covers 20% of the viewport's size outside the viewport on each side (top, right, bottom, left).
 
 .. _class_RenderingServer_constant_VIEWPORT_SDF_OVERSIZE_150_PERCENT:
 
@@ -2848,7 +2852,7 @@ enum **ViewportSDFOversize**:
 
 :ref:`ViewportSDFOversize<enum_RenderingServer_ViewportSDFOversize>` **VIEWPORT_SDF_OVERSIZE_150_PERCENT** = ``2``
 
-
+2D signed distance field covers 50% of the viewport's size outside the viewport on each side (top, right, bottom, left).
 
 .. _class_RenderingServer_constant_VIEWPORT_SDF_OVERSIZE_200_PERCENT:
 
@@ -2856,7 +2860,7 @@ enum **ViewportSDFOversize**:
 
 :ref:`ViewportSDFOversize<enum_RenderingServer_ViewportSDFOversize>` **VIEWPORT_SDF_OVERSIZE_200_PERCENT** = ``3``
 
-
+2D signed distance field covers 100% of the viewport's size outside the viewport on each side (top, right, bottom, left). This has the highest GPU requirements.
 
 .. _class_RenderingServer_constant_VIEWPORT_SDF_OVERSIZE_MAX:
 
@@ -2864,7 +2868,7 @@ enum **ViewportSDFOversize**:
 
 :ref:`ViewportSDFOversize<enum_RenderingServer_ViewportSDFOversize>` **VIEWPORT_SDF_OVERSIZE_MAX** = ``4``
 
-
+Represents the size of the :ref:`ViewportSDFOversize<enum_RenderingServer_ViewportSDFOversize>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2882,7 +2886,7 @@ enum **ViewportSDFScale**:
 
 :ref:`ViewportSDFScale<enum_RenderingServer_ViewportSDFScale>` **VIEWPORT_SDF_SCALE_100_PERCENT** = ``0``
 
-
+Full resolution 2D signed distance field scale. This has the highest GPU requirements.
 
 .. _class_RenderingServer_constant_VIEWPORT_SDF_SCALE_50_PERCENT:
 
@@ -2890,7 +2894,7 @@ enum **ViewportSDFScale**:
 
 :ref:`ViewportSDFScale<enum_RenderingServer_ViewportSDFScale>` **VIEWPORT_SDF_SCALE_50_PERCENT** = ``1``
 
-
+Half resolution 2D signed distance field scale on each axis (25% of the viewport pixel count).
 
 .. _class_RenderingServer_constant_VIEWPORT_SDF_SCALE_25_PERCENT:
 
@@ -2898,7 +2902,7 @@ enum **ViewportSDFScale**:
 
 :ref:`ViewportSDFScale<enum_RenderingServer_ViewportSDFScale>` **VIEWPORT_SDF_SCALE_25_PERCENT** = ``2``
 
-
+Quarter resolution 2D signed distance field scale on each axis (6.25% of the viewport pixel count). This has the lowest GPU requirements.
 
 .. _class_RenderingServer_constant_VIEWPORT_SDF_SCALE_MAX:
 
@@ -2906,7 +2910,7 @@ enum **ViewportSDFScale**:
 
 :ref:`ViewportSDFScale<enum_RenderingServer_ViewportSDFScale>` **VIEWPORT_SDF_SCALE_MAX** = ``3``
 
-
+Represents the size of the :ref:`ViewportSDFScale<enum_RenderingServer_ViewportSDFScale>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2956,7 +2960,7 @@ Multisample antialiasing uses 8 samples per pixel for 3D. This has a very high i
 
 :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` **VIEWPORT_MSAA_MAX** = ``4``
 
-
+Represents the size of the :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2974,7 +2978,7 @@ enum **ViewportScreenSpaceAA**:
 
 :ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **VIEWPORT_SCREEN_SPACE_AA_DISABLED** = ``0``
 
-
+Do not perform any antialiasing in the full screen post-process.
 
 .. _class_RenderingServer_constant_VIEWPORT_SCREEN_SPACE_AA_FXAA:
 
@@ -2982,7 +2986,7 @@ enum **ViewportScreenSpaceAA**:
 
 :ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **VIEWPORT_SCREEN_SPACE_AA_FXAA** = ``1``
 
-
+Use fast approximate antialiasing. FXAA is a popular screen-space antialiasing method, which is fast but will make the image look blurry, especially at lower resolutions. It can still work relatively well at large resolutions such as 1440p and 4K.
 
 .. _class_RenderingServer_constant_VIEWPORT_SCREEN_SPACE_AA_MAX:
 
@@ -2990,7 +2994,7 @@ enum **ViewportScreenSpaceAA**:
 
 :ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` **VIEWPORT_SCREEN_SPACE_AA_MAX** = ``2``
 
-
+Represents the size of the :ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3008,7 +3012,7 @@ enum **ViewportOcclusionCullingBuildQuality**:
 
 :ref:`ViewportOcclusionCullingBuildQuality<enum_RenderingServer_ViewportOcclusionCullingBuildQuality>` **VIEWPORT_OCCLUSION_BUILD_QUALITY_LOW** = ``0``
 
-
+Low occlusion culling BVH build quality (as defined by Embree). Results in the lowest CPU usage, but least effective culling.
 
 .. _class_RenderingServer_constant_VIEWPORT_OCCLUSION_BUILD_QUALITY_MEDIUM:
 
@@ -3016,7 +3020,7 @@ enum **ViewportOcclusionCullingBuildQuality**:
 
 :ref:`ViewportOcclusionCullingBuildQuality<enum_RenderingServer_ViewportOcclusionCullingBuildQuality>` **VIEWPORT_OCCLUSION_BUILD_QUALITY_MEDIUM** = ``1``
 
-
+Medium occlusion culling BVH build quality (as defined by Embree).
 
 .. _class_RenderingServer_constant_VIEWPORT_OCCLUSION_BUILD_QUALITY_HIGH:
 
@@ -3024,7 +3028,7 @@ enum **ViewportOcclusionCullingBuildQuality**:
 
 :ref:`ViewportOcclusionCullingBuildQuality<enum_RenderingServer_ViewportOcclusionCullingBuildQuality>` **VIEWPORT_OCCLUSION_BUILD_QUALITY_HIGH** = ``2``
 
-
+High occlusion culling BVH build quality (as defined by Embree). Results in the highest CPU usage, but most effective culling.
 
 .. rst-class:: classref-item-separator
 
@@ -3084,7 +3088,7 @@ enum **ViewportRenderInfoType**:
 
 :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` **VIEWPORT_RENDER_INFO_TYPE_VISIBLE** = ``0``
 
-
+Visible render pass (excluding shadows).
 
 .. _class_RenderingServer_constant_VIEWPORT_RENDER_INFO_TYPE_SHADOW:
 
@@ -3092,7 +3096,7 @@ enum **ViewportRenderInfoType**:
 
 :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` **VIEWPORT_RENDER_INFO_TYPE_SHADOW** = ``1``
 
-
+Shadow render pass. Objects will be rendered several times depending on the number of amounts of lights with shadows and the number of directional shadow splits.
 
 .. _class_RenderingServer_constant_VIEWPORT_RENDER_INFO_TYPE_MAX:
 
@@ -3100,7 +3104,7 @@ enum **ViewportRenderInfoType**:
 
 :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` **VIEWPORT_RENDER_INFO_TYPE_MAX** = ``2``
 
-
+Represents the size of the :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3208,7 +3212,7 @@ Draws the shadow atlas that stores shadows from :ref:`DirectionalLight3D<class_D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_SCENE_LUMINANCE** = ``11``
 
-
+Draws the estimated scene luminance. This is a 1×1 texture that is generated when autoexposure is enabled to control the scene's exposure.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_SSAO:
 
@@ -3240,7 +3244,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_DECAL_ATLAS** = ``15``
 
-
+Draws the decal atlas that stores decal textures from :ref:`Decal<class_Decal>`\ s.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_SDFGI:
 
@@ -3248,7 +3252,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_SDFGI** = ``16``
 
-
+Draws SDFGI cascade data. This is the data structure that is used to bounce lighting against and create reflections.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_SDFGI_PROBES:
 
@@ -3256,7 +3260,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_SDFGI_PROBES** = ``17``
 
-
+Draws SDFGI probe data. This is the data structure that is used to give indirect lighting dynamic objects moving within the scene.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_GI_BUFFER:
 
@@ -3264,7 +3268,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_GI_BUFFER** = ``18``
 
-
+Draws the global illumination buffer (:ref:`VoxelGI<class_VoxelGI>` or SDFGI).
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_DISABLE_LOD:
 
@@ -3272,7 +3276,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_DISABLE_LOD** = ``19``
 
-
+Disable mesh LOD. All meshes are drawn with full detail, which can be used to compare performance.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_CLUSTER_OMNI_LIGHTS:
 
@@ -3280,7 +3284,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_CLUSTER_OMNI_LIGHTS** = ``20``
 
-
+Draws the :ref:`OmniLight3D<class_OmniLight3D>` cluster. Clustering determines where lights are positioned in screen-space, which allows the engine to only process these portions of the screen for lighting.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_CLUSTER_SPOT_LIGHTS:
 
@@ -3288,7 +3292,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_CLUSTER_SPOT_LIGHTS** = ``21``
 
-
+Draws the :ref:`SpotLight3D<class_SpotLight3D>` cluster. Clustering determines where lights are positioned in screen-space, which allows the engine to only process these portions of the screen for lighting.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_CLUSTER_DECALS:
 
@@ -3296,7 +3300,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_CLUSTER_DECALS** = ``22``
 
-
+Draws the :ref:`Decal<class_Decal>` cluster. Clustering determines where decals are positioned in screen-space, which allows the engine to only process these portions of the screen for decals.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_CLUSTER_REFLECTION_PROBES:
 
@@ -3304,7 +3308,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_CLUSTER_REFLECTION_PROBES** = ``23``
 
-
+Draws the :ref:`ReflectionProbe<class_ReflectionProbe>` cluster. Clustering determines where reflection probes are positioned in screen-space, which allows the engine to only process these portions of the screen for reflection probes.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_OCCLUDERS:
 
@@ -3312,7 +3316,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_OCCLUDERS** = ``24``
 
-
+Draws the occlusion culling buffer. This low-resolution occlusion culling buffer is rasterized on the CPU and is used to check whether instances are occluded by other objects.
 
 .. _class_RenderingServer_constant_VIEWPORT_DEBUG_DRAW_MOTION_VECTORS:
 
@@ -3320,7 +3324,7 @@ Colors each PSSM split for the :ref:`DirectionalLight3D<class_DirectionalLight3D
 
 :ref:`ViewportDebugDraw<enum_RenderingServer_ViewportDebugDraw>` **VIEWPORT_DEBUG_DRAW_MOTION_VECTORS** = ``25``
 
-
+Draws the motion vectors buffer. This is used by temporal antialiasing to correct for motion that occurs during gameplay.
 
 .. rst-class:: classref-item-separator
 
@@ -3338,7 +3342,7 @@ enum **ViewportVRSMode**:
 
 :ref:`ViewportVRSMode<enum_RenderingServer_ViewportVRSMode>` **VIEWPORT_VRS_DISABLED** = ``0``
 
-VRS is disabled.
+Variable rate shading is disabled.
 
 .. _class_RenderingServer_constant_VIEWPORT_VRS_TEXTURE:
 
@@ -3346,7 +3350,7 @@ VRS is disabled.
 
 :ref:`ViewportVRSMode<enum_RenderingServer_ViewportVRSMode>` **VIEWPORT_VRS_TEXTURE** = ``1``
 
-VRS uses a texture. Note, for stereoscopic use a texture atlas with a texture for each view.
+Variable rate shading uses a texture. Note, for stereoscopic use a texture atlas with a texture for each view.
 
 .. _class_RenderingServer_constant_VIEWPORT_VRS_XR:
 
@@ -3354,7 +3358,7 @@ VRS uses a texture. Note, for stereoscopic use a texture atlas with a texture fo
 
 :ref:`ViewportVRSMode<enum_RenderingServer_ViewportVRSMode>` **VIEWPORT_VRS_XR** = ``2``
 
-VRS texture is supplied by the primary :ref:`XRInterface<class_XRInterface>`.
+Variable rate shading texture is supplied by the primary :ref:`XRInterface<class_XRInterface>`.
 
 .. _class_RenderingServer_constant_VIEWPORT_VRS_MAX:
 
@@ -3380,7 +3384,7 @@ enum **SkyMode**:
 
 :ref:`SkyMode<enum_RenderingServer_SkyMode>` **SKY_MODE_AUTOMATIC** = ``0``
 
-
+Automatically selects the appropriate process mode based on your sky shader. If your shader uses ``TIME`` or ``POSITION``, this will use :ref:`SKY_MODE_REALTIME<class_RenderingServer_constant_SKY_MODE_REALTIME>`. If your shader uses any of the ``LIGHT_*`` variables or any custom uniforms, this uses :ref:`SKY_MODE_INCREMENTAL<class_RenderingServer_constant_SKY_MODE_INCREMENTAL>`. Otherwise, this defaults to :ref:`SKY_MODE_QUALITY<class_RenderingServer_constant_SKY_MODE_QUALITY>`.
 
 .. _class_RenderingServer_constant_SKY_MODE_QUALITY:
 
@@ -3388,7 +3392,7 @@ enum **SkyMode**:
 
 :ref:`SkyMode<enum_RenderingServer_SkyMode>` **SKY_MODE_QUALITY** = ``1``
 
-Uses high quality importance sampling to process the radiance map. In general, this results in much higher quality than :ref:`Sky.PROCESS_MODE_REALTIME<class_Sky_constant_PROCESS_MODE_REALTIME>` but takes much longer to generate. This should not be used if you plan on changing the sky at runtime. If you are finding that the reflection is not blurry enough and is showing sparkles or fireflies, try increasing :ref:`ProjectSettings.rendering/reflections/sky_reflections/ggx_samples<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples>`.
+Uses high quality importance sampling to process the radiance map. In general, this results in much higher quality than :ref:`SKY_MODE_REALTIME<class_RenderingServer_constant_SKY_MODE_REALTIME>` but takes much longer to generate. This should not be used if you plan on changing the sky at runtime. If you are finding that the reflection is not blurry enough and is showing sparkles or fireflies, try increasing :ref:`ProjectSettings.rendering/reflections/sky_reflections/ggx_samples<class_ProjectSettings_property_rendering/reflections/sky_reflections/ggx_samples>`.
 
 .. _class_RenderingServer_constant_SKY_MODE_INCREMENTAL:
 
@@ -3396,7 +3400,7 @@ Uses high quality importance sampling to process the radiance map. In general, t
 
 :ref:`SkyMode<enum_RenderingServer_SkyMode>` **SKY_MODE_INCREMENTAL** = ``2``
 
-
+Uses the same high quality importance sampling to process the radiance map as :ref:`SKY_MODE_QUALITY<class_RenderingServer_constant_SKY_MODE_QUALITY>`, but updates over several frames. The number of frames is determined by :ref:`ProjectSettings.rendering/reflections/sky_reflections/roughness_layers<class_ProjectSettings_property_rendering/reflections/sky_reflections/roughness_layers>`. Use this when you need highest quality radiance maps, but have a sky that updates slowly.
 
 .. _class_RenderingServer_constant_SKY_MODE_REALTIME:
 
@@ -3404,9 +3408,9 @@ Uses high quality importance sampling to process the radiance map. In general, t
 
 :ref:`SkyMode<enum_RenderingServer_SkyMode>` **SKY_MODE_REALTIME** = ``3``
 
-Uses the fast filtering algorithm to process the radiance map. In general this results in lower quality, but substantially faster run times.
+Uses the fast filtering algorithm to process the radiance map. In general this results in lower quality, but substantially faster run times. If you need better quality, but still need to update the sky every frame, consider turning on :ref:`ProjectSettings.rendering/reflections/sky_reflections/fast_filter_high_quality<class_ProjectSettings_property_rendering/reflections/sky_reflections/fast_filter_high_quality>`.
 
-\ **Note:** The fast filtering algorithm is limited to 256x256 cubemaps, so :ref:`Sky.radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`Sky.RADIANCE_SIZE_256<class_Sky_constant_RADIANCE_SIZE_256>`.
+\ **Note:** The fast filtering algorithm is limited to 256×256 cubemaps, so :ref:`sky_set_radiance_size<class_RenderingServer_method_sky_set_radiance_size>` must be set to ``256``. Otherwise, a warning is printed and the overridden radiance size is ignored.
 
 .. rst-class:: classref-item-separator
 
@@ -3802,7 +3806,7 @@ enum **EnvironmentSDFGIYScale**:
 
 :ref:`EnvironmentSDFGIYScale<enum_RenderingServer_EnvironmentSDFGIYScale>` **ENV_SDFGI_Y_SCALE_50_PERCENT** = ``0``
 
-
+Use 50% scale for SDFGI on the Y (vertical) axis. SDFGI cells will be twice as short as they are wide. This allows providing increased GI detail and reduced light leaking with thin floors and ceilings. This is usually the best choice for scenes that don't feature much verticality.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_Y_SCALE_75_PERCENT:
 
@@ -3810,7 +3814,7 @@ enum **EnvironmentSDFGIYScale**:
 
 :ref:`EnvironmentSDFGIYScale<enum_RenderingServer_EnvironmentSDFGIYScale>` **ENV_SDFGI_Y_SCALE_75_PERCENT** = ``1``
 
-
+Use 75% scale for SDFGI on the Y (vertical) axis. This is a balance between the 50% and 100% SDFGI Y scales.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_Y_SCALE_100_PERCENT:
 
@@ -3818,7 +3822,7 @@ enum **EnvironmentSDFGIYScale**:
 
 :ref:`EnvironmentSDFGIYScale<enum_RenderingServer_EnvironmentSDFGIYScale>` **ENV_SDFGI_Y_SCALE_100_PERCENT** = ``2``
 
-
+Use 100% scale for SDFGI on the Y (vertical) axis. SDFGI cells will be as tall as they are wide. This is usually the best choice for highly vertical scenes. The downside is that light leaking may become more noticeable with thin floors and ceilings.
 
 .. rst-class:: classref-item-separator
 
@@ -3836,7 +3840,7 @@ enum **EnvironmentSDFGIRayCount**:
 
 :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` **ENV_SDFGI_RAY_COUNT_4** = ``0``
 
-
+Throw 4 rays per frame when converging SDFGI. This has the lowest GPU requirements, but creates the most noisy result.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_RAY_COUNT_8:
 
@@ -3844,7 +3848,7 @@ enum **EnvironmentSDFGIRayCount**:
 
 :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` **ENV_SDFGI_RAY_COUNT_8** = ``1``
 
-
+Throw 8 rays per frame when converging SDFGI.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_RAY_COUNT_16:
 
@@ -3852,7 +3856,7 @@ enum **EnvironmentSDFGIRayCount**:
 
 :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` **ENV_SDFGI_RAY_COUNT_16** = ``2``
 
-
+Throw 16 rays per frame when converging SDFGI.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_RAY_COUNT_32:
 
@@ -3860,7 +3864,7 @@ enum **EnvironmentSDFGIRayCount**:
 
 :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` **ENV_SDFGI_RAY_COUNT_32** = ``3``
 
-
+Throw 32 rays per frame when converging SDFGI.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_RAY_COUNT_64:
 
@@ -3868,7 +3872,7 @@ enum **EnvironmentSDFGIRayCount**:
 
 :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` **ENV_SDFGI_RAY_COUNT_64** = ``4``
 
-
+Throw 64 rays per frame when converging SDFGI.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_RAY_COUNT_96:
 
@@ -3876,7 +3880,7 @@ enum **EnvironmentSDFGIRayCount**:
 
 :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` **ENV_SDFGI_RAY_COUNT_96** = ``5``
 
-
+Throw 96 rays per frame when converging SDFGI. This has high GPU requirements.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_RAY_COUNT_128:
 
@@ -3884,7 +3888,7 @@ enum **EnvironmentSDFGIRayCount**:
 
 :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` **ENV_SDFGI_RAY_COUNT_128** = ``6``
 
-
+Throw 128 rays per frame when converging SDFGI. This has very high GPU requirements, but creates the least noisy result.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_RAY_COUNT_MAX:
 
@@ -3892,7 +3896,7 @@ enum **EnvironmentSDFGIRayCount**:
 
 :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` **ENV_SDFGI_RAY_COUNT_MAX** = ``7``
 
-
+Represents the size of the :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3910,7 +3914,7 @@ enum **EnvironmentSDFGIFramesToConverge**:
 
 :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` **ENV_SDFGI_CONVERGE_IN_5_FRAMES** = ``0``
 
-
+Converge SDFGI over 5 frames. This is the most responsive, but creates the most noisy result with a given ray count.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_CONVERGE_IN_10_FRAMES:
 
@@ -3918,7 +3922,7 @@ enum **EnvironmentSDFGIFramesToConverge**:
 
 :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` **ENV_SDFGI_CONVERGE_IN_10_FRAMES** = ``1``
 
-
+Configure SDFGI to fully converge over 10 frames.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_CONVERGE_IN_15_FRAMES:
 
@@ -3926,7 +3930,7 @@ enum **EnvironmentSDFGIFramesToConverge**:
 
 :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` **ENV_SDFGI_CONVERGE_IN_15_FRAMES** = ``2``
 
-
+Configure SDFGI to fully converge over 15 frames.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_CONVERGE_IN_20_FRAMES:
 
@@ -3934,7 +3938,7 @@ enum **EnvironmentSDFGIFramesToConverge**:
 
 :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` **ENV_SDFGI_CONVERGE_IN_20_FRAMES** = ``3``
 
-
+Configure SDFGI to fully converge over 20 frames.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_CONVERGE_IN_25_FRAMES:
 
@@ -3942,7 +3946,7 @@ enum **EnvironmentSDFGIFramesToConverge**:
 
 :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` **ENV_SDFGI_CONVERGE_IN_25_FRAMES** = ``4``
 
-
+Configure SDFGI to fully converge over 25 frames.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_CONVERGE_IN_30_FRAMES:
 
@@ -3950,7 +3954,7 @@ enum **EnvironmentSDFGIFramesToConverge**:
 
 :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` **ENV_SDFGI_CONVERGE_IN_30_FRAMES** = ``5``
 
-
+Configure SDFGI to fully converge over 30 frames. This is the least responsive, but creates the least noisy result with a given ray count.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_CONVERGE_MAX:
 
@@ -3958,7 +3962,7 @@ enum **EnvironmentSDFGIFramesToConverge**:
 
 :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` **ENV_SDFGI_CONVERGE_MAX** = ``6``
 
-
+Represents the size of the :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3976,7 +3980,7 @@ enum **EnvironmentSDFGIFramesToUpdateLight**:
 
 :ref:`EnvironmentSDFGIFramesToUpdateLight<enum_RenderingServer_EnvironmentSDFGIFramesToUpdateLight>` **ENV_SDFGI_UPDATE_LIGHT_IN_1_FRAME** = ``0``
 
-
+Update indirect light from dynamic lights in SDFGI over 1 frame. This is the most responsive, but has the highest GPU requirements.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_UPDATE_LIGHT_IN_2_FRAMES:
 
@@ -3984,7 +3988,7 @@ enum **EnvironmentSDFGIFramesToUpdateLight**:
 
 :ref:`EnvironmentSDFGIFramesToUpdateLight<enum_RenderingServer_EnvironmentSDFGIFramesToUpdateLight>` **ENV_SDFGI_UPDATE_LIGHT_IN_2_FRAMES** = ``1``
 
-
+Update indirect light from dynamic lights in SDFGI over 2 frames.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_UPDATE_LIGHT_IN_4_FRAMES:
 
@@ -3992,7 +3996,7 @@ enum **EnvironmentSDFGIFramesToUpdateLight**:
 
 :ref:`EnvironmentSDFGIFramesToUpdateLight<enum_RenderingServer_EnvironmentSDFGIFramesToUpdateLight>` **ENV_SDFGI_UPDATE_LIGHT_IN_4_FRAMES** = ``2``
 
-
+Update indirect light from dynamic lights in SDFGI over 4 frames.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_UPDATE_LIGHT_IN_8_FRAMES:
 
@@ -4000,7 +4004,7 @@ enum **EnvironmentSDFGIFramesToUpdateLight**:
 
 :ref:`EnvironmentSDFGIFramesToUpdateLight<enum_RenderingServer_EnvironmentSDFGIFramesToUpdateLight>` **ENV_SDFGI_UPDATE_LIGHT_IN_8_FRAMES** = ``3``
 
-
+Update indirect light from dynamic lights in SDFGI over 8 frames.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_UPDATE_LIGHT_IN_16_FRAMES:
 
@@ -4008,7 +4012,7 @@ enum **EnvironmentSDFGIFramesToUpdateLight**:
 
 :ref:`EnvironmentSDFGIFramesToUpdateLight<enum_RenderingServer_EnvironmentSDFGIFramesToUpdateLight>` **ENV_SDFGI_UPDATE_LIGHT_IN_16_FRAMES** = ``4``
 
-
+Update indirect light from dynamic lights in SDFGI over 16 frames. This is the least responsive, but has the lowest GPU requirements.
 
 .. _class_RenderingServer_constant_ENV_SDFGI_UPDATE_LIGHT_MAX:
 
@@ -4016,7 +4020,7 @@ enum **EnvironmentSDFGIFramesToUpdateLight**:
 
 :ref:`EnvironmentSDFGIFramesToUpdateLight<enum_RenderingServer_EnvironmentSDFGIFramesToUpdateLight>` **ENV_SDFGI_UPDATE_LIGHT_MAX** = ``5``
 
-
+Represents the size of the :ref:`EnvironmentSDFGIFramesToUpdateLight<enum_RenderingServer_EnvironmentSDFGIFramesToUpdateLight>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -4034,7 +4038,7 @@ enum **SubSurfaceScatteringQuality**:
 
 :ref:`SubSurfaceScatteringQuality<enum_RenderingServer_SubSurfaceScatteringQuality>` **SUB_SURFACE_SCATTERING_QUALITY_DISABLED** = ``0``
 
-
+Disables subsurface scattering entirely, even on materials that have :ref:`BaseMaterial3D.subsurf_scatter_enabled<class_BaseMaterial3D_property_subsurf_scatter_enabled>` set to ``true``. This has the lowest GPU requirements.
 
 .. _class_RenderingServer_constant_SUB_SURFACE_SCATTERING_QUALITY_LOW:
 
@@ -4042,7 +4046,7 @@ enum **SubSurfaceScatteringQuality**:
 
 :ref:`SubSurfaceScatteringQuality<enum_RenderingServer_SubSurfaceScatteringQuality>` **SUB_SURFACE_SCATTERING_QUALITY_LOW** = ``1``
 
-
+Low subsurface scattering quality.
 
 .. _class_RenderingServer_constant_SUB_SURFACE_SCATTERING_QUALITY_MEDIUM:
 
@@ -4050,7 +4054,7 @@ enum **SubSurfaceScatteringQuality**:
 
 :ref:`SubSurfaceScatteringQuality<enum_RenderingServer_SubSurfaceScatteringQuality>` **SUB_SURFACE_SCATTERING_QUALITY_MEDIUM** = ``2``
 
-
+Medium subsurface scattering quality.
 
 .. _class_RenderingServer_constant_SUB_SURFACE_SCATTERING_QUALITY_HIGH:
 
@@ -4058,7 +4062,7 @@ enum **SubSurfaceScatteringQuality**:
 
 :ref:`SubSurfaceScatteringQuality<enum_RenderingServer_SubSurfaceScatteringQuality>` **SUB_SURFACE_SCATTERING_QUALITY_HIGH** = ``3``
 
-
+High subsurface scattering quality. This has the highest GPU requirements.
 
 .. rst-class:: classref-item-separator
 
@@ -4184,7 +4188,7 @@ The instance is a particle emitter.
 
 :ref:`InstanceType<enum_RenderingServer_InstanceType>` **INSTANCE_PARTICLES_COLLISION** = ``4``
 
-
+The instance is a GPUParticles collision shape.
 
 .. _class_RenderingServer_constant_INSTANCE_LIGHT:
 
@@ -4232,7 +4236,7 @@ The instance is a lightmap.
 
 :ref:`InstanceType<enum_RenderingServer_InstanceType>` **INSTANCE_OCCLUDER** = ``10``
 
-
+The instance is an occlusion culling occluder.
 
 .. _class_RenderingServer_constant_INSTANCE_VISIBLITY_NOTIFIER:
 
@@ -4240,7 +4244,7 @@ The instance is a lightmap.
 
 :ref:`InstanceType<enum_RenderingServer_InstanceType>` **INSTANCE_VISIBLITY_NOTIFIER** = ``11``
 
-
+The instance is a visible on-screen notifier.
 
 .. _class_RenderingServer_constant_INSTANCE_FOG_VOLUME:
 
@@ -4248,7 +4252,7 @@ The instance is a lightmap.
 
 :ref:`InstanceType<enum_RenderingServer_InstanceType>` **INSTANCE_FOG_VOLUME** = ``12``
 
-
+The instance is a fog volume.
 
 .. _class_RenderingServer_constant_INSTANCE_MAX:
 
@@ -4306,7 +4310,7 @@ When set, manually requests to draw geometry on next frame.
 
 :ref:`InstanceFlags<enum_RenderingServer_InstanceFlags>` **INSTANCE_FLAG_IGNORE_OCCLUSION_CULLING** = ``3``
 
-
+Always draw, even if the instance would be culled by occlusion culling. Does not affect view frustum culling.
 
 .. _class_RenderingServer_constant_INSTANCE_FLAG_MAX:
 
@@ -4450,7 +4454,7 @@ enum **CanvasTextureChannel**:
 
 :ref:`CanvasTextureChannel<enum_RenderingServer_CanvasTextureChannel>` **CANVAS_TEXTURE_CHANNEL_DIFFUSE** = ``0``
 
-
+Diffuse canvas texture (:ref:`CanvasTexture.diffuse_texture<class_CanvasTexture_property_diffuse_texture>`).
 
 .. _class_RenderingServer_constant_CANVAS_TEXTURE_CHANNEL_NORMAL:
 
@@ -4458,7 +4462,7 @@ enum **CanvasTextureChannel**:
 
 :ref:`CanvasTextureChannel<enum_RenderingServer_CanvasTextureChannel>` **CANVAS_TEXTURE_CHANNEL_NORMAL** = ``1``
 
-
+Normal map canvas texture (:ref:`CanvasTexture.normal_texture<class_CanvasTexture_property_normal_texture>`).
 
 .. _class_RenderingServer_constant_CANVAS_TEXTURE_CHANNEL_SPECULAR:
 
@@ -4466,7 +4470,7 @@ enum **CanvasTextureChannel**:
 
 :ref:`CanvasTextureChannel<enum_RenderingServer_CanvasTextureChannel>` **CANVAS_TEXTURE_CHANNEL_SPECULAR** = ``2``
 
-
+Specular map canvas texture (:ref:`CanvasTexture.specular_texture<class_CanvasTexture_property_specular_texture>`).
 
 .. rst-class:: classref-item-separator
 
@@ -4642,7 +4646,7 @@ enum **CanvasGroupMode**:
 
 :ref:`CanvasGroupMode<enum_RenderingServer_CanvasGroupMode>` **CANVAS_GROUP_MODE_DISABLED** = ``0``
 
-
+Child draws over parent and is not clipped.
 
 .. _class_RenderingServer_constant_CANVAS_GROUP_MODE_CLIP_ONLY:
 
@@ -4650,7 +4654,7 @@ enum **CanvasGroupMode**:
 
 :ref:`CanvasGroupMode<enum_RenderingServer_CanvasGroupMode>` **CANVAS_GROUP_MODE_CLIP_ONLY** = ``1``
 
-
+Parent is used for the purposes of clipping only. Child is clipped to the parent's visible area, parent is not drawn.
 
 .. _class_RenderingServer_constant_CANVAS_GROUP_MODE_CLIP_AND_DRAW:
 
@@ -4658,7 +4662,7 @@ enum **CanvasGroupMode**:
 
 :ref:`CanvasGroupMode<enum_RenderingServer_CanvasGroupMode>` **CANVAS_GROUP_MODE_CLIP_AND_DRAW** = ``2``
 
-
+Parent is used for clipping child, but parent is also drawn underneath child as normal before clipping child to its visible area.
 
 .. _class_RenderingServer_constant_CANVAS_GROUP_MODE_TRANSPARENT:
 
@@ -4684,7 +4688,7 @@ enum **CanvasLightMode**:
 
 :ref:`CanvasLightMode<enum_RenderingServer_CanvasLightMode>` **CANVAS_LIGHT_MODE_POINT** = ``0``
 
-
+2D point light (see :ref:`PointLight2D<class_PointLight2D>`).
 
 .. _class_RenderingServer_constant_CANVAS_LIGHT_MODE_DIRECTIONAL:
 
@@ -4692,7 +4696,7 @@ enum **CanvasLightMode**:
 
 :ref:`CanvasLightMode<enum_RenderingServer_CanvasLightMode>` **CANVAS_LIGHT_MODE_DIRECTIONAL** = ``1``
 
-
+2D directional (sun/moon) light (see :ref:`DirectionalLight2D<class_DirectionalLight2D>`).
 
 .. rst-class:: classref-item-separator
 
@@ -4820,7 +4824,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_BOOL** = ``0``
 
-
+Boolean global shader parameter (``global uniform bool ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_BVEC2:
 
@@ -4828,7 +4832,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_BVEC2** = ``1``
 
-
+2-dimensional boolean vector global shader parameter (``global uniform bvec2 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_BVEC3:
 
@@ -4836,7 +4840,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_BVEC3** = ``2``
 
-
+3-dimensional boolean vector global shader parameter (``global uniform bvec3 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_BVEC4:
 
@@ -4844,7 +4848,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_BVEC4** = ``3``
 
-
+4-dimensional boolean vector global shader parameter (``global uniform bvec4 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_INT:
 
@@ -4852,7 +4856,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_INT** = ``4``
 
-
+Integer global shader parameter (``global uniform int ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_IVEC2:
 
@@ -4860,7 +4864,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_IVEC2** = ``5``
 
-
+2-dimensional integer vector global shader parameter (``global uniform ivec2 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_IVEC3:
 
@@ -4868,7 +4872,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_IVEC3** = ``6``
 
-
+3-dimensional integer vector global shader parameter (``global uniform ivec3 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_IVEC4:
 
@@ -4876,7 +4880,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_IVEC4** = ``7``
 
-
+4-dimensional integer vector global shader parameter (``global uniform ivec4 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_RECT2I:
 
@@ -4884,7 +4888,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_RECT2I** = ``8``
 
-
+2-dimensional integer rectangle global shader parameter (``global uniform ivec4 ...``). Equivalent to :ref:`GLOBAL_VAR_TYPE_IVEC4<class_RenderingServer_constant_GLOBAL_VAR_TYPE_IVEC4>` in shader code, but exposed as a :ref:`Rect2i<class_Rect2i>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_UINT:
 
@@ -4892,7 +4896,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_UINT** = ``9``
 
-
+Unsigned integer global shader parameter (``global uniform uint ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_UVEC2:
 
@@ -4900,7 +4904,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_UVEC2** = ``10``
 
-
+2-dimensional unsigned integer vector global shader parameter (``global uniform uvec2 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_UVEC3:
 
@@ -4908,7 +4912,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_UVEC3** = ``11``
 
-
+3-dimensional unsigned integer vector global shader parameter (``global uniform uvec3 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_UVEC4:
 
@@ -4916,7 +4920,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_UVEC4** = ``12``
 
-
+4-dimensional unsigned integer vector global shader parameter (``global uniform uvec4 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_FLOAT:
 
@@ -4924,7 +4928,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_FLOAT** = ``13``
 
-
+Single-precision floating-point global shader parameter (``global uniform float ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC2:
 
@@ -4932,7 +4936,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_VEC2** = ``14``
 
-
+2-dimensional floating-point vector global shader parameter (``global uniform vec2 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC3:
 
@@ -4940,7 +4944,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_VEC3** = ``15``
 
-
+3-dimensional floating-point vector global shader parameter (``global uniform vec3 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC4:
 
@@ -4948,7 +4952,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_VEC4** = ``16``
 
-
+4-dimensional floating-point vector global shader parameter (``global uniform vec4 ...``).
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_COLOR:
 
@@ -4956,7 +4960,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_COLOR** = ``17``
 
-
+Color global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:`GLOBAL_VAR_TYPE_VEC4<class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC4>` in shader code, but exposed as a :ref:`Color<class_Color>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_RECT2:
 
@@ -4964,7 +4968,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_RECT2** = ``18``
 
-
+2-dimensional floating-point rectangle global shader parameter (``global uniform vec4 ...``). Equivalent to :ref:`GLOBAL_VAR_TYPE_VEC4<class_RenderingServer_constant_GLOBAL_VAR_TYPE_VEC4>` in shader code, but exposed as a :ref:`Rect2<class_Rect2>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAT2:
 
@@ -4972,7 +4976,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_MAT2** = ``19``
 
-
+2×2 matrix global shader parameter (``global uniform mat2 ...``). Exposed as a :ref:`PackedInt32Array<class_PackedInt32Array>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAT3:
 
@@ -4980,7 +4984,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_MAT3** = ``20``
 
-
+3×3 matrix global shader parameter (``global uniform mat3 ...``). Exposed as a :ref:`Basis<class_Basis>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAT4:
 
@@ -4988,7 +4992,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_MAT4** = ``21``
 
-
+4×4 matrix global shader parameter (``global uniform mat4 ...``). Exposed as a :ref:`Projection<class_Projection>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_TRANSFORM_2D:
 
@@ -4996,7 +5000,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_TRANSFORM_2D** = ``22``
 
-
+2-dimensional transform global shader parameter (``global uniform mat2x3 ...``). Exposed as a :ref:`Transform2D<class_Transform2D>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_TRANSFORM:
 
@@ -5004,7 +5008,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_TRANSFORM** = ``23``
 
-
+3-dimensional transform global shader parameter (``global uniform mat3x4 ...``). Exposed as a :ref:`Transform3D<class_Transform3D>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLER2D:
 
@@ -5012,7 +5016,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLER2D** = ``24``
 
-
+2D sampler global shader parameter (``global uniform sampler2D ...``). Exposed as a :ref:`Texture2D<class_Texture2D>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLER2DARRAY:
 
@@ -5020,7 +5024,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLER2DARRAY** = ``25``
 
-
+2D sampler array global shader parameter (``global uniform sampler2DArray ...``). Exposed as a :ref:`Texture2DArray<class_Texture2DArray>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLER3D:
 
@@ -5028,7 +5032,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLER3D** = ``26``
 
-
+3D sampler global shader parameter (``global uniform sampler3D ...``). Exposed as a :ref:`Texture3D<class_Texture3D>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_SAMPLERCUBE:
 
@@ -5036,7 +5040,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_SAMPLERCUBE** = ``27``
 
-
+Cubemap sampler global shader parameter (``global uniform samplerCube ...``). Exposed as a :ref:`Cubemap<class_Cubemap>` in the editor UI.
 
 .. _class_RenderingServer_constant_GLOBAL_VAR_TYPE_MAX:
 
@@ -5044,7 +5048,7 @@ enum **GlobalShaderParameterType**:
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **GLOBAL_VAR_TYPE_MAX** = ``28``
 
-
+Represents the size of the :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -5062,7 +5066,7 @@ enum **RenderingInfo**:
 
 :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_TOTAL_OBJECTS_IN_FRAME** = ``0``
 
-
+Number of objects rendered in the current 3D scene. This varies depending on camera position and rotation.
 
 .. _class_RenderingServer_constant_RENDERING_INFO_TOTAL_PRIMITIVES_IN_FRAME:
 
@@ -5070,7 +5074,7 @@ enum **RenderingInfo**:
 
 :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_TOTAL_PRIMITIVES_IN_FRAME** = ``1``
 
-
+Number of vertices/indices rendered in the current 3D scene. This varies depending on camera position and rotation.
 
 .. _class_RenderingServer_constant_RENDERING_INFO_TOTAL_DRAW_CALLS_IN_FRAME:
 
@@ -5078,7 +5082,7 @@ enum **RenderingInfo**:
 
 :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_TOTAL_DRAW_CALLS_IN_FRAME** = ``2``
 
-
+Number of draw calls performed to render in the current 3D scene. This varies depending on camera position and rotation.
 
 .. _class_RenderingServer_constant_RENDERING_INFO_TEXTURE_MEM_USED:
 
@@ -5086,7 +5090,7 @@ enum **RenderingInfo**:
 
 :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_TEXTURE_MEM_USED** = ``3``
 
-
+Texture memory used (in bytes).
 
 .. _class_RenderingServer_constant_RENDERING_INFO_BUFFER_MEM_USED:
 
@@ -5094,7 +5098,7 @@ enum **RenderingInfo**:
 
 :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_BUFFER_MEM_USED** = ``4``
 
-
+Buffer memory used (in bytes).
 
 .. _class_RenderingServer_constant_RENDERING_INFO_VIDEO_MEM_USED:
 
@@ -5102,7 +5106,7 @@ enum **RenderingInfo**:
 
 :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` **RENDERING_INFO_VIDEO_MEM_USED** = ``5``
 
-
+Video memory used (in bytes). This is always greater than the sum of :ref:`RENDERING_INFO_TEXTURE_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_TEXTURE_MEM_USED>` and :ref:`RENDERING_INFO_BUFFER_MEM_USED<class_RenderingServer_constant_RENDERING_INFO_BUFFER_MEM_USED>`, since there is miscellaneous data not accounted for by those two metrics.
 
 .. rst-class:: classref-item-separator
 
@@ -5177,7 +5181,7 @@ The maximum Z-layer for canvas items.
 
 **MAX_GLOW_LEVELS** = ``7``
 
-Max number of glow levels that can be used with glow post-process effect.
+The maximum number of glow levels that can be used with the glow post-processing effect.
 
 .. _class_RenderingServer_constant_MAX_CURSORS:
 
@@ -5185,7 +5189,7 @@ Max number of glow levels that can be used with glow post-process effect.
 
 **MAX_CURSORS** = ``8``
 
-Unused enum in Godot 3.x.
+*Deprecated.* This constant is unused.
 
 .. _class_RenderingServer_constant_MAX_2D_DIRECTIONAL_LIGHTS:
 
@@ -5193,7 +5197,7 @@ Unused enum in Godot 3.x.
 
 **MAX_2D_DIRECTIONAL_LIGHTS** = ``8``
 
-
+The maximum number of directional lights that can be rendered at a given time in 2D.
 
 .. _class_RenderingServer_constant_MATERIAL_RENDER_PRIORITY_MIN:
 
@@ -5217,7 +5221,7 @@ The maximum renderpriority of all materials.
 
 **ARRAY_CUSTOM_COUNT** = ``4``
 
-
+The number of custom data arrays available (:ref:`ARRAY_CUSTOM0<class_RenderingServer_constant_ARRAY_CUSTOM0>`, :ref:`ARRAY_CUSTOM1<class_RenderingServer_constant_ARRAY_CUSTOM1>`, :ref:`ARRAY_CUSTOM2<class_RenderingServer_constant_ARRAY_CUSTOM2>`, :ref:`ARRAY_CUSTOM3<class_RenderingServer_constant_ARRAY_CUSTOM3>`).
 
 .. _class_RenderingServer_constant_PARTICLES_EMIT_FLAG_POSITION:
 
@@ -5310,7 +5314,9 @@ Bakes the material data of the Mesh passed in the ``base`` parameter with option
 
 Creates a camera attributes object and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``camera_attributes_`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`CameraAttributes<class_CameraAttributes>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5396,9 +5402,11 @@ The exposure value can be calculated from aperture (in f-stops), shutter speed (
 
 :ref:`RID<class_RID>` **camera_create** **(** **)**
 
-Creates a camera and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``camera_*`` RenderingServer functions.
+Creates a 3D camera and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``camera_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent node is :ref:`Camera3D<class_Camera3D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5508,7 +5516,9 @@ If ``true``, preserves the horizontal aspect ratio which is equivalent to :ref:`
 
 Creates a canvas and returns the assigned :ref:`RID<class_RID>`. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+Canvas has no :ref:`Resource<class_Resource>` or :ref:`Node<class_Node>` equivalent.
 
 .. rst-class:: classref-item-separator
 
@@ -5598,6 +5608,18 @@ See also :ref:`CanvasItem.draw_msdf_texture_rect_region<class_CanvasItem_method_
 
 ----
 
+.. _class_RenderingServer_method_canvas_item_add_multiline:
+
+.. rst-class:: classref-method
+
+void **canvas_item_add_multiline** **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`float<class_float>` width=-1.0 **)**
+
+Draws a 2D multiline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_multiline<class_CanvasItem_method_draw_multiline>` and :ref:`CanvasItem.draw_multiline_colors<class_CanvasItem_method_draw_multiline_colors>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_RenderingServer_method_canvas_item_add_multimesh:
 
 .. rst-class:: classref-method
@@ -5640,7 +5662,7 @@ Draws particles on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``i
 
 void **canvas_item_add_polygon** **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs=PackedVector2Array(), :ref:`RID<class_RID>` texture **)**
 
-Draws a 2D polygon on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_polygon<class_CanvasItem_method_draw_polygon>`.
+Draws a 2D polygon on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. If you need more flexibility (such as being able to use bones), use :ref:`canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>` instead. See also :ref:`CanvasItem.draw_polygon<class_CanvasItem_method_draw_polygon>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5652,7 +5674,7 @@ Draws a 2D polygon on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the 
 
 void **canvas_item_add_polyline** **(** :ref:`RID<class_RID>` item, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`float<class_float>` width=-1.0, :ref:`bool<class_bool>` antialiased=false **)**
 
-Draws a 2D polyline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_polyline<class_CanvasItem_method_draw_polyline>`.
+Draws a 2D polyline on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`CanvasItem.draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5700,9 +5722,7 @@ Sets a :ref:`Transform2D<class_Transform2D>` that will be used to transform subs
 
 void **canvas_item_add_texture_rect** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`bool<class_bool>` tile=false, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`bool<class_bool>` transpose=false **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Draws a 2D textured rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_texture_rect<class_CanvasItem_method_draw_texture_rect>` and :ref:`Texture2D.draw_rect<class_Texture2D_method_draw_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5714,9 +5734,7 @@ void **canvas_item_add_texture_rect** **(** :ref:`RID<class_RID>` item, :ref:`Re
 
 void **canvas_item_add_texture_rect_region** **(** :ref:`RID<class_RID>` item, :ref:`Rect2<class_Rect2>` rect, :ref:`RID<class_RID>` texture, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`bool<class_bool>` transpose=false, :ref:`bool<class_bool>` clip_uv=true **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Draws the specified region of a 2D textured rectangle on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. See also :ref:`CanvasItem.draw_texture_rect_region<class_CanvasItem_method_draw_texture_rect_region>` and :ref:`Texture2D.draw_rect_region<class_Texture2D_method_draw_rect_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5728,9 +5746,9 @@ void **canvas_item_add_texture_rect_region** **(** :ref:`RID<class_RID>` item, :
 
 void **canvas_item_add_triangle_array** **(** :ref:`RID<class_RID>` item, :ref:`PackedInt32Array<class_PackedInt32Array>` indices, :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs=PackedVector2Array(), :ref:`PackedInt32Array<class_PackedInt32Array>` bones=PackedInt32Array(), :ref:`PackedFloat32Array<class_PackedFloat32Array>` weights=PackedFloat32Array(), :ref:`RID<class_RID>` texture, :ref:`int<class_int>` count=-1 **)**
 
-.. container:: contribute
+Draws a triangle array on the :ref:`CanvasItem<class_CanvasItem>` pointed to by the ``item`` :ref:`RID<class_RID>`. This is internally used by :ref:`Line2D<class_Line2D>` and :ref:`StyleBoxFlat<class_StyleBoxFlat>` for rendering. :ref:`canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>` is highly flexible, but more complex to use than :ref:`canvas_item_add_polygon<class_RenderingServer_method_canvas_item_add_polygon>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** ``count`` is unused and can be left unspecified.
 
 .. rst-class:: classref-item-separator
 
@@ -5754,7 +5772,11 @@ Clears the :ref:`CanvasItem<class_CanvasItem>` and removes all commands in it.
 
 :ref:`RID<class_RID>` **canvas_item_create** **(** **)**
 
-Creates a new :ref:`CanvasItem<class_CanvasItem>` instance and returns its :ref:`RID<class_RID>`.
+Creates a new CanvasItem instance and returns its :ref:`RID<class_RID>`. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_item_*`` RenderingServer functions.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent node is :ref:`CanvasItem<class_CanvasItem>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5766,9 +5788,9 @@ Creates a new :ref:`CanvasItem<class_CanvasItem>` instance and returns its :ref:
 
 void **canvas_item_set_canvas_group_mode** **(** :ref:`RID<class_RID>` item, :ref:`CanvasGroupMode<enum_RenderingServer_CanvasGroupMode>` mode, :ref:`float<class_float>` clear_margin=5.0, :ref:`bool<class_bool>` fit_empty=false, :ref:`float<class_float>` fit_margin=0.0, :ref:`bool<class_bool>` blur_mipmaps=false **)**
 
-.. container:: contribute
+Sets the canvas group mode used during 2D rendering for the canvas item specified by the ``item`` RID. For faster but more limited clipping, use :ref:`canvas_item_set_clip<class_RenderingServer_method_canvas_item_set_clip>` instead.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The equivalent node functionality is found in :ref:`CanvasGroup<class_CanvasGroup>` and :ref:`CanvasItem.clip_children<class_CanvasItem_property_clip_children>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5780,9 +5802,9 @@ void **canvas_item_set_canvas_group_mode** **(** :ref:`RID<class_RID>` item, :re
 
 void **canvas_item_set_clip** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` clip **)**
 
-.. container:: contribute
+If ``clip`` is ``true``, makes the canvas item specified by the ``item`` RID not draw anything outside of its rect's coordinates. This clipping is fast, but works only with axis-aligned rectangles. This means that rotation is ignored by the clipping rectangle. For more advanced clipping shapes, use :ref:`canvas_item_set_canvas_group_mode<class_RenderingServer_method_canvas_item_set_canvas_group_mode>` instead.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The equivalent node functionality is found in :ref:`Label.clip_text<class_Label_property_clip_text>`, :ref:`RichTextLabel<class_RichTextLabel>` (always enabled) and more.
 
 .. rst-class:: classref-item-separator
 
@@ -5806,9 +5828,7 @@ Sets the :ref:`CanvasItem<class_CanvasItem>` to copy a rect to the backbuffer.
 
 void **canvas_item_set_custom_rect** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` use_custom_rect, :ref:`Rect2<class_Rect2>` rect=Rect2(0, 0, 0, 0) **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``use_custom_rect`` is ``true``, sets the custom visibility rectangle (used for culling) to ``rect`` for the canvas item specified by ``item``. Setting a custom visibility rect can reduce CPU load when drawing lots of 2D instances. If ``use_custom_rect`` is ``false``, automatically computes a visibility rectangle based on the canvas item's draw commands.
 
 .. rst-class:: classref-item-separator
 
@@ -5820,9 +5840,7 @@ void **canvas_item_set_custom_rect** **(** :ref:`RID<class_RID>` item, :ref:`boo
 
 void **canvas_item_set_default_texture_filter** **(** :ref:`RID<class_RID>` item, :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>` filter **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the default texture filter mode for the canvas item specified by the ``item`` RID. Equivalent to :ref:`CanvasItem.texture_filter<class_CanvasItem_property_texture_filter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5834,9 +5852,7 @@ void **canvas_item_set_default_texture_filter** **(** :ref:`RID<class_RID>` item
 
 void **canvas_item_set_default_texture_repeat** **(** :ref:`RID<class_RID>` item, :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>` repeat **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the default texture repeat mode for the canvas item specified by the ``item`` RID. Equivalent to :ref:`CanvasItem.texture_repeat<class_CanvasItem_property_texture_repeat>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5848,9 +5864,7 @@ void **canvas_item_set_default_texture_repeat** **(** :ref:`RID<class_RID>` item
 
 void **canvas_item_set_distance_field_mode** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``enabled`` is ``true``, enables multichannel signed distance field rendering mode for the canvas item specified by the ``item`` RID. This is meant to be used for font rendering, or with specially generated images using `msdfgen <https://github.com/Chlumsky/msdfgen>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -5862,9 +5876,7 @@ void **canvas_item_set_distance_field_mode** **(** :ref:`RID<class_RID>` item, :
 
 void **canvas_item_set_draw_behind_parent** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``enabled`` is ``true``, draws the canvas item specified by the ``item`` RID behind its parent. Equivalent to :ref:`CanvasItem.show_behind_parent<class_CanvasItem_property_show_behind_parent>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5888,9 +5900,7 @@ Sets the index for the :ref:`CanvasItem<class_CanvasItem>`.
 
 void **canvas_item_set_light_mask** **(** :ref:`RID<class_RID>` item, :ref:`int<class_int>` mask **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the light ``mask`` for the canvas item specified by the ``item`` RID. Equivalent to :ref:`CanvasItem.light_mask<class_CanvasItem_property_light_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5902,7 +5912,7 @@ void **canvas_item_set_light_mask** **(** :ref:`RID<class_RID>` item, :ref:`int<
 
 void **canvas_item_set_material** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` material **)**
 
-Sets a new material to the :ref:`CanvasItem<class_CanvasItem>`.
+Sets a new ``material`` to the canvas item specified by the ``item`` RID. Equivalent to :ref:`CanvasItem.material<class_CanvasItem_property_material>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5914,9 +5924,7 @@ Sets a new material to the :ref:`CanvasItem<class_CanvasItem>`.
 
 void **canvas_item_set_modulate** **(** :ref:`RID<class_RID>` item, :ref:`Color<class_Color>` color **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Multiplies the color of the canvas item specified by the ``item`` RID, while affecting its children. See also :ref:`canvas_item_set_self_modulate<class_RenderingServer_method_canvas_item_set_self_modulate>`. Equivalent to :ref:`CanvasItem.modulate<class_CanvasItem_property_modulate>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5928,9 +5936,7 @@ void **canvas_item_set_modulate** **(** :ref:`RID<class_RID>` item, :ref:`Color<
 
 void **canvas_item_set_parent** **(** :ref:`RID<class_RID>` item, :ref:`RID<class_RID>` parent **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets a parent :ref:`CanvasItem<class_CanvasItem>` to the :ref:`CanvasItem<class_CanvasItem>`. The item will inherit transform, modulation and visibility from its parent, like :ref:`CanvasItem<class_CanvasItem>` nodes in the scene tree.
 
 .. rst-class:: classref-item-separator
 
@@ -5942,9 +5948,7 @@ void **canvas_item_set_parent** **(** :ref:`RID<class_RID>` item, :ref:`RID<clas
 
 void **canvas_item_set_self_modulate** **(** :ref:`RID<class_RID>` item, :ref:`Color<class_Color>` color **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Multiplies the color of the canvas item specified by the ``item`` RID, without affecting its children. See also :ref:`canvas_item_set_modulate<class_RenderingServer_method_canvas_item_set_modulate>`. Equivalent to :ref:`CanvasItem.self_modulate<class_CanvasItem_property_self_modulate>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5956,9 +5960,7 @@ void **canvas_item_set_self_modulate** **(** :ref:`RID<class_RID>` item, :ref:`C
 
 void **canvas_item_set_sort_children_by_y** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enabled **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``enabled`` is ``true``, child nodes with the lowest Y position are drawn before those with a higher Y position. Y-sorting only affects children that inherit from the canvas item specified by the ``item`` RID, not the canvas item itself. Equivalent to :ref:`CanvasItem.y_sort_enabled<class_CanvasItem_property_y_sort_enabled>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5970,9 +5972,7 @@ void **canvas_item_set_sort_children_by_y** **(** :ref:`RID<class_RID>` item, :r
 
 void **canvas_item_set_transform** **(** :ref:`RID<class_RID>` item, :ref:`Transform2D<class_Transform2D>` transform **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``transform`` of the canvas item specified by the ``item`` RID. This affects where and how the item will be drawn. Child canvas items' transforms are multiplied by their parent's transform. Equivalent to :ref:`Node2D.transform<class_Node2D_property_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6008,9 +6008,9 @@ Sets the rendering visibility layer associated with this :ref:`CanvasItem<class_
 
 void **canvas_item_set_visibility_notifier** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` enable, :ref:`Rect2<class_Rect2>` area, :ref:`Callable<class_Callable>` enter_callable, :ref:`Callable<class_Callable>` exit_callable **)**
 
-.. container:: contribute
+Sets the given :ref:`CanvasItem<class_CanvasItem>` as visibility notifier. ``area`` defines the area of detecting visibility. ``enter_callable`` is called when the :ref:`CanvasItem<class_CanvasItem>` enters the screen, ``exit_callable`` is called when the :ref:`CanvasItem<class_CanvasItem>` exits the screen. If ``enable`` is ``false``, the item will no longer function as notifier.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+This method can be used to manually mimic :ref:`VisibleOnScreenNotifier2D<class_VisibleOnScreenNotifier2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6022,9 +6022,7 @@ void **canvas_item_set_visibility_notifier** **(** :ref:`RID<class_RID>` item, :
 
 void **canvas_item_set_visible** **(** :ref:`RID<class_RID>` item, :ref:`bool<class_bool>` visible **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the visibility of the :ref:`CanvasItem<class_CanvasItem>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6074,7 +6072,9 @@ Attaches the canvas light to the canvas. Removes it from its previous canvas.
 
 Creates a canvas light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_light_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent node is :ref:`Light2D<class_Light2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6098,9 +6098,11 @@ Attaches a light occluder to the canvas. Removes it from its previous canvas.
 
 :ref:`RID<class_RID>` **canvas_light_occluder_create** **(** **)**
 
-Creates a light occluder and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_light_ocluder_*`` RenderingServer functions.
+Creates a light occluder and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_light_occluder_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent node is :ref:`LightOccluder2D<class_LightOccluder2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6392,7 +6394,9 @@ Sets the Z range of objects that will be affected by this light. Equivalent to :
 
 Creates a new light occluder polygon and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_occluder_polygon_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`OccluderPolygon2D<class_OccluderPolygon2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6466,9 +6470,7 @@ Modulates all colors in the given canvas.
 
 void **canvas_set_shadow_texture_size** **(** :ref:`int<class_int>` size **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`ProjectSettings.rendering/2d/shadow_atlas/size<class_ProjectSettings_property_rendering/2d/shadow_atlas/size>` to use for :ref:`Light2D<class_Light2D>` shadow rendering (in pixels). The value is rounded up to the nearest power of 2.
 
 .. rst-class:: classref-item-separator
 
@@ -6480,9 +6482,11 @@ void **canvas_set_shadow_texture_size** **(** :ref:`int<class_int>` size **)**
 
 :ref:`RID<class_RID>` **canvas_texture_create** **(** **)**
 
-.. container:: contribute
+Creates a canvas texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``canvas_texture_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method. See also :ref:`texture_2d_create<class_RenderingServer_method_texture_2d_create>`.
+
+\ **Note:** The equivalent resource is :ref:`CanvasTexture<class_CanvasTexture>` and is only meant to be used in 2D rendering, not 3D.
 
 .. rst-class:: classref-item-separator
 
@@ -6494,9 +6498,7 @@ void **canvas_set_shadow_texture_size** **(** :ref:`int<class_int>` size **)**
 
 void **canvas_texture_set_channel** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`CanvasTextureChannel<enum_RenderingServer_CanvasTextureChannel>` channel, :ref:`RID<class_RID>` texture **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``channel``'s ``texture`` for the canvas texture specified by the ``canvas_texture`` RID. Equivalent to :ref:`CanvasTexture.diffuse_texture<class_CanvasTexture_property_diffuse_texture>`, :ref:`CanvasTexture.normal_texture<class_CanvasTexture_property_normal_texture>` and :ref:`CanvasTexture.specular_texture<class_CanvasTexture_property_specular_texture>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6508,9 +6510,7 @@ void **canvas_texture_set_channel** **(** :ref:`RID<class_RID>` canvas_texture, 
 
 void **canvas_texture_set_shading_parameters** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`Color<class_Color>` base_color, :ref:`float<class_float>` shininess **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``base_color`` and ``shininess`` to use for the canvas texture specified by the ``canvas_texture`` RID. Equivalent to :ref:`CanvasTexture.specular_color<class_CanvasTexture_property_specular_color>` and :ref:`CanvasTexture.specular_shininess<class_CanvasTexture_property_specular_shininess>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6522,9 +6522,7 @@ void **canvas_texture_set_shading_parameters** **(** :ref:`RID<class_RID>` canva
 
 void **canvas_texture_set_texture_filter** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>` filter **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the texture ``filter`` mode to use for the canvas texture specified by the ``canvas_texture`` RID.
 
 .. rst-class:: classref-item-separator
 
@@ -6536,9 +6534,7 @@ void **canvas_texture_set_texture_filter** **(** :ref:`RID<class_RID>` canvas_te
 
 void **canvas_texture_set_texture_repeat** **(** :ref:`RID<class_RID>` canvas_texture, :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>` repeat **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the texture ``repeat`` mode to use for the canvas texture specified by the ``canvas_texture`` RID.
 
 .. rst-class:: classref-item-separator
 
@@ -6564,9 +6560,13 @@ Creates a RenderingDevice that can be used to do draw and compute operations on 
 
 :ref:`RID<class_RID>` **decal_create** **(** **)**
 
-.. container:: contribute
+Creates a decal and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``decal_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+To place in a scene, attach this decal to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent node is :ref:`Decal<class_Decal>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6578,9 +6578,7 @@ Creates a RenderingDevice that can be used to do draw and compute operations on 
 
 void **decal_set_albedo_mix** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_float>` albedo_mix **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``albedo_mix`` in the decal specified by the ``decal`` RID. Equivalent to :ref:`Decal.albedo_mix<class_Decal_property_albedo_mix>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6592,9 +6590,7 @@ void **decal_set_albedo_mix** **(** :ref:`RID<class_RID>` decal, :ref:`float<cla
 
 void **decal_set_cull_mask** **(** :ref:`RID<class_RID>` decal, :ref:`int<class_int>` mask **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the cull ``mask`` in the decal specified by the ``decal`` RID. Equivalent to :ref:`Decal.cull_mask<class_Decal_property_cull_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6606,9 +6602,7 @@ void **decal_set_cull_mask** **(** :ref:`RID<class_RID>` decal, :ref:`int<class_
 
 void **decal_set_distance_fade** **(** :ref:`RID<class_RID>` decal, :ref:`bool<class_bool>` enabled, :ref:`float<class_float>` begin, :ref:`float<class_float>` length **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the distance fade parameters in the decal specified by the ``decal`` RID. Equivalent to :ref:`Decal.distance_fade_enabled<class_Decal_property_distance_fade_enabled>`, :ref:`Decal.distance_fade_begin<class_Decal_property_distance_fade_begin>` and :ref:`Decal.distance_fade_length<class_Decal_property_distance_fade_length>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6620,9 +6614,7 @@ void **decal_set_distance_fade** **(** :ref:`RID<class_RID>` decal, :ref:`bool<c
 
 void **decal_set_emission_energy** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_float>` energy **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the emission ``energy`` in the decal specified by the ``decal`` RID. Equivalent to :ref:`Decal.emission_energy<class_Decal_property_emission_energy>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6634,9 +6626,7 @@ void **decal_set_emission_energy** **(** :ref:`RID<class_RID>` decal, :ref:`floa
 
 void **decal_set_fade** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_float>` above, :ref:`float<class_float>` below **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the upper fade (``above``) and lower fade (``below``) in the decal specified by the ``decal`` RID. Equivalent to :ref:`Decal.upper_fade<class_Decal_property_upper_fade>` and :ref:`Decal.lower_fade<class_Decal_property_lower_fade>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6648,9 +6638,7 @@ void **decal_set_fade** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_flo
 
 void **decal_set_modulate** **(** :ref:`RID<class_RID>` decal, :ref:`Color<class_Color>` color **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the color multiplier in the decal specified by the ``decal`` RID to ``color``. Equivalent to :ref:`Decal.modulate<class_Decal_property_modulate>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6662,9 +6650,7 @@ void **decal_set_modulate** **(** :ref:`RID<class_RID>` decal, :ref:`Color<class
 
 void **decal_set_normal_fade** **(** :ref:`RID<class_RID>` decal, :ref:`float<class_float>` fade **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the normal ``fade`` in the decal specified by the ``decal`` RID. Equivalent to :ref:`Decal.normal_fade<class_Decal_property_normal_fade>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6676,9 +6662,7 @@ void **decal_set_normal_fade** **(** :ref:`RID<class_RID>` decal, :ref:`float<cl
 
 void **decal_set_size** **(** :ref:`RID<class_RID>` decal, :ref:`Vector3<class_Vector3>` size **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``size`` of the decal specified by the ``decal`` RID. Equivalent to :ref:`Decal.size<class_Decal_property_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6690,9 +6674,7 @@ void **decal_set_size** **(** :ref:`RID<class_RID>` decal, :ref:`Vector3<class_V
 
 void **decal_set_texture** **(** :ref:`RID<class_RID>` decal, :ref:`DecalTexture<enum_RenderingServer_DecalTexture>` type, :ref:`RID<class_RID>` texture **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``texture`` in the given texture ``type`` slot for the specified decal. Equivalent to :ref:`Decal.set_texture<class_Decal_method_set_texture>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6704,9 +6686,7 @@ void **decal_set_texture** **(** :ref:`RID<class_RID>` decal, :ref:`DecalTexture
 
 void **decals_set_filter** **(** :ref:`DecalFilter<enum_RenderingServer_DecalFilter>` filter **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the texture ``filter`` mode to use when rendering decals. This parameter is global and cannot be set on a per-decal basis.
 
 .. rst-class:: classref-item-separator
 
@@ -6720,9 +6700,11 @@ void **decals_set_filter** **(** :ref:`DecalFilter<enum_RenderingServer_DecalFil
 
 Creates a directional light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most ``light_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 To place in a scene, attach this directional light to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent node is :ref:`DirectionalLight3D<class_DirectionalLight3D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6734,9 +6716,7 @@ To place in a scene, attach this directional light to an instance using :ref:`in
 
 void **directional_shadow_atlas_set_size** **(** :ref:`int<class_int>` size, :ref:`bool<class_bool>` is_16bits **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``size`` of the directional light shadows in 3D. See also :ref:`ProjectSettings.rendering/lights_and_shadows/directional_shadow/size<class_ProjectSettings_property_rendering/lights_and_shadows/directional_shadow/size>`. This parameter is global and cannot be set on a per-viewport basis.
 
 .. rst-class:: classref-item-separator
 
@@ -6748,9 +6728,7 @@ void **directional_shadow_atlas_set_size** **(** :ref:`int<class_int>` size, :re
 
 void **directional_soft_shadow_filter_set_quality** **(** :ref:`ShadowQuality<enum_RenderingServer_ShadowQuality>` quality **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the filter ``quality`` for directional light shadows in 3D. See also :ref:`ProjectSettings.rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality<class_ProjectSettings_property_rendering/lights_and_shadows/directional_shadow/soft_shadow_filter_quality>`. This parameter is global and cannot be set on a per-viewport basis.
 
 .. rst-class:: classref-item-separator
 
@@ -6762,9 +6740,11 @@ void **directional_soft_shadow_filter_set_quality** **(** :ref:`ShadowQuality<en
 
 :ref:`Image<class_Image>` **environment_bake_panorama** **(** :ref:`RID<class_RID>` environment, :ref:`bool<class_bool>` bake_irradiance, :ref:`Vector2i<class_Vector2i>` size **)**
 
-.. container:: contribute
+Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``environment`` RID's sky. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`sky_bake_panorama<class_RenderingServer_method_sky_bake_panorama>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The image is saved in linear color space without any tonemapping performed, which means it will look too dark if viewed directly in an image editor.
+
+\ **Note:** ``size`` should be a 2:1 aspect ratio for the generated panorama to have square pixels. For radiance maps, there is no point in using a height greater than :ref:`Sky.radiance_size<class_Sky_property_radiance_size>`, as it won't increase detail. Irradiance maps only contain low-frequency data, so there is usually no point in going past a size of 128×64 pixels when saving an irradiance map.
 
 .. rst-class:: classref-item-separator
 
@@ -6778,7 +6758,9 @@ void **directional_soft_shadow_filter_set_quality** **(** :ref:`ShadowQuality<en
 
 Creates an environment and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``environment_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`Environment<class_Environment>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6790,9 +6772,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 void **environment_glow_set_use_bicubic_upscale** **(** :ref:`bool<class_bool>` enable **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``enable`` is ``true``, enables bicubic upscaling for glow which improves quality at the cost of performance. Equivalent to :ref:`ProjectSettings.rendering/environment/glow/upscale_mode<class_ProjectSettings_property_rendering/environment/glow/upscale_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6804,7 +6784,7 @@ void **environment_glow_set_use_bicubic_upscale** **(** :ref:`bool<class_bool>` 
 
 void **environment_set_adjustment** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` brightness, :ref:`float<class_float>` contrast, :ref:`float<class_float>` saturation, :ref:`bool<class_bool>` use_1d_color_correction, :ref:`RID<class_RID>` color_correction **)**
 
-Sets the values to be used with the "Adjustment" post-process effect. See :ref:`Environment<class_Environment>` for more details.
+Sets the values to be used with the "adjustments" post-process effect. See :ref:`Environment<class_Environment>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -6816,9 +6796,7 @@ Sets the values to be used with the "Adjustment" post-process effect. See :ref:`
 
 void **environment_set_ambient_light** **(** :ref:`RID<class_RID>` env, :ref:`Color<class_Color>` color, :ref:`EnvironmentAmbientSource<enum_RenderingServer_EnvironmentAmbientSource>` ambient=0, :ref:`float<class_float>` energy=1.0, :ref:`float<class_float>` sky_contibution=0.0, :ref:`EnvironmentReflectionSource<enum_RenderingServer_EnvironmentReflectionSource>` reflection_source=0 **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the values to be used for ambient light rendering. See :ref:`Environment<class_Environment>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -6830,7 +6808,7 @@ void **environment_set_ambient_light** **(** :ref:`RID<class_RID>` env, :ref:`Co
 
 void **environment_set_background** **(** :ref:`RID<class_RID>` env, :ref:`EnvironmentBG<enum_RenderingServer_EnvironmentBG>` bg **)**
 
-Sets the *BGMode* of the environment. Equivalent to :ref:`Environment.background_mode<class_Environment_property_background_mode>`.
+Sets the environment's background mode. Equivalent to :ref:`Environment.background_mode<class_Environment_property_background_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6842,7 +6820,7 @@ Sets the *BGMode* of the environment. Equivalent to :ref:`Environment.background
 
 void **environment_set_bg_color** **(** :ref:`RID<class_RID>` env, :ref:`Color<class_Color>` color **)**
 
-Color displayed for clear areas of the scene (if using Custom color or Color+Sky background modes).
+Color displayed for clear areas of the scene. Only effective if using the :ref:`ENV_BG_COLOR<class_RenderingServer_constant_ENV_BG_COLOR>` background mode.
 
 .. rst-class:: classref-item-separator
 
@@ -6878,9 +6856,7 @@ Sets the maximum layer to use if using Canvas background mode.
 
 void **environment_set_fog** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`Color<class_Color>` light_color, :ref:`float<class_float>` light_energy, :ref:`float<class_float>` sun_scatter, :ref:`float<class_float>` density, :ref:`float<class_float>` height, :ref:`float<class_float>` height_density, :ref:`float<class_float>` aerial_perspective, :ref:`float<class_float>` sky_affect **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Configures fog for the specified environment RID. See ``fog_*`` properties in :ref:`Environment<class_Environment>` for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -6892,9 +6868,7 @@ void **environment_set_fog** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_b
 
 void **environment_set_glow** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`PackedFloat32Array<class_PackedFloat32Array>` levels, :ref:`float<class_float>` intensity, :ref:`float<class_float>` strength, :ref:`float<class_float>` mix, :ref:`float<class_float>` bloom_threshold, :ref:`EnvironmentGlowBlendMode<enum_RenderingServer_EnvironmentGlowBlendMode>` blend_mode, :ref:`float<class_float>` hdr_bleed_threshold, :ref:`float<class_float>` hdr_bleed_scale, :ref:`float<class_float>` hdr_luminance_cap, :ref:`float<class_float>` glow_map_strength, :ref:`RID<class_RID>` glow_map **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Configures glow for the specified environment RID. See ``glow_*`` properties in :ref:`Environment<class_Environment>` for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -6906,9 +6880,7 @@ void **environment_set_glow** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_
 
 void **environment_set_sdfgi** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`int<class_int>` cascades, :ref:`float<class_float>` min_cell_size, :ref:`EnvironmentSDFGIYScale<enum_RenderingServer_EnvironmentSDFGIYScale>` y_scale, :ref:`bool<class_bool>` use_occlusion, :ref:`float<class_float>` bounce_feedback, :ref:`bool<class_bool>` read_sky, :ref:`float<class_float>` energy, :ref:`float<class_float>` normal_bias, :ref:`float<class_float>` probe_bias **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Configures signed distance field global illumination for the specified environment RID. See ``sdfgi_*`` properties in :ref:`Environment<class_Environment>` for more information.
 
 .. rst-class:: classref-item-separator
 
@@ -6920,9 +6892,7 @@ void **environment_set_sdfgi** **(** :ref:`RID<class_RID>` env, :ref:`bool<class
 
 void **environment_set_sdfgi_frames_to_converge** **(** :ref:`EnvironmentSDFGIFramesToConverge<enum_RenderingServer_EnvironmentSDFGIFramesToConverge>` frames **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the number of frames to use for converging signed distance field global illumination. Equivalent to :ref:`ProjectSettings.rendering/global_illumination/sdfgi/frames_to_converge<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_converge>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6934,9 +6904,7 @@ void **environment_set_sdfgi_frames_to_converge** **(** :ref:`EnvironmentSDFGIFr
 
 void **environment_set_sdfgi_frames_to_update_light** **(** :ref:`EnvironmentSDFGIFramesToUpdateLight<enum_RenderingServer_EnvironmentSDFGIFramesToUpdateLight>` frames **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the update speed for dynamic lights' indirect lighting when computing signed distance field global illumination. Equivalent to :ref:`ProjectSettings.rendering/global_illumination/sdfgi/frames_to_update_lights<class_ProjectSettings_property_rendering/global_illumination/sdfgi/frames_to_update_lights>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6948,9 +6916,7 @@ void **environment_set_sdfgi_frames_to_update_light** **(** :ref:`EnvironmentSDF
 
 void **environment_set_sdfgi_ray_count** **(** :ref:`EnvironmentSDFGIRayCount<enum_RenderingServer_EnvironmentSDFGIRayCount>` ray_count **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the number of rays to throw per frame when computing signed distance field global illumination. Equivalent to :ref:`ProjectSettings.rendering/global_illumination/sdfgi/probe_ray_count<class_ProjectSettings_property_rendering/global_illumination/sdfgi/probe_ray_count>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7034,7 +7000,7 @@ Sets the quality level of the screen-space indirect lighting (SSIL) post-process
 
 void **environment_set_ssr** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`int<class_int>` max_steps, :ref:`float<class_float>` fade_in, :ref:`float<class_float>` fade_out, :ref:`float<class_float>` depth_tolerance **)**
 
-Sets the variables to be used with the "screen space reflections" post-process effect. See :ref:`Environment<class_Environment>` for more details.
+Sets the variables to be used with the screen-space reflections (SSR) post-process effect. See :ref:`Environment<class_Environment>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -7072,9 +7038,7 @@ Sets the variables to be used with the "tonemap" post-process effect. See :ref:`
 
 void **environment_set_volumetric_fog** **(** :ref:`RID<class_RID>` env, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` density, :ref:`Color<class_Color>` albedo, :ref:`Color<class_Color>` emission, :ref:`float<class_float>` emission_energy, :ref:`float<class_float>` anisotropy, :ref:`float<class_float>` length, :ref:`float<class_float>` p_detail_spread, :ref:`float<class_float>` gi_inject, :ref:`bool<class_bool>` temporal_reprojection, :ref:`float<class_float>` temporal_reprojection_amount, :ref:`float<class_float>` ambient_inject, :ref:`float<class_float>` sky_affect **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the variables to be used with the volumetric fog post-process effect. See :ref:`Environment<class_Environment>` for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -7110,7 +7074,11 @@ Sets the resolution of the volumetric fog's froxel buffer. ``size`` is modified 
 
 :ref:`RID<class_RID>` **fog_volume_create** **(** **)**
 
-Creates a new fog volume and allocates an RID.
+Creates a new fog volume and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``fog_volume_*`` RenderingServer functions.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent node is :ref:`FogVolume<class_FogVolume>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7158,9 +7126,7 @@ Sets the size of the fog volume when shape is :ref:`FOG_VOLUME_SHAPE_ELLIPSOID<c
 
 void **force_draw** **(** :ref:`bool<class_bool>` swap_buffers=true, :ref:`float<class_float>` frame_step=0.0 **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Forces redrawing of all viewports at once.
 
 .. rst-class:: classref-item-separator
 
@@ -7172,9 +7138,7 @@ void **force_draw** **(** :ref:`bool<class_bool>` swap_buffers=true, :ref:`float
 
 void **force_sync** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Forces a synchronization between the CPU and GPU, which may be required in certain cases. Only call this when needed, as CPU-GPU synchronization has a performance cost.
 
 .. rst-class:: classref-item-separator
 
@@ -7186,7 +7150,7 @@ void **force_sync** **(** **)**
 
 void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
-Tries to free an object in the RenderingServer.
+Tries to free an object in the RenderingServer. To avoid memory leaks, this should be called after using an object as memory management does not occur automatically when using RendeeringServer directly.
 
 .. rst-class:: classref-item-separator
 
@@ -7198,7 +7162,7 @@ Tries to free an object in the RenderingServer.
 
 :ref:`Color<class_Color>` **get_default_clear_color** **(** **)**
 
-Returns the default clear color which is used when a specific clear color has not been selected.
+Returns the default clear color which is used when a specific clear color has not been selected. See also :ref:`set_default_clear_color<class_RenderingServer_method_set_default_clear_color>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7210,9 +7174,7 @@ Returns the default clear color which is used when a specific clear color has no
 
 :ref:`float<class_float>` **get_frame_setup_time_cpu** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the time taken to setup rendering on the CPU in milliseconds. This value is shared across all viewports and does *not* require :ref:`viewport_set_measure_render_time<class_RenderingServer_method_viewport_set_measure_render_time>` to be enabled on a viewport to be queried. See also :ref:`viewport_get_measured_render_time_cpu<class_RenderingServer_method_viewport_get_measured_render_time_cpu>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7238,9 +7200,19 @@ Returns the global RenderingDevice.
 
 :ref:`int<class_int>` **get_rendering_info** **(** :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` info **)**
 
-.. container:: contribute
+Returns a statistic about the rendering engine which can be used for performance profiling. See :ref:`RenderingInfo<enum_RenderingServer_RenderingInfo>` for a list of values that can be queried. See also :ref:`viewport_get_render_info<class_RenderingServer_method_viewport_get_render_info>`, which returns information specific to a viewport.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Only 3D rendering is currently taken into account by some of these values, such as the number of draw calls.
+
+\ **Note:** Rendering information is not available until at least 2 frames have been rendered by the engine. If rendering information is not available, :ref:`get_rendering_info<class_RenderingServer_method_get_rendering_info>` returns ``0``. To print rendering information in ``_ready()`` successfully, use the following:
+
+::
+
+    func _ready():
+        for _i in 2:
+            await get_tree().process_frame
+    
+        print(RenderingServer.get_rendering_info(RENDERING_INFO_TOTAL_DRAW_CALLS_IN_FRAME))
 
 .. rst-class:: classref-item-separator
 
@@ -7264,7 +7236,7 @@ Returns the parameters of a shader.
 
 :ref:`RID<class_RID>` **get_test_cube** **(** **)**
 
-Returns the ID of the test cube. Creates one if none exists.
+Returns the RID of the test cube. This mesh will be created and returned on the first call to :ref:`get_test_cube<class_RenderingServer_method_get_test_cube>`, then it will be cached for subsequent calls. See also :ref:`make_sphere_mesh<class_RenderingServer_method_make_sphere_mesh>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7276,7 +7248,15 @@ Returns the ID of the test cube. Creates one if none exists.
 
 :ref:`RID<class_RID>` **get_test_texture** **(** **)**
 
-Returns the ID of the test texture. Creates one if none exists.
+Returns the RID of a 256×256 texture with a testing pattern on it (in :ref:`Image.FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` format). This texture will be created and returned on the first call to :ref:`get_test_texture<class_RenderingServer_method_get_test_texture>`, then it will be cached for subsequent calls. See also :ref:`get_white_texture<class_RenderingServer_method_get_white_texture>`.
+
+Example of getting the test texture and applying it to a :ref:`Sprite2D<class_Sprite2D>` node:
+
+::
+
+    var texture_rid = RenderingServer.get_test_texture()
+    var texture = ImageTexture.create_from_image(RenderingServer.texture_2d_get(texture_rid))
+    $Sprite2D.texture = texture
 
 .. rst-class:: classref-item-separator
 
@@ -7288,7 +7268,7 @@ Returns the ID of the test texture. Creates one if none exists.
 
 :ref:`String<class_String>` **get_video_adapter_api_version** **(** **)** |const|
 
-Returns the version of the graphics video adapter *currently in use* (e.g. "1.2.189" for Vulkan, "3.3.0 NVIDIA 510.60.02" for OpenGL). This version may be different from the actual latest version supported by the hardware, as Godot may not always request the latest version.
+Returns the version of the graphics video adapter *currently in use* (e.g. "1.2.189" for Vulkan, "3.3.0 NVIDIA 510.60.02" for OpenGL). This version may be different from the actual latest version supported by the hardware, as Godot may not always request the latest version. See also :ref:`OS.get_video_adapter_driver_info<class_OS_method_get_video_adapter_driver_info>`.
 
 \ **Note:** When running a headless or server binary, this function returns an empty string.
 
@@ -7344,7 +7324,15 @@ Returns the vendor of the video adapter (e.g. "NVIDIA Corporation").
 
 :ref:`RID<class_RID>` **get_white_texture** **(** **)**
 
-Returns the ID of a white texture. Creates one if none exists.
+Returns the ID of a 4×4 white texture (in :ref:`Image.FORMAT_RGB8<class_Image_constant_FORMAT_RGB8>` format). This texture will be created and returned on the first call to :ref:`get_white_texture<class_RenderingServer_method_get_white_texture>`, then it will be cached for subsequent calls. See also :ref:`get_test_texture<class_RenderingServer_method_get_test_texture>`.
+
+Example of getting the white texture and applying it to a :ref:`Sprite2D<class_Sprite2D>` node:
+
+::
+
+    var texture_rid = RenderingServer.get_white_texture()
+    var texture = ImageTexture.create_from_image(RenderingServer.texture_2d_get(texture_rid))
+    $Sprite2D.texture = texture
 
 .. rst-class:: classref-item-separator
 
@@ -7356,7 +7344,7 @@ Returns the ID of a white texture. Creates one if none exists.
 
 void **gi_set_use_half_resolution** **(** :ref:`bool<class_bool>` half_resolution **)**
 
-If ``half_resolution`` is ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) buffers at halved resolution (e.g. 960×540 when the viewport size is 1920×1080). This improves performance significantly when VoxelGI or SDFGI is enabled, at the cost of artifacts that may be visible on polygon edges. The loss in quality becomes less noticeable as the viewport resolution increases. :ref:`LightmapGI<class_LightmapGI>` rendering is not affected by this setting. See also :ref:`ProjectSettings.rendering/global_illumination/gi/use_half_resolution<class_ProjectSettings_property_rendering/global_illumination/gi/use_half_resolution>`.
+If ``half_resolution`` is ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SDFGI (:ref:`Environment.sdfgi_enabled<class_Environment_property_sdfgi_enabled>`) buffers at halved resolution on each axis (e.g. 960×540 when the viewport size is 1920×1080). This improves performance significantly when VoxelGI or SDFGI is enabled, at the cost of artifacts that may be visible on polygon edges. The loss in quality becomes less noticeable as the viewport resolution increases. :ref:`LightmapGI<class_LightmapGI>` rendering is not affected by this setting. Equivalent to :ref:`ProjectSettings.rendering/global_illumination/gi/use_half_resolution<class_ProjectSettings_property_rendering/global_illumination/gi/use_half_resolution>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7368,9 +7356,9 @@ If ``half_resolution`` is ``true``, renders :ref:`VoxelGI<class_VoxelGI>` and SD
 
 void **global_shader_parameter_add** **(** :ref:`StringName<class_StringName>` name, :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` type, :ref:`Variant<class_Variant>` default_value **)**
 
-.. container:: contribute
+Creates a new global shader uniform.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Global shader parameter names are case-sensitive.
 
 .. rst-class:: classref-item-separator
 
@@ -7382,9 +7370,9 @@ void **global_shader_parameter_add** **(** :ref:`StringName<class_StringName>` n
 
 :ref:`Variant<class_Variant>` **global_shader_parameter_get** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-.. container:: contribute
+Returns the value of the global shader uniform specified by ``name``.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** :ref:`global_shader_parameter_get<class_RenderingServer_method_global_shader_parameter_get>` has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -7394,11 +7382,11 @@ void **global_shader_parameter_add** **(** :ref:`StringName<class_StringName>` n
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **global_shader_parameter_get_list** **(** **)** |const|
+:ref:`StringName[]<class_StringName>` **global_shader_parameter_get_list** **(** **)** |const|
 
-.. container:: contribute
+Returns the list of global shader uniform names.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** :ref:`global_shader_parameter_get<class_RenderingServer_method_global_shader_parameter_get>` has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -7410,9 +7398,9 @@ void **global_shader_parameter_add** **(** :ref:`StringName<class_StringName>` n
 
 :ref:`GlobalShaderParameterType<enum_RenderingServer_GlobalShaderParameterType>` **global_shader_parameter_get_type** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-.. container:: contribute
+Returns the type associated to the global shader uniform specified by ``name``.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** :ref:`global_shader_parameter_get<class_RenderingServer_method_global_shader_parameter_get>` has a large performance penalty as the rendering thread needs to synchronize with the calling thread, which is slow. Do not use this method during gameplay to avoid stuttering. If you need to read values in a script after setting them, consider creating an autoload where you store the values you need to query at the same time you're setting them as global parameters.
 
 .. rst-class:: classref-item-separator
 
@@ -7424,9 +7412,7 @@ void **global_shader_parameter_add** **(** :ref:`StringName<class_StringName>` n
 
 void **global_shader_parameter_remove** **(** :ref:`StringName<class_StringName>` name **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Removes the global shader uniform specified by ``name``.
 
 .. rst-class:: classref-item-separator
 
@@ -7438,9 +7424,7 @@ void **global_shader_parameter_remove** **(** :ref:`StringName<class_StringName>
 
 void **global_shader_parameter_set** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the global shader uniform ``name`` to ``value``.
 
 .. rst-class:: classref-item-separator
 
@@ -7452,9 +7436,7 @@ void **global_shader_parameter_set** **(** :ref:`StringName<class_StringName>` n
 
 void **global_shader_parameter_set_override** **(** :ref:`StringName<class_StringName>` name, :ref:`Variant<class_Variant>` value **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Overrides the global shader uniform ``name`` with ``value``. Equivalent to the :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>` node.
 
 .. rst-class:: classref-item-separator
 
@@ -7528,9 +7510,11 @@ Attaches a skeleton to an instance. Removes the previous skeleton from the insta
 
 Creates a visual instance and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``instance_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
-An instance is a way of placing a 3D object in the scenario. Objects like particles, meshes, and reflection probes need to be associated with an instance to be visible in the scenario using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>`.
+An instance is a way of placing a 3D object in the scenario. Objects like particles, meshes, reflection probes and decals need to be associated with an instance to be visible in the scenario using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>`.
+
+\ **Note:** The equivalent node is :ref:`VisualInstance3D<class_VisualInstance3D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7544,7 +7528,7 @@ An instance is a way of placing a 3D object in the scenario. Objects like partic
 
 Creates a visual instance, adds it to the RenderingServer, and sets both base and scenario. It can be accessed with the RID that is returned. This RID will be used in all ``instance_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method. This is a shorthand for using :ref:`instance_create<class_RenderingServer_method_instance_create>` and setting the base and scenario manually.
 
 .. rst-class:: classref-item-separator
 
@@ -7556,9 +7540,9 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`Variant<class_Variant>` **instance_geometry_get_shader_parameter** **(** :ref:`RID<class_RID>` instance, :ref:`StringName<class_StringName>` parameter **)** |const|
 
-.. container:: contribute
+Returns the value of the per-instance shader uniform from the specified 3D geometry instance. Equivalent to :ref:`GeometryInstance3D.get_instance_shader_parameter<class_GeometryInstance3D_method_get_instance_shader_parameter>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Per-instance shader parameter names are case-sensitive.
 
 .. rst-class:: classref-item-separator
 
@@ -7570,9 +7554,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`Variant<class_Variant>` **instance_geometry_get_shader_parameter_default_value** **(** :ref:`RID<class_RID>` instance, :ref:`StringName<class_StringName>` parameter **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the default value of the per-instance shader uniform from the specified 3D geometry instance. Equivalent to :ref:`GeometryInstance3D.get_instance_shader_parameter<class_GeometryInstance3D_method_get_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7584,9 +7566,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`Dictionary[]<class_Dictionary>` **instance_geometry_get_shader_parameter_list** **(** :ref:`RID<class_RID>` instance **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns a dictionary of per-instance shader uniform names of the per-instance shader uniform from the specified 3D geometry instance. The returned dictionary is in PropertyInfo format, with the keys ``name``, ``class_name``, ``type``, ``hint``, ``hint_string`` and ``usage``. Equivalent to :ref:`GeometryInstance3D.get_instance_shader_parameter<class_GeometryInstance3D_method_get_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7622,9 +7602,7 @@ Sets the flag for a given :ref:`InstanceFlags<enum_RenderingServer_InstanceFlags
 
 void **instance_geometry_set_lightmap** **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` lightmap, :ref:`Rect2<class_Rect2>` lightmap_uv_scale, :ref:`int<class_int>` lightmap_slice **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the lightmap GI instance to use for the specified 3D geometry instance. The lightmap UV scale for the specified instance (equivalent to :ref:`GeometryInstance3D.gi_lightmap_scale<class_GeometryInstance3D_property_gi_lightmap_scale>`) and lightmap atlas slice must also be specified.
 
 .. rst-class:: classref-item-separator
 
@@ -7636,9 +7614,7 @@ void **instance_geometry_set_lightmap** **(** :ref:`RID<class_RID>` instance, :r
 
 void **instance_geometry_set_lod_bias** **(** :ref:`RID<class_RID>` instance, :ref:`float<class_float>` lod_bias **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the level of detail bias to use when rendering the specified 3D geometry instance. Higher values result in higher detail from further away. Equivalent to :ref:`GeometryInstance3D.lod_bias<class_GeometryInstance3D_property_lod_bias>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7674,9 +7650,7 @@ Sets a material that will override the material for all surfaces on the mesh ass
 
 void **instance_geometry_set_shader_parameter** **(** :ref:`RID<class_RID>` instance, :ref:`StringName<class_StringName>` parameter, :ref:`Variant<class_Variant>` value **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the per-instance shader uniform on the specified 3D geometry instance. Equivalent to :ref:`GeometryInstance3D.set_instance_shader_parameter<class_GeometryInstance3D_method_set_instance_shader_parameter>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7718,7 +7692,7 @@ Sets the visibility range values for the given geometry instance. Equivalent to 
 
 void **instance_set_base** **(** :ref:`RID<class_RID>` instance, :ref:`RID<class_RID>` base **)**
 
-Sets the base of the instance. A base can be any of the 3D objects that are created in the RenderingServer that can be displayed. For example, any of the light types, mesh, multimesh, immediate geometry, particle system, reflection probe, lightmap, and the GI probe are all types that can be set as the base of an instance in order to be displayed in the scenario.
+Sets the base of the instance. A base can be any of the 3D objects that are created in the RenderingServer that can be displayed. For example, any of the light types, mesh, multimesh, particle system, reflection probe, decal, lightmap, voxel GI and visibility notifiers are all types that can be set as the base of an instance in order to be displayed in the scenario.
 
 .. rst-class:: classref-item-separator
 
@@ -7766,9 +7740,7 @@ Sets a margin to increase the size of the AABB when culling objects from the vie
 
 void **instance_set_ignore_culling** **(** :ref:`RID<class_RID>` instance, :ref:`bool<class_bool>` enabled **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, ignores both frustum and occlusion culling on the specified 3D geometry instance. This is not the same as :ref:`GeometryInstance3D.ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>`, which only ignores occlusion culling and leaves frustum culling intact.
 
 .. rst-class:: classref-item-separator
 
@@ -7864,7 +7836,7 @@ Sets whether an instance is drawn or not. Equivalent to :ref:`Node3D.visible<cla
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **instances_cull_aabb** **(** :ref:`AABB<class_AABB>` aabb, :ref:`RID<class_RID>` scenario **)** |const|
 
-Returns an array of object IDs intersecting with the provided AABB. Only visual 3D nodes are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
+Returns an array of object IDs intersecting with the provided AABB. Only 3D nodes that inherit from :ref:`VisualInstance3D<class_VisualInstance3D>` are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
 
 \ **Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
@@ -7878,7 +7850,7 @@ Returns an array of object IDs intersecting with the provided AABB. Only visual 
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **instances_cull_convex** **(** :ref:`Plane[]<class_Plane>` convex, :ref:`RID<class_RID>` scenario **)** |const|
 
-Returns an array of object IDs intersecting with the provided convex shape. Only visual 3D nodes are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
+Returns an array of object IDs intersecting with the provided convex shape. Only 3D nodes that inherit from :ref:`VisualInstance3D<class_VisualInstance3D>` are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
 
 \ **Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
@@ -7892,7 +7864,7 @@ Returns an array of object IDs intersecting with the provided convex shape. Only
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **instances_cull_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to, :ref:`RID<class_RID>` scenario **)** |const|
 
-Returns an array of object IDs intersecting with the provided 3D ray. Only visual 3D nodes are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
+Returns an array of object IDs intersecting with the provided 3D ray. Only 3D nodes that inherit from :ref:`VisualInstance3D<class_VisualInstance3D>` are considered, such as :ref:`MeshInstance3D<class_MeshInstance3D>` or :ref:`DirectionalLight3D<class_DirectionalLight3D>`. Use :ref:`@GlobalScope.instance_from_id<class_@GlobalScope_method_instance_from_id>` to obtain the actual nodes. A scenario RID must be provided, which is available in the :ref:`World3D<class_World3D>` you want to query. This forces an update for all resources queued to update.
 
 \ **Warning:** This function is primarily intended for editor usage. For in-game use cases, prefer physics collision.
 
@@ -7954,9 +7926,7 @@ Sets whether to use a dual paraboloid or a cubemap for the shadow map. Dual para
 
 void **light_projectors_set_filter** **(** :ref:`LightProjectorFilter<enum_RenderingServer_LightProjectorFilter>` filter **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the texture filter mode to use when rendering light projectors. This parameter is global and cannot be set on a per-light basis.
 
 .. rst-class:: classref-item-separator
 
@@ -7968,9 +7938,7 @@ void **light_projectors_set_filter** **(** :ref:`LightProjectorFilter<enum_Rende
 
 void **light_set_bake_mode** **(** :ref:`RID<class_RID>` light, :ref:`LightBakeMode<enum_RenderingServer_LightBakeMode>` bake_mode **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the bake mode to use for the specified 3D light. Equivalent to :ref:`Light3D.light_bake_mode<class_Light3D_property_light_bake_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -7994,7 +7962,7 @@ Sets the color of the light. Equivalent to :ref:`Light3D.light_color<class_Light
 
 void **light_set_cull_mask** **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` mask **)**
 
-Sets the cull mask for this Light3D. Lights only affect objects in the selected layers. Equivalent to :ref:`Light3D.light_cull_mask<class_Light3D_property_light_cull_mask>`.
+Sets the cull mask for this 3D light. Lights only affect objects in the selected layers. Equivalent to :ref:`Light3D.light_cull_mask<class_Light3D_property_light_cull_mask>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8006,7 +7974,7 @@ Sets the cull mask for this Light3D. Lights only affect objects in the selected 
 
 void **light_set_distance_fade** **(** :ref:`RID<class_RID>` decal, :ref:`bool<class_bool>` enabled, :ref:`float<class_float>` begin, :ref:`float<class_float>` shadow, :ref:`float<class_float>` length **)**
 
-Sets the distance fade for this Light3D. This acts as a form of level of detail (LOD) and can be used to improve performance. Equivalent to :ref:`Light3D.distance_fade_enabled<class_Light3D_property_distance_fade_enabled>`, :ref:`Light3D.distance_fade_begin<class_Light3D_property_distance_fade_begin>`, :ref:`Light3D.distance_fade_shadow<class_Light3D_property_distance_fade_shadow>`, and :ref:`Light3D.distance_fade_length<class_Light3D_property_distance_fade_length>`.
+Sets the distance fade for this 3D light. This acts as a form of level of detail (LOD) and can be used to improve performance. Equivalent to :ref:`Light3D.distance_fade_enabled<class_Light3D_property_distance_fade_enabled>`, :ref:`Light3D.distance_fade_begin<class_Light3D_property_distance_fade_begin>`, :ref:`Light3D.distance_fade_shadow<class_Light3D_property_distance_fade_shadow>`, and :ref:`Light3D.distance_fade_length<class_Light3D_property_distance_fade_length>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8018,9 +7986,7 @@ Sets the distance fade for this Light3D. This acts as a form of level of detail 
 
 void **light_set_max_sdfgi_cascade** **(** :ref:`RID<class_RID>` light, :ref:`int<class_int>` cascade **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the maximum SDFGI cascade in which the 3D light's indirect lighting is rendered. Higher values allow the light to be rendered in SDFGI further away from the camera.
 
 .. rst-class:: classref-item-separator
 
@@ -8032,7 +7998,7 @@ void **light_set_max_sdfgi_cascade** **(** :ref:`RID<class_RID>` light, :ref:`in
 
 void **light_set_negative** **(** :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` enable **)**
 
-If ``true``, light will subtract light instead of adding light. Equivalent to :ref:`Light3D.light_negative<class_Light3D_property_light_negative>`.
+If ``true``, the 3D light will subtract light instead of adding light. Equivalent to :ref:`Light3D.light_negative<class_Light3D_property_light_negative>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8044,7 +8010,7 @@ If ``true``, light will subtract light instead of adding light. Equivalent to :r
 
 void **light_set_param** **(** :ref:`RID<class_RID>` light, :ref:`LightParam<enum_RenderingServer_LightParam>` param, :ref:`float<class_float>` value **)**
 
-Sets the specified light parameter. See :ref:`LightParam<enum_RenderingServer_LightParam>` for options. Equivalent to :ref:`Light3D.set_param<class_Light3D_method_set_param>`.
+Sets the specified 3D light parameter. See :ref:`LightParam<enum_RenderingServer_LightParam>` for options. Equivalent to :ref:`Light3D.set_param<class_Light3D_method_set_param>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8056,7 +8022,7 @@ Sets the specified light parameter. See :ref:`LightParam<enum_RenderingServer_Li
 
 void **light_set_projector** **(** :ref:`RID<class_RID>` light, :ref:`RID<class_RID>` texture **)**
 
-Not implemented in Godot 3.x.
+Sets the projector texture to use for the specified 3D light. Equivalent to :ref:`Light3D.light_projector<class_Light3D_property_light_projector>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8092,7 +8058,11 @@ If ``true``, light will cast shadows. Equivalent to :ref:`Light3D.shadow_enabled
 
 :ref:`RID<class_RID>` **lightmap_create** **(** **)**
 
-Creates a new :ref:`LightmapGI<class_LightmapGI>` instance.
+Creates a new lightmap global illumination instance and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``lightmap_*`` RenderingServer functions.
+
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent node is :ref:`LightmapGI<class_LightmapGI>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8228,9 +8198,7 @@ void **lightmap_set_probe_interior** **(** :ref:`RID<class_RID>` lightmap, :ref:
 
 void **lightmap_set_textures** **(** :ref:`RID<class_RID>` lightmap, :ref:`RID<class_RID>` light, :ref:`bool<class_bool>` uses_sh **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Set the textures on the given ``lightmap`` GI instance to the texture array pointed to by the ``light`` RID. If the lightmap texture was baked with :ref:`LightmapGI.directional<class_LightmapGI_property_directional>` set to ``true``, then ``uses_sh`` must also be ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -8242,7 +8210,7 @@ void **lightmap_set_textures** **(** :ref:`RID<class_RID>` lightmap, :ref:`RID<c
 
 :ref:`RID<class_RID>` **make_sphere_mesh** **(** :ref:`int<class_int>` latitudes, :ref:`int<class_int>` longitudes, :ref:`float<class_float>` radius **)**
 
-Returns a mesh of a sphere with the given number of horizontal and vertical subdivisions.
+Returns a mesh of a sphere with the given number of horizontal subdivisions, vertical subdivisions and radius. See also :ref:`get_test_cube<class_RenderingServer_method_get_test_cube>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8256,7 +8224,9 @@ Returns a mesh of a sphere with the given number of horizontal and vertical subd
 
 Creates an empty material and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``material_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`Material<class_Material>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8370,9 +8340,11 @@ Removes all surfaces from a mesh.
 
 Creates a new mesh and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``mesh_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 To place in a scene, attach this mesh to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent resource is :ref:`Mesh<class_Mesh>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8660,9 +8632,11 @@ void **multimesh_allocate_data** **(** :ref:`RID<class_RID>` multimesh, :ref:`in
 
 Creates a new multimesh on the RenderingServer and returns an :ref:`RID<class_RID>` handle. This RID will be used in all ``multimesh_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 To place in a scene, attach this multimesh to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent resource is :ref:`MultiMesh<class_MultiMesh>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8686,9 +8660,9 @@ Calculates and returns the axis-aligned bounding box that encloses all instances
 
 :ref:`PackedFloat32Array<class_PackedFloat32Array>` **multimesh_get_buffer** **(** :ref:`RID<class_RID>` multimesh **)** |const|
 
-.. container:: contribute
+Returns the MultiMesh data (such as instance transforms, colors, etc). See :ref:`multimesh_set_buffer<class_RenderingServer_method_multimesh_set_buffer>` for a description of the returned data.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** If the buffer is in the engine's internal cache, it will have to be fetched from GPU memory and possibly decompressed. This means :ref:`multimesh_get_buffer<class_RenderingServer_method_multimesh_get_buffer>` is potentially a slow operation and should be avoided whenever possible.
 
 .. rst-class:: classref-item-separator
 
@@ -8832,9 +8806,22 @@ Sets the :ref:`Transform2D<class_Transform2D>` for this instance. For use when m
 
 void **multimesh_set_buffer** **(** :ref:`RID<class_RID>` multimesh, :ref:`PackedFloat32Array<class_PackedFloat32Array>` buffer **)**
 
-.. container:: contribute
+Set the entire data to use for drawing the ``multimesh`` at once to ``buffer`` (such as instance transforms and colors). ``buffer``'s size must match the number of instances multiplied by the per-instance data size (which depends on the enabled MultiMesh fields). Otherwise, an error message is printed and nothing is rendered. See also :ref:`multimesh_get_buffer<class_RenderingServer_method_multimesh_get_buffer>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The per-instance data size and expected data order is:
+
+::
+
+    2D:
+      - Position: 8 floats (8 floats for Transform2D)
+      - Position + Vertex color: 12 floats (8 floats for Transform2D, 4 floats for Color)
+      - Position + Custom data: 12 floats (8 floats for Transform2D, 4 floats of custom data)
+      - Position + Vertex color + Custom data: 16 floats (8 floats for Transform2D, 4 floats for Color, 4 floats of custom data)
+    3D:
+      - Position: 12 floats (12 floats for Transform3D)
+      - Position + Vertex color: 16 floats (12 floats for Transform3D, 4 floats for Color)
+      - Position + Custom data: 16 floats (12 floats for Transform3D, 4 floats of custom data)
+      - Position + Vertex color + Custom data: 20 floats (12 floats for Transform3D, 4 floats for Color, 4 floats of custom data)
 
 .. rst-class:: classref-item-separator
 
@@ -8870,9 +8857,11 @@ Sets the number of instances visible at a given time. If -1, all instances that 
 
 :ref:`RID<class_RID>` **occluder_create** **(** **)**
 
-.. container:: contribute
+Creates an occluder instance and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``occluder_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`Occluder3D<class_Occluder3D>` (not to be confused with the :ref:`OccluderInstance3D<class_OccluderInstance3D>` node).
 
 .. rst-class:: classref-item-separator
 
@@ -8884,9 +8873,7 @@ Sets the number of instances visible at a given time. If -1, all instances that 
 
 void **occluder_set_mesh** **(** :ref:`RID<class_RID>` occluder, :ref:`PackedVector3Array<class_PackedVector3Array>` vertices, :ref:`PackedInt32Array<class_PackedInt32Array>` indices **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the mesh data for the given occluder RID, which controls the shape of the occlusion culling that will be performed.
 
 .. rst-class:: classref-item-separator
 
@@ -8900,9 +8887,11 @@ void **occluder_set_mesh** **(** :ref:`RID<class_RID>` occluder, :ref:`PackedVec
 
 Creates a new omni light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most ``light_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 To place in a scene, attach this omni light to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent node is :ref:`OmniLight3D<class_OmniLight3D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8914,9 +8903,9 @@ To place in a scene, attach this omni light to an instance using :ref:`instance_
 
 :ref:`RID<class_RID>` **particles_collision_create** **(** **)**
 
-.. container:: contribute
+Creates a new 3D GPU particle collision or attractor and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most ``particles_collision_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The equivalent nodes are :ref:`GPUParticlesCollision3D<class_GPUParticlesCollision3D>` and :ref:`GPUParticlesAttractor3D<class_GPUParticlesAttractor3D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8928,9 +8917,7 @@ To place in a scene, attach this omni light to an instance using :ref:`instance_
 
 void **particles_collision_height_field_update** **(** :ref:`RID<class_RID>` particles_collision **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Requests an update for the 3D GPU particle collision heightfield. This may be automatically called by the 3D GPU particle collision heightfield depending on its :ref:`GPUParticlesCollisionHeightField3D.update_mode<class_GPUParticlesCollisionHeightField3D_property_update_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8942,9 +8929,7 @@ void **particles_collision_height_field_update** **(** :ref:`RID<class_RID>` par
 
 void **particles_collision_set_attractor_attenuation** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` curve **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the attenuation ``curve`` for the 3D GPU particles attractor specified by the ``particles_collision`` RID. Only used for attractors, not colliders. Equivalent to :ref:`GPUParticlesAttractor3D.attenuation<class_GPUParticlesAttractor3D_property_attenuation>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8956,9 +8941,7 @@ void **particles_collision_set_attractor_attenuation** **(** :ref:`RID<class_RID
 
 void **particles_collision_set_attractor_directionality** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` amount **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the directionality ``amount`` for the 3D GPU particles attractor specified by the ``particles_collision`` RID. Only used for attractors, not colliders. Equivalent to :ref:`GPUParticlesAttractor3D.directionality<class_GPUParticlesAttractor3D_property_directionality>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8968,11 +8951,9 @@ void **particles_collision_set_attractor_directionality** **(** :ref:`RID<class_
 
 .. rst-class:: classref-method
 
-void **particles_collision_set_attractor_strength** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` setrngth **)**
+void **particles_collision_set_attractor_strength** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` strength **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``strength`` for the 3D GPU particles attractor specified by the ``particles_collision`` RID. Only used for attractors, not colliders. Equivalent to :ref:`GPUParticlesAttractor3D.strength<class_GPUParticlesAttractor3D_property_strength>`.
 
 .. rst-class:: classref-item-separator
 
@@ -8984,9 +8965,7 @@ void **particles_collision_set_attractor_strength** **(** :ref:`RID<class_RID>` 
 
 void **particles_collision_set_box_extents** **(** :ref:`RID<class_RID>` particles_collision, :ref:`Vector3<class_Vector3>` extents **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``extents`` for the 3D GPU particles collision by the ``particles_collision`` RID. Equivalent to :ref:`GPUParticlesCollisionBox3D.size<class_GPUParticlesCollisionBox3D_property_size>`, :ref:`GPUParticlesCollisionSDF3D.size<class_GPUParticlesCollisionSDF3D_property_size>`, :ref:`GPUParticlesCollisionHeightField3D.size<class_GPUParticlesCollisionHeightField3D_property_size>`, :ref:`GPUParticlesAttractorBox3D.size<class_GPUParticlesAttractorBox3D_property_size>` or :ref:`GPUParticlesAttractorVectorField3D.size<class_GPUParticlesAttractorVectorField3D_property_size>` depending on the ``particles_collision`` type.
 
 .. rst-class:: classref-item-separator
 
@@ -8998,9 +8977,7 @@ void **particles_collision_set_box_extents** **(** :ref:`RID<class_RID>` particl
 
 void **particles_collision_set_collision_type** **(** :ref:`RID<class_RID>` particles_collision, :ref:`ParticlesCollisionType<enum_RenderingServer_ParticlesCollisionType>` type **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the collision or attractor shape ``type`` for the 3D GPU particles collision or attractor specified by the ``particles_collision`` RID.
 
 .. rst-class:: classref-item-separator
 
@@ -9012,9 +8989,7 @@ void **particles_collision_set_collision_type** **(** :ref:`RID<class_RID>` part
 
 void **particles_collision_set_cull_mask** **(** :ref:`RID<class_RID>` particles_collision, :ref:`int<class_int>` mask **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the cull ``mask`` for the 3D GPU particles collision or attractor specified by the ``particles_collision`` RID. Equivalent to :ref:`GPUParticlesCollision3D.cull_mask<class_GPUParticlesCollision3D_property_cull_mask>` or :ref:`GPUParticlesAttractor3D.cull_mask<class_GPUParticlesAttractor3D_property_cull_mask>` depending on the ``particles_collision`` type.
 
 .. rst-class:: classref-item-separator
 
@@ -9026,9 +9001,7 @@ void **particles_collision_set_cull_mask** **(** :ref:`RID<class_RID>` particles
 
 void **particles_collision_set_field_texture** **(** :ref:`RID<class_RID>` particles_collision, :ref:`RID<class_RID>` texture **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the signed distance field ``texture`` for the 3D GPU particles collision specified by the ``particles_collision`` RID. Equivalent to :ref:`GPUParticlesCollisionSDF3D.texture<class_GPUParticlesCollisionSDF3D_property_texture>` or :ref:`GPUParticlesAttractorVectorField3D.texture<class_GPUParticlesAttractorVectorField3D_property_texture>` depending on the ``particles_collision`` type.
 
 .. rst-class:: classref-item-separator
 
@@ -9040,9 +9013,7 @@ void **particles_collision_set_field_texture** **(** :ref:`RID<class_RID>` parti
 
 void **particles_collision_set_height_field_resolution** **(** :ref:`RID<class_RID>` particles_collision, :ref:`ParticlesCollisionHeightfieldResolution<enum_RenderingServer_ParticlesCollisionHeightfieldResolution>` resolution **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the heightmap ``resolution`` for the 3D GPU particles heightfield collision specified by the ``particles_collision`` RID. Equivalent to :ref:`GPUParticlesCollisionHeightField3D.resolution<class_GPUParticlesCollisionHeightField3D_property_resolution>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9054,9 +9025,7 @@ void **particles_collision_set_height_field_resolution** **(** :ref:`RID<class_R
 
 void **particles_collision_set_sphere_radius** **(** :ref:`RID<class_RID>` particles_collision, :ref:`float<class_float>` radius **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``radius`` for the 3D GPU particles sphere collision or attractor specified by the ``particles_collision`` RID. Equivalent to :ref:`GPUParticlesCollisionSphere3D.radius<class_GPUParticlesCollisionSphere3D_property_radius>` or :ref:`GPUParticlesAttractorSphere3D.radius<class_GPUParticlesAttractorSphere3D_property_radius>` depending on the ``particles_collision`` type.
 
 .. rst-class:: classref-item-separator
 
@@ -9068,11 +9037,15 @@ void **particles_collision_set_sphere_radius** **(** :ref:`RID<class_RID>` parti
 
 :ref:`RID<class_RID>` **particles_create** **(** **)**
 
-Creates a particle system and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``particles_*`` RenderingServer functions.
+Creates a GPU-based particle system and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``particles_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 To place in a scene, attach these particles to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent nodes are :ref:`GPUParticles2D<class_GPUParticles2D>` and :ref:`GPUParticles3D<class_GPUParticles3D>`.
+
+\ **Note:** All ``particles_*`` methods only apply to GPU-based particles, not CPU-based particles. :ref:`CPUParticles2D<class_CPUParticles2D>` and :ref:`CPUParticles3D<class_CPUParticles3D>` do not have equivalent RenderingServer functions available, as these use :ref:`MultiMeshInstance2D<class_MultiMeshInstance2D>` and :ref:`MultiMeshInstance3D<class_MultiMeshInstance3D>` under the hood (see ``multimesh_*`` methods).
 
 .. rst-class:: classref-item-separator
 
@@ -9084,9 +9057,7 @@ To place in a scene, attach these particles to an instance using :ref:`instance_
 
 void **particles_emit** **(** :ref:`RID<class_RID>` particles, :ref:`Transform3D<class_Transform3D>` transform, :ref:`Vector3<class_Vector3>` velocity, :ref:`Color<class_Color>` color, :ref:`Color<class_Color>` custom, :ref:`int<class_int>` emit_flags **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Manually emits particles from the ``particles`` instance.
 
 .. rst-class:: classref-item-separator
 
@@ -9318,9 +9289,7 @@ Sets the lifetime of each particle in the system. Equivalent to :ref:`GPUParticl
 
 void **particles_set_mode** **(** :ref:`RID<class_RID>` particles, :ref:`ParticlesMode<enum_RenderingServer_ParticlesMode>` mode **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets whether the GPU particles specified by the ``particles`` RID should be rendered in 2D or 3D according to ``mode``.
 
 .. rst-class:: classref-item-separator
 
@@ -9422,9 +9391,7 @@ void **particles_set_trail_bind_poses** **(** :ref:`RID<class_RID>` particles, :
 
 void **particles_set_trails** **(** :ref:`RID<class_RID>` particles, :ref:`bool<class_bool>` enable, :ref:`float<class_float>` length_sec **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``enable`` is ``true``, enables trails for the ``particles`` with the specified ``length_sec`` in seconds. Equivalent to :ref:`GPUParticles3D.trail_enabled<class_GPUParticles3D_property_trail_enabled>` and :ref:`GPUParticles3D.trail_lifetime<class_GPUParticles3D_property_trail_lifetime>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9462,9 +9429,7 @@ If ``true``, particles use local coordinates. If ``false`` they use global coord
 
 void **positional_soft_shadow_filter_set_quality** **(** :ref:`ShadowQuality<enum_RenderingServer_ShadowQuality>` quality **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the filter quality for omni and spot light shadows in 3D. See also :ref:`ProjectSettings.rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality<class_ProjectSettings_property_rendering/lights_and_shadows/positional_shadow/soft_shadow_filter_quality>`. This parameter is global and cannot be set on a per-viewport basis.
 
 .. rst-class:: classref-item-separator
 
@@ -9478,9 +9443,11 @@ void **positional_soft_shadow_filter_set_quality** **(** :ref:`ShadowQuality<enu
 
 Creates a reflection probe and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``reflection_probe_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 To place in a scene, attach this reflection probe to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent node is :ref:`ReflectionProbe<class_ReflectionProbe>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9492,9 +9459,7 @@ To place in a scene, attach this reflection probe to an instance using :ref:`ins
 
 void **reflection_probe_set_ambient_color** **(** :ref:`RID<class_RID>` probe, :ref:`Color<class_Color>` color **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the reflection probe's custom ambient light color. Equivalent to :ref:`ReflectionProbe.ambient_color<class_ReflectionProbe_property_ambient_color>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9506,9 +9471,7 @@ void **reflection_probe_set_ambient_color** **(** :ref:`RID<class_RID>` probe, :
 
 void **reflection_probe_set_ambient_energy** **(** :ref:`RID<class_RID>` probe, :ref:`float<class_float>` energy **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the reflection probe's custom ambient light energy. Equivalent to :ref:`ReflectionProbe.ambient_color_energy<class_ReflectionProbe_property_ambient_color_energy>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9520,9 +9483,7 @@ void **reflection_probe_set_ambient_energy** **(** :ref:`RID<class_RID>` probe, 
 
 void **reflection_probe_set_ambient_mode** **(** :ref:`RID<class_RID>` probe, :ref:`ReflectionProbeAmbientMode<enum_RenderingServer_ReflectionProbeAmbientMode>` mode **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the reflection probe's ambient light mode. Equivalent to :ref:`ReflectionProbe.ambient_mode<class_ReflectionProbe_property_ambient_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9606,9 +9567,7 @@ Sets the max distance away from the probe an object can be before it is culled. 
 
 void **reflection_probe_set_mesh_lod_threshold** **(** :ref:`RID<class_RID>` probe, :ref:`float<class_float>` pixels **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the mesh level of detail to use in the reflection probe rendering. Higher values will use less detailed versions of meshes that have LOD variations generated, which can improve performance. Equivalent to :ref:`ReflectionProbe.mesh_lod_threshold<class_ReflectionProbe_property_mesh_lod_threshold>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9632,9 +9591,7 @@ Sets the origin offset to be used when this reflection probe is in box project m
 
 void **reflection_probe_set_resolution** **(** :ref:`RID<class_RID>` probe, :ref:`int<class_int>` resolution **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the resolution to use when rendering the specified reflection probe. The ``resolution`` is specified for each cubemap face: for instance, specifying ``512`` will allocate 6 faces of 512×512 each (plus mipmaps for roughness levels).
 
 .. rst-class:: classref-item-separator
 
@@ -9684,7 +9641,7 @@ Schedules a callback to the given callable after a frame has been drawn.
 
 Creates a scenario and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``scenario_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 The scenario is the 3D world that all the visual instances exist in.
 
@@ -9698,9 +9655,7 @@ The scenario is the 3D world that all the visual instances exist in.
 
 void **scenario_set_camera_attributes** **(** :ref:`RID<class_RID>` scenario, :ref:`RID<class_RID>` effects **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the camera attributes (``effects``) that will be used with this scenario. See also :ref:`CameraAttributes<class_CameraAttributes>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9712,7 +9667,7 @@ void **scenario_set_camera_attributes** **(** :ref:`RID<class_RID>` scenario, :r
 
 void **scenario_set_environment** **(** :ref:`RID<class_RID>` scenario, :ref:`RID<class_RID>` environment **)**
 
-Sets the environment that will be used with this scenario.
+Sets the environment that will be used with this scenario. See also :ref:`Environment<class_Environment>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9736,9 +9691,7 @@ Sets the fallback environment to be used by this scenario. The fallback environm
 
 void **screen_space_roughness_limiter_set_active** **(** :ref:`bool<class_bool>` enable, :ref:`float<class_float>` amount, :ref:`float<class_float>` limit **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the screen-space roughness limiter parameters, such as whether it should be enabled and its thresholds. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/screen_space_roughness_limiter/enabled<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/enabled>`, :ref:`ProjectSettings.rendering/anti_aliasing/screen_space_roughness_limiter/amount<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/amount>` and :ref:`ProjectSettings.rendering/anti_aliasing/screen_space_roughness_limiter/limit<class_ProjectSettings_property_rendering/anti_aliasing/screen_space_roughness_limiter/limit>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9762,7 +9715,7 @@ Sets a boot image. The color defines the background color. If ``scale`` is ``tru
 
 void **set_debug_generate_wireframes** **(** :ref:`bool<class_bool>` generate **)**
 
-If ``true``, the engine will generate wireframes for use with the wireframe debug mode.
+This method is currently unimplemented and does nothing if called with ``generate`` set to ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -9774,7 +9727,7 @@ If ``true``, the engine will generate wireframes for use with the wireframe debu
 
 void **set_default_clear_color** **(** :ref:`Color<class_Color>` color **)**
 
-Sets the default clear color which is used when a specific clear color has not been selected.
+Sets the default clear color which is used when a specific clear color has not been selected. See also :ref:`get_default_clear_color<class_RenderingServer_method_get_default_clear_color>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9788,7 +9741,9 @@ Sets the default clear color which is used when a specific clear color has not b
 
 Creates an empty shader and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``shader_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`Shader<class_Shader>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9800,7 +9755,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`String<class_String>` **shader_get_code** **(** :ref:`RID<class_RID>` shader **)** |const|
 
-Returns a shader's code.
+Returns a shader's source code as a string.
 
 .. rst-class:: classref-item-separator
 
@@ -9826,9 +9781,7 @@ Returns a default texture from a shader searched by name.
 
 :ref:`Variant<class_Variant>` **shader_get_parameter_default** **(** :ref:`RID<class_RID>` shader, :ref:`StringName<class_StringName>` name **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the default value for the specified shader uniform. This is usually the value written in the shader source code.
 
 .. rst-class:: classref-item-separator
 
@@ -9840,9 +9793,7 @@ Returns a default texture from a shader searched by name.
 
 void **shader_set_code** **(** :ref:`RID<class_RID>` shader, :ref:`String<class_String>` code **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the shader's source code (which triggers recompilation after being changed).
 
 .. rst-class:: classref-item-separator
 
@@ -9868,9 +9819,7 @@ Sets a shader's default texture. Overwrites the texture given by name.
 
 void **shader_set_path_hint** **(** :ref:`RID<class_RID>` shader, :ref:`String<class_String>` path **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the path hint for the specified shader. This should generally match the :ref:`Shader<class_Shader>` resource's :ref:`Resource.resource_path<class_Resource_property_resource_path>`.
 
 .. rst-class:: classref-item-separator
 
@@ -9946,7 +9895,7 @@ Sets the :ref:`Transform2D<class_Transform2D>` for a specific bone of this skele
 
 Creates a skeleton and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``skeleton_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -9984,9 +9933,11 @@ void **skeleton_set_base_transform_2d** **(** :ref:`RID<class_RID>` skeleton, :r
 
 :ref:`Image<class_Image>` **sky_bake_panorama** **(** :ref:`RID<class_RID>` sky, :ref:`float<class_float>` energy, :ref:`bool<class_bool>` bake_irradiance, :ref:`Vector2i<class_Vector2i>` size **)**
 
-.. container:: contribute
+Generates and returns an :ref:`Image<class_Image>` containing the radiance map for the specified ``sky`` RID. This supports built-in sky material and custom sky shaders. If ``bake_irradiance`` is ``true``, the irradiance map is saved instead of the radiance map. The radiance map is used to render reflected light, while the irradiance map is used to render ambient light. See also :ref:`environment_bake_panorama<class_RenderingServer_method_environment_bake_panorama>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The image is saved in linear color space without any tonemapping performed, which means it will look too dark if viewed directly in an image editor. ``energy`` values above ``1.0`` can be used to brighten the resulting image.
+
+\ **Note:** ``size`` should be a 2:1 aspect ratio for the generated panorama to have square pixels. For radiance maps, there is no point in using a height greater than :ref:`Sky.radiance_size<class_Sky_property_radiance_size>`, as it won't increase detail. Irradiance maps only contain low-frequency data, so there is usually no point in going past a size of 128×64 pixels when saving an irradiance map.
 
 .. rst-class:: classref-item-separator
 
@@ -10000,7 +9951,7 @@ void **skeleton_set_base_transform_2d** **(** :ref:`RID<class_RID>` skeleton, :r
 
 Creates an empty sky and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``sky_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -10012,7 +9963,7 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 void **sky_set_material** **(** :ref:`RID<class_RID>` sky, :ref:`RID<class_RID>` material **)**
 
-Sets the material that the sky uses to render the background and reflection maps.
+Sets the material that the sky uses to render the background, ambient and reflection maps.
 
 .. rst-class:: classref-item-separator
 
@@ -10024,9 +9975,7 @@ Sets the material that the sky uses to render the background and reflection maps
 
 void **sky_set_mode** **(** :ref:`RID<class_RID>` sky, :ref:`SkyMode<enum_RenderingServer_SkyMode>` mode **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the process ``mode`` of the sky specified by the ``sky`` RID. Equivalent to :ref:`Sky.process_mode<class_Sky_property_process_mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10038,9 +9987,7 @@ void **sky_set_mode** **(** :ref:`RID<class_RID>` sky, :ref:`SkyMode<enum_Render
 
 void **sky_set_radiance_size** **(** :ref:`RID<class_RID>` sky, :ref:`int<class_int>` radiance_size **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the ``radiance_size`` of the sky specified by the ``sky`` RID (in pixels). Equivalent to :ref:`Sky.radiance_size<class_Sky_property_radiance_size>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10054,7 +10001,7 @@ void **sky_set_radiance_size** **(** :ref:`RID<class_RID>` sky, :ref:`int<class_
 
 Creates a spot light and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID can be used in most ``light_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
 
 To place in a scene, attach this spot light to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
 
@@ -10068,9 +10015,7 @@ To place in a scene, attach this spot light to an instance using :ref:`instance_
 
 void **sub_surface_scattering_set_quality** **(** :ref:`SubSurfaceScatteringQuality<enum_RenderingServer_SubSurfaceScatteringQuality>` quality **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_quality<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_quality>` to use when rendering materials that have subsurface scattering enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -10082,9 +10027,7 @@ void **sub_surface_scattering_set_quality** **(** :ref:`SubSurfaceScatteringQual
 
 void **sub_surface_scattering_set_scale** **(** :ref:`float<class_float>` scale, :ref:`float<class_float>` depth_scale **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_scale<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_scale>` and :ref:`ProjectSettings.rendering/environment/subsurface_scattering/subsurface_scattering_depth_scale<class_ProjectSettings_property_rendering/environment/subsurface_scattering/subsurface_scattering_depth_scale>` to use when rendering materials that have subsurface scattering enabled.
 
 .. rst-class:: classref-item-separator
 
@@ -10096,9 +10039,13 @@ void **sub_surface_scattering_set_scale** **(** :ref:`float<class_float>` scale,
 
 :ref:`RID<class_RID>` **texture_2d_create** **(** :ref:`Image<class_Image>` image **)**
 
-.. container:: contribute
+Creates a 2-dimensional texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`Texture2D<class_Texture2D>`.
+
+\ **Note:** Not to be confused with :ref:`RenderingDevice.texture_create<class_RenderingDevice_method_texture_create>`, which creates the graphics API's own texture type as opposed to the Godot-specific :ref:`Texture2D<class_Texture2D>` resource.
 
 .. rst-class:: classref-item-separator
 
@@ -10110,9 +10057,15 @@ void **sub_surface_scattering_set_scale** **(** :ref:`float<class_float>` scale,
 
 :ref:`Image<class_Image>` **texture_2d_get** **(** :ref:`RID<class_RID>` texture **)** |const|
 
-.. container:: contribute
+Returns an :ref:`Image<class_Image>` instance from the given ``texture`` :ref:`RID<class_RID>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Example of getting the test texture from :ref:`get_test_texture<class_RenderingServer_method_get_test_texture>` and applying it to a :ref:`Sprite2D<class_Sprite2D>` node:
+
+::
+
+    var texture_rid = RenderingServer.get_test_texture()
+    var texture = ImageTexture.create_from_image(RenderingServer.texture_2d_get(texture_rid))
+    $Sprite2D.texture = texture
 
 .. rst-class:: classref-item-separator
 
@@ -10124,9 +10077,7 @@ void **sub_surface_scattering_set_scale** **(** :ref:`float<class_float>` scale,
 
 :ref:`Image<class_Image>` **texture_2d_layer_get** **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` layer **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns an :ref:`Image<class_Image>` instance from the given ``texture`` :ref:`RID<class_RID>` and ``layer``.
 
 .. rst-class:: classref-item-separator
 
@@ -10138,9 +10089,11 @@ void **sub_surface_scattering_set_scale** **(** :ref:`float<class_float>` scale,
 
 :ref:`RID<class_RID>` **texture_2d_layered_create** **(** :ref:`Image[]<class_Image>` layers, :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` layered_type **)**
 
-.. container:: contribute
+Creates a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`TextureLayered<class_TextureLayered>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10152,9 +10105,9 @@ void **sub_surface_scattering_set_scale** **(** :ref:`float<class_float>` scale,
 
 :ref:`RID<class_RID>` **texture_2d_layered_placeholder_create** **(** :ref:`TextureLayeredType<enum_RenderingServer_TextureLayeredType>` layered_type **)**
 
-.. container:: contribute
+Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions, although it does nothing when used. See also :ref:`texture_2d_placeholder_create<class_RenderingServer_method_texture_2d_placeholder_create>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The equivalent resource is :ref:`PlaceholderTextureLayered<class_PlaceholderTextureLayered>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10166,9 +10119,11 @@ void **sub_surface_scattering_set_scale** **(** :ref:`float<class_float>` scale,
 
 :ref:`RID<class_RID>` **texture_2d_placeholder_create** **(** **)**
 
-.. container:: contribute
+Creates a placeholder for a 2-dimensional layered texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_2d_layered_*`` RenderingServer functions, although it does nothing when used. See also :ref:`texture_2d_layered_placeholder_create<class_RenderingServer_method_texture_2d_layered_placeholder_create>`\ 
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`PlaceholderTexture2D<class_PlaceholderTexture2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10180,9 +10135,9 @@ void **sub_surface_scattering_set_scale** **(** :ref:`float<class_float>` scale,
 
 void **texture_2d_update** **(** :ref:`RID<class_RID>` texture, :ref:`Image<class_Image>` image, :ref:`int<class_int>` layer **)**
 
-.. container:: contribute
+Updates the texture specified by the ``texture`` :ref:`RID<class_RID>` with the data in ``image``. A ``layer`` must also be specified, which should be ``0`` when updating a single-layer texture (:ref:`Texture2D<class_Texture2D>`).
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The ``image`` must have the same width, height and format as the current ``texture`` data. Otherwise, an error will be printed and the original texture won't be modified. If you need to use different width, height or format, use :ref:`texture_replace<class_RenderingServer_method_texture_replace>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -10194,9 +10149,7 @@ void **texture_2d_update** **(** :ref:`RID<class_RID>` texture, :ref:`Image<clas
 
 :ref:`RID<class_RID>` **texture_3d_create** **(** :ref:`Format<enum_Image_Format>` format, :ref:`int<class_int>` width, :ref:`int<class_int>` height, :ref:`int<class_int>` depth, :ref:`bool<class_bool>` mipmaps, :ref:`Image[]<class_Image>` data **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+**Note:** The equivalent resource is :ref:`Texture3D<class_Texture3D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10208,9 +10161,7 @@ void **texture_2d_update** **(** :ref:`RID<class_RID>` texture, :ref:`Image<clas
 
 :ref:`Image[]<class_Image>` **texture_3d_get** **(** :ref:`RID<class_RID>` texture **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns 3D texture data as an array of :ref:`Image<class_Image>`\ s for the specified texture :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10222,9 +10173,11 @@ void **texture_2d_update** **(** :ref:`RID<class_RID>` texture, :ref:`Image<clas
 
 :ref:`RID<class_RID>` **texture_3d_placeholder_create** **(** **)**
 
-.. container:: contribute
+Creates a placeholder for a 3-dimensional texture and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``texture_3d_*`` RenderingServer functions, although it does nothing when used.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent resource is :ref:`PlaceholderTexture3D<class_PlaceholderTexture3D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10236,9 +10189,23 @@ void **texture_2d_update** **(** :ref:`RID<class_RID>` texture, :ref:`Image<clas
 
 void **texture_3d_update** **(** :ref:`RID<class_RID>` texture, :ref:`Image[]<class_Image>` data **)**
 
-.. container:: contribute
+Updates the texture specified by the ``texture`` :ref:`RID<class_RID>`'s data with the data in ``data``. All the texture's layers must be replaced at once.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The ``texture`` must have the same width, height, depth and format as the current texture data. Otherwise, an error will be printed and the original texture won't be modified. If you need to use different width, height, depth or format, use :ref:`texture_replace<class_RenderingServer_method_texture_replace>` instead.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_texture_get_native_handle:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **texture_get_native_handle** **(** :ref:`RID<class_RID>` texture, :ref:`bool<class_bool>` srgb=false **)** |const|
+
+Returns the internal graphics handle for this texture object. For use when communicating with 3rd party APIs mostly with GDExternal.
+
+\ **Note:** This functions returns a ``uint64_t`` which internally maps to a ``GLuint`` (OpenGL) or ``VkImage`` (Vulkan).
 
 .. rst-class:: classref-item-separator
 
@@ -10276,9 +10243,7 @@ Returns a texture :ref:`RID<class_RID>` that can be used with :ref:`RenderingDev
 
 :ref:`RID<class_RID>` **texture_proxy_create** **(** :ref:`RID<class_RID>` base **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+*Deprecated.* As ProxyTexture was removed in Godot 4, this method does nothing when called and always returns a null :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10290,9 +10255,7 @@ Returns a texture :ref:`RID<class_RID>` that can be used with :ref:`RenderingDev
 
 void **texture_proxy_update** **(** :ref:`RID<class_RID>` texture, :ref:`RID<class_RID>` proxy_to **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+*Deprecated.* ProxyTexture was removed in Godot 4, so this method cannot be used anymore.
 
 .. rst-class:: classref-item-separator
 
@@ -10304,9 +10267,7 @@ void **texture_proxy_update** **(** :ref:`RID<class_RID>` texture, :ref:`RID<cla
 
 void **texture_replace** **(** :ref:`RID<class_RID>` texture, :ref:`RID<class_RID>` by_texture **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Replaces ``texture``'s texture data by the texture specified by the ``by_texture`` RID, without changing ``texture``'s RID.
 
 .. rst-class:: classref-item-separator
 
@@ -10415,7 +10376,9 @@ Using this can result in significant optimization, especially on lower-end devic
 
 Creates an empty viewport and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``viewport_*`` RenderingServer functions.
 
-Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` static method.
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent node is :ref:`Viewport<class_Viewport>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10427,9 +10390,9 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`float<class_float>` **viewport_get_measured_render_time_cpu** **(** :ref:`RID<class_RID>` viewport **)** |const|
 
-.. container:: contribute
+Returns the CPU time taken to render the last frame in milliseconds. This *only* includes time spent in rendering-related operations; scripts' ``_process`` functions and other engine subsystems are not included in this readout. To get a complete readout of CPU time spent to render the scene, sum the render times of all viewports that are drawn every frame plus :ref:`get_frame_setup_time_cpu<class_RenderingServer_method_get_frame_setup_time_cpu>`. Unlike :ref:`Engine.get_frames_per_second<class_Engine_method_get_frames_per_second>`, this method will accurately reflect CPU utilization even if framerate is capped via V-Sync or :ref:`Engine.max_fps<class_Engine_property_max_fps>`. See also :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Requires measurements to be enabled on the specified ``viewport`` using :ref:`viewport_set_measure_render_time<class_RenderingServer_method_viewport_set_measure_render_time>`. Otherwise, this method returns ``0.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -10441,9 +10404,11 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`float<class_float>` **viewport_get_measured_render_time_gpu** **(** :ref:`RID<class_RID>` viewport **)** |const|
 
-.. container:: contribute
+Returns the GPU time taken to render the last frame in milliseconds. To get a complete readout of GPU time spent to render the scene, sum the render times of all viewports that are drawn every frame. Unlike :ref:`Engine.get_frames_per_second<class_Engine_method_get_frames_per_second>`, this method accurately reflects GPU utilization even if framerate is capped via V-Sync or :ref:`Engine.max_fps<class_Engine_property_max_fps>`. See also :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Requires measurements to be enabled on the specified ``viewport`` using :ref:`viewport_set_measure_render_time<class_RenderingServer_method_viewport_set_measure_render_time>`. Otherwise, this method returns ``0.0``.
+
+\ **Note:** When GPU utilization is low enough during a certain period of time, GPUs will decrease their power state (which in turn decreases core and memory clock speeds). This can cause the reported GPU time to increase if GPU utilization is kept low enough by a framerate cap (compared to what it would be at the GPU's highest power state). Keep this in mind when benchmarking using :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>`. This behavior can be overridden in the graphics driver settings at the cost of higher power usage.
 
 .. rst-class:: classref-item-separator
 
@@ -10455,9 +10420,35 @@ Once finished with your RID, you will want to free the RID using the RenderingSe
 
 :ref:`int<class_int>` **viewport_get_render_info** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` type, :ref:`ViewportRenderInfo<enum_RenderingServer_ViewportRenderInfo>` info **)**
 
-.. container:: contribute
+Returns a statistic about the rendering engine which can be used for performance profiling. This is separated into render pass ``type``\ s, each of them having the same ``info``\ s you can query (different passes will return different values). See :ref:`ViewportRenderInfoType<enum_RenderingServer_ViewportRenderInfoType>` for a list of render pass types and :ref:`ViewportRenderInfo<enum_RenderingServer_ViewportRenderInfo>` for a list of information that can be queried.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+See also :ref:`get_rendering_info<class_RenderingServer_method_get_rendering_info>`, which returns global information across all viewports.
+
+\ **Note:** Viewport rendering information is not available until at least 2 frames have been rendered by the engine. If rendering information is not available, :ref:`viewport_get_render_info<class_RenderingServer_method_viewport_get_render_info>` returns ``0``. To print rendering information in ``_ready()`` successfully, use the following:
+
+::
+
+    func _ready():
+        for _i in 2:
+            await get_tree().process_frame
+    
+        print(
+                RenderingServer.viewport_get_render_info(get_viewport().get_viewport_rid(),
+                RenderingServer.VIEWPORT_RENDER_INFO_TYPE_VISIBLE,
+                RenderingServer.VIEWPORT_RENDER_INFO_DRAW_CALLS_IN_FRAME)
+        )
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingServer_method_viewport_get_render_target:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **viewport_get_render_target** **(** :ref:`RID<class_RID>` viewport **)** |const|
+
+Returns the render target for the viewport.
 
 .. rst-class:: classref-item-separator
 
@@ -10567,9 +10558,7 @@ Sets the debug draw mode of a viewport. See :ref:`ViewportDebugDraw<enum_Renderi
 
 void **viewport_set_default_canvas_item_texture_filter** **(** :ref:`RID<class_RID>` viewport, :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>` filter **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the default texture filtering mode for the specified ``viewport`` RID. See :ref:`CanvasItemTextureFilter<enum_RenderingServer_CanvasItemTextureFilter>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -10581,9 +10570,7 @@ void **viewport_set_default_canvas_item_texture_filter** **(** :ref:`RID<class_R
 
 void **viewport_set_default_canvas_item_texture_repeat** **(** :ref:`RID<class_RID>` viewport, :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>` repeat **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the default texture repeat mode for the specified ``viewport`` RID. See :ref:`CanvasItemTextureRepeat<enum_RenderingServer_CanvasItemTextureRepeat>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -10595,7 +10582,7 @@ void **viewport_set_default_canvas_item_texture_repeat** **(** :ref:`RID<class_R
 
 void **viewport_set_disable_2d** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` disable **)**
 
-If ``true``, the viewport's canvas is not rendered.
+If ``true``, the viewport's canvas (i.e. 2D and GUI elements) is not rendered.
 
 .. rst-class:: classref-item-separator
 
@@ -10607,9 +10594,7 @@ If ``true``, the viewport's canvas is not rendered.
 
 void **viewport_set_disable_3d** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` disable **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, the viewport's 3D elements are not rendered.
 
 .. rst-class:: classref-item-separator
 
@@ -10657,9 +10642,7 @@ Sets the viewport's global transformation matrix.
 
 void **viewport_set_measure_render_time** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the measurement for the given ``viewport`` RID (obtained using :ref:`Viewport.get_viewport_rid<class_Viewport_method_get_viewport_rid>`). Once enabled, :ref:`viewport_get_measured_render_time_cpu<class_RenderingServer_method_viewport_get_measured_render_time_cpu>` and :ref:`viewport_get_measured_render_time_gpu<class_RenderingServer_method_viewport_get_measured_render_time_gpu>` will return values greater than ``0.0`` when queried with the given ``viewport``.
 
 .. rst-class:: classref-item-separator
 
@@ -10671,7 +10654,7 @@ void **viewport_set_measure_render_time** **(** :ref:`RID<class_RID>` viewport, 
 
 void **viewport_set_msaa_2d** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` msaa **)**
 
-Sets the multisample anti-aliasing mode for 2D/Canvas. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options.
+Sets the multisample anti-aliasing mode for 2D/Canvas on the specified ``viewport`` RID. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -10683,7 +10666,7 @@ Sets the multisample anti-aliasing mode for 2D/Canvas. See :ref:`ViewportMSAA<en
 
 void **viewport_set_msaa_3d** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` msaa **)**
 
-Sets the multisample anti-aliasing mode for 3D. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options.
+Sets the multisample anti-aliasing mode for 3D on the specified ``viewport`` RID. See :ref:`ViewportMSAA<enum_RenderingServer_ViewportMSAA>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -10695,9 +10678,7 @@ Sets the multisample anti-aliasing mode for 3D. See :ref:`ViewportMSAA<enum_Rend
 
 void **viewport_set_occlusion_culling_build_quality** **(** :ref:`ViewportOcclusionCullingBuildQuality<enum_RenderingServer_ViewportOcclusionCullingBuildQuality>` quality **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`ProjectSettings.rendering/occlusion_culling/bvh_build_quality<class_ProjectSettings_property_rendering/occlusion_culling/bvh_build_quality>` to use for occlusion culling. This parameter is global and cannot be set on a per-viewport basis.
 
 .. rst-class:: classref-item-separator
 
@@ -10709,9 +10690,7 @@ void **viewport_set_occlusion_culling_build_quality** **(** :ref:`ViewportOcclus
 
 void **viewport_set_occlusion_rays_per_thread** **(** :ref:`int<class_int>` rays_per_thread **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`ProjectSettings.rendering/occlusion_culling/occlusion_rays_per_thread<class_ProjectSettings_property_rendering/occlusion_culling/occlusion_rays_per_thread>` to use for occlusion culling. This parameter is global and cannot be set on a per-viewport basis.
 
 .. rst-class:: classref-item-separator
 
@@ -10723,7 +10702,7 @@ void **viewport_set_occlusion_rays_per_thread** **(** :ref:`int<class_int>` rays
 
 void **viewport_set_parent_viewport** **(** :ref:`RID<class_RID>` viewport, :ref:`RID<class_RID>` parent_viewport **)**
 
-Sets the viewport's parent to another viewport.
+Sets the viewport's parent to the viewport specified by the ``parent_viewport`` RID.
 
 .. rst-class:: classref-item-separator
 
@@ -10735,7 +10714,7 @@ Sets the viewport's parent to another viewport.
 
 void **viewport_set_positional_shadow_atlas_quadrant_subdivision** **(** :ref:`RID<class_RID>` viewport, :ref:`int<class_int>` quadrant, :ref:`int<class_int>` subdivision **)**
 
-Sets the shadow atlas quadrant's subdivision.
+Sets the number of subdivisions to use in the specified shadow atlas ``quadrant`` for omni and spot shadows. See also :ref:`Viewport.set_positional_shadow_atlas_quadrant_subdiv<class_Viewport_method_set_positional_shadow_atlas_quadrant_subdiv>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10747,9 +10726,9 @@ Sets the shadow atlas quadrant's subdivision.
 
 void **viewport_set_positional_shadow_atlas_size** **(** :ref:`RID<class_RID>` viewport, :ref:`int<class_int>` size, :ref:`bool<class_bool>` use_16_bits=false **)**
 
-Sets the size of the shadow atlas's images (used for omni and spot lights). The value will be rounded up to the nearest power of 2.
+Sets the ``size`` of the shadow atlas's images (used for omni and spot lights) on the viewport specified by the ``viewport`` RID. The value is rounded up to the nearest power of 2. If ``use_16_bits`` is ``true``, use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows having less precision and may result in shadow acne, but can lead to performance improvements on some devices.
 
-\ **Note:** If this is set to ``0``, no shadows will be visible at all (including directional shadows).
+\ **Note:** If this is set to ``0``, no positional shadows will be visible at all. This can improve performance significantly on low-end systems by reducing both the CPU and GPU load (as fewer draw calls are needed to draw the scene without shadows).
 
 .. rst-class:: classref-item-separator
 
@@ -10773,7 +10752,7 @@ If ``true``, render the contents of the viewport directly to screen. This allows
 
 void **viewport_set_scaling_3d_mode** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportScaling3DMode<enum_RenderingServer_ViewportScaling3DMode>` scaling_3d_mode **)**
 
-Sets scaling 3d mode. Bilinear scaling renders at different resolution to either undersample or supersample the viewport. FidelityFX Super Resolution 1.0, abbreviated to FSR, is an upscaling technology that produces high quality images at fast framerates by using a spatially aware upscaling algorithm. FSR is slightly more expensive than bilinear, but it produces significantly higher image quality. FSR should be used where possible.
+Sets the 3D resolution scaling mode. Bilinear scaling renders at different resolution to either undersample or supersample the viewport. FidelityFX Super Resolution 1.0, abbreviated to FSR, is an upscaling technology that produces high quality images at fast framerates by using a spatially aware upscaling algorithm. FSR is slightly more expensive than bilinear, but it produces significantly higher image quality. FSR should be used where possible.
 
 .. rst-class:: classref-item-separator
 
@@ -10799,9 +10778,7 @@ When using FSR upscaling, AMD recommends exposing the following values as preset
 
 void **viewport_set_scenario** **(** :ref:`RID<class_RID>` viewport, :ref:`RID<class_RID>` scenario **)**
 
-Sets a viewport's scenario.
-
-The scenario contains information about environment information, reflection atlas etc.
+Sets a viewport's scenario. The scenario contains information about environment information, reflection atlas, etc.
 
 .. rst-class:: classref-item-separator
 
@@ -10813,9 +10790,7 @@ The scenario contains information about environment information, reflection atla
 
 void **viewport_set_screen_space_aa** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportScreenSpaceAA<enum_RenderingServer_ViewportScreenSpaceAA>` mode **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the viewport's screen-space antialiasing mode.
 
 .. rst-class:: classref-item-separator
 
@@ -10827,9 +10802,7 @@ void **viewport_set_screen_space_aa** **(** :ref:`RID<class_RID>` viewport, :ref
 
 void **viewport_set_sdf_oversize_and_scale** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportSDFOversize<enum_RenderingServer_ViewportSDFOversize>` oversize, :ref:`ViewportSDFScale<enum_RenderingServer_ViewportSDFScale>` scale **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the viewport's 2D signed distance field :ref:`ProjectSettings.rendering/2d/sdf/oversize<class_ProjectSettings_property_rendering/2d/sdf/oversize>` and :ref:`ProjectSettings.rendering/2d/sdf/scale<class_ProjectSettings_property_rendering/2d/sdf/scale>`. This is used when sampling the signed distance field in :ref:`CanvasItem<class_CanvasItem>` shaders as well as :ref:`GPUParticles2D<class_GPUParticles2D>` collision. This is *not* used by SDFGI in 3D rendering.
 
 .. rst-class:: classref-item-separator
 
@@ -10841,7 +10814,7 @@ void **viewport_set_sdf_oversize_and_scale** **(** :ref:`RID<class_RID>` viewpor
 
 void **viewport_set_size** **(** :ref:`RID<class_RID>` viewport, :ref:`int<class_int>` width, :ref:`int<class_int>` height **)**
 
-Sets the viewport's width and height.
+Sets the viewport's width and height in pixels.
 
 .. rst-class:: classref-item-separator
 
@@ -10853,9 +10826,7 @@ Sets the viewport's width and height.
 
 void **viewport_set_snap_2d_transforms_to_pixel** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enabled **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, canvas item transforms (i.e. origin position) are snapped to the nearest pixel when rendering. This can lead to a crisper appearance at the cost of less smooth movement, especially when :ref:`Camera2D<class_Camera2D>` smoothing is enabled. Equivalent to :ref:`ProjectSettings.rendering/2d/snap/snap_2d_transforms_to_pixel<class_ProjectSettings_property_rendering/2d/snap/snap_2d_transforms_to_pixel>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10867,9 +10838,7 @@ void **viewport_set_snap_2d_transforms_to_pixel** **(** :ref:`RID<class_RID>` vi
 
 void **viewport_set_snap_2d_vertices_to_pixel** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enabled **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, canvas item vertices (i.e. polygon points) are snapped to the nearest pixel when rendering. This can lead to a crisper appearance at the cost of less smooth movement, especially when :ref:`Camera2D<class_Camera2D>` smoothing is enabled. Equivalent to :ref:`ProjectSettings.rendering/2d/snap/snap_2d_vertices_to_pixel<class_ProjectSettings_property_rendering/2d/snap/snap_2d_vertices_to_pixel>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10919,9 +10888,7 @@ Sets when the viewport should be updated. See :ref:`ViewportUpdateMode<enum_Rend
 
 void **viewport_set_use_debanding** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, enables debanding on the specified viewport. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_debanding<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_debanding>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10933,9 +10900,7 @@ void **viewport_set_use_debanding** **(** :ref:`RID<class_RID>` viewport, :ref:`
 
 void **viewport_set_use_occlusion_culling** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, enables occlusion culling on the specified viewport. Equivalent to :ref:`ProjectSettings.rendering/occlusion_culling/use_occlusion_culling<class_ProjectSettings_property_rendering/occlusion_culling/use_occlusion_culling>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10947,7 +10912,7 @@ void **viewport_set_use_occlusion_culling** **(** :ref:`RID<class_RID>` viewport
 
 void **viewport_set_use_taa** **(** :ref:`RID<class_RID>` viewport, :ref:`bool<class_bool>` enable **)**
 
-If ``true``, use Temporal Anti-Aliasing.
+If ``true``, use Temporal Anti-Aliasing. Equivalent to :ref:`ProjectSettings.rendering/anti_aliasing/quality/use_taa<class_ProjectSettings_property_rendering/anti_aliasing/quality/use_taa>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10971,7 +10936,7 @@ If ``true``, the viewport uses augmented or virtual reality technologies. See :r
 
 void **viewport_set_vrs_mode** **(** :ref:`RID<class_RID>` viewport, :ref:`ViewportVRSMode<enum_RenderingServer_ViewportVRSMode>` mode **)**
 
-Sets the Variable Rate Shading (VRS) mode for the viewport. Note, if hardware does not support VRS this property is ignored.
+Sets the Variable Rate Shading (VRS) mode for the viewport. If the GPU does not support VRS, this property is ignored. Equivalent to :ref:`ProjectSettings.rendering/vrs/mode<class_ProjectSettings_property_rendering/vrs/mode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10983,7 +10948,7 @@ Sets the Variable Rate Shading (VRS) mode for the viewport. Note, if hardware do
 
 void **viewport_set_vrs_texture** **(** :ref:`RID<class_RID>` viewport, :ref:`RID<class_RID>` texture **)**
 
-Texture to use when the VRS mode is set to :ref:`VIEWPORT_VRS_TEXTURE<class_RenderingServer_constant_VIEWPORT_VRS_TEXTURE>`.
+The texture to use when the VRS mode is set to :ref:`VIEWPORT_VRS_TEXTURE<class_RenderingServer_constant_VIEWPORT_VRS_TEXTURE>`. Equivalent to :ref:`ProjectSettings.rendering/vrs/texture<class_ProjectSettings_property_rendering/vrs/texture>`.
 
 .. rst-class:: classref-item-separator
 
@@ -10995,9 +10960,13 @@ Texture to use when the VRS mode is set to :ref:`VIEWPORT_VRS_TEXTURE<class_Rend
 
 :ref:`RID<class_RID>` **visibility_notifier_create** **(** **)**
 
-.. container:: contribute
+Creates a new 3D visibility notifier object and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``visibility_notifier_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+To place in a scene, attach this mesh to an instance using :ref:`instance_set_base<class_RenderingServer_method_instance_set_base>` using the returned RID.
+
+\ **Note:** The equivalent node is :ref:`VisibleOnScreenNotifier3D<class_VisibleOnScreenNotifier3D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11051,9 +11020,11 @@ void **voxel_gi_allocate_data** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`Tran
 
 :ref:`RID<class_RID>` **voxel_gi_create** **(** **)**
 
-.. container:: contribute
+Creates a new voxel-based global illumination object and adds it to the RenderingServer. It can be accessed with the RID that is returned. This RID will be used in all ``voxel_gi_*`` RenderingServer functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingServer's :ref:`free_rid<class_RenderingServer_method_free_rid>` method.
+
+\ **Note:** The equivalent node is :ref:`VoxelGI<class_VoxelGI>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11161,9 +11132,7 @@ Used to inform the renderer what exposure normalization value was used while bak
 
 void **voxel_gi_set_bias** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` bias **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`VoxelGIData.bias<class_VoxelGIData_property_bias>` value to use on the specified ``voxel_gi``'s :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11175,9 +11144,7 @@ void **voxel_gi_set_bias** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<cla
 
 void **voxel_gi_set_dynamic_range** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` range **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`VoxelGIData.dynamic_range<class_VoxelGIData_property_dynamic_range>` value to use on the specified ``voxel_gi``'s :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11189,9 +11156,7 @@ void **voxel_gi_set_dynamic_range** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`
 
 void **voxel_gi_set_energy** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` energy **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`VoxelGIData.energy<class_VoxelGIData_property_energy>` value to use on the specified ``voxel_gi``'s :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11203,9 +11168,7 @@ void **voxel_gi_set_energy** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<c
 
 void **voxel_gi_set_interior** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`bool<class_bool>` enable **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`VoxelGIData.interior<class_VoxelGIData_property_interior>` value to use on the specified ``voxel_gi``'s :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11217,9 +11180,7 @@ void **voxel_gi_set_interior** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`bool<
 
 void **voxel_gi_set_normal_bias** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` bias **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`VoxelGIData.normal_bias<class_VoxelGIData_property_normal_bias>` value to use on the specified ``voxel_gi``'s :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11231,9 +11192,7 @@ void **voxel_gi_set_normal_bias** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`fl
 
 void **voxel_gi_set_propagation** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`float<class_float>` amount **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`VoxelGIData.propagation<class_VoxelGIData_property_propagation>` value to use on the specified ``voxel_gi``'s :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -11245,9 +11204,7 @@ void **voxel_gi_set_propagation** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`fl
 
 void **voxel_gi_set_quality** **(** :ref:`VoxelGIQuality<enum_RenderingServer_VoxelGIQuality>` quality **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`ProjectSettings.rendering/global_illumination/voxel_gi/quality<class_ProjectSettings_property_rendering/global_illumination/voxel_gi/quality>` value to use when rendering. This parameter is global and cannot be set on a per-VoxelGI basis.
 
 .. rst-class:: classref-item-separator
 
@@ -11259,9 +11216,7 @@ void **voxel_gi_set_quality** **(** :ref:`VoxelGIQuality<enum_RenderingServer_Vo
 
 void **voxel_gi_set_use_two_bounces** **(** :ref:`RID<class_RID>` voxel_gi, :ref:`bool<class_bool>` enable **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the :ref:`VoxelGIData.use_two_bounces<class_VoxelGIData_property_use_two_bounces>` value to use on the specified ``voxel_gi``'s :ref:`RID<class_RID>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

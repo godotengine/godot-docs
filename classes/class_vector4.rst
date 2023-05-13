@@ -92,7 +92,7 @@ Methods
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector4<class_Vector4>` | :ref:`inverse<class_Vector4_method_inverse>` **(** **)** |const|                                                                                                                                                                                                                                                                                        |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Vector4_method_is_equal_approx>` **(** :ref:`Vector4<class_Vector4>` with **)** |const|                                                                                                                                                                                                                                     |
+   | :ref:`bool<class_bool>`       | :ref:`is_equal_approx<class_Vector4_method_is_equal_approx>` **(** :ref:`Vector4<class_Vector4>` to **)** |const|                                                                                                                                                                                                                                       |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`is_finite<class_Vector4_method_is_finite>` **(** **)** |const|                                                                                                                                                                                                                                                                                    |
    +-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -483,9 +483,9 @@ Returns the inverse of the vector. This is the same as ``Vector4(1.0 / v.x, 1.0 
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Vector4<class_Vector4>` with **)** |const|
+:ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Vector4<class_Vector4>` to **)** |const|
 
-Returns ``true`` if this vector and ``with`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
+Returns ``true`` if this vector and ``to`` are approximately equal, by running :ref:`@GlobalScope.is_equal_approx<class_@GlobalScope_method_is_equal_approx>` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -509,7 +509,7 @@ Returns ``true`` if this vector is finite, by calling :ref:`@GlobalScope.is_fini
 
 :ref:`bool<class_bool>` **is_normalized** **(** **)** |const|
 
-Returns ``true`` if the vector is normalized, i.e. its length is equal to 1.
+Returns ``true`` if the vector is normalized, i.e. its length is approximately equal to 1.
 
 .. rst-class:: classref-item-separator
 
@@ -547,7 +547,9 @@ Returns the length (magnitude) of this vector.
 
 :ref:`float<class_float>` **length_squared** **(** **)** |const|
 
-Returns the squared length (squared magnitude) of this vector. This method runs faster than :ref:`length<class_Vector4_method_length>`.
+Returns the squared length (squared magnitude) of this vector.
+
+This method runs faster than :ref:`length<class_Vector4_method_length>`, so prefer it if you need to compare vectors or need the squared distance for some formula.
 
 .. rst-class:: classref-item-separator
 
@@ -595,7 +597,9 @@ Returns the axis of the vector's lowest value. See ``AXIS_*`` constants. If all 
 
 :ref:`Vector4<class_Vector4>` **normalized** **(** **)** |const|
 
-Returns the result of scaling the vector to unit length. Equivalent to ``v / v.length()``.
+Returns the result of scaling the vector to unit length. Equivalent to ``v / v.length()``. See also :ref:`is_normalized<class_Vector4_method_is_normalized>`.
+
+\ **Note:** This function may return incorrect values if the input vector length is near zero.
 
 .. rst-class:: classref-item-separator
 
@@ -607,7 +611,7 @@ Returns the result of scaling the vector to unit length. Equivalent to ``v / v.l
 
 :ref:`Vector4<class_Vector4>` **posmod** **(** :ref:`float<class_float>` mod **)** |const|
 
-Returns a new vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_method_fposmod>` of this vector's components and ``mod``.
+Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_method_fposmod>` of this vector's components and ``mod``.
 
 .. rst-class:: classref-item-separator
 
@@ -619,7 +623,7 @@ Returns a new vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalSco
 
 :ref:`Vector4<class_Vector4>` **posmodv** **(** :ref:`Vector4<class_Vector4>` modv **)** |const|
 
-Returns a new vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_method_fposmod>` of this vector's components and ``modv``'s components.
+Returns a vector composed of the :ref:`@GlobalScope.fposmod<class_@GlobalScope_method_fposmod>` of this vector's components and ``modv``'s components.
 
 .. rst-class:: classref-item-separator
 

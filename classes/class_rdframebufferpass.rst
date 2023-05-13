@@ -12,7 +12,7 @@ RDFramebufferPass
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Framebuffer pass attachment description.
+Framebuffer pass attachment description (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
 .. rst-class:: classref-introduction-group
 
@@ -21,7 +21,9 @@ Description
 
 This class contains the list of attachment descriptions for a framebuffer pass. Each points with an index to a previously supplied list of texture attachments.
 
-Multipass framebuffers can optimize some configurations in mobile, on desktop they provide little to no advantage.
+Multipass framebuffers can optimize some configurations in mobile. On desktop, they provide little to no advantage.
+
+This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -58,7 +60,7 @@ Constants
 
 **ATTACHMENT_UNUSED** = ``-1``
 
-
+Attachment is unused.
 
 .. rst-class:: classref-section-separator
 

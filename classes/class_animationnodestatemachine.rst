@@ -12,14 +12,14 @@ AnimationNodeStateMachine
 
 **Inherits:** :ref:`AnimationRootNode<class_AnimationRootNode>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-State machine for control of animations.
+A state machine with multiple :ref:`AnimationRootNode<class_AnimationRootNode>`\ s, used by :ref:`AnimationTree<class_AnimationTree>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>` object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
+Contains multiple :ref:`AnimationRootNode<class_AnimationRootNode>`\ s representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>` object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
 
 \ **Example:**\ 
 
@@ -43,7 +43,7 @@ Contains multiple nodes representing animation states, connected in a graph. Nod
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. rst-class:: classref-reftable-group
 
@@ -53,9 +53,13 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------+----------------------------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>` | :ref:`allow_transition_to_self<class_AnimationNodeStateMachine_property_allow_transition_to_self>` | ``false`` |
-   +-------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   +--------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                  | :ref:`allow_transition_to_self<class_AnimationNodeStateMachine_property_allow_transition_to_self>` | ``false`` |
+   +--------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                  | :ref:`reset_ends<class_AnimationNodeStateMachine_property_reset_ends>`                             | ``false`` |
+   +--------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`StateMachineType<enum_AnimationNodeStateMachine_StateMachineType>` | :ref:`state_machine_type<class_AnimationNodeStateMachine_property_state_machine_type>`             | ``0``     |
+   +--------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -111,6 +115,45 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Enumerations
+------------
+
+.. _enum_AnimationNodeStateMachine_StateMachineType:
+
+.. rst-class:: classref-enumeration
+
+enum **StateMachineType**:
+
+.. _class_AnimationNodeStateMachine_constant_STATE_MACHINE_TYPE_ROOT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StateMachineType<enum_AnimationNodeStateMachine_StateMachineType>` **STATE_MACHINE_TYPE_ROOT** = ``0``
+
+Seeking to the beginning is treated as playing from the start state. Transition to the end state is treated as exiting the state machine.
+
+.. _class_AnimationNodeStateMachine_constant_STATE_MACHINE_TYPE_NESTED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StateMachineType<enum_AnimationNodeStateMachine_StateMachineType>` **STATE_MACHINE_TYPE_NESTED** = ``1``
+
+Seeking to the beginning is treated as seeking to the beginning of the animation in the current state. Transition to the end state, or the absence of transitions in each state, is treated as exiting the state machine.
+
+.. _class_AnimationNodeStateMachine_constant_STATE_MACHINE_TYPE_GROUPED:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`StateMachineType<enum_AnimationNodeStateMachine_StateMachineType>` **STATE_MACHINE_TYPE_GROUPED** = ``2``
+
+This is a grouped state machine that can be controlled from a parent state machine. It does not work on standalone. There must be a state machine with :ref:`state_machine_type<class_AnimationNodeStateMachine_property_state_machine_type>` of :ref:`STATE_MACHINE_TYPE_ROOT<class_AnimationNodeStateMachine_constant_STATE_MACHINE_TYPE_ROOT>` or :ref:`STATE_MACHINE_TYPE_NESTED<class_AnimationNodeStateMachine_constant_STATE_MACHINE_TYPE_NESTED>` in the parent or ancestor.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
 Property Descriptions
 ---------------------
 
@@ -126,6 +169,42 @@ Property Descriptions
 - :ref:`bool<class_bool>` **is_allow_transition_to_self** **(** **)**
 
 If ``true``, allows teleport to the self state with :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>`. When the reset option is enabled in :ref:`AnimationNodeStateMachinePlayback.travel<class_AnimationNodeStateMachinePlayback_method_travel>`, the animation is restarted. If ``false``, nothing happens on the teleportation to the self state.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeStateMachine_property_reset_ends:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **reset_ends** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_reset_ends** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **are_ends_reset** **(** **)**
+
+If ``true``, treat the cross-fade to the start and end nodes as a blend with the RESET animation.
+
+In most cases, when additional cross-fades are performed in the parent :ref:`AnimationNode<class_AnimationNode>` of the state machine, setting this property to ``false`` and matching the cross-fade time of the parent :ref:`AnimationNode<class_AnimationNode>` and the state machine's start node and end node gives good results.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_AnimationNodeStateMachine_property_state_machine_type:
+
+.. rst-class:: classref-property
+
+:ref:`StateMachineType<enum_AnimationNodeStateMachine_StateMachineType>` **state_machine_type** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_state_machine_type** **(** :ref:`StateMachineType<enum_AnimationNodeStateMachine_StateMachineType>` value **)**
+- :ref:`StateMachineType<enum_AnimationNodeStateMachine_StateMachineType>` **get_state_machine_type** **(** **)**
+
+This property can define the process of transitions for different use cases. See also :ref:`StateMachineType<enum_AnimationNodeStateMachine_StateMachineType>`.
 
 .. rst-class:: classref-section-separator
 

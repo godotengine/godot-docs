@@ -44,7 +44,7 @@ For now, this includes generating cryptographically secure random bytes, RSA key
         cert.save("user://generated.crt")
         # Encryption
         var data = "Some data"
-        var encrypted = crypto.encrypt(key, data.to_utf8())
+        var encrypted = crypto.encrypt(key, data.to_utf8_buffer())
         # Decryption
         var decrypted = crypto.decrypt(key, encrypted)
         # Signing
@@ -53,7 +53,7 @@ For now, this includes generating cryptographically secure random bytes, RSA key
         var verified = crypto.verify(HashingContext.HASH_SHA256, data.sha256_buffer(), signature, key)
         # Checks
         assert(verified)
-        assert(data.to_utf8() == decrypted)
+        assert(data.to_utf8_buffer() == decrypted)
 
  .. code-tab:: csharp
 
@@ -77,7 +77,7 @@ For now, this includes generating cryptographically secure random bytes, RSA key
             _cert.Save("user://generated.crt");
             // Encryption
             string data = "Some data";
-            byte[] encrypted = _crypto.Encrypt(_key, data.ToUtf8());
+            byte[] encrypted = _crypto.Encrypt(_key, data.ToUtf8Buffer());
             // Decryption
             byte[] decrypted = _crypto.Decrypt(_key, encrypted);
             // Signing
@@ -86,7 +86,7 @@ For now, this includes generating cryptographically secure random bytes, RSA key
             bool verified = _crypto.Verify(HashingContext.HashType.Sha256, Data.Sha256Buffer(), signature, _key);
             // Checks
             Debug.Assert(verified);
-            Debug.Assert(data.ToUtf8() == decrypted);
+            Debug.Assert(data.ToUtf8Buffer() == decrypted);
         }
     }
 

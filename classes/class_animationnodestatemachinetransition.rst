@@ -12,7 +12,7 @@ AnimationNodeStateMachineTransition
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A resource to connect each node to make a path for :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>`.
+A transition within an :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>` connecting two :ref:`AnimationRootNode<class_AnimationRootNode>`\ s.
 
 .. rst-class:: classref-introduction-group
 
@@ -28,7 +28,7 @@ You can set the timing and conditions of the transition in detail.
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. rst-class:: classref-reftable-group
 

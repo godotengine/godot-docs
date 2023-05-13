@@ -12,9 +12,14 @@ RDSamplerState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Sampler state (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -76,9 +81,9 @@ Property Descriptions
 - void **set_anisotropy_max** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_anisotropy_max** **(** **)**
 
-.. container:: contribute
+Maximum anisotropy that can be used when sampling. Only effective if :ref:`use_anisotropy<class_RDSamplerState_property_use_anisotropy>` is ``true``. Higher values result in a sharper sampler at oblique angles, at the cost of performance (due to memory bandwidth). This value may be limited by the graphics hardware in use. Most graphics hardware only supports values up to ``16.0``.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If :ref:`anisotropy_max<class_RDSamplerState_property_anisotropy_max>` is ``1.0``, forcibly disables anisotropy even if :ref:`use_anisotropy<class_RDSamplerState_property_use_anisotropy>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -95,9 +100,7 @@ Property Descriptions
 - void **set_border_color** **(** :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` value **)**
 - :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **get_border_color** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The border color that will be returned when sampling outside the sampler's bounds and the :ref:`repeat_u<class_RDSamplerState_property_repeat_u>`, :ref:`repeat_v<class_RDSamplerState_property_repeat_v>` or :ref:`repeat_w<class_RDSamplerState_property_repeat_w>` modes have repeating disabled.
 
 .. rst-class:: classref-item-separator
 
@@ -114,9 +117,7 @@ Property Descriptions
 - void **set_compare_op** **(** :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` value **)**
 - :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **get_compare_op** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The compare operation to use. Only effective if :ref:`enable_compare<class_RDSamplerState_property_enable_compare>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -133,9 +134,7 @@ Property Descriptions
 - void **set_enable_compare** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_enable_compare** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, returned values will be based on the comparison operation defined in :ref:`compare_op<class_RDSamplerState_property_compare_op>`. This is a hardware-based approach and is therefore faster than performing this manually in a shader. For example, compare operations are used for shadow map rendering by comparing depth values from a shadow sampler.
 
 .. rst-class:: classref-item-separator
 
@@ -152,9 +151,7 @@ Property Descriptions
 - void **set_lod_bias** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_lod_bias** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The mipmap LOD bias to use. Positive values will make the sampler blurrier at a given distance, while negative values will make the sampler sharper at a given distance (at the risk of looking grainy). Recommended values are between ``-0.5`` and ``0.0``. Only effective if the sampler has mipmaps available.
 
 .. rst-class:: classref-item-separator
 
@@ -171,9 +168,7 @@ Property Descriptions
 - void **set_mag_filter** **(** :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` value **)**
 - :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_mag_filter** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The sampler's magnification filter.
 
 .. rst-class:: classref-item-separator
 
@@ -190,9 +185,7 @@ Property Descriptions
 - void **set_max_lod** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_max_lod** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The maximum mipmap LOD bias to display (lowest resolution). Only effective if the sampler has mipmaps available.
 
 .. rst-class:: classref-item-separator
 
@@ -228,9 +221,7 @@ Property Descriptions
 - void **set_min_lod** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_min_lod** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The minimum mipmap LOD bias to display (highest resolution). Only effective if the sampler has mipmaps available.
 
 .. rst-class:: classref-item-separator
 
@@ -247,9 +238,7 @@ Property Descriptions
 - void **set_mip_filter** **(** :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` value **)**
 - :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` **get_mip_filter** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The filtering method to use for mipmaps.
 
 .. rst-class:: classref-item-separator
 
@@ -266,9 +255,7 @@ Property Descriptions
 - void **set_repeat_u** **(** :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` value **)**
 - :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **get_repeat_u** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The repeat mode to use along the U axis of UV coordinates. This affects the returned values if sampling outside the UV bounds.
 
 .. rst-class:: classref-item-separator
 
@@ -285,9 +272,7 @@ Property Descriptions
 - void **set_repeat_v** **(** :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` value **)**
 - :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **get_repeat_v** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The repeat mode to use along the V axis of UV coordinates. This affects the returned values if sampling outside the UV bounds.
 
 .. rst-class:: classref-item-separator
 
@@ -304,9 +289,7 @@ Property Descriptions
 - void **set_repeat_w** **(** :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` value **)**
 - :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **get_repeat_w** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The repeat mode to use along the W axis of UV coordinates. This affects the returned values if sampling outside the UV bounds. Only effective for 3D samplers.
 
 .. rst-class:: classref-item-separator
 
@@ -342,9 +325,7 @@ Property Descriptions
 - void **set_use_anisotropy** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_use_anisotropy** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, perform anisotropic sampling. See :ref:`anisotropy_max<class_RDSamplerState_property_anisotropy_max>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

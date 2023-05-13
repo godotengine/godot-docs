@@ -12,9 +12,14 @@ RDAttachmentFormat
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Attachment format (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -52,9 +57,7 @@ Property Descriptions
 - void **set_format** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` value **)**
 - :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **get_format** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The attachment's data format.
 
 .. rst-class:: classref-item-separator
 
@@ -71,9 +74,7 @@ Property Descriptions
 - void **set_samples** **(** :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` value **)**
 - :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_samples** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The number of samples used when sampling the attachment.
 
 .. rst-class:: classref-item-separator
 
@@ -90,9 +91,7 @@ Property Descriptions
 - void **set_usage_flags** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_usage_flags** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The attachment's usage flags, which determine what can be done with it.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

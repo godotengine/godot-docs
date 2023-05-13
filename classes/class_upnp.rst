@@ -463,11 +463,11 @@ Adds the given :ref:`UPNPDevice<class_UPNPDevice>` to the list of discovered dev
 
 :ref:`int<class_int>` **add_port_mapping** **(** :ref:`int<class_int>` port, :ref:`int<class_int>` port_internal=0, :ref:`String<class_String>` desc="", :ref:`String<class_String>` proto="UDP", :ref:`int<class_int>` duration=0 **)** |const|
 
-Adds a mapping to forward the external ``port`` (between 1 and 65535, although recommended to use port 1024 or above) on the default gateway (see :ref:`get_gateway<class_UPNP_method_get_gateway>`) to the ``internal_port`` on the local machine for the given protocol ``proto`` (either ``"TCP"`` or ``"UDP"``, with UDP being the default). If a port mapping for the given port and protocol combination already exists on that gateway device, this method tries to overwrite it. If that is not desired, you can retrieve the gateway manually with :ref:`get_gateway<class_UPNP_method_get_gateway>` and call :ref:`add_port_mapping<class_UPNP_method_add_port_mapping>` on it, if any. Note that forwarding a well-known port (below 1024) with UPnP may fail depending on the device.
+Adds a mapping to forward the external ``port`` (between 1 and 65535, although recommended to use port 1024 or above) on the default gateway (see :ref:`get_gateway<class_UPNP_method_get_gateway>`) to the ``port_internal`` on the local machine for the given protocol ``proto`` (either ``"TCP"`` or ``"UDP"``, with UDP being the default). If a port mapping for the given port and protocol combination already exists on that gateway device, this method tries to overwrite it. If that is not desired, you can retrieve the gateway manually with :ref:`get_gateway<class_UPNP_method_get_gateway>` and call :ref:`add_port_mapping<class_UPNP_method_add_port_mapping>` on it, if any. Note that forwarding a well-known port (below 1024) with UPnP may fail depending on the device.
 
 Depending on the gateway device, if a mapping for that port already exists, it will either be updated or it will refuse this command due to that conflict, especially if the existing mapping for that port wasn't created via UPnP or points to a different network address (or device) than this one.
 
-If ``internal_port`` is ``0`` (the default), the same port number is used for both the external and the internal port (the ``port`` value).
+If ``port_internal`` is ``0`` (the default), the same port number is used for both the external and the internal port (the ``port`` value).
 
 The description (``desc``) is shown in some routers management UIs and can be used to point out which application added the mapping.
 

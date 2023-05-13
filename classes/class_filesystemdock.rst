@@ -12,9 +12,16 @@ FileSystemDock
 
 **Inherits:** :ref:`VBoxContainer<class_VBoxContainer>` **<** :ref:`BoxContainer<class_BoxContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Editor dock for managing files in the project.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This class is available only in :ref:`EditorPlugin<class_EditorPlugin>`\ s and can't be instantiated. You can access it using :ref:`EditorInterface.get_file_system_dock<class_EditorInterface_method_get_file_system_dock>`.
+
+While FileSystemDock doesn't expose any methods for file manipulation, you can listen for various file-related signals.
 
 .. rst-class:: classref-reftable-group
 
@@ -24,9 +31,13 @@ Methods
 .. table::
    :widths: auto
 
-   +------+--------------------------------------------------------------------------------------------------------------------+
-   | void | :ref:`navigate_to_path<class_FileSystemDock_method_navigate_to_path>` **(** :ref:`String<class_String>` path **)** |
-   +------+--------------------------------------------------------------------------------------------------------------------+
+   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`add_resource_tooltip_plugin<class_FileSystemDock_method_add_resource_tooltip_plugin>` **(** :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>` plugin **)**       |
+   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`navigate_to_path<class_FileSystemDock_method_navigate_to_path>` **(** :ref:`String<class_String>` path **)**                                                                         |
+   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void | :ref:`remove_resource_tooltip_plugin<class_FileSystemDock_method_remove_resource_tooltip_plugin>` **(** :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>` plugin **)** |
+   +------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -43,9 +54,7 @@ Signals
 
 **display_mode_changed** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when the user switches file display mode or split mode.
 
 .. rst-class:: classref-item-separator
 
@@ -57,9 +66,7 @@ Signals
 
 **file_removed** **(** :ref:`String<class_String>` file **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when the given ``file`` was removed.
 
 .. rst-class:: classref-item-separator
 
@@ -71,9 +78,7 @@ Signals
 
 **files_moved** **(** :ref:`String<class_String>` old_file, :ref:`String<class_String>` new_file **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when a file is moved from ``old_file`` path to ``new_file`` path.
 
 .. rst-class:: classref-item-separator
 
@@ -85,9 +90,7 @@ Signals
 
 **folder_moved** **(** :ref:`String<class_String>` old_folder, :ref:`String<class_String>` new_folder **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when a folder is moved from ``old_folder`` path to ``new_folder`` path.
 
 .. rst-class:: classref-item-separator
 
@@ -99,9 +102,7 @@ Signals
 
 **folder_removed** **(** :ref:`String<class_String>` folder **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when the given ``folder`` was removed.
 
 .. rst-class:: classref-item-separator
 
@@ -113,9 +114,7 @@ Signals
 
 **inherit** **(** :ref:`String<class_String>` file **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when a new scene is created that inherits the scene at ``file`` path.
 
 .. rst-class:: classref-item-separator
 
@@ -127,9 +126,7 @@ Signals
 
 **instantiate** **(** :ref:`PackedStringArray<class_PackedStringArray>` files **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when the given scenes are being instantiated in the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -141,9 +138,7 @@ Signals
 
 **resource_removed** **(** :ref:`Resource<class_Resource>` resource **)**
 
-.. container:: contribute
-
-	There is currently no description for this signal. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Emitted when an external ``resource`` had its file removed.
 
 .. rst-class:: classref-section-separator
 
@@ -154,15 +149,37 @@ Signals
 Method Descriptions
 -------------------
 
+.. _class_FileSystemDock_method_add_resource_tooltip_plugin:
+
+.. rst-class:: classref-method
+
+void **add_resource_tooltip_plugin** **(** :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>` plugin **)**
+
+Registers a new :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_FileSystemDock_method_navigate_to_path:
 
 .. rst-class:: classref-method
 
 void **navigate_to_path** **(** :ref:`String<class_String>` path **)**
 
-.. container:: contribute
+Sets the given ``path`` as currently selected, ensuring that the selected file/directory is visible.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileSystemDock_method_remove_resource_tooltip_plugin:
+
+.. rst-class:: classref-method
+
+void **remove_resource_tooltip_plugin** **(** :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>` plugin **)**
+
+Removes an :ref:`EditorResourceTooltipPlugin<class_EditorResourceTooltipPlugin>`. Fails if the plugin wasn't previously added.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

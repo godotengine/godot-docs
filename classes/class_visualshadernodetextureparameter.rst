@@ -381,7 +381,7 @@ Sets the texture repeating mode. See :ref:`TextureRepeat<enum_VisualShaderNodeTe
 - void **set_texture_source** **(** :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` value **)**
 - :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` **get_texture_source** **(** **)**
 
-Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture. see :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` for options.
+Sets the texture source mode. Used for reading from the screen, depth, or normal_roughness texture. See :ref:`TextureSource<enum_VisualShaderNodeTextureParameter_TextureSource>` for options.
 
 .. rst-class:: classref-item-separator
 

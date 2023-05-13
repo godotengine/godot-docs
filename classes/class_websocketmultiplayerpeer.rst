@@ -201,7 +201,7 @@ Starts a new multiplayer client connecting to the given ``url``. TLS certificate
 
 :ref:`Error<enum_@GlobalScope_Error>` **create_server** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`TLSOptions<class_TLSOptions>` tls_server_options=null **)**
 
-Starts a new multiplayer server listening on the given ``port``. You can optionally specify a ``bind_address``, and provide valiid ``tls_server_options`` to use TLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
+Starts a new multiplayer server listening on the given ``port``. You can optionally specify a ``bind_address``, and provide valid ``tls_server_options`` to use TLS. See :ref:`TLSOptions.server<class_TLSOptions_method_server>`.
 
 .. rst-class:: classref-item-separator
 

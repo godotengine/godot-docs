@@ -266,7 +266,7 @@ enum **CenterOfMassMode**:
 
 :ref:`CenterOfMassMode<enum_RigidBody2D_CenterOfMassMode>` **CENTER_OF_MASS_MODE_AUTO** = ``0``
 
-In this mode, the body's center of mass is calculated automatically based on its shapes.
+In this mode, the body's center of mass is calculated automatically based on its shapes. This assumes that the shapes' origins are also their center of mass.
 
 .. _class_RigidBody2D_constant_CENTER_OF_MASS_MODE_CUSTOM:
 

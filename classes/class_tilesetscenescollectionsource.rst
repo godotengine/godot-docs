@@ -180,7 +180,7 @@ Sets whether or not the scene tile with ``id`` should display a placeholder in t
 
 void **set_scene_tile_id** **(** :ref:`int<class_int>` id, :ref:`int<class_int>` new_id **)**
 
-Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is already a tile with a ID equal to ``new_id``.
+Changes a scene tile's ID from ``id`` to ``new_id``. This will fail if there is already a tile with an ID equal to ``new_id``.
 
 .. rst-class:: classref-item-separator
 

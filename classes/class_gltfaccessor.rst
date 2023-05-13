@@ -25,7 +25,7 @@ Properties
    :widths: auto
 
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                               | :ref:`buffer_view<class_GLTFAccessor_property_buffer_view>`                                     | ``0``                    |
+   | :ref:`int<class_int>`                               | :ref:`buffer_view<class_GLTFAccessor_property_buffer_view>`                                     | ``-1``                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
    | :ref:`int<class_int>`                               | :ref:`byte_offset<class_GLTFAccessor_property_byte_offset>`                                     | ``0``                    |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------+
@@ -67,7 +67,7 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **buffer_view** = ``0``
+:ref:`int<class_int>` **buffer_view** = ``-1``
 
 .. rst-class:: classref-property-setget
 

@@ -196,7 +196,9 @@ Method Descriptions
 
 :ref:`Callable<class_Callable>` **bind** **(** ... **)** |vararg| |const|
 
-Returns a copy of this **Callable** with one or more arguments bound. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call<class_Callable_method_call>`.
+Returns a copy of this **Callable** with one or more arguments bound. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call<class_Callable_method_call>`. See also :ref:`unbind<class_Callable_method_unbind>`.
+
+\ **Note:** When this method is chained with other similar methods, the order in which the argument list is modified is read from right to left.
 
 .. rst-class:: classref-item-separator
 
@@ -208,7 +210,9 @@ Returns a copy of this **Callable** with one or more arguments bound. When calle
 
 :ref:`Callable<class_Callable>` **bindv** **(** :ref:`Array<class_Array>` arguments **)**
 
-Returns a copy of this **Callable** with one or more arguments bound, reading them from an array. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call<class_Callable_method_call>`.
+Returns a copy of this **Callable** with one or more arguments bound, reading them from an array. When called, the bound arguments are passed *after* the arguments supplied by :ref:`call<class_Callable_method_call>`. See also :ref:`unbind<class_Callable_method_unbind>`.
+
+\ **Note:** When this method is chained with other similar methods, the order in which the argument list is modified is read from right to left.
 
 .. rst-class:: classref-item-separator
 
@@ -407,7 +411,15 @@ Perform an RPC (Remote Procedure Call) on a specific peer ID (see multiplayer do
 
 :ref:`Callable<class_Callable>` **unbind** **(** :ref:`int<class_int>` argcount **)** |const|
 
-Returns a copy of this **Callable** with the arguments unbound, as defined by ``argcount``. Calling the returned **Callable** will call the method without the extra arguments that are supplied in the **Callable** on which you are calling this method.
+Returns a copy of this **Callable** with a number of arguments unbound. In other words, when the new callable is called the last few arguments supplied by the user are ignored, according to ``argcount``. The remaining arguments are passed to the callable. This allows to use the original callable in a context that attempts to pass more arguments than this callable can handle, e.g. a signal with a fixed number of arguments. See also :ref:`bind<class_Callable_method_bind>`.
+
+\ **Note:** When this method is chained with other similar methods, the order in which the argument list is modified is read from right to left.
+
+::
+
+    func _ready():
+        foo.unbind(1).call(1, 2) # Calls foo(1).
+        foo.bind(3, 4).unbind(1).call(1, 2) # Calls foo(1, 3, 4), note that it does not change the arguments from bind.
 
 .. rst-class:: classref-section-separator
 

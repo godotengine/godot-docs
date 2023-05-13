@@ -314,7 +314,7 @@ Returns the inverse of the transform, under the assumption that the transformati
 
 :ref:`bool<class_bool>` **is_equal_approx** **(** :ref:`Transform3D<class_Transform3D>` xform **)** |const|
 
-Returns ``true`` if this transform and ``transform`` are approximately equal, by calling ``is_equal_approx`` on each component.
+Returns ``true`` if this transform and ``xform`` are approximately equal, by calling ``is_equal_approx`` on each component.
 
 .. rst-class:: classref-item-separator
 
@@ -368,9 +368,7 @@ Returns a copy of the transform rotated around the given ``axis`` by the given `
 
 The ``axis`` must be a normalized vector.
 
-This method is an optimized version of multiplying the given transform ``X``\ 
-
-with a corresponding rotation transform ``R`` from the left, i.e., ``R * X``.
+This method is an optimized version of multiplying the given transform ``X`` with a corresponding rotation transform ``R`` from the left, i.e., ``R * X``.
 
 This can be seen as transforming with respect to the global/parent frame.
 
@@ -388,9 +386,7 @@ Returns a copy of the transform rotated around the given ``axis`` by the given `
 
 The ``axis`` must be a normalized vector.
 
-This method is an optimized version of multiplying the given transform ``X``\ 
-
-with a corresponding rotation transform ``R`` from the right, i.e., ``X * R``.
+This method is an optimized version of multiplying the given transform ``X`` with a corresponding rotation transform ``R`` from the right, i.e., ``X * R``.
 
 This can be seen as transforming with respect to the local frame.
 
@@ -406,9 +402,7 @@ This can be seen as transforming with respect to the local frame.
 
 Returns a copy of the transform scaled by the given ``scale`` factor.
 
-This method is an optimized version of multiplying the given transform ``X``\ 
-
-with a corresponding scaling transform ``S`` from the left, i.e., ``S * X``.
+This method is an optimized version of multiplying the given transform ``X`` with a corresponding scaling transform ``S`` from the left, i.e., ``S * X``.
 
 This can be seen as transforming with respect to the global/parent frame.
 
@@ -424,9 +418,7 @@ This can be seen as transforming with respect to the global/parent frame.
 
 Returns a copy of the transform scaled by the given ``scale`` factor.
 
-This method is an optimized version of multiplying the given transform ``X``\ 
-
-with a corresponding scaling transform ``S`` from the right, i.e., ``X * S``.
+This method is an optimized version of multiplying the given transform ``X`` with a corresponding scaling transform ``S`` from the right, i.e., ``X * S``.
 
 This can be seen as transforming with respect to the local frame.
 
@@ -442,9 +434,7 @@ This can be seen as transforming with respect to the local frame.
 
 Returns a copy of the transform translated by the given ``offset``.
 
-This method is an optimized version of multiplying the given transform ``X``\ 
-
-with a corresponding translation transform ``T`` from the left, i.e., ``T * X``.
+This method is an optimized version of multiplying the given transform ``X`` with a corresponding translation transform ``T`` from the left, i.e., ``T * X``.
 
 This can be seen as transforming with respect to the global/parent frame.
 
@@ -460,9 +450,7 @@ This can be seen as transforming with respect to the global/parent frame.
 
 Returns a copy of the transform translated by the given ``offset``.
 
-This method is an optimized version of multiplying the given transform ``X``\ 
-
-with a corresponding translation transform ``T`` from the right, i.e., ``X * T``.
+This method is an optimized version of multiplying the given transform ``X`` with a corresponding translation transform ``T`` from the right, i.e., ``X * T``.
 
 This can be seen as transforming with respect to the local frame.
 

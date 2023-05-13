@@ -12,14 +12,21 @@ AnimationNodeOutput
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Generic output node to be added to :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+The animation output node of an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+A node created automatically in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>` that outputs the final animation.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `3D Platformer Demo <https://godotengine.org/asset-library/asset/125>`__
 

@@ -21,7 +21,7 @@ Description
 
 The X509Certificate class represents an X509 certificate. Certificates can be loaded and saved like any other :ref:`Resource<class_Resource>`.
 
-They can be used as the server certificate in :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>` (along with the proper :ref:`CryptoKey<class_CryptoKey>`), and to specify the only certificate that should be accepted when connecting to an TLS server via :ref:`StreamPeerTLS.connect_to_stream<class_StreamPeerTLS_method_connect_to_stream>`.
+They can be used as the server certificate in :ref:`StreamPeerTLS.accept_stream<class_StreamPeerTLS_method_accept_stream>` (along with the proper :ref:`CryptoKey<class_CryptoKey>`), and to specify the only certificate that should be accepted when connecting to a TLS server via :ref:`StreamPeerTLS.connect_to_stream<class_StreamPeerTLS_method_connect_to_stream>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -31,11 +31,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+---------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_X509Certificate_method_load>` **(** :ref:`String<class_String>` path **)** |
-   +---------------------------------------+---------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_X509Certificate_method_save>` **(** :ref:`String<class_String>` path **)** |
-   +---------------------------------------+---------------------------------------------------------------------------------------------+
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load<class_X509Certificate_method_load>` **(** :ref:`String<class_String>` path **)**                           |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`load_from_string<class_X509Certificate_method_load_from_string>` **(** :ref:`String<class_String>` string **)** |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save<class_X509Certificate_method_save>` **(** :ref:`String<class_String>` path **)**                           |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`save_to_string<class_X509Certificate_method_save_to_string>` **(** **)**                                        |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -58,6 +62,18 @@ Loads a certificate from ``path`` ("\*.crt" file).
 
 ----
 
+.. _class_X509Certificate_method_load_from_string:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **load_from_string** **(** :ref:`String<class_String>` string **)**
+
+Loads a certificate from the given ``string``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_X509Certificate_method_save:
 
 .. rst-class:: classref-method
@@ -65,6 +81,18 @@ Loads a certificate from ``path`` ("\*.crt" file).
 :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path **)**
 
 Saves a certificate to the given ``path`` (should be a "\*.crt" file).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_X509Certificate_method_save_to_string:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **save_to_string** **(** **)**
+
+Returns a string representation of the certificate, or an empty string if the certificate is invalid.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

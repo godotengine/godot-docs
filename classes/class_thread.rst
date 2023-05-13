@@ -108,7 +108,7 @@ Method Descriptions
 
 :ref:`String<class_String>` **get_id** **(** **)** |const|
 
-Returns the current **Thread**'s ID, uniquely identifying it among all threads. If the **Thread** is not running this returns an empty string.
+Returns the current **Thread**'s ID, uniquely identifying it among all threads. If the **Thread** has not started running or if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` has been called, this returns an empty string.
 
 .. rst-class:: classref-item-separator
 
@@ -120,7 +120,7 @@ Returns the current **Thread**'s ID, uniquely identifying it among all threads. 
 
 :ref:`bool<class_bool>` **is_alive** **(** **)** |const|
 
-Returns ``true`` if this **Thread** is currently running. This is useful for determining if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` can be called without blocking the calling thread.
+Returns ``true`` if this **Thread** is currently running the provided function. This is useful for determining if :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` can be called without blocking the calling thread.
 
 To check if a **Thread** is joinable, use :ref:`is_started<class_Thread_method_is_started>`.
 

@@ -12,16 +12,16 @@ Bone2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Joint used with :ref:`Skeleton2D<class_Skeleton2D>` to control and animate other nodes.
+A joint used with :ref:`Skeleton2D<class_Skeleton2D>` to control and animate other nodes.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Use a hierarchy of ``Bone2D`` bound to a :ref:`Skeleton2D<class_Skeleton2D>` to control, and animate other :ref:`Node2D<class_Node2D>` nodes.
+A hierarchy of **Bone2D**\ s can be bound to a :ref:`Skeleton2D<class_Skeleton2D>` to control and animate other :ref:`Node2D<class_Node2D>` nodes.
 
-You can use ``Bone2D`` and ``Skeleton2D`` nodes to animate 2D meshes created with the Polygon 2D UV editor.
+You can use **Bone2D** and :ref:`Skeleton2D<class_Skeleton2D>` nodes to animate 2D meshes created with the :ref:`Polygon2D<class_Polygon2D>` UV editor.
 
 Each bone has a :ref:`rest<class_Bone2D_property_rest>` transform that you can reset to with :ref:`apply_rest<class_Bone2D_method_apply_rest>`. These rest poses are relative to the bone's parent.
 
@@ -116,7 +116,7 @@ Stores the node's current transforms in :ref:`rest<class_Bone2D_property_rest>`.
 
 :ref:`bool<class_bool>` **get_autocalculate_length_and_angle** **(** **)** |const|
 
-Returns whether this ``Bone2D`` node is going to autocalculate its length and bone angle using its first ``Bone2D`` child node, if one exists. If there are no ``Bone2D`` children, then it cannot autocalculate these values and will print a warning.
+Returns whether this **Bone2D** is going to autocalculate its length and bone angle using its first **Bone2D** child node, if one exists. If there are no **Bone2D** children, then it cannot autocalculate these values and will print a warning.
 
 .. rst-class:: classref-item-separator
 
@@ -128,9 +128,9 @@ Returns whether this ``Bone2D`` node is going to autocalculate its length and bo
 
 :ref:`float<class_float>` **get_bone_angle** **(** **)** |const|
 
-Returns the angle of the bone in the ``Bone2D`` node.
+Returns the angle of the bone in the **Bone2D**.
 
-\ **Note:** This is different from the ``Bone2D``'s rotation. The bone angle is the rotation of the bone shown by the ``Bone2D`` gizmo, and because ``Bone2D`` bones are based on positions, this can vary from the actual rotation of the ``Bone2D`` node.
+\ **Note:** This is different from the **Bone2D**'s rotation. The bone's angle is the rotation of the bone shown by the gizmo, which is unaffected by the **Bone2D**'s :ref:`Node2D.transform<class_Node2D_property_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -154,7 +154,7 @@ Returns the node's index as part of the entire skeleton. See :ref:`Skeleton2D<cl
 
 :ref:`float<class_float>` **get_length** **(** **)** |const|
 
-Returns the length of the bone in the ``Bone2D`` node.
+Returns the length of the bone in the **Bone2D** node.
 
 .. rst-class:: classref-item-separator
 
@@ -178,7 +178,7 @@ Returns the node's :ref:`rest<class_Bone2D_property_rest>` ``Transform2D`` if it
 
 void **set_autocalculate_length_and_angle** **(** :ref:`bool<class_bool>` auto_calculate **)**
 
-When set to ``true``, the ``Bone2D`` node will attempt to automatically calculate the bone angle and length using the first child ``Bone2D`` node, if one exists. If none exist, the ``Bone2D`` cannot automatically calculate these values and will print a warning.
+When set to ``true``, the **Bone2D** node will attempt to automatically calculate the bone angle and length using the first child **Bone2D** node, if one exists. If none exist, the **Bone2D** cannot automatically calculate these values and will print a warning.
 
 .. rst-class:: classref-item-separator
 
@@ -190,9 +190,9 @@ When set to ``true``, the ``Bone2D`` node will attempt to automatically calculat
 
 void **set_bone_angle** **(** :ref:`float<class_float>` angle **)**
 
-Sets the bone angle for the ``Bone2D`` node. This is typically set to the rotation from the ``Bone2D`` node to a child ``Bone2D`` node.
+Sets the bone angle for the **Bone2D**. This is typically set to the rotation from the **Bone2D** to a child **Bone2D** node.
 
-\ **Note:** This is different from the ``Bone2D``'s rotation. The bone angle is the rotation of the bone shown by the ``Bone2D`` gizmo, and because ``Bone2D`` bones are based on positions, this can vary from the actual rotation of the ``Bone2D`` node.
+\ **Note:** **Note:** This is different from the **Bone2D**'s rotation. The bone's angle is the rotation of the bone shown by the gizmo, which is unaffected by the **Bone2D**'s :ref:`Node2D.transform<class_Node2D_property_transform>`.
 
 .. rst-class:: classref-item-separator
 
@@ -204,7 +204,7 @@ Sets the bone angle for the ``Bone2D`` node. This is typically set to the rotati
 
 void **set_length** **(** :ref:`float<class_float>` length **)**
 
-Sets the length of the bone in the ``Bone2D`` node.
+Sets the length of the bone in the **Bone2D**.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

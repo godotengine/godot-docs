@@ -48,17 +48,19 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationRegion3D_property_enabled>`                     | ``true`` |
-   +---------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                   | :ref:`enter_cost<class_NavigationRegion3D_property_enter_cost>`               | ``0.0``  |
-   +---------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`int<class_int>`                       | :ref:`navigation_layers<class_NavigationRegion3D_property_navigation_layers>` | ``1``    |
-   +---------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navigation_mesh<class_NavigationRegion3D_property_navigation_mesh>`     |          |
-   +---------------------------------------------+-------------------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                   | :ref:`travel_cost<class_NavigationRegion3D_property_travel_cost>`             | ``1.0``  |
-   +---------------------------------------------+-------------------------------------------------------------------------------+----------+
+   +---------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationRegion3D_property_enabled>`                           | ``true`` |
+   +---------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                   | :ref:`enter_cost<class_NavigationRegion3D_property_enter_cost>`                     | ``0.0``  |
+   +---------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`                       | :ref:`navigation_layers<class_NavigationRegion3D_property_navigation_layers>`       | ``1``    |
+   +---------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navigation_mesh<class_NavigationRegion3D_property_navigation_mesh>`           |          |
+   +---------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`float<class_float>`                   | :ref:`travel_cost<class_NavigationRegion3D_property_travel_cost>`                   | ``1.0``  |
+   +---------------------------------------------+-------------------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`                     | :ref:`use_edge_connections<class_NavigationRegion3D_property_use_edge_connections>` | ``true`` |
+   +---------------------------------------------+-------------------------------------------------------------------------------------+----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -196,6 +198,23 @@ The :ref:`NavigationMesh<class_NavigationMesh>` resource to use.
 - :ref:`float<class_float>` **get_travel_cost** **(** **)**
 
 When pathfinding moves inside this region's navigation mesh the traveled distances are multiplied with ``travel_cost`` for determining the shortest path.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationRegion3D_property_use_edge_connections:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_edge_connections** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_edge_connections** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_use_edge_connections** **(** **)**
+
+If enabled the navigation region will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
 .. rst-class:: classref-section-separator
 

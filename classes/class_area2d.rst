@@ -75,7 +75,7 @@ Properties
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
    | :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area2D_property_monitoring>`                                   | ``true``          |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                       | :ref:`priority<class_Area2D_property_priority>`                                       | ``0.0``           |
+   | :ref:`int<class_int>`                           | :ref:`priority<class_Area2D_property_priority>`                                       | ``0``             |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-reftable-group
@@ -551,14 +551,14 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **priority** = ``0.0``
+:ref:`int<class_int>` **priority** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_priority** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_priority** **(** **)**
+- void **set_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_priority** **(** **)**
 
-The area's priority. Higher priority areas are processed first.
+The area's priority. Higher priority areas are processed first. The :ref:`World2D<class_World2D>`'s physics is always processed last, after all areas.
 
 .. rst-class:: classref-section-separator
 

@@ -79,27 +79,29 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_Button_property_alignment>`                         | ``1``     |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`clip_text<class_Button_property_clip_text>`                         | ``false`` |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`expand_icon<class_Button_property_expand_icon>`                     | ``false`` |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`flat<class_Button_property_flat>`                                   | ``false`` |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`Texture2D<class_Texture2D>`                                 | :ref:`icon<class_Button_property_icon>`                                   |           |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`icon_alignment<class_Button_property_icon_alignment>`               | ``0``     |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                                       | :ref:`language<class_Button_property_language>`                           | ``""``    |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                                       | :ref:`text<class_Button_property_text>`                                   | ``""``    |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_Button_property_text_direction>`               | ``0``     |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
-   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_Button_property_text_overrun_behavior>` | ``0``     |
-   +-------------------------------------------------------------------+---------------------------------------------------------------------------+-----------+
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_Button_property_alignment>`                             | ``1``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                           | :ref:`clip_text<class_Button_property_clip_text>`                             | ``false`` |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                           | :ref:`expand_icon<class_Button_property_expand_icon>`                         | ``false`` |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                           | :ref:`flat<class_Button_property_flat>`                                       | ``false`` |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`Texture2D<class_Texture2D>`                                 | :ref:`icon<class_Button_property_icon>`                                       |           |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`icon_alignment<class_Button_property_icon_alignment>`                   | ``0``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                       | :ref:`language<class_Button_property_language>`                               | ``""``    |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                       | :ref:`text<class_Button_property_text>`                                       | ``""``    |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`TextDirection<enum_Control_TextDirection>`                  | :ref:`text_direction<class_Button_property_text_direction>`                   | ``0``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_Button_property_text_overrun_behavior>`     | ``0``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
+   | :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>`     | :ref:`vertical_icon_alignment<class_Button_property_vertical_icon_alignment>` | ``1``     |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -137,6 +139,8 @@ Theme Properties
    | :ref:`Color<class_Color>`       | :ref:`icon_pressed_color<class_Button_theme_color_icon_pressed_color>`             | ``Color(1, 1, 1, 1)``               |
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`           | :ref:`h_separation<class_Button_theme_constant_h_separation>`                      | ``2``                               |
+   +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
+   | :ref:`int<class_int>`           | :ref:`icon_max_width<class_Button_theme_constant_icon_max_width>`                  | ``0``                               |
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
    | :ref:`int<class_int>`           | :ref:`outline_size<class_Button_theme_constant_outline_size>`                      | ``0``                               |
    +---------------------------------+------------------------------------------------------------------------------------+-------------------------------------+
@@ -209,7 +213,7 @@ When this property is enabled, text that is too large to fit the button is clipp
 - void **set_expand_icon** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_expand_icon** **(** **)**
 
-When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect.
+When enabled, the button's icon will expand/shrink to fit the button's size while keeping its aspect. See also :ref:`icon_max_width<class_Button_theme_constant_icon_max_width>`.
 
 .. rst-class:: classref-item-separator
 
@@ -262,7 +266,7 @@ To edit margin and spacing of the icon, use :ref:`h_separation<class_Button_them
 - void **set_icon_alignment** **(** :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` value **)**
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_icon_alignment** **(** **)**
 
-Specifies if the icon should be aligned to the left, right, or center of a button. Uses the same :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants as the text alignment. If centered, text will draw on top of the icon.
+Specifies if the icon should be aligned horizontally to the left, right, or center of a button. Uses the same :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants as the text alignment. If centered horizontally and vertically, text will draw on top of the icon.
 
 .. rst-class:: classref-item-separator
 
@@ -331,6 +335,23 @@ Base text writing direction.
 - :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` **get_text_overrun_behavior** **(** **)**
 
 Sets the clipping behavior when the text exceeds the node's bounding rectangle. See :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>` for a description of all modes.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Button_property_vertical_icon_alignment:
+
+.. rst-class:: classref-property
+
+:ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **vertical_icon_alignment** = ``1``
+
+.. rst-class:: classref-property-setget
+
+- void **set_vertical_icon_alignment** **(** :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` value **)**
+- :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` **get_vertical_icon_alignment** **(** **)**
+
+Specifies if the icon should be aligned vertically to the top, bottom, or center of a button. Uses the same :ref:`VerticalAlignment<enum_@GlobalScope_VerticalAlignment>` constants as the text alignment. If centered horizontally and vertically, text will draw on top of the icon.
 
 .. rst-class:: classref-section-separator
 
@@ -504,6 +525,18 @@ Icon modulate :ref:`Color<class_Color>` used when the **Button** is being presse
 :ref:`int<class_int>` **h_separation** = ``2``
 
 The horizontal space between **Button**'s icon and text. Negative values will be treated as ``0`` when used.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Button_theme_constant_icon_max_width:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **icon_max_width** = ``0``
+
+The maximum allowed width of the **Button**'s icon. This limit is applied on top of the default size of the icon, or its expanded size if :ref:`expand_icon<class_Button_property_expand_icon>` is ``true``. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 

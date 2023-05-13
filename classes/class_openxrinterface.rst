@@ -38,9 +38,11 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+----------------------------------------------------------------------------------+---------+
-   | :ref:`float<class_float>` | :ref:`display_refresh_rate<class_OpenXRInterface_property_display_refresh_rate>` | ``0.0`` |
-   +---------------------------+----------------------------------------------------------------------------------+---------+
+   +---------------------------+----------------------------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`display_refresh_rate<class_OpenXRInterface_property_display_refresh_rate>`                   | ``0.0`` |
+   +---------------------------+----------------------------------------------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`render_target_size_multiplier<class_OpenXRInterface_property_render_target_size_multiplier>` | ``1.0`` |
+   +---------------------------+----------------------------------------------------------------------------------------------------+---------+
 
 .. rst-class:: classref-reftable-group
 
@@ -146,6 +148,23 @@ Property Descriptions
 - :ref:`float<class_float>` **get_display_refresh_rate** **(** **)**
 
 The display refresh rate for the current HMD. Only functional if this feature is supported by the OpenXR runtime and after the interface has been initialized.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OpenXRInterface_property_render_target_size_multiplier:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **render_target_size_multiplier** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_render_target_size_multiplier** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_render_target_size_multiplier** **(** **)**
+
+The render size multiplier for the current HMD. Must be set before the interface has been initialized.
 
 .. rst-class:: classref-section-separator
 

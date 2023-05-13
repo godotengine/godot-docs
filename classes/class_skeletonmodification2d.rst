@@ -14,7 +14,7 @@ SkeletonModification2D
 
 **Inherited By:** :ref:`SkeletonModification2DCCDIK<class_SkeletonModification2DCCDIK>`, :ref:`SkeletonModification2DFABRIK<class_SkeletonModification2DFABRIK>`, :ref:`SkeletonModification2DJiggle<class_SkeletonModification2DJiggle>`, :ref:`SkeletonModification2DLookAt<class_SkeletonModification2DLookAt>`, :ref:`SkeletonModification2DPhysicalBones<class_SkeletonModification2DPhysicalBones>`, :ref:`SkeletonModification2DStackHolder<class_SkeletonModification2DStackHolder>`, :ref:`SkeletonModification2DTwoBoneIK<class_SkeletonModification2DTwoBoneIK>`
 
-A resource that operates on :ref:`Bone2D<class_Bone2D>` nodes in a :ref:`Skeleton2D<class_Skeleton2D>`.
+Base class for resources that operate on :ref:`Bone2D<class_Bone2D>`\ s in a :ref:`Skeleton2D<class_Skeleton2D>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -159,7 +159,7 @@ Called when the modification is setup. This is where the modification performs i
 
 :ref:`float<class_float>` **clamp_angle** **(** :ref:`float<class_float>` angle, :ref:`float<class_float>` min, :ref:`float<class_float>` max, :ref:`bool<class_bool>` invert **)**
 
-Takes a angle and clamps it so it is within the passed-in ``min`` and ``max`` range. ``invert`` will inversely clamp the angle, clamping it to the range outside of the given bounds.
+Takes an angle and clamps it so it is within the passed-in ``min`` and ``max`` range. ``invert`` will inversely clamp the angle, clamping it to the range outside of the given bounds.
 
 .. rst-class:: classref-item-separator
 

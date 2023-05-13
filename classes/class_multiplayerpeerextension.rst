@@ -42,6 +42,10 @@ Methods
    +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`                          | :ref:`_get_packet<class_MultiplayerPeerExtension_method__get_packet>` **(** const uint8_t ** r_buffer, int32_t* r_buffer_size **)** |virtual|                           |
    +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                                          | :ref:`_get_packet_channel<class_MultiplayerPeerExtension_method__get_packet_channel>` **(** **)** |virtual| |const|                                                     |
+   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>`         | :ref:`_get_packet_mode<class_MultiplayerPeerExtension_method__get_packet_mode>` **(** **)** |virtual| |const|                                                           |
+   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                          | :ref:`_get_packet_peer<class_MultiplayerPeerExtension_method__get_packet_peer>` **(** **)** |virtual| |const|                                                           |
    +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedByteArray<class_PackedByteArray>`                  | :ref:`_get_packet_script<class_MultiplayerPeerExtension_method__get_packet_script>` **(** **)** |virtual|                                                               |
@@ -55,6 +59,8 @@ Methods
    | :ref:`bool<class_bool>`                                        | :ref:`_is_refusing_new_connections<class_MultiplayerPeerExtension_method__is_refusing_new_connections>` **(** **)** |virtual| |const|                                   |
    +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                        | :ref:`_is_server<class_MultiplayerPeerExtension_method__is_server>` **(** **)** |virtual| |const|                                                                       |
+   +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                        | :ref:`_is_server_relay_supported<class_MultiplayerPeerExtension_method__is_server_relay_supported>` **(** **)** |virtual| |const|                                       |
    +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                           | :ref:`_poll<class_MultiplayerPeerExtension_method__poll>` **(** **)** |virtual|                                                                                         |
    +----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -152,6 +158,30 @@ Called when a packet needs to be received by the :ref:`MultiplayerAPI<class_Mult
 
 ----
 
+.. _class_MultiplayerPeerExtension_method__get_packet_channel:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **_get_packet_channel** **(** **)** |virtual| |const|
+
+Called to get the channel over which the next available packet was received. See :ref:`MultiplayerPeer.get_packet_channel<class_MultiplayerPeer_method_get_packet_channel>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MultiplayerPeerExtension_method__get_packet_mode:
+
+.. rst-class:: classref-method
+
+:ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` **_get_packet_mode** **(** **)** |virtual| |const|
+
+Called to get the :ref:`TransferMode<enum_MultiplayerPeer_TransferMode>` the remote peer used to send the next available packet. See :ref:`MultiplayerPeer.get_packet_mode<class_MultiplayerPeer_method_get_packet_mode>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_MultiplayerPeerExtension_method__get_packet_peer:
 
 .. rst-class:: classref-method
@@ -206,7 +236,7 @@ Called when the transfer mode to use is read on this :ref:`MultiplayerPeer<class
 
 :ref:`int<class_int>` **_get_unique_id** **(** **)** |virtual| |const|
 
-Called when the unique ID of this :ref:`MultiplayerPeer<class_MultiplayerPeer>` is requested (see :ref:`MultiplayerPeer.get_unique_id<class_MultiplayerPeer_method_get_unique_id>`).
+Called when the unique ID of this :ref:`MultiplayerPeer<class_MultiplayerPeer>` is requested (see :ref:`MultiplayerPeer.get_unique_id<class_MultiplayerPeer_method_get_unique_id>`). The value must be between ``1`` and ``2147483647``.
 
 .. rst-class:: classref-item-separator
 
@@ -231,6 +261,18 @@ Called when the "refuse new connections" status is requested on this :ref:`Multi
 :ref:`bool<class_bool>` **_is_server** **(** **)** |virtual| |const|
 
 Called when the "is server" status is requested on the :ref:`MultiplayerAPI<class_MultiplayerAPI>`. See :ref:`MultiplayerAPI.is_server<class_MultiplayerAPI_method_is_server>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_MultiplayerPeerExtension_method__is_server_relay_supported:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **_is_server_relay_supported** **(** **)** |virtual| |const|
+
+Called to check if the server can act as a relay in the current configuration. See :ref:`MultiplayerPeer.is_server_relay_supported<class_MultiplayerPeer_method_is_server_relay_supported>`.
 
 .. rst-class:: classref-item-separator
 

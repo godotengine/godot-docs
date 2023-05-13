@@ -12,9 +12,25 @@ RibbonTrailMesh
 
 **Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Represents a straight ribbon-shaped :ref:`PrimitiveMesh<class_PrimitiveMesh>` with variable width.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**RibbonTrailMesh** represents a straight ribbon-shaped mesh with variable width. The ribbon is composed of a number of flat or cross-shaped sections, each with the same :ref:`section_length<class_RibbonTrailMesh_property_section_length>` and number of :ref:`section_segments<class_RibbonTrailMesh_property_section_segments>`. A :ref:`curve<class_RibbonTrailMesh_property_curve>` is sampled along the total length of the ribbon, meaning that the curve determines the size of the ribbon along its length.
+
+This primitive mesh is usually used for particle trails.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`3D Particle trails <../tutorials/3d/particles/trails>`
+
+- :doc:`Particle systems (3D) <../tutorials/3d/particles/index>`
 
 .. rst-class:: classref-reftable-group
 
@@ -59,7 +75,7 @@ enum **Shape**:
 
 :ref:`Shape<enum_RibbonTrailMesh_Shape>` **SHAPE_FLAT** = ``0``
 
-
+Gives the mesh a single flat face.
 
 .. _class_RibbonTrailMesh_constant_SHAPE_CROSS:
 
@@ -67,7 +83,7 @@ enum **Shape**:
 
 :ref:`Shape<enum_RibbonTrailMesh_Shape>` **SHAPE_CROSS** = ``1``
 
-
+Gives the mesh two perpendicular flat faces, making a cross shape.
 
 .. rst-class:: classref-section-separator
 
@@ -89,9 +105,7 @@ Property Descriptions
 - void **set_curve** **(** :ref:`Curve<class_Curve>` value **)**
 - :ref:`Curve<class_Curve>` **get_curve** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Determines the size of the ribbon along its length. The size of a particular section segment is obtained by multiplying the baseline :ref:`size<class_RibbonTrailMesh_property_size>` by the value of this curve at the given distance. For values smaller than ``0``, the faces will be inverted.
 
 .. rst-class:: classref-item-separator
 
@@ -108,9 +122,7 @@ Property Descriptions
 - void **set_section_length** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_section_length** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The length of a section of the ribbon.
 
 .. rst-class:: classref-item-separator
 
@@ -127,9 +139,7 @@ Property Descriptions
 - void **set_section_segments** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_section_segments** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The number of segments in a section. The :ref:`curve<class_RibbonTrailMesh_property_curve>` is sampled on each segment to determine its size. Higher values result in a more detailed ribbon at the cost of performance.
 
 .. rst-class:: classref-item-separator
 
@@ -146,9 +156,7 @@ Property Descriptions
 - void **set_sections** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_sections** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The total number of sections on the ribbon.
 
 .. rst-class:: classref-item-separator
 
@@ -165,9 +173,7 @@ Property Descriptions
 - void **set_shape** **(** :ref:`Shape<enum_RibbonTrailMesh_Shape>` value **)**
 - :ref:`Shape<enum_RibbonTrailMesh_Shape>` **get_shape** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Determines the shape of the ribbon.
 
 .. rst-class:: classref-item-separator
 
@@ -184,9 +190,7 @@ Property Descriptions
 - void **set_size** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_size** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The baseline size of the ribbon. The size of a particular section segment is obtained by multiplying this size by the value of the :ref:`curve<class_RibbonTrailMesh_property_curve>` at the given distance.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

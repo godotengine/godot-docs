@@ -12,7 +12,7 @@ Node
 
 **Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorInterface<class_EditorInterface>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`MissingNode<class_MissingNode>`, :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`NavigationObstacle2D<class_NavigationObstacle2D>`, :ref:`NavigationObstacle3D<class_NavigationObstacle3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
+**Inherited By:** :ref:`AnimationPlayer<class_AnimationPlayer>`, :ref:`AnimationTree<class_AnimationTree>`, :ref:`AudioStreamPlayer<class_AudioStreamPlayer>`, :ref:`CanvasItem<class_CanvasItem>`, :ref:`CanvasLayer<class_CanvasLayer>`, :ref:`EditorFileSystem<class_EditorFileSystem>`, :ref:`EditorPlugin<class_EditorPlugin>`, :ref:`EditorResourcePreview<class_EditorResourcePreview>`, :ref:`HTTPRequest<class_HTTPRequest>`, :ref:`InstancePlaceholder<class_InstancePlaceholder>`, :ref:`MissingNode<class_MissingNode>`, :ref:`MultiplayerSpawner<class_MultiplayerSpawner>`, :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`, :ref:`NavigationAgent2D<class_NavigationAgent2D>`, :ref:`NavigationAgent3D<class_NavigationAgent3D>`, :ref:`Node3D<class_Node3D>`, :ref:`ResourcePreloader<class_ResourcePreloader>`, :ref:`ShaderGlobalsOverride<class_ShaderGlobalsOverride>`, :ref:`SkeletonIK3D<class_SkeletonIK3D>`, :ref:`Timer<class_Timer>`, :ref:`Viewport<class_Viewport>`, :ref:`WorldEnvironment<class_WorldEnvironment>`
 
 Base class for all *scene* objects.
 
@@ -62,23 +62,31 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------+-----------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                 | :ref:`editor_description<class_Node_property_editor_description>`     | ``""``    |
-   +---------------------------------------------+-----------------------------------------------------------------------+-----------+
-   | :ref:`MultiplayerAPI<class_MultiplayerAPI>` | :ref:`multiplayer<class_Node_property_multiplayer>`                   |           |
-   +---------------------------------------------+-----------------------------------------------------------------------+-----------+
-   | :ref:`StringName<class_StringName>`         | :ref:`name<class_Node_property_name>`                                 |           |
-   +---------------------------------------------+-----------------------------------------------------------------------+-----------+
-   | :ref:`Node<class_Node>`                     | :ref:`owner<class_Node_property_owner>`                               |           |
-   +---------------------------------------------+-----------------------------------------------------------------------+-----------+
-   | :ref:`ProcessMode<enum_Node_ProcessMode>`   | :ref:`process_mode<class_Node_property_process_mode>`                 | ``0``     |
-   +---------------------------------------------+-----------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                       | :ref:`process_priority<class_Node_property_process_priority>`         | ``0``     |
-   +---------------------------------------------+-----------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                 | :ref:`scene_file_path<class_Node_property_scene_file_path>`           |           |
-   +---------------------------------------------+-----------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                     | :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>` | ``false`` |
-   +---------------------------------------------+-----------------------------------------------------------------------+-----------+
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                   | :ref:`editor_description<class_Node_property_editor_description>`                 | ``""``    |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`MultiplayerAPI<class_MultiplayerAPI>`                   | :ref:`multiplayer<class_Node_property_multiplayer>`                               |           |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`StringName<class_StringName>`                           | :ref:`name<class_Node_property_name>`                                             |           |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`Node<class_Node>`                                       | :ref:`owner<class_Node_property_owner>`                                           |           |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`ProcessMode<enum_Node_ProcessMode>`                     | :ref:`process_mode<class_Node_property_process_mode>`                             | ``0``     |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                         | :ref:`process_physics_priority<class_Node_property_process_physics_priority>`     | ``0``     |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                         | :ref:`process_priority<class_Node_property_process_priority>`                     | ``0``     |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>`       | :ref:`process_thread_group<class_Node_property_process_thread_group>`             | ``0``     |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                         | :ref:`process_thread_group_order<class_Node_property_process_thread_group_order>` |           |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` | :ref:`process_thread_messages<class_Node_property_process_thread_messages>`       |           |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                   | :ref:`scene_file_path<class_Node_property_scene_file_path>`                       |           |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                       | :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`             | ``false`` |
+   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -114,6 +122,10 @@ Methods
    | void                                              | :ref:`add_sibling<class_Node_method_add_sibling>` **(** :ref:`Node<class_Node>` sibling, :ref:`bool<class_bool>` force_readable_name=false **)**                                                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`add_to_group<class_Node_method_add_to_group>` **(** :ref:`StringName<class_StringName>` group, :ref:`bool<class_bool>` persistent=false **)**                                                                            |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                     | :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>` **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                           |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`                     | :ref:`call_thread_safe<class_Node_method_call_thread_safe>` **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`can_process<class_Node_method_can_process>` **(** **)** |const|                                                                                                                                                          |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -181,6 +193,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_multiplayer_authority<class_Node_method_is_multiplayer_authority>` **(** **)** |const|                                                                                                                                |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`is_node_ready<class_Node_method_is_node_ready>` **(** **)** |const|                                                                                                                                                      |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_physics_processing<class_Node_method_is_physics_processing>` **(** **)** |const|                                                                                                                                      |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`is_physics_processing_internal<class_Node_method_is_physics_processing_internal>` **(** **)** |const|                                                                                                                    |
@@ -198,6 +212,10 @@ Methods
    | :ref:`bool<class_bool>`                           | :ref:`is_processing_unhandled_key_input<class_Node_method_is_processing_unhandled_key_input>` **(** **)** |const|                                                                                                              |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`move_child<class_Node_method_move_child>` **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_int>` to_index **)**                                                                                                 |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`notify_deferred_thread_group<class_Node_method_notify_deferred_thread_group>` **(** :ref:`int<class_int>` what **)**                                                                                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`notify_thread_safe<class_Node_method_notify_thread_safe>` **(** :ref:`int<class_int>` what **)**                                                                                                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`print_orphan_nodes<class_Node_method_print_orphan_nodes>` **(** **)** |static|                                                                                                                                           |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -227,6 +245,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`rpc_id<class_Node_method_rpc_id>` **(** :ref:`int<class_int>` peer_id, :ref:`StringName<class_StringName>` method, ... **)** |vararg|                                                                                    |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`set_deferred_thread_group<class_Node_method_set_deferred_thread_group>` **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**                                                    |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`set_display_folded<class_Node_method_set_display_folded>` **(** :ref:`bool<class_bool>` fold **)**                                                                                                                       |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`set_editable_instance<class_Node_method_set_editable_instance>` **(** :ref:`Node<class_Node>` node, :ref:`bool<class_bool>` is_editable **)**                                                                            |
@@ -250,6 +270,8 @@ Methods
    | void                                              | :ref:`set_process_unhandled_key_input<class_Node_method_set_process_unhandled_key_input>` **(** :ref:`bool<class_bool>` enable **)**                                                                                           |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`set_scene_instance_load_placeholder<class_Node_method_set_scene_instance_load_placeholder>` **(** :ref:`bool<class_bool>` load_placeholder **)**                                                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`set_thread_safe<class_Node_method_set_thread_safe>` **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**                                                                        |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`update_configuration_warnings<class_Node_method_update_configuration_warnings>` **(** **)**                                                                                                                              |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -286,6 +308,18 @@ This signal is emitted *after* the child node's own :ref:`NOTIFICATION_ENTER_TRE
 Emitted when a child node is about to exit the scene tree, either because it is being removed or freed directly, or because this node is exiting the tree.
 
 When this signal is received, the child ``node`` is still in the tree and valid. This signal is emitted *after* the child node's own :ref:`tree_exiting<class_Node_signal_tree_exiting>` and :ref:`NOTIFICATION_EXIT_TREE<class_Node_constant_NOTIFICATION_EXIT_TREE>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_signal_child_order_changed:
+
+.. rst-class:: classref-signal
+
+**child_order_changed** **(** **)**
+
+Emitted when the list of children is changed. This happens when child nodes are added, moved or removed.
 
 .. rst-class:: classref-item-separator
 
@@ -410,6 +444,74 @@ Never process. Completely disables processing, ignoring the :ref:`SceneTree<clas
 
 ----
 
+.. _enum_Node_ProcessThreadGroup:
+
+.. rst-class:: classref-enumeration
+
+enum **ProcessThreadGroup**:
+
+.. _class_Node_constant_PROCESS_THREAD_GROUP_INHERIT:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>` **PROCESS_THREAD_GROUP_INHERIT** = ``0``
+
+If the :ref:`process_thread_group<class_Node_property_process_thread_group>` property is sent to this, the node will belong to any parent (or grandparent) node that has a thread group mode that is not inherit. See :ref:`process_thread_group<class_Node_property_process_thread_group>` for more information.
+
+.. _class_Node_constant_PROCESS_THREAD_GROUP_MAIN_THREAD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>` **PROCESS_THREAD_GROUP_MAIN_THREAD** = ``1``
+
+Process this node (and children nodes set to inherit) on the main thread. See :ref:`process_thread_group<class_Node_property_process_thread_group>` for more information.
+
+.. _class_Node_constant_PROCESS_THREAD_GROUP_SUB_THREAD:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>` **PROCESS_THREAD_GROUP_SUB_THREAD** = ``2``
+
+Process this node (and children nodes set to inherit) on a sub-thread. See :ref:`process_thread_group<class_Node_property_process_thread_group>` for more information.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_Node_ProcessThreadMessages:
+
+.. rst-class:: classref-enumeration
+
+enum **ProcessThreadMessages**:
+
+.. _class_Node_constant_FLAG_PROCESS_THREAD_MESSAGES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **FLAG_PROCESS_THREAD_MESSAGES** = ``1``
+
+
+
+.. _class_Node_constant_FLAG_PROCESS_THREAD_MESSAGES_PHYSICS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **FLAG_PROCESS_THREAD_MESSAGES_PHYSICS** = ``2``
+
+
+
+.. _class_Node_constant_FLAG_PROCESS_THREAD_MESSAGES_ALL:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **FLAG_PROCESS_THREAD_MESSAGES_ALL** = ``3``
+
+
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_Node_DuplicateFlags:
 
 .. rst-class:: classref-enumeration
@@ -519,7 +621,7 @@ This notification is emitted *after* the related :ref:`tree_exiting<class_Node_s
 
 **NOTIFICATION_MOVED_IN_PARENT** = ``12``
 
-Notification received when the node is moved in the parent.
+This notification is deprecated and is no longer emitted. Use :ref:`NOTIFICATION_CHILD_ORDER_CHANGED<class_Node_constant_NOTIFICATION_CHILD_ORDER_CHANGED>` instead.
 
 .. _class_Node_constant_NOTIFICATION_READY:
 
@@ -616,6 +718,14 @@ Use :ref:`Viewport.gui_is_drag_successful<class_Viewport_method_gui_is_drag_succ
 **NOTIFICATION_PATH_RENAMED** = ``23``
 
 Notification received when the node's name or one of its parents' name is changed. This notification is *not* received when the node is removed from the scene tree to be added to another parent later on.
+
+.. _class_Node_constant_NOTIFICATION_CHILD_ORDER_CHANGED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_CHILD_ORDER_CHANGED** = ``24``
+
+Notification received when the list of children is changed. This happens when child nodes are added, moved or removed.
 
 .. _class_Node_constant_NOTIFICATION_INTERNAL_PROCESS:
 
@@ -743,7 +853,7 @@ Specific to the Android platform.
 
 **NOTIFICATION_WM_SIZE_CHANGED** = ``1008``
 
-
+Notification received from the OS when the window is resized.
 
 .. _class_Node_constant_NOTIFICATION_WM_DPI_CHANGE:
 
@@ -751,7 +861,7 @@ Specific to the Android platform.
 
 **NOTIFICATION_WM_DPI_CHANGE** = ``1009``
 
-
+Notification received from the OS when the screen's DPI has been changed. Only implemented on macOS.
 
 .. _class_Node_constant_NOTIFICATION_VP_MOUSE_ENTER:
 
@@ -962,6 +1072,23 @@ Can be used to pause or unpause the node, or make the node paused based on the :
 
 ----
 
+.. _class_Node_property_process_physics_priority:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **process_physics_priority** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_physics_process_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_physics_process_priority** **(** **)**
+
+Similar to :ref:`process_priority<class_Node_property_process_priority>` but for :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>`, :ref:`_physics_process<class_Node_method__physics_process>` or the internal version.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_property_process_priority:
 
 .. rst-class:: classref-property
@@ -974,6 +1101,63 @@ Can be used to pause or unpause the node, or make the node paused based on the :
 - :ref:`int<class_int>` **get_process_priority** **(** **)**
 
 The node's priority in the execution order of the enabled processing callbacks (i.e. :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>` and their internal counterparts). Nodes whose process priority value is *lower* will have their processing callbacks executed first.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_property_process_thread_group:
+
+.. rst-class:: classref-property
+
+:ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>` **process_thread_group** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_process_thread_group** **(** :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>` value **)**
+- :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>` **get_process_thread_group** **(** **)**
+
+Set the process thread group for this node (basically, whether it receives :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>`, :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>`, :ref:`_process<class_Node_method__process>` or :ref:`_physics_process<class_Node_method__physics_process>` (and the internal versions) on the main thread or in a sub-thread. 
+
+By default, the thread group is :ref:`PROCESS_THREAD_GROUP_INHERIT<class_Node_constant_PROCESS_THREAD_GROUP_INHERIT>`, which means that this node belongs to the same thread group as the parent node. The thread groups means that nodes in a specific thread group will process together, separate to other thread groups (depending on :ref:`process_thread_group_order<class_Node_property_process_thread_group_order>`). If the value is set is :ref:`PROCESS_THREAD_GROUP_SUB_THREAD<class_Node_constant_PROCESS_THREAD_GROUP_SUB_THREAD>`, this thread group will occur on a sub thread (not the main thread), otherwise if set to :ref:`PROCESS_THREAD_GROUP_MAIN_THREAD<class_Node_constant_PROCESS_THREAD_GROUP_MAIN_THREAD>` it will process on the main thread. If there is not a parent or grandparent node set to something other than inherit, the node will belong to the *default thread group*. This default group will process on the main thread and its group order is 0.
+
+During processing in a sub-thread, accessing most functions in nodes outside the thread group is forbidden (and it will result in an error in debug mode). Use :ref:`Object.call_deferred<class_Object_method_call_deferred>`, :ref:`call_thread_safe<class_Node_method_call_thread_safe>`, :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>` and the likes in order to communicate from the thread groups to the main thread (or to other thread groups).			 
+
+To better understand process thread groups, the idea is that any node set to any other value than :ref:`PROCESS_THREAD_GROUP_INHERIT<class_Node_constant_PROCESS_THREAD_GROUP_INHERIT>` will include any children (and grandchildren) nodes set to inherit into its process thread group. this means that the processing of all the nodes in the group will happen together, at the same time as the node including them.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_property_process_thread_group_order:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **process_thread_group_order**
+
+.. rst-class:: classref-property-setget
+
+- void **set_process_thread_group_order** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_process_thread_group_order** **(** **)**
+
+Change the process thread group order. Groups with a lesser order will process before groups with a greater order. This is useful when a large amount of nodes process in sub thread and, afterwards, another group wants to collect their result in the main thread, as an example.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_property_process_thread_messages:
+
+.. rst-class:: classref-property
+
+:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **process_thread_messages**
+
+.. rst-class:: classref-property-setget
+
+- void **set_process_thread_messages** **(** :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` value **)**
+- :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **get_process_thread_messages** **(** **)**
+
+Set whether the current thread group will process messages (calls to :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>` on threads, and whether it wants to receive them during regular process or physics process callbacks.
 
 .. rst-class:: classref-item-separator
 
@@ -1059,6 +1243,19 @@ The elements in the array returned from this method are displayed as warnings in
 Returning an empty array produces no warnings.
 
 Call :ref:`update_configuration_warnings<class_Node_method_update_configuration_warnings>` when the warnings need to be updated for this node.
+
+::
+
+    @export var energy = 0:
+        set(value):
+            energy = value
+            update_configuration_warnings()
+    
+    func _get_configuration_warnings():
+        if energy < 0:
+            return ["Energy must be 0 or greater."]
+        else:
+            return []
 
 .. rst-class:: classref-item-separator
 
@@ -1212,7 +1409,7 @@ Adds a child ``node``. Nodes can have any number of children, but every child mu
 
 If ``force_readable_name`` is ``true``, improves the readability of the added ``node``. If not named, the ``node`` is renamed to its type, and if it shares :ref:`name<class_Node_property_name>` with a sibling, a number is suffixed more appropriately. This operation is very slow. As such, it is recommended leaving this to ``false``, which assigns a dummy name featuring ``@`` in both situations.
 
-If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. Such nodes are ignored by methods like :ref:`get_children<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``.The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`. See :ref:`InternalMode<enum_Node_InternalMode>` for available modes.
+If ``internal`` is different than :ref:`INTERNAL_MODE_DISABLED<class_Node_constant_INTERNAL_MODE_DISABLED>`, the child will be added as internal node. Such nodes are ignored by methods like :ref:`get_children<class_Node_method_get_children>`, unless their parameter ``include_internal`` is ``true``. The intended usage is to hide the internal nodes from the user, so the user won't accidentally delete or modify them. Used by some GUI nodes, e.g. :ref:`ColorPicker<class_ColorPicker>`. See :ref:`InternalMode<enum_Node_InternalMode>` for available modes.
 
 \ **Note:** If the child node already has a parent, the function will fail. Use :ref:`remove_child<class_Node_method_remove_child>` first to remove the node from its current parent. For example:
 
@@ -1279,6 +1476,30 @@ The ``persistent`` option is used when packing node to :ref:`PackedScene<class_P
 
 ----
 
+.. _class_Node_method_call_deferred_thread_group:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **call_deferred_thread_group** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
+
+This function is similar to :ref:`Object.call_deferred<class_Object_method_call_deferred>` except that the call will take place when the node thread group is processed. If the node thread group processes in sub-threads, then the call will be done on that thread, right before :ref:`NOTIFICATION_PROCESS<class_Node_constant_NOTIFICATION_PROCESS>` or :ref:`NOTIFICATION_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_PHYSICS_PROCESS>`, the :ref:`_process<class_Node_method__process>` or :ref:`_physics_process<class_Node_method__physics_process>` or their internal versions are called.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_call_thread_safe:
+
+.. rst-class:: classref-method
+
+:ref:`Variant<class_Variant>` **call_thread_safe** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
+
+This function ensures that the calling of this function will succeed, no matter whether it's being done from a thread or not. If called from a thread that is not allowed to call the function, the call will become deferred. Otherwise, the call will go through directly.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_method_can_process:
 
 .. rst-class:: classref-method
@@ -1312,6 +1533,8 @@ Creates a new :ref:`Tween<class_Tween>` and binds it to this node. This is equiv
 
 
 
+The Tween will start automatically on the next process frame or physics frame (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1338,7 +1561,7 @@ You can fine-tune the behavior using the ``flags`` (see :ref:`DuplicateFlags<enu
 
 :ref:`Node<class_Node>` **find_child** **(** :ref:`String<class_String>` pattern, :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
 
-Finds the first descendant of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`.
+Finds the first descendant of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`. Internal children are also searched over (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
 
 \ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
 
@@ -1362,7 +1585,7 @@ Returns ``null`` if no matching **Node** is found.
 
 :ref:`Node[]<class_Node>` **find_children** **(** :ref:`String<class_String>` pattern, :ref:`String<class_String>` type="", :ref:`bool<class_bool>` recursive=true, :ref:`bool<class_bool>` owned=true **)** |const|
 
-Finds descendants of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`, and/or type matches ``type`` as in :ref:`Object.is_class<class_Object_method_is_class>`.
+Finds descendants of this node whose name matches ``pattern`` as in :ref:`String.match<class_String_method_match>`, and/or type matches ``type`` as in :ref:`Object.is_class<class_Object_method_is_class>`. Internal children are also searched over (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
 
 \ ``pattern`` does not match against the full path, just against individual node names. It is case-sensitive, with ``"*"`` matching zero or more characters and ``"?"`` matching any single character except ``"."``).
 
@@ -1822,6 +2045,20 @@ Returns ``true`` if the local system is the multiplayer authority of this node.
 
 ----
 
+.. _class_Node_method_is_node_ready:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_node_ready** **(** **)** |const|
+
+Returns ``true`` if the node is ready, i.e. it's inside scene tree and all its children are initialized.
+
+\ :ref:`request_ready<class_Node_method_request_ready>` resets it back to ``false``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_method_is_physics_processing:
 
 .. rst-class:: classref-method
@@ -1927,6 +2164,30 @@ void **move_child** **(** :ref:`Node<class_Node>` child_node, :ref:`int<class_in
 Moves a child node to a different index (order) among the other children. Since calls, signals, etc. are performed by tree order, changing the order of children nodes may be useful. If ``to_index`` is negative, the index will be counted from the end.
 
 \ **Note:** Internal children can only be moved within their expected "internal range" (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_notify_deferred_thread_group:
+
+.. rst-class:: classref-method
+
+void **notify_deferred_thread_group** **(** :ref:`int<class_int>` what **)**
+
+Similar to :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>`, but for notifications.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_notify_thread_safe:
+
+.. rst-class:: classref-method
+
+void **notify_thread_safe** **(** :ref:`int<class_int>` what **)**
+
+Similar to :ref:`call_thread_safe<class_Node_method_call_thread_safe>`, but for notifications.
 
 .. rst-class:: classref-item-separator
 
@@ -2147,6 +2408,18 @@ Sends a :ref:`rpc<class_Node_method_rpc>` to a specific peer identified by ``pee
 
 ----
 
+.. _class_Node_method_set_deferred_thread_group:
+
+.. rst-class:: classref-method
+
+void **set_deferred_thread_group** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**
+
+Similar to :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>`, but for setting properties.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_method_set_display_folded:
 
 .. rst-class:: classref-method
@@ -2290,6 +2563,18 @@ Enables unhandled key input processing. Enabled automatically if :ref:`_unhandle
 void **set_scene_instance_load_placeholder** **(** :ref:`bool<class_bool>` load_placeholder **)**
 
 Sets whether this is an instance load placeholder. See :ref:`InstancePlaceholder<class_InstancePlaceholder>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_set_thread_safe:
+
+.. rst-class:: classref-method
+
+void **set_thread_safe** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**
+
+Similar to :ref:`call_thread_safe<class_Node_method_call_thread_safe>`, but for setting properties.
 
 .. rst-class:: classref-item-separator
 

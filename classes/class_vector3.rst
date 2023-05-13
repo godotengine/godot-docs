@@ -654,7 +654,7 @@ Returns ``true`` if this vector is finite, by calling :ref:`@GlobalScope.is_fini
 
 :ref:`bool<class_bool>` **is_normalized** **(** **)** |const|
 
-Returns ``true`` if the vector is :ref:`normalized<class_Vector3_method_normalized>`, ``false`` otherwise.
+Returns ``true`` if the vector is normalized, i.e. its length is approximately equal to 1.
 
 .. rst-class:: classref-item-separator
 
@@ -706,7 +706,7 @@ This method runs faster than :ref:`length<class_Vector3_method_length>`, so pref
 
 :ref:`Vector3<class_Vector3>` **lerp** **(** :ref:`Vector3<class_Vector3>` to, :ref:`float<class_float>` weight **)** |const|
 
-Returns the result of the linear interpolation between this vector and ``to`` by amount ``weight``. ``weight`` is on the range of 0.0 to 1.0, representing the amount of interpolation.
+Returns the result of the linear interpolation between this vector and ``to`` by amount ``weight``. ``weight`` is on the range of ``0.0`` to ``1.0``, representing the amount of interpolation.
 
 .. rst-class:: classref-item-separator
 
@@ -766,7 +766,9 @@ Returns a new vector moved toward ``to`` by the fixed ``delta`` amount. Will not
 
 :ref:`Vector3<class_Vector3>` **normalized** **(** **)** |const|
 
-Returns the vector scaled to unit length. Equivalent to ``v / v.length()``. See also :ref:`is_normalized<class_Vector3_method_is_normalized>`.
+Returns the result of scaling the vector to unit length. Equivalent to ``v / v.length()``. See also :ref:`is_normalized<class_Vector3_method_is_normalized>`.
+
+\ **Note:** This function may return incorrect values if the input vector length is near zero.
 
 .. rst-class:: classref-item-separator
 

@@ -44,6 +44,15 @@ To use simulated bold font variant:
 
 
 
+To set the coordinate of multiple variation axes:
+
+::
+
+    var fv = FontVariation.new();
+    var ts = TextServerManager.get_primary_interface()
+    fv.base_font = load("res://BarlowCondensed-Regular.ttf")
+    fv.variation_opentype = { ts.name_to_tag("wght"): 900, ts.name_to_tag("custom_hght"): 900 }
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -125,7 +134,7 @@ Base font used to create a variation. If not set, default :ref:`Theme<class_Them
 - void **set_fallbacks** **(** :ref:`Font[]<class_Font>` value **)**
 - :ref:`Font[]<class_Font>` **get_fallbacks** **(** **)**
 
-Array of fallback :ref:`Font<class_Font>`\ s. If not set :ref:`base_font<class_FontVariation_property_base_font>` fallback are ussed.
+Array of fallback :ref:`Font<class_Font>`\ s to use as a substitute if a glyph is not found in this **FontVariation**. If not set, :ref:`base_font<class_FontVariation_property_base_font>`'s fallbacks are used instead.
 
 .. rst-class:: classref-item-separator
 
@@ -264,6 +273,10 @@ Active face index in the TrueType / OpenType collection file.
 - :ref:`Dictionary<class_Dictionary>` **get_variation_opentype** **(** **)**
 
 Font OpenType variation coordinates. More info: `OpenType variation tags <https://docs.microsoft.com/en-us/typography/opentype/spec/dvaraxisreg>`__.
+
+\ **Note:** This :ref:`Dictionary<class_Dictionary>` uses OpenType tags as keys. Variation axes can be identified both by tags(``int``) and names (``string``). Some axes might be accessible by multiple names. For example, ``wght`` refers to the same axis as ``weight``. Tags on the other hand are unique. To convert between names and tags, use :ref:`TextServer.name_to_tag<class_TextServer_method_name_to_tag>` and :ref:`TextServer.tag_to_name<class_TextServer_method_tag_to_name>`.
+
+\ **Note:** To get available variation axes of a font, use :ref:`Font.get_supported_variation_list<class_Font_method_get_supported_variation_list>`.
 
 .. rst-class:: classref-item-separator
 

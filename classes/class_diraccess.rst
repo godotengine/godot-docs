@@ -195,7 +195,7 @@ Property Descriptions
 - void **set_include_hidden** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_include_hidden** **(** **)**
 
-If ``true``, hidden files are included when the navigating directory.
+If ``true``, hidden files are included when navigating the directory.
 
 Affects :ref:`list_dir_begin<class_DirAccess_method_list_dir_begin>`, :ref:`get_directories<class_DirAccess_method_get_directories>` and :ref:`get_files<class_DirAccess_method_get_files>`.
 
@@ -416,6 +416,8 @@ On other platforms, or if the requested drive does not exist, the method returns
 Returns a :ref:`PackedStringArray<class_PackedStringArray>` containing filenames of the directory contents, excluding directories. The array is sorted alphabetically.
 
 Affected by :ref:`include_hidden<class_DirAccess_property_include_hidden>`.
+
+\ **Note:** When used on a ``res://`` path in an exported project, only the files actually included in the PCK at the given folder level are returned. In practice, this means that since imported resources are stored in a top-level ``.godot/`` folder, only paths to ``*.gd`` and ``*.import`` files are returned (plus a few files such as ``project.godot`` or ``project.binary[code] and the project icon). In an exported project, the list of returned files will also vary depending on whether [member ProjectSettings.editor/export/convert_text_resources_to_binary] is [code]true``.
 
 .. rst-class:: classref-item-separator
 

@@ -57,7 +57,7 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
    | :ref:`bool<class_bool>`       | :ref:`anti_aliasing<class_StyleBoxFlat_property_anti_aliasing>`                           | ``true``                    |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
-   | :ref:`float<class_float>`     | :ref:`anti_aliasing_size<class_StyleBoxFlat_property_anti_aliasing_size>`                 | ``0.625``                   |
+   | :ref:`float<class_float>`     | :ref:`anti_aliasing_size<class_StyleBoxFlat_property_anti_aliasing_size>`                 | ``1.0``                     |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
    | :ref:`Color<class_Color>`     | :ref:`bg_color<class_StyleBoxFlat_property_bg_color>`                                     | ``Color(0.6, 0.6, 0.6, 1)`` |
    +-------------------------------+-------------------------------------------------------------------------------------------+-----------------------------+
@@ -164,14 +164,16 @@ Antialiasing draws a small ring around the edges, which fades to transparency. A
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **anti_aliasing_size** = ``0.625``
+:ref:`float<class_float>` **anti_aliasing_size** = ``1.0``
 
 .. rst-class:: classref-property-setget
 
 - void **set_aa_size** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_aa_size** **(** **)**
 
-This changes the size of the faded ring. Higher values can be used to achieve a "blurry" effect.
+This changes the size of the antialiasing effect. ``1.0`` is recommended for an optimal result at 100% scale, identical to how rounded rectangles are rendered in web browsers and most vector drawing software.
+
+\ **Note:** Higher values may produce a blur effect but can also create undesired artifacts on small boxes with large-radius corners.
 
 .. rst-class:: classref-item-separator
 

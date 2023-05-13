@@ -12,7 +12,7 @@ AnimatableBody3D
 
 **Inherits:** :ref:`StaticBody3D<class_StaticBody3D>` **<** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Physics body for 3D physics which moves only by script or animation. Useful for moving platforms and doors.
+Physics body for 3D physics which moves only by script or animation (while affecting other bodies on its path). Useful for moving platforms and doors.
 
 .. rst-class:: classref-introduction-group
 

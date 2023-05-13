@@ -495,6 +495,14 @@ The **CanvasItem** has entered the canvas.
 
 The **CanvasItem** has exited the canvas.
 
+.. _class_CanvasItem_constant_NOTIFICATION_WORLD_2D_CHANGED:
+
+.. rst-class:: classref-constant
+
+**NOTIFICATION_WORLD_2D_CHANGED** = ``36``
+
+The **CanvasItem**'s active :ref:`World2D<class_World2D>` changed.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -549,7 +557,7 @@ The rendering layers in which this **CanvasItem** responds to :ref:`Light2D<clas
 - void **set_material** **(** :ref:`Material<class_Material>` value **)**
 - :ref:`Material<class_Material>` **get_material** **(** **)**
 
-The material applied to textures on this **CanvasItem**.
+The material applied to this **CanvasItem**.
 
 .. rst-class:: classref-item-separator
 
@@ -566,7 +574,7 @@ The material applied to textures on this **CanvasItem**.
 - void **set_modulate** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_modulate** **(** **)**
 
-The color applied to textures on this **CanvasItem**.
+The color applied to this **CanvasItem**. This property does affect child **CanvasItem**\ s, unlike :ref:`self_modulate<class_CanvasItem_property_self_modulate>` which only affects the node itself.
 
 .. rst-class:: classref-item-separator
 
@@ -583,7 +591,9 @@ The color applied to textures on this **CanvasItem**.
 - void **set_self_modulate** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_self_modulate** **(** **)**
 
-The color applied to textures on this **CanvasItem**. This is not inherited by children **CanvasItem**\ s.
+The color applied to this **CanvasItem**. This property does **not** affect child **CanvasItem**\ s, unlike :ref:`modulate<class_CanvasItem_property_modulate>` which affects both the node itself and its children.
+
+\ **Note:** Internal children (e.g. sliders in :ref:`ColorPicker<class_ColorPicker>` or tab bar in :ref:`TabContainer<class_TabContainer>`) are also not affected by this property (see ``include_internal`` parameter of :ref:`Node.get_child<class_Node_method_get_child>` and other similar methods).
 
 .. rst-class:: classref-item-separator
 
@@ -702,7 +712,7 @@ The rendering layer in which this **CanvasItem** is rendered by :ref:`Viewport<c
 - void **set_visible** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_visible** **(** **)**
 
-If ``true``, this **CanvasItem** is drawn. The node is only visible if all of its antecedents are visible as well (in other words, :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` must return ``true``).
+If ``true``, this **CanvasItem** is drawn. The node is only visible if all of its ancestors are visible as well (in other words, :ref:`is_visible_in_tree<class_CanvasItem_method_is_visible_in_tree>` must return ``true``).
 
 \ **Note:** For controls that inherit :ref:`Popup<class_Popup>`, the correct way to make them visible is to call one of the multiple ``popup*()`` functions instead.
 
@@ -1019,7 +1029,7 @@ Draws a :ref:`MultiMesh<class_MultiMesh>` in 2D with the provided texture. See :
 
 void **draw_polygon** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` points, :ref:`PackedColorArray<class_PackedColorArray>` colors, :ref:`PackedVector2Array<class_PackedVector2Array>` uvs=PackedVector2Array(), :ref:`Texture2D<class_Texture2D>` texture=null **)**
 
-Draws a solid polygon of any number of points, convex or concave. Unlike :ref:`draw_colored_polygon<class_CanvasItem_method_draw_colored_polygon>`, each point's color can be changed individually. See also :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`.
+Draws a solid polygon of any number of points, convex or concave. Unlike :ref:`draw_colored_polygon<class_CanvasItem_method_draw_colored_polygon>`, each point's color can be changed individually. See also :ref:`draw_polyline<class_CanvasItem_method_draw_polyline>` and :ref:`draw_polyline_colors<class_CanvasItem_method_draw_polyline_colors>`. If you need more flexibility (such as being able to use bones), use :ref:`RenderingServer.canvas_item_add_triangle_array<class_RenderingServer_method_canvas_item_add_triangle_array>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -1071,7 +1081,7 @@ Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for
 
 void **draw_rect** **(** :ref:`Rect2<class_Rect2>` rect, :ref:`Color<class_Color>` color, :ref:`bool<class_bool>` filled=true, :ref:`float<class_float>` width=-1.0 **)**
 
-Draws a rectangle. If ``filled`` is ``true``, the rectangle will be filled with the ``color`` specified. If ``filled`` is ``false``, the rectangle will be drawn as a stroke with the ``color`` and ``width`` specified.
+Draws a rectangle. If ``filled`` is ``true``, the rectangle will be filled with the ``color`` specified. If ``filled`` is ``false``, the rectangle will be drawn as a stroke with the ``color`` and ``width`` specified. See also :ref:`draw_texture_rect<class_CanvasItem_method_draw_texture_rect>`.
 
 If ``width`` is negative, then two-point primitives will be drawn instead of a four-point ones. This means that when the CanvasItem is scaled, the lines will remain thin. If this behavior is not desired, then pass a positive ``width`` like ``1.0``.
 
@@ -1190,7 +1200,7 @@ Draws a texture at a given position.
 
 void **draw_texture_rect** **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`bool<class_bool>` tile, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`bool<class_bool>` transpose=false **)**
 
-Draws a textured rectangle at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped.
+Draws a textured rectangle at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped. See also :ref:`draw_rect<class_CanvasItem_method_draw_rect>` and :ref:`draw_texture_rect_region<class_CanvasItem_method_draw_texture_rect_region>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1202,7 +1212,7 @@ Draws a textured rectangle at a given position, optionally modulated by a color.
 
 void **draw_texture_rect_region** **(** :ref:`Texture2D<class_Texture2D>` texture, :ref:`Rect2<class_Rect2>` rect, :ref:`Rect2<class_Rect2>` src_rect, :ref:`Color<class_Color>` modulate=Color(1, 1, 1, 1), :ref:`bool<class_bool>` transpose=false, :ref:`bool<class_bool>` clip_uv=true **)**
 
-Draws a textured rectangle region at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped.
+Draws a textured rectangle from a texture's region (specified by ``src_rect``) at a given position, optionally modulated by a color. If ``transpose`` is ``true``, the texture will have its X and Y coordinates swapped. See also :ref:`draw_texture_rect<class_CanvasItem_method_draw_texture_rect>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1263,6 +1273,8 @@ Returns the transform from the coordinate system of the canvas, this item is in,
 :ref:`Vector2<class_Vector2>` **get_global_mouse_position** **(** **)** |const|
 
 Returns the mouse's position in the :ref:`CanvasLayer<class_CanvasLayer>` that this **CanvasItem** is in using the coordinate system of the :ref:`CanvasLayer<class_CanvasLayer>`.
+
+\ **Note:** For screen-space coordinates (e.g. when using a non-embedded :ref:`Popup<class_Popup>`), you can use :ref:`DisplayServer.mouse_get_position<class_DisplayServer_method_mouse_get_position>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1420,7 +1432,7 @@ Returns ``true`` if global transform notifications are communicated to children.
 
 :ref:`bool<class_bool>` **is_visible_in_tree** **(** **)** |const|
 
-Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree, and is consequently not drawn (see :ref:`_draw<class_CanvasItem_method__draw>`).
+Returns ``true`` if the node is present in the :ref:`SceneTree<class_SceneTree>`, its :ref:`visible<class_CanvasItem_property_visible>` property is ``true`` and all its ancestors are also visible. If any ancestor is hidden, this node will not be visible in the scene tree, and is consequently not drawn (see :ref:`_draw<class_CanvasItem_method__draw>`).
 
 .. rst-class:: classref-item-separator
 

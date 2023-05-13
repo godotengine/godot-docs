@@ -21,7 +21,7 @@ Description
 
 Compared to :ref:`AStar2D<class_AStar2D>` you don't need to manually create points or connect them together. It also supports multiple type of heuristics and modes for diagonal movement. This class also provides a jumping mode which is faster to calculate than without it in the :ref:`AStar2D<class_AStar2D>` class.
 
-In contrast to :ref:`AStar2D<class_AStar2D>`, you only need set the :ref:`size<class_AStarGrid2D_property_size>` of the grid, optionally set the :ref:`cell_size<class_AStarGrid2D_property_cell_size>` and then call the :ref:`update<class_AStarGrid2D_method_update>` method:
+In contrast to :ref:`AStar2D<class_AStar2D>`, you only need set the :ref:`region<class_AStarGrid2D_property_region>` of the grid, optionally set the :ref:`cell_size<class_AStarGrid2D_property_cell_size>` and then call the :ref:`update<class_AStarGrid2D_method_update>` method:
 
 
 .. tabs::
@@ -29,7 +29,7 @@ In contrast to :ref:`AStar2D<class_AStar2D>`, you only need set the :ref:`size<c
  .. code-tab:: gdscript
 
     var astar_grid = AStarGrid2D.new()
-    astar_grid.size = Vector2i(32, 32)
+    astar_grid.region = Rect2i(0, 0, 32, 32)
     astar_grid.cell_size = Vector2(16, 16)
     astar_grid.update()
     print(astar_grid.get_id_path(Vector2i(0, 0), Vector2i(3, 4))) # prints (0, 0), (1, 1), (2, 2), (3, 3), (3, 4)
@@ -54,21 +54,23 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-   | :ref:`Vector2<class_Vector2>`                      | :ref:`cell_size<class_AStarGrid2D_property_cell_size>`                                   | ``Vector2(1, 1)``  |
-   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-   | :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`       | :ref:`default_compute_heuristic<class_AStarGrid2D_property_default_compute_heuristic>`   | ``0``              |
-   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-   | :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`       | :ref:`default_estimate_heuristic<class_AStarGrid2D_property_default_estimate_heuristic>` | ``0``              |
-   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-   | :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` | :ref:`diagonal_mode<class_AStarGrid2D_property_diagonal_mode>`                           | ``0``              |
-   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-   | :ref:`bool<class_bool>`                            | :ref:`jumping_enabled<class_AStarGrid2D_property_jumping_enabled>`                       | ``false``          |
-   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-   | :ref:`Vector2<class_Vector2>`                      | :ref:`offset<class_AStarGrid2D_property_offset>`                                         | ``Vector2(0, 0)``  |
-   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
-   | :ref:`Vector2i<class_Vector2i>`                    | :ref:`size<class_AStarGrid2D_property_size>`                                             | ``Vector2i(0, 0)`` |
-   +----------------------------------------------------+------------------------------------------------------------------------------------------+--------------------+
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector2<class_Vector2>`                      | :ref:`cell_size<class_AStarGrid2D_property_cell_size>`                                   | ``Vector2(1, 1)``      |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`       | :ref:`default_compute_heuristic<class_AStarGrid2D_property_default_compute_heuristic>`   | ``0``                  |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Heuristic<enum_AStarGrid2D_Heuristic>`       | :ref:`default_estimate_heuristic<class_AStarGrid2D_property_default_estimate_heuristic>` | ``0``                  |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
+   | :ref:`DiagonalMode<enum_AStarGrid2D_DiagonalMode>` | :ref:`diagonal_mode<class_AStarGrid2D_property_diagonal_mode>`                           | ``0``                  |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`jumping_enabled<class_AStarGrid2D_property_jumping_enabled>`                       | ``false``              |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector2<class_Vector2>`                      | :ref:`offset<class_AStarGrid2D_property_offset>`                                         | ``Vector2(0, 0)``      |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Rect2i<class_Rect2i>`                        | :ref:`region<class_AStarGrid2D_property_region>`                                         | ``Rect2i(0, 0, 0, 0)`` |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
+   | :ref:`Vector2i<class_Vector2i>`                    | :ref:`size<class_AStarGrid2D_property_size>`                                             | ``Vector2i(0, 0)``     |
+   +----------------------------------------------------+------------------------------------------------------------------------------------------+------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -355,6 +357,23 @@ The offset of the grid which will be applied to calculate the resulting point po
 
 ----
 
+.. _class_AStarGrid2D_property_region:
+
+.. rst-class:: classref-property
+
+:ref:`Rect2i<class_Rect2i>` **region** = ``Rect2i(0, 0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_region** **(** :ref:`Rect2i<class_Rect2i>` value **)**
+- :ref:`Rect2i<class_Rect2i>` **get_region** **(** **)**
+
+The region of grid cells available for pathfinding. If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_AStarGrid2D_property_size:
 
 .. rst-class:: classref-property
@@ -367,6 +386,8 @@ The offset of the grid which will be applied to calculate the resulting point po
 - :ref:`Vector2i<class_Vector2i>` **get_size** **(** **)**
 
 The size of the grid (number of cells of size :ref:`cell_size<class_AStarGrid2D_property_cell_size>` on each axis). If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
+
+\ **Note:** This property is deprecated, use :ref:`region<class_AStarGrid2D_property_region>` instead.
 
 .. rst-class:: classref-section-separator
 
@@ -411,7 +432,7 @@ Note that this function is hidden in the default ``AStarGrid2D`` class.
 
 void **clear** **(** **)**
 
-Clears the grid and sets the :ref:`size<class_AStarGrid2D_property_size>` to :ref:`Vector2i.ZERO<class_Vector2i_constant_ZERO>`.
+Clears the grid and sets the :ref:`region<class_AStarGrid2D_property_region>` to ``Rect2i(0, 0, 0, 0)``.
 
 .. rst-class:: classref-item-separator
 
@@ -549,7 +570,9 @@ Sets the ``weight_scale`` for the point with the given ``id``. The ``weight_scal
 
 void **update** **(** **)**
 
-Updates the internal state of the grid according to the parameters to prepare it to search the path. Needs to be called if parameters like :ref:`size<class_AStarGrid2D_property_size>`, :ref:`cell_size<class_AStarGrid2D_property_cell_size>` or :ref:`offset<class_AStarGrid2D_property_offset>` are changed. :ref:`is_dirty<class_AStarGrid2D_method_is_dirty>` will return ``true`` if this is the case and this needs to be called.
+Updates the internal state of the grid according to the parameters to prepare it to search the path. Needs to be called if parameters like :ref:`region<class_AStarGrid2D_property_region>`, :ref:`cell_size<class_AStarGrid2D_property_cell_size>` or :ref:`offset<class_AStarGrid2D_property_offset>` are changed. :ref:`is_dirty<class_AStarGrid2D_method_is_dirty>` will return ``true`` if this is the case and this needs to be called.
+
+\ **Note:** All point data (solidity and weight scale) will be cleared.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

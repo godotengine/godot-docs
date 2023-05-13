@@ -70,8 +70,6 @@ Arrays can be concatenated using the ``+`` operator:
 
 \ **Note:** Erasing elements while iterating over arrays is **not** supported and will result in unpredictable behavior.
 
-\ **Note:** When declaring an array with ``const``, the array itself can still be mutated by defining the values at individual indices or pushing/removing elements. Using ``const`` will only prevent assigning the constant with another value after it was initialized.
-
 .. rst-class:: classref-reftable-group
 
 Constructors
@@ -873,6 +871,18 @@ See also :ref:`filter<class_Array_method_filter>`, :ref:`reduce<class_Array_meth
 
 Returns the maximum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
 
+To find the maximum value using a custom comparator, you can use :ref:`reduce<class_Array_method_reduce>`. In this example every array element is checked and the first maximum value is returned:
+
+::
+
+    func _ready():
+        var arr = [Vector2(0, 1), Vector2(2, 0), Vector2(1, 1), Vector2(1, 0), Vector2(0, 2)]
+        # In this example we compare the lengths.
+        print(arr.reduce(func(max, val): return val if is_length_greater(val, max) else max))
+    
+    func is_length_greater(a, b):
+        return a.length() > b.length()
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -884,6 +894,8 @@ Returns the maximum value contained in the array if all elements are of comparab
 :ref:`Variant<class_Variant>` **min** **(** **)** |const|
 
 Returns the minimum value contained in the array if all elements are of comparable types. If the elements can't be compared, ``null`` is returned.
+
+See also :ref:`max<class_Array_method_max>` for an example of using a custom comparator.
 
 .. rst-class:: classref-item-separator
 

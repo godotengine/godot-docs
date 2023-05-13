@@ -123,6 +123,8 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_contact_local_shape<class_PhysicsDirectBodyState3D_method_get_contact_local_shape>` **(** :ref:`int<class_int>` contact_idx **)** |const|                                          |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                                     | :ref:`get_contact_local_velocity_at_position<class_PhysicsDirectBodyState3D_method_get_contact_local_velocity_at_position>` **(** :ref:`int<class_int>` contact_idx **)** |const|            |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` | :ref:`get_space_state<class_PhysicsDirectBodyState3D_method_get_space_state>` **(** **)**                                                                                                    |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`get_velocity_at_local_position<class_PhysicsDirectBodyState3D_method_get_velocity_at_local_position>` **(** :ref:`Vector3<class_Vector3>` local_position **)** |const|                 |
@@ -578,7 +580,7 @@ Returns the collider object.
 
 :ref:`Vector3<class_Vector3>` **get_contact_collider_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
-Returns the contact position in the collider.
+Returns the position of the contact point on the collider in the global coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -652,7 +654,7 @@ Returns the local normal at the contact point.
 
 :ref:`Vector3<class_Vector3>` **get_contact_local_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
-Returns the local position of the contact point.
+Returns the position of the contact point on the body in the global coordinate system.
 
 .. rst-class:: classref-item-separator
 
@@ -665,6 +667,18 @@ Returns the local position of the contact point.
 :ref:`int<class_int>` **get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** |const|
 
 Returns the local shape index of the collision.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState3D_method_get_contact_local_velocity_at_position:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **get_contact_local_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** |const|
+
+Returns the linear velocity vector at the body's contact point.
 
 .. rst-class:: classref-item-separator
 
