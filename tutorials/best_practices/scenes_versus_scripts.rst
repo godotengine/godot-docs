@@ -11,8 +11,8 @@ declarative code.
 
 Each system's capabilities are different as a result.
 Scenes can define how an extended class initializes, but not what its
-behavior actually is. Scenes are often used in conjunction with a script so
-that the scene acts as an extension of the scripts declarative code.
+behavior actually is. Scenes are often used in conjunction with a script, 
+the scene declaring a composition of nodes, and the script adding behaviour with imperative code.
 
 Anonymous types
 ---------------
