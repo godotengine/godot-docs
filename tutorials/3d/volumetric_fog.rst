@@ -244,9 +244,8 @@ which has a performance cost.
 .. note::
 
     NoiseTexture3D's **Color Ramp** affects FogMaterial density textures, but
-    not in the way you would typically expect. Since the texture's red channel
-    is sampled, using a color ramp will affect the resulting density if the red
-    channel intensity is modified in any way.
+    since only the texture's red channel is sampled, only the color ramp's red
+    channel will affect the resulting density.
 
     However, using a color ramp will *not* tint the fog volume according to the
     texture. You would need to use a custom shader that reads a Texture3D to
