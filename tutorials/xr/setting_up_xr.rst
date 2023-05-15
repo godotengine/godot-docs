@@ -107,7 +107,7 @@ Next we need to add a script to our root node. Add the following code into this 
             xrinterface = XRServer.FindInterface("OpenXR");
             if(xrinterface != null && xrinterface.IsInitialized())
             {
-                GD.Print("OpenXR interface is initialized");
+                GD.Print("OpenXR initialized successfully");
 
                 // Turn off v-sync!
                 DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Disabled);
