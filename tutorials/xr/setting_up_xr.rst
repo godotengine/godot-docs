@@ -92,7 +92,7 @@ Next we need to add a script to our root node. Add the following code into this 
             # Change our main viewport to output to the HMD
             get_viewport().use_xr = true
         else:
-            print("OpenXR not initialised, please check if your headset is connected")
+            print("OpenXR not initialized, please check if your headset is connected")
 
   .. code-tab:: csharp
     using Godot;
