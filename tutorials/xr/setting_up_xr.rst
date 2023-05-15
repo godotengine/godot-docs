@@ -95,8 +95,8 @@ Next we need to add a script to our root node. Add the following code into this 
             print("OpenXR not initialized, please check if your headset is connected")
 
   .. code-tab:: csharp
+
     using Godot;
-    using System;
 
     public partial class MyNode3D : Node3D
     {
@@ -121,8 +121,6 @@ Next we need to add a script to our root node. Add the following code into this 
             }
         }
     }
-
-        
 
 This code fragment assumes we are using OpenXR, if you wish to use any of the other interfaces you can change the ``find_interface`` call.
 
