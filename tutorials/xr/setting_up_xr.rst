@@ -79,11 +79,11 @@ Next we need to add a script to our root node. Add the following code into this 
 
     extends Node3D
 
-    var interface: XRInterface
+    var xr_interface: XRInterface
 
     func _ready():
-        interface = XRServer.find_interface("OpenXR")
-        if interface and interface.is_initialized():
+        xr_interface = XRServer.find_interface("OpenXR")
+        if xr_interface and xr_interface.is_initialized():
             print("OpenXR initialised successfully")
 
             # Turn off v-sync!
