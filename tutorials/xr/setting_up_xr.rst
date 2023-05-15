@@ -74,7 +74,8 @@ Right now all these nodes are on the floor, the will be positioned correctly in 
 
 Next we need to add a script to our root node. Add the following code into this script:
 
-::
+.. tabs::
+  .. code-tab:: gdscript GDScript
 
     extends Node3D
 
@@ -92,6 +93,36 @@ Next we need to add a script to our root node. Add the following code into this 
             get_viewport().use_xr = true
         else:
             print("OpenXR not initialised, please check if your headset is connected")
+
+  .. code-tab:: csharp
+    using Godot;
+    using System;
+
+    public partial class XRinterface : Node3D
+    {
+        public XRInterface xrinterface;
+
+        public override void _Ready()
+        {
+            xrinterface = XRServer.FindInterface("OpenXR");
+            if(xrinterface != null && xrinterface.IsInitialized())
+            {
+                GD.Print("OpenXR interface is initialized");
+
+                // Turn off v-sync!
+                DisplayServer.WindowSetVsyncMode(DisplayServer.VSyncMode.Disabled);
+
+                // Change our main viewport to output to the HMD
+                GetViewport().UseXR = true;
+            }
+            else
+            {
+                GD.Print("OpenXR not initialised, please check if your headset is connected");
+            }
+        }
+    }
+
+        
 
 This code fragment assumes we are using OpenXR, if you wish to use any of the other interfaces you can change the ``find_interface`` call.
 
