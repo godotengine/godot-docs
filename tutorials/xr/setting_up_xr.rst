@@ -104,8 +104,8 @@ Next we need to add a script to our root node. Add the following code into this 
 
         public override void _Ready()
         {
-            xrinterface = XRServer.FindInterface("OpenXR");
-            if(xrinterface != null && xrinterface.IsInitialized())
+            _xrInterface = XRServer.FindInterface("OpenXR");
+            if(_xrInterface != null && _xrInterface.IsInitialized())
             {
                 GD.Print("OpenXR initialized successfully");
 
