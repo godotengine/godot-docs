@@ -130,9 +130,27 @@ select every scene or resource you want to export.
     ``.git`` from being included in the exported PCK file.
 
 Below the list of resources are two filters that can be setup. The first allows
-non resource files such as ``.txt``,``.json`` and ``.csv`` to be exported with
+non resource files such as ``.txt``, ``.json`` and ``.csv`` to be exported with
 the project. The second filter can be used to exclude every file of a certain
 type without manually deselecting every one. For example, ``.png`` files.
+
+Configuration files
+-------------------
+
+The export configuration is stored in two files that can both be found in the project
+directory:
+
+- ``export_presets.cfg``: This file contains the vast majority of the export
+  configuration and can be safely committed to version control. There is nothing
+  in here that you would normally have to keep secret.
+- ``.godot/export_credentials.cfg``: This file contains export options that are
+  considered confidential, like passwords and encryption keys. It should generally
+  **not** be committed to version control or shared with others unless you know
+  exactly what you are doing.
+
+Since the credentials file is usually kept out of version control systems, some
+export options will be missing if you clone the project to a new machine. The easiest
+way to deal with this is to copy the file manually from the old location to the new one.
 
 Exporting from the command line
 -------------------------------

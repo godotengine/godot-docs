@@ -17,3 +17,18 @@ Godot offers a more elegant approach for PC distribution when using the export
 system. When exporting for Linux, the exporter takes all the project files and
 creates a ``data.pck`` file. This file is bundled with a specially optimized
 binary that is smaller, faster and does not contain the editor and debugger.
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: Linux export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - GODOT_SCRIPT_ENCRYPTION_KEY
