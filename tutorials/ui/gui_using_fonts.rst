@@ -147,7 +147,7 @@ property that accepts a Font resource.
    by changing the **Rendering > Textures > Canvas Textures > Default Texture Filter**
    project setting to **Nearest**. The font size must also be an integer multiple of the
    design size (which varies on a per-font basis), and the Control node using the font
-   must be scaled by an integer multiple as well. Otherwise, the font may appear to look blurry.
+   must be scaled by an integer multiple as well. Otherwise, the font may look blurry.
 
    The texture filter mode can also be set on individual nodes that inherit from CanvasItem
    by setting :ref:`CanvasItem.texture_filter <class_CanvasItem_property_texture_filter>`.
