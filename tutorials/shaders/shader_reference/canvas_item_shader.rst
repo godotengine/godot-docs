@@ -258,7 +258,7 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 | inout vec4 **LIGHT**             | Value from the Light texture and output color. Can be modified. If not used, |
 |                                  | the light function is ignored.                                               |
 +----------------------------------+------------------------------------------------------------------------------+
-| in vec4 **SPECULAR_SHININESS**   | Specular Shininess, as set in the object's texture.                          |
+| in vec4 **SPECULAR_SHININESS**   | Specular shininess, as set in the object's texture.                          |
 +----------------------------------+------------------------------------------------------------------------------+
 | out vec4 **SHADOW_MODULATE**     | Multiply shadows cast at this point by this color.                           |
 +----------------------------------+------------------------------------------------------------------------------+
