@@ -191,8 +191,7 @@ Other languages
 ~~~~~~~~~~~~~~~
 
 Third parties provide support for several other languages, including `Rust
-<https://github.com/godot-rust/godot-rust>`_ and `Javascript
-<https://github.com/GodotExplorer/ECMAScript>`_.
+<https://github.com/godot-rust/gdext>`_.
 
 C++
 ~~~
