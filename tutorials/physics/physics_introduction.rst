@@ -291,7 +291,7 @@ For example, here is the code for an "Asteroids" style spaceship:
             if (Input.IsActionPressed("ui_up"))
                 state.ApplyForce(_thrust.Rotated(Rotation));
             else
-                state.AppliedForce = new Vector2();
+                state.ApplyForce(new Vector2());
 
             var rotationDir = 0;
             if (Input.IsActionPressed("ui_right"))
