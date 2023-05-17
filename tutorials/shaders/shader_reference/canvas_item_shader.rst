@@ -166,9 +166,9 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 +---------------------------------------------+---------------------------------------------------------------+
 | in bool **AT_LIGHT_PASS**                   | Always ``false``.                                             |
 +---------------------------------------------+---------------------------------------------------------------+
-| sampler2D **SPECULAR_SHININESS_TEXTURE**    |                                                               |
+| sampler2D **SPECULAR_SHININESS_TEXTURE**    | Specular shininess texture of this object.                    |
 +---------------------------------------------+---------------------------------------------------------------+
-| in vec4 **SPECULAR_SHININESS**              |                                                               |
+| in vec4 **SPECULAR_SHININESS**              | Specular shininess color, as sampled from the texture.        |
 +---------------------------------------------+---------------------------------------------------------------+
 | in vec2 **UV**                              | UV from vertex function.                                      |
 +---------------------------------------------+---------------------------------------------------------------+
@@ -191,6 +191,7 @@ it to the ``NORMALMAP`` property. Godot will handle converting it for use in 2D 
 | inout vec2 **SHADOW_VERTEX**                | Same as ``VERTEX`` but can be written to alter shadows.       |
 +---------------------------------------------+---------------------------------------------------------------+
 | inout vec3 **LIGHT_VERTEX**                 | Same as ``VERTEX`` but can be written to alter lighting.      |
+|                                             | Z component represents height.                                |
 +---------------------------------------------+---------------------------------------------------------------+
 | inout vec4 **COLOR**                        | Color from vertex function and output fragment color. If      |
 |                                             | unused, will be set to **TEXTURE** color.                     |
@@ -243,23 +244,23 @@ Below is an example of a light shader that takes a CanvasItem's normal map into 
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec4 **LIGHT_COLOR**          | Color of Light.                                                              |
 +----------------------------------+------------------------------------------------------------------------------+
-| in vec3 **LIGHT_ENERGY**         | Energy multiplier of Light.                                                  |
+| in float **LIGHT_ENERGY**        | Energy multiplier of Light.                                                  |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec3 **LIGHT_POSITION**       | Position of Light in screen space. If using a ``DirectionalLight2D``         |
 |                                  | this is always ``vec3(0,0,0)``.                                              |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec3 **LIGHT_DIRECTION**      | Direction of Light in screen space.                                          |
 +----------------------------------+------------------------------------------------------------------------------+
-| in vec3 **LIGHT_IS_DIRECTIONAL** | ``true`` if this pass is a ``DirectionalLight2D``.                           |
+| in bool **LIGHT_IS_DIRECTIONAL** | ``true`` if this pass is a ``DirectionalLight2D``.                           |
 +----------------------------------+------------------------------------------------------------------------------+
 | in vec3 **LIGHT_VERTEX**         | Pixel position, in screen space as modified in the fragment function.        |
 +----------------------------------+------------------------------------------------------------------------------+
 | inout vec4 **LIGHT**             | Value from the Light texture and output color. Can be modified. If not used, |
 |                                  | the light function is ignored.                                               |
 +----------------------------------+------------------------------------------------------------------------------+
-| in vec4 **SPECULAR_SHININESS**   |                                                                              |
+| in vec4 **SPECULAR_SHININESS**   | Specular shininess, as set in the object's texture.                          |
 +----------------------------------+------------------------------------------------------------------------------+
-| out vec4 **SHADOW_MODULATE**     |                                                                              |
+| out vec4 **SHADOW_MODULATE**     | Multiply shadows cast at this point by this color.                           |
 +----------------------------------+------------------------------------------------------------------------------+
 
 SDF functions
