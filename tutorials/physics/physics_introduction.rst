@@ -298,7 +298,7 @@ For example, here is the code for an "Asteroids" style spaceship:
                 rotationDir += 1;
             if (Input.IsActionPressed("ui_left"))
                 rotationDir -= 1;
-            state.AppliedTorque = rotationDir * _torque;
+            state.ApplyTorque(rotationDir * _torque);
         }
     }
 
