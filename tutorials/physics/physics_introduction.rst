@@ -289,7 +289,7 @@ For example, here is the code for an "Asteroids" style spaceship:
         public override void _IntegrateForces(PhysicsDirectBodyState2D state)
         {
             if (Input.IsActionPressed("ui_up"))
-                state.AppliedForce = _thrust.Rotated(Rotation);
+                state.ApplyForce(_thrust.Rotated(Rotation));
             else
                 state.AppliedForce = new Vector2();
 
