@@ -2054,7 +2054,7 @@ Allows an application to record audio. See `RECORD_AUDIO <https://developer.andr
 
 :ref:`bool<class_bool>` **permissions/reorder_tasks**
 
-Allows an application to change the Z-order of tasks. See `REORDER_TASKS < https://developer.android.com/reference/android/Manifest.permission#REORDER_TASKS>`__.
+Allows an application to change the Z-order of tasks. See `REORDER_TASKS <https://developer.android.com/reference/android/Manifest.permission#REORDER_TASKS>`__.
 
 .. rst-class:: classref-item-separator
 
