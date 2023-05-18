@@ -3,55 +3,46 @@
 Background loading
 ==================
 
+Commonly, games need to load resources asynchronously.
 When switching the main scene of your game (e.g. going to a new
 level), you might want to show a loading screen with some indication
-that progress is being made. The main load method
-(``ResourceLoader::load`` or just ``load`` from GDScript) blocks your
-thread, making your game appear frozen and unresponsive while the resource is being loaded. This
-document discusses the alternative of using ``ResourceLoader``'s other methods class for smoother
-load screens.
+that progress is being made, or you may want to load additional resources
+during gameplay.
 
-ResourceLoader
---------------
-Usage
------
+The standard load method
+(:ref:`ResourceLoader.load <class_ResourceLoader_method_load>` or GDScript's simpler
+:ref:`load <class_@GDScript_method_load>`) blocks your
+thread, making your game appear unresponsive while the resource is being loaded.
 
-Usage is generally as follows
+One way around this is using ``ResourceLoader`` to load resources asynchronously
+in background threads.
 
-Start a load request
-~~~~~~~~~~~~~~~~~~~~
+Using ResourceLoader
+--------------------
 
-.. code-block:: gdscript
+Generally, you queue requests to load resources for a path using
+:ref:`ResourceLoader.load_threaded_request <class_ResourceLoader_method_load_threaded_request>`,
+which will then be loaded in threads in the background.
 
-    func ResourceLoader.load_threaded_request(path: String, type_hint: String = "", use_sub_threads: bool = false, cache_mode: int = 1) -> int
+You can check the status with
+:ref:`ResourceLoader.load_threaded_get_status <class_ResourceLoader_method_load_threaded_get_status>`.
+Progress can be obtained by passing an array variable via progress which will return
+a one element array containing the percentage.
 
-This method will start to load the resource using thread(s).
+Finally, you retrieved loaded resources by calling
+:ref:`ResourceLoader.load_threaded_get <class_ResourceLoader_method_load_threaded_get>`.
 
-Checking Status
-~~~~~~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    func ResourceLoader.load_threaded_get_status(path: String, progress: Array = []) -> int
-
-Returns ``ResourceLoader.THREAD_LOAD_FAILED``, ``ResourceLoader.THREAD_LOAD_IN_PROGRESS``, 
-``ResourceLoader.THREAD_LOAD_INVALID_RESOURCE``, or ``ResourceLoader.THREAD_LOAD_LOADED``.
-The progress can be obtained by passing an array variable via progress which will return a one element array containing the percentage.
-
-Getting the resource (forces completion)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code-block:: gdscript
-
-    func ResourceLoader.load_threaded_get(path: String) -> Resource
-
-To obtain the resource call this method. This will wait (block) until it can return the resource.
+Once you call ``load_threaded_get()``, either the resource finished loading in
+the background and will be returned instantly or the load will block at this point like
+``load()`` would. If you want to guarantee this does not block,
+you either need to ensure there is enough time between requesting the load and
+retrieving the resource or you need to check the status manually.
 
 Example
 -------
 
 This example demonstrates how to load a scene in the background.
-In this example we will have a button spawn a enemy when pressed.
+We will have a button spawn a enemy when pressed.
 The enemy will be ``Enemy.tscn`` which we will load on ``_ready`` and instantiate when pressed.
 The path will be ``"Enemy.tscn"`` which is located at ``res://Enemy.tscn``.
 
@@ -59,30 +50,20 @@ First, we will start a request to load the resource and connect the button:
 
 ::
 
-    # Define the path of the enemy
     const ENEMY_SCENE_PATH : String = "Enemy.tscn"
-    # It isn't necessary to use constants but it can make it easier if the resource is moved around.
 
-        func _ready():
-            # Start the request for Enemy.tscn , this will not block
-            ResourceLoader.load_threaded_request(ENEMY_SCENE_PATH)
-            # Connect the button to our method on_button_pressed
-            self.pressed.connect(on_button_pressed)
+    func _ready():
+        ResourceLoader.load_threaded_request(ENEMY_SCENE_PATH)
+        self.pressed.connect(_on_button_pressed)
 
-Now on_button_pressed will be called when the button is pressed.
+Now ``_on_button_pressed`` will be called when the button is pressed.
 This method will be used to spawn an enemy.
 
 ::
 
-    func on_button_pressed(): # Button was pressed
+    func _on_button_pressed(): # Button was pressed
         # Obtain the resource now that we need it
         var enemy_scene = ResourceLoader.load_threaded_get(ENEMY_SCENE_PATH)
-        # Instantiate the enemy scene
+        # Instantiate the enemy scene and add it to the current scene
         var enemy = enemy_scene.instantiate()
-        # Add it to the current scene
         add_child(enemy)
-        
-
-**Note**: this code, in its current form, is not tested in real world
-scenarios. If you run into any issues, ask for help in one of
-`Godot's community channels <https://godotengine.org/community>`__.
