@@ -145,8 +145,8 @@ these names from the list (array indices start at ``0``). ``randi() % n``
 selects a random integer between ``0`` and ``n-1``.
 
 The last piece is to make the mobs delete themselves when they leave the screen.
-Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node and
-add this code:
+Connect the ``screen_exited()`` signal of the ``VisibleOnScreenNotifier2D`` node
+to the ``Mob`` and add this code:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
