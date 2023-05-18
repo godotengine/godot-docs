@@ -1579,8 +1579,8 @@ Example::
         set(value):
             milliseconds = value * 1000
 
-Using the variable name inside its own setter or getter will directly access the underlying member, so it
-won't generate infinite recursion and saves you from explicitly declaring another variable::
+Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member, 
+so it won't generate infinite recursion and saves you from explicitly declaring another variable::
 
     signal changed(new_value)
     var warns_when_changed = "some value":
