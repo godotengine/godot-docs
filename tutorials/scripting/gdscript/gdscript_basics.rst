@@ -1879,7 +1879,7 @@ Awaiting for signals or coroutines
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``await`` keyword can be used to create `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
-which waits until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
+which wait until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
 call to a function that is also a coroutine will immediately return the control to the caller. When the signal is
 emitted (or the called coroutine finishes), it will resume execution from the point on where it stopped.
 
