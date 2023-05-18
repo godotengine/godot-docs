@@ -9,6 +9,8 @@ Launch Godot and create a new project.
 
 .. image:: img/new-project-button.webp
 
+When creating the new project, you only need to choose a valid *Project Path*. You can leave the other default settings alone.
+
 .. tabs::
  .. tab:: GDScript
 
