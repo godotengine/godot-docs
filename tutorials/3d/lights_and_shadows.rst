@@ -141,7 +141,7 @@ object. This is called *peter-panning*:
 
 In general, increasing **Shadow Normal Bias** is preferred over increasing
 **Shadow Bias**. Increasing **Shadow Normal Bias** does not cause as much
-peter-panning as increasing **Shadow Normal Bias**, but it can still resolve
+peter-panning as increasing **Shadow Bias**, but it can still resolve
 most shadow acne issues efficiently. The downside of increasing **Shadow Normal
 Bias** is that it can make shadows appear thinner for certain objects.
 
