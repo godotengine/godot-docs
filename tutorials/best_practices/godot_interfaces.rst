@@ -472,7 +472,7 @@ accesses:
     @onready var child = $Child
 
     func _ready():
-        child.fn = print_me()
+        child.fn = print_me
         child.my_method()
 
     func print_me():
