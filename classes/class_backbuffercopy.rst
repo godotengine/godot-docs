@@ -17,9 +17,9 @@ Copies a region of the screen (or the whole screen) to a buffer so it can be acc
 Description
 -----------
 
-Node for back-buffering the currently-displayed screen. The region defined in the BackBufferCopy node is buffered with the content of the screen it covers, or the entire screen according to the copy mode set. Use the ``texture(SCREEN_TEXTURE, ...)`` function in your shader scripts to access the buffer.
+Node for back-buffering the currently-displayed screen. The region defined in the ``BackBufferCopy`` node is buffered with the content of the screen it covers, or the entire screen according to the copy mode set. Use the ``texture(SCREEN_TEXTURE, ...)`` function in your shader scripts to access the buffer.
 
-\ **Note:** Since this node inherits from :ref:`Node2D<class_Node2D>` (and not :ref:`Control<class_Control>`), anchors and margins won't apply to child :ref:`Control<class_Control>`-derived nodes. This can be problematic when resizing the window. To avoid this, add :ref:`Control<class_Control>`-derived nodes as *siblings* to the BackBufferCopy node instead of adding them as children.
+\ **Note:** Since this node inherits from :ref:`Node2D<class_Node2D>` (and not :ref:`Control<class_Control>`), anchors and margins won't apply to child :ref:`Control<class_Control>`-derived nodes. This can be problematic when resizing the window. To avoid this, add :ref:`Control<class_Control>`-derived nodes as *siblings* to the ``BackBufferCopy`` node instead of adding them as children.
 
 Properties
 ----------
@@ -43,11 +43,11 @@ Enumerations
 
 enum **CopyMode**:
 
-- **COPY_MODE_DISABLED** = **0** --- Disables the buffering mode. This means the BackBufferCopy node will directly use the portion of screen it covers.
+- **COPY_MODE_DISABLED** = **0** --- Disables the buffering mode. This means the ``BackBufferCopy`` node will directly use the portion of screen it covers.
 
-- **COPY_MODE_RECT** = **1** --- BackBufferCopy buffers a rectangular region.
+- **COPY_MODE_RECT** = **1** --- ``BackBufferCopy`` buffers a rectangular region.
 
-- **COPY_MODE_VIEWPORT** = **2** --- BackBufferCopy buffers the entire screen.
+- **COPY_MODE_VIEWPORT** = **2** --- ``BackBufferCopy`` buffers the entire screen.
 
 Property Descriptions
 ---------------------
@@ -80,7 +80,7 @@ Buffer mode. See :ref:`CopyMode<enum_BackBufferCopy_CopyMode>` constants.
 | *Getter*  | get_rect()                        |
 +-----------+-----------------------------------+
 
-The area covered by the BackBufferCopy. Only used if :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` is :ref:`COPY_MODE_RECT<class_BackBufferCopy_constant_COPY_MODE_RECT>`.
+The area covered by the ``BackBufferCopy``. Only used if :ref:`copy_mode<class_BackBufferCopy_property_copy_mode>` is :ref:`COPY_MODE_RECT<class_BackBufferCopy_constant_COPY_MODE_RECT>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

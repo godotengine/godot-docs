@@ -101,6 +101,8 @@ The light's attenuation (drop-off) curve. A number of presets are available in t
 
 The light's radius. Note that the effectively lit area may appear to be smaller depending on the :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>` in use. No matter the :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>` in use, the light will never reach anything outside this radius.
 
+\ **Note:** :ref:`omni_range<class_OmniLight_property_omni_range>` is not affected by :ref:`Spatial.scale<class_Spatial_property_scale>` (the light's scale or its parent's scale).
+
 ----
 
 .. _class_OmniLight_property_omni_shadow_detail:

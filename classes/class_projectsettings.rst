@@ -6720,11 +6720,15 @@ If set to a value greater than ``0.0``, contrast-adaptive sharpening will be app
 | *Default* | ``false`` |
 +-----------+-----------+
 
-If ``true``, uses a fast post-processing filter to make banding significantly less visible. In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
+If ``true``, uses a fast post-processing filter to make banding significantly less visible in 3D. 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`. In this case, :ref:`rendering/quality/intended_usage/framebuffer_allocation<class_ProjectSettings_property_rendering/quality/intended_usage/framebuffer_allocation>` must also be set to **3D**.
+
+In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
 
 \ **Note:** Only available on the GLES3 backend. :ref:`rendering/quality/depth/hdr<class_ProjectSettings_property_rendering/quality/depth/hdr>` must also be ``true`` for debanding to be effective.
 
 \ **Note:** There are known issues with debanding breaking rendering on mobile platforms. Due to this, it is recommended to leave this option disabled when targeting mobile platforms.
+
+\ **Note:** This property is only read when the project starts. To set debanding at run-time, set :ref:`Viewport.debanding<class_Viewport_property_debanding>` on the root :ref:`Viewport<class_Viewport>` instead.
 
 ----
 

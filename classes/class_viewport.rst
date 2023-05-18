@@ -21,7 +21,7 @@ A Viewport creates a different view into the screen, or a sub-view inside anothe
 
 Optionally, a viewport can have its own 2D or 3D world, so they don't share what they draw with other viewports.
 
-If a viewport is a child of a :ref:`ViewportContainer<class_ViewportContainer>`, it will automatically take up its size, otherwise it must be set manually.
+If a viewport is a child of a :ref:`ViewportContainer<class_ViewportContainer>`, the viewport will automatically take up the container's size, otherwise it must be set manually.
 
 Viewports can also choose to be audio listeners, so they generate positional audio depending on a 2D or 3D camera child of it.
 
@@ -465,7 +465,9 @@ The canvas transform of the viewport, useful for changing the on-screen position
 | *Getter*  | get_use_debanding()      |
 +-----------+--------------------------+
 
-If ``true``, uses a fast post-processing filter to make banding significantly less visible. In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
+If ``true``, uses a fast post-processing filter to make banding significantly less visible in 3D. 2D rendering is *not* affected by debanding unless the :ref:`Environment.background_mode<class_Environment_property_background_mode>` is :ref:`Environment.BG_CANVAS<class_Environment_constant_BG_CANVAS>`. In this case, :ref:`usage<class_Viewport_property_usage>` must also be set to :ref:`USAGE_3D<class_Viewport_constant_USAGE_3D>`. See also :ref:`ProjectSettings.rendering/quality/filters/use_debanding<class_ProjectSettings_property_rendering/quality/filters/use_debanding>`.
+
+In some cases, debanding may introduce a slightly noticeable dithering pattern. It's recommended to enable debanding only when actually needed since the dithering pattern will make lossless-compressed screenshots larger.
 
 \ **Note:** Only available on the GLES3 backend. :ref:`hdr<class_Viewport_property_hdr>` must also be ``true`` for debanding to be effective.
 
@@ -499,7 +501,7 @@ The overlay mode for test rendered geometry in debug purposes.
 | *Getter*  | is_3d_disabled()      |
 +-----------+-----------------------+
 
-If ``true``, the viewport will disable 3D rendering. For actual disabling use ``usage``.
+If ``true``, the viewport will disable 3D rendering. To actually disable allocation of 3D buffers, set :ref:`usage<class_Viewport_property_usage>` instead.
 
 ----
 
@@ -887,7 +889,7 @@ If ``true``, the viewport should render its background as transparent.
 | *Getter*  | get_usage()      |
 +-----------+------------------+
 
-The rendering mode of viewport.
+The viewport's rendering mode. This controls which buffers are allocated for the viewport (2D only, or 2D + 3D). 2D-only options can reduce memory usage and improve performance slightly, especially on low-end devices.
 
 \ **Note:** If set to :ref:`USAGE_2D<class_Viewport_constant_USAGE_2D>` or :ref:`USAGE_2D_NO_SAMPLING<class_Viewport_constant_USAGE_2D_NO_SAMPLING>`, :ref:`hdr<class_Viewport_property_hdr>` will have no effect when enabled since HDR is not supported for 2D.
 

@@ -264,6 +264,8 @@ enum **GroupCallFlags**:
 
 - **GROUP_CALL_UNIQUE** = **4** --- Call a group only once even if the call is executed many times.
 
+\ **Note:** Arguments are not taken into account when deciding whether the call is unique or not. Therefore when the same method is called with different arguments, only the first call will be performed.
+
 ----
 
 .. _enum_SceneTree_StretchMode:

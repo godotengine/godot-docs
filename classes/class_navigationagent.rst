@@ -21,6 +21,8 @@ Description
 
 \ **Note:** After :ref:`set_target_location<class_NavigationAgent_method_set_target_location>` is used it is required to use the :ref:`get_next_location<class_NavigationAgent_method_get_next_location>` function once every physics frame to update the internal path logic of the NavigationAgent. The returned vector position from this function should be used as the next movement position for the agent's parent Node.
 
+\ **Note:** By default, the expensive calculations for avoidance are done in a thread. In HTML5 exports without thread support, they will be done on the main thread, which can lead to performance issues.
+
 Properties
 ----------
 

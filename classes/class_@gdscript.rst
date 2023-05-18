@@ -646,7 +646,7 @@ Returns a reference to the specified function ``funcname`` in the ``instance`` n
 
 - :ref:`Array<class_Array>` **get_stack** **(** **)**
 
-Returns an array of dictionaries representing the current call stack.
+Returns an array of dictionaries representing the current call stack. See also :ref:`print_stack<class_@GDScript_method_print_stack>`.
 
 ::
 
@@ -664,6 +664,8 @@ would print
 ::
 
     [{function:bar, line:12, source:res://script.gd}, {function:foo, line:9, source:res://script.gd}, {function:_ready, line:6, source:res://script.gd}]
+
+\ **Note:** :ref:`get_stack<class_@GDScript_method_get_stack>` only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`get_stack<class_@GDScript_method_get_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
 
 ----
 
@@ -1084,13 +1086,15 @@ Output in the console would look something like this:
 
 - void **print_stack** **(** **)**
 
-Prints a stack track at code location, only works when running with debugger turned on.
+Prints a stack trace at the current code location. See also :ref:`get_stack<class_@GDScript_method_get_stack>`.
 
 Output in the console would look something like this:
 
 ::
 
     Frame 0 - res://test.gd:16 in function '_process'
+
+\ **Note:** :ref:`print_stack<class_@GDScript_method_print_stack>` only works if the running instance is connected to a debugging server (i.e. an editor instance). :ref:`print_stack<class_@GDScript_method_print_stack>` will not work in projects exported in release mode, or in projects exported in debug mode if not connected to a debugging server.
 
 ----
 

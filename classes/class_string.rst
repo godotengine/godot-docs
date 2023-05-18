@@ -867,7 +867,7 @@ Returns a copy of the string with characters removed from the left. The ``chars`
 
 - :ref:`bool<class_bool>` **match** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple case-sensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
+Does a simple expression match (also called "glob" or "globbing"), where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except a period (``.``). An empty string or empty expression always evaluates to ``false``.
 
 ----
 
@@ -875,7 +875,7 @@ Does a simple case-sensitive expression match, where ``"*"`` matches zero or mor
 
 - :ref:`bool<class_bool>` **matchn** **(** :ref:`String<class_String>` expr **)**
 
-Does a simple case-insensitive expression match, where ``"*"`` matches zero or more arbitrary characters and ``"?"`` matches any single character except a period (``"."``). An empty string or empty expression always evaluates to ``false``.
+Does a simple **case-insensitive** expression match, where ``*`` matches zero or more arbitrary characters and ``?`` matches any single character except a period (``.``). An empty string or empty expression always evaluates to ``false``.
 
 ----
 
@@ -953,7 +953,7 @@ Formats a number to have an exact number of ``digits`` before the decimal point.
 
 - :ref:`String<class_String>` **percent_decode** **(** **)**
 
-Decode a percent-encoded string. See :ref:`percent_encode<class_String_method_percent_encode>`.
+Decode a percent-encoded string (also called URI-encoded string). See also :ref:`percent_encode<class_String_method_percent_encode>`.
 
 ----
 
@@ -961,7 +961,7 @@ Decode a percent-encoded string. See :ref:`percent_encode<class_String_method_pe
 
 - :ref:`String<class_String>` **percent_encode** **(** **)**
 
-Percent-encodes a string. Encodes parameters in a URL when sending a HTTP GET request (and bodies of form-urlencoded POST requests).
+Percent-encodes a string (also called URI-encoded string). Encodes parameters in a URL when sending a HTTP GET request (and bodies of form-urlencoded POST requests). See also :ref:`percent_decode<class_String_method_percent_decode>`.
 
 ----
 
