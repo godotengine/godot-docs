@@ -145,14 +145,14 @@ toggle avoidance on agents, create or delete avoidance callbacks or switch avoid
 
     var agent: RID = get_rid()
     # Enable avoidance
-    NavigationServer2D::get_singleton()->agent_set_avoidance_enabled(agent, true)
+    NavigationServer2D.agent_set_avoidance_enabled(agent, true)
     # Create avoidance callback
-    NavigationServer2D::get_singleton()->agent_set_avoidance_callback(agent, self._avoidance_done)
+    NavigationServer2D.agent_set_avoidance_callback(agent, Callable(self, "_avoidance_done"))
 
     # Disable avoidance
-    NavigationServer2D::get_singleton()->agent_set_avoidance_enabled(agent, false)
+    NavigationServer2D.agent_set_avoidance_enabled(agent, false)
     # Delete avoidance callback
-    NavigationServer2D::get_singleton()->agent_set_avoidance_callback(agent, Callable())
+    NavigationServer2D.agent_set_avoidance_callback(agent, Callable())
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -161,18 +161,18 @@ toggle avoidance on agents, create or delete avoidance callbacks or switch avoid
 
     var agent: RID = get_rid()
     # Enable avoidance
-    NavigationServer3D::get_singleton()->agent_set_avoidance_enabled(agent, true)
+    NavigationServer3D.agent_set_avoidance_enabled(agent, true)
     # Create avoidance callback
-    NavigationServer3D::get_singleton()->agent_set_avoidance_callback(agent, self._avoidance_done)
+    NavigationServer3D.agent_set_avoidance_callback(agent, Callable(self, "_avoidance_done"))
     # Switch to 3D avoidance
-    NavigationServer3D::get_singleton()->agent_set_use_3d_avoidance(agent, true)
+    NavigationServer3D.agent_set_use_3d_avoidance(agent, true)
 
     # Disable avoidance
-    NavigationServer3D::get_singleton()->agent_set_avoidance_enabled(agent, false)
+    NavigationServer3D.agent_set_avoidance_enabled(agent, false)
     # Delete avoidance callback
-    NavigationServer3D::get_singleton()->agent_set_avoidance_callback(agent, Callable())
+    NavigationServer3D.agent_set_avoidance_callback(agent, Callable())
     # Switch to 2D avoidance
-    NavigationServer3D::get_singleton()->agent_set_use_3d_avoidance(agent, false)
+    NavigationServer3D.agent_set_use_3d_avoidance(agent, false)
 
 NavigationAgent Script Templates
 --------------------------------
