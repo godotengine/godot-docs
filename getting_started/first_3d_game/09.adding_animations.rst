@@ -259,11 +259,11 @@ node structure, you can copy them to different scenes.
 For example, both the ``Mob`` and the ``Player`` scenes have a ``Pivot`` and a
 ``Character`` node, so we can reuse animations between them.
 
-Open the *Player* scene, select the AnimationPlayer node and open the "float" 
-animation. Next, click on **Animation > Copy**. Then open ``Mob.tscn``, 
-create an AnimationPlayer child node and select it. Click **Animation > Paste** 
-and make sure that the button with an "A+" icon (Autoplay on Load) and the 
-looping arrows (Animation looping) are also turned on in the animation editor 
+Open the *Player* scene, select the AnimationPlayer node and open the "float"
+animation. Next, click on **Animation > Copy**. Then open ``mob.tscn``,
+create an AnimationPlayer child node and select it. Click **Animation > Paste**
+and make sure that the button with an "A+" icon (Autoplay on Load) and the
+looping arrows (Animation looping) are also turned on in the animation editor
 in the bottom panel. That's it; all monsters will now play the float animation.
 
 We can change the playback speed based on the creature's ``random_speed``. Open

@@ -478,7 +478,7 @@ accesses:
 
     func my_method():
         if fn:
-            fn.call_func()
+            fn.call()
 
     # parent.gd
     extends Node
@@ -486,7 +486,7 @@ accesses:
     @onready var child = $Child
 
     func _ready():
-        child.fn = funcref(self, "print_me")
+        child.fn = print_me
         child.my_method()
 
     func print_me():
@@ -499,12 +499,11 @@ accesses:
 
     public partial class Child : Node
     {
-        public FuncRef FN = null;
+        public Callable? Callable { get; set; }
 
         public void MyMethod()
         {
-            Debug.Assert(FN != null);
-            FN.CallFunc();
+            Callable?.Call();
         }
     }
 
@@ -513,18 +512,18 @@ accesses:
 
     public partial class Parent : Node
     {
-        public Node Child;
+        private Child _child;
 
         public void _Ready()
         {
-            Child = GetNode("Child");
-            Child.Set("FN", GD.FuncRef(this, "PrintMe"));
-            Child.MyMethod();
+            _child = GetNode<Child>("Child");
+            _child.Callable = Callable.From(PrintMe);
+            _child.MyMethod();
         }
 
         public void PrintMe() {
         {
-            GD.Print(GetClass());
+            GD.Print(Name);
         }
     }
 

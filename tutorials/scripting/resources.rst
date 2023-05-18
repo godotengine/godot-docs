@@ -130,7 +130,7 @@ To get an instance of the scene, you have to use the
 
     private PackedScene _bulletScene = (PackedScene)GD.Load("res://bullet.tscn");
 
-    public void OnShoot()
+    private void OnShoot()
     {
         Node bullet = _bulletScene.Instantiate();
         AddChild(bullet);

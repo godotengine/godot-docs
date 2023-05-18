@@ -368,3 +368,18 @@ defaulting to ``false`` to prevent polluting the global namespace:
         // thus adding a new JavaScript global variable `SomeGlobal`
         JavaScriptBridge.Eval("var SomeGlobal = {};", true);
     }
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: HTML5 export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - GODOT_SCRIPT_ENCRYPTION_KEY

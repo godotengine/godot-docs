@@ -25,6 +25,8 @@ Godot can import the following image formats:
 - SVG (``.svg``, ``.svgz``)
   - SVGs are rasterized using `ThorVG <https://www.thorvg.org/>`__
   when importing them. Support is limited; complex vectors may not render correctly.
+  You can check whether ThorVG can render a certain vector correctly using its
+  `web-based viewer <https://www.thorvg.org/viewer>`__.
   For complex vectors, rendering them to PNGs using `Inkscape <https://inkscape.org/>`__
   is often a better solution. This can be automated thanks to its
   `command-line interface <https://wiki.inkscape.org/wiki/index.php/Using_the_Command_Line#Export_files>`__.

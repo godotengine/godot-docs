@@ -223,3 +223,46 @@ Custom FogVolume shaders
 This page only covers the built-in settings offered by FogMaterial. If you need
 to customize fog behavior within a FogVolume node (such as creating animated fog),
 FogVolume nodes' appearance can be customized using :ref:`doc_fog_shader`.
+
+Faking volumetric fog using quads
+---------------------------------
+
+In some cases, it may be better to use specially configured QuadMeshes as an
+alternative to volumetric fog:
+
+- Quads work with any rendering method, including Forward Mobile and Compatibility.
+- Quads do not require temporal reprojection to look smooth, which makes
+  them suited to fast-moving dynamic effects such as lasers. They can also
+  represent small details which volumetric fog cannot do efficiently.
+- Quads generally have a lower performance cost than volumetric fog.
+
+This approach has a few downsides though:
+
+- The fog effect has less realistic falloff, especially if the camera enters the fog.
+- Transparency sorting issues may occur when sprites overlap.
+- Performance will not necessarily be better than volumetric fog if there are
+  lots of sprites close to the camera.
+
+To create a QuadMesh-based fog sprite:
+
+1. Create a MeshInstance3D node with a QuadMesh resource in the **Mesh**
+   property. Set the size as desired.
+2. Create a new StandardMaterial3D in the mesh's **Material** property.
+3. In the StandardMaterial3D, set **Shading > Shading Mode** to **Unshaded**,
+   **Billboard > Mode** to **Enabled**, enable **Proximity Fade** and set
+   **Distance Fade** to **Pixel Alpha**.
+4. Set the **Albedo > Texture** to the texture below (right-click and choose **Save as…**):
+
+   .. image:: img/volumetric_fog_quad_mesh_texture.webp
+
+5. *After* setting the albedo texture, go to the Import dock, select the texture
+   and change its compression mode to **Lossless** to improve quality.
+
+The fog's color is set using the **Albedo > Color** property; its density is set
+using the color's alpha channel. For best results, you will have to adjust
+**Proximity Fade > Distance** and **Distance Fade > Max Distance** depending on
+the size of your QuadMesh.
+
+Optionally, billboarding may be left disabled if you place the quad in a way
+where all of its corners are in solid geometry. This can be useful for fogging
+large planes that the camera cannot enter, such as bottomless pits.

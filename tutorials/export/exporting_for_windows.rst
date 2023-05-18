@@ -55,3 +55,24 @@ Under options there is a code signing category.
 ``Enabled`` must be set to true, and ``Identity`` must be set to the signing
 certificate. The other settings can be adjusted as needed. Once this is Done
 Godot will sign your project on export.
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: Windows export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - GODOT_SCRIPT_ENCRYPTION_KEY
+   * - Options / Codesign / Identity Type
+     - GODOT_WINDOWS_CODESIGN_IDENTITY_TYPE
+   * - Options / Codesign / Identity
+     - GODOT_WINDOWS_CODESIGN_IDENTITY
+   * - Options / Codesign / Password
+     - GODOT_WINDOWS_CODESIGN_PASSWORD

@@ -143,6 +143,22 @@ If you still wish to force sharpening or FXAA on other applications, it's
 recommended to do so on a per-application basis using the application profiles
 system provided by graphics drivers' control panels.
 
+The editor/project freezes or displays glitched visuals after resuming the PC from suspend
+------------------------------------------------------------------------------------------
+
+This is a known issue on Linux with NVIDIA graphics when using the proprietary
+driver. There is no definitive fix yet, as suspend on Linux + NVIDIA is often
+buggy when OpenGL or Vulkan is involved. The Compatibility rendering method
+(which uses OpenGL) is generally less prone to suspend-related issues compared
+to the Forward+ and Forward Mobile rendering methods (which use Vulkan).
+
+The NVIDIA driver offers an *experimental*
+`option to preserve video memory after suspend <https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Preserve_video_memory_after_suspend>`__
+which may resolve this issue. This option has been reported to work better with
+more recent NVIDIA driver versions.
+
+To avoid losing work, save scenes in the editor before putting the PC to sleep.
+
 The project works when run from the editor, but fails to load some files when running from an exported copy
 -----------------------------------------------------------------------------------------------------------
 

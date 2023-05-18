@@ -60,8 +60,8 @@ Initialization example:
             payment.price_change_acknowledged.connect(_on_price_acknowledged) # Response ID (int)
             payment.purchases_updated.connect(_on_purchases_updated) # Purchases (Dictionary[])
             payment.purchase_error.connect(_on_purchase_error) # Response ID (int), Debug message (string)
-            payment.sku_details_query_completed.connect(_on_sku_details_query_completed) # SKUs (Dictionary[])
-            payment.sku_details_query_error.connect(_on_sku_details_query_error) # Response ID (int), Debug message (string), Queried SKUs (string[])
+            payment.product_details_query_completed.connect(_on_product_details_query_completed) # Products (Dictionary[])
+            payment.product_details_query_error.connect(_on_product_details_query_error) # Response ID (int), Debug message (string), Queried SKUs (string[])
             payment.purchase_acknowledged.connect(_on_purchase_acknowledged) # Purchase token (string)
             payment.purchase_acknowledgement_error.connect(_on_purchase_acknowledgement_error) # Response ID (int), Debug message (string), Purchase token (string)
             payment.purchase_consumed.connect(_on_purchase_consumed) # Purchase token (string)
@@ -108,13 +108,13 @@ Example use of ``querySkuDetails()``:
     func _on_connected():
       payment.querySkuDetails(["my_iap_item"], "inapp") # "subs" for subscriptions
 
-    func _on_sku_details_query_completed(sku_details):
-      for available_sku in sku_details:
-        print(available_sku)
+    func _on_product_details_query_completed(product_details):
+      for available_product in product_details:
+        print(available_product)
 
-    func _on_sku_details_query_error(response_id, error_message, skus_queried):
-        print("on_sku_details_query_error id:", response_id, " message: ",
-                error_message, " skus: ", skus_queried)
+    func _on_product_details_query_error(response_id, error_message, products_queried):
+        print("on_product_details_query_error id:", response_id, " message: ",
+                error_message, " products: ", products_queried)
 
 
 Query user purchases
@@ -214,9 +214,9 @@ Purchase fields:
     // PBL V4 replaced getSku with getSkus to support multi-sku purchases,
     // use the first entry for "sku" and generate an array for "skus"
     ArrayList<String> skus = purchase.getSkus();
-    dictionary.put("sku", skus.get(0));
+    dictionary.put("sku", skus.get(0)); # Not available in plugin
     String[] skusArray = skus.toArray(new String[0]);
-    dictionary.put("skus", skusArray);
+    dictionary.put("products", productsArray);
     dictionary.put("is_acknowledged", purchase.isAcknowledged());
     dictionary.put("is_auto_renewing", purchase.isAutoRenewing());
 
@@ -263,7 +263,7 @@ Example use of ``consumePurchase()``:
 ::
 
     func _process_purchase(purchase):
-        if purchase.sku == "my_consumable_iap_item" and purchase.purchase_state == PurchaseState.PURCHASED:
+        if "my_consumable_iap_item" in purchase.products and purchase.purchase_state == PurchaseState.PURCHASED:
             # Add code to store payment so we can reconcile the purchase token
             # in the completion callback against the original purchase
             payment.consumePurchase(purchase.purchase_token)
@@ -297,7 +297,7 @@ Example use of ``acknowledgePurchase()``:
 ::
 
     func _process_purchase(purchase):
-        if purchase.sku == "my_one_time_iap_item" and \
+        if "my_one_time_iap_item" in purchase.products and \
                 purchase.purchase_state == PurchaseState.PURCHASED and \
                 not purchase.is_acknowledged:
             # Add code to store payment so we can reconcile the purchase token

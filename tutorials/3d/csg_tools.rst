@@ -290,3 +290,12 @@ in the **Scale** property will cause the texture to repeat more often.
          and choose **Copy**. To paste it, select the node you'd like to apply
          the material onto, click the dropdown arrow next to its material
          property then choose **Paste**.
+
+Exporting as glTF
+------------------------
+
+It can be useful to block out a level using CSG, then export it as a 3d model, to
+import into 3D modelling software. You can do this by selecting **Scene > Export As... >
+glTF 2.0 Scene**.
+
+.. image:: img/export_as_gltf.webp

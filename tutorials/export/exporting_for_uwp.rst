@@ -102,3 +102,22 @@ It's also possible to install by using the ``Add-AppxPackage`` PowerShell cmdlet
 .. note:: If you want to update your already installed app, you must
           update the version number on the new package or first uninstall
           the previous package.
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: UWP export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - GODOT_SCRIPT_ENCRYPTION_KEY
+   * - Options / Signing / Certificate
+     - GODOT_UWP_SIGNING_CERTIFICATE
+   * - Options / Signing / Password
+     - GODOT_UWP_SIGNING_PASSWORD
