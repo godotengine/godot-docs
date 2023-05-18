@@ -40,7 +40,7 @@ The "art/House In a Forest Loop.ogg" music file should have "Loop" checked to
 window below that click on the music file under "art" and on the "Import" tab check
 the box next to "Loop", so that the music file will now loop automatically.
 
-To play the music, add ``$Music.play()`` in the ``_on_start_timer_timeout()``
+To play the music, add ``$Music.play()`` in the ``new_game()``
 function and ``$Music.stop()`` in the ``game_over()`` function.
 
 Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
