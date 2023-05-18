@@ -187,8 +187,9 @@ the same collision response:
     var collision = MoveAndCollide(Velocity * (float)delta);
     if (collision != null)
     {
-        velocity = velocity.Slide(collision.GetNormal());
+        Velocity = Velocity.Slide(collision.GetNormal());
     }
+
     // using MoveAndSlide
     MoveAndSlide();
 
@@ -250,14 +251,14 @@ Attach a script to the CharacterBody2D and add the following code:
 
     using Godot;
 
-    public partial class CBExample : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public int Speed = 300;
+        private int _speed = 300;
 
         public void GetInput()
         {
             Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-            Velocity = inputDir * Speed;
+            Velocity = inputDir * _speed;
         }
 
         public override void _PhysicsProcess(double delta)
@@ -334,16 +335,16 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
 
     using Godot;
 
-    public partial class CBExample : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
         private PackedScene _bullet = (PackedScene)GD.Load("res://bullet.tscn");
-        public int Speed = 200;
+        private int _speed = 200;
 
         public void GetInput()
         {
             // Add these actions in Project Settings -> Input Map.
             float inputDir = Input.GetAxis("backward", "forward");
-            Velocity = Transform.x * inputDir * Speed;
+            Velocity = Transform.X * inputDir * _speed;
             if (Input.IsActionPressed("shoot"))
             {
                 Shoot();
@@ -403,7 +404,7 @@ And the code for the Bullet:
 
     public partial class Bullet : CharacterBody2D
     {
-        public int Speed = 750;
+        public int _speed = 750;
 
         public void Start(Vector2 position, float direction)
         {
@@ -425,7 +426,7 @@ And the code for the Bullet:
             }
         }
 
-        public void OnVisibilityNotifier2DScreenExited()
+        private void OnVisibilityNotifier2DScreenExited()
         {
             // Deletes the bullet when it exits the screen.
             QueueFree();
@@ -490,10 +491,10 @@ Here's the code for the player body:
 
     using Godot;
 
-    public partial class CBExample : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public float Speed = 100.0f;
-        public float JumpSpeed = -400.0f;
+        private float _speed = 100.0f;
+        private float _jumpSpeed = -400.0f;
 
         // Get the gravity from the project settings so you can sync with rigid body nodes.
         public float Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
@@ -507,11 +508,11 @@ Here's the code for the player body:
 
             // Handle jump.
             if (Input.IsActionJustPressed("jump") && IsOnFloor())
-                velocity.Y = JumpSpeed;
+                velocity.Y = _jumpSpeed;
 
             // Get the input direction.
             Vector2 direction = Input.GetAxis("ui_left", "ui_right");
-            velocity.X = direction * Speed;
+            velocity.X = direction * _speed;
 
             Velocity = velocity;
             MoveAndSlide();

@@ -56,7 +56,7 @@ code below.
         direction = 1;
     }
 
-    Rotation += AngularSpeed * direction * (float)delta;
+    Rotation += _angularSpeed * direction * (float)delta;
 
 Our ``direction`` local variable is a multiplier representing the direction in
 which the player wants to turn. A value of ``0`` means the player isn't pressing
@@ -146,8 +146,8 @@ Here is the complete ``sprite_2d.gd`` file for reference.
 
     public partial class Sprite : Sprite2D
     {
-        private float Speed = 400;
-        private float AngularSpeed = Mathf.Pi;
+        private float _speed = 400;
+        private float _angularSpeed = Mathf.Pi;
 
         public override void _Process(double delta)
         {
@@ -161,12 +161,12 @@ Here is the complete ``sprite_2d.gd`` file for reference.
                 direction = 1;
             }
 
-            Rotation += AngularSpeed * direction * (float)delta;
+            Rotation += _angularSpeed * direction * (float)delta;
 
             var velocity = Vector2.Zero;
             if (Input.IsActionPressed("ui_up"))
             {
-                velocity = Vector2.Up.Rotated(Rotation) * Speed;
+                velocity = Vector2.Up.Rotated(Rotation) * _speed;
             }
 
             Position += velocity * (float)delta;

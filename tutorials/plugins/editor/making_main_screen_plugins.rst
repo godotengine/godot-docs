@@ -134,7 +134,7 @@ Add a script to the button like this:
     [Tool]
     public partial class PrintHello : Button
     {
-        public void OnPrintHelloPressed()
+        private void OnPrintHelloPressed()
         {
             GD.Print("Hello from the main screen plugin!");
         }

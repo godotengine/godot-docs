@@ -378,9 +378,9 @@ occurred:
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            var collisionInfo = MoveAndCollide(_velocity * delta);
+            var collisionInfo = MoveAndCollide(_velocity * (float)delta);
             if (collisionInfo != null)
             {
                 var collisionPoint = collisionInfo.GetPosition();
@@ -410,9 +410,9 @@ Or to bounce off of the colliding object:
     {
         private Vector2 _velocity = new Vector2(250, 250);
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            var collisionInfo = MoveAndCollide(_velocity * delta);
+            var collisionInfo = MoveAndCollide(_velocity * (float)delta);
             if (collisionInfo != null)
                 _velocity = _velocity.Bounce(collisionInfo.Normal);
         }
@@ -473,23 +473,28 @@ the ground (including slopes) and jump when standing on the ground:
 
         private void GetInput()
         {
-            _velocity.x = 0;
+            var velocity = Velocity;
+            velocity.X = 0;
 
             var right = Input.IsActionPressed("ui_right");
             var left = Input.IsActionPressed("ui_left");
             var jump = Input.IsActionPressed("ui_select");
 
             if (IsOnFloor() && jump)
-                _velocity.y = _jumpSpeed;
+                velocity.Y = _jumpSpeed;
             if (right)
-                _velocity.x += _runSpeed;
+                velocity.X += _runSpeed;
             if (left)
-                _velocity.x -= _runSpeed;
+                velocity.X -= _runSpeed;
+
+            Velocity = velocity;
         }
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            _velocity.y += _gravity * delta;
+            var velocity = Velocity;
+            velocity.Y += _gravity * (float)delta;
+            Velocity = velocity;
             GetInput();
             MoveAndSlide();
         }

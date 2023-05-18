@@ -136,7 +136,7 @@ while up/down moves it forward or backward in whatever direction it's facing.
         public void GetInput()
         {
             _rotationDirection = Input.GetAxis("left", "right");
-            Velocity = Transform.x * Input.GetAxis("down", "up") * Speed;
+            Velocity = Transform.X * Input.GetAxis("down", "up") * Speed;
         }
 
         public override void _PhysicsProcess(double delta)
@@ -189,7 +189,7 @@ is set by the mouse position instead of the keyboard. The character will always
         public void GetInput()
         {
             LookAt(GetGlobalMousePosition());
-            Velocity = Transform.x * Input.GetAxis("down", "up") * Speed;
+            Velocity = Transform.X * Input.GetAxis("down", "up") * Speed;
         }
 
         public override void _PhysicsProcess(double delta)

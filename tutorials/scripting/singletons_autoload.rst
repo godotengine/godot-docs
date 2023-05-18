@@ -224,7 +224,7 @@ current scene and replace it with the requested one.
         // The solution is to defer the load to a later time, when
         // we can be sure that no code from the current scene is running:
 
-        CallDeferred(nameof(DeferredGotoScene), path);
+        CallDeferred(MethodName.DeferredGotoScene, path);
     }
 
     public void DeferredGotoScene(string path)
@@ -264,7 +264,7 @@ Finally, we need to fill the empty callback functions in the two scenes:
 
     // Add to 'Scene1.cs'.
 
-    public void OnButtonPressed()
+    private void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
         global.GotoScene("res://scene_2.tscn");
@@ -284,7 +284,7 @@ and
 
     // Add to 'Scene2.cs'.
 
-    public void OnButtonPressed()
+    private void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
         global.GotoScene("res://scene_1.tscn");
