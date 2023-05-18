@@ -204,7 +204,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | preload    | Preloads a class or variable. See `Classes as resources`_.                                                                                        |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| await      | Waits for a signal or a coroutine to finish. See `Awaiting for signals`_.                                                                         |
+| await      | Waits for a signal or a coroutine to finish. See `Awaiting for signals or coroutines`_.                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | yield      | Previously used for coroutines. Kept as keyword for transition.                                                                                   |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -226,73 +226,116 @@ Operators
 
 The following is the list of supported operators and their precedence.
 
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| **Operator**                                                                          | **Description**                           |
-+=======================================================================================+===========================================+
-| ``x[index]``                                                                          | Subscription (highest priority)           |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``x.attribute``                                                                       | Attribute reference                       |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``foo()``                                                                             | Function call                             |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``is``                                                                                | Instance type checker                     |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``**``                                                                                | Power operator                            |
-|                                                                                       |                                           |
-|                                                                                       | Multiplies value by itself ``x`` times,   |
-|                                                                                       | similar to calling ``pow`` built-in       |
-|                                                                                       | function                                  |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``~``                                                                                 | Bitwise NOT                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``-x``                                                                                | Negative / Unary negation                 |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``*`` ``/`` ``%``                                                                     | Multiplication / Division / Remainder     |
-|                                                                                       |                                           |
-|                                                                                       | These operators have the same behavior    |
-|                                                                                       | as C++. Integer division is truncated     |
-|                                                                                       | rather than returning a fractional        |
-|                                                                                       | number, and the % operator is only        |
-|                                                                                       | available for ints (``fmod`` for floats), |
-|                                                                                       | and is additionally used for Format       |
-|                                                                                       | Strings                                   |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``+``                                                                                 | Addition / Concatenation of arrays        |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``-``                                                                                 | Subtraction                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``<<`` ``>>``                                                                         | Bit shifting                              |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``&``                                                                                 | Bitwise AND                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``^``                                                                                 | Bitwise XOR                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``|``                                                                                 | Bitwise OR                                |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``<`` ``>`` ``==`` ``!=`` ``>=`` ``<=``                                               | Comparisons                               |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``in``                                                                                | Inclusion checker (when used with         |
-|                                                                                       | control flow keywords or in a             |
-|                                                                                       | standalone expression)                    |
-|                                                                                       |                                           |
-|                                                                                       | Content iterator (when used with the      |
-|                                                                                       | for_ keyword)                             |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``not`` ``!``                                                                         | Boolean NOT and its                       |
-|                                                                                       | :ref:`aliases<boolean_operators>`         |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``and`` ``&&``                                                                        | Boolean AND and its                       |
-|                                                                                       | :ref:`aliases<boolean_operators>`         |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``or`` ``||``                                                                         | Boolean OR and its                        |
-|                                                                                       | :ref:`aliases<boolean_operators>`         |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``if x else``                                                                         | Ternary if/else                           |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``as``                                                                                | Type casting                              |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
-| ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``**=`` ``&=`` ``^=`` ``|=`` ``<<=`` ``>>=`` | Assignment (lowest priority)              |
-+---------------------------------------------------------------------------------------+-------------------------------------------+
++---------------------------------------+-----------------------------------------------------------------------------+
+| **Operator**                          | **Description**                                                             |
++=======================================+=============================================================================+
+| ``(`` ``)``                           | Grouping (highest priority)                                                 |
+|                                       |                                                                             |
+|                                       | Parentheses are not really an operator, but allow you to explicitly specify |
+|                                       | the precedence of an operation.                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x[index]``                          | Subscription                                                                |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x.attribute``                       | Attribute reference                                                         |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``foo()``                             | Function call                                                               |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``await x``                           | `Awaiting for signals or coroutines`_                                       |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x is Node``                         | Type checking                                                               |
+|                                       |                                                                             |
+|                                       | See also :ref:`is_instance_of() <class_@GDScript_method_is_instance_of>`    |
+|                                       | function.                                                                   |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x ** y``                            | Power                                                                       |
+|                                       |                                                                             |
+|                                       | Multiplies ``x`` by itself ``y`` times, similar to calling                  |
+|                                       | :ref:`pow() <class_@GlobalScope_method_pow>` function.                      |
+|                                       |                                                                             |
+|                                       | **Note:** In GDScript, the ``**`` operator is                               |
+|                                       | `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. |
+|                                       | See a detailed note after the table.                                        |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``~x``                                | Bitwise NOT                                                                 |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``+x``                              | Identity / Negation                                                         |
+| | ``-x``                              |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x * y``                           | Multiplication / Division / Remainder                                       |
+| | ``x / y``                           |                                                                             |
+| | ``x % y``                           | The ``%`` operator is additionally used for                                 |
+|                                       | :ref:`format strings <doc_gdscript_printf>`.                                |
+|                                       |                                                                             |
+|                                       | **Note:** These operators have the same behavior as C++, which may be       |
+|                                       | unexpected for users coming from Python, JavaScript, etc. See a detailed    |
+|                                       | note after the table.                                                       |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x + y``                           | Addition (or Concatenation) / Subtraction                                   |
+| | ``x - y``                           |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x << y``                          | Bit shifting                                                                |
+| | ``x >> y``                          |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x & y``                             | Bitwise AND                                                                 |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x ^ y``                             | Bitwise XOR                                                                 |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x | y``                             | Bitwise OR                                                                  |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x == y``                          | Comparison                                                                  |
+| | ``x != y``                          |                                                                             |
+| | ``x < y``                           | See a detailed note after the table.                                        |
+| | ``x > y``                           |                                                                             |
+| | ``x <= y``                          |                                                                             |
+| | ``x >= y``                          |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x in y``                          | Inclusion checking                                                          |
+| | ``x not in y``                      |                                                                             |
+|                                       | ``in`` is also used with the for_ keyword as part of the syntax.            |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``not x``                           | Boolean NOT and its :ref:`unrecommended <boolean_operators>` alias          |
+| | ``!x``                              |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x and y``                         | Boolean AND and its :ref:`unrecommended <boolean_operators>` alias          |
+| | ``x && y``                          |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x or y``                          | Boolean OR and its :ref:`unrecommended <boolean_operators>` alias           |
+| | ``x || y``                          |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``true_expr if cond else false_expr`` | Ternary if/else                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+| ``x as Node``                         | `Type casting <casting_>`_                                                  |
++---------------------------------------+-----------------------------------------------------------------------------+
+| | ``x = y``                           | Assignment (lowest priority)                                                |
+| | ``x += y``                          |                                                                             |
+| | ``x -= y``                          | You cannot use an assignment operator inside an expression.                 |
+| | ``x *= y``                          |                                                                             |
+| | ``x /= y``                          |                                                                             |
+| | ``x **= y``                         |                                                                             |
+| | ``x %= y``                          |                                                                             |
+| | ``x &= y``                          |                                                                             |
+| | ``x |= y``                          |                                                                             |
+| | ``x ^= y``                          |                                                                             |
+| | ``x <<= y``                         |                                                                             |
+| | ``x >>= y``                         |                                                                             |
++---------------------------------------+-----------------------------------------------------------------------------+
+
+.. note::
+
+    The behavior of some operators may differ from what you expect:
+
+    1. If both operands of the ``/`` operator are :ref:`int <class_int>`, then integer division is performed instead of fractional. For example ``5 / 2 == 2``, not ``2.5``.
+       If this is not desired, use at least one :ref:`float <class_float>` literal (``x / 2.0``), cast (``float(x) / y``), or multiply by ``1.0`` (``x * 1.0 / y``).
+    2. The ``%`` operator is only available for ints, for floats use the :ref:`fmod() <class_@GlobalScope_method_fmod>` function.
+    3. For negative values, the ``%`` operator and ``fmod()`` use `truncation <https://en.wikipedia.org/wiki/Truncation>`_ instead of rounding towards negative infinity.
+       This means that the remainder has a sign. If you need the remainder in a mathematical sense, use the :ref:`posmod() <class_@GlobalScope_method_posmod>` and
+       :ref:`fposmod() <class_@GlobalScope_method_fposmod>` functions instead.
+    4. The ``**`` operator is `left-associative <https://en.wikipedia.org/wiki/Operator_associativity>`_. This means that ``2 ** 2 ** 3`` is equal to ``(2 ** 2) ** 3``.
+       Use parentheses to explicitly specify precedence you need, for example ``2 ** (2 ** 3)``.
+    5. The ``==`` and ``!=`` operators sometimes allow you to compare values of different types (for example, ``1 == 1.0`` is true), but in other cases it can cause
+       a runtime error. If you're not sure about the types of the operands, you can safely use the :ref:`is_same() <class_@GlobalScope_method_is_same>` function
+       (but note that it is more strict about types and references). To compare floats, use the :ref:`is_equal_approx() <class_@GlobalScope_method_is_equal_approx>`
+       and :ref:`is_zero_approx() <class_@GlobalScope_method_is_zero_approx>` functions instead.
 
 Literals
 ~~~~~~~~
@@ -510,7 +553,7 @@ There are two ways to represent an escaped Unicode character above 0xFFFF:
 Also, using ``\`` followed by a newline inside a string will allow you to continue it in the next line, without
 inserting a newline character in the string itself.
 
-GDScript also supports :ref:`doc_gdscript_printf`.
+GDScript also supports :ref:`format strings <doc_gdscript_printf>`.
 
 :ref:`StringName <class_StringName>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1197,6 +1240,10 @@ Basic syntax::
         [pattern](s):
             [block]
 
+.. warning::
+
+    ``match`` is more type strict than the ``==`` operator. For example ``1`` will **not** match ``1.0``. The only exception is ``String`` vs ``StringName`` matching:
+    for example, the String ``"hello"`` is considered equal to the StringName ``&"hello"``.
 
 **Crash-course for people who are familiar with switch statements**:
 
@@ -1209,6 +1256,10 @@ Basic syntax::
 
 The patterns are matched from top to bottom.
 If a pattern matches, the first corresponding block will be executed. After that, the execution continues below the ``match`` statement.
+
+.. note::
+
+    The special ``continue`` behavior in ``match`` supported in 3.x was removed in Godot 4.0.
 
 There are 6 pattern types:
 
@@ -1831,11 +1882,11 @@ Our ``BattleLog`` node receives each element in the binds array as an extra argu
         label.text += character_name + " took " + str(damage) + " damage."
 
 
-Awaiting for signals
-~~~~~~~~~~~~~~~~~~~~
+Awaiting for signals or coroutines
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``await`` keyword can be used to create `coroutines <https://en.wikipedia.org/wiki/Coroutine>`_
-which waits until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
+which wait until a signal is emitted before continuing execution. Using the ``await`` keyword with a signal or a
 call to a function that is also a coroutine will immediately return the control to the caller. When the signal is
 emitted (or the called coroutine finishes), it will resume execution from the point on where it stopped.
 
