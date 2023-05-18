@@ -155,8 +155,8 @@ There, we increment the score and update the displayed text.
 
 The second line uses the value of the ``score`` variable to replace the
 placeholder ``%s``. When using this feature, Godot automatically converts values
-to string text, which is convenient to output text in labels or using the ``print()``
-function.
+to string text, which is convenient when outputting text in labels or
+when using the ``print()`` function.
 
 .. seealso::
 
