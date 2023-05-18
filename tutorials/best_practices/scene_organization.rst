@@ -96,7 +96,7 @@ initialize it:
      .. code-tab:: gdscript GDScript
 
        # Parent
-       $Child.func_property = object_with_method()
+       $Child.func_property = object_with_method.method_on_the_object
 
        # Child
        func_property.call() # Call parent-defined method (can come from anywhere).
