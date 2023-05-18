@@ -33,12 +33,9 @@ Add two :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` nodes as children of
 click on the ``Stream`` property, select "Load", and choose the corresponding
 audio file.
 
-All audio is automatically imported with the "Loop" setting disabled.
-The "art/House In a Forest Loop.ogg" music file should have "Loop" checked to
-**On** and the "art/gameover.wav" should have the "Loop" not checked. Next to the
-"Scene" tab (left side of the editor), click on the "Import" tab. In the "FileSystem"
-window below that click on the music file under "art" and on the "Import" tab check
-the box next to "Loop", so that the music file will now loop automatically.
+All audio is automatically imported with the ``Loop`` setting disabled.
+If you want the music to loop seamlessly, click on the Stream file arrow,
+select ``Make Unique``, then click on the Stream file and check the ``Loop`` box. 
 
 To play the music, add ``$Music.play()`` in the ``new_game()``
 function and ``$Music.stop()`` in the ``game_over()`` function.
