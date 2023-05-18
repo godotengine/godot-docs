@@ -26,17 +26,14 @@ Here's a sample on how to generate a triangular face:
 
 .. tabs::
 
-var mesh = ImmediateMesh.new()
+ .. code-tab:: gdscript
 
-mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES)
-
-mesh.surface_add_vertex(Vector3.LEFT)
-
-mesh.surface_add_vertex(Vector3.FORWARD)
-
-mesh.surface_add_vertex(Vector3.ZERO)
-
-mesh.surface_end()
+    var mesh = ImmediateMesh.new()
+    mesh.surface_begin(Mesh.PRIMITIVE_TRIANGLES)
+    mesh.surface_add_vertex(Vector3.LEFT)
+    mesh.surface_add_vertex(Vector3.FORWARD)
+    mesh.surface_add_vertex(Vector3.ZERO)
+    mesh.surface_end()
 
 
 
