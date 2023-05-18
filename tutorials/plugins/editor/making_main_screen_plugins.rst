@@ -124,7 +124,7 @@ Add a script to the button like this:
     extends Button
 
 
-    func _on_PrintHello_pressed():
+    func _on_print_hello_pressed():
         print("Hello from the main screen plugin!")
 
  .. code-tab:: csharp

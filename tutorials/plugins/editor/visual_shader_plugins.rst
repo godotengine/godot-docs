@@ -32,7 +32,7 @@ all you need to initialize your plugin.
 
 ::
 
-    # PerlinNoise3D.gd
+    # perlin_noise_3d.gd
     @tool
     extends VisualShaderNodeCustom
     class_name VisualShaderNodePerlinNoise3D

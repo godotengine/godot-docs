@@ -219,7 +219,7 @@ To see these examples in action, download the sample project:
 Movement and walls
 ~~~~~~~~~~~~~~~~~~
 
-If you've downloaded the sample project, this example is in "BasicMovement.tscn".
+If you've downloaded the sample project, this example is in "basic_movement.tscn".
 
 For this example, add a ``CharacterBody2D`` with two children: a ``Sprite2D`` and a
 ``CollisionShape2D``. Use the Godot "icon.png" as the Sprite2D's texture (drag it
@@ -291,7 +291,7 @@ to get the behavior you want.
 Bouncing/reflecting
 ~~~~~~~~~~~~~~~~~~~
 
-What if you don't want a sliding collision response? For this example ("BounceandCollide.tscn"
+What if you don't want a sliding collision response? For this example ("bounce_and_collide.tscn"
 in the sample project), we have a character shooting bullets and we want the bullets to
 bounce off the walls.
 
@@ -306,7 +306,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
 
     extends CharacterBody2D
 
-    var Bullet = preload("res://Bullet.tscn")
+    var Bullet = preload("res://bullet.tscn")
     var speed = 200
 
     func get_input():
@@ -336,7 +336,7 @@ uses the mouse pointer. Here is the code for the Player, using ``move_and_slide(
 
     public partial class CBExample : CharacterBody2D
     {
-        private PackedScene _bullet = (PackedScene)GD.Load("res://Bullet.tscn");
+        private PackedScene _bullet = (PackedScene)GD.Load("res://bullet.tscn");
         public int Speed = 200;
 
         public void GetInput()

@@ -1380,7 +1380,7 @@ By default, all script files are unnamed classes. In this case, you can only
 reference them using the file's path, using either a relative or an absolute
 path. For example, if you name a script file ``character.gd``::
 
-   # Inherit from 'Character.gd'.
+   # Inherit from 'character.gd'.
 
    extends "res://path/to/character.gd"
 
@@ -1399,7 +1399,7 @@ editor. For that, you use the ``class_name`` keyword. You can optionally use
 the ``@icon`` annotation with a path to an image, to use it as an icon. Your
 class will then appear with its new icon in the editor::
 
-   # Item.gd
+   # item.gd
 
    @icon("res://interface/icons/item.png")
    class_name Item
@@ -1515,7 +1515,7 @@ explicit constructor::
 
 This is better explained through examples. Consider this scenario::
 
-    # State.gd (inherited class).
+    # state.gd (inherited class).
     var entity = null
     var message = null
 
@@ -1528,8 +1528,8 @@ This is better explained through examples. Consider this scenario::
         message = m
 
 
-    # Idle.gd (inheriting class).
-    extends "State.gd"
+    # idle.gd (inheriting class).
+    extends "state.gd"
 
 
     func _init(e=null, m=null):
@@ -1539,17 +1539,17 @@ This is better explained through examples. Consider this scenario::
 
 There are a few things to keep in mind here:
 
-1. If the inherited class (``State.gd``) defines a ``_init`` constructor that takes
-   arguments (``e`` in this case), then the inheriting class (``Idle.gd``) *must*
-   define ``_init`` as well and pass appropriate parameters to ``_init`` from ``State.gd``.
-2. ``Idle.gd`` can have a different number of arguments than the base class ``State.gd``.
-3. In the example above, ``e`` passed to the ``State.gd`` constructor is the same ``e`` passed
-   in to ``Idle.gd``.
-4. If ``Idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
-   to the ``State.gd`` base class, even if it does nothing. This brings us to the fact that you
+1. If the inherited class (``state.gd``) defines a ``_init`` constructor that takes
+   arguments (``e`` in this case), then the inheriting class (``idle.gd``) *must*
+   define ``_init`` as well and pass appropriate parameters to ``_init`` from ``state.gd``.
+2. ``idle.gd`` can have a different number of arguments than the base class ``state.gd``.
+3. In the example above, ``e`` passed to the ``state.gd`` constructor is the same ``e`` passed
+   in to ``idle.gd``.
+4. If ``idle.gd``'s ``_init`` constructor takes 0 arguments, it still needs to pass some value
+   to the ``state.gd`` base class, even if it does nothing. This brings us to the fact that you
    can pass expressions to the base constructor as well, not just variables, e.g.::
 
-    # Idle.gd
+    # idle.gd
 
     func _init():
         super(5)
@@ -1630,7 +1630,7 @@ Example::
         set(value):
             milliseconds = value * 1000
 
-Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member, 
+Using the variable's name to set it inside its own setter or to get it inside its own getter will directly access the underlying member,
 so it won't generate infinite recursion and saves you from explicitly declaring another variable::
 
     signal changed(new_value)
@@ -1761,16 +1761,16 @@ signals of nodes like :ref:`class_Button` or :ref:`class_RigidBody3D`.
 
 In the example below, we connect the ``health_depleted`` signal from a
 ``Character`` node to a ``Game`` node. When the ``Character`` node emits the
-signal, the game node's ``_on_Character_health_depleted`` is called::
+signal, the game node's ``_on_character_health_depleted`` is called::
 
-    # Game.gd
+    # game.gd
 
     func _ready():
         var character_node = get_node('Character')
-        character_node.health_depleted.connect(_on_Character_health_depleted)
+        character_node.health_depleted.connect(_on_character_health_depleted)
 
 
-    func _on_Character_health_depleted():
+    func _on_character_health_depleted():
         get_tree().reload_current_scene()
 
 You can emit as many arguments as you want along with a signal.
@@ -1779,12 +1779,12 @@ Here is an example where this is useful. Let's say we want a life bar on screen
 to react to health changes with an animation, but we want to keep the user
 interface separate from the player in our scene tree.
 
-In our ``Character.gd`` script, we define a ``health_changed`` signal and emit
+In our ``character.gd`` script, we define a ``health_changed`` signal and emit
 it with :ref:`Signal.emit() <class_Signal_method_emit>`, and from
 a ``Game`` node higher up our scene tree, we connect it to the ``Lifebar`` using
 the :ref:`Signal.connect() <class_Signal_method_connect>` method::
 
-    # Character.gd
+    # character.gd
 
     ...
     signal health_changed
@@ -1801,7 +1801,7 @@ the :ref:`Signal.connect() <class_Signal_method_connect>` method::
 
 ::
 
-    # Lifebar.gd
+    # lifebar.gd
 
     # Here, we define a function to use as a callback when the
     # character's health_changed signal is emitted.
@@ -1824,7 +1824,7 @@ node in this case.
 
 ::
 
-    # Game.gd
+    # game.gd
 
     func _ready():
         var character_node = get_node('Character')
@@ -1862,7 +1862,7 @@ taken by each character on the screen, like ``Player1 took 22 damage.``. The
 damage. So when we connect the signal to the in-game console, we can add the
 character's name in the binds array argument::
 
-    # Game.gd
+    # game.gd
 
     func _ready():
         var character_node = get_node('Character')
@@ -1872,7 +1872,7 @@ character's name in the binds array argument::
 
 Our ``BattleLog`` node receives each element in the binds array as an extra argument::
 
-    # BattleLog.gd
+    # battle_log.gd
 
     func _on_Character_health_changed(old_value, new_value, character_name):
         if not new_value <= old_value:

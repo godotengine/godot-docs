@@ -94,7 +94,7 @@ Add a script to the ``Mob`` like this:
     public:
         void _init() {}
         void _ready();
-        void _on_VisibleOnScreenNotifier2D_screen_exited();
+        void _on_visible_on_screen_notifier_2d_screen_exited();
 
         static void _register_methods();
     };
@@ -164,7 +164,7 @@ add this code:
  .. code-tab:: cpp
 
     // This code goes in `mob.cpp`.
-    void Mob::_on_VisibleOnScreenNotifier2D_screen_exited() {
+    void Mob::_on_visible_on_screen_notifier_2d_screen_exited() {
         queue_free();
     }
 

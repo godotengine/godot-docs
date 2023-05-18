@@ -94,7 +94,7 @@ Here is the code for the player using signals to emit the bullet:
 
     signal shoot(bullet, direction, location)
 
-    var Bullet = preload("res://Bullet.tscn")
+    var Bullet = preload("res://bullet.tscn")
 
     func _input(event):
         if event is InputEventMouseButton:
@@ -113,7 +113,7 @@ Here is the code for the player using signals to emit the bullet:
         [Signal]
         delegate void ShootEventHandler(PackedScene bullet, Vector2 direction, Vector2 location);
 
-        private PackedScene _bullet = GD.Load<PackedScene>("res://Bullet.tscn");
+        private PackedScene _bullet = GD.Load<PackedScene>("res://bullet.tscn");
 
         public override void _Input(InputEvent @event)
         {
@@ -138,7 +138,7 @@ In the main scene, we then connect the player's signal (it will appear in the
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    func _on_Player_shoot(Bullet, direction, location):
+    func _on_player_shoot(Bullet, direction, location):
         var spawned_bullet = Bullet.instantiate()
         add_child(spawned_bullet)
         spawned_bullet.rotation = direction
@@ -147,7 +147,7 @@ In the main scene, we then connect the player's signal (it will appear in the
 
  .. code-tab:: csharp
 
-    public void _on_Player_Shoot(PackedScene bullet, Vector2 direction, Vector2 location)
+    public void OnPlayerShoot(PackedScene bullet, Vector2 direction, Vector2 location)
     {
         var bulletInstance = (Bullet)bullet.Instantiate();
         AddChild(bulletInstance);

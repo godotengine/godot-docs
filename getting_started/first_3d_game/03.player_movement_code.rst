@@ -359,14 +359,14 @@ tab at the top of the editor to do so.
 |image1|
 
 If you closed the scene before, head to the *FileSystem* dock and double-click
-``Main.tscn`` to re-open it.
+``main.tscn`` to re-open it.
 
 To instantiate the ``Player``, right-click on the ``Main`` node and select *Instance
 Child Scene*.
 
 |image2|
 
-In the popup, double-click ``Player.tscn``. The character should appear in the
+In the popup, double-click ``player.tscn``. The character should appear in the
 center of the viewport.
 
 Adding a camera
