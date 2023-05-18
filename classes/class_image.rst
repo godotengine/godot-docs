@@ -647,6 +647,22 @@ Use ETC compression.
 
 Use ETC2 compression.
 
+.. _class_Image_constant_COMPRESS_BPTC:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressMode<enum_Image_CompressMode>` **COMPRESS_BPTC** = ``5``
+
+Use BPTC compression.
+
+.. _class_Image_constant_COMPRESS_MAX:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`CompressMode<enum_Image_CompressMode>` **COMPRESS_MAX** = ``6``
+
+Represents the size of the :ref:`CompressMode<enum_Image_CompressMode>` enum.
+
 .. rst-class:: classref-item-separator
 
 ----
