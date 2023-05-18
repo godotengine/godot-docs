@@ -158,7 +158,7 @@ Uses the same high quality importance sampling to process the radiance map as :r
 
 Uses the fast filtering algorithm to process the radiance map. In general this results in lower quality, but substantially faster run times. If you need better quality, but still need to update the sky every frame, consider turning on :ref:`ProjectSettings.rendering/reflections/sky_reflections/fast_filter_high_quality<class_ProjectSettings_property_rendering/reflections/sky_reflections/fast_filter_high_quality>`.
 
-\ **Note:** The fast filtering algorithm is limited to 256x256 cubemaps, so :ref:`radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`RADIANCE_SIZE_256<class_Sky_constant_RADIANCE_SIZE_256>`.
+\ **Note:** The fast filtering algorithm is limited to 256×256 cubemaps, so :ref:`radiance_size<class_Sky_property_radiance_size>` must be set to :ref:`RADIANCE_SIZE_256<class_Sky_constant_RADIANCE_SIZE_256>`. Otherwise, a warning is printed and the overridden radiance size is ignored.
 
 .. rst-class:: classref-section-separator
 

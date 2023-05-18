@@ -46,6 +46,8 @@ Theme Properties
    :widths: auto
 
    +-----------------------------------+---------------------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`             | :ref:`center_grabber<class_VSlider_theme_constant_center_grabber>`              | ``0`` |
+   +-----------------------------------+---------------------------------------------------------------------------------+-------+
    | :ref:`int<class_int>`             | :ref:`grabber_offset<class_VSlider_theme_constant_grabber_offset>`              | ``0`` |
    +-----------------------------------+---------------------------------------------------------------------------------+-------+
    | :ref:`Texture2D<class_Texture2D>` | :ref:`grabber<class_VSlider_theme_icon_grabber>`                                |       |
@@ -71,6 +73,18 @@ Theme Properties
 
 Theme Property Descriptions
 ---------------------------
+
+.. _class_VSlider_theme_constant_center_grabber:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`int<class_int>` **center_grabber** = ``0``
+
+Boolean constant. If ``1``, the grabber texture size will be ignored and it will fit within slider's bounds based only on its center position.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_VSlider_theme_constant_grabber_offset:
 

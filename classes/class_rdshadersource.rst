@@ -12,9 +12,16 @@ RDShaderSource
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Shader source code (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Shader source code in text form.
+
+See also :ref:`RDShaderFile<class_RDShaderFile>`. **RDShaderSource** is only meant to be used with the :ref:`RenderingDevice<class_RenderingDevice>` API. It should not be confused with Godot's own :ref:`Shader<class_Shader>` resource, which is what Godot's various nodes use for high-level shader programming.
 
 .. rst-class:: classref-reftable-group
 
@@ -72,9 +79,7 @@ Property Descriptions
 - void **set_language** **(** :ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>` value **)**
 - :ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>` **get_language** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The language the shader is written in.
 
 .. rst-class:: classref-item-separator
 
@@ -91,9 +96,7 @@ Property Descriptions
 - void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
 - :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Source code for the shader's compute stage.
 
 .. rst-class:: classref-item-separator
 
@@ -110,9 +113,7 @@ Property Descriptions
 - void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
 - :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Source code for the shader's fragment stage.
 
 .. rst-class:: classref-item-separator
 
@@ -129,9 +130,7 @@ Property Descriptions
 - void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
 - :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Source code for the shader's tessellation control stage.
 
 .. rst-class:: classref-item-separator
 
@@ -148,9 +147,7 @@ Property Descriptions
 - void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
 - :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Source code for the shader's tessellation evaluation stage.
 
 .. rst-class:: classref-item-separator
 
@@ -167,9 +164,7 @@ Property Descriptions
 - void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
 - :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Source code for the shader's vertex stage.
 
 .. rst-class:: classref-section-separator
 
@@ -186,9 +181,7 @@ Method Descriptions
 
 :ref:`String<class_String>` **get_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns source code for the specified shader ``stage``. Equivalent to getting one of :ref:`source_compute<class_RDShaderSource_property_source_compute>`, :ref:`source_fragment<class_RDShaderSource_property_source_fragment>`, :ref:`source_tesselation_control<class_RDShaderSource_property_source_tesselation_control>`, :ref:`source_tesselation_evaluation<class_RDShaderSource_property_source_tesselation_evaluation>` or :ref:`source_vertex<class_RDShaderSource_property_source_vertex>`.
 
 .. rst-class:: classref-item-separator
 
@@ -200,9 +193,7 @@ Method Descriptions
 
 void **set_stage_source** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` source **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets ``source`` code for the specified shader ``stage``. Equivalent to setting one of :ref:`source_compute<class_RDShaderSource_property_source_compute>`, :ref:`source_fragment<class_RDShaderSource_property_source_fragment>`, :ref:`source_tesselation_control<class_RDShaderSource_property_source_tesselation_control>`, :ref:`source_tesselation_evaluation<class_RDShaderSource_property_source_tesselation_evaluation>` or :ref:`source_vertex<class_RDShaderSource_property_source_vertex>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

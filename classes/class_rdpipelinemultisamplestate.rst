@@ -12,9 +12,14 @@ RDPipelineMultisampleState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Pipeline multisample state (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**RDPipelineMultisampleState** is used to control how multisample or supersample antialiasing is being performed when rendering using :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -58,9 +63,7 @@ Property Descriptions
 - void **set_enable_alpha_to_coverage** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_enable_alpha_to_coverage** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, alpha to coverage is enabled. This generates a temporary coverage value based on the alpha component of the fragment's first color output. This allows alpha transparency to make use of multisample antialiasing.
 
 .. rst-class:: classref-item-separator
 
@@ -77,9 +80,7 @@ Property Descriptions
 - void **set_enable_alpha_to_one** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_enable_alpha_to_one** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, alpha is forced to either ``0.0`` or ``1.0``. This allows hardening the edges of antialiased alpha transparencies. Only relevant if :ref:`enable_alpha_to_coverage<class_RDPipelineMultisampleState_property_enable_alpha_to_coverage>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -96,9 +97,7 @@ Property Descriptions
 - void **set_enable_sample_shading** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_enable_sample_shading** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, enables per-sample shading which replaces MSAA by SSAA. This provides higher quality antialiasing that works with transparent (alpha scissor) edges. This has a very high performance cost. See also :ref:`min_sample_shading<class_RDPipelineMultisampleState_property_min_sample_shading>`. See the `per-sample shading Vulkan documentation <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#primsrast-sampleshading>`__ for more details.
 
 .. rst-class:: classref-item-separator
 
@@ -115,9 +114,7 @@ Property Descriptions
 - void **set_min_sample_shading** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_min_sample_shading** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The multiplier of :ref:`sample_count<class_RDPipelineMultisampleState_property_sample_count>` that determines how many samples are performed for each fragment. Must be between ``0.0`` and ``1.0`` (inclusive). Only effective if :ref:`enable_sample_shading<class_RDPipelineMultisampleState_property_enable_sample_shading>` is ``true``. If :ref:`min_sample_shading<class_RDPipelineMultisampleState_property_min_sample_shading>` is ``1.0``, fragment invocation must only read from the coverage index sample. Tile image access must not be used if :ref:`enable_sample_shading<class_RDPipelineMultisampleState_property_enable_sample_shading>` is *not* ``1.0``.
 
 .. rst-class:: classref-item-separator
 
@@ -134,9 +131,7 @@ Property Descriptions
 - void **set_sample_count** **(** :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` value **)**
 - :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_sample_count** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The number of MSAA samples (or SSAA samples if :ref:`enable_sample_shading<class_RDPipelineMultisampleState_property_enable_sample_shading>` is ``true``) to perform. Higher values result in better antialiasing, at the cost of performance.
 
 .. rst-class:: classref-item-separator
 
@@ -153,9 +148,7 @@ Property Descriptions
 - void **set_sample_masks** **(** :ref:`int[]<class_int>` value **)**
 - :ref:`int[]<class_int>` **get_sample_masks** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The sampleSee the `sample mask Vulkan documentation <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#fragops-samplemask>`__ for more details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

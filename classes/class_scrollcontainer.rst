@@ -42,21 +42,25 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                            | clip_contents                                                                        | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                            | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                     | ``false``                                                                 |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | :ref:`horizontal_scroll_mode<class_ScrollContainer_property_horizontal_scroll_mode>` | ``1``                                                                     |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                              | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`               | ``0``                                                                     |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                              | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`           | ``0``                                                                     |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                              | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`               | ``0``                                                                     |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-   | :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | :ref:`vertical_scroll_mode<class_ScrollContainer_property_vertical_scroll_mode>`     | ``1``                                                                     |
-   +----------------------------------------------------+--------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                            | clip_contents                                                                                      | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                            | :ref:`follow_focus<class_ScrollContainer_property_follow_focus>`                                   | ``false``                                                                 |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | :ref:`horizontal_scroll_mode<class_ScrollContainer_property_horizontal_scroll_mode>`               | ``1``                                                                     |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                              | :ref:`scroll_deadzone<class_ScrollContainer_property_scroll_deadzone>`                             | ``0``                                                                     |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                              | :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`                         | ``0``                                                                     |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                          | :ref:`scroll_horizontal_custom_step<class_ScrollContainer_property_scroll_horizontal_custom_step>` | ``-1.0``                                                                  |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                              | :ref:`scroll_vertical<class_ScrollContainer_property_scroll_vertical>`                             | ``0``                                                                     |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                          | :ref:`scroll_vertical_custom_step<class_ScrollContainer_property_scroll_vertical_custom_step>`     | ``-1.0``                                                                  |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`ScrollMode<enum_ScrollContainer_ScrollMode>` | :ref:`vertical_scroll_mode<class_ScrollContainer_property_vertical_scroll_mode>`                   | ``1``                                                                     |
+   +----------------------------------------------------+----------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -233,7 +237,31 @@ Deadzone for touch scrolling. Lower deadzone makes the scrolling more sensitive.
 - void **set_h_scroll** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_h_scroll** **(** **)**
 
-The current horizontal scroll value.
+The current horizontal scroll value. 
+
+\ **Note:** If you are setting this value in the :ref:`Node._ready<class_Node_method__ready>` function or earlier, it needs to be wrapped with :ref:`Object.set_deferred<class_Object_method_set_deferred>`, since scroll bar's :ref:`Range.max_value<class_Range_property_max_value>` is not initialized yet.
+
+::
+
+    func _ready():
+        set_deferred("scroll_horizontal", 600)
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScrollContainer_property_scroll_horizontal_custom_step:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **scroll_horizontal_custom_step** = ``-1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_horizontal_custom_step** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_horizontal_custom_step** **(** **)**
+
+Overrides the :ref:`ScrollBar.custom_step<class_ScrollBar_property_custom_step>` used when clicking the internal scroll bar's horizontal increment and decrement buttons or when using arrow keys when the :ref:`ScrollBar<class_ScrollBar>` is focused.
 
 .. rst-class:: classref-item-separator
 
@@ -251,6 +279,30 @@ The current horizontal scroll value.
 - :ref:`int<class_int>` **get_v_scroll** **(** **)**
 
 The current vertical scroll value.
+
+\ **Note:** Setting it early needs to be deferred, just like in :ref:`scroll_horizontal<class_ScrollContainer_property_scroll_horizontal>`.
+
+::
+
+    func _ready():
+        set_deferred("scroll_vertical", 600)
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ScrollContainer_property_scroll_vertical_custom_step:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **scroll_vertical_custom_step** = ``-1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_vertical_custom_step** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_vertical_custom_step** **(** **)**
+
+Overrides the :ref:`ScrollBar.custom_step<class_ScrollBar_property_custom_step>` used when clicking the internal scroll bar's vertical increment and decrement buttons or when using arrow keys when the :ref:`ScrollBar<class_ScrollBar>` is focused.
 
 .. rst-class:: classref-item-separator
 

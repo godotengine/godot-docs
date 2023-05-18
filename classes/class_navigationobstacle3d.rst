@@ -10,18 +10,22 @@
 NavigationObstacle3D
 ====================
 
-**Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+**Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-3D Obstacle used in navigation for collision avoidance.
+3D Obstacle used in navigation to constrain avoidance controlled agents outside or inside an area.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-3D Obstacle used in navigation for collision avoidance. The obstacle needs navigation data to work correctly. **NavigationObstacle3D** is physics safe.
+3D Obstacle used in navigation to constrain avoidance controlled agents outside or inside an area. The obstacle needs a navigation map and outline vertices defined to work correctly.
 
-Obstacles **don't** change the resulting path from the pathfinding, they only affect the navigation agent movement in a radius. Therefore, using obstacles for the static walls in your level won't work because those walls don't exist in the pathfinding. The navigation agent will be pushed in a semi-random direction away while moving inside that radius. Obstacles are intended as a last resort option for constantly moving objects that cannot be (re)baked to a navigation mesh efficiently.
+If the obstacle's vertices are winded in clockwise order, avoidance agents will be pushed in by the obstacle, otherwise, avoidance agents will be pushed out. Outlines must not cross or overlap.
+
+Obstacles are **not** a replacement for a (re)baked navigation mesh. Obstacles **don't** change the resulting path from the pathfinding, obstacles only affect the navigation avoidance agent movement by altering the suggested velocity of the avoidance agent.
+
+Obstacles using vertices can warp to a new position but should not moved every frame as each move requires a rebuild of the avoidance map.
 
 .. rst-class:: classref-introduction-group
 
@@ -38,11 +42,19 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+-----------------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`   | :ref:`estimate_radius<class_NavigationObstacle3D_property_estimate_radius>` | ``true`` |
-   +---------------------------+-----------------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>` | :ref:`radius<class_NavigationObstacle3D_property_radius>`                   | ``1.0``  |
-   +---------------------------+-----------------------------------------------------------------------------+----------+
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                               | :ref:`avoidance_layers<class_NavigationObstacle3D_property_avoidance_layers>` | ``1``                    |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`height<class_NavigationObstacle3D_property_height>`                     | ``1.0``                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`radius<class_NavigationObstacle3D_property_radius>`                     | ``0.0``                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`use_3d_avoidance<class_NavigationObstacle3D_property_use_3d_avoidance>` | ``false``                |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
+   | :ref:`Vector3<class_Vector3>`                       | :ref:`velocity<class_NavigationObstacle3D_property_velocity>`                 | ``Vector3(0, 0, 0)``     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector3Array<class_PackedVector3Array>` | :ref:`vertices<class_NavigationObstacle3D_property_vertices>`                 | ``PackedVector3Array()`` |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -52,13 +64,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>` | :ref:`get_navigation_map<class_NavigationObstacle3D_method_get_navigation_map>` **(** **)** |const|                              |
-   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>` | :ref:`get_rid<class_NavigationObstacle3D_method_get_rid>` **(** **)** |const|                                                    |
-   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
-   | void                  | :ref:`set_navigation_map<class_NavigationObstacle3D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)** |
-   +-----------------------+----------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_agent_rid<class_NavigationObstacle3D_method_get_agent_rid>` **(** **)** |const|                                                                                   |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`get_avoidance_layer_value<class_NavigationObstacle3D_method_get_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_navigation_map<class_NavigationObstacle3D_method_get_navigation_map>` **(** **)** |const|                                                                         |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_obstacle_rid<class_NavigationObstacle3D_method_get_obstacle_rid>` **(** **)** |const|                                                                             |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_avoidance_layer_value<class_NavigationObstacle3D_method_set_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_navigation_map<class_NavigationObstacle3D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**                                            |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -69,18 +87,35 @@ Methods
 Property Descriptions
 ---------------------
 
-.. _class_NavigationObstacle3D_property_estimate_radius:
+.. _class_NavigationObstacle3D_property_avoidance_layers:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **estimate_radius** = ``true``
+:ref:`int<class_int>` **avoidance_layers** = ``1``
 
 .. rst-class:: classref-property-setget
 
-- void **set_estimate_radius** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_radius_estimated** **(** **)**
+- void **set_avoidance_layers** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_avoidance_layers** **(** **)**
 
-Enables radius estimation algorithm which uses parent's collision shapes to determine the obstacle radius.
+A bitfield determining the avoidance layers for this obstacle. Agent's with a matching bit on the their avoidance mask will avoid this obstacle.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationObstacle3D_property_height:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **height** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_height** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_height** **(** **)**
+
+Sets the obstacle height used in 2D avoidance. 2D avoidance using agent's ignore obstacles that are below or above them.
 
 .. rst-class:: classref-item-separator
 
@@ -90,14 +125,67 @@ Enables radius estimation algorithm which uses parent's collision shapes to dete
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **radius** = ``1.0``
+:ref:`float<class_float>` **radius** = ``0.0``
 
 .. rst-class:: classref-property-setget
 
 - void **set_radius** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_radius** **(** **)**
 
-The radius of the agent. Used only if :ref:`estimate_radius<class_NavigationObstacle3D_property_estimate_radius>` is set to false.
+Sets the avoidance radius for the obstacle.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationObstacle3D_property_use_3d_avoidance:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_3d_avoidance** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_3d_avoidance** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_use_3d_avoidance** **(** **)**
+
+If ``true`` the obstacle affects 3D avoidance using agent's with obstacle :ref:`radius<class_NavigationObstacle3D_property_radius>`.
+
+If ``false`` the obstacle affects 2D avoidance using agent's with both obstacle :ref:`vertices<class_NavigationObstacle3D_property_vertices>` as well as obstacle :ref:`radius<class_NavigationObstacle3D_property_radius>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationObstacle3D_property_velocity:
+
+.. rst-class:: classref-property
+
+:ref:`Vector3<class_Vector3>` **velocity** = ``Vector3(0, 0, 0)``
+
+.. rst-class:: classref-property-setget
+
+- void **set_velocity** **(** :ref:`Vector3<class_Vector3>` value **)**
+- :ref:`Vector3<class_Vector3>` **get_velocity** **(** **)**
+
+Sets the wanted velocity for the obstacle so other agent's can better predict the obstacle if it is moved with a velocity regularly (every frame) instead of warped to a new position. Does only affect avoidance for the obstacles :ref:`radius<class_NavigationObstacle3D_property_radius>`. Does nothing for the obstacles static vertices.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationObstacle3D_property_vertices:
+
+.. rst-class:: classref-property
+
+:ref:`PackedVector3Array<class_PackedVector3Array>` **vertices** = ``PackedVector3Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_vertices** **(** :ref:`PackedVector3Array<class_PackedVector3Array>` value **)**
+- :ref:`PackedVector3Array<class_PackedVector3Array>` **get_vertices** **(** **)**
+
+The outline vertices of the obstacle. If the vertices are winded in clockwise order agents will be pushed in by the obstacle, else they will be pushed out. Outlines can not be crossed or overlap. Should the vertices using obstacle be warped to a new position agent's can not predict this movement and may get trapped inside the obstacle.
 
 .. rst-class:: classref-section-separator
 
@@ -108,25 +196,61 @@ The radius of the agent. Used only if :ref:`estimate_radius<class_NavigationObst
 Method Descriptions
 -------------------
 
+.. _class_NavigationObstacle3D_method_get_agent_rid:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_agent_rid** **(** **)** |const|
+
+Returns the :ref:`RID<class_RID>` of this agent on the :ref:`NavigationServer3D<class_NavigationServer3D>`. This :ref:`RID<class_RID>` is used for the moving avoidance "obstacle" component (using a fake avoidance agent) which size is defined by :ref:`radius<class_NavigationObstacle3D_property_radius>` and velocity set by using :ref:`velocity<class_NavigationObstacle3D_property_velocity>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationObstacle3D_method_get_avoidance_layer_value:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **get_avoidance_layer_value** **(** :ref:`int<class_int>` layer_number **)** |const|
+
+Returns whether or not the specified layer of the :ref:`avoidance_layers<class_NavigationObstacle3D_property_avoidance_layers>` bitmask is enabled, given a ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationObstacle3D_method_get_navigation_map:
 
 .. rst-class:: classref-method
 
 :ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
 
-Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObstacle node. This function returns always the map set on the NavigationObstacle node and not the map of the abstract agent on the NavigationServer. If the agent map is changed directly with the NavigationServer API the NavigationObstacle node will not be aware of the map change. Use :ref:`set_navigation_map<class_NavigationObstacle3D_method_set_navigation_map>` to change the navigation map for the NavigationObstacle and also update the agent on the NavigationServer.
+Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObstacle node. This function returns always the map set on the NavigationObstacle node and not the map of the abstract obstacle on the NavigationServer. If the obstacle map is changed directly with the NavigationServer API the NavigationObstacle node will not be aware of the map change. Use :ref:`set_navigation_map<class_NavigationObstacle3D_method_set_navigation_map>` to change the navigation map for the NavigationObstacle and also update the obstacle on the NavigationServer.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_NavigationObstacle3D_method_get_rid:
+.. _class_NavigationObstacle3D_method_get_obstacle_rid:
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
+:ref:`RID<class_RID>` **get_obstacle_rid** **(** **)** |const|
 
-Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer3D<class_NavigationServer3D>`.
+Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer3D<class_NavigationServer3D>`. This :ref:`RID<class_RID>` is used for the static avoidance obstacle component which shape is defined by :ref:`vertices<class_NavigationObstacle3D_property_vertices>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationObstacle3D_method_set_avoidance_layer_value:
+
+.. rst-class:: classref-method
+
+void **set_avoidance_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
+
+Based on ``value``, enables or disables the specified layer in the :ref:`avoidance_layers<class_NavigationObstacle3D_property_avoidance_layers>` bitmask, given a ``layer_number`` between 1 and 32.
 
 .. rst-class:: classref-item-separator
 
@@ -138,7 +262,7 @@ Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer
 
 void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
 
-Sets the :ref:`RID<class_RID>` of the navigation map this NavigationObstacle node should use and also updates the ``agent`` on the NavigationServer.
+Sets the :ref:`RID<class_RID>` of the navigation map this NavigationObstacle node should use and also updates the ``obstacle`` on the NavigationServer.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

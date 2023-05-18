@@ -253,7 +253,7 @@ The option is local to the location of the code completion query - e.g. a local 
 
 :ref:`CodeCompletionLocation<enum_ScriptLanguageExtension_CodeCompletionLocation>` **LOCATION_PARENT_MASK** = ``256``
 
-The option is from the containing class or a parent class, relative to the location of the code completion query. Perform a bitwise OR with the class depth (e.g. 0 for the local class, 1 for the parent, 2 for the grandparent, etc) to store the depth of an option in a the class or a parent class.
+The option is from the containing class or a parent class, relative to the location of the code completion query. Perform a bitwise OR with the class depth (e.g. 0 for the local class, 1 for the parent, 2 for the grandparent, etc) to store the depth of an option in the class or a parent class.
 
 .. _class_ScriptLanguageExtension_constant_LOCATION_OTHER_USER_CODE:
 

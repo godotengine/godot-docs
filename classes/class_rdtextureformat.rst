@@ -12,9 +12,14 @@ RDTextureFormat
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Texture format (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -78,9 +83,7 @@ Property Descriptions
 - void **set_array_layers** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_array_layers** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The number of layers in the texture. Only relevant for 2D texture arrays.
 
 .. rst-class:: classref-item-separator
 
@@ -97,9 +100,7 @@ Property Descriptions
 - void **set_depth** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_depth** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The texture's depth (in pixels). This is always ``1`` for 2D textures.
 
 .. rst-class:: classref-item-separator
 
@@ -116,9 +117,7 @@ Property Descriptions
 - void **set_format** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` value **)**
 - :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **get_format** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The texture's pixel data format.
 
 .. rst-class:: classref-item-separator
 
@@ -135,9 +134,7 @@ Property Descriptions
 - void **set_height** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_height** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The texture's height (in pixels).
 
 .. rst-class:: classref-item-separator
 
@@ -154,9 +151,7 @@ Property Descriptions
 - void **set_mipmaps** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_mipmaps** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The number of mipmaps available in the texture.
 
 .. rst-class:: classref-item-separator
 
@@ -173,9 +168,7 @@ Property Descriptions
 - void **set_samples** **(** :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` value **)**
 - :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **get_samples** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The number of samples used when sampling the texture.
 
 .. rst-class:: classref-item-separator
 
@@ -192,9 +185,7 @@ Property Descriptions
 - void **set_texture_type** **(** :ref:`TextureType<enum_RenderingDevice_TextureType>` value **)**
 - :ref:`TextureType<enum_RenderingDevice_TextureType>` **get_texture_type** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The texture type.
 
 .. rst-class:: classref-item-separator
 
@@ -211,9 +202,7 @@ Property Descriptions
 - void **set_usage_bits** **(** :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` value **)**
 - :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **get_usage_bits** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The texture's usage bits, which determine what can be done using the texture.
 
 .. rst-class:: classref-item-separator
 
@@ -230,9 +219,7 @@ Property Descriptions
 - void **set_width** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_width** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The texture's width (in pixels).
 
 .. rst-class:: classref-section-separator
 

@@ -19,7 +19,7 @@ Operating System functions.
 Description
 -----------
 
-Operating System functions. **OS** wraps the most common functionality to communicate with the host operating system, such as the clipboard, video driver, delays, environment variables, execution of binaries, command line, etc.
+Operating System functions. **OS** wraps the most common functionality to communicate with the host operating system, such as the video driver, delays, environment variables, execution of binaries, command line, etc.
 
 \ **Note:** In Godot 4, **OS** functions related to window management were moved to the :ref:`DisplayServer<class_DisplayServer>` singleton.
 
@@ -99,6 +99,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_main_thread_id<class_OS_method_get_main_thread_id>` **(** **)** |const|                                                                                                                                                                                                                                                                                        |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`               | :ref:`get_memory_info<class_OS_method_get_memory_info>` **(** **)** |const|                                                                                                                                                                                                                                                                                              |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_model_name<class_OS_method_get_model_name>` **(** **)** |const|                                                                                                                                                                                                                                                                                                |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`get_name<class_OS_method_get_name>` **(** **)** |const|                                                                                                                                                                                                                                                                                                            |
@@ -170,6 +172,8 @@ Methods
    | void                                              | :ref:`set_use_file_access_save_and_swap<class_OS_method_set_use_file_access_save_and_swap>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                                                                                                  |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`shell_open<class_OS_method_shell_open>` **(** :ref:`String<class_String>` uri **)**                                                                                                                                                                                                                                                                                |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`shell_show_in_file_manager<class_OS_method_shell_show_in_file_manager>` **(** :ref:`String<class_String>` file_or_dir_path, :ref:`bool<class_bool>` open_folder=true **)**                                                                                                                                                                                         |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                              | :ref:`unset_environment<class_OS_method_unset_environment>` **(** :ref:`String<class_String>` variable **)** |const|                                                                                                                                                                                                                                                     |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -456,7 +460,7 @@ Delays execution of the current thread by ``usec`` microseconds. ``usec`` must b
 
 :ref:`int<class_int>` **execute** **(** :ref:`String<class_String>` path, :ref:`PackedStringArray<class_PackedStringArray>` arguments, :ref:`Array<class_Array>` output=[], :ref:`bool<class_bool>` read_stderr=false, :ref:`bool<class_bool>` open_console=false **)**
 
-Executes a command. The file specified in ``path`` must exist and be executable. Platform path resolution will be used. The ``arguments`` are used in the given order and separated by a space. If an ``output`` :ref:`Array<class_Array>` is provided, the complete shell output of the process will be appended as a single :ref:`String<class_String>` element in ``output``. If ``read_stderr`` is ``true``, the output to the standard error stream will be included too.
+Executes a command. The file specified in ``path`` must exist and be executable. Platform path resolution will be used. The ``arguments`` are used in the given order, separated by spaces, and wrapped in quotes. If an ``output`` :ref:`Array<class_Array>` is provided, the complete shell output of the process will be appended as a single :ref:`String<class_String>` element in ``output``. If ``read_stderr`` is ``true``, the output to the standard error stream will be included too.
 
 On Windows, if ``open_console`` is ``true`` and the process is a console app, a new terminal window will be opened. This is ignored on other platforms.
 
@@ -783,6 +787,26 @@ Returns the ID of the main thread. See :ref:`get_thread_caller_id<class_OS_metho
 
 ----
 
+.. _class_OS_method_get_memory_info:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **get_memory_info** **(** **)** |const|
+
+Returns the :ref:`Dictionary<class_Dictionary>` with the following keys:
+
+\ ``"physical"`` - total amount of usable physical memory, in bytes or ``-1`` if unknown. This value can be slightly less than the actual physical memory amount, since it does not include memory reserved by kernel and devices.
+
+\ ``"free"`` - amount of physical memory, that can be immediately allocated without disk access or other costly operation, in bytes or ``-1`` if unknown. The process might be able to allocate more physical memory, but such allocation will require moving inactive pages to disk and can take some time.
+
+\ ``"available"`` - amount of memory, that can be allocated without extending the swap file(s), in bytes or ``-1`` if unknown. This value include both physical memory and swap.
+
+\ ``"stack"`` - size of the current thread stack, in bytes or ``-1`` if unknown.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_OS_method_get_model_name:
 
 .. rst-class:: classref-method
@@ -995,7 +1019,7 @@ Returns an array of the system substitute font file paths, which are similar to 
 
 The following aliases can be used to request default fonts: "sans-serif", "serif", "monospace", "cursive", and "fantasy".
 
-\ **Note:** Depending on OS, it's not guaranteed that any of the returned fonts is suitable for rendering specified text. Fonts should be loaded and checked in the order they are returned, and the first suitable one used.
+\ **Note:** Depending on OS, it's not guaranteed that any of the returned fonts will be suitable for rendering specified text. Fonts should be loaded and checked in the order they are returned, and the first suitable one used.
 
 \ **Note:** Returned fonts might have different style if the requested style is not available or belong to a different font family.
 
@@ -1105,7 +1129,7 @@ For Android, the SDK version and the incremental build number are returned. If i
 
 :ref:`PackedStringArray<class_PackedStringArray>` **get_video_adapter_driver_info** **(** **)** |const|
 
-Returns the video adapter driver name and version for the user's currently active graphics card.
+Returns the video adapter driver name and version for the user's currently active graphics card. See also :ref:`RenderingServer.get_video_adapter_api_version<class_RenderingServer_method_get_video_adapter_api_version>`.
 
 The first element holds the driver name, such as ``nvidia``, ``amdgpu``, etc.
 
@@ -1140,6 +1164,8 @@ Returns ``true`` if the environment variable with the name ``variable`` exists.
 Returns ``true`` if the feature for the given feature tag is supported in the currently running instance, depending on the platform, build, etc. Can be used to check whether you're currently running a debug build, on a certain platform or arch, etc. Refer to the :doc:`Feature Tags <../tutorials/export/feature_tags>` documentation for more details.
 
 \ **Note:** Tag names are case-sensitive.
+
+\ **Note:** On the web platform, one of the following additional tags is defined to indicate host platform: ``web_android``, ``web_ios``, ``web_linuxbsd``, ``web_macos``, or ``web_windows``.
 
 .. rst-class:: classref-item-separator
 
@@ -1398,7 +1424,27 @@ Requests the OS to open a resource with the most appropriate program. For exampl
 
 Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
 
+\ **Note:** Use :ref:`String.uri_encode<class_String_method_uri_encode>` to encode characters within URLs in a URL-safe, portable way. This is especially required for line breaks. Otherwise, :ref:`shell_open<class_OS_method_shell_open>` may not work correctly in a project exported to the Web platform.
+
 \ **Note:** This method is implemented on Android, iOS, Web, Linux, macOS and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_OS_method_shell_show_in_file_manager:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **shell_show_in_file_manager** **(** :ref:`String<class_String>` file_or_dir_path, :ref:`bool<class_bool>` open_folder=true **)**
+
+Requests the OS to open the file manager, then navigate to the given ``file_or_dir_path`` and select the target file or folder.
+
+If ``file_or_dir_path`` is a valid directory path, and ``open_folder`` is ``true``, the method will open the file manager and enter the target folder without selecting anything.
+
+Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
+
+\ **Note:** Currently this method is only implemented on Windows. On other platforms, it will fallback to :ref:`shell_open<class_OS_method_shell_open>` with a directory path for ``file_or_dir_path``.
 
 .. rst-class:: classref-item-separator
 

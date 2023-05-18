@@ -31,7 +31,7 @@ You may assign navigation layers to regions with :ref:`region_set_navigation_lay
 
 To use the collision avoidance system, you may use agents. You can set an agent's target velocity, then the servers will emit a callback with a modified velocity.
 
-\ **Note:** The collision avoidance system ignores regions. Using the modified velocity as-is might lead to pushing and agent outside of a navigable area. This is a limitation of the collision avoidance system, any more complex situation may require the use of the physics engine.
+\ **Note:** The collision avoidance system ignores regions. Using the modified velocity as-is might lead to pushing an agent outside of a navigable area. This is a limitation of the collision avoidance system, any more complex situation may require the use of the physics engine.
 
 This server keeps tracks of any call and executes them during the sync phase. This means that you can request any change to the map, using any thread, without worrying.
 
@@ -55,11 +55,21 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`agent_create<class_NavigationServer2D_method_agent_create>` **(** **)**                                                                                                                                                                                                 |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`agent_get_avoidance_enabled<class_NavigationServer2D_method_agent_get_avoidance_enabled>` **(** :ref:`RID<class_RID>` agent **)** |const|                                                                                                                               |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`agent_get_map<class_NavigationServer2D_method_agent_get_map>` **(** :ref:`RID<class_RID>` agent **)** |const|                                                                                                                                                           |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`agent_is_map_changed<class_NavigationServer2D_method_agent_is_map_changed>` **(** :ref:`RID<class_RID>` agent **)** |const|                                                                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`agent_set_callback<class_NavigationServer2D_method_agent_set_callback>` **(** :ref:`RID<class_RID>` agent, :ref:`Callable<class_Callable>` callback **)**                                                                                                               |
+   | void                                                | :ref:`agent_set_avoidance_callback<class_NavigationServer2D_method_agent_set_avoidance_callback>` **(** :ref:`RID<class_RID>` agent, :ref:`Callable<class_Callable>` callback **)**                                                                                           |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`agent_set_avoidance_enabled<class_NavigationServer2D_method_agent_set_avoidance_enabled>` **(** :ref:`RID<class_RID>` agent, :ref:`bool<class_bool>` enabled **)**                                                                                                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`agent_set_avoidance_layers<class_NavigationServer2D_method_agent_set_avoidance_layers>` **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` layers **)**                                                                                                           |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`agent_set_avoidance_mask<class_NavigationServer2D_method_agent_set_avoidance_mask>` **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` mask **)**                                                                                                                 |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`agent_set_avoidance_priority<class_NavigationServer2D_method_agent_set_avoidance_priority>` **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` priority **)**                                                                                                 |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`agent_set_map<class_NavigationServer2D_method_agent_set_map>` **(** :ref:`RID<class_RID>` agent, :ref:`RID<class_RID>` map **)**                                                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -73,11 +83,13 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`agent_set_radius<class_NavigationServer2D_method_agent_set_radius>` **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` radius **)**                                                                                                                           |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`agent_set_target_velocity<class_NavigationServer2D_method_agent_set_target_velocity>` **(** :ref:`RID<class_RID>` agent, :ref:`Vector2<class_Vector2>` target_velocity **)**                                                                                            |
+   | void                                                | :ref:`agent_set_time_horizon_agents<class_NavigationServer2D_method_agent_set_time_horizon_agents>` **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` time_horizon **)**                                                                                           |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                | :ref:`agent_set_time_horizon<class_NavigationServer2D_method_agent_set_time_horizon>` **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` time **)**                                                                                                                 |
+   | void                                                | :ref:`agent_set_time_horizon_obstacles<class_NavigationServer2D_method_agent_set_time_horizon_obstacles>` **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` time_horizon **)**                                                                                     |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`agent_set_velocity<class_NavigationServer2D_method_agent_set_velocity>` **(** :ref:`RID<class_RID>` agent, :ref:`Vector2<class_Vector2>` velocity **)**                                                                                                                 |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`agent_set_velocity_forced<class_NavigationServer2D_method_agent_set_velocity_forced>` **(** :ref:`RID<class_RID>` agent, :ref:`Vector2<class_Vector2>` velocity **)**                                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`free_rid<class_NavigationServer2D_method_free_rid>` **(** :ref:`RID<class_RID>` rid **)**                                                                                                                                                                               |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -137,9 +149,13 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID[]<class_RID>`                             | :ref:`map_get_links<class_NavigationServer2D_method_map_get_links>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID[]<class_RID>`                             | :ref:`map_get_obstacles<class_NavigationServer2D_method_map_get_obstacles>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                     |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`map_get_path<class_NavigationServer2D_method_map_get_path>` **(** :ref:`RID<class_RID>` map, :ref:`Vector2<class_Vector2>` origin, :ref:`Vector2<class_Vector2>` destination, :ref:`bool<class_bool>` optimize, :ref:`int<class_int>` navigation_layers=1 **)** |const| |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID[]<class_RID>`                             | :ref:`map_get_regions<class_NavigationServer2D_method_map_get_regions>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                         |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`map_get_use_edge_connections<class_NavigationServer2D_method_map_get_use_edge_connections>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                               |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`map_is_active<class_NavigationServer2D_method_map_is_active>` **(** :ref:`RID<class_RID>` map **)** |const|                                                                                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -150,6 +166,20 @@ Methods
    | void                                                | :ref:`map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>` **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` margin **)**                                                                                                 |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`map_set_link_connection_radius<class_NavigationServer2D_method_map_set_link_connection_radius>` **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` radius **)**                                                                                                 |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`map_set_use_edge_connections<class_NavigationServer2D_method_map_set_use_edge_connections>` **(** :ref:`RID<class_RID>` map, :ref:`bool<class_bool>` enabled **)**                                                                                                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                               | :ref:`obstacle_create<class_NavigationServer2D_method_obstacle_create>` **(** **)**                                                                                                                                                                                           |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`                               | :ref:`obstacle_get_map<class_NavigationServer2D_method_obstacle_get_map>` **(** :ref:`RID<class_RID>` obstacle **)** |const|                                                                                                                                                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`obstacle_set_avoidance_layers<class_NavigationServer2D_method_obstacle_set_avoidance_layers>` **(** :ref:`RID<class_RID>` obstacle, :ref:`int<class_int>` layers **)**                                                                                                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`obstacle_set_map<class_NavigationServer2D_method_obstacle_set_map>` **(** :ref:`RID<class_RID>` obstacle, :ref:`RID<class_RID>` map **)**                                                                                                                               |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`obstacle_set_position<class_NavigationServer2D_method_obstacle_set_position>` **(** :ref:`RID<class_RID>` obstacle, :ref:`Vector2<class_Vector2>` position **)**                                                                                                        |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`obstacle_set_vertices<class_NavigationServer2D_method_obstacle_set_vertices>` **(** :ref:`RID<class_RID>` obstacle, :ref:`PackedVector2Array<class_PackedVector2Array>` vertices **)**                                                                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`query_path<class_NavigationServer2D_method_query_path>` **(** :ref:`NavigationPathQueryParameters2D<class_NavigationPathQueryParameters2D>` parameters, :ref:`NavigationPathQueryResult2D<class_NavigationPathQueryResult2D>` result **)** |const|                      |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -171,6 +201,8 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                           | :ref:`region_get_travel_cost<class_NavigationServer2D_method_region_get_travel_cost>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`region_get_use_edge_connections<class_NavigationServer2D_method_region_get_use_edge_connections>` **(** :ref:`RID<class_RID>` region **)** |const|                                                                                                                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`region_owns_point<class_NavigationServer2D_method_region_owns_point>` **(** :ref:`RID<class_RID>` region, :ref:`Vector2<class_Vector2>` point **)** |const|                                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`region_set_enter_cost<class_NavigationServer2D_method_region_set_enter_cost>` **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` enter_cost **)**                                                                                                            |
@@ -186,6 +218,8 @@ Methods
    | void                                                | :ref:`region_set_transform<class_NavigationServer2D_method_region_set_transform>` **(** :ref:`RID<class_RID>` region, :ref:`Transform2D<class_Transform2D>` transform **)**                                                                                                   |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`region_set_travel_cost<class_NavigationServer2D_method_region_set_travel_cost>` **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` travel_cost **)**                                                                                                         |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`region_set_use_edge_connections<class_NavigationServer2D_method_region_set_use_edge_connections>` **(** :ref:`RID<class_RID>` region, :ref:`bool<class_bool>` enabled **)**                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`set_debug_enabled<class_NavigationServer2D_method_set_debug_enabled>` **(** :ref:`bool<class_bool>` enabled **)**                                                                                                                                                       |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -240,6 +274,18 @@ Creates the agent.
 
 ----
 
+.. _class_NavigationServer2D_method_agent_get_avoidance_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **agent_get_avoidance_enabled** **(** :ref:`RID<class_RID>` agent **)** |const|
+
+Return ``true`` if the specified ``agent`` uses avoidance.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer2D_method_agent_get_map:
 
 .. rst-class:: classref-method
@@ -264,15 +310,65 @@ Returns true if the map got changed the previous frame.
 
 ----
 
-.. _class_NavigationServer2D_method_agent_set_callback:
+.. _class_NavigationServer2D_method_agent_set_avoidance_callback:
 
 .. rst-class:: classref-method
 
-void **agent_set_callback** **(** :ref:`RID<class_RID>` agent, :ref:`Callable<class_Callable>` callback **)**
+void **agent_set_avoidance_callback** **(** :ref:`RID<class_RID>` agent, :ref:`Callable<class_Callable>` callback **)**
 
-Sets the callback that gets called after each avoidance processing step for the ``agent``. The calculated ``safe_velocity`` will be passed as the first parameter just before the physics calculations.
+Sets the callback :ref:`Callable<class_Callable>` that gets called after each avoidance processing step for the ``agent``. The calculated ``safe_velocity`` will be dispatched with a signal to the object just before the physics calculations.
 
-\ **Note:** Created callbacks are always processed independently of the SceneTree state as long as the agent is on a navigation map and not freed. To disable the dispatch of a callback from an agent use :ref:`agent_set_callback<class_NavigationServer2D_method_agent_set_callback>` again with an empty :ref:`Callable<class_Callable>`.
+\ **Note:** Created callbacks are always processed independently of the SceneTree state as long as the agent is on a navigation map and not freed. To disable the dispatch of a callback from an agent use :ref:`agent_set_avoidance_callback<class_NavigationServer2D_method_agent_set_avoidance_callback>` again with an empty :ref:`Callable<class_Callable>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_agent_set_avoidance_enabled:
+
+.. rst-class:: classref-method
+
+void **agent_set_avoidance_enabled** **(** :ref:`RID<class_RID>` agent, :ref:`bool<class_bool>` enabled **)**
+
+If ``enabled`` is ``true`` the specified ``agent`` uses avoidance.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_agent_set_avoidance_layers:
+
+.. rst-class:: classref-method
+
+void **agent_set_avoidance_layers** **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` layers **)**
+
+Set the agent's ``avoidance_layers`` bitmask.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_agent_set_avoidance_mask:
+
+.. rst-class:: classref-method
+
+void **agent_set_avoidance_mask** **(** :ref:`RID<class_RID>` agent, :ref:`int<class_int>` mask **)**
+
+Set the agent's ``avoidance_mask`` bitmask.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_agent_set_avoidance_priority:
+
+.. rst-class:: classref-method
+
+void **agent_set_avoidance_priority** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` priority **)**
+
+Set the agent's ``avoidance_priority`` with a ``priority`` between 0.0 (lowest priority) to 1.0 (highest priority).
+
+The specified ``agent`` does not adjust the velocity for other agents that would match the ``avoidance_mask`` but have a lower `` avoidance_priority``. This in turn makes the other agents with lower priority adjust their velocities even more to avoid collision with this agent.
 
 .. rst-class:: classref-item-separator
 
@@ -350,25 +446,25 @@ Sets the radius of the agent.
 
 ----
 
-.. _class_NavigationServer2D_method_agent_set_target_velocity:
+.. _class_NavigationServer2D_method_agent_set_time_horizon_agents:
 
 .. rst-class:: classref-method
 
-void **agent_set_target_velocity** **(** :ref:`RID<class_RID>` agent, :ref:`Vector2<class_Vector2>` target_velocity **)**
+void **agent_set_time_horizon_agents** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` time_horizon **)**
 
-Sets the new target velocity.
+The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to other agents. The larger this number, the sooner this agent will respond to the presence of other agents, but the less freedom this agent has in choosing its velocities. A too high value will slow down agents movement considerably. Must be positive.
 
 .. rst-class:: classref-item-separator
 
 ----
 
-.. _class_NavigationServer2D_method_agent_set_time_horizon:
+.. _class_NavigationServer2D_method_agent_set_time_horizon_obstacles:
 
 .. rst-class:: classref-method
 
-void **agent_set_time_horizon** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` time **)**
+void **agent_set_time_horizon_obstacles** **(** :ref:`RID<class_RID>` agent, :ref:`float<class_float>` time_horizon **)**
 
-The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to other agents. The larger this number, the sooner this agent will respond to the presence of other agents, but the less freedom this agent has in choosing its velocities. Must be positive.
+The minimal amount of time for which the agent's velocities that are computed by the simulation are safe with respect to static avoidance obstacles. The larger this number, the sooner this agent will respond to the presence of static avoidance obstacles, but the less freedom this agent has in choosing its velocities. A too high value will slow down agents movement considerably. Must be positive.
 
 .. rst-class:: classref-item-separator
 
@@ -380,7 +476,19 @@ The minimal amount of time for which the agent's velocities that are computed by
 
 void **agent_set_velocity** **(** :ref:`RID<class_RID>` agent, :ref:`Vector2<class_Vector2>` velocity **)**
 
-Sets the current velocity of the agent.
+Sets ``velocity`` as the new wanted velocity for the specified ``agent``. The avoidance simulation will try to fulfil this velocity if possible but will modify it to avoid collision with other agent's and obstacles. When an agent is teleported to a new position far away use :ref:`agent_set_velocity_forced<class_NavigationServer2D_method_agent_set_velocity_forced>` instead to reset the internal velocity state.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_agent_set_velocity_forced:
+
+.. rst-class:: classref-method
+
+void **agent_set_velocity_forced** **(** :ref:`RID<class_RID>` agent, :ref:`Vector2<class_Vector2>` velocity **)**
+
+Replaces the internal velocity in the collision avoidance simulation with ``velocity`` for the specified ``agent``. When an agent is teleported to a new position far away this function should be used in the same frame. If called frequently this function can get agents stuck.
 
 .. rst-class:: classref-item-separator
 
@@ -740,6 +848,18 @@ Returns all navigation link :ref:`RID<class_RID>`\ s that are currently assigned
 
 ----
 
+.. _class_NavigationServer2D_method_map_get_obstacles:
+
+.. rst-class:: classref-method
+
+:ref:`RID[]<class_RID>` **map_get_obstacles** **(** :ref:`RID<class_RID>` map **)** |const|
+
+Returns all navigation obstacle :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer2D_method_map_get_path:
 
 .. rst-class:: classref-method
@@ -759,6 +879,18 @@ Returns the navigation path to reach the destination from the origin. ``navigati
 :ref:`RID[]<class_RID>` **map_get_regions** **(** :ref:`RID<class_RID>` map **)** |const|
 
 Returns all navigation regions :ref:`RID<class_RID>`\ s that are currently assigned to the requested navigation ``map``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_map_get_use_edge_connections:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **map_get_use_edge_connections** **(** :ref:`RID<class_RID>` map **)** |const|
+
+Returns whether the navigation ``map`` allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
 .. rst-class:: classref-item-separator
 
@@ -819,6 +951,92 @@ Set the map edge connection margin used to weld the compatible region edges.
 void **map_set_link_connection_radius** **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` radius **)**
 
 Set the map's link connection radius used to connect links to navigation polygons.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_map_set_use_edge_connections:
+
+.. rst-class:: classref-method
+
+void **map_set_use_edge_connections** **(** :ref:`RID<class_RID>` map, :ref:`bool<class_bool>` enabled **)**
+
+Set the navigation ``map`` edge connection use. If ``enabled`` the navigation map allows navigation regions to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_obstacle_create:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **obstacle_create** **(** **)**
+
+Creates a new navigation obstacle.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_obstacle_get_map:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **obstacle_get_map** **(** :ref:`RID<class_RID>` obstacle **)** |const|
+
+Returns the navigation map :ref:`RID<class_RID>` the requested ``obstacle`` is currently assigned to.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_obstacle_set_avoidance_layers:
+
+.. rst-class:: classref-method
+
+void **obstacle_set_avoidance_layers** **(** :ref:`RID<class_RID>` obstacle, :ref:`int<class_int>` layers **)**
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_obstacle_set_map:
+
+.. rst-class:: classref-method
+
+void **obstacle_set_map** **(** :ref:`RID<class_RID>` obstacle, :ref:`RID<class_RID>` map **)**
+
+Sets the navigation map :ref:`RID<class_RID>` for the obstacle.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_obstacle_set_position:
+
+.. rst-class:: classref-method
+
+void **obstacle_set_position** **(** :ref:`RID<class_RID>` obstacle, :ref:`Vector2<class_Vector2>` position **)**
+
+Sets the position of the obstacle in world space.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_obstacle_set_vertices:
+
+.. rst-class:: classref-method
+
+void **obstacle_set_vertices** **(** :ref:`RID<class_RID>` obstacle, :ref:`PackedVector2Array<class_PackedVector2Array>` vertices **)**
+
+Sets the outline vertices for the obstacle. If the vertices are winded in clockwise order agents will be pushed in by the obstacle, else they will be pushed out.
 
 .. rst-class:: classref-item-separator
 
@@ -944,6 +1162,18 @@ Returns the travel cost of this ``region``.
 
 ----
 
+.. _class_NavigationServer2D_method_region_get_use_edge_connections:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **region_get_use_edge_connections** **(** :ref:`RID<class_RID>` region **)** |const|
+
+Returns whether the navigation ``region`` is set to use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer2D_method_region_owns_point:
 
 .. rst-class:: classref-method
@@ -1039,6 +1269,18 @@ Sets the global transformation for the region.
 void **region_set_travel_cost** **(** :ref:`RID<class_RID>` region, :ref:`float<class_float>` travel_cost **)**
 
 Sets the ``travel_cost`` for this ``region``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_region_set_use_edge_connections:
+
+.. rst-class:: classref-method
+
+void **region_set_use_edge_connections** **(** :ref:`RID<class_RID>` region, :ref:`bool<class_bool>` enabled **)**
+
+If ``enabled`` the navigation ``region`` will use edge connections to connect with other navigation regions within proximity of the navigation map edge connection margin.
 
 .. rst-class:: classref-item-separator
 

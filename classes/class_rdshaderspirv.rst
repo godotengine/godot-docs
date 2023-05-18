@@ -12,9 +12,16 @@ RDShaderSPIRV
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+SPIR-V intermediate representation as part of a :ref:`RDShaderFile<class_RDShaderFile>` (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**RDShaderSPIRV** represents a :ref:`RDShaderFile<class_RDShaderFile>`'s `SPIR-V <https://www.khronos.org/spir/>`__ code for various shader stages, as well as possible compilation error messages. SPIR-V a low-level intermediate shader representation. This intermediate representation is not used directly by GPUs for rendering, but it can be compiled into binary shaders that GPUs can understand. Unlike compiled shaders, SPIR-V is portable across GPU models and driver versions.
+
+This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -84,9 +91,7 @@ Property Descriptions
 - void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The SPIR-V bytecode for the compute shader stage.
 
 .. rst-class:: classref-item-separator
 
@@ -103,9 +108,7 @@ Property Descriptions
 - void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The SPIR-V bytecode for the fragment shader stage.
 
 .. rst-class:: classref-item-separator
 
@@ -122,9 +125,7 @@ Property Descriptions
 - void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The SPIR-V bytecode for the tessellation control shader stage.
 
 .. rst-class:: classref-item-separator
 
@@ -141,9 +142,7 @@ Property Descriptions
 - void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The SPIR-V bytecode for the tessellation evaluation shader stage.
 
 .. rst-class:: classref-item-separator
 
@@ -160,9 +159,7 @@ Property Descriptions
 - void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
 - :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The SPIR-V bytecode for the vertex shader stage.
 
 .. rst-class:: classref-item-separator
 
@@ -179,9 +176,7 @@ Property Descriptions
 - void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
 - :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The compilation error message for the compute shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
 .. rst-class:: classref-item-separator
 
@@ -198,9 +193,7 @@ Property Descriptions
 - void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
 - :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The compilation error message for the fragment shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
 .. rst-class:: classref-item-separator
 
@@ -217,9 +210,7 @@ Property Descriptions
 - void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
 - :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The compilation error message for the tessellation control shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
 .. rst-class:: classref-item-separator
 
@@ -236,9 +227,7 @@ Property Descriptions
 - void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
 - :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The compilation error message for the tessellation evaluation shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
 .. rst-class:: classref-item-separator
 
@@ -255,9 +244,7 @@ Property Descriptions
 - void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
 - :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The compilation error message for the vertex shader stage (set by the SPIR-V compiler and Godot). If empty, shader compilation was successful.
 
 .. rst-class:: classref-section-separator
 
@@ -274,9 +261,7 @@ Method Descriptions
 
 :ref:`PackedByteArray<class_PackedByteArray>` **get_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Equivalent to getting one of :ref:`bytecode_compute<class_RDShaderSPIRV_property_bytecode_compute>`, :ref:`bytecode_fragment<class_RDShaderSPIRV_property_bytecode_fragment>`, :ref:`bytecode_tesselation_control<class_RDShaderSPIRV_property_bytecode_tesselation_control>`, :ref:`bytecode_tesselation_evaluation<class_RDShaderSPIRV_property_bytecode_tesselation_evaluation>`, :ref:`bytecode_vertex<class_RDShaderSPIRV_property_bytecode_vertex>`.
 
 .. rst-class:: classref-item-separator
 
@@ -288,9 +273,7 @@ Method Descriptions
 
 :ref:`String<class_String>` **get_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the compilation error message for the given shader ``stage``. Equivalent to getting one of :ref:`compile_error_compute<class_RDShaderSPIRV_property_compile_error_compute>`, :ref:`compile_error_fragment<class_RDShaderSPIRV_property_compile_error_fragment>`, :ref:`compile_error_tesselation_control<class_RDShaderSPIRV_property_compile_error_tesselation_control>`, :ref:`compile_error_tesselation_evaluation<class_RDShaderSPIRV_property_compile_error_tesselation_evaluation>`, :ref:`compile_error_vertex<class_RDShaderSPIRV_property_compile_error_vertex>`.
 
 .. rst-class:: classref-item-separator
 
@@ -302,9 +285,7 @@ Method Descriptions
 
 void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`PackedByteArray<class_PackedByteArray>` bytecode **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the SPIR-V ``bytecode`` for the given shader ``stage``. Equivalent to setting one of :ref:`bytecode_compute<class_RDShaderSPIRV_property_bytecode_compute>`, :ref:`bytecode_fragment<class_RDShaderSPIRV_property_bytecode_fragment>`, :ref:`bytecode_tesselation_control<class_RDShaderSPIRV_property_bytecode_tesselation_control>`, :ref:`bytecode_tesselation_evaluation<class_RDShaderSPIRV_property_bytecode_tesselation_evaluation>`, :ref:`bytecode_vertex<class_RDShaderSPIRV_property_bytecode_vertex>`.
 
 .. rst-class:: classref-item-separator
 
@@ -316,9 +297,7 @@ void **set_stage_bytecode** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderS
 
 void **set_stage_compile_error** **(** :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` stage, :ref:`String<class_String>` compile_error **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the compilation error message for the given shader ``stage`` to ``compile_error``. Equivalent to setting one of :ref:`compile_error_compute<class_RDShaderSPIRV_property_compile_error_compute>`, :ref:`compile_error_fragment<class_RDShaderSPIRV_property_compile_error_fragment>`, :ref:`compile_error_tesselation_control<class_RDShaderSPIRV_property_compile_error_tesselation_control>`, :ref:`compile_error_tesselation_evaluation<class_RDShaderSPIRV_property_compile_error_tesselation_evaluation>`, :ref:`compile_error_vertex<class_RDShaderSPIRV_property_compile_error_vertex>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

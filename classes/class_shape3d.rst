@@ -95,7 +95,7 @@ When set to ``0``, the default value from :ref:`ProjectSettings.physics/3d/solve
 - void **set_margin** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_margin** **(** **)**
 
-The collision margin for the shape. Used in Bullet Physics only.
+The collision margin for the shape. This is not used in Godot Physics.
 
 Collision margins allow collision detection to be more efficient by adding an extra shell around shapes. Collision algorithms are more expensive when objects overlap by more than their margin, so a higher value for margins is better for performance, at the cost of accuracy around edges as it makes them less sharp.
 

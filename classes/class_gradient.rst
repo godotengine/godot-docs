@@ -239,6 +239,8 @@ void **reverse** **(** **)**
 
 Reverses/mirrors the gradient.
 
+\ **Note:** This method mirrors all points around the middle of the gradient, which may produce unexpected results when :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>` is set to :ref:`GRADIENT_INTERPOLATE_CONSTANT<class_Gradient_constant_GRADIENT_INTERPOLATE_CONSTANT>`.
+
 .. rst-class:: classref-item-separator
 
 ----

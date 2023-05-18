@@ -73,7 +73,7 @@ Properties
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
    | :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area3D_property_monitoring>`                                   | ``true``              |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`float<class_float>`                       | :ref:`priority<class_Area3D_property_priority>`                                       | ``0.0``               |
+   | :ref:`int<class_int>`                           | :ref:`priority<class_Area3D_property_priority>`                                       | ``0``                 |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
    | :ref:`float<class_float>`                       | :ref:`reverb_bus_amount<class_Area3D_property_reverb_bus_amount>`                     | ``0.0``               |
    +-------------------------------------------------+---------------------------------------------------------------------------------------+-----------------------+
@@ -563,14 +563,14 @@ If ``true``, the area detects bodies or areas entering and exiting it.
 
 .. rst-class:: classref-property
 
-:ref:`float<class_float>` **priority** = ``0.0``
+:ref:`int<class_int>` **priority** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_priority** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_priority** **(** **)**
+- void **set_priority** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_priority** **(** **)**
 
-The area's priority. Higher priority areas are processed first.
+The area's priority. Higher priority areas are processed first. The :ref:`World3D<class_World3D>`'s physics is always processed last, after all areas.
 
 .. rst-class:: classref-item-separator
 
@@ -689,7 +689,7 @@ The magnitude of area-specific wind force.
 - void **set_wind_source_path** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_wind_source_path** **(** **)**
 
-The :ref:`Node3D<class_Node3D>` which is used to specify the the direction and origin of an area-specific wind force. The direction is opposite to the z-axis of the :ref:`Node3D<class_Node3D>`'s local transform, and its origin is the origin of the :ref:`Node3D<class_Node3D>`'s local transform.
+The :ref:`Node3D<class_Node3D>` which is used to specify the direction and origin of an area-specific wind force. The direction is opposite to the z-axis of the :ref:`Node3D<class_Node3D>`'s local transform, and its origin is the origin of the :ref:`Node3D<class_Node3D>`'s local transform.
 
 .. rst-class:: classref-section-separator
 

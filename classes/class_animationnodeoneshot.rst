@@ -12,7 +12,7 @@ AnimationNodeOneShot
 
 **Inherits:** :ref:`AnimationNodeSync<class_AnimationNodeSync>` **<** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Plays an animation once in :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+Plays an animation once in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -61,7 +61,7 @@ After setting the request and changing the animation playback, the one-shot node
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 - `Third Person Shooter Demo <https://godotengine.org/asset-library/asset/678>`__
 

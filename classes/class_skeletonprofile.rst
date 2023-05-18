@@ -14,7 +14,7 @@ SkeletonProfile
 
 **Inherited By:** :ref:`SkeletonProfileHumanoid<class_SkeletonProfileHumanoid>`
 
-Profile of a virtual skeleton used as a target for retargeting.
+Base class for a profile of a virtual skeleton used as a target for retargeting.
 
 .. rst-class:: classref-introduction-group
 

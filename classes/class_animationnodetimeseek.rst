@@ -12,7 +12,7 @@ AnimationNodeTimeSeek
 
 **Inherits:** :ref:`AnimationNode<class_AnimationNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A time-seeking animation node to be used with :ref:`AnimationTree<class_AnimationTree>`.
+A time-seeking animation node used in :ref:`AnimationTree<class_AnimationTree>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -53,7 +53,7 @@ After setting the time and changing the animation playback, the time seek node a
 Tutorials
 ---------
 
-- :doc:`AnimationTree <../tutorials/animation/animation_tree>`
+- :doc:`Using AnimationTree <../tutorials/animation/animation_tree>`
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

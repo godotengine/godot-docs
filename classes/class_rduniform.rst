@@ -12,9 +12,14 @@ RDUniform
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Shader uniform (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -66,9 +71,7 @@ Property Descriptions
 - void **set_binding** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_binding** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The uniform's binding.
 
 .. rst-class:: classref-item-separator
 
@@ -85,9 +88,7 @@ Property Descriptions
 - void **set_uniform_type** **(** :ref:`UniformType<enum_RenderingDevice_UniformType>` value **)**
 - :ref:`UniformType<enum_RenderingDevice_UniformType>` **get_uniform_type** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The uniform's data type.
 
 .. rst-class:: classref-section-separator
 

@@ -30,13 +30,13 @@ Below shows an example of a basic plugin that will convert an :ref:`ImageTexture
 
     extends EditorResourceConversionPlugin
     
-    func _handles(resource : Resource):
+    func _handles(resource: Resource):
         return resource is ImageTexture
     
     func _converts_to():
         return "PortableCompressedTexture2D"
     
-    func _convert(itex : Resource):
+    func _convert(itex: Resource):
         var ptex = PortableCompressedTexture2D.new()
         ptex.create_from_image(itex.get_image(), PortableCompressedTexture2D.COMPRESSION_MODE_LOSSLESS)
         return ptex

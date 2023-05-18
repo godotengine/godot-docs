@@ -12,14 +12,14 @@ Skeleton3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Skeleton for characters and animated objects.
+A node containing a bone hierarchy, used to create a 3D skeletal animation.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Skeleton3D provides a hierarchical interface for managing bones, including pose, rest and animation (see :ref:`Animation<class_Animation>`). It can also use ragdoll physics.
+**Skeleton3D** provides an interface for managing a hierarchy of bones, including pose, rest and animation (see :ref:`Animation<class_Animation>`). It can also use ragdoll physics.
 
 The overall transform of a bone with respect to the skeleton is determined by the following hierarchical order: rest pose, custom pose and pose.
 
@@ -257,7 +257,7 @@ Property Descriptions
 - void **set_motion_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_motion_scale** **(** **)**
 
-Multiplies the position 3D track animation.
+Multiplies the 3D position track animation.
 
 \ **Note:** Unless this value is ``1.0``, the key value in animation will not match the actual position value.
 

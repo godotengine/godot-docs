@@ -109,7 +109,7 @@ The :ref:`Curve<class_Curve>` that is rendered onto the texture.
 - void **set_texture_mode** **(** :ref:`TextureMode<enum_CurveTexture_TextureMode>` value **)**
 - :ref:`TextureMode<enum_CurveTexture_TextureMode>` **get_texture_mode** **(** **)**
 
-The format the texture should be generated with. When passing a CurveTexture as a input to a :ref:`Shader<class_Shader>`, this may need to be adjusted.
+The format the texture should be generated with. When passing a CurveTexture as an input to a :ref:`Shader<class_Shader>`, this may need to be adjusted.
 
 .. rst-class:: classref-item-separator
 

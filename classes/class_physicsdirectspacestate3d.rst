@@ -40,19 +40,19 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`   | :ref:`cast_motion<class_PhysicsDirectSpaceState3D_method_cast_motion>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters **)**                                               |
-   +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedVector3Array[]<class_PackedVector3Array>` | :ref:`collide_shape<class_PhysicsDirectSpaceState3D_method_collide_shape>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)**     |
-   +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                   | :ref:`get_rest_info<class_PhysicsDirectSpaceState3D_method_get_rest_info>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters **)**                                           |
-   +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`                 | :ref:`intersect_point<class_PhysicsDirectSpaceState3D_method_intersect_point>` **(** :ref:`PhysicsPointQueryParameters3D<class_PhysicsPointQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)** |
-   +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary<class_Dictionary>`                   | :ref:`intersect_ray<class_PhysicsDirectSpaceState3D_method_intersect_ray>` **(** :ref:`PhysicsRayQueryParameters3D<class_PhysicsRayQueryParameters3D>` parameters **)**                                               |
-   +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Dictionary[]<class_Dictionary>`                 | :ref:`intersect_shape<class_PhysicsDirectSpaceState3D_method_intersect_shape>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)** |
-   +-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>` | :ref:`cast_motion<class_PhysicsDirectSpaceState3D_method_cast_motion>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters **)**                                               |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3[]<class_Vector3>`                     | :ref:`collide_shape<class_PhysicsDirectSpaceState3D_method_collide_shape>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)**     |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                 | :ref:`get_rest_info<class_PhysicsDirectSpaceState3D_method_get_rest_info>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters **)**                                           |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>`               | :ref:`intersect_point<class_PhysicsDirectSpaceState3D_method_intersect_point>` **(** :ref:`PhysicsPointQueryParameters3D<class_PhysicsPointQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)** |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                 | :ref:`intersect_ray<class_PhysicsDirectSpaceState3D_method_intersect_ray>` **(** :ref:`PhysicsRayQueryParameters3D<class_PhysicsRayQueryParameters3D>` parameters **)**                                               |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary[]<class_Dictionary>`               | :ref:`intersect_shape<class_PhysicsDirectSpaceState3D_method_intersect_shape>` **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)** |
+   +-----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -83,7 +83,7 @@ Returns an array with the safe and unsafe proportions (between 0 and 1) of the m
 
 .. rst-class:: classref-method
 
-:ref:`PackedVector3Array[]<class_PackedVector3Array>` **collide_shape** **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)**
+:ref:`Vector3[]<class_Vector3>` **collide_shape** **(** :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` parameters, :ref:`int<class_int>` max_results=32 **)**
 
 Checks the intersections of a shape, given through a :ref:`PhysicsShapeQueryParameters3D<class_PhysicsShapeQueryParameters3D>` object, against the space. The resulting array contains a list of points where the shape intersects another. Like with :ref:`intersect_shape<class_PhysicsDirectSpaceState3D_method_intersect_shape>`, the number of returned results can be limited to save processing time.
 

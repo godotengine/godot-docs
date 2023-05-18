@@ -158,6 +158,8 @@ Methods
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`         | :ref:`get_scroll_offset<class_LineEdit_method_get_scroll_offset>` **(** **)** |const|                                                |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`       | :ref:`get_selected_text<class_LineEdit_method_get_selected_text>` **(** **)**                                                        |
+   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_selection_from_column<class_LineEdit_method_get_selection_from_column>` **(** **)** |const|                                |
    +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`             | :ref:`get_selection_to_column<class_LineEdit_method_get_selection_to_column>` **(** **)** |const|                                    |
@@ -640,7 +642,7 @@ Text alignment as defined in the :ref:`HorizontalAlignment<enum_@GlobalScope_Hor
 - void **set_caret_blink_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_caret_blink_enabled** **(** **)**
 
-If ``true``, the caret (text cursor) blinks.
+If ``true``, makes the caret blink.
 
 .. rst-class:: classref-item-separator
 
@@ -657,7 +659,7 @@ If ``true``, the caret (text cursor) blinks.
 - void **set_caret_blink_interval** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_caret_blink_interval** **(** **)**
 
-Duration (in seconds) of a caret's blinking cycle.
+The interval at which the caret blinks (in seconds).
 
 .. rst-class:: classref-item-separator
 
@@ -727,7 +729,7 @@ Allow moving caret, selecting and removing the individual composite character co
 - void **set_clear_button_enabled** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_clear_button_enabled** **(** **)**
 
-If ``true``, the **LineEdit** will show a clear button if ``text`` is not empty, which can be used to clear the text quickly.
+If ``true``, the **LineEdit** will show a clear button if :ref:`text<class_LineEdit_property_text>` is not empty, which can be used to clear the text quickly.
 
 .. rst-class:: classref-item-separator
 
@@ -1264,6 +1266,18 @@ Returns the scroll offset due to :ref:`caret_column<class_LineEdit_property_care
 
 ----
 
+.. _class_LineEdit_method_get_selected_text:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **get_selected_text** **(** **)**
+
+Returns the text inside the selection.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_LineEdit_method_get_selection_from_column:
 
 .. rst-class:: classref-method
@@ -1572,7 +1586,7 @@ Texture for the clear button. See :ref:`clear_button_enabled<class_LineEdit_prop
 
 :ref:`StyleBox<class_StyleBox>` **focus**
 
-Background used when **LineEdit** has GUI focus. The ``focus`` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
+Background used when **LineEdit** has GUI focus. The :ref:`focus<class_LineEdit_theme_style_focus>` :ref:`StyleBox<class_StyleBox>` is displayed *over* the base :ref:`StyleBox<class_StyleBox>`, so a partially transparent :ref:`StyleBox<class_StyleBox>` should be used to ensure the base :ref:`StyleBox<class_StyleBox>` remains visible. A :ref:`StyleBox<class_StyleBox>` that represents an outline or an underline works well for this purpose. To disable the focus visual effect, assign a :ref:`StyleBoxEmpty<class_StyleBoxEmpty>` resource. Note that disabling the focus visual effect will harm keyboard/controller navigation usability, so this is not recommended for accessibility reasons.
 
 .. rst-class:: classref-item-separator
 

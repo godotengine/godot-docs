@@ -110,11 +110,15 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_next<class_TreeItem_method_get_next>` **(** **)** |const|                                                                                                                                                                                      |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_next_in_tree<class_TreeItem_method_get_next_in_tree>` **(** :ref:`bool<class_bool>` wrap=false **)**                                                                                                                                           |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_next_visible<class_TreeItem_method_get_next_visible>` **(** :ref:`bool<class_bool>` wrap=false **)**                                                                                                                                           |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_parent<class_TreeItem_method_get_parent>` **(** **)** |const|                                                                                                                                                                                  |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_prev<class_TreeItem_method_get_prev>` **(** **)**                                                                                                                                                                                              |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_prev_in_tree<class_TreeItem_method_get_prev_in_tree>` **(** :ref:`bool<class_bool>` wrap=false **)**                                                                                                                                           |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`TreeItem<class_TreeItem>`                                   | :ref:`get_prev_visible<class_TreeItem_method_get_prev_visible>` **(** :ref:`bool<class_bool>` wrap=false **)**                                                                                                                                           |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -145,6 +149,8 @@ Methods
    | :ref:`bool<class_bool>`                                           | :ref:`is_checked<class_TreeItem_method_is_checked>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`is_custom_set_as_button<class_TreeItem_method_is_custom_set_as_button>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                           |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                           | :ref:`is_edit_multiline<class_TreeItem_method_is_edit_multiline>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                                       |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`is_editable<class_TreeItem_method_is_editable>` **(** :ref:`int<class_int>` column **)**                                                                                                                                                           |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -187,6 +193,8 @@ Methods
    | void                                                              | :ref:`set_custom_font<class_TreeItem_method_set_custom_font>` **(** :ref:`int<class_int>` column, :ref:`Font<class_Font>` font **)**                                                                                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`set_custom_font_size<class_TreeItem_method_set_custom_font_size>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` font_size **)**                                                                                                        |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`set_edit_multiline<class_TreeItem_method_set_edit_multiline>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` multiline **)**                                                                                                          |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`set_editable<class_TreeItem_method_set_editable>` **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enabled **)**                                                                                                                        |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -654,7 +662,7 @@ Returns the given column's icon :ref:`Texture2D<class_Texture2D>`. Error if no i
 
 :ref:`int<class_int>` **get_icon_max_width** **(** :ref:`int<class_int>` column **)** |const|
 
-Returns the column's icon's maximum width.
+Returns the maximum allowed width of the icon in the given ``column``.
 
 .. rst-class:: classref-item-separator
 
@@ -732,13 +740,27 @@ Returns the next sibling TreeItem in the tree or a null object if there is none.
 
 ----
 
+.. _class_TreeItem_method_get_next_in_tree:
+
+.. rst-class:: classref-method
+
+:ref:`TreeItem<class_TreeItem>` **get_next_in_tree** **(** :ref:`bool<class_bool>` wrap=false **)**
+
+Returns the next TreeItem in the tree (in the context of a depth-first search) or a ``null`` object if there is none.
+
+If ``wrap`` is enabled, the method will wrap around to the first element in the tree when called on the last element, otherwise it returns ``null``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TreeItem_method_get_next_visible:
 
 .. rst-class:: classref-method
 
 :ref:`TreeItem<class_TreeItem>` **get_next_visible** **(** :ref:`bool<class_bool>` wrap=false **)**
 
-Returns the next visible sibling TreeItem in the tree or a null object if there is none.
+Returns the next visible TreeItem in the tree (in the context of a depth-first search) or a ``null`` object if there is none.
 
 If ``wrap`` is enabled, the method will wrap around to the first visible element in the tree when called on the last visible element, otherwise it returns ``null``.
 
@@ -770,13 +792,27 @@ Returns the previous sibling TreeItem in the tree or a null object if there is n
 
 ----
 
+.. _class_TreeItem_method_get_prev_in_tree:
+
+.. rst-class:: classref-method
+
+:ref:`TreeItem<class_TreeItem>` **get_prev_in_tree** **(** :ref:`bool<class_bool>` wrap=false **)**
+
+Returns the previous TreeItem in the tree (in the context of a depth-first search) or a ``null`` object if there is none.
+
+If ``wrap`` is enabled, the method will wrap around to the last element in the tree when called on the first visible element, otherwise it returns ``null``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TreeItem_method_get_prev_visible:
 
 .. rst-class:: classref-method
 
 :ref:`TreeItem<class_TreeItem>` **get_prev_visible** **(** :ref:`bool<class_bool>` wrap=false **)**
 
-Returns the previous visible sibling TreeItem in the tree or a null object if there is none.
+Returns the previous visible sibling TreeItem in the tree (in the context of a depth-first search) or a ``null`` object if there is none.
 
 If ``wrap`` is enabled, the method will wrap around to the last visible element in the tree when called on the first visible element, otherwise it returns ``null``.
 
@@ -960,6 +996,18 @@ Returns ``true`` if the given ``column`` is checked.
 
 ----
 
+.. _class_TreeItem_method_is_edit_multiline:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_edit_multiline** **(** :ref:`int<class_int>` column **)** |const|
+
+Returns ``true`` if the given ``column`` is multiline editable.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TreeItem_method_is_editable:
 
 .. rst-class:: classref-method
@@ -1126,7 +1174,7 @@ Sets the given column's cell mode to ``mode``. See :ref:`TreeCellMode<enum_TreeI
 
 void **set_checked** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` checked **)**
 
-If ``true``, the given ``column`` is checked. Clears column's indeterminate status.
+If ``checked`` is ``true``, the given ``column`` is checked. Clears column's indeterminate status.
 
 .. rst-class:: classref-item-separator
 
@@ -1220,13 +1268,27 @@ Sets custom font size used to draw text in the given ``column``.
 
 ----
 
+.. _class_TreeItem_method_set_edit_multiline:
+
+.. rst-class:: classref-method
+
+void **set_edit_multiline** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` multiline **)**
+
+If ``multiline`` is ``true``, the given ``column`` is multiline editable.
+
+\ **Note:** This option only affects the type of control (:ref:`LineEdit<class_LineEdit>` or :ref:`TextEdit<class_TextEdit>`) that appears when editing the column. You can set multiline values with :ref:`set_text<class_TreeItem_method_set_text>` even if the column is not multiline editable.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TreeItem_method_set_editable:
 
 .. rst-class:: classref-method
 
 void **set_editable** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enabled **)**
 
-If ``true``, the given ``column`` is editable.
+If ``enabled`` is ``true``, the given ``column`` is editable.
 
 .. rst-class:: classref-item-separator
 
@@ -1238,7 +1300,7 @@ If ``true``, the given ``column`` is editable.
 
 void **set_expand_right** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` enable **)**
 
-If ``true``, the given ``column`` is expanded to the right.
+If ``enable`` is ``true``, the given ``column`` is expanded to the right.
 
 .. rst-class:: classref-item-separator
 
@@ -1262,7 +1324,7 @@ Sets the given column's icon :ref:`Texture2D<class_Texture2D>`.
 
 void **set_icon_max_width** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` width **)**
 
-Sets the given column's icon's maximum width.
+Sets the maximum allowed width of the icon in the given ``column``. This limit is applied on top of the default size of the icon and on top of :ref:`Tree.icon_max_width<class_Tree_theme_constant_icon_max_width>`. The height is adjusted according to the icon's ratio.
 
 .. rst-class:: classref-item-separator
 
@@ -1298,7 +1360,7 @@ Sets the given column's icon's texture region.
 
 void **set_indeterminate** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` indeterminate **)**
 
-If ``true``, the given ``column`` is marked ``indeterminate``.
+If ``indeterminate`` is ``true``, the given ``column`` is marked indeterminate.
 
 \ **Note:** If set ``true`` from ``false``, then column is cleared of checked status.
 
@@ -1362,7 +1424,7 @@ If ``expr`` is ``true``, the edit mode slider will use an exponential scale as w
 
 void **set_selectable** **(** :ref:`int<class_int>` column, :ref:`bool<class_bool>` selectable **)**
 
-If ``true``, the given column is selectable.
+If ``selectable`` is ``true``, the given ``column`` is selectable.
 
 .. rst-class:: classref-item-separator
 

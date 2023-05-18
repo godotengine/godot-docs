@@ -42,6 +42,8 @@ Properties
    +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                 | :ref:`allow_rmb_select<class_ItemList_property_allow_rmb_select>`           | ``false``                                                                 |
    +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                 | :ref:`allow_search<class_ItemList_property_allow_search>`                   | ``true``                                                                  |
+   +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                 | :ref:`auto_height<class_ItemList_property_auto_height>`                     | ``false``                                                                 |
    +---------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                 | clip_contents                                                               | ``true`` (overrides :ref:`Control<class_Control_property_clip_contents>`) |
@@ -105,6 +107,8 @@ Methods
    | :ref:`String<class_String>`                      | :ref:`get_item_language<class_ItemList_method_get_item_language>` **(** :ref:`int<class_int>` idx **)** |const|                                                                    |
    +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                    | :ref:`get_item_metadata<class_ItemList_method_get_item_metadata>` **(** :ref:`int<class_int>` idx **)** |const|                                                                    |
+   +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Rect2<class_Rect2>`                        | :ref:`get_item_rect<class_ItemList_method_get_item_rect>` **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` expand=true **)** |const|                                       |
    +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                      | :ref:`get_item_text<class_ItemList_method_get_item_text>` **(** :ref:`int<class_int>` idx **)** |const|                                                                            |
    +--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -176,6 +180,8 @@ Theme Properties
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_color<class_ItemList_theme_color_font_color>`                   | ``Color(0.65, 0.65, 0.65, 1)`` |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`Color<class_Color>`       | :ref:`font_hovered_color<class_ItemList_theme_color_font_hovered_color>`   | ``Color(0.95, 0.95, 0.95, 1)`` |
+   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_outline_color<class_ItemList_theme_color_font_outline_color>`   | ``Color(1, 1, 1, 1)``          |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`Color<class_Color>`       | :ref:`font_selected_color<class_ItemList_theme_color_font_selected_color>` | ``Color(1, 1, 1, 1)``          |
@@ -201,6 +207,8 @@ Theme Properties
    | :ref:`StyleBox<class_StyleBox>` | :ref:`cursor_unfocused<class_ItemList_theme_style_cursor_unfocused>`       |                                |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`focus<class_ItemList_theme_style_focus>`                             |                                |
+   +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
+   | :ref:`StyleBox<class_StyleBox>` | :ref:`hovered<class_ItemList_theme_style_hovered>`                         |                                |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
    | :ref:`StyleBox<class_StyleBox>` | :ref:`panel<class_ItemList_theme_style_panel>`                             |                                |
    +---------------------------------+----------------------------------------------------------------------------+--------------------------------+
@@ -373,6 +381,23 @@ If ``true``, the currently selected item can be selected again.
 - :ref:`bool<class_bool>` **get_allow_rmb_select** **(** **)**
 
 If ``true``, right mouse button click can select items.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ItemList_property_allow_search:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **allow_search** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_allow_search** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_allow_search** **(** **)**
+
+If ``true``, allows navigating the **ItemList** with letter keys through incremental search.
 
 .. rst-class:: classref-item-separator
 
@@ -668,6 +693,8 @@ Returns the item index at the given ``position``.
 
 When there is no item at that point, -1 will be returned if ``exact`` is ``true``, and the closest item index will be returned otherwise.
 
+\ **Note:** The returned value is unreliable if called right after modifying the **ItemList**, before it redraws in the next frame.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -751,6 +778,20 @@ Returns item's text language code.
 :ref:`Variant<class_Variant>` **get_item_metadata** **(** :ref:`int<class_int>` idx **)** |const|
 
 Returns the metadata value of the specified index.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ItemList_method_get_item_rect:
+
+.. rst-class:: classref-method
+
+:ref:`Rect2<class_Rect2>` **get_item_rect** **(** :ref:`int<class_int>` idx, :ref:`bool<class_bool>` expand=true **)** |const|
+
+Returns the position and size of the item with the specified index, in the coordinate system of the **ItemList** node. If ``expand`` is ``true`` the last column expands to fill the rest of the row.
+
+\ **Note:** The returned value is unreliable if called right after modifying the **ItemList**, before it redraws in the next frame.
 
 .. rst-class:: classref-item-separator
 
@@ -1127,6 +1168,18 @@ Default text :ref:`Color<class_Color>` of the item.
 
 ----
 
+.. _class_ItemList_theme_color_font_hovered_color:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`Color<class_Color>` **font_hovered_color** = ``Color(0.95, 0.95, 0.95, 1)``
+
+Text :ref:`Color<class_Color>` used when the item is hovered and not selected yet.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ItemList_theme_color_font_outline_color:
 
 .. rst-class:: classref-themeproperty
@@ -1280,6 +1333,18 @@ Font size of the item's text.
 :ref:`StyleBox<class_StyleBox>` **focus**
 
 The focused style for the **ItemList**, drawn on top of the background, but below everything else.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ItemList_theme_style_hovered:
+
+.. rst-class:: classref-themeproperty
+
+:ref:`StyleBox<class_StyleBox>` **hovered**
+
+:ref:`StyleBox<class_StyleBox>` for the hovered, but not selected items.
 
 .. rst-class:: classref-item-separator
 

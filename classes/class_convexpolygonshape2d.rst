@@ -19,11 +19,15 @@ Convex polygon shape resource for 2D physics.
 Description
 -----------
 
-2D convex polygon shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. A convex polygon, whatever its shape, is internally decomposed into as many convex polygons as needed to ensure all collision checks against it are always done on convex polygons (which are faster to check). See also :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`.
+2D convex polygon shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node.
 
-The main difference between a **ConvexPolygonShape2D** and a :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex to speed up collision detection.
+The shape is a *solid* that includes all the points that it encloses, as opposed to :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` which is hollow if it encloses anything. See also :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`.
 
-\ **Performance:** **ConvexPolygonShape2D** is faster to check collisions against compared to :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, but it is slower than primitive collision shapes such as :ref:`CircleShape2D<class_CircleShape2D>` or :ref:`RectangleShape2D<class_RectangleShape2D>`. Its use should generally be limited to medium-sized objects that cannot have their collision accurately represented by a primitive shape.
+The solid nature of the shape makes it well-suited for both detection and physics; in physics body interactions this allows depenetrating even those shapes which end up (e.g. due to high speed) fully inside the convex shape (similarly to primitive shapes, but unlike :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`). The convexity limits the possible geometric shape of a single **ConvexPolygonShape2D**: it cannot be concave.
+
+\ **Convex decomposition:** Concave objects' collisions can be represented accurately using *several* convex shapes. This allows dynamic physics bodies to have complex concave collisions (at a performance cost). It can be achieved using several **ConvexPolygonShape2D** nodes or by using the :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` node in Solids build mode. To generate a collision polygon from a sprite, select the :ref:`Sprite2D<class_Sprite2D>` node, go to the **Sprite2D** menu that appears above the viewport, and choose **Create Polygon2D Sibling**.
+
+\ **Performance:** **ConvexPolygonShape2D** is faster to check collisions against compared to :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, but it is slower than primitive collision shapes such as :ref:`CircleShape2D<class_CircleShape2D>` or :ref:`RectangleShape2D<class_RectangleShape2D>`. Its use should generally be limited to medium-sized objects that cannot have their collision accurately represented by primitive shapes.
 
 .. rst-class:: classref-reftable-group
 
@@ -69,7 +73,9 @@ Property Descriptions
 - void **set_points** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` value **)**
 - :ref:`PackedVector2Array<class_PackedVector2Array>` **get_points** **(** **)**
 
-The polygon's list of vertices. Can be in either clockwise or counterclockwise order. Only set this property with convex hull points, use :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` to generate a convex hull shape from concave shape points.
+The polygon's list of vertices that form a convex hull. Can be in either clockwise or counterclockwise order.
+
+\ **Warning:** Only set this property to a list of points that actually form a convex hull. Use :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` to generate the convex hull of an arbitrary set of points.
 
 .. rst-class:: classref-section-separator
 
@@ -86,7 +92,7 @@ Method Descriptions
 
 void **set_point_cloud** **(** :ref:`PackedVector2Array<class_PackedVector2Array>` point_cloud **)**
 
-Based on the set of points provided, this creates and assigns the :ref:`points<class_ConvexPolygonShape2D_property_points>` property using the convex hull algorithm. Removing all unneeded points. See :ref:`Geometry2D.convex_hull<class_Geometry2D_method_convex_hull>` for details.
+Based on the set of points provided, this assigns the :ref:`points<class_ConvexPolygonShape2D_property_points>` property using the convex hull algorithm, removing all unneeded points. See :ref:`Geometry2D.convex_hull<class_Geometry2D_method_convex_hull>` for details.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -75,6 +75,8 @@ Methods
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`_get_contact_local_shape<class_PhysicsDirectBodyState3DExtension_method__get_contact_local_shape>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|                                     |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_contact_local_velocity_at_position<class_PhysicsDirectBodyState3DExtension_method__get_contact_local_velocity_at_position>` **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|       |
+   +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector3<class_Vector3>`                                     | :ref:`_get_inverse_inertia<class_PhysicsDirectBodyState3DExtension_method__get_inverse_inertia>` **(** **)** |virtual| |const|                                                                               |
    +-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Basis<class_Basis>`                                         | :ref:`_get_inverse_inertia_tensor<class_PhysicsDirectBodyState3DExtension_method__get_inverse_inertia_tensor>` **(** **)** |virtual| |const|                                                                 |
@@ -466,6 +468,20 @@ void **_apply_torque_impulse** **(** :ref:`Vector3<class_Vector3>` impulse **)**
 .. rst-class:: classref-method
 
 :ref:`int<class_int>` **_get_contact_local_shape** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
+
+.. container:: contribute
+
+	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PhysicsDirectBodyState3DExtension_method__get_contact_local_velocity_at_position:
+
+.. rst-class:: classref-method
+
+:ref:`Vector3<class_Vector3>` **_get_contact_local_velocity_at_position** **(** :ref:`int<class_int>` contact_idx **)** |virtual| |const|
 
 .. container:: contribute
 

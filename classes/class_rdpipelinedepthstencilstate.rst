@@ -12,9 +12,14 @@ RDPipelineDepthStencilState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Pipeline depth/stencil state (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+**RDPipelineDepthStencilState** controls the way depth and stencil comparisons are performed when sampling those values using :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -297,9 +302,7 @@ Property Descriptions
 - void **set_enable_depth_test** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_enable_depth_test** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, enables depth testing which allows objects to be automatically occluded by other objects based on their depth. This also allows objects to be partially occluded by other objects. If ``false``, objects will appear in the order they were drawn (like in Godot's 2D renderer).
 
 .. rst-class:: classref-item-separator
 

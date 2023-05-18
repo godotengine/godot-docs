@@ -3509,6 +3509,14 @@ Hints that an :ref:`int<class_int>` property is a bitmask using the optionally n
 
 Hints that an :ref:`int<class_int>` property is a bitmask using the optionally named 3D navigation layers.
 
+.. _class_@GlobalScope_constant_PROPERTY_HINT_LAYERS_AVOIDANCE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_LAYERS_AVOIDANCE** = ``37``
+
+Hints that an integer property is a bitmask using the optionally named avoidance layers.
+
 .. _class_@GlobalScope_constant_PROPERTY_HINT_FILE:
 
 .. rst-class:: classref-enumeration-constant
@@ -3714,7 +3722,7 @@ Hints that a string property is a password, and every character is replaced with
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``37``
+:ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` **PROPERTY_HINT_MAX** = ``38``
 
 Represents the size of the :ref:`PropertyHint<enum_@GlobalScope_PropertyHint>` enum.
 
@@ -3758,7 +3766,7 @@ The property is shown in the :ref:`EditorInspector<class_EditorInspector>` (defa
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_INTERNAL** = ``8``
 
-
+The property is excluded from the class reference.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_CHECKABLE:
 
@@ -3959,6 +3967,14 @@ The property is only shown in the editor if modern renderers are supported (the 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_READ_ONLY** = ``268435456``
 
 The property is read-only in the :ref:`EditorInspector<class_EditorInspector>`.
+
+.. _class_@GlobalScope_constant_PROPERTY_USAGE_SECRET:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_SECRET** = ``536870912``
+
+An export preset property with this flag contains confidential information and is stored separately from the rest of the export preset configuration.
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_DEFAULT:
 
@@ -5114,7 +5130,7 @@ Returns the absolute value of int parameter ``x`` (i.e. positive value).
 
 :ref:`float<class_float>` **acos** **(** :ref:`float<class_float>` x **)**
 
-Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``. ``x`` must be between ``-1.0`` and ``1.0`` (inclusive), otherwise, :ref:`acos<class_@GlobalScope_method_acos>` will return :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`acos<class_@GlobalScope_method_acos>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
 ::
 
@@ -5131,7 +5147,7 @@ Returns the arc cosine of ``x`` in radians. Use to get the angle of cosine ``x``
 
 :ref:`float<class_float>` **asin** **(** :ref:`float<class_float>` x **)**
 
-Returns the arc sine of ``x`` in radians. Use to get the angle of sine ``x``. ``x`` must be between ``-1.0`` and ``1.0`` (inclusive), otherwise, :ref:`asin<class_@GlobalScope_method_asin>` will return :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
+Returns the arc sine of ``x`` in radians. Use to get the angle of sine ``x``. ``x`` will be clamped between ``-1.0`` and ``1.0`` (inclusive), in order to prevent :ref:`asin<class_@GlobalScope_method_asin>` from returning :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>`.
 
 ::
 
@@ -5904,7 +5920,7 @@ Linearly interpolates between two values by the factor defined in ``weight``. To
 
 ::
 
-    lerp(0, 4, 0.75) # Returns 3.0
+    lerpf(0, 4, 0.75) # Returns 3.0
 
 See also :ref:`inverse_lerp<class_@GlobalScope_method_inverse_lerp>` which performs the reverse of this operation. To perform eased interpolation with :ref:`lerp<class_@GlobalScope_method_lerp>`, combine it with :ref:`ease<class_@GlobalScope_method_ease>` or :ref:`smoothstep<class_@GlobalScope_method_smoothstep>`.
 
@@ -5939,9 +5955,9 @@ Converts from linear energy to decibels (audio). This can be used to implement v
 
 :ref:`float<class_float>` **log** **(** :ref:`float<class_float>` x **)**
 
-Returns the natural logarithm of ``x``. This is the amount of time needed to reach a certain level of continuous growth.
+Returns the `natural logarithm <https://en.wikipedia.org/wiki/Natural_logarithm>`__ of ``x`` (base `[i]e[/i] <https://en.wikipedia.org/wiki/E_(mathematical_constant)>`__, with *e* being approximately 2.71828). This is the amount of time needed to reach a certain level of continuous growth.
 
-\ **Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm.
+\ **Note:** This is not the same as the "log" function on most calculators, which uses a base 10 logarithm. To use base 10 logarithm, use ``log(x) / log(10)``.
 
 ::
 
@@ -6208,24 +6224,32 @@ Converts one or more arguments of any type to string in the best way possible an
 
 void **print_rich** **(** ... **)** |vararg|
 
-Converts one or more arguments of any type to string in the best way possible and prints them to the console. The following BBCode tags are supported: b, i, u, s, indent, code, url, center, right, color, bgcolor, fgcolor. Color tags only support named colors such as ``red``, *not* hexadecimal color codes. Unsupported tags will be left as-is in standard output.
+Converts one or more arguments of any type to string in the best way possible and prints them to the console.
 
-When printing to standard output, the supported subset of BBCode is converted to ANSI escape codes for the terminal emulator to display. Displaying ANSI escape codes is currently only supported on Linux and macOS. Support for ANSI escape codes may vary across terminal emulators, especially for italic and strikethrough.
+The following BBCode tags are supported: ``b``, ``i``, ``u``, ``s``, ``indent``, ``code``, ``url``, ``center``, ``right``, ``color``, ``bgcolor``, ``fgcolor``.
+
+Color tags only support the following named colors: ``black``, ``red``, ``green``, ``yellow``, ``blue``, ``magenta``, ``pink``, ``purple``, ``cyan``, ``white``, ``orange``, ``gray``. Hexadecimal color codes are not supported.
+
+URL tags only support URLs wrapped by an URL tag, not URLs with a different title.
+
+When printing to standard output, the supported subset of BBCode is converted to ANSI escape codes for the terminal emulator to display. Support for ANSI escape codes varies across terminal emulators, especially for italic and strikethrough. In standard output, ``code`` is represented with faint text but without any font change. Unsupported tags are left as-is in standard output.
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    print_rich("[code][b]Hello world![/b][/code]") # Prints out: [b]Hello world![/b]
+    print_rich("[color=green][b]Hello world![/b][/color]") # Prints out "Hello world!" in green with a bold font
 
  .. code-tab:: csharp
 
-    GD.PrintRich("[code][b]Hello world![/b][/code]"); // Prints out: [b]Hello world![/b]
+    GD.PrintRich("[color=green][b]Hello world![/b][/color]"); // Prints out "Hello world!" in green with a bold font
 
 
 
 \ **Note:** Consider using :ref:`push_error<class_@GlobalScope_method_push_error>` and :ref:`push_warning<class_@GlobalScope_method_push_warning>` to print error and warning messages instead of :ref:`print<class_@GlobalScope_method_print>` or :ref:`print_rich<class_@GlobalScope_method_print_rich>`. This distinguishes them from print messages used for debugging purposes, while also displaying a stack trace when an error or warning is printed.
+
+\ **Note:** On Windows, only Windows 10 and later correctly displays ANSI escape codes in standard output.
 
 .. rst-class:: classref-item-separator
 
@@ -6735,9 +6759,9 @@ Returns ``-1.0`` if ``x`` is negative, ``1.0`` if ``x`` is positive, and ``0.0``
 
 ::
 
-    sign(-6.5) # Returns -1.0
-    sign(0.0)  # Returns 0.0
-    sign(6.5)  # Returns 1.0
+    signf(-6.5) # Returns -1.0
+    signf(0.0)  # Returns 0.0
+    signf(6.5)  # Returns 1.0
 
 .. rst-class:: classref-item-separator
 
@@ -6753,9 +6777,9 @@ Returns ``-1`` if ``x`` is negative, ``1`` if ``x`` is positive, and ``0`` if if
 
 ::
 
-    sign(-6) # Returns -1
-    sign(0)  # Returns 0
-    sign(6)  # Returns 1
+    signi(-6) # Returns -1
+    signi(0)  # Returns 0
+    signi(6)  # Returns 1
 
 .. rst-class:: classref-item-separator
 
@@ -6859,8 +6883,8 @@ A type-safe version of :ref:`snapped<class_@GlobalScope_method_snapped>`, return
 
 ::
 
-    snapped(32.0, 2.5)  # Returns 32.5
-    snapped(3.14159, 0.01)  # Returns 3.14
+    snappedf(32.0, 2.5)  # Returns 32.5
+    snappedf(3.14159, 0.01)  # Returns 3.14
 
 .. rst-class:: classref-item-separator
 
@@ -6878,8 +6902,8 @@ A type-safe version of :ref:`snapped<class_@GlobalScope_method_snapped>`, return
 
 ::
 
-    snapped(53, 16)  # Returns 48
-    snapped(4096, 100)  # Returns 4100
+    snappedi(53, 16)  # Returns 48
+    snappedi(4096, 100)  # Returns 4100
 
 .. rst-class:: classref-item-separator
 

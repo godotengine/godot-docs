@@ -12,9 +12,16 @@ RDShaderFile
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Compiled shader file in SPIR-V form (used by :ref:`RenderingDevice<class_RenderingDevice>`). Not to be confused with Godot's own :ref:`Shader<class_Shader>`.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+Compiled shader file in SPIR-V form.
+
+See also :ref:`RDShaderSource<class_RDShaderSource>`. **RDShaderFile** is only meant to be used with the :ref:`RenderingDevice<class_RenderingDevice>` API. It should not be confused with Godot's own :ref:`Shader<class_Shader>` resource, which is what Godot's various nodes use for high-level shader programming.
 
 .. rst-class:: classref-reftable-group
 
@@ -36,13 +43,13 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`         | :ref:`get_spirv<class_RDShaderFile_method_get_spirv>` **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|                                                   |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_version_list<class_RDShaderFile_method_get_version_list>` **(** **)** |const|                                                                                     |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`set_bytecode<class_RDShaderFile_method_set_bytecode>` **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)** |
-   +---------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` | :ref:`get_spirv<class_RDShaderFile_method_get_spirv>` **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|                                                   |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`StringName[]<class_StringName>`     | :ref:`get_version_list<class_RDShaderFile_method_get_version_list>` **(** **)** |const|                                                                                     |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                      | :ref:`set_bytecode<class_RDShaderFile_method_set_bytecode>` **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)** |
+   +-------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -64,9 +71,7 @@ Property Descriptions
 - void **set_base_error** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_base_error** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The base compilation error message, which indicates errors not related to a specific shader stage if non-empty. If empty, shader compilation is not necessarily successful (check :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`'s error message members).
 
 .. rst-class:: classref-section-separator
 
@@ -83,9 +88,7 @@ Method Descriptions
 
 :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **get_spirv** **(** :ref:`StringName<class_StringName>` version=&"" **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the SPIR-V intermediate representation for the specified shader ``version``.
 
 .. rst-class:: classref-item-separator
 
@@ -95,11 +98,9 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`PackedStringArray<class_PackedStringArray>` **get_version_list** **(** **)** |const|
+:ref:`StringName[]<class_StringName>` **get_version_list** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the list of compiled versions for this shader.
 
 .. rst-class:: classref-item-separator
 
@@ -111,9 +112,7 @@ Method Descriptions
 
 void **set_bytecode** **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` bytecode, :ref:`StringName<class_StringName>` version=&"" **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the SPIR-V ``bytecode`` that will be compiled for the specified ``version``.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

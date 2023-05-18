@@ -104,7 +104,7 @@ The :ref:`Bone2D<class_Bone2D>` node that the modification will operate on.
 - void **set_bone_index** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_bone_index** **(** **)**
 
-The index of the :ref:`Bone2D<class_Bone2D>` node that the modification will oeprate on.
+The index of the :ref:`Bone2D<class_Bone2D>` node that the modification will operate on.
 
 .. rst-class:: classref-item-separator
 

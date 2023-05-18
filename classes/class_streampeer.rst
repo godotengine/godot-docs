@@ -46,13 +46,13 @@ Methods
    :widths: auto
 
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_8<class_StreamPeer_method_get_8>` **(** **)**                                                                                     |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_16<class_StreamPeer_method_get_16>` **(** **)**                                                                                   |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_32<class_StreamPeer_method_get_32>` **(** **)**                                                                                   |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_64<class_StreamPeer_method_get_64>` **(** **)**                                                                                   |
-   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`get_8<class_StreamPeer_method_get_8>` **(** **)**                                                                                     |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_available_bytes<class_StreamPeer_method_get_available_bytes>` **(** **)** |const|                                                 |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -66,25 +66,25 @@ Methods
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`           | :ref:`get_string<class_StreamPeer_method_get_string>` **(** :ref:`int<class_int>` bytes=-1 **)**                                            |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                 | :ref:`get_u8<class_StreamPeer_method_get_u8>` **(** **)**                                                                                   |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_u16<class_StreamPeer_method_get_u16>` **(** **)**                                                                                 |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_u32<class_StreamPeer_method_get_u32>` **(** **)**                                                                                 |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                 | :ref:`get_u64<class_StreamPeer_method_get_u64>` **(** **)**                                                                                 |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                 | :ref:`get_u8<class_StreamPeer_method_get_u8>` **(** **)**                                                                                   |
-   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`           | :ref:`get_utf8_string<class_StreamPeer_method_get_utf8_string>` **(** :ref:`int<class_int>` bytes=-1 **)**                                  |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`         | :ref:`get_var<class_StreamPeer_method_get_var>` **(** :ref:`bool<class_bool>` allow_objects=false **)**                                     |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`put_8<class_StreamPeer_method_put_8>` **(** :ref:`int<class_int>` value **)**                                                         |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`put_16<class_StreamPeer_method_put_16>` **(** :ref:`int<class_int>` value **)**                                                       |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`put_32<class_StreamPeer_method_put_32>` **(** :ref:`int<class_int>` value **)**                                                       |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`put_64<class_StreamPeer_method_put_64>` **(** :ref:`int<class_int>` value **)**                                                       |
-   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`put_8<class_StreamPeer_method_put_8>` **(** :ref:`int<class_int>` value **)**                                                         |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`put_data<class_StreamPeer_method_put_data>` **(** :ref:`PackedByteArray<class_PackedByteArray>` data **)**                            |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -96,13 +96,13 @@ Methods
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`put_string<class_StreamPeer_method_put_string>` **(** :ref:`String<class_String>` value **)**                                         |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`put_u8<class_StreamPeer_method_put_u8>` **(** :ref:`int<class_int>` value **)**                                                       |
+   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`put_u16<class_StreamPeer_method_put_u16>` **(** :ref:`int<class_int>` value **)**                                                     |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`put_u32<class_StreamPeer_method_put_u32>` **(** :ref:`int<class_int>` value **)**                                                     |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`put_u64<class_StreamPeer_method_put_u64>` **(** :ref:`int<class_int>` value **)**                                                     |
-   +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                  | :ref:`put_u8<class_StreamPeer_method_put_u8>` **(** :ref:`int<class_int>` value **)**                                                       |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`put_utf8_string<class_StreamPeer_method_put_utf8_string>` **(** :ref:`String<class_String>` value **)**                               |
    +---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -140,6 +140,18 @@ If ``true``, this **StreamPeer** will using big-endian format for encoding and d
 Method Descriptions
 -------------------
 
+.. _class_StreamPeer_method_get_8:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_8** **(** **)**
+
+Gets a signed byte from the stream.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_StreamPeer_method_get_16:
 
 .. rst-class:: classref-method
@@ -171,18 +183,6 @@ Gets a signed 32-bit value from the stream.
 :ref:`int<class_int>` **get_64** **(** **)**
 
 Gets a signed 64-bit value from the stream.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_StreamPeer_method_get_8:
-
-.. rst-class:: classref-method
-
-:ref:`int<class_int>` **get_8** **(** **)**
-
-Gets a signed byte from the stream.
 
 .. rst-class:: classref-item-separator
 
@@ -260,6 +260,18 @@ Gets an ASCII string with byte-length ``bytes`` from the stream. If ``bytes`` is
 
 ----
 
+.. _class_StreamPeer_method_get_u8:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_u8** **(** **)**
+
+Gets an unsigned byte from the stream.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_StreamPeer_method_get_u16:
 
 .. rst-class:: classref-method
@@ -296,18 +308,6 @@ Gets an unsigned 64-bit value from the stream.
 
 ----
 
-.. _class_StreamPeer_method_get_u8:
-
-.. rst-class:: classref-method
-
-:ref:`int<class_int>` **get_u8** **(** **)**
-
-Gets an unsigned byte from the stream.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_StreamPeer_method_get_utf8_string:
 
 .. rst-class:: classref-method
@@ -331,6 +331,18 @@ Gets a Variant from the stream. If ``allow_objects`` is ``true``, decoding objec
 Internally, this uses the same decoding mechanism as the :ref:`@GlobalScope.bytes_to_var<class_@GlobalScope_method_bytes_to_var>` method.
 
 \ **Warning:** Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StreamPeer_method_put_8:
+
+.. rst-class:: classref-method
+
+void **put_8** **(** :ref:`int<class_int>` value **)**
+
+Puts a signed byte into the stream.
 
 .. rst-class:: classref-item-separator
 
@@ -367,18 +379,6 @@ Puts a signed 32-bit value into the stream.
 void **put_64** **(** :ref:`int<class_int>` value **)**
 
 Puts a signed 64-bit value into the stream.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_StreamPeer_method_put_8:
-
-.. rst-class:: classref-method
-
-void **put_8** **(** :ref:`int<class_int>` value **)**
-
-Puts a signed byte into the stream.
 
 .. rst-class:: classref-item-separator
 
@@ -447,13 +447,25 @@ Puts a zero-terminated ASCII string into the stream prepended by a 32-bit unsign
 
  .. code-tab:: gdscript
 
-    put_data("Hello world".to_ascii())
+    put_data("Hello world".to_ascii_buffer())
 
  .. code-tab:: csharp
 
-    PutData("Hello World".ToAscii());
+    PutData("Hello World".ToAsciiBuffer());
 
 
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_StreamPeer_method_put_u8:
+
+.. rst-class:: classref-method
+
+void **put_u8** **(** :ref:`int<class_int>` value **)**
+
+Puts an unsigned byte into the stream.
 
 .. rst-class:: classref-item-separator
 
@@ -495,18 +507,6 @@ Puts an unsigned 64-bit value into the stream.
 
 ----
 
-.. _class_StreamPeer_method_put_u8:
-
-.. rst-class:: classref-method
-
-void **put_u8** **(** :ref:`int<class_int>` value **)**
-
-Puts an unsigned byte into the stream.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_StreamPeer_method_put_utf8_string:
 
 .. rst-class:: classref-method
@@ -522,11 +522,11 @@ Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsig
 
  .. code-tab:: gdscript
 
-    put_data("Hello world".to_utf8())
+    put_data("Hello world".to_utf8_buffer())
 
  .. code-tab:: csharp
 
-    PutData("Hello World".ToUtf8());
+    PutData("Hello World".ToUtf8Buffer());
 
 
 

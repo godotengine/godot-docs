@@ -19,7 +19,7 @@ TLS stream peer.
 Description
 -----------
 
-TLS stream peer. This object can be used to connect to an TLS server or accept a single TLS client connection.
+TLS stream peer. This object can be used to connect to a TLS server or accept a single TLS client connection.
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 

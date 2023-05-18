@@ -193,7 +193,7 @@ Methods
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`push_italics<class_RichTextLabel_method_push_italics>` **(** **)**                                                                                                                                                                                                                                                                                                               |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                | :ref:`push_list<class_RichTextLabel_method_push_list>` **(** :ref:`int<class_int>` level, :ref:`ListType<enum_RichTextLabel_ListType>` type, :ref:`bool<class_bool>` capitalize **)**                                                                                                                                                                                                  |
+   | void                                | :ref:`push_list<class_RichTextLabel_method_push_list>` **(** :ref:`int<class_int>` level, :ref:`ListType<enum_RichTextLabel_ListType>` type, :ref:`bool<class_bool>` capitalize, :ref:`String<class_String>` bullet="•" **)**                                                                                                                                                          |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                | :ref:`push_meta<class_RichTextLabel_method_push_meta>` **(** :ref:`Variant<class_Variant>` data **)**                                                                                                                                                                                                                                                                                  |
    +-------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1434,7 +1434,7 @@ Adds an ``[indent]`` tag to the tag stack. Multiplies ``level`` by current :ref:
 
 void **push_italics** **(** **)**
 
-Adds a ``[font]`` tag with a italics font to the tag stack. This is the same as adding a ``[i]`` tag if not currently in a ``[b]`` tag.
+Adds a ``[font]`` tag with an italics font to the tag stack. This is the same as adding an ``[i]`` tag if not currently in a ``[b]`` tag.
 
 .. rst-class:: classref-item-separator
 
@@ -1444,7 +1444,7 @@ Adds a ``[font]`` tag with a italics font to the tag stack. This is the same as 
 
 .. rst-class:: classref-method
 
-void **push_list** **(** :ref:`int<class_int>` level, :ref:`ListType<enum_RichTextLabel_ListType>` type, :ref:`bool<class_bool>` capitalize **)**
+void **push_list** **(** :ref:`int<class_int>` level, :ref:`ListType<enum_RichTextLabel_ListType>` type, :ref:`bool<class_bool>` capitalize, :ref:`String<class_String>` bullet="•" **)**
 
 Adds ``[ol]`` or ``[ul]`` tag to the tag stack. Multiplies ``level`` by current :ref:`tab_size<class_RichTextLabel_property_tab_size>` to determine new margin length.
 

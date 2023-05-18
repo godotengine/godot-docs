@@ -226,7 +226,7 @@ If ``false``, stops printing error and warning messages to the console and edito
 - void **set_time_scale** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_time_scale** **(** **)**
 
-Controls how fast or slow the in-game clock ticks versus the real life one. It defaults to 1.0. A value of 2.0 means the game moves twice as fast as real life, whilst a value of 0.5 means the game moves at half the regular speed.
+Controls how fast or slow the in-game clock ticks versus the real life one. It defaults to 1.0. A value of 2.0 means the game moves twice as fast as real life, whilst a value of 0.5 means the game moves at half the regular speed. This also affects :ref:`Timer<class_Timer>` and :ref:`SceneTreeTimer<class_SceneTreeTimer>` (see :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>` for how to control this).
 
 .. rst-class:: classref-section-separator
 

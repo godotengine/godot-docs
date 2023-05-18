@@ -21,7 +21,7 @@ Base class for texture types which contain the data of multiple :ref:`Image<clas
 Description
 -----------
 
-Base class for :ref:`ImageTextureLayered<class_ImageTextureLayered>`. Cannot be used directly, but contains all the functions necessary for accessing the derived resource types. See also :ref:`Texture3D<class_Texture3D>`.
+Base class for :ref:`ImageTextureLayered<class_ImageTextureLayered>` and :ref:`CompressedTextureLayered<class_CompressedTextureLayered>`. Cannot be used directly, but contains all the functions necessary for accessing the derived resource types. See also :ref:`Texture3D<class_Texture3D>`.
 
 Data is set on a per-layer basis. For :ref:`Texture2DArray<class_Texture2DArray>`\ s, the layer specifies the array layer.
 
@@ -135,7 +135,7 @@ Called when the **TextureLayered**'s format is queried.
 
 :ref:`int<class_int>` **_get_height** **(** **)** |virtual| |const|
 
-Called when the the **TextureLayered**'s height is queried.
+Called when the **TextureLayered**'s height is queried.
 
 .. rst-class:: classref-item-separator
 

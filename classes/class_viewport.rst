@@ -334,7 +334,7 @@ enum **Scaling3DMode**:
 
 :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_BILINEAR** = ``0``
 
-Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
+Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will result in undersampling while values greater than ``1.0`` will result in supersampling. A value of ``1.0`` disables scaling.
 
 .. _class_Viewport_constant_SCALING_3D_MODE_FSR:
 
@@ -342,7 +342,7 @@ Use bilinear scaling for the viewport's 3D buffer. The amount of scaling can be 
 
 :ref:`Scaling3DMode<enum_Viewport_Scaling3DMode>` **SCALING_3D_MODE_FSR** = ``1``
 
-Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less then ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
+Use AMD FidelityFX Super Resolution 1.0 upscaling for the viewport's 3D buffer. The amount of scaling can be set using :ref:`scaling_3d_scale<class_Viewport_property_scaling_3d_scale>`. Values less than ``1.0`` will be result in the viewport being upscaled using FSR. Values greater than ``1.0`` are not supported and bilinear downsampling will be used instead. A value of ``1.0`` disables scaling.
 
 .. _class_Viewport_constant_SCALING_3D_MODE_MAX:
 
@@ -1199,7 +1199,7 @@ If ``true``, the GUI controls on the viewport will lay pixel perfectly.
 - void **set_handle_input_locally** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_handling_input_locally** **(** **)**
 
-If ``true``, this viewport will mark incoming input events as handled by itself. If ``false``, this is instead done by the the first parent viewport that is set to handle input locally.
+If ``true``, this viewport will mark incoming input events as handled by itself. If ``false``, this is instead done by the first parent viewport that is set to handle input locally.
 
 A :ref:`SubViewportContainer<class_SubViewportContainer>` will automatically set this property to ``false`` for the **Viewport** contained inside of it.
 
@@ -1328,9 +1328,7 @@ If ``true``, objects receive mouse picking events sorted primarily by their :ref
 - void **set_positional_shadow_atlas_16_bits** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_positional_shadow_atlas_16_bits** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Use 16 bits for the omni/spot shadow depth map. Enabling this results in shadows having less precision and may result in shadow acne, but can lead to performance improvements on some devices.
 
 .. rst-class:: classref-item-separator
 
@@ -1415,9 +1413,9 @@ The subdivision amount of the fourth quadrant on the shadow atlas.
 - void **set_positional_shadow_atlas_size** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_positional_shadow_atlas_size** **(** **)**
 
-The shadow atlas' resolution (used for omni and spot lights). The value will be rounded up to the nearest power of 2.
+The shadow atlas' resolution (used for omni and spot lights). The value is rounded up to the nearest power of 2.
 
-\ **Note:** If this is set to ``0``, no shadows will be visible at all (including directional shadows).
+\ **Note:** If this is set to ``0``, no positional shadows will be visible at all. This can improve performance significantly on low-end systems by reducing both the CPU and GPU load (as fewer draw calls are needed to draw the scene without shadows).
 
 .. rst-class:: classref-item-separator
 
@@ -1860,9 +1858,7 @@ Returns the :ref:`PositionalShadowAtlasQuadrantSubdiv<enum_Viewport_PositionalSh
 
 :ref:`int<class_int>` **get_render_info** **(** :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` type, :ref:`RenderInfo<enum_Viewport_RenderInfo>` info **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns rendering statistics of the given type. See :ref:`RenderInfoType<enum_Viewport_RenderInfoType>` and :ref:`RenderInfo<enum_Viewport_RenderInfo>` for options.
 
 .. rst-class:: classref-item-separator
 
@@ -2020,7 +2016,15 @@ Calling this method will propagate calls to child nodes for following methods in
 
 - :ref:`Control._gui_input<class_Control_method__gui_input>` for :ref:`Control<class_Control>` nodes
 
+- :ref:`Node._shortcut_input<class_Node_method__shortcut_input>`\ 
+
+- :ref:`Node._unhandled_input<class_Node_method__unhandled_input>`\ 
+
+- :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`\ 
+
 If an earlier method marks the input as handled via :ref:`set_input_as_handled<class_Viewport_method_set_input_as_handled>`, any later method in this list will not be called.
+
+If none of the methods handle the event and :ref:`physics_object_picking<class_Viewport_property_physics_object_picking>` is ``true``, the event is used for physics object picking.
 
 .. rst-class:: classref-item-separator
 
@@ -2032,9 +2036,7 @@ If an earlier method marks the input as handled via :ref:`set_input_as_handled<c
 
 void **push_text_input** **(** :ref:`String<class_String>` text **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Helper method which calls the ``set_text()`` method on the currently focused :ref:`Control<class_Control>`, provided that it is defined (e.g. if the focused Control is :ref:`Button<class_Button>` or :ref:`LineEdit<class_LineEdit>`).
 
 .. rst-class:: classref-item-separator
 
@@ -2087,6 +2089,8 @@ Set/clear individual bits on the rendering layer mask. This simplifies editing t
 void **set_input_as_handled** **(** **)**
 
 Stops the input from propagating further down the :ref:`SceneTree<class_SceneTree>`.
+
+\ **Note:** This does not affect the methods in :ref:`Input<class_Input>`, only the way events are propagated.
 
 .. rst-class:: classref-item-separator
 

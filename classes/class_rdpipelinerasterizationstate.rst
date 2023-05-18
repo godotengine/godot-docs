@@ -12,9 +12,14 @@ RDPipelineRasterizationState
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Pipeline rasterization state (used by :ref:`RenderingDevice<class_RenderingDevice>`).
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This object is used by :ref:`RenderingDevice<class_RenderingDevice>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -68,9 +73,7 @@ Property Descriptions
 - void **set_cull_mode** **(** :ref:`PolygonCullMode<enum_RenderingDevice_PolygonCullMode>` value **)**
 - :ref:`PolygonCullMode<enum_RenderingDevice_PolygonCullMode>` **get_cull_mode** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The cull mode to use when drawing polygons, which determines whether front faces or backfaces are hidden.
 
 .. rst-class:: classref-item-separator
 
@@ -163,9 +166,7 @@ Property Descriptions
 - void **set_discard_primitives** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_discard_primitives** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, primitives are discarded immediately before the rasterization stage.
 
 .. rst-class:: classref-item-separator
 
@@ -201,9 +202,7 @@ Property Descriptions
 - void **set_front_face** **(** :ref:`PolygonFrontFace<enum_RenderingDevice_PolygonFrontFace>` value **)**
 - :ref:`PolygonFrontFace<enum_RenderingDevice_PolygonFrontFace>` **get_front_face** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The winding order to use to determine which face of a triangle is considered its front face.
 
 .. rst-class:: classref-item-separator
 
@@ -220,9 +219,7 @@ Property Descriptions
 - void **set_line_width** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_line_width** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+THe line width to use when drawing lines (in pixels). Thick lines may not be supported on all hardware.
 
 .. rst-class:: classref-item-separator
 
@@ -239,9 +236,7 @@ Property Descriptions
 - void **set_patch_control_points** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_patch_control_points** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The number of control points to use when drawing a patch with tessellation enabled. Higher values result in higher quality at the cost of performance.
 
 .. rst-class:: classref-item-separator
 
@@ -258,9 +253,7 @@ Property Descriptions
 - void **set_wireframe** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **get_wireframe** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, performs wireframe rendering for triangles instead of flat or textured rendering.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

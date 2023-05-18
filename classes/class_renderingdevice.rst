@@ -19,15 +19,22 @@ Abstraction for working with modern low-level graphics APIs.
 Description
 -----------
 
-**RenderingDevice** is an abstraction for working with modern low-level graphics APIs such as Vulkan.
+**RenderingDevice** is an abstraction for working with modern low-level graphics APIs such as Vulkan. Compared to :ref:`RenderingServer<class_RenderingServer>` (which works with Godot's own rendering subsystems), **RenderingDevice** is much lower-level and allows working more directly with the underlying graphics APIs. **RenderingDevice** is used in Godot to provide support for several modern low-level graphics APIs while reducing the amount of code duplication required. **RenderingDevice** can also be used in your own projects to perform things that are not exposed by :ref:`RenderingServer<class_RenderingServer>` or high-level nodes, such as using compute shaders.
 
-On startup, Godot creates a global **RenderingDevice** which can be retrieved using :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>`. This global RenderingDevice performs drawing to the screen.
-
-Internally, **RenderingDevice** is used in Godot to provide support for several modern low-level graphics APIs while reducing the amount of code duplication required.
+On startup, Godot creates a global **RenderingDevice** which can be retrieved using :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>`. This global **RenderingDevice** performs drawing to the screen.
 
 \ **Local RenderingDevices:** Using :ref:`RenderingServer.create_local_rendering_device<class_RenderingServer_method_create_local_rendering_device>`, you can create "secondary" rendering devices to perform drawing and GPU compute operations on separate threads.
 
+\ **Note:** **RenderingDevice** assumes intermediate knowledge of modern graphics APIs such as Vulkan, Direct3D 12, Metal or WebGPU. These graphics APIs are lower-level than OpenGL or Direct3D 11, requiring you to perform what was previously done by the graphics driver itself. If you have difficulty understanding the concepts used in this class, follow the `Vulkan Tutorial <https://vulkan-tutorial.com/>`__ or `Vulkan Guide <https://vkguide.dev/>`__. It's recommended to have existing modern OpenGL or Direct3D 11 knowledge before attempting to learn a low-level graphics API.
+
 \ **Note:** **RenderingDevice** is not available when running in headless mode or when using the Compatibility rendering method.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `Using compute shaders <https://docs.godotengine.org/en/latest/tutorials/shaders/compute_shaders.html>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -64,7 +71,7 @@ Methods
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                      | :ref:`compute_pipeline_create<class_RenderingDevice_method_compute_pipeline_create>` **(** :ref:`RID<class_RID>` shader, :ref:`RDPipelineSpecializationConstant[]<class_RDPipelineSpecializationConstant>` specialization_constants=[] **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                    | :ref:`compute_pipeline_is_valid<class_RenderingDevice_method_compute_pipeline_is_valid>` **(** :ref:`RID<class_RID>` compute_pieline **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+   | :ref:`bool<class_bool>`                                    | :ref:`compute_pipeline_is_valid<class_RenderingDevice_method_compute_pipeline_is_valid>` **(** :ref:`RID<class_RID>` compute_pipeline **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RenderingDevice<class_RenderingDevice>`              | :ref:`create_local_device<class_RenderingDevice_method_create_local_device>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -74,7 +81,7 @@ Methods
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                       | :ref:`draw_command_insert_label<class_RenderingDevice_method_draw_command_insert_label>` **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                                      | :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>` **(** :ref:`RID<class_RID>` framebuffer, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_color_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_color_action, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_depth_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_depth_action, :ref:`PackedColorArray<class_PackedColorArray>` clear_color_values=PackedColorArray(), :ref:`float<class_float>` clear_depth=1.0, :ref:`int<class_int>` clear_stencil=0, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`Array<class_Array>` storage_textures=[] **)**                                                                                                                                                                                                   |
+   | :ref:`int<class_int>`                                      | :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>` **(** :ref:`RID<class_RID>` framebuffer, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_color_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_color_action, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_depth_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_depth_action, :ref:`PackedColorArray<class_PackedColorArray>` clear_color_values=PackedColorArray(), :ref:`float<class_float>` clear_depth=1.0, :ref:`int<class_int>` clear_stencil=0, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`RID[]<class_RID>` storage_textures=[] **)**                                                                                                                                                                                                     |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`draw_list_begin_for_screen<class_RenderingDevice_method_draw_list_begin_for_screen>` **(** :ref:`int<class_int>` screen=0, :ref:`Color<class_Color>` clear_color=Color(0, 0, 0, 1) **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -159,6 +166,8 @@ Methods
    | :ref:`bool<class_bool>`                                    | :ref:`render_pipeline_is_valid<class_RenderingDevice_method_render_pipeline_is_valid>` **(** :ref:`RID<class_RID>` render_pipeline **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                                      | :ref:`sampler_create<class_RenderingDevice_method_sampler_create>` **(** :ref:`RDSamplerState<class_RDSamplerState>` state **)**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+   +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                    | :ref:`sampler_is_format_supported_for_filter<class_RenderingDevice_method_sampler_is_format_supported_for_filter>` **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format, :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` sampler_filter **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                      | :ref:`screen_get_framebuffer_format<class_RenderingDevice_method_screen_get_framebuffer_format>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
    +------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -300,7 +309,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_DEVICE** = ``0``
 
-
+Vulkan device driver resource. This is a "global" resource and ignores the RID passed in
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_PHYSICAL_DEVICE:
 
@@ -308,7 +317,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_PHYSICAL_DEVICE** = ``1``
 
-
+Physical device (graphics card) driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_INSTANCE:
 
@@ -316,7 +325,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_INSTANCE** = ``2``
 
-
+Vulkan instance driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_QUEUE:
 
@@ -324,7 +333,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_QUEUE** = ``3``
 
-
+Vulkan queue driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_QUEUE_FAMILY_INDEX:
 
@@ -332,7 +341,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_QUEUE_FAMILY_INDEX** = ``4``
 
-
+Vulkan queue family index driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_IMAGE:
 
@@ -340,7 +349,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_IMAGE** = ``5``
 
-
+Vulkan image driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_IMAGE_VIEW:
 
@@ -348,7 +357,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_IMAGE_VIEW** = ``6``
 
-
+Vulkan image view driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_IMAGE_NATIVE_TEXTURE_FORMAT:
 
@@ -356,7 +365,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_IMAGE_NATIVE_TEXTURE_FORMAT** = ``7``
 
-
+Vulkan image native texture format driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_SAMPLER:
 
@@ -364,7 +373,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_SAMPLER** = ``8``
 
-
+Vulkan sampler driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_DESCRIPTOR_SET:
 
@@ -372,7 +381,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_DESCRIPTOR_SET** = ``9``
 
-
+Vulkan `descriptor set <https://vkguide.dev/docs/chapter-4/descriptors/>`__ driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_BUFFER:
 
@@ -380,7 +389,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_BUFFER** = ``10``
 
-
+Vulkan buffer driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_COMPUTE_PIPELINE:
 
@@ -388,7 +397,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_COMPUTE_PIPELINE** = ``11``
 
-
+Vulkan compute pipeline driver resource.
 
 .. _class_RenderingDevice_constant_DRIVER_RESOURCE_VULKAN_RENDER_PIPELINE:
 
@@ -396,7 +405,7 @@ enum **DriverResource**:
 
 :ref:`DriverResource<enum_RenderingDevice_DriverResource>` **DRIVER_RESOURCE_VULKAN_RENDER_PIPELINE** = ``12``
 
-
+Vulkan render pipeline driver resource.
 
 .. rst-class:: classref-item-separator
 
@@ -414,7 +423,9 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R4G4_UNORM_PACK8** = ``0``
 
+4-bit-per-channel red/green channel data format, packed into 8 bits. Values are in the ``[0.0, 1.0]`` range.
 
+\ **Note:** More information on all data formats can be found on the `Identification of formats <https://registry.khronos.org/vulkan/specs/1.1/html/vkspec.html#_identification_of_formats>`__ section of the Vulkan specification, as well as the `VkFormat <https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFormat.html>`__ enum.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R4G4B4A4_UNORM_PACK16:
 
@@ -422,7 +433,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R4G4B4A4_UNORM_PACK16** = ``1``
 
-
+4-bit-per-channel red/green/blue/alpha channel data format, packed into 16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B4G4R4A4_UNORM_PACK16:
 
@@ -430,7 +441,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B4G4R4A4_UNORM_PACK16** = ``2``
 
-
+4-bit-per-channel blue/green/red/alpha channel data format, packed into 16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R5G6B5_UNORM_PACK16:
 
@@ -438,7 +449,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R5G6B5_UNORM_PACK16** = ``3``
 
-
+Red/green/blue channel data format with 5 bits of red, 6 bits of green and 5 bits of blue, packed into 16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B5G6R5_UNORM_PACK16:
 
@@ -446,7 +457,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B5G6R5_UNORM_PACK16** = ``4``
 
-
+Blue/green/red channel data format with 5 bits of blue, 6 bits of green and 5 bits of red, packed into 16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R5G5B5A1_UNORM_PACK16:
 
@@ -454,7 +465,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R5G5B5A1_UNORM_PACK16** = ``5``
 
-
+Red/green/blue/alpha channel data format with 5 bits of red, 6 bits of green, 5 bits of blue and 1 bit of alpha, packed into 16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B5G5R5A1_UNORM_PACK16:
 
@@ -462,7 +473,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B5G5R5A1_UNORM_PACK16** = ``6``
 
-
+Blue/green/red/alpha channel data format with 5 bits of blue, 6 bits of green, 5 bits of red and 1 bit of alpha, packed into 16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A1R5G5B5_UNORM_PACK16:
 
@@ -470,7 +481,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A1R5G5B5_UNORM_PACK16** = ``7``
 
-
+Alpha/red/green/blue channel data format with 1 bit of alpha, 5 bits of red, 6 bits of green and 5 bits of blue, packed into 16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8_UNORM:
 
@@ -478,7 +489,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8_UNORM** = ``8``
 
-
+8-bit-per-channel unsigned floating-point red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8_SNORM:
 
@@ -486,7 +497,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8_SNORM** = ``9``
 
-
+8-bit-per-channel signed floating-point red channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8_USCALED:
 
@@ -494,7 +505,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8_USCALED** = ``10``
 
-
+8-bit-per-channel unsigned floating-point red channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 255.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8_SSCALED:
 
@@ -502,7 +513,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8_SSCALED** = ``11``
 
-
+8-bit-per-channel signed floating-point red channel data format with scaled value (value is converted from integer to float). Values are in the ``[-127.0, 127.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8_UINT:
 
@@ -510,7 +521,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8_UINT** = ``12``
 
-
+8-bit-per-channel unsigned integer red channel data format. Values are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8_SINT:
 
@@ -518,7 +529,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8_SINT** = ``13``
 
-
+8-bit-per-channel signed integer red channel data format. Values are in the ``[-127, 127]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8_SRGB:
 
@@ -526,7 +537,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8_SRGB** = ``14``
 
-
+8-bit-per-channel unsigned floating-point red channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8_UNORM:
 
@@ -534,7 +545,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8_UNORM** = ``15``
 
-
+8-bit-per-channel unsigned floating-point red/green channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8_SNORM:
 
@@ -542,7 +553,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8_SNORM** = ``16``
 
-
+8-bit-per-channel signed floating-point red/green channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8_USCALED:
 
@@ -550,7 +561,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8_USCALED** = ``17``
 
-
+8-bit-per-channel unsigned floating-point red/green channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 255.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8_SSCALED:
 
@@ -558,7 +569,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8_SSCALED** = ``18``
 
-
+8-bit-per-channel signed floating-point red/green channel data format with scaled value (value is converted from integer to float). Values are in the ``[-127.0, 127.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8_UINT:
 
@@ -566,7 +577,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8_UINT** = ``19``
 
-
+8-bit-per-channel unsigned integer red/green channel data format. Values are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8_SINT:
 
@@ -574,7 +585,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8_SINT** = ``20``
 
-
+8-bit-per-channel signed integer red/green channel data format. Values are in the ``[-127, 127]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8_SRGB:
 
@@ -582,7 +593,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8_SRGB** = ``21``
 
-
+8-bit-per-channel unsigned floating-point red/green channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8_UNORM:
 
@@ -590,7 +601,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8_UNORM** = ``22``
 
-
+8-bit-per-channel unsigned floating-point red/green/blue channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8_SNORM:
 
@@ -598,7 +609,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8_SNORM** = ``23``
 
-
+8-bit-per-channel signed floating-point red/green/blue channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8_USCALED:
 
@@ -606,7 +617,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8_USCALED** = ``24``
 
-
+8-bit-per-channel unsigned floating-point red/green/blue channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 255.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8_SSCALED:
 
@@ -614,7 +625,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8_SSCALED** = ``25``
 
-
+8-bit-per-channel signed floating-point red/green/blue channel data format with scaled value (value is converted from integer to float). Values are in the ``[-127.0, 127.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8_UINT:
 
@@ -622,7 +633,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8_UINT** = ``26``
 
-
+8-bit-per-channel unsigned integer red/green/blue channel data format. Values are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8_SINT:
 
@@ -630,7 +641,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8_SINT** = ``27``
 
-
+8-bit-per-channel signed integer red/green/blue channel data format. Values are in the ``[-127, 127]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8_SRGB:
 
@@ -638,7 +649,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8_SRGB** = ``28``
 
-
+8-bit-per-channel unsigned floating-point red/green/blue/blue channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8_UNORM:
 
@@ -646,7 +657,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8_UNORM** = ``29``
 
-
+8-bit-per-channel unsigned floating-point blue/green/red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8_SNORM:
 
@@ -654,7 +665,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8_SNORM** = ``30``
 
-
+8-bit-per-channel signed floating-point blue/green/red channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8_USCALED:
 
@@ -662,7 +673,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8_USCALED** = ``31``
 
-
+8-bit-per-channel unsigned floating-point blue/green/red channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 255.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8_SSCALED:
 
@@ -670,7 +681,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8_SSCALED** = ``32``
 
-
+8-bit-per-channel signed floating-point blue/green/red channel data format with scaled value (value is converted from integer to float). Values are in the ``[-127.0, 127.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8_UINT:
 
@@ -678,7 +689,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8_UINT** = ``33``
 
-
+8-bit-per-channel unsigned integer blue/green/red channel data format. Values are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8_SINT:
 
@@ -686,7 +697,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8_SINT** = ``34``
 
-
+8-bit-per-channel signed integer blue/green/red channel data format. Values are in the ``[-127, 127]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8_SRGB:
 
@@ -694,7 +705,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8_SRGB** = ``35``
 
-
+8-bit-per-channel unsigned floating-point blue/green/red data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8A8_UNORM:
 
@@ -702,7 +713,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8A8_UNORM** = ``36``
 
-
+8-bit-per-channel unsigned floating-point red/green/blue/alpha channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8A8_SNORM:
 
@@ -710,7 +721,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8A8_SNORM** = ``37``
 
-
+8-bit-per-channel signed floating-point red/green/blue/alpha channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8A8_USCALED:
 
@@ -718,7 +729,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8A8_USCALED** = ``38``
 
-
+8-bit-per-channel unsigned floating-point red/green/blue/alpha channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 255.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8A8_SSCALED:
 
@@ -726,7 +737,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8A8_SSCALED** = ``39``
 
-
+8-bit-per-channel signed floating-point red/green/blue/alpha channel data format with scaled value (value is converted from integer to float). Values are in the ``[-127.0, 127.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8A8_UINT:
 
@@ -734,7 +745,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8A8_UINT** = ``40``
 
-
+8-bit-per-channel unsigned integer red/green/blue/alpha channel data format. Values are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8A8_SINT:
 
@@ -742,7 +753,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8A8_SINT** = ``41``
 
-
+8-bit-per-channel signed integer red/green/blue/alpha channel data format. Values are in the ``[-127, 127]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R8G8B8A8_SRGB:
 
@@ -750,7 +761,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R8G8B8A8_SRGB** = ``42``
 
-
+8-bit-per-channel unsigned floating-point red/green/blue/alpha channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8A8_UNORM:
 
@@ -758,7 +769,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8A8_UNORM** = ``43``
 
-
+8-bit-per-channel unsigned floating-point blue/green/red/alpha channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8A8_SNORM:
 
@@ -766,7 +777,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8A8_SNORM** = ``44``
 
-
+8-bit-per-channel signed floating-point blue/green/red/alpha channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8A8_USCALED:
 
@@ -774,7 +785,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8A8_USCALED** = ``45``
 
-
+8-bit-per-channel unsigned floating-point blue/green/red/alpha channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 255.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8A8_SSCALED:
 
@@ -782,7 +793,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8A8_SSCALED** = ``46``
 
-
+8-bit-per-channel signed floating-point blue/green/red/alpha channel data format with scaled value (value is converted from integer to float). Values are in the ``[-127.0, 127.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8A8_UINT:
 
@@ -790,7 +801,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8A8_UINT** = ``47``
 
-
+8-bit-per-channel unsigned integer blue/green/red/alpha channel data format. Values are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8A8_SINT:
 
@@ -798,7 +809,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8A8_SINT** = ``48``
 
-
+8-bit-per-channel signed integer blue/green/red/alpha channel data format. Values are in the ``[-127, 127]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8A8_SRGB:
 
@@ -806,7 +817,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8A8_SRGB** = ``49``
 
-
+8-bit-per-channel unsigned floating-point blue/green/red/alpha channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A8B8G8R8_UNORM_PACK32:
 
@@ -814,7 +825,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A8B8G8R8_UNORM_PACK32** = ``50``
 
-
+8-bit-per-channel unsigned floating-point alpha/red/green/blue channel data format with normalized value, packed in 32 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A8B8G8R8_SNORM_PACK32:
 
@@ -822,7 +833,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A8B8G8R8_SNORM_PACK32** = ``51``
 
-
+8-bit-per-channel signed floating-point alpha/red/green/blue channel data format with normalized value, packed in 32 bits. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A8B8G8R8_USCALED_PACK32:
 
@@ -830,7 +841,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A8B8G8R8_USCALED_PACK32** = ``52``
 
-
+8-bit-per-channel unsigned floating-point alpha/red/green/blue channel data format with scaled value (value is converted from integer to float), packed in 32 bits. Values are in the ``[0.0, 255.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A8B8G8R8_SSCALED_PACK32:
 
@@ -838,7 +849,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A8B8G8R8_SSCALED_PACK32** = ``53``
 
-
+8-bit-per-channel signed floating-point alpha/red/green/blue channel data format with scaled value (value is converted from integer to float), packed in 32 bits. Values are in the ``[-127.0, 127.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A8B8G8R8_UINT_PACK32:
 
@@ -846,7 +857,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A8B8G8R8_UINT_PACK32** = ``54``
 
-
+8-bit-per-channel unsigned integer alpha/red/green/blue channel data format, packed in 32 bits. Values are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A8B8G8R8_SINT_PACK32:
 
@@ -854,7 +865,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A8B8G8R8_SINT_PACK32** = ``55``
 
-
+8-bit-per-channel signed integer alpha/red/green/blue channel data format, packed in 32 bits. Values are in the ``[-127, 127]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A8B8G8R8_SRGB_PACK32:
 
@@ -862,7 +873,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A8B8G8R8_SRGB_PACK32** = ``56``
 
-
+8-bit-per-channel unsigned floating-point alpha/red/green/blue channel data format with normalized value and non-linear sRGB encoding, packed in 32 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2R10G10B10_UNORM_PACK32:
 
@@ -870,7 +881,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2R10G10B10_UNORM_PACK32** = ``57``
 
-
+Unsigned floating-point alpha/red/green/blue channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of red, 10 bits of green and 10 bits of blue. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2R10G10B10_SNORM_PACK32:
 
@@ -878,7 +889,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2R10G10B10_SNORM_PACK32** = ``58``
 
-
+Signed floating-point alpha/red/green/blue channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of red, 10 bits of green and 10 bits of blue. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2R10G10B10_USCALED_PACK32:
 
@@ -886,7 +897,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2R10G10B10_USCALED_PACK32** = ``59``
 
-
+Unsigned floating-point alpha/red/green/blue channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of red, 10 bits of green and 10 bits of blue. Values are in the ``[0.0, 1023.0]`` range for red/green/blue and ``[0.0, 3.0]`` for alpha.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2R10G10B10_SSCALED_PACK32:
 
@@ -894,7 +905,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2R10G10B10_SSCALED_PACK32** = ``60``
 
-
+Signed floating-point alpha/red/green/blue channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of red, 10 bits of green and 10 bits of blue. Values are in the ``[-511.0, 511.0]`` range for red/green/blue and ``[-1.0, 1.0]`` for alpha.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2R10G10B10_UINT_PACK32:
 
@@ -902,7 +913,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2R10G10B10_UINT_PACK32** = ``61``
 
-
+Unsigned integer alpha/red/green/blue channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of red, 10 bits of green and 10 bits of blue. Values are in the ``[0, 1023]`` range for red/green/blue and ``[0, 3]`` for alpha.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2R10G10B10_SINT_PACK32:
 
@@ -910,7 +921,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2R10G10B10_SINT_PACK32** = ``62``
 
-
+Signed integer alpha/red/green/blue channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of red, 10 bits of green and 10 bits of blue. Values are in the ``[-511, 511]`` range for red/green/blue and ``[-1, 1]`` for alpha.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2B10G10R10_UNORM_PACK32:
 
@@ -918,7 +929,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2B10G10R10_UNORM_PACK32** = ``63``
 
-
+Unsigned floating-point alpha/blue/green/red channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of blue, 10 bits of green and 10 bits of red. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2B10G10R10_SNORM_PACK32:
 
@@ -926,7 +937,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2B10G10R10_SNORM_PACK32** = ``64``
 
-
+Signed floating-point alpha/blue/green/red channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of blue, 10 bits of green and 10 bits of red. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2B10G10R10_USCALED_PACK32:
 
@@ -934,7 +945,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2B10G10R10_USCALED_PACK32** = ``65``
 
-
+Unsigned floating-point alpha/blue/green/red channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of blue, 10 bits of green and 10 bits of red. Values are in the ``[0.0, 1023.0]`` range for blue/green/red and ``[0.0, 3.0]`` for alpha.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2B10G10R10_SSCALED_PACK32:
 
@@ -942,7 +953,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2B10G10R10_SSCALED_PACK32** = ``66``
 
-
+Signed floating-point alpha/blue/green/red channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of blue, 10 bits of green and 10 bits of red. Values are in the ``[-511.0, 511.0]`` range for blue/green/red and ``[-1.0, 1.0]`` for alpha.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2B10G10R10_UINT_PACK32:
 
@@ -950,7 +961,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2B10G10R10_UINT_PACK32** = ``67``
 
-
+Unsigned integer alpha/blue/green/red channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of blue, 10 bits of green and 10 bits of red. Values are in the ``[0, 1023]`` range for blue/green/red and ``[0, 3]`` for alpha.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_A2B10G10R10_SINT_PACK32:
 
@@ -958,7 +969,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_A2B10G10R10_SINT_PACK32** = ``68``
 
-
+Signed integer alpha/blue/green/red channel data format with normalized value, packed in 32 bits. Format contains 2 bits of alpha, 10 bits of blue, 10 bits of green and 10 bits of red. Values are in the ``[-511, 511]`` range for blue/green/red and ``[-1, 1]`` for alpha.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16_UNORM:
 
@@ -966,7 +977,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16_UNORM** = ``69``
 
-
+16-bit-per-channel unsigned floating-point red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16_SNORM:
 
@@ -974,7 +985,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16_SNORM** = ``70``
 
-
+16-bit-per-channel signed floating-point red channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16_USCALED:
 
@@ -982,7 +993,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16_USCALED** = ``71``
 
-
+16-bit-per-channel unsigned floating-point red channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 65535.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16_SSCALED:
 
@@ -990,7 +1001,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16_SSCALED** = ``72``
 
-
+16-bit-per-channel signed floating-point red channel data format with scaled value (value is converted from integer to float). Values are in the ``[-32767.0, 32767.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16_UINT:
 
@@ -998,7 +1009,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16_UINT** = ``73``
 
-
+16-bit-per-channel unsigned integer red channel data format. Values are in the ``[0.0, 65535]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16_SINT:
 
@@ -1006,7 +1017,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16_SINT** = ``74``
 
-
+16-bit-per-channel signed integer red channel data format. Values are in the ``[-32767, 32767]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16_SFLOAT:
 
@@ -1014,7 +1025,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16_SFLOAT** = ``75``
 
-
+16-bit-per-channel signed floating-point red channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16_UNORM:
 
@@ -1022,7 +1033,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16_UNORM** = ``76``
 
-
+16-bit-per-channel unsigned floating-point red/green channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16_SNORM:
 
@@ -1030,7 +1041,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16_SNORM** = ``77``
 
-
+16-bit-per-channel signed floating-point red/green channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16_USCALED:
 
@@ -1038,7 +1049,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16_USCALED** = ``78``
 
-
+16-bit-per-channel unsigned floating-point red/green channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 65535.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16_SSCALED:
 
@@ -1046,7 +1057,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16_SSCALED** = ``79``
 
-
+16-bit-per-channel signed floating-point red/green channel data format with scaled value (value is converted from integer to float). Values are in the ``[-32767.0, 32767.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16_UINT:
 
@@ -1054,7 +1065,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16_UINT** = ``80``
 
-
+16-bit-per-channel unsigned integer red/green channel data format. Values are in the ``[0.0, 65535]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16_SINT:
 
@@ -1062,7 +1073,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16_SINT** = ``81``
 
-
+16-bit-per-channel signed integer red/green channel data format. Values are in the ``[-32767, 32767]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16_SFLOAT:
 
@@ -1070,7 +1081,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16_SFLOAT** = ``82``
 
-
+16-bit-per-channel signed floating-point red/green channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16_UNORM:
 
@@ -1078,7 +1089,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16_UNORM** = ``83``
 
-
+16-bit-per-channel unsigned floating-point red/green/blue channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16_SNORM:
 
@@ -1086,7 +1097,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16_SNORM** = ``84``
 
-
+16-bit-per-channel signed floating-point red/green/blue channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16_USCALED:
 
@@ -1094,7 +1105,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16_USCALED** = ``85``
 
-
+16-bit-per-channel unsigned floating-point red/green/blue channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 65535.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16_SSCALED:
 
@@ -1102,7 +1113,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16_SSCALED** = ``86``
 
-
+16-bit-per-channel signed floating-point red/green/blue channel data format with scaled value (value is converted from integer to float). Values are in the ``[-32767.0, 32767.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16_UINT:
 
@@ -1110,7 +1121,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16_UINT** = ``87``
 
-
+16-bit-per-channel unsigned integer red/green/blue channel data format. Values are in the ``[0.0, 65535]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16_SINT:
 
@@ -1118,7 +1129,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16_SINT** = ``88``
 
-
+16-bit-per-channel signed integer red/green/blue channel data format. Values are in the ``[-32767, 32767]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16_SFLOAT:
 
@@ -1126,7 +1137,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16_SFLOAT** = ``89``
 
-
+16-bit-per-channel signed floating-point red/green/blue channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16A16_UNORM:
 
@@ -1134,7 +1145,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16A16_UNORM** = ``90``
 
-
+16-bit-per-channel unsigned floating-point red/green/blue/alpha channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16A16_SNORM:
 
@@ -1142,7 +1153,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16A16_SNORM** = ``91``
 
-
+16-bit-per-channel signed floating-point red/green/blue/alpha channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16A16_USCALED:
 
@@ -1150,7 +1161,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16A16_USCALED** = ``92``
 
-
+16-bit-per-channel unsigned floating-point red/green/blue/alpha channel data format with scaled value (value is converted from integer to float). Values are in the ``[0.0, 65535.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16A16_SSCALED:
 
@@ -1158,7 +1169,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16A16_SSCALED** = ``93``
 
-
+16-bit-per-channel signed floating-point red/green/blue/alpha channel data format with scaled value (value is converted from integer to float). Values are in the ``[-32767.0, 32767.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16A16_UINT:
 
@@ -1166,7 +1177,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16A16_UINT** = ``94``
 
-
+16-bit-per-channel unsigned integer red/green/blue/alpha channel data format. Values are in the ``[0.0, 65535]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16A16_SINT:
 
@@ -1174,7 +1185,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16A16_SINT** = ``95``
 
-
+16-bit-per-channel signed integer red/green/blue/alpha channel data format. Values are in the ``[-32767, 32767]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R16G16B16A16_SFLOAT:
 
@@ -1182,7 +1193,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R16G16B16A16_SFLOAT** = ``96``
 
-
+16-bit-per-channel signed floating-point red/green/blue/alpha channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32_UINT:
 
@@ -1190,7 +1201,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32_UINT** = ``97``
 
-
+32-bit-per-channel unsigned integer red channel data format. Values are in the ``[0, 2^32 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32_SINT:
 
@@ -1198,7 +1209,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32_SINT** = ``98``
 
-
+32-bit-per-channel signed integer red channel data format. Values are in the ``[2^31 + 1, 2^31 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32_SFLOAT:
 
@@ -1206,7 +1217,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32_SFLOAT** = ``99``
 
-
+32-bit-per-channel signed floating-point red channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32G32_UINT:
 
@@ -1214,7 +1225,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32G32_UINT** = ``100``
 
-
+32-bit-per-channel unsigned integer red/green channel data format. Values are in the ``[0, 2^32 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32G32_SINT:
 
@@ -1222,7 +1233,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32G32_SINT** = ``101``
 
-
+32-bit-per-channel signed integer red/green channel data format. Values are in the ``[2^31 + 1, 2^31 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32G32_SFLOAT:
 
@@ -1230,7 +1241,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32G32_SFLOAT** = ``102``
 
-
+32-bit-per-channel signed floating-point red/green channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32G32B32_UINT:
 
@@ -1238,7 +1249,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32G32B32_UINT** = ``103``
 
-
+32-bit-per-channel unsigned integer red/green/blue channel data format. Values are in the ``[0, 2^32 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32G32B32_SINT:
 
@@ -1246,7 +1257,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32G32B32_SINT** = ``104``
 
-
+32-bit-per-channel signed integer red/green/blue channel data format. Values are in the ``[2^31 + 1, 2^31 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32G32B32_SFLOAT:
 
@@ -1254,7 +1265,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32G32B32_SFLOAT** = ``105``
 
-
+32-bit-per-channel signed floating-point red/green/blue channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32G32B32A32_UINT:
 
@@ -1262,7 +1273,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32G32B32A32_UINT** = ``106``
 
-
+32-bit-per-channel unsigned integer red/green/blue/alpha channel data format. Values are in the ``[0, 2^32 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32G32B32A32_SINT:
 
@@ -1270,7 +1281,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32G32B32A32_SINT** = ``107``
 
-
+32-bit-per-channel signed integer red/green/blue/alpha channel data format. Values are in the ``[2^31 + 1, 2^31 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R32G32B32A32_SFLOAT:
 
@@ -1278,7 +1289,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R32G32B32A32_SFLOAT** = ``108``
 
-
+32-bit-per-channel signed floating-point red/green/blue/alpha channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64_UINT:
 
@@ -1286,7 +1297,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64_UINT** = ``109``
 
-
+64-bit-per-channel unsigned integer red channel data format. Values are in the ``[0, 2^64 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64_SINT:
 
@@ -1294,7 +1305,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64_SINT** = ``110``
 
-
+64-bit-per-channel signed integer red channel data format. Values are in the ``[2^63 + 1, 2^63 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64_SFLOAT:
 
@@ -1302,7 +1313,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64_SFLOAT** = ``111``
 
-
+64-bit-per-channel signed floating-point red channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64G64_UINT:
 
@@ -1310,7 +1321,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64G64_UINT** = ``112``
 
-
+64-bit-per-channel unsigned integer red/green channel data format. Values are in the ``[0, 2^64 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64G64_SINT:
 
@@ -1318,7 +1329,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64G64_SINT** = ``113``
 
-
+64-bit-per-channel signed integer red/green channel data format. Values are in the ``[2^63 + 1, 2^63 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64G64_SFLOAT:
 
@@ -1326,7 +1337,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64G64_SFLOAT** = ``114``
 
-
+64-bit-per-channel signed floating-point red/green channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64G64B64_UINT:
 
@@ -1334,7 +1345,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64G64B64_UINT** = ``115``
 
-
+64-bit-per-channel unsigned integer red/green/blue channel data format. Values are in the ``[0, 2^64 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64G64B64_SINT:
 
@@ -1342,7 +1353,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64G64B64_SINT** = ``116``
 
-
+64-bit-per-channel signed integer red/green/blue channel data format. Values are in the ``[2^63 + 1, 2^63 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64G64B64_SFLOAT:
 
@@ -1350,7 +1361,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64G64B64_SFLOAT** = ``117``
 
-
+64-bit-per-channel signed floating-point red/green/blue channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64G64B64A64_UINT:
 
@@ -1358,7 +1369,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64G64B64A64_UINT** = ``118``
 
-
+64-bit-per-channel unsigned integer red/green/blue/alpha channel data format. Values are in the ``[0, 2^64 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64G64B64A64_SINT:
 
@@ -1366,7 +1377,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64G64B64A64_SINT** = ``119``
 
-
+64-bit-per-channel signed integer red/green/blue/alpha channel data format. Values are in the ``[2^63 + 1, 2^63 - 1]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R64G64B64A64_SFLOAT:
 
@@ -1374,7 +1385,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R64G64B64A64_SFLOAT** = ``120``
 
-
+64-bit-per-channel signed floating-point red/green/blue/alpha channel data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B10G11R11_UFLOAT_PACK32:
 
@@ -1382,7 +1393,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B10G11R11_UFLOAT_PACK32** = ``121``
 
-
+Unsigned floating-point blue/green/red data format with the value stored as-is, packed in 32 bits. The format's precision is 10 bits of blue channel, 11 bits of green channel and 11 bits of red channel.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_E5B9G9R9_UFLOAT_PACK32:
 
@@ -1390,7 +1401,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_E5B9G9R9_UFLOAT_PACK32** = ``122``
 
-
+Unsigned floating-point exposure/blue/green/red data format with the value stored as-is, packed in 32 bits. The format's precision is 5 bits of exposure, 9 bits of blue channel, 9 bits of green channel and 9 bits of red channel.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_D16_UNORM:
 
@@ -1398,7 +1409,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_D16_UNORM** = ``123``
 
-
+16-bit unsigned floating-point depth data format with normalized value. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_X8_D24_UNORM_PACK32:
 
@@ -1406,7 +1417,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_X8_D24_UNORM_PACK32** = ``124``
 
-
+24-bit unsigned floating-point depth data format with normalized value, plus 8 unused bits, packed in 32 bits. Values for depth are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_D32_SFLOAT:
 
@@ -1414,7 +1425,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_D32_SFLOAT** = ``125``
 
-
+32-bit signed floating-point depth data format with the value stored as-is.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_S8_UINT:
 
@@ -1422,7 +1433,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_S8_UINT** = ``126``
 
-
+8-bit unsigned integer stencil data format.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_D16_UNORM_S8_UINT:
 
@@ -1430,7 +1441,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_D16_UNORM_S8_UINT** = ``127``
 
-
+16-bit unsigned floating-point depth data format with normalized value, plus 8 bits of stencil in unsigned integer format. Values for depth are in the ``[0.0, 1.0]`` range. Values for stencil are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_D24_UNORM_S8_UINT:
 
@@ -1438,7 +1449,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_D24_UNORM_S8_UINT** = ``128``
 
-
+24-bit unsigned floating-point depth data format with normalized value, plus 8 bits of stencil in unsigned integer format. Values for depth are in the ``[0.0, 1.0]`` range. Values for stencil are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_D32_SFLOAT_S8_UINT:
 
@@ -1446,7 +1457,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_D32_SFLOAT_S8_UINT** = ``129``
 
-
+32-bit signed floating-point depth data format with the value stored as-is, plus 8 bits of stencil in unsigned integer format. Values for stencil are in the ``[0, 255]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC1_RGB_UNORM_BLOCK:
 
@@ -1454,7 +1465,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC1_RGB_UNORM_BLOCK** = ``130``
 
-
+VRAM-compressed unsigned red/green/blue channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. The format's precision is 5 bits of red channel, 6 bits of green channel and 5 bits of blue channel. Using BC1 texture compression (also known as S3TC DXT1).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC1_RGB_SRGB_BLOCK:
 
@@ -1462,7 +1473,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC1_RGB_SRGB_BLOCK** = ``131``
 
-
+VRAM-compressed unsigned red/green/blue channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range. The format's precision is 5 bits of red channel, 6 bits of green channel and 5 bits of blue channel. Using BC1 texture compression (also known as S3TC DXT1).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC1_RGBA_UNORM_BLOCK:
 
@@ -1470,7 +1481,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC1_RGBA_UNORM_BLOCK** = ``132``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. The format's precision is 5 bits of red channel, 6 bits of green channel, 5 bits of blue channel and 1 bit of alpha channel. Using BC1 texture compression (also known as S3TC DXT1).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC1_RGBA_SRGB_BLOCK:
 
@@ -1478,7 +1489,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC1_RGBA_SRGB_BLOCK** = ``133``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range. The format's precision is 5 bits of red channel, 6 bits of green channel, 5 bits of blue channel and 1 bit of alpha channel. Using BC1 texture compression (also known as S3TC DXT1).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC2_UNORM_BLOCK:
 
@@ -1486,7 +1497,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC2_UNORM_BLOCK** = ``134``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. The format's precision is 5 bits of red channel, 6 bits of green channel, 5 bits of blue channel and 4 bits of alpha channel. Using BC2 texture compression (also known as S3TC DXT3).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC2_SRGB_BLOCK:
 
@@ -1494,7 +1505,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC2_SRGB_BLOCK** = ``135``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range. The format's precision is 5 bits of red channel, 6 bits of green channel, 5 bits of blue channel and 4 bits of alpha channel. Using BC2 texture compression (also known as S3TC DXT3).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC3_UNORM_BLOCK:
 
@@ -1502,7 +1513,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC3_UNORM_BLOCK** = ``136``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. The format's precision is 5 bits of red channel, 6 bits of green channel, 5 bits of blue channel and 8 bits of alpha channel. Using BC3 texture compression (also known as S3TC DXT5).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC3_SRGB_BLOCK:
 
@@ -1510,7 +1521,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC3_SRGB_BLOCK** = ``137``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range. The format's precision is 5 bits of red channel, 6 bits of green channel, 5 bits of blue channel and 8 bits of alpha channel. Using BC3 texture compression (also known as S3TC DXT5).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC4_UNORM_BLOCK:
 
@@ -1518,7 +1529,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC4_UNORM_BLOCK** = ``138``
 
-
+VRAM-compressed unsigned red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. The format's precision is 8 bits of red channel. Using BC4 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC4_SNORM_BLOCK:
 
@@ -1526,7 +1537,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC4_SNORM_BLOCK** = ``139``
 
-
+VRAM-compressed signed red channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range. The format's precision is 8 bits of red channel. Using BC4 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC5_UNORM_BLOCK:
 
@@ -1534,7 +1545,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC5_UNORM_BLOCK** = ``140``
 
-
+VRAM-compressed unsigned red/green channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. The format's precision is 8 bits of red channel and 8 bits of green channel. Using BC5 texture compression (also known as S3TC RGTC).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC5_SNORM_BLOCK:
 
@@ -1542,7 +1553,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC5_SNORM_BLOCK** = ``141``
 
-
+VRAM-compressed signed red/green channel data format with normalized value. Values are in the ``[-1.0, 1.0]`` range. The format's precision is 8 bits of red channel and 8 bits of green channel. Using BC5 texture compression (also known as S3TC RGTC).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC6H_UFLOAT_BLOCK:
 
@@ -1550,7 +1561,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC6H_UFLOAT_BLOCK** = ``142``
 
-
+VRAM-compressed unsigned red/green/blue channel data format with the floating-point value stored as-is. The format's precision is 8 bits of red channel and 8 bits of green channel. Using BC6H texture compression (also known as BPTC HDR).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC6H_SFLOAT_BLOCK:
 
@@ -1558,7 +1569,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC6H_SFLOAT_BLOCK** = ``143``
 
-
+VRAM-compressed signed red/green/blue channel data format with the floating-point value stored as-is. The format's precision is between 4 and 7 bits for the red/green/blue channels and between 0 and 8 bits for the alpha channel. Using BC7 texture compression (also known as BPTC HDR).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC7_UNORM_BLOCK:
 
@@ -1566,7 +1577,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC7_UNORM_BLOCK** = ``144``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. The format's precision is between 4 and 7 bits for the red/green/blue channels and between 0 and 8 bits for the alpha channel. Also known as BPTC LDR.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_BC7_SRGB_BLOCK:
 
@@ -1574,7 +1585,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_BC7_SRGB_BLOCK** = ``145``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range. The format's precision is between 4 and 7 bits for the red/green/blue channels and between 0 and 8 bits for the alpha channel. Also known as BPTC LDR.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ETC2_R8G8B8_UNORM_BLOCK:
 
@@ -1582,7 +1593,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ETC2_R8G8B8_UNORM_BLOCK** = ``146``
 
-
+VRAM-compressed unsigned red/green/blue channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ETC2_R8G8B8_SRGB_BLOCK:
 
@@ -1590,7 +1601,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ETC2_R8G8B8_SRGB_BLOCK** = ``147``
 
-
+VRAM-compressed unsigned red/green/blue channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ETC2_R8G8B8A1_UNORM_BLOCK:
 
@@ -1598,7 +1609,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ETC2_R8G8B8A1_UNORM_BLOCK** = ``148``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Red/green/blue use 8 bit of precision each, with alpha using 1 bit of precision. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ETC2_R8G8B8A1_SRGB_BLOCK:
 
@@ -1606,7 +1617,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ETC2_R8G8B8A1_SRGB_BLOCK** = ``149``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range. Red/green/blue use 8 bit of precision each, with alpha using 1 bit of precision. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ETC2_R8G8B8A8_UNORM_BLOCK:
 
@@ -1614,7 +1625,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ETC2_R8G8B8A8_UNORM_BLOCK** = ``150``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Red/green/blue use 8 bits of precision each, with alpha using 8 bits of precision. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ETC2_R8G8B8A8_SRGB_BLOCK:
 
@@ -1622,7 +1633,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ETC2_R8G8B8A8_SRGB_BLOCK** = ``151``
 
-
+VRAM-compressed unsigned red/green/blue/alpha channel data format with normalized value and non-linear sRGB encoding. Values are in the ``[0.0, 1.0]`` range. Red/green/blue use 8 bits of precision each, with alpha using 8 bits of precision. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_EAC_R11_UNORM_BLOCK:
 
@@ -1630,7 +1641,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_EAC_R11_UNORM_BLOCK** = ``152``
 
-
+11-bit VRAM-compressed unsigned red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_EAC_R11_SNORM_BLOCK:
 
@@ -1638,7 +1649,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_EAC_R11_SNORM_BLOCK** = ``153``
 
-
+11-bit VRAM-compressed signed red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_EAC_R11G11_UNORM_BLOCK:
 
@@ -1646,7 +1657,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_EAC_R11G11_UNORM_BLOCK** = ``154``
 
-
+11-bit VRAM-compressed unsigned red/green channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_EAC_R11G11_SNORM_BLOCK:
 
@@ -1654,7 +1665,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_EAC_R11G11_SNORM_BLOCK** = ``155``
 
-
+11-bit VRAM-compressed signed red/green channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Using ETC2 texture compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_4x4_UNORM_BLOCK:
 
@@ -1662,7 +1673,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_4x4_UNORM_BLOCK** = ``156``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 4×4 blocks (highest quality). Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_4x4_SRGB_BLOCK:
 
@@ -1670,7 +1681,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_4x4_SRGB_BLOCK** = ``157``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 4×4 blocks (highest quality). Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_5x4_UNORM_BLOCK:
 
@@ -1678,7 +1689,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_5x4_UNORM_BLOCK** = ``158``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 5×4 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_5x4_SRGB_BLOCK:
 
@@ -1686,7 +1697,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_5x4_SRGB_BLOCK** = ``159``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 5×4 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_5x5_UNORM_BLOCK:
 
@@ -1694,7 +1705,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_5x5_UNORM_BLOCK** = ``160``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 5×5 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_5x5_SRGB_BLOCK:
 
@@ -1702,7 +1713,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_5x5_SRGB_BLOCK** = ``161``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 5×5 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_6x5_UNORM_BLOCK:
 
@@ -1710,7 +1721,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_6x5_UNORM_BLOCK** = ``162``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 6×5 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_6x5_SRGB_BLOCK:
 
@@ -1718,7 +1729,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_6x5_SRGB_BLOCK** = ``163``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 6×5 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_6x6_UNORM_BLOCK:
 
@@ -1726,7 +1737,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_6x6_UNORM_BLOCK** = ``164``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 6×6 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_6x6_SRGB_BLOCK:
 
@@ -1734,7 +1745,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_6x6_SRGB_BLOCK** = ``165``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 6×6 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_8x5_UNORM_BLOCK:
 
@@ -1742,7 +1753,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_8x5_UNORM_BLOCK** = ``166``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 8×5 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_8x5_SRGB_BLOCK:
 
@@ -1750,7 +1761,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_8x5_SRGB_BLOCK** = ``167``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 8×5 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_8x6_UNORM_BLOCK:
 
@@ -1758,7 +1769,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_8x6_UNORM_BLOCK** = ``168``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 8×6 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_8x6_SRGB_BLOCK:
 
@@ -1766,7 +1777,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_8x6_SRGB_BLOCK** = ``169``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 8×6 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_8x8_UNORM_BLOCK:
 
@@ -1774,7 +1785,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_8x8_UNORM_BLOCK** = ``170``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 8×8 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_8x8_SRGB_BLOCK:
 
@@ -1782,7 +1793,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_8x8_SRGB_BLOCK** = ``171``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 8×8 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x5_UNORM_BLOCK:
 
@@ -1790,7 +1801,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x5_UNORM_BLOCK** = ``172``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 10×5 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x5_SRGB_BLOCK:
 
@@ -1798,7 +1809,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x5_SRGB_BLOCK** = ``173``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 10×5 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x6_UNORM_BLOCK:
 
@@ -1806,7 +1817,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x6_UNORM_BLOCK** = ``174``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 10×6 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x6_SRGB_BLOCK:
 
@@ -1814,7 +1825,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x6_SRGB_BLOCK** = ``175``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 10×6 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x8_UNORM_BLOCK:
 
@@ -1822,7 +1833,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x8_UNORM_BLOCK** = ``176``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 10×8 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x8_SRGB_BLOCK:
 
@@ -1830,7 +1841,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x8_SRGB_BLOCK** = ``177``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 10×8 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x10_UNORM_BLOCK:
 
@@ -1838,7 +1849,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x10_UNORM_BLOCK** = ``178``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 10×10 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_10x10_SRGB_BLOCK:
 
@@ -1846,7 +1857,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_10x10_SRGB_BLOCK** = ``179``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 10×10 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_12x10_UNORM_BLOCK:
 
@@ -1854,7 +1865,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_12x10_UNORM_BLOCK** = ``180``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 12×10 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_12x10_SRGB_BLOCK:
 
@@ -1862,7 +1873,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_12x10_SRGB_BLOCK** = ``181``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 12×10 blocks. Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_12x12_UNORM_BLOCK:
 
@@ -1870,7 +1881,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_12x12_UNORM_BLOCK** = ``182``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value, packed in 12 blocks (lowest quality). Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_ASTC_12x12_SRGB_BLOCK:
 
@@ -1878,7 +1889,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_ASTC_12x12_SRGB_BLOCK** = ``183``
 
-
+VRAM-compressed unsigned floating-point data format with normalized value and non-linear sRGB encoding, packed in 12 blocks (lowest quality). Values are in the ``[0.0, 1.0]`` range. Using ASTC compression.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G8B8G8R8_422_UNORM:
 
@@ -1886,7 +1897,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G8B8G8R8_422_UNORM** = ``184``
 
-
+8-bit-per-channel unsigned floating-point green/blue/red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B8G8R8G8_422_UNORM:
 
@@ -1894,7 +1905,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B8G8R8G8_422_UNORM** = ``185``
 
-
+8-bit-per-channel unsigned floating-point blue/green/red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G8_B8_R8_3PLANE_420_UNORM:
 
@@ -1902,7 +1913,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G8_B8_R8_3PLANE_420_UNORM** = ``186``
 
-
+8-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, stored across 3 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal and vertical resolution (i.e. 2×2 adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G8_B8R8_2PLANE_420_UNORM:
 
@@ -1910,7 +1921,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G8_B8R8_2PLANE_420_UNORM** = ``187``
 
-
+8-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, stored across 2 separate planes (green + blue/red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal and vertical resolution (i.e. 2×2 adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G8_B8_R8_3PLANE_422_UNORM:
 
@@ -1918,7 +1929,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G8_B8_R8_3PLANE_422_UNORM** = ``188``
 
-
+8-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, stored across 2 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G8_B8R8_2PLANE_422_UNORM:
 
@@ -1926,7 +1937,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G8_B8R8_2PLANE_422_UNORM** = ``189``
 
-
+8-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, stored across 2 separate planes (green + blue/red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G8_B8_R8_3PLANE_444_UNORM:
 
@@ -1934,7 +1945,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G8_B8_R8_3PLANE_444_UNORM** = ``190``
 
-
+8-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, stored across 3 separate planes. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R10X6_UNORM_PACK16:
 
@@ -1942,7 +1953,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R10X6_UNORM_PACK16** = ``191``
 
-
+10-bit-per-channel unsigned floating-point red channel data with normalized value, plus 6 unused bits, packed in 16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R10X6G10X6_UNORM_2PACK16:
 
@@ -1950,7 +1961,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R10X6G10X6_UNORM_2PACK16** = ``192``
 
-
+10-bit-per-channel unsigned floating-point red/green channel data with normalized value, plus 6 unused bits after each channel, packed in 2×16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16:
 
@@ -1958,7 +1969,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R10X6G10X6B10X6A10X6_UNORM_4PACK16** = ``193``
 
-
+10-bit-per-channel unsigned floating-point red/green/blue/alpha channel data with normalized value, plus 6 unused bits after each channel, packed in 4×16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16:
 
@@ -1966,7 +1977,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G10X6B10X6G10X6R10X6_422_UNORM_4PACK16** = ``194``
 
-
+10-bit-per-channel unsigned floating-point green/blue/green/red channel data with normalized value, plus 6 unused bits after each channel, packed in 4×16 bits. Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel). The green channel is listed twice, but contains different values to allow it to be represented at full resolution.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16:
 
@@ -1974,7 +1985,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B10X6G10X6R10X6G10X6_422_UNORM_4PACK16** = ``195``
 
-
+10-bit-per-channel unsigned floating-point blue/green/red/green channel data with normalized value, plus 6 unused bits after each channel, packed in 4×16 bits. Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel). The green channel is listed twice, but contains different values to allow it to be represented at full resolution.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16:
 
@@ -1982,7 +1993,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G10X6_B10X6_R10X6_3PLANE_420_UNORM_3PACK16** = ``196``
 
-
+10-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 2 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal and vertical resolution (i.e. 2×2 adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16:
 
@@ -1990,7 +2001,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G10X6_B10X6R10X6_2PLANE_420_UNORM_3PACK16** = ``197``
 
-
+10-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 2 separate planes (green + blue/red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal and vertical resolution (i.e. 2×2 adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16:
 
@@ -1998,7 +2009,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G10X6_B10X6_R10X6_3PLANE_422_UNORM_3PACK16** = ``198``
 
-
+10-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 3 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16:
 
@@ -2006,7 +2017,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G10X6_B10X6R10X6_2PLANE_422_UNORM_3PACK16** = ``199``
 
-
+10-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 3 separate planes (green + blue/red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16:
 
@@ -2014,7 +2025,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G10X6_B10X6_R10X6_3PLANE_444_UNORM_3PACK16** = ``200``
 
-
+10-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 3 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R12X4_UNORM_PACK16:
 
@@ -2022,7 +2033,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R12X4_UNORM_PACK16** = ``201``
 
-
+12-bit-per-channel unsigned floating-point red channel data with normalized value, plus 6 unused bits, packed in 16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R12X4G12X4_UNORM_2PACK16:
 
@@ -2030,7 +2041,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R12X4G12X4_UNORM_2PACK16** = ``202``
 
-
+12-bit-per-channel unsigned floating-point red/green channel data with normalized value, plus 6 unused bits after each channel, packed in 2×16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16:
 
@@ -2038,7 +2049,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_R12X4G12X4B12X4A12X4_UNORM_4PACK16** = ``203``
 
-
+12-bit-per-channel unsigned floating-point red/green/blue/alpha channel data with normalized value, plus 6 unused bits after each channel, packed in 4×16 bits. Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16:
 
@@ -2046,7 +2057,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G12X4B12X4G12X4R12X4_422_UNORM_4PACK16** = ``204``
 
-
+12-bit-per-channel unsigned floating-point green/blue/green/red channel data with normalized value, plus 6 unused bits after each channel, packed in 4×16 bits. Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel). The green channel is listed twice, but contains different values to allow it to be represented at full resolution.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16:
 
@@ -2054,7 +2065,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B12X4G12X4R12X4G12X4_422_UNORM_4PACK16** = ``205``
 
-
+12-bit-per-channel unsigned floating-point blue/green/red/green channel data with normalized value, plus 6 unused bits after each channel, packed in 4×16 bits. Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel). The green channel is listed twice, but contains different values to allow it to be represented at full resolution.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16:
 
@@ -2062,7 +2073,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G12X4_B12X4_R12X4_3PLANE_420_UNORM_3PACK16** = ``206``
 
-
+12-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 2 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal and vertical resolution (i.e. 2×2 adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16:
 
@@ -2070,7 +2081,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G12X4_B12X4R12X4_2PLANE_420_UNORM_3PACK16** = ``207``
 
-
+12-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 2 separate planes (green + blue/red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal and vertical resolution (i.e. 2×2 adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16:
 
@@ -2078,7 +2089,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G12X4_B12X4_R12X4_3PLANE_422_UNORM_3PACK16** = ``208``
 
-
+12-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 3 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16:
 
@@ -2086,7 +2097,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G12X4_B12X4R12X4_2PLANE_422_UNORM_3PACK16** = ``209``
 
-
+12-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 3 separate planes (green + blue/red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16:
 
@@ -2094,7 +2105,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G12X4_B12X4_R12X4_3PLANE_444_UNORM_3PACK16** = ``210``
 
-
+12-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Packed in 3×16 bits and stored across 3 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G16B16G16R16_422_UNORM:
 
@@ -2102,7 +2113,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G16B16G16R16_422_UNORM** = ``211``
 
-
+16-bit-per-channel unsigned floating-point green/blue/red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_B16G16R16G16_422_UNORM:
 
@@ -2110,7 +2121,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_B16G16R16G16_422_UNORM** = ``212``
 
-
+16-bit-per-channel unsigned floating-point blue/green/red channel data format with normalized value. Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G16_B16_R16_3PLANE_420_UNORM:
 
@@ -2118,7 +2129,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G16_B16_R16_3PLANE_420_UNORM** = ``213``
 
-
+16-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Stored across 2 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal and vertical resolution (i.e. 2×2 adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G16_B16R16_2PLANE_420_UNORM:
 
@@ -2126,7 +2137,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G16_B16R16_2PLANE_420_UNORM** = ``214``
 
-
+16-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Stored across 2 separate planes (green + blue/red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal and vertical resolution (i.e. 2×2 adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G16_B16_R16_3PLANE_422_UNORM:
 
@@ -2134,7 +2145,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G16_B16_R16_3PLANE_422_UNORM** = ``215``
 
-
+16-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Stored across 3 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G16_B16R16_2PLANE_422_UNORM:
 
@@ -2142,7 +2153,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G16_B16R16_2PLANE_422_UNORM** = ``216``
 
-
+16-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Stored across 3 separate planes (green + blue/red). Values are in the ``[0.0, 1.0]`` range. Blue and red channel data is stored at halved horizontal resolution (i.e. 2 horizontally adjacent pixels will share the same value for the blue/red channel).
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_G16_B16_R16_3PLANE_444_UNORM:
 
@@ -2150,7 +2161,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_G16_B16_R16_3PLANE_444_UNORM** = ``217``
 
-
+16-bit-per-channel unsigned floating-point green/blue/red channel data with normalized value, plus 6 unused bits after each channel. Stored across 3 separate planes (green + blue + red). Values are in the ``[0.0, 1.0]`` range.
 
 .. _class_RenderingDevice_constant_DATA_FORMAT_MAX:
 
@@ -2158,7 +2169,7 @@ enum **DataFormat**:
 
 :ref:`DataFormat<enum_RenderingDevice_DataFormat>` **DATA_FORMAT_MAX** = ``218``
 
-
+Represents the size of the :ref:`DataFormat<enum_RenderingDevice_DataFormat>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2176,7 +2187,7 @@ flags **BarrierMask**:
 
 :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` **BARRIER_MASK_RASTER** = ``1``
 
-
+Raster barrier mask.
 
 .. _class_RenderingDevice_constant_BARRIER_MASK_COMPUTE:
 
@@ -2184,7 +2195,7 @@ flags **BarrierMask**:
 
 :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` **BARRIER_MASK_COMPUTE** = ``2``
 
-
+Compute barrier mask.
 
 .. _class_RenderingDevice_constant_BARRIER_MASK_TRANSFER:
 
@@ -2192,7 +2203,7 @@ flags **BarrierMask**:
 
 :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` **BARRIER_MASK_TRANSFER** = ``4``
 
-
+Transfer barrier mask.
 
 .. _class_RenderingDevice_constant_BARRIER_MASK_ALL_BARRIERS:
 
@@ -2200,7 +2211,7 @@ flags **BarrierMask**:
 
 :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` **BARRIER_MASK_ALL_BARRIERS** = ``7``
 
-
+Barrier mask for all types (raster, compute, transfer). Equivalent to ``BARRIER_MASK_RASTER | BARRIER_MASK_COMPUTE | BARRIER_MASK_TRANSFER``.
 
 .. _class_RenderingDevice_constant_BARRIER_MASK_NO_BARRIER:
 
@@ -2208,7 +2219,7 @@ flags **BarrierMask**:
 
 :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` **BARRIER_MASK_NO_BARRIER** = ``8``
 
-
+No barrier for any type.
 
 .. rst-class:: classref-item-separator
 
@@ -2300,7 +2311,7 @@ enum **TextureSamples**:
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **TEXTURE_SAMPLES_1** = ``0``
 
-
+Perform 1 texture sample (this is the fastest but lowest-quality for antialiasing).
 
 .. _class_RenderingDevice_constant_TEXTURE_SAMPLES_2:
 
@@ -2308,7 +2319,7 @@ enum **TextureSamples**:
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **TEXTURE_SAMPLES_2** = ``1``
 
-
+Perform 2 texture samples.
 
 .. _class_RenderingDevice_constant_TEXTURE_SAMPLES_4:
 
@@ -2316,7 +2327,7 @@ enum **TextureSamples**:
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **TEXTURE_SAMPLES_4** = ``2``
 
-
+Perform 4 texture samples.
 
 .. _class_RenderingDevice_constant_TEXTURE_SAMPLES_8:
 
@@ -2324,7 +2335,7 @@ enum **TextureSamples**:
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **TEXTURE_SAMPLES_8** = ``3``
 
-
+Perform 8 texture samples. Not supported on mobile GPUs (including Apple Silicon).
 
 .. _class_RenderingDevice_constant_TEXTURE_SAMPLES_16:
 
@@ -2332,7 +2343,7 @@ enum **TextureSamples**:
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **TEXTURE_SAMPLES_16** = ``4``
 
-
+Perform 16 texture samples. Not supported on mobile GPUs and many desktop GPUs.
 
 .. _class_RenderingDevice_constant_TEXTURE_SAMPLES_32:
 
@@ -2340,7 +2351,7 @@ enum **TextureSamples**:
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **TEXTURE_SAMPLES_32** = ``5``
 
-
+Perform 32 texture samples. Not supported on most GPUs.
 
 .. _class_RenderingDevice_constant_TEXTURE_SAMPLES_64:
 
@@ -2348,7 +2359,7 @@ enum **TextureSamples**:
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **TEXTURE_SAMPLES_64** = ``6``
 
-
+Perform 64 texture samples (this is the slowest but highest-quality for antialiasing). Not supported on most GPUs.
 
 .. _class_RenderingDevice_constant_TEXTURE_SAMPLES_MAX:
 
@@ -2374,7 +2385,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_SAMPLING_BIT** = ``1``
 
-
+Texture can be sampled.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_COLOR_ATTACHMENT_BIT:
 
@@ -2382,7 +2393,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_COLOR_ATTACHMENT_BIT** = ``2``
 
-
+Texture can be used as a color attachment in a framebuffer.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT:
 
@@ -2390,7 +2401,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT** = ``4``
 
-
+Texture can be used as a depth/stencil attachment in a framebuffer.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_STORAGE_BIT:
 
@@ -2398,7 +2409,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_STORAGE_BIT** = ``8``
 
-
+Texture can be used as a `storage image <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#descriptorsets-storageimage>`__.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_STORAGE_ATOMIC_BIT:
 
@@ -2406,7 +2417,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_STORAGE_ATOMIC_BIT** = ``16``
 
-
+Texture can be used as a `storage image <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#descriptorsets-storageimage>`__ with support for atomic operations.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_CPU_READ_BIT:
 
@@ -2414,7 +2425,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_CPU_READ_BIT** = ``32``
 
-
+Texture can be read back on the CPU using :ref:`texture_get_data<class_RenderingDevice_method_texture_get_data>` faster than without this bit, since it is always kept in the system memory.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_CAN_UPDATE_BIT:
 
@@ -2422,7 +2433,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_CAN_UPDATE_BIT** = ``64``
 
-
+Texture can be updated using :ref:`texture_update<class_RenderingDevice_method_texture_update>`.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_FROM_BIT:
 
@@ -2430,7 +2441,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_CAN_COPY_FROM_BIT** = ``128``
 
-
+Texture can be a source for :ref:`texture_copy<class_RenderingDevice_method_texture_copy>`.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_TO_BIT:
 
@@ -2438,7 +2449,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_CAN_COPY_TO_BIT** = ``256``
 
-
+Texture can be a destination for :ref:`texture_copy<class_RenderingDevice_method_texture_copy>`.
 
 .. _class_RenderingDevice_constant_TEXTURE_USAGE_INPUT_ATTACHMENT_BIT:
 
@@ -2446,7 +2457,7 @@ flags **TextureUsageBits**:
 
 :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **TEXTURE_USAGE_INPUT_ATTACHMENT_BIT** = ``512``
 
-
+Texture can be used as a `input attachment <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#descriptorsets-inputattachment>`__ in a framebuffer.
 
 .. rst-class:: classref-item-separator
 
@@ -2464,7 +2475,7 @@ enum **TextureSwizzle**:
 
 :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **TEXTURE_SWIZZLE_IDENTITY** = ``0``
 
-
+Return the sampled value as-is.
 
 .. _class_RenderingDevice_constant_TEXTURE_SWIZZLE_ZERO:
 
@@ -2472,7 +2483,7 @@ enum **TextureSwizzle**:
 
 :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **TEXTURE_SWIZZLE_ZERO** = ``1``
 
-
+Always return ``0.0`` when sampling.
 
 .. _class_RenderingDevice_constant_TEXTURE_SWIZZLE_ONE:
 
@@ -2480,7 +2491,7 @@ enum **TextureSwizzle**:
 
 :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **TEXTURE_SWIZZLE_ONE** = ``2``
 
-
+Always return ``1.0`` when sampling.
 
 .. _class_RenderingDevice_constant_TEXTURE_SWIZZLE_R:
 
@@ -2488,7 +2499,7 @@ enum **TextureSwizzle**:
 
 :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **TEXTURE_SWIZZLE_R** = ``3``
 
-
+Sample the red color channel.
 
 .. _class_RenderingDevice_constant_TEXTURE_SWIZZLE_G:
 
@@ -2496,7 +2507,7 @@ enum **TextureSwizzle**:
 
 :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **TEXTURE_SWIZZLE_G** = ``4``
 
-
+Sample the green color channel.
 
 .. _class_RenderingDevice_constant_TEXTURE_SWIZZLE_B:
 
@@ -2504,7 +2515,7 @@ enum **TextureSwizzle**:
 
 :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **TEXTURE_SWIZZLE_B** = ``5``
 
-
+Sample the blue color channel.
 
 .. _class_RenderingDevice_constant_TEXTURE_SWIZZLE_A:
 
@@ -2512,7 +2523,7 @@ enum **TextureSwizzle**:
 
 :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **TEXTURE_SWIZZLE_A** = ``6``
 
-
+Sample the alpha channel.
 
 .. _class_RenderingDevice_constant_TEXTURE_SWIZZLE_MAX:
 
@@ -2520,7 +2531,7 @@ enum **TextureSwizzle**:
 
 :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` **TEXTURE_SWIZZLE_MAX** = ``7``
 
-
+Represents the size of the :ref:`TextureSwizzle<enum_RenderingDevice_TextureSwizzle>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2538,7 +2549,7 @@ enum **TextureSliceType**:
 
 :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` **TEXTURE_SLICE_2D** = ``0``
 
-
+2-dimensional texture slice.
 
 .. _class_RenderingDevice_constant_TEXTURE_SLICE_CUBEMAP:
 
@@ -2546,7 +2557,7 @@ enum **TextureSliceType**:
 
 :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` **TEXTURE_SLICE_CUBEMAP** = ``1``
 
-
+Cubemap texture slice.
 
 .. _class_RenderingDevice_constant_TEXTURE_SLICE_3D:
 
@@ -2554,7 +2565,7 @@ enum **TextureSliceType**:
 
 :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` **TEXTURE_SLICE_3D** = ``2``
 
-
+3-dimensional texture slice.
 
 .. rst-class:: classref-item-separator
 
@@ -2598,7 +2609,7 @@ enum **SamplerRepeatMode**:
 
 :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **SAMPLER_REPEAT_MODE_REPEAT** = ``0``
 
-
+Sample with repeating enabled.
 
 .. _class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_MIRRORED_REPEAT:
 
@@ -2606,7 +2617,7 @@ enum **SamplerRepeatMode**:
 
 :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **SAMPLER_REPEAT_MODE_MIRRORED_REPEAT** = ``1``
 
-
+Sample with mirrored repeating enabled. When sampling outside the ``[0.0, 1.0]`` range, return a mirrored version of the sampler. This mirrored version is mirrored again if sampling further away, with the pattern repeating indefinitely.
 
 .. _class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_CLAMP_TO_EDGE:
 
@@ -2614,7 +2625,7 @@ enum **SamplerRepeatMode**:
 
 :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **SAMPLER_REPEAT_MODE_CLAMP_TO_EDGE** = ``2``
 
-
+Sample with repeating disabled. When sampling outside the ``[0.0, 1.0]`` range, return the color of the last pixel on the edge.
 
 .. _class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER:
 
@@ -2622,7 +2633,7 @@ enum **SamplerRepeatMode**:
 
 :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER** = ``3``
 
-
+Sample with repeating disabled. When sampling outside the ``[0.0, 1.0]`` range, return the specified :ref:`RDSamplerState.border_color<class_RDSamplerState_property_border_color>`.
 
 .. _class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_MIRROR_CLAMP_TO_EDGE:
 
@@ -2630,7 +2641,7 @@ enum **SamplerRepeatMode**:
 
 :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **SAMPLER_REPEAT_MODE_MIRROR_CLAMP_TO_EDGE** = ``4``
 
-
+Sample with mirrored repeating enabled, but only once. When sampling in the ``[-1.0, 0.0]`` range, return a mirrored version of the sampler. When sampling outside the ``[-1.0, 1.0]`` range, return the color of the last pixel on the edge.
 
 .. _class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_MAX:
 
@@ -2638,7 +2649,7 @@ enum **SamplerRepeatMode**:
 
 :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` **SAMPLER_REPEAT_MODE_MAX** = ``5``
 
-
+Represents the size of the :ref:`SamplerRepeatMode<enum_RenderingDevice_SamplerRepeatMode>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2656,7 +2667,7 @@ enum **SamplerBorderColor**:
 
 :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **SAMPLER_BORDER_COLOR_FLOAT_TRANSPARENT_BLACK** = ``0``
 
-
+Return a floating-point transparent black color when sampling outside the ``[0.0, 1.0]`` range. Only effective if the sampler repeat mode is :ref:`SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER<class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER>`.
 
 .. _class_RenderingDevice_constant_SAMPLER_BORDER_COLOR_INT_TRANSPARENT_BLACK:
 
@@ -2664,7 +2675,7 @@ enum **SamplerBorderColor**:
 
 :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **SAMPLER_BORDER_COLOR_INT_TRANSPARENT_BLACK** = ``1``
 
-
+Return a integer transparent black color when sampling outside the ``[0.0, 1.0]`` range. Only effective if the sampler repeat mode is :ref:`SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER<class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER>`.
 
 .. _class_RenderingDevice_constant_SAMPLER_BORDER_COLOR_FLOAT_OPAQUE_BLACK:
 
@@ -2672,7 +2683,7 @@ enum **SamplerBorderColor**:
 
 :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **SAMPLER_BORDER_COLOR_FLOAT_OPAQUE_BLACK** = ``2``
 
-
+Return a floating-point opaque black color when sampling outside the ``[0.0, 1.0]`` range. Only effective if the sampler repeat mode is :ref:`SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER<class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER>`.
 
 .. _class_RenderingDevice_constant_SAMPLER_BORDER_COLOR_INT_OPAQUE_BLACK:
 
@@ -2680,7 +2691,7 @@ enum **SamplerBorderColor**:
 
 :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **SAMPLER_BORDER_COLOR_INT_OPAQUE_BLACK** = ``3``
 
-
+Return a integer opaque black color when sampling outside the ``[0.0, 1.0]`` range. Only effective if the sampler repeat mode is :ref:`SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER<class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER>`.
 
 .. _class_RenderingDevice_constant_SAMPLER_BORDER_COLOR_FLOAT_OPAQUE_WHITE:
 
@@ -2688,7 +2699,7 @@ enum **SamplerBorderColor**:
 
 :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **SAMPLER_BORDER_COLOR_FLOAT_OPAQUE_WHITE** = ``4``
 
-
+Return a floating-point opaque white color when sampling outside the ``[0.0, 1.0]`` range. Only effective if the sampler repeat mode is :ref:`SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER<class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER>`.
 
 .. _class_RenderingDevice_constant_SAMPLER_BORDER_COLOR_INT_OPAQUE_WHITE:
 
@@ -2696,7 +2707,7 @@ enum **SamplerBorderColor**:
 
 :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **SAMPLER_BORDER_COLOR_INT_OPAQUE_WHITE** = ``5``
 
-
+Return a integer opaque white color when sampling outside the ``[0.0, 1.0]`` range. Only effective if the sampler repeat mode is :ref:`SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER<class_RenderingDevice_constant_SAMPLER_REPEAT_MODE_CLAMP_TO_BORDER>`.
 
 .. _class_RenderingDevice_constant_SAMPLER_BORDER_COLOR_MAX:
 
@@ -2704,7 +2715,7 @@ enum **SamplerBorderColor**:
 
 :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` **SAMPLER_BORDER_COLOR_MAX** = ``6``
 
-
+Represents the size of the :ref:`SamplerBorderColor<enum_RenderingDevice_SamplerBorderColor>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2722,7 +2733,7 @@ enum **VertexFrequency**:
 
 :ref:`VertexFrequency<enum_RenderingDevice_VertexFrequency>` **VERTEX_FREQUENCY_VERTEX** = ``0``
 
-
+Vertex attribute addressing is a function of the vertex. This is used to specify the rate at which vertex attributes are pulled from buffers.
 
 .. _class_RenderingDevice_constant_VERTEX_FREQUENCY_INSTANCE:
 
@@ -2730,7 +2741,7 @@ enum **VertexFrequency**:
 
 :ref:`VertexFrequency<enum_RenderingDevice_VertexFrequency>` **VERTEX_FREQUENCY_INSTANCE** = ``1``
 
-
+Vertex attribute addressing is a function of the instance index. This is used to specify the rate at which vertex attributes are pulled from buffers.
 
 .. rst-class:: classref-item-separator
 
@@ -2748,7 +2759,7 @@ enum **IndexBufferFormat**:
 
 :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>` **INDEX_BUFFER_FORMAT_UINT16** = ``0``
 
-
+Index buffer in 16-bit unsigned integer format. This limits the maximum index that can be specified to ``65535``.
 
 .. _class_RenderingDevice_constant_INDEX_BUFFER_FORMAT_UINT32:
 
@@ -2756,7 +2767,7 @@ enum **IndexBufferFormat**:
 
 :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>` **INDEX_BUFFER_FORMAT_UINT32** = ``1``
 
-
+Index buffer in 32-bit unsigned integer format. This limits the maximum index that can be specified to ``4294967295``.
 
 .. rst-class:: classref-item-separator
 
@@ -2792,7 +2803,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_SAMPLER** = ``0``
 
-
+Sampler uniform. TODO: Difference between sampler and texture uniform
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_SAMPLER_WITH_TEXTURE:
 
@@ -2800,7 +2811,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_SAMPLER_WITH_TEXTURE** = ``1``
 
-
+Sampler uniform with a texture.
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_TEXTURE:
 
@@ -2808,7 +2819,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_TEXTURE** = ``2``
 
-
+Texture uniform.
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_IMAGE:
 
@@ -2816,7 +2827,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_IMAGE** = ``3``
 
-
+Image uniform. TODO: Difference between texture and image uniform
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_TEXTURE_BUFFER:
 
@@ -2824,7 +2835,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_TEXTURE_BUFFER** = ``4``
 
-
+Texture buffer uniform. TODO: Difference between texture and texture buffe uniformr
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_SAMPLER_WITH_TEXTURE_BUFFER:
 
@@ -2832,7 +2843,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_SAMPLER_WITH_TEXTURE_BUFFER** = ``5``
 
-
+Sampler uniform with a texture buffer. TODO: Difference between texture and texture buffer uniform
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_IMAGE_BUFFER:
 
@@ -2840,7 +2851,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_IMAGE_BUFFER** = ``6``
 
-
+Image buffer uniform. TODO: Difference between texture and image uniforms
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_UNIFORM_BUFFER:
 
@@ -2848,7 +2859,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_UNIFORM_BUFFER** = ``7``
 
-
+Uniform buffer uniform.
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_STORAGE_BUFFER:
 
@@ -2856,7 +2867,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_STORAGE_BUFFER** = ``8``
 
-
+`Storage buffer <https://vkguide.dev/docs/chapter-4/storage_buffers/>`__ uniform.
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_INPUT_ATTACHMENT:
 
@@ -2864,7 +2875,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_INPUT_ATTACHMENT** = ``9``
 
-
+Input attachment uniform.
 
 .. _class_RenderingDevice_constant_UNIFORM_TYPE_MAX:
 
@@ -2872,7 +2883,7 @@ enum **UniformType**:
 
 :ref:`UniformType<enum_RenderingDevice_UniformType>` **UNIFORM_TYPE_MAX** = ``10``
 
-
+Represents the size of the :ref:`UniformType<enum_RenderingDevice_UniformType>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2898,7 +2909,7 @@ Point rendering primitive (with constant size, regardless of distance from camer
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_LINES** = ``1``
 
-Line rendering primitive.
+Line list rendering primitive. Lines are drawn separated from each other.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_LINES_WITH_ADJACENCY:
 
@@ -2906,7 +2917,9 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_LINES_WITH_ADJACENCY** = ``2``
 
+`Line list rendering primitive with adjacency. <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#drawing-line-lists-with-adjacency>`__\ 
 
+\ **Note:** Adjacency is only useful with geometry shaders, which Godot does not expose.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_LINESTRIPS:
 
@@ -2914,7 +2927,7 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_LINESTRIPS** = ``3``
 
-
+Line strip rendering primitive. Lines drawn are connected to the previous vertex.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_LINESTRIPS_WITH_ADJACENCY:
 
@@ -2922,7 +2935,9 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_LINESTRIPS_WITH_ADJACENCY** = ``4``
 
+`Line strip rendering primitive with adjacency. <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#drawing-line-strips-with-adjacency>`__\ 
 
+\ **Note:** Adjacency is only useful with geometry shaders, which Godot does not expose.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_TRIANGLES:
 
@@ -2930,7 +2945,7 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_TRIANGLES** = ``5``
 
-
+Triangle list rendering primitive. Triangles are drawn separated from each other.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_TRIANGLES_WITH_ADJACENCY:
 
@@ -2938,7 +2953,9 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_TRIANGLES_WITH_ADJACENCY** = ``6``
 
+`Triangle list rendering primitive with adjacency. <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#drawing-triangle-lists-with-adjacency>`__\ 
 
+ **Note:** Adjacency is only useful with geometry shaders, which Godot does not expose.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_TRIANGLE_STRIPS:
 
@@ -2946,7 +2963,7 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_TRIANGLE_STRIPS** = ``7``
 
-
+Triangle strip rendering primitive. Triangles drawn are connected to the previous triangle.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_TRIANGLE_STRIPS_WITH_AJACENCY:
 
@@ -2954,7 +2971,9 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_TRIANGLE_STRIPS_WITH_AJACENCY** = ``8``
 
+`Triangle strip rendering primitive with adjacency. <https://registry.khronos.org/vulkan/specs/1.3-extensions/html/vkspec.html#drawing-triangle-strips-with-adjacency>`__\ 
 
+\ **Note:** Adjacency is only useful with geometry shaders, which Godot does not expose.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_TRIANGLE_STRIPS_WITH_RESTART_INDEX:
 
@@ -2962,7 +2981,9 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_TRIANGLE_STRIPS_WITH_RESTART_INDEX** = ``9``
 
+Triangle strip rendering primitive with *primitive restart* enabled. Triangles drawn are connected to the previous triangle, but a primitive restart index can be specified before drawing to create a second triangle strip after the specified index.
 
+\ **Note:** Only compatible with indexed draws.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_TESSELATION_PATCH:
 
@@ -2970,7 +2991,7 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_TESSELATION_PATCH** = ``10``
 
-
+Tessellation patch rendering primitive. Only useful with tessellation shaders, which can be used to deform these patches.
 
 .. _class_RenderingDevice_constant_RENDER_PRIMITIVE_MAX:
 
@@ -2978,7 +2999,7 @@ Line rendering primitive.
 
 :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` **RENDER_PRIMITIVE_MAX** = ``11``
 
-
+Represents the size of the :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -2996,7 +3017,7 @@ enum **PolygonCullMode**:
 
 :ref:`PolygonCullMode<enum_RenderingDevice_PolygonCullMode>` **POLYGON_CULL_DISABLED** = ``0``
 
-
+Do not use polygon front face or backface culling.
 
 .. _class_RenderingDevice_constant_POLYGON_CULL_FRONT:
 
@@ -3004,7 +3025,7 @@ enum **PolygonCullMode**:
 
 :ref:`PolygonCullMode<enum_RenderingDevice_PolygonCullMode>` **POLYGON_CULL_FRONT** = ``1``
 
-
+Use polygon frontface culling (faces pointing towards the camera are hidden).
 
 .. _class_RenderingDevice_constant_POLYGON_CULL_BACK:
 
@@ -3012,7 +3033,7 @@ enum **PolygonCullMode**:
 
 :ref:`PolygonCullMode<enum_RenderingDevice_PolygonCullMode>` **POLYGON_CULL_BACK** = ``2``
 
-
+Use polygon backface culling (faces pointing away from the camera are hidden).
 
 .. rst-class:: classref-item-separator
 
@@ -3030,7 +3051,7 @@ enum **PolygonFrontFace**:
 
 :ref:`PolygonFrontFace<enum_RenderingDevice_PolygonFrontFace>` **POLYGON_FRONT_FACE_CLOCKWISE** = ``0``
 
-
+Clockwise winding order to determine which face of a polygon is its front face.
 
 .. _class_RenderingDevice_constant_POLYGON_FRONT_FACE_COUNTER_CLOCKWISE:
 
@@ -3038,7 +3059,7 @@ enum **PolygonFrontFace**:
 
 :ref:`PolygonFrontFace<enum_RenderingDevice_PolygonFrontFace>` **POLYGON_FRONT_FACE_COUNTER_CLOCKWISE** = ``1``
 
-
+Counter-clockwise winding order to determine which face of a polygon is its front face.
 
 .. rst-class:: classref-item-separator
 
@@ -3056,7 +3077,7 @@ enum **StencilOperation**:
 
 :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **STENCIL_OP_KEEP** = ``0``
 
-
+Keep the current stencil value.
 
 .. _class_RenderingDevice_constant_STENCIL_OP_ZERO:
 
@@ -3064,7 +3085,7 @@ enum **StencilOperation**:
 
 :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **STENCIL_OP_ZERO** = ``1``
 
-
+Set the stencil value to ``0``.
 
 .. _class_RenderingDevice_constant_STENCIL_OP_REPLACE:
 
@@ -3072,7 +3093,7 @@ enum **StencilOperation**:
 
 :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **STENCIL_OP_REPLACE** = ``2``
 
-
+Replace the existing stencil value with the new one.
 
 .. _class_RenderingDevice_constant_STENCIL_OP_INCREMENT_AND_CLAMP:
 
@@ -3080,7 +3101,7 @@ enum **StencilOperation**:
 
 :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **STENCIL_OP_INCREMENT_AND_CLAMP** = ``3``
 
-
+Increment the existing stencil value and clamp to the maximum representable unsigned value if reached. Stencil bits are considered as an unsigned integer.
 
 .. _class_RenderingDevice_constant_STENCIL_OP_DECREMENT_AND_CLAMP:
 
@@ -3088,7 +3109,7 @@ enum **StencilOperation**:
 
 :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **STENCIL_OP_DECREMENT_AND_CLAMP** = ``4``
 
-
+Decrement the existing stencil value and clamp to the minimum value if reached. Stencil bits are considered as an unsigned integer.
 
 .. _class_RenderingDevice_constant_STENCIL_OP_INVERT:
 
@@ -3096,7 +3117,7 @@ enum **StencilOperation**:
 
 :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **STENCIL_OP_INVERT** = ``5``
 
-
+Bitwise-invert the existing stencil value.
 
 .. _class_RenderingDevice_constant_STENCIL_OP_INCREMENT_AND_WRAP:
 
@@ -3104,7 +3125,7 @@ enum **StencilOperation**:
 
 :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **STENCIL_OP_INCREMENT_AND_WRAP** = ``6``
 
-
+Increment the stencil value and wrap around to ``0`` if reaching the maximum representable unsigned. Stencil bits are considered as an unsigned integer.
 
 .. _class_RenderingDevice_constant_STENCIL_OP_DECREMENT_AND_WRAP:
 
@@ -3112,7 +3133,7 @@ enum **StencilOperation**:
 
 :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **STENCIL_OP_DECREMENT_AND_WRAP** = ``7``
 
-
+Decrement the stencil value and wrap around to the maximum representable unsigned if reaching the minimum. Stencil bits are considered as an unsigned integer.
 
 .. _class_RenderingDevice_constant_STENCIL_OP_MAX:
 
@@ -3120,7 +3141,7 @@ enum **StencilOperation**:
 
 :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` **STENCIL_OP_MAX** = ``8``
 
-
+Represents the size of the :ref:`StencilOperation<enum_RenderingDevice_StencilOperation>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3138,7 +3159,7 @@ enum **CompareOperator**:
 
 :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **COMPARE_OP_NEVER** = ``0``
 
-
+"Never" comparison (opposite of :ref:`COMPARE_OP_ALWAYS<class_RenderingDevice_constant_COMPARE_OP_ALWAYS>`).
 
 .. _class_RenderingDevice_constant_COMPARE_OP_LESS:
 
@@ -3146,7 +3167,7 @@ enum **CompareOperator**:
 
 :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **COMPARE_OP_LESS** = ``1``
 
-
+"Less than" comparison.
 
 .. _class_RenderingDevice_constant_COMPARE_OP_EQUAL:
 
@@ -3154,7 +3175,7 @@ enum **CompareOperator**:
 
 :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **COMPARE_OP_EQUAL** = ``2``
 
-
+"Equal" comparison.
 
 .. _class_RenderingDevice_constant_COMPARE_OP_LESS_OR_EQUAL:
 
@@ -3162,7 +3183,7 @@ enum **CompareOperator**:
 
 :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **COMPARE_OP_LESS_OR_EQUAL** = ``3``
 
-
+"Less than or equal" comparison.
 
 .. _class_RenderingDevice_constant_COMPARE_OP_GREATER:
 
@@ -3170,7 +3191,7 @@ enum **CompareOperator**:
 
 :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **COMPARE_OP_GREATER** = ``4``
 
-
+"Greater than" comparison.
 
 .. _class_RenderingDevice_constant_COMPARE_OP_NOT_EQUAL:
 
@@ -3178,7 +3199,7 @@ enum **CompareOperator**:
 
 :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **COMPARE_OP_NOT_EQUAL** = ``5``
 
-
+"Not equal" comparison.
 
 .. _class_RenderingDevice_constant_COMPARE_OP_GREATER_OR_EQUAL:
 
@@ -3186,7 +3207,7 @@ enum **CompareOperator**:
 
 :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **COMPARE_OP_GREATER_OR_EQUAL** = ``6``
 
-
+"Greater than or equal" comparison.
 
 .. _class_RenderingDevice_constant_COMPARE_OP_ALWAYS:
 
@@ -3194,7 +3215,7 @@ enum **CompareOperator**:
 
 :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **COMPARE_OP_ALWAYS** = ``7``
 
-
+"Always" comparison (opposite of :ref:`COMPARE_OP_NEVER<class_RenderingDevice_constant_COMPARE_OP_NEVER>`).
 
 .. _class_RenderingDevice_constant_COMPARE_OP_MAX:
 
@@ -3202,7 +3223,7 @@ enum **CompareOperator**:
 
 :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` **COMPARE_OP_MAX** = ``8``
 
-
+Represents the size of the :ref:`CompareOperator<enum_RenderingDevice_CompareOperator>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3220,7 +3241,7 @@ enum **LogicOperation**:
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_CLEAR** = ``0``
 
-
+Clear logic operation (result is always ``0``). See also :ref:`LOGIC_OP_SET<class_RenderingDevice_constant_LOGIC_OP_SET>`.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_AND:
 
@@ -3228,7 +3249,7 @@ enum **LogicOperation**:
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_AND** = ``1``
 
-
+AND logic operation.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_AND_REVERSE:
 
@@ -3236,7 +3257,7 @@ enum **LogicOperation**:
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_AND_REVERSE** = ``2``
 
-
+AND logic operation with the *destination* operand being inverted. See also :ref:`LOGIC_OP_AND_INVERTED<class_RenderingDevice_constant_LOGIC_OP_AND_INVERTED>`.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_COPY:
 
@@ -3244,7 +3265,7 @@ enum **LogicOperation**:
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_COPY** = ``3``
 
-
+Copy logic operation (keeps the *source* value as-is). See also :ref:`LOGIC_OP_COPY_INVERTED<class_RenderingDevice_constant_LOGIC_OP_COPY_INVERTED>` and :ref:`LOGIC_OP_NO_OP<class_RenderingDevice_constant_LOGIC_OP_NO_OP>`.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_AND_INVERTED:
 
@@ -3252,7 +3273,7 @@ enum **LogicOperation**:
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_AND_INVERTED** = ``4``
 
-
+AND logic operation with the *source* operand being inverted. See also :ref:`LOGIC_OP_AND_REVERSE<class_RenderingDevice_constant_LOGIC_OP_AND_REVERSE>`.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_NO_OP:
 
@@ -3260,7 +3281,7 @@ enum **LogicOperation**:
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_NO_OP** = ``5``
 
-
+No-op logic operation (keeps the *destination* value as-is). See also :ref:`LOGIC_OP_COPY<class_RenderingDevice_constant_LOGIC_OP_COPY>`.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_XOR:
 
@@ -3276,7 +3297,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_OR** = ``7``
 
-
+OR logic operation.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_NOR:
 
@@ -3284,7 +3305,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_NOR** = ``8``
 
-
+Not-OR (NOR) logic operation.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_EQUIVALENT:
 
@@ -3292,7 +3313,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_EQUIVALENT** = ``9``
 
-
+Not-XOR (XNOR) logic operation.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_INVERT:
 
@@ -3300,7 +3321,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_INVERT** = ``10``
 
-
+Invert logic operation.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_OR_REVERSE:
 
@@ -3308,7 +3329,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_OR_REVERSE** = ``11``
 
-
+OR logic operation with the *destination* operand being inverted. See also :ref:`LOGIC_OP_OR_REVERSE<class_RenderingDevice_constant_LOGIC_OP_OR_REVERSE>`.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_COPY_INVERTED:
 
@@ -3316,7 +3337,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_COPY_INVERTED** = ``12``
 
-
+NOT logic operation (inverts the value). See also :ref:`LOGIC_OP_COPY<class_RenderingDevice_constant_LOGIC_OP_COPY>`.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_OR_INVERTED:
 
@@ -3324,7 +3345,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_OR_INVERTED** = ``13``
 
-
+OR logic operation with the *source* operand being inverted. See also :ref:`LOGIC_OP_OR_REVERSE<class_RenderingDevice_constant_LOGIC_OP_OR_REVERSE>`.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_NAND:
 
@@ -3332,7 +3353,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_NAND** = ``14``
 
-
+Not-AND (NAND) logic operation.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_SET:
 
@@ -3340,7 +3361,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_SET** = ``15``
 
-
+SET logic operation (result is always ``1``). See also :ref:`LOGIC_OP_CLEAR<class_RenderingDevice_constant_LOGIC_OP_CLEAR>`.
 
 .. _class_RenderingDevice_constant_LOGIC_OP_MAX:
 
@@ -3348,7 +3369,7 @@ Exclusive or (XOR) logic operation.
 
 :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` **LOGIC_OP_MAX** = ``16``
 
-
+Represents the size of the :ref:`LogicOperation<enum_RenderingDevice_LogicOperation>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3366,7 +3387,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ZERO** = ``0``
 
-
+Constant ``0.0`` blend factor.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE:
 
@@ -3374,7 +3395,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE** = ``1``
 
-
+Constant ``1.0`` blend factor.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_SRC_COLOR:
 
@@ -3382,7 +3403,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_SRC_COLOR** = ``2``
 
-
+Color blend factor is ``source color``. Alpha blend factor is ``source alpha``.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_SRC_COLOR:
 
@@ -3390,7 +3411,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_SRC_COLOR** = ``3``
 
-
+Color blend factor is ``1.0 - source color``. Alpha blend factor is ``1.0 - source alpha``.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_DST_COLOR:
 
@@ -3398,7 +3419,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_DST_COLOR** = ``4``
 
-
+Color blend factor is ``destination color``. Alpha blend factor is ``destination alpha``.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_DST_COLOR:
 
@@ -3406,7 +3427,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_DST_COLOR** = ``5``
 
-
+Color blend factor is ``1.0 - destination color``. Alpha blend factor is ``1.0 - destination alpha``.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_SRC_ALPHA:
 
@@ -3414,7 +3435,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_SRC_ALPHA** = ``6``
 
-
+Color and alpha blend factor is ``source alpha``.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_SRC_ALPHA:
 
@@ -3422,7 +3443,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_SRC_ALPHA** = ``7``
 
-
+Color and alpha blend factor is ``1.0 - source alpha``.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_DST_ALPHA:
 
@@ -3430,7 +3451,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_DST_ALPHA** = ``8``
 
-
+Color and alpha blend factor is ``destination alpha``.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_DST_ALPHA:
 
@@ -3438,7 +3459,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_DST_ALPHA** = ``9``
 
-
+Color and alpha blend factor is ``1.0 - destination alpha``.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_CONSTANT_COLOR:
 
@@ -3446,7 +3467,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_CONSTANT_COLOR** = ``10``
 
-
+Color blend factor is ``blend constant color``. Alpha blend factor is ``blend constant alpha`` (see :ref:`draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`).
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_CONSTANT_COLOR:
 
@@ -3454,7 +3475,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_CONSTANT_COLOR** = ``11``
 
-
+Color blend factor is ``1.0 - blend constant color``. Alpha blend factor is ``1.0 - blend constant alpha`` (see :ref:`draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`).
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_CONSTANT_ALPHA:
 
@@ -3462,7 +3483,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_CONSTANT_ALPHA** = ``12``
 
-
+Color and alpha blend factor is ``blend constant alpha`` (see :ref:`draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`).
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_CONSTANT_ALPHA:
 
@@ -3470,7 +3491,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_CONSTANT_ALPHA** = ``13``
 
-
+Color and alpha blend factor is ``1.0 - blend constant alpha`` (see :ref:`draw_list_set_blend_constants<class_RenderingDevice_method_draw_list_set_blend_constants>`).
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_SRC_ALPHA_SATURATE:
 
@@ -3478,7 +3499,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_SRC_ALPHA_SATURATE** = ``14``
 
-
+Color blend factor is ``min(source alpha, 1.0 - destination alpha)``. Alpha blend factor is ``1.0``.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_SRC1_COLOR:
 
@@ -3486,7 +3507,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_SRC1_COLOR** = ``15``
 
-
+Color blend factor is ``second source color``. Alpha blend factor is ``second source alpha``. Only relevant for dual-source blending.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_SRC1_COLOR:
 
@@ -3494,7 +3515,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_SRC1_COLOR** = ``16``
 
-
+Color blend factor is ``1.0 - second source color``. Alpha blend factor is ``1.0 - second source alpha``. Only relevant for dual-source blending.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_SRC1_ALPHA:
 
@@ -3502,7 +3523,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_SRC1_ALPHA** = ``17``
 
-
+Color and alpha blend factor is ``second source alpha``. Only relevant for dual-source blending.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_ONE_MINUS_SRC1_ALPHA:
 
@@ -3510,7 +3531,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_ONE_MINUS_SRC1_ALPHA** = ``18``
 
-
+Color and alpha blend factor is ``1.0 - second source alpha``. Only relevant for dual-source blending.
 
 .. _class_RenderingDevice_constant_BLEND_FACTOR_MAX:
 
@@ -3518,7 +3539,7 @@ enum **BlendFactor**:
 
 :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` **BLEND_FACTOR_MAX** = ``19``
 
-
+Represents the size of the :ref:`BlendFactor<enum_RenderingDevice_BlendFactor>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3708,7 +3729,7 @@ enum **InitialAction**:
 
 :ref:`InitialAction<enum_RenderingDevice_InitialAction>` **INITIAL_ACTION_MAX** = ``6``
 
-
+Represents the size of the :ref:`InitialAction<enum_RenderingDevice_InitialAction>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3726,7 +3747,7 @@ enum **FinalAction**:
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_READ** = ``0``
 
-
+Store the texture for reading and make it read-only if it has the :ref:`TEXTURE_USAGE_SAMPLING_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_SAMPLING_BIT>` bit (only applies to color, depth and stencil attachments).
 
 .. _class_RenderingDevice_constant_FINAL_ACTION_DISCARD:
 
@@ -3734,7 +3755,7 @@ enum **FinalAction**:
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_DISCARD** = ``1``
 
-
+Discard the texture data and make it read-only if it has the :ref:`TEXTURE_USAGE_SAMPLING_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_SAMPLING_BIT>` bit (only applies to color, depth and stencil attachments).
 
 .. _class_RenderingDevice_constant_FINAL_ACTION_CONTINUE:
 
@@ -3742,7 +3763,7 @@ enum **FinalAction**:
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_CONTINUE** = ``2``
 
-
+Store the texture and continue for further processing. Similar to :ref:`FINAL_ACTION_READ<class_RenderingDevice_constant_FINAL_ACTION_READ>`, but does not make the texture read-only if it has the :ref:`TEXTURE_USAGE_SAMPLING_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_SAMPLING_BIT>` bit.
 
 .. _class_RenderingDevice_constant_FINAL_ACTION_MAX:
 
@@ -3750,7 +3771,7 @@ enum **FinalAction**:
 
 :ref:`FinalAction<enum_RenderingDevice_FinalAction>` **FINAL_ACTION_MAX** = ``3``
 
-
+Represents the size of the :ref:`FinalAction<enum_RenderingDevice_FinalAction>` enum.
 
 .. rst-class:: classref-item-separator
 
@@ -3768,7 +3789,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_VERTEX** = ``0``
 
-
+Vertex shader stage. This can be used to manipulate vertices from a shader (but not create new vertices).
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_FRAGMENT:
 
@@ -3776,7 +3797,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_FRAGMENT** = ``1``
 
-
+Fragment shader stage (called "pixel shader" in Direct3D). This can be used to manipulate pixels from a shader.
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_TESSELATION_CONTROL:
 
@@ -3784,7 +3805,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_TESSELATION_CONTROL** = ``2``
 
-
+Tessellation control shader stage. This can be used to create additional geometry from a shader.
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_TESSELATION_EVALUATION:
 
@@ -3792,7 +3813,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_TESSELATION_EVALUATION** = ``3``
 
-
+Tessellation evaluation shader stage. This can be used to create additional geometry from a shader.
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_COMPUTE:
 
@@ -3800,7 +3821,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_COMPUTE** = ``4``
 
-
+Compute shader stage. This can be used to run arbitrary computing tasks in a shader, performing them on the GPU instead of the CPU.
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_MAX:
 
@@ -3808,7 +3829,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_MAX** = ``5``
 
-
+Represents the size of the :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` enum.
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_VERTEX_BIT:
 
@@ -3816,7 +3837,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_VERTEX_BIT** = ``1``
 
-
+Vertex shader stage bit (see also :ref:`SHADER_STAGE_VERTEX<class_RenderingDevice_constant_SHADER_STAGE_VERTEX>`).
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_FRAGMENT_BIT:
 
@@ -3824,7 +3845,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_FRAGMENT_BIT** = ``2``
 
-
+Fragment shader stage bit (see also :ref:`SHADER_STAGE_FRAGMENT<class_RenderingDevice_constant_SHADER_STAGE_FRAGMENT>`).
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_TESSELATION_CONTROL_BIT:
 
@@ -3832,7 +3853,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_TESSELATION_CONTROL_BIT** = ``4``
 
-
+Tessellation control shader stage bit (see also :ref:`SHADER_STAGE_TESSELATION_CONTROL<class_RenderingDevice_constant_SHADER_STAGE_TESSELATION_CONTROL>`).
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_TESSELATION_EVALUATION_BIT:
 
@@ -3840,7 +3861,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_TESSELATION_EVALUATION_BIT** = ``8``
 
-
+Tessellation evaluation shader stage bit (see also :ref:`SHADER_STAGE_TESSELATION_EVALUATION<class_RenderingDevice_constant_SHADER_STAGE_TESSELATION_EVALUATION>`).
 
 .. _class_RenderingDevice_constant_SHADER_STAGE_COMPUTE_BIT:
 
@@ -3848,7 +3869,7 @@ enum **ShaderStage**:
 
 :ref:`ShaderStage<enum_RenderingDevice_ShaderStage>` **SHADER_STAGE_COMPUTE_BIT** = ``16``
 
-
+Compute shader stage bit (see also :ref:`SHADER_STAGE_COMPUTE<class_RenderingDevice_constant_SHADER_STAGE_COMPUTE>`).
 
 .. rst-class:: classref-item-separator
 
@@ -3866,7 +3887,7 @@ enum **ShaderLanguage**:
 
 :ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>` **SHADER_LANGUAGE_GLSL** = ``0``
 
-
+Khronos' GLSL shading language (used natively by OpenGL and Vulkan). This is the language used for core Godot shaders.
 
 .. _class_RenderingDevice_constant_SHADER_LANGUAGE_HLSL:
 
@@ -3874,7 +3895,7 @@ enum **ShaderLanguage**:
 
 :ref:`ShaderLanguage<enum_RenderingDevice_ShaderLanguage>` **SHADER_LANGUAGE_HLSL** = ``1``
 
-
+Microsoft's High-Level Shading Language (used natively by Direct3D, but can also be used in Vulkan).
 
 .. rst-class:: classref-item-separator
 
@@ -3892,7 +3913,7 @@ enum **PipelineSpecializationConstantType**:
 
 :ref:`PipelineSpecializationConstantType<enum_RenderingDevice_PipelineSpecializationConstantType>` **PIPELINE_SPECIALIZATION_CONSTANT_TYPE_BOOL** = ``0``
 
-
+Boolean specialization constant.
 
 .. _class_RenderingDevice_constant_PIPELINE_SPECIALIZATION_CONSTANT_TYPE_INT:
 
@@ -3900,7 +3921,7 @@ enum **PipelineSpecializationConstantType**:
 
 :ref:`PipelineSpecializationConstantType<enum_RenderingDevice_PipelineSpecializationConstantType>` **PIPELINE_SPECIALIZATION_CONSTANT_TYPE_INT** = ``1``
 
-
+Integer specialization constant.
 
 .. _class_RenderingDevice_constant_PIPELINE_SPECIALIZATION_CONSTANT_TYPE_FLOAT:
 
@@ -3908,7 +3929,7 @@ enum **PipelineSpecializationConstantType**:
 
 :ref:`PipelineSpecializationConstantType<enum_RenderingDevice_PipelineSpecializationConstantType>` **PIPELINE_SPECIALIZATION_CONSTANT_TYPE_FLOAT** = ``2``
 
-
+Floating-point specialization constant.
 
 .. rst-class:: classref-item-separator
 
@@ -3926,7 +3947,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_BOUND_UNIFORM_SETS** = ``0``
 
-
+Maximum number of uniform sets that can be bound at a given time.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_FRAMEBUFFER_COLOR_ATTACHMENTS:
 
@@ -3934,7 +3955,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_FRAMEBUFFER_COLOR_ATTACHMENTS** = ``1``
 
-
+Maximum number of color framebuffer attachments that can be used at a given time.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_TEXTURES_PER_UNIFORM_SET:
 
@@ -3942,7 +3963,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_TEXTURES_PER_UNIFORM_SET** = ``2``
 
-
+Maximum number of textures that can be used per uniform set.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_SAMPLERS_PER_UNIFORM_SET:
 
@@ -3950,7 +3971,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_SAMPLERS_PER_UNIFORM_SET** = ``3``
 
-
+Maximum number of samplers that can be used per uniform set.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_STORAGE_BUFFERS_PER_UNIFORM_SET:
 
@@ -3958,7 +3979,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_STORAGE_BUFFERS_PER_UNIFORM_SET** = ``4``
 
-
+Maximum number of `storage buffers <https://vkguide.dev/docs/chapter-4/storage_buffers/>`__ per uniform set.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_STORAGE_IMAGES_PER_UNIFORM_SET:
 
@@ -3966,7 +3987,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_STORAGE_IMAGES_PER_UNIFORM_SET** = ``5``
 
-
+Maximum number of storage images per uniform set.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_UNIFORM_BUFFERS_PER_UNIFORM_SET:
 
@@ -3974,7 +3995,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_UNIFORM_BUFFERS_PER_UNIFORM_SET** = ``6``
 
-
+Maximum number of uniform buffers per uniform set.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_DRAW_INDEXED_INDEX:
 
@@ -3982,7 +4003,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_DRAW_INDEXED_INDEX** = ``7``
 
-
+Maximum index for an indexed draw command.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_FRAMEBUFFER_HEIGHT:
 
@@ -3990,7 +4011,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_FRAMEBUFFER_HEIGHT** = ``8``
 
-
+Maximum height of a framebuffer (in pixels).
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_FRAMEBUFFER_WIDTH:
 
@@ -3998,7 +4019,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_FRAMEBUFFER_WIDTH** = ``9``
 
-
+Maximum width of a framebuffer (in pixels).
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_TEXTURE_ARRAY_LAYERS:
 
@@ -4006,7 +4027,7 @@ enum **Limit**:
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_TEXTURE_ARRAY_LAYERS** = ``10``
 
-
+Maximum number of texture array layers.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_TEXTURE_SIZE_1D:
 
@@ -4046,7 +4067,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_TEXTURES_PER_SHADER_STAGE** = ``15``
 
-
+Maximum number of textures per shader stage.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_SAMPLERS_PER_SHADER_STAGE:
 
@@ -4054,7 +4075,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_SAMPLERS_PER_SHADER_STAGE** = ``16``
 
-
+Maximum number of samplers per shader stage.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_STORAGE_BUFFERS_PER_SHADER_STAGE:
 
@@ -4062,7 +4083,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_STORAGE_BUFFERS_PER_SHADER_STAGE** = ``17``
 
-
+Maximum number of `storage buffers <https://vkguide.dev/docs/chapter-4/storage_buffers/>`__ per shader stage.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_STORAGE_IMAGES_PER_SHADER_STAGE:
 
@@ -4070,7 +4091,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_STORAGE_IMAGES_PER_SHADER_STAGE** = ``18``
 
-
+Maximum number of storage images per shader stage.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_UNIFORM_BUFFERS_PER_SHADER_STAGE:
 
@@ -4078,7 +4099,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_UNIFORM_BUFFERS_PER_SHADER_STAGE** = ``19``
 
-
+Maximum number of uniform buffers per uniform set.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_PUSH_CONSTANT_SIZE:
 
@@ -4086,7 +4107,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_PUSH_CONSTANT_SIZE** = ``20``
 
-
+Maximum size of a push constant. A lot of devices are limited to 128 bytes, so try to avoid exceeding 128 bytes in push constants to ensure compatibility even if your GPU is reporting a higher value.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_UNIFORM_BUFFER_SIZE:
 
@@ -4094,7 +4115,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_UNIFORM_BUFFER_SIZE** = ``21``
 
-
+Maximum size of a uniform buffer.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET:
 
@@ -4102,7 +4123,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_VERTEX_INPUT_ATTRIBUTE_OFFSET** = ``22``
 
-
+Maximum vertex input attribute offset.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_VERTEX_INPUT_ATTRIBUTES:
 
@@ -4110,7 +4131,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_VERTEX_INPUT_ATTRIBUTES** = ``23``
 
-
+Maximum number of vertex input attributes.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_VERTEX_INPUT_BINDINGS:
 
@@ -4118,7 +4139,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_VERTEX_INPUT_BINDINGS** = ``24``
 
-
+Maximum number of vertex input bindings.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_VERTEX_INPUT_BINDING_STRIDE:
 
@@ -4126,7 +4147,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_VERTEX_INPUT_BINDING_STRIDE** = ``25``
 
-
+Maximum vertex input binding stride.
 
 .. _class_RenderingDevice_constant_LIMIT_MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT:
 
@@ -4134,7 +4155,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MIN_UNIFORM_BUFFER_OFFSET_ALIGNMENT** = ``26``
 
-
+Minimum uniform buffer offset alignment.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_COMPUTE_SHARED_MEMORY_SIZE:
 
@@ -4142,7 +4163,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_COMPUTE_SHARED_MEMORY_SIZE** = ``27``
 
-
+Maximum shared memory size for compute shaders.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_COMPUTE_WORKGROUP_COUNT_X:
 
@@ -4150,7 +4171,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_COMPUTE_WORKGROUP_COUNT_X** = ``28``
 
-
+Maximum number of workgroups for compute shaders on the X axis.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_COMPUTE_WORKGROUP_COUNT_Y:
 
@@ -4158,7 +4179,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_COMPUTE_WORKGROUP_COUNT_Y** = ``29``
 
-
+Maximum number of workgroups for compute shaders on the Y axis.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_COMPUTE_WORKGROUP_COUNT_Z:
 
@@ -4166,7 +4187,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_COMPUTE_WORKGROUP_COUNT_Z** = ``30``
 
-
+Maximum number of workgroups for compute shaders on the Z axis.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_COMPUTE_WORKGROUP_INVOCATIONS:
 
@@ -4174,7 +4195,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_COMPUTE_WORKGROUP_INVOCATIONS** = ``31``
 
-
+Maximum number of workgroup invocations for compute shaders.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_COMPUTE_WORKGROUP_SIZE_X:
 
@@ -4182,7 +4203,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_COMPUTE_WORKGROUP_SIZE_X** = ``32``
 
-
+Maximum workgroup size for compute shaders on the X axis.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_COMPUTE_WORKGROUP_SIZE_Y:
 
@@ -4190,7 +4211,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_COMPUTE_WORKGROUP_SIZE_Y** = ``33``
 
-
+Maximum workgroup size for compute shaders on the Y axis.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_COMPUTE_WORKGROUP_SIZE_Z:
 
@@ -4198,7 +4219,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_COMPUTE_WORKGROUP_SIZE_Z** = ``34``
 
-
+Maximum workgroup size for compute shaders on the Z axis.
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_VIEWPORT_DIMENSIONS_X:
 
@@ -4206,7 +4227,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_VIEWPORT_DIMENSIONS_X** = ``35``
 
-
+Maximum viewport width (in pixels).
 
 .. _class_RenderingDevice_constant_LIMIT_MAX_VIEWPORT_DIMENSIONS_Y:
 
@@ -4214,7 +4235,7 @@ Maximum supported cubemap texture size (in pixels on a single axis of a single f
 
 :ref:`Limit<enum_RenderingDevice_Limit>` **LIMIT_MAX_VIEWPORT_DIMENSIONS_Y** = ``36``
 
-
+Maximum viewport height (in pixels).
 
 .. rst-class:: classref-item-separator
 
@@ -4290,9 +4311,7 @@ Method Descriptions
 
 void **barrier** **(** :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` from=7, :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` to=7 **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Puts a memory barrier in place. This is used for synchronization to avoid data races. See also :ref:`full_barrier<class_RenderingDevice_method_full_barrier>`, which may be useful for debugging.
 
 .. rst-class:: classref-item-separator
 
@@ -4344,9 +4363,7 @@ Returns a copy of the data of the specified ``buffer``, optionally ``offset_byte
 
 void **capture_timestamp** **(** :ref:`String<class_String>` name **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a timestamp marker with the specified ``name``. This is used for performance reporting with the :ref:`get_captured_timestamp_cpu_time<class_RenderingDevice_method_get_captured_timestamp_cpu_time>`, :ref:`get_captured_timestamp_gpu_time<class_RenderingDevice_method_get_captured_timestamp_gpu_time>` and :ref:`get_captured_timestamp_name<class_RenderingDevice_method_get_captured_timestamp_name>` methods.
 
 .. rst-class:: classref-item-separator
 
@@ -4372,9 +4389,27 @@ void **compute_list_add_barrier** **(** :ref:`int<class_int>` compute_list **)**
 
 :ref:`int<class_int>` **compute_list_begin** **(** :ref:`bool<class_bool>` allow_draw_overlap=false **)**
 
-.. container:: contribute
+Starts a list of compute commands created with the ``compute_*`` methods. The returned value should be passed to other ``compute_list_*`` functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``allow_draw_overlap`` is true, you may have one draw list running at the same time as one compute list. Multiple compute lists cannot be created at the same time; you must finish the previous compute list first using :ref:`compute_list_end<class_RenderingDevice_method_compute_list_end>`.
+
+A simple compute operation might look like this (code is not a complete example):
+
+::
+
+    var rd = RenderingDevice.new()
+    var compute_list = rd.compute_list_begin()
+    
+    rd.compute_list_bind_compute_pipeline(compute_list, compute_shader_dilate_pipeline)
+    rd.compute_list_bind_uniform_set(compute_list, compute_base_uniform_set, 0)
+    rd.compute_list_bind_uniform_set(compute_list, dilate_uniform_set, 1)
+    
+    for i in atlas_slices:
+        rd.compute_list_set_push_constant(compute_list, push_constant, push_constant.size())
+        rd.compute_list_dispatch(compute_list, group_size.x, group_size.y, group_size.z)
+        # No barrier, let them run all together.
+    
+    rd.compute_list_end()
 
 .. rst-class:: classref-item-separator
 
@@ -4414,9 +4449,7 @@ void **compute_list_bind_uniform_set** **(** :ref:`int<class_int>` compute_list,
 
 void **compute_list_dispatch** **(** :ref:`int<class_int>` compute_list, :ref:`int<class_int>` x_groups, :ref:`int<class_int>` y_groups, :ref:`int<class_int>` z_groups **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Submits the compute list for processing on the GPU. This is the compute equivalent to :ref:`draw_list_draw<class_RenderingDevice_method_draw_list_draw>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4428,9 +4461,7 @@ void **compute_list_dispatch** **(** :ref:`int<class_int>` compute_list, :ref:`i
 
 void **compute_list_end** **(** :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` post_barrier=7 **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Finishes a list of compute commands created with the ``compute_*`` methods.
 
 .. rst-class:: classref-item-separator
 
@@ -4442,9 +4473,7 @@ void **compute_list_end** **(** :ref:`BarrierMask<enum_RenderingDevice_BarrierMa
 
 void **compute_list_set_push_constant** **(** :ref:`int<class_int>` compute_list, :ref:`PackedByteArray<class_PackedByteArray>` buffer, :ref:`int<class_int>` size_bytes **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the push constant data to ``buffer`` for the specified ``compute_list``. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in ``size_bytes`` (this can be obtained by calling the :ref:`PackedByteArray.size<class_PackedByteArray_method_size>` method on the passed ``buffer``).
 
 .. rst-class:: classref-item-separator
 
@@ -4456,9 +4485,9 @@ void **compute_list_set_push_constant** **(** :ref:`int<class_int>` compute_list
 
 :ref:`RID<class_RID>` **compute_pipeline_create** **(** :ref:`RID<class_RID>` shader, :ref:`RDPipelineSpecializationConstant[]<class_RDPipelineSpecializationConstant>` specialization_constants=[] **)**
 
-.. container:: contribute
+Creates a new compute pipeline. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -4468,11 +4497,9 @@ void **compute_list_set_push_constant** **(** :ref:`int<class_int>` compute_list
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **compute_pipeline_is_valid** **(** :ref:`RID<class_RID>` compute_pieline **)**
+:ref:`bool<class_bool>` **compute_pipeline_is_valid** **(** :ref:`RID<class_RID>` compute_pipeline **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the compute pipeline specified by the ``compute_pipeline`` RID is valid, ``false`` otherwise.
 
 .. rst-class:: classref-item-separator
 
@@ -4484,9 +4511,7 @@ void **compute_list_set_push_constant** **(** :ref:`int<class_int>` compute_list
 
 :ref:`RenderingDevice<class_RenderingDevice>` **create_local_device** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Create a new local **RenderingDevice**. This is most useful for performing compute operations on the GPU independently from the rest of the engine.
 
 .. rst-class:: classref-item-separator
 
@@ -4498,9 +4523,9 @@ void **compute_list_set_push_constant** **(** :ref:`int<class_int>` compute_list
 
 void **draw_command_begin_label** **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**
 
-.. container:: contribute
+Create a command buffer debug label region that can be displayed in third-party tools such as `RenderDoc <https://renderdoc.org/>`__. All regions must be ended with a :ref:`draw_command_end_label<class_RenderingDevice_method_draw_command_end_label>` call. When viewed from the linear series of submissions to a single queue, calls to :ref:`draw_command_begin_label<class_RenderingDevice_method_draw_command_begin_label>` and :ref:`draw_command_end_label<class_RenderingDevice_method_draw_command_end_label>` must be matched and balanced.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The ``VK_EXT_DEBUG_UTILS_EXTENSION_NAME`` Vulkan extension must be available and enabled for command buffer debug label region to work. See also :ref:`draw_command_insert_label<class_RenderingDevice_method_draw_command_insert_label>` and :ref:`draw_command_end_label<class_RenderingDevice_method_draw_command_end_label>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4512,9 +4537,7 @@ void **draw_command_begin_label** **(** :ref:`String<class_String>` name, :ref:`
 
 void **draw_command_end_label** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Ends the command buffer debug label region started by a :ref:`draw_command_begin_label<class_RenderingDevice_method_draw_command_begin_label>` call.
 
 .. rst-class:: classref-item-separator
 
@@ -4526,9 +4549,7 @@ void **draw_command_end_label** **(** **)**
 
 void **draw_command_insert_label** **(** :ref:`String<class_String>` name, :ref:`Color<class_Color>` color **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Inserts a command buffer debug label region in the current command buffer. Unlike :ref:`draw_command_begin_label<class_RenderingDevice_method_draw_command_begin_label>`, this region should not be ended with a :ref:`draw_command_end_label<class_RenderingDevice_method_draw_command_end_label>` call.
 
 .. rst-class:: classref-item-separator
 
@@ -4538,11 +4559,32 @@ void **draw_command_insert_label** **(** :ref:`String<class_String>` name, :ref:
 
 .. rst-class:: classref-method
 
-:ref:`int<class_int>` **draw_list_begin** **(** :ref:`RID<class_RID>` framebuffer, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_color_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_color_action, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_depth_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_depth_action, :ref:`PackedColorArray<class_PackedColorArray>` clear_color_values=PackedColorArray(), :ref:`float<class_float>` clear_depth=1.0, :ref:`int<class_int>` clear_stencil=0, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`Array<class_Array>` storage_textures=[] **)**
+:ref:`int<class_int>` **draw_list_begin** **(** :ref:`RID<class_RID>` framebuffer, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_color_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_color_action, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_depth_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_depth_action, :ref:`PackedColorArray<class_PackedColorArray>` clear_color_values=PackedColorArray(), :ref:`float<class_float>` clear_depth=1.0, :ref:`int<class_int>` clear_stencil=0, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`RID[]<class_RID>` storage_textures=[] **)**
 
-.. container:: contribute
+Starts a list of raster drawing commands created with the ``draw_*`` methods. The returned value should be passed to other ``draw_list_*`` functions.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Multiple draw lists cannot be created at the same time; you must finish the previous draw list first using :ref:`draw_list_end<class_RenderingDevice_method_draw_list_end>`.
+
+A simple drawing operation might look like this (code is not a complete example):
+
+::
+
+    var rd = RenderingDevice.new()
+    var clear_colors = PackedColorArray([Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 0)]
+    var draw_list = rd.draw_list_begin(framebuffers[i], RenderingDevice.INITIAL_ACTION_CLEAR, RenderingDevice.FINAL_ACTION_READ, RenderingDevice.INITIAL_ACTION_CLEAR, RenderingDevice.FINAL_ACTION_DISCARD, clear_colors)
+    
+    # Draw opaque.
+    rd.draw_list_bind_render_pipeline(draw_list, raster_pipeline)
+    rd.draw_list_bind_uniform_set(draw_list, raster_base_uniform, 0)
+    rd.draw_list_set_push_constant(draw_list, raster_push_constant, raster_push_constant.size())
+    rd.draw_list_draw(draw_list, false, 1, slice_triangle_count[i] * 3)
+    # Draw wire.
+    rd.draw_list_bind_render_pipeline(draw_list, raster_pipeline_wire)
+    rd.draw_list_bind_uniform_set(draw_list, raster_base_uniform, 0)
+    rd.draw_list_set_push_constant(draw_list, raster_push_constant, raster_push_constant.size())
+    rd.draw_list_draw(draw_list, false, 1, slice_triangle_count[i] * 3)
+    
+    rd.draw_list_end()
 
 .. rst-class:: classref-item-separator
 
@@ -4554,9 +4596,9 @@ void **draw_command_insert_label** **(** :ref:`String<class_String>` name, :ref:
 
 :ref:`int<class_int>` **draw_list_begin_for_screen** **(** :ref:`int<class_int>` screen=0, :ref:`Color<class_Color>` clear_color=Color(0, 0, 0, 1) **)**
 
-.. container:: contribute
+High-level variant of :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>`, with the parameters automtaically being adjusted for drawing onto the window specified by the ``screen`` ID.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Cannot be used with local RenderingDevices, as these don't have a screen. If called on a local RenderingDevice, :ref:`draw_list_begin_for_screen<class_RenderingDevice_method_draw_list_begin_for_screen>` returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4568,9 +4610,7 @@ void **draw_command_insert_label** **(** :ref:`String<class_String>` name, :ref:
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_begin_split** **(** :ref:`RID<class_RID>` framebuffer, :ref:`int<class_int>` splits, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_color_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_color_action, :ref:`InitialAction<enum_RenderingDevice_InitialAction>` initial_depth_action, :ref:`FinalAction<enum_RenderingDevice_FinalAction>` final_depth_action, :ref:`PackedColorArray<class_PackedColorArray>` clear_color_values=PackedColorArray(), :ref:`float<class_float>` clear_depth=1.0, :ref:`int<class_int>` clear_stencil=0, :ref:`Rect2<class_Rect2>` region=Rect2(0, 0, 0, 0), :ref:`RID[]<class_RID>` storage_textures=[] **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Variant of :ref:`draw_list_begin<class_RenderingDevice_method_draw_list_begin>` with support for multiple splits. The ``splits`` parameter determines how many splits are created.
 
 .. rst-class:: classref-item-separator
 
@@ -4582,9 +4622,7 @@ void **draw_command_insert_label** **(** :ref:`String<class_String>` name, :ref:
 
 void **draw_list_bind_index_array** **(** :ref:`int<class_int>` draw_list, :ref:`RID<class_RID>` index_array **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Binds ``index_array`` to the specified ``draw_list``.
 
 .. rst-class:: classref-item-separator
 
@@ -4596,9 +4634,7 @@ void **draw_list_bind_index_array** **(** :ref:`int<class_int>` draw_list, :ref:
 
 void **draw_list_bind_render_pipeline** **(** :ref:`int<class_int>` draw_list, :ref:`RID<class_RID>` render_pipeline **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Binds ``render_pipeline`` to the specified ``draw_list``.
 
 .. rst-class:: classref-item-separator
 
@@ -4610,9 +4646,7 @@ void **draw_list_bind_render_pipeline** **(** :ref:`int<class_int>` draw_list, :
 
 void **draw_list_bind_uniform_set** **(** :ref:`int<class_int>` draw_list, :ref:`RID<class_RID>` uniform_set, :ref:`int<class_int>` set_index **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Binds ``uniform_set`` to the specified ``draw_list``. A ``set_index`` must also be specified, which is an identifier starting from ``0`` that must match the one expected by the draw list.
 
 .. rst-class:: classref-item-separator
 
@@ -4624,9 +4658,7 @@ void **draw_list_bind_uniform_set** **(** :ref:`int<class_int>` draw_list, :ref:
 
 void **draw_list_bind_vertex_array** **(** :ref:`int<class_int>` draw_list, :ref:`RID<class_RID>` vertex_array **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Binds ``vertex_array`` to the specified ``draw_list``.
 
 .. rst-class:: classref-item-separator
 
@@ -4638,9 +4670,7 @@ void **draw_list_bind_vertex_array** **(** :ref:`int<class_int>` draw_list, :ref
 
 void **draw_list_disable_scissor** **(** :ref:`int<class_int>` draw_list **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Removes and disables the scissor rectangle for the specified ``draw_list``. See also :ref:`draw_list_enable_scissor<class_RenderingDevice_method_draw_list_enable_scissor>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4652,9 +4682,7 @@ void **draw_list_disable_scissor** **(** :ref:`int<class_int>` draw_list **)**
 
 void **draw_list_draw** **(** :ref:`int<class_int>` draw_list, :ref:`bool<class_bool>` use_indices, :ref:`int<class_int>` instances, :ref:`int<class_int>` procedural_vertex_count=0 **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Submits ``draw_list`` for rendering on the GPU. This is the raster equivalent to :ref:`compute_list_dispatch<class_RenderingDevice_method_compute_list_dispatch>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4666,9 +4694,9 @@ void **draw_list_draw** **(** :ref:`int<class_int>` draw_list, :ref:`bool<class_
 
 void **draw_list_enable_scissor** **(** :ref:`int<class_int>` draw_list, :ref:`Rect2<class_Rect2>` rect=Rect2(0, 0, 0, 0) **)**
 
-.. container:: contribute
+Creates a scissor rectangle and enables it for the specified ``draw_list``. Scissor rectangles are used for clipping by discarding fragments that fall outside a specified rectangular portion of the screen. See also :ref:`draw_list_disable_scissor<class_RenderingDevice_method_draw_list_disable_scissor>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** The specified ``rect`` is automatically intersected with the screen's dimensions, which means it cannot exceed the screen's dimensions.
 
 .. rst-class:: classref-item-separator
 
@@ -4680,9 +4708,7 @@ void **draw_list_enable_scissor** **(** :ref:`int<class_int>` draw_list, :ref:`R
 
 void **draw_list_end** **(** :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` post_barrier=7 **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Finishes a list of raster drawing commands created with the ``draw_*`` methods.
 
 .. rst-class:: classref-item-separator
 
@@ -4694,7 +4720,7 @@ void **draw_list_end** **(** :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>
 
 void **draw_list_set_blend_constants** **(** :ref:`int<class_int>` draw_list, :ref:`Color<class_Color>` color **)**
 
-Sets blend constants for draw list, blend constants are used only if the graphics pipeline is created with :ref:`DYNAMIC_STATE_BLEND_CONSTANTS<class_RenderingDevice_constant_DYNAMIC_STATE_BLEND_CONSTANTS>` flag set.
+Sets blend constants for the specified ``draw_list`` to ``color``. Blend constants are used only if the graphics pipeline is created with :ref:`DYNAMIC_STATE_BLEND_CONSTANTS<class_RenderingDevice_constant_DYNAMIC_STATE_BLEND_CONSTANTS>` flag set.
 
 .. rst-class:: classref-item-separator
 
@@ -4706,9 +4732,7 @@ Sets blend constants for draw list, blend constants are used only if the graphic
 
 void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref:`PackedByteArray<class_PackedByteArray>` buffer, :ref:`int<class_int>` size_bytes **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the push constant data to ``buffer`` for the specified ``draw_list``. The shader determines how this binary data is used. The buffer's size in bytes must also be specified in ``size_bytes`` (this can be obtained by calling the :ref:`PackedByteArray.size<class_PackedByteArray_method_size>` method on the passed ``buffer``).
 
 .. rst-class:: classref-item-separator
 
@@ -4720,9 +4744,7 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`int<class_int>` **draw_list_switch_to_next_pass** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Switches to the next draw pass and returns the split's ID. Equivalent to :ref:`draw_list_switch_to_next_pass_split<class_RenderingDevice_method_draw_list_switch_to_next_pass_split>` with ``splits`` set to ``1``.
 
 .. rst-class:: classref-item-separator
 
@@ -4734,9 +4756,7 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`PackedInt64Array<class_PackedInt64Array>` **draw_list_switch_to_next_pass_split** **(** :ref:`int<class_int>` splits **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Switches to the next draw pass, with the number of splits allocated specified in ``splits``. The return value is an array containing the ID of each split. For single-split usage, see :ref:`draw_list_switch_to_next_pass<class_RenderingDevice_method_draw_list_switch_to_next_pass>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4748,9 +4768,9 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`RID<class_RID>` **framebuffer_create** **(** :ref:`RID[]<class_RID>` textures, :ref:`int<class_int>` validate_with_format=-1, :ref:`int<class_int>` view_count=1 **)**
 
-.. container:: contribute
+Creates a new framebuffer. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -4762,9 +4782,9 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`RID<class_RID>` **framebuffer_create_empty** **(** :ref:`Vector2i<class_Vector2i>` size, :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` samples=0, :ref:`int<class_int>` validate_with_format=-1 **)**
 
-.. container:: contribute
+Creates a new empty framebuffer. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -4776,9 +4796,9 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`RID<class_RID>` **framebuffer_create_multipass** **(** :ref:`RID[]<class_RID>` textures, :ref:`RDFramebufferPass[]<class_RDFramebufferPass>` passes, :ref:`int<class_int>` validate_with_format=-1, :ref:`int<class_int>` view_count=1 **)**
 
-.. container:: contribute
+Creates a new multipass framebuffer. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -4790,9 +4810,9 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`int<class_int>` **framebuffer_format_create** **(** :ref:`RDAttachmentFormat[]<class_RDAttachmentFormat>` attachments, :ref:`int<class_int>` view_count=1 **)**
 
-.. container:: contribute
+Creates a new framebuffer format with the specified ``attachments`` and ``view_count``. Returns the new framebuffer's unique framebuffer format ID.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``view_count`` is greater than or equal to ``2``, enables multiview which is used for VR rendering. This requires support for the Vulkan multiview extension.
 
 .. rst-class:: classref-item-separator
 
@@ -4804,9 +4824,7 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`int<class_int>` **framebuffer_format_create_empty** **(** :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` samples=0 **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a new empty framebuffer format with the specified number of ``samples`` and returns its ID.
 
 .. rst-class:: classref-item-separator
 
@@ -4818,9 +4836,7 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`int<class_int>` **framebuffer_format_create_multipass** **(** :ref:`RDAttachmentFormat[]<class_RDAttachmentFormat>` attachments, :ref:`RDFramebufferPass[]<class_RDFramebufferPass>` passes, :ref:`int<class_int>` view_count=1 **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a multipass framebuffer format with the specified ``attachments``, ``passes`` and ``view_count`` and returns its ID. If ``view_count`` is greater than or equal to ``2``, enables multiview which is used for VR rendering. This requires support for the Vulkan multiview extension.
 
 .. rst-class:: classref-item-separator
 
@@ -4832,9 +4848,7 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>` **framebuffer_format_get_texture_samples** **(** :ref:`int<class_int>` format, :ref:`int<class_int>` render_pass=0 **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the number of texture samples used for the given framebuffer ``format`` ID (returned by :ref:`framebuffer_get_format<class_RenderingDevice_method_framebuffer_get_format>`).
 
 .. rst-class:: classref-item-separator
 
@@ -4846,9 +4860,7 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`int<class_int>` **framebuffer_get_format** **(** :ref:`RID<class_RID>` framebuffer **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the format ID of the framebuffer specified by the ``framebuffer`` RID. This ID is guaranteed to be unique for the same formats and does not need to be freed.
 
 .. rst-class:: classref-item-separator
 
@@ -4860,9 +4872,7 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 :ref:`bool<class_bool>` **framebuffer_is_valid** **(** :ref:`RID<class_RID>` framebuffer **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the framebuffer specified by the ``framebuffer`` RID is valid, ``false`` otherwise.
 
 .. rst-class:: classref-item-separator
 
@@ -4874,9 +4884,7 @@ void **draw_list_set_push_constant** **(** :ref:`int<class_int>` draw_list, :ref
 
 void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Tries to free an object in the RenderingDevice. To avoid memory leaks, this should be called after using an object as memory management does not occur automatically when using RenderingDevice directly.
 
 .. rst-class:: classref-item-separator
 
@@ -4888,9 +4896,7 @@ void **free_rid** **(** :ref:`RID<class_RID>` rid **)**
 
 void **full_barrier** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Puts a *full* memory barrier in place. This is a memory :ref:`barrier<class_RenderingDevice_method_barrier>` with all flags enabled. :ref:`full_barrier<class_RenderingDevice_method_full_barrier>` it should only be used for debugging as it can severely impact performance.
 
 .. rst-class:: classref-item-separator
 
@@ -4902,9 +4908,7 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **get_captured_timestamp_cpu_time** **(** :ref:`int<class_int>` index **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the timestamp in CPU time for the rendering step specified by ``index`` (in microseconds since the engine started). See also :ref:`get_captured_timestamp_gpu_time<class_RenderingDevice_method_get_captured_timestamp_gpu_time>` and :ref:`capture_timestamp<class_RenderingDevice_method_capture_timestamp>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4916,9 +4920,7 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **get_captured_timestamp_gpu_time** **(** :ref:`int<class_int>` index **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the timestamp in GPU time for the rendering step specified by ``index`` (in microseconds since the engine started). See also :ref:`get_captured_timestamp_cpu_time<class_RenderingDevice_method_get_captured_timestamp_cpu_time>` and :ref:`capture_timestamp<class_RenderingDevice_method_capture_timestamp>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4930,9 +4932,7 @@ void **full_barrier** **(** **)**
 
 :ref:`String<class_String>` **get_captured_timestamp_name** **(** :ref:`int<class_int>` index **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the timestamp's name for the rendering step specified by ``index``. See also :ref:`capture_timestamp<class_RenderingDevice_method_capture_timestamp>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4944,9 +4944,7 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **get_captured_timestamps_count** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the total number of timestamps (rendering steps) available for profiling.
 
 .. rst-class:: classref-item-separator
 
@@ -4958,9 +4956,7 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **get_captured_timestamps_frame** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the index of the last frame rendered that has rendering timestamps available for querying.
 
 .. rst-class:: classref-item-separator
 
@@ -4972,9 +4968,7 @@ void **full_barrier** **(** **)**
 
 :ref:`String<class_String>` **get_device_name** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the name of the video adapter (e.g. "GeForce GTX 1080/PCIe/SSE2"). Equivalent to :ref:`RenderingServer.get_video_adapter_name<class_RenderingServer_method_get_video_adapter_name>`. See also :ref:`get_device_vendor_name<class_RenderingDevice_method_get_device_vendor_name>`.
 
 .. rst-class:: classref-item-separator
 
@@ -4986,9 +4980,7 @@ void **full_barrier** **(** **)**
 
 :ref:`String<class_String>` **get_device_pipeline_cache_uuid** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the universally unique identifier for the pipeline cache. This is used to cache shader files on disk, which avoids shader recompilations on subsequent engine runs. This UUID varies depending on the graphics card model, but also the driver version. Therefore, updating graphics drivers will invalidate the shader cache.
 
 .. rst-class:: classref-item-separator
 
@@ -5000,9 +4992,7 @@ void **full_barrier** **(** **)**
 
 :ref:`String<class_String>` **get_device_vendor_name** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the vendor of the video adapter (e.g. "NVIDIA Corporation"). Equivalent to :ref:`RenderingServer.get_video_adapter_vendor<class_RenderingServer_method_get_video_adapter_vendor>`. See also :ref:`get_device_name<class_RenderingDevice_method_get_device_name>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5014,9 +5004,7 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **get_driver_resource** **(** :ref:`DriverResource<enum_RenderingDevice_DriverResource>` resource, :ref:`RID<class_RID>` rid, :ref:`int<class_int>` index **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the unique identifier of the driver ``resource`` for the specified ``rid``. Some driver resource types ignore the specified ``rid`` (see :ref:`DriverResource<enum_RenderingDevice_DriverResource>` descriptions). ``index`` is always ignored but must be specified anyway.
 
 .. rst-class:: classref-item-separator
 
@@ -5028,9 +5016,7 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **get_frame_delay** **(** **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the frame count kept by the graphics API. Higher values result in higher input lag, but with more consistent throughput. For the main **RenderingDevice**, frames are cycled (usually 3 with triple-buffered V-Sync enabled). However, local **RenderingDevice**\ s only have 1 frame.
 
 .. rst-class:: classref-item-separator
 
@@ -5042,9 +5028,7 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **get_memory_usage** **(** :ref:`MemoryType<enum_RenderingDevice_MemoryType>` type **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the memory usage in bytes corresponding to the given ``type``. When using Vulkan, these statistics are calculated by `Vulkan Memory Allocator <https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -5056,9 +5040,9 @@ void **full_barrier** **(** **)**
 
 :ref:`RID<class_RID>` **index_array_create** **(** :ref:`RID<class_RID>` index_buffer, :ref:`int<class_int>` index_offset, :ref:`int<class_int>` index_count **)**
 
-.. container:: contribute
+Creates a new index array. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5070,9 +5054,9 @@ void **full_barrier** **(** **)**
 
 :ref:`RID<class_RID>` **index_buffer_create** **(** :ref:`int<class_int>` size_indices, :ref:`IndexBufferFormat<enum_RenderingDevice_IndexBufferFormat>` format, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray(), :ref:`bool<class_bool>` use_restart_indices=false **)**
 
-.. container:: contribute
+Creates a new index buffer. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5084,9 +5068,9 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **limit_get** **(** :ref:`Limit<enum_RenderingDevice_Limit>` limit **)** |const|
 
-.. container:: contribute
+Returns the value of the specified ``limit``. This limit varies depending on the current graphics hardware (and sometimes the driver version). If the given limit is exceeded, rendering errors will occur.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Limits for various graphics hardware can be found in the `Vulkan Hardware Database <https://vulkan.gpuinfo.org/>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -5098,9 +5082,9 @@ void **full_barrier** **(** **)**
 
 :ref:`RID<class_RID>` **render_pipeline_create** **(** :ref:`RID<class_RID>` shader, :ref:`int<class_int>` framebuffer_format, :ref:`int<class_int>` vertex_format, :ref:`RenderPrimitive<enum_RenderingDevice_RenderPrimitive>` primitive, :ref:`RDPipelineRasterizationState<class_RDPipelineRasterizationState>` rasterization_state, :ref:`RDPipelineMultisampleState<class_RDPipelineMultisampleState>` multisample_state, :ref:`RDPipelineDepthStencilState<class_RDPipelineDepthStencilState>` stencil_state, :ref:`RDPipelineColorBlendState<class_RDPipelineColorBlendState>` color_blend_state, :ref:`PipelineDynamicStateFlags<enum_RenderingDevice_PipelineDynamicStateFlags>` dynamic_state_flags=0, :ref:`int<class_int>` for_render_pass=0, :ref:`RDPipelineSpecializationConstant[]<class_RDPipelineSpecializationConstant>` specialization_constants=[] **)**
 
-.. container:: contribute
+Creates a new render pipeline. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5112,9 +5096,7 @@ void **full_barrier** **(** **)**
 
 :ref:`bool<class_bool>` **render_pipeline_is_valid** **(** :ref:`RID<class_RID>` render_pipeline **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the render pipeline specified by the ``render_pipeline`` RID is valid, ``false`` otherwise.
 
 .. rst-class:: classref-item-separator
 
@@ -5126,9 +5108,21 @@ void **full_barrier** **(** **)**
 
 :ref:`RID<class_RID>` **sampler_create** **(** :ref:`RDSamplerState<class_RDSamplerState>` state **)**
 
-.. container:: contribute
+Creates a new sampler. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_RenderingDevice_method_sampler_is_format_supported_for_filter:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **sampler_is_format_supported_for_filter** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format, :ref:`SamplerFilter<enum_RenderingDevice_SamplerFilter>` sampler_filter **)** |const|
+
+Returns ``true`` if implementation supports using a texture of ``format`` with the given ``sampler_filter``.
 
 .. rst-class:: classref-item-separator
 
@@ -5140,9 +5134,9 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **screen_get_framebuffer_format** **(** **)** |const|
 
-.. container:: contribute
+Returns the screen's framebuffer format.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>` has a format. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5154,9 +5148,9 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **screen_get_height** **(** :ref:`int<class_int>` screen=0 **)** |const|
 
-.. container:: contribute
+Returns the window height matching the graphics API context for the given window ID (in pixels). Despite the parameter being named ``screen``, this returns the *window* size. See also :ref:`screen_get_width<class_RenderingDevice_method_screen_get_width>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>` has a height. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5168,9 +5162,9 @@ void **full_barrier** **(** **)**
 
 :ref:`int<class_int>` **screen_get_width** **(** :ref:`int<class_int>` screen=0 **)** |const|
 
-.. container:: contribute
+Returns the window width matching the graphics API context for the given window ID (in pixels). Despite the parameter being named ``screen``, this returns the *window* size. See also :ref:`screen_get_height<class_RenderingDevice_method_screen_get_height>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Only the main **RenderingDevice** returned by :ref:`RenderingServer.get_rendering_device<class_RenderingServer_method_get_rendering_device>` has a width. If called on a local **RenderingDevice**, this method prints an error and returns :ref:`INVALID_ID<class_RenderingDevice_constant_INVALID_ID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5182,9 +5176,11 @@ void **full_barrier** **(** **)**
 
 void **set_resource_name** **(** :ref:`RID<class_RID>` id, :ref:`String<class_String>` name **)**
 
-.. container:: contribute
+Sets the resource name for ``id`` to ``name``. This is used for debugging with third-party tools such as `RenderDoc <https://renderdoc.org/>`__.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+The following types of resources can be named: texture, sampler, vertex buffer, index buffer, uniform buffer, texture buffer, storage buffer, uniform set buffer, shader, render pipeline and compute pipeline. Framebuffers cannot be named. Attempting to name an incompatible resource type will print an error.
+
+\ **Note:** Resource names are only set when the engine runs in verbose mode (:ref:`OS.is_stdout_verbose<class_OS_method_is_stdout_verbose>` = ``true``), or when using an engine build compiled with the ``dev_mode=yes`` SCons option. The graphics driver must also support the ``VK_EXT_DEBUG_UTILS_EXTENSION_NAME`` Vulkan extension for named resources to work.
 
 .. rst-class:: classref-item-separator
 
@@ -5196,9 +5192,9 @@ void **set_resource_name** **(** :ref:`RID<class_RID>` id, :ref:`String<class_St
 
 :ref:`PackedByteArray<class_PackedByteArray>` **shader_compile_binary_from_spirv** **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` spirv_data, :ref:`String<class_String>` name="" **)**
 
-.. container:: contribute
+Compiles a binary shader from ``spirv_data`` and returns the compiled binary data as a :ref:`PackedByteArray<class_PackedByteArray>`. This compiled shader is specific to the GPU model and driver version used; it will not work on different GPU models or even different driver versions. See also :ref:`shader_compile_spirv_from_source<class_RenderingDevice_method_shader_compile_spirv_from_source>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ ``name`` is an optional human-readable name that can be given to the compiled shader for organizational purposes.
 
 .. rst-class:: classref-item-separator
 
@@ -5210,9 +5206,9 @@ void **set_resource_name** **(** :ref:`RID<class_RID>` id, :ref:`String<class_St
 
 :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` **shader_compile_spirv_from_source** **(** :ref:`RDShaderSource<class_RDShaderSource>` shader_source, :ref:`bool<class_bool>` allow_cache=true **)**
 
-.. container:: contribute
+Compiles a SPIR-V from the shader source code in ``shader_source`` and returns the SPIR-V as a :ref:`RDShaderSPIRV<class_RDShaderSPIRV>`. This intermediate language shader is portable across different GPU models and driver versions, but cannot be run directly by GPUs until compiled into a binary shader using :ref:`shader_compile_binary_from_spirv<class_RenderingDevice_method_shader_compile_binary_from_spirv>`.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``allow_cache`` is ``true``, make use of the shader cache generated by Godot. This avoids a potentially lengthy shader compilation step if the shader is already in cache. If ``allow_cache`` is ``false``, Godot's shader cache is ignored and the shader will always be recompiled.
 
 .. rst-class:: classref-item-separator
 
@@ -5224,9 +5220,9 @@ void **set_resource_name** **(** :ref:`RID<class_RID>` id, :ref:`String<class_St
 
 :ref:`RID<class_RID>` **shader_create_from_bytecode** **(** :ref:`PackedByteArray<class_PackedByteArray>` binary_data **)**
 
-.. container:: contribute
+Creates a new shader instance from a binary compiled shader. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method. See also :ref:`shader_compile_binary_from_spirv<class_RenderingDevice_method_shader_compile_binary_from_spirv>` and :ref:`shader_create_from_spirv<class_RenderingDevice_method_shader_create_from_spirv>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5238,9 +5234,9 @@ void **set_resource_name** **(** :ref:`RID<class_RID>` id, :ref:`String<class_St
 
 :ref:`RID<class_RID>` **shader_create_from_spirv** **(** :ref:`RDShaderSPIRV<class_RDShaderSPIRV>` spirv_data, :ref:`String<class_String>` name="" **)**
 
-.. container:: contribute
+Creates a new shader instance from SPIR-V intermediate code. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method. See also :ref:`shader_compile_spirv_from_source<class_RenderingDevice_method_shader_compile_spirv_from_source>` and :ref:`shader_create_from_bytecode<class_RenderingDevice_method_shader_create_from_bytecode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5266,9 +5262,9 @@ void **set_resource_name** **(** :ref:`RID<class_RID>` id, :ref:`String<class_St
 
 :ref:`RID<class_RID>` **storage_buffer_create** **(** :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray(), :ref:`StorageBufferUsage<enum_RenderingDevice_StorageBufferUsage>` usage=0 **)**
 
-.. container:: contribute
+Creates a `storage buffer <https://vkguide.dev/docs/chapter-4/storage_buffers/>`__ with the specified ``data`` and ``usage``. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5280,9 +5276,9 @@ void **set_resource_name** **(** :ref:`RID<class_RID>` id, :ref:`String<class_St
 
 void **submit** **(** **)**
 
-.. container:: contribute
+Pushes the frame setup and draw command buffers then marks the local device as currently processing (which allows calling :ref:`sync<class_RenderingDevice_method_sync>`).
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Only available in local RenderingDevices.
 
 .. rst-class:: classref-item-separator
 
@@ -5294,9 +5290,11 @@ void **submit** **(** **)**
 
 void **sync** **(** **)**
 
-.. container:: contribute
+Forces a synchronization between the CPU and GPU, which may be required in certain cases. Only call this when needed, as CPU-GPU synchronization has a performance cost.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Only available in local RenderingDevices.
+
+\ **Note:** :ref:`sync<class_RenderingDevice_method_sync>` can only be called after a :ref:`submit<class_RenderingDevice_method_submit>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5308,9 +5306,9 @@ void **sync** **(** **)**
 
 :ref:`RID<class_RID>` **texture_buffer_create** **(** :ref:`int<class_int>` size_bytes, :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray() **)**
 
-.. container:: contribute
+Creates a new texture buffer. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5322,9 +5320,9 @@ void **sync** **(** **)**
 
 :ref:`Error<enum_@GlobalScope_Error>` **texture_clear** **(** :ref:`RID<class_RID>` texture, :ref:`Color<class_Color>` color, :ref:`int<class_int>` base_mipmap, :ref:`int<class_int>` mipmap_count, :ref:`int<class_int>` base_layer, :ref:`int<class_int>` layer_count, :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` post_barrier=7 **)**
 
-.. container:: contribute
+Clears the specified ``texture`` by replacing all of its pixels with the specified ``color``. ``base_mipmap`` and ``mipmap_count`` determine which mipmaps of the texture are affected by this clear operation, while ``base_layer`` and ``layer_count`` determine which layers of a 3D texture (or texture array) are affected by this clear operation. For 2D textures (which only have one layer by design), ``base_layer`` and ``layer_count`` must both be ``0``.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** ``texture`` can't be cleared while a draw list that uses it as part of a framebuffer is being created. Ensure the draw list is finalized (and that the color/depth texture using it is not set to :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>`) to clear this texture.
 
 .. rst-class:: classref-item-separator
 
@@ -5336,9 +5334,17 @@ void **sync** **(** **)**
 
 :ref:`Error<enum_@GlobalScope_Error>` **texture_copy** **(** :ref:`RID<class_RID>` from_texture, :ref:`RID<class_RID>` to_texture, :ref:`Vector3<class_Vector3>` from_pos, :ref:`Vector3<class_Vector3>` to_pos, :ref:`Vector3<class_Vector3>` size, :ref:`int<class_int>` src_mipmap, :ref:`int<class_int>` dst_mipmap, :ref:`int<class_int>` src_layer, :ref:`int<class_int>` dst_layer, :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` post_barrier=7 **)**
 
-.. container:: contribute
+Copies the ``from_texture`` to ``to_texture`` with the specified ``from_pos``, ``to_pos`` and ``size`` coordinates. The Z axis of the ``from_pos``, ``to_pos`` and ``size`` must be ``0`` for 2-dimensional textures. Source and destination mipmaps/layers must also be specified, with these parameters being ``0`` for textures without mipmaps or single-layer textures. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the texture copy was successful or :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` otherwise.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** ``from_texture`` texture can't be copied while a draw list that uses it as part of a framebuffer is being created. Ensure the draw list is finalized (and that the color/depth texture using it is not set to :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>`) to copy this texture.
+
+\ **Note:** ``from_texture`` texture requires the :ref:`TEXTURE_USAGE_CAN_COPY_FROM_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_FROM_BIT>` to be retrieved.
+
+\ **Note:** ``to_texture`` can't be copied while a draw list that uses it as part of a framebuffer is being created. Ensure the draw list is finalized (and that the color/depth texture using it is not set to :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>`) to copy this texture.
+
+\ **Note:** ``to_texture`` requires the :ref:`TEXTURE_USAGE_CAN_COPY_TO_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_TO_BIT>` to be retrieved.
+
+\ **Note:** ``from_texture`` and ``to_texture`` must be of the same type (color or depth).
 
 .. rst-class:: classref-item-separator
 
@@ -5350,9 +5356,11 @@ void **sync** **(** **)**
 
 :ref:`RID<class_RID>` **texture_create** **(** :ref:`RDTextureFormat<class_RDTextureFormat>` format, :ref:`RDTextureView<class_RDTextureView>` view, :ref:`PackedByteArray[]<class_PackedByteArray>` data=[] **)**
 
-.. container:: contribute
+Creates a new texture. It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
+
+\ **Note:** Not to be confused with :ref:`RenderingServer.texture_2d_create<class_RenderingServer_method_texture_2d_create>`, which creates the Godot-specific :ref:`Texture2D<class_Texture2D>` resource as opposed to the graphics API's own texture type.
 
 .. rst-class:: classref-item-separator
 
@@ -5364,9 +5372,7 @@ void **sync** **(** **)**
 
 :ref:`RID<class_RID>` **texture_create_shared** **(** :ref:`RDTextureView<class_RDTextureView>` view, :ref:`RID<class_RID>` with_texture **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a shared texture using the specified ``view`` and the texture information from ``with_texture``.
 
 .. rst-class:: classref-item-separator
 
@@ -5378,9 +5384,11 @@ void **sync** **(** **)**
 
 :ref:`RID<class_RID>` **texture_create_shared_from_slice** **(** :ref:`RDTextureView<class_RDTextureView>` view, :ref:`RID<class_RID>` with_texture, :ref:`int<class_int>` layer, :ref:`int<class_int>` mipmap, :ref:`int<class_int>` mipmaps=1, :ref:`TextureSliceType<enum_RenderingDevice_TextureSliceType>` slice_type=0 **)**
 
-.. container:: contribute
+Creates a shared texture using the specified ``view`` and the texture information from ``with_texture``'s ``layer`` and ``mipmap``. The number of included mipmaps from the original texture can be controlled using the ``mipmaps`` parameter. Only relevant for textures with multiple layers, such as 3D textures, texture arrays and cubemaps. For single-layer textures, use :ref:`texture_create_shared<class_RenderingDevice_method_texture_create_shared>`\ 
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+For 2D textures (which only have one layer), ``layer`` must be ``0``.
+
+\ **Note:** Layer slicing is only supported for 2D texture arrays, not 3D textures or cubemaps.
 
 .. rst-class:: classref-item-separator
 
@@ -5392,9 +5400,11 @@ void **sync** **(** **)**
 
 :ref:`PackedByteArray<class_PackedByteArray>` **texture_get_data** **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` layer **)**
 
-.. container:: contribute
+Returns the ``texture`` data for the specified ``layer`` as raw binary data. For 2D textures (which only have one layer), ``layer`` must be ``0``.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** ``texture`` can't be retrieved while a draw list that uses it as part of a framebuffer is being created. Ensure the draw list is finalized (and that the color/depth texture using it is not set to :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>`) to retrieve this texture. Otherwise, an error is printed and a empty :ref:`PackedByteArray<class_PackedByteArray>` is returned.
+
+\ **Note:** ``texture`` requires the :ref:`TEXTURE_USAGE_CAN_COPY_FROM_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_FROM_BIT>` to be retrieved. Otherwise, an error is printed and a empty :ref:`PackedByteArray<class_PackedByteArray>` is returned.
 
 .. rst-class:: classref-item-separator
 
@@ -5406,9 +5416,7 @@ void **sync** **(** **)**
 
 :ref:`bool<class_bool>` **texture_is_format_supported_for_usage** **(** :ref:`DataFormat<enum_RenderingDevice_DataFormat>` format, :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` usage_flags **)** |const|
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the specified ``format`` is supported for the given ``usage_flags``, ``false`` otherwise.
 
 .. rst-class:: classref-item-separator
 
@@ -5420,9 +5428,7 @@ void **sync** **(** **)**
 
 :ref:`bool<class_bool>` **texture_is_shared** **(** :ref:`RID<class_RID>` texture **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the ``texture`` is shared, ``false`` otherwise. See :ref:`RDTextureView<class_RDTextureView>`.
 
 .. rst-class:: classref-item-separator
 
@@ -5434,9 +5440,7 @@ void **sync** **(** **)**
 
 :ref:`bool<class_bool>` **texture_is_valid** **(** :ref:`RID<class_RID>` texture **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns ``true`` if the ``texture`` is valid, ``false`` otherwise.
 
 .. rst-class:: classref-item-separator
 
@@ -5448,9 +5452,21 @@ void **sync** **(** **)**
 
 :ref:`Error<enum_@GlobalScope_Error>` **texture_resolve_multisample** **(** :ref:`RID<class_RID>` from_texture, :ref:`RID<class_RID>` to_texture, :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` post_barrier=7 **)**
 
-.. container:: contribute
+Resolves the ``from_texture`` texture onto ``to_texture`` with multisample antialiasing enabled. This must be used when rendering a framebuffer for MSAA to work. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if successful, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` otherwise.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** ``from_texture`` and ``to_texture`` textures must have the same dimension, format and type (color or depth).
+
+\ **Note:** ``from_texture`` can't be copied while a draw list that uses it as part of a framebuffer is being created. Ensure the draw list is finalized (and that the color/depth texture using it is not set to :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>`) to resolve this texture.
+
+\ **Note:** ``from_texture`` requires the :ref:`TEXTURE_USAGE_CAN_COPY_FROM_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_FROM_BIT>` to be retrieved.
+
+\ **Note:** ``from_texture`` must be multisampled and must also be 2D (or a slice of a 3D/cubemap texture).
+
+\ **Note:** ``to_texture`` can't be copied while a draw list that uses it as part of a framebuffer is being created. Ensure the draw list is finalized (and that the color/depth texture using it is not set to :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>`) to resolve this texture.
+
+\ **Note:** ``to_texture`` texture requires the :ref:`TEXTURE_USAGE_CAN_COPY_TO_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_CAN_COPY_TO_BIT>` to be retrieved.
+
+\ **Note:** ``to_texture`` texture must **not** be multisampled and must also be 2D (or a slice of a 3D/cubemap texture).
 
 .. rst-class:: classref-item-separator
 
@@ -5462,9 +5478,13 @@ void **sync** **(** **)**
 
 :ref:`Error<enum_@GlobalScope_Error>` **texture_update** **(** :ref:`RID<class_RID>` texture, :ref:`int<class_int>` layer, :ref:`PackedByteArray<class_PackedByteArray>` data, :ref:`BarrierMask<enum_RenderingDevice_BarrierMask>` post_barrier=7 **)**
 
-.. container:: contribute
+Updates texture data with new data, replacing the previous data in place. The updated texture data must have the same dimensions and format. For 2D textures (which only have one layer), ``layer`` must be ``0``. Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the update was successful, :ref:`@GlobalScope.ERR_INVALID_PARAMETER<class_@GlobalScope_constant_ERR_INVALID_PARAMETER>` otherwise.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+\ **Note:** Updating textures is forbidden during creation of a draw or compute list.
+
+\ **Note:** The existing ``texture`` can't be updated while a draw list that uses it as part of a framebuffer is being created. Ensure the draw list is finalized (and that the color/depth texture using it is not set to :ref:`FINAL_ACTION_CONTINUE<class_RenderingDevice_constant_FINAL_ACTION_CONTINUE>`) to update this texture.
+
+\ **Note:** The existing ``texture`` requires the :ref:`TEXTURE_USAGE_CAN_UPDATE_BIT<class_RenderingDevice_constant_TEXTURE_USAGE_CAN_UPDATE_BIT>` to be updatable.
 
 .. rst-class:: classref-item-separator
 
@@ -5476,9 +5496,9 @@ void **sync** **(** **)**
 
 :ref:`RID<class_RID>` **uniform_buffer_create** **(** :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray() **)**
 
-.. container:: contribute
+It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5490,9 +5510,9 @@ void **sync** **(** **)**
 
 :ref:`RID<class_RID>` **uniform_set_create** **(** :ref:`RDUniform[]<class_RDUniform>` uniforms, :ref:`RID<class_RID>` shader, :ref:`int<class_int>` shader_set **)**
 
-.. container:: contribute
+It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5530,9 +5550,9 @@ Creates a vertex array based on the specified buffers. Optionally, ``offsets`` (
 
 :ref:`RID<class_RID>` **vertex_buffer_create** **(** :ref:`int<class_int>` size_bytes, :ref:`PackedByteArray<class_PackedByteArray>` data=PackedByteArray(), :ref:`bool<class_bool>` use_as_storage=false **)**
 
-.. container:: contribute
+It can be accessed with the RID that is returned.
 
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Once finished with your RID, you will want to free the RID using the RenderingDevice's :ref:`free_rid<class_RenderingDevice_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 
@@ -5544,9 +5564,7 @@ Creates a vertex array based on the specified buffers. Optionally, ``offsets`` (
 
 :ref:`int<class_int>` **vertex_format_create** **(** :ref:`RDVertexAttribute[]<class_RDVertexAttribute>` vertex_descriptions **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Creates a new vertex format with the specified ``vertex_descriptions``. Returns a unique vertex format ID corresponding to the newly created vertex format.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

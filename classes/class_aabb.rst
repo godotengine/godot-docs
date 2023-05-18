@@ -502,7 +502,7 @@ Returns ``true`` if the **AABB** is on both sides of a plane.
 
 :ref:`Variant<class_Variant>` **intersects_ray** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` dir **)** |const|
 
-Returns ``true`` if the given ray intersects with this **AABB**. Ray length is infinite.
+Returns the point of intersection of the given ray with this **AABB** or ``null`` if there is no intersection. Ray length is infinite.
 
 .. rst-class:: classref-item-separator
 
@@ -514,7 +514,7 @@ Returns ``true`` if the given ray intersects with this **AABB**. Ray length is i
 
 :ref:`Variant<class_Variant>` **intersects_segment** **(** :ref:`Vector3<class_Vector3>` from, :ref:`Vector3<class_Vector3>` to **)** |const|
 
-Returns ``true`` if the **AABB** intersects the line segment between ``from`` and ``to``.
+Returns the point of intersection between ``from`` and ``to`` with this **AABB** or ``null`` if there is no intersection.
 
 .. rst-class:: classref-item-separator
 
@@ -567,7 +567,7 @@ Operator Descriptions
 
 :ref:`bool<class_bool>` **operator !=** **(** :ref:`AABB<class_AABB>` right **)**
 
-Returns ``true`` if the vectors are not equal.
+Returns ``true`` if the AABBs are not equal.
 
 \ **Note:** Due to floating-point precision errors, consider using :ref:`is_equal_approx<class_AABB_method_is_equal_approx>` instead, which is more reliable.
 

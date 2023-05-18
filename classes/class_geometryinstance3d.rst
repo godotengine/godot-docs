@@ -285,7 +285,7 @@ The selected shadow casting flag. See :ref:`ShadowCastingSetting<enum_GeometryIn
 - void **set_custom_aabb** **(** :ref:`AABB<class_AABB>` value **)**
 - :ref:`AABB<class_AABB>` **get_custom_aabb** **(** **)**
 
-Overrides the bounding box of this node with a custom one. This can be used to avoid the expensive :ref:`AABB<class_AABB>` recalculation that happens when a skeleton is used with a :ref:`MeshInstance3D<class_MeshInstance3D>` or to have fine control over the :ref:`MeshInstance3D<class_MeshInstance3D>`'s bounding box. To remove this, set value to an :ref:`AABB<class_AABB>` with all fields set to zero.
+Overrides the bounding box of this node with a custom one. This can be used to avoid the expensive :ref:`AABB<class_AABB>` recalculation that happens when a skeleton is used with a :ref:`MeshInstance3D<class_MeshInstance3D>` or to have fine control over the :ref:`MeshInstance3D<class_MeshInstance3D>`'s bounding box. To use the default AABB, set value to an :ref:`AABB<class_AABB>` with all fields set to ``0.0``. To avoid frustum culling, set :ref:`custom_aabb<class_GeometryInstance3D_property_custom_aabb>` to a very large AABB that covers your entire game world such as ``AABB(-10000, -10000, -10000, 20000, 20000, 20000)``. To disable all forms of culling (including occlusion culling), call :ref:`RenderingServer.instance_set_ignore_culling<class_RenderingServer_method_instance_set_ignore_culling>` on the **GeometryInstance3D**'s :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 
@@ -356,6 +356,8 @@ The global illumination mode to use for the whole geometry. To avoid inconsisten
 - :ref:`bool<class_bool>` **is_ignoring_occlusion_culling** **(** **)**
 
 If ``true``, disables occlusion culling for this instance. Useful for gizmos that must be rendered even when occlusion culling is in use.
+
+\ **Note:** :ref:`ignore_occlusion_culling<class_GeometryInstance3D_property_ignore_occlusion_culling>` does not affect frustum culling (which is what happens when an object is not visible given the camera's angle). To avoid frustum culling, set :ref:`custom_aabb<class_GeometryInstance3D_property_custom_aabb>` to a very large AABB that covers your entire game world such as ``AABB(-10000, -10000, -10000, 20000, 20000, 20000)``.
 
 .. rst-class:: classref-item-separator
 
@@ -469,7 +471,7 @@ Starting distance from which the GeometryInstance3D will be visible, taking :ref
 
 Margin for the :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` threshold. The GeometryInstance3D will only change its visibility state when it goes over or under the :ref:`visibility_range_begin<class_GeometryInstance3D_property_visibility_range_begin>` threshold by this amount.
 
-If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, this acts as an hysteresis distance. If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_SELF<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF>` or :ref:`VISIBILITY_RANGE_FADE_DEPENDENCIES<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES>`, this acts as a fade transition distance and must be set to a value greater than ``0.0`` for the effect to be noticeable.
+If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, this acts as a hysteresis distance. If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_SELF<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF>` or :ref:`VISIBILITY_RANGE_FADE_DEPENDENCIES<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES>`, this acts as a fade transition distance and must be set to a value greater than ``0.0`` for the effect to be noticeable.
 
 .. rst-class:: classref-item-separator
 
@@ -505,7 +507,7 @@ Distance from which the GeometryInstance3D will be hidden, taking :ref:`visibili
 
 Margin for the :ref:`visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>` threshold. The GeometryInstance3D will only change its visibility state when it goes over or under the :ref:`visibility_range_end<class_GeometryInstance3D_property_visibility_range_end>` threshold by this amount.
 
-If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, this acts as an hysteresis distance. If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_SELF<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF>` or :ref:`VISIBILITY_RANGE_FADE_DEPENDENCIES<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES>`, this acts as a fade transition distance and must be set to a value greater than ``0.0`` for the effect to be noticeable.
+If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_DISABLED<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DISABLED>`, this acts as a hysteresis distance. If :ref:`visibility_range_fade_mode<class_GeometryInstance3D_property_visibility_range_fade_mode>` is :ref:`VISIBILITY_RANGE_FADE_SELF<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_SELF>` or :ref:`VISIBILITY_RANGE_FADE_DEPENDENCIES<class_GeometryInstance3D_constant_VISIBILITY_RANGE_FADE_DEPENDENCIES>`, this acts as a fade transition distance and must be set to a value greater than ``0.0`` for the effect to be noticeable.
 
 .. rst-class:: classref-item-separator
 

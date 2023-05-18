@@ -141,9 +141,9 @@ Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accep
 
 \ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__\ 
 
-\ **Note:** All **Tween**\ s will automatically start by default. To prevent a **Tween** from autostarting, you can call :ref:`stop<class_Tween_method_stop>` immediately after it is created.
+\ **Note:** Tweens are not designed to be re-used and trying to do so results in an undefined behavior. Create a new Tween for each animation and every time you replay an animation from start. Keep in mind that Tweens start immediately, so only create a Tween when you want to start animating.
 
-\ **Note:** **Tween**\ s are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+\ **Note:** Tweens are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
 
 .. rst-class:: classref-reftable-group
 
@@ -159,6 +159,8 @@ Methods
    | :ref:`Tween<class_Tween>`                     | :ref:`chain<class_Tween_method_chain>` **(** **)**                                                                                                                                                                                                                                                                                                                  |
    +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                       | :ref:`custom_step<class_Tween_method_custom_step>` **(** :ref:`float<class_float>` delta **)**                                                                                                                                                                                                                                                                      |
+   +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                         | :ref:`get_loops_left<class_Tween_method_get_loops_left>` **(** **)** |const|                                                                                                                                                                                                                                                                                        |
    +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                     | :ref:`get_total_elapsed_time<class_Tween_method_get_total_elapsed_time>` **(** **)** |const|                                                                                                                                                                                                                                                                        |
    +-----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -217,8 +219,6 @@ Signals
 **finished** **(** **)**
 
 Emitted when the **Tween** has finished all tweening. Never emitted when the **Tween** is set to infinite looping (see :ref:`set_loops<class_Tween_method_set_loops>`).
-
-\ **Note:** The **Tween** is removed (invalidated) in the next processing frame after this signal is emitted. Calling :ref:`stop<class_Tween_method_stop>` inside the signal callback will prevent the **Tween** from being removed.
 
 .. rst-class:: classref-item-separator
 
@@ -513,7 +513,17 @@ Processes the **Tween** by the given ``delta`` value, in seconds. This is mostly
 
 Returns ``true`` if the **Tween** still has :ref:`Tweener<class_Tweener>`\ s that haven't finished.
 
-\ **Note:** The **Tween** will become invalid in the next processing frame after its animation finishes. Calling :ref:`stop<class_Tween_method_stop>` after performing :ref:`custom_step<class_Tween_method_custom_step>` instead keeps and resets the **Tween**.
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Tween_method_get_loops_left:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_loops_left** **(** **)** |const|
+
+Returns the number of remaining loops for this **Tween** (see :ref:`set_loops<class_Tween_method_set_loops>`). A return value of ``-1`` indicates an infinitely looping **Tween**, and a return value of ``0`` indicates that the **Tween** has already finished.
 
 .. rst-class:: classref-item-separator
 
