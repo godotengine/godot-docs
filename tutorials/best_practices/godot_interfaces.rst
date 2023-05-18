@@ -478,7 +478,7 @@ accesses:
 
     func my_method():
         if fn:
-            fn.call_func()
+            fn.call()
 
     # parent.gd
     extends Node
@@ -486,7 +486,7 @@ accesses:
     @onready var child = $Child
 
     func _ready():
-        child.fn = funcref(self, "print_me")
+        child.fn = print_me
         child.my_method()
 
     func print_me():
