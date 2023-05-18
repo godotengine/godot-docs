@@ -89,7 +89,7 @@ other options by default and click the Create button to create the script.
 
 .. image:: img/scripting_first_script_attach_node_script.webp
 
-The Script workspace should appear with your new ``Sprite2D.gd`` file open and
+The Script workspace should appear with your new ``sprite_2d.gd`` file open and
 the following line of code:
 
 .. tabs::
@@ -305,7 +305,7 @@ Our node currently moves by itself. In the next part
 Complete script
 ---------------
 
-Here is the complete ``Sprite2D.gd`` file for reference.
+Here is the complete ``sprite_2d.gd`` file for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

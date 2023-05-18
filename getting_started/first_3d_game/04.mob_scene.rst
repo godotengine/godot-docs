@@ -9,7 +9,7 @@ In this part, you're going to code the monsters, which we'll call mobs. In the
 next lesson, we'll spawn them randomly around the playable area.
 
 Let's design the monsters themselves in a new scene. The node structure is going
-to be similar to the ``Player.tscn`` scene.
+to be similar to the ``player.tscn`` scene.
 
 Create a scene with, once again, a :ref:`CharacterBody3D <class_CharacterBody3D>` node as its root. Name it
 ``Mob``. Add a child node :ref:`Node3D <class_Node3D>`, name it ``Pivot``. And drag and drop
@@ -93,7 +93,7 @@ Coding the mob's movement
 
 Let's implement the monster's motion. We're going to do this in two steps.
 First, we'll write a script on the ``Mob`` that defines a function to initialize
-the monster. We'll then code the randomized spawn mechanism in the ``Main.tscn`` scene
+the monster. We'll then code the randomized spawn mechanism in the ``main.tscn`` scene
 and call the function from there.
 
 Attach a script to the ``Mob``.

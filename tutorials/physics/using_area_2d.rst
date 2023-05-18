@@ -73,7 +73,7 @@ use ``area_entered``. However, let's assume our player is a ``CharacterBody2D``
 
     extends Area2D
 
-    func _on_Coin_body_entered(body):
+    func _on_coin_body_entered(body):
         queue_free()
 
  .. code-tab:: csharp

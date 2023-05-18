@@ -11,7 +11,7 @@ Listening to player input
 
 Building upon the previous lesson :ref:`doc_scripting_first_script`, let's look
 at another important feature of any game: giving control to the player.
-To add this, we need to modify our ``Sprite2D.gd`` code.
+To add this, we need to modify our ``sprite_2d.gd`` code.
 
 .. image:: img/scripting_first_script_moving_with_input.gif
 
@@ -114,7 +114,7 @@ causing the sprite to move forward.
 Complete script
 ---------------
 
-Here is the complete ``Sprite2D.gd`` file for reference.
+Here is the complete ``sprite_2d.gd`` file for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript

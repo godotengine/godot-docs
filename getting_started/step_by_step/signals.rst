@@ -184,7 +184,7 @@ following code, which we saw two lessons ago:
         Position += velocity * (float)delta;
     }
 
-Your complete ``Sprite2D.gd`` code should look like the following.
+Your complete ``sprite_2d.gd`` code should look like the following.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -313,7 +313,7 @@ which the script is attached. When the Timer emits ``timeout``, we want to call
 the function ``_on_timer_timeout()``, that we need to define. Let's add it at the
 bottom of our script and use it to toggle our sprite's visibility.
 
-.. note:: By convention, we name these callback methods in GDScript as 
+.. note:: By convention, we name these callback methods in GDScript as
           "_on_node_name_signal_name" and in C# as "OnNodeNameSignalName".
           Here, it'll be "_on_timer_timeout" for GDScript and OnTimerTimeout() for C#.
 
@@ -341,7 +341,7 @@ Complete script
 ---------------
 
 That's it for our little moving and blinking Godot icon demo!
-Here is the complete ``Sprite2D.gd`` file for reference.
+Here is the complete ``sprite_2d.gd`` file for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -354,7 +354,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     func _ready():
         var timer = get_node("Timer")
-        timer.timeout.connect(_on_Timer_timeout)
+        timer.timeout.connect(_on_timer_timeout)
 
 
     func _process(delta):
@@ -367,7 +367,7 @@ Here is the complete ``Sprite2D.gd`` file for reference.
         set_process(not is_processing())
 
 
-    func _on_Timer_timeout():
+    func _on_timer_timeout():
         visible = not visible
 
  .. code-tab:: csharp C#

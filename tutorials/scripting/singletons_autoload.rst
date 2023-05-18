@@ -123,10 +123,10 @@ To begin, download the template from here:
 `singleton_autoload_starter.zip <https://github.com/godotengine/godot-docs-project-starters/releases/download/latest-4.x/singleton_autoload_starter.zip>`_
 and open it in Godot.
 
-The project contains two scenes: ``Scene1.tscn`` and ``Scene2.tscn``. Each
+The project contains two scenes: ``scene_1.tscn`` and ``scene_2.tscn``. Each
 scene contains a label displaying the scene name and a button with its
 ``pressed()`` signal connected. When you run the project, it starts in
-``Scene1.tscn``. However, pressing the button does nothing.
+``scene_1.tscn``. However, pressing the button does nothing.
 
 Creating the script
 ~~~~~~~~~~~~~~~~~~~~~
@@ -257,8 +257,8 @@ Finally, we need to fill the empty callback functions in the two scenes:
 
     # Add to 'Scene1.gd'.
 
-    func _on_Button_pressed():
-        Global.goto_scene("res://Scene2.tscn")
+    func _on_button_pressed():
+        Global.goto_scene("res://scene_2.tscn")
 
  .. code-tab:: csharp
 
@@ -267,7 +267,7 @@ Finally, we need to fill the empty callback functions in the two scenes:
     public void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
-        global.GotoScene("res://Scene2.tscn");
+        global.GotoScene("res://scene_2.tscn");
     }
 
 and
@@ -277,8 +277,8 @@ and
 
     # Add to 'Scene2.gd'.
 
-    func _on_Button_pressed():
-        Global.goto_scene("res://Scene1.tscn")
+    func _on_button_pressed():
+        Global.goto_scene("res://scene_1.tscn")
 
  .. code-tab:: csharp
 
@@ -287,7 +287,7 @@ and
     public void OnButtonPressed()
     {
         var global = GetNode<Global>("/root/Global");
-        global.GotoScene("res://Scene1.tscn");
+        global.GotoScene("res://scene_1.tscn");
     }
 
 Run the project and test that you can switch between scenes by pressing
