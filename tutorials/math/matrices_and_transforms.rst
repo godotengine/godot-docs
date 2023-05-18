@@ -563,21 +563,21 @@ transformations:
     // The transform is the identity transform.
 
 Transforming a position by a transform and its inverse results in the
-same position (same for "xform_inv"):
+same position:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
     var ti = transform.affine_inverse()
-    position = transform.xform(position)
-    position = ti.xform(position)
+    position = transform * position
+    position = ti * position
     # The position is the same as before.
 
  .. code-tab:: csharp
 
     Transform2D ti = Transform.AffineInverse();
-    Position = Transform.Xform(Position);
-    Position = ti.Xform(Position);
+    Position = Transform * Position;
+    Position = ti * Position;
     // The position is the same as before.
 
 How does it all work in 3D?

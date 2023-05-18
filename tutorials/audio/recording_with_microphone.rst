@@ -82,7 +82,7 @@ and :ref:`set_recording_active() <class_AudioEffectRecord_method_set_recording_a
 
   .. code-tab:: csharp
 
-    public void OnRecordButtonPressed()
+    private void OnRecordButtonPressed()
     {
         if (_effect.IsRecordingActive())
         {
@@ -126,7 +126,7 @@ the recorded stream can be stored into the ``recording`` variable by calling
 
   .. code-tab:: csharp
 
-    public void OnPlayButtonPressed()
+    private void OnPlayButtonPressed()
     {
         GD.Print(_recording);
         GD.Print(_recording.Format);
@@ -152,7 +152,7 @@ To playback the recording, you assign the recording as the stream of the
 
   .. code-tab:: csharp
 
-    public void OnSavebuttonPressed()
+    private void OnSaveButtonPressed()
     {
         string savePath = GetNode<LineEdit>("SaveButton/Filename").Text;
         _recording.SaveToWav(savePath);

@@ -80,7 +80,7 @@ coordinates, just multiply in the following order:
 
  .. code-tab:: csharp
 
-    var screenCord = (GetViewportTransform() * GetGlobalTransform()).Xform(localPos);
+    var screenCord = GetViewportTransform() * (GetGlobalTransform() * localPos);
 
 Keep in mind, however, that it is generally not desired to work with
 screen coordinates. The recommended approach is to simply work in Canvas

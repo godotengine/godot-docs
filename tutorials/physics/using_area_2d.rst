@@ -82,8 +82,7 @@ use ``area_entered``. However, let's assume our player is a ``CharacterBody2D``
 
     public partial class Coin : Area2D
     {
-
-        public void OnCoinBodyEntered(PhysicsBody2D body)
+        private void OnCoinBodyEntered(PhysicsBody2D body)
         {
             QueueFree();
         }

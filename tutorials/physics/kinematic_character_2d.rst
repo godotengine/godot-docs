@@ -65,9 +65,9 @@ or lose precision if the frame rate is too high or too low.
 
     using Godot;
 
-    public partial class PhysicsScript : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
         }
     }
@@ -129,9 +129,9 @@ So, let's move our sprite downwards until it hits the floor:
 
     using Godot;
 
-    public partial class PhysicsScript : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
             // Move down 1 pixel per physics frame
             MoveAndCollide(new Vector2(0, 1));
@@ -161,15 +161,17 @@ little more like a regular game character:
 
     using Godot;
 
-    public partial class PhysicsScript : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        const float gravity = 200.0f;
+        private const float Gravity = 200.0f;
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            velocity.y += delta * gravity;
+            var velocity = Velocity;
+            velocity.Y += (float)delta * Gravity;
+            Velocity = velocity;
 
-            var motion = velocity * delta;
+            var motion = velocity * (float)delta;
             MoveAndCollide(motion);
         }
     }
@@ -205,30 +207,34 @@ This adds basic support for walking when pressing left and right:
 
     using Godot;
 
-    public partial class PhysicsScript : CharacterBody2D
+    public partial class MyCharacterBody2D : CharacterBody2D
     {
-        const float gravity = 200.0f;
-        const int walkSpeed = 200;
+        private const float Gravity = 200.0f;
+        private const int WalkSpeed = 200;
 
-        public override void _PhysicsProcess(float delta)
+        public override void _PhysicsProcess(double delta)
         {
-            velocity.y += delta * gravity;
+            var velocity = Velocity;
+
+            velocity.Y += (float)delta * Gravity;
 
             if (Input.IsActionPressed("ui_left"))
             {
-                velocity.x = -walkSpeed;
+                velocity.X = -WalkSpeed;
             }
             else if (Input.IsActionPressed("ui_right"))
             {
-                velocity.x = walkSpeed;
+                velocity.X = WalkSpeed;
             }
             else
             {
-                velocity.x = 0;
+                velocity.X = 0;
             }
 
+            Velocity = velocity;
+
             // "MoveAndSlide" already takes delta time into account.
-            MoveAndSlide(velocity, new Vector2(0, -1));
+            MoveAndSlide();
         }
     }
 
