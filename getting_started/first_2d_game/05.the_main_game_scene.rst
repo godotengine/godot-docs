@@ -211,8 +211,8 @@ double-click the ``hit`` signal in the list (or right-click it and select
 "Connect..."). This will open the signal connection dialog. We want to make a
 new function named ``game_over``, which will handle what needs to happen when a
 game ends. Type "game_over" in the "Receiver Method" box at the bottom of the
-signal connection dialog and click "Connect". You are aiming to have the ``hit``` signal
-emitted from ``Player`` and handled in the ``Master`` script. Add the following code
+signal connection dialog and click "Connect". You are aiming to have the ``hit`` signal
+emitted from ``Player`` and handled in the ``Main`` script. Add the following code
 to the new function, as well as a ``new_game`` function that will set
 everything up for a new game:
 
