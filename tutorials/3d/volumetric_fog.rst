@@ -217,6 +217,40 @@ the following properties in FogMaterial:
   You can import any image as a 3D texture by
   :ref:`changing its import type in the Import dock <doc_importing_images_changing_import_type>`.
 
+Using 3D noise density textures
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Since Godot 4.1, there is a NoiseTexture3D resource that can be used to
+procedurally generate 3D noise. This is well-suited to FogMaterial density
+textures, which can result in more detailed fog effects:
+
+.. figure:: img/volumetric_fog_fog_material_density_texture.webp
+   :alt: FogMaterial comparison (without and with density texture)
+
+   Screenshot taken with **Volume Size** project setting set to 192 to make
+   high-frequency detail more visible in the fog.
+
+To do so, select the **Density Texture** property and choose **New NoiseTexture3D**.
+Edit this NoiseTexture3D by clicking it, then click **Noise** at the bottom of the
+NoiseTexture3D properties and choose **New FastNoiseLite**. Adjust the noise texture's
+width, height and depth according to your fog volume's dimensions.
+
+To improve performance, it's recommended to use low texture sizes (64×64×64 or lower),
+as high-frequency detail is difficult to notice in a FogVolume. If you wish to represent
+more detailed density variations, you will need to increase
+**Rendering > Environment > Volumetric Fog > Volume Size** in the project settings,
+which has a performance cost.
+
+.. note::
+
+    NoiseTexture3D's **Color Ramp** affects FogMaterial density textures, but
+    since only the texture's red channel is sampled, only the color ramp's red
+    channel will affect the resulting density.
+
+    However, using a color ramp will *not* tint the fog volume according to the
+    texture. You would need to use a custom shader that reads a Texture3D to
+    achieve this.
+
 Custom FogVolume shaders
 ------------------------
 
