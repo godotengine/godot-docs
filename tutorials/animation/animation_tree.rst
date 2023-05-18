@@ -93,7 +93,7 @@ This node will execute a sub-animation and return once it finishes. Blend times 
 
 .. image:: img/animtree6b.gif
 
-After setting the request and changing the animation playback, the one-shot node automatically clears the request on the next process frame by setting its [code]request[/code] value to [constant ONE_SHOT_REQUEST_NONE].
+After setting the request and changing the animation playback, the one-shot node automatically clears the request on the next process frame by setting its ``request`` value to ``AnimationNodeOneShot.ONE_SHOT_REQUEST_NONE``.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -161,7 +161,7 @@ Transition
 ^^^^^^^^^^
 
 Very simple state machine (when you don't want to cope with a ``StateMachine`` node). Animations can be connected to the outputs and transition times can be specified.
-After setting the request and changing the animation playback, the transition node automatically clears the request on the next process frame by setting its [code]transition_request[/code] value to empty.
+After setting the request and changing the animation playback, the transition node automatically clears the request on the next process frame by setting its ``transition_request`` value to an empty string (``""``).
 
 .. tabs::
  .. code-tab:: gdscript GDScript
