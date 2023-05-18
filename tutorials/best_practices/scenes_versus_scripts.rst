@@ -11,8 +11,8 @@ declarative code.
 
 Each system's capabilities are different as a result.
 Scenes can define how an extended class initializes, but not what its
-behavior actually is. Scenes are often used in conjunction with a script so
-that the scene acts as an extension of the scripts declarative code.
+behavior actually is. Scenes are often used in conjunction with a script,
+the scene declaring a composition of nodes, and the script adding behaviour with imperative code.
 
 Anonymous types
 ---------------
@@ -150,13 +150,13 @@ with it, and finally adds it as a child of the ``Main`` node:
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    # Main.gd
+    # main.gd
     extends Node
 
     func _init():
         var child = Node.new()
         child.name = "Child"
-        child.script = preload("Child.gd")
+        child.script = preload("child.gd")
         child.owner = self
         add_child(child)
 
@@ -226,7 +226,7 @@ In the end, the best approach is to consider the following:
       {
           public static PackedScene MyScene { get; } = GD.Load<PackedScene>("MyScene.tscn");
       }
-      
+
       // Main.cs
       public partial class Main : Node
       {

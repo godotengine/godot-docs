@@ -98,10 +98,10 @@ initialize it:
      .. code-tab:: gdscript GDScript
 
        # Parent
-       $Child.func_property = funcref(object_with_method, "method_on_the_object")
+       $Child.func_property = object_with_method.method_on_the_object
 
        # Child
-       func_property.call_func() # Call parent-defined method (can come from anywhere).
+       func_property.call() # Call parent-defined method (can come from anywhere).
 
      .. code-tab:: csharp
 
@@ -233,14 +233,14 @@ in another context without any extra changes to its API.
   satisfied? Other programmers, and especially designers and writers, will need
   clear instructions in the messages telling them what to do to configure it.
 
-So, why do all this complex switcharoo work? Well, because scenes operate
+So, why does all this complex switcharoo work? Well, because scenes operate
 best when they operate alone. If unable to work alone, then working with
 others anonymously (with minimal hard dependencies, i.e. loose coupling)
 is the next best thing. Inevitably, changes may need to be made to a class and
 if these changes cause it to interact with other scenes in unforeseen ways,
 then things will start to break down. The whole point of all this indirection
 is to avoid ending up in a situation where changing one class results in
-adversely effecting other classes.
+adversely effecting other classes dependent on it.
 
 Scripts and scenes, as extensions of engine classes, should abide
 by *all* OOP principles. Examples include...

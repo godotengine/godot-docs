@@ -351,9 +351,22 @@ loaded for each platform and the entry function for the module. It is called ``g
 
     [libraries]
 
-    linux.64="res://bin/libgdexample.linux.64.so"
-    windows.x86_64="res://bin/libgdexample.windows.x86_64.dll"
-    macos="res://bin/libgdexample.macos.framework"
+    macos.debug = "res://bin/libgdexample.macos.template_debug.framework"
+    macos.release = "res://bin/libgdexample.macos.template_release.framework"
+    windows.debug.x86_32 = "res://bin/libgdexample.windows.template_debug.x86_32.dll"
+    windows.release.x86_32 = "res://bin/libgdexample.windows.template_release.x86_32.dll"
+    windows.debug.x86_64 = "res://bin/libgdexample.windows.template_debug.x86_64.dll"
+    windows.release.x86_64 = "res://bin/libgdexample.windows.template_release.x86_64.dll"
+    linux.debug.x86_64 = "res://bin/libgdexample.linux.template_debug.x86_64.so"
+    linux.release.x86_64 = "res://bin/libgdexample.linux.template_release.x86_64.so"
+    linux.debug.arm64 = "res://bin/libgdexample.linux.template_debug.arm64.so"
+    linux.release.arm64 = "res://bin/libgdexample.linux.template_release.arm64.so"
+    linux.debug.rv64 = "res://bin/libgdexample.linux.template_debug.rv64.so"
+    linux.release.rv64 = "res://bin/libgdexample.linux.template_release.rv64.so"
+    android.debug.x86_64 = "res://bin/libgdexample.android.template_debug.x86_64.so"
+    android.release.x86_64 = "res://bin/libgdexample.android.template_release.x86_64.so"
+    android.debug.arm64 = "res://bin/libgdexample.android.template_debug.arm64.so"
+    android.release.arm64 = "res://bin/libgdexample.android.template_release.arm64.so"
 
 This file contains a ``configuration`` section that controls the entry function of the module.
 
@@ -442,7 +455,7 @@ show the methods we end up changing, don't remove the lines we're omitting:
         ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "amplitude"), "set_amplitude", "get_amplitude");
     }
 
-    void GDExample::GDExample() {
+    GDExample::GDExample() {
         // Initialize any variables here.
         time_passed = 0.0;
         amplitude = 10.0;

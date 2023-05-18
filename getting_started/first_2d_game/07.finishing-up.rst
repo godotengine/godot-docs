@@ -33,8 +33,12 @@ Add two :ref:`AudioStreamPlayer <class_AudioStreamPlayer>` nodes as children of
 click on the ``Stream`` property, select "Load", and choose the corresponding
 audio file.
 
-To play the music, add ``$Music.play()`` in the ``new_game()`` function and
-``$Music.stop()`` in the ``game_over()`` function.
+All audio is automatically imported with the ``Loop`` setting disabled.
+If you want the music to loop seamlessly, click on the Stream file arrow,
+select ``Make Unique``, then click on the Stream file and check the ``Loop`` box. 
+
+To play the music, add ``$Music.play()`` in the ``new_game()``
+function and ``$Music.stop()`` in the ``game_over()`` function.
 
 Finally, add ``$DeathSound.play()`` in the ``game_over()`` function.
 
@@ -53,9 +57,15 @@ tab. In the same way you created the movement input actions, create a new
 input action called ``start_game`` and add a key mapping for the :kbd:`Enter`
 key.
 
+Now would be a good time to add controller support if you have one available.
+Attach or pair your controller and then under each input action that you wish
+to add controller support for, click on the "+" button and press the corresponding
+button, d-pad, or stick direction that you want to map to the respective input action.
+
 In the ``HUD`` scene, select the ``StartButton`` and find its **Shortcut**
-property in the Inspector. Create a new :ref:`Shortcut <class_Shortcut>` resource,
-open the **Events** array and add a new array element to it.
+property in the Inspector. Create a new :ref:`Shortcut <class_Shortcut>` resource
+by clicking within the box, open the **Events** array and add a new array element
+to it by clicking on **Array[InputEvent] (size 0)**.
 
 .. image:: img/start_button_shortcut.webp
 

@@ -157,7 +157,7 @@ a NavigationAgent3D for path movement.
         new_velocity = new_velocity.normalized()
         new_velocity = new_velocity * movement_speed
 
-        velocity = safe_velocity
+        velocity = new_velocity
         move_and_slide()
 
  .. code-tab:: csharp C#

@@ -188,7 +188,7 @@ steps:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var scene = load("res://MyScene.tscn")
+    var scene = load("res://my_scene.tscn")
 
  .. code-tab:: csharp
 
@@ -201,7 +201,7 @@ only available with GDScript.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    var scene = preload("res://MyScene.tscn")
+    var scene = preload("res://my_scene.tscn")
 
 At that point, ``scene`` is a packed scene resource, not a node. To create the
 actual node, you need to call :ref:`PackedScene.instantiate()

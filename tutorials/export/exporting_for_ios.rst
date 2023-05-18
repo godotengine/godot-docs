@@ -104,3 +104,22 @@ Plugins for iOS
 
 Special iOS plugins can be used in Godot. Check out the
 :ref:`doc_plugins_for_ios` page.
+
+Environment variables
+---------------------
+
+You can use the following environment variables to set export options outside of
+the editor. During the export process, these override the values that you set in
+the export menu.
+
+.. list-table:: iOS export environment variables
+   :header-rows: 1
+
+   * - Export option
+     - Environment variable
+   * - Encryption / Encryption Key
+     - GODOT_SCRIPT_ENCRYPTION_KEY
+   * - Options / Application / Provisioning Profile UUID Debug
+     - GODOT_IOS_PROVISIONING_PROFILE_UUID_DEBUG
+   * - Options / Application / Provisioning Profile UUID Release
+     - GODOT_IOS_PROVISIONING_PROFILE_UUID_RELEASE

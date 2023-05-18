@@ -59,7 +59,7 @@ Here's the node setup for the coin:
 
 .. image:: img/area2d_coin_nodes.png
 
-To detect the overlap, we'll connect the appropriate signal on the Area2d. Which
+To detect the overlap, we'll connect the appropriate signal on the Area2D. Which
 signal to use depends on the player's node type. If the player is another area,
 use ``area_entered``. However, let's assume our player is a ``CharacterBody2D``
 (and therefore a ``CollisionObject2D`` type), so we'll connect the
@@ -73,7 +73,7 @@ use ``area_entered``. However, let's assume our player is a ``CharacterBody2D``
 
     extends Area2D
 
-    func _on_Coin_body_entered(body):
+    func _on_coin_body_entered(body):
         queue_free()
 
  .. code-tab:: csharp
@@ -82,8 +82,7 @@ use ``area_entered``. However, let's assume our player is a ``CharacterBody2D``
 
     public partial class Coin : Area2D
     {
-
-        public void OnCoinBodyEntered(PhysicsBody2D body)
+        private void OnCoinBodyEntered(PhysicsBody2D body)
         {
             QueueFree();
         }

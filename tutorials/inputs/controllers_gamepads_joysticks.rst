@@ -259,7 +259,7 @@ Then, instead of using ``Input.is_action_pressed(action)``, use
 ``Focus.input_is_action_pressed(action)`` where ``action`` is the name of
 the input action. Also, instead of using ``event.is_action_pressed(action)``,
 use ``Focus.event_is_action_pressed(event, action)`` where ``event`` is an
-InputEvent reference ``action`` is the name of the input action.
+InputEvent reference and ``action`` is the name of the input action.
 
 Power saving prevention
 ^^^^^^^^^^^^^^^^^^^^^^^

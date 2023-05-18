@@ -128,9 +128,9 @@ deltatime methods as needed.
         }
 
         // Called during every input event. Equally true for _input().
-        public void _UnhandledInput(InputEvent event)
+        public void _UnhandledInput(InputEvent @event)
         {
-            switch (event)
+            switch (@event)
             {
                 case InputEventKey:
                     if (Input.IsActionJustPressed("ui_accept"))
@@ -242,7 +242,7 @@ nodes that one might create at runtime.
     var parent_cache
 
     func connection_check():
-        return parent.has_user_signal("interacted_with")
+        return parent_cache.has_user_signal("interacted_with")
 
     func _notification(what):
         match what:
@@ -263,34 +263,34 @@ nodes that one might create at runtime.
 
     public partial class MyNode : Node
     {
-        public Node ParentCache = null;
+        private Node _parentCache;
 
         public void ConnectionCheck()
         {
-            return ParentCache.HasUserSignal("InteractedWith");
+            return _parentCache.HasUserSignal("InteractedWith");
         }
 
         public void _Notification(int what)
         {
             switch (what)
             {
-                case NOTIFICATION_PARENTED:
-                    ParentCache = GetParent();
+                case NotificationParented:
+                    _parentCache = GetParent();
                     if (ConnectionCheck())
                     {
-                        ParentCache.Connect("InteractedWith", OnParentInteractedWith);
+                        _parentCache.Connect("InteractedWith", Callable.From(OnParentInteractedWith));
                     }
                     break;
-                case NOTIFICATION_UNPARENTED:
+                case NotificationUnparented:
                     if (ConnectionCheck())
                     {
-                        ParentCache.Disconnect("InteractedWith", OnParentInteractedWith);
+                        _parentCache.Disconnect("InteractedWith", Callable.From(OnParentInteractedWith));
                     }
                     break;
             }
         }
 
-        public void OnParentInteractedWith()
+        private void OnParentInteractedWith()
         {
             GD.Print("I'm reacting to my parent's interaction!");
         }

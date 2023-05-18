@@ -11,7 +11,7 @@ Listening to player input
 
 Building upon the previous lesson :ref:`doc_scripting_first_script`, let's look
 at another important feature of any game: giving control to the player.
-To add this, we need to modify our ``Sprite2D.gd`` code.
+To add this, we need to modify our ``sprite_2d.gd`` code.
 
 .. image:: img/scripting_first_script_moving_with_input.gif
 
@@ -56,7 +56,7 @@ code below.
         direction = 1;
     }
 
-    Rotation += AngularSpeed * direction * (float)delta;
+    Rotation += _angularSpeed * direction * (float)delta;
 
 Our ``direction`` local variable is a multiplier representing the direction in
 which the player wants to turn. A value of ``0`` means the player isn't pressing
@@ -114,7 +114,7 @@ causing the sprite to move forward.
 Complete script
 ---------------
 
-Here is the complete ``Sprite2D.gd`` file for reference.
+Here is the complete ``sprite_2d.gd`` file for reference.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -146,8 +146,8 @@ Here is the complete ``Sprite2D.gd`` file for reference.
 
     public partial class Sprite : Sprite2D
     {
-        private float Speed = 400;
-        private float AngularSpeed = Mathf.Pi;
+        private float _speed = 400;
+        private float _angularSpeed = Mathf.Pi;
 
         public override void _Process(double delta)
         {
@@ -161,12 +161,12 @@ Here is the complete ``Sprite2D.gd`` file for reference.
                 direction = 1;
             }
 
-            Rotation += AngularSpeed * direction * (float)delta;
+            Rotation += _angularSpeed * direction * (float)delta;
 
             var velocity = Vector2.Zero;
             if (Input.IsActionPressed("ui_up"))
             {
-                velocity = Vector2.Up.Rotated(Rotation) * Speed;
+                velocity = Vector2.Up.Rotated(Rotation) * _speed;
             }
 
             Position += velocity * (float)delta;
