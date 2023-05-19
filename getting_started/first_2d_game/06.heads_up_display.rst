@@ -36,15 +36,12 @@ Inspector. The default font for ``Control`` nodes is small and doesn't scale
 well. There is a font file included in the game assets called
 "Xolonium-Regular.ttf". To use this font, do the following:
 
-1. Under "Theme Overrides > Fonts", choose "Load" and select the "Xolonium-Regular.ttf" file.
+Under "Theme Overrides > Fonts", choose "Load" and select the "Xolonium-Regular.ttf" file.
 
 .. image:: img/custom_font_load_font.webp
 
-Once you've done this on the ``ScoreLabel``, you can click the down arrow next
-to the Font property and choose "Copy", then "Paste" it in the same place
-on the other two Control nodes.
-Set the "Font Size" property of the ``ScoreLabel`` under "Theme Overrides > Font Sizes".
-A setting of ``64`` works well.
+The font size is still to small, increase it to ``64`` under "Theme Overrides > Font Sizes". 
+Once you've done this with the ``ScoreLabel``, repeat the changes for the ``Message`` and ``StartButton`` nodes.
 
 .. image:: img/custom_font_size.webp
 
@@ -54,48 +51,34 @@ A setting of ``64`` works well.
 
 Arrange the nodes as shown below.
 You can drag the nodes to place them manually, or for more precise placement,
-use "Anchor Presets" with the following settings:
+use "Anchor Presets".
 
 .. image:: img/ui_anchor.webp
 
 ScoreLabel
 ~~~~~~~~~~
 
-Layout :
-
--  Anchor Preset : ``Center Top``
-
-Label settings :
-
--  Text : ``0``
--  Horizontal Alignment : ``Center``
--  Vertical Alignment : ``Center``
+1. Add the text ``0``.
+2. Set the "Horizontal Alignment" and "Vertical Alignment" to ``Center``.
+3. Choose the "Anchor Preset" ``Center Top``.
 
 Message
 ~~~~~~~~~~~~
 
-Layout :
-
--  Anchor Preset : ``Center``
-
-Label settings :
-
--  Text : ``Dodge the Creeps!``
--  Horizontal Alignment : ``Center``
--  Vertical Alignment : ``Center``
--  Autowrap Mode : ``Word``
+1. Add the text ``Dodge the creeps!``.
+2. Set the "Horizontal Alignment" and "Vertical Alignment" to ``Center``.
+3. Set the "Autowrap Mode" to ``Word``, otherwise the label will stay on one line.
+4. Under "Control - Layout/Transform" set "Size X"  to ``480`` to use the entire width of the screen.
+5. Choose the "Anchor Preset" ``Center``.
 
 StartButton
 ~~~~~~~~~~~
 
-Layout :
-
--  Anchor Preset : ``Center Bottom``
-
-Button settings :
-
--  Text : ``Start``
--  Position Y : ``580`` (Control - Layout/Transform)
+1. Add the text ``Start``.
+2. Under "Control - Layout/Transform", set "Size X" to ``200`` and "Size Y" to ``100``
+   to add a little bit more padding between the border and text.
+3. Choose the "Anchor Preset" ``Center Bottom``.
+4. Under "Control - Layout/Transform", set "Position Y" to ``580``.
 
 On the ``MessageTimer``, set the ``Wait Time`` to ``2`` and set the ``One Shot``
 property to "On".
