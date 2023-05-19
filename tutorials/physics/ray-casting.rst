@@ -56,7 +56,7 @@ Use the following code in 2D:
 
     func _physics_process(delta):
         var space_rid = get_world_2d().space
-        var space_state = Physics2DServer.space_get_direct_state(space_rid)
+        var space_state = PhysicsServer2D.space_get_direct_state(space_rid)
 
  .. code-tab:: csharp
 
