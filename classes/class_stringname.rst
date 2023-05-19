@@ -25,7 +25,7 @@ See also :ref:`NodePath<class_NodePath>`, which is a similar concept specificall
 
 Some string methods have corresponding variations. Variations suffixed with ``n`` (:ref:`countn<class_StringName_method_countn>`, :ref:`findn<class_StringName_method_findn>`, :ref:`replacen<class_StringName_method_replacen>`, etc.) are **case-insensitive** (they make no distinction between uppercase and lowercase letters). Method variations prefixed with ``r`` (:ref:`rfind<class_StringName_method_rfind>`, :ref:`rsplit<class_StringName_method_rsplit>`, etc.) are reversed, and start from the end of the string, instead of the beginning.
 
-\ **Note:** In a boolean context, a **StringName** will evaluate to ``false`` if it is empty (``StringName("")``). Otherwise, a **StringName** will always evaluate to ``true``.
+\ **Note:** In a boolean context, a **StringName** will evaluate to ``false`` if it is empty (``StringName("")``). Otherwise, a **StringName** will always evaluate to ``true``. The ``not`` operator cannot be used. Instead, the ``is_empty`` method should be used to check for empty **StringName**s.
 
 .. rst-class:: classref-reftable-group
 
