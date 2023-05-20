@@ -38,19 +38,19 @@ Scene setup
 -----------
 
 To add a button to our game, we will create a new main scene which will include
-both a button and the ``Sprite2D.tscn`` scene that we scripted in previous
-lessons.
+both a :ref:`Button <class_button>` and the ``sprite_2d.tscn`` scene we created in
+the :ref:`doc_scripting_first_script` lesson.
 
 Create a new scene by going to the menu Scene -> New Scene.
 
-.. image:: img/signals_01_new_scene.png
+.. image:: img/signals_01_new_scene.webp
 
-In the Scene dock, click the 2D Scene button. This will add a Node2D as our
-root.
+In the Scene dock, click the 2D Scene button. This will add
+a :ref:`Node2D <class_Node2D>` as our root.
 
-.. image:: img/signals_02_2d_scene.png
+.. image:: img/signals_02_2d_scene.webp
 
-In the FileSystem dock, click and drag the ``Sprite2D.tscn`` file you saved
+In the FileSystem dock, click and drag the ``sprite_2d.tscn`` file you saved
 previously onto the Node2D to instantiate it.
 
 .. image:: img/signals_03_dragging_scene.png
@@ -58,11 +58,11 @@ previously onto the Node2D to instantiate it.
 We want to add another node as a sibling of the Sprite2D. To do so, right-click
 on Node2D and select Add Child Node.
 
-.. image:: img/signals_04_add_child_node.png
+.. image:: img/signals_04_add_child_node.webp
 
-Search for the Button node type and add it.
+Search for the :ref:`Button <class_button>` node and add it.
 
-.. image:: img/signals_05_add_button.png
+.. image:: img/signals_05_add_button.webp
 
 The node is small by default. Click and drag on the bottom-right handle of the
 Button in the viewport to resize it.
@@ -71,20 +71,21 @@ Button in the viewport to resize it.
 
 If you don't see the handles, ensure the select tool is active in the toolbar.
 
-.. image:: img/signals_07_select_tool.png
+.. image:: img/signals_07_select_tool.webp
 
 Click and drag on the button itself to move it closer to the sprite.
 
 You can also write a label on the Button by editing its Text property in the
-Inspector. Enter "Toggle motion".
+Inspector. Enter ``Toggle motion``.
 
-.. image:: img/signals_08_toggle_motion_text.png
+.. image:: img/signals_08_toggle_motion_text.webp
 
 Your scene tree and viewport should look like this.
 
 .. image:: img/signals_09_scene_setup.png
 
-Save your newly created scene. You can then run it with :kbd:`F6` (:kbd:`Cmd + R` on macOS).
+Save your newly created scene as ``node_2d.tscn``, if you haven't already.
+You can then run it with :kbd:`F6` (:kbd:`Cmd + R` on macOS).
 At the moment, the button will be visible, but nothing will happen if you
 press it.
 
@@ -99,11 +100,11 @@ lesson.
 You can connect signals in the Node dock. Select the Button node and, on the
 right side of the editor, click on the tab named "Node" next to the Inspector.
 
-.. image:: img/signals_10_node_dock.png
+.. image:: img/signals_10_node_dock.webp
 
 The dock displays a list of signals available on the selected node.
 
-.. image:: img/signals_11_pressed_signals.png
+.. image:: img/signals_11_pressed_signals.webp
 
 Double-click the "pressed" signal to open the node connection window.
 
