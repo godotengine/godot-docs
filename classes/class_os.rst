@@ -39,6 +39,8 @@ Properties
    :widths: auto
 
    +-------------------------+---------------------------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>` | :ref:`delta_smoothing<class_OS_property_delta_smoothing>`                                         | ``true``  |
+   +-------------------------+---------------------------------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>` | :ref:`low_processor_usage_mode<class_OS_property_low_processor_usage_mode>`                       | ``false`` |
    +-------------------------+---------------------------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`   | :ref:`low_processor_usage_mode_sleep_usec<class_OS_property_low_processor_usage_mode_sleep_usec>` | ``6900``  |
@@ -291,6 +293,23 @@ Ringtones directory path.
 
 Property Descriptions
 ---------------------
+
+.. _class_OS_property_delta_smoothing:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **delta_smoothing** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_delta_smoothing** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_delta_smoothing_enabled** **(** **)**
+
+If ``true``, the engine filters the time delta measured between each frame, and attempts to compensate for random variation. This will only operate on systems where V-Sync is active.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_OS_property_low_processor_usage_mode:
 

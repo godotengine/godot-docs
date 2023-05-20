@@ -149,6 +149,8 @@ Methods
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_index<class_Node_method_get_index>` **(** :ref:`bool<class_bool>` include_internal=false **)** |const|                                                                                                               |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Window<class_Window>`                       | :ref:`get_last_exclusive_window<class_Node_method_get_last_exclusive_window>` **(** **)** |const|                                                                                                                              |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`get_multiplayer_authority<class_Node_method_get_multiplayer_authority>` **(** **)** |const|                                                                                                                              |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Node<class_Node>`                           | :ref:`get_node<class_Node_method_get_node>` **(** :ref:`NodePath<class_NodePath>` path **)** |const|                                                                                                                           |
@@ -1715,6 +1717,18 @@ Returns an array listing the groups that the node is a member of.
 Returns the node's order in the scene tree branch. For example, if called on the first child node the position is ``0``.
 
 If ``include_internal`` is ``false``, the index won't take internal children into account, i.e. first non-internal child will have index of 0 (see ``internal`` parameter in :ref:`add_child<class_Node_method_add_child>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_get_last_exclusive_window:
+
+.. rst-class:: classref-method
+
+:ref:`Window<class_Window>` **get_last_exclusive_window** **(** **)** |const|
+
+Returns the :ref:`Window<class_Window>` that contains this node, or the last exclusive child in a chain of windows starting with the one that contains this node.
 
 .. rst-class:: classref-item-separator
 

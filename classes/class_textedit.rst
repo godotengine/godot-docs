@@ -2241,7 +2241,9 @@ Returns the text currently in ``gutter`` at ``line``.
 
 :ref:`int<class_int>` **get_line_height** **(** **)** |const|
 
-Returns the height of a largest line.
+Returns the maximum value of the line height among all lines.
+
+\ **Note:** The return value is influenced by :ref:`line_spacing<class_TextEdit_theme_constant_line_spacing>` and :ref:`font_size<class_TextEdit_theme_font_size_font_size>`. And it will not be less than ``1``.
 
 .. rst-class:: classref-item-separator
 

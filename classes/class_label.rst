@@ -45,6 +45,8 @@ Properties
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`           | :ref:`horizontal_alignment<class_Label_property_horizontal_alignment>`                                   | ``0``                                                                        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`                 | :ref:`justification_flags<class_Label_property_justification_flags>`                                     | ``163``                                                                      |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`LabelSettings<class_LabelSettings>`                                   | :ref:`label_settings<class_Label_property_label_settings>`                                               |                                                                              |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                 | :ref:`language<class_Label_property_language>`                                                           | ``""``                                                                       |
@@ -183,6 +185,23 @@ If ``true``, the Label only shows the text that fits inside its bounding rectang
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_horizontal_alignment** **(** **)**
 
 Controls the text's horizontal alignment. Supports left, center, right, and fill, or justify. Set it to one of the :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_property_justification_flags:
+
+.. rst-class:: classref-property
+
+:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **justification_flags** = ``163``
+
+.. rst-class:: classref-property-setget
+
+- void **set_justification_flags** **(** :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` value **)**
+- :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **get_justification_flags** **(** **)**
+
+Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`.
 
 .. rst-class:: classref-item-separator
 

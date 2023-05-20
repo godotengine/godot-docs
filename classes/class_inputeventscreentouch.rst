@@ -39,6 +39,8 @@ Properties
    :widths: auto
 
    +-------------------------------+--------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`       | :ref:`canceled<class_InputEventScreenTouch_property_canceled>`     | ``false``         |
+   +-------------------------------+--------------------------------------------------------------------+-------------------+
    | :ref:`bool<class_bool>`       | :ref:`double_tap<class_InputEventScreenTouch_property_double_tap>` | ``false``         |
    +-------------------------------+--------------------------------------------------------------------+-------------------+
    | :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenTouch_property_index>`           | ``0``             |
@@ -56,6 +58,23 @@ Properties
 
 Property Descriptions
 ---------------------
+
+.. _class_InputEventScreenTouch_property_canceled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **canceled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_canceled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_canceled** **(** **)**
+
+If ``true``, the touch event has been canceled.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_InputEventScreenTouch_property_double_tap:
 

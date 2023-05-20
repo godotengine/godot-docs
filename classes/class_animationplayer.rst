@@ -798,7 +798,9 @@ See also :ref:`stop<class_AnimationPlayer_method_stop>`.
 
 void **play** **(** :ref:`StringName<class_StringName>` name="", :ref:`float<class_float>` custom_blend=-1, :ref:`float<class_float>` custom_speed=1.0, :ref:`bool<class_bool>` from_end=false **)**
 
-Plays the animation with key ``name``. Custom blend times and speed can be set. If ``custom_speed`` is negative and ``from_end`` is ``true``, the animation will play backwards (which is equivalent to calling :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>`).
+Plays the animation with key ``name``. Custom blend times and speed can be set.
+
+The ``from_end`` option only affects when switching to a new animation track, or if the same track but at the start or end. It does not affect resuming playback that was paused in the middle of an animation. If ``custom_speed`` is negative and ``from_end`` is ``true``, the animation will play backwards (which is equivalent to calling :ref:`play_backwards<class_AnimationPlayer_method_play_backwards>`).
 
 The **AnimationPlayer** keeps track of its current or last played animation with :ref:`assigned_animation<class_AnimationPlayer_property_assigned_animation>`. If this method is called with that same animation ``name``, or with no ``name`` parameter, the assigned animation will resume playing if it was paused.
 

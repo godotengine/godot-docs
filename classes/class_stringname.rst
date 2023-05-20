@@ -777,7 +777,7 @@ Decodes a hexadecimal string as a :ref:`PackedByteArray<class_PackedByteArray>`.
  .. code-tab:: csharp
 
     var text = "hello world";
-    var encoded = text.ToUtf8Buffer().HexEncode(); # outputs "68656c6c6f20776f726c64"
+    var encoded = text.ToUtf8Buffer().HexEncode(); // outputs "68656c6c6f20776f726c64"
     GD.Print(buf.HexDecode().GetStringFromUtf8());
 
 
@@ -1965,7 +1965,7 @@ Appends ``right`` at the end of this **StringName**, returning a :ref:`String<cl
 
 :ref:`bool<class_bool>` **operator <** **(** :ref:`StringName<class_StringName>` right **)**
 
-Returns ``true`` if the left :ref:`String<class_String>` comes before ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order. Useful for sorting.
+Returns ``true`` if the left **StringName**'s pointer comes before ``right``. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -1977,7 +1977,7 @@ Returns ``true`` if the left :ref:`String<class_String>` comes before ``right`` 
 
 :ref:`bool<class_bool>` **operator <=** **(** :ref:`StringName<class_StringName>` right **)**
 
-Returns ``true`` if the left :ref:`String<class_String>` comes before ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order, or if both are equal.
+Returns ``true`` if the left **StringName**'s pointer comes before ``right`` or if they are the same. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -2013,7 +2013,7 @@ Returns ``true`` if the **StringName** and ``right`` refer to the same name. Com
 
 :ref:`bool<class_bool>` **operator >** **(** :ref:`StringName<class_StringName>` right **)**
 
-Returns ``true`` if the left **StringName** comes after ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order. Useful for sorting.
+Returns ``true`` if the left **StringName**'s pointer comes after ``right``. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -2025,7 +2025,7 @@ Returns ``true`` if the left **StringName** comes after ``right`` in `Unicode or
 
 :ref:`bool<class_bool>` **operator >=** **(** :ref:`StringName<class_StringName>` right **)**
 
-Returns ``true`` if the left **StringName** comes after ``right`` in `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__, which roughly matches the alphabetical order, or if both are equal.
+Returns ``true`` if the left **StringName**'s pointer comes after ``right`` or if they are the same. Note that this will not match their `Unicode order <https://en.wikipedia.org/wiki/List_of_Unicode_characters>`__.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -25,6 +25,8 @@ This class is used when loading a project that uses a :ref:`Cubemap<class_Cubema
 
 - When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
 
+\ **Note:** This is not intended to be used as an actual texture for rendering. It is not guaranteed to work like one in shaders or materials (for example when calculating UV).
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`

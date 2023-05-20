@@ -21,6 +21,14 @@ Description
 
 A synchronization semaphore which can be used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. Be careful to avoid deadlocks. For a binary version, see :ref:`Mutex<class_Mutex>`.
 
+\ **Warning:**\ 
+
+To guarantee that the operating system is able to perform proper cleanup (no crashes, no deadlocks), these conditions must be met:
+
+- By the time a **Semaphore**'s reference count reaches zero and therefore it is destroyed, no threads must be waiting on it.
+
+- By the time a :ref:`Thread<class_Thread>`'s reference count reaches zero and therefore it is destroyed, it must not be waiting on any semaphore.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
