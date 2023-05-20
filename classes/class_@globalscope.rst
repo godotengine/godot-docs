@@ -2823,7 +2823,7 @@ Enum value which doesn't correspond to any MIDI message. This is used to initial
 
 :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **MIDI_MESSAGE_NOTE_OFF** = ``8``
 
-MIDI note OFF message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
+MIDI note OFF message. Not all MIDI devices send this event; some send :ref:`MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` with zero velocity instead. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON:
 
@@ -2831,7 +2831,7 @@ MIDI note OFF message. See the documentation of :ref:`InputEventMIDI<class_Input
 
 :ref:`MIDIMessage<enum_@GlobalScope_MIDIMessage>` **MIDI_MESSAGE_NOTE_ON** = ``9``
 
-MIDI note ON message. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
+MIDI note ON message. Some MIDI devices send this event with velocity zero instead of :ref:`MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>`, but implementations vary. See the documentation of :ref:`InputEventMIDI<class_InputEventMIDI>` for information of how to use MIDI inputs.
 
 .. _class_@GlobalScope_constant_MIDI_MESSAGE_AFTERTOUCH:
 
@@ -3982,7 +3982,7 @@ An export preset property with this flag contains confidential information and i
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_DEFAULT** = ``6``
 
-Default usage (storage, editor and network).
+Default usage (storage and editor).
 
 .. _class_@GlobalScope_constant_PROPERTY_USAGE_NO_EDITOR:
 
@@ -3990,7 +3990,7 @@ Default usage (storage, editor and network).
 
 :ref:`PropertyUsageFlags<enum_@GlobalScope_PropertyUsageFlags>` **PROPERTY_USAGE_NO_EDITOR** = ``2``
 
-Default usage but without showing the property in the editor (storage, network).
+Default usage but without showing the property in the editor (storage).
 
 .. rst-class:: classref-item-separator
 

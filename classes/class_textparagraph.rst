@@ -38,7 +38,7 @@ Properties
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | :ref:`Direction<enum_TextServer_Direction>`                       | :ref:`direction<class_TextParagraph_property_direction>`                         | ``0``     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`       | :ref:`justification_flags<class_TextParagraph_property_justification_flags>`     | ``3``     |
+   | :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`       | :ref:`justification_flags<class_TextParagraph_property_justification_flags>`     | ``163``   |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
    | :ref:`int<class_int>`                                             | :ref:`max_lines_visible<class_TextParagraph_property_max_lines_visible>`         | ``-1``    |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
@@ -208,14 +208,14 @@ Text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **justification_flags** = ``3``
+:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **justification_flags** = ``163``
 
 .. rst-class:: classref-property-setget
 
 - void **set_justification_flags** **(** :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` value **)**
 - :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **get_justification_flags** **(** **)**
 
-Line alignment rules. For more info see :ref:`TextServer<class_TextServer>`.
+Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`.
 
 .. rst-class:: classref-item-separator
 

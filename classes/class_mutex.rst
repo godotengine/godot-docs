@@ -21,6 +21,16 @@ Description
 
 A synchronization mutex (mutual exclusion). This is used to synchronize multiple :ref:`Thread<class_Thread>`\ s, and is equivalent to a binary :ref:`Semaphore<class_Semaphore>`. It guarantees that only one thread can ever acquire the lock at a time. A mutex can be used to protect a critical section; however, be careful to avoid deadlocks.
 
+It's of the recursive kind, so it can be locked multiple times by one thread, provided it also unlocks it as many times.
+
+\ **Warning:**\ 
+
+To guarantee that the operating system is able to perform proper cleanup (no crashes, no deadlocks), these conditions must be met:
+
+- By the time a **Mutex**'s reference count reaches zero and therefore it is destroyed, no threads (including the one on which the destruction will happen) must have it locked.
+
+- By the time a :ref:`Thread<class_Thread>`'s reference count reaches zero and therefore it is destroyed, it must not have any mutex locked.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -90,6 +100,8 @@ void **unlock** **(** **)**
 Unlocks this **Mutex**, leaving it to other threads.
 
 \ **Note:** If a thread called :ref:`lock<class_Mutex_method_lock>` or :ref:`try_lock<class_Mutex_method_try_lock>` multiple times while already having ownership of the mutex, it must also call :ref:`unlock<class_Mutex_method_unlock>` the same number of times in order to unlock it correctly.
+
+\ **Warning:** Calling :ref:`unlock<class_Mutex_method_unlock>` more times that :ref:`lock<class_Mutex_method_lock>` on a given thread, thus ending up trying to unlock a non-locked mutex, is wrong and may causes crashes or deadlocks.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

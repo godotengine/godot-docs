@@ -58,6 +58,8 @@ Properties
    +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
    | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`         | :ref:`horizontal_alignment<class_Label3D_property_horizontal_alignment>`                                   | ``1``                                                                                      |
    +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+   | :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`               | :ref:`justification_flags<class_Label3D_property_justification_flags>`                                     | ``163``                                                                                    |
+   +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                               | :ref:`language<class_Label3D_property_language>`                                                           | ``""``                                                                                     |
    +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                                 | :ref:`line_spacing<class_Label3D_property_line_spacing>`                                                   | ``0.0``                                                                                    |
@@ -426,6 +428,23 @@ Higher font sizes require more time to render new characters, which can cause st
 - :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` **get_horizontal_alignment** **(** **)**
 
 Controls the text's horizontal alignment. Supports left, center, right, and fill, or justify. Set it to one of the :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` constants.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label3D_property_justification_flags:
+
+.. rst-class:: classref-property
+
+:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **justification_flags** = ``163``
+
+.. rst-class:: classref-property-setget
+
+- void **set_justification_flags** **(** :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` value **)**
+- :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **get_justification_flags** **(** **)**
+
+Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`.
 
 .. rst-class:: classref-item-separator
 

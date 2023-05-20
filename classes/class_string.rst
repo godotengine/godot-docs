@@ -823,7 +823,7 @@ Decodes a hexadecimal string as a :ref:`PackedByteArray<class_PackedByteArray>`.
  .. code-tab:: csharp
 
     var text = "hello world";
-    var encoded = text.ToUtf8Buffer().HexEncode(); # outputs "68656c6c6f20776f726c64"
+    var encoded = text.ToUtf8Buffer().HexEncode(); // outputs "68656c6c6f20776f726c64"
     GD.Print(buf.HexDecode().GetStringFromUtf8());
 
 

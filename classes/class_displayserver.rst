@@ -202,6 +202,8 @@ Methods
    +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                          | :ref:`screen_get_dpi<class_DisplayServer_method_screen_get_dpi>` **(** :ref:`int<class_int>` screen=-1 **)** |const|                                                                                                                                                                                                                                                                                                                                                            |
    +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Image<class_Image>`                                      | :ref:`screen_get_image<class_DisplayServer_method_screen_get_image>` **(** :ref:`int<class_int>` screen=-1 **)** |const|                                                                                                                                                                                                                                                                                                                                                        |
+   +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                      | :ref:`screen_get_max_scale<class_DisplayServer_method_screen_get_max_scale>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                |
    +----------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`ScreenOrientation<enum_DisplayServer_ScreenOrientation>` | :ref:`screen_get_orientation<class_DisplayServer_method_screen_get_orientation>` **(** :ref:`int<class_int>` screen=-1 **)** |const|                                                                                                                                                                                                                                                                                                                                            |
@@ -2648,6 +2650,22 @@ Returns the dots per inch density of the specified screen. If ``screen`` is :ref
 
 ----
 
+.. _class_DisplayServer_method_screen_get_image:
+
+.. rst-class:: classref-method
+
+:ref:`Image<class_Image>` **screen_get_image** **(** :ref:`int<class_int>` screen=-1 **)** |const|
+
+Returns screenshot of the ``screen``.
+
+\ **Note:** This method is implemented on Linux (X11), macOS, and Windows.
+
+\ **Note:** On macOS, this method requires "Screen Recording" permission, if permission is not granted it will return desktop wallpaper color.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_screen_get_max_scale:
 
 .. rst-class:: classref-method
@@ -2915,6 +2933,8 @@ Note that Godot depends on system libraries for text-to-speech functionality. Th
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
+\ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2928,6 +2948,8 @@ Note that Godot depends on system libraries for text-to-speech functionality. Th
 Returns an :ref:`PackedStringArray<class_PackedStringArray>` of voice identifiers for the ``language``.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+
+\ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
 .. rst-class:: classref-item-separator
 
@@ -2943,6 +2965,8 @@ Returns ``true`` if the synthesizer is in a paused state.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
+\ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2956,6 +2980,8 @@ Returns ``true`` if the synthesizer is in a paused state.
 Returns ``true`` if the synthesizer is generating speech, or have utterance waiting in the queue.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+
+\ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
 .. rst-class:: classref-item-separator
 
@@ -2971,6 +2997,8 @@ Puts the synthesizer into a paused state.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
+\ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -2984,6 +3012,8 @@ void **tts_resume** **(** **)**
 Resumes the synthesizer if it was paused.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+
+\ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
 .. rst-class:: classref-item-separator
 
@@ -3004,6 +3034,8 @@ Adds a callback, which is called when the utterance has started, finished, cance
 \ **Note:** The granularity of the boundary callbacks is engine dependent.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+
+\ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
 .. rst-class:: classref-item-separator
 
@@ -3033,6 +3065,8 @@ Adds an utterance to the queue. If ``interrupt`` is ``true``, the queue is clear
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
 
+\ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -3046,6 +3080,8 @@ void **tts_stop** **(** **)**
 Stops synthesis in progress and removes all utterances from the queue.
 
 \ **Note:** This method is implemented on Android, iOS, Web, Linux (X11), macOS, and Windows.
+
+\ **Note:** :ref:`ProjectSettings.audio/general/text_to_speech<class_ProjectSettings_property_audio/general/text_to_speech>` should be ``true`` to use text-to-speech.
 
 .. rst-class:: classref-item-separator
 

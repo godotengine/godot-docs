@@ -213,7 +213,9 @@ For MIDI messages between 0x80 and 0xEF, only the left half of the bits are retu
 
 Notes will return :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` when activated, but they might not always return :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>` when deactivated, therefore your code should treat the input as stopped if some period of time has passed.
 
-For more information, see the MIDI message status byte list chart linked above.
+Some MIDI devices may send :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` with zero velocity instead of :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>`.
+
+For more information, see the note in :ref:`velocity<class_InputEventMIDI_property_velocity>` and the MIDI message status byte list chart linked above.
 
 .. rst-class:: classref-item-separator
 
@@ -264,7 +266,9 @@ The pressure of the MIDI signal. This value ranges from 0 to 127. For many devic
 - void **set_velocity** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_velocity** **(** **)**
 
-The velocity of the MIDI signal. This value ranges from 0 to 127. For a piano, this corresponds to how quickly the key was pressed, and is rarely above about 110 in practice. Note that some MIDI devices may send a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` message with zero velocity and expect this to be treated the same as a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>` message, but device implementations vary so Godot reports event data exactly as received.
+The velocity of the MIDI signal. This value ranges from 0 to 127. For a piano, this corresponds to how quickly the key was pressed, and is rarely above about 110 in practice.
+
+\ **Note:** Some MIDI devices may send a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` message with zero velocity and expect this to be treated the same as a :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_OFF<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_OFF>` message, but device implementations vary so Godot reports event data exactly as received. Depending on the hardware and the needs of the game/app, this MIDI quirk can be handled robustly with a couple lines of script (check for :ref:`@GlobalScope.MIDI_MESSAGE_NOTE_ON<class_@GlobalScope_constant_MIDI_MESSAGE_NOTE_ON>` with velocity zero).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

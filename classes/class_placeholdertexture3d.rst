@@ -25,6 +25,8 @@ This class is used when loading a project that uses a :ref:`Texture3D<class_Text
 
 - When this subclass is missing due to using a different engine version or build (e.g. modules disabled).
 
+\ **Note:** This is not intended to be used as an actual texture for rendering. It is not guaranteed to work like one in shaders or materials (for example when calculating UV).
+
 .. rst-class:: classref-reftable-group
 
 Properties

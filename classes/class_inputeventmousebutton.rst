@@ -39,6 +39,8 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------+-----------+
    | :ref:`MouseButton<enum_@GlobalScope_MouseButton>` | :ref:`button_index<class_InputEventMouseButton_property_button_index>` | ``0``     |
    +---------------------------------------------------+------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                           | :ref:`canceled<class_InputEventMouseButton_property_canceled>`         | ``false`` |
+   +---------------------------------------------------+------------------------------------------------------------------------+-----------+
    | :ref:`bool<class_bool>`                           | :ref:`double_click<class_InputEventMouseButton_property_double_click>` | ``false`` |
    +---------------------------------------------------+------------------------------------------------------------------------+-----------+
    | :ref:`float<class_float>`                         | :ref:`factor<class_InputEventMouseButton_property_factor>`             | ``1.0``   |
@@ -67,6 +69,23 @@ Property Descriptions
 - :ref:`MouseButton<enum_@GlobalScope_MouseButton>` **get_button_index** **(** **)**
 
 The mouse button identifier, one of the :ref:`MouseButton<enum_@GlobalScope_MouseButton>` button or button wheel constants.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_InputEventMouseButton_property_canceled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **canceled** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_canceled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_canceled** **(** **)**
+
+If ``true``, the mouse button event has been canceled.
 
 .. rst-class:: classref-item-separator
 

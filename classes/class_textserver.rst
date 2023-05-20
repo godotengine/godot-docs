@@ -304,7 +304,7 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                            | :ref:`shaped_text_draw_outline<class_TextServer_method_shaped_text_draw_outline>` **(** :ref:`RID<class_RID>` shaped, :ref:`RID<class_RID>` canvas, :ref:`Vector2<class_Vector2>` pos, :ref:`float<class_float>` clip_l=-1, :ref:`float<class_float>` clip_r=-1, :ref:`int<class_int>` outline_size=1, :ref:`Color<class_Color>` color=Color(1, 1, 1, 1) **)** |const| |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`float<class_float>`                                       | :ref:`shaped_text_fit_to_width<class_TextServer_method_shaped_text_fit_to_width>` **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` width, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3 **)**                                                                                                                                   |
+   | :ref:`float<class_float>`                                       | :ref:`shaped_text_fit_to_width<class_TextServer_method_shaped_text_fit_to_width>` **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` width, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` justification_flags=3 **)**                                                                                                                         |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                       | :ref:`shaped_text_get_ascent<class_TextServer_method_shaped_text_get_ascent>` **(** :ref:`RID<class_RID>` shaped **)** |const|                                                                                                                                                                                                                                         |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -365,6 +365,8 @@ Methods
    | :ref:`float<class_float>`                                       | :ref:`shaped_text_get_width<class_TextServer_method_shaped_text_get_width>` **(** :ref:`RID<class_RID>` shaped **)** |const|                                                                                                                                                                                                                                           |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`PackedInt32Array<class_PackedInt32Array>`                 | :ref:`shaped_text_get_word_breaks<class_TextServer_method_shaped_text_get_word_breaks>` **(** :ref:`RID<class_RID>` shaped, :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` grapheme_flags=264 **)** |const|                                                                                                                                                         |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                         | :ref:`shaped_text_has_visible_chars<class_TextServer_method_shaped_text_has_visible_chars>` **(** :ref:`RID<class_RID>` shaped **)** |const|                                                                                                                                                                                                                           |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                           | :ref:`shaped_text_hit_test_grapheme<class_TextServer_method_shaped_text_hit_test_grapheme>` **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` coords **)** |const|                                                                                                                                                                                         |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -643,6 +645,30 @@ Only apply justification to the part of the text after the last tab.
 :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **JUSTIFICATION_CONSTRAIN_ELLIPSIS** = ``16``
 
 Apply justification to the trimmed line with ellipsis.
+
+.. _class_TextServer_constant_JUSTIFICATION_SKIP_LAST_LINE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **JUSTIFICATION_SKIP_LAST_LINE** = ``32``
+
+Do not apply justification to the last line of the paragraph.
+
+.. _class_TextServer_constant_JUSTIFICATION_SKIP_LAST_LINE_WITH_VISIBLE_CHARS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **JUSTIFICATION_SKIP_LAST_LINE_WITH_VISIBLE_CHARS** = ``64``
+
+Do not apply justification to the last line of the paragraph with visible characters (takes precedence over :ref:`JUSTIFICATION_SKIP_LAST_LINE<class_TextServer_constant_JUSTIFICATION_SKIP_LAST_LINE>`).
+
+.. _class_TextServer_constant_JUSTIFICATION_DO_NOT_SKIP_SINGLE_LINE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **JUSTIFICATION_DO_NOT_SKIP_SINGLE_LINE** = ``128``
+
+Always apply justification to the paragraphs with a single line (:ref:`JUSTIFICATION_SKIP_LAST_LINE<class_TextServer_constant_JUSTIFICATION_SKIP_LAST_LINE>` and :ref:`JUSTIFICATION_SKIP_LAST_LINE_WITH_VISIBLE_CHARS<class_TextServer_constant_JUSTIFICATION_SKIP_LAST_LINE_WITH_VISIBLE_CHARS>` are ignored).
 
 .. rst-class:: classref-item-separator
 
@@ -3149,7 +3175,7 @@ Draw the outline of the shaped text into a canvas item at a given position, with
 
 .. rst-class:: classref-method
 
-:ref:`float<class_float>` **shaped_text_fit_to_width** **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` width, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` jst_flags=3 **)**
+:ref:`float<class_float>` **shaped_text_fit_to_width** **(** :ref:`RID<class_RID>` shaped, :ref:`float<class_float>` width, :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` justification_flags=3 **)**
 
 Adjusts text width to fit to specified width, returns new text width.
 
@@ -3518,6 +3544,18 @@ Returns width (for horizontal layout) or height (for vertical) of the text.
 :ref:`PackedInt32Array<class_PackedInt32Array>` **shaped_text_get_word_breaks** **(** :ref:`RID<class_RID>` shaped, :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>` grapheme_flags=264 **)** |const|
 
 Breaks text into words and returns array of character ranges. Use ``grapheme_flags`` to set what characters are used for breaking (see :ref:`GraphemeFlag<enum_TextServer_GraphemeFlag>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_shaped_text_has_visible_chars:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **shaped_text_has_visible_chars** **(** :ref:`RID<class_RID>` shaped **)** |const|
+
+Returns ``true``, if text buffer contents any visible characters.
 
 .. rst-class:: classref-item-separator
 
