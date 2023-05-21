@@ -443,7 +443,7 @@ functions:
         double amplitude;
 
     public:
-        void set_amplitude(const double amplitude);
+        void set_amplitude(const double p_amplitude);
         double get_amplitude() const;
     ...
 
@@ -500,7 +500,7 @@ code:
     ...
         void _process(double delta) override;
         void set_speed(double p_speed);
-        double get_speed();
+        double get_speed() const;
     ...
 
 This requires a few more changes to our ``gdexample.cpp`` file, again we're only
