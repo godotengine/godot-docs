@@ -114,7 +114,7 @@ Specifies when depth rendering must take place.
 * **Opaque Only (default):** Depth is only drawn for opaque objects.
 * **Always:** Depth draw is drawn for both opaque and transparent objects.
 * **Never:** No depth draw takes place
-  (do not confuse this with the No Depth Test option above).
+  (do not confuse this with the No Depth Test option below).
 * **Depth Pre-Pass:** For transparent objects, an opaque pass is made first
   with the opaque parts, then transparency is drawn above.
   Use this option with transparent grass or tree foliage.
