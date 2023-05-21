@@ -232,18 +232,18 @@ Here is a GDScript example of the diagram above using a :ref:`CharacterBody2D
     # object "collision" contains information about the collision
     var collision = move_and_collide(velocity * delta)
     if collision:
-        var reflect = collision.remainder.bounce(collision.normal)
-        velocity = velocity.bounce(collision.normal)
+        var reflect = collision.get_remainder().bounce(collision.get_normal())
+        velocity = velocity.bounce(collision.get_normal())
         move_and_collide(reflect)
 
  .. code-tab:: csharp
 
     // KinematicCollision2D contains information about the collision
-    KinematicCollision2D collision = MoveAndCollide(_velocity * delta);
+    KinematicCollision2D collision = MoveAndCollide(_velocity * (float)delta);
     if (collision != null)
     {
-        var reflect = collision.Remainder.Bounce(collision.Normal);
-        _velocity = _velocity.Bounce(collision.Normal);
+        var reflect = collision.GetRemainder().Bounce(collision.GetNormal());
+        _velocity = _velocity.Bounce(collision.GetNormal());
         MoveAndCollide(reflect);
     }
 
