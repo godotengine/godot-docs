@@ -116,10 +116,10 @@ After setting the request and changing the animation playback, the one-shot node
  .. code-tab:: csharp
 
     // Play child animation connected to "shot" port.
-    animationTree.Set("parameters/OneShot/request", (int) AnimationNodeOneShot.OneShotRequest.Fire);
+    animationTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
 
     // Abort child animation connected to "shot" port.
-    animationTree.Set("parameters/OneShot/request", (int) AnimationNodeOneShot.OneShotRequest.Abort);
+    animationTree.Set("parameters/OneShot/request", (int)AnimationNodeOneShot.OneShotRequest.Abort);
 
     // Get current state (read-only).
     animationTree.Get("parameters/OneShot/active");
