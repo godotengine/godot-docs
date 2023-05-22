@@ -102,7 +102,7 @@ velocity. Replace the line starting with ``var velocity`` with the code below.
     var velocity = Vector2.Zero;
     if (Input.IsActionPressed("ui_up"))
     {
-        velocity = Vector2.Up.Rotated(Rotation) * Speed;
+        velocity = Vector2.Up.Rotated(Rotation) * _speed;
     }
 
 We initialize the ``velocity`` with a value of ``Vector2.ZERO``, another
