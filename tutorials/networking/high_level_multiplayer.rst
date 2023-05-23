@@ -113,7 +113,7 @@ Initializing as a server, listening on the given port, with a given maximum numb
 
 ::
 
-    var peer = NetworkedMultiplayerENet.new()
+    var peer = ENetMultiplayerPeer.new()
     peer.create_server(SERVER_PORT, MAX_PLAYERS)
     get_tree().network_peer = peer
 
@@ -121,7 +121,7 @@ Initializing as a client, connecting to a given IP and port:
 
 ::
 
-    var peer = NetworkedMultiplayerENet.new()
+    var peer = ENetMultiplayerPeer.new()
     peer.create_client(SERVER_IP, SERVER_PORT)
     get_tree().network_peer = peer
 
