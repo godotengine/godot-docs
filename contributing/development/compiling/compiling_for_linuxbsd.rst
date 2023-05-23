@@ -436,7 +436,7 @@ listed in the :ref:`doc_compiling_for_linuxbsd_oneliners`:
 +------------------+-----------------------------------------------------------------------------------------------------------+
 | **Fedora**       | ::                                                                                                        |
 |                  |                                                                                                           |
-|                  |     sudo dnf install embree3-devel enet-devel glslang-devel graphite2-devel harfbuzz-devel libicu-devel \  |
+|                  |     sudo dnf install embree3-devel enet-devel glslang-devel graphite2-devel harfbuzz-devel libicu-devel \ |
 |                  |         libsquish-devel libtheora-devel libvorbis-devel libwebp-devel libzstd-devel mbedtls-devel \       |
 |                  |         miniupnpc-devel                                                                                   |
 +------------------+-----------------------------------------------------------------------------------------------------------+
