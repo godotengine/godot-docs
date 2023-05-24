@@ -112,7 +112,7 @@
     --copybtn-tooltip-background-color: #24292f;
     --copybtn-box-shadow: 0 1px 0 rgba(27,31,36,0.04), inset 0 1px 0 rgba(255,255,255,0.25);
     --copybtn-border-color-success: #2da44e;
-    
+
     --contribute-background-color: #d7dee8;
     --contribute-text-color: #646e72;
 
@@ -726,7 +726,7 @@ footer {
 
 .rst-content table.docutils,
 .wy-table-bordered-all {
-    border: 4px solid var(--code-border-color);
+    border: none;
 }
 
 .wy-table-bordered-all td,
@@ -734,14 +734,14 @@ footer {
 .rst-content table.docutils td,
 .rst-content table.docutils thead th,
 .rst-content table.field-list thead th {
-    border-bottom: 2px solid var(--code-border-color);
-    border-left: 2px solid var(--code-border-color);
+    border: none;
+    border-left: 1px solid var(--code-border-color);
     padding: 4px 16px;
 }
 
 html.writer-html5 .rst-content table.docutils th {
+    border: none;
     border-bottom: 4px solid var(--code-border-color);
-    border-left: 2px solid var(--code-border-color);
     padding: 8px 16px;
     vertical-align: middle;
 }
@@ -1714,7 +1714,7 @@ p + .classref-constant {
     left: 3.5px;
     top: 3.5px;
     color: var(--copybtn-icon-color);
-    pointer-events: none; 
+    pointer-events: none;
 }
 .highlight button.copybtn.success {
     border-color: var(--copybtn-border-color-success);
