@@ -311,7 +311,7 @@ this.
     ensure shader compilation doesn't become too slow.
 
     If you use ``if`` branching in a shader, performance may decrease as
-    :abbr`VGPR (Vector General-Purpose Register)` usage will increase in the
+    :abbr:`VGPR (Vector General-Purpose Register)` usage will increase in the
     shader. This happens even if all pixels evaluate to ``true`` or ``false`` in
     a given frame.
 
