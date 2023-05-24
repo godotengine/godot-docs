@@ -123,25 +123,25 @@ Initializing as a client, connecting to a given IP and port:
 
     var peer = NetworkedMultiplayerENet.new()
     peer.create_client(SERVER_IP, SERVER_PORT)
-    get_tree().network_peer = peer
+    multiplayer.multiplayer_peer = peer
 
 Get the previously set network peer:
 
 ::
 
-    get_tree().get_network_peer()
+    multiplayer.multiplayer_peer
 
 Checking whether the tree is initialized as a server or client:
 
 ::
 
-    get_tree().is_network_server()
+    multiplayer.is_server()
 
 Terminating the networking feature:
 
 ::
 
-    get_tree().network_peer = null
+    multiplayer.multiplayer_peer = null
 
 (Although it may make sense to send a message first to let the other peers know you're going away instead of letting the connection close or timeout, depending on your game.)
 
