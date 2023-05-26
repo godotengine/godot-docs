@@ -47,3 +47,6 @@ tmp-unused-images-history
 
 # User created Python virtual environement as described in the docs
 godot-docs-venv/
+
+# Jetbrains IDE files
+/.idea/
