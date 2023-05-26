@@ -17,7 +17,6 @@ Navigation
    navigation_using_navigationobstacles
    navigation_using_navigationlinks
    navigation_using_navigationlayers
-   navigation_using_agent_avoidance
    navigation_debug_tools
    navigation_connecting_navmesh
    navigation_different_actor_types

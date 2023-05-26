@@ -170,7 +170,6 @@ If RVO avoidance agents are registered for avoidance callbacks the NavigationSer
 their ``safe_velocity`` signals just before the PhysicsServer synchronization.
 
 To learn more about NavigationAgents see :ref:`doc_navigation_using_navigationagents`.
-To learn more about RVO Avoidance see :ref:`doc_navigation_using_agent_avoidance`.
 
 The simplified order of execution for NavigationAgents that use avoidance:
 
