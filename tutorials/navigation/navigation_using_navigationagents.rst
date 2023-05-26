@@ -89,9 +89,7 @@ There are some common user problems and important caveats to consider when writi
 NavigationAgent Avoidance
 -------------------------
 
-This section explains how to use the built-in avoidance specific
-to NavigationAgent nodes. For general avoidance use and more technical details
-on agent avoidance system see :ref:`doc_navigation_using_agent_avoidance`.
+This section explains how to use the navigation avoidance specific to NavigationAgents.
 
 In order for NavigationAgents to use the avoidance feature the ``enable_avoidance`` property must be set to ``true``.
 
