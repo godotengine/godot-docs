@@ -237,7 +237,9 @@ For example, the full command for exporting your game (as explained below) might
 
 ::
 
-    godot --path path_to_your_project --export-release my_export_preset_name game.exe
+    godot --headless --path path_to_your_project --export-release my_export_preset_name game.exe
+
+..
 
 Creating a project
 ------------------
@@ -324,27 +326,34 @@ Exporting
 ---------
 
 Exporting the project from the command line is also supported. This is
-especially useful for continuous integration setups. The version of Godot
-that is headless (server build, no video) is ideal for this.
+especially useful for continuous integration setups.
+
+.. note::
+
+    Using the ``--headless`` command line argument is **required** on platforms
+    that do not have GPU access (such as continuous integration). On platforms
+    with GPU access, ``--headless`` prevents a window from spawning while the
+    project is exporting.
 
 ::
 
     # `godot` must be a Godot editor binary, not an export template.
     # Also, export templates must be installed for the editor
     # (or a valid custom export template must be defined in the export preset).
-    godot --export-release "Linux/X11" /var/builds/project
-    godot --export-release Android /var/builds/project.apk
+    godot --headless --export-release "Linux/X11" /var/builds/project
+    godot --headless --export-release Android /var/builds/project.apk
 
 The preset name must match the name of an export preset defined in the
 project's ``export_presets.cfg`` file. If the preset name contains spaces or
 special characters (such as "Windows Desktop"), it must be surrounded with quotes.
 
-To export a debug version of the game, use the ``--export-debug`` switch
-instead of ``--export``. Their parameters and usage are the same.
+To export a debug version of the game, use the ``--export-debug`` switch instead
+of ``--export-release``. Their parameters and usage are the same.
 
 To export only a PCK file, use the ``--export-pack`` option followed by the
-preset name and output path, with the file extension, instead of ``--export``.
-The output path extension determines the package's format, either PCK or ZIP.
+preset name and output path, with the file extension, instead of
+``--export-release`` or ``--export-debug``. The output path extension determines
+the package's format, either PCK or ZIP.
 
 .. warning::
 
