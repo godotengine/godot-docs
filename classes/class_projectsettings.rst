@@ -1533,6 +1533,8 @@ Methods
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`save_custom<class_ProjectSettings_method_save_custom>` **(** :ref:`String<class_String>` file **)**                                                                                           |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_as_basic<class_ProjectSettings_method_set_as_basic>` **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` basic **)**                                                          |
+   +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`set_initial_value<class_ProjectSettings_method_set_initial_value>` **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**                                          |
    +---------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                  | :ref:`set_order<class_ProjectSettings_method_set_order>` **(** :ref:`String<class_String>` name, :ref:`int<class_int>` position **)**                                                               |
@@ -11079,13 +11081,25 @@ Saves the configuration to a custom file. The file extension must be ``.godot`` 
 
 ----
 
+.. _class_ProjectSettings_method_set_as_basic:
+
+.. rst-class:: classref-method
+
+void **set_as_basic** **(** :ref:`String<class_String>` name, :ref:`bool<class_bool>` basic **)**
+
+Defines if the specified setting is considered basic or advanced. Basic settings will always be shown in the project settings. Advanced settings will only be shown if the user enables the "Advanced Settings" option.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_ProjectSettings_method_set_initial_value:
 
 .. rst-class:: classref-method
 
 void **set_initial_value** **(** :ref:`String<class_String>` name, :ref:`Variant<class_Variant>` value **)**
 
-Sets the specified property's initial value. This is the value the property reverts to.
+Sets the specified setting's initial value. This is the value the setting reverts to.
 
 .. rst-class:: classref-item-separator
 

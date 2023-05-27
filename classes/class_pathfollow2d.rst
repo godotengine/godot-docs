@@ -36,8 +36,6 @@ Properties
    +---------------------------+-------------------------------------------------------------------+----------+
    | :ref:`float<class_float>` | :ref:`h_offset<class_PathFollow2D_property_h_offset>`             | ``0.0``  |
    +---------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>` | :ref:`lookahead<class_PathFollow2D_property_lookahead>`           | ``4.0``  |
-   +---------------------------+-------------------------------------------------------------------+----------+
    | :ref:`bool<class_bool>`   | :ref:`loop<class_PathFollow2D_property_loop>`                     | ``true`` |
    +---------------------------+-------------------------------------------------------------------+----------+
    | :ref:`float<class_float>` | :ref:`progress<class_PathFollow2D_property_progress>`             | ``0.0``  |
@@ -91,23 +89,6 @@ There are two answers to this problem: either increase the number of cached poin
 - :ref:`float<class_float>` **get_h_offset** **(** **)**
 
 The node's offset along the curve.
-
-.. rst-class:: classref-item-separator
-
-----
-
-.. _class_PathFollow2D_property_lookahead:
-
-.. rst-class:: classref-property
-
-:ref:`float<class_float>` **lookahead** = ``4.0``
-
-.. rst-class:: classref-property-setget
-
-- void **set_lookahead** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_lookahead** **(** **)**
-
-How far to look ahead of the curve to calculate the tangent if the node is rotating. E.g. shorter lookaheads will lead to faster rotations.
 
 .. rst-class:: classref-item-separator
 

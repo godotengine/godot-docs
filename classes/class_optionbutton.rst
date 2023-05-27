@@ -25,6 +25,8 @@ See also :ref:`BaseButton<class_BaseButton>` which contains common properties an
 
 \ **Note:** Properties :ref:`Button.text<class_Button_property_text>` and :ref:`Button.icon<class_Button_property_icon>` are automatically set based on the selected item. They shouldn't be changed manually.
 
+\ **Note:** The ID values used for items are limited to 32 bits, not full 64 bits of :ref:`int<class_int>`. This has a range of ``-2^32`` to ``2^32 - 1``, i.e. ``-2147483648`` to ``2147483647``.
+
 .. rst-class:: classref-reftable-group
 
 Properties

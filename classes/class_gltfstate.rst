@@ -502,9 +502,7 @@ Returns an array of all :ref:`GLTFCamera<class_GLTFCamera>`\ s in the GLTF file.
 
 :ref:`Texture2D[]<class_Texture2D>` **get_images** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Gets the images of the GLTF file as an array of :ref:`Texture2D<class_Texture2D>`\ s. These are the images that the :ref:`GLTFTexture.src_image<class_GLTFTexture_property_src_image>` index refers to.
 
 .. rst-class:: classref-item-separator
 
@@ -732,9 +730,7 @@ void **set_handle_binary_image** **(** :ref:`int<class_int>` method **)**
 
 void **set_images** **(** :ref:`Texture2D[]<class_Texture2D>` images **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets the images in the state stored as an array of :ref:`Texture2D<class_Texture2D>`\ s. This can be used during export. These are the images that the :ref:`GLTFTexture.src_image<class_GLTFTexture_property_src_image>` index refers to.
 
 .. rst-class:: classref-item-separator
 

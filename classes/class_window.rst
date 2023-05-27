@@ -148,6 +148,8 @@ Methods
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`StyleBox<class_StyleBox>`                     | :ref:`get_theme_stylebox<class_Window_method_get_theme_stylebox>` **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` theme_type="" **)** |const|                                                                  |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                               | :ref:`get_window_id<class_Window_method_get_window_id>` **(** **)** |const|                                                                                                                                                                        |
+   +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`grab_focus<class_Window_method_grab_focus>` **(** **)**                                                                                                                                                                                      |
    +-----------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                             | :ref:`has_focus<class_Window_method_has_focus>` **(** **)** |const|                                                                                                                                                                                |
@@ -1676,6 +1678,18 @@ See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for det
 Returns a :ref:`StyleBox<class_StyleBox>` from the first matching :ref:`Theme<class_Theme>` in the tree if that :ref:`Theme<class_Theme>` has a stylebox item with the specified ``name`` and ``theme_type``.
 
 See :ref:`Control.get_theme_color<class_Control_method_get_theme_color>` for details.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Window_method_get_window_id:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_window_id** **(** **)** |const|
+
+Returns the ID of the window.
 
 .. rst-class:: classref-item-separator
 

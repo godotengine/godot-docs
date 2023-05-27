@@ -474,7 +474,7 @@ Called when the object receives a notification, which can be identified in ``wha
 
  .. code-tab:: csharp
 
-    public override void _Notification(long what)
+    public override void _Notification(int what)
     {
         if (what == NotificationPredelete)
         {

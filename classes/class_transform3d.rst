@@ -80,33 +80,33 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`affine_inverse<class_Transform3D_method_affine_inverse>` **(** **)** |const|                                                                                   |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`interpolate_with<class_Transform3D_method_interpolate_with>` **(** :ref:`Transform3D<class_Transform3D>` xform, :ref:`float<class_float>` weight **)** |const| |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`inverse<class_Transform3D_method_inverse>` **(** **)** |const|                                                                                                 |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>` **(** :ref:`Transform3D<class_Transform3D>` xform **)** |const|                                     |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`is_finite<class_Transform3D_method_is_finite>` **(** **)** |const|                                                                                             |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`looking_at<class_Transform3D_method_looking_at>` **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0) **)** |const|   |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`orthonormalized<class_Transform3D_method_orthonormalized>` **(** **)** |const|                                                                                 |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`rotated<class_Transform3D_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                             |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`rotated_local<class_Transform3D_method_rotated_local>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                 |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`scaled<class_Transform3D_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                               |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`scaled_local<class_Transform3D_method_scaled_local>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                   |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`translated<class_Transform3D_method_translated>` **(** :ref:`Vector3<class_Vector3>` offset **)** |const|                                                      |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Transform3D<class_Transform3D>` | :ref:`translated_local<class_Transform3D_method_translated_local>` **(** :ref:`Vector3<class_Vector3>` offset **)** |const|                                          |
-   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`affine_inverse<class_Transform3D_method_affine_inverse>` **(** **)** |const|                                                                                                                                |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`interpolate_with<class_Transform3D_method_interpolate_with>` **(** :ref:`Transform3D<class_Transform3D>` xform, :ref:`float<class_float>` weight **)** |const|                                              |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`inverse<class_Transform3D_method_inverse>` **(** **)** |const|                                                                                                                                              |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_equal_approx<class_Transform3D_method_is_equal_approx>` **(** :ref:`Transform3D<class_Transform3D>` xform **)** |const|                                                                                  |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_finite<class_Transform3D_method_is_finite>` **(** **)** |const|                                                                                                                                          |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`looking_at<class_Transform3D_method_looking_at>` **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0), :ref:`bool<class_bool>` use_model_front=false **)** |const| |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`orthonormalized<class_Transform3D_method_orthonormalized>` **(** **)** |const|                                                                                                                              |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`rotated<class_Transform3D_method_rotated>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                                                                          |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`rotated_local<class_Transform3D_method_rotated_local>` **(** :ref:`Vector3<class_Vector3>` axis, :ref:`float<class_float>` angle **)** |const|                                                              |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`scaled<class_Transform3D_method_scaled>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                                                                            |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`scaled_local<class_Transform3D_method_scaled_local>` **(** :ref:`Vector3<class_Vector3>` scale **)** |const|                                                                                                |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`translated<class_Transform3D_method_translated>` **(** :ref:`Vector3<class_Vector3>` offset **)** |const|                                                                                                   |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Transform3D<class_Transform3D>` | :ref:`translated_local<class_Transform3D_method_translated_local>` **(** :ref:`Vector3<class_Vector3>` offset **)** |const|                                                                                       |
+   +---------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -336,11 +336,13 @@ Returns ``true`` if this transform is finite, by calling :ref:`@GlobalScope.is_f
 
 .. rst-class:: classref-method
 
-:ref:`Transform3D<class_Transform3D>` **looking_at** **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0) **)** |const|
+:ref:`Transform3D<class_Transform3D>` **looking_at** **(** :ref:`Vector3<class_Vector3>` target, :ref:`Vector3<class_Vector3>` up=Vector3(0, 1, 0), :ref:`bool<class_bool>` use_model_front=false **)** |const|
 
 Returns a copy of the transform rotated such that the forward axis (-Z) points towards the ``target`` position.
 
 The up axis (+Y) points as close to the ``up`` vector as possible while staying perpendicular to the forward axis. The resulting transform is orthonormalized. The existing rotation, scale, and skew information from the original transform is discarded. The ``target`` and ``up`` vectors cannot be zero, cannot be parallel to each other, and are defined in global/parent space.
+
+If ``use_model_front`` is ``true``, the +Z axis (asset front) is treated as forward (implies +X is left) and points toward the ``target`` position. By default, the -Z axis (camera forward) is treated as forward (implies +X is right).
 
 .. rst-class:: classref-item-separator
 

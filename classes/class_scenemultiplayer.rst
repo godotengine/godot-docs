@@ -44,6 +44,10 @@ Properties
    +---------------------------------+---------------------------------------------------------------------------------------+------------------+
    | :ref:`float<class_float>`       | :ref:`auth_timeout<class_SceneMultiplayer_property_auth_timeout>`                     | ``3.0``          |
    +---------------------------------+---------------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`max_delta_packet_size<class_SceneMultiplayer_property_max_delta_packet_size>`   | ``65535``        |
+   +---------------------------------+---------------------------------------------------------------------------------------+------------------+
+   | :ref:`int<class_int>`           | :ref:`max_sync_packet_size<class_SceneMultiplayer_property_max_sync_packet_size>`     | ``1350``         |
+   +---------------------------------+---------------------------------------------------------------------------------------+------------------+
    | :ref:`bool<class_bool>`         | :ref:`refuse_new_connections<class_SceneMultiplayer_property_refuse_new_connections>` | ``false``        |
    +---------------------------------+---------------------------------------------------------------------------------------+------------------+
    | :ref:`NodePath<class_NodePath>` | :ref:`root_path<class_SceneMultiplayer_property_root_path>`                           | ``NodePath("")`` |
@@ -171,6 +175,40 @@ The callback to execute when when receiving authentication data sent via :ref:`s
 - :ref:`float<class_float>` **get_auth_timeout** **(** **)**
 
 If set to a value greater than ``0.0``, the maximum amount of time peers can stay in the authenticating state, after which the authentication will automatically fail. See the :ref:`peer_authenticating<class_SceneMultiplayer_signal_peer_authenticating>` and :ref:`peer_authentication_failed<class_SceneMultiplayer_signal_peer_authentication_failed>` signals.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SceneMultiplayer_property_max_delta_packet_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **max_delta_packet_size** = ``65535``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_delta_packet_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max_delta_packet_size** **(** **)**
+
+Maximum size of each delta packet. Higher values increase the chance of receiving full updates in a single frame, but also the chance of causing networking congestion (higher latency, disconnections). See :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SceneMultiplayer_property_max_sync_packet_size:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **max_sync_packet_size** = ``1350``
+
+.. rst-class:: classref-property-setget
+
+- void **set_max_sync_packet_size** **(** :ref:`int<class_int>` value **)**
+- :ref:`int<class_int>` **get_max_sync_packet_size** **(** **)**
+
+Maximum size of each synchronization packet. Higher values increase the chance of receiving full updates in a single frame, but also the chance of packet loss. See :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`.
 
 .. rst-class:: classref-item-separator
 

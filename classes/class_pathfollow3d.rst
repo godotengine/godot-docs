@@ -31,23 +31,25 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`                             | :ref:`cubic_interp<class_PathFollow3D_property_cubic_interp>`     | ``true`` |
-   +-----------------------------------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                           | :ref:`h_offset<class_PathFollow3D_property_h_offset>`             | ``0.0``  |
-   +-----------------------------------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`                             | :ref:`loop<class_PathFollow3D_property_loop>`                     | ``true`` |
-   +-----------------------------------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                           | :ref:`progress<class_PathFollow3D_property_progress>`             | ``0.0``  |
-   +-----------------------------------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                           | :ref:`progress_ratio<class_PathFollow3D_property_progress_ratio>` | ``0.0``  |
-   +-----------------------------------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`RotationMode<enum_PathFollow3D_RotationMode>` | :ref:`rotation_mode<class_PathFollow3D_property_rotation_mode>`   | ``3``    |
-   +-----------------------------------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`                             | :ref:`tilt_enabled<class_PathFollow3D_property_tilt_enabled>`     | ``true`` |
-   +-----------------------------------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`float<class_float>`                           | :ref:`v_offset<class_PathFollow3D_property_v_offset>`             | ``0.0``  |
-   +-----------------------------------------------------+-------------------------------------------------------------------+----------+
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                             | :ref:`cubic_interp<class_PathFollow3D_property_cubic_interp>`       | ``true``  |
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                           | :ref:`h_offset<class_PathFollow3D_property_h_offset>`               | ``0.0``   |
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                             | :ref:`loop<class_PathFollow3D_property_loop>`                       | ``true``  |
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                           | :ref:`progress<class_PathFollow3D_property_progress>`               | ``0.0``   |
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                           | :ref:`progress_ratio<class_PathFollow3D_property_progress_ratio>`   | ``0.0``   |
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`RotationMode<enum_PathFollow3D_RotationMode>` | :ref:`rotation_mode<class_PathFollow3D_property_rotation_mode>`     | ``3``     |
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                             | :ref:`tilt_enabled<class_PathFollow3D_property_tilt_enabled>`       | ``true``  |
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                             | :ref:`use_model_front<class_PathFollow3D_property_use_model_front>` | ``false`` |
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                           | :ref:`v_offset<class_PathFollow3D_property_v_offset>`               | ``0.0``   |
+   +-----------------------------------------------------+---------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -243,6 +245,23 @@ Allows or forbids rotation on one or more axes, depending on the :ref:`RotationM
 - :ref:`bool<class_bool>` **is_tilt_enabled** **(** **)**
 
 If ``true``, the tilt property of :ref:`Curve3D<class_Curve3D>` takes effect.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_PathFollow3D_property_use_model_front:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_model_front** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_model_front** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **is_using_model_front** **(** **)**
+
+If ``true``, the node moves on the travel path with orienting the +Z axis as forward. See also :ref:`Vector3.FORWARD<class_Vector3_constant_FORWARD>` and :ref:`Vector3.MODEL_FRONT<class_Vector3_constant_MODEL_FRONT>`.
 
 .. rst-class:: classref-item-separator
 
