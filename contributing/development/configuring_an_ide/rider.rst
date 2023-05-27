@@ -63,7 +63,7 @@ Use the root path to the project folder, not ``project.godot`` file path.
 
 - You can now launch the debugger by pressing the **Debug** icon at the top of the screen and it will open the project to debug.
 
-Alternatively you can use **run > attach to process** to attach the debugger to a running Godot instance.
+Alternatively you can use **Run > Attach to Process** to attach the debugger to a running Godot instance.
 
 .. figure:: img/rider_attach_to_process.webp
    :align: center
