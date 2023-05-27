@@ -14,9 +14,8 @@ behalf of the parent actor node in a more convenient manner for beginners.
 
 New NavigationAgent nodes will automatically join the default navigation map on the World2D/World3D.
 
-The functionality of NavigationsAgent nodes can be recreated with scripts and direct
-calls to the NavigationServer API should the default NavigationsAgent 
-nodes not do what is required for a project and specific gameplay.
+NavigationsAgent nodes are optional and not a hard requirement to use the navigation system.
+Their entire functionality can be replaced with scripts and direct calls to the NavigationServer API.
 
 NavigationAgent Pathfinding
 ---------------------------
@@ -48,19 +47,19 @@ towards this path position with your own movement code.
     The navigation system never moves the parent node of a NavigationAgent.
     The movement is entirely in the hands of users and their custom scripts.
 
+NavigationAgents have their own internal logic to proceed with the current path and call for updates.
+
 The ``get_next_path_position()`` function is responsible for updating many of the agent's internal states and properties.
 The function should be repeatedly called `once` every ``physics_process`` until ``is_navigation_finished()`` tells that the path is finished.
 The function should not be called after the target position or path end has been reached 
 as it can make the agent jitter in place due to the repeated path updates.
 Always check very early in script with ``is_navigation_finished()`` if the path is already finished.
 
-NavigationAgents have their own internal logic to proceed with the current path and call for updates.
-
 The following properties influence the path following behavior.
 
 - The ``path_desired_distance`` defines the distance at which the agent advances its internal path index to the next path position.
-- The ``target_desired_distance`` defines the dinstance at which the agent considers the target position to be reached and the path at its end.
-- The ``path_max_distance`` defines when an agent requests a new path cause it was moved to far away from the current path point segment.
+- The ``target_desired_distance`` defines the distance at which the agent considers the target position to be reached and the path at its end.
+- The ``path_max_distance`` defines when an agent requests a new path cause it was moved too far away from the current path point segment.
 
 The important updates are all triggered with the ``get_next_path_position()`` function
 when called in ``_physics_process()``.
@@ -130,7 +129,7 @@ NavigationObstacles can be used to add some environment constrains to the avoida
 
 .. note::
 
-    Avoidance does not affect the pathfinding. It should be seen as an additional option for constantly moving objects that cannot be re(baked) to a navigation mesh efficiently in order to move around them.
+    Avoidance does not affect the pathfinding. It should be seen as an additional option for constantly moving objects that cannot be (re)baked to a navigation mesh efficiently in order to move around them.
 
 Using the NavigationAgent ``enable_avoidance`` property is the preferred option
 to toggle avoidance. The following code snippets can be used to 
