@@ -106,7 +106,6 @@ Examples
 
     ## If the member has any annotation, the annotation should
     ## immediately precede it.
-    @export
     @onready
     var v3 := some_func()
 
