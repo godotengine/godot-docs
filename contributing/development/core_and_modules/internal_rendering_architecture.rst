@@ -368,6 +368,12 @@ this.
 in :abbr:`LDR (Low Dynamic Range)` sRGB-space while 3D rendering uses
 :abbr:`HDR (High Dynamic Range)` linear space.
 
+The color format used for 2D rendering is RGB8 (RGBA8 if the **Transparent**
+property on the Viewport is enabled). 3D rendering uses a 24-bit unsigned
+normalized integer depth buffer, or 32-bit signed floating-point if a 24-bit
+depth buffer is not supported by the hardware. 2D rendering does not use a depth
+buffer.
+
 3D resolution scaling is performed differently depending on whether bilinear or
 FSR 1.0 scaling is used. When bilinear scaling is used, no special upscaling
 shader is run. Instead, the viewport's texture is stretched and displayed with a
