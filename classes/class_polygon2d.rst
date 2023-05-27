@@ -438,7 +438,7 @@ Returns the path to the node associated with the specified bone.
 
 :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_bone_weights** **(** :ref:`int<class_int>` index **)** |const|
 
-Returns the height values of the specified bone.
+Returns the weight values of the specified bone.
 
 .. rst-class:: classref-item-separator
 

@@ -27,6 +27,8 @@ Visibility can be handled directly with :ref:`set_visibility_for<class_Multiplay
 
 Internally, **MultiplayerSynchronizer** uses :ref:`MultiplayerAPI.object_configuration_add<class_MultiplayerAPI_method_object_configuration_add>` to notify synchronization start passing the :ref:`Node<class_Node>` at :ref:`root_path<class_MultiplayerSynchronizer_property_root_path>` as the ``object`` and itself as the ``configuration``, and uses :ref:`MultiplayerAPI.object_configuration_remove<class_MultiplayerAPI_method_object_configuration_remove>` to notify synchronization end in a similar way.
 
+\ **Note:** Synchronization is not supported for :ref:`Object<class_Object>` type properties, like :ref:`Resource<class_Resource>`. Properties that are unique to each peer, like the instance IDs of :ref:`Object<class_Object>`\ s (see :ref:`Object.get_instance_id<class_Object_method_get_instance_id>`) or :ref:`RID<class_RID>`\ s, will also not work in synchronization.
+
 .. rst-class:: classref-reftable-group
 
 Properties
@@ -35,6 +37,8 @@ Properties
 .. table::
    :widths: auto
 
+   +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
+   | :ref:`float<class_float>`                                                      | :ref:`delta_interval<class_MultiplayerSynchronizer_property_delta_interval>`                 | ``0.0``            |
    +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
    | :ref:`bool<class_bool>`                                                        | :ref:`public_visibility<class_MultiplayerSynchronizer_property_public_visibility>`           | ``true``           |
    +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+--------------------+
@@ -76,13 +80,25 @@ Methods
 Signals
 -------
 
+.. _class_MultiplayerSynchronizer_signal_delta_synchronized:
+
+.. rst-class:: classref-signal
+
+**delta_synchronized** **(** **)**
+
+Emitted when a new delta synchronization state is received by this synchronizer after the properties have been updated.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_MultiplayerSynchronizer_signal_synchronized:
 
 .. rst-class:: classref-signal
 
 **synchronized** **(** **)**
 
-Emitted when a new synchronization state is received by this synchronizer after the variables have been updated.
+Emitted when a new synchronization state is received by this synchronizer after the properties have been updated.
 
 .. rst-class:: classref-item-separator
 
@@ -144,6 +160,23 @@ Visibility filters are not updated automatically, and must be updated manually b
 Property Descriptions
 ---------------------
 
+.. _class_MultiplayerSynchronizer_property_delta_interval:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **delta_interval** = ``0.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_delta_interval** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_delta_interval** **(** **)**
+
+Time interval between delta synchronizations. When set to ``0.0`` (the default), delta synchronizations happen every network process frame.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_MultiplayerSynchronizer_property_public_visibility:
 
 .. rst-class:: classref-property
@@ -189,7 +222,7 @@ Resource containing which properties to synchronize.
 - void **set_replication_interval** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_replication_interval** **(** **)**
 
-Time interval between synchronizes. When set to ``0.0`` (the default), synchronizes happen every network process frame.
+Time interval between synchronizations. When set to ``0.0`` (the default), synchronizations happen every network process frame.
 
 .. rst-class:: classref-item-separator
 

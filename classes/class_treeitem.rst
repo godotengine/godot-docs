@@ -23,6 +23,8 @@ Control for a single item inside a :ref:`Tree<class_Tree>`. May have child **Tre
 
 You can remove a **TreeItem** by using :ref:`Object.free<class_Object_method_free>`.
 
+\ **Note:** The ID values used for buttons are limited to 32 bits, not full 64 bits of :ref:`int<class_int>`. This has a range of ``-2^32`` to ``2^32 - 1``, i.e. ``-2147483648`` to ``2147483647``.
+
 .. rst-class:: classref-reftable-group
 
 Properties

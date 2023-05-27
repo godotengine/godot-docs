@@ -315,7 +315,7 @@ Down unit vector.
 
 **FORWARD** = ``Vector3(0, 0, -1)``
 
-Forward unit vector. Represents the local direction of forward, and the global direction of north.
+Forward unit vector. Represents the local direction of forward, and the global direction of north. Keep in mind that the forward direction for lights, cameras, etc is different from 3D assets like characters, which face towards the camera by convention. Use :ref:`MODEL_FRONT<class_Vector3_constant_MODEL_FRONT>` and similar constants when working in 3D asset space.
 
 .. _class_Vector3_constant_BACK:
 
@@ -324,6 +324,54 @@ Forward unit vector. Represents the local direction of forward, and the global d
 **BACK** = ``Vector3(0, 0, 1)``
 
 Back unit vector. Represents the local direction of back, and the global direction of south.
+
+.. _class_Vector3_constant_MODEL_LEFT:
+
+.. rst-class:: classref-constant
+
+**MODEL_LEFT** = ``Vector3(1, 0, 0)``
+
+Unit vector pointing towards the left side of imported 3D assets.
+
+.. _class_Vector3_constant_MODEL_RIGHT:
+
+.. rst-class:: classref-constant
+
+**MODEL_RIGHT** = ``Vector3(-1, 0, 0)``
+
+Unit vector pointing towards the right side of imported 3D assets.
+
+.. _class_Vector3_constant_MODEL_TOP:
+
+.. rst-class:: classref-constant
+
+**MODEL_TOP** = ``Vector3(0, 1, 0)``
+
+Unit vector pointing towards the top side (up) of imported 3D assets.
+
+.. _class_Vector3_constant_MODEL_BOTTOM:
+
+.. rst-class:: classref-constant
+
+**MODEL_BOTTOM** = ``Vector3(0, -1, 0)``
+
+Unit vector pointing towards the bottom side (down) of imported 3D assets.
+
+.. _class_Vector3_constant_MODEL_FRONT:
+
+.. rst-class:: classref-constant
+
+**MODEL_FRONT** = ``Vector3(0, 0, 1)``
+
+Unit vector pointing towards the front side (facing forward) of imported 3D assets.
+
+.. _class_Vector3_constant_MODEL_REAR:
+
+.. rst-class:: classref-constant
+
+**MODEL_REAR** = ``Vector3(0, 0, -1)``
+
+Unit vector pointing towards the rear side (back) of imported 3D assets.
 
 .. rst-class:: classref-section-separator
 

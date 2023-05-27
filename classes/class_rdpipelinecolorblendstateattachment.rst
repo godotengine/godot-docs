@@ -55,8 +55,8 @@ For reference, this is how common user-facing blend modes are implemented in God
 
     var attachment = RDPipelineColorBlendStateAttachment.new()
     attachment.enable_blend = true
-    attachment.alpha_blend_op = RenderingDevice.BLEND_OP_SUBTRACT
-    attachment.color_blend_op = RenderingDevice.BLEND_OP_SUBTRACT
+    attachment.alpha_blend_op = RenderingDevice.BLEND_OP_REVERSE_SUBTRACT
+    attachment.color_blend_op = RenderingDevice.BLEND_OP_REVERSE_SUBTRACT
     attachment.src_color_blend_factor = RenderingDevice.BLEND_FACTOR_SRC_ALPHA
     attachment.dst_color_blend_factor = RenderingDevice.BLEND_FACTOR_ONE
     attachment.src_alpha_blend_factor = RenderingDevice.BLEND_FACTOR_SRC_ALPHA

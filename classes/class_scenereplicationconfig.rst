@@ -35,9 +35,13 @@ Methods
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`           | :ref:`property_get_sync<class_SceneReplicationConfig_method_property_get_sync>` **(** :ref:`NodePath<class_NodePath>` path **)**                                    |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`           | :ref:`property_get_watch<class_SceneReplicationConfig_method_property_get_watch>` **(** :ref:`NodePath<class_NodePath>` path **)**                                  |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`property_set_spawn<class_SceneReplicationConfig_method_property_set_spawn>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)** |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`property_set_sync<class_SceneReplicationConfig_method_property_set_sync>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**   |
+   +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                              | :ref:`property_set_watch<class_SceneReplicationConfig_method_property_set_watch>` **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)** |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                              | :ref:`remove_property<class_SceneReplicationConfig_method_remove_property>` **(** :ref:`NodePath<class_NodePath>` path **)**                                        |
    +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -58,6 +62,8 @@ Method Descriptions
 void **add_property** **(** :ref:`NodePath<class_NodePath>` path, :ref:`int<class_int>` index=-1 **)**
 
 Adds the property identified by the given ``path`` to the list of the properties being synchronized, optionally passing an ``index``.
+
+\ **Note:** For details on restrictions and limitations on property synchronization, see :ref:`MultiplayerSynchronizer<class_MultiplayerSynchronizer>`.
 
 .. rst-class:: classref-item-separator
 
@@ -123,6 +129,18 @@ Returns whether the property identified by the given ``path`` is configured to b
 
 ----
 
+.. _class_SceneReplicationConfig_method_property_get_watch:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **property_get_watch** **(** :ref:`NodePath<class_NodePath>` path **)**
+
+Returns whether the property identified by the given ``path`` is configured to be reliably synchronized when changes are detected on process.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_SceneReplicationConfig_method_property_set_spawn:
 
 .. rst-class:: classref-method
@@ -142,6 +160,18 @@ Sets whether the property identified by the given ``path`` is configured to be s
 void **property_set_sync** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**
 
 Sets whether the property identified by the given ``path`` is configured to be synchronized on process.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_SceneReplicationConfig_method_property_set_watch:
+
+.. rst-class:: classref-method
+
+void **property_set_watch** **(** :ref:`NodePath<class_NodePath>` path, :ref:`bool<class_bool>` enabled **)**
+
+Sets whether the property identified by the given ``path`` is configured to be reliably synchronized when changes are detected on process.
 
 .. rst-class:: classref-item-separator
 

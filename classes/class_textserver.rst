@@ -108,6 +108,8 @@ Methods
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`                             | :ref:`font_get_opentype_feature_overrides<class_TextServer_method_font_get_opentype_feature_overrides>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                             |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Dictionary<class_Dictionary>`                             | :ref:`font_get_ot_name_strings<class_TextServer_method_font_get_ot_name_strings>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                   |
+   +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                       | :ref:`font_get_oversampling<class_TextServer_method_font_get_oversampling>` **(** :ref:`RID<class_RID>` font_rid **)** |const|                                                                                                                                                                                                                                         |
    +-----------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                       | :ref:`font_get_scale<class_TextServer_method_font_get_scale>` **(** :ref:`RID<class_RID>` font_rid, :ref:`int<class_int>` size **)** |const|                                                                                                                                                                                                                           |
@@ -1946,6 +1948,18 @@ Returns font family name.
 :ref:`Dictionary<class_Dictionary>` **font_get_opentype_feature_overrides** **(** :ref:`RID<class_RID>` font_rid **)** |const|
 
 Returns font OpenType feature set override.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TextServer_method_font_get_ot_name_strings:
+
+.. rst-class:: classref-method
+
+:ref:`Dictionary<class_Dictionary>` **font_get_ot_name_strings** **(** :ref:`RID<class_RID>` font_rid **)** |const|
+
+Returns :ref:`Dictionary<class_Dictionary>` with OpenType font name strings (localized font names, version, description, license information, sample text, etc.).
 
 .. rst-class:: classref-item-separator
 

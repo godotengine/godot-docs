@@ -407,6 +407,14 @@ The animation is interpolated by bouncing at the end.
 
 The animation is interpolated backing out at ends.
 
+.. _class_Tween_constant_TRANS_SPRING:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`TransitionType<enum_Tween_TransitionType>` **TRANS_SPRING** = ``11``
+
+The animation is interpolated like a spring towards the end.
+
 .. rst-class:: classref-item-separator
 
 ----
