@@ -404,11 +404,11 @@ between parentheses and separated by commas.
 
 Both of these are the same::
 
-    @onready
-    @export_node_path("TextEdit", "LineEdit")
-    var input_field
+    @annotation_a
+    @annotation_b
+    var variable
 
-    @onready @export_node_path("TextEdit", "LineEdit") var input_field
+    @annotation_a @annotation_b var variable
 
 .. _doc_gdscript_onready_annotation:
 
@@ -434,6 +434,29 @@ defers initialization of a member variable until ``_ready()`` is called. It
 can replace the above code with a single line::
 
     @onready var my_label = get_node("MyLabel")
+
+.. warning::
+
+    Applying ``@onready`` and any ``@export`` annotation to the same variable
+    doesn't work as you might expect. The ``@onready`` annotation will cause
+    the default value to be set after the ``@export`` takes effect and will
+    override it::
+
+        @export var a = "init_value_a"
+        @onready @export var b = "init_value_b"
+
+        func _init():
+            prints(a, b) # init_value_a <null>
+
+        func _notification(what):
+            if what == NOTIFICATION_SCENE_INSTANTIATED:
+                prints(a, b) # exported_value_a exported_value_b
+
+        func _ready():
+            prints(a, b) # exported_value_a init_value_b
+
+    Therefore, the ``ONREADY_WITH_EXPORT`` warning is generated, which is treated
+    as an error by default. We do not recommend disabling or ignoring it.
 
 Comments
 ~~~~~~~~
@@ -911,7 +934,7 @@ want to assign consecutive integers to some constant.
 ::
 
     enum {TILE_BRICK, TILE_FLOOR, TILE_SPIKE, TILE_TELEPORT}
-    
+
     # Is the same as:
     const TILE_BRICK = 0
     const TILE_FLOOR = 1
@@ -930,10 +953,10 @@ a dictionary can also be used with a named enum.
 ::
 
     enum State {STATE_IDLE, STATE_JUMP = 5, STATE_SHOOT}
-    
+
     # Is the same as:
     const State = {STATE_IDLE = 0, STATE_JUMP = 5, STATE_SHOOT = 6}
-    
+
     func _ready():
         # Access values with Name.KEY, prints '5'
         print(State.STATE_JUMP)
