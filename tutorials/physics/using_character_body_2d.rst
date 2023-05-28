@@ -223,7 +223,7 @@ Movement and walls
 If you've downloaded the sample project, this example is in "basic_movement.tscn".
 
 For this example, add a ``CharacterBody2D`` with two children: a ``Sprite2D`` and a
-``CollisionShape2D``. Use the Godot "icon.png" as the Sprite2D's texture (drag it
+``CollisionShape2D``. Use the Godot "icon.svg" as the Sprite2D's texture (drag it
 from the Filesystem dock to the *Texture* property of the ``Sprite2D``). In the
 ``CollisionShape2D``'s *Shape* property, select "New RectangleShape2D" and
 size the rectangle to fit over the sprite image.
@@ -272,7 +272,7 @@ Attach a script to the CharacterBody2D and add the following code:
 Run this scene and you'll see that ``move_and_collide()`` works as expected, moving
 the body along the velocity vector. Now let's see what happens when you add
 some obstacles. Add a :ref:`StaticBody2D <class_StaticBody2D>` with a
-rectangular collision shape. For visibility, you can use a sprite, a
+rectangular collision shape. For visibility, you can use a Sprite2D, a
 Polygon2D, or turn on "Visible Collision Shapes" from the "Debug" menu.
 
 Run the scene again and try moving into the obstacle. You'll see that the ``CharacterBody2D``
@@ -436,7 +436,7 @@ And the code for the Bullet:
 
 The action happens in ``_physics_process()``. After using ``move_and_collide()``, if a
 collision occurs, a ``KinematicCollision2D`` object is returned (otherwise, the return
-is ``Nil``).
+is ``null``).
 
 If there is a returned collision, we use the ``normal`` of the collision to reflect
 the bullet's ``velocity`` with the ``Vector2.bounce()`` method.
