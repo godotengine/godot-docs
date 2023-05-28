@@ -185,8 +185,8 @@ and create a precompiled version of it using this:
 
     // Load GLSL shader
     var shaderFile = GD.Load<RDShaderFile>("res://compute_example.glsl");
-    var shaderBytecode = shaderFile.GetSpirv();
-    var shader = rd.ShaderCreateFromSpirv(shaderBytecode);
+    var shaderBytecode = shaderFile.GetSpirV();
+    var shader = rd.ShaderCreateFromSpirV(shaderBytecode);
 
 
 Provide input data
@@ -356,11 +356,11 @@ the data and print the results to our console.
  .. code-tab:: csharp
 
     // Read back the data from the buffers
-    var outputBytes = rd.BufferGetData(outputBuffer);
+    var outputBytes = rd.BufferGetData(buffer);
     var output = new float[input.Length];
     Buffer.BlockCopy(outputBytes, 0, output, 0, outputBytes.Length);
-    GD.Print("Input: ", input)
-    GD.Print("Output: ", output)
+    GD.Print("Input: ", input);
+    GD.Print("Output: ", output);
 
 With that, you have everything you need to get started working with compute
 shaders.
