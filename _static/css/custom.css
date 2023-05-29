@@ -112,7 +112,7 @@
     --copybtn-tooltip-background-color: #24292f;
     --copybtn-box-shadow: 0 1px 0 rgba(27,31,36,0.04), inset 0 1px 0 rgba(255,255,255,0.25);
     --copybtn-border-color-success: #2da44e;
-    
+
     --contribute-background-color: #d7dee8;
     --contribute-text-color: #646e72;
 
@@ -1714,7 +1714,7 @@ p + .classref-constant {
     left: 3.5px;
     top: 3.5px;
     color: var(--copybtn-icon-color);
-    pointer-events: none; 
+    pointer-events: none;
 }
 .highlight button.copybtn.success {
     border-color: var(--copybtn-border-color-success);
@@ -1728,4 +1728,30 @@ p + .classref-constant {
     color: #ffffff;
     border-radius: 6px;
     padding: 0.5em 0.75em;
+}
+
+/* Allow :abbr: tags' content to be displayed on mobile platforms by tapping the word */
+@media (hover: none), (hover: on-demand), (-moz-touch-enabled: 1), (pointer:coarse) {
+    /* Do not enable on desktop platforms to avoid doubling the tooltip */
+    abbr[title] {
+        position: relative;
+    }
+
+    abbr[title]:hover::after,
+    abbr[title]:focus::after {
+        content: attr(title);
+
+        position: absolute;
+        left: 0;
+        bottom: -32px;
+        width: auto;
+        white-space: nowrap;
+
+        background-color: #1e1e1e;
+        color: #fff;
+        border-radius: 3px;
+        box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+        font-size: 14px;
+        padding: 3px 5px;
+    }
 }
