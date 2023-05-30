@@ -24,6 +24,20 @@ in other sections where appropriate. For example, the :ref:`animation editor
    default_key_mapping
    customizing_editor
 
+Android editor
+--------------
+
+Godot offers a native port of the editor running entirely on Android devices.
+The Android port can be downloaded from the `Android Downloads page <https://godotengine.org/download/android/>`__.
+While we strive for feature parity with the Desktop version of the editor,
+the Android port has a certain amount of caveats you should be aware of.
+
+.. toctree::
+   :maxdepth: 1
+   :name: toc-android-editor
+
+   using_the_android_editor
+
 Web editor
 ----------
 
