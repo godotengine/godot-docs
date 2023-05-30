@@ -69,12 +69,12 @@ two different ways:
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-        get_tree().get_root() # Access via scene main loop.
+        get_tree().root # Access via scene main loop.
         get_node("/root") # Access via absolute path.
 
  .. code-tab:: csharp
 
-        GetTree().GetRoot(); // Access via scene main loop.
+        GetTree().Root // Access via scene main loop.
         GetNode("/root"); // Access via absolute path.
 
 This node contains the main viewport. Anything that is a child of a
