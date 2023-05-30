@@ -109,7 +109,7 @@ little easier. The :ref:`Viewport <class_Viewport>`
 node has several functions to handle resizing, and the root node of the
 scene tree is always a viewport (scenes loaded are instanced as a child
 of it, and it can always be accessed by calling
-``get_tree().get_root()`` or ``get_node("/root")``).
+``get_tree().root`` or ``get_node("/root")``).
 
 In any case, while changing the root Viewport params is probably the
 most flexible way to deal with the problem, it can be a lot of work,
