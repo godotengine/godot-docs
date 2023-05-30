@@ -39,7 +39,7 @@ that +Z is back, +X is right, and -X is left for a camera.
 The convention for 3D assets is to face the opposite direction as the camera,
 so that characters and other assets are facing the camera by default.
 This convention is extremely common in 3D modeling applications, and is
-`codified in glTF as part of the glTF 2.0 specification <https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units>`.
+`codified in glTF as part of the glTF 2.0 specification <https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#coordinate-system-and-units>`__.
 This means that for oriented 3D assets (such as characters),
 the +Z axis is the direction of the front, so -Z is the rear,
 +X is the left side, and -X is the right side for a 3D asset.
