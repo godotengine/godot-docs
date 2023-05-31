@@ -216,7 +216,7 @@ Manually drawing a light occluder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a LightOccluder2D node, then select the node and click the "+" button at
-the top top of the 2D editor. When asked to create a polygon resource, answer
+the top of the 2D editor. When asked to create a polygon resource, answer
 **Yes**. You can then start drawing an occluder polygon by clicking to create
 new points. You can remove existing points by right-clicking them, and you can
 create new points from the existing line by clicking on the line then dragging.

@@ -34,7 +34,7 @@ Or it can be done stashing the action in ``Dope Sheet``
 
 An NLA track can be ``mute`` or ``unmute``, the exporter will export all
 the ``mute`` NLA track as a separate action, while blends all the ``unmute``
-NLA tracks into every action (including the action action) being exported.
+NLA tracks into every action (including the action) being exported.
 
 .. image:: img/nla_strip.jpg
 

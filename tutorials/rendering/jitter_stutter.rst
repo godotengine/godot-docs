@@ -220,7 +220,7 @@ better troubleshoot it.
 If you are reporting input lag problems, please include a capture made with a
 high speed camera (such as your phone's slow motion video mode). The capture
 **must** have both the screen and the input device visible so that the number of
-frames between an input and the on-screen result can can be counted. Also, make
+frames between an input and the on-screen result can be counted. Also, make
 sure to mention your monitor's refresh rate and your input device's polling rate
 (especially for mice).
 
