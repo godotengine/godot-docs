@@ -52,7 +52,8 @@ Building an Android plugin
 **Prerequisite:** Android Studio is strongly recommended as the IDE to use to create Android plugins. Currently the latest version of Android Studio
 is not compatible with Godot out of the box because it uses a newer version of JDK (via Android Gradle Plugin, AGP) but Godot currently requires JDK 11.
 (see the release notes of `JDK 17 <https://developer.android.com/build/releases/gradle-plugin#jdk-17-agp>`_ and `AGP 8.0 <https://developer.android.com/build/releases/gradle-plugin#8-0-0>`_). However you can configure your Android project to use JDK 11 by setting your project's
-AGP version to 7.6.2 in `File > Project Structure > Project > Android Gradle Plugin Version`.
+AGP version to 7.6.2 in `File > Project Structure > Project > Android Gradle Plugin Version`. Then make sure to set your JDK 11 in 
+`File > Settings > Build, Exection, Deployment > Build Tools > Gradle > Gradle Projects >` **your project** `> Gradle JDK`.
 Or, you can use **Android Studio Electric Eel | 2022.1.1 Patch 2** which is the last release to support JDK 11 out of the box. It can be downloaded from the `Android Studio Archive <https://developer.android.com/studio/archive>`_.
 Alternatively, instead of using Android Studio, you can try adapting the `Godot Google Play Billing <https://github.com/godotengine/godot-google-play-billing>`_ plugin by cloning it and modifying it to fit your project.
 The instructions below assume that you're using Android Studio.
