@@ -91,7 +91,7 @@ a low-quality speaker or device.
 EQ
 ~~
 
-EQ is what all other equalizers inherit from. It can be extended with with Custom
+EQ is what all other equalizers inherit from. It can be extended with Custom
 scripts to create an equalizer with a custom number of bands.
 
 EQ6, EQ10, EQ21

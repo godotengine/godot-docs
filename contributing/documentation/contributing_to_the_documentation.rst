@@ -63,7 +63,7 @@ Editing existing pages
 To edit an existing page, locate its ``.rst`` source file and open it in your
 favorite text editor. You can then commit the changes, push them to your fork,
 and make a pull request. **Note that the pages in** ``classes/`` **should not be
-edited here.** They are automatically generated from Godot’s `XML class
+edited here.** They are automatically generated from Godot's `XML class
 reference <https://github.com/godotengine/godot/tree/master/doc/classes>`__.
 See :ref:`doc_updating_the_class_reference` for details.
 
@@ -145,7 +145,7 @@ first letter capitalized.
 Sphinx and reStructuredText syntax
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Check Sphinx’s `reST Primer <https://www.sphinx-doc.org/en/stable/rest.html>`__
+Check Sphinx's `reST Primer <https://www.sphinx-doc.org/en/stable/rest.html>`__
 and the `official reference <https://docutils.sourceforge.net/rst.html>`__ for
 details on the syntax.
 

@@ -31,7 +31,7 @@ All screenshots should ideally be taken on a 1080p screen. Anything higher
 resolution is adding detail that doesn't make the documentation better and
 dramatically increases file size. If you're taking screenshots on a higher
 resolution screen the screenshot should be scaled down. There are instructions
-on  how to do this later on this page.
+on how to do this later on this page.
 
 Format conversion
 -----------------
