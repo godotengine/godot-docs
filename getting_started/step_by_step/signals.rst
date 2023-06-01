@@ -22,7 +22,7 @@ limits `coupling
 code flexible.
 
 For example, you might have a life bar on the screen that represents the
-player’s health. When the player takes damage or uses a healing potion, you want
+player's health. When the player takes damage or uses a healing potion, you want
 the bar to reflect the change. To do so, in Godot, you would use signals.
 
 .. note:: As mentioned in the introduction, signals are Godot's version of the

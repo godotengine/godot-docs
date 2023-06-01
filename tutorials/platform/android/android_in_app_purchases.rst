@@ -94,7 +94,7 @@ Query available items
 *********************
 
 Once the API has connected, query SKUs using ``querySkuDetails()``. You must successfully complete
-a SKU query before before calling the ``purchase()`` or ``queryPurchases()`` functions,
+a SKU query before calling the ``purchase()`` or ``queryPurchases()`` functions,
 or they will return an error. ``querySkuDetails()`` takes two parameters: an array
 of SKU name strings, and a string specifying the type of SKU being queried.
 The SKU type string should be ``"inapp"`` for normal in-app purchases or ``"subs"`` for subscriptions.

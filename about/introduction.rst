@@ -65,7 +65,7 @@ This documentation is organized into several sections:
   engine to make games. It starts with the :ref:`Step by step
   <toc-learn-step_by_step>` tutorial which should be the entry point for all
   new users. **This is the best place to start if you're new!**
-- The **Manual** can be read  or referenced as needed,
+- The **Manual** can be read or referenced as needed,
   in any order. It contains feature-specific tutorials and documentation.
 - **Contributing** gives information related to contributing to
   Godot, whether to the core engine, documentation, demos or other parts.
