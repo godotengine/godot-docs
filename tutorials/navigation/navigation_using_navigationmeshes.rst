@@ -208,16 +208,22 @@ The following script creates a new 3D navigation region and fills it with proced
     NavigationServer3D.region_set_map(new_3d_region_rid, default_3d_map_rid)
 
     var new_navigation_mesh: NavigationMesh = NavigationMesh.new()
-    var new_plane_mesh: PlaneMesh = PlaneMesh.new()
-    new_plane_mesh.size = Vector2(10.0, 10.0)
-    new_navigation_mesh.create_from_mesh(new_plane_mesh)
-
+    # Add vertices for a triangle.
+    new_navigation_mesh.vertices = PackedVector3Array([
+        Vector3(-1.0, 0.0, 1.0),
+        Vector3(1.0, 0.0, 1.0),
+        Vector3(1.0, 0.0, -1.0)
+    ])
+    # Add indices for the polygon.
+    new_navigation_mesh.add_polygon(
+        PackedInt32Array([0, 1, 2])
+    )
     NavigationServer3D.region_set_navigation_mesh(new_3d_region_rid, new_navigation_mesh)
 
 Navmesh for 3D GridMaps
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The following script creates a new 3D navmesh from the mesh of a GridMap item, clears the current grid cells and adds new procedual grid cells with the new navmesh.
+The following script creates a new 3D navigation mesh for each GridMap items, clears the current grid cells and adds new procedual grid cells with the new navigation mesh.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
@@ -227,12 +233,21 @@ The following script creates a new 3D navmesh from the mesh of a GridMap item, c
     # enable navigation mesh for grid items
     set_bake_navigation(true)
 
-    # get mesh from grid item, bake and set a new navigation mesh for the library
+    # get grid items, create and set a new navigation mesh for each item in the MeshLibrary
     var gridmap_item_list: PackedInt32Array = mesh_library.get_item_list()
     for item in gridmap_item_list:
-        var item_mesh: Mesh = mesh_library.get_item_mesh(item)
         var new_item_navigation_mesh: NavigationMesh = NavigationMesh.new()
-        new_item_navigation_mesh.create_from_mesh(item_mesh)
+        # Add vertices and polygons that describe the traversable ground surface.
+        # E.g. for a convex polygon that resembles a flat square.
+        new_item_navigation_mesh.vertices = PackedVector3Array([
+            Vector3(-1.0, 0.0, 1.0),
+            Vector3(1.0, 0.0, 1.0),
+            Vector3(1.0, 0.0, -1.0),
+            Vector3(-1.0, 0.0, -1.0),
+        ])
+        new_item_navigation_mesh.add_polygon(
+            PackedInt32Array([0, 1, 2, 3])
+        )
         mesh_library.set_item_navigation_mesh(item, new_item_navigation_mesh)
         mesh_library.set_item_navigation_mesh_transform(item, Transform3D())
 
