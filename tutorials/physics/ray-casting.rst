@@ -164,7 +164,7 @@ with Area3D, the boolean parameter ``collide_with_areas`` must be set to ``true`
             var mousepos = get_viewport().get_mouse_position()
         
             var origin = cam.project_ray_origin(mousepos)
-		    var end = origin + cam.project_ray_normal(mousepos) * RAY_LENGTH
+            var end = origin + cam.project_ray_normal(mousepos) * RAY_LENGTH
             var query = PhysicsRayQueryParameters3D.create(origin, end)
             query.collide_with_areas = true
             
