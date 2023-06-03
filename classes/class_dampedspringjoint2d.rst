@@ -12,14 +12,14 @@ DampedSpringJoint2D
 
 **Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Damped spring constraint for 2D physics.
+A physics joint that connects two 2D physics bodies with a spring-like force.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Damped spring constraint for 2D physics. This resembles a spring joint that always wants to go back to a given length.
+A physics joint that connects two 2D physics bodies with a spring-like force. This resembles a spring that always wants to stretch to a given length.
 
 .. rst-class:: classref-reftable-group
 

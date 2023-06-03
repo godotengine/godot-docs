@@ -12,14 +12,14 @@ PhysicsMaterial
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A material for physics properties.
+Holds physics-related properties of a surface, namely its roughness and bounciness.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Provides a means of modifying the collision properties of a :ref:`PhysicsBody3D<class_PhysicsBody3D>`.
+Holds physics-related properties of a surface, namely its roughness and bounciness. This class is used to apply these properties to a physics body.
 
 .. rst-class:: classref-reftable-group
 

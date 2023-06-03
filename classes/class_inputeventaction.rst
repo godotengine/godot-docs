@@ -12,14 +12,14 @@ InputEventAction
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event type for actions.
+An input event type for actions.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Contains a generic action which can be targeted from several types of inputs. Actions can be created from the **Input Map** tab in the **Project > Project Settings** menu. See :ref:`Node._input<class_Node_method__input>`.
+Contains a generic action which can be targeted from several types of inputs. Actions and their events can be set in the **Input Map** tab in **Project > Project Settings**, or with the :ref:`InputMap<class_InputMap>` class.
 
 \ **Note:** Unlike the other :ref:`InputEvent<class_InputEvent>` subclasses which map to unique physical events, this virtual one is not emitted by the engine. This class is useful to emit actions manually with :ref:`Input.parse_input_event<class_Input_method_parse_input_event>`, which are then received in :ref:`Node._input<class_Node_method__input>`. To check if a physical event matches an action from the Input Map, use :ref:`InputEvent.is_action<class_InputEvent_method_is_action>` and :ref:`InputEvent.is_action_pressed<class_InputEvent_method_is_action_pressed>`.
 
@@ -28,7 +28,7 @@ Contains a generic action which can be targeted from several types of inputs. Ac
 Tutorials
 ---------
 
-- `InputEvent: Actions <../tutorials/inputs/inputevent.html#actions>`__
+- `Using InputEvent: Actions <../tutorials/inputs/inputevent.html#actions>`__
 
 - `2D Dodge The Creeps Demo <https://godotengine.org/asset-library/asset/515>`__
 

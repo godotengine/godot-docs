@@ -14,14 +14,14 @@ Separator
 
 **Inherited By:** :ref:`HSeparator<class_HSeparator>`, :ref:`VSeparator<class_VSeparator>`
 
-Base class for separators.
+Abstract base class for separators.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Separator is a :ref:`Control<class_Control>` used for separating other controls. It's purely a visual decoration. Horizontal (:ref:`HSeparator<class_HSeparator>`) and Vertical (:ref:`VSeparator<class_VSeparator>`) versions are available.
+Abstract base class for separators, used for separating other controls. **Separator**\ s are purely visual and normally drawn as a :ref:`StyleBoxLine<class_StyleBoxLine>`.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

@@ -12,14 +12,14 @@ Theme
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Theme resource for styling/skinning :ref:`Control<class_Control>`\ s and :ref:`Window<class_Window>`\ s.
+A resource used for styling/skinning :ref:`Control<class_Control>`\ s and :ref:`Window<class_Window>`\ s.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A theme resource is used for styling/skinning :ref:`Control<class_Control>` and :ref:`Window<class_Window>` nodes. While individual controls can be styled using their local theme overrides (see :ref:`Control.add_theme_color_override<class_Control_method_add_theme_color_override>`), theme resources allow you to store and apply the same settings between all controls sharing the same type (e.g. style all :ref:`Button<class_Button>`\ s the same). One theme resource can be used for the entire project, but you can also set a separate theme resource to a branch of control nodes. A theme resources assigned to a control node applies to the control itself, as well as all of its direct and indirect children (as long as a chain of controls is uninterrupted).
+A resource used for styling/skinning :ref:`Control<class_Control>` and :ref:`Window<class_Window>` nodes. While individual controls can be styled using their local theme overrides (see :ref:`Control.add_theme_color_override<class_Control_method_add_theme_color_override>`), theme resources allow you to store and apply the same settings across all controls sharing the same type (e.g. style all :ref:`Button<class_Button>`\ s the same). One theme resource can be used for the entire project, but you can also set a separate theme resource to a branch of control nodes. A theme resource assigned to a control applies to the control itself, as well as all of its direct and indirect children (as long as a chain of controls is uninterrupted).
 
 Use :ref:`ProjectSettings.gui/theme/custom<class_ProjectSettings_property_gui/theme/custom>` to set up a project-scope theme that will be available to every control in your project.
 

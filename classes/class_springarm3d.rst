@@ -12,20 +12,14 @@ SpringArm3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A helper node, mostly used in 3rd person cameras.
+A 3D raycast that dynamically moves its children near the collision point.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The SpringArm3D node is a node that casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin.
-
-The most common use case for this is to make a 3rd person camera that reacts to collisions in the environment.
-
-The SpringArm3D will either cast a ray, or if a shape is given, it will cast the shape in the direction of its z axis.
-
-If you use the SpringArm3D as a camera controller for your player, you might need to exclude the player's collider from the SpringArm3D's collision check.
+**SpringArm3D** casts a ray or a shape along its Z axis and moves all its direct children to the collision point, with an optional margin. This is useful for 3rd person cameras that move closer to the player when inside a tight space (you may need to exclude the player's collider from the **SpringArm3D**'s collision check.
 
 .. rst-class:: classref-reftable-group
 

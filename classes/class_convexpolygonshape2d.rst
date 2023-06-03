@@ -12,22 +12,20 @@ ConvexPolygonShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Convex polygon shape resource for 2D physics.
+A 2D convex polygon shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2D convex polygon shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node.
+A 2D convex polygon shape, intended for use in physics. Used internally in :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` when it's in ``BUILD_SOLIDS`` mode.
 
-The shape is a *solid* that includes all the points that it encloses, as opposed to :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` which is hollow if it encloses anything. See also :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`.
+\ **ConvexPolygonShape2D** is *solid*, which means it detects collisions from objects that are fully inside it, unlike :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` which is hollow. This makes it more suitable for both detection and physics.
 
-The solid nature of the shape makes it well-suited for both detection and physics; in physics body interactions this allows depenetrating even those shapes which end up (e.g. due to high speed) fully inside the convex shape (similarly to primitive shapes, but unlike :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`). The convexity limits the possible geometric shape of a single **ConvexPolygonShape2D**: it cannot be concave.
+\ **Convex decomposition:** A concave polygon can be split up into several convex polygons. This allows dynamic physics bodies to have complex concave collisions (at a performance cost) and can be achieved by using several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` nodes or by using the :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` node in ``BUILD_SOLIDS`` mode. To generate a collision polygon from a sprite, select the :ref:`Sprite2D<class_Sprite2D>` node, go to the **Sprite2D** menu that appears above the viewport, and choose **Create Polygon2D Sibling**.
 
-\ **Convex decomposition:** Concave objects' collisions can be represented accurately using *several* convex shapes. This allows dynamic physics bodies to have complex concave collisions (at a performance cost). It can be achieved using several **ConvexPolygonShape2D** nodes or by using the :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` node in Solids build mode. To generate a collision polygon from a sprite, select the :ref:`Sprite2D<class_Sprite2D>` node, go to the **Sprite2D** menu that appears above the viewport, and choose **Create Polygon2D Sibling**.
-
-\ **Performance:** **ConvexPolygonShape2D** is faster to check collisions against compared to :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, but it is slower than primitive collision shapes such as :ref:`CircleShape2D<class_CircleShape2D>` or :ref:`RectangleShape2D<class_RectangleShape2D>`. Its use should generally be limited to medium-sized objects that cannot have their collision accurately represented by primitive shapes.
+\ **Performance:** **ConvexPolygonShape2D** is faster to check collisions against compared to :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, but it is slower than primitive collision shapes such as :ref:`CircleShape2D<class_CircleShape2D>` and :ref:`RectangleShape2D<class_RectangleShape2D>`. Its use should generally be limited to medium-sized objects that cannot have their collision accurately represented by primitive shapes.
 
 .. rst-class:: classref-reftable-group
 

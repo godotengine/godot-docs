@@ -12,14 +12,14 @@ LabelSettings
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Collection of common settings to customize label text.
+Provides common settings to customize the text in a :ref:`Label<class_Label>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**LabelSettings** is a resource that can be assigned to a :ref:`Label<class_Label>` node to customize it. It will take priority over the properties defined in theme. The resource can be shared between multiple labels and swapped on the fly, so it's convenient and flexible way to setup text style.
+**LabelSettings** is a resource that provides common settings to customize the text in a :ref:`Label<class_Label>`. It will take priority over the properties defined in :ref:`Control.theme<class_Control_property_theme>`. The resource can be shared between multiple labels and changed on the fly, so it's convenient and flexible way to setup text style.
 
 .. rst-class:: classref-reftable-group
 

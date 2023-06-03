@@ -12,14 +12,14 @@ PhysicsShapeQueryParameters3D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Parameters to be sent to a 3D shape physics query.
+Provides parameters for :ref:`PhysicsDirectSpaceState3D.intersect_shape<class_PhysicsDirectSpaceState3D_method_intersect_shape>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the shape and other parameters for :ref:`PhysicsDirectSpaceState3D<class_PhysicsDirectSpaceState3D>` intersection/collision queries.
+By changing various properties of this object, such as the shape, you can configure the parameters for :ref:`PhysicsDirectSpaceState3D.intersect_shape<class_PhysicsDirectSpaceState3D_method_intersect_shape>`.
 
 .. rst-class:: classref-reftable-group
 

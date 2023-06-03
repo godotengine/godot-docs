@@ -89,6 +89,10 @@ This object will only be visible for :ref:`Camera3D<class_Camera3D>`\ s whose cu
 
 For :ref:`Light3D<class_Light3D>`\ s, this can be used to control which **VisualInstance3D**\ s are affected by a specific light. For :ref:`GPUParticles3D<class_GPUParticles3D>`, this can be used to control which particles are effected by a specific attractor. For :ref:`Decal<class_Decal>`\ s, this can be used to control which **VisualInstance3D**\ s are affected by a specific decal.
 
+To adjust :ref:`layers<class_VisualInstance3D_property_layers>` more easily using a script, use :ref:`get_layer_mask_value<class_VisualInstance3D_method_get_layer_mask_value>` and :ref:`set_layer_mask_value<class_VisualInstance3D_method_set_layer_mask_value>`.
+
+\ **Note:** :ref:`VoxelGI<class_VoxelGI>`, SDFGI and :ref:`LightmapGI<class_LightmapGI>` will always take all layers into account to determine what contributes to global illumination. If this is an issue, set :ref:`GeometryInstance3D.gi_mode<class_GeometryInstance3D_property_gi_mode>` to :ref:`GeometryInstance3D.GI_MODE_DISABLED<class_GeometryInstance3D_constant_GI_MODE_DISABLED>` for meshes and :ref:`Light3D.light_bake_mode<class_Light3D_property_light_bake_mode>` to :ref:`Light3D.BAKE_DISABLED<class_Light3D_constant_BAKE_DISABLED>` for lights to exclude them from global illumination.
+
 .. rst-class:: classref-item-separator
 
 ----

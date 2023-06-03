@@ -14,25 +14,21 @@ ScrollContainer
 
 **Inherited By:** :ref:`EditorInspector<class_EditorInspector>`
 
-A helper node for displaying scrollable elements such as lists.
+A container used to provide scrollbars to a child control when needed.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A ScrollContainer node meant to contain a :ref:`Control<class_Control>` child.
-
-ScrollContainers will automatically create a scrollbar child (:ref:`HScrollBar<class_HScrollBar>`, :ref:`VScrollBar<class_VScrollBar>`, or both) when needed and will only draw the Control within the ScrollContainer area. Scrollbars will automatically be drawn at the right (for vertical) or bottom (for horizontal) and will enable dragging to move the viewable Control (and its children) within the ScrollContainer. Scrollbars will also automatically resize the grabber based on the :ref:`Control.custom_minimum_size<class_Control_property_custom_minimum_size>` of the Control relative to the ScrollContainer.
-
-Works great with a :ref:`Panel<class_Panel>` control. You can set :ref:`Control.SIZE_EXPAND<class_Control_constant_SIZE_EXPAND>` on the children's size flags, so they will upscale to the ScrollContainer's size if it's larger (scroll is invisible for the chosen dimension).
+A container used to provide a child control with scrollbars when needed. Scrollbars will automatically be drawn at the right (for vertical) or bottom (for horizontal) and will enable dragging to move the viewable Control (and its children) within the ScrollContainer. Scrollbars will also automatically resize the grabber based on the :ref:`Control.custom_minimum_size<class_Control_property_custom_minimum_size>` of the Control relative to the ScrollContainer.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 

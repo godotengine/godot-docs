@@ -14,16 +14,20 @@ CanvasLayer
 
 **Inherited By:** :ref:`ParallaxBackground<class_ParallaxBackground>`
 
-Canvas drawing layer.
+A node used for independent rendering of objects within a 2D scene.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Canvas drawing layer. :ref:`CanvasItem<class_CanvasItem>` nodes that are direct or indirect children of a **CanvasLayer** will be drawn in that layer. The layer is a numeric index that defines the draw order. The default 2D scene renders with index 0, so a **CanvasLayer** with index -1 will be drawn below, and one with index 1 will be drawn above. This is very useful for HUDs (in layer 1+ or above), or backgrounds (in layer -1 or below).
+:ref:`CanvasItem<class_CanvasItem>`-derived nodes that are direct or indirect children of a **CanvasLayer** will be drawn in that layer. The layer is a numeric index that defines the draw order. The default 2D scene renders with index ``0``, so a **CanvasLayer** with index ``-1`` will be drawn below, and a **CanvasLayer** with index ``1`` will be drawn above. This order will hold regardless of the :ref:`CanvasItem.z_index<class_CanvasItem_property_z_index>` of the nodes within each layer.
 
-Embedded :ref:`Window<class_Window>`\ s are placed in layer 1024. CanvasItems in layer 1025 or above appear in front of embedded windows, CanvasItems in layer 1023 or below appear behind embedded windows.
+\ **CanvasLayer**\ s can be hidden and they can also optionally follow the viewport. This makes them useful for HUDs like health bar overlays (on layers ``1`` and higher) or backgrounds (on layers ``-1`` and lower).
+
+\ **Note:** Embedded :ref:`Window<class_Window>`\ s are placed on layer ``1024``. :ref:`CanvasItem<class_CanvasItem>`\ s on layers ``1025`` and higher appear in front of embedded windows.
+
+\ **Note:** Each **CanvasLayer** is drawn on one specific :ref:`Viewport<class_Viewport>` and cannot be shared between multiple :ref:`Viewport<class_Viewport>`\ s, see :ref:`custom_viewport<class_CanvasLayer_property_custom_viewport>`. When using multiple :ref:`Viewport<class_Viewport>`\ s, for example in a split-screen game, you need create an individual **CanvasLayer** for each :ref:`Viewport<class_Viewport>` you want it to be drawn on.
 
 .. rst-class:: classref-introduction-group
 

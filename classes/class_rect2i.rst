@@ -10,7 +10,7 @@
 Rect2i
 ======
 
-2D axis-aligned bounding box using integer coordinates.
+A 2D axis-aligned bounding box using integer coordinates.
 
 .. rst-class:: classref-introduction-group
 

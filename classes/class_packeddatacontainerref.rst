@@ -12,7 +12,7 @@ PackedDataContainerRef
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Internal class used by :ref:`PackedDataContainer<class_PackedDataContainer>`.
+An internal class used by :ref:`PackedDataContainer<class_PackedDataContainer>` to pack nested arrays and dictionaries.
 
 .. rst-class:: classref-introduction-group
 

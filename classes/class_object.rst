@@ -1082,7 +1082,9 @@ Returns the object's unique instance ID. This ID can be saved in :ref:`EncodedOb
 
 Returns the object's metadata value for the given entry ``name``. If the entry does not exist, returns ``default``. If ``default`` is ``null``, an error is also generated.
 
-\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector dock and should not be edited.
+\ **Note:** A metadata's ``name`` must be a valid identifier as per :ref:`StringName.is_valid_identifier<class_StringName_method_is_valid_identifier>` method.
+
+\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
 .. rst-class:: classref-item-separator
 
@@ -1201,6 +1203,8 @@ Returns the list of existing signals as an :ref:`Array<class_Array>` of dictiona
 :ref:`bool<class_bool>` **has_meta** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
 Returns ``true`` if a metadata entry is found with the given ``name``. See also :ref:`get_meta<class_Object_method_get_meta>`, :ref:`set_meta<class_Object_method_set_meta>` and :ref:`remove_meta<class_Object_method_remove_meta>`.
+
+\ **Note:** A metadata's ``name`` must be a valid identifier as per :ref:`StringName.is_valid_identifier<class_StringName_method_is_valid_identifier>` method.
 
 \ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
@@ -1408,7 +1412,9 @@ void **remove_meta** **(** :ref:`StringName<class_StringName>` name **)**
 
 Removes the given entry ``name`` from the object's metadata. See also :ref:`has_meta<class_Object_method_has_meta>`, :ref:`get_meta<class_Object_method_get_meta>` and :ref:`set_meta<class_Object_method_set_meta>`.
 
-\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited.
+\ **Note:** A metadata's ``name`` must be a valid identifier as per :ref:`StringName.is_valid_identifier<class_StringName_method_is_valid_identifier>` method.
+
+\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
 .. rst-class:: classref-item-separator
 
@@ -1553,7 +1559,9 @@ Adds or changes the entry ``name`` inside the object's metadata. The metadata ``
 
 If ``value`` is ``null``, the entry is removed. This is the equivalent of using :ref:`remove_meta<class_Object_method_remove_meta>`. See also :ref:`has_meta<class_Object_method_has_meta>` and :ref:`get_meta<class_Object_method_get_meta>`.
 
-\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector dock and should not be edited.
+\ **Note:** A metadata's ``name`` must be a valid identifier as per :ref:`StringName.is_valid_identifier<class_StringName_method_is_valid_identifier>` method.
+
+\ **Note:** Metadata that has a ``name`` starting with an underscore (``_``) is considered editor-only. Editor-only metadata is not displayed in the Inspector and should not be edited, although it can still be found by this method.
 
 .. rst-class:: classref-item-separator
 

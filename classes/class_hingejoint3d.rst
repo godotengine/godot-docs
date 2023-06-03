@@ -12,14 +12,14 @@ HingeJoint3D
 
 **Inherits:** :ref:`Joint3D<class_Joint3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A hinge between two 3D PhysicsBodies.
+A physics joint that restricts the rotation of a 3D physics body around an axis relative to another physics body.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A HingeJoint3D normally uses the Z axis of body A as the hinge axis, another axis can be specified when adding it manually though. See also :ref:`Generic6DOFJoint3D<class_Generic6DOFJoint3D>`.
+A physics joint that restricts the rotation of a 3D physics body around an axis relative to another physics body. For example, Body A can be a :ref:`StaticBody3D<class_StaticBody3D>` representing a door hinge that a :ref:`RigidBody3D<class_RigidBody3D>` rotates around.
 
 .. rst-class:: classref-reftable-group
 

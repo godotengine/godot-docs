@@ -10,113 +10,59 @@
 bool
 ====
 
-Boolean built-in type.
+A built-in boolean type.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Boolean is a built-in type. There are two boolean values: ``true`` and ``false``. You can think of it as a switch with on or off (1 or 0) setting. Booleans are used in programming for logic in condition statements, like ``if`` statements.
+A **bool** is always one of two values: ``true`` or ``false``, similar to a switch that is either on or off. Booleans are used in programming for logic in condition statements.
 
-Booleans can be directly used in ``if`` statements. The code below demonstrates this on the ``if can_shoot:`` line. You don't need to use ``== true``, you only need ``if can_shoot:``. Similarly, use ``if not can_shoot:`` rather than ``== false``.
-
-
-.. tabs::
-
- .. code-tab:: gdscript
-
-    var _can_shoot = true
-    
-    func shoot():
-        if _can_shoot:
-            pass # Perform shooting actions here.
-
- .. code-tab:: csharp
-
-    private bool _canShoot = true;
-    
-    public void Shoot()
-    {
-        if (_canShoot)
-        {
-            // Perform shooting actions here.
-        }
-    }
-
-
-
-The following code will only create a bullet if both conditions are met: action "shoot" is pressed and if ``can_shoot`` is ``true``.
-
-\ **Note:** ``Input.is_action_pressed("shoot")`` is also a boolean that is ``true`` when "shoot" is pressed and ``false`` when "shoot" isn't pressed.
+Booleans can be directly used in ``if`` and ``elif`` statements. You don't need to add ``== true`` or ``== false``:
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    var _can_shoot = true
-    
-    func shoot():
-        if _can_shoot and Input.is_action_pressed("shoot"):
-            create_bullet()
+    if can_shoot:
+        launch_bullet()
 
  .. code-tab:: csharp
 
-    private bool _canShoot = true;
-    
-    public void Shoot()
+    if (canShoot)
     {
-        if (_canShoot && Input.IsActionPressed("shoot"))
-        {
-            CreateBullet();
-        }
+        launchBullet();
     }
 
 
 
-The following code will set ``can_shoot`` to ``false`` and start a timer. This will prevent player from shooting until the timer runs out. Next ``can_shoot`` will be set to ``true`` again allowing player to shoot once again.
+Many common methods and operations return **bool**\ s, for example, ``shooting_cooldown <= 0.0`` may evaluate to ``true`` or ``false`` depending on the number's value.
+
+\ **bool**\ s are usually used with the logical operators ``and``, ``or``, and ``not`` to create complex conditions:
 
 
 .. tabs::
 
  .. code-tab:: gdscript
 
-    var _can_shoot = true
-    @onready var _cool_down = $CoolDownTimer
+    if bullets > 0 and not is_reloading:
+        launch_bullet()
     
-    func shoot():
-        if _can_shoot and Input.is_action_pressed("shoot"):
-            create_bullet()
-            _can_shoot = false
-            _cool_down.start()
-    
-    func _on_cool_down_timer_timeout():
-        _can_shoot = true
+    if bullets == 0 or is_reloading:
+        play_clack_sound()
 
  .. code-tab:: csharp
 
-    private bool _canShoot = true;
-    private Timer _coolDown;
-    
-    public override void _Ready()
+    if (bullets > 0 && !isReloading)
     {
-        _coolDown = GetNode<Timer>("CoolDownTimer");
+        launchBullet();
     }
     
-    public void Shoot()
+    if (bullets == 0 || isReloading)
     {
-        if (_canShoot && Input.IsActionPressed("shoot"))
-        {
-            CreateBullet();
-            _canShoot = false;
-            _coolDown.Start();
-        }
-    }
-    
-    public void OnCoolDownTimerTimeout()
-    {
-        _canShoot = true;
+        playClackSound();
     }
 
 
@@ -192,7 +138,7 @@ Constructs a **bool** as a copy of the given **bool**.
 
 :ref:`bool<class_bool>` **bool** **(** :ref:`float<class_float>` from **)**
 
-Cast a :ref:`float<class_float>` value to a boolean value, this method will return ``false`` if ``0.0`` is passed in, and ``true`` for all other floats.
+Cast a :ref:`float<class_float>` value to a boolean value. This method will return ``false`` if ``0.0`` is passed in, and ``true`` for all other values.
 
 .. rst-class:: classref-item-separator
 
@@ -202,7 +148,7 @@ Cast a :ref:`float<class_float>` value to a boolean value, this method will retu
 
 :ref:`bool<class_bool>` **bool** **(** :ref:`int<class_int>` from **)**
 
-Cast an :ref:`int<class_int>` value to a boolean value, this method will return ``false`` if ``0`` is passed in, and ``true`` for all other ints.
+Cast an :ref:`int<class_int>` value to a boolean value. This method will return ``false`` if ``0`` is passed in, and ``true`` for all other values.
 
 .. rst-class:: classref-section-separator
 

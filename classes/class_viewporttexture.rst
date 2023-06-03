@@ -12,18 +12,18 @@ ViewportTexture
 
 **Inherits:** :ref:`Texture2D<class_Texture2D>` **<** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Texture which displays the content of a :ref:`Viewport<class_Viewport>`.
+Provides the content of a :ref:`Viewport<class_Viewport>` as a dynamic texture.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Displays the content of a :ref:`Viewport<class_Viewport>` node as a dynamic :ref:`Texture2D<class_Texture2D>`. This can be used to mix controls, 2D, and 3D elements in the same scene.
+Provides the content of a :ref:`Viewport<class_Viewport>` as a dynamic :ref:`Texture2D<class_Texture2D>`. This can be used to mix controls, 2D game objects, and 3D game objects in the same scene.
 
-To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
+To create a **ViewportTexture** in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
 
-\ **Note:** When local to scene, this texture uses :ref:`Resource.setup_local_to_scene<class_Resource_method_setup_local_to_scene>` to set the proxy texture and flags in the local viewport. Local to scene viewport textures will return incorrect data until the scene root is ready (see :ref:`Node.ready<class_Node_signal_ready>`).
+\ **Note:** When local to scene, this texture uses :ref:`Resource.setup_local_to_scene<class_Resource_method_setup_local_to_scene>` to set the proxy texture and flags in the local viewport. Local to scene **ViewportTexture**\ s will return incorrect data until the scene root is ready (see :ref:`Node.ready<class_Node_signal_ready>`).
 
 .. rst-class:: classref-introduction-group
 
@@ -70,9 +70,9 @@ Property Descriptions
 - void **set_viewport_path_in_scene** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_viewport_path_in_scene** **(** **)**
 
-The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the scene root, not to the node which uses the texture.
+The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the scene root, not to the node that uses the texture.
 
-\ **Note:** In the editor, it is automatically updated when the target viewport's node path changes due to renaming or moving the viewport or its ancestors. At runtime, it may not be able to automatically update due to the inability to determine the scene root.
+\ **Note:** In the editor, this path is automatically updated when the target viewport or one of its ancestors is renamed or moved. At runtime, the path may not be able to automatically update due to the inability to determine the scene root.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

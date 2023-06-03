@@ -12,22 +12,22 @@ Semaphore
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A synchronization semaphore.
+A synchronization mechanism used to control access to a shared resource by :ref:`Thread<class_Thread>`\ s.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A synchronization semaphore which can be used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. Be careful to avoid deadlocks. For a binary version, see :ref:`Mutex<class_Mutex>`.
+A synchronization semaphore that can be used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. For a binary version, see :ref:`Mutex<class_Mutex>`.
 
-\ **Warning:**\ 
+\ **Warning:** Semaphores must be used carefully to avoid deadlocks.
 
-To guarantee that the operating system is able to perform proper cleanup (no crashes, no deadlocks), these conditions must be met:
+\ **Warning:** To guarantee that the operating system is able to perform proper cleanup (no crashes, no deadlocks), these conditions must be met:
 
-- By the time a **Semaphore**'s reference count reaches zero and therefore it is destroyed, no threads must be waiting on it.
+- When a **Semaphore**'s reference count reaches zero and it is therefore destroyed, no threads must be waiting on it.
 
-- By the time a :ref:`Thread<class_Thread>`'s reference count reaches zero and therefore it is destroyed, it must not be waiting on any semaphore.
+- When a :ref:`Thread<class_Thread>`'s reference count reaches zero and it is therefore destroyed, it must not be waiting on any semaphore.
 
 .. rst-class:: classref-introduction-group
 
@@ -35,6 +35,8 @@ Tutorials
 ---------
 
 - :doc:`Using multiple threads <../tutorials/performance/using_multiple_threads>`
+
+- :doc:`Thread-safe APIs <../tutorials/performance/thread_safe_apis>`
 
 .. rst-class:: classref-reftable-group
 

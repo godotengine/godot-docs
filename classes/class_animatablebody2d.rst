@@ -12,18 +12,16 @@ AnimatableBody2D
 
 **Inherits:** :ref:`StaticBody2D<class_StaticBody2D>` **<** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Physics body for 2D physics which moves only by script or animation (while affecting other bodies on its path). Useful for moving platforms and doors.
+A 2D physics body that can't be moved by external forces. When moved manually, it affects other bodies in its path.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Animatable body for 2D physics.
+An animatable 2D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationPlayer<class_AnimationPlayer>`\ s (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to ``ANIMATION_PROCESS_PHYSICS``), and :ref:`RemoteTransform2D<class_RemoteTransform2D>`.
 
-An animatable body can't be moved by external forces or contacts, but can be moved by script or animation to affect other bodies in its path. It is ideal for implementing moving objects in the environment, such as moving platforms or doors.
-
-When the body is moved manually, either from code or from an :ref:`AnimationPlayer<class_AnimationPlayer>` (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to ``physics``), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
+When **AnimatableBody2D** is moved, its linear and angular velocity are estimated and used to affect other physics bodies in its path. This makes it useful for moving platforms, doors, and other moving objects.
 
 .. rst-class:: classref-reftable-group
 

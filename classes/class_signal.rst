@@ -10,7 +10,7 @@
 Signal
 ======
 
-Built-in type representing a signal defined in an object.
+A built-in type representing a signal of an :ref:`Object<class_Object>`.
 
 .. rst-class:: classref-introduction-group
 

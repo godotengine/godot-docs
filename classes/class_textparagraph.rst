@@ -19,7 +19,7 @@ Holds a paragraph of text.
 Description
 -----------
 
-Abstraction over :ref:`TextServer<class_TextServer>` for handling paragraph of text.
+Abstraction over :ref:`TextServer<class_TextServer>` for handling a single paragraph of text.
 
 .. rst-class:: classref-reftable-group
 

@@ -12,14 +12,14 @@ PhysicsServer2DManager
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Manager for 2D physics server implementations.
+A singleton for managing :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**PhysicsServer2DManager** is the API for registering :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementations, and for setting the default implementation.
+**PhysicsServer2DManager** is the API for registering :ref:`PhysicsServer2D<class_PhysicsServer2D>` implementations and for setting the default implementation.
 
 \ **Note:** It is not possible to switch physics servers at runtime. This class is only used on startup at the server initialization level, by Godot itself and possibly by GDExtensions.
 

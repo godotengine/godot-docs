@@ -12,14 +12,14 @@ PinJoint3D
 
 **Inherits:** :ref:`Joint3D<class_Joint3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Pin joint for 3D PhysicsBodies.
+A physics joint that attaches two 3D physics bodies at a single point, allowing them to freely rotate.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Pin joint for 3D rigid bodies. It pins 2 bodies (dynamic or static) together. See also :ref:`Generic6DOFJoint3D<class_Generic6DOFJoint3D>`.
+A physics joint that attaches two 2D physics bodies at a single point, allowing them to freely rotate. For example, a :ref:`RigidBody3D<class_RigidBody3D>` can be attached to a :ref:`StaticBody3D<class_StaticBody3D>` to create a pendulum or a seesaw.
 
 .. rst-class:: classref-reftable-group
 

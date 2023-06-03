@@ -19,7 +19,7 @@ Holds a line of text.
 Description
 -----------
 
-Abstraction over :ref:`TextServer<class_TextServer>` for handling single line of text.
+Abstraction over :ref:`TextServer<class_TextServer>` for handling a single line of text.
 
 .. rst-class:: classref-reftable-group
 

@@ -4391,7 +4391,7 @@ void **compute_list_add_barrier** **(** :ref:`int<class_int>` compute_list **)**
 
 Starts a list of compute commands created with the ``compute_*`` methods. The returned value should be passed to other ``compute_list_*`` functions.
 
-If ``allow_draw_overlap`` is true, you may have one draw list running at the same time as one compute list. Multiple compute lists cannot be created at the same time; you must finish the previous compute list first using :ref:`compute_list_end<class_RenderingDevice_method_compute_list_end>`.
+If ``allow_draw_overlap`` is ``true``, you may have one draw list running at the same time as one compute list. Multiple compute lists cannot be created at the same time; you must finish the previous compute list first using :ref:`compute_list_end<class_RenderingDevice_method_compute_list_end>`.
 
 A simple compute operation might look like this (code is not a complete example):
 

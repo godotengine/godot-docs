@@ -12,21 +12,21 @@ CenterContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Keeps children controls centered.
+A container that keeps child controls in its center.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-CenterContainer keeps children controls centered. This container keeps all children to their minimum size, in the center.
+**CenterContainer** is a container that keeps all of its child controls in its center at their minimum size.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 

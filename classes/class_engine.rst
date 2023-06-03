@@ -12,7 +12,7 @@ Engine
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Access to engine properties.
+Provides access to engine properties.
 
 .. rst-class:: classref-introduction-group
 

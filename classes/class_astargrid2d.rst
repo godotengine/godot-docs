@@ -12,16 +12,16 @@ AStarGrid2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A\* (or "A-Star") pathfinding tailored to find the shortest paths on 2D grids.
+An implementation of A\* for finding the shortest path between two points on a partial 2D grid.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Compared to :ref:`AStar2D<class_AStar2D>` you don't need to manually create points or connect them together. It also supports multiple type of heuristics and modes for diagonal movement. This class also provides a jumping mode which is faster to calculate than without it in the :ref:`AStar2D<class_AStar2D>` class.
+**AStarGrid2D** is a variant of :ref:`AStar2D<class_AStar2D>` that is specialized for partial 2D grids. It is simpler to use because it doesn't require you to manually create points and connect them together. This class also supports multiple types of heuristics, modes for diagonal movement, and a jumping mode to speed up calculations.
 
-In contrast to :ref:`AStar2D<class_AStar2D>`, you only need set the :ref:`region<class_AStarGrid2D_property_region>` of the grid, optionally set the :ref:`cell_size<class_AStarGrid2D_property_cell_size>` and then call the :ref:`update<class_AStarGrid2D_method_update>` method:
+To use **AStarGrid2D**, you only need to set the :ref:`region<class_AStarGrid2D_property_region>` of the grid, optionally set the :ref:`cell_size<class_AStarGrid2D_property_cell_size>`, and then call the :ref:`update<class_AStarGrid2D_method_update>` method:
 
 
 .. tabs::
@@ -45,6 +45,8 @@ In contrast to :ref:`AStar2D<class_AStar2D>`, you only need set the :ref:`region
     GD.Print(astarGrid.GetPointPath(Vector2I.Zero, new Vector2I(3, 4))); // prints (0, 0), (16, 16), (32, 32), (48, 48), (48, 64)
 
 
+
+To remove a point from the pathfinding grid, it must be set as "solid" with :ref:`set_point_solid<class_AStarGrid2D_method_set_point_solid>`.
 
 .. rst-class:: classref-reftable-group
 

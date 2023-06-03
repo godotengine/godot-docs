@@ -12,18 +12,16 @@ Area2D
 
 **Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-2D area for detection, as well as physics and audio influence.
+A region of 2D space that detects other :ref:`CollisionObject2D<class_CollisionObject2D>`\ s entering or exiting it.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2D area that detects :ref:`CollisionObject2D<class_CollisionObject2D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping) and route audio to custom audio buses.
+**Area2D** is a region of 2D space defined by one or multiple :ref:`CollisionShape2D<class_CollisionShape2D>` or :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` child nodes. It detects when other :ref:`CollisionObject2D<class_CollisionObject2D>`\ s enter or exit it, and it also keeps track of which collision objects haven't exited it yet (i.e. which one are overlapping it).
 
-To give the area its shape, add a :ref:`CollisionShape2D<class_CollisionShape2D>` or a :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` node as a *direct* child (or add multiple such nodes as direct children) of the area.
-
-\ **Warning:** See :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` for a warning about possibly unexpected behavior when using that shape for an area.
+This node can also locally alter or override physics parameters (gravity, damping) and route audio to custom audio buses.
 
 .. rst-class:: classref-introduction-group
 

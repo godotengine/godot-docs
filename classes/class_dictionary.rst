@@ -10,18 +10,16 @@
 Dictionary
 ==========
 
-Dictionary type.
+A built-in data structure that holds key-value pairs.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Dictionary type. Associative container, which contains values referenced by unique keys. Dictionaries are composed of pairs of keys (which must be unique) and values. Dictionaries will preserve the insertion order when adding new entries. In other programming languages, this data structure is sometimes referred to as a hash map or associative array.
+Dictionaries are associative containers that contain values referenced by unique keys. Dictionaries will preserve the insertion order when adding new entries. In other programming languages, this data structure is often referred to as a hash map or an associative array.
 
-You can define a dictionary by placing a comma-separated list of ``key: value`` pairs in curly braces ``{}``.
-
-\ **Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
+You can define a dictionary by placing a comma-separated list of ``key: value`` pairs inside curly braces ``{}``.
 
 Creating a dictionary:
 
@@ -186,6 +184,8 @@ The keys of a dictionary can be iterated with the ``for`` keyword:
     }
 
 
+
+\ **Note:** Dictionaries are always passed by reference. To get a copy of a dictionary which can be modified independently of the original dictionary, use :ref:`duplicate<class_Dictionary_method_duplicate>`.
 
 \ **Note:** Erasing elements while iterating over dictionaries is **not** supported and will result in unpredictable behavior.
 
@@ -400,9 +400,9 @@ Returns ``true`` if the dictionary contains an entry with the given ``key``.
         { 210, default },
     };
     
-    GD.Print(myDict.Contains("Godot")); // Prints true
-    GD.Print(myDict.Contains(210));     // Prints true
-    GD.Print(myDict.Contains(4));       // Prints false
+    GD.Print(myDict.ContainsKey("Godot")); // Prints true
+    GD.Print(myDict.ContainsKey(210));     // Prints true
+    GD.Print(myDict.ContainsKey(4));       // Prints false
 
 
 

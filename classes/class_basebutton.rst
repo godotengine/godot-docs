@@ -14,14 +14,14 @@ BaseButton
 
 **Inherited By:** :ref:`Button<class_Button>`, :ref:`LinkButton<class_LinkButton>`, :ref:`TextureButton<class_TextureButton>`
 
-Base class for different kinds of buttons.
+Abstract base class for GUI buttons.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-BaseButton is the abstract base class for buttons, so it shouldn't be used directly (it doesn't display anything). Other types of buttons inherit from it.
+**BaseButton** is an abstract base class for GUI buttons. It doesn't display anything by itself.
 
 .. rst-class:: classref-reftable-group
 

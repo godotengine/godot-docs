@@ -115,7 +115,7 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
                 new Godot.Collections.Dictionary
                 {
                     { "name", "myOption" },
-                    { "defaultValue", false },
+                    { "default_value", false },
                 }
             };
         }
@@ -249,12 +249,12 @@ This method can be overridden to hide specific import options if conditions are 
 
  .. code-tab:: csharp
 
-    public void GetOptionVisibility(string option, Godot.Collections.Dictionary options)
+    public void _GetOptionVisibility(string option, Godot.Collections.Dictionary options)
     {
         // Only show the lossy quality setting if the compression mode is set to "Lossy".
-        if (option == "compress/lossyQuality" && options.Contains("compress/mode"))
+        if (option == "compress/lossy_quality" && options.ContainsKey("compress/mode"))
         {
-            return (int)options["compress/mode"] == COMPRESS_LOSSY; // This is a constant you set
+            return (int)options["compress/mode"] == CompressLossy; // This is a constant you set
         }
     
         return true;

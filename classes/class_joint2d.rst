@@ -14,14 +14,14 @@ Joint2D
 
 **Inherited By:** :ref:`DampedSpringJoint2D<class_DampedSpringJoint2D>`, :ref:`GrooveJoint2D<class_GrooveJoint2D>`, :ref:`PinJoint2D<class_PinJoint2D>`
 
-Base node for all joint constraints in 2D physics.
+Abstract base class for all 2D physics joints.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Base node for all joint constraints in 2D physics. Joints take 2 bodies and apply a custom constraint.
+Abstract base class for all joints in 2D physics. 2D joints bind together two physics bodies and apply a constraint.
 
 .. rst-class:: classref-reftable-group
 

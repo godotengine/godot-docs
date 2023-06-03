@@ -12,22 +12,20 @@ RayCast3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Query the closest object intersecting a ray.
+A ray in 3D space, used to find the first :ref:`CollisionObject3D<class_CollisionObject3D>` it intersects.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A RayCast represents a line from its origin to its destination position, :ref:`target_position<class_RayCast3D_property_target_position>`. It is used to query the 3D space in order to find the closest object along the path of the ray.
+A raycast represents a ray from its origin to its :ref:`target_position<class_RayCast3D_property_target_position>` that finds the closest :ref:`CollisionObject3D<class_CollisionObject3D>` along its path, if it intersects any. This is useful for a lot of things, such as
 
-RayCast3D can ignore some objects by adding them to the exception list via :ref:`add_exception<class_RayCast3D_method_add_exception>` or by setting proper filtering with collision layers and masks.
+\ **RayCast3D** can ignore some objects by adding them to an exception list, by making its detection reporting ignore :ref:`Area3D<class_Area3D>`\ s (:ref:`collide_with_areas<class_RayCast3D_property_collide_with_areas>`) or :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s (:ref:`collide_with_bodies<class_RayCast3D_property_collide_with_bodies>`), or by configuring physics layers.
 
-RayCast3D can be configured to report collisions with :ref:`Area3D<class_Area3D>`\ s (:ref:`collide_with_areas<class_RayCast3D_property_collide_with_areas>`) and/or :ref:`PhysicsBody3D<class_PhysicsBody3D>`\ s (:ref:`collide_with_bodies<class_RayCast3D_property_collide_with_bodies>`).
+\ **RayCast3D** calculates intersection every physics frame, and it holds the result until the next physics frame. For an immediate raycast, or if you want to configure a **RayCast3D** multiple times within the same physics frame, use :ref:`force_raycast_update<class_RayCast3D_method_force_raycast_update>`.
 
-Only enabled raycasts will be able to query the space and report collisions.
-
-RayCast3D calculates intersection every physics frame (see :ref:`Node<class_Node>`), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame), use :ref:`force_raycast_update<class_RayCast3D_method_force_raycast_update>` after adjusting the raycast.
+To sweep over a region of 3D space, you can approximate the region with multiple **RayCast3D**\ s or use :ref:`ShapeCast3D<class_ShapeCast3D>`.
 
 .. rst-class:: classref-introduction-group
 

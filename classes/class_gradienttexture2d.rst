@@ -80,6 +80,14 @@ The colors are linearly interpolated in a straight line.
 
 The colors are linearly interpolated in a circular pattern.
 
+.. _class_GradientTexture2D_constant_FILL_SQUARE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`Fill<enum_GradientTexture2D_Fill>` **FILL_SQUARE** = ``2``
+
+The colors are linearly interpolated in a square pattern.
+
 .. rst-class:: classref-item-separator
 
 ----

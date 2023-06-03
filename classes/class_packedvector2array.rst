@@ -194,6 +194,8 @@ Finds the index of an existing value (or the insertion index that maintains sort
 
 \ **Note:** Calling :ref:`bsearch<class_PackedVector2Array_method_bsearch>` on an unsorted array results in unexpected behavior.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -217,6 +219,8 @@ Clears the array. This is equivalent to using :ref:`resize<class_PackedVector2Ar
 :ref:`int<class_int>` **count** **(** :ref:`Vector2<class_Vector2>` value **)** |const|
 
 Returns the number of times an element is in the array.
+
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -254,6 +258,8 @@ Assigns the given value to all elements in the array. This can typically be used
 
 Searches the array for a value and returns its index or ``-1`` if not found. Optionally, the initial search index can be passed.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -265,6 +271,8 @@ Searches the array for a value and returns its index or ``-1`` if not found. Opt
 :ref:`bool<class_bool>` **has** **(** :ref:`Vector2<class_Vector2>` value **)** |const|
 
 Returns ``true`` if the array contains ``value``.
+
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 
@@ -350,6 +358,8 @@ Reverses the order of the elements in the array.
 
 Searches the array in reverse order. Optionally, a start search index can be passed. If negative, the start index is considered relative to the end of the array.
 
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -401,6 +411,8 @@ If either ``begin`` or ``end`` are negative, they will be relative to the end of
 void **sort** **(** **)**
 
 Sorts the elements of the array in ascending order.
+
+\ **Note:** Vectors with :ref:`@GDScript.NAN<class_@GDScript_constant_NAN>` elements don't behave the same as other vectors. Therefore, the results from this method may not be accurate if NaNs are included.
 
 .. rst-class:: classref-item-separator
 

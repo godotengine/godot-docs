@@ -12,7 +12,7 @@ InputMap
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Singleton that manages :ref:`InputEventAction<class_InputEventAction>`.
+A singleton that manages all :ref:`InputEventAction<class_InputEventAction>`\ s.
 
 .. rst-class:: classref-introduction-group
 
@@ -26,7 +26,7 @@ Manages all :ref:`InputEventAction<class_InputEventAction>` which can be created
 Tutorials
 ---------
 
-- `InputEvent: InputMap <../tutorials/inputs/inputevent.html#inputmap>`__
+- `Using InputEvent: InputMap <../tutorials/inputs/inputevent.html#inputmap>`__
 
 .. rst-class:: classref-reftable-group
 

@@ -10,7 +10,7 @@
 Callable
 ========
 
-Built-in type representing a method in an object instance or a standalone function.
+A built-in type representing a method or a standalone function.
 
 .. rst-class:: classref-introduction-group
 

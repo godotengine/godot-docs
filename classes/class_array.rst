@@ -10,14 +10,14 @@
 Array
 =====
 
-A generic array datatype.
+A built-in data structure that holds a sequence of elements.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A generic array that can contain several elements of any type, accessible by a numerical index starting at 0. Negative indices can be used to count from the back, like in Python (-1 is the last element, -2 is the second to last, etc.).
+An array data structure that can contain a sequence of elements of any type. Elements are accessed by a numerical index starting at 0. Negative indices are used to count from the back (-1 is the last element, -2 is the second to last, etc.).
 
 \ **Example:**\ 
 
@@ -63,8 +63,6 @@ Arrays can be concatenated using the ``+`` operator:
     GD.Print(array1 + array2); // Prints [One, 2, 3, Four]
 
 
-
-\ **Note:** Concatenating with the ``+=`` operator will create a new array, which has a cost. If you want to append another array to an existing array, :ref:`append_array<class_Array_method_append_array>` is more efficient.
 
 \ **Note:** Arrays are always passed by reference. To get a copy of an array that can be modified independently of the original array, use :ref:`duplicate<class_Array_method_duplicate>`.
 

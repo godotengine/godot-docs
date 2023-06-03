@@ -12,7 +12,7 @@ InputEventJoypadButton
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event for gamepad buttons.
+Represents a gamepad button being pressed or released.
 
 .. rst-class:: classref-introduction-group
 
@@ -26,7 +26,7 @@ Input event type for gamepad buttons. For gamepad analog sticks and joysticks, s
 Tutorials
 ---------
 
-- :doc:`InputEvent <../tutorials/inputs/inputevent>`
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 .. rst-class:: classref-reftable-group
 

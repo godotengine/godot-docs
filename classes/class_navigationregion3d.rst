@@ -12,14 +12,14 @@ NavigationRegion3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A region of the navigation map.
+A traversable 3D region that :ref:`NavigationAgent3D<class_NavigationAgent3D>`\ s can use for pathfinding.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A region of the navigation map. It tells the :ref:`NavigationServer3D<class_NavigationServer3D>` what can be navigated and what cannot, based on its :ref:`NavigationMesh<class_NavigationMesh>` resource.
+A traversable 3D region based on a :ref:`NavigationMesh<class_NavigationMesh>` that :ref:`NavigationAgent3D<class_NavigationAgent3D>`\ s can use for pathfinding.
 
 Two regions can be connected to each other if they share a similar edge. You can set the minimum distance between two vertices required to connect two edges by using :ref:`NavigationServer3D.map_set_edge_connection_margin<class_NavigationServer3D_method_map_set_edge_connection_margin>`.
 

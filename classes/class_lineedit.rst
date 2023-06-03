@@ -12,16 +12,14 @@ LineEdit
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Control that provides single-line string editing.
+An input field for single-line text.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-LineEdit provides a single-line string editor, used for text fields.
-
-It features many built-in shortcuts which will always be available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
+**LineEdit** provides an input field for editing a single line of text. It features many built-in shortcuts that are always available (:kbd:`Ctrl` here maps to :kbd:`Cmd` on macOS):
 
 - :kbd:`Ctrl + C`: Copy
 
@@ -45,21 +43,21 @@ It features many built-in shortcuts which will always be available (:kbd:`Ctrl` 
 
 On macOS, some extra keyboard shortcuts are available:
 
-- :kbd:`Ctrl + F`: Same as :kbd:`Right Arrow`, move the caret one character right
+- :kbd:`Cmd + F`: Same as :kbd:`Right Arrow`, move the caret one character right
 
-- :kbd:`Ctrl + B`: Same as :kbd:`Left Arrow`, move the caret one character left
+- :kbd:`Cmd + B`: Same as :kbd:`Left Arrow`, move the caret one character left
 
-- :kbd:`Ctrl + P`: Same as :kbd:`Up Arrow`, move the caret to the previous line
+- :kbd:`Cmd + P`: Same as :kbd:`Up Arrow`, move the caret to the previous line
 
-- :kbd:`Ctrl + N`: Same as :kbd:`Down Arrow`, move the caret to the next line
+- :kbd:`Cmd + N`: Same as :kbd:`Down Arrow`, move the caret to the next line
 
-- :kbd:`Ctrl + D`: Same as :kbd:`Delete`, delete the character on the right side of caret
+- :kbd:`Cmd + D`: Same as :kbd:`Delete`, delete the character on the right side of caret
 
-- :kbd:`Ctrl + H`: Same as :kbd:`Backspace`, delete the character on the left side of the caret
+- :kbd:`Cmd + H`: Same as :kbd:`Backspace`, delete the character on the left side of the caret
 
-- :kbd:`Ctrl + A`: Same as :kbd:`Home`, move the caret to the beginning of the line
+- :kbd:`Cmd + A`: Same as :kbd:`Home`, move the caret to the beginning of the line
 
-- :kbd:`Ctrl + E`: Same as :kbd:`End`, move the caret to the end of the line
+- :kbd:`Cmd + E`: Same as :kbd:`End`, move the caret to the end of the line
 
 - :kbd:`Cmd + Left Arrow`: Same as :kbd:`Home`, move the caret to the beginning of the line
 

@@ -10,14 +10,14 @@
 Transform3D
 ===========
 
-3D transformation (3×4 matrix).
+A 3×4 matrix representing a 3D transformation.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-3×4 matrix (3 rows, 4 columns) used for 3D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consists of a :ref:`basis<class_Transform3D_property_basis>` (first 3 columns) and a :ref:`Vector3<class_Vector3>` for the :ref:`origin<class_Transform3D_property_origin>` (last column).
+A 3×4 matrix (3 rows, 4 columns) used for 3D linear transformations. It can represent transformations such as translation, rotation, and scaling. It consists of a :ref:`basis<class_Transform3D_property_basis>` (first 3 columns) and a :ref:`Vector3<class_Vector3>` for the :ref:`origin<class_Transform3D_property_origin>` (last column).
 
 For more information, read the "Matrices and transforms" documentation article.
 

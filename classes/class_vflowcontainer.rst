@@ -12,14 +12,21 @@ VFlowContainer
 
 **Inherits:** :ref:`FlowContainer<class_FlowContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Vertical flow container.
+A container that arranges its child controls vertically and wraps them around at the borders.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Vertical version of :ref:`FlowContainer<class_FlowContainer>`.
+A variant of :ref:`FlowContainer<class_FlowContainer>` that can only arrange its child controls vertically, wrapping them around at the borders. This is similar to how text in a book wraps around when no more words can fit on a line, except vertically.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 

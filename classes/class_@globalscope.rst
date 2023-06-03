@@ -5303,7 +5303,7 @@ A type-safe version of :ref:`ceil<class_@GlobalScope_method_ceil>`, returning an
 
 :ref:`Variant<class_Variant>` **clamp** **(** :ref:`Variant<class_Variant>` value, :ref:`Variant<class_Variant>` min, :ref:`Variant<class_Variant>` max **)**
 
-Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``min`` and not more than ``max``. Supported types: :ref:`int<class_int>`, :ref:`float<class_float>`, :ref:`Vector2<class_Vector2>`, :ref:`Vector2i<class_Vector2i>`, :ref:`Vector3<class_Vector3>`, :ref:`Vector3i<class_Vector3i>`, :ref:`Vector4<class_Vector4>`, :ref:`Vector4i<class_Vector4i>`.
+Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``min`` and not more than ``max``. Any values that can be compared with the less than and greater than operators will work.
 
 ::
 
@@ -5325,7 +5325,7 @@ Clamps the ``value``, returning a :ref:`Variant<class_Variant>` not less than ``
     var f = clamp(Vector3i(-7, -8, -9), Vector3i(-1, 2, 3), Vector3i(-4, -5, -6))
     # f is (-4, -5, -6)
 
-\ **Note:** For better type safety, use :ref:`clampf<class_@GlobalScope_method_clampf>`, :ref:`clampi<class_@GlobalScope_method_clampi>`, :ref:`Vector2.clamp<class_Vector2_method_clamp>`, :ref:`Vector2i.clamp<class_Vector2i_method_clamp>`, :ref:`Vector3.clamp<class_Vector3_method_clamp>`, :ref:`Vector3i.clamp<class_Vector3i_method_clamp>`, :ref:`Vector4.clamp<class_Vector4_method_clamp>`, or :ref:`Vector4i.clamp<class_Vector4i_method_clamp>`.
+\ **Note:** For better type safety, use :ref:`clampf<class_@GlobalScope_method_clampf>`, :ref:`clampi<class_@GlobalScope_method_clampi>`, :ref:`Vector2.clamp<class_Vector2_method_clamp>`, :ref:`Vector2i.clamp<class_Vector2i_method_clamp>`, :ref:`Vector3.clamp<class_Vector3_method_clamp>`, :ref:`Vector3i.clamp<class_Vector3i_method_clamp>`, :ref:`Vector4.clamp<class_Vector4_method_clamp>`, :ref:`Vector4i.clamp<class_Vector4i_method_clamp>`, or :ref:`Color.clamp<class_Color_method_clamp>`.
 
 .. rst-class:: classref-item-separator
 
@@ -6230,7 +6230,7 @@ The following BBCode tags are supported: ``b``, ``i``, ``u``, ``s``, ``indent``,
 
 Color tags only support the following named colors: ``black``, ``red``, ``green``, ``yellow``, ``blue``, ``magenta``, ``pink``, ``purple``, ``cyan``, ``white``, ``orange``, ``gray``. Hexadecimal color codes are not supported.
 
-URL tags only support URLs wrapped by an URL tag, not URLs with a different title.
+URL tags only support URLs wrapped by a URL tag, not URLs with a different title.
 
 When printing to standard output, the supported subset of BBCode is converted to ANSI escape codes for the terminal emulator to display. Support for ANSI escape codes varies across terminal emulators, especially for italic and strikethrough. In standard output, ``code`` is represented with faint text but without any font change. Unsupported tags are left as-is in standard output.
 

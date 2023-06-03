@@ -31,13 +31,15 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
-   | :ref:`PackedColorArray<class_PackedColorArray>`           | :ref:`colors<class_Gradient_property_colors>`                         | ``PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)`` |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
-   | :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` | :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>` | ``0``                                        |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
-   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`       | :ref:`offsets<class_Gradient_property_offsets>`                       | ``PackedFloat32Array(0, 1)``                 |
-   +-----------------------------------------------------------+-----------------------------------------------------------------------+----------------------------------------------+
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`PackedColorArray<class_PackedColorArray>`           | :ref:`colors<class_Gradient_property_colors>`                                       | ``PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1)`` |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`ColorSpace<enum_Gradient_ColorSpace>`               | :ref:`interpolation_color_space<class_Gradient_property_interpolation_color_space>` | ``0``                                        |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` | :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>`               | ``0``                                        |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`       | :ref:`offsets<class_Gradient_property_offsets>`                                     | ``PackedFloat32Array(0, 1)``                 |
+   +-----------------------------------------------------------+-------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -106,6 +108,40 @@ Constant interpolation, color changes abruptly at each point and stays uniform b
 
 Cubic interpolation.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _enum_Gradient_ColorSpace:
+
+.. rst-class:: classref-enumeration
+
+enum **ColorSpace**:
+
+.. _class_Gradient_constant_GRADIENT_COLOR_SPACE_SRGB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorSpace<enum_Gradient_ColorSpace>` **GRADIENT_COLOR_SPACE_SRGB** = ``0``
+
+sRGB color space.
+
+.. _class_Gradient_constant_GRADIENT_COLOR_SPACE_LINEAR_SRGB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorSpace<enum_Gradient_ColorSpace>` **GRADIENT_COLOR_SPACE_LINEAR_SRGB** = ``1``
+
+Linear sRGB color space.
+
+.. _class_Gradient_constant_GRADIENT_COLOR_SPACE_OKLAB:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`ColorSpace<enum_Gradient_ColorSpace>` **GRADIENT_COLOR_SPACE_OKLAB** = ``2``
+
+`Oklab <https://bottosson.github.io/posts/oklab/>`__ color space. This color space provides a smooth and uniform-looking transition between colors.
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -132,6 +168,25 @@ Gradient's colors returned as a :ref:`PackedColorArray<class_PackedColorArray>`.
 
 ----
 
+.. _class_Gradient_property_interpolation_color_space:
+
+.. rst-class:: classref-property
+
+:ref:`ColorSpace<enum_Gradient_ColorSpace>` **interpolation_color_space** = ``0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_interpolation_color_space** **(** :ref:`ColorSpace<enum_Gradient_ColorSpace>` value **)**
+- :ref:`ColorSpace<enum_Gradient_ColorSpace>` **get_interpolation_color_space** **(** **)**
+
+The color space used to interpolate between points of the gradient. It does not affect the returned colors, which will always be in sRGB space. See :ref:`ColorSpace<enum_Gradient_ColorSpace>` for available modes.
+
+\ **Note:** This setting has no effect when :ref:`interpolation_mode<class_Gradient_property_interpolation_mode>` is set to :ref:`GRADIENT_INTERPOLATE_CONSTANT<class_Gradient_constant_GRADIENT_INTERPOLATE_CONSTANT>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Gradient_property_interpolation_mode:
 
 .. rst-class:: classref-property
@@ -143,7 +198,7 @@ Gradient's colors returned as a :ref:`PackedColorArray<class_PackedColorArray>`.
 - void **set_interpolation_mode** **(** :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` value **)**
 - :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` **get_interpolation_mode** **(** **)**
 
-Defines how the colors between points of the gradient are interpolated. See :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` for available modes.
+The algorithm used to interpolate between points of the gradient. See :ref:`InterpolationMode<enum_Gradient_InterpolationMode>` for available modes.
 
 .. rst-class:: classref-item-separator
 

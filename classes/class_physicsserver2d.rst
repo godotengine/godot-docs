@@ -14,7 +14,7 @@ PhysicsServer2D
 
 **Inherited By:** :ref:`PhysicsServer2DExtension<class_PhysicsServer2DExtension>`
 
-Server interface for low-level 2D physics access.
+A server interface for low-level 2D physics access.
 
 .. rst-class:: classref-introduction-group
 
@@ -25,7 +25,7 @@ PhysicsServer2D is the server responsible for all 2D physics. It can directly cr
 
 - A *space* is a self-contained world for a physics simulation. It contains bodies, areas, and joints. Its state can be queried for collision and intersection information, and several parameters of the simulation can be modified.
 
-- A *shape* is a geometric figure such as a circle, a rectangle, a capsule, or a polygon. It can be used for collision detection by adding it to a body/area, possibly with an extra transformation relative to the body/area's origin. Bodies/areas can have multiple (transformed) shapes added to them, and a single shape can be added to bodies/areas multiple times with different local transformations.
+- A *shape* is a geometric shape such as a circle, a rectangle, a capsule, or a polygon. It can be used for collision detection by adding it to a body/area, possibly with an extra transformation relative to the body/area's origin. Bodies/areas can have multiple (transformed) shapes added to them, and a single shape can be added to bodies/areas multiple times with different local transformations.
 
 - A *body* is a physical object which can be in static, kinematic, or rigid mode. Its state (such as position and velocity) can be queried and updated. A force integration callback can be set to customize the body's physics.
 
@@ -33,9 +33,9 @@ PhysicsServer2D is the server responsible for all 2D physics. It can directly cr
 
 - A *joint* is a constraint, either between two bodies or on one body relative to a point. Parameters such as the joint bias and the rest length of a spring joint can be adjusted.
 
-Physics objects in the physics server may be created and manipulated independently; they do not have to be tied to nodes in the scene tree.
+Physics objects in **PhysicsServer2D** may be created and manipulated independently; they do not have to be tied to nodes in the scene tree.
 
-\ **Note:** All the physics nodes use the physics server internally. Adding a physics node to the scene tree will cause a corresponding physics object to be created in the physics server. A rigid body node registers a callback that updates the node's transform with the transform of the respective body object in the physics server (every physics update). An area node registers a callback to inform the area node about overlaps with the respective area object in the physics server. The raycast node queries the direct state of the relevant space in the physics server.
+\ **Note:** All the 2D physics nodes use the physics server internally. Adding a physics node to the scene tree will cause a corresponding physics object to be created in the physics server. A rigid body node registers a callback that updates the node's transform with the transform of the respective body object in the physics server (every physics update). An area node registers a callback to inform the area node about overlaps with the respective area object in the physics server. The raycast node queries the direct state of the relevant space in the physics server.
 
 .. rst-class:: classref-reftable-group
 

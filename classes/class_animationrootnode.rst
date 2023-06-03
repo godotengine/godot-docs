@@ -23,6 +23,8 @@ Description
 
 **AnimationRootNode** is a base class for :ref:`AnimationNode<class_AnimationNode>`\ s that hold a complete animation. A complete animation refers to the output of an :ref:`AnimationNodeOutput<class_AnimationNodeOutput>` in an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>` or the output of another **AnimationRootNode**. Used for :ref:`AnimationTree.tree_root<class_AnimationTree_property_tree_root>` or in other **AnimationRootNode**\ s.
 
+Examples of built-in root nodes include :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>` (allows blending nodes between each other using various modes), :ref:`AnimationNodeStateMachine<class_AnimationNodeStateMachine>` (allows to configure blending and transitions between nodes using a state machine pattern), :ref:`AnimationNodeBlendSpace2D<class_AnimationNodeBlendSpace2D>` (allows linear blending between **three** :ref:`AnimationNode<class_AnimationNode>`\ s), :ref:`AnimationNodeBlendSpace1D<class_AnimationNodeBlendSpace1D>` (allows linear blending only between **two** :ref:`AnimationNode<class_AnimationNode>`\ s).
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

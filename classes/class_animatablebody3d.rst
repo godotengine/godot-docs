@@ -12,20 +12,16 @@ AnimatableBody3D
 
 **Inherits:** :ref:`StaticBody3D<class_StaticBody3D>` **<** :ref:`PhysicsBody3D<class_PhysicsBody3D>` **<** :ref:`CollisionObject3D<class_CollisionObject3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Physics body for 3D physics which moves only by script or animation (while affecting other bodies on its path). Useful for moving platforms and doors.
+A 3D physics body that can't be moved by external forces. When moved manually, it affects other bodies in its path.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Animatable body for 3D physics.
+An animatable 3D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationPlayer<class_AnimationPlayer>`\ s (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to ``ANIMATION_PROCESS_PHYSICS``), and :ref:`RemoteTransform3D<class_RemoteTransform3D>`.
 
-An animatable body can't be moved by external forces or contacts, but can be moved by script or animation to affect other bodies in its path. It is ideal for implementing moving objects in the environment, such as moving platforms or doors.
-
-When the body is moved manually, either from code or from an :ref:`AnimationPlayer<class_AnimationPlayer>` (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to ``physics``), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc).
-
-\ **Warning:** With a non-uniform scale this node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size(s) of its collision shape(s) instead.
+When **AnimatableBody3D** is moved, its linear and angular velocity are estimated and used to affect other physics bodies in its path. This makes it useful for moving platforms, doors, and other moving objects.
 
 .. rst-class:: classref-introduction-group
 

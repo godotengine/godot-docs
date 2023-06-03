@@ -14,22 +14,18 @@ StaticBody2D
 
 **Inherited By:** :ref:`AnimatableBody2D<class_AnimatableBody2D>`
 
-Physics body for 2D physics which is static or moves only by script (without affecting other bodies on its path). Useful for floors and walls.
+A 2D physics body that can't be moved by external forces. When moved manually, it doesn't affect other bodies in its path.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Static body for 2D physics.
+A static 2D physics body. It can't be moved by external forces or contacts, but can be moved manually by other means such as code, :ref:`AnimationPlayer<class_AnimationPlayer>`\ s (with :ref:`AnimationPlayer.playback_process_mode<class_AnimationPlayer_property_playback_process_mode>` set to ``ANIMATION_PROCESS_PHYSICS``), and :ref:`RemoteTransform2D<class_RemoteTransform2D>`.
 
-A static body is a simple body that doesn't move under physics simulation, i.e. it can't be moved by external forces or contacts but its transformation can still be updated manually by the user. It is ideal for implementing objects in the environment, such as walls or platforms. In contrast to :ref:`RigidBody2D<class_RigidBody2D>`, it doesn't consume any CPU resources as long as they don't move.
+When **StaticBody2D** is moved, it is teleported to its new position without affecting other physics bodies in its path. If this is not desired, use :ref:`AnimatableBody2D<class_AnimatableBody2D>` instead.
 
-They have extra functionalities to move and affect other bodies:
-
-\ **Static transform change:** Static bodies *can* be moved by animation or script. In this case, they are just teleported and don't affect other bodies on their path. Use :ref:`AnimatableBody2D<class_AnimatableBody2D>` instead of **StaticBody2D** if you need a moving static body that affects other bodies on its path.
-
-\ **Constant velocity:** When :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>` or :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` is set, static bodies don't move themselves but affect touching bodies as if they were moving. This is useful for simulating conveyor belts or conveyor wheels.
+\ **StaticBody2D** is useful for completely static objects like floors and walls, as well as moving surfaces like conveyor belts and circular revolving platforms (by using :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>` and :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>`).
 
 .. rst-class:: classref-reftable-group
 

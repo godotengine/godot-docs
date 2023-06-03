@@ -19,7 +19,7 @@ A state machine with multiple :ref:`AnimationRootNode<class_AnimationRootNode>`\
 Description
 -----------
 
-Contains multiple :ref:`AnimationRootNode<class_AnimationRootNode>`\ s representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>` object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
+Contains multiple :ref:`AnimationRootNode<class_AnimationRootNode>`\ s representing animation states, connected in a graph. State transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the :ref:`AnimationNodeStateMachinePlayback<class_AnimationNodeStateMachinePlayback>` object from the :ref:`AnimationTree<class_AnimationTree>` node to control it programmatically.
 
 \ **Example:**\ 
 
@@ -221,7 +221,7 @@ Method Descriptions
 
 void **add_node** **(** :ref:`StringName<class_StringName>` name, :ref:`AnimationNode<class_AnimationNode>` node, :ref:`Vector2<class_Vector2>` position=Vector2(0, 0) **)**
 
-Adds a new node to the graph. The ``position`` is used for display in the editor.
+Adds a new animation node to the graph. The ``position`` is used for display in the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -233,7 +233,7 @@ Adds a new node to the graph. The ``position`` is used for display in the editor
 
 void **add_transition** **(** :ref:`StringName<class_StringName>` from, :ref:`StringName<class_StringName>` to, :ref:`AnimationNodeStateMachineTransition<class_AnimationNodeStateMachineTransition>` transition **)**
 
-Adds a transition between the given nodes.
+Adds a transition between the given animation nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -281,7 +281,7 @@ Returns the given animation node's name.
 
 :ref:`Vector2<class_Vector2>` **get_node_position** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns the given node's coordinates. Used for display in the editor.
+Returns the given animation node's coordinates. Used for display in the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -341,7 +341,7 @@ Returns the given transition's end node.
 
 :ref:`bool<class_bool>` **has_node** **(** :ref:`StringName<class_StringName>` name **)** |const|
 
-Returns ``true`` if the graph contains the given node.
+Returns ``true`` if the graph contains the given animation node.
 
 .. rst-class:: classref-item-separator
 
@@ -353,7 +353,7 @@ Returns ``true`` if the graph contains the given node.
 
 :ref:`bool<class_bool>` **has_transition** **(** :ref:`StringName<class_StringName>` from, :ref:`StringName<class_StringName>` to **)** |const|
 
-Returns ``true`` if there is a transition between the given nodes.
+Returns ``true`` if there is a transition between the given animation nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -365,7 +365,7 @@ Returns ``true`` if there is a transition between the given nodes.
 
 void **remove_node** **(** :ref:`StringName<class_StringName>` name **)**
 
-Deletes the given node from the graph.
+Deletes the given animation node from the graph.
 
 .. rst-class:: classref-item-separator
 
@@ -377,7 +377,7 @@ Deletes the given node from the graph.
 
 void **remove_transition** **(** :ref:`StringName<class_StringName>` from, :ref:`StringName<class_StringName>` to **)**
 
-Deletes the transition between the two specified nodes.
+Deletes the transition between the two specified animation nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -401,7 +401,7 @@ Deletes the given transition by index.
 
 void **rename_node** **(** :ref:`StringName<class_StringName>` name, :ref:`StringName<class_StringName>` new_name **)**
 
-Renames the given node.
+Renames the given animation node.
 
 .. rst-class:: classref-item-separator
 
@@ -439,7 +439,7 @@ Sets the draw offset of the graph. Used for display in the editor.
 
 void **set_node_position** **(** :ref:`StringName<class_StringName>` name, :ref:`Vector2<class_Vector2>` position **)**
 
-Sets the node's coordinates. Used for display in the editor.
+Sets the animation node's coordinates. Used for display in the editor.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

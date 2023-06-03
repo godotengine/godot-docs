@@ -12,18 +12,16 @@ CollisionPolygon3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Node that represents a 3D collision polygon, given by the thickening of a 2D polygon in the local XY plane along the local Z axis.
+A node that provides a thickened polygon shape (a prism) to a :ref:`CollisionObject3D<class_CollisionObject3D>` parent.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Provides a 3D collision polygon to a :ref:`CollisionObject3D<class_CollisionObject3D>` parent, by thickening a 2D (convex or concave) polygon in the local XY plane along the local Z axis. The 2D polygon in the local XY plane can be drawn in the editor or specified by a list of vertices. That 2D polygon is thickened evenly in the local Z and -Z directions.
+A node that provides a thickened polygon shape (a prism) to a :ref:`CollisionObject3D<class_CollisionObject3D>` parent and allows to edit it. The polygon can be concave or convex. This can give a detection shape to an :ref:`Area3D<class_Area3D>` or turn :ref:`PhysicsBody3D<class_PhysicsBody3D>` into a solid object.
 
-This node has the same effect as several :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` nodes, created by thickening the 2D convex polygons in the convex decomposition of the given 2D polygon (but without the overhead of multiple nodes).
-
-\ **Warning:** A non-uniformly scaled CollisionPolygon3D node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change its :ref:`polygon<class_CollisionPolygon3D_property_polygon>`'s vertices instead.
+\ **Warning:** A non-uniformly scaled :ref:`CollisionShape3D<class_CollisionShape3D>` will likely not behave as expected. Make sure to keep its scale the same on all axes and adjust its shape resource instead.
 
 .. rst-class:: classref-reftable-group
 

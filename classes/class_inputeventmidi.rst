@@ -12,14 +12,14 @@ InputEventMIDI
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event for MIDI inputs.
+Represents an input event from a MIDI device, such as a piano.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-InputEventMIDI allows receiving input events from MIDI devices such as a piano. MIDI stands for Musical Instrument Digital Interface.
+InputEventMIDI allows receiving input events from MIDI (Musical Instrument Digital Interface) devices such as a piano.
 
 MIDI signals can be sent over a 5-pin MIDI connector or over USB, if your device supports both be sure to check the settings in the device to see which output it's using.
 

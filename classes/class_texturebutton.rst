@@ -289,7 +289,7 @@ Texture to display when the mouse hovers the node.
 - void **set_texture_normal** **(** :ref:`Texture2D<class_Texture2D>` value **)**
 - :ref:`Texture2D<class_Texture2D>` **get_texture_normal** **(** **)**
 
-Texture to display by default, when the node is **not** in the disabled, focused, hover or pressed state.
+Texture to display by default, when the node is **not** in the disabled, hover or pressed state. This texture is still displayed in the focused state, with :ref:`texture_focused<class_TextureButton_property_texture_focused>` drawn on top.
 
 .. rst-class:: classref-item-separator
 

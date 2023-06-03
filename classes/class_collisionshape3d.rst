@@ -12,18 +12,16 @@ CollisionShape3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Node that represents collision shape data in 3D space.
+A node that provides a :ref:`Shape3D<class_Shape3D>` to a :ref:`CollisionObject3D<class_CollisionObject3D>` parent.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Editor facility for creating and editing collision shapes in 3D space. Set the :ref:`shape<class_CollisionShape3D_property_shape>` property to configure the shape.
+A node that provides a :ref:`Shape3D<class_Shape3D>` to a :ref:`CollisionObject3D<class_CollisionObject3D>` parent and allows to edit it. This can give a detection shape to an :ref:`Area3D<class_Area3D>` or turn a :ref:`PhysicsBody3D<class_PhysicsBody3D>` into a solid object.
 
-You can use this node to represent all sorts of collision shapes, for example, add this to an :ref:`Area3D<class_Area3D>` to give it a detection shape, or add it to a :ref:`PhysicsBody3D<class_PhysicsBody3D>` to create a solid object.
-
-\ **Warning:** A non-uniformly scaled CollisionShape3D node will probably not function as expected. Please make sure to keep its scale uniform (i.e. the same on all axes), and change the size of its :ref:`shape<class_CollisionShape3D_property_shape>` resource instead.
+\ **Warning:** A non-uniformly scaled **CollisionShape3D** will likely not behave as expected. Make sure to keep its scale the same on all axes and adjust its :ref:`shape<class_CollisionShape3D_property_shape>` resource instead.
 
 .. rst-class:: classref-introduction-group
 

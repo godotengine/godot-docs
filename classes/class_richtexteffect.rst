@@ -12,14 +12,14 @@ RichTextEffect
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
+A custom effect for a :ref:`RichTextLabel<class_RichTextLabel>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A custom effect for use with :ref:`RichTextLabel<class_RichTextLabel>`.
+A custom effect for a :ref:`RichTextLabel<class_RichTextLabel>`.
 
 \ **Note:** For a **RichTextEffect** to be usable, a BBCode tag must be defined as a member variable called ``bbcode`` in the script.
 
