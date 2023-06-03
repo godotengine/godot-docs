@@ -10,7 +10,7 @@
 RID
 ===
 
-Handle for a :ref:`Resource<class_Resource>`'s unique ID.
+A handle for a :ref:`Resource<class_Resource>`'s unique identifier.
 
 .. rst-class:: classref-introduction-group
 

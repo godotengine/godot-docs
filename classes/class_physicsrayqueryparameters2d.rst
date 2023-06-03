@@ -12,14 +12,14 @@ PhysicsRayQueryParameters2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Parameters to be sent to a 2D ray physics query.
+Provides parameters for :ref:`PhysicsDirectSpaceState2D.intersect_ray<class_PhysicsDirectSpaceState2D_method_intersect_ray>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the ray position and other parameters to be used for :ref:`PhysicsDirectSpaceState2D.intersect_ray<class_PhysicsDirectSpaceState2D_method_intersect_ray>`.
+By changing various properties of this object, such as the ray position, you can configure the parameters for :ref:`PhysicsDirectSpaceState2D.intersect_ray<class_PhysicsDirectSpaceState2D_method_intersect_ray>`.
 
 .. rst-class:: classref-reftable-group
 

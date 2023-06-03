@@ -41,7 +41,7 @@ After setting the request and changing the animation playback, the transition no
     animation_tree["parameters/Transition/current_state"]
     
     # Get current state index (read-only).
-    animation_tree.get("parameters/Transition/current_index"))
+    animation_tree.get("parameters/Transition/current_index")
     # Alternative syntax (same result as above).
     animation_tree["parameters/Transition/current_index"]
 
@@ -142,7 +142,7 @@ If ``true``, allows transition to the self state. When the reset option is enabl
 - void **set_input_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_input_count** **(** **)**
 
-The number of enabled input ports for this node.
+The number of enabled input ports for this animation node.
 
 .. rst-class:: classref-item-separator
 

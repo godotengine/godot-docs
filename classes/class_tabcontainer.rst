@@ -12,25 +12,23 @@ TabContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Tabbed container.
+A container that creates a tab for each child control, displaying only the active tab's control.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Arranges :ref:`Control<class_Control>` children into a tabbed view, creating a tab for each one. The active tab's corresponding :ref:`Control<class_Control>` has its ``visible`` property set to ``true``, and all other children's to ``false``.
+Arranges child controls into a tabbed view, creating a tab for each one. The active tab's corresponding control is made visible, while all other child controls are hidden. Ignores non-control children.
 
-Ignores non-:ref:`Control<class_Control>` children.
-
-\ **Note:** The drawing of the clickable tabs themselves is handled by this node. Adding :ref:`TabBar<class_TabBar>`\ s as children is not needed.
+\ **Note:** The drawing of the clickable tabs is handled by this node; :ref:`TabBar<class_TabBar>` is not needed.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 

@@ -12,14 +12,14 @@ Label3D
 
 **Inherits:** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Displays plain text in a 3D world.
+A node for displaying plain text in 3D space.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Label3D displays plain text in a 3D world. It gives you control over the horizontal and vertical alignment.
+A node for displaying plain text in 3D space. By adjusting various properties of this node, you can configure things such as the text's appearance and whether it always faces the camera.
 
 .. rst-class:: classref-reftable-group
 

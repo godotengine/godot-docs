@@ -12,14 +12,14 @@ ReferenceRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Reference frame for GUI.
+A rectangle hint for designing UIs.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A rectangle box that displays only a :ref:`border_color<class_ReferenceRect_property_border_color>` border color around its rectangle. **ReferenceRect** has no fill :ref:`Color<class_Color>`. If you need to display a rectangle filled with a solid color, consider using :ref:`ColorRect<class_ColorRect>` instead.
+A rectangle box that displays only a colored border around its rectangle. It is used to visualize the extents of a :ref:`Control<class_Control>`.
 
 .. rst-class:: classref-reftable-group
 
@@ -57,7 +57,7 @@ Property Descriptions
 - void **set_border_color** **(** :ref:`Color<class_Color>` value **)**
 - :ref:`Color<class_Color>` **get_border_color** **(** **)**
 
-Sets the border :ref:`Color<class_Color>` of the **ReferenceRect**.
+Sets the border color of the **ReferenceRect**.
 
 .. rst-class:: classref-item-separator
 

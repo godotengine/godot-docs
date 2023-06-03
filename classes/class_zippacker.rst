@@ -76,7 +76,7 @@ enum **ZipAppend**:
 
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_CREATE** = ``0``
 
-
+Create a new zip archive at the given path.
 
 .. _class_ZIPPacker_constant_APPEND_CREATEAFTER:
 
@@ -84,7 +84,7 @@ enum **ZipAppend**:
 
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_CREATEAFTER** = ``1``
 
-
+Append a new zip archive to the end of the already existing file at the given path.
 
 .. _class_ZIPPacker_constant_APPEND_ADDINZIP:
 
@@ -92,7 +92,7 @@ enum **ZipAppend**:
 
 :ref:`ZipAppend<enum_ZIPPacker_ZipAppend>` **APPEND_ADDINZIP** = ``2``
 
-
+Add new files to the existing zip archive at the given path.
 
 .. rst-class:: classref-section-separator
 

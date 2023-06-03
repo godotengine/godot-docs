@@ -12,16 +12,16 @@ CircleShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Circular shape resource for 2D physics.
+A 2D circle shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2D circular shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. This shape is useful for modeling balls or small characters and its collision detection with everything else is very fast.
+A 2D circle shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape2D<class_CollisionShape2D>`.
 
-\ **Performance:** Being a primitive collision shape, **CircleShape2D** is the fastest collision shape to check collisions against, as it only requires a distance check with the shape's origin.
+\ **Performance:** **CircleShape2D** is fast to check collisions against. It is faster than :ref:`RectangleShape2D<class_RectangleShape2D>` and :ref:`CapsuleShape2D<class_CapsuleShape2D>`.
 
 .. rst-class:: classref-reftable-group
 

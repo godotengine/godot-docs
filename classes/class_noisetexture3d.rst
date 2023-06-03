@@ -95,7 +95,7 @@ A :ref:`Gradient<class_Gradient>` which is used to map the luminance of each pix
 - void **set_depth** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_depth** **(** **)**
 
-Depth of the generated texture.
+Depth of the generated texture (in pixels).
 
 .. rst-class:: classref-item-separator
 
@@ -112,7 +112,7 @@ Depth of the generated texture.
 - void **set_height** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_height** **(** **)**
 
-Height of the generated texture.
+Height of the generated texture (in pixels).
 
 .. rst-class:: classref-item-separator
 
@@ -186,6 +186,8 @@ If ``true``, a seamless texture is requested from the :ref:`Noise<class_Noise>` 
 
 \ **Note:** Seamless noise textures may take longer to generate and/or can have a lower contrast compared to non-seamless noise depending on the used :ref:`Noise<class_Noise>` resource. This is because some implementations use higher dimensions for generating seamless noise.
 
+\ **Note:** The default :ref:`FastNoiseLite<class_FastNoiseLite>` implementation uses the fallback path for seamless generation. If using a :ref:`width<class_NoiseTexture3D_property_width>`, :ref:`height<class_NoiseTexture3D_property_height>` or :ref:`depth<class_NoiseTexture3D_property_depth>` lower than the default, you may need to increase :ref:`seamless_blend_skirt<class_NoiseTexture3D_property_seamless_blend_skirt>` to make seamless blending more effective.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -203,6 +205,8 @@ If ``true``, a seamless texture is requested from the :ref:`Noise<class_Noise>` 
 
 Used for the default/fallback implementation of the seamless texture generation. It determines the distance over which the seams are blended. High values may result in less details and contrast. See :ref:`Noise<class_Noise>` for further details.
 
+\ **Note:** If using a :ref:`width<class_NoiseTexture3D_property_width>`, :ref:`height<class_NoiseTexture3D_property_height>` or :ref:`depth<class_NoiseTexture3D_property_depth>` lower than the default, you may need to increase :ref:`seamless_blend_skirt<class_NoiseTexture3D_property_seamless_blend_skirt>` to make seamless blending more effective.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -218,7 +222,7 @@ Used for the default/fallback implementation of the seamless texture generation.
 - void **set_width** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_width** **(** **)**
 
-Width of the generated texture.
+Width of the generated texture (in pixels).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

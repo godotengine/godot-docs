@@ -12,21 +12,21 @@ VSplitContainer
 
 **Inherits:** :ref:`SplitContainer<class_SplitContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Vertical split container.
+A container that splits two child controls vertically and provides a grabber for adjusting the split ratio.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Vertical split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from top to bottom.
+A container that accepts only two child controls, then arranges them vertically and creates a divisor between them. The divisor can be dragged around to change the size relation between the child controls.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 

@@ -12,22 +12,14 @@ StyleBoxFlat
 
 **Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Customizable :ref:`StyleBox<class_StyleBox>` with a given set of parameters (no texture required).
+A customizable :ref:`StyleBox<class_StyleBox>` that doesn't use a texture.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This :ref:`StyleBox<class_StyleBox>` can be used to achieve all kinds of looks without the need of a texture. The following properties are customizable:
-
-- Color
-
-- Border width (individual width for each border)
-
-- Rounded corners (individual radius for each corner)
-
-- Shadow (with blur and offset)
+By configuring various properties of this style box, you can achieve many common looks without the need of a texture. This includes optionally rounded borders, antialiasing, shadows, and skew.
 
 Setting corner radius to high values is allowed. As soon as corners overlap, the stylebox will switch to a relative system.
 

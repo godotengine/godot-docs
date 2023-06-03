@@ -12,16 +12,16 @@ AStar3D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-An implementation of A\* to find the shortest paths among connected points in space.
+An implementation of A\* for finding the shortest path between two vertices on a connected graph in 3D space.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A\* (A star) is a computer algorithm that is widely used in pathfinding and graph traversal, the process of plotting short paths among vertices (points), passing through a given set of edges (segments). It enjoys widespread use due to its performance and accuracy. Godot's A\* implementation uses points in three-dimensional space and Euclidean distances by default.
+A\* (A star) is a computer algorithm used in pathfinding and graph traversal, the process of plotting short paths among vertices (points), passing through a given set of edges (segments). It enjoys widespread use due to its performance and accuracy. Godot's A\* implementation uses points in 3D space and Euclidean distances by default.
 
-You must add points manually with :ref:`add_point<class_AStar3D_method_add_point>` and create segments manually with :ref:`connect_points<class_AStar3D_method_connect_points>`. Then you can test if there is a path between two points with the :ref:`are_points_connected<class_AStar3D_method_are_points_connected>` function, get a path containing indices by :ref:`get_id_path<class_AStar3D_method_get_id_path>`, or one containing actual coordinates with :ref:`get_point_path<class_AStar3D_method_get_point_path>`.
+You must add points manually with :ref:`add_point<class_AStar3D_method_add_point>` and create segments manually with :ref:`connect_points<class_AStar3D_method_connect_points>`. Once done, you can test if there is a path between two points with the :ref:`are_points_connected<class_AStar3D_method_are_points_connected>` function, get a path containing indices by :ref:`get_id_path<class_AStar3D_method_get_id_path>`, or one containing actual coordinates with :ref:`get_point_path<class_AStar3D_method_get_point_path>`.
 
 It is also possible to use non-Euclidean distances. To do so, create a class that extends ``AStar3D`` and override methods :ref:`_compute_cost<class_AStar3D_method__compute_cost>` and :ref:`_estimate_cost<class_AStar3D_method__estimate_cost>`. Both take two indices and return a length, as is shown in the following example.
 

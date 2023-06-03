@@ -12,14 +12,14 @@ AESContext
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Interface to low level AES encryption features.
+Provides access to AES encryption/decryption of raw data.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class provides access to AES encryption/decryption of raw data. Both AES-ECB and AES-CBC mode are supported.
+This class holds the context information required for encryption and decryption operations with AES (Advanced Encryption Standard). Both AES-ECB and AES-CBC modes are supported.
 
 
 .. tabs::

@@ -12,14 +12,14 @@ SliderJoint3D
 
 **Inherits:** :ref:`Joint3D<class_Joint3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Slider between two PhysicsBodies in 3D.
+A physics joint that restricts the movement of a 3D physics body along an axis relative to another physics body.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Slides across the X axis of the pivot object. See also :ref:`Generic6DOFJoint3D<class_Generic6DOFJoint3D>`.
+A physics joint that restricts the movement of a 3D physics body along an axis relative to another physics body. For example, Body A could be a :ref:`StaticBody3D<class_StaticBody3D>` representing a piston base, while Body B could be a :ref:`RigidBody3D<class_RigidBody3D>` representing the piston head, moving up and down.
 
 .. rst-class:: classref-reftable-group
 

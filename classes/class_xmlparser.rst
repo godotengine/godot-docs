@@ -12,6 +12,8 @@ XMLParser
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
+Provides a low-level interface for creating parsers for XML files.
+
 Low-level class for creating parsers for `XML <https://en.wikipedia.org/wiki/XML>`__ files.
 
 .. rst-class:: classref-introduction-group
@@ -19,7 +21,7 @@ Low-level class for creating parsers for `XML <https://en.wikipedia.org/wiki/XML
 Description
 -----------
 
-This class can serve as base to make custom XML parsers. Since XML is a very flexible standard, this interface is low-level so it can be applied to any possible schema.
+Provides a low-level interface for creating parsers for `XML <https://en.wikipedia.org/wiki/XML>`__ files. This class can serve as base to make custom XML parsers.
 
 .. rst-class:: classref-reftable-group
 

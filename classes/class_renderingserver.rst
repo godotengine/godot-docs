@@ -1216,7 +1216,7 @@ Array is a vertex color array.
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_TEX_UV** = ``4``
 
-Array is an UV coordinates array.
+Array is a UV coordinates array.
 
 .. _class_RenderingServer_constant_ARRAY_TEX_UV2:
 
@@ -1224,7 +1224,7 @@ Array is an UV coordinates array.
 
 :ref:`ArrayType<enum_RenderingServer_ArrayType>` **ARRAY_TEX_UV2** = ``5``
 
-Array is an UV coordinates array for the second set of UV coordinates.
+Array is a UV coordinates array for the second set of UV coordinates.
 
 .. _class_RenderingServer_constant_ARRAY_CUSTOM0:
 
@@ -1420,7 +1420,7 @@ Flag used to mark a vertex color array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_TEX_UV** = ``16``
 
-Flag used to mark an UV coordinates array.
+Flag used to mark a UV coordinates array.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_TEX_UV2:
 
@@ -1428,7 +1428,7 @@ Flag used to mark an UV coordinates array.
 
 :ref:`ArrayFormat<enum_RenderingServer_ArrayFormat>` **ARRAY_FORMAT_TEX_UV2** = ``32``
 
-Flag used to mark an UV coordinates array for the second UV coordinates.
+Flag used to mark a UV coordinates array for the second UV coordinates.
 
 .. _class_RenderingServer_constant_ARRAY_FORMAT_CUSTOM0:
 

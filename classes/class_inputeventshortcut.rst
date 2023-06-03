@@ -12,14 +12,14 @@ InputEventShortcut
 
 **Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-:ref:`InputEvent<class_InputEvent>` that signifies a triggered keyboard :ref:`Shortcut<class_Shortcut>`.
+Represents a triggered keyboard :ref:`Shortcut<class_Shortcut>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-InputEventShortcut is a special event that can be received in :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`. It's typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_unhandled_input<class_Viewport_method_push_unhandled_input>`.
+InputEventShortcut is a special event that can be received in :ref:`Node._unhandled_key_input<class_Node_method__unhandled_key_input>`. It is typically sent by the editor's Command Palette to trigger actions, but can also be sent manually using :ref:`Viewport.push_input<class_Viewport_method_push_input>`.
 
 .. rst-class:: classref-reftable-group
 

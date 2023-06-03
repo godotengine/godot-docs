@@ -12,9 +12,16 @@ PhysicsDirectSpaceState2DExtension
 
 **Inherits:** :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Provides virtual methods that can be overridden to create custom :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` implementations.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+This class extends :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` by providing additional virtual methods that can be overridden. When these methods are overridden, they will be called instead of the internal methods of the physics server.
+
+Intended for use with GDExtension to create custom implementations of :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>`.
 
 .. rst-class:: classref-reftable-group
 

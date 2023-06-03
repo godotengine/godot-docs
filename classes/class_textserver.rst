@@ -14,14 +14,14 @@ TextServer
 
 **Inherited By:** :ref:`TextServerExtension<class_TextServerExtension>`
 
-Interface for the fonts and complex text layouts.
+A server interface for font management and text rendering.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**TextServer** is the API backend for managing fonts, and rendering complex text.
+**TextServer** is the API backend for managing fonts and rendering text.
 
 .. rst-class:: classref-reftable-group
 
@@ -1475,7 +1475,7 @@ Method Descriptions
 
 :ref:`RID<class_RID>` **create_font** **(** **)**
 
-Creates new, empty font cache entry resource. To free the resulting resource, use :ref:`free_rid<class_TextServer_method_free_rid>` method.
+Creates a new, empty font cache entry resource. To free the resulting resource, use the :ref:`free_rid<class_TextServer_method_free_rid>` method.
 
 .. rst-class:: classref-item-separator
 

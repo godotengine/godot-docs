@@ -12,20 +12,18 @@ ShapeCast3D
 
 **Inherits:** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Node for physics collision sweep and immediate overlap queries. Similar to the :ref:`RayCast3D<class_RayCast3D>` node.
+A 3D shape that sweeps a region of space to detect :ref:`CollisionObject3D<class_CollisionObject3D>`\ s.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Shape casting allows to detect collision objects by sweeping the :ref:`shape<class_ShapeCast3D_property_shape>` along the cast direction determined by :ref:`target_position<class_ShapeCast3D_property_target_position>` (useful for things like beam weapons).
+Shape casting allows to detect collision objects by sweeping its :ref:`shape<class_ShapeCast3D_property_shape>` along the cast direction determined by :ref:`target_position<class_ShapeCast3D_property_target_position>`. This is similar to :ref:`RayCast3D<class_RayCast3D>`, but it allows for sweeping a region of space, rather than just a straight line. **ShapeCast3D** can detect multiple collision objects. It is useful for things like wide laser beams or snapping a simple shape to a floor.
 
-Immediate collision overlaps can be done with the :ref:`target_position<class_ShapeCast3D_property_target_position>` set to ``Vector3(0, 0, 0)`` and by calling :ref:`force_shapecast_update<class_ShapeCast3D_method_force_shapecast_update>` within the same **physics frame**. This also helps to overcome some limitations of :ref:`Area3D<class_Area3D>` when used as a continuous detection area, often requiring waiting a couple of frames before collision information is available to :ref:`Area3D<class_Area3D>` nodes, and when using the signals creates unnecessary complexity.
+Immediate collision overlaps can be done with the :ref:`target_position<class_ShapeCast3D_property_target_position>` set to ``Vector3(0, 0, 0)`` and by calling :ref:`force_shapecast_update<class_ShapeCast3D_method_force_shapecast_update>` within the same physics frame. This helps to overcome some limitations of :ref:`Area3D<class_Area3D>` when used as an instantaneous detection area, as collision information isn't immediately available to it.
 
-The node can detect multiple collision objects, but it's usually used to detect the first collision.
-
-\ **Note:** Shape casting is more computationally expensive compared to ray casting.
+\ **Note:** Shape casting is more computationally expensive than ray casting.
 
 .. rst-class:: classref-reftable-group
 

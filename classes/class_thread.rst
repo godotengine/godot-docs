@@ -25,7 +25,7 @@ A unit of execution in a process. Can run methods on :ref:`Object<class_Object>`
 
 \ **Warning:**\ 
 
-To guarantee that the operating system is able to perform proper cleanup (no crashes, no deadlocks), these conditions must be met by the time a **Thread**'s reference count reaches zero and therefore it is destroyed:
+To ensure proper cleanup without crashes or deadlocks, when a **Thread**'s reference count reaches zero and it is therefore destroyed, the following conditions must be met:
 
 - It must not have any :ref:`Mutex<class_Mutex>` objects locked.
 

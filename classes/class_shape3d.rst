@@ -14,14 +14,16 @@ Shape3D
 
 **Inherited By:** :ref:`BoxShape3D<class_BoxShape3D>`, :ref:`CapsuleShape3D<class_CapsuleShape3D>`, :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>`, :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>`, :ref:`CylinderShape3D<class_CylinderShape3D>`, :ref:`HeightMapShape3D<class_HeightMapShape3D>`, :ref:`SeparationRayShape3D<class_SeparationRayShape3D>`, :ref:`SphereShape3D<class_SphereShape3D>`, :ref:`WorldBoundaryShape3D<class_WorldBoundaryShape3D>`
 
-Base class for all 3D shape resources.
+Abstract base class for 3D shapes used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Base class for all 3D shape resources. Nodes that inherit from this can be used as shapes for a :ref:`PhysicsBody3D<class_PhysicsBody3D>` or :ref:`Area3D<class_Area3D>` objects.
+Abstract base class for all 3D shapes, intended for use in physics.
+
+\ **Performance:** Primitive shapes, especially :ref:`SphereShape3D<class_SphereShape3D>`, are fast to check collisions against. :ref:`ConvexPolygonShape3D<class_ConvexPolygonShape3D>` and :ref:`HeightMapShape3D<class_HeightMapShape3D>` are slower, and :ref:`ConcavePolygonShape3D<class_ConcavePolygonShape3D>` is the slowest.
 
 .. rst-class:: classref-introduction-group
 

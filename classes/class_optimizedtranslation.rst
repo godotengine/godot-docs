@@ -12,14 +12,14 @@ OptimizedTranslation
 
 **Inherits:** :ref:`Translation<class_Translation>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Optimized translation.
+An optimized translation, used by default for CSV Translations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Optimized translation. Uses real-time compressed translations, which results in very small dictionaries.
+An optimized translation, used by default for CSV Translations. Uses real-time compressed translations, which results in very small dictionaries.
 
 .. rst-class:: classref-reftable-group
 

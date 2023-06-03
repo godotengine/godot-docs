@@ -33,7 +33,7 @@ Allows control of :ref:`AnimationTree<class_AnimationTree>` state machines creat
 
  .. code-tab:: csharp
 
-    var stateMachine = GetNode<AnimationTree>("AnimationTree").Get("parameters/playback") as AnimationNodeStateMachinePlayback;
+    var stateMachine = GetNode<AnimationTree>("AnimationTree").Get("parameters/playback").As<AnimationNodeStateMachinePlayback>();
     stateMachine.Travel("some_state");
 
 

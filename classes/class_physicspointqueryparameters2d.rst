@@ -12,14 +12,14 @@ PhysicsPointQueryParameters2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Parameters to be sent to a 2D point physics query.
+Provides parameters for :ref:`PhysicsDirectSpaceState2D.intersect_point<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the position and other parameters to be used for :ref:`PhysicsDirectSpaceState2D.intersect_point<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
+By changing various properties of this object, such as the point position, you can configure the parameters for :ref:`PhysicsDirectSpaceState2D.intersect_point<class_PhysicsDirectSpaceState2D_method_intersect_point>`.
 
 .. rst-class:: classref-reftable-group
 

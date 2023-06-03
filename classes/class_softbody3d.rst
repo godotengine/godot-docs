@@ -12,16 +12,16 @@ SoftBody3D
 
 **Inherits:** :ref:`MeshInstance3D<class_MeshInstance3D>` **<** :ref:`GeometryInstance3D<class_GeometryInstance3D>` **<** :ref:`VisualInstance3D<class_VisualInstance3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-A soft mesh physics body.
+A deformable 3D physics mesh.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A deformable physics body. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
+A deformable 3D physics mesh. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
 
-\ **Note:** There are many known bugs in **SoftBody3D**. Therefore, it's not recommended to use them for things that can affect gameplay (such as a player character made entirely out of soft bodies).
+\ **Note:** There are many known bugs in **SoftBody3D**. Therefore, it's not recommended to use them for things that can affect gameplay (such as trampolines).
 
 .. rst-class:: classref-introduction-group
 

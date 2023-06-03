@@ -12,16 +12,16 @@ RectangleShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Rectangle shape resource for 2D physics.
+A 2D rectangle shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2D rectangle shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. This shape is useful for modeling box-like 2D objects.
+A 2D rectangle shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape2D<class_CollisionShape2D>`.
 
-\ **Performance:** Being a primitive collision shape, **RectangleShape2D** is fast to check collisions against (though not as fast as :ref:`CircleShape2D<class_CircleShape2D>`).
+\ **Performance:** **RectangleShape2D** is fast to check collisions against. It is faster than :ref:`CapsuleShape2D<class_CapsuleShape2D>`, but slower than :ref:`CircleShape2D<class_CircleShape2D>`.
 
 .. rst-class:: classref-introduction-group
 

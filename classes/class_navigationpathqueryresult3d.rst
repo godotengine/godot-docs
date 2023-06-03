@@ -12,14 +12,14 @@ NavigationPathQueryResult3D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Result from a :ref:`NavigationPathQueryParameters3D<class_NavigationPathQueryParameters3D>` navigation path query.
+Represents the result of a 3D pathfinding query.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the result of a navigation path query from :ref:`NavigationServer3D.query_path<class_NavigationServer3D_method_query_path>`.
+This class stores the result of a 3D navigation path query from the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. rst-class:: classref-introduction-group
 

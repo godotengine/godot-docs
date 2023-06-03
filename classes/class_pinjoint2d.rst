@@ -12,14 +12,14 @@ PinJoint2D
 
 **Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Pin joint for 2D shapes.
+A physics joint that attaches two 2D physics bodies at a single point, allowing them to freely rotate.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Pin joint for 2D rigid bodies. It pins two bodies (dynamic or static) together.
+A physics joint that attaches two 2D physics bodies at a single point, allowing them to freely rotate. For example, a :ref:`RigidBody2D<class_RigidBody2D>` can be attached to a :ref:`StaticBody2D<class_StaticBody2D>` to create a pendulum or a seesaw.
 
 .. rst-class:: classref-reftable-group
 

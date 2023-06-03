@@ -12,16 +12,16 @@ MarginContainer
 
 **Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Simple margin container.
+A container that keeps a margin around its child controls.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` nodes that are direct children of the container. To control the **MarginContainer**'s margin, use the ``margin_*`` theme properties listed below.
+**MarginContainer** adds an adjustable margin on each side of its child controls. The margins are added around all children, not around each individual one. To control the **MarginContainer**'s margins, use the ``margin_*`` theme properties listed below.
 
-\ **Note:** Be careful, :ref:`Control<class_Control>` margin values are different from the constant margin values. If you want to change the custom margin values of the **MarginContainer** by code, you should use the following examples:
+\ **Note:** The margin sizes are theme overrides, not normal properties. This is an example of how to change them in code:
 
 
 .. tabs::
@@ -51,7 +51,7 @@ Adds a top, left, bottom, and right margin to all :ref:`Control<class_Control>` 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 

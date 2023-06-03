@@ -14,14 +14,14 @@ Range
 
 **Inherited By:** :ref:`EditorSpinSlider<class_EditorSpinSlider>`, :ref:`ProgressBar<class_ProgressBar>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, :ref:`SpinBox<class_SpinBox>`, :ref:`TextureProgressBar<class_TextureProgressBar>`
 
-Abstract base class for range-based controls.
+Abstract base class for controls that represent a number within a range.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Range is a base class for :ref:`Control<class_Control>` nodes that change a floating-point :ref:`value<class_Range_property_value>` between a :ref:`min_value<class_Range_property_min_value>` and :ref:`max_value<class_Range_property_max_value>`, using a configured :ref:`step<class_Range_property_step>` and :ref:`page<class_Range_property_page>` size. See e.g. :ref:`ScrollBar<class_ScrollBar>` and :ref:`Slider<class_Slider>` for examples of higher level nodes using Range.
+Range is an abstract base class for controls that represent a number within a range, using a configured :ref:`step<class_Range_property_step>` and :ref:`page<class_Range_property_page>` size. See e.g. :ref:`ScrollBar<class_ScrollBar>` and :ref:`Slider<class_Slider>` for examples of higher-level nodes using Range.
 
 .. rst-class:: classref-reftable-group
 
@@ -158,7 +158,7 @@ If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min
 - void **set_exp_ratio** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_ratio_exp** **(** **)**
 
-If ``true``, and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.
+If ``true``, and :ref:`min_value<class_Range_property_min_value>` is greater than 0, :ref:`value<class_Range_property_value>` will be represented exponentially rather than linearly.
 
 .. rst-class:: classref-item-separator
 
@@ -175,7 +175,7 @@ If ``true``, and ``min_value`` is greater than 0, ``value`` will be represented 
 - void **set_max** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_max** **(** **)**
 
-Maximum value. Range is clamped if ``value`` is greater than ``max_value``.
+Maximum value. Range is clamped if :ref:`value<class_Range_property_value>` is greater than :ref:`max_value<class_Range_property_max_value>`.
 
 .. rst-class:: classref-item-separator
 
@@ -192,7 +192,7 @@ Maximum value. Range is clamped if ``value`` is greater than ``max_value``.
 - void **set_min** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_min** **(** **)**
 
-Minimum value. Range is clamped if ``value`` is less than ``min_value``.
+Minimum value. Range is clamped if :ref:`value<class_Range_property_value>` is less than :ref:`min_value<class_Range_property_min_value>`.
 
 .. rst-class:: classref-item-separator
 
@@ -209,7 +209,7 @@ Minimum value. Range is clamped if ``value`` is less than ``min_value``.
 - void **set_page** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_page** **(** **)**
 
-Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
+Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length is its size multiplied by :ref:`page<class_Range_property_page>` over the difference between :ref:`min_value<class_Range_property_min_value>` and :ref:`max_value<class_Range_property_max_value>`.
 
 .. rst-class:: classref-item-separator
 
@@ -243,7 +243,7 @@ The value mapped between 0 and 1.
 - void **set_use_rounded_values** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_using_rounded_values** **(** **)**
 
-If ``true``, ``value`` will always be rounded to the nearest integer.
+If ``true``, :ref:`value<class_Range_property_value>` will always be rounded to the nearest integer.
 
 .. rst-class:: classref-item-separator
 
@@ -260,7 +260,7 @@ If ``true``, ``value`` will always be rounded to the nearest integer.
 - void **set_step** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_step** **(** **)**
 
-If greater than 0, ``value`` will always be rounded to a multiple of ``step``. If ``rounded`` is also ``true``, ``value`` will first be rounded to a multiple of ``step`` then rounded to the nearest integer.
+If greater than 0, :ref:`value<class_Range_property_value>` will always be rounded to a multiple of this property's value. If :ref:`rounded<class_Range_property_rounded>` is also ``true``, :ref:`value<class_Range_property_value>` will first be rounded to a multiple of this property's value, then rounded to the nearest integer.
 
 .. rst-class:: classref-item-separator
 

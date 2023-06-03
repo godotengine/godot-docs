@@ -14,16 +14,14 @@ Slider
 
 **Inherited By:** :ref:`HSlider<class_HSlider>`, :ref:`VSlider<class_VSlider>`
 
-Base class for GUI sliders.
+Abstract base class for sliders.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Base class for GUI sliders.
-
-\ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+Abstract base class for sliders, used to adjust a value by moving a grabber along a horizontal or vertical axis. Sliders are :ref:`Range<class_Range>`-based controls.
 
 .. rst-class:: classref-reftable-group
 

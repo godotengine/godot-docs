@@ -14,7 +14,7 @@ Window
 
 **Inherited By:** :ref:`AcceptDialog<class_AcceptDialog>`, :ref:`Popup<class_Popup>`
 
-Base class for all windows.
+Base class for all windows, dialogs, and popups.
 
 .. rst-class:: classref-introduction-group
 
@@ -23,7 +23,7 @@ Description
 
 A node that creates a window. The window can either be a native system window or embedded inside another **Window** (see :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>`).
 
-At runtime, **Window**\ s will not close automatically when requested. You need to handle it manually using :ref:`close_requested<class_Window_signal_close_requested>` (this applies both to clicking close button and clicking outside popup).
+At runtime, **Window**\ s will not close automatically when requested. You need to handle it manually using the :ref:`close_requested<class_Window_signal_close_requested>` signal (this applies both to pressing the close button and clicking outside of a popup).
 
 .. rst-class:: classref-reftable-group
 
@@ -332,7 +332,7 @@ Emitted when the **Window**'s DPI changes as a result of OS-level changes (e.g. 
 
 Emitted when files are dragged from the OS file manager and dropped in the game window. The argument is a list of file paths.
 
-Note that this method only works with non-embedded windows, i.e. the main window and **Window**-derived nodes when :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>` is disabled in the main viewport.
+Note that this method only works with native windows, i.e. the main window and **Window**-derived nodes when :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>` is disabled in the main viewport.
 
 Example usage:
 
@@ -553,9 +553,9 @@ The window is floating on top of all other windows. This flag is ignored for ful
 
 :ref:`Flags<enum_Window_Flags>` **FLAG_TRANSPARENT** = ``3``
 
-The window background can be transparent.
+The window background can be transparent. Set with :ref:`transparent<class_Window_property_transparent>`.
 
-\ **Note:** This flag has no effect if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``. Set with :ref:`transparent<class_Window_property_transparent>`.
+\ **Note:** This flag has no effect if either :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`, or the window's :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` is set to ``false``.
 
 .. _class_Window_constant_FLAG_NO_FOCUS:
 
@@ -573,6 +573,8 @@ The window can't be focused. No-focus window will ignore all input, except mouse
 
 Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This flag can't be changed when the window is visible. An active popup window will exclusively receive all input, without stealing focus from its parent. Popup windows are automatically closed when uses click outside it, or when an application is switched. Popup window must have transient parent set (see :ref:`transient<class_Window_property_transient>`).
 
+\ **Note:** This flag has no effect in embedded windows (unless said window is a :ref:`Popup<class_Popup>`).
+
 .. _class_Window_constant_FLAG_EXTEND_TO_TITLE:
 
 .. rst-class:: classref-enumeration-constant
@@ -581,7 +583,9 @@ Window is part of menu or :ref:`OptionButton<class_OptionButton>` dropdown. This
 
 Window content is expanded to the full size of the window. Unlike borderless window, the frame is left intact and can be used to resize the window, title bar is transparent, but have minimize/maximize/close buttons. Set with :ref:`extend_to_title<class_Window_property_extend_to_title>`.
 
-\ **Note:** This flag is implemented on macOS.
+\ **Note:** This flag is implemented only on macOS.
+
+\ **Note:** This flag has no effect in embedded windows.
 
 .. _class_Window_constant_FLAG_MOUSE_PASSTHROUGH:
 
@@ -590,6 +594,8 @@ Window content is expanded to the full size of the window. Unlike borderless win
 :ref:`Flags<enum_Window_Flags>` **FLAG_MOUSE_PASSTHROUGH** = ``7``
 
 All mouse events are passed to the underlying window of the same application.
+
+\ **Note:** This flag has no effect in embedded windows.
 
 .. _class_Window_constant_FLAG_MAX:
 
@@ -993,6 +999,10 @@ Needs :ref:`transient<class_Window_property_transient>` enabled to work.
 
 If ``true``, the **Window** contents is expanded to the full size of the window, window title bar is transparent.
 
+\ **Note:** This property is implemented only on macOS.
+
+\ **Note:** This property only works with native windows.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1008,9 +1018,7 @@ If ``true``, the **Window** contents is expanded to the full size of the window,
 - void **set_initial_position** **(** :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` value **)**
 - :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` **get_initial_position** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Specifies the initial type of position for the **Window**. See :ref:`WindowInitialPosition<enum_Window_WindowInitialPosition>` constants.
 
 .. rst-class:: classref-item-separator
 
@@ -1069,6 +1077,8 @@ Set's the window's current mode.
 
 \ **Note:** Fullscreen mode is not exclusive full screen on Windows and Linux.
 
+\ **Note:** This method only works with native windows, i.e. the main window and **Window**-derived nodes when :ref:`Viewport.gui_embed_subwindows<class_Viewport_property_gui_embed_subwindows>` is disabled in the main viewport.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1087,6 +1097,8 @@ Set's the window's current mode.
 If ``true``, all mouse events will be passed to the underlying window of the same application. See also :ref:`mouse_passthrough_polygon<class_Window_property_mouse_passthrough_polygon>`.
 
 \ **Note:** This property is implemented on Linux (X11), macOS and Windows.
+
+\ **Note:** This property only works with native windows.
 
 .. rst-class:: classref-item-separator
 
@@ -1157,6 +1169,8 @@ Passing an empty array will disable passthrough support (all mouse events will b
 
 If ``true``, the **Window** will be considered a popup. Popups are sub-windows that don't show as separate windows in system's window manager's window list and will send close request when anything is clicked outside of them (unless :ref:`exclusive<class_Window_property_exclusive>` is enabled).
 
+\ **Note:** This property only works with native windows.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1174,7 +1188,9 @@ If ``true``, the **Window** will be considered a popup. Popups are sub-windows t
 
 The window's position in pixels.
 
-If :ref:`ProjectSettings.display/window/subwindows/embed_subwindows<class_ProjectSettings_property_display/window/subwindows/embed_subwindows>` is ``false``, the position is in absolute screen coordinates. This typically applies to editor plugins. If the setting is ``false``, the window's position is in the coordinates of its parent :ref:`Viewport<class_Viewport>`.
+If :ref:`ProjectSettings.display/window/subwindows/embed_subwindows<class_ProjectSettings_property_display/window/subwindows/embed_subwindows>` is ``false``, the position is in absolute screen coordinates. This typically applies to editor plugins. If the setting is ``true``, the window's position is in the coordinates of its parent :ref:`Viewport<class_Viewport>`.
+
+\ **Note:** This property only works if :ref:`initial_position<class_Window_property_initial_position>` is set to :ref:`WINDOW_INITIAL_POSITION_ABSOLUTE<class_Window_constant_WINDOW_INITIAL_POSITION_ABSOLUTE>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1244,7 +1260,7 @@ The name of a theme type variation used by this **Window** to look up its own th
 - void **set_title** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_title** **(** **)**
 
-The window's title. If the **Window** is non-embedded, title styles set in :ref:`Theme<class_Theme>` will have no effect.
+The window's title. If the **Window** is native, title styles set in :ref:`Theme<class_Theme>` will have no effect.
 
 .. rst-class:: classref-item-separator
 
@@ -1282,9 +1298,9 @@ Note that behavior might be different depending on the platform.
 
 If ``true``, the **Window**'s background can be transparent. This is best used with embedded windows.
 
-\ **Note:** For native windows, this flag has no effect if :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>` is set to ``false``.
-
 \ **Note:** Transparency support is implemented on Linux, macOS and Windows, but availability might vary depending on GPU driver, display manager, and compositor capabilities.
+
+\ **Note:** This property has no effect if either :ref:`ProjectSettings.display/window/per_pixel_transparency/allowed<class_ProjectSettings_property_display/window/per_pixel_transparency/allowed>`, or the window's :ref:`Viewport.transparent_bg<class_Viewport_property_transparent_bg>` is set to ``false``.
 
 .. rst-class:: classref-item-separator
 

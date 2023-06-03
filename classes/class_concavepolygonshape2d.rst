@@ -12,26 +12,22 @@ ConcavePolygonShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Concave polygon shape resource for 2D physics.
+A 2D polyline shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2D concave polygon shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node.
+A 2D polyline shape, intended for use in physics. Used internally in :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` when it's in ``BUILD_SEGMENTS`` mode.
 
-The shape consists of a collection of line segments, and as such it does not include any "inside" that the segments might be enclosing. If the segments do enclose anything, then the shape is *hollow*, as opposed to a :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` which is solid. See also :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`.
+Being just a collection of interconnected line segments, **ConcavePolygonShape2D** is the most freely configurable single 2D shape. It can be used to form polygons of any nature, or even shapes that don't enclose an area. However, :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` is *hollow* even if the interconnected line segments do enclose an area, which often makes it unsuitable for physics or detection.
 
-Being made out of line segments, this shape is the most freely configurable single 2D shape. It can be used to form (hollow) polygons of any nature, convex or concave.
+\ **Note:** When used for collision, **ConcavePolygonShape2D** is intended to work with static :ref:`CollisionShape2D<class_CollisionShape2D>` nodes like :ref:`StaticBody2D<class_StaticBody2D>` and will likely not behave well for :ref:`CharacterBody2D<class_CharacterBody2D>`\ s or :ref:`RigidBody2D<class_RigidBody2D>`\ s in a mode other than Static.
 
-\ **Note:** When used for collision, **ConcavePolygonShape2D** is intended to work with static :ref:`PhysicsBody2D<class_PhysicsBody2D>` nodes like :ref:`StaticBody2D<class_StaticBody2D>` and is not recommended to use with :ref:`RigidBody2D<class_RigidBody2D>` nodes in a mode other than Static. A :ref:`CollisionPolygon2D<class_CollisionPolygon2D>` in convex decomposition mode (solids) or several convex objects are advised for that instead. Otherwise, a concave polygon 2D shape is better suited for static bodies.
+\ **Warning:** Physics bodies that are small have a chance to clip through this shape when moving fast. This happens because on one frame, the physics body may be on the "outside" of the shape, and on the next frame it may be "inside" it. **ConcavePolygonShape2D** is hollow, so it won't detect a collision.
 
-\ **Warning:** The nature of this shape makes it extra prone to being tunneled through by (small) fast physics bodies. For example, consider a (small) rigid body *Ball* traveling toward a static body *Box* at high speed. If the box uses a **ConcavePolygonShape2D** consisting of four segments, then the ball might end up inside the box or tunnel all the way through the box, if it goes fast enough. This is (partly) because the ball can only collide against the individual segments of the hollow box. In interactions with rigid bodies tunneling can be avoided by enabling continuous collision detection on the rigid body.
-
-\ **Warning:** Using this shape for an :ref:`Area2D<class_Area2D>` (via a :ref:`CollisionShape2D<class_CollisionShape2D>` node) may give unexpected results: the area will only detect collisions with the segments in the **ConcavePolygonShape2D** (and not with any "inside" of the shape, for example).
-
-\ **Performance:** Due to its complexity, **ConcavePolygonShape2D** is the slowest collision shape to check collisions against. Its use should generally be limited to level geometry. For convex geometry, using :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` will perform better. For dynamic physics bodies that need concave collision, several :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`\ s can be used to represent its collision by using convex decomposition; see :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`'s documentation for instructions. However, consider using primitive collision shapes such as :ref:`CircleShape2D<class_CircleShape2D>` or :ref:`RectangleShape2D<class_RectangleShape2D>` first.
+\ **Performance:** Due to its complexity, **ConcavePolygonShape2D** is the slowest 2D collision shape to check collisions against. Its use should generally be limited to level geometry. If the polyline is closed, :ref:`CollisionPolygon2D<class_CollisionPolygon2D>`'s ``BUILD_SOLIDS`` mode can be used, which decomposes the polygon into convex ones; see :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`'s documentation for instructions.
 
 .. rst-class:: classref-reftable-group
 

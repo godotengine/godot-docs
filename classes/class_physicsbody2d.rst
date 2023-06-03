@@ -14,14 +14,14 @@ PhysicsBody2D
 
 **Inherited By:** :ref:`CharacterBody2D<class_CharacterBody2D>`, :ref:`RigidBody2D<class_RigidBody2D>`, :ref:`StaticBody2D<class_StaticBody2D>`
 
-Base class for all objects affected by physics in 2D space.
+Abstract base class for 2D game objects affected by physics.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-PhysicsBody2D is an abstract base class for implementing a physics body. All \*Body2D types inherit from it.
+**PhysicsBody2D** is an abstract base class for 2D game objects affected by physics. All 2D physics bodies inherit from it.
 
 .. rst-class:: classref-introduction-group
 

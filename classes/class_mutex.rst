@@ -12,24 +12,24 @@ Mutex
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A synchronization mutex (mutual exclusion).
+A binary :ref:`Semaphore<class_Semaphore>` for synchronization of multiple :ref:`Thread<class_Thread>`\ s.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-A synchronization mutex (mutual exclusion). This is used to synchronize multiple :ref:`Thread<class_Thread>`\ s, and is equivalent to a binary :ref:`Semaphore<class_Semaphore>`. It guarantees that only one thread can ever acquire the lock at a time. A mutex can be used to protect a critical section; however, be careful to avoid deadlocks.
+A synchronization mutex (mutual exclusion). This is used to synchronize multiple :ref:`Thread<class_Thread>`\ s, and is equivalent to a binary :ref:`Semaphore<class_Semaphore>`. It guarantees that only one thread can access a critical section at a time.
 
-It's of the recursive kind, so it can be locked multiple times by one thread, provided it also unlocks it as many times.
+This is a reentrant mutex, meaning that it can be locked multiple times by one thread, provided it also unlocks it as many times.
 
-\ **Warning:**\ 
+\ **Warning:** Mutexes must be used carefully to avoid deadlocks.
 
-To guarantee that the operating system is able to perform proper cleanup (no crashes, no deadlocks), these conditions must be met:
+\ **Warning:** To ensure proper cleanup without crashes or deadlocks, the following conditions must be met:
 
-- By the time a **Mutex**'s reference count reaches zero and therefore it is destroyed, no threads (including the one on which the destruction will happen) must have it locked.
+- When a **Mutex**'s reference count reaches zero and it is therefore destroyed, no threads (including the one on which the destruction will happen) must have it locked.
 
-- By the time a :ref:`Thread<class_Thread>`'s reference count reaches zero and therefore it is destroyed, it must not have any mutex locked.
+- When a :ref:`Thread<class_Thread>`'s reference count reaches zero and it is therefore destroyed, it must not have any mutex locked.
 
 .. rst-class:: classref-introduction-group
 
@@ -37,6 +37,8 @@ Tutorials
 ---------
 
 - :doc:`Using multiple threads <../tutorials/performance/using_multiple_threads>`
+
+- :doc:`Thread-safe APIs <../tutorials/performance/thread_safe_apis>`
 
 .. rst-class:: classref-reftable-group
 

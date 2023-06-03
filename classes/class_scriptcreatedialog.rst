@@ -12,7 +12,7 @@ ScriptCreateDialog
 
 **Inherits:** :ref:`ConfirmationDialog<class_ConfirmationDialog>` **<** :ref:`AcceptDialog<class_AcceptDialog>` **<** :ref:`Window<class_Window>` **<** :ref:`Viewport<class_Viewport>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-The Editor's popup dialog for creating new :ref:`Script<class_Script>` files.
+Godot editor's popup dialog for creating new :ref:`Script<class_Script>` files.
 
 .. rst-class:: classref-introduction-group
 

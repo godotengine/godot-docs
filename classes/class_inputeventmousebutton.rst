@@ -12,19 +12,21 @@ InputEventMouseButton
 
 **Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEventFromWindow<class_InputEventFromWindow>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Input event type for mouse button events.
+Represents a mouse button being pressed or released.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Contains mouse click information. See :ref:`Node._input<class_Node_method__input>`.
+Stores information about mouse click events. See :ref:`Node._input<class_Node_method__input>`.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
+
+- :doc:`Using InputEvent <../tutorials/inputs/inputevent>`
 
 - :doc:`Mouse and input coordinates <../tutorials/inputs/mouse_and_input_coordinates>`
 

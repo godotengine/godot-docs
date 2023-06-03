@@ -12,7 +12,7 @@ EditorNode3DGizmoPlugin
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Used by the editor to define Node3D gizmo types.
+A class used by the editor to define Node3D gizmo types.
 
 .. rst-class:: classref-introduction-group
 

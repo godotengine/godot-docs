@@ -12,16 +12,18 @@ NavigationAgent3D
 
 **Inherits:** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-3D Agent used in navigation for collision avoidance.
+A 3D agent used to pathfind to a position while avoiding obstacles.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-3D Agent that is used in navigation to reach a position while avoiding static and dynamic obstacles. The dynamic obstacles are avoided using RVO collision avoidance. The agent needs navigation data to work correctly. **NavigationAgent3D** is physics safe.
+A 3D agent used to pathfind to a position while avoiding static and dynamic obstacles. The calculation can be used by the parent node to dynamically move it along the path. Requires navigation data to work correctly.
 
-\ **Note:** After :ref:`target_position<class_NavigationAgent3D_property_target_position>` is set, the :ref:`get_next_path_position<class_NavigationAgent3D_method_get_next_path_position>` function must be used once every physics frame to update the internal path logic of the NavigationAgent. The returned position from this function should be used as the next movement position for the agent's parent node.
+Dynamic obstacles are avoided using RVO collision avoidance. Avoidance is computed before physics, so the pathfinding information can be used safely in the physics step.
+
+\ **Note:** After setting the :ref:`target_position<class_NavigationAgent3D_property_target_position>` property, the :ref:`get_next_path_position<class_NavigationAgent3D_method_get_next_path_position>` method must be used once every physics frame to update the internal path logic of the navigation agent. The vector position it returns should be used as the next movement position for the agent's parent node.
 
 .. rst-class:: classref-introduction-group
 

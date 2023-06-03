@@ -10,14 +10,14 @@
 Plane
 =====
 
-Plane in hessian form.
+A plane in Hessian normal form.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Plane represents a normalized plane equation. Basically, "normal" is the normal of the plane (a,b,c normalized), and "d" is the distance from the origin to the plane (in the direction of "normal"). "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
+Represents a normalized plane equation. :ref:`normal<class_Plane_property_normal>` is the normal of the plane (a, b, c normalized), and :ref:`d<class_Plane_property_d>` is the distance from the origin to the plane (in the direction of "normal"). "Over" or "Above" the plane is considered the side of the plane towards where the normal is pointing.
 
 .. rst-class:: classref-introduction-group
 

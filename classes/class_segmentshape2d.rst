@@ -12,16 +12,14 @@ SegmentShape2D
 
 **Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Segment shape resource for 2D physics.
+A 2D line segment shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2D segment shape to be added as a *direct* child of a :ref:`PhysicsBody2D<class_PhysicsBody2D>` or :ref:`Area2D<class_Area2D>` using a :ref:`CollisionShape2D<class_CollisionShape2D>` node. Consists of two points, ``a`` and ``b``.
-
-\ **Performance:** Being a primitive collision shape, **SegmentShape2D** is fast to check collisions against (though not as fast as :ref:`CircleShape2D<class_CircleShape2D>`).
+A 2D line segment shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape2D<class_CollisionShape2D>`.
 
 .. rst-class:: classref-reftable-group
 

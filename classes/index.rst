@@ -287,6 +287,7 @@ Resources
     class_animationnodestatemachine
     class_animationnodestatemachineplayback
     class_animationnodestatemachinetransition
+    class_animationnodesub2
     class_animationnodesync
     class_animationnodetimescale
     class_animationnodetimeseek

@@ -12,7 +12,7 @@ NavigationPolygon
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A node that has methods to draw outlines or use indices of vertices to create navigation polygons.
+A navigation polygon that defines traversable areas and obstacles.
 
 .. rst-class:: classref-introduction-group
 

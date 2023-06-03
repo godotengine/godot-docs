@@ -107,7 +107,7 @@ The interpolation between animations is linear.
 
 :ref:`BlendMode<enum_AnimationNodeBlendSpace1D_BlendMode>` **BLEND_MODE_DISCRETE** = ``1``
 
-The blend space plays the animation of the node the blending position is closest to. Useful for frame-by-frame 2D animations.
+The blend space plays the animation of the animation node which blending position is closest to. Useful for frame-by-frame 2D animations.
 
 .. _class_AnimationNodeBlendSpace1D_constant_BLEND_MODE_DISCRETE_CARRY:
 

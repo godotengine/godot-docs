@@ -14,14 +14,14 @@ StreamPeer
 
 **Inherited By:** :ref:`StreamPeerBuffer<class_StreamPeerBuffer>`, :ref:`StreamPeerExtension<class_StreamPeerExtension>`, :ref:`StreamPeerGZIP<class_StreamPeerGZIP>`, :ref:`StreamPeerTCP<class_StreamPeerTCP>`, :ref:`StreamPeerTLS<class_StreamPeerTLS>`
 
-Abstraction and base class for stream-based protocols.
+Abstract base class for interacting with streams.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-StreamPeer is an abstraction and base class for stream-based protocols (such as TCP). It provides an API for sending and receiving data through streams as raw data or strings.
+StreamPeer is an abstract base class mostly used for stream-based protocols (such as TCP). It provides an API for sending and receiving data through streams as raw data or strings.
 
 \ **Note:** When exporting to Android, make sure to enable the ``INTERNET`` permission in the Android export preset before exporting the project or using one-click deploy. Otherwise, network communication of any kind will be blocked by Android.
 
@@ -314,7 +314,7 @@ Gets an unsigned 64-bit value from the stream.
 
 :ref:`String<class_String>` **get_utf8_string** **(** :ref:`int<class_int>` bytes=-1 **)**
 
-Gets an UTF-8 string with byte-length ``bytes`` from the stream (this decodes the string sent as UTF-8). If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_utf8_string<class_StreamPeer_method_put_utf8_string>`.
+Gets a UTF-8 string with byte-length ``bytes`` from the stream (this decodes the string sent as UTF-8). If ``bytes`` is negative (default) the length will be read from the stream using the reverse process of :ref:`put_utf8_string<class_StreamPeer_method_put_utf8_string>`.
 
 .. rst-class:: classref-item-separator
 
@@ -515,7 +515,7 @@ void **put_utf8_string** **(** :ref:`String<class_String>` value **)**
 
 Puts a zero-terminated UTF-8 string into the stream prepended by a 32 bits unsigned integer representing its size.
 
-\ **Note:** To put an UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
+\ **Note:** To put a UTF-8 string without prepending its size, you can use :ref:`put_data<class_StreamPeer_method_put_data>`:
 
 
 .. tabs::

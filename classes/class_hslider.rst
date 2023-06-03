@@ -12,16 +12,14 @@ HSlider
 
 **Inherits:** :ref:`Slider<class_Slider>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Horizontal slider.
+A horizontal slider that goes from left (min) to right (max).
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Horizontal slider. See :ref:`Slider<class_Slider>`. This one goes from left (min) to right (max).
-
-\ **Note:** The :ref:`Range.changed<class_Range_signal_changed>` and :ref:`Range.value_changed<class_Range_signal_value_changed>` signals are part of the :ref:`Range<class_Range>` class which this class inherits from.
+A horizontal slider, used to adjust a value by moving a grabber along a horizontal axis. It is a :ref:`Range<class_Range>`-based control and goes from left (min) to right (max).
 
 .. rst-class:: classref-reftable-group
 

@@ -12,14 +12,14 @@ TextureRect
 
 **Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Control for drawing textures.
+A control that displays a texture.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
+A control that displays a texture, for example an icon inside a GUI. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
 
 .. rst-class:: classref-introduction-group
 

@@ -12,16 +12,16 @@ KinematicCollision2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Collision data for :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>` collisions.
+Holds collision data from the movement of a :ref:`PhysicsBody2D<class_PhysicsBody2D>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Contains collision data for :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>` collisions. When a :ref:`PhysicsBody2D<class_PhysicsBody2D>` is moved using :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`, it stops if it detects a collision with another body. If a collision is detected, a **KinematicCollision2D** object is returned.
+Holds collision data from the movement of a :ref:`PhysicsBody2D<class_PhysicsBody2D>`, usually from :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`. When a :ref:`PhysicsBody2D<class_PhysicsBody2D>` is moved, it stops if it detects a collision with another body. If a collision is detected, a **KinematicCollision2D** object is returned.
 
-This object contains information about the collision, including the colliding object, the remaining motion, and the collision position. This information can be used to calculate a collision response.
+The collision data includes the colliding object, the remaining motion, and the collision position. This data can be used to determine a custom response to the collision.
 
 .. rst-class:: classref-reftable-group
 

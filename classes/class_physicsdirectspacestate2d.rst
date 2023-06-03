@@ -14,14 +14,14 @@ PhysicsDirectSpaceState2D
 
 **Inherited By:** :ref:`PhysicsDirectSpaceState2DExtension<class_PhysicsDirectSpaceState2DExtension>`
 
-Direct access object to a space in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
+Provides direct access to a physics space in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Direct access object to a space in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. It's used mainly to do queries against objects and areas residing in a given space.
+Provides direct access to a physics space in the :ref:`PhysicsServer2D<class_PhysicsServer2D>`. It's used mainly to do queries against objects and areas residing in a given space.
 
 .. rst-class:: classref-introduction-group
 

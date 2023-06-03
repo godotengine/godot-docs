@@ -12,18 +12,16 @@ CollisionPolygon2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Node that represents a 2D collision polygon.
+A node that provides a polygon shape to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Provides a 2D collision polygon to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent. Polygons can be drawn in the editor or specified by a list of vertices.
+A node that provides a thickened polygon shape (a prism) to a :ref:`CollisionObject2D<class_CollisionObject2D>` parent and allows to edit it. The polygon can be concave or convex. This can give a detection shape to an :ref:`Area2D<class_Area2D>` or turn :ref:`PhysicsBody2D<class_PhysicsBody2D>` into a solid object.
 
-Depending on the build mode, this node effectively provides several convex shapes (by convex decomposition of the polygon) or a single concave shape made of the polygon's segments.
-
-In the editor, a **CollisionPolygon2D** can be generated from a :ref:`Sprite2D<class_Sprite2D>`'s outline by selecting a :ref:`Sprite2D<class_Sprite2D>` node, going to the **Sprite2D** menu at the top of the 2D editor viewport then choosing **Create CollisionPolygon2D Sibling**.
+\ **Warning:** A non-uniformly scaled :ref:`CollisionShape3D<class_CollisionShape3D>` will likely not behave as expected. Make sure to keep its scale the same on all axes and adjust its shape resource instead.
 
 .. rst-class:: classref-reftable-group
 

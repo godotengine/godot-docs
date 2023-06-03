@@ -19,7 +19,7 @@ A time-seeking animation node used in :ref:`AnimationTree<class_AnimationTree>`.
 Description
 -----------
 
-This node can be used to cause a seek command to happen to any sub-children of the animation graph. Use this node type to play an :ref:`Animation<class_Animation>` from the start or a certain playback position inside the :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
+This animation node can be used to cause a seek command to happen to any sub-children of the animation graph. Use to play an :ref:`Animation<class_Animation>` from the start or a certain playback position inside the :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`.
 
 After setting the time and changing the animation playback, the time seek node automatically goes into sleep mode on the next process frame by setting its ``seek_request`` value to ``-1.0``.
 

@@ -14,14 +14,14 @@ TextEdit
 
 **Inherited By:** :ref:`CodeEdit<class_CodeEdit>`
 
-Multiline text editing control.
+A multiline text editor.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-TextEdit is meant for editing large, multiline text. It also has facilities for editing code, such as syntax highlighting support and multiple levels of undo/redo.
+A multiline text editor. It also has limited facilities for editing code, such as syntax highlighting support. For more advanced facilities for editing code, see :ref:`CodeEdit<class_CodeEdit>`.
 
 \ **Note:** Most viewport, caret and edit methods contain a ``caret_index`` argument for :ref:`caret_multiple<class_TextEdit_property_caret_multiple>` support. The argument should be one of the following: ``-1`` for all carets, ``0`` for the main caret, or greater than ``0`` for secondary carets.
 

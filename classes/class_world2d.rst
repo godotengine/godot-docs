@@ -12,14 +12,14 @@ World2D
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Class that has everything pertaining to a 2D world.
+A resource that holds all components of a 2D world, such as a canvas and a physics space.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Class that has everything pertaining to a 2D world. A physics space, a visual scenario and a sound space. 2D nodes register their resources into the current 2D world.
+Class that has everything pertaining to a 2D world: A physics space, a canvas, and a sound space. 2D nodes register their resources into the current 2D world.
 
 .. rst-class:: classref-introduction-group
 

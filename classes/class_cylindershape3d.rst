@@ -12,18 +12,18 @@ CylinderShape3D
 
 **Inherits:** :ref:`Shape3D<class_Shape3D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Cylinder shape for 3D collisions.
+A 3D cylinder shape used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Cylinder shape for collisions. Like :ref:`CapsuleShape3D<class_CapsuleShape3D>`, but without hemispheres at the cylinder's ends.
+A 2D capsule shape, intended for use in physics. Usually used to provide a shape for a :ref:`CollisionShape3D<class_CollisionShape3D>`.
 
 \ **Note:** There are several known bugs with cylinder collision shapes. Using :ref:`CapsuleShape3D<class_CapsuleShape3D>` or :ref:`BoxShape3D<class_BoxShape3D>` instead is recommended.
 
-\ **Performance:** Being a primitive collision shape, **CylinderShape3D** is fast to check collisions against (though not as fast as :ref:`SphereShape3D<class_SphereShape3D>`). **CylinderShape3D** is also more demanding compared to :ref:`CapsuleShape3D<class_CapsuleShape3D>`.
+\ **Performance:** **CylinderShape3D** is fast to check collisions against, but it is slower than :ref:`CapsuleShape3D<class_CapsuleShape3D>`, :ref:`BoxShape3D<class_BoxShape3D>`, and **CylinderShape3D**.
 
 .. rst-class:: classref-introduction-group
 

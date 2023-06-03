@@ -12,7 +12,7 @@ NavigationMesh
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-A mesh to approximate the walkable areas and obstacles.
+A navigation mesh that defines traversable areas and obstacles.
 
 .. rst-class:: classref-introduction-group
 

@@ -14,14 +14,14 @@ CollisionObject2D
 
 **Inherited By:** :ref:`Area2D<class_Area2D>`, :ref:`PhysicsBody2D<class_PhysicsBody2D>`
 
-Base node for 2D collision objects.
+Abstract base class for 2D physics objects.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-CollisionObject2D is the base class for 2D physics objects. It can hold any number of 2D collision :ref:`Shape2D<class_Shape2D>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject2D can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
+Abstract base class for 2D physics objects. **CollisionObject2D** can hold any number of :ref:`Shape2D<class_Shape2D>`\ s for collision. Each shape must be assigned to a *shape owner*. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
 
 \ **Note:** Only collisions between objects within the same canvas (:ref:`Viewport<class_Viewport>` canvas or :ref:`CanvasLayer<class_CanvasLayer>`) are supported. The behavior of collisions between objects in different canvases is undefined.
 

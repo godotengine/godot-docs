@@ -14,14 +14,14 @@ Translation
 
 **Inherited By:** :ref:`OptimizedTranslation<class_OptimizedTranslation>`
 
-Language Translation.
+A language translation that maps a collection of strings to their individual translations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Translations are resources that can be loaded and unloaded on demand. They map a string to another string.
+**Translation**\ s are resources that can be loaded and unloaded on demand. They map a collection of strings to their individual translations, and they also provide convenience methods for pluralization.
 
 .. rst-class:: classref-introduction-group
 

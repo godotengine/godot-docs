@@ -12,14 +12,14 @@ NavigationPathQueryParameters3D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Parameters to be sent to a 3D navigation path query.
+Provides parameters for 3D navigation path queries.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the start and target position and other parameters to be used with :ref:`NavigationServer3D.query_path<class_NavigationServer3D_method_query_path>`.
+By changing various properties of this object, such as the start and target position, you can configure path queries to the :ref:`NavigationServer3D<class_NavigationServer3D>`.
 
 .. rst-class:: classref-introduction-group
 

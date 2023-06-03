@@ -14,21 +14,21 @@ HBoxContainer
 
 **Inherited By:** :ref:`EditorResourcePicker<class_EditorResourcePicker>`
 
-Horizontal box container.
+A container that arranges its child controls horizontally.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Horizontal box container. See :ref:`BoxContainer<class_BoxContainer>`.
+A variant of :ref:`BoxContainer<class_BoxContainer>` that can only arrange its child controls horizontally. Child controls are rearranged automatically when their minimum size changes.
 
 .. rst-class:: classref-introduction-group
 
 Tutorials
 ---------
 
-- :doc:`GUI containers <../tutorials/ui/gui_containers>`
+- :doc:`Using Containers <../tutorials/ui/gui_containers>`
 
 .. rst-class:: classref-reftable-group
 

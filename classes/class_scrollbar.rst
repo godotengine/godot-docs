@@ -14,14 +14,14 @@ ScrollBar
 
 **Inherited By:** :ref:`HScrollBar<class_HScrollBar>`, :ref:`VScrollBar<class_VScrollBar>`
 
-Base class for scroll bars.
+Abstract base class for scrollbars.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Scrollbars are a :ref:`Range<class_Range>`-based :ref:`Control<class_Control>`, that display a draggable area (the size of the page). Horizontal (:ref:`HScrollBar<class_HScrollBar>`) and Vertical (:ref:`VScrollBar<class_VScrollBar>`) versions are available.
+Abstract base class for scrollbars, typically used to navigate through content that extends beyond the visible area of a control. Scrollbars are :ref:`Range<class_Range>`-based controls.
 
 .. rst-class:: classref-reftable-group
 

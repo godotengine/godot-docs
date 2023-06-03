@@ -12,14 +12,16 @@ AStar2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-AStar class representation that uses 2D vectors as edges.
+An implementation of A\* for finding the shortest path between two vertices on a connected graph in 2D space.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This is a wrapper for the :ref:`AStar3D<class_AStar3D>` class which uses 2D vectors instead of 3D vectors.
+An implementation of the A\* algorithm, used to find the shortest path between two vertices on a connected graph in 2D space.
+
+See :ref:`AStar3D<class_AStar3D>` for a more thorough explanation on how to use this class. **AStar2D** is a wrapper for :ref:`AStar3D<class_AStar3D>` that enforces 2D coordinates.
 
 .. rst-class:: classref-reftable-group
 
@@ -98,7 +100,7 @@ Method Descriptions
 
 Called when computing the cost between two connected points.
 
-Note that this function is hidden in the default ``AStar2D`` class.
+Note that this function is hidden in the default **AStar2D** class.
 
 .. rst-class:: classref-item-separator
 
@@ -112,7 +114,7 @@ Note that this function is hidden in the default ``AStar2D`` class.
 
 Called when estimating the cost between a point and the path's ending point.
 
-Note that this function is hidden in the default ``AStar2D`` class.
+Note that this function is hidden in the default **AStar2D** class.
 
 .. rst-class:: classref-item-separator
 

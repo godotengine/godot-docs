@@ -14,22 +14,22 @@ RigidBody2D
 
 **Inherited By:** :ref:`PhysicalBone2D<class_PhysicalBone2D>`
 
-Physics Body which is moved by 2D physics simulation. Useful for objects that have gravity and can be pushed by other objects.
+A 2D physics body that is moved by a physics simulation.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This node implements simulated 2D physics. You do not control a RigidBody2D directly. Instead, you apply forces to it (gravity, impulses, etc.) and the physics simulation calculates the resulting movement based on its mass, friction, and other physical properties.
+**RigidBody2D** implements full 2D physics. It cannot be controlled directly, instead, you must apply forces to it (gravity, impulses, etc.), and the physics simulation will calculate the resulting movement, rotation, react to collisions, and affect other physics bodies in its path.
 
-You can switch the body's behavior using :ref:`lock_rotation<class_RigidBody2D_property_lock_rotation>`, :ref:`freeze<class_RigidBody2D_property_freeze>`, and :ref:`freeze_mode<class_RigidBody2D_property_freeze_mode>`.
+The body's behavior can be adjusted via :ref:`lock_rotation<class_RigidBody2D_property_lock_rotation>`, :ref:`freeze<class_RigidBody2D_property_freeze>`, and :ref:`freeze_mode<class_RigidBody2D_property_freeze_mode>`. By changing various properties of the object, such as :ref:`mass<class_RigidBody2D_property_mass>`, you can control how the physics simulation acts on it.
 
-\ **Note:** You should not change a RigidBody2D's ``position`` or ``linear_velocity`` every frame or even very often. If you need to directly affect the body's state, use :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>`, which allows you to directly access the physics state.
+A rigid body will always maintain its shape and size, even when forces are applied to it. It is useful for objects that can be interacted with in an environment, such as a tree that can be knocked over or a stack of crates that can be pushed around.
 
-Please also keep in mind that physics bodies manage their own transform which overwrites the ones you set. So any direct or indirect transformation (including scaling of the node or its parent) will be visible in the editor only, and immediately reset at runtime.
+If you need to override the default physics behavior, you can write a custom force integration function. See :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`.
 
-If you need to override the default physics behavior or add a transformation at runtime, you can write a custom force integration. See :ref:`custom_integrator<class_RigidBody2D_property_custom_integrator>`.
+\ **Note:** Changing the 2D transform or :ref:`linear_velocity<class_RigidBody2D_property_linear_velocity>` of a **RigidBody2D** very often may lead to some unpredictable behaviors. If you need to directly affect the body, prefer :ref:`_integrate_forces<class_RigidBody2D_method__integrate_forces>` as it allows you to directly access the physics state.
 
 .. rst-class:: classref-introduction-group
 

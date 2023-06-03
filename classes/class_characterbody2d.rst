@@ -12,18 +12,16 @@ CharacterBody2D
 
 **Inherits:** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Specialized 2D physics body node for characters moved by script.
+A 2D physics body specialized for characters moved by script.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Character bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a rigid body, these are the same as a :ref:`AnimatableBody2D<class_AnimatableBody2D>`. However, they have two main uses:
+**CharacterBody2D** is a specialized class for physics bodies that are meant to be user-controlled. They are not affected by physics at all, but they affect other physics bodies in their path. They are mainly used to provide high-level API to move objects with wall and slope detection (:ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>` method) in addition to the general collision detection provided by :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`. This makes it useful for highly configurable physics bodies that must move in specific ways and collide with the world, as is often the case with user-controlled characters.
 
-\ **Kinematic characters:** Character bodies have an API for moving objects with walls and slopes detection (:ref:`move_and_slide<class_CharacterBody2D_method_move_and_slide>` method), in addition to collision detection (also done with :ref:`PhysicsBody2D.move_and_collide<class_PhysicsBody2D_method_move_and_collide>`). This makes them really useful to implement characters that move in specific ways and collide with the world, but don't require advanced physics.
-
-\ **Kinematic motion:** Character bodies can also be used for kinematic motion (same functionality as :ref:`AnimatableBody2D<class_AnimatableBody2D>`), which allows them to be moved by code and push other bodies on their path.
+For game objects that don't require complex movement or collision detection, such as moving platforms, :ref:`AnimatableBody2D<class_AnimatableBody2D>` is simpler to configure.
 
 .. rst-class:: classref-introduction-group
 

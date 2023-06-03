@@ -12,14 +12,16 @@ Generic6DOFJoint3D
 
 **Inherits:** :ref:`Joint3D<class_Joint3D>` **<** :ref:`Node3D<class_Node3D>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-The generic 6-degrees-of-freedom joint can implement a variety of joint types by locking certain axes' rotation or translation.
+A physics joint that allows for complex movement and rotation between two 3D physics bodies.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-The first 3 DOF axes are linear axes, which represent translation of Bodies, and the latter 3 DOF axes represent the angular motion. Each axis can be either locked, or limited.
+The **Generic6DOFJoint3D** (6 Degrees Of Freedom) joint allows for implementing custom types of joints by locking the rotation and translation of certain axes.
+
+The first 3 DOF represent the linear motion of the physics bodies and the last 3 DOF represent the angular motion of the physics bodies. Each axis can be either locked, or limited.
 
 .. rst-class:: classref-reftable-group
 

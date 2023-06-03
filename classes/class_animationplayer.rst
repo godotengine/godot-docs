@@ -676,6 +676,8 @@ Returns the :ref:`Animation<class_Animation>` with the key ``name``. If the anim
 
 Returns the first :ref:`AnimationLibrary<class_AnimationLibrary>` with key ``name`` or ``null`` if not found.
 
+To get the **AnimationPlayer**'s global animation library, use ``get_animation_library("")``.
+
 .. rst-class:: classref-item-separator
 
 ----

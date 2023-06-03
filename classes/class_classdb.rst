@@ -12,7 +12,7 @@ ClassDB
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Class information repository.
+A class information repository.
 
 .. rst-class:: classref-introduction-group
 

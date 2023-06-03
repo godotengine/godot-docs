@@ -12,14 +12,14 @@ NavigationLink2D
 
 **Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-Creates a link between two positions that :ref:`NavigationServer2D<class_NavigationServer2D>` can route agents through.
+A link between two positions on :ref:`NavigationRegion2D<class_NavigationRegion2D>`\ s that agents can be routed through.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Creates a link between two positions that :ref:`NavigationServer2D<class_NavigationServer2D>` can route agents through. Links can be used to express navigation methods that aren't just traveling along the surface of the navigation mesh, like zip-lines, teleporters, or jumping across gaps.
+A link between two positions on :ref:`NavigationRegion2D<class_NavigationRegion2D>`\ s that agents can be routed through. These positions can be on the same :ref:`NavigationRegion2D<class_NavigationRegion2D>` or on two different ones. Links are useful to express navigation methods other than traveling along the surface of the navigation polygon, such as ziplines, teleporters, or gaps that can be jumped across.
 
 .. rst-class:: classref-introduction-group
 

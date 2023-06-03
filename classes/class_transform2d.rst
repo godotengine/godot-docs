@@ -10,14 +10,14 @@
 Transform2D
 ===========
 
-2D transformation (2×3 matrix).
+A 2×3 matrix representing a 2D transformation.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can represent transformations such as translation, rotation, or scaling. It consists of three :ref:`Vector2<class_Vector2>` values: :ref:`x<class_Transform2D_property_x>`, :ref:`y<class_Transform2D_property_y>`, and the :ref:`origin<class_Transform2D_property_origin>`.
+A 2×3 matrix (2 rows, 3 columns) used for 2D linear transformations. It can represent transformations such as translation, rotation, and scaling. It consists of three :ref:`Vector2<class_Vector2>` values: :ref:`x<class_Transform2D_property_x>`, :ref:`y<class_Transform2D_property_y>`, and the :ref:`origin<class_Transform2D_property_origin>`.
 
 For more information, read the "Matrices and transforms" documentation article.
 

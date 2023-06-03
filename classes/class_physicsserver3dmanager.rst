@@ -12,14 +12,14 @@ PhysicsServer3DManager
 
 **Inherits:** :ref:`Object<class_Object>`
 
-Manager for 3D physics server implementations.
+A singleton for managing :ref:`PhysicsServer3D<class_PhysicsServer3D>` implementations.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-**PhysicsServer3DManager** is the API for registering :ref:`PhysicsServer3D<class_PhysicsServer3D>` implementations, and for setting the default implementation.
+**PhysicsServer3DManager** is the API for registering :ref:`PhysicsServer3D<class_PhysicsServer3D>` implementations and for setting the default implementation.
 
 \ **Note:** It is not possible to switch physics servers at runtime. This class is only used on startup at the server initialization level, by Godot itself and possibly by GDExtensions.
 

@@ -12,14 +12,14 @@ PhysicsShapeQueryParameters2D
 
 **Inherits:** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Parameters to be sent to a 2D shape physics query.
+Provides parameters for :ref:`PhysicsDirectSpaceState2D.intersect_shape<class_PhysicsDirectSpaceState2D_method_intersect_shape>`.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class contains the shape and other parameters for :ref:`PhysicsDirectSpaceState2D<class_PhysicsDirectSpaceState2D>` intersection/collision queries.
+By changing various properties of this object, such as the shape, you can configure the parameters for :ref:`PhysicsDirectSpaceState2D.intersect_shape<class_PhysicsDirectSpaceState2D_method_intersect_shape>`.
 
 .. rst-class:: classref-reftable-group
 

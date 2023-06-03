@@ -14,14 +14,14 @@ ResourceImporter
 
 **Inherited By:** :ref:`EditorImportPlugin<class_EditorImportPlugin>`
 
-Base class for the implementation of core resource importers.
+Base class for resource importers.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This is the base class for the resource importers implemented in core. To implement your own resource importers using editor plugins, see :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
+This is the base class for Godot's resource importers. To implement your own resource importers using editor plugins, see :ref:`EditorImportPlugin<class_EditorImportPlugin>`.
 
 .. rst-class:: classref-introduction-group
 

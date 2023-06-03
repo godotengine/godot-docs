@@ -31,15 +31,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                   | :ref:`_handles<class_EditorResourceTooltipPlugin_method__handles>` **(** :ref:`String<class_String>` type **)** |virtual| |const|                                                                           |
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Object<class_Object>`               | :ref:`_make_tooltip_for_path<class_EditorResourceTooltipPlugin_method__make_tooltip_for_path>` **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` metadata **)** |virtual| |const| |
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`VBoxContainer<class_VBoxContainer>` | :ref:`make_default_tooltip<class_EditorResourceTooltipPlugin_method_make_default_tooltip>` **(** :ref:`String<class_String>` path **)** |static|                                                            |
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                      | :ref:`request_thumbnail<class_EditorResourceTooltipPlugin_method_request_thumbnail>` **(** :ref:`String<class_String>` path, :ref:`TextureRect<class_TextureRect>` control **)** |const|                    |
-   +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`       | :ref:`_handles<class_EditorResourceTooltipPlugin_method__handles>` **(** :ref:`String<class_String>` type **)** |virtual| |const|                                                                                                               |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Control<class_Control>` | :ref:`_make_tooltip_for_path<class_EditorResourceTooltipPlugin_method__make_tooltip_for_path>` **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` metadata, :ref:`Control<class_Control>` base **)** |virtual| |const| |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                          | :ref:`request_thumbnail<class_EditorResourceTooltipPlugin_method_request_thumbnail>` **(** :ref:`String<class_String>` path, :ref:`TextureRect<class_TextureRect>` control **)** |const|                                                        |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -66,25 +64,25 @@ Return ``true`` if the plugin is going to handle the given :ref:`Resource<class_
 
 .. rst-class:: classref-method
 
-:ref:`Object<class_Object>` **_make_tooltip_for_path** **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` metadata **)** |virtual| |const|
+:ref:`Control<class_Control>` **_make_tooltip_for_path** **(** :ref:`String<class_String>` path, :ref:`Dictionary<class_Dictionary>` metadata, :ref:`Control<class_Control>` base **)** |virtual| |const|
 
-Create and return a tooltip that will be displayed when the user hovers resource under given ``path`` in filesystem dock. For best results, use :ref:`make_default_tooltip<class_EditorResourceTooltipPlugin_method_make_default_tooltip>` as a base. 
+Create and return a tooltip that will be displayed when the user hovers a resource under the given ``path`` in filesystem dock.
 
 The ``metadata`` dictionary is provided by preview generator (see method EditorResourcePreviewGenerator._generate]).
 
+\ ``base`` is the base default tooltip, which is a :ref:`VBoxContainer<class_VBoxContainer>` with a file name, type and size labels. If another plugin handled the same file type, ``base`` will be output from the previous plugin. For best result, make sure the base tooltip is part of the returned :ref:`Control<class_Control>`.
+
 \ **Note:** It's unadvised to use :ref:`ResourceLoader.load<class_ResourceLoader_method_load>`, especially with heavy resources like models or textures, because it will make the editor unresponsive when creating the tooltip. You can use :ref:`request_thumbnail<class_EditorResourceTooltipPlugin_method_request_thumbnail>` if you want to display a preview in your tooltip.
 
-.. rst-class:: classref-item-separator
+\ **Note:** If you decide to discard the ``base``, make sure to call :ref:`Node.queue_free<class_Node_method_queue_free>`, because it's not freed automatically.
 
-----
+::
 
-.. _class_EditorResourceTooltipPlugin_method_make_default_tooltip:
-
-.. rst-class:: classref-method
-
-:ref:`VBoxContainer<class_VBoxContainer>` **make_default_tooltip** **(** :ref:`String<class_String>` path **)** |static|
-
-Creates a default file tooltip. The tooltip includes file name, file size and :ref:`Resource<class_Resource>` type if available.
+    func _make_tooltip_for_path(path, metadata, base):
+        var t_rect = TextureRect.new()
+        request_thumbnail(path, t_rect)
+        base.add_child(t_rect) # The TextureRect will appear at the bottom of the tooltip.
+        return base
 
 .. rst-class:: classref-item-separator
 

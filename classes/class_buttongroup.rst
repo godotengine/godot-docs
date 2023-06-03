@@ -12,16 +12,16 @@ ButtonGroup
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Group of Buttons.
+A group of buttons that doesn't allow more than one button to be pressed at a time.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Group of :ref:`BaseButton<class_BaseButton>`. The members of this group are treated like radio buttons in the sense that only one button can be pressed at the same time. Some types of buttons (such as :ref:`CheckBox<class_CheckBox>`) may have a special appearance for this state.
+A group of :ref:`BaseButton<class_BaseButton>`-derived buttons. The buttons in a **ButtonGroup** are treated like radio buttons: No more than one button can be pressed at a time. Some types of buttons (such as :ref:`CheckBox<class_CheckBox>`) may have a special appearance in this state.
 
-Every member of the ButtonGroup should have :ref:`BaseButton.toggle_mode<class_BaseButton_property_toggle_mode>` set to ``true``.
+Every member of a **ButtonGroup** should have :ref:`BaseButton.toggle_mode<class_BaseButton_property_toggle_mode>` set to ``true``.
 
 .. rst-class:: classref-reftable-group
 

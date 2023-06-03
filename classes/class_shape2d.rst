@@ -14,14 +14,16 @@ Shape2D
 
 **Inherited By:** :ref:`CapsuleShape2D<class_CapsuleShape2D>`, :ref:`CircleShape2D<class_CircleShape2D>`, :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>`, :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>`, :ref:`RectangleShape2D<class_RectangleShape2D>`, :ref:`SegmentShape2D<class_SegmentShape2D>`, :ref:`SeparationRayShape2D<class_SeparationRayShape2D>`, :ref:`WorldBoundaryShape2D<class_WorldBoundaryShape2D>`
 
-Base class for all 2D shapes.
+Abstract base class for 2D shapes used for physics collision.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-Base class for all 2D shapes. All 2D shape types inherit from this.
+Abstract base class for all 2D shapes, intended for use in physics.
+
+\ **Performance:** Primitive shapes, especially :ref:`CircleShape2D<class_CircleShape2D>`, are fast to check collisions against. :ref:`ConvexPolygonShape2D<class_ConvexPolygonShape2D>` is slower, and :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` is the slowest.
 
 .. rst-class:: classref-introduction-group
 
