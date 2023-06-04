@@ -70,7 +70,7 @@ The second is more complicated, because it is often not associated to the engine
 or game but the underlying operating system. Here is some information regarding
 stutter on different OSs.
 
-On platforms that support disabling V-Sync, suttering can be made less
+On platforms that support disabling V-Sync, stuttering can be made less
 noticeable by disabling V-Sync in the project settings. This will however cause
 tearing to appear, especially on monitors with low refresh rates. If your
 monitor supports it, consider enabling variable refresh rate (G-Sync/FreeSync)
