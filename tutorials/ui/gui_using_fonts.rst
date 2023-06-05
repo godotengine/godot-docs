@@ -629,6 +629,14 @@ For example, here's the `Inter <https://rsms.me/inter/>`__ font without the
 
    OpenType feature comparison (Inter)
 
+You can disable ligatures and/or kerning for a specific font by adding OpenType
+features, then unchecking them in the inspector:
+
+.. figure:: img/using_fonts_font_variation_disable_ligatures.webp
+   :align: center
+
+   Disabling ligatures and kerning for a font
+
 .. _doc_using_fonts_system_fonts:
 
 System fonts
