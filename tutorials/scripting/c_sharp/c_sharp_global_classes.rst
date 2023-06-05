@@ -3,7 +3,7 @@
 C# global classes
 =================
 
-Global classes also known as named scripts are types registered in Godot's editor so they can be used
+Global classes (also known as named scripts) are types registered in Godot's editor so they can be used
 more conveniently. These classes show up in the *Add Node* and *Create Resource* dialogs,
 and :ref:`exported properties <doc_c_sharp_exports>` are restricted to instances of the global class or derived classes.
 Global classes are registered with the ``[GlobalClass]`` attribute.
