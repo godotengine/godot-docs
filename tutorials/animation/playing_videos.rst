@@ -145,11 +145,7 @@ There are several limitations with the current implementation of video playback 
   :ref:`Engine.time_scale<class_Engine_property_time_scale>`.
 - Looping is not supported, but you can connect a VideoStreamPlayer's
   :ref:`finished <class_VideoStreamPlayer_signal_finished>` signal to a function
-  that plays the video again. However, this will cause a black frame to be
-  visible when the video restarts. This can be worked around by adding a fade to
-  black in the video file before the video ends, or by hiding the video for one
-  frame and displaying a TextureRect with a screenshot of the first frame of the
-  video until the video is restarted.
+  that plays the video again.
 - Streaming a video from a URL is not supported.
 
 .. _doc_playing_videos_recommended_theora_encoding_settings:
@@ -205,7 +201,9 @@ The **audio quality** level (``-q:a``) must be between ``-1`` and ``10``. Qualit
 video quality, increasing audio quality doesn't increase the output file size
 nearly as much. Therefore, if you want the cleanest audio possible, you can
 increase this to ``9`` to get *perceptually lossless* audio. This is especially
-valuable if your input file already uses lossy audio compression. See
+valuable if your input file already uses lossy audio compression. Higher quality
+audio does increase the CPU usage of the decoder, so it might lead to audio
+dropouts in case of high system load. See
 `this page <https://wiki.hydrogenaud.io/index.php?title=Recommended_Ogg_Vorbis#Recommended_Encoder_Settings>`__
 for a table listing Ogg Vorbis audio quality presets and their respective
 variable bitrates.
