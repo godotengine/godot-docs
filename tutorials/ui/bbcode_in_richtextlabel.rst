@@ -711,11 +711,15 @@ Wave
 .. image:: img/bbcode_in_richtextlabel_effect_wave.webp
 
 Wave makes the text go up and down. Its tag format is
-``[wave amp=50.0 freq=5.0]{text}[/wave]``.
+``[wave amp=50.0 freq=5.0 connected=1]{text}[/wave]``.
 
 ``amp`` controls how high and low the effect goes, and ``freq`` controls how
 fast the text goes up and down. A ``freq`` value of ``0`` will result in no
-visible waves, and negative ``freq`` values won't display any waves either.
+visible waves, and negative ``freq`` values won't display any waves either. If
+``connected`` is ``1`` (default), glyphs with ligatures will be moved together.
+If ``connected`` is ``0``, each glyph is moved individually even if they are
+joined by ligatures. This can work around certain rendering issues with font
+ligatures.
 
 Tornado
 ~~~~~~~
@@ -723,21 +727,29 @@ Tornado
 .. image:: img/bbcode_in_richtextlabel_effect_tornado.webp
 
 Tornao makes the text move around in a circle. Its tag format is
-``[tornado radius=10.0 freq=1.0]{text}[/tornado]``.
+``[tornado radius=10.0 freq=1.0 connected=1]{text}[/tornado]``.
 
 ``radius`` is the radius of the circle that controls the offset, ``freq`` is how
 fast the text moves in a circle. A ``freq`` value of ``0`` will pause the
-animation, while negative ``freq`` will play the animation backwards.
+animation, while negative ``freq`` will play the animation backwards. If
+``connected`` is ``1`` (default), glyphs with ligatures will be moved together.
+If ``connected`` is ``0``, each glyph is moved individually even if they are
+joined by ligatures. This can work around certain rendering issues with font
+ligatures.
 
 Shake
 ~~~~~
 
 .. image:: img/bbcode_in_richtextlabel_effect_shake.webp
 
-Shake makes the text shake. Its tag format is ``[shake rate=20.0 level=5]{text}[/shake]``.
+Shake makes the text shake. Its tag format is
+``[shake rate=20.0 level=5 connected=1]{text}[/shake]``.
 
-``rate`` controls how fast the text shakes, ``level`` controls how far the text is
-offset from the origin.
+``rate`` controls how fast the text shakes, ``level`` controls how far the text
+is offset from the origin. If ``connected`` is ``1`` (default), glyphs with
+ligatures will be moved together. If ``connected`` is ``0``, each glyph is moved
+individually even if they are joined by ligatures. This can work around certain
+rendering issues with font ligatures.
 
 Fade
 ~~~~
