@@ -263,6 +263,8 @@ Since Godot 4.0, nodes can be directly exported without having to use NodePaths.
     [Export]
     public Node Node { get; set; }
 
+Custom node classes can also be used, see :ref:`doc_c_sharp_global_classes`.
+
 Exporting NodePaths like in Godot 3.x is still possible, in case you need it:
 
 .. code-block:: csharp
@@ -296,7 +298,8 @@ Therefore, if you specify a type derived from Resource such as:
     private AnimationNode Resource;
 
 The drop-down menu will be limited to AnimationNode and all
-its inherited classes.
+its inherited classes. Custom resource classes can also be used,
+see :ref:`doc_c_sharp_global_classes`.
 
 It must be noted that even if the script is not being run while in the
 editor, the exported properties are still editable. This can be used
