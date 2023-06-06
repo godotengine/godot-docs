@@ -154,6 +154,11 @@ If you have at least 16 GB of RAM, you can speed up compilation by running:
 
             make html SPHINXOPTS=-j2
 
+You can use ``-j auto`` to use all available CPU threads, but this can use a lot
+of RAM if you have a lot of CPU threads. For instance, on a system with 32 CPU
+threads, ``-j auto`` (which corresponds to ``-j 32`` here) can require 20+ GB of
+RAM for Sphinx alone.
+
 Specifying a list of files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
