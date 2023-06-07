@@ -297,6 +297,8 @@ The downsides of MSDF font rendering are:
   `Google Fonts <https://fonts.google.com>`__, try downloading the font from the
   font author's official website instead.
 
+.. _doc_using_fonts_emoji:
+
 Using emoji
 ^^^^^^^^^^^
 
@@ -304,6 +306,9 @@ Godot has limited support for emoji fonts:
 
 - CBDT/CBLC (embedded PNGs) and SVG emoji fonts are supported.
 - COLR/CPAL emoji fonts (custom vector format) are **not** supported.
+- EMJC bitmap image compression (used by iOS' system emoji font) is **not** supported.
+  This means that to support emoji on iOS, you must use a custom font that
+  uses SVG or PNG bitmap compression instead.
 
 For Godot to be able to display emoji, the font used (or one of its
 :ref:`fallbacks <doc_using_fonts_font_fallbacks>`) needs to include them.
@@ -325,7 +330,6 @@ you get the expected result:
    :alt: Correct appearance after adding an emoji font to the label
 
    Correct appearance after adding an emoji font to the label
-
 
 To use a regular font alongside emoji, it's recommended to specify a
 :ref:`fallback font <doc_using_fonts_font_fallbacks>` that points to the
@@ -644,7 +648,7 @@ System fonts
 
 .. warning::
 
-    Loading system fonts is only supported on Windows, macOS and Linux.
+    Loading system fonts is only supported on Windows, macOS, Linux, Android and iOS.
 
 System fonts are a different type of resource compared to imported fonts. They
 are never actually imported into the project, but are loaded at run-time. This
@@ -655,6 +659,11 @@ has 2 benefits:
 - Since fonts are not included with the exported project, this avoids licensing
   issues that would occur if proprietary system fonts were distributed alongside
   the project.
+
+The engine automatically uses system fonts as fallback fonts, which makes it
+possible to display CJK characters and emoji without having to load a custom
+font. There are some restrictions that apply though, as mentioned in the
+:ref:`Using emoji <doc_using_fonts_emoji>` section.
 
 Create a SystemFont resource in the location where you desire to use the system font:
 
@@ -672,19 +681,25 @@ You can either specify one or more font names explicitly (such as ``Arial``), or
 specify the name of a font *alias* that maps to a "standard" default font for
 the system:
 
-+----------------+-----------------+----------------+-------------------------+
-| Font alias     | Windows         | macOS/iOS      | Linux                   |
-+================+=================+================+=========================+
-| ``sans-serif`` | Arial           | Helvetica      | *Handled by fontconfig* |
-+----------------+-----------------+----------------+-------------------------+
-| ``serif``      | Times New Roman | Times          | *Handled by fontconfig* |
-+----------------+-----------------+----------------+-------------------------+
-| ``monospace``  | Courier New     | Courier        | *Handled by fontconfig* |
-+----------------+-----------------+----------------+-------------------------+
-| ``cursive``    | Comic Sans MS   | Apple Chancery | *Handled by fontconfig* |
-+----------------+-----------------+----------------+-------------------------+
-| ``fantasy``    | Gabriola        | Papyrus        | *Handled by fontconfig* |
-+----------------+-----------------+----------------+-------------------------+
+.. Android font information sourced from <https://android.googlesource.com/platform/frameworks/base/+/master/data/fonts/fonts.xml>
+
++----------------+-----------------+----------------+-------------------------+-------------------------+
+| Font alias     | Windows         | macOS/iOS      | Linux                   | Android                 |
++================+=================+================+=========================+=========================+
+| ``sans-serif`` | Arial           | Helvetica      | *Handled by fontconfig* | Roboto / Noto Sans      |
++----------------+-----------------+----------------+-------------------------+-------------------------+
+| ``serif``      | Times New Roman | Times          | *Handled by fontconfig* | Noto Serif              |
++----------------+-----------------+----------------+-------------------------+-------------------------+
+| ``monospace``  | Courier New     | Courier        | *Handled by fontconfig* | Droid Sans Mono         |
++----------------+-----------------+----------------+-------------------------+-------------------------+
+| ``cursive``    | Comic Sans MS   | Apple Chancery | *Handled by fontconfig* | Dancing Script          |
++----------------+-----------------+----------------+-------------------------+-------------------------+
+| ``fantasy``    | Gabriola        | Papyrus        | *Handled by fontconfig* | Droid Sans Mono         |
++----------------+-----------------+----------------+-------------------------+-------------------------+
+
+On Android, Roboto is used for Latin/Cyrillic text and Noto Sans is used for
+other languages' glyphs such as CJK. On third-party Android distributions, the
+exact font selection may differ.
 
 If specifying more than one font, the first font that is found on the system
 will be used (from top to bottom). Font names and aliases are case-insensitive
@@ -692,6 +707,11 @@ on all platforms.
 
 Like for font variations, you can save the SystemFont arrangement to a resource
 file to reuse it in other places.
+
+Remember that different system fonts have different metrics, which means that
+text that can fit within a rectangle on one platform may not be doing so on
+another platform. Always reserve some additional space during development so
+that labels can extend further if needed.
 
 .. note::
 
