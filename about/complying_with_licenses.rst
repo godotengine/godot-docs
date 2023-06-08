@@ -20,8 +20,7 @@ with the original one.
 
     This section covers compliance with licenses from a user perspective.
     If you are interested in licence complience as a contributor, please see
-    the last two paragraphs of the "Best Practices for Engine Contributors",
-    found in the "Engine Development" section, found under "Contributing".
+    the last two paragraphs of :ref:`Best Practices for Engine Contributors <doc_best_practices_for_engine_contributors>`
 
 .. warning::
 
