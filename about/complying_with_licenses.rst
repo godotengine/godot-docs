@@ -19,7 +19,7 @@ with the original one.
 .. note::
 
     This section covers compliance with licenses from a user perspective.
-    If you are interested in licence complience as a contributor, please see
+    If you are interested in licence compliance as a contributor, please see
     the last two paragraphs of :ref:`Best Practices for Engine Contributors <doc_best_practices_for_engine_contributors>`
 
 .. warning::
