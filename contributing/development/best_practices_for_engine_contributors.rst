@@ -227,10 +227,10 @@ link libraries dynamically. Instead, we bundle them in our source tree.
 .. image:: img/best_practices8.png
 
 As a result, we are very picky with what goes in, and we tend to prefer smaller
-libraries (in fact, single header ones are our favorite). Only in cases where
-there is no other choice we end up bundling something larger.
+libraries (single header ones are our favorite). We will only bundle something
+larger if there is no other choice.
 
-Also, libraries must use a permissive enough license to be included into Godot.
+Libraries must use a permissive enough license to be included into Godot.
 Some examples of acceptable licenses are Apache 2.0, BSD, MIT, ISC, and MPL 2.0.
 In particular, we cannot accept libraries licensed under the GPL or LGPL since
 these licenses effectively disallow static linking in proprietary software
