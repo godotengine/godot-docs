@@ -236,5 +236,5 @@ In particular, we cannot accept libraries licensed under the GPL or LGPL since
 these licenses effectively disallow static linking in proprietary software
 (which Godot is distributed as in most exported projects). This requirement also
 applies to the editor, since we may want to run it on iOS in the long term.
-Since iOS doesn't support dynamic linking, static linking the only option on
+Since iOS doesn't support dynamic linking, static linking is the only option on
 that platform.
