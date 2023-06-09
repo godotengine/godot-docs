@@ -499,7 +499,7 @@ code:
         double speed;
     ...
         void _process(double delta) override;
-        void set_speed(double p_speed);
+        void set_speed(const double p_speed);
         double get_speed() const;
     ...
 
@@ -515,7 +515,7 @@ showing the methods that have changed so don't remove anything we're omitting:
         ClassDB::add_property("GDExample", PropertyInfo(Variant::FLOAT, "speed", PROPERTY_HINT_RANGE, "0,20,0.01"), "set_speed", "get_speed");
     }
 
-    void GDExample::GDExample() {
+    GDExample::GDExample() {
         time_passed = 0.0;
         amplitude = 10.0;
         speed = 1.0;
@@ -534,7 +534,7 @@ showing the methods that have changed so don't remove anything we're omitting:
 
     ...
 
-    void GDExample::set_speed(double p_speed) {
+    void GDExample::set_speed(const double p_speed) {
         speed = p_speed;
     }
 
