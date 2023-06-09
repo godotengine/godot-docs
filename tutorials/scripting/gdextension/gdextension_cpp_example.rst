@@ -58,7 +58,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b master https://github.com/godotengine/godot-cpp
+    git clone -b 4.0 https://github.com/godotengine/godot-cpp
 
 .. note::
 
