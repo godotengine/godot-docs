@@ -230,6 +230,8 @@ As a result, we are very picky with what goes in, and we tend to prefer smaller
 libraries (single header ones are our favorite). We will only bundle something
 larger if there is no other choice.
 
+.. _doc_best_practices_for_engine_contributors_license_compliance:
+
 Libraries must use a permissive enough license to be included into Godot.
 Some examples of acceptable licenses are Apache 2.0, BSD, MIT, ISC, and MPL 2.0.
 In particular, we cannot accept libraries licensed under the GPL or LGPL since
