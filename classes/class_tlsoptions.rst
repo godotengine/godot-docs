@@ -35,7 +35,7 @@ Objects of this class cannot be instantiated directly, and one of the static met
     # Create a TLS server configuration.
     var server_certs = load("res://my_server_cas.crt")
     var server_key = load("res://my_server_key.key")
-    var server_tls_options = TLSOptions.server(server_certs, server_key)
+    var server_tls_options = TLSOptions.server(server_key, server_certs)
 
 
 

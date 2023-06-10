@@ -276,7 +276,7 @@ If ``true`` the agent is registered for an RVO avoidance callback on the :ref:`N
 - void **set_avoidance_layers** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_avoidance_layers** **(** **)**
 
-A bitfield determining the avoidance layers for this NavigationAgent. Other agent's with a matching bit on the :ref:`avoidance_mask<class_NavigationAgent2D_property_avoidance_mask>` will avoid this agent.
+A bitfield determining the avoidance layers for this NavigationAgent. Other agents with a matching bit on the :ref:`avoidance_mask<class_NavigationAgent2D_property_avoidance_mask>` will avoid this agent.
 
 .. rst-class:: classref-item-separator
 
@@ -293,7 +293,7 @@ A bitfield determining the avoidance layers for this NavigationAgent. Other agen
 - void **set_avoidance_mask** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_avoidance_mask** **(** **)**
 
-A bitfield determining what other avoidance agent's and obstacles this NavigationAgent will avoid when a bit matches at least one of their :ref:`avoidance_layers<class_NavigationAgent2D_property_avoidance_layers>`.
+A bitfield determining what other avoidance agents and obstacles this NavigationAgent will avoid when a bit matches at least one of their :ref:`avoidance_layers<class_NavigationAgent2D_property_avoidance_layers>`.
 
 .. rst-class:: classref-item-separator
 
@@ -446,7 +446,7 @@ The maximum speed that an agent can move.
 - void **set_navigation_layers** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_navigation_layers** **(** **)**
 
-A bitfield determining what navigation layers of navigation regions this agent will use to calculate path. Changing it runtime will clear current navigation path and generate new one, according to new navigation layers.
+A bitfield determining which navigation layers of navigation regions this agent will use to calculate a path. Changing it during runtime will clear the current navigation path and generate a new one, according to the new navigation layers.
 
 .. rst-class:: classref-item-separator
 
@@ -480,7 +480,7 @@ The distance to search for other agents.
 - void **set_path_desired_distance** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_path_desired_distance** **(** **)**
 
-The distance threshold before a path point is considered to be reached. This will allow an agent to not have to hit a path point on the path exactly, but in the area. If this value is set to high the NavigationAgent will skip points on the path which can lead to leaving the navigation mesh. If this value is set to low the NavigationAgent will be stuck in a repath loop cause it will constantly overshoot or undershoot the distance to the next point on each physics frame update.
+The distance threshold before a path point is considered to be reached. This allows agents to not have to hit a path point on the path exactly, but only to reach its general area. If this value is set too high, the NavigationAgent will skip points on the path, which can lead too leaving the navigation mesh. If this value is set too low, the NavigationAgent will be stuck in a repath loop because it will constantly overshoot or undershoot the distance to the next point on each physics frame update.
 
 .. rst-class:: classref-item-separator
 
@@ -584,7 +584,7 @@ Does not affect normal pathfinding. To change an actor's pathfinding radius bake
 - void **set_target_desired_distance** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_target_desired_distance** **(** **)**
 
-The distance threshold before the final target point is considered to be reached. This will allow an agent to not have to hit the point of the final target exactly, but only the area. If this value is set to low the NavigationAgent will be stuck in a repath loop cause it will constantly overshoot or undershoot the distance to the final target point on each physics frame update.
+The distance threshold before the final target point is considered to be reached. This allows agents to not have to hit the point of the final target exactly, but only to reach its general area. If this value is set too low, the NavigationAgent will be stuck in a repath loop because it will constantly overshoot or undershoot the distance to the final target point on each physics frame update.
 
 .. rst-class:: classref-item-separator
 
@@ -652,7 +652,7 @@ The minimal amount of time for which this agent's velocities, that are computed 
 - void **set_velocity** **(** :ref:`Vector2<class_Vector2>` value **)**
 - :ref:`Vector2<class_Vector2>` **get_velocity** **(** **)**
 
-Sets the new wanted velocity for the agent. The avoidance simulation will try to fulfil this velocity if possible but will modify it to avoid collision with other agent's and obstacles. When an agent is teleported to a new position use :ref:`set_velocity_forced<class_NavigationAgent2D_method_set_velocity_forced>` as well to reset the internal simulation velocity.
+Sets the new wanted velocity for the agent. The avoidance simulation will try to fulfill this velocity if possible but will modify it to avoid collision with other agents and obstacles. When an agent is teleported to a new position, use :ref:`set_velocity_forced<class_NavigationAgent2D_method_set_velocity_forced>` as well to reset the internal simulation velocity.
 
 .. rst-class:: classref-section-separator
 

@@ -1465,9 +1465,9 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/lossless_compression/force_png<class_ProjectSettings_property_rendering/textures/lossless_compression/force_png>`                                                                 | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2_astc<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`                                                           |                                                                                                  |
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_etc2_astc<class_ProjectSettings_property_rendering/textures/vram_compression/import_etc2_astc>`                                                           | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc_bptc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`                                                           |                                                                                                  |
+   | :ref:`bool<class_bool>`                           | :ref:`rendering/textures/vram_compression/import_s3tc_bptc<class_ProjectSettings_property_rendering/textures/vram_compression/import_s3tc_bptc>`                                                           | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/textures/webp_compression/compression_method<class_ProjectSettings_property_rendering/textures/webp_compression/compression_method>`                                                       | ``2``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1675,7 +1675,7 @@ The project's description, displayed as a tooltip in the Project Manager when ho
 
 :ref:`String<class_String>` **application/config/icon** = ``""``
 
-Icon used for the project, set when project loads. Exporters will also use this icon when possible.
+Icon used for the project, set when project loads. Exporters will also use this icon as a fallback if necessary.
 
 .. rst-class:: classref-item-separator
 
@@ -10605,7 +10605,7 @@ If ``true``, the texture importer will import lossless textures using the PNG fo
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2_astc**
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_etc2_astc** = ``false``
 
 If ``true``, the texture importer will import VRAM-compressed textures using the Ericsson Texture Compression 2 algorithm for lower quality textures and normal maps and Adaptable Scalable Texture Compression algorithm for high quality textures (in 4x4 block size).
 
@@ -10619,7 +10619,7 @@ If ``true``, the texture importer will import VRAM-compressed textures using the
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_s3tc_bptc**
+:ref:`bool<class_bool>` **rendering/textures/vram_compression/import_s3tc_bptc** = ``true``
 
 If ``true``, the texture importer will import VRAM-compressed textures using the S3 Texture Compression algorithm (DXT1-5) for lower quality textures and the BPTC algorithm (BC6H and BC7) for high quality textures. This algorithm is only supported on PC desktop platforms and consoles.
 

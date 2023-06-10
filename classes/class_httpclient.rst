@@ -451,7 +451,7 @@ HTTP status code ``304 Not Modified``. A conditional GET or HEAD request has bee
 
 :ref:`ResponseCode<enum_HTTPClient_ResponseCode>` **RESPONSE_USE_PROXY** = ``305``
 
-HTTP status code ``305 Use Proxy``. *Deprecated. Do not use.*
+*Deprecated.* HTTP status code ``305 Use Proxy``.
 
 .. _class_HTTPClient_constant_RESPONSE_SWITCH_PROXY:
 
@@ -459,7 +459,7 @@ HTTP status code ``305 Use Proxy``. *Deprecated. Do not use.*
 
 :ref:`ResponseCode<enum_HTTPClient_ResponseCode>` **RESPONSE_SWITCH_PROXY** = ``306``
 
-HTTP status code ``306 Switch Proxy``. *Deprecated. Do not use.*
+*Deprecated.* HTTP status code ``306 Switch Proxy``.
 
 .. _class_HTTPClient_constant_RESPONSE_TEMPORARY_REDIRECT:
 

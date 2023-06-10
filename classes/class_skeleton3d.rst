@@ -359,6 +359,8 @@ void **force_update_all_bone_transforms** **(** **)**
 
 Force updates the bone transforms/poses for all bones in the skeleton.
 
+\ *Deprecated.* Do not use.
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -5189,7 +5189,7 @@ The maximum number of glow levels that can be used with the glow post-processing
 
 **MAX_CURSORS** = ``8``
 
-*Deprecated.* This constant is unused.
+*Deprecated.* This constant is unused internally.
 
 .. _class_RenderingServer_constant_MAX_2D_DIRECTIONAL_LIGHTS:
 
@@ -10243,7 +10243,7 @@ Returns a texture :ref:`RID<class_RID>` that can be used with :ref:`RenderingDev
 
 :ref:`RID<class_RID>` **texture_proxy_create** **(** :ref:`RID<class_RID>` base **)**
 
-*Deprecated.* As ProxyTexture was removed in Godot 4, this method does nothing when called and always returns a null :ref:`RID<class_RID>`.
+*Deprecated.* ProxyTexture was removed in Godot 4, so this method does nothing when called and always returns a null :ref:`RID<class_RID>`.
 
 .. rst-class:: classref-item-separator
 

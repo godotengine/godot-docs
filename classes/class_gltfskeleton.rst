@@ -140,9 +140,7 @@ Method Descriptions
 
 :ref:`Dictionary<class_Dictionary>` **get_godot_bone_node** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns a :ref:`Dictionary<class_Dictionary>` that maps skeleton bone indices to the indices of GLTF nodes. This property is unused during import, and only set during export. In a GLTF file, a bone is a node, so Godot converts skeleton bones to GLTF nodes.
 
 .. rst-class:: classref-item-separator
 
@@ -182,9 +180,7 @@ Method Descriptions
 
 void **set_godot_bone_node** **(** :ref:`Dictionary<class_Dictionary>` godot_bone_node **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Sets a :ref:`Dictionary<class_Dictionary>` that maps skeleton bone indices to the indices of GLTF nodes. This property is unused during import, and only set during export. In a GLTF file, a bone is a node, so Godot converts skeleton bones to GLTF nodes.
 
 .. rst-class:: classref-item-separator
 

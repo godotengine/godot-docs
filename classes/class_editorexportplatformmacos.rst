@@ -272,7 +272,7 @@ Copyright notice for the bundle visible to the user (localized).
 
 :ref:`String<class_String>` **application/icon**
 
-Application icon file. If left empty, project icon is used instead.
+Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.application/config/macos_native_icon<class_ProjectSettings_property_application/config/macos_native_icon>`, and  then to :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`.
 
 .. rst-class:: classref-item-separator
 
