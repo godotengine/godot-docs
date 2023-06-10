@@ -61,7 +61,8 @@ For static use an array of ``vertices`` is required.
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Node2D
+    # For 2D
+
     # create a new "obstacle" and place it on the default navigation map.
     var new_obstacle_rid: RID = NavigationServer2D.obstacle_create()
     var default_2d_map_rid: RID = get_world_2d().get_navigation_map()
@@ -76,10 +77,14 @@ For static use an array of ``vertices`` is required.
     var outline = PackedVector2Array([Vector2(-100, -100), Vector2(100, -100), Vector2(100, 100), Vector2(-100, 100)])
     NavigationServer2D.obstacle_set_vertices(new_obstacle_rid, outline)
 
+    # Enable the obstacle.
+    NavigationServer2D.obstacle_set_avoidance_enabled(new_obstacle_rid, true)
+
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    extends Node3D
+    # For 3D
+
     # Create a new "obstacle" and place it on the default navigation map.
     var new_obstacle_rid: RID = NavigationServer3D.obstacle_create()
     var default_3d_map_rid: RID = get_world_3d().get_navigation_map()
@@ -93,3 +98,8 @@ For static use an array of ``vertices`` is required.
     # Use obstacle static by adding a square that pushes agents out.
     var outline = PackedVector3Array([Vector3(-5, 0, -5), Vector3(5, 0, -5), Vector3(5, 0, 5), Vector3(-5, 0, 5)])
     NavigationServer3D.obstacle_set_vertices(new_obstacle_rid, outline)
+    # Set the obstacle height on the y-axis.
+    NavigationServer3D.obstacle_set_height(new_obstacle_rid, 1.0)
+
+    # Enable the obstacle.
+    NavigationServer3D.obstacle_set_avoidance_enabled(new_obstacle_rid, true)
