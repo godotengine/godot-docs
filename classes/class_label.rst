@@ -61,6 +61,8 @@ Properties
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                                                   | :ref:`structured_text_bidi_override_options<class_Label_property_structured_text_bidi_override_options>` | ``[]``                                                                       |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`                         | :ref:`tab_stops<class_Label_property_tab_stops>`                                                         | ``PackedFloat32Array()``                                                     |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                 | :ref:`text<class_Label_property_text>`                                                                   | ``""``                                                                       |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`TextDirection<enum_Control_TextDirection>`                            | :ref:`text_direction<class_Label_property_text_direction>`                                               | ``0``                                                                        |
@@ -302,6 +304,23 @@ Set BiDi algorithm override for the structured text.
 - :ref:`Array<class_Array>` **get_structured_text_bidi_override_options** **(** **)**
 
 Set additional options for BiDi override.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_property_tab_stops:
+
+.. rst-class:: classref-property
+
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **tab_stops** = ``PackedFloat32Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tab_stops** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` value **)**
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_tab_stops** **(** **)**
+
+Aligns text to the given tab-stops.
 
 .. rst-class:: classref-item-separator
 

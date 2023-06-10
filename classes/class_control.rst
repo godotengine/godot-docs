@@ -1743,7 +1743,7 @@ The size of the node's bounding rectangle, in the node's coordinate system. :ref
 - void **set_h_size_flags** **(** :ref:`SizeFlags<enum_Control_SizeFlags>` value **)**
 - :ref:`SizeFlags<enum_Control_SizeFlags>` **get_h_size_flags** **(** **)**
 
-Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the X axis. Use one of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
+Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the X axis. Use a combination of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
 .. rst-class:: classref-item-separator
 
@@ -1777,7 +1777,7 @@ If the node and at least one of its neighbors uses the :ref:`SIZE_EXPAND<class_C
 - void **set_v_size_flags** **(** :ref:`SizeFlags<enum_Control_SizeFlags>` value **)**
 - :ref:`SizeFlags<enum_Control_SizeFlags>` **get_v_size_flags** **(** **)**
 
-Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the Y axis. Use one of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
+Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the Y axis. Use a combination of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
 .. rst-class:: classref-item-separator
 

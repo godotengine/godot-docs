@@ -2437,7 +2437,7 @@ Sets the shape data that defines the configuration of the shape. The ``data`` to
 
 - :ref:`SHAPE_CONCAVE_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONCAVE_POLYGON>`: a :ref:`PackedVector2Array<class_PackedVector2Array>` of length divisible by two (each pair of points forms one segment).
 
-\ **Warning**: In the case of :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`, this method does not check if the points supplied actually form a convex polygon (unlike the :ref:`CollisionPolygon2D.polygon<class_CollisionPolygon2D_property_polygon>` property).
+\ **Warning:** In the case of :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`, this method does not check if the points supplied actually form a convex polygon (unlike the :ref:`CollisionPolygon2D.polygon<class_CollisionPolygon2D_property_polygon>` property).
 
 .. rst-class:: classref-item-separator
 

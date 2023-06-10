@@ -623,7 +623,7 @@ This notification is emitted *after* the related :ref:`tree_exiting<class_Node_s
 
 **NOTIFICATION_MOVED_IN_PARENT** = ``12``
 
-This notification is deprecated and is no longer emitted. Use :ref:`NOTIFICATION_CHILD_ORDER_CHANGED<class_Node_constant_NOTIFICATION_CHILD_ORDER_CHANGED>` instead.
+*Deprecated.* This notification is no longer emitted. Use :ref:`NOTIFICATION_CHILD_ORDER_CHANGED<class_Node_constant_NOTIFICATION_CHILD_ORDER_CHANGED>` instead.
 
 .. _class_Node_constant_NOTIFICATION_READY:
 
@@ -2297,7 +2297,9 @@ Notifies the current node and all its children recursively by calling :ref:`Obje
 
 void **queue_free** **(** **)**
 
-Queues a node for deletion at the end of the current frame. When deleted, all of its child nodes will be deleted as well. This method ensures it's safe to delete the node, contrary to :ref:`Object.free<class_Object_method_free>`. Use :ref:`Object.is_queued_for_deletion<class_Object_method_is_queued_for_deletion>` to check whether a node will be deleted at the end of the frame.
+Queues a node for deletion at the end of the current frame. When deleted, all of its child nodes will be deleted as well, and all references to the node and its children will become invalid, see :ref:`Object.free<class_Object_method_free>`.
+
+It is safe to call :ref:`queue_free<class_Node_method_queue_free>` multiple times per frame on a node, and to :ref:`Object.free<class_Object_method_free>` a node that is currently queued for deletion. Use :ref:`Object.is_queued_for_deletion<class_Object_method_is_queued_for_deletion>` to check whether a node will be deleted at the end of the frame.
 
 .. rst-class:: classref-item-separator
 

@@ -41,6 +41,8 @@ SkeletonIK3D is used to rotate all bones of a :ref:`Skeleton3D<class_Skeleton3D>
     # Apply zero IK effect (a value at or below 0.01 also removes bones_global_pose_override on Skeleton)
     skeleton_ik_node.set_interpolation(0.0)
 
+\ *Deprecated.* This class is deprecated, and might be removed in a future release.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

@@ -389,7 +389,7 @@ The region of grid cells available for pathfinding. If changed, :ref:`update<cla
 
 The size of the grid (number of cells of size :ref:`cell_size<class_AStarGrid2D_property_cell_size>` on each axis). If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
 
-\ **Note:** This property is deprecated, use :ref:`region<class_AStarGrid2D_property_region>` instead.
+\ *Deprecated.* Use :ref:`region<class_AStarGrid2D_property_region>` instead.
 
 .. rst-class:: classref-section-separator
 

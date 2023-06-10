@@ -367,6 +367,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`                                                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`run/window_placement/android_window<class_EditorSettings_property_run/window_placement/android_window>`                                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>`                                                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>` | :ref:`run/window_placement/rect_custom_position<class_EditorSettings_property_run/window_placement/rect_custom_position>`                                                           |
@@ -2576,6 +2578,20 @@ If ``true``, the editor will expand the Output panel when running the project.
 :ref:`int<class_int>` **run/output/font_size**
 
 The size of the font in the **Output** panel at the bottom of the editor. This setting does not impact the font size of the script editor (see :ref:`interface/editor/code_font_size<class_EditorSettings_property_interface/editor/code_font_size>`).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_run/window_placement/android_window:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/window_placement/android_window**
+
+The Android window to display the project on when starting the project from the editor.
+
+\ **Note:** Only available in the Android editor.
 
 .. rst-class:: classref-item-separator
 

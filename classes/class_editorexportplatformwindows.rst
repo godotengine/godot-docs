@@ -130,7 +130,7 @@ Company that produced the application. Required. See `StringFileInfo <https://le
 
 :ref:`String<class_String>` **application/console_wrapper_icon**
 
-Console wrapper icon file. If left empty, application icon is used instead.
+Console wrapper icon file. If left empty, it will fallback to :ref:`application/icon<class_EditorExportPlatformWindows_property_application/icon>`, then to :ref:`ProjectSettings.application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`, and lastly, :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`.
 
 .. rst-class:: classref-item-separator
 
@@ -178,7 +178,7 @@ Version number of the file. Required. See `StringFileInfo <https://learn.microso
 
 :ref:`String<class_String>` **application/icon**
 
-Application icon file. If left empty, project icon is used instead.
+Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.application/config/windows_native_icon<class_ProjectSettings_property_application/config/windows_native_icon>`, and  then to :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`.
 
 .. rst-class:: classref-item-separator
 

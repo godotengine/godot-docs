@@ -245,7 +245,7 @@ enum **CodeCompletionLocation**:
 
 :ref:`CodeCompletionLocation<enum_ScriptLanguageExtension_CodeCompletionLocation>` **LOCATION_LOCAL** = ``0``
 
-The option is local to the location of the code completion query - e.g. a local variable.
+The option is local to the location of the code completion query - e.g. a local variable. Subsequent value of location represent options from the outer class, the exact value represent how far they are (in terms of inner classes).
 
 .. _class_ScriptLanguageExtension_constant_LOCATION_PARENT_MASK:
 

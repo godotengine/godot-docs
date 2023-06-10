@@ -612,6 +612,8 @@ Path of the debug keystore file.
 
 Can be overridden with the environment variable ``GODOT_ANDROID_KEYSTORE_DEBUG_PATH``.
 
+Fallbacks to ``EditorSettings.export/android/debug_keystore`` if empty.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -626,6 +628,8 @@ Password for the debug keystore file.
 
 Can be overridden with the environment variable ``GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD``.
 
+Fallbacks to ``EditorSettings.export/android/debug_keystore_pass`` if both it and :ref:`keystore/debug<class_EditorExportPlatformAndroid_property_keystore/debug>` are empty.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -639,6 +643,8 @@ Can be overridden with the environment variable ``GODOT_ANDROID_KEYSTORE_DEBUG_P
 User name for the debug keystore file.
 
 Can be overridden with the environment variable ``GODOT_ANDROID_KEYSTORE_DEBUG_USER``.
+
+Fallbacks to ``EditorSettings.export/android/debug_keystore_user`` if both it and :ref:`keystore/debug<class_EditorExportPlatformAndroid_property_keystore/debug>` are empty.
 
 .. rst-class:: classref-item-separator
 
@@ -716,7 +722,7 @@ Foreground layer of the application adaptive icon file.
 
 :ref:`String<class_String>` **launcher_icons/main_192x192**
 
-Application icon file. If left empty, project icon is used instead.
+Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`.
 
 .. rst-class:: classref-item-separator
 
