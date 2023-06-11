@@ -93,7 +93,7 @@ every pixel.
 
 We do so by writing a ``vec4`` to the built-in variable ``COLOR``. ``vec4`` is
 shorthand for constructing a vector with 4 numbers. For more information about
-vectors see the :ref:`Vector math tutorial <doc_vector_math>` ``COLOR`` is both
+vectors see the :ref:`Vector math tutorial <doc_vector_math>`. ``COLOR`` is both
 an input variable to the fragment function and the final output from it.
 
 .. code-block:: glsl
