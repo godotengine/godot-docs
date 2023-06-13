@@ -98,9 +98,9 @@ The velocity_computed signal of the NavigationAgent node must be connected to re
 
 .. image:: img/agent_safevelocity_signal.png
 
-In order to trigger the avoidance velocity calculation, the current velocity of the agent's parent node must be set with ``set_velocity()`` on the NavigationAgent node in ``_physics_process()``.
+Use ``set_velocity()`` on the NavigationAgent node in ``_physics_process()`` to update the agent with the current velocity of the agent's parent node.
 
-After a short wait for processing the avoidance (still in the same frame) the ``safe_velocity`` vector will be received with the signal.
+While avoidance is enabled on the agent the ``safe_velocity`` vector will be received with the velocity_computed signal every physics frame.
 This velocity vector should be used to move the NavigationAgent's parent node in order to avoidance collision with other avoidance using agents or avoidance obstacles.
 
 .. note::
