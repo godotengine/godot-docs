@@ -34,7 +34,7 @@ settings in your in-game menus.
 Resolution scaling options
 --------------------------
 
-In the advanced Project Settings' **Rendering > Scaling 3D** section, you cany
+In the advanced Project Settings' **Rendering > Scaling 3D** section, you can
 find several options for 3D resolution scaling:
 
 Scaling mode
