@@ -135,6 +135,60 @@ provided for testing purposes only.
     See :ref:`doc_upgrading_to_godot_4` for instructions on migrating a project
     from Godot 3.x to 4.x.
 
+.. _doc_release_policy_which_version_should_i_use:
+
+Which version should I use for a new project?
+---------------------------------------------
+
+We recommend using Godot 4.x for new projects, as the Godot 4.x series will be
+supported long after 3.x stops receiving updates in the future. One caveat is
+that a lot of third-party documentation hasn't been updated for Godot 4.x yet.
+If you have to follow a tutorial designed for Godot 3.x, we recommend keeping
+:ref:`doc_upgrading_to_godot_4` open in a separate tab to check which methods
+have been renamed (if you get a script error while trying to use a specific node
+or method that was renamed in Godot 4.x).
+
+If your project requires a feature that is missing in 4.x (such as GLES2/WebGL
+1.0), you should use Godot 3.x for a new project instead.
+
+.. _doc_release_policy_should_i_upgrade_my_project:
+
+Should I upgrade my project to use new engine versions?
+-------------------------------------------------------
+
+.. note::
+
+    Upgrading software while working on a project is inherently risky, so
+    consider whether it's a good idea for your project before attempting an
+    upgrade. Also, make backups of your project or use version control to
+    prevent losing data in case the upgrade goes wrong.
+
+    That said, we do our best to keep minor and especially patch releases
+    compatible with existing projects.
+
+The general recommendation is to upgrade your project to follow new *patch*
+releases, such as upgrading from 4.0.2 to 4.0.3. This ensures you get bug fixes,
+security updates and platform support updates (which is especially important for
+mobile platforms). You also get continued support, as only the last patch
+release receives support on official community platforms.
+
+For *minor* releases, you should determine whether it's a good idea to upgrade
+on a case-by-case basis. We've made a lot of effort in making the upgrade
+process as seamless as possible, but some breaking changes may be present in
+minor releases, along with a greater risk of regressions. Some fixes included in
+minor releases may also change a class' expected behavior as required to fix
+some bugs. This is especially the case in classes marked as *experimental* in
+the documentation.
+
+*Major* releases bring a lot of new functionality, but they also remove
+previously existing functionality and may raise hardware requirements. They also
+require much more work to upgrade to compared to minor releases. As a result, we
+recommend sticking with the major release you've started your project with if
+you are happy with how your project currently works. For example, if your
+project was started with 3.5, we recommend upgrading to 3.5.2 and possibly 3.6
+in the future, but not to 4.0+, unless your project really needs the new
+features that come with 4.0+.
+
 .. _doc_release_policy_when_is_next_release_out:
 
 When is the next release out?
@@ -161,3 +215,63 @@ The 3.6 release is still planned and should be the last stable branch of Godot
 as long as users still need it (due to missing features in Godot 4.x, or
 having published games which they need to keep updating for platform
 requirements).
+
+What are the criteria for compatibility across engine versions?
+---------------------------------------------------------------
+
+.. note::
+
+    This section is intended to be used by contributors to determine which
+    changes are safe for a given release. The list is not exhaustive; it only
+    outlines the most common situations encountered during Godot's development.
+
+The following changes are acceptable in patch releases:
+
+- Fixing a bug in a way that has no major negative impact on most projects, such
+  as a visual or physics bug. Godot's physics engine is not deterministic, so
+  physics bug fixes are not considered to break compatibility. If fixing a bug
+  has a negative impact that could impact a lot of projects, it should be made
+  optional (e.g. using a project setting or separate method).
+- Adding a new optional parameter to a method.
+- Small-scale editor usability tweaks.
+
+Note that we tend to be more conservative with the fixes we allow in each
+subsequent patch release. For instance, 4.0.1 may receive more impactful fixes
+than 4.0.4 would.
+
+The following changes are acceptable in minor releases, but not patch releases:
+
+- Significant new features.
+- Renaming a method parameter. In C#, method parameters can be passed by name
+  (but not in GDScript). As a result, this can break some projects that use C#.
+- Deprecating a method, member variable, or class. This is done by adding a
+  deprecated flag to its class reference, which will show up in the editor. When
+  a method is marked as deprecated, it's slated to be removed in the next
+  *major* release.
+- Changes that affect the default project theme's visuals.
+- Bug fixes which significantly change the behavior or the output, with the aim
+  to meet user expectations better. In comparison, in patch releases, we may
+  favor keeping a buggy behavior so we don't break existing projects which
+  likely already rely on the bug or use a workaround.
+- Performance optimizations that result in visual changes.
+
+The following changes are considered **compatibility-breaking** and can only be
+performed in a new major release:
+
+- Renaming or removing a method, member variable, or class.
+- Modifying a node's inheritance tree by making it inherit from a different class.
+- Changing the default value of a project setting value in a way that affects existing
+  projects. To only affect new projects, the project manager should write a
+  modified ``project.godot`` instead.
+
+Since Godot 5.0 hasn't been branched off yet, we currently discourage making
+compatibility-breaking changes of this kind.
+
+.. note::
+
+      When modifying a method's signature in any fashion (including adding an
+      optional parameter), a GDExtension compatibility method must be created.
+      This ensures that existing GDExtensions continue to work across patch and
+      minor releases, so that users don't have to recompile them.
+      See `pull request #76446 <https://github.com/godotengine/godot/pull/76446>`
+      for more information.
