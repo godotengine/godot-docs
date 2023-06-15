@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_user_interface:
 
 User interface (UI)

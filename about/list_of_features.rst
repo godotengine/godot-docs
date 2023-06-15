@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_list_of_features:
 
 List of features

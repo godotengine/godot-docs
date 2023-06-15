@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_c_sharp_diagnostics:
 
 C# diagnostics

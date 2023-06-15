@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_your_first_2d_game:
 
 Your first 2D game

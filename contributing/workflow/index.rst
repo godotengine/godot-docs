@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_contributing_workflow:
 
 Contribution workflow

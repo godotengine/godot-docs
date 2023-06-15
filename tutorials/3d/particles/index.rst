@@ -1,3 +1,5 @@
+:allow_comments: False
+
 .. _doc_3d_particles:
 
 Particle systems (3D)

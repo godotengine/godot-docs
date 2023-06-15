@@ -1,3 +1,5 @@
+:allow_comments: False
+
 C#/.NET
 =======
 
@@ -7,7 +9,6 @@ C# as an option for a scripting language, alongside Godot's own :ref:`GDScript<t
 The standard Godot executable does not contain C# support out of the box. Instead,
 to enable C# support for your project you need to `download a .NET version <https://godotengine.org/download/>`_
 of the editor from the Godot website.
-
 
 .. toctree::
    :maxdepth: 1

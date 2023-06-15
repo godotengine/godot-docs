@@ -196,6 +196,8 @@ html_context = {
     "godot_version": "4.3",
     # Enables a banner that displays the up-to-date status of each article.
     "godot_show_article_status": True,
+    # Display user-contributed notes at the bottom of pages that don't have `:allow_comments: False` at the top.
+    "godot_show_article_comments": on_rtd and not is_i18n,
 }
 
 html_logo = "img/docs_logo.svg"

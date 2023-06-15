@@ -1,3 +1,5 @@
+:allow_comments: False
+
 Engine core and modules
 =======================
 

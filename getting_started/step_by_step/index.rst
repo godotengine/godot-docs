@@ -1,4 +1,4 @@
-:article_outdated: False
+:allow_comments: False
 
 Step by step
 ============

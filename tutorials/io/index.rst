@@ -1,3 +1,5 @@
+:allow_comments: False
+
 File and data I/O
 =================
 

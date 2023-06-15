@@ -1,3 +1,5 @@
+:allow_comments: False
+
 Debugging and profiling
 =======================
 
