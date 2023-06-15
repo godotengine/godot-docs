@@ -57,7 +57,7 @@ This will return a list of supported blend modes for submitting the main render 
 
 We need to check if ``XR_ENV_BLEND_MODE_ALPHA_BLEND`` is present in this list.
 If so we can tell OpenXR to expect an image that can be alpha blended with a background.
-To do this, we simply call ``set_environment_blend_mode(XR_ENV_BLEND_MODE_ALPHA_BLEND)``.
+To do this, we simply call ``set_environment_blend_mode(xr_interface.XR_ENV_BLEND_MODE_ALPHA_BLEND)``.
 
 We must also set ``transparent_bg`` to true to ensure we submit the right image.
 
@@ -74,8 +74,8 @@ Putting the above together we can use the following code as a base:
       return xr_interface.start_passthrough()
     else:
       var modes = xr_interface.get_supported_environment_blend_modes()
-      if XR_ENV_BLEND_MODE_ALPHA_BLEND in modes:
-        xr_interface.set_environment_blend_mode(XR_ENV_BLEND_MODE_ALPHA_BLEND)
+      if xr_interface.XR_ENV_BLEND_MODE_ALPHA_BLEND in modes:
+        xr_interface.set_environment_blend_mode(xr_interface.XR_ENV_BLEND_MODE_ALPHA_BLEND)
         return true
       else:
         return false
