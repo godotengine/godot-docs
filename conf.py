@@ -66,6 +66,9 @@ if not os.getenv("SPHINX_NO_GDSCRIPT"):
 if not os.getenv("SPHINX_NO_DESCRIPTIONS"):
     extensions.append("godot_descriptions")
 
+if not os.getenv("SPHINX_NO_SPACES_TO_TABS"):
+    extensions.append("spaces_to_tabs")
+
 templates_path = ["_templates"]
 
 # You can specify multiple suffix as a list of string: ['.rst', '.md']
