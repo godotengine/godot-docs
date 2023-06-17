@@ -96,6 +96,8 @@ Methods
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Texture2D[]<class_Texture2D>`                       | :ref:`make_mesh_previews<class_EditorInterface_method_make_mesh_previews>` **(** :ref:`Mesh[]<class_Mesh>` meshes, :ref:`int<class_int>` preview_size **)**                                                                                            |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                      | :ref:`mark_scene_as_unsaved<class_EditorInterface_method_mark_scene_as_unsaved>` **(** **)**                                                                                                                                                           |
+   +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`open_scene_from_path<class_EditorInterface_method_open_scene_from_path>` **(** :ref:`String<class_String>` scene_filepath **)**                                                                                                                  |
    +-----------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                      | :ref:`play_current_scene<class_EditorInterface_method_play_current_scene>` **(** **)**                                                                                                                                                                 |
@@ -491,6 +493,18 @@ Returns mesh previews rendered at the given size as an :ref:`Array<class_Array>`
 
 ----
 
+.. _class_EditorInterface_method_mark_scene_as_unsaved:
+
+.. rst-class:: classref-method
+
+void **mark_scene_as_unsaved** **(** **)**
+
+Marks the current scene tab as unsaved.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorInterface_method_open_scene_from_path:
 
 .. rst-class:: classref-method
@@ -693,3 +707,4 @@ Stops the scene that is currently playing.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

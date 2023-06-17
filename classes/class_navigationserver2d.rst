@@ -171,13 +171,21 @@ Methods
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`obstacle_create<class_NavigationServer2D_method_obstacle_create>` **(** **)**                                                                                                                                                                                           |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`obstacle_get_avoidance_enabled<class_NavigationServer2D_method_obstacle_get_avoidance_enabled>` **(** :ref:`RID<class_RID>` obstacle **)** |const|                                                                                                                      |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`                               | :ref:`obstacle_get_map<class_NavigationServer2D_method_obstacle_get_map>` **(** :ref:`RID<class_RID>` obstacle **)** |const|                                                                                                                                                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`obstacle_set_avoidance_enabled<class_NavigationServer2D_method_obstacle_set_avoidance_enabled>` **(** :ref:`RID<class_RID>` obstacle, :ref:`bool<class_bool>` enabled **)**                                                                                             |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`obstacle_set_avoidance_layers<class_NavigationServer2D_method_obstacle_set_avoidance_layers>` **(** :ref:`RID<class_RID>` obstacle, :ref:`int<class_int>` layers **)**                                                                                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`obstacle_set_map<class_NavigationServer2D_method_obstacle_set_map>` **(** :ref:`RID<class_RID>` obstacle, :ref:`RID<class_RID>` map **)**                                                                                                                               |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`obstacle_set_position<class_NavigationServer2D_method_obstacle_set_position>` **(** :ref:`RID<class_RID>` obstacle, :ref:`Vector2<class_Vector2>` position **)**                                                                                                        |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`obstacle_set_radius<class_NavigationServer2D_method_obstacle_set_radius>` **(** :ref:`RID<class_RID>` obstacle, :ref:`float<class_float>` radius **)**                                                                                                                  |
+   +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                | :ref:`obstacle_set_velocity<class_NavigationServer2D_method_obstacle_set_velocity>` **(** :ref:`RID<class_RID>` obstacle, :ref:`Vector2<class_Vector2>` velocity **)**                                                                                                        |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`obstacle_set_vertices<class_NavigationServer2D_method_obstacle_set_vertices>` **(** :ref:`RID<class_RID>` obstacle, :ref:`PackedVector2Array<class_PackedVector2Array>` vertices **)**                                                                                  |
    +-----------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -476,7 +484,7 @@ The minimal amount of time for which the agent's velocities that are computed by
 
 void **agent_set_velocity** **(** :ref:`RID<class_RID>` agent, :ref:`Vector2<class_Vector2>` velocity **)**
 
-Sets ``velocity`` as the new wanted velocity for the specified ``agent``. The avoidance simulation will try to fulfil this velocity if possible but will modify it to avoid collision with other agent's and obstacles. When an agent is teleported to a new position far away use :ref:`agent_set_velocity_forced<class_NavigationServer2D_method_agent_set_velocity_forced>` instead to reset the internal velocity state.
+Sets ``velocity`` as the new wanted velocity for the specified ``agent``. The avoidance simulation will try to fulfill this velocity if possible but will modify it to avoid collision with other agent's and obstacles. When an agent is teleported to a new position far away use :ref:`agent_set_velocity_forced<class_NavigationServer2D_method_agent_set_velocity_forced>` instead to reset the internal velocity state.
 
 .. rst-class:: classref-item-separator
 
@@ -782,7 +790,7 @@ Returns all navigation agents :ref:`RID<class_RID>`\ s that are currently assign
 
 :ref:`float<class_float>` **map_get_cell_size** **(** :ref:`RID<class_RID>` map **)** |const|
 
-Returns the map cell size.
+Returns the map cell size used to rasterize the navigation mesh vertices.
 
 .. rst-class:: classref-item-separator
 
@@ -926,7 +934,7 @@ Sets the map active.
 
 void **map_set_cell_size** **(** :ref:`RID<class_RID>` map, :ref:`float<class_float>` cell_size **)**
 
-Set the map cell size used to weld the navigation mesh polygons.
+Sets the map cell size used to rasterize the navigation mesh vertices. Must match with the cell size of the used navigation meshes.
 
 .. rst-class:: classref-item-separator
 
@@ -980,6 +988,18 @@ Creates a new navigation obstacle.
 
 ----
 
+.. _class_NavigationServer2D_method_obstacle_get_avoidance_enabled:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **obstacle_get_avoidance_enabled** **(** :ref:`RID<class_RID>` obstacle **)** |const|
+
+Returns ``true`` if the provided ``obstacle`` has avoidance enabled.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer2D_method_obstacle_get_map:
 
 .. rst-class:: classref-method
@@ -992,15 +1012,25 @@ Returns the navigation map :ref:`RID<class_RID>` the requested ``obstacle`` is c
 
 ----
 
+.. _class_NavigationServer2D_method_obstacle_set_avoidance_enabled:
+
+.. rst-class:: classref-method
+
+void **obstacle_set_avoidance_enabled** **(** :ref:`RID<class_RID>` obstacle, :ref:`bool<class_bool>` enabled **)**
+
+If ``enabled`` the provided ``obstacle`` affects avoidance using agents.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationServer2D_method_obstacle_set_avoidance_layers:
 
 .. rst-class:: classref-method
 
 void **obstacle_set_avoidance_layers** **(** :ref:`RID<class_RID>` obstacle, :ref:`int<class_int>` layers **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Set the obstacles's ``avoidance_layers`` bitmask.
 
 .. rst-class:: classref-item-separator
 
@@ -1025,6 +1055,30 @@ Sets the navigation map :ref:`RID<class_RID>` for the obstacle.
 void **obstacle_set_position** **(** :ref:`RID<class_RID>` obstacle, :ref:`Vector2<class_Vector2>` position **)**
 
 Sets the position of the obstacle in world space.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_obstacle_set_radius:
+
+.. rst-class:: classref-method
+
+void **obstacle_set_radius** **(** :ref:`RID<class_RID>` obstacle, :ref:`float<class_float>` radius **)**
+
+Sets the radius of the dynamic obstacle.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationServer2D_method_obstacle_set_velocity:
+
+.. rst-class:: classref-method
+
+void **obstacle_set_velocity** **(** :ref:`RID<class_RID>` obstacle, :ref:`Vector2<class_Vector2>` velocity **)**
+
+Sets ``velocity`` of the dynamic ``obstacle``. Allows other agents to better predict the movement of the dynamic obstacle. Only works in combination with the radius of the obstacle.
 
 .. rst-class:: classref-item-separator
 
@@ -1300,3 +1354,4 @@ If ``true`` enables debug mode on the NavigationServer.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

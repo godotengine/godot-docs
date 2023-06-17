@@ -6075,7 +6075,7 @@ Returns the minimum of two :ref:`int<class_int>` values.
 
 :ref:`float<class_float>` **move_toward** **(** :ref:`float<class_float>` from, :ref:`float<class_float>` to, :ref:`float<class_float>` delta **)**
 
-Moves ``from`` toward ``to`` by the ``delta`` value.
+Moves ``from`` toward ``to`` by the ``delta`` amount. Will not go past ``to``.
 
 Use a negative ``delta`` value to move away.
 
@@ -6083,6 +6083,7 @@ Use a negative ``delta`` value to move away.
 
     move_toward(5, 10, 4)    # Returns 9
     move_toward(10, 5, 4)    # Returns 6
+    move_toward(5, 10, 9)    # Returns 10
     move_toward(10, 5, -1.5) # Returns 11.5
 
 .. rst-class:: classref-item-separator
@@ -7206,3 +7207,4 @@ Wraps the integer ``value`` between ``min`` and ``max``. Can be used for creatin
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

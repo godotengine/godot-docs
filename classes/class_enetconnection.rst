@@ -71,6 +71,8 @@ Methods
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                     | :ref:`service<class_ENetConnection_method_service>` **(** :ref:`int<class_int>` timeout=0 **)**                                                                                                                                                                                                                      |
    +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                          | :ref:`socket_send<class_ENetConnection_method_socket_send>` **(** :ref:`String<class_String>` destination_address, :ref:`int<class_int>` destination_port, :ref:`PackedByteArray<class_PackedByteArray>` packet **)**                                                                                                |
+   +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -440,9 +442,26 @@ Waits for events on the host specified and shuttles packets between the host and
 
 Call this function regularly to handle connections, disconnections, and to receive new packets.
 
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ENetConnection_method_socket_send:
+
+.. rst-class:: classref-method
+
+void **socket_send** **(** :ref:`String<class_String>` destination_address, :ref:`int<class_int>` destination_port, :ref:`PackedByteArray<class_PackedByteArray>` packet **)**
+
+Sends a ``packet`` toward a destination from the address and port currently bound by this ENetConnection instance. 
+
+This is useful as it serves to establish entries in NAT routing tables on all devices between this bound instance and the public facing internet, allowing a prospective client's connection packets to be routed backward through the NAT device(s) between the public internet and this host.
+
+This requires forward knowledge of a prospective client's address and communication port as seen by the public internet - after any NAT devices have handled their connection request. This information can be obtained by a `STUN <https://en.wikipedia.org/wiki/STUN>`__ service, and must be handed off to your host by an entity that is not the prospective client. This will never work for a client behind a Symmetric NAT due to the nature of the Symmetric NAT routing algorithm, as their IP and Port cannot be known beforehand.
+
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
 .. |vararg| replace:: :abbr:`vararg (This method accepts any number of arguments after the ones described here.)`
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

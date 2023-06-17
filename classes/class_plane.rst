@@ -170,7 +170,7 @@ Property Descriptions
 
 :ref:`float<class_float>` **d** = ``0.0``
 
-The distance from the origin to the plane, in the direction of :ref:`normal<class_Plane_property_normal>`. This value is typically non-negative.
+The distance from the origin to the plane, expressed in terms of :ref:`normal<class_Plane_property_normal>` (according to its direction and magnitude). Actual absolute distance from the origin to the plane can be calculated as ``abs(d) / normal.length()`` (if :ref:`normal<class_Plane_property_normal>` has zero length then this **Plane** does not represent a valid plane).
 
 In the scalar equation of the plane ``ax + by + cz = d``, this is ``d``, while the ``(a, b, c)`` coordinates are represented by the :ref:`normal<class_Plane_property_normal>` property.
 
@@ -184,7 +184,7 @@ In the scalar equation of the plane ``ax + by + cz = d``, this is ``d``, while t
 
 :ref:`Vector3<class_Vector3>` **normal** = ``Vector3(0, 0, 0)``
 
-The normal of the plane, which must be a unit vector.
+The normal of the plane, typically a unit vector. Shouldn't be a zero vector as **Plane** with such :ref:`normal<class_Plane_property_normal>` does not represent a valid plane.
 
 In the scalar equation of the plane ``ax + by + cz = d``, this is the vector ``(a, b, c)``, where ``d`` is the :ref:`d<class_Plane_property_d>` property.
 
@@ -430,7 +430,7 @@ Returns ``true`` if ``point`` is located above the plane.
 
 :ref:`Plane<class_Plane>` **normalized** **(** **)** |const|
 
-Returns a copy of the plane, normalized.
+Returns a copy of the plane, with normalized :ref:`normal<class_Plane_property_normal>` (so it's a unit vector). Returns ``Plane(0, 0, 0, 0)`` if :ref:`normal<class_Plane_property_normal>` can't be normalized (it has zero length).
 
 .. rst-class:: classref-item-separator
 
@@ -519,3 +519,4 @@ Returns the negative value of the **Plane**. This is the same as writing ``Plane
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

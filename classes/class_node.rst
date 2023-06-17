@@ -62,31 +62,31 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                                   | :ref:`editor_description<class_Node_property_editor_description>`                 | ``""``    |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`MultiplayerAPI<class_MultiplayerAPI>`                   | :ref:`multiplayer<class_Node_property_multiplayer>`                               |           |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`StringName<class_StringName>`                           | :ref:`name<class_Node_property_name>`                                             |           |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`Node<class_Node>`                                       | :ref:`owner<class_Node_property_owner>`                                           |           |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`ProcessMode<enum_Node_ProcessMode>`                     | :ref:`process_mode<class_Node_property_process_mode>`                             | ``0``     |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                         | :ref:`process_physics_priority<class_Node_property_process_physics_priority>`     | ``0``     |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                         | :ref:`process_priority<class_Node_property_process_priority>`                     | ``0``     |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>`       | :ref:`process_thread_group<class_Node_property_process_thread_group>`             | ``0``     |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                         | :ref:`process_thread_group_order<class_Node_property_process_thread_group_order>` |           |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` | :ref:`process_thread_messages<class_Node_property_process_thread_messages>`       |           |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                                   | :ref:`scene_file_path<class_Node_property_scene_file_path>`                       |           |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                       | :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`             | ``false`` |
-   +---------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                                 | :ref:`editor_description<class_Node_property_editor_description>`                 | ``""``    |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`MultiplayerAPI<class_MultiplayerAPI>`                                 | :ref:`multiplayer<class_Node_property_multiplayer>`                               |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`StringName<class_StringName>`                                         | :ref:`name<class_Node_property_name>`                                             |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`Node<class_Node>`                                                     | :ref:`owner<class_Node_property_owner>`                                           |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`ProcessMode<enum_Node_ProcessMode>`                                   | :ref:`process_mode<class_Node_property_process_mode>`                             | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                       | :ref:`process_physics_priority<class_Node_property_process_physics_priority>`     | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                       | :ref:`process_priority<class_Node_property_process_priority>`                     | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`ProcessThreadGroup<enum_Node_ProcessThreadGroup>`                     | :ref:`process_thread_group<class_Node_property_process_thread_group>`             | ``0``     |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                       | :ref:`process_thread_group_order<class_Node_property_process_thread_group_order>` |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | |bitfield|\<:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>`\> | :ref:`process_thread_messages<class_Node_property_process_thread_messages>`       |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                                 | :ref:`scene_file_path<class_Node_property_scene_file_path>`                       |           |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                     | :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`             | ``false`` |
+   +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -351,6 +351,20 @@ Emitted when the node is renamed.
 
 ----
 
+.. _class_Node_signal_replacing_by:
+
+.. rst-class:: classref-signal
+
+**replacing_by** **(** :ref:`Node<class_Node>` node **)**
+
+Emitted when this node is being replaced by the ``node``, see :ref:`replace_by<class_Node_method_replace_by>`.
+
+This signal is emitted *after* ``node`` has been added as a child of the original parent node, but *before* all original child nodes have been reparented to ``node``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Node_signal_tree_entered:
 
 .. rst-class:: classref-signal
@@ -484,7 +498,7 @@ Process this node (and children nodes set to inherit) on a sub-thread. See :ref:
 
 .. rst-class:: classref-enumeration
 
-enum **ProcessThreadMessages**:
+flags **ProcessThreadMessages**:
 
 .. _class_Node_constant_FLAG_PROCESS_THREAD_MESSAGES:
 
@@ -1152,12 +1166,12 @@ Change the process thread group order. Groups with a lesser order will process b
 
 .. rst-class:: classref-property
 
-:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **process_thread_messages**
+|bitfield|\<:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>`\> **process_thread_messages**
 
 .. rst-class:: classref-property-setget
 
-- void **set_process_thread_messages** **(** :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` value **)**
-- :ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>` **get_process_thread_messages** **(** **)**
+- void **set_process_thread_messages** **(** |bitfield|\<:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>`\> value **)**
+- |bitfield|\<:ref:`ProcessThreadMessages<enum_Node_ProcessThreadMessages>`\> **get_process_thread_messages** **(** **)**
 
 Set whether the current thread group will process messages (calls to :ref:`call_deferred_thread_group<class_Node_method_call_deferred_thread_group>` on threads, and whether it wants to receive them during regular process or physics process callbacks.
 
@@ -2612,3 +2626,4 @@ Use :ref:`_get_configuration_warnings<class_Node_method__get_configuration_warni
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

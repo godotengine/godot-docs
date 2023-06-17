@@ -68,6 +68,19 @@ In GDScript, it's possible to create lambda functions within a method. Lambda fu
         # Prints "Attack!", when the button_pressed signal is emitted.
         button_pressed.connect(func(): print("Attack!"))
 
+\ **Note:** Methods of native types such as :ref:`Signal<class_Signal>`, :ref:`Array<class_Array>`, or :ref:`Dictionary<class_Dictionary>` are not of type **Callable** in order to avoid unnecessary overhead. If you need to pass those methods as **Callable**, use a lambda function as a wrapper.
+
+::
+
+    func _init():
+        var my_dictionary = { "hello": "world" }
+    
+        # This will not work, `clear` is not a callable.
+        create_tween().tween_callback(my_dictionary.clear)
+    
+        # This will work, as lambdas are custom callables.
+        create_tween().tween_callback(func(): my_dictionary.clear())
+
 .. rst-class:: classref-reftable-group
 
 Constructors
@@ -456,3 +469,4 @@ Returns ``true`` if both **Callable**\ s invoke the same custom target.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

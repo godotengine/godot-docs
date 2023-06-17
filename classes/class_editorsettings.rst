@@ -399,6 +399,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/gutters/show_line_numbers<class_EditorSettings_property_text_editor/appearance/gutters/show_line_numbers>`                                             |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/appearance/lines/autowrap_mode<class_EditorSettings_property_text_editor/appearance/lines/autowrap_mode>`                                                         |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/lines/code_folding<class_EditorSettings_property_text_editor/appearance/lines/code_folding>`                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`text_editor/appearance/lines/word_wrap<class_EditorSettings_property_text_editor/appearance/lines/word_wrap>`                                                                 |
@@ -2777,6 +2779,18 @@ If ``true``, displays line numbers in a gutter at the left.
 
 ----
 
+.. _class_EditorSettings_property_text_editor/appearance/lines/autowrap_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/appearance/lines/autowrap_mode**
+
+If :ref:`text_editor/appearance/lines/word_wrap<class_EditorSettings_property_text_editor/appearance/lines/word_wrap>` is set to ``1``, sets text wrapping mode. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_text_editor/appearance/lines/code_folding:
 
 .. rst-class:: classref-property
@@ -3904,3 +3918,4 @@ Sets the ``value`` of the setting specified by ``name``. This is equivalent to u
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
