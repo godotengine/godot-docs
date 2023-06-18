@@ -197,7 +197,7 @@ texture as the second argument. We use the ``x`` and ``z`` channels of
 ``VERTEX`` to determine where on the texture to look up. Note that the PlaneMesh
 coordinates are within the [-1,1] range (for a size of 2), while the texture
 coordinates are within [0,1], so to normalize we divide by the size of the
-PlaneMesh 2.0 and add 0.5. ``texture()`` returns a ``vec4`` of the ``r, g, b,
+PlaneMesh by 2.0 and add 0.5. ``texture()`` returns a ``vec4`` of the ``r, g, b,
 a`` channels at the position. Since the noise texture is grayscale, all of the
 values are the same, so we can use any one of the channels as the height. In
 this case we'll use the ``r``, or ``x`` channel.
@@ -325,7 +325,7 @@ explained in more detail in the next part of this tutorial.
 
 When we have normals that correspond to a specific vertex we set ``NORMAL``, but
 if you have a normalmap that comes from a texture, set the normal using
-``NORMAL_MAP``. This way Godot will handle the wrapping the texture around the
+``NORMAL_MAP``. This way Godot will handle the wrapping of texture around the
 mesh automatically.
 
 Lastly, in order to ensure that we are reading from the same places on the noise
