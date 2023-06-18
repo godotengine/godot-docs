@@ -363,7 +363,7 @@ to change the display orientation project setting.
 Mobile game in portrait mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Set the base window width to ``720`` and window height to ``1080``.
+- Set the base window width to ``720`` and window height to ``1280``.
 - Alternatively, if you're targeting high-end devices primarily, set the base
   window width to ``1080`` and window height to ``1920``.
   This allows you to provide higher resolution 2D assets, resulting in crisper
