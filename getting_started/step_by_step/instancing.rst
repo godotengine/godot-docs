@@ -117,12 +117,12 @@ There is more to instances. With this feature, you can:
 Let's try this. Open ``Ball.tscn`` and select the Ball node. In the Inspector on
 the right, click on the PhysicsMaterial property to expand it.
 
-.. image:: img/instancing_physics_material_expand.png
+.. image:: img/instancing_physics_material_expand.webp
 
-Set its Bounce property to ``2`` by clicking on the number field, typing ``2``,
+Set its Bounce property to ``0.5`` by clicking on the number field, typing ``0.5``,
 and pressing :kbd:`Enter`.
 
-.. image:: img/instancing_property_bounce_updated.png
+.. image:: img/instancing_property_bounce_updated.webp
 
 Play the game by pressing :kbd:`F5` and notice how all balls now bounce a lot
 more. As the Ball scene is a template for all instances, modifying it and saving
