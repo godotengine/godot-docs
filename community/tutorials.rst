@@ -44,7 +44,7 @@ Video tutorials
 - `Kasper Frandsen <https://www.youtube.com/c/KasperFrandsen/>`_ (3D, Shaders).
 - `bitbrain <https://www.youtube.com/watch?v=lFIBn8kJ-IM&list=PL4AhUX6lGjJWfiDORSmEu8x_myelbe1p2>`_ (2D, GDScript).
 - `Gwizz <https://www.youtube.com/@Gwizz1027>`_ (2D, GDScript).
-- `Quiver <https://quiver.dev/>`_ (2D, GDScript, Game Jams).
+- `Quiver <https://quiver.dev/>`_ (2D, GDScript).
 - `Maker Tech <https://www.youtube.com/watch?v=0mUoRdYe0s4>`_ (2D, GDScript).
 
 Text tutorials
