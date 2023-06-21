@@ -791,6 +791,32 @@ html.writer-html5 .rst-content .wy-table-responsive > table td > p code.literal 
     padding: 2px 5px;
 }
 
+/* Wrap table columns on mobile */
+@media screen and (max-width: 1024px) {
+    .rst-content table.docutils {
+        border-top-width: 1px;
+    }
+
+    .rst-content table.docutils tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rst-content table.docutils td,
+    html.writer-html5 .rst-content table.docutils th {
+        border-width: 0 0 1px 0;
+    }
+
+    .rst-content table.docutils td:first-child,
+    .rst-content table.docutils th:first-child {
+        border-top: 3px solid var(--code-border-color) !important;
+    }
+
+    .rst-content table.docutils tbody > tr:last-child td {
+        border-bottom-width: 1px;
+    }
+}
+
 /* Code display tweaks */
 
 code,
