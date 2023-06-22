@@ -414,7 +414,7 @@ Or to bounce off of the colliding object:
         {
             var collisionInfo = MoveAndCollide(_velocity * (float)delta);
             if (collisionInfo != null)
-                _velocity = _velocity.Bounce(collisionInfo.Normal);
+                _velocity = _velocity.Bounce(collisionInfo.GetNormal());
         }
     }
 
