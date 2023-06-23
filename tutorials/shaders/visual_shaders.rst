@@ -26,10 +26,14 @@ VisualShaders, create a new ``ShaderMaterial`` in an object of your choice.
 
 Then assign a :ref:`class_VisualShader` resource to the ``Shader`` property.
 
-.. image:: img/visual_shader_create.png
+.. image:: img/visual_shader_create.webp
 
-Click on the new ``VisualShader`` resource and the Visual Shader Editor will
-open automatically. The layout of the Visual Shader Editor comprises two parts:
+Click on the new ``Shader`` resource and the Create Shader dialog will
+open automatically. Change the Type option to VisualShader in the dropdown.
+
+.. image:: img/visual_shader_create2.webp
+
+The layout of the Visual Shader Editor comprises two parts:
 the upper toolbar and the graph itself.
 
 .. image:: img/visual_shader_editor2.png
