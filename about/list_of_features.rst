@@ -433,7 +433,8 @@ Scripting
 
    - Full support for the C# 10.0 syntax and features.
 
-- Supports Windows, Linux and macOS.
+- Supports Windows, Linux and macOS. Mobile/web platforms are currently
+  unsupported. To use C# on mobile/web platforms, use Godot 3 instead.
 - Using an external editor is recommended to benefit from IDE functionality.
 
 **GDExtension (C, C++, Rust, D, ...):**

@@ -13,6 +13,11 @@ These are the steps to load a Godot project in Xcode. This allows you to
 build and deploy to an iOS device, build a release for the App Store, and
 do everything else you can normally do with Xcode.
 
+.. attention::
+
+    Projects written in C# using Godot 4 currently cannot be exported to iOS.
+    To use C# on iOS, use Godot 3 instead.
+
 Requirements
 ------------
 
