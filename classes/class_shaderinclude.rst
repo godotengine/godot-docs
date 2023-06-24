@@ -12,9 +12,21 @@ ShaderInclude
 
 **Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+A snippet of shader code to be included in a :ref:`Shader<class_Shader>` with ``#include``.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+A shader include file, saved with the ``.gdshaderinc`` extension. This class allows you to define a custom shader snippet that can be included in a :ref:`Shader<class_Shader>` by using the preprocessor directive ``#include``, followed by the file path (e.g. ``#include "res://shader_lib.gdshaderinc"``). The snippet doesn't have to be a valid shader on its own.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- :doc:`Shader preprocessor <../tutorials/shaders/shader_reference/shader_preprocessor>`
 
 .. rst-class:: classref-reftable-group
 
@@ -48,9 +60,7 @@ Property Descriptions
 - void **set_code** **(** :ref:`String<class_String>` value **)**
 - :ref:`String<class_String>` **get_code** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Returns the code of the shader include file. The returned text is what the user has written, not the full generated code used internally.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
@@ -58,3 +68,4 @@ Property Descriptions
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -80,6 +80,18 @@ Tutorials
 
 .. rst-class:: classref-reftable-group
 
+Properties
+----------
+
+.. table::
+   :widths: auto
+
+   +---------------------------+--------------------------------------------------------------+---------+
+   | :ref:`float<class_float>` | :ref:`cell_size<class_NavigationPolygon_property_cell_size>` | ``1.0`` |
+   +---------------------------+--------------------------------------------------------------+---------+
+
+.. rst-class:: classref-reftable-group
+
 Methods
 -------
 
@@ -117,6 +129,28 @@ Methods
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                | :ref:`set_vertices<class_NavigationPolygon_method_set_vertices>` **(** :ref:`PackedVector2Array<class_PackedVector2Array>` vertices **)**                                             |
    +-----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Property Descriptions
+---------------------
+
+.. _class_NavigationPolygon_property_cell_size:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **cell_size** = ``1.0``
+
+.. rst-class:: classref-property-setget
+
+- void **set_cell_size** **(** :ref:`float<class_float>` value **)**
+- :ref:`float<class_float>` **get_cell_size** **(** **)**
+
+The cell size used to rasterize the navigation mesh vertices. Must match with the cell size on the navigation map.
 
 .. rst-class:: classref-section-separator
 
@@ -309,3 +343,4 @@ Sets the vertices that can be then indexed to create polygons with the :ref:`add
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

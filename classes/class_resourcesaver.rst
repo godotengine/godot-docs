@@ -31,15 +31,15 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`add_resource_format_saver<class_ResourceSaver_method_add_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver, :ref:`bool<class_bool>` at_front=false **)** |
-   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                                       |
-   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                              | :ref:`remove_resource_format_saver<class_ResourceSaver_method_remove_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver **)**                                   |
-   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**              |
-   +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`add_resource_format_saver<class_ResourceSaver_method_add_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver, :ref:`bool<class_bool>` at_front=false **)**  |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`PackedStringArray<class_PackedStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                                                                        |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                              | :ref:`remove_resource_format_saver<class_ResourceSaver_method_remove_resource_format_saver>` **(** :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` format_saver **)**                                    |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`             | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", |bitfield|\<:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>`\> flags=0 **)** |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -171,7 +171,7 @@ Unregisters the given :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`.
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", :ref:`SaverFlags<enum_ResourceSaver_SaverFlags>` flags=0 **)**
+:ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`Resource<class_Resource>` resource, :ref:`String<class_String>` path="", |bitfield|\<:ref:`SaverFlags<enum_ResourceSaver_SaverFlags>`\> flags=0 **)**
 
 Saves a resource to disk to the given path, using a :ref:`ResourceFormatSaver<class_ResourceFormatSaver>` that recognizes the resource object. If ``path`` is empty, **ResourceSaver** will try to use :ref:`Resource.resource_path<class_Resource_property_resource_path>`.
 
@@ -185,3 +185,4 @@ Returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` on success.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

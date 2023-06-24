@@ -52,17 +52,19 @@ Methods
 .. table::
    :widths: auto
 
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** |const|                                                                                  |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`is_alive<class_Thread_method_is_alive>` **(** **)** |const|                                                                              |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`               | :ref:`is_started<class_Thread_method_is_started>` **(** **)** |const|                                                                          |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Callable<class_Callable>` callable, :ref:`Priority<enum_Thread_Priority>` priority=1 **)** |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Variant<class_Variant>`         | :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` **(** **)**                                                                          |
-   +---------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`           | :ref:`get_id<class_Thread_method_get_id>` **(** **)** |const|                                                                                      |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_alive<class_Thread_method_is_alive>` **(** **)** |const|                                                                                  |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`               | :ref:`is_started<class_Thread_method_is_started>` **(** **)** |const|                                                                              |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                  | :ref:`set_thread_safety_checks_enabled<class_Thread_method_set_thread_safety_checks_enabled>` **(** :ref:`bool<class_bool>` enabled **)** |static| |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>` | :ref:`start<class_Thread_method_start>` **(** :ref:`Callable<class_Callable>` callable, :ref:`Priority<enum_Thread_Priority>` priority=1 **)**     |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Variant<class_Variant>`         | :ref:`wait_to_finish<class_Thread_method_wait_to_finish>` **(** **)**                                                                              |
+   +---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -150,6 +152,30 @@ Returns ``true`` if this **Thread** has been started. Once started, this will re
 
 ----
 
+.. _class_Thread_method_set_thread_safety_checks_enabled:
+
+.. rst-class:: classref-method
+
+void **set_thread_safety_checks_enabled** **(** :ref:`bool<class_bool>` enabled **)** |static|
+
+Sets whether the thread safety checks the engine normally performs in methods of certain classes (e.g., :ref:`Node<class_Node>`) should happen **on the current thread**.
+
+The default, for every thread, is that they are enabled (as if called with ``enabled`` being ``true``).
+
+Those checks are conservative. That means that they will only succeed in considering a call thread-safe (and therefore allow it to happen) if the engine can guarantee such safety.
+
+Because of that, there may be cases where the user may want to disable them (``enabled`` being ``false``) to make certain operations allowed again. By doing so, it becomes the user's responsibility to ensure thread safety (e.g., by using :ref:`Mutex<class_Mutex>`) for those objects that are otherwise protected by the engine.
+
+\ **Note:** This is an advanced usage of the engine. You are advised to use it only if you know what you are doing and there is no safer way.
+
+\ **Note:** This is useful for scripts running on either arbitrary **Thread** objects or tasks submitted to the :ref:`WorkerThreadPool<class_WorkerThreadPool>`. It doesn't apply to code running during :ref:`Node<class_Node>` group processing, where the checks will be always performed.
+
+\ **Note:** Even in the case of having disabled the checks in a :ref:`WorkerThreadPool<class_WorkerThreadPool>` task, there's no need to re-enable them at the end. The engine will do so.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_Thread_method_start:
 
 .. rst-class:: classref-method
@@ -186,3 +212,4 @@ To determine if this can be called without blocking the calling thread, check if
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

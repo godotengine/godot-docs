@@ -62,85 +62,85 @@ Properties
 .. table::
    :widths: auto
 
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`anchor_bottom<class_Control_property_anchor_bottom>`                                   | ``0.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`anchor_left<class_Control_property_anchor_left>`                                       | ``0.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`anchor_right<class_Control_property_anchor_right>`                                     | ``0.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`anchor_top<class_Control_property_anchor_top>`                                         | ``0.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`                              | :ref:`auto_translate<class_Control_property_auto_translate>`                                 | ``true``          |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`                              | :ref:`clip_contents<class_Control_property_clip_contents>`                                   | ``false``         |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                        | :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>`                       | ``Vector2(0, 0)`` |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`FocusMode<enum_Control_FocusMode>`             | :ref:`focus_mode<class_Control_property_focus_mode>`                                         | ``0``             |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`NodePath<class_NodePath>`                      | :ref:`focus_neighbor_bottom<class_Control_property_focus_neighbor_bottom>`                   | ``NodePath("")``  |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`NodePath<class_NodePath>`                      | :ref:`focus_neighbor_left<class_Control_property_focus_neighbor_left>`                       | ``NodePath("")``  |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`NodePath<class_NodePath>`                      | :ref:`focus_neighbor_right<class_Control_property_focus_neighbor_right>`                     | ``NodePath("")``  |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`NodePath<class_NodePath>`                      | :ref:`focus_neighbor_top<class_Control_property_focus_neighbor_top>`                         | ``NodePath("")``  |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`NodePath<class_NodePath>`                      | :ref:`focus_next<class_Control_property_focus_next>`                                         | ``NodePath("")``  |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`NodePath<class_NodePath>`                      | :ref:`focus_previous<class_Control_property_focus_previous>`                                 | ``NodePath("")``  |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                        | :ref:`global_position<class_Control_property_global_position>`                               |                   |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`GrowDirection<enum_Control_GrowDirection>`     | :ref:`grow_horizontal<class_Control_property_grow_horizontal>`                               | ``1``             |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`GrowDirection<enum_Control_GrowDirection>`     | :ref:`grow_vertical<class_Control_property_grow_vertical>`                                   | ``1``             |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`LayoutDirection<enum_Control_LayoutDirection>` | :ref:`layout_direction<class_Control_property_layout_direction>`                             | ``0``             |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`                              | :ref:`localize_numeral_system<class_Control_property_localize_numeral_system>`               | ``true``          |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`CursorShape<enum_Control_CursorShape>`         | :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`         | ``0``             |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`MouseFilter<enum_Control_MouseFilter>`         | :ref:`mouse_filter<class_Control_property_mouse_filter>`                                     | ``0``             |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`bool<class_bool>`                              | :ref:`mouse_force_pass_scroll_events<class_Control_property_mouse_force_pass_scroll_events>` | ``true``          |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`offset_bottom<class_Control_property_offset_bottom>`                                   | ``0.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`offset_left<class_Control_property_offset_left>`                                       | ``0.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`offset_right<class_Control_property_offset_right>`                                     | ``0.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`offset_top<class_Control_property_offset_top>`                                         | ``0.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                        | :ref:`pivot_offset<class_Control_property_pivot_offset>`                                     | ``Vector2(0, 0)`` |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                        | :ref:`position<class_Control_property_position>`                                             | ``Vector2(0, 0)`` |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`rotation<class_Control_property_rotation>`                                             | ``0.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`rotation_degrees<class_Control_property_rotation_degrees>`                             |                   |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                        | :ref:`scale<class_Control_property_scale>`                                                   | ``Vector2(1, 1)`` |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Node<class_Node>`                              | :ref:`shortcut_context<class_Control_property_shortcut_context>`                             |                   |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                        | :ref:`size<class_Control_property_size>`                                                     | ``Vector2(0, 0)`` |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`SizeFlags<enum_Control_SizeFlags>`             | :ref:`size_flags_horizontal<class_Control_property_size_flags_horizontal>`                   | ``1``             |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`float<class_float>`                            | :ref:`size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`             | ``1.0``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`SizeFlags<enum_Control_SizeFlags>`             | :ref:`size_flags_vertical<class_Control_property_size_flags_vertical>`                       | ``1``             |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`Theme<class_Theme>`                            | :ref:`theme<class_Control_property_theme>`                                                   |                   |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`StringName<class_StringName>`                  | :ref:`theme_type_variation<class_Control_property_theme_type_variation>`                     | ``&""``           |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
-   | :ref:`String<class_String>`                          | :ref:`tooltip_text<class_Control_property_tooltip_text>`                                     | ``""``            |
-   +------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`anchor_bottom<class_Control_property_anchor_bottom>`                                   | ``0.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`anchor_left<class_Control_property_anchor_left>`                                       | ``0.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`anchor_right<class_Control_property_anchor_right>`                                     | ``0.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`anchor_top<class_Control_property_anchor_top>`                                         | ``0.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`auto_translate<class_Control_property_auto_translate>`                                 | ``true``          |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`clip_contents<class_Control_property_clip_contents>`                                   | ``false``         |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                          | :ref:`custom_minimum_size<class_Control_property_custom_minimum_size>`                       | ``Vector2(0, 0)`` |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`FocusMode<enum_Control_FocusMode>`               | :ref:`focus_mode<class_Control_property_focus_mode>`                                         | ``0``             |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`NodePath<class_NodePath>`                        | :ref:`focus_neighbor_bottom<class_Control_property_focus_neighbor_bottom>`                   | ``NodePath("")``  |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`NodePath<class_NodePath>`                        | :ref:`focus_neighbor_left<class_Control_property_focus_neighbor_left>`                       | ``NodePath("")``  |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`NodePath<class_NodePath>`                        | :ref:`focus_neighbor_right<class_Control_property_focus_neighbor_right>`                     | ``NodePath("")``  |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`NodePath<class_NodePath>`                        | :ref:`focus_neighbor_top<class_Control_property_focus_neighbor_top>`                         | ``NodePath("")``  |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`NodePath<class_NodePath>`                        | :ref:`focus_next<class_Control_property_focus_next>`                                         | ``NodePath("")``  |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`NodePath<class_NodePath>`                        | :ref:`focus_previous<class_Control_property_focus_previous>`                                 | ``NodePath("")``  |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                          | :ref:`global_position<class_Control_property_global_position>`                               |                   |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`GrowDirection<enum_Control_GrowDirection>`       | :ref:`grow_horizontal<class_Control_property_grow_horizontal>`                               | ``1``             |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`GrowDirection<enum_Control_GrowDirection>`       | :ref:`grow_vertical<class_Control_property_grow_vertical>`                                   | ``1``             |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`LayoutDirection<enum_Control_LayoutDirection>`   | :ref:`layout_direction<class_Control_property_layout_direction>`                             | ``0``             |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`localize_numeral_system<class_Control_property_localize_numeral_system>`               | ``true``          |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`CursorShape<enum_Control_CursorShape>`           | :ref:`mouse_default_cursor_shape<class_Control_property_mouse_default_cursor_shape>`         | ``0``             |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`MouseFilter<enum_Control_MouseFilter>`           | :ref:`mouse_filter<class_Control_property_mouse_filter>`                                     | ``0``             |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`bool<class_bool>`                                | :ref:`mouse_force_pass_scroll_events<class_Control_property_mouse_force_pass_scroll_events>` | ``true``          |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`offset_bottom<class_Control_property_offset_bottom>`                                   | ``0.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`offset_left<class_Control_property_offset_left>`                                       | ``0.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`offset_right<class_Control_property_offset_right>`                                     | ``0.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`offset_top<class_Control_property_offset_top>`                                         | ``0.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                          | :ref:`pivot_offset<class_Control_property_pivot_offset>`                                     | ``Vector2(0, 0)`` |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                          | :ref:`position<class_Control_property_position>`                                             | ``Vector2(0, 0)`` |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`rotation<class_Control_property_rotation>`                                             | ``0.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`rotation_degrees<class_Control_property_rotation_degrees>`                             |                   |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                          | :ref:`scale<class_Control_property_scale>`                                                   | ``Vector2(1, 1)`` |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Node<class_Node>`                                | :ref:`shortcut_context<class_Control_property_shortcut_context>`                             |                   |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                          | :ref:`size<class_Control_property_size>`                                                     | ``Vector2(0, 0)`` |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> | :ref:`size_flags_horizontal<class_Control_property_size_flags_horizontal>`                   | ``1``             |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`float<class_float>`                              | :ref:`size_flags_stretch_ratio<class_Control_property_size_flags_stretch_ratio>`             | ``1.0``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> | :ref:`size_flags_vertical<class_Control_property_size_flags_vertical>`                       | ``1``             |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`Theme<class_Theme>`                              | :ref:`theme<class_Control_property_theme>`                                                   |                   |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`StringName<class_StringName>`                    | :ref:`theme_type_variation<class_Control_property_theme_type_variation>`                     | ``&""``           |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
+   | :ref:`String<class_String>`                            | :ref:`tooltip_text<class_Control_property_tooltip_text>`                                     | ``""``            |
+   +--------------------------------------------------------+----------------------------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -1736,12 +1736,12 @@ The size of the node's bounding rectangle, in the node's coordinate system. :ref
 
 .. rst-class:: classref-property
 
-:ref:`SizeFlags<enum_Control_SizeFlags>` **size_flags_horizontal** = ``1``
+|bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> **size_flags_horizontal** = ``1``
 
 .. rst-class:: classref-property-setget
 
-- void **set_h_size_flags** **(** :ref:`SizeFlags<enum_Control_SizeFlags>` value **)**
-- :ref:`SizeFlags<enum_Control_SizeFlags>` **get_h_size_flags** **(** **)**
+- void **set_h_size_flags** **(** |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> value **)**
+- |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> **get_h_size_flags** **(** **)**
 
 Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the X axis. Use a combination of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
@@ -1770,12 +1770,12 @@ If the node and at least one of its neighbors uses the :ref:`SIZE_EXPAND<class_C
 
 .. rst-class:: classref-property
 
-:ref:`SizeFlags<enum_Control_SizeFlags>` **size_flags_vertical** = ``1``
+|bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> **size_flags_vertical** = ``1``
 
 .. rst-class:: classref-property-setget
 
-- void **set_v_size_flags** **(** :ref:`SizeFlags<enum_Control_SizeFlags>` value **)**
-- :ref:`SizeFlags<enum_Control_SizeFlags>` **get_v_size_flags** **(** **)**
+- void **set_v_size_flags** **(** |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> value **)**
+- |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\> **get_v_size_flags** **(** **)**
 
 Tells the parent :ref:`Container<class_Container>` nodes how they should resize and place the node on the Y axis. Use a combination of the :ref:`SizeFlags<enum_Control_SizeFlags>` constants to change the flags. See the constants to learn what each does.
 
@@ -3306,3 +3306,4 @@ Moves the mouse cursor to ``position``, relative to :ref:`position<class_Control
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

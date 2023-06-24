@@ -71,7 +71,7 @@ Properties
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`select_all_on_focus<class_SpinBox_property_select_all_on_focus>`       | ``false``                                                                    |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`SizeFlags<enum_Control_SizeFlags>`                          | size_flags_vertical                                                          | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\>            | size_flags_vertical                                                          | ``1`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | step                                                                         | ``1.0`` (overrides :ref:`Range<class_Range_property_step>`)                  |
    +-------------------------------------------------------------------+------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -284,3 +284,4 @@ Sets a custom :ref:`Texture2D<class_Texture2D>` for up and down arrows of the **
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

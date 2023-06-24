@@ -45,7 +45,7 @@ Properties
    +-------------------------------------+----------------------------------------------------------------------+-----------------------+
    | :ref:`Dictionary<class_Dictionary>` | :ref:`env<class_CharFXTransform_property_env>`                       | ``{}``                |
    +-------------------------------------+----------------------------------------------------------------------+-----------------------+
-   | :ref:`RID<class_RID>`               | :ref:`font<class_CharFXTransform_property_font>`                     |                       |
+   | :ref:`RID<class_RID>`               | :ref:`font<class_CharFXTransform_property_font>`                     | ``RID()``             |
    +-------------------------------------+----------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`               | :ref:`glyph_count<class_CharFXTransform_property_glyph_count>`       | ``0``                 |
    +-------------------------------------+----------------------------------------------------------------------+-----------------------+
@@ -136,7 +136,7 @@ For example, the opening BBCode tag ``[example foo=hello bar=true baz=42 color=#
 
 .. rst-class:: classref-property
 
-:ref:`RID<class_RID>` **font**
+:ref:`RID<class_RID>` **font** = ``RID()``
 
 .. rst-class:: classref-property-setget
 
@@ -287,3 +287,4 @@ If ``true``, the character will be drawn. If ``false``, the character will be hi
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

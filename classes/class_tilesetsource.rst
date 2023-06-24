@@ -29,6 +29,8 @@ Depending on the TileSet source type, those IDs might have restrictions on their
 
 You can iterate over all tiles exposed by a TileSetSource by first iterating over coordinates IDs using :ref:`get_tiles_count<class_TileSetSource_method_get_tiles_count>` and :ref:`get_tile_id<class_TileSetSource_method_get_tile_id>`, then over alternative IDs using :ref:`get_alternative_tiles_count<class_TileSetSource_method_get_alternative_tiles_count>` and :ref:`get_alternative_tile_id<class_TileSetSource_method_get_alternative_tile_id>`.
 
+\ **Warning:** **TileSetSource** can only be added to one TileSet at the same time. Calling :ref:`TileSet.add_source<class_TileSet_method_add_source>` on a second :ref:`TileSet<class_TileSet>` will remove the source from the first one.
+
 .. rst-class:: classref-reftable-group
 
 Methods
@@ -138,3 +140,4 @@ Returns if this atlas has a tile with coordinates ID ``atlas_coords``.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

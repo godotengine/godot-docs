@@ -79,7 +79,7 @@ Properties
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                           | :ref:`font_stretch<class_FontFile_property_font_stretch>`                                             | ``100``               |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
-   | :ref:`FontStyle<enum_TextServer_FontStyle>`                     | :ref:`font_style<class_FontFile_property_font_style>`                                                 | ``0``                 |
+   | |bitfield|\<:ref:`FontStyle<enum_TextServer_FontStyle>`\>       | :ref:`font_style<class_FontFile_property_font_style>`                                                 | ``0``                 |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
    | :ref:`int<class_int>`                                           | :ref:`font_weight<class_FontFile_property_font_weight>`                                               | ``400``               |
    +-----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+-----------------------+
@@ -372,12 +372,12 @@ Font stretch amount, compared to a normal width. A percentage value between ``50
 
 .. rst-class:: classref-property
 
-:ref:`FontStyle<enum_TextServer_FontStyle>` **font_style** = ``0``
+|bitfield|\<:ref:`FontStyle<enum_TextServer_FontStyle>`\> **font_style** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_font_style** **(** :ref:`FontStyle<enum_TextServer_FontStyle>` value **)**
-- :ref:`FontStyle<enum_TextServer_FontStyle>` **get_font_style** **(** **)**
+- void **set_font_style** **(** |bitfield|\<:ref:`FontStyle<enum_TextServer_FontStyle>`\> value **)**
+- |bitfield|\<:ref:`FontStyle<enum_TextServer_FontStyle>`\> **get_font_style** **(** **)**
 
 Font style flags, see :ref:`FontStyle<enum_TextServer_FontStyle>`.
 
@@ -1355,3 +1355,4 @@ Sets variation coordinates for the specified font cache entry. See :ref:`Font.ge
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

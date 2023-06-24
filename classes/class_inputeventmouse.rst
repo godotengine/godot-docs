@@ -38,13 +38,13 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------+------------------------------------------------------------------------+-------------------+
-   | :ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | ``0``             |
-   +-----------------------------------------------------------+------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                             | :ref:`global_position<class_InputEventMouse_property_global_position>` | ``Vector2(0, 0)`` |
-   +-----------------------------------------------------------+------------------------------------------------------------------------+-------------------+
-   | :ref:`Vector2<class_Vector2>`                             | :ref:`position<class_InputEventMouse_property_position>`               | ``Vector2(0, 0)`` |
-   +-----------------------------------------------------------+------------------------------------------------------------------------+-------------------+
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------+-------------------+
+   | |bitfield|\<:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>`\> | :ref:`button_mask<class_InputEventMouse_property_button_mask>`         | ``0``             |
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                                           | :ref:`global_position<class_InputEventMouse_property_global_position>` | ``Vector2(0, 0)`` |
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------+-------------------+
+   | :ref:`Vector2<class_Vector2>`                                           | :ref:`position<class_InputEventMouse_property_position>`               | ``Vector2(0, 0)`` |
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------+-------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -59,12 +59,12 @@ Property Descriptions
 
 .. rst-class:: classref-property
 
-:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **button_mask** = ``0``
+|bitfield|\<:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>`\> **button_mask** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_button_mask** **(** :ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` value **)**
-- :ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>` **get_button_mask** **(** **)**
+- void **set_button_mask** **(** |bitfield|\<:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>`\> value **)**
+- |bitfield|\<:ref:`MouseButtonMask<enum_@GlobalScope_MouseButtonMask>`\> **get_button_mask** **(** **)**
 
 The mouse button mask identifier, one of or a bitwise combination of the :ref:`MouseButton<enum_@GlobalScope_MouseButton>` button masks.
 
@@ -112,3 +112,4 @@ When received in :ref:`Control._gui_input<class_Control_method__gui_input>`, ret
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

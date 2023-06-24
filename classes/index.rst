@@ -386,7 +386,6 @@ Resources
     class_gltfanimation
     class_gltfbufferview
     class_gltfcamera
-    class_gltfcollider
     class_gltfdocument
     class_gltfdocumentextension
     class_gltfdocumentextensionconvertimportermesh
@@ -394,6 +393,7 @@ Resources
     class_gltfmesh
     class_gltfnode
     class_gltfphysicsbody
+    class_gltfphysicsshape
     class_gltfskeleton
     class_gltfskin
     class_gltfspecgloss
@@ -437,6 +437,7 @@ Resources
     class_missingresource
     class_multimesh
     class_navigationmesh
+    class_navigationmeshsourcegeometrydata3d
     class_navigationpolygon
     class_noise
     class_noisetexture2d

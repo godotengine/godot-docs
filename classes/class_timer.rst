@@ -108,7 +108,7 @@ enum **TimerProcessCallback**:
 
 :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **TIMER_PROCESS_PHYSICS** = ``0``
 
-Update the timer during the physics step at each frame (fixed framerate processing).
+Update the timer during physics frames (see :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`).
 
 .. _class_Timer_constant_TIMER_PROCESS_IDLE:
 
@@ -116,7 +116,7 @@ Update the timer during the physics step at each frame (fixed framerate processi
 
 :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **TIMER_PROCESS_IDLE** = ``1``
 
-Update the timer during the idle time at each frame.
+Update the timer during process frames (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
 
 .. rst-class:: classref-section-separator
 
@@ -279,3 +279,4 @@ Stops the timer.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
