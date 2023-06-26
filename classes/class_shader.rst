@@ -14,14 +14,16 @@ Shader
 
 **Inherited By:** :ref:`VisualShader<class_VisualShader>`
 
-A custom shader program.
+A shader implemented in the Godot shading language.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-This class allows you to define a custom shader program that can be used by a :ref:`ShaderMaterial<class_ShaderMaterial>`. Shaders allow you to write your own custom behavior for rendering objects or updating particle information. For a detailed explanation and usage, please see the tutorials linked below.
+A custom shader program implemented in the Godot shading language, saved with the ``.gdshader`` extension.
+
+This class is used by a :ref:`ShaderMaterial<class_ShaderMaterial>` and allows you to write your own custom behavior for rendering visual items or updating particle information. For a detailed explanation and usage, please see the tutorials linked below.
 
 .. rst-class:: classref-introduction-group
 
@@ -168,7 +170,7 @@ Returns the texture that is set as default for the specified parameter.
 
 :ref:`Mode<enum_Shader_Mode>` **get_mode** **(** **)** |const|
 
-Returns the shader mode for the shader, either :ref:`MODE_CANVAS_ITEM<class_Shader_constant_MODE_CANVAS_ITEM>`, :ref:`MODE_SPATIAL<class_Shader_constant_MODE_SPATIAL>` or :ref:`MODE_PARTICLES<class_Shader_constant_MODE_PARTICLES>`.
+Returns the shader mode for the shader.
 
 .. rst-class:: classref-item-separator
 
@@ -206,3 +208,4 @@ Sets the default texture to be used with a texture uniform. The default is used 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

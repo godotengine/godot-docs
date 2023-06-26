@@ -659,11 +659,19 @@ Mark the following property as assigned when the :ref:`Node<class_Node>` is read
 
 .. rst-class:: classref-annotation
 
-**@rpc** **(** :ref:`String<class_String>` mode="authority", :ref:`String<class_String>` sync="call_remote", :ref:`String<class_String>` transfer_mode="unreliable", :ref:`int<class_int>` transfer_channel=0, ... **)** |vararg|
+**@rpc** **(** :ref:`String<class_String>` mode="authority", :ref:`String<class_String>` sync="call_remote", :ref:`String<class_String>` transfer_mode="unreliable", :ref:`int<class_int>` transfer_channel=0 **)**
 
 Mark the following method for remote procedure calls. See :doc:`High-level multiplayer <../tutorials/networking/high_level_multiplayer>`.
 
-The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter and all arguments can be omitted, but ``transfer_channel`` always has to be the last argument. The accepted values for ``mode`` are ``"any_peer"`` or ``"authority"``, for ``sync`` are ``"call_remote"`` or ``"call_local"`` and for ``transfer_mode`` are ``"unreliable"``, ``"unreliable_ordered"`` or ``"reliable"``.
+The accepted values:
+
+- for ``mode`` are ``"any_peer"`` or ``"authority"``;
+
+- for ``sync`` are ``"call_remote"`` or ``"call_local"``;
+
+- and for ``transfer_mode`` are ``"unreliable"``, ``"unreliable_ordered"``, or ``"reliable"``.
+
+The order of ``mode``, ``sync`` and ``transfer_mode`` does not matter, but values related to the same argument must not be used more than once. ``transfer_channel`` always has to be the 4th argument (you must specify 3 preceding arguments).
 
 ::
 
@@ -1117,3 +1125,4 @@ Returns ``true`` if the given :ref:`Object<class_Object>`-derived class exists i
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

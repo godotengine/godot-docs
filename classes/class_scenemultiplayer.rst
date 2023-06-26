@@ -40,7 +40,7 @@ Properties
    +---------------------------------+---------------------------------------------------------------------------------------+------------------+
    | :ref:`bool<class_bool>`         | :ref:`allow_object_decoding<class_SceneMultiplayer_property_allow_object_decoding>`   | ``false``        |
    +---------------------------------+---------------------------------------------------------------------------------------+------------------+
-   | :ref:`Callable<class_Callable>` | :ref:`auth_callback<class_SceneMultiplayer_property_auth_callback>`                   |                  |
+   | :ref:`Callable<class_Callable>` | :ref:`auth_callback<class_SceneMultiplayer_property_auth_callback>`                   | ``Callable()``   |
    +---------------------------------+---------------------------------------------------------------------------------------+------------------+
    | :ref:`float<class_float>`       | :ref:`auth_timeout<class_SceneMultiplayer_property_auth_timeout>`                     | ``3.0``          |
    +---------------------------------+---------------------------------------------------------------------------------------+------------------+
@@ -150,7 +150,7 @@ If ``true``, the MultiplayerAPI will allow encoding and decoding of object durin
 
 .. rst-class:: classref-property
 
-:ref:`Callable<class_Callable>` **auth_callback**
+:ref:`Callable<class_Callable>` **auth_callback** = ``Callable()``
 
 .. rst-class:: classref-property-setget
 
@@ -352,3 +352,4 @@ Sends the given raw ``bytes`` to a specific peer identified by ``id`` (see :ref:
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -29,29 +29,29 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_TextParagraph_property_alignment>`                         | ``0``     |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`               | :ref:`break_flags<class_TextParagraph_property_break_flags>`                     | ``3``     |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`String<class_String>`                                       | :ref:`custom_punctuation<class_TextParagraph_property_custom_punctuation>`       | ``""``    |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`Direction<enum_TextServer_Direction>`                       | :ref:`direction<class_TextParagraph_property_direction>`                         | ``0``     |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`       | :ref:`justification_flags<class_TextParagraph_property_justification_flags>`     | ``163``   |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`int<class_int>`                                             | :ref:`max_lines_visible<class_TextParagraph_property_max_lines_visible>`         | ``-1``    |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`Orientation<enum_TextServer_Orientation>`                   | :ref:`orientation<class_TextParagraph_property_orientation>`                     | ``0``     |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`preserve_control<class_TextParagraph_property_preserve_control>`           | ``false`` |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`preserve_invalid<class_TextParagraph_property_preserve_invalid>`           | ``true``  |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_TextParagraph_property_text_overrun_behavior>` | ``0``     |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                                         | :ref:`width<class_TextParagraph_property_width>`                                 | ``-1.0``  |
-   +-------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`         | :ref:`alignment<class_TextParagraph_property_alignment>`                         | ``0``     |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | |bitfield|\<:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\>         | :ref:`break_flags<class_TextParagraph_property_break_flags>`                     | ``3``     |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`String<class_String>`                                               | :ref:`custom_punctuation<class_TextParagraph_property_custom_punctuation>`       | ``""``    |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`Direction<enum_TextServer_Direction>`                               | :ref:`direction<class_TextParagraph_property_direction>`                         | ``0``     |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> | :ref:`justification_flags<class_TextParagraph_property_justification_flags>`     | ``163``   |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`int<class_int>`                                                     | :ref:`max_lines_visible<class_TextParagraph_property_max_lines_visible>`         | ``-1``    |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`Orientation<enum_TextServer_Orientation>`                           | :ref:`orientation<class_TextParagraph_property_orientation>`                     | ``0``     |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                   | :ref:`preserve_control<class_TextParagraph_property_preserve_control>`           | ``false`` |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                   | :ref:`preserve_invalid<class_TextParagraph_property_preserve_invalid>`           | ``true``  |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`                   | :ref:`text_overrun_behavior<class_TextParagraph_property_text_overrun_behavior>` | ``0``     |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                                 | :ref:`width<class_TextParagraph_property_width>`                                 | ``-1.0``  |
+   +---------------------------------------------------------------------------+----------------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -157,12 +157,12 @@ Paragraph horizontal alignment.
 
 .. rst-class:: classref-property
 
-:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **break_flags** = ``3``
+|bitfield|\<:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\> **break_flags** = ``3``
 
 .. rst-class:: classref-property-setget
 
-- void **set_break_flags** **(** :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` value **)**
-- :ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>` **get_break_flags** **(** **)**
+- void **set_break_flags** **(** |bitfield|\<:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\> value **)**
+- |bitfield|\<:ref:`LineBreakFlag<enum_TextServer_LineBreakFlag>`\> **get_break_flags** **(** **)**
 
 Line breaking rules. For more info see :ref:`TextServer<class_TextServer>`.
 
@@ -208,12 +208,12 @@ Text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **justification_flags** = ``163``
+|bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **justification_flags** = ``163``
 
 .. rst-class:: classref-property-setget
 
-- void **set_justification_flags** **(** :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` value **)**
-- :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **get_justification_flags** **(** **)**
+- void **set_justification_flags** **(** |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> value **)**
+- |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **get_justification_flags** **(** **)**
 
 Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`.
 
@@ -716,3 +716,4 @@ Aligns paragraph to the given tab-stops.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

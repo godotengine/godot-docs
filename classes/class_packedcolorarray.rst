@@ -142,6 +142,12 @@ Constructs a **PackedColorArray** as a copy of the given **PackedColorArray**.
 
 Constructs a new **PackedColorArray**. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
+\ **Note:** When initializing a **PackedColorArray** with elements, it must be initialized with an :ref:`Array<class_Array>` of :ref:`Color<class_Color>` values:
+
+::
+
+    var array = PackedColorArray([Color(0.1, 0.2, 0.3), Color(0.4, 0.5, 0.6)])
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -464,3 +470,4 @@ Returns the :ref:`Color<class_Color>` at index ``index``. Negative indices can b
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

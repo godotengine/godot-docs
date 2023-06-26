@@ -29,25 +29,25 @@ Properties
 .. table::
    :widths: auto
 
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                          | :ref:`array_layers<class_RDTextureFormat_property_array_layers>` | ``1`` |
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                          | :ref:`depth<class_RDTextureFormat_property_depth>`               | ``1`` |
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`             | :ref:`format<class_RDTextureFormat_property_format>`             | ``8`` |
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                          | :ref:`height<class_RDTextureFormat_property_height>`             | ``1`` |
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                          | :ref:`mipmaps<class_RDTextureFormat_property_mipmaps>`           | ``1`` |
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`     | :ref:`samples<class_RDTextureFormat_property_samples>`           | ``0`` |
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`TextureType<enum_RenderingDevice_TextureType>`           | :ref:`texture_type<class_RDTextureFormat_property_texture_type>` | ``1`` |
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` | :ref:`usage_bits<class_RDTextureFormat_property_usage_bits>`     | ``0`` |
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
-   | :ref:`int<class_int>`                                          | :ref:`width<class_RDTextureFormat_property_width>`               | ``1`` |
-   +----------------------------------------------------------------+------------------------------------------------------------------+-------+
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`                                                        | :ref:`array_layers<class_RDTextureFormat_property_array_layers>` | ``1`` |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`                                                        | :ref:`depth<class_RDTextureFormat_property_depth>`               | ``1`` |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | :ref:`DataFormat<enum_RenderingDevice_DataFormat>`                           | :ref:`format<class_RDTextureFormat_property_format>`             | ``8`` |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`                                                        | :ref:`height<class_RDTextureFormat_property_height>`             | ``1`` |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`                                                        | :ref:`mipmaps<class_RDTextureFormat_property_mipmaps>`           | ``1`` |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | :ref:`TextureSamples<enum_RenderingDevice_TextureSamples>`                   | :ref:`samples<class_RDTextureFormat_property_samples>`           | ``0`` |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | :ref:`TextureType<enum_RenderingDevice_TextureType>`                         | :ref:`texture_type<class_RDTextureFormat_property_texture_type>` | ``1`` |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | |bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> | :ref:`usage_bits<class_RDTextureFormat_property_usage_bits>`     | ``0`` |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
+   | :ref:`int<class_int>`                                                        | :ref:`width<class_RDTextureFormat_property_width>`               | ``1`` |
+   +------------------------------------------------------------------------------+------------------------------------------------------------------+-------+
 
 .. rst-class:: classref-reftable-group
 
@@ -195,12 +195,12 @@ The texture type.
 
 .. rst-class:: classref-property
 
-:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **usage_bits** = ``0``
+|bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> **usage_bits** = ``0``
 
 .. rst-class:: classref-property-setget
 
-- void **set_usage_bits** **(** :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` value **)**
-- :ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>` **get_usage_bits** **(** **)**
+- void **set_usage_bits** **(** |bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> value **)**
+- |bitfield|\<:ref:`TextureUsageBits<enum_RenderingDevice_TextureUsageBits>`\> **get_usage_bits** **(** **)**
 
 The texture's usage bits, which determine what can be done using the texture.
 
@@ -260,3 +260,4 @@ void **remove_shareable_format** **(** :ref:`DataFormat<enum_RenderingDevice_Dat
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

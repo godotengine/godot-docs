@@ -151,6 +151,12 @@ Constructs a **PackedVector2Array** as a copy of the given **PackedVector2Array*
 
 Constructs a new **PackedVector2Array**. Optionally, you can pass in a generic :ref:`Array<class_Array>` that will be converted.
 
+\ **Note:** When initializing a **PackedVector2Array** with elements, it must be initialized with an :ref:`Array<class_Array>` of :ref:`Vector2<class_Vector2>` values:
+
+::
+
+    var array = PackedVector2Array([Vector2(12, 34), Vector2(56, 78)])
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -497,3 +503,4 @@ Returns the :ref:`Vector2<class_Vector2>` at index ``index``. Negative indices c
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -38,7 +38,7 @@ Properties
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>` | :ref:`custom_template/release<class_EditorExportPlatformLinuxBSD_property_custom_template/release>`                   |
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`       | :ref:`debug/export_console_script<class_EditorExportPlatformLinuxBSD_property_debug/export_console_script>`           |
+   | :ref:`int<class_int>`       | :ref:`debug/export_console_wrapper<class_EditorExportPlatformLinuxBSD_property_debug/export_console_wrapper>`         |
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>` | :ref:`ssh_remote_deploy/cleanup_script<class_EditorExportPlatformLinuxBSD_property_ssh_remote_deploy/cleanup_script>` |
    +-----------------------------+-----------------------------------------------------------------------------------------------------------------------+
@@ -124,13 +124,13 @@ Path to the custom export template. If left empty, default template is used.
 
 ----
 
-.. _class_EditorExportPlatformLinuxBSD_property_debug/export_console_script:
+.. _class_EditorExportPlatformLinuxBSD_property_debug/export_console_wrapper:
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **debug/export_console_script**
+:ref:`int<class_int>` **debug/export_console_wrapper**
 
-If ``true``, a console wrapper script is exported alongside the main executable, which allows running the project with enabled console output.
+If ``true``, a console wrapper is exported alongside the main executable, which allows running the project with enabled console output.
 
 .. rst-class:: classref-item-separator
 
@@ -290,3 +290,4 @@ If ``true``, project textures are exported in the S3TC format.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

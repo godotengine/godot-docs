@@ -58,11 +58,11 @@ Methods
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` | :ref:`get_modifiers_mask<class_InputEventWithModifiers_method_get_modifiers_mask>` **(** **)** |const|                       |
-   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                   | :ref:`is_command_or_control_pressed<class_InputEventWithModifiers_method_is_command_or_control_pressed>` **(** **)** |const| |
-   +-----------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | |bitfield|\<:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\> | :ref:`get_modifiers_mask<class_InputEventWithModifiers_method_get_modifiers_mask>` **(** **)** |const|                       |
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`is_command_or_control_pressed<class_InputEventWithModifiers_method_is_command_or_control_pressed>` **(** **)** |const| |
+   +-------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -167,7 +167,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>` **get_modifiers_mask** **(** **)** |const|
+|bitfield|\<:ref:`KeyModifierMask<enum_@GlobalScope_KeyModifierMask>`\> **get_modifiers_mask** **(** **)** |const|
 
 Returns the keycode combination of modifier keys.
 
@@ -191,3 +191,4 @@ On other platforms, returns ``true`` if :kbd:`Ctrl` is pressed.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

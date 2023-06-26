@@ -749,7 +749,7 @@ If the string is a valid file path, returns the file name, including the extensi
 
 :ref:`String<class_String>` **get_slice** **(** :ref:`String<class_String>` delimiter, :ref:`int<class_int>` slice **)** |const|
 
-Splits the string using a ``delimiter`` and returns the substring at index ``slice``. Returns an empty string if the ``slice`` does not exist.
+Splits the string using a ``delimiter`` and returns the substring at index ``slice``. Returns the original string if ``delimiter`` does not occur in the string. Returns an empty string if the ``slice`` does not exist.
 
 This is faster than :ref:`split<class_String_method_split>`, if you only need one substring.
 
@@ -2211,3 +2211,4 @@ Returns a new **String** that only contains the character at ``index``. Indices 
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

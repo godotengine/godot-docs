@@ -36,6 +36,8 @@ Properties
    :widths: auto
 
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+   | :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`                 | :ref:`autowrap_mode<class_TextEdit_property_autowrap_mode>`                                                 | ``3``                                                                               |
+   +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                           | :ref:`caret_blink<class_TextEdit_property_caret_blink>`                                                     | ``false``                                                                           |
    +-------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                                         | :ref:`caret_blink_interval<class_TextEdit_property_caret_blink_interval>`                                   | ``0.65``                                                                            |
@@ -1031,6 +1033,23 @@ Custom draw.
 
 Property Descriptions
 ---------------------
+
+.. _class_TextEdit_property_autowrap_mode:
+
+.. rst-class:: classref-property
+
+:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **autowrap_mode** = ``3``
+
+.. rst-class:: classref-property-setget
+
+- void **set_autowrap_mode** **(** :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` value **)**
+- :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **get_autowrap_mode** **(** **)**
+
+If :ref:`wrap_mode<class_TextEdit_property_wrap_mode>` is set to :ref:`LINE_WRAPPING_BOUNDARY<class_TextEdit_constant_LINE_WRAPPING_BOUNDARY>`, sets text wrapping mode. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_TextEdit_property_caret_blink:
 
@@ -3712,3 +3731,4 @@ Sets the :ref:`StyleBox<class_StyleBox>` of this **TextEdit** when :ref:`editabl
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

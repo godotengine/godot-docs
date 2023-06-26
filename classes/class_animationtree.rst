@@ -148,7 +148,7 @@ enum **AnimationProcessCallback**:
 
 :ref:`AnimationProcessCallback<enum_AnimationTree_AnimationProcessCallback>` **ANIMATION_PROCESS_PHYSICS** = ``0``
 
-The animations will progress during the physics frame (i.e. :ref:`Node._physics_process<class_Node_method__physics_process>`).
+The animations will progress during physics frames (see :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`).
 
 .. _class_AnimationTree_constant_ANIMATION_PROCESS_IDLE:
 
@@ -156,7 +156,7 @@ The animations will progress during the physics frame (i.e. :ref:`Node._physics_
 
 :ref:`AnimationProcessCallback<enum_AnimationTree_AnimationProcessCallback>` **ANIMATION_PROCESS_IDLE** = ``1``
 
-The animations will progress during the idle frame (i.e. :ref:`Node._process<class_Node_method__process>`).
+The animations will progress during process frames (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
 
 .. _class_AnimationTree_constant_ANIMATION_PROCESS_MANUAL:
 
@@ -552,3 +552,4 @@ However, if the animation loops, an unintended discrete change may occur, so thi
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

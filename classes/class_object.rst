@@ -228,7 +228,7 @@ enum **ConnectFlags**:
 
 :ref:`ConnectFlags<enum_Object_ConnectFlags>` **CONNECT_DEFERRED** = ``1``
 
-Deferred connections trigger their :ref:`Callable<class_Callable>`\ s on idle time, rather than instantly.
+Deferred connections trigger their :ref:`Callable<class_Callable>`\ s on idle time (at the end of the frame), rather than instantly.
 
 .. _class_Object_constant_CONNECT_PERSIST:
 
@@ -669,7 +669,11 @@ Calls the ``method`` on the object and returns the result. This method supports 
 
 :ref:`Variant<class_Variant>` **call_deferred** **(** :ref:`StringName<class_StringName>` method, ... **)** |vararg|
 
-Calls the ``method`` on the object during idle time. This method supports a variable number of arguments, so parameters can be passed as a comma separated list.
+Calls the ``method`` on the object during idle time. Always returns null, **not** the method's result.
+
+Idle time happens mainly at the end of process and physics frames. In it, deferred calls will be run until there are none left, which means you can defer calls from other deferred calls and they'll still be run in the current idle time cycle. If not done carefully, this can result in infinite recursion without causing a stack overflow, which will hang the game similarly to an infinite loop.
+
+This method supports a variable number of arguments, so parameters can be passed as a comma separated list.
 
 
 .. tabs::
@@ -686,7 +690,20 @@ Calls the ``method`` on the object during idle time. This method supports a vari
 
 
 
+See also :ref:`Callable.call_deferred<class_Callable_method_call_deferred>`.
+
 \ **Note:** In C#, ``method`` must be in snake_case when referring to built-in Godot methods. Prefer using the names exposed in the ``MethodName`` class to avoid allocating a new :ref:`StringName<class_StringName>` on each call.
+
+\ **Note:** If you're looking to delay the function call by a frame, refer to the :ref:`SceneTree.process_frame<class_SceneTree_signal_process_frame>` and :ref:`SceneTree.physics_frame<class_SceneTree_signal_physics_frame>` signals.
+
+::
+
+    var node = Node3D.new()
+    # Make a Callable and bind the arguments to the node's rotate() call.
+    var callable = node.rotate.bind(Vector3(1.0, 0.0, 0.0), 1.571)
+    # Connect the callable to the process_frame signal, so it gets called in the next process frame.
+    # CONNECT_ONE_SHOT makes sure it only gets called once instead of every frame.
+    get_tree().process_frame.connect(callable, CONNECT_ONE_SHOT)
 
 .. rst-class:: classref-item-separator
 
@@ -1469,7 +1486,7 @@ If set to ``true``, the object becomes unable to emit signals. As such, :ref:`em
 
 void **set_deferred** **(** :ref:`StringName<class_StringName>` property, :ref:`Variant<class_Variant>` value **)**
 
-Assigns ``value`` to the given ``property``, after the current frame's physics step. This is equivalent to calling :ref:`set<class_Object_method_set>` through :ref:`call_deferred<class_Object_method_call_deferred>`.
+Assigns ``value`` to the given ``property``, at the end of the current frame. This is equivalent to calling :ref:`set<class_Object_method_set>` through :ref:`call_deferred<class_Object_method_call_deferred>`.
 
 
 .. tabs::
@@ -1631,3 +1648,4 @@ For detailed examples, see :doc:`Localization using gettext <../tutorials/i18n/l
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

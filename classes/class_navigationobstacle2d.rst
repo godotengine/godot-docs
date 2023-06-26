@@ -42,15 +42,17 @@ Properties
 .. table::
    :widths: auto
 
-   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
-   | :ref:`int<class_int>`                               | :ref:`avoidance_layers<class_NavigationObstacle2D_property_avoidance_layers>` | ``1``                    |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
-   | :ref:`float<class_float>`                           | :ref:`radius<class_NavigationObstacle2D_property_radius>`                     | ``0.0``                  |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
-   | :ref:`Vector2<class_Vector2>`                       | :ref:`velocity<class_NavigationObstacle2D_property_velocity>`                 | ``Vector2(0, 0)``        |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
-   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`vertices<class_NavigationObstacle2D_property_vertices>`                 | ``PackedVector2Array()`` |
-   +-----------------------------------------------------+-------------------------------------------------------------------------------+--------------------------+
+   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
+   | :ref:`bool<class_bool>`                             | :ref:`avoidance_enabled<class_NavigationObstacle2D_property_avoidance_enabled>` | ``true``                 |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
+   | :ref:`int<class_int>`                               | :ref:`avoidance_layers<class_NavigationObstacle2D_property_avoidance_layers>`   | ``1``                    |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
+   | :ref:`float<class_float>`                           | :ref:`radius<class_NavigationObstacle2D_property_radius>`                       | ``0.0``                  |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
+   | :ref:`Vector2<class_Vector2>`                       | :ref:`velocity<class_NavigationObstacle2D_property_velocity>`                   | ``Vector2(0, 0)``        |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
+   | :ref:`PackedVector2Array<class_PackedVector2Array>` | :ref:`vertices<class_NavigationObstacle2D_property_vertices>`                   | ``PackedVector2Array()`` |
+   +-----------------------------------------------------+---------------------------------------------------------------------------------+--------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -61,13 +63,11 @@ Methods
    :widths: auto
 
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`   | :ref:`get_agent_rid<class_NavigationObstacle2D_method_get_agent_rid>` **(** **)** |const|                                                                                   |
-   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`get_avoidance_layer_value<class_NavigationObstacle2D_method_get_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`   | :ref:`get_navigation_map<class_NavigationObstacle2D_method_get_navigation_map>` **(** **)** |const|                                                                         |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`RID<class_RID>`   | :ref:`get_obstacle_rid<class_NavigationObstacle2D_method_get_obstacle_rid>` **(** **)** |const|                                                                             |
+   | :ref:`RID<class_RID>`   | :ref:`get_rid<class_NavigationObstacle2D_method_get_rid>` **(** **)** |const|                                                                                               |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`set_avoidance_layer_value<class_NavigationObstacle2D_method_set_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -82,6 +82,23 @@ Methods
 
 Property Descriptions
 ---------------------
+
+.. _class_NavigationObstacle2D_property_avoidance_enabled:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **avoidance_enabled** = ``true``
+
+.. rst-class:: classref-property-setget
+
+- void **set_avoidance_enabled** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_avoidance_enabled** **(** **)**
+
+If ``true`` the obstacle affects avoidance using agents.
+
+.. rst-class:: classref-item-separator
+
+----
 
 .. _class_NavigationObstacle2D_property_avoidance_layers:
 
@@ -156,18 +173,6 @@ The outline vertices of the obstacle. If the vertices are winded in clockwise or
 Method Descriptions
 -------------------
 
-.. _class_NavigationObstacle2D_method_get_agent_rid:
-
-.. rst-class:: classref-method
-
-:ref:`RID<class_RID>` **get_agent_rid** **(** **)** |const|
-
-Returns the :ref:`RID<class_RID>` of this agent on the :ref:`NavigationServer2D<class_NavigationServer2D>`. This :ref:`RID<class_RID>` is used for the moving avoidance "obstacle" component (using a fake avoidance agent) which size is defined by :ref:`radius<class_NavigationObstacle2D_property_radius>` and velocity set by using :ref:`velocity<class_NavigationObstacle2D_property_velocity>`.
-
-.. rst-class:: classref-item-separator
-
-----
-
 .. _class_NavigationObstacle2D_method_get_avoidance_layer_value:
 
 .. rst-class:: classref-method
@@ -192,13 +197,13 @@ Returns the :ref:`RID<class_RID>` of the navigation map for this NavigationObsta
 
 ----
 
-.. _class_NavigationObstacle2D_method_get_obstacle_rid:
+.. _class_NavigationObstacle2D_method_get_rid:
 
 .. rst-class:: classref-method
 
-:ref:`RID<class_RID>` **get_obstacle_rid** **(** **)** |const|
+:ref:`RID<class_RID>` **get_rid** **(** **)** |const|
 
-Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer2D<class_NavigationServer2D>`. This :ref:`RID<class_RID>` is used for the static avoidance obstacle component which shape is defined by :ref:`vertices<class_NavigationObstacle2D_property_vertices>`.
+Returns the :ref:`RID<class_RID>` of this obstacle on the :ref:`NavigationServer2D<class_NavigationServer2D>`.
 
 .. rst-class:: classref-item-separator
 
@@ -230,3 +235,4 @@ Sets the :ref:`RID<class_RID>` of the navigation map this NavigationObstacle nod
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

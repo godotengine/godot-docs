@@ -139,11 +139,11 @@ You should avoid using more than one **Tween** per object's property. If two or 
 
 Some :ref:`Tweener<class_Tweener>`\ s use transitions and eases. The first accepts a :ref:`TransitionType<enum_Tween_TransitionType>` constant, and refers to the way the timing of the animation is handled (see `easings.net <https://easings.net/>`__ for some examples). The second accepts an :ref:`EaseType<enum_Tween_EaseType>` constant, and controls where the ``trans_type`` is applied to the interpolation (in the beginning, the end, or both). If you don't know which transition and easing to pick, you can try different :ref:`TransitionType<enum_Tween_TransitionType>` constants with :ref:`EASE_IN_OUT<class_Tween_constant_EASE_IN_OUT>`, and use the one that looks best.
 
-\ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.png>`__\ 
+\ `Tween easing and transition types cheatsheet <https://raw.githubusercontent.com/godotengine/godot-docs/master/img/tween_cheatsheet.webp>`__\ 
 
 \ **Note:** Tweens are not designed to be re-used and trying to do so results in an undefined behavior. Create a new Tween for each animation and every time you replay an animation from start. Keep in mind that Tweens start immediately, so only create a Tween when you want to start animating.
 
-\ **Note:** Tweens are processing after all of nodes in the current frame, i.e. after :ref:`Node._process<class_Node_method__process>` or :ref:`Node._physics_process<class_Node_method__physics_process>` (depending on :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>`).
+\ **Note:** The tween is processed after all of the nodes in the current frame, i.e. node's :ref:`Node._process<class_Node_method__process>` method would be called before the timer (or :ref:`Node._physics_process<class_Node_method__physics_process>` depending on the value passed to :ref:`set_process_mode<class_Tween_method_set_process_mode>`).
 
 .. rst-class:: classref-reftable-group
 
@@ -265,7 +265,7 @@ enum **TweenProcessMode**:
 
 :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **TWEEN_PROCESS_PHYSICS** = ``0``
 
-The **Tween** updates during the physics frame.
+The **Tween** updates after each physics frame (see :ref:`Node._physics_process<class_Node_method__physics_process>`).
 
 .. _class_Tween_constant_TWEEN_PROCESS_IDLE:
 
@@ -273,7 +273,7 @@ The **Tween** updates during the physics frame.
 
 :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` **TWEEN_PROCESS_IDLE** = ``1``
 
-The **Tween** updates during the idle frame.
+The **Tween** updates after each process frame (see :ref:`Node._process<class_Node_method__process>`).
 
 .. rst-class:: classref-item-separator
 
@@ -732,7 +732,7 @@ Default value is :ref:`TWEEN_PAUSE_BOUND<class_Tween_constant_TWEEN_PAUSE_BOUND>
 
 :ref:`Tween<class_Tween>` **set_process_mode** **(** :ref:`TweenProcessMode<enum_Tween_TweenProcessMode>` mode **)**
 
-Determines whether the **Tween** should run during idle frame (see :ref:`Node._process<class_Node_method__process>`) or physics frame (see :ref:`Node._physics_process<class_Node_method__physics_process>`.
+Determines whether the **Tween** should run after process frames (see :ref:`Node._process<class_Node_method__process>`) or physics frames (see :ref:`Node._physics_process<class_Node_method__physics_process>`).
 
 Default value is :ref:`TWEEN_PROCESS_IDLE<class_Tween_constant_TWEEN_PROCESS_IDLE>`.
 
@@ -1001,3 +1001,4 @@ will move the sprite to position (100, 200) and then to (200, 300). If you use :
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

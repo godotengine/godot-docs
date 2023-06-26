@@ -244,7 +244,7 @@ enum **AnimationProcessCallback**:
 
 :ref:`AnimationProcessCallback<enum_AnimationPlayer_AnimationProcessCallback>` **ANIMATION_PROCESS_PHYSICS** = ``0``
 
-Process animation during the physics process. This is especially useful when animating physics bodies.
+Process animation during physics frames (see :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`). This is especially useful when animating physics bodies.
 
 .. _class_AnimationPlayer_constant_ANIMATION_PROCESS_IDLE:
 
@@ -252,7 +252,7 @@ Process animation during the physics process. This is especially useful when ani
 
 :ref:`AnimationProcessCallback<enum_AnimationPlayer_AnimationProcessCallback>` **ANIMATION_PROCESS_IDLE** = ``1``
 
-Process animation during the idle process.
+Process animation during process frames (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
 
 .. _class_AnimationPlayer_constant_ANIMATION_PROCESS_MANUAL:
 
@@ -908,3 +908,4 @@ If ``keep_state`` is ``true``, the animation state is not updated visually.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

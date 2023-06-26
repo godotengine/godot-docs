@@ -133,7 +133,7 @@ enum **VisibilityUpdateMode**:
 
 :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **VISIBILITY_PROCESS_IDLE** = ``0``
 
-Visibility filters are updated every idle process frame.
+Visibility filters are updated during process frames (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
 
 .. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_PHYSICS:
 
@@ -141,7 +141,7 @@ Visibility filters are updated every idle process frame.
 
 :ref:`VisibilityUpdateMode<enum_MultiplayerSynchronizer_VisibilityUpdateMode>` **VISIBILITY_PROCESS_PHYSICS** = ``1``
 
-Visibility filters are updated every physics process frame.
+Visibility filters are updated during physics frames (see :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`).
 
 .. _class_MultiplayerSynchronizer_constant_VISIBILITY_PROCESS_NONE:
 
@@ -333,3 +333,4 @@ Updates the visibility of ``for_peer`` according to visibility filters. If ``for
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

@@ -194,7 +194,7 @@ Disables doppler tracking.
 
 :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **DOPPLER_TRACKING_IDLE_STEP** = ``1``
 
-Executes doppler tracking in idle step.
+Executes doppler tracking during process frames (see :ref:`Node.NOTIFICATION_INTERNAL_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PROCESS>`).
 
 .. _class_AudioStreamPlayer3D_constant_DOPPLER_TRACKING_PHYSICS_STEP:
 
@@ -202,7 +202,7 @@ Executes doppler tracking in idle step.
 
 :ref:`DopplerTracking<enum_AudioStreamPlayer3D_DopplerTracking>` **DOPPLER_TRACKING_PHYSICS_STEP** = ``2``
 
-Executes doppler tracking in physics step.
+Executes doppler tracking during physics frames (see :ref:`Node.NOTIFICATION_INTERNAL_PHYSICS_PROCESS<class_Node_constant_NOTIFICATION_INTERNAL_PHYSICS_PROCESS>`).
 
 .. rst-class:: classref-section-separator
 
@@ -633,3 +633,4 @@ Stops the audio.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

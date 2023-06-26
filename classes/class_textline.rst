@@ -29,23 +29,23 @@ Properties
 .. table::
    :widths: auto
 
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>` | :ref:`alignment<class_TextLine_property_alignment>`                         | ``0``     |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`Direction<enum_TextServer_Direction>`                       | :ref:`direction<class_TextLine_property_direction>`                         | ``0``     |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`       | :ref:`flags<class_TextLine_property_flags>`                                 | ``3``     |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`Orientation<enum_TextServer_Orientation>`                   | :ref:`orientation<class_TextLine_property_orientation>`                     | ``0``     |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`preserve_control<class_TextLine_property_preserve_control>`           | ``false`` |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`bool<class_bool>`                                           | :ref:`preserve_invalid<class_TextLine_property_preserve_invalid>`           | ``true``  |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`           | :ref:`text_overrun_behavior<class_TextLine_property_text_overrun_behavior>` | ``3``     |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
-   | :ref:`float<class_float>`                                         | :ref:`width<class_TextLine_property_width>`                                 | ``-1.0``  |
-   +-------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`         | :ref:`alignment<class_TextLine_property_alignment>`                         | ``0``     |
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`Direction<enum_TextServer_Direction>`                               | :ref:`direction<class_TextLine_property_direction>`                         | ``0``     |
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> | :ref:`flags<class_TextLine_property_flags>`                                 | ``3``     |
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`Orientation<enum_TextServer_Orientation>`                           | :ref:`orientation<class_TextLine_property_orientation>`                     | ``0``     |
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                   | :ref:`preserve_control<class_TextLine_property_preserve_control>`           | ``false`` |
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`bool<class_bool>`                                                   | :ref:`preserve_invalid<class_TextLine_property_preserve_invalid>`           | ``true``  |
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`OverrunBehavior<enum_TextServer_OverrunBehavior>`                   | :ref:`text_overrun_behavior<class_TextLine_property_text_overrun_behavior>` | ``3``     |
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
+   | :ref:`float<class_float>`                                                 | :ref:`width<class_TextLine_property_width>`                                 | ``-1.0``  |
+   +---------------------------------------------------------------------------+-----------------------------------------------------------------------------+-----------+
 
 .. rst-class:: classref-reftable-group
 
@@ -140,12 +140,12 @@ Text writing direction.
 
 .. rst-class:: classref-property
 
-:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **flags** = ``3``
+|bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **flags** = ``3``
 
 .. rst-class:: classref-property-setget
 
-- void **set_flags** **(** :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` value **)**
-- :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **get_flags** **(** **)**
+- void **set_flags** **(** |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> value **)**
+- |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **get_flags** **(** **)**
 
 Line alignment rules. For more info see :ref:`TextServer<class_TextServer>`.
 
@@ -463,3 +463,4 @@ Aligns text to the given tab-stops.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

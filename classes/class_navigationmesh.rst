@@ -339,7 +339,7 @@ The distance to erode/shrink the walkable area of the heightfield away from obst
 - void **set_cell_height** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_cell_height** **(** **)**
 
-The Y axis cell size to use for fields.
+The cell height used to rasterize the navigation mesh vertices on the Y axis. Must match with the cell height on the navigation map.
 
 .. rst-class:: classref-item-separator
 
@@ -356,7 +356,7 @@ The Y axis cell size to use for fields.
 - void **set_cell_size** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_cell_size** **(** **)**
 
-The XZ plane cell size to use for fields.
+The cell size used to rasterize the navigation mesh vertices on the XZ plane. Must match with the cell size on the navigation map.
 
 .. rst-class:: classref-item-separator
 
@@ -778,3 +778,4 @@ Sets the vertices that can be then indexed to create polygons with the :ref:`add
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
