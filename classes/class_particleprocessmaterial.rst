@@ -1318,7 +1318,7 @@ Minimum equivalent of :ref:`initial_velocity_max<class_ParticleProcessMaterial_p
 - void **set_lifetime_randomness** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_lifetime_randomness** **(** **)**
 
-Particle lifetime randomness ratio. The lifetime will be multiplied by a value interpolated between ``1.0`` and a random number less than one. For example a random ratio of ``0.4`` would scale the original lifetime between ``0.4-1.0`` of its original value.
+Particle lifetime randomness ratio. The lifetime is multiplied by ``1.0`` minus a random float between ``0.0`` and the random ratio. For example a random ratio of ``0.4`` scales the lifetime between ``0.6`` to ``1.0`` of its original value.
 
 .. rst-class:: classref-item-separator
 
