@@ -1076,6 +1076,8 @@ For a list of the built-in variables that are available, please see the correspo
 - :ref:`Spatial shaders <doc_spatial_shader>`
 - :ref:`Canvas item shaders <doc_canvas_item_shader>`
 - :ref:`Particle shaders <doc_particle_shader>`
+- :ref:`Sky shaders <doc_sky_shader>`
+- :ref:`Fog shaders <doc_fog_shader>`
 
 Built-in functions
 ------------------
