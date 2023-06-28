@@ -84,7 +84,7 @@ author = "Juan Linietsky, Ariel Manzur and the Godot community"
 
 # Version info for the project, acts as replacement for |version| and |release|
 # The short X.Y version
-version = os.getenv("READTHEDOCS_VERSION", "latest")
+version = os.getenv("READTHEDOCS_VERSION", "4.1")
 # The full version, including alpha/beta/rc tags
 release = version
 
@@ -181,8 +181,8 @@ html_context = {
     "godot_title_prefix": "" if on_rtd else "(DEV) ",
     # Set this to `True` when in the `latest` branch to clearly indicate to the reader
     # that they are not reading the `stable` documentation.
-    "godot_is_latest": True,
-    "godot_version": "4.2",
+    "godot_is_latest": False,
+    "godot_version": "4.1",
     # Enables a banner that displays the up-to-date status of each article.
     "godot_show_article_status": True,
 }
