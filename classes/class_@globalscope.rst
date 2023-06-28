@@ -4899,7 +4899,7 @@ The :ref:`NavigationServer2D<class_NavigationServer2D>` singleton.
 
 :ref:`NavigationServer3D<class_NavigationServer3D>` **NavigationServer3D**
 
-The :ref:`NavigationServer2D<class_NavigationServer2D>` singleton.
+The :ref:`NavigationServer3D<class_NavigationServer3D>` singleton.
 
 .. rst-class:: classref-item-separator
 

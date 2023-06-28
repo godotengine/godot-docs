@@ -621,6 +621,8 @@ Returns the current frame number, i.e. the total frame count since the applicati
 
 Return the :ref:`MultiplayerAPI<class_MultiplayerAPI>` configured for the given path, or the default one if ``for_path`` is empty.
 
+\ **Note:** Only one :ref:`MultiplayerAPI<class_MultiplayerAPI>` may be configured for any subpath. If one is configured for ``"/root/Foo"`` then calling this for ``"/root/Foo/Bar"`` will return the one configured for ``"/root/Foo"``, regardless if one is configured for that path.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -780,6 +782,8 @@ Sets the given ``property`` to ``value`` on all members of the given group, resp
 void **set_multiplayer** **(** :ref:`MultiplayerAPI<class_MultiplayerAPI>` multiplayer, :ref:`NodePath<class_NodePath>` root_path=NodePath("") **)**
 
 Sets a custom :ref:`MultiplayerAPI<class_MultiplayerAPI>` with the given ``root_path`` (controlling also the relative subpaths), or override the default one if ``root_path`` is empty.
+
+\ **Note:** Only one :ref:`MultiplayerAPI<class_MultiplayerAPI>` may be configured for any subpath. If one is configured for ``"/root/Foo"`` setting one for ``"/root/Foo/Bar"`` will be ignored. See :ref:`get_multiplayer<class_SceneTree_method_get_multiplayer>`.
 
 .. rst-class:: classref-item-separator
 
