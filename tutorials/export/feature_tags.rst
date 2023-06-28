@@ -40,17 +40,17 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 +-----------------+----------------------------------------------------------+
 | **Feature tag** | **Description**                                          |
 +=================+==========================================================+
-| **android**     | Running on Android                                       |
+| **android**     | Running on Android (but not within a Web browser)        |
 +-----------------+----------------------------------------------------------+
-| **bsd**         | Running on \*BSD                                         |
+| **bsd**         | Running on \*BSD (but not within a Web browser)          |
 +-----------------+----------------------------------------------------------+
-| **linux**       | Running on Linux                                         |
+| **linux**       | Running on Linux (but not within a Web browser)          |
 +-----------------+----------------------------------------------------------+
-| **macos**       | Running on macOS                                         |
+| **macos**       | Running on macOS (but not within a Web browser)          |
 +-----------------+----------------------------------------------------------+
-| **ios**         | Running on iOS                                           |
+| **ios**         | Running on iOS (but not within a Web browser)            |
 +-----------------+----------------------------------------------------------+
-| **uwp**         | Running on UWP                                           |
+| **uwp**         | Running on UWP (but not within a Web browser)            |
 +-----------------+----------------------------------------------------------+
 | **windows**     | Running on Windows                                       |
 +-----------------+----------------------------------------------------------+
@@ -105,6 +105,16 @@ Here is a list of most feature tags in Godot. Keep in mind they are **case-sensi
 | **pc**          | Host OS is a PC platform (desktop/laptop)                |
 +-----------------+----------------------------------------------------------+
 | **web**         | Host OS is a Web browser                                 |
++-----------------+----------------------------------------------------------+
+| **web_android** | Host OS is a Web browser running on Android              |
++-----------------+----------------------------------------------------------+
+| **web_ios**     | Host OS is a Web browser running on iOS                  |
++-----------------+----------------------------------------------------------+
+| **web_linuxbsd**| Host OS is a Web browser running on Linux or \*BSD       |
++-----------------+----------------------------------------------------------+
+| **web_macos**   | Host OS is a Web browser running on macOS                |
++-----------------+----------------------------------------------------------+
+| **web_windows** | Host OS is a Web browser running on Windows              |
 +-----------------+----------------------------------------------------------+
 | **etc**         | Textures using ETC1 compression are supported            |
 +-----------------+----------------------------------------------------------+
