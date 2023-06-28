@@ -87,7 +87,7 @@ Locks this **Mutex**, blocks until it is unlocked by the current owner.
 
 Tries locking this **Mutex**, but does not block. Returns ``true`` on success, ``false`` otherwise.
 
-\ **Note:** This function returns :ref:`@GlobalScope.OK<class_@GlobalScope_constant_OK>` if the thread already has ownership of the mutex.
+\ **Note:** This function returns ``true`` if the thread already has ownership of the mutex.
 
 .. rst-class:: classref-item-separator
 

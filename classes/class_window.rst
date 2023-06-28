@@ -2021,7 +2021,9 @@ Popups the **Window** centered inside its parent **Window**. ``fallback_ratio`` 
 
 void **popup_centered_ratio** **(** :ref:`float<class_float>` ratio=0.8 **)**
 
-Popups the **Window** centered inside its parent **Window** and sets its size as a ``ratio`` of parent's size.
+If **Window** is embedded, popups the **Window** centered inside its embedder and sets its size as a ``ratio`` of embedder's size.
+
+If **Window** is a native window, popups the **Window** centered inside the screen of its parent **Window** and sets its size as a ``ratio`` of the screen size.
 
 .. rst-class:: classref-item-separator
 

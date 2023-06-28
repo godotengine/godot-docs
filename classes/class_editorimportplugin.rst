@@ -51,10 +51,10 @@ Below is an example EditorImportPlugin that imports a :ref:`Mesh<class_Mesh>` fr
     func _get_preset_count():
         return 1
     
-    func _get_preset_name(i):
+    func _get_preset_name(preset_index):
         return "Default"
     
-    func _get_import_options(i):
+    func _get_import_options(path, preset_index):
         return [{"name": "my_option", "default_value": false}]
     
     func _import(source_file, save_path, options, platform_variants, gen_files):

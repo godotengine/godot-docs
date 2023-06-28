@@ -33,6 +33,7 @@ Some examples of NodePaths include the following:
     ^"." # The current node.
     ^".." # The parent node.
     ^"../C" # A sibling node C.
+    ^"../.." # The grandparent node.
     # A leading slash means it is absolute from the SceneTree.
     ^"/root" # Equivalent to get_tree().get_root().
     ^"/root/Main" # If your main scene's root node were named "Main".
