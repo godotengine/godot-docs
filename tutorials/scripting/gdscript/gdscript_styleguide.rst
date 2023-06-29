@@ -784,7 +784,7 @@ variables, in that order.
 
 ::
 
-    signal spawn_player(position)
+    signal player_spawned(position)
 
     enum Jobs {KNIGHT, WIZARD, ROGUE, HEALER, SHAMAN}
 
