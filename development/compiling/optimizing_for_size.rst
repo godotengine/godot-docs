@@ -79,7 +79,7 @@ and MSVC compilers:
 
 ::
 
-    scons p=windows target=release tools=no use_lto=yes
+    scons p=windows target=release tools=no lto=full
 
 Linking becomes much slower and more RAM-consuming with this option,
 so it should be used only for release builds:
