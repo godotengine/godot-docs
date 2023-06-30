@@ -136,10 +136,9 @@ Visual Studio will include the required SDKs if you have the correct
 workloads selected, so you don't need to manually install the things
 listed in the "Prerequisites" section.
 
-While installing Visual Studio, select these workloads:
+While installing Visual Studio, select this workload:
 
-- Mobile development with .NET
-- .NET Core cross-platform development
+- .NET desktop development
 
 In Godot's **Editor → Editor Settings** menu:
 
