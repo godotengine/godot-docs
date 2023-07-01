@@ -286,9 +286,9 @@ initialize them, but you might have to set up more things depending on your
 needs. We call the function ``register_class`` for each of our classes in our library.
 
 The important function is the third function called ``example_library_init``.
-We first call a function in our bindings library that creates an initilization object.
+We first call a function in our bindings library that creates an initialization object.
 This object registrates the initialization and termination functions of the GDExtension.
-Furthermore, it sets the level of initilization (core, servers, scene, editor, level).
+Furthermore, it sets the level of initialization (core, servers, scene, editor, level).
 
 At last, we need the header file for the ``register_types.cpp`` named
 ``register_types.h``.
