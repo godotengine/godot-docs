@@ -87,17 +87,12 @@ This means that any node can access a singleton named "PlayerVariables" with:
     playerVariables.Health -= 10; // Instance field.
 
 If the **Enable** column is checked (which is the default), then the singleton can
-be accessed directly without requiring ``get_node()``:
+be accessed directly in GDScript, without requiring ``get_node()``:
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
    PlayerVariables.health -= 10
-
- .. code-tab:: csharp
-
-    // Static members can be accessed by using the class name.
-    PlayerVariables.Health -= 10;
 
 Note that autoload objects (scripts and/or scenes) are accessed just like any
 other node in the scene tree. In fact, if you look at the running scene tree,
