@@ -27,6 +27,12 @@ step-by-step tutorial.
 C# is a high-level programming language developed by Microsoft. In Godot,
 it is implemented with .NET 6.0.
 
+.. attention::
+
+    Projects written in C# using Godot 4.x currently cannot be exported to
+    Android, iOS and web platforms. To use C# on those platforms, use Godot 3
+    instead.
+
 .. note::
 
     This is **not** a full-scale tutorial on the C# language as a whole.
@@ -114,16 +120,16 @@ In Visual Studio Code:
     If you are using Linux you need to install the `Mono SDK <https://www.mono-project.com/download/stable/#download-lin>`__
     for the C# tools plugin to work.
 
-To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in 
-the ``.vscode`` folder with the necessary configuration. An example configuration can be 
-found `here <https://github.com/godotengine/godot-csharp-vscode/issues/43#issuecomment-1258321229>`__ . 
-In the ``tasks.json`` file, make sure the ``program`` parameter points to your Godot executable, either by 
+To configure a project for debugging, you need a ``tasks.json`` and ``launch.json`` file in
+the ``.vscode`` folder with the necessary configuration. An example configuration can be
+found `here <https://github.com/godotengine/godot-csharp-vscode/issues/43#issuecomment-1258321229>`__ .
+In the ``tasks.json`` file, make sure the ``program`` parameter points to your Godot executable, either by
 changing it to the path of the executable or by defining a ``GODOT4`` environment variable that points to the
 executable. Now, when you start the debugger in Visual Studio Code, your Godot project will run.
 
 .. note::
 
-    There is also a `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__ 
+    There is also a `C# Tools for Godot <https://marketplace.visualstudio.com/items?itemName=neikeq.godot-csharp-vscode>`__
     Visual Studio Code extension, that is meant to make this setup easier and to provide further useful tools.
     But it is not yet updated to work with Godot 4.
 

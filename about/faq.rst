@@ -81,12 +81,14 @@ the long run, for prototyping, developing Minimum Viable Products (MVPs), and
 focusing on Time-To-Market (TTM), GDScript will provide a fast, friendly, and capable
 way of developing your games.
 
-Note that C# support is still relatively new, and as such, you may encounter some
-issues along the way. Our friendly and hard-working development community is always
-ready to tackle new problems as they arise, but since this is an open source project,
-we recommend that you first do some due diligence yourself. Searching through
-discussions on `open issues <https://github.com/godotengine/godot/issues>`_ is a
-great way to start your troubleshooting.
+Note that C# support is still relatively new, and as such, you may encounter
+some issues along the way. C# support is also currently missing on Android, iOS
+and web platforms. Our friendly and hard-working development community is always
+ready to tackle new problems as they arise, but since this is an open source
+project, we recommend that you first do some due diligence yourself. Searching
+through discussions on
+`open issues <https://github.com/godotengine/godot/issues?q=is%3Aopen+is%3Aissue+label%3Atopic%3Adotnet>`__
+is a great way to start your troubleshooting.
 
 As for new languages, support is possible via third parties with GDExtensions. (See the question
 about plugins below). Work is currently underway, for example, on unofficial bindings for Godot
