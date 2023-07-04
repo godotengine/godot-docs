@@ -260,7 +260,7 @@ Moving forward
 ~~~~~~~~~~~~~~
 
 Let's now make the node move. Add the following two lines inside of the ``_process()``
-function, ensuring the new lines are indented the same way as the ``rotation += angular * delta`` line before
+function, ensuring the new lines are indented the same way as the ``rotation += angular_speed * delta`` line before
 them.
 
 .. tabs::
