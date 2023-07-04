@@ -55,6 +55,11 @@ multiple options (separated by spaces within the opening tag). The closing tag
 delimits the end of the formatted part. In some cases, both the closing tag and
 the content can be omitted.
 
+Unlike BBCode in HTML, leading/trailing whitespace is not removed by a
+RichTextLabel upon display. Duplicate spaces are also displayed as-is in the
+final output. This means that when displaying a code block in a RichTextLabel,
+you don't need to use a preformatted text tag.
+
 .. code-block:: none
 
   [tag]content[/tag]
@@ -628,7 +633,6 @@ the built-in :ref:`class_Color` class. Named classes can be specified in a numbe
 styles using different casings: ``DARK_RED``, ``DarkRed``, and ``darkred`` will give
 the same exact result.
 
-
 .. _doc_bbcode_in_richtextlabel_hex_colors:
 
 Hexadecimal color codes
@@ -642,7 +646,6 @@ For transparent RGB colors, any RGBA 8-digit hexadecimal code can be used,
 e.g. ``[color=#ffffff88]translucent white[/color]``. Note that the alpha channel
 is the **last** component of the color code, not the first one. Short RGBA
 color codes such as ``#6f28`` (equivalent to ``#66ff2288``) are supported as well.
-
 
 .. _doc_bbcode_in_richtextlabel_cell_options:
 
