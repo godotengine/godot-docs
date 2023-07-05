@@ -59,6 +59,8 @@ Using one-click deploy
 
 .. image:: img/remote_debug.webp
 
+.. _doc_one-click_deploy_troubleshooting:
+
 Troubleshooting
 ---------------
 
