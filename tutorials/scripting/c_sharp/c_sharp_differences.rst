@@ -379,6 +379,7 @@ count                    StringExtensions.Count (Consider using `RegEx`_)
 countn                   StringExtensions.CountN (Consider using `RegEx`_)
 dedent                   StringExtensions.Dedent
 ends_with                `string.EndsWith`_
+erase                    `string.Remove`_ (Consider using `StringBuilder`_ to manipulate strings)
 find                     StringExtensions.Find (Consider using `string.IndexOf`_ or `string.IndexOfAny`_)
 findn                    StringExtensions.FindN (Consider using `string.IndexOf`_ or `string.IndexOfAny`_)
 format                   Use `$ string interpolation`_
@@ -390,6 +391,7 @@ get_slice                N/A
 get_slice_count          N/A
 get_slicec               N/A
 hash                     StringExtensions.Hash (Consider using `object.GetHashCode`_ unless you need to guarantee the same behavior as in GDScript)
+hex_decode               StringExtensions.HexDecode (Consider using `System.Convert.FromHexString`_)
 hex_to_int               StringExtensions.HexToInt (Consider using `int.Parse`_ or `long.Parse`_ with `System.Globalization.NumberStyles.HexNumber`_)
 humanize_size            N/A
 indent                   StringExtensions.Indent
@@ -414,8 +416,8 @@ lpad                     `string.PadLeft`_
 lstrip                   `string.TrimStart`_
 match                    StringExtensions.Match (Consider using `RegEx`_)
 matchn                   StringExtensions.MatchN (Consider using `RegEx`_)
-md5_buffer               StringExtensions.MD5Buffer (Consider using `System.Security.Cryptography.MD5.HashData`_)
-md5_text                 StringExtensions.MD5Text (Consider using `System.Security.Cryptography.MD5.HashData`_ with StringExtensions.HexEncode)
+md5_buffer               StringExtensions.Md5Buffer (Consider using `System.Security.Cryptography.MD5.HashData`_)
+md5_text                 StringExtensions.Md5Text (Consider using `System.Security.Cryptography.MD5.HashData`_ with StringExtensions.HexEncode)
 naturalnocasecmp_to      N/A (Consider using `string.Equals`_ or `string.Compare`_)
 nocasecmp_to             StringExtensions.NocasecmpTo or StringExtensions.CompareTo (Consider using `string.Equals`_ or `string.Compare`_)
 num                      `float.ToString`_ or `double.ToString`_
@@ -434,10 +436,10 @@ right                    StringExtensions.Right (Consider using `string.Substrin
 rpad                     `string.PadRight`_
 rsplit                   N/A
 rstrip                   `string.TrimEnd`_
-sha1_buffer              StringExtensions.SHA1Buffer (Consider using `System.Security.Cryptography.SHA1.HashData`_)
-sha1_text                StringExtensions.SHA1Text (Consider using `System.Security.Cryptography.SHA1.HashData`_ with StringExtensions.HexEncode)
-sha256_buffer            StringExtensions.SHA256Buffer (Consider using `System.Security.Cryptography.SHA256.HashData`_)
-sha256_text              StringExtensions.SHA256Text (Consider using `System.Security.Cryptography.SHA256.HashData`_ with StringExtensions.HexEncode)
+sha1_buffer              StringExtensions.Sha1Buffer (Consider using `System.Security.Cryptography.SHA1.HashData`_)
+sha1_text                StringExtensions.Sha1Text (Consider using `System.Security.Cryptography.SHA1.HashData`_ with StringExtensions.HexEncode)
+sha256_buffer            StringExtensions.Sha256Buffer (Consider using `System.Security.Cryptography.SHA256.HashData`_)
+sha256_text              StringExtensions.Sha256Text (Consider using `System.Security.Cryptography.SHA256.HashData`_ with StringExtensions.HexEncode)
 similarity               StringExtensions.Similarity
 simplify_path            StringExtensions.SimplifyPath
 split                    StringExtensions.Split (Consider using `string.Split`_)
@@ -445,7 +447,7 @@ split_floats             StringExtensions.SplitFloat
 strip_edges              StringExtensions.StripEdges (Consider using `string.Trim`_, `string.TrimStart`_ or `string.TrimEnd`_)
 strip_escapes            StringExtensions.StripEscapes
 substr                   StringExtensions.Substr (Consider using `string.Substring`_ or `string.AsSpan`_)
-to_ascii_buffer          StringExtensions.ToASCIIBuffer (Consider using `System.Text.Encoding.ASCII.GetBytes`_)
+to_ascii_buffer          StringExtensions.ToAsciiBuffer (Consider using `System.Text.Encoding.ASCII.GetBytes`_)
 to_camel_case            StringExtensions.ToCamelCase
 to_float                 StringExtensions.ToFloat (Consider using `float.TryParse`_ or `double.TryParse`_)
 to_int                   StringExtensions.ToInt (Consider using `int.TryParse`_ or `long.TryParse`_)
@@ -453,9 +455,10 @@ to_lower                 `string.ToLower`_
 to_pascal_case           StringExtensions.ToPascalCase
 to_snake_case            StringExtensions.ToSnakeCase
 to_upper                 `string.ToUpper`_
-to_utf16_buffer          StringExtensions.ToUTF16Buffer (Consider using `System.Text.Encoding.UTF16.GetBytes`_)
-to_utf32_buffer          StringExtensions.ToUTF32Buffer (Consider using `System.Text.Encoding.UTF32.GetBytes`_)
-to_utf8_buffer           StringExtensions.ToUTF8Buffer (Consider using `System.Text.Encoding.UTF8.GetBytes`_)
+to_utf16_buffer          StringExtensions.ToUtf16Buffer (Consider using `System.Text.Encoding.UTF16.GetBytes`_)
+to_utf32_buffer          StringExtensions.ToUtf32Buffer (Consider using `System.Text.Encoding.UTF32.GetBytes`_)
+to_utf8_buffer           StringExtensions.ToUtf8Buffer (Consider using `System.Text.Encoding.UTF8.GetBytes`_)
+to_wchar_buffer          StringExtensions.ToUtf16Buffer in Windows and StringExtensiont.ToUtf32Buffer in other platforms
 trim_prefix              StringExtensions.TrimPrefix
 trim_suffix              StringExtensions.TrimSuffix
 unicode_at               `string[int]`_ indexer
@@ -471,10 +474,10 @@ List of Godot's PackedByteArray methods that create a String and their C# equiva
 =========================  ==============================================================
 GDScript                   C#
 =========================  ==============================================================
-get_string_from_ascii      StringExtensions.GetStringFromASCII (Consider using `System.Text.Encoding.ASCII.GetString`_)
-get_string_from_utf16      StringExtensions.GetStringFromUTF16 (Consider using `System.Text.Encoding.UTF16.GetString`_)
-get_string_from_utf32      StringExtensions.GetStringFromUTF32 (Consider using `System.Text.Encoding.UTF32.GetString`_)
-get_string_from_utf8       StringExtensions.GetStringFromUTF8 (Consider using `System.Text.Encoding.UTF8.GetString`_)
+get_string_from_ascii      StringExtensions.GetStringFromAscii (Consider using `System.Text.Encoding.ASCII.GetString`_)
+get_string_from_utf16      StringExtensions.GetStringFromUtf16 (Consider using `System.Text.Encoding.UTF16.GetString`_)
+get_string_from_utf32      StringExtensions.GetStringFromUtf32 (Consider using `System.Text.Encoding.UTF32.GetString`_)
+get_string_from_utf8       StringExtensions.GetStringFromUtf8 (Consider using `System.Text.Encoding.UTF8.GetString`_)
 hex_encode                 StringExtensions.HexEncode (Consider using `System.Convert.ToHexString`_)
 =========================  ==============================================================
 
@@ -516,6 +519,7 @@ hex_encode                 StringExtensions.HexEncode (Consider using `System.Co
 .. _string.Length: https://learn.microsoft.com/en-us/dotnet/api/system.string.length
 .. _string.PadLeft: https://learn.microsoft.com/en-us/dotnet/api/system.string.padleft
 .. _string.PadRight: https://learn.microsoft.com/en-us/dotnet/api/system.string.padright
+.. _string.Remove: https://learn.microsoft.com/en-us/dotnet/api/system.string.remove
 .. _string.Replace: https://learn.microsoft.com/en-us/dotnet/api/system.string.replace
 .. _string.Split: https://learn.microsoft.com/en-us/dotnet/api/system.string.split
 .. _string.StartsWith: https://learn.microsoft.com/en-us/dotnet/api/system.string.startswith
@@ -526,6 +530,7 @@ hex_encode                 StringExtensions.HexEncode (Consider using `System.Co
 .. _string.ToLower: https://learn.microsoft.com/en-us/dotnet/api/system.string.tolower
 .. _string.ToUpper: https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper
 .. _StringBuilder: https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder
+.. _System.Convert.FromHexString: https://learn.microsoft.com/en-us/dotnet/api/system.convert.fromhexstring
 .. _System.Convert.ToHexString: https://learn.microsoft.com/en-us/dotnet/api/system.convert.tohexstring
 .. _System.Globalization.NumberStyles.HexNumber: https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberstyles#system-globalization-numberstyles-hexnumber
 .. _System.IO.Path: https://learn.microsoft.com/en-us/dotnet/api/system.io.path
