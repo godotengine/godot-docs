@@ -81,14 +81,14 @@ To have something to test, here's the scene (from the tilemap tutorial):
 We'll be creating a new scene for the character. Use the robot sprite and
 create a scene like this:
 
-.. image:: img/kbscene.png
+.. image:: img/kbscene.webp
 
 You'll notice that there's a warning icon next to our CollisionShape2D node;
 that's because we haven't defined a shape for it. Create a new CircleShape2D
 in the shape property of CollisionShape2D. Click on <CircleShape2D> to go to the
 options for it, and set the radius to 30:
 
-.. image:: img/kbradius.png
+.. image:: img/kbradius.webp
 
 **Note: As mentioned before in the physics tutorial, the physics engine
 can't handle scale on most types of shapes (only collision polygons,
@@ -103,7 +103,7 @@ above should work as a base.
 Finally, instance that character scene in the tilemap, and make the
 map scene the main one, so it runs when pressing play.
 
-.. image:: img/kbinstance.png
+.. image:: img/kbinstance.webp
 
 Moving the kinematic character
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
