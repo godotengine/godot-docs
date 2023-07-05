@@ -191,7 +191,7 @@ in case you want to take a look under the hood.
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | func       | Defines a function.                                                                                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| static     | Defines a static function. Static member variables are not allowed.                                                                               |
+| static     | Defines a static function or a static member variable.                                                                                            |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 | const      | Defines a constant.                                                                                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -412,8 +412,8 @@ Both of these are the same::
 
 .. _doc_gdscript_onready_annotation:
 
-`@onready` annotation
-~~~~~~~~~~~~~~~~~~~~~
+``@onready`` annotation
+~~~~~~~~~~~~~~~~~~~~~~~
 
 When using nodes, it's common to desire to keep references to parts
 of the scene in a variable. As scenes are only warranted to be
@@ -847,6 +847,110 @@ Valid types are:
     You can turn off this check, or make it only a warning, by changing it in
     the project settings. See :ref:`doc_gdscript_warning_system` for details.
 
+Static variables
+^^^^^^^^^^^^^^^^
+
+A class member variable can be declared static::
+
+    static var a
+
+Static variables belong to the class, not instances. This means that static variables
+share values between multiple instances, unlike regular member variables.
+
+From inside a class, you can access static variables from any function, both static and non-static.
+From outside the class, you can access static variables using the class or an instance
+(the second is not recommended as it is less readable).
+
+.. note::
+
+    The ``@export`` and ``@onready`` annotations cannot be applied to a static variable.
+    Local variables cannot be static.
+
+The following example defines a ``Person`` class with a static variable named ``max_id``.
+We increment the ``max_id`` in the ``_init()`` function. This makes it easy to keep track
+of the number of ``Person`` instances in our game.
+
+::
+
+    # person.gd
+    class_name Person
+
+    static var max_id = 0
+
+    var id
+    var name
+
+    func _init(p_name):
+        max_id += 1
+        id = max_id
+        name = p_name
+
+In this code, we create two instances of our ``Person`` class and check that the class
+and every instance have the same ``max_id`` value, because the variable is static and accessible to every instance.
+
+::
+
+    # test.gd
+    extends Node
+
+    func _ready():
+        var person1 = Person.new("John Doe")
+        var person2 = Person.new("Jane Doe")
+
+        print(person1.id) # 1
+        print(person2.id) # 2
+
+        print(Person.max_id)  # 2
+        print(person1.max_id) # 2
+        print(person2.max_id) # 2
+
+Static variables can have type hints, setters and getters::
+
+    static var balance: int = 0
+
+    static var debt: int:
+        get:
+            return -balance
+        set(value):
+            balance = -value
+
+A base class static variable can also be accessed via a child class::
+
+    class A:
+        static var x = 1
+
+    class B extends A:
+        pass
+
+    func _ready():
+        prints(A.x, B.x) # 1 1
+        A.x = 2
+        prints(A.x, B.x) # 2 2
+        B.x = 3
+        prints(A.x, B.x) # 3 3
+
+``@static_unload`` annotation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Since GDScript classes are resources, having static variables in a script prevents it from being unloaded
+even if there are no more instances of that class and no other references left. This can be important
+if static variables store large amounts of data or hold references to other project resources, such as scenes.
+You should clean up this data manually, or use the :ref:`@static_unload <class_@GDScript_annotation_@static_unload>`
+annotation if static variables don't store important data and can be reset.
+
+.. warning::
+
+    Currently, due to a bug, scripts are never freed, even if ``@static_unload`` annotation is used.
+
+Note that ``@static_unload`` applies to the entire script (including inner classes)
+and must be placed at the top of the script, before ``class_name`` and ``extends``::
+
+    @static_unload
+    class_name MyNode
+    extends Node
+
+See also `Static functions`_ and `Static constructor`_.
+
 Casting
 ^^^^^^^
 
@@ -1080,15 +1184,15 @@ Lambda functions capture the local environment. Local variables are passed by va
 Static functions
 ^^^^^^^^^^^^^^^^
 
-A function can be declared static. When a function is static, it has no
-access to the instance member variables or ``self``. This is mainly
-useful to make libraries of helper functions::
+A function can be declared static. When a function is static, it has no access to the instance member variables or ``self``.
+A static function has access to static variables. Also static functions are useful to make libraries of helper functions::
 
     static func sum2(a, b):
         return a + b
 
 Lambdas cannot be declared static.
 
+See also `Static variables`_ and `Static constructor`_.
 
 Statements and control flow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1467,13 +1571,11 @@ If you want to use ``extends`` too, you can keep both on the same line::
 
     class_name MyNode extends Node
 
-.. note:: Godot's class syntax is compact: it can only contain member variables or
-          functions. You can use static functions, but not static member variables. In the
-          same way, the engine initializes variables every time you create an instance,
-          and this includes arrays and dictionaries. This is in the spirit of thread
-          safety, since scripts can be initialized in separate threads without the user
-          knowing.
+.. note::
 
+    Godot initializes non-static variables every time you create an instance,
+    and this includes arrays and dictionaries. This is in the spirit of thread safety,
+    since scripts can be initialized in separate threads without the user knowing.
 
 Inheritance
 ^^^^^^^^^^^
@@ -1588,6 +1690,19 @@ There are a few things to keep in mind here:
 
     func _init():
         super(5)
+
+Static constructor
+^^^^^^^^^^^^^^^^^^
+
+A static constructor is a static function ``_static_init`` that is called automatically
+when the class is loaded, after the static variables have been initialized::
+
+    static var my_static_var = 1
+
+    static func _static_init():
+        my_static_var = 2
+
+A static constructor cannot take arguments and must not return any value.
 
 Inner classes
 ^^^^^^^^^^^^^
