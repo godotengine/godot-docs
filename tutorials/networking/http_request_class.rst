@@ -78,20 +78,22 @@ look for the ``name`` field and print that to console.
     .. code-tab:: csharp
 
         using Godot;
+        using System.Text;
+        using Godot.Collections;
 
         public partial class MyNode : Node
         {
             public override void _Ready()
             {
-                GetNode("HTTPRequest").RequestCompleted += OnRequestCompleted;
                 HttpRequest httpRequest = GetNode<HttpRequest>("HTTPRequest");
+                httpRequest.RequestCompleted += OnRequestCompleted;
                 httpRequest.Request("https://api.github.com/repos/godotengine/godot/releases/latest");
             }
 
             private void OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
             {
-                JsonParseResult json = Json.Parse(Encoding.UTF8.GetString(body));
-                GD.Print(json.Result);
+                Dictionary d = Json.ParseString(Encoding.UTF8.GetString(body)).AsGodotDictionary();
+                GD.Print(d["name"]);
             }
         }
 
