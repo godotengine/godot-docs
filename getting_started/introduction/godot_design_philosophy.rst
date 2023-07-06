@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_godot_design_philosophy:
 
 Godot's design philosophy

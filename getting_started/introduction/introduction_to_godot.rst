@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_introduction_to_godot:
 
 Introduction to Godot
@@ -55,7 +53,7 @@ Godot comes with a fully-fledged game editor with integrated tools to answer the
 most common needs. It includes a code editor, an animation editor, a tilemap
 editor, a shader editor, a debugger, a profiler, and more.
 
-.. image:: img/introduction_editor.png
+.. image:: img/introduction_editor.webp
 
 The team strives to offer a feature-rich game editor with a consistent user
 experience. While there is always room for improvement, the user interface keeps
