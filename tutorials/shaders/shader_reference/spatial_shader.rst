@@ -377,7 +377,10 @@ If you want the lights to add together, add the light contribution to ``DIFFUSE_
 +-----------------------------------+-----------------------------------------------------+
 | in vec3 **ALBEDO**                | Base albedo.                                        |
 +-----------------------------------+-----------------------------------------------------+
-| in vec3 **LIGHT_COLOR**           | Color of light multiplied by energy.                |
+| in vec3 **LIGHT_COLOR**           | Color of light multiplied by ``energy * PI``.       |
+|                                   | The ``PI`` multiplication is present because        |
+|                                   | physically-based lighting models include a          |
+|                                   | division by ``PI``.                                 |
 +-----------------------------------+-----------------------------------------------------+
 | out float **ALPHA**               | Alpha (0..1); if written to, the material will go   |
 |                                   | to the transparent pipeline.                        |
