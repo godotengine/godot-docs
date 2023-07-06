@@ -1,4 +1,4 @@
-Godot Docs – *master* branch
+Godot Docs – *4.1* branch
 ============================
 
 .. only:: not i18n

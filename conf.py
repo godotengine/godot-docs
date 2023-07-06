@@ -167,7 +167,7 @@ html_context = {
     "display_github": not is_i18n,  # Integrate GitHub
     "github_user": "godotengine",  # Username
     "github_repo": "godot-docs",  # Repo name
-    "github_version": "master",  # Version
+    "github_version": "4.1",  # Version
     "conf_py_path": "/",  # Path in the checkout to the docs root
     "godot_inject_language_links": True,
     "godot_docs_supported_languages": list(supported_languages.keys()),
