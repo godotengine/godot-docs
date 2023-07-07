@@ -92,8 +92,8 @@ look for the ``name`` field and print that to console.
 
             private void OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
             {
-                Dictionary d = Json.ParseString(Encoding.UTF8.GetString(body)).AsGodotDictionary();
-                GD.Print(d["name"]);
+                Godot.Collections.Dictionary json = Json.ParseString(Encoding.UTF8.GetString(body)).AsGodotDictionary();
+                GD.Print(json["name"]);
             }
         }
 
