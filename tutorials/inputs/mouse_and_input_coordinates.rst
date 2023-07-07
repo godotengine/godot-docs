@@ -36,7 +36,7 @@ for example:
            print("Mouse Motion at: ", event.position)
 
        # Print the size of the viewport.
-       print("Viewport Resolution is: ", get_viewport().get_visible_rect().size)
+       print("Viewport Resolution is: ", get_viewport_rect().size)
 
  .. code-tab:: csharp
 
@@ -51,6 +51,8 @@ for example:
         // Print the size of the viewport.
         GD.Print("Viewport Resolution is: ", GetViewportRect().Size);
     }
+
+Note that ... only exists on CanvasItem and otherwise, you'll want to use `get_viewport().get_visible_rect().size`
 
 Alternatively, it's possible to ask the viewport for the mouse position:
 
