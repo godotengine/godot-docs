@@ -79,7 +79,6 @@ look for the ``name`` field and print that to console.
 
         using Godot;
         using System.Text;
-        using Godot.Collections;
 
         public partial class MyNode : Node
         {
