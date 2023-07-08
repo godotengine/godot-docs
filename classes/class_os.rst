@@ -1463,7 +1463,7 @@ If ``file_or_dir_path`` is a valid directory path, and ``open_folder`` is ``true
 
 Use :ref:`ProjectSettings.globalize_path<class_ProjectSettings_method_globalize_path>` to convert a ``res://`` or ``user://`` path into a system path for use with this method.
 
-\ **Note:** Currently this method is only implemented on Windows. On other platforms, it will fallback to :ref:`shell_open<class_OS_method_shell_open>` with a directory path for ``file_or_dir_path``.
+\ **Note:** Currently this method is only implemented on Windows and macOS. On other platforms, it will fallback to :ref:`shell_open<class_OS_method_shell_open>` with a directory path of ``file_or_dir_path`` with prefix ``file://``.
 
 .. rst-class:: classref-item-separator
 
