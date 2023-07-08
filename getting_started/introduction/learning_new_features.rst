@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. Keep this page short and sweet! We want users to read it to the end, so they
    know where to find information, how to get help, and how to maximize chances
    of getting answers.
@@ -33,7 +31,7 @@ access it both online and offline. We recommend browsing the reference offline,
 from within the Godot editor. To do so, go to Help -> Search Help or press
 :kbd:`F1`.
 
-.. image:: img/manual_class_reference_search.png
+.. image:: img/manual_class_reference_search.webp
 
 To browse it online, head to the manual's :ref:`Class Reference <doc_class_reference>`
 section.
