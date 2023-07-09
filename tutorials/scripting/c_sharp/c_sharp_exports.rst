@@ -207,13 +207,13 @@ Allow floats from -10 to 20 and snap the value to multiples of 0.2.
     [Export(PropertyHint.Range, "-10,20,0.2")]
     public float Number { get; set; }
 
-If you add the hints "or_greater" and/or "or_lesser" you can go above
+If you add the hints "or_greater" and/or "or_less" you can go above
 or below the limits when adjusting the value by typing it instead of using
 the slider.
 
 .. code-block:: csharp
 
-    [Export(PropertyHint.Range, "0,100,1,or_greater,or_lesser")]
+    [Export(PropertyHint.Range, "0,100,1,or_greater,or_less")]
     public int Number { get; set; }
 
 Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
