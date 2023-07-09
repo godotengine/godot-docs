@@ -163,11 +163,11 @@ Allow floats from -10 to 20 and snap the value to multiples of 0.2.
 
     @export_range(-10, 20, 0.2) var k: float
 
-The limits can be only for the slider if you add the hints "or_greater" and/or "or_lesser".
+The limits can be only for the slider if you add the hints "or_greater" and/or "or_less".
 
 ::
 
-    @export_range(0, 100, 1, "or_greater", "or_lesser")
+    @export_range(0, 100, 1, "or_greater", "or_less")
 
 .. TODO: Document other hint strings usable with export_range.
 
