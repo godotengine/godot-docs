@@ -835,6 +835,12 @@ Create navigation (-navmesh)
 A mesh node with the ``-navmesh`` suffix will be converted to a navigation mesh.
 The original Mesh object will be removed at import-time.
 
+Create a OccluderInstance3D (-occ)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A mesh node with the ``-occ`` suffix will be imported as a :ref:`class_OccluderInstance3D` node.
+If you don't want the resultant mesh to be visible, use the ``-occonly`` suffix.
+
 Create a VehicleBody (-vehicle)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
