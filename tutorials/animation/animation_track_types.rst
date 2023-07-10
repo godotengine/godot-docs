@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_animation_track_types:
 
 Animation Track types
