@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_godot_notifications:
 
 Godot notifications
@@ -15,17 +13,17 @@ relate to it. For example, if the engine tells a
 Some of these notifications, like draw, are useful to override in scripts. So
 much so that Godot exposes many of them with dedicated functions:
 
-- ``_ready()`` : NOTIFICATION_READY
+- ``_ready()``: ``NOTIFICATION_READY``
 
-- ``_enter_tree()`` : NOTIFICATION_ENTER_TREE
+- ``_enter_tree()``: ``NOTIFICATION_ENTER_TREE``
 
-- ``_exit_tree()`` : NOTIFICATION_EXIT_TREE
+- ``_exit_tree()``: ``NOTIFICATION_EXIT_TREE``
 
-- ``_process(delta)`` : NOTIFICATION_PROCESS
+- ``_process(delta)``: ``NOTIFICATION_PROCESS``
 
-- ``_physics_process(delta)`` : NOTIFICATION_PHYSICS_PROCESS
+- ``_physics_process(delta)``: ``NOTIFICATION_PHYSICS_PROCESS``
 
-- ``_draw()`` : NOTIFICATION_DRAW
+- ``_draw()``: ``NOTIFICATION_DRAW``
 
 What users might *not* realize is that notifications exist for types other
 than Node alone, for example:
@@ -35,7 +33,7 @@ than Node alone, for example:
 
 - :ref:`Object::NOTIFICATION_PREDELETE <class_Object_constant_NOTIFICATION_PREDELETE>`:
   a callback that triggers before the engine deletes an Object, i.e. a
-  'destructor'.
+  "destructor".
 
 And many of the callbacks that *do* exist in Nodes don't have any dedicated
 methods, but are still quite useful.
@@ -48,7 +46,7 @@ methods, but are still quite useful.
   node.
 
 One can access all these custom notifications from the universal
-``_notification`` method.
+``_notification()`` method.
 
 .. note::
   Methods in the documentation labeled as "virtual" are also intended to be
@@ -65,38 +63,41 @@ virtual functions?
 _process vs. _physics_process vs. \*_input
 ------------------------------------------
 
-Use ``_process`` when one needs a framerate-dependent deltatime between
+Use ``_process()`` when one needs a framerate-dependent delta time between
 frames. If code that updates object data needs to update as often as
 possible, this is the right place. Recurring logic checks and data caching
 often execute here, but it comes down to the frequency at which one needs
 the evaluations to update. If they don't need to execute every frame, then
-implementing a Timer-yield-timeout loop is another option.
+implementing a Timer-timeout loop is another option.
 
 .. tabs::
  .. code-tab:: gdscript GDScript
 
-    # Infinitely loop, but only execute whenever the Timer fires.
     # Allows for recurring operations that don't trigger script logic
     # every frame (or even every fixed frame).
-    while true:
-        my_method()
-        $Timer.start()
-        yield($Timer, "timeout")
+    func _ready():
+        var timer = Timer.new()
+        timer.autostart = true
+        timer.wait_time = 0.5
+        add_child(timer)
+        timer.timeout.connect(func():
+            print("This block runs every 0.5 seconds")
+        )
 
-Use ``_physics_process`` when one needs a framerate-independent deltatime
+Use ``_physics_process()`` when one needs a framerate-independent delta time
 between frames. If code needs consistent updates over time, regardless
 of how fast or slow time advances, this is the right place.
 Recurring kinematic and object transform operations should execute here.
 
 While it is possible, to achieve the best performance, one should avoid
-making input checks during these callbacks. ``_process`` and
-``_physics_process`` will trigger at every opportunity (they do not "rest" by
-default). In contrast, ``*_input`` callbacks will trigger only on frames in
+making input checks during these callbacks. ``_process()`` and
+``_physics_process()`` will trigger at every opportunity (they do not "rest" by
+default). In contrast, ``*_input()`` callbacks will trigger only on frames in
 which the engine has actually detected the input.
 
 One can check for input actions within the input callbacks just the same.
 If one wants to use delta time, one can fetch it from the related
-deltatime methods as needed.
+delta time methods as needed.
 
 .. tabs::
   .. code-tab:: gdscript GDScript
@@ -146,8 +147,8 @@ _init vs. initialization vs. export
 
 If the script initializes its own node subtree, without a scene,
 that code should execute here. Other property or SceneTree-independent
-initializations should also run here. This triggers before ``_ready`` or
-``_enter_tree``, but after a script creates and initializes its properties.
+initializations should also run here. This triggers before ``_ready()`` or
+``_enter_tree()``, but after a script creates and initializes its properties.
 
 Scripts have three types of property assignments that can occur during
 instantiation:
@@ -216,16 +217,16 @@ _ready vs. _enter_tree vs. NOTIFICATION_PARENTED
 ------------------------------------------------
 
 When instantiating a scene connected to the first executed scene, Godot will
-instantiate nodes down the tree (making ``_init`` calls) and build the tree
-going downwards from the root. This causes ``_enter_tree`` calls to cascade
+instantiate nodes down the tree (making ``_init()`` calls) and build the tree
+going downwards from the root. This causes ``_enter_tree()`` calls to cascade
 down the tree. Once the tree is complete, leaf nodes call ``_ready``. A node
 will call this method once all child nodes have finished calling theirs. This
 then causes a reverse cascade going up back to the tree's root.
 
 When instantiating a script or a standalone scene, nodes are not
-added to the SceneTree upon creation, so no ``_enter_tree`` callbacks
-trigger. Instead, only the ``_init`` call occurs. When the scene is added
-to the SceneTree, the ``_enter_tree`` and ``_ready`` calls occur.
+added to the SceneTree upon creation, so no ``_enter_tree()`` callbacks
+trigger. Instead, only the ``_init()`` call occurs. When the scene is added
+to the SceneTree, the ``_enter_tree()`` and ``_ready()`` calls occur.
 
 If one needs to trigger behavior that occurs as nodes parent to another,
 regardless of whether it occurs as part of the main/active scene or not, one
