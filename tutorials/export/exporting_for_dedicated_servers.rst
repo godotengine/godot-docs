@@ -58,7 +58,7 @@ See :ref:`doc_exporting_projects` for more information.
 .. note::
 
     If you're exporting the project from a headless editor, call the headless
-    editor with the `--export-pack` option while in the project folder to export
+    editor with the ``--export-pack`` option while in the project folder to export
     only a PCK file.
 
 .. note::
