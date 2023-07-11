@@ -52,9 +52,3 @@ This can lead to files unnecessarily being marked as modified by Git due to thei
 It is better to set this option as::
 
     git config --global core.autocrlf input
-
-Known issues
-------------
-
-**Always close the editor** before running ``git pull``! Otherwise, you may
-`lose data if you synchronize files while the editor is open <https://github.com/godotengine/godot/issues/20250>`__.
