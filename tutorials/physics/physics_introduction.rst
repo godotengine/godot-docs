@@ -169,7 +169,7 @@ would be as follows::
 
     # Binary - set the bit corresponding to the layers you want to enable (1, 3, and 4) to 1, set all other bits to 0.
     # Note: Layer 32 is the first bit, layer 1 is the last. The mask for layers 4,3 and 1 is therefore
-    0b10000000_00000000_00000000_00001101
+    0b00000000_00000000_00000000_00001101
     # (This can be shortened to 0b1101)
 
     # Hexadecimal equivalent (1101 binary converted to hexadecimal)
