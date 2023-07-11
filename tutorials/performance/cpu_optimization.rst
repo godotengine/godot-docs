@@ -1,12 +1,10 @@
-:article_outdated: True
-
 .. _doc_cpu_optimization:
 
 CPU optimization
 ================
 
 Measuring performance
-=====================
+---------------------
 
 We have to know where the "bottlenecks" are to know how to speed up our program.
 Bottlenecks are the slowest parts of the program that limit the rate that
@@ -18,7 +16,7 @@ lead to small performance improvements.
 For the CPU, the easiest way to identify bottlenecks is to use a profiler.
 
 CPU profilers
-=============
+-------------
 
 Profilers run alongside your program and take timing measurements to work out
 what proportion of time is spent in each function.
@@ -31,7 +29,7 @@ slow down your project significantly.
 After profiling, you can look back at the results for a frame.
 
 .. figure:: img/godot_profiler.png
-.. figure:: img/godot_profiler.png
+   :align: center
    :alt: Screenshot of the Godot profiler
 
    Results of a profile of one of the demo projects.
@@ -51,7 +49,7 @@ For more info about using Godot's built-in profiler, see
 :ref:`doc_debugger_panel`.
 
 External profilers
-~~~~~~~~~~~~~~~~~~
+------------------
 
 Although the Godot IDE profiler is very convenient and useful, sometimes you
 need more power, and the ability to profile the Godot engine source code itself.
@@ -98,7 +96,7 @@ batching, which greatly speeds up 2D rendering by reducing bottlenecks in this
 area.
 
 Manually timing functions
-=========================
+-------------------------
 
 Another handy technique, especially once you have identified the bottleneck
 using a profiler, is to manually time the function or area under test.
@@ -126,7 +124,7 @@ time them as you go. This will give you crucial feedback as to whether the
 optimization is working (or not).
 
 Caches
-======
+------
 
 CPU caches are something else to be particularly aware of, especially when
 comparing timing results of two different versions of a function. The results
@@ -159,7 +157,7 @@ rendering and physics. Still, you should be especially aware of caching when
 writing GDExtensions.
 
 Languages
-=========
+---------
 
 Godot supports a number of different languages, and it is worth bearing in mind
 that there are trade-offs involved. Some languages are designed for ease of use
@@ -170,7 +168,7 @@ language you choose. If your project is making a lot of calculations in its own
 code, consider moving those calculations to a faster language.
 
 GDScript
-~~~~~~~~
+^^^^^^^^
 
 :ref:`GDScript <toc-learn-scripting-gdscript>` is designed to be easy to use and iterate,
 and is ideal for making many types of games. However, in this language, ease of
@@ -179,7 +177,7 @@ calculations, consider moving some of your project to one of the other
 languages.
 
 C#
-~~
+^^
 
 :ref:`C# <toc-learn-scripting-C#>` is popular and has first-class support in Godot. It
 offers a good compromise between speed and ease of use. Beware of possible
@@ -188,13 +186,13 @@ common approach to workaround issues with garbage collection is to use *object
 pooling*, which is outside the scope of this guide.
 
 Other languages
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 Third parties provide support for several other languages, including `Rust
 <https://github.com/godot-rust/gdext>`_.
 
 C++
-~~~
+^^^
 
 Godot is written in C++. Using C++ will usually result in the fastest code.
 However, on a practical level, it is the most difficult to deploy to end users'
@@ -203,7 +201,7 @@ GDExtensions and
 :ref:`custom modules <doc_custom_modules_in_cpp>`.
 
 Threads
-=======
+-------
 
 Consider using threads when making a lot of calculations that can run in
 parallel to each other. Modern CPUs have multiple cores, each one capable of
@@ -222,7 +220,7 @@ debugger doesn't support setting up breakpoints in threads yet.
 For more information on threads, see :ref:`doc_using_multiple_threads`.
 
 SceneTree
-=========
+---------
 
 Although Nodes are an incredibly powerful and versatile concept, be aware that
 every node has a cost. Built-in functions such as `_process()` and
@@ -247,7 +245,7 @@ You can avoid the SceneTree altogether by using Server APIs. For more
 information, see :ref:`doc_using_servers`.
 
 Physics
-=======
+-------
 
 In some situations, physics can end up becoming a bottleneck. This is
 particularly the case with complex worlds and large numbers of physics objects.
