@@ -99,11 +99,6 @@ It is possible to choose other types of imported resources in the Import dock:
   used to reduce memory usage for animated 2D sprites. Only supported in 2D due
   to missing support in built-in 3D shaders.
 
-.. note::
-
-    For technical reasons, the editor must be restarted after changing an import
-    type in the Import dock.
-
 Detect 3D
 ^^^^^^^^^
 
