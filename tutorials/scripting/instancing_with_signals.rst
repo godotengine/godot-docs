@@ -149,7 +149,7 @@ In the main scene, we then connect the player's signal (it will appear in the
 
     private void OnPlayerShoot(PackedScene bullet, float direction, Vector2 location)
     {
-        var spawnedBullet = (Bullet)bullet.Instantiate();
+        var spawnedBullet = bullet.Instantiate<Bullet>();
         AddChild(spawnedBullet);
         spawnedBullet.Rotation = direction;
         spawnedBullet.Position = location;
