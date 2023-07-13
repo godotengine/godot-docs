@@ -35,8 +35,8 @@ of Godot. GDExtensions will not work in older versions of Godot (only Godot 4 an
 .. note::
 
     To use `GDExtension <https://godotengine.org/article/introducing-gd-extensions>`__
-    you need to use the ``4.0`` branch of godot-cpp,
-    which is only compatible with Godot 4.0 and being used here as an example.
+    you need to use the ``4.0`` branch or later of godot-cpp.
+    Godot 4.1 is being used here as an example.
     The ``master`` branch is the development branch and is being updated
     regularly to work with godot's ``master`` branch.
 
@@ -48,7 +48,7 @@ a Git submodule:
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
     git init
-    git submodule add -b 4.0 https://github.com/godotengine/godot-cpp
+    git submodule add -b 4.1 https://github.com/godotengine/godot-cpp
     cd godot-cpp
     git submodule update --init
 
@@ -58,7 +58,7 @@ Alternatively, you can also clone it to the project folder:
 
     mkdir gdextension_cpp_example
     cd gdextension_cpp_example
-    git clone -b 4.0 https://github.com/godotengine/godot-cpp
+    git clone -b 4.1 https://github.com/godotengine/godot-cpp
 
 .. note::
 
