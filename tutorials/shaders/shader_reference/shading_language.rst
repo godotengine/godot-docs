@@ -1208,7 +1208,7 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | vec3 **refract** (vec3 I, vec3 N, float eta)                                | Refract.                                                            |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
-| vec_type **faceforward** (vec_type N, vec_type I, vec_type Nref)            | If ``dot(Nref, I)`` < 0, return N, otherwise –N.                    |
+| vec_type **faceforward** (vec_type N, vec_type I, vec_type Nref)            | If ``dot(Nref, I)`` < 0, return ``N``, otherwise ``-N``.            |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | mat_type **matrixCompMult** (mat_type x, mat_type y)                        | Matrix component multiplication.                                    |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
@@ -1240,8 +1240,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | ivec2 **textureSize** (gsampler2D s, int lod)                               | Get the size of a texture.                                          |
 |                                                                             |                                                                     |
-| ivec3 **textureSize** (gsampler2DArray s, int lod)                          | The LOD defines which mipmap level is used. An LOD value of 0 will  |
-|                                                                             | use the full resolution texture.                                    |
+| ivec3 **textureSize** (gsampler2DArray s, int lod)                          | The LOD defines which mipmap level is used. An LOD value of ``0``   |
+|                                                                             | will use the full resolution texture.                               |
 | ivec3 **textureSize** (gsampler3D s, int lod)                               |                                                                     |
 |                                                                             |                                                                     |
 | ivec2 **textureSize** (samplerCube s, int lod)                              |                                                                     |
@@ -1249,8 +1249,8 @@ is used, it can be scalar or vector.
 | ivec2 **textureSize** (samplerCubeArray s, int lod)                         |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | vec2 **textureQueryLod** (gsampler2D s, vec2 p)                             | Compute the level-of-detail that would be used to sample from a     |
-|                                                                             | texture. The `x` component of the resulted value is the mipmap      |
-| vec3 **textureQueryLod** (gsampler2DArray s, vec2 p)                        | array that would be accessed. The `y` component is computed         |
+|                                                                             | texture. The ``x`` component of the resulted value is the mipmap    |
+| vec3 **textureQueryLod** (gsampler2DArray s, vec2 p)                        | array that would be accessed. The ``y`` component is computed       |
 |                                                                             | level-of-detail relative to the base level (regardless of the       |
 | vec2 **textureQueryLod** (gsampler3D s, vec3 p)                             | mipmap levels of the texture).                                      |
 |                                                                             |                                                                     |
@@ -1258,7 +1258,7 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | int **textureQueryLevels** (gsampler2D s)                                   | Get the number of accessible mipmap levels of a texture.            |
 |                                                                             |                                                                     |
-| int **textureQueryLevels** (gsampler2DArray s)                              | If the texture is unassigned to a sampler, `0` is returned.         |
+| int **textureQueryLevels** (gsampler2DArray s)                              | If the texture is unassigned to a sampler, ``0`` is returned.       |
 |                                                                             |                                                                     |
 | int **textureQueryLevels** (gsampler3D s)                                   |                                                                     |
 |                                                                             |                                                                     |
@@ -1282,7 +1282,7 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureLod** (gsampler2D s, vec2 p, float lod)                 | Perform a texture read at custom mipmap.                            |
 |                                                                             |                                                                     |
-| gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            | The LOD defines which mipmap level is used. An LOD value of 0.0     |
+| gvec4_type **textureLod** (gsampler2DArray s, vec3 p, float lod)            | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
 |                                                                             | will use the full resolution texture.                               |
 | gvec4_type **textureLod** (gsampler3D s, vec3 p, float lod)                 |                                                                     |
 |                                                                             |                                                                     |
@@ -1292,7 +1292,7 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureProjLod** (gsampler2D s, vec3 p, float lod)             | Performs a texture read with projection/LOD.                        |
 |                                                                             |                                                                     |
-| gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             | The LOD defines which mipmap level is used. An LOD value of 0.0     |
+| gvec4_type **textureProjLod** (gsampler2D s, vec4 p, float lod)             | The LOD defines which mipmap level is used. An LOD value of ``0.0`` |
 |                                                                             | will use the full resolution texture.                               |
 | gvec4_type **textureProjLod** (gsampler3D s, vec4 p, float lod)             |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
@@ -1318,8 +1318,8 @@ is used, it can be scalar or vector.
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **texelFetch** (gsampler2D s, ivec2 p, int lod)                  | Fetches a single texel using integer coordinates.                   |
 |                                                                             |                                                                     |
-| gvec4_type **texelFetch** (gsampler2DArray s, ivec3 p, int lod)             | The LOD defines which mipmap level is used. An LOD value of 0 will  |
-|                                                                             | use the full resolution texture.                                    |
+| gvec4_type **texelFetch** (gsampler2DArray s, ivec3 p, int lod)             | The LOD defines which mipmap level is used. An LOD value of ``0``   |
+|                                                                             | will use the full resolution texture.                               |
 | gvec4_type **texelFetch** (gsampler3D s, ivec3 p, int lod)                  |                                                                     |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------+
 | gvec4_type **textureGather** (gsampler2D s, vec2 p [, int comps])           | Gathers four texels from a texture.                                 |
