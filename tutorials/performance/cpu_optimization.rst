@@ -56,19 +56,8 @@ External profilers
 Although the Godot IDE profiler is very convenient and useful, sometimes you
 need more power, and the ability to profile the Godot engine source code itself.
 
-You can use a number of third party profilers to do this including
-`Valgrind <https://www.valgrind.org/>`__,
-`VerySleepy <http://www.codersnotes.com/sleepy/>`__,
-`HotSpot <https://github.com/KDAB/hotspot>`__,
-`Visual Studio <https://visualstudio.microsoft.com/>`__ and
-`Intel VTune <https://software.intel.com/content/www/us/en/develop/tools/vtune-profiler.html>`__.
-
-.. note:: You will need to compile Godot from source to use a third-party profiler.
-          This is required to obtain debugging symbols. You can also use a debug
-          build, however, note that the results of profiling a debug build will
-          be different to a release build, because debug builds are less
-          optimized. Bottlenecks are often in a different place in debug builds,
-          so you should profile release builds whenever possible.
+You can :ref:`use a number of third-party C++ profilers <doc_using_cpp_profilers>`
+to do this.
 
 .. figure:: img/valgrind.png
    :alt: Screenshot of Callgrind
@@ -81,7 +70,7 @@ itself, excluding child functions (Self), the number of times the function is
 called, the function name, and the file or module.
 
 In this example, we can see nearly all time is spent under the
-`Main::iteration()` function. This is the master function in the Godot source
+``Main::iteration()`` function. This is the master function in the Godot source
 code that is called repeatedly. It causes frames to be drawn, physics ticks to
 be simulated, and nodes and scripts to be updated. A large proportion of the
 time is spent in the functions to render a canvas (66%), because this example
@@ -225,8 +214,8 @@ SceneTree
 =========
 
 Although Nodes are an incredibly powerful and versatile concept, be aware that
-every node has a cost. Built-in functions such as `_process()` and
-`_physics_process()` propagate through the tree. This housekeeping can reduce
+every node has a cost. Built-in functions such as ``_process()`` and
+``_physics_process()`` propagate through the tree. This housekeeping can reduce
 performance when you have a very large numbers of nodes (how many exactly
 depends on the target platform and can range from thousands to tens of
 thousands so ensure that you profile performance on all target platforms
