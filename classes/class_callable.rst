@@ -81,6 +81,10 @@ In GDScript, it's possible to create lambda functions within a method. Lambda fu
         # This will work, as lambdas are custom callables.
         create_tween().tween_callback(func(): my_dictionary.clear())
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-reftable-group
 
 Constructors

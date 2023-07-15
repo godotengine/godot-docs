@@ -25,6 +25,10 @@ The 3D counterpart to **Rect2** is :ref:`AABB<class_AABB>`.
 
 Negative values for :ref:`size<class_Rect2_property_size>` are not supported and will not work for most methods. Use :ref:`abs<class_Rect2_method_abs>` to get a Rect2 with a positive size.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

@@ -139,6 +139,10 @@ Methods
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_png_from_buffer<class_Image_method_load_png_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                         |
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_svg_from_buffer<class_Image_method_load_svg_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer, :ref:`float<class_float>` scale=1.0 **)**                                                                                                    |
+   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_svg_from_string<class_Image_method_load_svg_from_string>` **(** :ref:`String<class_String>` svg_str, :ref:`float<class_float>` scale=1.0 **)**                                                                                                                     |
+   +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_tga_from_buffer<class_Image_method_load_tga_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                         |
    +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`load_webp_from_buffer<class_Image_method_load_webp_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**                                                                                                                                       |
@@ -1393,6 +1397,36 @@ Loads an image from the binary contents of a JPEG file.
 :ref:`Error<enum_@GlobalScope_Error>` **load_png_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)**
 
 Loads an image from the binary contents of a PNG file.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Image_method_load_svg_from_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **load_svg_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer, :ref:`float<class_float>` scale=1.0 **)**
+
+Loads an image from the UTF-8 binary contents of an **uncompressed** SVG file (**.svg**).
+
+\ **Note:** Beware when using compressed SVG files (like **.svgz**), they need to be ``decompressed`` before loading.
+
+\ **Note:** This method is only available in engine builds with the SVG module enabled. By default, the SVG module is enabled, but it can be disabled at build-time using the ``module_svg_enabled=no`` SCons option.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Image_method_load_svg_from_string:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **load_svg_from_string** **(** :ref:`String<class_String>` svg_str, :ref:`float<class_float>` scale=1.0 **)**
+
+Loads an image from the string contents of a SVG file (**.svg**).
+
+\ **Note:** This method is only available in engine builds with the SVG module enabled. By default, the SVG module is enabled, but it can be disabled at build-time using the ``module_svg_enabled=no`` SCons option.
 
 .. rst-class:: classref-item-separator
 

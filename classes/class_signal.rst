@@ -44,6 +44,10 @@ In GDScript, signals can be declared with the ``signal`` keyword. In C#, you may
 
 
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

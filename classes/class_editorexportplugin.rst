@@ -290,7 +290,9 @@ Return ``true``, if the result of :ref:`_get_export_options<class_EditorExportPl
 
 void **add_file** **(** :ref:`String<class_String>` path, :ref:`PackedByteArray<class_PackedByteArray>` file, :ref:`bool<class_bool>` remap **)**
 
-Adds a custom file to be exported. ``path`` is the virtual path that can be used to load the file, ``file`` is the binary data of the file. If ``remap`` is ``true``, file will not be exported, but instead remapped to the given ``path``.
+Adds a custom file to be exported. ``path`` is the virtual path that can be used to load the file, ``file`` is the binary data of the file.
+
+When called inside :ref:`_export_file<class_EditorExportPlugin_method__export_file>` and ``remap`` is ``true``, the current file will not be exported, but instead remapped to this custom file. ``remap`` is ignored when called in other places.
 
 .. rst-class:: classref-item-separator
 

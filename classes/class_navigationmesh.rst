@@ -407,7 +407,7 @@ The maximum distance the detail mesh surface should deviate from heightfield, in
 - void **set_edge_max_error** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_edge_max_error** **(** **)**
 
-The maximum distance a simplfied contour's border edges should deviate the original raw contour.
+The maximum distance a simplified contour's border edges should deviate the original raw contour.
 
 .. rst-class:: classref-item-separator
 

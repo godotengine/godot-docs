@@ -88,6 +88,10 @@ Properties
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`package/retain_data_on_uninstall<class_EditorExportPlatformAndroid_property_package/retain_data_on_uninstall>`                             |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`package/show_as_launcher_app<class_EditorExportPlatformAndroid_property_package/show_as_launcher_app>`                                     |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`package/show_in_android_tv<class_EditorExportPlatformAndroid_property_package/show_in_android_tv>`                                         |
+   +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`package/signed<class_EditorExportPlatformAndroid_property_package/signed>`                                                                 |
    +---------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`package/unique_name<class_EditorExportPlatformAndroid_property_package/unique_name>`                                                       |
@@ -771,6 +775,30 @@ Name of the application.
 :ref:`bool<class_bool>` **package/retain_data_on_uninstall**
 
 If ``true``, when the user uninstalls an app, a prompt to keep the app's data will be shown.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_package/show_as_launcher_app:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **package/show_as_launcher_app**
+
+If ``true``, the user will be able to set this app as the system launcher in Android preferences.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformAndroid_property_package/show_in_android_tv:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **package/show_in_android_tv**
+
+If ``true``, this app will show in Android TV launcher UI.
 
 .. rst-class:: classref-item-separator
 

@@ -79,11 +79,15 @@ Methods
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>` | :ref:`get_navigation_layer_value<class_NavigationRegion2D_method_get_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number **)** |const|                        |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`RID<class_RID>`   | :ref:`get_navigation_map<class_NavigationRegion2D_method_get_navigation_map>` **(** **)** |const|                                                                           |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`RID<class_RID>`   | :ref:`get_region_rid<class_NavigationRegion2D_method_get_region_rid>` **(** **)** |const|                                                                                   |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`set_avoidance_layer_value<class_NavigationRegion2D_method_set_avoidance_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**   |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                    | :ref:`set_navigation_layer_value<class_NavigationRegion2D_method_set_navigation_layer_value>` **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)** |
+   +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                    | :ref:`set_navigation_map<class_NavigationRegion2D_method_set_navigation_map>` **(** :ref:`RID<class_RID>` navigation_map **)**                                              |
    +-------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
@@ -262,6 +266,18 @@ Returns whether or not the specified layer of the :ref:`navigation_layers<class_
 
 ----
 
+.. _class_NavigationRegion2D_method_get_navigation_map:
+
+.. rst-class:: classref-method
+
+:ref:`RID<class_RID>` **get_navigation_map** **(** **)** |const|
+
+Returns the current navigation map :ref:`RID<class_RID>` used by this region.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_NavigationRegion2D_method_get_region_rid:
 
 .. rst-class:: classref-method
@@ -293,6 +309,18 @@ Based on ``value``, enables or disables the specified layer in the :ref:`avoidan
 void **set_navigation_layer_value** **(** :ref:`int<class_int>` layer_number, :ref:`bool<class_bool>` value **)**
 
 Based on ``value``, enables or disables the specified layer in the :ref:`navigation_layers<class_NavigationRegion2D_property_navigation_layers>` bitmask, given a ``layer_number`` between 1 and 32.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_NavigationRegion2D_method_set_navigation_map:
+
+.. rst-class:: classref-method
+
+void **set_navigation_map** **(** :ref:`RID<class_RID>` navigation_map **)**
+
+Sets the :ref:`RID<class_RID>` of the navigation map this region should use. By default the region will automatically join the :ref:`World2D<class_World2D>` default navigation map so this function is only required to override the default map.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

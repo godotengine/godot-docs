@@ -19,7 +19,7 @@ Blends two of three animations additively inside of an :ref:`AnimationNodeBlendT
 Description
 -----------
 
-A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations out of three additively out of three based on the amounmt value.
+A resource to add to an :ref:`AnimationNodeBlendTree<class_AnimationNodeBlendTree>`. Blends two animations out of three additively out of three based on the amount value.
 
 This animation node has three inputs:
 

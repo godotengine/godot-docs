@@ -23,6 +23,10 @@ Singletons are also documented here, since they can be accessed from anywhere.
 
 For the entries related to GDScript which can be accessed in any script see :ref:`@GDScript<class_@GDScript>`.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

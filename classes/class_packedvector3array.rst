@@ -19,6 +19,10 @@ Description
 
 An array specifically designed to hold :ref:`Vector3<class_Vector3>`. Packs data tightly, so it saves memory for large array sizes.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-reftable-group
 
 Constructors

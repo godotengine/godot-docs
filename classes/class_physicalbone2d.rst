@@ -113,7 +113,7 @@ The index of the :ref:`Bone2D<class_Bone2D>` that this **PhysicalBone2D** should
 - void **set_bone2d_nodepath** **(** :ref:`NodePath<class_NodePath>` value **)**
 - :ref:`NodePath<class_NodePath>` **get_bone2d_nodepath** **(** **)**
 
-The :ref:`NodePath<class_NodePath>` to the :ref:`Bone2D<class_Bone2D>` that this **PhysicalBone2D** isshould simulate.
+The :ref:`NodePath<class_NodePath>` to the :ref:`Bone2D<class_Bone2D>` that this **PhysicalBone2D** should simulate.
 
 .. rst-class:: classref-item-separator
 

@@ -115,7 +115,7 @@ Property Descriptions
 - void **set_loop** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **has_loop** **(** **)**
 
-If ``true``, the stream will automatically loop when it reaches the end.
+If ``true``, the audio will play again from the specified :ref:`loop_offset<class_AudioStreamOggVorbis_property_loop_offset>` once it is done playing. Useful for ambient sounds and background music.
 
 .. rst-class:: classref-item-separator
 
