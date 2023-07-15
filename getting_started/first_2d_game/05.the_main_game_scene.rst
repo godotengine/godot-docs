@@ -324,7 +324,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
         # Choose the velocity for the mob.
         var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
-        mob.linear_velocity = velocity.rotated(direction)
+        mob.get_child(0).linear_velocity = velocity.rotated(direction)
 
         # Spawn the mob by adding it to the Main scene.
         add_child(mob)
@@ -356,7 +356,7 @@ Note that a new instance must be added to the scene using ``add_child()``.
 
         // Choose the velocity.
         var velocity = new Vector2((float)GD.RandRange(150.0, 250.0), 0);
-        mob.LinearVelocity = velocity.Rotated(direction);
+        mob.GetChild(0).LinearVelocity = velocity.Rotated(direction);
 
         // Spawn the mob by adding it to the Main scene.
         AddChild(mob);
