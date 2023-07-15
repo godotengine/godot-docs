@@ -23,6 +23,10 @@ Some string methods have corresponding variations. Variations suffixed with ``n`
 
 \ **Note:** In a boolean context, a string will evaluate to ``false`` if it is empty (``""``). Otherwise, a string will always evaluate to ``true``. The ``not`` operator cannot be used. Instead, :ref:`is_empty<class_String_method_is_empty>` should be used to check for empty strings.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials
@@ -1780,11 +1784,11 @@ Converts the string representing a decimal number into a :ref:`float<class_float
 
 ::
 
-    var a = "12.35".to_float() # a is 12.35
-    var b = "1.2.3".to_float() # b is 1.2
-    var c = "12xy3".to_float() # c is 12.0
-    var d = "1e3".to_float()   # d is 1000.0
-    var e = "Hello!".to_int()  # e is 0.0
+    var a = "12.35".to_float()  # a is 12.35
+    var b = "1.2.3".to_float()  # b is 1.2
+    var c = "12xy3".to_float()  # c is 12.0
+    var d = "1e3".to_float()    # d is 1000.0
+    var e = "Hello!".to_float() # e is 0.0
 
 .. rst-class:: classref-item-separator
 
@@ -2017,7 +2021,7 @@ Returns a copy of the string with all characters that are not allowed in :ref:`i
 
 :ref:`String<class_String>` **validate_node_name** **(** **)** |const|
 
-Returns a copy of the string with all characters that are not allowed in :ref:`Node.name<class_Node_property_name>` removed (``.`` ``:`` ``@`` ``/`` ``"`` ``%``).
+Returns a copy of the string with all characters that are not allowed in :ref:`Node.name<class_Node_property_name>` (``.`` ``:`` ``@`` ``/`` ``"`` ``%``) replaced with underscores.
 
 .. rst-class:: classref-item-separator
 

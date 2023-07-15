@@ -192,6 +192,14 @@ An optional ``type_hint`` can be used to further specify the :ref:`Resource<clas
 
 Returns the dependencies for the resource at the given ``path``.
 
+\ **Note:** The dependencies are returned with slices separated by ``::``. You can use :ref:`String.get_slice<class_String_method_get_slice>` to get their components.
+
+::
+
+    for dep in ResourceLoader.get_dependencies(path):
+        print(dep.get_slice("::", 0)) # Prints UID.
+        print(dep.get_slice("::", 2)) # Prints path.
+
 .. rst-class:: classref-item-separator
 
 ----

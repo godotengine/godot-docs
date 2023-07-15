@@ -74,7 +74,7 @@ Creates a TLS client configuration which validates certificates and their common
 
 You can specify a custom ``trusted_chain`` of certification authorities (the default CA list will be used if ``null``), and optionally provide a ``common_name_override`` if you expect the certificate to have a common name other then the server FQDN.
 
-Note: On the Web plafrom, TLS verification is always enforced against the CA list of the web browser. This is considered a security feature.
+\ **Note:** On the Web platform, TLS verification is always enforced against the CA list of the web browser. This is considered a security feature.
 
 .. rst-class:: classref-item-separator
 
@@ -86,9 +86,9 @@ Note: On the Web plafrom, TLS verification is always enforced against the CA lis
 
 :ref:`TLSOptions<class_TLSOptions>` **client_unsafe** **(** :ref:`X509Certificate<class_X509Certificate>` trusted_chain=null **)** |static|
 
-Creates an **unsafe** TLS client configuration where certificate validation is optional. You can optionally provide a valid ``trusted_chain``, but the common name of the certififcates will never be checked. Using this configuration for purposes other than testing **is not recommended**.
+Creates an **unsafe** TLS client configuration where certificate validation is optional. You can optionally provide a valid ``trusted_chain``, but the common name of the certificates will never be checked. Using this configuration for purposes other than testing **is not recommended**.
 
-Note: On the Web plafrom, TLS verification is always enforced against the CA list of the web browser. This is considered a security feature.
+\ **Note:** On the Web platform, TLS verification is always enforced against the CA list of the web browser. This is considered a security feature.
 
 .. rst-class:: classref-item-separator
 
@@ -102,7 +102,7 @@ Note: On the Web plafrom, TLS verification is always enforced against the CA lis
 
 Creates a TLS server configuration using the provided ``key`` and ``certificate``.
 
-Note: The ``certificate`` should include the full certificate chain up to the signing CA (certificates file can be concatenated using a general purpose text editor).
+\ **Note:** The ``certificate`` should include the full certificate chain up to the signing CA (certificates file can be concatenated using a general purpose text editor).
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

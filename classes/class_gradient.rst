@@ -164,6 +164,8 @@ Property Descriptions
 
 Gradient's colors returned as a :ref:`PackedColorArray<class_PackedColorArray>`.
 
+\ **Note:** This property returns a copy, modifying the return value does not update the gradient. To update the gradient use :ref:`set_color<class_Gradient_method_set_color>` method (for updating colors individually) or assign to this property directly (for bulk-updating all colors at once).
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -216,6 +218,8 @@ The algorithm used to interpolate between points of the gradient. See :ref:`Inte
 - :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_offsets** **(** **)**
 
 Gradient's offsets returned as a :ref:`PackedFloat32Array<class_PackedFloat32Array>`.
+
+\ **Note:** This property returns a copy, modifying the return value does not update the gradient. To update the gradient use :ref:`set_offset<class_Gradient_method_set_offset>` method (for updating offsets individually) or assign to this property directly (for bulk-updating all offsets at once).
 
 .. rst-class:: classref-section-separator
 

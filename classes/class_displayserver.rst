@@ -54,6 +54,8 @@ Methods
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                    | :ref:`enable_for_stealing_focus<class_DisplayServer_method_enable_for_stealing_focus>` **(** :ref:`int<class_int>` process_id **)**                                                                                                                                                                                                                                                                                                                                                                   |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                                   | :ref:`file_dialog_show<class_DisplayServer_method_file_dialog_show>` **(** :ref:`String<class_String>` title, :ref:`String<class_String>` current_directory, :ref:`String<class_String>` filename, :ref:`bool<class_bool>` show_hidden, :ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>` mode, :ref:`PackedStringArray<class_PackedStringArray>` filters, :ref:`Callable<class_Callable>` callback **)**                                                                                      |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                                    | :ref:`force_process_and_drop_events<class_DisplayServer_method_force_process_and_drop_events>` **(** **)**                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Color<class_Color>`                                               | :ref:`get_accent_color<class_DisplayServer_method_get_accent_color>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -181,6 +183,8 @@ Methods
    | :ref:`int<class_int>`                                                   | :ref:`keyboard_get_current_layout<class_DisplayServer_method_keyboard_get_current_layout>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                        |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Key<enum_@GlobalScope_Key>`                                       | :ref:`keyboard_get_keycode_from_physical<class_DisplayServer_method_keyboard_get_keycode_from_physical>` **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|                                                                                                                                                                                                                                                                                                                                |
+   +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Key<enum_@GlobalScope_Key>`                                       | :ref:`keyboard_get_label_from_physical<class_DisplayServer_method_keyboard_get_label_from_physical>` **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|                                                                                                                                                                                                                                                                                                                                    |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                                   | :ref:`keyboard_get_layout_count<class_DisplayServer_method_keyboard_get_layout_count>` **(** **)** |const|                                                                                                                                                                                                                                                                                                                                                                                            |
    +-------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -886,6 +890,56 @@ Represents the size of the :ref:`CursorShape<enum_DisplayServer_CursorShape>` en
 
 ----
 
+.. _enum_DisplayServer_FileDialogMode:
+
+.. rst-class:: classref-enumeration
+
+enum **FileDialogMode**:
+
+.. _class_DisplayServer_constant_FILE_DIALOG_MODE_OPEN_FILE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>` **FILE_DIALOG_MODE_OPEN_FILE** = ``0``
+
+The native file dialog allows selecting one, and only one file.
+
+.. _class_DisplayServer_constant_FILE_DIALOG_MODE_OPEN_FILES:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>` **FILE_DIALOG_MODE_OPEN_FILES** = ``1``
+
+The native file dialog allows selecting multiple files.
+
+.. _class_DisplayServer_constant_FILE_DIALOG_MODE_OPEN_DIR:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>` **FILE_DIALOG_MODE_OPEN_DIR** = ``2``
+
+The native file dialog only allows selecting a directory, disallowing the selection of any file.
+
+.. _class_DisplayServer_constant_FILE_DIALOG_MODE_OPEN_ANY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>` **FILE_DIALOG_MODE_OPEN_ANY** = ``3``
+
+The native file dialog allows selecting one file or directory.
+
+.. _class_DisplayServer_constant_FILE_DIALOG_MODE_SAVE_FILE:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>` **FILE_DIALOG_MODE_SAVE_FILE** = ``4``
+
+The native file dialog will warn when a file exists.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _enum_DisplayServer_WindowMode:
 
 .. rst-class:: classref-enumeration
@@ -1477,6 +1531,28 @@ void **enable_for_stealing_focus** **(** :ref:`int<class_int>` process_id **)**
 Allows the ``process_id`` PID to steal focus from this window. In other words, this disables the operating system's focus stealing protection for the specified PID.
 
 \ **Note:** This method is implemented only on Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_file_dialog_show:
+
+.. rst-class:: classref-method
+
+:ref:`Error<enum_@GlobalScope_Error>` **file_dialog_show** **(** :ref:`String<class_String>` title, :ref:`String<class_String>` current_directory, :ref:`String<class_String>` filename, :ref:`bool<class_bool>` show_hidden, :ref:`FileDialogMode<enum_DisplayServer_FileDialogMode>` mode, :ref:`PackedStringArray<class_PackedStringArray>` filters, :ref:`Callable<class_Callable>` callback **)**
+
+Displays OS native dialog for selecting files or directories in the file system.
+
+Callbacks have the following arguments: ``bool status, PackedStringArray selected_paths``.
+
+\ **Note:** This method is implemented if the display server has the ``FEATURE_NATIVE_DIALOG`` feature.
+
+\ **Note:** This method is implemented on macOS.
+
+\ **Note:** On macOS, native file dialogs have no title.
+
+\ **Note:** On macOS, sandboxed apps will save security-scoped bookmarks to retain access to the opened folders across multiple sessions. Use :ref:`OS.get_granted_permissions<class_OS_method_get_granted_permissions>` to get a list of saved bookmarks.
 
 .. rst-class:: classref-item-separator
 
@@ -2502,6 +2578,20 @@ Returns active keyboard layout index.
 :ref:`Key<enum_@GlobalScope_Key>` **keyboard_get_keycode_from_physical** **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|
 
 Converts a physical (US QWERTY) ``keycode`` to one in the active keyboard layout.
+
+\ **Note:** This method is implemented on Linux (X11), macOS and Windows.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_DisplayServer_method_keyboard_get_label_from_physical:
+
+.. rst-class:: classref-method
+
+:ref:`Key<enum_@GlobalScope_Key>` **keyboard_get_label_from_physical** **(** :ref:`Key<enum_@GlobalScope_Key>` keycode **)** |const|
+
+Converts a physical (US QWERTY) ``keycode`` to localized label printed on the key in the active keyboard layout.
 
 \ **Note:** This method is implemented on Linux (X11), macOS and Windows.
 

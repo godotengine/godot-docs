@@ -243,7 +243,7 @@ Method Descriptions
 
 :ref:`String<class_String>` **get_architecture_name** **(** **)** |const|
 
-Returns the name of the CPU architecture the Godot binary was built for. Possible return values are ``x86_64``, ``x86_32``, ``arm64``, ``armv7``, ``rv64``, ``riscv``, ``ppc64``, ``ppc``, ``wasm64`` and ``wasm32``.
+Returns the name of the CPU architecture the Godot binary was built for. Possible return values are ``x86_64``, ``x86_32``, ``arm64``, ``arm32``, ``rv64``, ``riscv``, ``ppc64``, ``ppc``, ``wasm64`` and ``wasm32``.
 
 To detect whether the current CPU architecture is 64-bit, you can use the fact that all 64-bit architecture names have ``64`` in their name:
 
@@ -253,16 +253,16 @@ To detect whether the current CPU architecture is 64-bit, you can use the fact t
  .. code-tab:: gdscript
 
     if "64" in Engine.get_architecture_name():
-        print("Running on 64-bit CPU.")
+        print("Running a 64-bit build of Godot.")
     else:
-        print("Running on 32-bit CPU.")
+        print("Running a 32-bit build of Godot.")
 
  .. code-tab:: csharp
 
     if (Engine.GetArchitectureName().Contains("64"))
-        GD.Print("Running on 64-bit CPU.");
+        GD.Print("Running a 64-bit build of Godot.");
     else
-        GD.Print("Running on 32-bit CPU.");
+        GD.Print("Running a 32-bit build of Godot.");
 
 
 

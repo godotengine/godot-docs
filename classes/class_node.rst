@@ -1067,9 +1067,9 @@ The name of the node. This name is unique among the siblings (other child nodes 
 - void **set_owner** **(** :ref:`Node<class_Node>` value **)**
 - :ref:`Node<class_Node>` **get_owner** **(** **)**
 
-The node owner. A node can have any other node as owner (as long as it is a valid parent, grandparent, etc. ascending in the tree). When saving a node (using :ref:`PackedScene<class_PackedScene>`), all the nodes it owns will be saved with it. This allows for the creation of complex :ref:`SceneTree<class_SceneTree>`\ s, with instancing and subinstancing.
+The node owner. A node can have any ancestor node as owner (i.e. a parent, grandparent, etc. node ascending in the tree). This implies that :ref:`add_child<class_Node_method_add_child>` should be called before setting the owner, so that this relationship of parenting exists. When saving a node (using :ref:`PackedScene<class_PackedScene>`), all the nodes it owns will be saved with it. This allows for the creation of complex scene trees, with instancing and subinstancing.
 
-\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for :doc:`tool scripts <../tutorials/plugins/running_code_in_the_editor>` and :doc:`editor plugins <../tutorials/plugins/editor/index>`. If :ref:`add_child<class_Node_method_add_child>` is called without setting :ref:`owner<class_Node_property_owner>`, the newly added **Node** will not be visible in the scene tree, though it will be visible in the 2D/3D view.
+\ **Note:** If you want a child to be persisted to a :ref:`PackedScene<class_PackedScene>`, you must set :ref:`owner<class_Node_property_owner>` in addition to calling :ref:`add_child<class_Node_method_add_child>`. This is typically relevant for :doc:`tool scripts <../tutorials/plugins/running_code_in_the_editor>` and :doc:`editor plugins <../tutorials/plugins/editor/index>`. If a new node is added to the tree without setting its owner as an ancestor in that tree, it will be visible in the 2D/3D view, but not in the scene tree (and not persisted when packing or saving).
 
 .. rst-class:: classref-item-separator
 

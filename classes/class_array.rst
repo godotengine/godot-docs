@@ -68,6 +68,10 @@ Arrays can be concatenated using the ``+`` operator:
 
 \ **Note:** Erasing elements while iterating over arrays is **not** supported and will result in unpredictable behavior.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-reftable-group
 
 Constructors

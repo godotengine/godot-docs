@@ -470,7 +470,7 @@ See :ref:`add_constant_torque<class_RigidBody3D_method_add_constant_torque>`.
 - void **set_contact_monitor** **(** :ref:`bool<class_bool>` value **)**
 - :ref:`bool<class_bool>` **is_contact_monitor_enabled** **(** **)**
 
-If ``true``, the RigidBody3D will emit signals when it collides with another RigidBody3D.
+If ``true``, the RigidBody3D will emit signals when it collides with another body.
 
 \ **Note:** By default the maximum contacts reported is set to 0, meaning nothing will be recorded, see :ref:`max_contacts_reported<class_RigidBody3D_property_max_contacts_reported>`.
 

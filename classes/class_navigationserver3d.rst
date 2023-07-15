@@ -1467,6 +1467,8 @@ Parses the :ref:`SceneTree<class_SceneTree>` for source geometry according to th
 
 \ **Note:** This function needs to run on the main thread or with a deferred call as the SceneTree is not thread-safe.
 
+\ **Performance:** While convenient, reading data arrays from :ref:`Mesh<class_Mesh>` resources can affect the frame rate negatively. The data needs to be received from the GPU, stalling the :ref:`RenderingServer<class_RenderingServer>` in the process. For performance prefer the use of e.g. collision shapes or creating the data arrays entirely in code.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -1490,6 +1492,8 @@ Queries a path in a given navigation map. Start and target position and other pa
 void **region_bake_navigation_mesh** **(** :ref:`NavigationMesh<class_NavigationMesh>` navigation_mesh, :ref:`Node<class_Node>` root_node **)**
 
 Bakes the ``navigation_mesh`` with bake source geometry collected starting from the ``root_node``.
+
+\ *Deprecated.* This function is deprecated due to core threading changes. To upgrade existing code, first create a :ref:`NavigationMeshSourceGeometryData3D<class_NavigationMeshSourceGeometryData3D>` resource. Use this resource with :ref:`parse_source_geometry_data<class_NavigationServer3D_method_parse_source_geometry_data>` to parse the SceneTree for nodes that should contribute to the navigation mesh baking. The SceneTree parsing needs to happen on the main thread. After the parsing is finished use the resource with :ref:`bake_from_source_geometry_data<class_NavigationServer3D_method_bake_from_source_geometry_data>` to bake a navigation mesh.
 
 .. rst-class:: classref-item-separator
 

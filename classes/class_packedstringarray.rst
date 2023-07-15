@@ -27,6 +27,10 @@ If you want to join the strings in the array, use :ref:`String.join<class_String
     var string = " ".join(string_array)
     print(string) # "hello world"
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-introduction-group
 
 Tutorials

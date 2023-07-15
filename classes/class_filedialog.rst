@@ -52,6 +52,8 @@ Properties
    +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | title                                                                       | ``"Save a File"`` (overrides :ref:`Window<class_Window_property_title>`)                 |
    +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`use_native_dialog<class_FileDialog_property_use_native_dialog>`       | ``false``                                                                                |
+   +---------------------------------------------------+-----------------------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-reftable-group
 
@@ -394,6 +396,25 @@ If non-empty, the given sub-folder will be "root" of this **FileDialog**, i.e. u
 - :ref:`bool<class_bool>` **is_showing_hidden_files** **(** **)**
 
 If ``true``, the dialog will show hidden files.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_FileDialog_property_use_native_dialog:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **use_native_dialog** = ``false``
+
+.. rst-class:: classref-property-setget
+
+- void **set_use_native_dialog** **(** :ref:`bool<class_bool>` value **)**
+- :ref:`bool<class_bool>` **get_use_native_dialog** **(** **)**
+
+If ``true``, :ref:`access<class_FileDialog_property_access>` is set to :ref:`ACCESS_FILESYSTEM<class_FileDialog_constant_ACCESS_FILESYSTEM>`, and it is supported by the current :ref:`DisplayServer<class_DisplayServer>`, OS native dialog will be used instead of custom one.
+
+\ **Note:** On macOS, sandboxed apps always use native dialogs to access host filesystem.
 
 .. rst-class:: classref-section-separator
 

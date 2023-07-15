@@ -21,6 +21,10 @@ An array specifically designed to hold bytes. Packs data tightly, so it saves me
 
 \ **PackedByteArray** also provides methods to encode/decode various types to/from bytes. The way values are encoded is an implementation detail and shouldn't be relied upon when interacting with external apps.
 
+.. note::
+
+	There are notable differences when using this API with C#. See :ref:`doc_c_sharp_differences` for more information.
+
 .. rst-class:: classref-reftable-group
 
 Constructors
