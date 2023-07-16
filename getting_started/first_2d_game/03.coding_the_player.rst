@@ -297,8 +297,7 @@ the ``_process`` function (make sure it's not indented under the `else`):
  .. code-tab:: gdscript GDScript
 
         position += velocity * delta
-        position.x = clamp(position.x, 0, screen_size.x)
-        position.y = clamp(position.y, 0, screen_size.y)
+        position = position.clamp(Vector2.ZERO, screen_size)
 
  .. code-tab:: csharp
 
