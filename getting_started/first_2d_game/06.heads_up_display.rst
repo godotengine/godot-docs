@@ -40,7 +40,7 @@ Under "Theme Overrides > Fonts", choose "Load" and select the "Xolonium-Regular.
 
 .. image:: img/custom_font_load_font.webp
 
-The font size is still to small, increase it to ``64`` under "Theme Overrides > Font Sizes". 
+The font size is still too small, increase it to ``64`` under "Theme Overrides > Font Sizes". 
 Once you've done this with the ``ScoreLabel``, repeat the changes for the ``Message`` and ``StartButton`` nodes.
 
 .. image:: img/custom_font_size.webp
