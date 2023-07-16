@@ -207,9 +207,9 @@ vector, add the following code.
        #...
        if direction != Vector3.ZERO:
            #...
-           $AnimationPlayer.speed_scale = 4
+           $AnimationPlayer.playback_speed = 4
        else:
-           $AnimationPlayer.speed_scale = 1
+           $AnimationPlayer.playback_speed = 1
 
  .. code-tab:: csharp
 
@@ -275,7 +275,7 @@ following line.
 
    func initialize(start_position, player_position):
        #...
-       $AnimationPlayer.speed_scale = random_speed / min_speed
+       $AnimationPlayer.playback_speed = random_speed / min_speed
 
  .. code-tab:: csharp
 
@@ -335,9 +335,9 @@ Here's the *Player* script.
         if direction != Vector3.ZERO:
             direction = direction.normalized()
             $Pivot.look_at(position + direction,Vector3.UP)
-            $AnimationPlayer.speed_scale = 4
+            $AnimationPlayer.playback_speed = 4
         else:
-            $AnimationPlayer.speed_scale = 1
+            $AnimationPlayer.playback_speed = 1
 
         # Ground Velocity
         target_velocity.x = direction.x * speed
@@ -537,7 +537,7 @@ And the *Mob*'s script.
         # in order to move in the direction the mob is looking.
         velocity = velocity.rotated(Vector3.UP, rotation.y)
 
-        $AnimationPlayer.speed_scale = random_speed / min_speed
+        $AnimationPlayer.playback_speed = random_speed / min_speed
 
     func _on_visible_on_screen_notifier_3d_screen_exited():
         queue_free()
