@@ -100,7 +100,7 @@ The name of the most recent Godot release on Github should be printed to the out
 For more information on parsing JSON, see the class references for :ref:`JSON <class_JSON>`.
 
 Note that you may want to check whether the ``result`` equals ``RESULT_SUCCESS``
-and whether a JSON parsing error occurred, see the JSON class reference and
+and whether a JSON parsing error occurred, see the class reference for :ref:`JSON <class_JSON>` and
 :ref:`HTTPRequest <class_HTTPRequest>` for more.
 
 You have to wait for a request to finish before sending another one.
