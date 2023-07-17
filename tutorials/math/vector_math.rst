@@ -138,16 +138,19 @@ A vector can be multiplied by a **scalar**:
 
     var c = a * 2  # (2, 5) * 2 = (4, 10)
     var d = b / 3  # (3, 6) / 3 = (1, 2)
+    var e = d * -2 # (1, 2) * -2 = (-2, -4)
 
  .. code-tab:: csharp
 
     var c = a * 2;  // (2, 5) * 2 = (4, 10)
     var d = b / 3;  // (3, 6) / 3 = (1, 2)
+    var e = d * -2; // (1, 2) * -2 = (-2, -4)
 
 .. image:: img/vector_mult1.png
 
-.. note:: Multiplying a vector by a scalar does not change its direction, only
-          its magnitude. This is how you **scale** a vector.
+.. note:: Multiplying a vector by a positive scalar does not change its direction, only
+          its magnitude. Multiplying with a negative scalar results in a vector in the
+          opposite direction. This is how you **scale** a vector.
 
 Practical applications
 ~~~~~~~~~~~~~~~~~~~~~~
