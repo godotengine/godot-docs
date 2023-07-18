@@ -146,6 +146,9 @@ Process built-ins
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 | in vec3 **ATTRACTOR_FORCE**        | A combined force of the attractors at the moment on that particle.                                                                      |
 +------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
+| in vec4 **USERDATAX**              | Vector that enables the integration of supplementary user-defined data into the particle process shader.                                |
+|                                    | ``USERDATAX`` are six built-ins identified by number, ``X`` can be numbers between 1 and 6.                                             |
++------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Process functions
 ^^^^^^^^^^^^^^^^^
