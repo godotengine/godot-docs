@@ -112,12 +112,9 @@ abs                              Mathf.Abs
 absf                             Mathf.Abs
 absi                             Mathf.Abs
 acos                             Mathf.Acos
-acosh                            Mathf.Acosh
 asin                             Mathf.Asin
-asinh                            Mathf.Asinh
 atan                             Mathf.Atan
 atan2                            Mathf.Atan2
-atanh                            Mathf.Atanh
 bezier_derivative                Mathf.BezierDerivative
 bezier_interpolate               Mathf.BezierInterpolate
 bytes_to_var                     GD.BytesToVar
@@ -131,7 +128,7 @@ clampi                           Mathf.Clamp
 cos                              Mathf.Cos
 cosh                             Mathf.Cosh
 cubic_interpolate                Mathf.CubicInterpolate
-cubic_interpolate_angle          Mathf.CubicInterpolateAngle
+cubic_interpoalte_angle          Mathf.CubicInterpolateAngle
 cubic_interpolate_angle_in_time  Mathf.CubicInterpolateInTime
 cubic_interpolate_in_time        Mathf.CubicInterpolateAngleInTime
 db_to_linear                     Mathf.DbToLinear
@@ -382,7 +379,6 @@ count                    StringExtensions.Count (Consider using `RegEx`_)
 countn                   StringExtensions.CountN (Consider using `RegEx`_)
 dedent                   StringExtensions.Dedent
 ends_with                `string.EndsWith`_
-erase                    `string.Remove`_ (Consider using `StringBuilder`_ to manipulate strings)
 find                     StringExtensions.Find (Consider using `string.IndexOf`_ or `string.IndexOfAny`_)
 findn                    StringExtensions.FindN (Consider using `string.IndexOf`_ or `string.IndexOfAny`_)
 format                   Use `$ string interpolation`_
@@ -394,7 +390,6 @@ get_slice                N/A
 get_slice_count          N/A
 get_slicec               N/A
 hash                     StringExtensions.Hash (Consider using `object.GetHashCode`_ unless you need to guarantee the same behavior as in GDScript)
-hex_decode               StringExtensions.HexDecode (Consider using `System.Convert.FromHexString`_)
 hex_to_int               StringExtensions.HexToInt (Consider using `int.Parse`_ or `long.Parse`_ with `System.Globalization.NumberStyles.HexNumber`_)
 humanize_size            N/A
 indent                   StringExtensions.Indent
@@ -461,7 +456,6 @@ to_upper                 `string.ToUpper`_
 to_utf16_buffer          StringExtensions.ToUtf16Buffer (Consider using `System.Text.Encoding.UTF16.GetBytes`_)
 to_utf32_buffer          StringExtensions.ToUtf32Buffer (Consider using `System.Text.Encoding.UTF32.GetBytes`_)
 to_utf8_buffer           StringExtensions.ToUtf8Buffer (Consider using `System.Text.Encoding.UTF8.GetBytes`_)
-to_wchar_buffer          StringExtensions.ToUtf16Buffer in Windows and StringExtensions.ToUtf32Buffer in other platforms
 trim_prefix              StringExtensions.TrimPrefix
 trim_suffix              StringExtensions.TrimSuffix
 unicode_at               `string[int]`_ indexer
@@ -522,7 +516,6 @@ hex_encode                 StringExtensions.HexEncode (Consider using `System.Co
 .. _string.Length: https://learn.microsoft.com/en-us/dotnet/api/system.string.length
 .. _string.PadLeft: https://learn.microsoft.com/en-us/dotnet/api/system.string.padleft
 .. _string.PadRight: https://learn.microsoft.com/en-us/dotnet/api/system.string.padright
-.. _string.Remove: https://learn.microsoft.com/en-us/dotnet/api/system.string.remove
 .. _string.Replace: https://learn.microsoft.com/en-us/dotnet/api/system.string.replace
 .. _string.Split: https://learn.microsoft.com/en-us/dotnet/api/system.string.split
 .. _string.StartsWith: https://learn.microsoft.com/en-us/dotnet/api/system.string.startswith
@@ -533,7 +526,6 @@ hex_encode                 StringExtensions.HexEncode (Consider using `System.Co
 .. _string.ToLower: https://learn.microsoft.com/en-us/dotnet/api/system.string.tolower
 .. _string.ToUpper: https://learn.microsoft.com/en-us/dotnet/api/system.string.toupper
 .. _StringBuilder: https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder
-.. _System.Convert.FromHexString: https://learn.microsoft.com/en-us/dotnet/api/system.convert.fromhexstring
 .. _System.Convert.ToHexString: https://learn.microsoft.com/en-us/dotnet/api/system.convert.tohexstring
 .. _System.Globalization.NumberStyles.HexNumber: https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberstyles#system-globalization-numberstyles-hexnumber
 .. _System.IO.Path: https://learn.microsoft.com/en-us/dotnet/api/system.io.path
@@ -797,7 +789,7 @@ Dictionary
 ----------
 
 Use ``Godot.Collections.Dictionary`` for an untyped ``Variant`` dictionary.
-``Godot.Collections.Dictionary<TKey, TValue>`` is a type-safe wrapper around ``Godot.Collections.Dictionary``.
+``Godot.Colelctions.Dictionary<TKey, TValue>`` is a type-safe wrapper around ``Godot.Collections.Dictionary``.
 
 See also :ref:`Dictionary in C# <doc_c_sharp_collections_dictionary>`.
 
