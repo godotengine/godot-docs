@@ -115,11 +115,6 @@ select the relevant type of resource desired then click **Reimport**:
 
 .. image:: img/import_process_changing_import_type.webp
 
-.. note::
-
-    For technical reasons, the editor must be restarted after changing an import
-    type in the Import dock.
-
 Changing default import parameters
 ----------------------------------
 
