@@ -510,7 +510,7 @@ to empty space.
 
 For example, if a tile has all its bits set to ``0`` or greater, it will only
 appear if *all* 8 neighboring tiles are using a tile with the same terrain ID.
-is present on corners or sides. If a tile has its bits set to ``0`` or greater,
+If a tile has its bits set to ``0`` or greater,
 but the top-left, top and top-right bits are set to ``-1``, it will only appear
 if there is empty space on top of it (including diagonally).
 
