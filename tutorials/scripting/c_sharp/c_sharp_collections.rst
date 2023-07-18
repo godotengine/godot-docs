@@ -121,6 +121,7 @@ all                      `System.Linq.Enumerable.All`_
 any                      `System.Linq.Enumerable.Any`_
 append                   Add
 append_array             AddRange
+assign                   Clear and AddRange
 back                     ``Array[^1]`` or `System.Linq.Enumerable.Last`_ or `System.Linq.Enumerable.LastOrDefault`_
 bsearch                  BinarySearch
 bsearch_custom           N/A
@@ -140,6 +141,7 @@ hash                     GD.Hash
 insert                   Insert
 is_empty                 Use ``Count == 0``
 is_read_only             IsReadOnly
+is_same_typed            N/A
 is_typed                 N/A
 make_read_only           MakeReadOnly
 map                      `System.Linq.Enumerable.Select`_
@@ -161,7 +163,6 @@ size                     Count
 slice                    Slice
 sort                     Sort
 sort_custom              `System.Linq.Enumerable.OrderBy`_
-typed_assign             N/A
 operator !=              !RecursiveEqual
 operator +               operator +
 operator <               N/A
