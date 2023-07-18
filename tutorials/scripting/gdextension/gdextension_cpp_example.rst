@@ -421,6 +421,22 @@ We're finally ready to run the project:
 
 .. image:: img/gdextension_cpp_animated.gif
 
+Custom editor icon
+------------------
+By default, Godot uses the node icon in the scene dock for GDExtension nodes. The custom icon can be
+added via the ``gdextension`` file. The node's icon is set by reference to its name and resource path
+of an SVG file.
+
+For example:
+
+.. code-block:: none
+
+    [Icon]
+    GDExample = "res://icons/GDExample.svg"
+
+The path should point to a 16 by 16 pixel SVG image. Read the guide for :ref:`creating icons <doc_editor_icons>`
+for more information.
+
 Adding properties
 -----------------
 
