@@ -41,7 +41,11 @@ While some Linux programs will support saving screenshots in this format, macOS
 and the Snip & Sketch program on Windows do not. For images that don't need
 editing, such as precise cropping or adding outlines, Squoosh can be used.
 `Squoosh <https://squoosh.app/>`_ is a converter developed by Google, is open
-source, and doesn't give Google any image rights by using it.
+source, and doesn't give Google any image rights by using it. When choosing
+compression if you can get an image that's under 300KB in size use lossless
+compression. If it's over 300KB use just enough lossy compression to get it
+under that size. If this results in noticable compression artifacts using less
+compression is fine, even if the file size is bigger.
 
 If you already have an image editor such as GIMP, Krita or Photoshop installed
 it may have the ability to open an image then save it as a WebP file.
@@ -100,6 +104,11 @@ To save an image as webp if it isn't already one, Go to **File > Save As**. Sele
 **Save as type:** dropdown, then choose wherever you want to save it. After clicking **Save** a menu
 will popup with webp options. Make sure **Losses** is checked and **Quality** is set to 100%. This
 means the image will not lose detail and will be as small as possible.
+
+If the image is over 300KB in size try compressing it losslessly using `Squoosh <https://squoosh.app/>`_.
+If it's still over 300KB change to lossy compression and slowly increase the compression until it's under
+300KB. If this results in noticable compression artifacts using less compression is fine, even if the file
+size is bigger.
 
 Outlines arrows and text
 ------------------------
