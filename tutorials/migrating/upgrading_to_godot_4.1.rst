@@ -15,7 +15,8 @@ affect you. Changes are grouped by areas/systems.
 
 .. warning::
     The GDExtension API completely breaks compatibility in 4.1 so it's not included
-    in the list. GDExtensions built against 4.0 need to be upgraded.
+    in the table below. See the :ref:`updating_your_gdextension_for_godot_4_1` section
+    for more information.
 
 This article indicates whether each breaking change affects GDScript and whether
 the C# breaking change is *binary compatible* or *source compatible*:
@@ -213,3 +214,59 @@ Method ``create_action`` adds a new ``backward_undo_ops`` optional parameter    
 .. _GH-76794: https://github.com/godotengine/godot/pull/76794
 .. _GH-77143: https://github.com/godotengine/godot/pull/77143
 .. _GH-78237: https://github.com/godotengine/godot/pull/78237
+
+.. _updating_your_gdextension_for_godot_4_1:
+
+Updating your GDExtension for 4.1
+---------------------------------
+
+GDExtension is still in beta. Until it's marked as stable, compatibility may break when
+upgrading to a new minor version of Godot.
+
+In order to fix a serious bug, in Godot 4.1 we had to break binary compatibility in a big
+way and source compatibility in a small way.
+
+This means that GDExtensions made for Godot 4.0 will need to be recompiled for Godot 4.1
+(using the  ``4.1`` branch of godot-cpp), with a small change to their source code.
+
+In Godot 4.0, your "entry_symbol" function looks something like this:
+
+.. code-block:: C++
+
+  GDExtensionBool GDE_EXPORT example_library_init(const GDExtensionInterface *p_interface, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
+      godot::GDExtensionBinding::InitObject init_obj(p_interface, p_library, r_initialization);
+
+      init_obj.register_initializer(initialize_example_module);
+      init_obj.register_terminator(uninitialize_example_module);
+      init_obj.set_minimum_library_initialization_level(MODULE_INITIALIZATION_LEVEL_SCENE);
+
+      return init_obj.init();
+  }
+
+However, for Godot 4.1, it should look like:
+
+.. code-block:: C++
+
+  GDExtensionBool GDE_EXPORT example_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, const GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
+      godot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
+
+      init_obj.register_initializer(initialize_example_module);
+      init_obj.register_terminator(uninitialize_example_module);
+      init_obj.set_minimum_library_initialization_level(MODULE_INITIALIZATION_LEVEL_SCENE);
+
+      return init_obj.init();
+  }
+
+There are two small changes:
+
+#. The first argument changes from ``const GDExtensionInterface *p_interface`` to ``GDExtensionInterfaceGetProcAddress p_get_proc_address``
+#. The constructor for the `init_obj` variable now receives ``p_get_proc_address`` as its first parameter
+
+You also need to add an extra ``compatibility_minimum`` line to your ``.gdextension`` file, so that it looks something like::
+
+  [configuration]
+
+  entry_symbol = "example_library_init"
+  compatibility_minimum = 4.1
+
+This lets Godot know that your GDExtension has been updated and is safe to load in Godot 4.1.
