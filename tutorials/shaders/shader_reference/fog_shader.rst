@@ -59,8 +59,7 @@ be drawn at once.
 +===============================+=================================================================================================+
 | in vec3 **WORLD_POSITION**    | Position of current froxel cell in world space.                                                 |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
-| in vec3 **OBJECT_POSITION**   | Position of current froxel cell relative to the center of the current                           |
-|                               | :ref:`FogVolume <class_FogVolume>`.                                                             |
+| in vec3 **OBJECT_POSITION**   | Position of the center of the current :ref:`FogVolume <class_FogVolume>` in world space.        |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
 | in vec3 **UVW**               | 3-dimensional uv, used to map a 3D texture to the current :ref:`FogVolume <class_FogVolume>`.   |
 +-------------------------------+-------------------------------------------------------------------------------------------------+
