@@ -216,15 +216,6 @@ the slider.
     [Export(PropertyHint.Range, "0,100,1,or_greater,or_less")]
     public int Number { get; set; }
 
-Allow values 'y = exp(x)' where 'y' varies between 100 and 1000
-while snapping to steps of 20. The editor will present a
-slider for easily editing the value. This only works with floats.
-
-.. code-block:: csharp
-
-    [Export(PropertyHint.ExpRange, "100,1000,20")]
-    public float Number { get; set; }
-
 Floats with easing hint
 -----------------------
 
