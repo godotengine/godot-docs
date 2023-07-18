@@ -861,7 +861,7 @@ object, which holds a few variables to control how the associated glyph is rende
   effect. You can use :ref:`get() <class_Dictionary_method_get>` with an optional default value
   to retrieve each parameter, if specified by the user. For example ``[custom_fx spread=0.5
   color=#FFFF00]test[/custom_fx]`` would have a float ``spread`` and Color ``color``
-  parameters in its ` `env`` Dictionary. See below for more usage examples.
+  parameters in its ``env`` Dictionary. See below for more usage examples.
 
 The last thing to note about this function is that it is necessary to return a boolean
 ``true`` value to verify that the effect processed correctly. This way, if there's a problem

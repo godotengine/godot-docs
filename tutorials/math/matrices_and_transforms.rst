@@ -50,10 +50,10 @@ You should not worry about manipulating rows directly, as we usually
 work with columns. However, you can think of the rows of the matrix
 as showing which vectors contribute to moving in a given direction.
 
-When we refer to a value such as `t.x.y`, that's the Y component of
+When we refer to a value such as ``t.x.y``, that's the Y component of
 the X column vector. In other words, the bottom-left of the matrix.
-Similarly, `t.x.x` is top-left, `t.y.x` is top-right, and `t.y.y`
-is bottom-right, where `t` is the Transform2D.
+Similarly, ``t.x.x`` is top-left, ``t.y.x`` is top-right, and ``t.y.y``
+is bottom-right, where ``t`` is the Transform2D.
 
 Scaling the transformation matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -184,7 +184,7 @@ matrix, you can use ``atan2(t.x.y, t.x.x)``, where t is the Transform2D.
 Basis of the transformation matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-So far we have only been working with the `x` and `y`, vectors, which
+So far we have only been working with the ``x`` and ``y``, vectors, which
 are in charge of representing rotation, scale, and/or shearing
 (advanced, covered at the end). The X and Y vectors are together
 called the *basis* of the transformation matrix. The terms "basis"

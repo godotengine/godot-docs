@@ -860,7 +860,7 @@ how the default font should be rendered:
   :ref:`subpixel positioning <doc_using_fonts_subpixel_positioning>`
   method for the default project font.
 - **Default Font Multichannel Signed Distance Field:** If ``true``, makes the
-  default project font use `MSDF font rendering <doc_using_fonts_msdf>` instead
+  default project font use :ref:`MSDF font rendering <doc_using_fonts_msdf>` instead
   of traditional rasterization.
 - **Default Font Generate Mipmaps:** If ``true``, enables
   :ref:`mipmap <doc_using_fonts_mipmaps>` generation and
