@@ -496,9 +496,10 @@ Built-in types
 
 Built-in types are stack-allocated. They are passed as values. This means a copy
 is created on each assignment or when passing them as arguments to functions.
-The only exceptions are ``Array``\ s and ``Dictionaries``, which are passed by
-reference so they are shared. (Packed arrays such as ``PackedByteArray`` are still
-passed as values.)
+The exceptions are ``Object``, ``Array``, ``Dictionary``, and packed arrays
+(such as ``PackedByteArray``), which are passed by reference so they are shared.
+All arrays, ``Dictionary``, and some objects (``Node``, ``Resource``)
+have a ``duplicate()`` method that allows you to make a copy.
 
 Basic built-in types
 ~~~~~~~~~~~~~~~~~~~~
@@ -520,21 +521,21 @@ Short for "boolean", it can only contain ``true`` or ``false``.
 ^^^^^^^^^^^^^^^^^^^^^^
 
 Short for "integer", it stores whole numbers (positive and negative).
-It is stored as a 64-bit value, equivalent to "int64_t" in C++.
+It is stored as a 64-bit value, equivalent to ``int64_t`` in C++.
 
 :ref:`float <class_float>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Stores real numbers, including decimals, using floating-point values.
-It is stored as a 64-bit value, equivalent to "double" in C++.
-Note: Currently, data structures such as Vector2, Vector3, and
-PackedFloat32Array store 32-bit single-precision "float" values.
+It is stored as a 64-bit value, equivalent to ``double`` in C++.
+Note: Currently, data structures such as ``Vector2``, ``Vector3``, and
+``PackedFloat32Array`` store 32-bit single-precision ``float`` values.
 
 :ref:`String <class_String>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A sequence of characters in `Unicode format <https://en.wikipedia.org/wiki/Unicode>`_.
-Strings can contain the following escape sequences:
+String literals can contain the following escape sequences:
 
 +---------------------+---------------------------------+
 | **Escape sequence** | **Expands to**                  |
@@ -701,6 +702,48 @@ Negative indices count from the end.
     arr[0] = "Hi!" # Replacing value 1 with "Hi!".
     arr.append(4) # Array is now ["Hi!", 2, 3, 4].
 
+Typed arrays
+^^^^^^^^^^^^
+
+Godot 4.0 added support for typed arrays. On write operations, Godot checks that
+element values match the specified type, so the array cannot contain invalid values.
+The GDScript static analyzer takes typed arrays into account, however array methods like
+``front()`` and ``back()`` still have the ``Variant`` return type.
+
+Typed arrays have the syntax ``Array[Type]``, where ``Type`` can be any ``Variant`` type,
+native or user class, or enum. Nested array types (like ``Array[Array[int]]``) are not supported.
+
+::
+
+    var a: Array[int]
+    var b: Array[Node]
+    var c: Array[MyClass]
+    var d: Array[MyEnum]
+    var e: Array[Variant]
+
+``Array`` and ``Array[Variant]`` are the same thing.
+
+.. note::
+
+    Arrays are passed by reference, so the array element type is also an attribute of the in-memory
+    structure referenced by a variable in runtime. The static type of a variable restricts the structures
+    that it can reference to. Therefore, you **cannot** assign an array with a different element type,
+    even if the type is a subtype of the required type::
+
+        var a: Array[Node2D] = [Node2D.new()]
+
+        # OK. You can add the value to the array because `Node2D` extends `Node`.
+        var b: Array[Node] = [a[0]]
+
+        # Error. You cannot assign an `Array[Node2D]` to an `Array[Node]` variable.
+        b = a
+
+    The only exception was made for the ``Array`` (``Array[Variant]``) type, for user convenience
+    and compatibility with old code. However, operations on untyped arrays are considered unsafe.
+
+Packed arrays
+^^^^^^^^^^^^^
+
 GDScript arrays are allocated linearly in memory for speed.
 Large arrays (more than tens of thousands of elements) may however cause
 memory fragmentation. If this is a concern, special types of
@@ -714,9 +757,9 @@ arrays. They are therefore only recommended to use for large data sets:
 - :ref:`PackedFloat32Array <class_PackedFloat32Array>`: An array of 32-bit floats.
 - :ref:`PackedFloat64Array <class_PackedFloat64Array>`: An array of 64-bit floats.
 - :ref:`PackedStringArray <class_PackedStringArray>`: An array of strings.
-- :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` objects.
-- :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` objects.
-- :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` objects.
+- :ref:`PackedVector2Array <class_PackedVector2Array>`: An array of :ref:`Vector2 <class_Vector2>` values.
+- :ref:`PackedVector3Array <class_PackedVector3Array>`: An array of :ref:`Vector3 <class_Vector3>` values.
+- :ref:`PackedColorArray <class_PackedColorArray>`: An array of :ref:`Color <class_Color>` values.
 
 :ref:`Dictionary <class_Dictionary>`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
