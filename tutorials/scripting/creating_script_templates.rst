@@ -121,6 +121,12 @@ This is an example of utilizing custom templates at editor and project level:
           visible throughout the project's filesystem anymore, yet the templates can be
           modified by an external text editor anytime.
 
+.. tip::
+
+    By default, every C# file inside the project directory is included in the compilation.
+    Script templates must be manually excluded from the C# project to avoid build errors.
+    See `Exclude files from the build <https://learn.microsoft.com/en-us/visualstudio/msbuild/how-to-exclude-files-from-the-build>`_ in the Microsoft documentation.
+
 It is possible to create editor-level templates that have the same level as a project-specific
 templates, and also that have the same name as a built-in one, all will be shown on the new script
 dialog.
@@ -190,20 +196,23 @@ which are currently implemented.
 Base placeholders
 ~~~~~~~~~~~~~~~~~
 
-+-------------+-----------------------------------------------------------------+
-| Placeholder | Description                                                     |
-+=============+=================================================================+
-| ``_CLASS_`` | The name of the new class (used in C# only).                    |
-+-------------+-----------------------------------------------------------------+
-| ``_BASE_``  | The base type a new script inherits from.                       |
-+-------------+-----------------------------------------------------------------+
-| ``_TS_``    | Indentation placeholder. The exact type and number of           |
-|             | whitespace characters used for indentation is determined by     |
-|             | the ``text_editor/indent/type`` and ``text_editor/indent/size`` |
-|             | settings in the :ref:`EditorSettings <class_EditorSettings>`    |
-|             | respectively. Can be overridden by the ``meta-space-indent``    |
-|             | header on the template.                                         |
-+-------------+-----------------------------------------------------------------+
++--------------------------+----------------------------------------------------+
+| Placeholder              | Description                                        |
++==========================+====================================================+
+| ``_BINDINGS_NAMESPACE_`` | The name of the Godot namespace (used in C# only). |
++--------------------------+----------------------------------------------------+
+| ``_CLASS_``              | The name of the new class (used in C# only).       |
++--------------------------+----------------------------------------------------+
+| ``_BASE_``               | The base type a new script inherits from.          |
++--------------------------+----------------------------------------------------+
+| ``_TS_``                 | Indentation placeholder. The exact type and number |
+|                          | of whitespace characters used for indentation is   |
+|                          | determined by the ``text_editor/indent/type`` and  |
+|                          | ``text_editor/indent/size`` settings in the        |
+|                          | :ref:`EditorSettings <class_EditorSettings>`       |
+|                          | respectively. Can be overridden by the             |
+|                          | ``meta-space-indent`` header on the template.      |
++--------------------------+----------------------------------------------------+
 
 Type placeholders
 ~~~~~~~~~~~~~~~~~
