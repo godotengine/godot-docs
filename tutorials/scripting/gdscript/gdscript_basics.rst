@@ -1680,6 +1680,22 @@ the function name with the attribute operator::
     func dont_override():
         return super.overriding() # This calls the method as defined in the base class.
 
+.. warning::
+
+    One of the common misconceptions is trying to override *non-virtual* engine methods
+    such as ``get_class()``, ``queue_free()``, etc. This is not supported for technical reasons.
+
+    In Godot 3, you can *shadow* engine methods in GDScript, and it will work if you call this method in GDScript.
+    However, the engine will **not** execute your code if the method is called inside the engine on some event.
+
+    In Godot 4, even shadowing may not always work, as GDScript optimizes native method calls.
+    Therefore, we added the ``NATIVE_METHOD_OVERRIDE`` warning, which is treated as an error by default.
+    We strongly advise against disabling or ignoring the warning.
+
+    Note that this does not apply to virtual methods such as ``_ready()``, ``_process()`` and others
+    (marked with the ``virtual`` qualifier in the documentation and the names start with an underscore).
+    These methods are specifically for customizing engine behavior and can be overridden in GDScript.
+    Signals and notifications can also be useful for these purposes.
 
 Class constructor
 ^^^^^^^^^^^^^^^^^
