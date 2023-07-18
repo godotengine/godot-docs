@@ -1924,9 +1924,9 @@ Here is an example:
     var my_file_ref
 
     func _ready():
-        var f = File.new()
+        var f = FileAccess.open("user://example_file.json", FileAccess.READ)
         my_file_ref = weakref(f)
-        # the File class inherits RefCounted, so it will be freed when not in use
+        # the FileAccess class inherits RefCounted, so it will be freed when not in use
 
         # the WeakRef will not prevent f from being freed when other_node is finished
         other_node.use_file(f)
