@@ -141,6 +141,20 @@ Or you can detect which engine your code is in, useful for making cross-engine l
     #endif
         }
 
+Or you can write scripts that target multiple Godot versions and can take
+advantage that are only available on some of those versions:
+
+.. code-block:: csharp
+
+        public void UseCoolFeature()
+        {
+    #if GODOT4_3_OR_GREATER || GODOT4_2_2_OR_GREATER
+            // Use CoolFeature, that was added to Godot in 4.3 and cherry-picked into 4.2.2, here.
+    #else
+            // Use a workaround for the absence of CoolFeature here.
+    #endif
+        }
+
 Full list of defines
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -159,15 +173,30 @@ Full list of defines
   :ref:`OS <class_OS>` singleton, but not every possible OS
   the method returns is an OS that Godot with .NET runs on.
 
+* ``GODOTX``, ``GODOTX_Y``, ``GODOTX_Y_Z``, ``GODOTx_OR_GREATER``,
+  ``GODOTX_y_OR_GREATER``, and ``GODOTX_Y_z_OR_GREATER``, where ``X``, ``Y``,
+  and ``Z`` are replaced by the current major, minor and patch version of Godot.
+  ``x``, ``y``, and ``z`` are replaced by 0 to to the current version for that
+  component.
+
+  .. note::
+
+    These defines were first added in Godot 4.0.4 and 4.1. Version defines for
+    prior versions do not exist, regardless of the current Godot version.
+
+  For example: Godot 4.0.5 defines ``GODOT4``, ``GODOT4_OR_GREATER``,
+  ``GODOT4_0``, ``GODOT4_0_OR_GREATER``, ``GODOT4_0_5``,
+  ``GODOT4_0_4_OR_GREATER``, and ``GODOT4_0_5_OR_GREATER``. Godot 4.3.2 defines
+  ``GODOT4``, ``GODOT4_OR_GREATER``, ``GODOT4_3``, ``GODOT4_0_OR_GREATER``,
+  ``GODOT4_1_OR_GREATER``, ``GODOT4_2_OR_GREATER``, ``GODOT4_3_OR_GREATER``,
+  ``GODOT4_3_2``, ``GODOT4_3_0_OR_GREATER``, ``GODOT4_3_1_OR_GREATER``, and
+  ``GODOT4_3_2_OR_GREATER``.
+
 When **exporting**, the following may also be defined depending on the export features:
 
 * One of ``GODOT_PC``, ``GODOT_MOBILE``, or ``GODOT_WEB`` depending on the platform type.
 
-* One of ``GODOT_ARM64_V8A`` or ``GODOT_ARMEABI_V7A`` on Android only depending on the architecture.
-
-* One of ``GODOT_ARM64`` or ``GODOT_ARMV7`` on iOS only depending on the architecture.
-
-* Any of ``GODOT_S3TC``, ``GODOT_ETC``, and ``GODOT_ETC2`` depending on the texture compression type.
+* One of ``GODOT_WINDOWS``, ``GODOT_LINUXBSD``, ``GODOT_MACOS``, ``GODOT_UWP``, ``GODOT_HAIKU``, ``GODOT_ANDROID``, ``GODOT_IOS``, or ``GODOT_WEB`` depending on the platform.
 
 To see an example project, see the OS testing demo:
 https://github.com/godotengine/godot-demo-projects/tree/master/misc/os_test
