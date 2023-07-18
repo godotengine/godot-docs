@@ -378,6 +378,20 @@ When is the next release of Godot out?
 When it's ready! See :ref:`doc_release_policy_when_is_next_release_out` for more
 information.
 
+Which Godot version should I use for a new project?
+---------------------------------------------------
+
+We recommend using Godot 4.x for new projects, but depending on the feature set
+you need, it may be better to use 3.x instead. See
+:ref:`doc_release_policy_which_version_should_i_use` for more information.
+
+Should I upgrade my project to use new Godot versions?
+------------------------------------------------------
+
+Some new versions are safer to upgrade to than others. In general, whether you
+should upgrade depends on your project's circumstances. See
+:ref:`doc_release_policy_should_i_upgrade_my_project` for more information.
+
 I would like to contribute! How can I get started?
 --------------------------------------------------
 

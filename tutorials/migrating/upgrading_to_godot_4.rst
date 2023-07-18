@@ -33,10 +33,8 @@ Godot 3.x for the following reasons:
 - `Godot 3.x is tried and true, while Godot 4 remains in its early stages. <https://godotengine.org/article/release-management-4-0-and-beyond>`__
 
   - Godot 4.0 is expected to contain workflow and performance issues that Godot
-    3.x doesn't have. If stability is crucial to your project, it's recommended to
-    wait for the first minor release in the 4.x series to land, along with its
-    respective patch release. This means staying on Godot 3.x until Godot 4.1.1 is
-    released.
+    3.x doesn't have. These issues will be ironed out over time in future
+    Godot 4.x releases.
 
 - Godot 4 has fewer third-party tutorials available compared to Godot 3.x.
   If you're new to game engines, you may have a better experience using Godot 3.x
