@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_multiple_resolutions:
 
 Multiple resolutions
