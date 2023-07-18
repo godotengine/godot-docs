@@ -212,7 +212,7 @@ Subresource properties with the :ref:`@GlobalScope.PROPERTY_USAGE_ALWAYS_DUPLICA
 
 void **emit_changed** **(** **)**
 
-Emits the :ref:`changed<class_Resource_signal_changed>` signal. This method is called automatically for built-in resources.
+Emits the :ref:`changed<class_Resource_signal_changed>` signal. This method is called automatically for some built-in resources.
 
 \ **Note:** For custom resources, it's recommended to call this method whenever a meaningful change occurs, such as a modified property. This ensures that custom :ref:`Object<class_Object>`\ s depending on the resource are properly updated.
 

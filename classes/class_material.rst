@@ -74,6 +74,29 @@ Methods
 
 .. rst-class:: classref-descriptions-group
 
+Signals
+-------
+
+.. _class_Resource_signal_changed:
+
+.. rst-class:: classref-signal
+
+**changed** **(** **)**
+
+For performance reasons, it's only emitted when this properties are changed:
+
+- Name (inherited from :ref:`Resource<class_Resource>`)
+- Shader
+
+See also :ref:`emit_changed<class_Resource_method_emit_changed>`.
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+
 Constants
 ---------
 
