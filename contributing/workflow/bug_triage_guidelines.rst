@@ -45,8 +45,6 @@ The following labels are currently defined in the Godot repository:
 -  *Bug*: describes something that is not working properly.
 -  *Cherrypick*: describes something that can be backported to a stable branch
    after being merged in the ``master`` branch.
--  *Crash:* describes a bug that causes the engine to crash.
-   This label is only used for "hard" crashes, not freezes.
 -  *Confirmed*: has been confirmed by at least one other contributor
    than the bug reporter (typically for *Bug* reports).
    The purpose of this label is to let developers know which issues are
@@ -55,6 +53,8 @@ The following labels are currently defined in the Godot repository:
    what version or commit of Godot the issue could be reproduced; if a
    developer looks at the issue one year later, the *Confirmed* label
    may not be relevant anymore.
+-  *Crash:* describes a bug that causes the engine to crash.
+   This label is only used for "hard" crashes, not freezes.
 -  *Discussion*: the issue is not consensual and needs further
    discussion to define what exactly should be done to address the
    topic.
@@ -71,21 +71,20 @@ The following labels are currently defined in the Godot repository:
 -  *For PR meeting*: the issue needs to be discussed in a pull request meeting.
    These meetings are public and are held on the `Godot Contributors Chat <https://chat.godotengine.org/>`_.
 -  *Good first issue*: the issue is *assumed* to be an easy one to fix, which makes
-   it a great fit for new contributors who need to become familiar with
-   the code base.
+   it a great fit for new contributors who want to become familiar with
+   the code base. It should be removed while an active PR is available, that
+   resolves this issue.
 -  *High priority:* the issue is particularly important as it can
    prevent people from releasing their projects or cause data loss.
--  *Needs work*: the pull request needs additional work before it can be merged.
 -  *Needs testing*: the issue/pull request could not be completely tested
    and thus need further testing. This can mean that it needs to be tested
    on different hardware/software configurations or even that the steps to
    reproduce are not certain.
+-  *Needs work*: the pull request needs additional work before it can be merged.
 -  *Performance*: issues that directly impact engine or editor performance.
    Can also be used for pull requests that improve performance or add low-end-friendly options.
    Should not be coupled with *Usability*.
--  *PR welcome / Hero wanted!*: Contributions for issues with these labels
-   are especially welcome. Note that this **doesn't** mean you can't work
-   on issues without these labels.
+-  *Production*: Relates to the production team.
 -  *Regression*: the bug appeared after a stable release not exhibiting
    the bug was released.
 -  *Salvageable*: the pull request can't be merged due to design issues or
@@ -101,6 +100,8 @@ combined in some way when relevant, e.g. an issue can be labelled
 *Enhancement* and *Usability* at the same time if it's an issue to improve
 usability. Or *Feature proposal* and *Discussion* if it's a non-consensual
 feature request, or one that is not precise enough to be worked on.
+At least one of the categories *Bug*, *Enhancement* or *Discussion* is used to
+describe an issue or pull request.
 
 **Topics:**
 
@@ -118,12 +119,12 @@ feature request, or one that is not precise enough to be worked on.
 -  *Export*: relates to the export system and templates.
 -  *GDExtension*: relates to the GDExtension system for native extensions.
 -  *GDScript*: relates to GDScript.
--  *GUI*: relates to GUI (Control) nodes.
+-  *GUI*: relates to GUI (Control) nodes or to Nodes that compose user interfaces.
 -  *Import*: relates to the resource import system.
--  *Input*: relates to input system.
+-  *Input*: relates to the input system.
+-  *Multiplayer*: relates to multiplayer (high-level networking) systems.
 -  *Navigation*: relates to the navigation system (including A* and navmeshes).
 -  *Network*: relates to (lot-level) networking.
--  *Multiplayer*: relates to multiplayer (high-level networking) systems.
 -  *Particles*: particles, particle systems and their editors.
 -  *Physics*: relates to the physics engine (2D/3D).
 -  *Plugin*: relates to problems encountered while writing plugins.
@@ -154,27 +155,52 @@ Documentation labels
 In the `documentation repository <https://github.com/godotengine/godot-docs>`__, we
 use the following labels:
 
+-  *Archived*: either a duplicate of another issue, or invalid. Such an
+   issue would also be closed.
 -  *Bug*: Incorrect information in an existing page. Not to be used for
    *missing* information.
--  *Class reference*: the issue is about the class reference, not a documentation page.
+-  *Cherrypick*: describes something that can be backported to a stable branch
+   after being merged in the ``master`` branch.
+-  *Dependencies*: describes pull requests that update a dependency file.
 -  *Discussion*: the issue is not consensual and needs further
    discussion to define what exactly should be done to address the
    topic.
 -  *Enhancememnt*: new information to be added in an existing page.
--  *New page*: a new page to be created.
--  *Hero wanted!*: contributions for issues with these labels
-   are especially welcome. Note that this **doesn't** mean you can't work
-   on issues without these labels.
--  *Organization*: The issue involves moving pages around or reorganizing content.
--  *Redirect*: a redirection needs to be created in the Read the Docs backend.
-   Only administrators can do this.
+-  *Good first issue*: the issue is *assumed* to be an easy one to fix, which makes
+   it a great fit for new contributors who want to become familiar with
+   the code base. It should be removed while an active PR is available, that
+   resolves this issue.
+-  *Needs work*: the pull request needs additional work before it can be merged.
+-  *Python*: Pull requests that update Python code.
 -  *Salvageable*: the pull request can't be merged due to design issues or
    merge conflicts and its author is not active anymore. However, it can still
    be picked up by an external contributor to bring it to a mergeable state.
    To do so, you need to open a new pull request based on the original pull request.
--  *Topic:Dotnet*: the issue is about C# support in Godot.
--  *Topic:Website*: the issue relates to the Sphinx/Read the Docs frontend or backend,
-   not the documentation contents.
+-  *Tracker*: issue used to track other issues (like all issues related to
+   the plugin system).
+
+**Area:**
+
+-  *About*: Issues and PRs related to the About section of the documentation and other general articles.
+-  *Class reference*: the issue is about the class reference, not a documentation page.
+-  *Community*: Issues and PRs related to the Community section of the documentation.
+-  *Contributing*: Issues and PRs related to the Contributing/Development section of the documentation.
+-  *Getting started*: Issues and PRs related to the Getting Started section of the documentation.
+-  *Manual*: Issues and PRs related to the Manual/Tutorials section of the documentation.
+
+**Content:**
+
+-  *Images*: Issues and PRs involving outdated or incorrect images in articles.
+-  *New page*: Issues and PRs related to creation of new documentation pages for new or undocumented features.
+-  *Organization*: Issues and PRs related to reorganizing the content.
+-  *Proofreading*: Issues and PRs related to proofreading the documentation.
+-  *Redirect*: Issues and PRs involving moving content and adding a redirect rule on the backend.
+-  *Website*: Issues related to adding website features and fixing bugs, whether on the front or back-end,
+
+**Topic:**
+
+The available topics describe the same content as the topics in the main
+repository.
 
 Milestones
 ~~~~~~~~~~
