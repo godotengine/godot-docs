@@ -191,10 +191,25 @@ Method ``create_action`` adds a new ``backward_undo_ops`` optional parameter    
 ========================================================================================================================  ===================  ====================  ====================  ===========
 
 
+Behavior changes
+----------------
+
+In 4.1 some behavior changes have been introduced, which might require you to adjust your project.
+
+==================================================================================================================================================================================================  ===========
+Change                                                                                                                                                                                              Introduced
+==================================================================================================================================================================================================  ===========
+**SubViewportContainer**
+When input events should reach SubViewports and their children, ``SubViewportContainer.mouse_filter`` now needs to be ``MOUSE_FILTER_STOP`` or ``MOUSE_FILTER_PASS``. See `GH-79271`_ for details.  `GH-57894`_
+Multiple layered ``SubViewportContainer`` nodes, that should all receive mouse input events, now need to be replaced by ``Area2D`` nodes. See `GH-79128`_ for details.                              `GH-57894`_
+==================================================================================================================================================================================================  ===========
+
+
 .. |❌| replace:: :abbr:`❌ (This API breaks compatibility.)`
 .. |✔️| replace:: :abbr:`✔️ (This API does not break compatibility.)`
 .. |✔️ with compat| replace:: :abbr:`✔️ (This API does not break compatibility. A compatibility method was added.)`
 
+.. _GH-57894: https://github.com/godotengine/godot/pull/57894
 .. _GH-64628: https://github.com/godotengine/godot/pull/64628
 .. _GH-69988: https://github.com/godotengine/godot/pull/69988
 .. _GH-72152: https://github.com/godotengine/godot/pull/72152
@@ -214,6 +229,8 @@ Method ``create_action`` adds a new ``backward_undo_ops`` optional parameter    
 .. _GH-76794: https://github.com/godotengine/godot/pull/76794
 .. _GH-77143: https://github.com/godotengine/godot/pull/77143
 .. _GH-78237: https://github.com/godotengine/godot/pull/78237
+.. _GH-79128: https://github.com/godotengine/godot/issues/79128
+.. _GH-79271: https://github.com/godotengine/godot/issues/79271
 
 .. _updating_your_gdextension_for_godot_4_1:
 
