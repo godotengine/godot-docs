@@ -327,7 +327,7 @@ Iterating using the C-style for loop in C-derived languages can be quite complex
     [..]
 
     for (int i = 0; i < 50; i++) {
-		printf("Value: %c Index: %d\n", stringsA[i], i);
+		printf("Value: %c Index: %d\n", strings[i], i);
 	}
 
     // Even in STL:
