@@ -335,7 +335,7 @@ Iterating using the C-style for loop in C-derived languages can be quite complex
     
     [..]
 
-	for (std::string::const_iterator it = stringsB.begin(); it != stringsB.end(); it++) {
+	for (std::string::const_iterator it = strings.begin(); it != strings.end(); it++) {
 		std::cout << *it << std::endl;
 	}
 
