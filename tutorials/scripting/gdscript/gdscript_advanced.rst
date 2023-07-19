@@ -322,8 +322,7 @@ Iterating using the C-style for loop in C-derived languages can be quite complex
 
 .. code-block:: cpp
 
-    const char* stringA = new char[50];
-    const std::string stringsB = new char[50];
+    const char** strings = new const char*[50];
 
     [..]
 
