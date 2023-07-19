@@ -48,8 +48,8 @@ arguments for doctest.
 
 .. note::
 
-    Tests are compiled automatically if you use the ``dev=yes`` SCons option.
-    ``dev=yes`` is recommended if you plan on contributing to the engine
+    Tests are compiled automatically if you use the ``dev_mode=yes`` SCons option.
+    ``dev_mode=yes`` is recommended if you plan on contributing to the engine
     development as it will automatically treat compilation warnings as errors.
     The continuous integration system will fail if any compilation warnings are
     detected, so you should strive to fix all warnings before opening a pull
