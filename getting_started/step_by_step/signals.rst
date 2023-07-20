@@ -306,7 +306,7 @@ We can now connect the Timer to the Sprite2D in the ``_ready()`` function.
     public override void _Ready()
     {
         var timer = GetNode<Timer>("Timer");
-        timer.Timeout += OnTimerTimeout;
+        timer.Timeout += OnTimerTimeout();
     }
 
 The line reads like so: we connect the Timer's "timeout" signal to the node to
