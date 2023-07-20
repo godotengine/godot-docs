@@ -145,7 +145,7 @@ pose. This means that it's time to set one. Go to the *skeleton* node and create
 a rest pose. This pose is the default one, you can come back to it anytime you
 want (which is very handy for animating):
 
-.. image:: img/skel2d14_1.png
+.. image:: img/skel2d14_1.webp
 
 The warnings will go away. If you modify the skeleton (add/remove bones) you
 will need to set the rest pose again.
