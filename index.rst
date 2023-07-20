@@ -32,7 +32,7 @@ documentation has to offer.
 The table of contents in the sidebar should let you easily access the documentation
 for your topic of interest. You can also use the search function in the top-left corner.
 
-Get involved
+Git involved
 ------------
 
 Godot Engine is an open source project developed by a community of volunteers.
