@@ -10,33 +10,33 @@ Y or Z? This article covers a variety of topics related to these dilemmas.
 
 .. note::
 
-  This article makes references to "[something]-time" operations. This
-  terminology comes from algorithm analysis'
-  `Big O Notation <https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/>`_.
+    This article makes references to "[something]-time" operations. This
+    terminology comes from algorithm analysis'
+    `Big O Notation <https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/>`_.
 
-  Long-story short, it describes the worst-case scenario of runtime length.
-  In laymen's terms:
+    Long-story short, it describes the worst-case scenario of runtime length.
+    In laymen's terms:
 
-  "As the size of a problem domain increases, the runtime length of the
-  algorithm..."
+    "As the size of a problem domain increases, the runtime length of the
+    algorithm..."
 
-  - Constant-time, ``O(1)``: "...does not increase."
-  - Logarithmic-time, ``O(log n)``: "...increases at a slow rate."
-  - Linear-time, ``O(n)``: "...increases at the same rate."
-  - Etc.
+    - Constant-time, ``O(1)``: "...does not increase."
+    - Logarithmic-time, ``O(log n)``: "...increases at a slow rate."
+    - Linear-time, ``O(n)``: "...increases at the same rate."
+    - Etc.
 
-  Imagine if one had to process 3 million data points within a single frame. It
-  would be impossible to craft the feature with a linear-time algorithm since
-  the sheer size of the data would increase the runtime far beyond the time allotted.
-  In comparison, using a constant-time algorithm could handle the operation without
-  issue.
+    Imagine if one had to process 3 million data points within a single frame. It
+    would be impossible to craft the feature with a linear-time algorithm since
+    the sheer size of the data would increase the runtime far beyond the time allotted.
+    In comparison, using a constant-time algorithm could handle the operation without
+    issue.
 
-  By and large, developers want to avoid engaging in linear-time operations as
-  much as possible. But, if one keeps the scale of a linear-time operation
-  small, and if one does not need to perform the operation often, then it may
-  be acceptable. Balancing these requirements and choosing the right
-  algorithm / data structure for the job is part of what makes programmers'
-  skills valuable.
+    By and large, developers want to avoid engaging in linear-time operations as
+    much as possible. But, if one keeps the scale of a linear-time operation
+    small, and if one does not need to perform the operation often, then it may
+    be acceptable. Balancing these requirements and choosing the right
+    algorithm / data structure for the job is part of what makes programmers'
+    skills valuable.
 
 Array vs. Dictionary vs. Object
 -------------------------------
@@ -52,12 +52,13 @@ contents in a contiguous section of memory, i.e. they are in a row adjacent
 to each other.
 
 .. note::
-  For those unfamiliar with C++, a Vector is the name of the
-  array object in traditional C++ libraries. It is a "templated"
-  type, meaning that its records can only contain a particular type (denoted
-  by angled brackets). So, for example, a
-  :ref:`PackedStringArray <class_PackedStringArray>` would be something like
-  a ``Vector<String>``.
+
+    For those unfamiliar with C++, a Vector is the name of the
+    array object in traditional C++ libraries. It is a "templated"
+    type, meaning that its records can only contain a particular type (denoted
+    by angled brackets). So, for example, a
+    :ref:`PackedStringArray <class_PackedStringArray>` would be something like
+    a ``Vector<String>``.
 
 Contiguous memory stores imply the following operation performance:
 
@@ -294,7 +295,7 @@ faster than string comparisons (linear-time). If one wants to keep
 up other languages' conventions though, then one should use integers.
 
 The primary issue with using integers comes up when one wants to *print*
-an enum value. As integers, attempting to print MY_ENUM will print
+an enum value. As integers, attempting to print ``MY_ENUM`` will print
 ``5`` or what-have-you, rather than something like ``"MyEnum"``. To
 print an integer enum, one would have to write a Dictionary that maps the
 corresponding string value for each enum.
@@ -314,7 +315,7 @@ The answer may not be immediately clear to new Godot users.
 the engine draws as an animated loop rather than a static image.
 Users can manipulate...
 
-1. the rate at which it moves across each section of the texture (fps).
+1. the rate at which it moves across each section of the texture (FPS).
 
 2. the number of regions contained within the texture (frames).
 
@@ -346,7 +347,7 @@ the AnimatedSprite2D.
 AnimationPlayers are also the tool one will need to use if they wish to design
 more complex 2D animation systems, such as...
 
-1. **Cut-Out animations:** editing sprites' transforms at runtime.
+1. **Cut-out animations:** editing sprites' transforms at runtime.
 
 2. **2D Mesh animations:** defining a region for the sprite's texture and
    rigging a skeleton to it. Then one animates the bones which
