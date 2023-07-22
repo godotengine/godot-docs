@@ -124,8 +124,8 @@ To use ``.blend`` import, you must install Blender before opening the Godot
 editor (if opening a project that already contains ``.blend`` files). If you
 keep Blender installed at its default location, Godot should be able to detect
 its path automatically. If this isn't the case, configure the path to the
-Blender executable in the Editor Settings (**Filesystem > Import > Blender >
-Blender 3 Path**).
+directory containing the Blender executable in the Editor Settings
+(**Filesystem > Import > Blender > Blender 3 Path**).
 
 If you keep ``.blend`` files within your project folder but don't want them to
 be imported by Godot, disable **Filesystem > Import > Blender > Enabled** in the
