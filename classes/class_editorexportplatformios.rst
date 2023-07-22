@@ -42,6 +42,8 @@ Properties
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`application/export_method_release<class_EditorExportPlatformIOS_property_application/export_method_release>`                               |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`             | :ref:`application/export_project_only<class_EditorExportPlatformIOS_property_application/export_project_only>`                                   |
+   +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`application/icon_interpolation<class_EditorExportPlatformIOS_property_application/icon_interpolation>`                                     |
    +-------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`               | :ref:`application/launch_screens_interpolation<class_EditorExportPlatformIOS_property_application/launch_screens_interpolation>`                 |
@@ -219,6 +221,18 @@ Application distribution target (debug export).
 :ref:`int<class_int>` **application/export_method_release**
 
 Application distribution target (release export).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorExportPlatformIOS_property_application/export_project_only:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **application/export_project_only**
+
+If ``true``, exports iOS project files without building an XCArchive or ``.ipa`` file. If ``false``, exports iOS project files and builds an XCArchive and ``.ipa`` file at the same time. When combining Godot with Fastlane or other build pipelines, you may want to set this to ``true``.
 
 .. rst-class:: classref-item-separator
 

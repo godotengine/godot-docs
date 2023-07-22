@@ -53,6 +53,8 @@ Methods
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                          | :ref:`clear_default_input_values<class_VisualShaderNode_method_clear_default_input_values>` **(** **)**                                                                                                                    |
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`get_default_input_port<class_VisualShaderNode_method_get_default_input_port>` **(** :ref:`PortType<enum_VisualShaderNode_PortType>` type **)** |const|                                                               |
+   +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`     | :ref:`get_default_input_values<class_VisualShaderNode_method_get_default_input_values>` **(** **)** |const|                                                                                                                |
    +-------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>` | :ref:`get_input_port_default_value<class_VisualShaderNode_method_get_input_port_default_value>` **(** :ref:`int<class_int>` port **)** |const|                                                                             |
@@ -197,6 +199,18 @@ Method Descriptions
 void **clear_default_input_values** **(** **)**
 
 Clears the default input ports value.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_VisualShaderNode_method_get_default_input_port:
+
+.. rst-class:: classref-method
+
+:ref:`int<class_int>` **get_default_input_port** **(** :ref:`PortType<enum_VisualShaderNode_PortType>` type **)** |const|
+
+Returns the input port which should be connected by default when this node is created as a result of dragging a connection from an existing node to the empty space on the graph.
 
 .. rst-class:: classref-item-separator
 

@@ -1548,7 +1548,7 @@ Callbacks have the following arguments: ``bool status, PackedStringArray selecte
 
 \ **Note:** This method is implemented if the display server has the ``FEATURE_NATIVE_DIALOG`` feature.
 
-\ **Note:** This method is implemented on macOS.
+\ **Note:** This method is implemented on Windows and macOS.
 
 \ **Note:** On macOS, native file dialogs have no title.
 
@@ -2551,7 +2551,7 @@ Returns ``true`` if OS supports dark mode.
 
 :ref:`bool<class_bool>` **is_touchscreen_available** **(** **)** |const|
 
-Returns ``true`` if touch events are available (Android or iOS), the capability is detected on the Webplatform or if :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is ``true``.
+Returns ``true`` if touch events are available (Android or iOS), the capability is detected on the Web platform or if :ref:`ProjectSettings.input_devices/pointing/emulate_touch_from_mouse<class_ProjectSettings_property_input_devices/pointing/emulate_touch_from_mouse>` is ``true``.
 
 .. rst-class:: classref-item-separator
 
