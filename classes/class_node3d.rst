@@ -412,7 +412,7 @@ Access to the node rotation as a :ref:`Quaternion<class_Quaternion>`. This prope
 - void **set_rotation** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_rotation** **(** **)**
 
-Rotation part of the local transformation in radians, specified in terms of Euler angles. The angles construct a rotaton in the order specified by the :ref:`rotation_order<class_Node3D_property_rotation_order>` property.
+Rotation part of the local transformation in radians, specified in terms of Euler angles. The angles construct a rotation in the order specified by the :ref:`rotation_order<class_Node3D_property_rotation_order>` property.
 
 \ **Note:** In the mathematical sense, rotation is a matrix and not a vector. The three Euler angles, which are the three independent parameters of the Euler-angle parametrization of the rotation matrix, are stored in a :ref:`Vector3<class_Vector3>` data structure not because the rotation is a vector, but only because :ref:`Vector3<class_Vector3>` exists as a convenient data-structure to store 3 floating-point numbers. Therefore, applying affine operations on the rotation "vector" is not meaningful.
 

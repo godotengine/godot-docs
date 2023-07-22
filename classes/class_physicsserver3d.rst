@@ -556,7 +556,7 @@ A factor applied to the movement across the slider axis once the limits get surp
 
 :ref:`SliderJointParam<enum_PhysicsServer3D_SliderJointParam>` **SLIDER_JOINT_LINEAR_LIMIT_RESTITUTION** = ``3``
 
-The amount of restitution once the limits are surpassed. The lower, the more velocityenergy gets lost.
+The amount of restitution once the limits are surpassed. The lower, the more velocity-energy gets lost.
 
 .. _class_PhysicsServer3D_constant_SLIDER_JOINT_LINEAR_LIMIT_DAMPING:
 

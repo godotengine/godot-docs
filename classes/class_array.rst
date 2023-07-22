@@ -1115,6 +1115,8 @@ If specified, ``step`` is the relative index between source elements. It can be 
 
 If ``deep`` is true, each element will be copied by value rather than by reference.
 
+\ **Note:** To include the first element when ``step`` is negative, use ``arr.slice(begin, -arr.size() - 1, step)`` (i.e. ``[0, 1, 2].slice(1, -4, -1)`` returns ``[1, 0]``).
+
 .. rst-class:: classref-item-separator
 
 ----

@@ -507,7 +507,7 @@ Texture format that uses `BPTC <https://www.khronos.org/opengl/wiki/BPTC_Texture
 
 :ref:`Format<enum_Image_Format>` **FORMAT_ASTC_4x4** = ``35``
 
-`Adaptive Scalable Texutre Compression <https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression>`__. This implements the 4x4 (high quality) mode.
+`Adaptive Scalable Texture Compression <https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression>`__. This implements the 4x4 (high quality) mode.
 
 .. _class_Image_constant_FORMAT_ASTC_4x4_HDR:
 
@@ -523,7 +523,7 @@ Same format as :ref:`FORMAT_ASTC_4x4<class_Image_constant_FORMAT_ASTC_4x4>`, but
 
 :ref:`Format<enum_Image_Format>` **FORMAT_ASTC_8x8** = ``37``
 
-`Adaptive Scalable Texutre Compression <https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression>`__. This implements the 8x8 (low quality) mode.
+`Adaptive Scalable Texture Compression <https://en.wikipedia.org/wiki/Adaptive_scalable_texture_compression>`__. This implements the 8x8 (low quality) mode.
 
 .. _class_Image_constant_FORMAT_ASTC_8x8_HDR:
 

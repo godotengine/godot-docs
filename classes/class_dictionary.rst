@@ -470,7 +470,7 @@ Returns a hashed 32-bit integer value representing the dictionary contents.
 
 \ **Note:** Dictionaries with the same entries but in a different order will not have the same hash.
 
-\ **Note:** Dictionaries with equal hash values are *not* guaranteed to be the same, because of hash collisions. On the countrary, dictionaries with different hash values are guaranteed to be different.
+\ **Note:** Dictionaries with equal hash values are *not* guaranteed to be the same, because of hash collisions. On the contrary, dictionaries with different hash values are guaranteed to be different.
 
 .. rst-class:: classref-item-separator
 

@@ -396,7 +396,7 @@ Attenuation factor used if listener is outside of :ref:`emission_angle_degrees<c
 - void **set_max_db** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_max_db** **(** **)**
 
-Sets the absolute maximum of the soundlevel, in decibels.
+Sets the absolute maximum of the sound level, in decibels.
 
 .. rst-class:: classref-item-separator
 

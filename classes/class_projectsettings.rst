@@ -1089,11 +1089,11 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`memory/limits/multithreaded_server/rid_pool_prealloc<class_ProjectSettings_property_memory/limits/multithreaded_server/rid_pool_prealloc>`                                                           | ``60``                                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`navigation/2d/default_cell_size<class_ProjectSettings_property_navigation/2d/default_cell_size>`                                                                                                     | ``1``                                                                                            |
+   | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_cell_size<class_ProjectSettings_property_navigation/2d/default_cell_size>`                                                                                                     | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`navigation/2d/default_edge_connection_margin<class_ProjectSettings_property_navigation/2d/default_edge_connection_margin>`                                                                           | ``1``                                                                                            |
+   | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_edge_connection_margin<class_ProjectSettings_property_navigation/2d/default_edge_connection_margin>`                                                                           | ``1.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`navigation/2d/default_link_connection_radius<class_ProjectSettings_property_navigation/2d/default_link_connection_radius>`                                                                           | ``4``                                                                                            |
+   | :ref:`float<class_float>`                         | :ref:`navigation/2d/default_link_connection_radius<class_ProjectSettings_property_navigation/2d/default_link_connection_radius>`                                                                           | ``4.0``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`navigation/2d/use_edge_connections<class_ProjectSettings_property_navigation/2d/use_edge_connections>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -3801,7 +3801,7 @@ Name of the .NET assembly. This name is used as the name of the ``.csproj`` and 
 
 :ref:`int<class_int>` **dotnet/project/assembly_reload_attempts** = ``3``
 
-Number of times to attempt assembly reloading after rebuilding .NET assembies. Effectively also the timeout in seconds to wait for unloading of script assemblies to finish.
+Number of times to attempt assembly reloading after rebuilding .NET assemblies. Effectively also the timeout in seconds to wait for unloading of script assemblies to finish.
 
 .. rst-class:: classref-item-separator
 
@@ -8127,7 +8127,7 @@ This is used by servers when used in multi-threading mode (servers and visual). 
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **navigation/2d/default_cell_size** = ``1``
+:ref:`float<class_float>` **navigation/2d/default_cell_size** = ``1.0``
 
 Default cell size for 2D navigation maps. See :ref:`NavigationServer2D.map_set_cell_size<class_NavigationServer2D_method_map_set_cell_size>`.
 
@@ -8139,7 +8139,7 @@ Default cell size for 2D navigation maps. See :ref:`NavigationServer2D.map_set_c
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **navigation/2d/default_edge_connection_margin** = ``1``
+:ref:`float<class_float>` **navigation/2d/default_edge_connection_margin** = ``1.0``
 
 Default edge connection margin for 2D navigation maps. See :ref:`NavigationServer2D.map_set_edge_connection_margin<class_NavigationServer2D_method_map_set_edge_connection_margin>`.
 
@@ -8151,7 +8151,7 @@ Default edge connection margin for 2D navigation maps. See :ref:`NavigationServe
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **navigation/2d/default_link_connection_radius** = ``4``
+:ref:`float<class_float>` **navigation/2d/default_link_connection_radius** = ``4.0``
 
 Default link connection radius for 2D navigation maps. See :ref:`NavigationServer2D.map_set_link_connection_radius<class_NavigationServer2D_method_map_set_link_connection_radius>`.
 

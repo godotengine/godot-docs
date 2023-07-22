@@ -1581,7 +1581,7 @@ Unindents selected lines, or in the case of no selection the caret line by one. 
 
 void **update_code_completion_options** **(** :ref:`bool<class_bool>` force **)**
 
-Submits all completion options added with :ref:`add_code_completion_option<class_CodeEdit_method_add_code_completion_option>`. Will try to force the autoccomplete menu to popup, if ``force`` is ``true``.
+Submits all completion options added with :ref:`add_code_completion_option<class_CodeEdit_method_add_code_completion_option>`. Will try to force the autocomplete menu to popup, if ``force`` is ``true``.
 
 \ **Note:** This will replace all current candidates.
 

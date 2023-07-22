@@ -36,6 +36,20 @@ Properties
    | :ref:`float<class_float>` | :ref:`loop_offset<class_ResourceImporterOggVorbis_property_loop_offset>` | ``0``     |
    +---------------------------+--------------------------------------------------------------------------+-----------+
 
+.. rst-class:: classref-reftable-group
+
+Methods
+-------
+
+.. table::
+   :widths: auto
+
+   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_buffer<class_ResourceImporterOggVorbis_method_load_from_buffer>` **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)** |static| |
+   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` | :ref:`load_from_file<class_ResourceImporterOggVorbis_method_load_from_file>` **(** :ref:`String<class_String>` path **)** |static|                         |
+   +---------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. rst-class:: classref-section-separator
 
 ----
@@ -108,6 +122,35 @@ If ``true``, the audio will play again from the specified :ref:`loop_offset<clas
 .. container:: contribute
 
 	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+
+.. rst-class:: classref-section-separator
+
+----
+
+.. rst-class:: classref-descriptions-group
+
+Method Descriptions
+-------------------
+
+.. _class_ResourceImporterOggVorbis_method_load_from_buffer:
+
+.. rst-class:: classref-method
+
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_buffer** **(** :ref:`PackedByteArray<class_PackedByteArray>` buffer **)** |static|
+
+This method loads audio data from a PackedByteArray buffer into an AudioStreamOggVorbis object.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterOggVorbis_method_load_from_file:
+
+.. rst-class:: classref-method
+
+:ref:`AudioStreamOggVorbis<class_AudioStreamOggVorbis>` **load_from_file** **(** :ref:`String<class_String>` path **)** |static|
+
+This method loads audio data from a file into an AudioStreamOggVorbis object. The file path is provided as a string.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
