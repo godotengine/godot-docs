@@ -75,8 +75,9 @@ editor binary built with ``target=release_debug``::
 
     cp -r misc/dist/macos_tools.app ./Godot.app
     mkdir -p Godot.app/Contents/MacOS
-    cp bin/godot.macos.opt.tools.universal Godot.app/Contents/MacOS/Godot
+    cp bin/godot.macos.tools.universal Godot.app/Contents/MacOS/Godot
     chmod +x Godot.app/Contents/MacOS/Godot
+    codesign --force --timestamp --options=runtime --entitlements misc/dist/macos/editor.entitlements -s - Godot.app
 
 .. note::
 
