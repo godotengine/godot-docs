@@ -106,10 +106,10 @@ initialize it:
      .. code-tab:: csharp
 
        // Parent
-       GetNode("Child").Set("FuncProperty", GD.FuncRef(ObjectWithMethod, "MethodOnTheObject"));
+       GetNode("Child").Set("FuncProperty", Callable.From(ObjectWithMethod.MethodOnTheObject));
 
        // Child
-       FuncProperty.CallFunc(); // Call parent-defined method (can come from anywhere).
+       FuncProperty.Call(); // Call parent-defined method (can come from anywhere).
 
 4. Initialize a Node or other Object reference.
 
