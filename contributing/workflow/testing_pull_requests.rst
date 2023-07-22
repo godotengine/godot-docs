@@ -31,24 +31,23 @@ If you have a GitHub account
 
 - Open the pull request page. Click the **Checks** tab near the top of the page:
 
-.. image:: img/testing_pull_requests_access_checks.png
+.. image:: img/testing_pull_requests_access_checks.webp
 
-- In the list of platforms that appears on the left, select your platform by clicking
-  it then choose the type of build you need (editor or export template).
-  If in doubt, select an editor build:
+- Click the **Artifacts** dropdown on the right of the page:
 
-.. image:: img/testing_pull_requests_checks_platforms.png
+.. image:: img/testing_pull_requests_checks_artifacts.webp
 
-- Click the **Artifacts** dropdown on the right of the page then click the artifact's
-  name to download it:
+- In the dropdown, click the artifact's name to download it. Remember to scroll
+  if you cannot see the name of the platform you're looking for:
 
-.. image:: img/testing_pull_requests_checks_artifacts.png
+.. image:: img/testing_pull_requests_checks_artifacts_list.webp
 
 - Extract the ZIP archive then run the executable.
-  Note that Windows and macOS binaries are not code signed.
+  Note that Windows and macOS binaries are **not** code signed.
   This means you may have to bypass a security warning before you can run the executable.
-  If you frequently test pull request builds, it may be better to disable
-  Windows SmartScreen or `disable macOS Gatekeeper <https://disable-gatekeeper.github.io/>`__ permanently.
+  On Windows, if you frequently test pull request builds, it may be better to disable
+  Windows SmartScreen permanently in the Windows security settings.
+  On macOS, see :ref:`doc_running_on_macos` for instructions on bypassing Gatekeeper.
 
 If you don't have a GitHub account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
