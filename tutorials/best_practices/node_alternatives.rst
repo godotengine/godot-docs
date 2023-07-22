@@ -1,10 +1,7 @@
-:article_outdated: True
-
 .. _doc_node_alternatives:
 
 When and how to avoid using nodes for everything
 ================================================
-
 
 Nodes are cheap to produce, but even they have their limits. A project may
 have tens of thousands of nodes all doing things. The more complex their
@@ -30,10 +27,12 @@ your project's features.
      entire Node library, one creates an abbreviated set of Objects from which
      a node can generate and manage the appropriate sub-nodes.
 
-   .. note:: One should be careful when handling them. One can store an Object
-     into a variable, but these references can become invalid without warning.
-     For example, if the object's creator decides to delete it out of nowhere,
-     this would trigger an error state when one next accesses it.
+   .. note::
+
+       One should be careful when handling them. One can store an Object
+       into a variable, but these references can become invalid without warning.
+       For example, if the object's creator decides to delete it out of nowhere,
+       this would trigger an error state when one next accesses it.
 
 2. :ref:`RefCounted <class_RefCounted>`: Only a little more complex than Object.
    They track references to themselves, only deleting loaded memory when no

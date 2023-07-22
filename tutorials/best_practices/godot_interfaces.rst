@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_godot_interfaces:
 
 Godot interfaces
@@ -41,32 +39,36 @@ access.
 .. tabs::
   .. code-tab:: gdscript GDScript
 
-    var preres = preload(path) # Load resource during scene load
-    var res = load(path) # Load resource when program reaches statement
+    # If you need an "export const var" (which doesn't exist), use a conditional
+    # setter for a tool script that checks if it's executing in the editor.
+    # The `@tool` annotation must be placed at the top of the script.
+    @tool
+
+    # Load resource during scene load.
+    var preres = preload(path)
+    # Load resource when program reaches statement.
+    var res = load(path)
 
     # Note that users load scenes and scripts, by convention, with PascalCase
     # names (like typenames), often into constants.
-    const MyScene : = preload("my_scene.tscn") as PackedScene # Static load
-    const MyScript : = preload("my_script.gd") as Script
+    const MyScene = preload("my_scene.tscn") # Static load
+    const MyScript = preload("my_script.gd")
 
     # This type's value varies, i.e. it is a variable, so it uses snake_case.
-    export(Script) var script_type: Script
-
-    # If need an "export const var" (which doesn't exist), use a conditional
-    # setter for a tool script that checks if it's executing in the editor.
-    tool # Must place at top of file.
+    @export var script_type: Script
 
     # Must configure from the editor, defaults to null.
-    export(Script) var const_script setget set_const_script
-    func set_const_script(value):
-        if Engine.is_editor_hint():
-            const_script = value
+    export var const_script: Script:
+        set(value):
+            if Engine.is_editor_hint():
+                const_script = value
 
     # Warn users if the value hasn't been set.
-    func _get_configuration_warning():
+    func _get_configuration_warnings():
         if not const_script:
-            return "Must initialize property 'const_script'."
-        return ""
+            return ["Must initialize property 'const_script'."]
+
+        return []
 
   .. code-tab:: csharp
 
@@ -106,7 +108,7 @@ access.
         };
 
         // Warn users if the value hasn't been set.
-        public String _GetConfigurationWarning()
+        public String _GetConfigurationWarnings()
         {
             if (EnemyScn == null)
                 return "Must initialize property 'EnemyScn'.";
@@ -142,12 +144,18 @@ Nodes likewise have an alternative access point: the SceneTree.
         print($Child)
 
     # Fastest. Doesn't break if node moves later.
-    # Note that `@onready` annotation is GDScript only.
+    # Note that `@onready` annotation is GDScript-only.
     # Other languages must do...
     #     var child
     #     func _ready():
     #         child = get_node("Child")
     @onready var child = $Child
+    func lookup_and_cache_for_future_access():
+        print(child)
+
+    # Fastest. Doesn't break if node is moved in the Scene tree dock.
+    # Node must be selected in the inspector as it's an exported property.
+    @export var child: Node
     func lookup_and_cache_for_future_access():
         print(child)
 
@@ -169,8 +177,7 @@ Nodes likewise have an alternative access point: the SceneTree.
             return
 
         # Fail and terminate.
-        # Note: Scripts run from a release export template don't
-        # run `assert` statements.
+        # NOTE: Scripts run from a release export template don't run `assert`s.
         assert(prop, "'prop' wasn't initialized")
 
     # Use an autoload.
@@ -236,8 +243,7 @@ Nodes likewise have an alternative access point: the SceneTree.
             }
 
             // Fail and terminate.
-            // Note: Scripts run from a release export template don't
-            // run `Debug.Assert` statements.
+            // Note: Scripts run from a release export template don't run `Debug.Assert`s.
             Debug.Assert(Prop, "'Prop' wasn't initialized");
         }
 
@@ -287,10 +293,8 @@ following checks, in order:
   execute logic that gives the impression that the Object has a property. This
   is also the case with the ``_get_property_list`` method.
 
-  - Note that this happens even for non-legal symbol names such as in the
-    case of :ref:`TileSet <class_TileSet>`'s "1/tile_name" property. This
-    refers to the name of the tile with ID 1, i.e.
-    ``TileSet.tile_get_name(1)``.
+  - Note that this happens even for non-legal symbol names, such as names
+    starting with a digit or containing a slash.
 
 As a result, this duck-typed system can locate a property either in the script,
 the object's class, or any class that object inherits, but only for things
