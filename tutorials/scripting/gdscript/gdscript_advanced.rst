@@ -338,7 +338,7 @@ Iterating using the C-style for loop in C-derived languages can be quite complex
         std::cout << *it << std::endl;
     }
 
-Because of this, GDScript makes the opinonated decision to have a for-in loop over iterables instead:
+Because of this, GDScript makes the opinionated decision to have a for-in loop over iterables instead:
 
 ::
 
