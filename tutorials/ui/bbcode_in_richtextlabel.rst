@@ -306,7 +306,7 @@ Reference
     - | ``[hint={tooltip text displayed on hover}]{text}[/hint]``
 
   * - | **img**
-      | Inserts an image from the ``{path}`` (can be any valid image resource).
+      | Inserts an image from the ``{path}`` (can be any valid :ref:`class_Texture2D` resource).
       | If ``{width}`` is provided, the image will try to fit that width maintaining
         the aspect ratio.
       | If both ``{width}`` and ``{height}`` are provided, the image will be scaled
@@ -568,7 +568,7 @@ Image options
   | `Default` | Inherit                                    |
   +-----------+--------------------------------------------+
 
-  Region rect of the image.
+  Region rect of the image. This can be used to display a single image from a spritesheet.
 
 .. _doc_bbcode_in_richtextlabel_image_alignment:
 
