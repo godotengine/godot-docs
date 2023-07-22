@@ -337,8 +337,8 @@ this.
 
 **Core GLSL material shaders:**
 
-- Forward+: `servers/rendering/renderer_rd/shaders/scene_forward_clustered.glsl <https://github.com/godotengine/godot/blob/4.0/servers/rendering/renderer_rd/shaders/scene_forward_clustered.glsl>`__
-- Forward Mobile: `servers/rendering/renderer_rd/shaders/scene_forward_mobile.glsl <https://github.com/godotengine/godot/blob/4.0/servers/rendering/renderer_rd/shaders/scene_forward_mobile.glsl>`__
+- Forward+: `servers/rendering/renderer_rd/shaders/forward_clustered/scene_forward_clustered.glsl <https://github.com/godotengine/godot/blob/4.0/servers/rendering/renderer_rd/shaders/forward_clustered/scene_forward_clustered.glsl>`__
+- Forward Mobile: `servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl <https://github.com/godotengine/godot/blob/4.0/servers/rendering/renderer_rd/shaders/forward_mobile/scene_forward_mobile.glsl>`__
 - Compatibility: `drivers/gles3/shaders/scene.glsl <https://github.com/godotengine/godot/blob/4.0/drivers/gles3/shaders/scene.glsl>`__
 
 **Material shader generation:**
