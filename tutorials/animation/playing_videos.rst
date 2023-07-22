@@ -76,7 +76,7 @@ a float. Otherwise, the division's result will always be an integer.
 
 Once you've configured the AspectRatioContainer, reparent your VideoStreamPlayer
 node to be a child of the AspectRatioContainer node. Make sure **Expand** is
-disabled on the VideoStreamPlayer. Your video should now scale automatically
+enabled on the VideoStreamPlayer. Your video should now scale automatically
 to fit the whole screen while avoiding distortion.
 
 .. seealso::
