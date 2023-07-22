@@ -1,5 +1,3 @@
-:article_outdated: True
-
 .. _doc_scenes_versus_scripts:
 
 When to use scenes versus scripts
@@ -202,7 +200,7 @@ In the end, the best approach is to consider the following:
   security than scripts.
 
 - If one would like to give a name to a scene, then they can still sort of do
-  this in 3.1 by declaring a script class and giving it a scene as a constant.
+  this by declaring a script class and giving it a scene as a constant.
   The script becomes, in effect, a namespace:
 
   .. tabs::
