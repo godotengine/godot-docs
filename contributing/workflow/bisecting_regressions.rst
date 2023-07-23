@@ -92,6 +92,13 @@ following commit hashes depending on the version:
 
 .. code-block:: none
 
+    4.1.1-stable
+    4.1-stable
+    4.0.3-stable
+    4.0.2-stable
+    4.0.1-stable
+    4.0-stable
+    3.5.2-stable
     3.5.1-stable
     3.5-stable
     3.4.5-stable
